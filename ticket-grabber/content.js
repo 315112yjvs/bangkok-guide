@@ -20,9 +20,10 @@ function getPage() {
 // ── Floating overlay ──────────────────────────────────────
 function createOverlay() {
   if (overlayEl) return;
+  const zIdx = Math.floor(88888 + Math.random() * 11111); // 隨機 z-index，避免最大值特徵
   overlayEl = document.createElement('div');
   overlayEl.style.cssText = `
-    position:fixed;top:12px;right:12px;z-index:2147483647;
+    position:fixed;top:12px;right:12px;z-index:${zIdx};
     background:rgba(12,8,20,.96);color:#e0e0f0;
     border:1.5px solid #c0392b;border-radius:10px;
     padding:10px 14px;font:600 11px/1.6 monospace;
@@ -54,14 +55,23 @@ function start(cfg, initialDone = {}) {
   log(`啟動，頁面：${page}`, 'info');
   setStep(page);
 
-  // fixed.php 頁面初始化（不再注入 alert 攔截）
+  scheduleTick();
+}
 
-  tickerInterval = setInterval(tick, settings.interval || 800);
+// 用 setTimeout 遞迴取代 setInterval，加入 ±200ms 隨機抖動模擬真人節奏
+function scheduleTick() {
+  if (!isRunning) return;
+  const base   = settings.interval || 800;
+  const jitter = (Math.random() - 0.5) * 400;
+  tickerInterval = setTimeout(() => {
+    tick();
+    scheduleTick();
+  }, Math.max(300, base + jitter));
 }
 
 function stop() {
   isRunning = false;
-  clearInterval(tickerInterval);
+  clearTimeout(tickerInterval);
   tickerInterval = null;
   rmO();
 }
@@ -243,8 +253,7 @@ function handleConcert() {
   log(`選擇場次：${timeText}，${price} บาท`, 'success');
   setStep('VERIFY');
 
-  // 直接點擊按鈕，讓 signin() 自然觸發（避免直接跳 URL 被偵測）
-  setTimeout(() => { btn.click(); }, 200);
+  setTimeout(() => { humanClick(btn); }, 200);
 }
 
 function parsePrice(text) {
@@ -261,13 +270,12 @@ function handleVerify() {
   const btn = document.querySelector('button.btn-solid-round5-blue');
   if (!cb||!btn) { setO('等待條款頁...', '#88aaff'); return; }
   if (!cb.checked) {
-    cb.checked=true;
-    cb.dispatchEvent(new Event('change',{bubbles:true}));
-    cb.dispatchEvent(new Event('click', {bubbles:true}));
+    humanClick(cb); // 模擬真人點擊勾選，等下一個 tick 確認
+    return;
   }
   if (cb.checked && !stepDone.VERIFY) {
     stepDone.VERIFY = true;
-    setTimeout(()=>{ btn.click(); log('已點擊「ซื้อบัตร」', 'success'); setStep('ZONES'); }, 500);
+    setTimeout(()=>{ humanClick(btn); log('已點擊「ซื้อบัตร」', 'success'); setStep('ZONES'); }, 500);
   }
 }
 
@@ -423,16 +431,23 @@ function humanClick(el) {
   });
 }
 
-// 發送 ESC 事件（關閉自訂 modal）
-function pressEsc() {
-  ['keydown','keypress','keyup'].forEach(type=>{
-    document.dispatchEvent(new KeyboardEvent(type,{
-      key:'Escape', keyCode:27, which:27, bubbles:true, cancelable:true
-    }));
-  });
-  // 也試著關閉 fancybox / jQuery modal
+// 關閉 modal（點擊實際關閉按鈕，避免派發 isTrusted:false 的鍵盤事件）
+function closeModal() {
+  const closeSelectors = [
+    '.fancybox-close',
+    '.fancybox-button--close',
+    '[data-fancybox-close]',
+    '.modal.show .close',
+    '.modal.show .btn-close',
+    '.popup-normal .close',
+    '.popup-normal .btn-close',
+    'button[aria-label="Close"]',
+  ];
+  for (const sel of closeSelectors) {
+    const el = document.querySelector(sel);
+    if (el) { el.click(); return; }
+  }
   try { $.fancybox?.close?.(); } catch(e){}
-  try { $('.modal.show, .popup-normal:visible').hide?.(); } catch(e){}
 }
 
 // 座位優先順序：前中 > 後中 > 前右靠中 > 前左靠中 > 其他
@@ -593,7 +608,7 @@ function handleFixed() {
     triedSeatIds.add(seat.id);
 
     humanClick(seat);   // 模擬真人滑鼠點擊
-    pressEsc();         // 關閉可能出現的自訂 modal
+    closeModal();       // 關閉可能出現的自訂 modal
 
     setO(`點擊座位 ${seatId}（${selected.length+1}/${seatCount}）...`, '#88aaff');
 
@@ -649,8 +664,8 @@ function handleFixed() {
     setO('✓ 點擊「ยืนยันที่นั่ง」！', '#4cff91');
     log(`已選 ${selected.length} 個座位，點擊確認！`, 'success');
     setStep('DONE');
-    confirmBtn.click();
-    clearInterval(tickerInterval); tickerInterval=null;
+    humanClick(confirmBtn);
+    clearTimeout(tickerInterval); tickerInterval=null;
     chrome.storage.local.set({isRunning:false});
     chrome.runtime.sendMessage({type:'STEP',step:'DONE'}).catch(()=>{});
     setTimeout(()=>rmO(), 6000);
@@ -665,5 +680,4 @@ function setStep(step) {
 }
 function log(text, level='info') {
   chrome.runtime.sendMessage({type:'LOG',text,level}).catch(()=>{});
-  console.log(`[搶票][${level.toUpperCase()}] ${text}`);
 }
