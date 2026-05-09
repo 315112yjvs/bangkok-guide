@@ -11,9 +11,11 @@ let overlayEl = null;
 function getPage() {
   const p = location.pathname;
   if (p.includes('verify_condition')) return 'VERIFY';
+  if (p.includes('verify.php'))       return 'PASSPORT';
   if (p.includes('zones.php'))        return 'ZONES';
   if (p.includes('fixed.php'))        return 'FIXED';
-  if (location.hostname === 'www.thaiticketmajor.com') return 'CONCERT';
+  if (location.hostname === 'www.thaiticketmajor.com' ||
+      location.hostname === 'thaiticketmajor.com') return 'CONCERT';
   return 'OTHER';
 }
 
@@ -45,9 +47,10 @@ const rmO   = ()=>{ overlayEl?.remove(); overlayEl=null; };
 // ── 啟動 / 停止 ───────────────────────────────────────────
 function start(cfg, initialDone = {}) {
   if (isRunning) return;
-  settings  = cfg;
-  isRunning = true;
-  stepDone  = { ...initialDone };
+  settings      = cfg;
+  isRunning     = true;
+  stepDone      = { ...initialDone };
+  passportFilled = false;
   resetFixed();
   createOverlay();
   const page = getPage();
@@ -83,45 +86,39 @@ chrome.runtime.onMessage.addListener((msg,_,res)=>{
 });
 
 // ── Storage 變化監聽：sendMessage 失敗時的備援啟動 ────────
-// 當 popup 將 isRunning 設為 true 但訊息沒送達時，
-// storage 變化仍會觸發這裡，確保 content script 能自動啟動
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== 'local') return;
-
-  // isRunning 被設為 true，但 content script 尚未在跑
-  if (changes.isRunning?.newValue === true && !isRunning) {
-    chrome.storage.local.get(
-      ['targetDate','targetTicket','zoneKeywords','targetZone',
-       'seatCount','seatDirection','priorityRows','autoRefresh','interval',
-       'currentStep','triedZones'],
-      data => {
-        _triedZones = (data.triedZones || []).map(z => z.toUpperCase());
-
-        let zoneKeywords = data.zoneKeywords || [];
-        if (!zoneKeywords.length && data.targetZone)
-          zoneKeywords = data.targetZone.split(/[,，\s]+/).map(s=>s.trim()).filter(Boolean);
-
-        const initialDone = resolveInitialDone(data.currentStep || '');
-        start({
-          targetDate:    data.targetDate    || '',
-          targetTicket:  data.targetTicket  || '',
-          zoneKeywords,
-          seatCount:     data.seatCount     || 1,
-          seatDirection: data.seatDirection || 'MIDDLE',
-          priorityRows:  data.priorityRows  ?? 5,
-    
-          autoRefresh:   data.autoRefresh   || false,
-          interval:      data.interval      || 800,
-        }, initialDone);
-      }
-    );
-  }
-
-  // isRunning 被設為 false → 停止
-  if (changes.isRunning?.newValue === false && isRunning) {
+  if (changes.isRunning?.newValue === true && !isRunning)
+    chrome.storage.local.get(STORAGE_KEYS, startFromStorage);
+  if (changes.isRunning?.newValue === false && isRunning)
     stop();
-  }
 });
+
+// ── startFromStorage：從 storage 讀取設定並啟動 ─────────
+const STORAGE_KEYS = [
+  'isRunning','targetDate','targetTicket','zoneKeywords','targetZone',
+  'seatCount','seatDirection','priorityRows','autoRefresh','interval',
+  'currentStep','triedZones','passportId',
+];
+
+function startFromStorage(data) {
+  _triedZones = (data.triedZones || []).map(z => z.toUpperCase());
+  let zoneKeywords = data.zoneKeywords || [];
+  if (!zoneKeywords.length && data.targetZone)
+    zoneKeywords = data.targetZone.split(/[,，\s]+/).map(s => s.trim()).filter(Boolean);
+  const initialDone = resolveInitialDone(data.currentStep || '');
+  start({
+    targetDate:    data.targetDate    || '',
+    targetTicket:  data.targetTicket  || '',
+    zoneKeywords,
+    seatCount:     data.seatCount     || 1,
+    seatDirection: data.seatDirection || 'MIDDLE',
+    priorityRows:  data.priorityRows  ?? 5,
+    passportId:    data.passportId    || '',
+    autoRefresh:   data.autoRefresh   || false,
+    interval:      data.interval      || 800,
+  }, initialDone);
+}
 
 // ── initialDone 推算（綜合 URL + 儲存的 currentStep，取最遠進度）──
 function resolveInitialDone(storedStep) {
@@ -137,33 +134,9 @@ function resolveInitialDone(storedStep) {
 }
 
 // ── 頁面載入自動恢復 ──────────────────────────────────────
-chrome.storage.local.get(
-  ['isRunning','targetDate','targetTicket','zoneKeywords','targetZone',
-   'seatCount','seatDirection','priorityRows','autoRefresh','interval',
-   'currentStep','triedZones'],
-  data => {
-    if (!data.isRunning) return;
-    // 恢復已試過的 Zone 清單（跨頁面重整必須從 storage 讀回）
-    _triedZones = (data.triedZones || []).map(z => z.toUpperCase());
-
-    let zoneKeywords = data.zoneKeywords||[];
-    if (!zoneKeywords.length && data.targetZone)
-      zoneKeywords = data.targetZone.split(/[,，\s]+/).map(s=>s.trim()).filter(Boolean);
-
-    const initialDone = resolveInitialDone(data.currentStep || '');
-    start({
-      targetDate:    data.targetDate    || '',
-      targetTicket:  data.targetTicket  || '',
-      zoneKeywords,
-      seatCount:     data.seatCount     || 1,
-      seatDirection: data.seatDirection || 'MIDDLE',
-      priorityRows:  data.priorityRows  ?? 5,
-
-      autoRefresh:   data.autoRefresh   || false,
-      interval:      data.interval      || 800,
-    }, initialDone);
-  }
-);
+chrome.storage.local.get(STORAGE_KEYS, data => {
+  if (data.isRunning) startFromStorage(data);
+});
 
 // ── 主迴圈 ────────────────────────────────────────────────
 let tickCount = 0;
@@ -174,11 +147,12 @@ function tick() {
   tickCount++;
   setO2(`偵測次數：${tickCount}`);
   const page = getPage();
-  if      (page==='CONCERT') { captchaLogged=false; handleConcert(); }
-  else if (page==='VERIFY')  { captchaLogged=false; handleVerify();  }
-  else if (page==='ZONES')   { captchaLogged=false; handleZones();   }
-  else if (page==='FIXED')   { captchaLogged=false; handleFixed();   }
-  else                        handleCaptcha(); // 驗證/未知頁面
+  if      (page==='CONCERT')  { captchaLogged=false; handleConcert();  }
+  else if (page==='VERIFY')   { captchaLogged=false; handleVerify();   }
+  else if (page==='PASSPORT') { captchaLogged=false; handlePassport(); }
+  else if (page==='ZONES')    { captchaLogged=false; handleZones();    }
+  else if (page==='FIXED')    { captchaLogged=false; handleFixed();    }
+  else                         handleCaptcha(); // 驗證/未知頁面
 }
 
 // ── 驗證/CAPTCHA 頁面 ─────────────────────────────────────
@@ -239,15 +213,21 @@ function handleConcert() {
   if (settings.targetTicket) {
     const kw = settings.targetTicket.toLowerCase();
     filtered = filtered.filter(c => c.txt.toLowerCase().includes(kw));
+  } else {
+    // 無關鍵字時自動排除 Live Streaming / RERUN（只搶實體票）
+    const EXCLUDE = ['streaming', 'live stream', 'rerun', 're-run', 'ttm live'];
+    const physicalOnly = filtered.filter(c =>
+      !EXCLUDE.some(x => c.txt.toLowerCase().includes(x))
+    );
+    // 若還有實體票則只選實體票，否則保留全部（避免過濾太嚴）
+    if (physicalOnly.length) filtered = physicalOnly;
   }
   if (!filtered.length) { setO('沒有符合場次，等待...', '#ffcc44'); return; }
 
-  // 無票種關鍵字 → 高價優先
-  if (!settings.targetTicket) filtered.sort((a,b)=>b.price-a.price);
+  // 高價優先（實體票通常比串流貴，可作為額外保險）
+  filtered.sort((a,b)=>b.price-a.price);
 
   const {btn, timeText, price} = filtered[0];
-  const m = (btn.getAttribute('onclick')||'').match(/signin\(['"](https?:\/\/[^'"]+)['"]\)/);
-
   stepDone.CONCERT = true;
   setO(`場次 [${timeText}] ${price}฿ → 前往...`, '#4cff91');
   log(`選擇場次：${timeText}，${price} บาท`, 'success');
@@ -270,12 +250,52 @@ function handleVerify() {
   const btn = document.querySelector('button.btn-solid-round5-blue');
   if (!cb||!btn) { setO('等待條款頁...', '#88aaff'); return; }
   if (!cb.checked) {
-    humanClick(cb); // 模擬真人點擊勾選，等下一個 tick 確認
+    humanClick(cb);
     return;
   }
-  if (cb.checked && !stepDone.VERIFY) {
-    stepDone.VERIFY = true;
-    setTimeout(()=>{ humanClick(btn); log('已點擊「ซื้อบัตร」', 'success'); setStep('ZONES'); }, 500);
+  stepDone.VERIFY = true;
+  setTimeout(() => { humanClick(btn); log('已點擊「ซื้อบัตร」', 'success'); setStep('ZONES'); }, 500);
+}
+
+// ════════════════════════════════════════════════════════
+// STEP 2b — verify.php（身分證 / 護照號碼驗證）
+// ════════════════════════════════════════════════════════
+let passportFilled = false;
+
+function handlePassport() {
+  if (stepDone.PASSPORT) return;
+
+  if (!settings.passportId) {
+    setO('請在插件填入身分證/護照號碼', '#ffcc44');
+    return;
+  }
+
+  const input = document.querySelector('input[type="text"]') ||
+                document.querySelector('input[type="tel"]') ||
+                document.querySelector('input[name="citizen_id"]') ||
+                document.querySelector('input[name="passport"]') ||
+                document.querySelector('input[name="id"]');
+
+  const btn = Array.from(document.querySelectorAll('button')).find(b =>
+    b.textContent.includes('ตกลง') || b.type === 'submit'
+  ) || document.querySelector('button[type="submit"]') ||
+       document.querySelector('input[type="submit"]');
+
+  if (!input) { setO('等待身分驗證頁面...', '#88aaff'); return; }
+  if (!btn)   { setO('找不到確認按鈕...', '#ffcc44');   return; }
+
+  if (!passportFilled) {
+    passportFilled = true;
+    input.focus();
+    input.value = settings.passportId;
+    input.dispatchEvent(new Event('input',  { bubbles: true }));
+    input.dispatchEvent(new Event('change', { bubbles: true }));
+    setO('✓ 已填入證件號，點擊確認...', '#4cff91');
+    log(`填入證件號碼並送出`, 'success');
+    setTimeout(() => {
+      stepDone.PASSPORT = true;
+      humanClick(btn);
+    }, 500);
   }
 }
 
@@ -289,46 +309,72 @@ function handleZones() {
 
   const frm  = document.forms['frm'] || document.querySelector('form[name="frm"]');
   const kEl  = frm?.elements['k']    || document.querySelector('[name="k"]');
-  const rdEl = frm?.elements['rdId'] || document.querySelector('[name="rdId"]');
-  if (!kEl||!rdEl) { setO('等待 Zone 表單...', '#88aaff'); return; }
+  const rdEl = frm?.elements['rdId'] || document.querySelector('[name="rdId"]') ||
+               document.querySelector('select[name="rdId"]') ||
+               document.querySelector('select'); // 場次 dropdown fallback
+  if (!rdEl) { setO('等待 Zone 表單...', '#88aaff'); return; }
 
-  const k=kEl.value, rdId=rdEl.value;
-  if (!k||!rdId) { setO('表單值為空...', '#ffcc44'); return; }
+  // k：優先從表單取，次選 URL query 參數（新版頁面用 ?query=xxx）
+  let k    = kEl?.value || '';
+  let rdId = rdEl.value || '';
+
+  if (!k) {
+    const p = new URLSearchParams(location.search);
+    k = p.get('k') || p.get('query') || '';
+  }
+
+  // rdId 對應 select dropdown 且尚未選擇場次 → 自動選擇
+  if (!rdId && rdEl.tagName === 'SELECT') {
+    const opts = Array.from(rdEl.options).filter(o => o.value && o.value !== '0');
+    if (!opts.length) { setO('等待場次選項載入...', '#88aaff'); return; }
+
+    let chosen = opts[0]; // 預設第一個
+    if (settings.targetDate) {
+      const kw = settings.targetDate.toLowerCase();
+      const hit = opts.find(o => o.text.toLowerCase().includes(kw));
+      if (hit) chosen = hit;
+    }
+    setO(`選擇場次：${chosen.text}...`, '#88aaff');
+    log(`自動選擇場次：${chosen.text}`, 'info');
+    rdEl.value = chosen.value;
+    rdEl.dispatchEvent(new Event('change', { bubbles: true }));
+    rdId = chosen.value;
+    return; // 等下一個 tick，讓頁面反應
+  }
+
+  if (!k || !rdId) { setO('表單值為空...', '#ffcc44'); return; }
 
   const areas = Array.from(document.querySelectorAll('map area'));
   if (!areas.length) { setO('等待 Zone 地圖...', '#88aaff'); return; }
 
-  // 嘗試多種格式抓取 zone 名稱：
-  // 1. href="#ZONE"  2. href/onclick 含 selectzone('ZONE')  3. title/alt 屬性
-  const availZones = [];
+  // 一次解析，產生 { name, area } 物件，避免後續重複遍歷
+  const zoneMap = [];
   areas.forEach(a => {
     const href    = a.getAttribute('href')    || '';
     const onclick = a.getAttribute('onclick') || '';
     const title   = a.getAttribute('title')   || '';
     const alt     = a.getAttribute('alt')     || '';
 
-    // selectzone('ZONE') pattern
     const mJS = (href + onclick).match(/selectzone\s*\(\s*['"]([^'"]+)['"]\s*\)/i);
-    if (mJS) { availZones.push(mJS[1]); return; }
+    if (mJS) { zoneMap.push({ name: mJS[1], area: a }); return; }
 
-    // href="#ZONE" fragment
     const mHash = href.match(/#([^#?&]+)/);
-    if (mHash && mHash[1] !== '' && mHash[1] !== '0') { availZones.push(mHash[1]); return; }
+    if (mHash && mHash[1] !== '' && mHash[1] !== '0') { zoneMap.push({ name: mHash[1], area: a }); return; }
 
-    // title 或 alt 有內容就用
     const label = (title || alt).trim();
-    if (label) availZones.push(label);
+    if (label) zoneMap.push({ name: label, area: a });
   });
 
-  if (!availZones.length) {
+  if (!zoneMap.length) {
     setO('Zone 地圖載入中，等待...', '#88aaff');
     return;
   }
-  // 顯示偵測到的 zone 名稱（方便核對關鍵字是否填對）
-  setO2(`偵測 ${availZones.length} 區：${availZones.join(', ')}`);
+
+  const zoneNames = zoneMap.map(z => z.name);
+  setO2(`偵測 ${zoneMap.length} 區：${zoneNames.join(', ')}`);
   if (!_zonesDetectedLogged) {
     _zonesDetectedLogged = true;
-    log(`頁面 Zone 清單：${availZones.join(', ')}`, 'info');
+    log(`頁面 Zone 清單：${zoneNames.join(', ')}`, 'info');
   }
 
   // 儲存 zones page URL 供回退使用
@@ -343,57 +389,57 @@ function handleZones() {
   // 決定候選範圍：有關鍵字只考慮匹配的 zone，沒有則全部
   let pool;
   if (kws.length) {
-    pool = availZones.filter(z =>
-      kws.some(kw => z.toUpperCase()===kw ||
-                     z.toUpperCase().includes(kw) ||
-                     kw.includes(z.toUpperCase()))
+    pool = zoneMap.filter(z =>
+      kws.some(kw => z.name.toUpperCase() === kw ||
+                     z.name.toUpperCase().includes(kw) ||
+                     kw.includes(z.name.toUpperCase()))
     );
     if (!pool.length) {
       setO(`Zone [${kws.join('/')}] 頁面上找不到，等待...`, '#ffcc44');
       return;
     }
   } else {
-    pool = availZones;
+    pool = zoneMap;
   }
 
-  // 用 zoneIdx 計數器無限輪詢：A→B→A→B→...
-  chrome.storage.local.get('zoneIdx', d => {
-    const idx    = (d.zoneIdx || 0) % pool.length;
-    const chosen = pool[idx];
+  // 直接從 storage 讀取已試過的 zone（不靠記憶體變數，避免跨頁重整後遺失）
+  chrome.storage.local.get('triedZones', d => {
+    const triedUpper = (d.triedZones || []).map(z => z.toUpperCase());
 
-    // 找到對應 zone 的 <area> 元素，直接點擊觸發原生 selectzone()
-    // 這樣伺服器才能看到正常的 zone 選擇流程（不是直接跳 URL）
-    const chosenArea = areas.find(a => {
-      const href    = a.getAttribute('href')    || '';
-      const onclick = a.getAttribute('onclick') || '';
-      const mJS = (href + onclick).match(/selectzone\s*\(\s*['"]([^'"]+)['"]\s*\)/i);
-      if (mJS) return mJS[1].toUpperCase() === chosen.toUpperCase();
-      const mHash = href.match(/#([^#?&]+)/);
-      if (mHash && mHash[1] !== '' && mHash[1] !== '0')
-        return mHash[1].toUpperCase() === chosen.toUpperCase();
-      return false;
-    });
+    const untriedPool = pool.filter(z => !triedUpper.includes(z.name.toUpperCase()));
+    let activePool;
+    if (untriedPool.length) {
+      activePool = untriedPool;
+    } else {
+      // 所有 zone 都試過 → 清空重頭輪詢
+      activePool = pool;
+      chrome.storage.local.set({ triedZones: [] });
+      log('所有 Zone 都嘗試過，重頭輪詢', 'warn');
+      setO('所有 Zone 都試過，重頭輪詢...', '#ffcc44');
+    }
+
+    const chosen = activePool[0]; // { name, area }
+
+    log(`選 Zone: ${chosen.name}（已試：${triedUpper.join(',') || '無'}）`, 'info');
 
     stepDone.ZONES = true;
     chrome.storage.local.set({
       zonesPageUrl: location.href,
-      currentZone:  chosen,
+      currentZone:  chosen.name,
       zoneReloadCount: 0,
-      zoneIdx: idx + 1,
     });
-    setO(`✓ Zone: ${chosen} → 點擊進入...`, '#4cff91');
-    log(`Zone ${chosen}`, 'success');
+    setO(`✓ Zone: ${chosen.name} → 點擊進入...`, '#4cff91');
+    log(`Zone ${chosen.name}`, 'success');
     setStep('FIXED');
     setTimeout(() => {
-      if (chosenArea) {
-        chosenArea.click(); // 觸發原生 selectzone()，走正常流程
+      if (chosen.area) {
+        chosen.area.click();
       } else {
-        // 找不到 area 元素才 fallback 直接跳 URL
-        const dest = `${location.origin}/booking/3m/fixed.php?k=${k}&zone=${chosen}&round=${rdId}`;
+        const dest = `${location.origin}/booking/3m/fixed.php?k=${k}&zone=${chosen.name}&round=${rdId}`;
         location.href = dest;
       }
     }, 300);
-  }); // closes chrome.storage.local.get('zoneIdx', ...)
+  });
 } // closes handleZones
 
 // ════════════════════════════════════════════════════════
@@ -543,7 +589,12 @@ function handleFixed() {
 
   // ── INIT ──
   if (fixedPhase==='INIT') {
-    chrome.storage.local.get('triedZones', d=>{ _triedZones=(d.triedZones||[]).map(z=>z.toUpperCase()); });
+    chrome.storage.local.get(['triedZones','currentZone'], d=>{
+      _triedZones = (d.triedZones||[]).map(z=>z.toUpperCase());
+      const zoneName = d.currentZone || new URLSearchParams(location.search).get('zone') || '?';
+      setO(`進入 Zone: ${zoneName}，掃描座位中...`, '#88aaff');
+      log(`進入 Zone: ${zoneName}`, 'info');
+    });
     fixedPhase='SELECT';
     return;
   }
@@ -587,14 +638,22 @@ function handleFixed() {
 
     if (!available.length) {
       fixedRetry++;
-      if (fixedRetry >= 3) {
-        // 連續 3 次偵測不到座位 → 重整頁面繼續等候（不換 Zone）
-        log(`Zone 連續 ${fixedRetry} 次無可用座位，重整頁面繼續監控`, 'warn');
-        setO('無可用座位，重整繼續監控...', '#ffcc44');
+      if (fixedRetry >= 2) {
         fixedRetry = 0;
-        setTimeout(() => location.reload(), 800);
-      } else {
-        setO(`Zone 內暫無可用座位，重試 ${fixedRetry}/3...`, '#ffcc44');
+        chrome.storage.local.get('zoneReloadCount', d => {
+          const reloadCount = (d.zoneReloadCount || 0) + 1;
+          if (reloadCount >= 3) {
+            chrome.storage.local.set({ zoneReloadCount: 0 });
+            log(`Zone 已重整 3 次仍無座位，切換下一個 Zone`, 'warn');
+            setO('重整 3 次無座位，切換下一 Zone...', '#ff8844');
+            goBackToZones();
+          } else {
+            chrome.storage.local.set({ zoneReloadCount: reloadCount });
+            log(`Zone 無可用座位，重整 ${reloadCount}/3`, 'warn');
+            setO(`無座位，重整 ${reloadCount}/3...`, '#ffcc44');
+            setTimeout(() => location.reload(), 800);
+          }
+        });
       }
       return;
     }
