@@ -544,26 +544,27 @@ function sortSeats(seats, direction, priorityRows) {
 
     let group;
     if      (isCenter && isFront)   group = 0; // 前排中間（最優先）
-    else if (isCenter && !isFront)  group = 1; // 後排中間
-    else if (isFront && isRight)    group = 2; // 前排右靠中
-    else if (isFront && !isRight)   group = 3; // 前排左靠中
-    else                            group = 4; // 其他（後排側邊）
+    else if (!isCenter && isFront)  group = 1; // 前排側邊
+    else if (isCenter && !isFront)  group = 2; // 後排中間
+    else                            group = 3; // 後排側邊
 
-    // LEFT 方向：左右互換優先順序
-    if (direction === 'LEFT') {
-      if (group === 2) group = 3;
-      else if (group === 3) group = 2;
+    // 方向偏好：在側邊組（group 1/3）中決定左/右哪側優先（0=偏好，1=次選）
+    let dirScore = 0;
+    if (!isCenter) {
+      if      (direction === 'LEFT')  dirScore = isRight ? 1 : 0;
+      else if (direction === 'RIGHT') dirScore = isRight ? 0 : 1;
     }
 
-    return [group, relDist, row];
+    return [group, dirScore, relDist, row];
   };
 
   return [...seats].sort((a, b) => {
-    const [ga, da, ra] = score(a);
-    const [gb, db, rb] = score(b);
-    if (ga !== gb) return ga - gb;   // 先依分組
-    if (da !== db) return da - db;   // 再依距中心遠近
-    return ra - rb;                  // 最後依排數（前排優先）
+    const [ga, dsa, da, ra] = score(a);
+    const [gb, dsb, db, rb] = score(b);
+    if (ga !== gb)   return ga - gb;     // 先依分組
+    if (dsa !== dsb) return dsa - dsb;   // 再依方向偏好（側邊組有效）
+    if (da !== db)   return da - db;     // 再依距中心遠近
+    return ra - rb;                      // 最後依排數（前排優先）
   });
 }
 
