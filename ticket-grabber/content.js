@@ -250,8 +250,12 @@ function handleConcert() {
 }
 
 function parsePrice(text) {
-  const m = text.replace(/,/g,'').match(/(\d+)\s*บาท/);
-  return m ? parseInt(m[1]) : 0;
+  const t = text.replace(/,/g,'');
+  const m1 = t.match(/(\d+)\s*บาท/);
+  if (m1) return parseInt(m1[1]);
+  const m2 = t.match(/ราคาบัตร\s*(\d+)/);
+  if (m2) return parseInt(m2[1]);
+  return 0;
 }
 
 // ════════════════════════════════════════════════════════
