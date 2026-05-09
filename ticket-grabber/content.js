@@ -513,6 +513,24 @@ function resetFixed() {
   triedSeatIds   = new Set();
 }
 
+// 統一的 reload / 換 Zone 邏輯：無論哪種原因，3 次 reload 後換 Zone
+function reloadOrSwitchZone(reason) {
+  chrome.storage.local.get('zoneReloadCount', d => {
+    const reloadCount = (d.zoneReloadCount || 0) + 1;
+    if (reloadCount >= 3) {
+      chrome.storage.local.set({ zoneReloadCount: 0 });
+      log(`${reason}，已重整 3 次，切換下一個 Zone`, 'warn');
+      setO('重整 3 次無進展，切換下一 Zone...', '#ff8844');
+      goBackToZones();
+    } else {
+      chrome.storage.local.set({ zoneReloadCount: reloadCount });
+      log(`${reason}，重整 ${reloadCount}/3`, 'warn');
+      setO(`${reason}，重整 ${reloadCount}/3...`, '#ffcc44');
+      setTimeout(() => location.reload(), 800);
+    }
+  });
+}
+
 // 模擬真人滑鼠點擊（帶座標，比 .click() 更難偵測）
 function humanClick(el) {
   const rect = el.getBoundingClientRect();
@@ -695,20 +713,7 @@ function handleFixed() {
       fixedRetry++;
       if (fixedRetry >= 2) {
         fixedRetry = 0;
-        chrome.storage.local.get('zoneReloadCount', d => {
-          const reloadCount = (d.zoneReloadCount || 0) + 1;
-          if (reloadCount >= 3) {
-            chrome.storage.local.set({ zoneReloadCount: 0 });
-            log(`Zone 已重整 3 次仍無座位，切換下一個 Zone`, 'warn');
-            setO('重整 3 次無座位，切換下一 Zone...', '#ff8844');
-            goBackToZones();
-          } else {
-            chrome.storage.local.set({ zoneReloadCount: reloadCount });
-            log(`Zone 無可用座位，重整 ${reloadCount}/3`, 'warn');
-            setO(`無座位，重整 ${reloadCount}/3...`, '#ffcc44');
-            setTimeout(() => location.reload(), 800);
-          }
-        });
+        reloadOrSwitchZone('無可用座位');
       }
       return;
     }
@@ -736,15 +741,12 @@ function handleFixed() {
 
       if (!success) {
         seatClickFails++;
-        log(`座位 ${seatId} 搶佔失敗，嘗試下一個... (${seatClickFails}/20)`, 'warn');
-        setO(`✗ ${seatId} 失敗，換下一個... (${seatClickFails}/20)`, '#ffcc44');
+        log(`座位 ${seatId} 搶佔失敗，嘗試下一個... (${seatClickFails}/5)`, 'warn');
+        setO(`✗ ${seatId} 失敗，換下一個... (${seatClickFails}/5)`, '#ffcc44');
 
-        // 同一 Zone 點擊失敗達 20 次 → 重整頁面繼續監控（不換 Zone）
-        if (seatClickFails >= 20) {
+        if (seatClickFails >= 5) {
           seatClickFails = 0;
-          log(`點擊失敗達 20 次，重整頁面繼續監控`, 'warn');
-          setO('失敗 20 次，重整繼續監控...', '#ffcc44');
-          setTimeout(() => location.reload(), 400);
+          reloadOrSwitchZone('點擊失敗 5 次');
           return;
         }
       } else {
