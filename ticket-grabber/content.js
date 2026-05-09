@@ -6,6 +6,7 @@ let isRunning = false;
 let settings = null;
 let stepDone = {};
 let overlayEl = null;
+let refreshPending = false;
 
 // ── 頁面偵測 ──────────────────────────────────────────────
 function getPage() {
@@ -47,10 +48,11 @@ const rmO   = ()=>{ overlayEl?.remove(); overlayEl=null; };
 // ── 啟動 / 停止 ───────────────────────────────────────────
 function start(cfg, initialDone = {}) {
   if (isRunning) return;
-  settings      = cfg;
-  isRunning     = true;
-  stepDone      = { ...initialDone };
+  settings       = cfg;
+  isRunning      = true;
+  stepDone       = { ...initialDone };
   passportFilled = false;
+  refreshPending = false;
   resetFixed();
   createOverlay();
   const page = getPage();
@@ -176,9 +178,10 @@ function handleConcert() {
 
   if (!document.querySelector('.ticket-status.inline.available')) {
     setO('等待開賣...', '#ffcc44');
-    if (settings.autoRefresh) {
+    if (settings.autoRefresh && !refreshPending) {
+      refreshPending = true;
       log('尚未開賣，3 秒後重整', 'warn');
-      setTimeout(()=>location.reload(), 3000);
+      setTimeout(() => { refreshPending = false; location.reload(); }, 3000);
     }
     return;
   }
@@ -303,6 +306,7 @@ function handlePassport() {
 // STEP 3 — zones.php
 // ════════════════════════════════════════════════════════
 let _zonesDetectedLogged = false;
+let _zonesUrlSaved = false;
 
 // 計算 <area> 的幾何中心（從 coords 屬性解析）
 function getZoneCoords(area) {
@@ -396,19 +400,26 @@ function handleZones() {
     return;
   }
 
-  const zoneNames = zoneMap.map(z => z.name);
+  // 為 coords: 備援名稱產生友善顯示名
+  zoneMap.forEach((z, i) => {
+    z.display = z.name.startsWith('coords:') ? `Zone ${i + 1}` : z.name;
+  });
+
+  const zoneNames = zoneMap.map(z => z.display);
   setO2(`偵測 ${zoneMap.length} 區：${zoneNames.join(', ')}`);
   if (!_zonesDetectedLogged) {
     _zonesDetectedLogged = true;
     log(`頁面 Zone 清單：${zoneNames.join(', ')}`, 'info');
   }
 
-  // 儲存 zones page URL 供回退使用
-  chrome.storage.local.get('zonesPageUrl', stored => {
-    if (!stored.zonesPageUrl || !stored.zonesPageUrl.includes('zones.php')) {
-      chrome.storage.local.set({ zonesPageUrl: location.href });
-    }
-  });
+  // 儲存 zones page URL 供回退使用（每次進入 zones.php 只做一次）
+  if (!_zonesUrlSaved) {
+    _zonesUrlSaved = true;
+    chrome.storage.local.get('zonesPageUrl', stored => {
+      if (!stored.zonesPageUrl || !stored.zonesPageUrl.includes('zones.php'))
+        chrome.storage.local.set({ zonesPageUrl: location.href });
+    });
+  }
 
   const kws = (settings.zoneKeywords||[]).map(k=>k.toUpperCase());
 
@@ -461,16 +472,16 @@ function handleZones() {
 
     const chosen = activePool[0]; // { name, area }
 
-    log(`選 Zone: ${chosen.name}（已試：${triedUpper.join(',') || '無'}）`, 'info');
+    log(`選 Zone: ${chosen.display}（已試：${triedUpper.join(',') || '無'}）`, 'info');
 
     stepDone.ZONES = true;
     chrome.storage.local.set({
       zonesPageUrl: location.href,
-      currentZone:  chosen.name,
+      currentZone:  chosen.name,   // 儲存原始 name 供 triedZones 追蹤
       zoneReloadCount: 0,
     });
-    setO(`✓ Zone: ${chosen.name} → 點擊進入...`, '#4cff91');
-    log(`Zone ${chosen.name}`, 'success');
+    setO(`✓ Zone: ${chosen.display} → 點擊進入...`, '#4cff91');
+    log(`Zone ${chosen.display}`, 'success');
     setStep('FIXED');
     setTimeout(() => {
       if (chosen.area) {
@@ -617,8 +628,10 @@ async function goBackToZones() {
   if (cur && !tried.includes(cur)) tried.push(cur);
   _triedZones = tried;
   await chrome.storage.local.set({ triedZones:tried, currentStep:'ZONES' });
-  stepDone = { CONCERT:true, VERIFY:true }; // 保留前兩步完成狀態
+  stepDone = { CONCERT:true, VERIFY:true };
   resetFixed();
+  _zonesDetectedLogged = false;
+  _zonesUrlSaved = false;
   const zonesUrl = data.zonesPageUrl || (location.origin+'/booking/3m/zones.php');
   setO(`Zone 全滿，返回重選...`, '#ffcc44');
   log(`Zone ${cur} 全滿，返回 zones 頁`, 'warn');
