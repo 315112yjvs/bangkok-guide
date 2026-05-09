@@ -231,12 +231,22 @@ function handleConcert() {
   filtered.sort((a,b)=>b.price-a.price);
 
   const {btn, timeText, price} = filtered[0];
+
+  // 從 onclick 取出 signin 目標 URL（直接導頁，不觸發可能彈 modal 的 $app.popup.signin）
+  const signinUrl = (btn.getAttribute('onclick') || '').match(/signin\(['"](.+?)['"]\)/)?.[1];
+
   stepDone.CONCERT = true;
   setO(`場次 [${timeText}] ${price}฿ → 前往...`, '#4cff91');
   log(`選擇場次：${timeText}，${price} บาท`, 'success');
   setStep('VERIFY');
 
-  setTimeout(() => { humanClick(btn); }, 200);
+  setTimeout(() => {
+    if (signinUrl) {
+      location.href = signinUrl;
+    } else {
+      humanClick(btn); // 備援：找不到 URL 時才用 click
+    }
+  }, 200);
 }
 
 function parsePrice(text) {
