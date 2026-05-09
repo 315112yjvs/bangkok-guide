@@ -304,6 +304,18 @@ function handlePassport() {
 // ════════════════════════════════════════════════════════
 let _zonesDetectedLogged = false;
 
+// 計算 <area> 的幾何中心（從 coords 屬性解析）
+function getZoneCoords(area) {
+  const nums = (area.getAttribute('coords') || '').split(',').map(Number).filter(n => !isNaN(n));
+  if (nums.length < 2) return { cx: null, cy: null };
+  const xs = nums.filter((_, i) => i % 2 === 0);
+  const ys = nums.filter((_, i) => i % 2 === 1);
+  return {
+    cx: xs.reduce((a, b) => a + b, 0) / xs.length,
+    cy: ys.reduce((a, b) => a + b, 0) / ys.length,
+  };
+}
+
 function handleZones() {
   if (stepDone.ZONES) return;
 
@@ -399,7 +411,22 @@ function handleZones() {
       return;
     }
   } else {
-    pool = zoneMap;
+    // 無關鍵字：依地圖座標自動排序
+    // 優先順序：靠舞台前排（y 小）> 靠水平中心（中間 Zone）
+    const mapImg = document.querySelector('img[usemap]');
+    const imgW   = mapImg?.naturalWidth || mapImg?.offsetWidth || 0;
+    const midX   = imgW > 0 ? imgW / 2 : null;
+    pool = [...zoneMap].sort((a, b) => {
+      const ca = getZoneCoords(a.area);
+      const cb = getZoneCoords(b.area);
+      // y 差異 > 20px 視為不同排，前排（y 小）優先
+      if (ca.cy !== null && cb.cy !== null && Math.abs(ca.cy - cb.cy) > 20)
+        return ca.cy - cb.cy;
+      // 同排：靠水平中心優先
+      if (midX !== null && ca.cx !== null && cb.cx !== null)
+        return Math.abs(ca.cx - midX) - Math.abs(cb.cx - midX);
+      return 0;
+    });
   }
 
   // 直接從 storage 讀取已試過的 zone（不靠記憶體變數，避免跨頁重整後遺失）
