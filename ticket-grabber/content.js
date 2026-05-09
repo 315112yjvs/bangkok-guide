@@ -366,13 +366,23 @@ function handleZones() {
     const onclick = a.getAttribute('onclick') || '';
     const title   = a.getAttribute('title')   || '';
     const alt     = a.getAttribute('alt')     || '';
+    const raw     = href + onclick;
 
-    const mJS = (href + onclick).match(/selectzone\s*\(\s*['"]([^'"]+)['"]\s*\)/i);
+    // 1. selectzone('ZONE') pattern
+    const mJS = raw.match(/selectzone\s*\(\s*['"]([^'"]+)['"]\s*\)/i);
     if (mJS) { zoneMap.push({ name: mJS[1], area: a }); return; }
 
-    const mHash = href.match(/#([^#?&]+)/);
-    if (mHash && mHash[1] !== '' && mHash[1] !== '0') { zoneMap.push({ name: mHash[1], area: a }); return; }
+    // 2. ?zone=ZONE query 參數（支援 href="#fixed.php?zone=A2" 格式）
+    const mZone = raw.match(/[?&]zone=([^&'")\s]+)/i);
+    if (mZone) { zoneMap.push({ name: mZone[1], area: a }); return; }
 
+    // 3. href="#ZONE" fragment（排除含 . 的檔案路徑如 fixed.php）
+    const mHash = href.match(/#([^#?&]+)/);
+    if (mHash && mHash[1] !== '' && mHash[1] !== '0' && !mHash[1].includes('.')) {
+      zoneMap.push({ name: mHash[1], area: a }); return;
+    }
+
+    // 4. title 或 alt
     const label = (title || alt).trim();
     if (label) zoneMap.push({ name: label, area: a });
   });
