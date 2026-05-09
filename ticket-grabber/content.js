@@ -394,11 +394,11 @@ function handleZones() {
     const mZone = raw.match(/[?&]zone=([^&'")\s]+)/i);
     if (mZone) { zoneMap.push({ name: mZone[1], area: a }); return; }
 
-    // 3. href="#ZONE" fragment（若解析結果是 .php 路徑，繼續往下找）
-    const mHash = href.match(/#([^#?&]+)/);
-    if (mHash && mHash[1] !== '' && mHash[1] !== '0' && !mHash[1].includes('.')) {
-      zoneMap.push({ name: mHash[1], area: a }); return;
-    }
+    // 3. href 的所有 # fragment 中找第一個不含 . 的段落
+    //    支援 "#A1"、"#fixed.php#A1" 兩種格式
+    const hashParts = href.split('#').slice(1);
+    const zoneFrag  = hashParts.find(p => p && p !== '0' && !p.includes('.') && !p.includes('?'));
+    if (zoneFrag) { zoneMap.push({ name: zoneFrag, area: a }); return; }
 
     // 4. title 或 alt
     const label = (title || alt).trim();
