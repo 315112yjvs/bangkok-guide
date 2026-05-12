@@ -51,9 +51,9 @@ function start(cfg, initialDone = {}) {
   settings       = cfg;
   isRunning      = true;
   stepDone       = { ...initialDone };
-  passportFilled      = false;
-  passportTypeClicked = false;
-  refreshPending      = false;
+  passportFilled = false;
+  passportPhase  = 'type';
+  refreshPending = false;
   resetFixed();
   createOverlay();
   const page = getPage();
@@ -278,10 +278,10 @@ function handleVerify() {
 
 // ════════════════════════════════════════════════════════
 // STEP 2b — verify.php（身分證 / 護照號碼驗證）
-// 新版頁面需要先點選證件類型按鈕，才會出現輸入欄
+// 三階段：type → country（護照才有）→ fill
 // ════════════════════════════════════════════════════════
-let passportFilled      = false;
-let passportTypeClicked = false; // 是否已點選「身分證/護照」類型鈕
+let passportFilled = false;
+let passportPhase  = 'type'; // 'type' | 'country' | 'fill'
 
 function handlePassport() {
   if (stepDone.PASSPORT) return;
@@ -289,54 +289,72 @@ function handlePassport() {
 
   const isThaiId = /^\d{13}$/.test(settings.passportId.replace(/\s/g, ''));
 
-  // ── Phase 1：新格式 — 點選「ยืนยันตัวตน...」類型按鈕 ──
-  if (!passportTypeClicked) {
+  // ── Phase type：點選類型按鈕 ────────────────────────────
+  if (passportPhase === 'type') {
     const keyword = isThaiId ? 'บัตรประชาชน' : 'พาสปอร์ต';
-    const typeBtn = Array.from(document.querySelectorAll('button'))
+    const typeBtn = [...document.querySelectorAll('button')]
       .find(el => el.textContent.includes('ยืนยัน') && el.textContent.includes(keyword));
-    if (typeBtn) {
-      passportTypeClicked = true;
-      setO(`選擇${isThaiId ? '身分證' : '護照'}類型...`, '#88aaff');
-      log(`點選證件類型：${isThaiId ? '泰國身分證' : '護照'}`, 'info');
-      humanClick(typeBtn);
-      return; // 等下一 tick 讓輸入框出現
+
+    if (!typeBtn) {
+      passportPhase = 'fill'; return; // 舊格式，無類型按鈕
     }
-    passportTypeClicked = true; // 舊格式（無類型按鈕），直接進 Phase 2
+    if (!typeBtn.classList.contains('active')) {
+      setO(`選擇${isThaiId ? '身分證' : '護照'}類型...`, '#88aaff');
+      humanClick(typeBtn);
+      return;
+    }
+    // 按鈕已 active → 進下一階段
+    passportPhase = isThaiId ? 'fill' : 'country';
+    return;
   }
 
-  // ── Phase 2：找輸入欄並送出 ──
-  const countryInput = document.querySelector('input[placeholder*="ประเทศ"]') ||
-                       document.querySelector('select[name*="country"]') ||
-                       document.querySelector('input[name*="country"]');
+  // ── Phase country：選擇護照國家 ─────────────────────────
+  if (passportPhase === 'country') {
+    const dropdown = document.querySelector('#passport_country_dropdown');
+    const cInput   = document.querySelector('#passport_country_input');
 
-  const numberInput = document.querySelector('input[name="citizen_id"]') ||
-                      document.querySelector('input[name="idcard_number"]') ||
-                      document.querySelector('input[name="passport_no"]') ||
-                      document.querySelector('input[name="passport"]') ||
-                      document.querySelector('input[name="id"]') ||
+    // 若下拉已有選項，點第一個（觸發 jQuery chooseCountryOption）
+    const firstOpt = dropdown?.querySelector('.verify-country-option');
+    if (firstOpt && firstOpt.offsetParent !== null) {
+      setO('點選國家...', '#88aaff');
+      humanClick(firstOpt);
+      passportPhase = 'fill';
+      return;
+    }
+
+    // 輸入關鍵字觸發下拉（頁面 JS 監聽 input/keyup 事件）
+    if (cInput && settings.passportCountry) {
+      if (!cInput.value) {
+        cInput.value = settings.passportCountry;
+        cInput.dispatchEvent(new Event('input',      { bubbles: true }));
+        cInput.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true, key: '' }));
+        setO(`搜尋國家：${settings.passportCountry}...`, '#88aaff');
+      }
+    } else {
+      setO('請在插件填入護照國家（如：Taiwan）', '#ffcc44');
+    }
+    return;
+  }
+
+  // ── Phase fill：填入號碼並送出 ─────────────────────────
+  // 確保號碼輸入框容器可見（chooseCountryOption 會 show，這裡再保險一次）
+  const inputWrap = document.querySelector('#verify-input-wrap');
+  if (inputWrap) inputWrap.style.display = 'block';
+
+  const numberInput = document.querySelector('#txt_verifycode') ||
                       document.querySelector('input[type="tel"]') ||
                       [...document.querySelectorAll('input[type="text"]')]
                         .find(i => !(i.placeholder || '').includes('ประเทศ'));
 
-  const submitBtn = Array.from(document.querySelectorAll('button')).find(b =>
-    b.textContent.includes('ตกลง') || b.type === 'submit'
-  ) || document.querySelector('button[type="submit"]') ||
-       document.querySelector('input[type="submit"]');
+  const submitBtn = document.querySelector('#btnconfirm') ||
+                    [...document.querySelectorAll('button')]
+                      .find(b => b.textContent.includes('ตกลง') && b.type === 'submit');
 
   if (!numberInput) { setO('等待輸入框出現...', '#88aaff'); return; }
   if (!submitBtn)   { setO('找不到確認按鈕...', '#ffcc44');  return; }
 
   if (!passportFilled) {
     passportFilled = true;
-
-    // 填入護照國家（如有設定）
-    if (!isThaiId && countryInput && settings.passportCountry) {
-      countryInput.focus();
-      countryInput.value = settings.passportCountry;
-      countryInput.dispatchEvent(new Event('input',  { bubbles: true }));
-      countryInput.dispatchEvent(new Event('change', { bubbles: true }));
-    }
-
     numberInput.focus();
     numberInput.value = settings.passportId;
     numberInput.dispatchEvent(new Event('input',  { bubbles: true }));
