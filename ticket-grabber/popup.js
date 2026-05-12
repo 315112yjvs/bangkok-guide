@@ -54,7 +54,7 @@ async function save() {
     seatDirection: $('seatDirection').value,
     priorityRows:  parseInt($('priorityRows').value) ?? 5,
     autoRefresh:   $('autoRefresh').checked,
-    interval:      parseInt($('intervalInput').value) || 800,
+    interval:      parseInt($('intervalInput').value) || 500,
     passportId:      $('passportId').value.trim(),
     passportCountry: $('passportCountry').value.trim(),
   });
@@ -88,7 +88,7 @@ function getSettings() {
     seatDirection: $('seatDirection').value,
     priorityRows:  parseInt($('priorityRows').value) ?? 5,
     autoRefresh:   $('autoRefresh').checked,
-    interval:      parseInt($('intervalInput').value) || 800,
+    interval:      parseInt($('intervalInput').value) || 500,
     passportId:      $('passportId').value.trim(),
     passportCountry: $('passportCountry').value.trim(),
   };

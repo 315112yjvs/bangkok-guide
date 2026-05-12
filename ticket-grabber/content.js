@@ -64,15 +64,15 @@ function start(cfg, initialDone = {}) {
   scheduleTick();
 }
 
-// 用 setTimeout 遞迴取代 setInterval，加入 ±200ms 隨機抖動模擬真人節奏
+// 用 setTimeout 遞迴取代 setInterval，加入 ±100ms 隨機抖動模擬真人節奏
 function scheduleTick() {
   if (!isRunning) return;
-  const base   = settings.interval || 800;
-  const jitter = (Math.random() - 0.5) * 400;
+  const base   = settings.interval || 500;
+  const jitter = (Math.random() - 0.5) * 200;
   tickerInterval = setTimeout(() => {
     tick();
     scheduleTick();
-  }, Math.max(300, base + jitter));
+  }, Math.max(200, base + jitter));
 }
 
 function stop() {
@@ -120,7 +120,7 @@ function startFromStorage(data) {
     passportId:      data.passportId      || '',
     passportCountry: data.passportCountry || '',
     autoRefresh:     data.autoRefresh     || false,
-    interval:      data.interval      || 800,
+    interval:      data.interval      || 500,
   }, initialDone);
 }
 
@@ -184,8 +184,8 @@ function handleConcert() {
     setO('等待開賣...', '#ffcc44');
     if (settings.autoRefresh && !refreshPending) {
       refreshPending = true;
-      log('尚未開賣，3 秒後重整', 'warn');
-      setTimeout(() => { refreshPending = false; location.reload(); }, 3000);
+      log('尚未開賣，1.5 秒後重整', 'warn');
+      setTimeout(() => { refreshPending = false; location.reload(); }, 1500);
     }
     return;
   }
@@ -250,7 +250,7 @@ function handleConcert() {
     } else {
       humanClick(btn); // 備援：找不到 URL 時才用 click
     }
-  }, 200);
+  }, 100);
 }
 
 function parsePrice(text) {
@@ -275,7 +275,7 @@ function handleVerify() {
     return;
   }
   stepDone.VERIFY = true;
-  setTimeout(() => { humanClick(btn); log('已點擊「ซื้อบัตร」', 'success'); setStep('ZONES'); }, 500);
+  setTimeout(() => { humanClick(btn); log('已點擊「ซื้อบัตร」', 'success'); setStep('ZONES'); }, 250);
 }
 
 // ════════════════════════════════════════════════════════
@@ -366,7 +366,7 @@ function handlePassport() {
     setTimeout(() => {
       stepDone.PASSPORT = true;
       humanClick(submitBtn);
-    }, 500);
+    }, 300);
   }
 }
 
@@ -561,7 +561,7 @@ function handleZones() {
         const dest = `${location.origin}/booking/3m/fixed.php?k=${k}&zone=${chosen.name}&round=${rdId}`;
         location.href = dest;
       }
-    }, 300);
+    }, 150);
   });
 } // closes handleZones
 
@@ -584,20 +584,20 @@ function resetFixed() {
   triedSeatIds   = new Set();
 }
 
-// 統一的 reload / 換 Zone 邏輯：無論哪種原因，3 次 reload 後換 Zone
+// 統一的 reload / 換 Zone 邏輯：無論哪種原因，2 次 reload 後換 Zone
 function reloadOrSwitchZone(reason) {
   chrome.storage.local.get('zoneReloadCount', d => {
     const reloadCount = (d.zoneReloadCount || 0) + 1;
-    if (reloadCount >= 3) {
+    if (reloadCount >= 2) {
       chrome.storage.local.set({ zoneReloadCount: 0 });
-      log(`${reason}，已重整 3 次，切換下一個 Zone`, 'warn');
-      setO('重整 3 次無進展，切換下一 Zone...', '#ff8844');
+      log(`${reason}，已重整 2 次，切換下一個 Zone`, 'warn');
+      setO('重整 2 次無進展，切換下一 Zone...', '#ff8844');
       goBackToZones();
     } else {
       chrome.storage.local.set({ zoneReloadCount: reloadCount });
-      log(`${reason}，重整 ${reloadCount}/3`, 'warn');
-      setO(`${reason}，重整 ${reloadCount}/3...`, '#ffcc44');
-      setTimeout(() => location.reload(), 800);
+      log(`${reason}，重整 ${reloadCount}/2`, 'warn');
+      setO(`${reason}，重整 ${reloadCount}/2...`, '#ffcc44');
+      setTimeout(() => location.reload(), 400);
     }
   });
 }
@@ -725,7 +725,7 @@ async function goBackToZones() {
   setO(`Zone 全滿，返回重選...`, '#ffcc44');
   log(`Zone ${cur} 全滿，返回 zones 頁`, 'warn');
   setStep('ZONES');
-  setTimeout(()=>{ location.href=zonesUrl; }, 500);
+  setTimeout(()=>{ location.href=zonesUrl; }, 300);
 }
 
 function handleFixed() {
@@ -812,12 +812,12 @@ function handleFixed() {
 
       if (!success) {
         seatClickFails++;
-        log(`座位 ${seatId} 搶佔失敗，嘗試下一個... (${seatClickFails}/5)`, 'warn');
-        setO(`✗ ${seatId} 失敗，換下一個... (${seatClickFails}/5)`, '#ffcc44');
+        log(`座位 ${seatId} 搶佔失敗，嘗試下一個... (${seatClickFails}/10)`, 'warn');
+        setO(`✗ ${seatId} 失敗，換下一個... (${seatClickFails}/10)`, '#ffcc44');
 
-        if (seatClickFails >= 5) {
+        if (seatClickFails >= 10) {
           seatClickFails = 0;
-          reloadOrSwitchZone('點擊失敗 5 次');
+          reloadOrSwitchZone('點擊失敗 10 次');
           return;
         }
       } else {
