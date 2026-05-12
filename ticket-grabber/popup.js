@@ -7,12 +7,13 @@ function detectStep(url) {
   if (url.includes('fixed.php'))           return 'FIXED';
   if (url.includes('zones.php'))           return 'ZONES';
   if (url.includes('verify_condition'))    return 'VERIFY';
+  if (url.includes('verify.php'))          return 'PASSPORT';
   if (url.includes('thaiticketmajor.com')) return 'CONCERT';
   return 'CONCERT';
 }
 
 function stepLabel(step) {
-  return { CONCERT:'選場次', VERIFY:'條款', CAPTCHA:'等待驗證', ZONES:'Zone', FIXED:'選座', DONE:'完成！', '':'-' }[step] || step || '-';
+  return { CONCERT:'選場次', VERIFY:'條款', PASSPORT:'填證件', CAPTCHA:'等待驗證', ZONES:'Zone', FIXED:'選座', DONE:'完成！', '':'-' }[step] || step || '-';
 }
 
 // ── 初始化 ────────────────────────────────────────────────
@@ -20,7 +21,7 @@ async function init() {
   const data = await chrome.storage.local.get([
     'targetDate','targetTicket','targetZone',
     'seatCount','seatDirection','priorityRows',
-    'autoRefresh','interval',
+    'autoRefresh','interval','passportId',
     'isRunning','clickCount','currentStep'
   ]);
   if (data.targetDate)     $('targetDate').value     = data.targetDate;
@@ -31,6 +32,8 @@ async function init() {
   if (data.priorityRows != null) $('priorityRows').value = data.priorityRows;
   if (data.autoRefresh)    $('autoRefresh').checked   = data.autoRefresh;
   if (data.interval)       $('intervalInput').value   = data.interval;
+  if (data.passportId)      $('passportId').value       = data.passportId;
+  if (data.passportCountry) $('passportCountry').value  = data.passportCountry;
 
   updateUI(data.isRunning || false, data.clickCount || 0, data.currentStep || '');
   updatePageHint();
@@ -52,12 +55,14 @@ async function save() {
     priorityRows:  parseInt($('priorityRows').value) ?? 5,
     autoRefresh:   $('autoRefresh').checked,
     interval:      parseInt($('intervalInput').value) || 800,
+    passportId:      $('passportId').value.trim(),
+    passportCountry: $('passportCountry').value.trim(),
   });
 }
 
 // 所有輸入欄位變更時自動儲存
 ['targetDate','targetTicket','targetZone','seatCount','seatDirection',
- 'priorityRows','intervalInput','autoRefresh'].forEach(id => {
+ 'priorityRows','intervalInput','autoRefresh','passportId','passportCountry'].forEach(id => {
   const el = $(id);
   if (!el) return;
   el.addEventListener('input',  () => save());
@@ -68,7 +73,7 @@ async function save() {
 async function updatePageHint() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const step = detectStep(tab?.url || '');
-  const labels = { CONCERT:'演唱會頁', VERIFY:'條款頁', ZONES:'Zone 選擇', FIXED:'座位選擇', DONE:'完成頁' };
+  const labels = { CONCERT:'演唱會頁', VERIFY:'條款頁', PASSPORT:'證件驗證', ZONES:'Zone 選擇', FIXED:'座位選擇', DONE:'完成頁' };
   $('pageTag').textContent = labels[step] || '未知頁面';
 }
 
@@ -84,6 +89,8 @@ function getSettings() {
     priorityRows:  parseInt($('priorityRows').value) ?? 5,
     autoRefresh:   $('autoRefresh').checked,
     interval:      parseInt($('intervalInput').value) || 800,
+    passportId:      $('passportId').value.trim(),
+    passportCountry: $('passportCountry').value.trim(),
   };
 }
 
