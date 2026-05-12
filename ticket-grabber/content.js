@@ -124,14 +124,16 @@ function startFromStorage(data) {
   }, initialDone);
 }
 
-// ── initialDone 推算（綜合 URL + 儲存的 currentStep，取最遠進度）──
+// ── initialDone 推算 ──────────────────────────────────────
+// 在已知頁面（CONCERT/VERIFY/ZONES/FIXED）：只標記「此頁之前」的步驟為完成，
+// 確保當前頁永遠重跑（避免 zone 點擊失敗後重整仍卡住）。
+// 在未知頁面（CAPTCHA/PASSPORT）：用儲存的 currentStep 推算。
 function resolveInitialDone(storedStep) {
   const stepOrder = ['CONCERT','VERIFY','ZONES','FIXED'];
   const page      = getPage();
-  const pageIdx   = stepOrder.indexOf(page);    // -1 if CAPTCHA/OTHER
-  const storedIdx = stepOrder.indexOf(storedStep); // -1 if unknown
-  // 取兩者中進度較遠的，確保在驗證/CAPTCHA 頁面也能正確還原
-  const effectiveIdx = Math.max(pageIdx, storedIdx);
+  const pageIdx   = stepOrder.indexOf(page);
+  const storedIdx = stepOrder.indexOf(storedStep);
+  const effectiveIdx = pageIdx !== -1 ? pageIdx : Math.max(0, storedIdx);
   const initialDone  = {};
   stepOrder.forEach((s, i) => { if (i < effectiveIdx) initialDone[s] = true; });
   return initialDone;
@@ -437,6 +439,9 @@ function handleZones() {
     const title   = a.getAttribute('title')   || '';
     const alt     = a.getAttribute('alt')     || '';
     const raw     = href + onclick;
+
+    // 跳過無法導航的佔位 area（href="#" 且無 onclick，如 Projection Room 標記）
+    if (href === '#' && !onclick) return;
 
     // 1. selectzone('ZONE') pattern
     const mJS = raw.match(/selectzone\s*\(\s*['"]([^'"]+)['"]\s*\)/i);
