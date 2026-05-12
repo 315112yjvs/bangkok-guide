@@ -21,7 +21,7 @@ async function init() {
   const data = await chrome.storage.local.get([
     'targetDate','targetTicket','targetZone',
     'seatCount','seatDirection','priorityRows',
-    'autoRefresh','interval','passportId',
+    'autoRefresh','interval','passportId','passportCountry',
     'isRunning','clickCount','currentStep'
   ]);
   if (data.targetDate)     $('targetDate').value     = data.targetDate;
