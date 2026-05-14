@@ -1,194 +1,114 @@
 (() => {
-  const frameUrl = location.href;
-  const isIbonPage = frameUrl.includes('ibon.com.tw');
+  if (!location.href.includes('ibon.com.tw')) return;
+
   const isTopFrame = window === window.top;
-
-  console.log(`[ibon搶票] frame=${isTopFrame ? 'TOP' : 'sub'} url=${frameUrl.substring(0, 80)}`);
-
-  if (!isIbonPage) return;
+  const isDetails  = /\/Details\//i.test(location.href);
 
   // ════════════════════════════════════════════════════
-  // 共用工具
+  // 共用：點擊防抖 + 真實點擊
   // ════════════════════════════════════════════════════
   let lastClickTime = 0;
 
   function realClick(el, label) {
     const now = Date.now();
-    if (now - lastClickTime < 3000) return false;
+    if (now - lastClickTime < 2000) return false;
     lastClickTime = now;
     try { el.scrollIntoView({ block: 'center', behavior: 'instant' }); } catch (_) {}
     el.click();
     el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
-    console.log(`[ibon搶票][${isTopFrame ? 'TOP' : 'sub'}] ✅ 點擊: ${label}`);
+    console.log(`[ibon搶票] ✅ 點擊: ${label}`);
     return true;
   }
 
-  function textIncludes(el, kw) {
-    const txt = (el.textContent || el.innerText || '').replace(/\s/g, '');
-    return txt.includes(kw.replace(/\s/g, ''));
-  }
-
-  function extractPrice(el) {
-    const m = (el.textContent || '').match(/[\d,]{3,}/g);
-    if (!m) return 0;
-    return Math.max(...m.map(s => parseInt(s.replace(/,/g, '')) || 0));
-  }
-
-  function isInInfoSection(el) {
-    let ancestor = el.parentElement;
-    for (let i = 0; i < 3 && ancestor && ancestor !== document.body; i++) {
-      const t = ancestor.textContent || '';
-      if (t.includes('售票平台') && t.includes('機台')) return true;
-      ancestor = ancestor.parentElement;
-    }
-    return false;
-  }
-
-  function queryShadowAll(selector, root) {
-    root = root || document;
-    const results = Array.from(root.querySelectorAll(selector));
-    const allEls = root.querySelectorAll('*');
-    for (let i = 0; i < allEls.length; i++) {
-      const sr = allEls[i].shadowRoot;
-      if (sr) queryShadowAll(selector, sr).forEach(e => results.push(e));
-    }
-    return results;
-  }
-
-  function findClickableByText(text, enabledOnly) {
+  // ════════════════════════════════════════════════════
+  // 找「線上購票」可點擊元素
+  // ════════════════════════════════════════════════════
+  function findBuyBtns(enabledOnly) {
     const results = [];
+
+    // 1. 精確 class
+    const byClass = document.querySelectorAll(
+      enabledOnly
+        ? 'button.btn-buy:not([disabled]),a.btn-buy:not([disabled]),button.btn-pink:not([disabled]),a.btn-pink:not([disabled])'
+        : 'button.btn-buy,a.btn-buy,button.btn-pink,a.btn-pink'
+    );
+    for (const el of byClass) {
+      const t = (el.textContent || '').trim();
+      if (!t.includes('線上購票') && !t.includes('購票')) continue;
+      if (!el.offsetParent) continue;
+      if (!results.includes(el)) results.push(el);
+    }
+    if (results.length) return results;
+
+    // 2. 任何含「線上購票」文字的可見按鈕／連結
+    const byText = document.querySelectorAll(
+      enabledOnly
+        ? 'button:not([disabled]),a:not([disabled]),[role="button"]:not([disabled])'
+        : 'button,a,[role="button"]'
+    );
+    for (const el of byText) {
+      if (!el.offsetParent) continue;
+      const t = (el.textContent || '').trim();
+      if (!t.includes('線上購票')) continue;
+      // 排除「售票平台」說明裡的那個 <a>
+      const parent = el.parentElement;
+      if (parent && (parent.textContent || '').includes('ibon機台')) continue;
+      if (!results.includes(el)) results.push(el);
+    }
+    if (results.length) return results;
+
+    // 3. TreeWalker — 找文字節點反查祖先
     try {
       const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
       let n;
       while ((n = walker.nextNode())) {
-        if (!n.textContent.includes(text)) continue;
+        if (!n.textContent.includes('線上購票')) continue;
         let el = n.parentElement;
         if (!el) continue;
-        let clickable = null;
+        // 排除說明文字
+        if ((el.textContent || '').includes('ibon機台')) continue;
+        let clickable = el;
         let cur = el;
         for (let i = 0; i < 6 && cur && cur !== document.body; i++) {
           const tag = (cur.tagName || '').toUpperCase();
           if (tag === 'BUTTON' || tag === 'A') { clickable = cur; break; }
           if (cur.getAttribute('role') === 'button') { clickable = cur; break; }
-          if (cur.getAttribute('onclick')) { clickable = cur; break; }
-          try {
-            if (getComputedStyle(cur).cursor === 'pointer' && tag !== 'BODY' && tag !== 'HTML') {
-              clickable = cur; break;
-            }
-          } catch (_) {}
           cur = cur.parentElement;
         }
-        if (!clickable) clickable = el;
         if (enabledOnly && clickable.disabled) continue;
         if (!clickable.offsetParent) continue;
-        if (isInInfoSection(clickable)) continue;
         if (!results.includes(clickable)) results.push(clickable);
       }
     } catch (_) {}
+
     return results;
   }
 
-  function findEnabledSessionBtns() {
-    const byClass = Array.from(document.querySelectorAll('button.btn-buy:not([disabled]), a.btn-buy:not([disabled])'));
-    if (byClass.length > 0) return byClass;
-
-    const byPink = Array.from(document.querySelectorAll('button.btn-pink:not([disabled]), a.btn-pink:not([disabled])')).filter(b =>
-      (b.textContent || '').trim().includes('線上購票')
-    );
-    if (byPink.length > 0) return byPink;
-
-    const byBtnClass = Array.from(document.querySelectorAll('[class*="btn"]:not([disabled])')).filter(el => {
-      if (!el.offsetParent) return false;
-      if (!(el.textContent || '').includes('線上購票')) return false;
-      return !isInInfoSection(el);
-    });
-    if (byBtnClass.length > 0) return byBtnClass;
-
-    const byRole = Array.from(document.querySelectorAll(
-      'button:not([disabled]), a:not([disabled]), [role="button"]:not([disabled]), div[onclick], span[onclick]'
-    )).filter(el => {
-      if (!el.offsetParent) return false;
-      if (!(el.textContent || '').includes('線上購票')) return false;
-      return !isInInfoSection(el);
-    });
-    if (byRole.length > 0) return byRole;
-
-    const byText = findClickableByText('線上購票', true);
-    if (byText.length > 0) return byText;
-
-    return queryShadowAll('button.btn-buy:not([disabled]), a.btn-buy:not([disabled]), button.btn-pink:not([disabled])').filter(el => {
-      if (!el.offsetParent) return false;
-      return !isInInfoSection(el);
-    });
-  }
-
-  function findAllSessionBtns() {
-    const byClass = Array.from(document.querySelectorAll('button.btn-buy, a.btn-buy'));
-    if (byClass.length > 0) return byClass;
-    const byPink = Array.from(document.querySelectorAll('button.btn-pink, a.btn-pink')).filter(b =>
-      (b.textContent || '').trim().includes('線上購票')
-    );
-    if (byPink.length > 0) return byPink;
-    const byBtnClass = Array.from(document.querySelectorAll('[class*="btn"]')).filter(el => {
-      if (!(el.textContent || '').includes('線上購票')) return false;
-      return !isInInfoSection(el);
-    });
-    if (byBtnClass.length > 0) return byBtnClass;
-    const byRole = Array.from(document.querySelectorAll('button, a, [role="button"]')).filter(el => {
-      if (!(el.textContent || '').includes('線上購票')) return false;
-      return !isInInfoSection(el);
-    });
-    if (byRole.length > 0) return byRole;
-    const byText = findClickableByText('線上購票', false);
-    if (byText.length > 0) return byText;
-    return queryShadowAll('button.btn-buy, a.btn-buy, button.btn-pink').filter(el => !isInInfoSection(el));
-  }
-
   // ════════════════════════════════════════════════════
-  // SUB-FRAME 邏輯
+  // SUB-FRAME
   // ════════════════════════════════════════════════════
   if (!isTopFrame) {
+    function subTryClick() {
+      const btns = findBuyBtns(true);
+      if (!btns.length) return false;
+      const label = (btns[0].textContent || '').trim().substring(0, 20);
+      if (realClick(btns[0], label)) {
+        chrome.runtime.sendMessage({ type: 'session_clicked', label });
+        return true;
+      }
+      return false;
+    }
+
     let subActive = false;
     let subTimer = null;
     let subObs = null;
-    let subCount = 0;
-
-    function subTick() {
-      subCount++;
-      const enabled = findEnabledSessionBtns();
-      if (enabled.length > 0) {
-        const btn = enabled[0];
-        const label = (btn.textContent || '').trim().substring(0, 20);
-        if (realClick(btn, label)) {
-          subStop();
-          chrome.runtime.sendMessage({ type: 'session_clicked', label });
-        }
-        return;
-      }
-      if (subCount % 50 === 0) {
-        const all = findAllSessionBtns();
-        console.log(`[ibon搶票][sub] 場次: enabled=${enabled.length} all=${all.length}`);
-      }
-    }
 
     function subStart() {
       if (subActive) return;
       subActive = true;
-      subCount = 0;
-      console.log('[ibon搶票][sub] 啟動');
-      subTimer = setInterval(subTick, 200);
-      subObs = new MutationObserver(() => {
-        if (!subActive) return;
-        const enabled = findEnabledSessionBtns();
-        if (enabled.length > 0) {
-          const btn = enabled[0];
-          const label = (btn.textContent || '').trim().substring(0, 20);
-          if (realClick(btn, label)) {
-            subStop();
-            chrome.runtime.sendMessage({ type: 'session_clicked', label });
-          }
-        }
-      });
+      subTryClick();
+      subTimer = setInterval(subTryClick, 150);
+      subObs = new MutationObserver(subTryClick);
       subObs.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['disabled'] });
     }
 
@@ -200,28 +120,20 @@
 
     chrome.runtime.onMessage.addListener((msg) => {
       if (msg.action === 'start') subStart();
-      if (msg.action === 'stop') subStop();
+      if (msg.action === 'stop')  subStop();
     });
-
-    chrome.storage.local.get(['sniper_active'], (d) => {
-      if (d.sniper_active) subStart();
+    chrome.storage.local.get(['sniper_active'], (d) => { if (d.sniper_active) subStart(); });
+    chrome.storage.onChanged.addListener((c) => {
+      if (c.sniper_active) c.sniper_active.newValue ? subStart() : subStop();
     });
-
-    chrome.storage.onChanged.addListener((changes) => {
-      if (changes.sniper_active) {
-        changes.sniper_active.newValue ? subStart() : subStop();
-      }
-    });
-
     return;
   }
 
   // ════════════════════════════════════════════════════
-  // TOP FRAME 邏輯
+  // TOP FRAME
   // ════════════════════════════════════════════════════
   const cfg = { zones: [], session: '', ticketType: '', qty: 1, priceStrategy: 'high' };
   let timer = null;
-  let checkCount = 0;
   let isActive = false;
   let ticketPageHandled = false;
   let mutObs = null;
@@ -254,7 +166,6 @@
       lastHudMsg = msg;
       chrome.storage.local.set({ sniper_log: msg });
     }
-    console.log(`[ibon搶票][TOP] ${t} ${msg}`);
   }
 
   function loadCfg(cb) {
@@ -271,35 +182,20 @@
     );
   }
 
-  // ── 找「立即購票」展開按鈕 ────────────────────────────
-  function tryMainBtn() {
-    const btn = document.querySelector('#BuyTicketsNow_btn button:not([disabled])');
-    if (btn && btn.offsetParent) { realClick(btn, '立即購票'); return true; }
-    // Broader fallback: any visible button/link with purchase text
-    for (const el of document.querySelectorAll('button:not([disabled]), a:not([disabled])')) {
-      if (!el.offsetParent) continue;
-      const t = (el.textContent || '').trim();
-      if (t === '立即購票' || t === '購票') { realClick(el, t); return true; }
-    }
-    return false;
+  function extractPrice(el) {
+    const m = (el.textContent || '').match(/[\d,]{3,}/g);
+    if (!m) return 0;
+    return Math.max(...m.map(s => parseInt(s.replace(/,/g, '')) || 0));
   }
 
-  // 捲頁觸發 Angular lazy rendering
-  let scrollPhase = 0;
-  function scrollToReveal() {
-    scrollPhase = (scrollPhase + 1) % 3;
-    if (scrollPhase === 0) {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
-    } else if (scrollPhase === 1) {
-      window.scrollTo({ top: document.body.scrollHeight / 2, behavior: 'instant' });
-    }
-    // scrollPhase === 2: stay, let Angular render
+  function textIncludes(el, kw) {
+    return (el.textContent || '').replace(/\s/g, '').includes(kw.replace(/\s/g, ''));
   }
 
-  // ── 場次按鈕（隔離世界 fallback） ────────────────────
+  // ── 點場次按鈕 ───────────────────────────────────────
   function trySessionBtn() {
-    const btns = findEnabledSessionBtns();
-    if (btns.length === 0) return false;
+    const btns = findBuyBtns(true);
+    if (!btns.length) return false;
 
     let target = btns[0];
     if (cfg.session) {
@@ -316,9 +212,14 @@
       }
     }
 
-    const rowEl = target.closest('[class*="flex-md-row"], .tr, li, tr') || target.parentElement;
+    const rowEl = target.closest('tr, li, [class*="row"]') || target.parentElement;
     const label = (rowEl ? rowEl.textContent : '').replace(/\s+/g, ' ').trim().substring(0, 30);
-    return realClick(target, label);
+    if (realClick(target, label)) {
+      hud(`✅ 已點擊：${label}`, 'ok');
+      stop();
+      return true;
+    }
+    return false;
   }
 
   // ── 票種選擇（購票頁） ───────────────────────────────
@@ -334,7 +235,7 @@
       if (!btn || !btn.offsetParent) return;
       available.push({ row, btn, text: row.textContent || '', price: extractPrice(row) });
     });
-    if (available.length === 0) return false;
+    if (!available.length) return false;
 
     let target = null;
     if (cfg.zones.length > 0) {
@@ -365,77 +266,34 @@
     const label = target.text.replace(/\s+/g, ' ').trim().substring(0, 25);
     hud(`🎯 選票：${label}（$${target.price}）`, 'warn');
     setTimeout(() => {
-      realClick(target.btn, label);
-      ticketPageHandled = true;
+      if (realClick(target.btn, label)) ticketPageHandled = true;
     }, 300);
     return true;
   }
 
-  function tryNextBtn() {
-    const kws = ['下一步', '確認', '結帳', '前往付款', 'Checkout', 'Next', '繼續'];
-    for (const btn of document.querySelectorAll('button:not([disabled]), a.btn:not([disabled]), input[type="submit"]')) {
-      if (!btn.offsetParent) continue;
-      if (kws.some(k => (btn.textContent || btn.value || '').includes(k))) {
-        return realClick(btn, btn.textContent.trim() || 'Next');
-      }
-    }
-    return false;
-  }
-
-  // ── 主循環 ───────────────────────────────────────────
+  // ── 主 tick ──────────────────────────────────────────
   function tick() {
-    checkCount++;
-    const isDetailsPage = /\/Details\//i.test(location.href);
-
-    if (isDetailsPage) {
-      const enabledBtns = findEnabledSessionBtns();
-      const allBtns     = findAllSessionBtns();
-
-      // 捲頁讓 Angular 渲染場次元件（每 10 ticks = 1s）
-      if (allBtns.length === 0 && checkCount % 10 === 0) scrollToReveal();
-
-      if (checkCount % 20 === 0) {
-        if (enabledBtns.length > 0) {
-          hud(`🎯 找到 ${enabledBtns.length} 個可購場次，點擊中...`, 'warn');
-        } else if (allBtns.length > 0) {
-          const small = document.querySelector('small');
-          const openInfo = small ? small.textContent.trim() : '';
-          hud(`⏳ 找到 ${allBtns.length} 個場次（未開賣）${openInfo ? ' · ' + openInfo : ''}`);
-        } else {
-          const extBtn   = document.querySelectorAll('button').length;
-          const extNgTns = document.querySelectorAll('[class*="ng-tns"]').length;
-          // 印出所有 button 的文字，幫助診斷
-          if (checkCount % 100 === 0) {
-            const btexts = Array.from(document.querySelectorAll('button')).map(b => (b.textContent||'').trim().substring(0,15)).join(' | ');
-            console.log(`[ibon搶票][TOP] buttons: ${btexts}`);
-          }
-          hud(`⏳ 等待... btn=${extBtn} ng-tns=${extNgTns}`);
-        }
+    if (isDetails) {
+      // 有按鈕就直接點，不管是什麼狀態
+      if (trySessionBtn()) return;
+      // 沒找到：更新 HUD 狀態
+      const all = findBuyBtns(false);
+      if (all.length > 0) {
+        hud(`⏳ ${all.length} 個場次（未開賣）`);
+      } else {
+        hud('⏳ 待開賣...');
       }
-
-      if (enabledBtns.length > 0) { trySessionBtn(); return; }
-      if (allBtns.length === 0 && checkCount % 5 === 0) tryMainBtn();
-      if (allBtns.length > 0 && checkCount % 300 === 0) { hud('🔄 刷新...'); location.reload(); }
-
     } else {
       if (!ticketPageHandled) tryTicketSelect();
     }
   }
 
-  // ── MutationObserver ─────────────────────────────────
+  // ── MutationObserver（DOM 一變就立刻嘗試） ───────────
   function startMutObs() {
     if (mutObs) return;
-    let debounce = null;
     mutObs = new MutationObserver(() => {
-      if (!isActive) return;
-      clearTimeout(debounce);
-      debounce = setTimeout(() => {
-        const enabled = findEnabledSessionBtns();
-        if (enabled.length > 0) {
-          hud(`🎯 DOM變化：發現 ${enabled.length} 個可購場次！`, 'warn');
-          trySessionBtn();
-        }
-      }, 200);
+      if (!isActive || !isDetails) return;
+      trySessionBtn();
     });
     mutObs.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['disabled'] });
   }
@@ -450,15 +308,14 @@
     loadCfg(() => {
       isActive = true;
       ticketPageHandled = false;
-      checkCount = 0;
-      const info = [
-        cfg.zones.length > 0 ? `票區：${cfg.zones.join('>')}` : (cfg.priceStrategy === 'high' ? '↑高價' : '↓低價') + '優先',
-        cfg.session ? `場次：${cfg.session}` : '',
-        `${cfg.qty}張`,
-      ].filter(Boolean).join(' | ');
-      hud(`🚀 啟動 — ${info}`, 'ok');
+      const info = cfg.zones.length > 0
+        ? `票區：${cfg.zones.join('>')} | ${cfg.qty}張`
+        : `${cfg.priceStrategy === 'high' ? '↑高價' : '↓低價'} | ${cfg.qty}張`;
+      hud(`🚀 就緒 — ${info}`, 'ok');
       startMutObs();
-      timer = setInterval(tick, 100);
+      // 立刻試一次
+      tick();
+      timer = setInterval(tick, 150);
     });
   }
 
@@ -474,12 +331,11 @@
   // ── 接收訊息 ─────────────────────────────────────────
   chrome.runtime.onMessage.addListener((msg) => {
     if (msg.action === 'start') start();
-    if (msg.action === 'stop') stop();
-    if (msg.type === 'session_clicked') hud(`✅ iframe 已點擊場次：${msg.label || ''}`, 'ok');
+    if (msg.action === 'stop')  stop();
+    if (msg.type === 'session_clicked') hud(`✅ 已點擊：${msg.label || ''}`, 'ok');
   });
 
   chrome.storage.local.get(['sniper_active'], (d) => {
     if (d.sniper_active) start();
   });
-
 })();
