@@ -95,11 +95,11 @@
   }
 
   // 判斷元素是否在「售票平台：ibon機台、線上購票」說明區（而非場次表格）
+  // 只走 3 層，避免走到 page-level container（它的 textContent 包含整頁文字）
   function isInInfoSection(el) {
     let ancestor = el.parentElement;
-    for (let i = 0; i < 6 && ancestor && ancestor !== document.body; i++) {
+    for (let i = 0; i < 3 && ancestor && ancestor !== document.body; i++) {
       const t = ancestor.textContent || '';
-      // 說明區通常同時包含「售票平台」和「機台」兩個詞
       if (t.includes('售票平台') && t.includes('機台')) return true;
       ancestor = ancestor.parentElement;
     }
@@ -414,8 +414,15 @@
           const cBtnT = Array.from(document.querySelectorAll('button, a')).filter(el => (el.textContent||'').includes('線上購票')).length;
           const cClass = Array.from(document.querySelectorAll('[class*="btn"]')).filter(el => (el.textContent||'').includes('線上購票')).length;
           const cTree = findClickableByText('線上購票', false).length;
+          // raw TreeWalker 計數（不過濾說明區）—— 用來判斷 isInInfoSection 是否過度排除
+          let rawTree = 0;
+          try {
+            const rw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+            let rn;
+            while ((rn = rw.nextNode())) { if ((rn.textContent||'').includes('線上購票')) rawTree++; }
+          } catch(_) {}
           const bodyHas = (document.body && document.body.innerText || '').includes('線上購票') ? 'Y' : 'N';
-          hud(`⏳ 等待場次... body:${bodyHas} btn/a:${cBtnT} class:${cClass} tree:${cTree} iframe:[${iframeSrcs||'無'}]`);
+          hud(`⏳ 等待場次... body:${bodyHas} btn/a:${cBtnT} class:${cClass} tree:${cTree}(raw:${rawTree}) iframe:[${iframeSrcs||'無'}]`);
         }
       }
 
