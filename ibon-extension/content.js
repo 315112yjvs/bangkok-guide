@@ -435,17 +435,23 @@
           const iframeSrcs = Array.from(document.querySelectorAll('iframe'))
             .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
             .join(', ');
-          // 診斷：找 btn-pink 在 innerHTML 的上下文 + shadow iframe
-          const ih = document.body.innerHTML || '';
-          const pinkIdx = ih.indexOf('btn-pink');
-          const pinkCtx = pinkIdx >= 0 ? ih.substring(Math.max(0,pinkIdx-30), pinkIdx+50) : 'not found';
-          const shadowIframes = queryShadowAll('iframe').length;
-          const allIframeInfo = Array.from(document.querySelectorAll('iframe'))
-            .map((f,i) => `[${i}]${(f.src||'(blank)').replace(/https?:\/\//,'').substring(0,40)}`)
-            .join(' ');
-          console.log('[ibon搶票][DIAG] btn-pink context:', pinkCtx);
-          console.log('[ibon搶票][DIAG] iframes in DOM:', Array.from(document.querySelectorAll('iframe')).map(f=>f.outerHTML.substring(0,200)).join('\n'));
-          hud(`⏳ 等待... btn-pink位置:[${pinkCtx.substring(0,40)}] shadowIframe:${shadowIframes} iframe:[${allIframeInfo||iframeSrcs||'無'}]`);
+          // 診斷：用 window.frames 枚舉所有 frame（含跨 origin）
+          const totalFrames = window.length;
+          const frameInfo = [];
+          for (let fi = 0; fi < window.length; fi++) {
+            try {
+              const fd = window.frames[fi].document;
+              const fbtns = fd.querySelectorAll('button.btn-pink, button.btn-buy').length;
+              const furl = window.frames[fi].location.href.replace(/https?:\/\//,'').substring(0,40);
+              frameInfo.push(`[${fi}]${furl} btn-pink=${fbtns}`);
+              if (fbtns > 0) console.log(`[ibon搶票][FRAME${fi}] btn-pink=${fbtns} url=${furl}`);
+            } catch(e) {
+              const furl = (e.message||'').includes('cross') ? 'cross-origin' : e.message.substring(0,20);
+              frameInfo.push(`[${fi}]${furl}`);
+            }
+          }
+          console.log('[ibon搶票][FRAMES] total:', totalFrames, frameInfo.join(' | '));
+          hud(`⏳ 等待... frames:${totalFrames} [${frameInfo.join(' | ')}]`);
         }
       }
 
