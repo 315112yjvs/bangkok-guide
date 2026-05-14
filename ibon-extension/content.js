@@ -435,23 +435,31 @@
           const iframeSrcs = Array.from(document.querySelectorAll('iframe'))
             .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
             .join(', ');
-          // 診斷：用 window.frames 枚舉所有 frame（含跨 origin）
-          const totalFrames = window.length;
-          const frameInfo = [];
-          for (let fi = 0; fi < window.length; fi++) {
+          // 診斷：比對 extension isolated world vs 頁面 page context
+          const extBtn  = document.querySelectorAll('button').length;
+          const extNgTns = document.querySelectorAll('[class*="ng-tns"]').length;
+          // 注入 <script> 到頁面 context，讓頁面本身的 JS 查詢
+          if (!window.__ibonPageDiagDone) {
+            window.__ibonPageDiagDone = true;
+            document.addEventListener('__ibon_page_diag__', function h(e) {
+              document.removeEventListener('__ibon_page_diag__', h);
+              console.log('[ibon搶票][PAGE-CTX]', JSON.stringify(e.detail));
+            });
             try {
-              const fd = window.frames[fi].document;
-              const fbtns = fd.querySelectorAll('button.btn-pink, button.btn-buy').length;
-              const furl = window.frames[fi].location.href.replace(/https?:\/\//,'').substring(0,40);
-              frameInfo.push(`[${fi}]${furl} btn-pink=${fbtns}`);
-              if (fbtns > 0) console.log(`[ibon搶票][FRAME${fi}] btn-pink=${fbtns} url=${furl}`);
-            } catch(e) {
-              const furl = (e.message||'').includes('cross') ? 'cross-origin' : e.message.substring(0,20);
-              frameInfo.push(`[${fi}]${furl}`);
-            }
+              const s = document.createElement('script');
+              s.textContent = `(function(){
+                var r={btnPink:document.querySelectorAll('button.btn-pink,a.btn-pink').length,
+                       btnBuy:document.querySelectorAll('button.btn-buy,a.btn-buy').length,
+                       btn:document.querySelectorAll('button').length,
+                       ngTns:document.querySelectorAll('[class*="ng-tns"]').length};
+                document.dispatchEvent(new CustomEvent('__ibon_page_diag__',{detail:r}));
+              })();`;
+              (document.head||document.documentElement).appendChild(s);
+              s.remove();
+            } catch(e) { console.log('[ibon搶票] script inject err:', e.message); }
           }
-          console.log('[ibon搶票][FRAMES] total:', totalFrames, frameInfo.join(' | '));
-          hud(`⏳ 等待... frames:${totalFrames} [${frameInfo.join(' | ')}]`);
+          console.log('[ibon搶票][EXT-CTX] btn:', extBtn, 'ng-tns:', extNgTns);
+          hud(`⏳ 等待... EXT:btn=${extBtn} ng-tns=${extNgTns} (check console for PAGE-CTX)`);
         }
       }
 
