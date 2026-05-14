@@ -12,6 +12,21 @@
   // ════════════════════════════════════════════════════
   let lastClickTime = 0; // 所有 frame 共用，防止重複點擊
 
+  // 遞迴搜尋所有 shadow root（Angular ViewEncapsulation.ShadowDom 時需要）
+  function queryShadowAll(selector, root) {
+    root = root || document;
+    const results = Array.from(root.querySelectorAll(selector));
+    const allEls = root.querySelectorAll('*');
+    for (let i = 0; i < allEls.length; i++) {
+      const sr = allEls[i].shadowRoot;
+      if (sr) {
+        const inner = queryShadowAll(selector, sr);
+        for (let j = 0; j < inner.length; j++) results.push(inner[j]);
+      }
+    }
+    return results;
+  }
+
   function realClick(el, label) {
     const now = Date.now();
     if (now - lastClickTime < 3000) {
@@ -137,8 +152,15 @@
     });
     if (byRole.length > 0) return byRole;
 
-    // 5. 文字節點反查（最終 fallback：Angular 自訂元素 / div 按鈕）
-    return findClickableByText('線上購票', true);
+    // 5. 文字節點反查（div 按鈕 fallback）
+    const byText = findClickableByText('線上購票', true);
+    if (byText.length > 0) return byText;
+
+    // 6. Shadow DOM 遞迴搜尋（Angular ViewEncapsulation.ShadowDom）
+    return queryShadowAll('button.btn-buy:not([disabled]), a.btn-buy:not([disabled]), button.btn-pink:not([disabled])').filter(el => {
+      if (!el.offsetParent) return false;
+      return !isInInfoSection(el);
+    });
   }
 
   function findAllSessionBtns() {
@@ -158,7 +180,10 @@
       return !isInInfoSection(el);
     });
     if (byRole.length > 0) return byRole;
-    return findClickableByText('線上購票', false);
+    const byText = findClickableByText('線上購票', false);
+    if (byText.length > 0) return byText;
+    // Shadow DOM fallback
+    return queryShadowAll('button.btn-buy, a.btn-buy, button.btn-pink').filter(el => !isInInfoSection(el));
   }
 
   // ════════════════════════════════════════════════════
@@ -410,16 +435,13 @@
           const iframeSrcs = Array.from(document.querySelectorAll('iframe'))
             .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
             .join(', ');
-          // 診斷：直接查 btn-pink / btn-buy，不依賴文字過濾
-          const allBtnPink = document.querySelectorAll('button.btn-pink, a.btn-pink').length;
-          const allBtnBuy  = document.querySelectorAll('button.btn-buy, a.btn-buy').length;
-          const allBtn     = document.querySelectorAll('button').length;
-          // 第一個 btn-pink 的詳細資訊
-          const fp = document.querySelector('button.btn-pink, a.btn-pink');
-          const fpInfo = fp
-            ? `"${(fp.textContent||'').trim().substring(0,10)}" dis=${fp.disabled}`
-            : 'none';
-          hud(`⏳ 等待... btn-pink:${allBtnPink}(${fpInfo}) btn-buy:${allBtnBuy} btn:${allBtn} iframe:[${iframeSrcs||'無'}]`);
+          // 診斷：一般 DOM + Shadow DOM 兩路搜尋
+          const allBtn      = document.querySelectorAll('button').length;
+          const allBtnPink  = document.querySelectorAll('button.btn-pink, a.btn-pink').length;
+          const shadowPink  = queryShadowAll('button.btn-pink, a.btn-pink').length;
+          const shadowBuy   = queryShadowAll('button.btn-buy, a.btn-buy').length;
+          const shadowBtn   = queryShadowAll('button').length;
+          hud(`⏳ 等待... DOM:btn-pink=${allBtnPink} btn=${allBtn} | Shadow:btn-pink=${shadowPink} btn-buy=${shadowBuy} btn=${shadowBtn} | iframe:[${iframeSrcs||'無'}]`);
         }
       }
 
