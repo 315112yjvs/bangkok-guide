@@ -59,6 +59,41 @@
     return null;
   }
 
+  // 用文字節點反查最近的可點擊祖先（處理 Angular 自訂元素）
+  function findClickableByText(text, enabledOnly) {
+    const results = [];
+    try {
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+      let n;
+      while ((n = walker.nextNode())) {
+        if (!n.textContent.includes(text)) continue;
+        let el = n.parentElement;
+        if (!el) continue;
+        // 往上最多 6 層，找第一個「看起來可點擊」的祖先
+        let clickable = null;
+        let cur = el;
+        for (let i = 0; i < 6 && cur && cur !== document.body; i++) {
+          const tag = (cur.tagName || '').toUpperCase();
+          if (tag === 'BUTTON' || tag === 'A') { clickable = cur; break; }
+          if (cur.getAttribute('role') === 'button') { clickable = cur; break; }
+          if (cur.getAttribute('onclick')) { clickable = cur; break; }
+          try {
+            if (getComputedStyle(cur).cursor === 'pointer' && tag !== 'BODY' && tag !== 'HTML') {
+              clickable = cur; break;
+            }
+          } catch (_) {}
+          cur = cur.parentElement;
+        }
+        if (!clickable) clickable = el;
+        if (enabledOnly && clickable.disabled) continue;
+        if (!clickable.offsetParent) continue;
+        if (isInInfoSection(clickable)) continue;
+        if (!results.includes(clickable)) results.push(clickable);
+      }
+    } catch (_) {}
+    return results;
+  }
+
   // 判斷元素是否在「售票平台：ibon機台、線上購票」說明區（而非場次表格）
   function isInInfoSection(el) {
     let ancestor = el.parentElement;
@@ -93,13 +128,17 @@
     if (byBtnClass.length > 0) return byBtnClass;
 
     // 4. role="button" 或任何可見元素含「線上購票」文字
-    return Array.from(document.querySelectorAll(
+    const byRole = Array.from(document.querySelectorAll(
       'button:not([disabled]), a:not([disabled]), [role="button"]:not([disabled]), div[onclick], span[onclick]'
     )).filter(el => {
       if (!el.offsetParent) return false;
       if (!(el.textContent || '').includes('線上購票')) return false;
       return !isInInfoSection(el);
     });
+    if (byRole.length > 0) return byRole;
+
+    // 5. 文字節點反查（最終 fallback：Angular 自訂元素 / div 按鈕）
+    return findClickableByText('線上購票', true);
   }
 
   function findAllSessionBtns() {
@@ -114,11 +153,12 @@
       return !isInInfoSection(el);
     });
     if (byBtnClass.length > 0) return byBtnClass;
-    // 最寬鬆
-    return Array.from(document.querySelectorAll('button, a, [role="button"]')).filter(el => {
+    const byRole = Array.from(document.querySelectorAll('button, a, [role="button"]')).filter(el => {
       if (!(el.textContent || '').includes('線上購票')) return false;
       return !isInInfoSection(el);
     });
+    if (byRole.length > 0) return byRole;
+    return findClickableByText('線上購票', false);
   }
 
   // ════════════════════════════════════════════════════
@@ -371,11 +411,11 @@
             .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
             .join(', ');
           // 多策略診斷計數
-          const cBtn  = document.querySelectorAll('button, a').length;
           const cBtnT = Array.from(document.querySelectorAll('button, a')).filter(el => (el.textContent||'').includes('線上購票')).length;
           const cClass = Array.from(document.querySelectorAll('[class*="btn"]')).filter(el => (el.textContent||'').includes('線上購票')).length;
+          const cTree = findClickableByText('線上購票', false).length;
           const bodyHas = (document.body && document.body.innerText || '').includes('線上購票') ? 'Y' : 'N';
-          hud(`⏳ 等待場次... body含文字:${bodyHas} btn/a:${cBtnT}/${cBtn} class含btn:${cClass} iframe:[${iframeSrcs||'無'}]`);
+          hud(`⏳ 等待場次... body:${bodyHas} btn/a:${cBtnT} class:${cClass} tree:${cTree} iframe:[${iframeSrcs||'無'}]`);
         }
       }
 
