@@ -84,8 +84,18 @@
     });
     if (byPink.length > 0) return byPink;
 
-    // 3. 廣泛搜尋：所有可見的 button/a 含「線上購票」，排除說明區
-    return Array.from(document.querySelectorAll('button:not([disabled]), a:not([disabled])')).filter(el => {
+    // 3. 任何有 btn class 的元素（div/span 也算）
+    const byBtnClass = Array.from(document.querySelectorAll('[class*="btn"]:not([disabled])')).filter(el => {
+      if (!el.offsetParent) return false;
+      if (!(el.textContent || '').includes('線上購票')) return false;
+      return !isInInfoSection(el);
+    });
+    if (byBtnClass.length > 0) return byBtnClass;
+
+    // 4. role="button" 或任何可見元素含「線上購票」文字
+    return Array.from(document.querySelectorAll(
+      'button:not([disabled]), a:not([disabled]), [role="button"]:not([disabled]), div[onclick], span[onclick]'
+    )).filter(el => {
       if (!el.offsetParent) return false;
       if (!(el.textContent || '').includes('線上購票')) return false;
       return !isInInfoSection(el);
@@ -99,8 +109,13 @@
       (b.textContent || '').trim().includes('線上購票')
     );
     if (byPink.length > 0) return byPink;
-    // 全部含「線上購票」的 button/a，排除說明區
-    return Array.from(document.querySelectorAll('button, a')).filter(el => {
+    const byBtnClass = Array.from(document.querySelectorAll('[class*="btn"]')).filter(el => {
+      if (!(el.textContent || '').includes('線上購票')) return false;
+      return !isInInfoSection(el);
+    });
+    if (byBtnClass.length > 0) return byBtnClass;
+    // 最寬鬆
+    return Array.from(document.querySelectorAll('button, a, [role="button"]')).filter(el => {
       if (!(el.textContent || '').includes('線上購票')) return false;
       return !isInInfoSection(el);
     });
@@ -355,11 +370,12 @@
           const iframeSrcs = Array.from(document.querySelectorAll('iframe'))
             .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
             .join(', ');
-          // 計算含「線上購票」的元素數（含被排除的），方便診斷
-          const rawMatches = Array.from(document.querySelectorAll('button, a')).filter(el =>
-            (el.textContent || '').includes('線上購票')
-          ).length;
-          hud(`⏳ 等待場次... 購票連結:${rawMatches} iframe:[${iframeSrcs || '無'}]`);
+          // 多策略診斷計數
+          const cBtn  = document.querySelectorAll('button, a').length;
+          const cBtnT = Array.from(document.querySelectorAll('button, a')).filter(el => (el.textContent||'').includes('線上購票')).length;
+          const cClass = Array.from(document.querySelectorAll('[class*="btn"]')).filter(el => (el.textContent||'').includes('線上購票')).length;
+          const bodyHas = (document.body && document.body.innerText || '').includes('線上購票') ? 'Y' : 'N';
+          hud(`⏳ 等待場次... body含文字:${bodyHas} btn/a:${cBtnT}/${cBtn} class含btn:${cClass} iframe:[${iframeSrcs||'無'}]`);
         }
       }
 
