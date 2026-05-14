@@ -410,19 +410,16 @@
           const iframeSrcs = Array.from(document.querySelectorAll('iframe'))
             .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
             .join(', ');
-          // 多策略診斷計數
-          const cBtnT = Array.from(document.querySelectorAll('button, a')).filter(el => (el.textContent||'').includes('線上購票')).length;
-          const cClass = Array.from(document.querySelectorAll('[class*="btn"]')).filter(el => (el.textContent||'').includes('線上購票')).length;
-          const cTree = findClickableByText('線上購票', false).length;
-          // raw TreeWalker 計數（不過濾說明區）—— 用來判斷 isInInfoSection 是否過度排除
-          let rawTree = 0;
-          try {
-            const rw = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
-            let rn;
-            while ((rn = rw.nextNode())) { if ((rn.textContent||'').includes('線上購票')) rawTree++; }
-          } catch(_) {}
-          const bodyHas = (document.body && document.body.innerText || '').includes('線上購票') ? 'Y' : 'N';
-          hud(`⏳ 等待場次... body:${bodyHas} btn/a:${cBtnT} class:${cClass} tree:${cTree}(raw:${rawTree}) iframe:[${iframeSrcs||'無'}]`);
+          // 診斷：直接查 btn-pink / btn-buy，不依賴文字過濾
+          const allBtnPink = document.querySelectorAll('button.btn-pink, a.btn-pink').length;
+          const allBtnBuy  = document.querySelectorAll('button.btn-buy, a.btn-buy').length;
+          const allBtn     = document.querySelectorAll('button').length;
+          // 第一個 btn-pink 的詳細資訊
+          const fp = document.querySelector('button.btn-pink, a.btn-pink');
+          const fpInfo = fp
+            ? `"${(fp.textContent||'').trim().substring(0,10)}" dis=${fp.disabled}`
+            : 'none';
+          hud(`⏳ 等待... btn-pink:${allBtnPink}(${fpInfo}) btn-buy:${allBtnBuy} btn:${allBtn} iframe:[${iframeSrcs||'無'}]`);
         }
       }
 
