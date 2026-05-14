@@ -59,28 +59,37 @@
     return null;
   }
 
+  // 判斷元素是否在「售票平台：ibon機台、線上購票」說明區（而非場次表格）
+  function isInInfoSection(el) {
+    let ancestor = el.parentElement;
+    for (let i = 0; i < 6 && ancestor && ancestor !== document.body; i++) {
+      const t = ancestor.textContent || '';
+      // 說明區通常同時包含「售票平台」和「機台」兩個詞
+      if (t.includes('售票平台') && t.includes('機台')) return true;
+      ancestor = ancestor.parentElement;
+    }
+    return false;
+  }
+
   // 找場次按鈕（只在當前 document 找，不跨 iframe）
   function findEnabledSessionBtns() {
+    // 1. 精確 class 匹配
     const byClass = Array.from(document.querySelectorAll('button.btn-buy:not([disabled]), a.btn-buy:not([disabled])'));
     if (byClass.length > 0) return byClass;
 
+    // 2. btn-pink class 含購票文字
     const byPink = Array.from(document.querySelectorAll('button.btn-pink:not([disabled]), a.btn-pink:not([disabled])')).filter(b => {
       const t = (b.textContent || '').trim();
-      return t.includes('線上購票') || t === '購票';
+      return t.includes('線上購票') || t.includes('購票');
     });
     if (byPink.length > 0) return byPink;
 
-    // 廣泛搜尋：含「線上購票」且有 btn class，但排除「售票平台」說明區
-    const broad = Array.from(document.querySelectorAll('a[class*="btn"], button')).filter(el => {
-      if (el.disabled) return false;
+    // 3. 廣泛搜尋：所有可見的 button/a 含「線上購票」，排除說明區
+    return Array.from(document.querySelectorAll('button:not([disabled]), a:not([disabled])')).filter(el => {
       if (!el.offsetParent) return false;
       if (!(el.textContent || '').includes('線上購票')) return false;
-      // 排除「售票平台」說明區的連結
-      const nearText = (el.closest('p, li, span') || el.parentElement || el).textContent || '';
-      if (nearText.includes('售票平台') || nearText.includes('機台')) return false;
-      return true;
+      return !isInInfoSection(el);
     });
-    return broad;
   }
 
   function findAllSessionBtns() {
@@ -90,11 +99,10 @@
       (b.textContent || '').trim().includes('線上購票')
     );
     if (byPink.length > 0) return byPink;
-    // 全部含「線上購票」的按鈕，排除說明區
-    return Array.from(document.querySelectorAll('a[class*="btn"], button')).filter(el => {
+    // 全部含「線上購票」的 button/a，排除說明區
+    return Array.from(document.querySelectorAll('button, a')).filter(el => {
       if (!(el.textContent || '').includes('線上購票')) return false;
-      const nearText = (el.closest('p, li, span') || el.parentElement || el).textContent || '';
-      return !nearText.includes('售票平台') && !nearText.includes('機台');
+      return !isInInfoSection(el);
     });
   }
 
@@ -345,9 +353,13 @@
           hud(`⏳ 找到 ${allBtns.length} 個場次（未開賣）${openInfo ? ' · ' + openInfo : ''}`);
         } else {
           const iframeSrcs = Array.from(document.querySelectorAll('iframe'))
-            .map(f => (f.src || '').replace(/https?:\/\//, '').substring(0, 40))
+            .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
             .join(', ');
-          hud(`⏳ 等待場次... iframe:[${iframeSrcs || '無'}]`);
+          // 計算含「線上購票」的元素數（含被排除的），方便診斷
+          const rawMatches = Array.from(document.querySelectorAll('button, a')).filter(el =>
+            (el.textContent || '').includes('線上購票')
+          ).length;
+          hud(`⏳ 等待場次... 購票連結:${rawMatches} iframe:[${iframeSrcs || '無'}]`);
         }
       }
 
