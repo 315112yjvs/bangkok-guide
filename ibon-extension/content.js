@@ -435,13 +435,12 @@
           const iframeSrcs = Array.from(document.querySelectorAll('iframe'))
             .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
             .join(', ');
-          // 診斷：一般 DOM + Shadow DOM 兩路搜尋
-          const allBtn      = document.querySelectorAll('button').length;
-          const allBtnPink  = document.querySelectorAll('button.btn-pink, a.btn-pink').length;
-          const shadowPink  = queryShadowAll('button.btn-pink, a.btn-pink').length;
-          const shadowBuy   = queryShadowAll('button.btn-buy, a.btn-buy').length;
-          const shadowBtn   = queryShadowAll('button').length;
-          hud(`⏳ 等待... DOM:btn-pink=${allBtnPink} btn=${allBtn} | Shadow:btn-pink=${shadowPink} btn-buy=${shadowBuy} btn=${shadowBtn} | iframe:[${iframeSrcs||'無'}]`);
+          // 診斷：innerHTML 文字檢查 + 所有 button 的 class
+          const ihHasPink = (document.body.innerHTML||'').includes('btn-pink') ? 'Y' : 'N';
+          const allBtns = Array.from(document.querySelectorAll('button'));
+          const btnClasses = allBtns.map(b => (b.className||'(no-class)').split(' ').filter(c=>c&&!c.startsWith('ng-')).join('.').substring(0,25)).join(' | ');
+          console.log('[ibon搶票][DIAG] All buttons:', allBtns.map(b => b.outerHTML.substring(0,120)).join('\n'));
+          hud(`⏳ 等待... innerHTML含btn-pink:${ihHasPink} btn(${allBtns.length}):[${btnClasses}] iframe:[${iframeSrcs||'無'}]`);
         }
       }
 
