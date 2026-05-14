@@ -301,18 +301,35 @@
     return true;
   }
 
+  // ── 漸進式捲頁觸發 Angular IntersectionObserver ────────
+  // Angular 只在元素進入 viewport 時才渲染 session 表格
+  let scrollPos = 0;
+  let scrollDir = 1;
+  function scrollStep() {
+    const maxH = Math.max(document.body.scrollHeight - window.innerHeight, 0);
+    if (maxH === 0) return;
+    scrollPos += 300 * scrollDir;
+    if (scrollPos >= maxH) { scrollPos = maxH; scrollDir = -1; }
+    if (scrollPos <= 0)    { scrollPos = 0;    scrollDir = 1;  }
+    window.scrollTo({ top: scrollPos, behavior: 'instant' });
+  }
+
   // ── 主 tick ──────────────────────────────────────────
+  let tickCount = 0;
   function tick() {
+    tickCount++;
     diagLog();
     if (isDetails) {
-      // 有按鈕就直接點，不管是什麼狀態
+      // 有按鈕就直接點
       if (trySessionBtn()) return;
-      // 沒找到：更新 HUD 狀態
-      const all = findBuyBtns(false);
-      if (all.length > 0) {
-        hud(`⏳ ${all.length} 個場次（未開賣）`);
-      } else {
-        hud('⏳ 待開賣...');
+
+      // 每 700ms（~5 ticks）捲一步，讓 Angular 渲染 session 表格
+      if (tickCount % 5 === 0) scrollStep();
+
+      // HUD 狀態
+      if (tickCount % 20 === 0) {
+        const all = findBuyBtns(false);
+        hud(all.length > 0 ? `⏳ ${all.length} 個場次（未開賣）` : '⏳ 待開賣...');
       }
     } else {
       if (!ticketPageHandled) tryTicketSelect();
