@@ -10,29 +10,11 @@
   // ════════════════════════════════════════════════════
   // 共用工具
   // ════════════════════════════════════════════════════
-  let lastClickTime = 0; // 所有 frame 共用，防止重複點擊
-
-  // 遞迴搜尋所有 shadow root（Angular ViewEncapsulation.ShadowDom 時需要）
-  function queryShadowAll(selector, root) {
-    root = root || document;
-    const results = Array.from(root.querySelectorAll(selector));
-    const allEls = root.querySelectorAll('*');
-    for (let i = 0; i < allEls.length; i++) {
-      const sr = allEls[i].shadowRoot;
-      if (sr) {
-        const inner = queryShadowAll(selector, sr);
-        for (let j = 0; j < inner.length; j++) results.push(inner[j]);
-      }
-    }
-    return results;
-  }
+  let lastClickTime = 0;
 
   function realClick(el, label) {
     const now = Date.now();
-    if (now - lastClickTime < 3000) {
-      console.log(`[ibon搶票][${isTopFrame ? 'TOP' : 'sub'}] ⏸ 點擊冷卻中，跳過: ${label}`);
-      return false;
-    }
+    if (now - lastClickTime < 3000) return false;
     lastClickTime = now;
     try { el.scrollIntoView({ block: 'center', behavior: 'instant' }); } catch (_) {}
     el.click();
@@ -52,29 +34,27 @@
     return Math.max(...m.map(s => parseInt(s.replace(/,/g, '')) || 0));
   }
 
-  // XPath fallback
-  function findByXPath(text) {
-    try {
-      const xp = `//*[contains(normalize-space(text()),"${text}") and not(@disabled)]`;
-      const r = document.evaluate(xp, document, null, XPathResult.ORDERED_NODE_ITERATOR_TYPE, null);
-      const nodes = [];
-      let n;
-      while ((n = r.iterateNext())) {
-        if (n.offsetParent !== null) nodes.push(n);
-      }
-      for (const node of nodes) {
-        let el = node;
-        while (el && el !== document.body) {
-          if (el.tagName === 'BUTTON' || el.tagName === 'A') return el;
-          el = el.parentElement;
-        }
-        return node;
-      }
-    } catch (_) {}
-    return null;
+  function isInInfoSection(el) {
+    let ancestor = el.parentElement;
+    for (let i = 0; i < 3 && ancestor && ancestor !== document.body; i++) {
+      const t = ancestor.textContent || '';
+      if (t.includes('售票平台') && t.includes('機台')) return true;
+      ancestor = ancestor.parentElement;
+    }
+    return false;
   }
 
-  // 用文字節點反查最近的可點擊祖先（處理 Angular 自訂元素）
+  function queryShadowAll(selector, root) {
+    root = root || document;
+    const results = Array.from(root.querySelectorAll(selector));
+    const allEls = root.querySelectorAll('*');
+    for (let i = 0; i < allEls.length; i++) {
+      const sr = allEls[i].shadowRoot;
+      if (sr) queryShadowAll(selector, sr).forEach(e => results.push(e));
+    }
+    return results;
+  }
+
   function findClickableByText(text, enabledOnly) {
     const results = [];
     try {
@@ -84,7 +64,6 @@
         if (!n.textContent.includes(text)) continue;
         let el = n.parentElement;
         if (!el) continue;
-        // 往上最多 6 層，找第一個「看起來可點擊」的祖先
         let clickable = null;
         let cur = el;
         for (let i = 0; i < 6 && cur && cur !== document.body; i++) {
@@ -109,32 +88,15 @@
     return results;
   }
 
-  // 判斷元素是否在「售票平台：ibon機台、線上購票」說明區（而非場次表格）
-  // 只走 3 層，避免走到 page-level container（它的 textContent 包含整頁文字）
-  function isInInfoSection(el) {
-    let ancestor = el.parentElement;
-    for (let i = 0; i < 3 && ancestor && ancestor !== document.body; i++) {
-      const t = ancestor.textContent || '';
-      if (t.includes('售票平台') && t.includes('機台')) return true;
-      ancestor = ancestor.parentElement;
-    }
-    return false;
-  }
-
-  // 找場次按鈕（只在當前 document 找，不跨 iframe）
   function findEnabledSessionBtns() {
-    // 1. 精確 class 匹配
     const byClass = Array.from(document.querySelectorAll('button.btn-buy:not([disabled]), a.btn-buy:not([disabled])'));
     if (byClass.length > 0) return byClass;
 
-    // 2. btn-pink class 含購票文字
-    const byPink = Array.from(document.querySelectorAll('button.btn-pink:not([disabled]), a.btn-pink:not([disabled])')).filter(b => {
-      const t = (b.textContent || '').trim();
-      return t.includes('線上購票') || t.includes('購票');
-    });
+    const byPink = Array.from(document.querySelectorAll('button.btn-pink:not([disabled]), a.btn-pink:not([disabled])')).filter(b =>
+      (b.textContent || '').trim().includes('線上購票')
+    );
     if (byPink.length > 0) return byPink;
 
-    // 3. 任何有 btn class 的元素（div/span 也算）
     const byBtnClass = Array.from(document.querySelectorAll('[class*="btn"]:not([disabled])')).filter(el => {
       if (!el.offsetParent) return false;
       if (!(el.textContent || '').includes('線上購票')) return false;
@@ -142,7 +104,6 @@
     });
     if (byBtnClass.length > 0) return byBtnClass;
 
-    // 4. role="button" 或任何可見元素含「線上購票」文字
     const byRole = Array.from(document.querySelectorAll(
       'button:not([disabled]), a:not([disabled]), [role="button"]:not([disabled]), div[onclick], span[onclick]'
     )).filter(el => {
@@ -152,11 +113,9 @@
     });
     if (byRole.length > 0) return byRole;
 
-    // 5. 文字節點反查（div 按鈕 fallback）
     const byText = findClickableByText('線上購票', true);
     if (byText.length > 0) return byText;
 
-    // 6. Shadow DOM 遞迴搜尋（Angular ViewEncapsulation.ShadowDom）
     return queryShadowAll('button.btn-buy:not([disabled]), a.btn-buy:not([disabled]), button.btn-pink:not([disabled])').filter(el => {
       if (!el.offsetParent) return false;
       return !isInInfoSection(el);
@@ -182,12 +141,11 @@
     if (byRole.length > 0) return byRole;
     const byText = findClickableByText('線上購票', false);
     if (byText.length > 0) return byText;
-    // Shadow DOM fallback
     return queryShadowAll('button.btn-buy, a.btn-buy, button.btn-pink').filter(el => !isInInfoSection(el));
   }
 
   // ════════════════════════════════════════════════════
-  // SUB-FRAME 邏輯（iframe，專注點擊按鈕）
+  // SUB-FRAME 邏輯
   // ════════════════════════════════════════════════════
   if (!isTopFrame) {
     let subActive = false;
@@ -199,16 +157,14 @@
       subCount++;
       const enabled = findEnabledSessionBtns();
       if (enabled.length > 0) {
-        console.log(`[ibon搶票][sub] 找到 ${enabled.length} 個可購場次`);
         const btn = enabled[0];
         const label = (btn.textContent || '').trim().substring(0, 20);
         if (realClick(btn, label)) {
-          subStop(); // 點擊成功後停止，避免重複點擊
+          subStop();
           chrome.runtime.sendMessage({ type: 'session_clicked', label });
         }
         return;
       }
-
       if (subCount % 50 === 0) {
         const all = findAllSessionBtns();
         console.log(`[ibon搶票][sub] 場次: enabled=${enabled.length} all=${all.length}`);
@@ -221,8 +177,6 @@
       subCount = 0;
       console.log('[ibon搶票][sub] 啟動');
       subTimer = setInterval(subTick, 200);
-
-      // MutationObserver：disabled 解除時立刻點
       subObs = new MutationObserver(() => {
         if (!subActive) return;
         const enabled = findEnabledSessionBtns();
@@ -259,11 +213,11 @@
       }
     });
 
-    return; // sub frame 到此結束
+    return;
   }
 
   // ════════════════════════════════════════════════════
-  // TOP FRAME 邏輯（主框架，負責 HUD + state）
+  // TOP FRAME 邏輯
   // ════════════════════════════════════════════════════
   const cfg = { zones: [], session: '', ticketType: '', qty: 1, priceStrategy: 'high' };
   let timer = null;
@@ -291,7 +245,6 @@
     document.body.appendChild(overlay);
   }
 
-  // 限速：相同訊息不重複更新 storage
   function hud(msg, type = 'info') {
     const c = { info: '#eee', ok: '#69f0ae', warn: '#ffd740', err: '#ff5252' }[type] || '#eee';
     const t = new Date().toLocaleTimeString('zh-TW');
@@ -318,17 +271,102 @@
     );
   }
 
+  // ── 頁面 context 橋接 ────────────────────────────────
+  // Angular 的按鈕有時在 extension isolated world 看不到，
+  // 注入 <script> 讓頁面自己的 JS 找按鈕並點擊
+  function injectPageHelper() {
+    if (window.__ibonHelperInjected) return;
+    window.__ibonHelperInjected = true;
+    const s = document.createElement('script');
+    s.textContent = `(function(){
+      if (window.__ibonPageHelper) return;
+      window.__ibonPageHelper = true;
+      var active = false;
+      var lastClick = 0;
+
+      function tryFind() {
+        var sel = 'button.btn-pink:not([disabled]),button.btn-buy:not([disabled]),a.btn-pink:not([disabled]),a.btn-buy:not([disabled])';
+        return Array.from(document.querySelectorAll(sel)).filter(function(b) {
+          return b.offsetParent !== null && (b.textContent||'').includes('\\u7dda\\u4e0a\\u8cfc\\u7968');
+        });
+      }
+
+      function tryClick() {
+        if (Date.now() - lastClick < 2000) return false;
+        var found = tryFind();
+        if (!found.length) return false;
+        lastClick = Date.now();
+        var btn = found[0];
+        try { btn.scrollIntoView({block:'center',behavior:'instant'}); } catch(_) {}
+        btn.click();
+        btn.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true}));
+        document.dispatchEvent(new CustomEvent('__ibon_clicked__',{detail:{text:(btn.textContent||'').trim()}}));
+        return true;
+      }
+
+      function diag() {
+        var found = tryFind();
+        var r = {
+          btnPink: document.querySelectorAll('button.btn-pink,a.btn-pink').length,
+          btnBuy:  document.querySelectorAll('button.btn-buy,a.btn-buy').length,
+          btn:     document.querySelectorAll('button').length,
+          ngTns:   document.querySelectorAll('[class*="ng-tns"]').length,
+          enabled: found.length
+        };
+        document.dispatchEvent(new CustomEvent('__ibon_diag__',{detail:r}));
+      }
+
+      var obs = new MutationObserver(function() {
+        if (active) tryClick();
+      });
+      obs.observe(document.body, {childList:true,subtree:true,attributes:true,attributeFilter:['disabled','class']});
+
+      document.addEventListener('__ibon_cmd__', function(e) {
+        var cmd = e.detail && e.detail.cmd;
+        if (cmd === 'start') { active = true;  tryClick(); }
+        if (cmd === 'stop')  { active = false; }
+        if (cmd === 'click') { tryClick(); }
+        if (cmd === 'diag')  { diag(); }
+      });
+
+      // 自動診斷：等 Angular 渲染後回報
+      setTimeout(diag, 2500);
+    })();`;
+    (document.head || document.documentElement).appendChild(s);
+    s.remove();
+  }
+
+  function pageCmd(cmd) {
+    document.dispatchEvent(new CustomEvent('__ibon_cmd__', { detail: { cmd } }));
+  }
+
+  // 監聽頁面 context 回傳的事件
+  document.addEventListener('__ibon_diag__', function(e) {
+    const d = e.detail;
+    console.log('[ibon搶票][PAGE-CTX]', JSON.stringify(d));
+    if (!isActive) {
+      // 自動診斷，只印 log
+      hud(`PAGE: btn-pink=${d.btnPink}(可點:${d.enabled}) btn=${d.btn} ng-tns=${d.ngTns}`);
+    }
+  });
+
+  document.addEventListener('__ibon_clicked__', function(e) {
+    const text = (e.detail && e.detail.text) || '';
+    console.log('[ibon搶票][PAGE-CTX] 點擊成功:', text);
+    hud(`✅ 已點擊場次：${text}`, 'ok');
+    // 點擊成功後停止 interval，等頁面跳轉
+    clearInterval(timer); timer = null;
+    stopMutObs();
+  });
+
   // ── 找「立即購票」展開按鈕 ────────────────────────────
   function tryMainBtn() {
     const btn = document.querySelector('#BuyTicketsNow_btn button:not([disabled])');
-    if (btn) {
-      realClick(btn, '立即購票');
-      return true;
-    }
+    if (btn) { realClick(btn, '立即購票'); return true; }
     return false;
   }
 
-  // ── 場次按鈕（top frame 自己也試） ───────────────────
+  // ── 場次按鈕（隔離世界 fallback） ────────────────────
   function trySessionBtn() {
     const btns = findEnabledSessionBtns();
     if (btns.length === 0) return false;
@@ -422,7 +460,11 @@
     if (isDetailsPage) {
       const enabledBtns = findEnabledSessionBtns();
       const allBtns     = findAllSessionBtns();
-      const mainBtn     = document.querySelector('#BuyTicketsNow_btn button:not([disabled])');
+
+      if (checkCount % 5 === 0) {
+        // 同時透過 page context 嘗試點擊（解決 isolated world 看不見 Angular 按鈕的問題）
+        pageCmd('click');
+      }
 
       if (checkCount % 20 === 0) {
         if (enabledBtns.length > 0) {
@@ -432,34 +474,9 @@
           const openInfo = small ? small.textContent.trim() : '';
           hud(`⏳ 找到 ${allBtns.length} 個場次（未開賣）${openInfo ? ' · ' + openInfo : ''}`);
         } else {
-          const iframeSrcs = Array.from(document.querySelectorAll('iframe'))
-            .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
-            .join(', ');
-          // 診斷：比對 extension isolated world vs 頁面 page context
-          const extBtn  = document.querySelectorAll('button').length;
+          const extBtn = document.querySelectorAll('button').length;
           const extNgTns = document.querySelectorAll('[class*="ng-tns"]').length;
-          // 注入 <script> 到頁面 context，讓頁面本身的 JS 查詢
-          if (!window.__ibonPageDiagDone) {
-            window.__ibonPageDiagDone = true;
-            document.addEventListener('__ibon_page_diag__', function h(e) {
-              document.removeEventListener('__ibon_page_diag__', h);
-              console.log('[ibon搶票][PAGE-CTX]', JSON.stringify(e.detail));
-            });
-            try {
-              const s = document.createElement('script');
-              s.textContent = `(function(){
-                var r={btnPink:document.querySelectorAll('button.btn-pink,a.btn-pink').length,
-                       btnBuy:document.querySelectorAll('button.btn-buy,a.btn-buy').length,
-                       btn:document.querySelectorAll('button').length,
-                       ngTns:document.querySelectorAll('[class*="ng-tns"]').length};
-                document.dispatchEvent(new CustomEvent('__ibon_page_diag__',{detail:r}));
-              })();`;
-              (document.head||document.documentElement).appendChild(s);
-              s.remove();
-            } catch(e) { console.log('[ibon搶票] script inject err:', e.message); }
-          }
-          console.log('[ibon搶票][EXT-CTX] btn:', extBtn, 'ng-tns:', extNgTns);
-          hud(`⏳ 等待... EXT:btn=${extBtn} ng-tns=${extNgTns} (check console for PAGE-CTX)`);
+          hud(`⏳ 等待... EXT:btn=${extBtn} ng-tns=${extNgTns}`);
         }
       }
 
@@ -507,6 +524,8 @@
         `${cfg.qty}張`,
       ].filter(Boolean).join(' | ');
       hud(`🚀 啟動 — ${info}`, 'ok');
+      injectPageHelper();
+      pageCmd('start');
       startMutObs();
       timer = setInterval(tick, 100);
     });
@@ -517,6 +536,7 @@
     ticketPageHandled = false;
     clearInterval(timer); timer = null;
     stopMutObs();
+    pageCmd('stop');
     overlay.style.display = 'none';
     chrome.storage.local.set({ sniper_active: false, sniper_log: '已停止' });
   }
@@ -531,4 +551,10 @@
   chrome.storage.local.get(['sniper_active'], (d) => {
     if (d.sniper_active) start();
   });
+
+  // 頁面 context 自動診斷（無需啟動監控即可看到 Angular 的 DOM 狀況）
+  if (/\/Details\//i.test(location.href)) {
+    injectPageHelper();
+    // 等 Angular 渲染後，helper 會自動觸發 diag（2.5s）
+  }
 })();
