@@ -435,12 +435,17 @@
           const iframeSrcs = Array.from(document.querySelectorAll('iframe'))
             .map(f => (f.src || '(blank)').replace(/https?:\/\//, '').substring(0, 35))
             .join(', ');
-          // 診斷：innerHTML 文字檢查 + 所有 button 的 class
-          const ihHasPink = (document.body.innerHTML||'').includes('btn-pink') ? 'Y' : 'N';
-          const allBtns = Array.from(document.querySelectorAll('button'));
-          const btnClasses = allBtns.map(b => (b.className||'(no-class)').split(' ').filter(c=>c&&!c.startsWith('ng-')).join('.').substring(0,25)).join(' | ');
-          console.log('[ibon搶票][DIAG] All buttons:', allBtns.map(b => b.outerHTML.substring(0,120)).join('\n'));
-          hud(`⏳ 等待... innerHTML含btn-pink:${ihHasPink} btn(${allBtns.length}):[${btnClasses}] iframe:[${iframeSrcs||'無'}]`);
+          // 診斷：找 btn-pink 在 innerHTML 的上下文 + shadow iframe
+          const ih = document.body.innerHTML || '';
+          const pinkIdx = ih.indexOf('btn-pink');
+          const pinkCtx = pinkIdx >= 0 ? ih.substring(Math.max(0,pinkIdx-30), pinkIdx+50) : 'not found';
+          const shadowIframes = queryShadowAll('iframe').length;
+          const allIframeInfo = Array.from(document.querySelectorAll('iframe'))
+            .map((f,i) => `[${i}]${(f.src||'(blank)').replace(/https?:\/\//,'').substring(0,40)}`)
+            .join(' ');
+          console.log('[ibon搶票][DIAG] btn-pink context:', pinkCtx);
+          console.log('[ibon搶票][DIAG] iframes in DOM:', Array.from(document.querySelectorAll('iframe')).map(f=>f.outerHTML.substring(0,200)).join('\n'));
+          hud(`⏳ 等待... btn-pink位置:[${pinkCtx.substring(0,40)}] shadowIframe:${shadowIframes} iframe:[${allIframeInfo||iframeSrcs||'無'}]`);
         }
       }
 
