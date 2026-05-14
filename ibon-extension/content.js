@@ -21,43 +21,56 @@
   }
 
   // ════════════════════════════════════════════════════
-  // 找「線上購票」可點擊元素
+  // 找「線上購票」可點擊元素（多種 API 確保找到）
   // ════════════════════════════════════════════════════
   function findBuyBtns(enabledOnly) {
+    const seen = new Set();
     const results = [];
 
-    // 1. 精確 class
-    const byClass = document.querySelectorAll(
-      enabledOnly
-        ? 'button.btn-buy:not([disabled]),a.btn-buy:not([disabled]),button.btn-pink:not([disabled]),a.btn-pink:not([disabled])'
-        : 'button.btn-buy,a.btn-buy,button.btn-pink,a.btn-pink'
-    );
-    for (const el of byClass) {
+    function add(el) {
+      if (!el || seen.has(el)) return;
+      if (enabledOnly && el.disabled) return;
       const t = (el.textContent || '').trim();
-      if (!t.includes('線上購票') && !t.includes('購票')) continue;
-      if (!el.offsetParent) continue;
-      if (!results.includes(el)) results.push(el);
+      if (!t.includes('線上購票')) return;
+      seen.add(el);
+      results.push(el);
     }
+
+    // 1. querySelectorAll — 精確 class（不加 offsetParent 限制，讓後面步驟判斷）
+    const sel = enabledOnly
+      ? 'button.btn-buy:not([disabled]),a.btn-buy:not([disabled]),button.btn-pink:not([disabled]),a.btn-pink:not([disabled])'
+      : 'button.btn-buy,a.btn-buy,button.btn-pink,a.btn-pink';
+    document.querySelectorAll(sel).forEach(add);
+
+    // 2. getElementsByClassName（不同底層 API，有時 QSA 抓不到時仍可用）
+    for (const cls of ['btn-buy', 'btn-pink']) {
+      Array.from(document.getElementsByClassName(cls)).forEach(add);
+    }
+
+    // 3. 全 button/a 掃描，手動比對 className
+    document.querySelectorAll('button,a').forEach(el => {
+      const cls = el.className || '';
+      if (cls.includes('btn-buy') || cls.includes('btn-pink')) add(el);
+    });
+
     if (results.length) return results;
 
-    // 2. 任何含「線上購票」文字的可見按鈕／連結
-    const byText = document.querySelectorAll(
+    // 4. 任何含「線上購票」文字的可見按鈕／連結（排除說明區）
+    const allClickable = document.querySelectorAll(
       enabledOnly
         ? 'button:not([disabled]),a:not([disabled]),[role="button"]:not([disabled])'
         : 'button,a,[role="button"]'
     );
-    for (const el of byText) {
+    for (const el of allClickable) {
       if (!el.offsetParent) continue;
-      const t = (el.textContent || '').trim();
-      if (!t.includes('線上購票')) continue;
-      // 排除「售票平台」說明裡的那個 <a>
+      if (!(el.textContent || '').includes('線上購票')) continue;
       const parent = el.parentElement;
       if (parent && (parent.textContent || '').includes('ibon機台')) continue;
-      if (!results.includes(el)) results.push(el);
+      add(el);
     }
     if (results.length) return results;
 
-    // 3. TreeWalker — 找文字節點反查祖先
+    // 5. TreeWalker 文字節點 → 反查可點擊祖先
     try {
       const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
       let n;
@@ -65,7 +78,6 @@
         if (!n.textContent.includes('線上購票')) continue;
         let el = n.parentElement;
         if (!el) continue;
-        // 排除說明文字
         if ((el.textContent || '').includes('ibon機台')) continue;
         let clickable = el;
         let cur = el;
@@ -77,11 +89,29 @@
         }
         if (enabledOnly && clickable.disabled) continue;
         if (!clickable.offsetParent) continue;
-        if (!results.includes(clickable)) results.push(clickable);
+        add(clickable);
       }
     } catch (_) {}
 
     return results;
+  }
+
+  // 每 15 秒印診斷，讓我們知道哪個 API 能看到按鈕
+  let diagCount = 0;
+  function diagLog() {
+    diagCount++;
+    if (diagCount % 100 !== 0) return;
+    const d = {
+      btn:      document.querySelectorAll('button').length,
+      btnPink:  document.querySelectorAll('button.btn-pink,a.btn-pink').length,
+      btnBuy:   document.querySelectorAll('button.btn-buy,a.btn-buy').length,
+      gecPink:  document.getElementsByClassName('btn-pink').length,
+      gecBuy:   document.getElementsByClassName('btn-buy').length,
+      ngTns:    document.querySelectorAll('[class*="ng-tns"]').length,
+      ngStar:   document.querySelectorAll('.ng-star-inserted').length,
+      inHTML:   document.body.innerHTML.includes('btn-pink'),
+    };
+    console.log('[ibon搶票][DIAG]', JSON.stringify(d));
   }
 
   // ════════════════════════════════════════════════════
@@ -273,6 +303,7 @@
 
   // ── 主 tick ──────────────────────────────────────────
   function tick() {
+    diagLog();
     if (isDetails) {
       // 有按鈕就直接點，不管是什麼狀態
       if (trySessionBtn()) return;
