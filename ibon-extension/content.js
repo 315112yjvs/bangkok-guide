@@ -271,99 +271,29 @@
     );
   }
 
-  // ── 頁面 context 橋接 ────────────────────────────────
-  // Angular 的按鈕有時在 extension isolated world 看不到，
-  // 注入 <script> 讓頁面自己的 JS 找按鈕並點擊
-  function injectPageHelper() {
-    if (window.__ibonHelperInjected) return;
-    window.__ibonHelperInjected = true;
-    const s = document.createElement('script');
-    s.textContent = `(function(){
-      if (window.__ibonPageHelper) return;
-      window.__ibonPageHelper = true;
-      var active = false;
-      var lastClick = 0;
-
-      function tryFind() {
-        var sel = 'button.btn-pink:not([disabled]),button.btn-buy:not([disabled]),a.btn-pink:not([disabled]),a.btn-buy:not([disabled])';
-        return Array.from(document.querySelectorAll(sel)).filter(function(b) {
-          return b.offsetParent !== null && (b.textContent||'').includes('\\u7dda\\u4e0a\\u8cfc\\u7968');
-        });
-      }
-
-      function tryClick() {
-        if (Date.now() - lastClick < 2000) return false;
-        var found = tryFind();
-        if (!found.length) return false;
-        lastClick = Date.now();
-        var btn = found[0];
-        try { btn.scrollIntoView({block:'center',behavior:'instant'}); } catch(_) {}
-        btn.click();
-        btn.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true}));
-        document.dispatchEvent(new CustomEvent('__ibon_clicked__',{detail:{text:(btn.textContent||'').trim()}}));
-        return true;
-      }
-
-      function diag() {
-        var found = tryFind();
-        var r = {
-          btnPink: document.querySelectorAll('button.btn-pink,a.btn-pink').length,
-          btnBuy:  document.querySelectorAll('button.btn-buy,a.btn-buy').length,
-          btn:     document.querySelectorAll('button').length,
-          ngTns:   document.querySelectorAll('[class*="ng-tns"]').length,
-          enabled: found.length
-        };
-        document.dispatchEvent(new CustomEvent('__ibon_diag__',{detail:r}));
-      }
-
-      var obs = new MutationObserver(function() {
-        if (active) tryClick();
-      });
-      obs.observe(document.body, {childList:true,subtree:true,attributes:true,attributeFilter:['disabled','class']});
-
-      document.addEventListener('__ibon_cmd__', function(e) {
-        var cmd = e.detail && e.detail.cmd;
-        if (cmd === 'start') { active = true;  tryClick(); }
-        if (cmd === 'stop')  { active = false; }
-        if (cmd === 'click') { tryClick(); }
-        if (cmd === 'diag')  { diag(); }
-      });
-
-      // 自動診斷：等 Angular 渲染後回報
-      setTimeout(diag, 2500);
-    })();`;
-    (document.head || document.documentElement).appendChild(s);
-    s.remove();
-  }
-
-  function pageCmd(cmd) {
-    document.dispatchEvent(new CustomEvent('__ibon_cmd__', { detail: { cmd } }));
-  }
-
-  // 監聽頁面 context 回傳的事件
-  document.addEventListener('__ibon_diag__', function(e) {
-    const d = e.detail;
-    console.log('[ibon搶票][PAGE-CTX]', JSON.stringify(d));
-    if (!isActive) {
-      // 自動診斷，只印 log
-      hud(`PAGE: btn-pink=${d.btnPink}(可點:${d.enabled}) btn=${d.btn} ng-tns=${d.ngTns}`);
-    }
-  });
-
-  document.addEventListener('__ibon_clicked__', function(e) {
-    const text = (e.detail && e.detail.text) || '';
-    console.log('[ibon搶票][PAGE-CTX] 點擊成功:', text);
-    hud(`✅ 已點擊場次：${text}`, 'ok');
-    // 點擊成功後停止 interval，等頁面跳轉
-    clearInterval(timer); timer = null;
-    stopMutObs();
-  });
-
   // ── 找「立即購票」展開按鈕 ────────────────────────────
   function tryMainBtn() {
     const btn = document.querySelector('#BuyTicketsNow_btn button:not([disabled])');
-    if (btn) { realClick(btn, '立即購票'); return true; }
+    if (btn && btn.offsetParent) { realClick(btn, '立即購票'); return true; }
+    // Broader fallback: any visible button/link with purchase text
+    for (const el of document.querySelectorAll('button:not([disabled]), a:not([disabled])')) {
+      if (!el.offsetParent) continue;
+      const t = (el.textContent || '').trim();
+      if (t === '立即購票' || t === '購票') { realClick(el, t); return true; }
+    }
     return false;
+  }
+
+  // 捲頁觸發 Angular lazy rendering
+  let scrollPhase = 0;
+  function scrollToReveal() {
+    scrollPhase = (scrollPhase + 1) % 3;
+    if (scrollPhase === 0) {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'instant' });
+    } else if (scrollPhase === 1) {
+      window.scrollTo({ top: document.body.scrollHeight / 2, behavior: 'instant' });
+    }
+    // scrollPhase === 2: stay, let Angular render
   }
 
   // ── 場次按鈕（隔離世界 fallback） ────────────────────
@@ -461,10 +391,8 @@
       const enabledBtns = findEnabledSessionBtns();
       const allBtns     = findAllSessionBtns();
 
-      if (checkCount % 5 === 0) {
-        // 同時透過 page context 嘗試點擊（解決 isolated world 看不見 Angular 按鈕的問題）
-        pageCmd('click');
-      }
+      // 捲頁讓 Angular 渲染場次元件（每 10 ticks = 1s）
+      if (allBtns.length === 0 && checkCount % 10 === 0) scrollToReveal();
 
       if (checkCount % 20 === 0) {
         if (enabledBtns.length > 0) {
@@ -474,9 +402,14 @@
           const openInfo = small ? small.textContent.trim() : '';
           hud(`⏳ 找到 ${allBtns.length} 個場次（未開賣）${openInfo ? ' · ' + openInfo : ''}`);
         } else {
-          const extBtn = document.querySelectorAll('button').length;
+          const extBtn   = document.querySelectorAll('button').length;
           const extNgTns = document.querySelectorAll('[class*="ng-tns"]').length;
-          hud(`⏳ 等待... EXT:btn=${extBtn} ng-tns=${extNgTns}`);
+          // 印出所有 button 的文字，幫助診斷
+          if (checkCount % 100 === 0) {
+            const btexts = Array.from(document.querySelectorAll('button')).map(b => (b.textContent||'').trim().substring(0,15)).join(' | ');
+            console.log(`[ibon搶票][TOP] buttons: ${btexts}`);
+          }
+          hud(`⏳ 等待... btn=${extBtn} ng-tns=${extNgTns}`);
         }
       }
 
@@ -524,8 +457,6 @@
         `${cfg.qty}張`,
       ].filter(Boolean).join(' | ');
       hud(`🚀 啟動 — ${info}`, 'ok');
-      injectPageHelper();
-      pageCmd('start');
       startMutObs();
       timer = setInterval(tick, 100);
     });
@@ -536,7 +467,6 @@
     ticketPageHandled = false;
     clearInterval(timer); timer = null;
     stopMutObs();
-    pageCmd('stop');
     overlay.style.display = 'none';
     chrome.storage.local.set({ sniper_active: false, sniper_log: '已停止' });
   }
@@ -552,9 +482,4 @@
     if (d.sniper_active) start();
   });
 
-  // 頁面 context 自動診斷（無需啟動監控即可看到 Angular 的 DOM 狀況）
-  if (/\/Details\//i.test(location.href)) {
-    injectPageHelper();
-    // 等 Angular 渲染後，helper 會自動觸發 diag（2.5s）
-  }
 })();
