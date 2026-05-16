@@ -1,5 +1,6 @@
-// content.js — AllTicket 搶票核心 v1.3
-// 流程: BUY → CHECK → ZONE → SEAT（選滿） → BOOK（勾選+Booking）→ DONE
+// content.js — AllTicket 搶票核心 v1.4
+// 流程: BUY → CHECK → ZONE → SEAT（連座優先）→ BOOK（勾選+Booking）→ DONE
+// 優化: 連座搜尋 / 防重複點擊 / 隱藏 Tab 節能 / 開賣倒計時
 
 let tickerTimeout = null;
 let isRunning     = false;
@@ -10,7 +11,8 @@ let overlayEl     = null;
 let seatsTried    = new Set();
 let seatsSelected = 0;
 let checkClicked  = false;
-let currentZone   = '';   // 當前選取的 Zone，用於決定座位方向偏好
+let currentZone   = '';
+let seatQueue     = []; // 連座隊列：找到一組連座後依序點擊
 
 // ── Overlay ──────────────────────────────────────────────
 function createOverlay() {
@@ -53,6 +55,7 @@ function start(cfg) {
   seatsSelected = 0;
   checkClicked  = false;
   seatsTried    = new Set();
+  seatQueue     = [];
   phase         = 'BUY';
   createOverlay();
   setO('啟動，尋找 BUY NOW...', '#88aaff');
@@ -65,6 +68,7 @@ function stop() {
   clearTimeout(tickerTimeout);
   tickerTimeout = null;
   phase = 'IDLE';
+  seatQueue = [];
   rmO();
 }
 
@@ -105,10 +109,12 @@ chrome.storage.onChanged.addListener((changes, area) => {
 // ── 主迴圈 ────────────────────────────────────────────────
 function tick() {
   if (!isRunning) return;
+  // 分頁隱藏時暫停（BUY 階段例外，仍需偵測開賣）
+  if (document.hidden && phase !== 'BUY') return;
   tickCount++;
   setO2(`偵測 ${tickCount} 次 | 步驟: ${phase}`);
 
-  if      (phase === 'BUY')  handleBuy();
+  if      (phase === 'BUY')   handleBuy();
   else if (phase === 'CHECK') handleCheck();
   else if (phase === 'ZONE')  handleZone();
   else if (phase === 'SEAT')  handleSeat();
@@ -128,7 +134,13 @@ function handleBuy() {
     return;
   }
   if (buyBtn.style.display === 'none' || buyBtn.disabled) {
-    setO('BUY NOW 尚未開放...', '#ffcc44');
+    // 若頁面有倒計時元素，顯示剩餘時間
+    const countdown = document.querySelector('.countdown, [class*="countdown"], [id*="countdown"]');
+    if (countdown?.textContent?.trim()) {
+      setO(`等待開賣... ${countdown.textContent.trim().slice(0, 30)}`, '#ffcc44');
+    } else {
+      setO('BUY NOW 尚未開放...', '#ffcc44');
+    }
     if (settings?.autoRefresh && tickCount % 15 === 0) location.reload();
     return;
   }
@@ -149,17 +161,13 @@ function handleBuy() {
 // STEP 2 — 點擊 CHECK SEAT AVAILABLE
 // ════════════════════════════════════════════════════════
 function handleCheck() {
-  // Zone 表格已出現 → 進 ZONE
   if (document.querySelectorAll('.seat-ava').length > 0) {
     phase = 'ZONE';
     return;
   }
-  // 確認彈窗
   const yesBtn = document.querySelector('button.btn-primary.popup-styled');
-  if (yesBtn && isVisible(yesBtn)) {
-    humanClick(yesBtn);
-    return;
-  }
+  if (yesBtn && isVisible(yesBtn)) { humanClick(yesBtn); return; }
+
   const checkBtn = document.querySelector('button.btn-outline-info') ||
     [...document.querySelectorAll('button')].find(b => b.textContent.includes('CHECK SEAT AVAILABLE'));
   if (!checkBtn) { setO('等待 Zone 面板...', '#88aaff'); return; }
@@ -183,7 +191,6 @@ function handleZone() {
   const zoneRows = document.querySelectorAll('.seat-ava');
   if (!zoneRows.length) { phase = 'CHECK'; checkClicked = false; return; }
 
-  // 可購買：無 .not-ava 且有 cursor:pointer
   const availZones = [...zoneRows]
     .map(row => row.querySelector('span.badge.badge-light'))
     .filter(span => span && !span.classList.contains('not-ava') && span.style.cursor === 'pointer');
@@ -203,7 +210,7 @@ function handleZone() {
       return;
     }
   } else {
-    chosen = availZones[0]; // 票價最高的第一個
+    chosen = availZones[0];
     if (!chosen) { setO('所有 Zone 已售罄！', '#ff4444'); return; }
   }
 
@@ -215,44 +222,42 @@ function handleZone() {
   chrome.runtime.sendMessage({ type: 'STEP', step: 'ZONE', zone: zoneName }).catch(() => {});
   phase = 'SEAT';
   seatsTried.clear();
+  seatQueue = [];
   seatsSelected = 0;
   chosen.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
 }
 
 // ════════════════════════════════════════════════════════
-// STEP 4 — 選座位（必須確認選中後才離開此步驟）
+// STEP 4 — 選座位（連座優先，等待確認後才繼續）
 // ════════════════════════════════════════════════════════
-let seatFailCount  = 0;
-let seatPhase      = 'PICKING'; // 'PICKING' | 'WAITING'
+let seatFailCount = 0;
+let seatPhase     = 'PICKING'; // 'PICKING' | 'WAITING'
 
 function handleSeat() {
-  const seatCount = settings?.seatCount || 1;
-
-  // 偵測已選座位數（svg.seat.selected = 藍色打勾）
+  const seatCount     = settings?.seatCount || 1;
   const selectedSeats = document.querySelectorAll('svg.seat.selected');
 
-  // ── 座位已選滿，進入 BOOK 步驟 ──
+  // ── 已選滿，進 BOOK ──
   if (selectedSeats.length >= seatCount) {
     setO(`✓ 已選 ${selectedSeats.length} 張座位，前往 Booking...`, '#4cff91');
     log(`座位選取完成 (${selectedSeats.length}/${seatCount})`, 'success');
     phase = 'BOOK';
     seatFailCount = 0;
     seatPhase = 'PICKING';
+    seatQueue = [];
     return;
   }
 
-  // ── 處理彈窗 ──
+  // ── 等待上次點擊確認，不重複觸發 ──
+  if (seatPhase === 'WAITING') return;
+
+  // ── 彈窗處理 ──
   const okBtn = [...document.querySelectorAll('button')]
     .find(b => b.textContent.trim().toUpperCase() === 'OK' && isVisible(b));
-  if (okBtn) {
-    setO('點擊彈窗 OK...', '#88aaff');
-    humanClick(okBtn);
-    return;
-  }
+  if (okBtn) { setO('點擊彈窗 OK...', '#88aaff'); humanClick(okBtn); return; }
   const yesBtn = document.querySelector('button.btn-primary.popup-styled');
   if (yesBtn && isVisible(yesBtn)) { humanClick(yesBtn); return; }
 
-  // ── 尋找可用座位 ──
   if (!document.querySelector('svg.seat')) {
     setO('等待座位圖載入...', '#88aaff');
     return;
@@ -263,10 +268,10 @@ function handleSeat() {
 
   if (!allAvail.length) {
     if (selectedSeats.length > 0) {
-      // 部分選到，繼續往下
       setO(`無更多空位，已選 ${selectedSeats.length} 張，繼續...`, '#4cff91');
       phase = 'BOOK';
       seatPhase = 'PICKING';
+      seatQueue = [];
     } else {
       seatFailCount++;
       setO(`搜尋座位... (${seatFailCount})`, '#88aaff');
@@ -277,21 +282,53 @@ function handleSeat() {
         checkClicked = false;
         seatFailCount = 0;
         seatPhase = 'PICKING';
+        seatQueue = [];
       }
     }
     return;
   }
 
-  // ── 依視角排序後點擊最佳座位 ──
   seatFailCount = 0;
-  const sorted = sortSeats(allAvail, currentZone);
-  const seat = sorted[0];
-  seatsTried.add(seat);
+
+  // ── 選座策略：連座優先 ──
+  let seat = null;
+  const remainingNeeded = seatCount - selectedSeats.length;
+
+  // 取連座隊列中下一個（確認仍可用）
+  while (seatQueue.length > 0) {
+    const next = seatQueue.shift();
+    if (next && !seatsTried.has(next) && next.classList.contains('available')) {
+      seat = next;
+      seatsTried.add(seat);
+      break;
+    }
+    // 隊列中的座位已被搶走，清空重找
+    seatQueue = [];
+  }
+
+  // 嘗試找新的連座組
+  if (!seat && remainingNeeded > 1 && allAvail.length >= remainingNeeded) {
+    const group = findConsecutiveGroup(allAvail, remainingNeeded, currentZone);
+    if (group) {
+      seat = group[0];
+      seatsTried.add(seat);
+      seatQueue = group.slice(1);
+      log(`找到 ${group.length} 連座，依序點擊`, 'info');
+    }
+  }
+
+  // 回落：最佳單座
+  if (!seat) {
+    const sorted = sortSeats(allAvail, currentZone);
+    seat = sorted[0];
+    seatsTried.add(seat);
+  }
+
   const curSelected = selectedSeats.length;
   setO(`點擊座位 (${curSelected + 1}/${seatCount})...`, '#88aaff');
-  seat.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+  humanClick(seat);
 
-  // 等 400ms 後確認是否選中
+  // 等待 400ms 確認是否命中，期間暫停後續點擊
   seatPhase = 'WAITING';
   setTimeout(() => {
     const nowSelected = document.querySelectorAll('svg.seat.selected').length;
@@ -301,48 +338,122 @@ function handleSeat() {
       setO(`✓ 座位 ${nowSelected}/${seatCount} 已選`, '#4cff91');
       chrome.storage.local.set({ seatsSelected: nowSelected });
       chrome.runtime.sendMessage({ type: 'SEATS', count: nowSelected }).catch(() => {});
+    } else if (seatQueue.length > 0) {
+      // 連座第一個點失敗，整組放棄重找
+      log('連座點擊失敗，重新搜尋', 'warn');
+      seatQueue = [];
     }
     seatPhase = 'PICKING';
   }, 400);
 }
 
 // ════════════════════════════════════════════════════════
+// 連座搜尋：在同一排找 N 個相鄰可用座位
+// 回傳 el[] 或 null
+// ════════════════════════════════════════════════════════
+function findConsecutiveGroup(seats, count, zone) {
+  // 依 Y 座標分行（±12px 容差）
+  const rows = [];
+  for (const seat of seats) {
+    const r  = seat.getBoundingClientRect();
+    const cy = r.top  + r.height / 2;
+    const cx = r.left + r.width  / 2;
+    if (cy <= 0 && cx <= 0) continue;
+    let placed = false;
+    for (const row of rows) {
+      if (Math.abs(row.y - cy) <= 12) {
+        row.items.push({ el: seat, x: cx });
+        placed = true;
+        break;
+      }
+    }
+    if (!placed) rows.push({ y: cy, items: [{ el: seat, x: cx }] });
+  }
+
+  rows.sort((a, b) => a.y - b.y); // 前排優先
+
+  const z = (zone || '').toUpperCase().trim();
+  const RIGHT_ZONES  = new Set(['A2','B2','G','H','I']);
+  const CENTER_ZONES = new Set(['D','E','F']);
+  const allX = seats
+    .map(s => { const r = s.getBoundingClientRect(); return r.left + r.width / 2; })
+    .filter(x => x > 0);
+  const midX = allX.length ? (Math.min(...allX) + Math.max(...allX)) / 2 : 0;
+
+  for (const row of rows) {
+    if (row.items.length < count) continue;
+    row.items.sort((a, b) => a.x - b.x);
+
+    // 計算相鄰最小間距（≈1 座位寬），用於判斷是否連座
+    const gaps = [];
+    for (let i = 1; i < row.items.length; i++)
+      gaps.push(row.items[i].x - row.items[i - 1].x);
+    if (!gaps.length) continue;
+    const minGap    = Math.min(...gaps);
+    const maxConsec = minGap * 1.6; // 超過此距離表示中間有已售座位
+
+    // 滑動視窗收集連座組
+    const groups = [];
+    for (let i = 0; i <= row.items.length - count; i++) {
+      let ok = true;
+      for (let j = i; j < i + count - 1; j++) {
+        if (row.items[j + 1].x - row.items[j].x > maxConsec) { ok = false; break; }
+      }
+      if (ok) groups.push(row.items.slice(i, i + count));
+    }
+    if (!groups.length) continue;
+
+    // 依視角選最佳連座組
+    let best;
+    if (CENTER_ZONES.has(z)) {
+      best = groups.sort((a, b) => {
+        const ac = (a[0].x + a[a.length - 1].x) / 2;
+        const bc = (b[0].x + b[b.length - 1].x) / 2;
+        return Math.abs(ac - midX) - Math.abs(bc - midX);
+      })[0];
+    } else if (RIGHT_ZONES.has(z)) {
+      best = groups.sort((a, b) => a[0].x - b[0].x)[0]; // 最靠左（靠舞台中心）
+    } else {
+      best = groups.sort((a, b) => b[b.length - 1].x - a[a.length - 1].x)[0]; // 最靠右
+    }
+    return best.map(s => s.el);
+  }
+  return null;
+}
+
+// ════════════════════════════════════════════════════════
 // STEP 5 — 勾選同意框 + 點擊 Booking
-// 前提：必須已有 svg.seat.selected（座位確認選中）
+// 前提：必須有 svg.seat.selected
 // ════════════════════════════════════════════════════════
 let bookAttempts = 0;
 
 function handleBook() {
-  // 安全檢查：確認有選到座位才繼續
   const selectedSeats = document.querySelectorAll('svg.seat.selected');
   if (selectedSeats.length === 0) {
     setO('未偵測到選中座位，返回選座...', '#ff8844');
     log('未選到座位，退回 SEAT 步驟', 'warn');
     phase = 'SEAT';
     seatsTried.clear();
+    seatQueue = [];
     bookAttempts = 0;
     return;
   }
 
-  // 處理任何 OK 彈窗（Please select seat / 驗證彈窗）
   const okBtn = [...document.querySelectorAll('button')]
     .find(b => b.textContent.trim().toUpperCase() === 'OK' && isVisible(b));
   if (okBtn) {
     const bodyText = document.body.innerText || '';
     if (bodyText.includes('Please select seat') || bodyText.includes('select seat')) {
-      // 這不應該發生（我們已有選中座位），可能是殘留彈窗
       setO('點擊 OK 關閉...', '#ffcc44');
       humanClick(okBtn);
       return;
     }
-    // 驗證彈窗（กรุณาคลิก ยินยอม）→ 點 OK
     setO('點擊驗證 OK...', '#88aaff');
     log('點擊驗證彈窗 OK', 'info');
     humanClick(okBtn);
     return;
   }
 
-  // 勾選同意框（#GMM10）
   const consentCb = document.getElementById('GMM10') ||
     document.querySelector('input.form-check-input[type="checkbox"]');
   if (consentCb && !consentCb.checked) {
@@ -353,21 +464,18 @@ function handleBook() {
     return;
   }
 
-  // 點擊 Booking
   const bookBtn = document.querySelector('button.btn-book');
   if (!bookBtn || !isVisible(bookBtn)) {
     setO('等待 Booking 按鈕...', '#88aaff');
     bookAttempts++;
     if (bookAttempts > 20) {
-      // 超過等待次數，可能頁面狀態異常，重試勾選
       bookAttempts = 0;
-      if (consentCb) { consentCb.click(); }
+      if (consentCb) consentCb.click();
     }
     return;
   }
   if (bookBtn.disabled) {
     setO('Booking 按鈕未啟用，等待勾選生效...', '#ffcc44');
-    // 重新勾選一次
     if (consentCb && !consentCb.checked) consentCb.click();
     return;
   }
@@ -384,50 +492,28 @@ function handleBook() {
   setTimeout(() => rmO(), 8000);
 }
 
-// ── 座位排序（前排優先 + 最佳視角方向）────────────────────
-//
-//  左側 Zone（A1, B1, A, B, C）→ 靠右邊座位（靠舞台中心）
-//  右側 Zone（A2, B2, G, H, I）→ 靠左邊座位（靠舞台中心）
-//  中央 Zone（D, E, F）         → 靠中間座位
-//
+// ── 座位排序（前排 + 最佳視角）──────────────────────────
 function sortSeats(seats, zone) {
   const z = (zone || '').toUpperCase().trim();
-
-  // 右側 Zone：偏好低 X（靠左/中心）
-  const RIGHT_ZONES = new Set(['A2','B2','G','H','I']);
-  // 中央 Zone：偏好中間 X
+  const RIGHT_ZONES  = new Set(['A2','B2','G','H','I']);
   const CENTER_ZONES = new Set(['D','E','F']);
-  // 其餘（A1, B1, A, B, C）：偏好高 X（靠右/中心）
 
-  // 取得每個座位的螢幕座標
   const withPos = seats.map(s => {
     const r = s.getBoundingClientRect();
     return { el: s, x: r.left + r.width / 2, y: r.top + r.height / 2 };
-  }).filter(s => s.x > 0 || s.y > 0); // 過濾還沒渲染的元素
+  }).filter(s => s.x > 0 || s.y > 0);
 
   if (!withPos.length) return seats;
 
-  // 計算整排水平中心（用於中央 Zone 對中計算）
   const allX = withPos.map(s => s.x);
   const midX = (Math.min(...allX) + Math.max(...allX)) / 2;
 
   withPos.sort((a, b) => {
-    // ① 主要：前排優先（Y 座標小 = 靠近舞台 = 優先）
-    //    同一排容差 ±8px（不同排之間通常 > 30px）
     const yDiff = a.y - b.y;
     if (Math.abs(yDiff) > 8) return yDiff;
-
-    // ② 次要：同排內依視角偏好排序
-    if (CENTER_ZONES.has(z)) {
-      // 中央區：越靠中間越好
-      return Math.abs(a.x - midX) - Math.abs(b.x - midX);
-    } else if (RIGHT_ZONES.has(z)) {
-      // 右側區：X 越小越好（靠舞台中心）
-      return a.x - b.x;
-    } else {
-      // 左側區（A1, B1, A, B, C）：X 越大越好（靠舞台中心）
-      return b.x - a.x;
-    }
+    if (CENTER_ZONES.has(z)) return Math.abs(a.x - midX) - Math.abs(b.x - midX);
+    else if (RIGHT_ZONES.has(z)) return a.x - b.x;
+    else return b.x - a.x;
   });
 
   return withPos.map(s => s.el);
