@@ -2,15 +2,13 @@
 const $ = id => document.getElementById(id);
 
 const STEP_LABEL = {
-  IDLE:   '待機',
-  BUY:    '等待開賣',
-  CHECK:  '查詢座位數',
-  ZONE:   '選 Zone',
-  SEAT:   '選座位',
-  ACCEPT: '確認選擇',
-  VERIFY: '驗證同意',
-  BOOK:   '勾選 + 訂票',
-  DONE:   '完成！',
+  IDLE:  '待機',
+  BUY:   '等待開賣',
+  CHECK: '查詢座位數',
+  ZONE:  '選 Zone',
+  SEAT:  '選座位中',
+  BOOK:  '勾選 + 訂票',
+  DONE:  '完成！',
 };
 
 async function init() {
