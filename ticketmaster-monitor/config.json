@@ -4,5 +4,6 @@
   "event_name": "BTS World Tour: ARIRANG – Inglewood 09/05/2026",
   "interval_seconds": 30,
   "telegram_bot_token": "8672830368:AAHArvmXhAQM14glu5sfN9jNfPJ6AzCg38c",
-  "telegram_chat_id": "8612292857"
+  "telegram_chat_id": "8612292857",
+  "line_notify_token": ""
 }

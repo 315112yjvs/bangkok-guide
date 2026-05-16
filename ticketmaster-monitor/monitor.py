@@ -45,10 +45,26 @@ def telegram(token: str, chat_id: str, msg: str):
             f"https://api.telegram.org/bot{token}/sendMessage",
             json={"chat_id": chat_id, "text": msg},
             timeout=10,
-            verify=False,  # bypass macOS SSL cert issue
+            verify=False,
         )
     except Exception as e:
         print(f"  [Telegram 失敗] {e}")
+
+
+def line_notify(token: str, msg: str):
+    if not token:
+        return
+    import requests
+    try:
+        requests.post(
+            "https://notify-api.line.me/api/notify",
+            headers={"Authorization": f"Bearer {token}"},
+            data={"message": "\n" + msg},
+            timeout=10,
+            verify=False,
+        )
+    except Exception as e:
+        print(f"  [LINE 失敗] {e}")
 
 
 # ── 可用性判斷 ────────────────────────────────────────────────────────────────
@@ -126,16 +142,19 @@ def run():
     interval   = cfg["interval_seconds"]
     tg_token   = cfg["telegram_bot_token"]
     tg_chat    = cfg["telegram_chat_id"]
+    line_token = cfg.get("line_notify_token", "")
 
     print("=" * 55)
     print("  Ticketmaster 掉落票監控")
     print(f"  場次：{event_name}")
     print(f"  間隔：{interval} 秒")
     print(f"  Telegram：{'✓' if tg_token else '✗ 未設定'}")
+    print(f"  LINE：     {'✓' if line_token else '✗ 未設定'}")
     print("=" * 55)
 
-    telegram(tg_token, tg_chat,
-             f"🔍 監控啟動\n{event_name}\n每 {interval} 秒檢查一次\n{event_url}")
+    startup_msg = f"🔍 監控啟動\n{event_name}\n每 {interval} 秒檢查一次\n{event_url}"
+    telegram(tg_token, tg_chat, startup_msg)
+    line_notify(line_token, startup_msg)
 
     notified = False
 
@@ -180,7 +199,8 @@ def run():
                         f"{event_url}"
                     )
                     telegram(tg_token, tg_chat, msg)
-                    print("  → Telegram 通知已送出")
+                    line_notify(line_token, msg)
+                    print("  → Telegram + LINE 通知已送出")
                     notified = True
                 elif not avail and notified:
                     notified = False
