@@ -10,6 +10,7 @@ let overlayEl     = null;
 let seatsTried    = new Set();
 let seatsSelected = 0;
 let checkClicked  = false;
+let currentZone   = '';   // 當前選取的 Zone，用於決定座位方向偏好
 
 // ── Overlay ──────────────────────────────────────────────
 function createOverlay() {
@@ -207,6 +208,7 @@ function handleZone() {
   }
 
   const zoneName = chosen.textContent.trim();
+  currentZone = zoneName;
   setO(`點擊 Zone: ${zoneName}（票價最高可用）`, '#4cff91');
   log(`選擇 Zone: ${zoneName}`, 'success');
   chrome.storage.local.set({ currentStep: 'ZONE', currentZone: zoneName });
@@ -280,9 +282,10 @@ function handleSeat() {
     return;
   }
 
-  // ── 點擊座位 ──
+  // ── 依視角排序後點擊最佳座位 ──
   seatFailCount = 0;
-  const seat = allAvail[0];
+  const sorted = sortSeats(allAvail, currentZone);
+  const seat = sorted[0];
   seatsTried.add(seat);
   const curSelected = selectedSeats.length;
   setO(`點擊座位 (${curSelected + 1}/${seatCount})...`, '#88aaff');
@@ -379,6 +382,55 @@ function handleBook() {
   chrome.runtime.sendMessage({ type: 'STEP', step: 'DONE' }).catch(() => {});
   humanClick(bookBtn);
   setTimeout(() => rmO(), 8000);
+}
+
+// ── 座位排序（前排優先 + 最佳視角方向）────────────────────
+//
+//  左側 Zone（A1, B1, A, B, C）→ 靠右邊座位（靠舞台中心）
+//  右側 Zone（A2, B2, G, H, I）→ 靠左邊座位（靠舞台中心）
+//  中央 Zone（D, E, F）         → 靠中間座位
+//
+function sortSeats(seats, zone) {
+  const z = (zone || '').toUpperCase().trim();
+
+  // 右側 Zone：偏好低 X（靠左/中心）
+  const RIGHT_ZONES = new Set(['A2','B2','G','H','I']);
+  // 中央 Zone：偏好中間 X
+  const CENTER_ZONES = new Set(['D','E','F']);
+  // 其餘（A1, B1, A, B, C）：偏好高 X（靠右/中心）
+
+  // 取得每個座位的螢幕座標
+  const withPos = seats.map(s => {
+    const r = s.getBoundingClientRect();
+    return { el: s, x: r.left + r.width / 2, y: r.top + r.height / 2 };
+  }).filter(s => s.x > 0 || s.y > 0); // 過濾還沒渲染的元素
+
+  if (!withPos.length) return seats;
+
+  // 計算整排水平中心（用於中央 Zone 對中計算）
+  const allX = withPos.map(s => s.x);
+  const midX = (Math.min(...allX) + Math.max(...allX)) / 2;
+
+  withPos.sort((a, b) => {
+    // ① 主要：前排優先（Y 座標小 = 靠近舞台 = 優先）
+    //    同一排容差 ±8px（不同排之間通常 > 30px）
+    const yDiff = a.y - b.y;
+    if (Math.abs(yDiff) > 8) return yDiff;
+
+    // ② 次要：同排內依視角偏好排序
+    if (CENTER_ZONES.has(z)) {
+      // 中央區：越靠中間越好
+      return Math.abs(a.x - midX) - Math.abs(b.x - midX);
+    } else if (RIGHT_ZONES.has(z)) {
+      // 右側區：X 越小越好（靠舞台中心）
+      return a.x - b.x;
+    } else {
+      // 左側區（A1, B1, A, B, C）：X 越大越好（靠舞台中心）
+      return b.x - a.x;
+    }
+  });
+
+  return withPos.map(s => s.el);
 }
 
 // ── 輔助 ──────────────────────────────────────────────────
