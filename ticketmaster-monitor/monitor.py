@@ -54,12 +54,12 @@ def notify_all(cfg: dict, msg: str):
         except Exception as e:
             print(f"  [Telegram 失敗] {e}")
 
-    if ln_token and ln_uid:
+    if ln_token:
         try:
             r = req_sync.post(
-                "https://api.line.me/v2/bot/message/push",
+                "https://api.line.me/v2/bot/message/broadcast",
                 headers={"Authorization": f"Bearer {ln_token}", "Content-Type": "application/json"},
-                json={"to": ln_uid, "messages": [{"type": "text", "text": msg}]},
+                json={"messages": [{"type": "text", "text": msg}]},
                 timeout=10, verify=False,
             )
             if r.status_code != 200:
