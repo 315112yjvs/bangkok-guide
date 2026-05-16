@@ -1,14 +1,15 @@
-// content.js — AllTicket 搶票核心 v1.0
-// 流程: 事件頁(BUY NOW) → Zone選擇 → 座位選擇 → Booking → 確認
+// content.js — AllTicket 搶票核心 v1.1
+// 流程: BUY NOW → CHECK SEAT → 選 Zone（票價高→低）→ 選座 → Booking → 確認
 
 let tickerTimeout = null;
 let isRunning     = false;
 let settings      = null;
-let phase         = 'IDLE';   // IDLE | BUY | ZONE | SEAT | BOOK | CONFIRM | DONE
+let phase         = 'IDLE';  // IDLE | BUY | CHECK | ZONE | SEAT | BOOK | CONFIRM | DONE
 let tickCount     = 0;
 let overlayEl     = null;
 let seatsTried    = new Set();
 let seatsSelected = 0;
+let checkClicked  = false;  // CHECK SEAT AVAILABLE 已點過
 
 // ── Overlay ──────────────────────────────────────────────
 function createOverlay() {
@@ -16,15 +17,15 @@ function createOverlay() {
   overlayEl = document.createElement('div');
   overlayEl.style.cssText = `
     position:fixed;top:12px;right:12px;z-index:999999;
-    background:rgba(10,6,20,.95);color:#e0e0f0;
-    border:1.5px solid #e74c3c;border-radius:10px;
+    background:rgba(8,22,45,.96);color:#e0e0f0;
+    border:1.5px solid #f5a623;border-radius:10px;
     padding:10px 14px;font:600 11px/1.6 monospace;
     min-width:240px;max-width:340px;
     box-shadow:0 4px 24px rgba(0,0,0,.7);
     pointer-events:none;
   `;
   overlayEl.innerHTML = `
-    <div style="color:#e05050;font-size:12px;margin-bottom:3px">🎫 AllTicket 搶票助手</div>
+    <div style="color:#f5a623;font-size:12px;margin-bottom:3px">⚡ AllTicket 搶票助手</div>
     <div id="__at_s__" style="color:#aaa">初始化...</div>
     <div id="__at_c__" style="color:#555;font-size:10px;margin-top:2px"></div>
   `;
@@ -49,6 +50,7 @@ function start(cfg) {
   isRunning     = true;
   tickCount     = 0;
   seatsSelected = 0;
+  checkClicked  = false;
   seatsTried    = new Set();
   phase         = 'BUY';
   createOverlay();
@@ -82,16 +84,13 @@ chrome.runtime.onMessage.addListener((msg, _, res) => {
   if (msg.action === 'STATUS') res({ phase, tickCount, seatsSelected });
 });
 
-// 頁面載入時自動恢復（SPA 不會重載，此處為保險）
-chrome.storage.local.get(['isRunning', 'zoneKeywords', 'seatCount', 'interval', 'autoRefresh'], d => {
-  if (d.isRunning) {
-    start({
-      zoneKeywords: d.zoneKeywords || [],
-      seatCount:    d.seatCount    || 1,
-      interval:     d.interval     || 400,
-      autoRefresh:  d.autoRefresh  || false,
-    });
-  }
+chrome.storage.local.get(['isRunning','zoneKeywords','seatCount','interval','autoRefresh'], d => {
+  if (d.isRunning) start({
+    zoneKeywords: d.zoneKeywords || [],
+    seatCount:    d.seatCount    || 1,
+    interval:     d.interval     || 400,
+    autoRefresh:  d.autoRefresh  || false,
+  });
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {
@@ -99,8 +98,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
   if (changes.isRunning?.newValue === true  && !isRunning)
     chrome.storage.local.get(['zoneKeywords','seatCount','interval','autoRefresh'], d =>
       start({ zoneKeywords: d.zoneKeywords||[], seatCount: d.seatCount||1, interval: d.interval||400, autoRefresh: d.autoRefresh||false }));
-  if (changes.isRunning?.newValue === false && isRunning)
-    stop();
+  if (changes.isRunning?.newValue === false && isRunning) stop();
 });
 
 // ── 主迴圈 ────────────────────────────────────────────────
@@ -109,8 +107,8 @@ function tick() {
   tickCount++;
   setO2(`偵測 ${tickCount} 次 | 步驟: ${phase}`);
 
-  // 各階段 handler
-  if (phase === 'BUY')     handleBuy();
+  if      (phase === 'BUY')     handleBuy();
+  else if (phase === 'CHECK')   handleCheck();
   else if (phase === 'ZONE')    handleZone();
   else if (phase === 'SEAT')    handleSeat();
   else if (phase === 'BOOK')    handleBook();
@@ -121,244 +119,253 @@ function tick() {
 // STEP 1 — 點擊 BUY NOW
 // ════════════════════════════════════════════════════════
 function handleBuy() {
-  // 先處理可能出現的「是否繼續」彈窗（CHECK SEAT AVAILABLE 確認框）
-  const yesBtn = document.querySelector('button.btn-primary.popup-styled');
-  if (yesBtn) {
-    setO('自動確認查詢座位...', '#ffcc44');
-    humanClick(yesBtn);
-    return;
-  }
-
   const buyBtn = document.getElementById('butBuy') ||
                  document.querySelector('button.btn-atk-primary');
 
   if (!buyBtn) {
-    // 可能尚未登入 → 提示
-    const loginBtn = document.querySelector('button[id*="login"], .btn-login, #btnLogin');
-    if (loginBtn) {
-      setO('請先登入 AllTicket 帳號！', '#ff4444');
-      return;
-    }
     setO('等待頁面載入...', '#88aaff');
-    // autoRefresh 支援
-    if (settings?.autoRefresh) {
-      setTimeout(() => { if (isRunning && phase === 'BUY') location.reload(); }, 3000);
-    }
+    if (settings?.autoRefresh && tickCount % 15 === 0) location.reload();
     return;
   }
 
   if (buyBtn.style.display === 'none' || buyBtn.disabled) {
     setO('BUY NOW 尚未開放，等待...', '#ffcc44');
-    if (settings?.autoRefresh) {
-      setTimeout(() => { if (isRunning && phase === 'BUY') location.reload(); }, 3000);
-    }
+    if (settings?.autoRefresh && tickCount % 15 === 0) location.reload();
+    return;
+  }
+
+  // Zone 面板已出現（BUY NOW 已被點過，可能是頁面恢復）
+  if (document.querySelector('.seat-ava, button.btn-outline-info')) {
+    phase = 'CHECK';
     return;
   }
 
   setO('點擊 BUY NOW！', '#4cff91');
   log('點擊 BUY NOW', 'success');
-  phase = 'ZONE';
+  phase = 'CHECK';
+  checkClicked = false;
   humanClick(buyBtn);
 }
 
 // ════════════════════════════════════════════════════════
-// STEP 2 — 選擇 Zone
+// STEP 2 — 點擊 CHECK SEAT AVAILABLE
 // ════════════════════════════════════════════════════════
-function handleZone() {
-  // 若「查詢座位」確認彈窗出現先關掉
+function handleCheck() {
+  // 若 Zone 表格已有資料，直接進 ZONE 選擇
+  const zoneRows = document.querySelectorAll('.seat-ava');
+  if (zoneRows.length > 0) {
+    phase = 'ZONE';
+    return;
+  }
+
+  // 處理「是否確認查詢座位」確認彈窗（只在可見時點）
   const yesBtn = document.querySelector('button.btn-primary.popup-styled');
-  if (yesBtn) {
-    setO('確認查詢座位...', '#88aaff');
+  if (yesBtn && isVisible(yesBtn)) {
+    setO('確認查詢座位數...', '#88aaff');
     humanClick(yesBtn);
     return;
   }
 
-  // Zone 選項出現在 span.badge.badge-light 且有 cursor:pointer
-  const allZoneSpans = [...document.querySelectorAll('span.badge.badge-light')]
-    .filter(s => s.style.cursor === 'pointer');
+  // 點擊 CHECK SEAT AVAILABLE
+  const checkBtn = document.querySelector('button.btn-outline-info') ||
+    [...document.querySelectorAll('button')].find(b => b.textContent.includes('CHECK SEAT AVAILABLE'));
 
-  if (!allZoneSpans.length) {
-    setO('等待 Zone 選項...', '#88aaff');
+  if (!checkBtn) {
+    setO('等待 Zone 面板...', '#88aaff');
     return;
   }
 
-  const kws = (settings?.zoneKeywords || []).map(k => k.toUpperCase().trim());
+  if (!checkClicked) {
+    checkClicked = true;
+    setO('點擊 CHECK SEAT AVAILABLE...', '#88aaff');
+    log('查詢各 Zone 剩餘座位', 'info');
+    humanClick(checkBtn);
+  } else {
+    setO('等待座位資料載入...', '#88aaff');
+  }
+}
 
+// ════════════════════════════════════════════════════════
+// STEP 3 — 選 Zone（依票價高→低，跳過售罄）
+// ════════════════════════════════════════════════════════
+function handleZone() {
+  // 處理確認彈窗（若仍可見）
+  const yesBtn = document.querySelector('button.btn-primary.popup-styled');
+  if (yesBtn && isVisible(yesBtn)) {
+    humanClick(yesBtn);
+    return;
+  }
+
+  // 讀取 Zone 表格（DOM 順序 = 票價高到低）
+  const zoneRows = document.querySelectorAll('.seat-ava');
+  if (!zoneRows.length) {
+    // 表格消失了，返回重查
+    phase = 'CHECK';
+    checkClicked = false;
+    return;
+  }
+
+  // 可購買的 Zone：有 cursor:pointer 且無 .not-ava class
+  const availZones = [...zoneRows]
+    .map(row => row.querySelector('span.badge.badge-light'))
+    .filter(span => span && !span.classList.contains('not-ava') && span.style.cursor === 'pointer');
+
+  const kws = (settings?.zoneKeywords || []).map(k => k.toUpperCase().trim());
   let chosen = null;
+
   if (kws.length) {
-    // 依關鍵字篩選
-    chosen = allZoneSpans.find(s =>
-      kws.some(kw => s.textContent.trim().toUpperCase() === kw ||
-                     s.textContent.trim().toUpperCase().includes(kw))
+    // 依關鍵字篩選（仍需有空位）
+    chosen = availZones.find(s =>
+      kws.some(kw => {
+        const name = s.textContent.trim().toUpperCase();
+        return name === kw || name.includes(kw);
+      })
     );
     if (!chosen) {
-      setO(`Zone [${kws.join('/')}] 找不到，等待...`, '#ffcc44');
+      // 建立顯示各 Zone 剩餘數的字串
+      const summary = [...zoneRows].map(row => {
+        const z = row.querySelector('span.badge.badge-light')?.textContent?.trim() || '?';
+        const n = row.parentElement?.querySelector('.col-7 span')?.textContent?.trim() || '?';
+        return `${z}:${n}`;
+      }).join(' ');
+      setO(`Zone [${kws.join('/')}] 無座位，等待... (${summary})`, '#ffcc44');
       return;
     }
   } else {
-    // 沒指定關鍵字：找有剩餘座位的 Zone（row 中 available > 0）
-    chosen = findBestZoneSpan(allZoneSpans);
+    // 無關鍵字：自動選票價最高且有座位的 Zone（DOM 第一個 = 最高票價）
+    chosen = availZones[0];
+    if (!chosen) {
+      setO('所有 Zone 已售罄！', '#ff4444');
+      return;
+    }
   }
 
-  if (!chosen) {
-    setO('所有 Zone 已滿，等待重整...', '#ffcc44');
-    return;
-  }
-
-  setO(`點擊 Zone: ${chosen.textContent.trim()}`, '#4cff91');
-  log(`選擇 Zone: ${chosen.textContent.trim()}`, 'success');
+  const zoneName = chosen.textContent.trim();
+  setO(`✓ 點擊 Zone: ${zoneName}（票價最高可用）`, '#4cff91');
+  log(`選擇 Zone: ${zoneName}`, 'success');
+  chrome.runtime.sendMessage({ type: 'STEP', step: 'ZONE', zone: zoneName }).catch(() => {});
+  chrome.storage.local.set({ currentStep: 'ZONE', currentZone: zoneName });
   phase = 'SEAT';
   seatsTried.clear();
   seatsSelected = 0;
   chosen.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
 }
 
-// 找有空位的最佳 Zone（根據 SEAT AVAILABLE 表格中的數字）
-function findBestZoneSpan(spans) {
-  // 嘗試從 SEAT AVAILABLE 表格讀取剩餘數
-  const rows = [...document.querySelectorAll('.seat-ava')];
-  if (!rows.length) return spans[0];
-
-  // 建立 zone→available 映射
-  const avail = {};
-  rows.forEach(row => {
-    const zoneEl = row.querySelector('span.badge.badge-light');
-    const numEl  = row.nextElementSibling?.querySelector('span') ||
-                   row.parentElement?.querySelector('.col-5:last-child span, .col-6 span');
-    if (zoneEl) {
-      const name = zoneEl.textContent.trim().toUpperCase();
-      const num  = parseInt(row.parentElement?.querySelector('[class*="col"]:last-child span')?.textContent || '0');
-      avail[name] = num;
-    }
-  });
-
-  // 挑 available 最多的 Zone span
-  let best = null, bestNum = -1;
-  spans.forEach(s => {
-    const name = s.textContent.trim().toUpperCase();
-    const n    = avail[name] ?? 999;
-    if (n > 0 && n > bestNum) { bestNum = n; best = s; }
-  });
-  return best || spans[0];
-}
-
 // ════════════════════════════════════════════════════════
-// STEP 3 — 選擇座位
+// STEP 4 — 選座位
 // ════════════════════════════════════════════════════════
+let seatFailCount = 0;
+
 function handleSeat() {
   // 確認彈窗
   const yesBtn = document.querySelector('button.btn-primary.popup-styled');
-  if (yesBtn) { humanClick(yesBtn); return; }
+  if (yesBtn && isVisible(yesBtn)) { humanClick(yesBtn); return; }
 
   const seatCount = settings?.seatCount || 1;
   const selected  = document.querySelectorAll('svg.seat.selected');
 
   if (selected.length >= seatCount) {
-    setO(`已選 ${selected.length} 個座位，前往 Booking...`, '#4cff91');
+    setO(`已選 ${selected.length} 張，前往 Booking...`, '#4cff91');
     phase = 'BOOK';
+    seatFailCount = 0;
     return;
   }
 
-  // 找所有可用座位（svg.seat.available）
   const allAvail = [...document.querySelectorAll('svg.seat.available')]
     .filter(s => !seatsTried.has(s));
 
   if (!allAvail.length) {
-    // 若已選到部分座位，直接繼續
     if (selected.length > 0) {
-      setO(`無更多空位，已選 ${selected.length} 張，前往 Booking...`, '#4cff91');
+      setO(`無更多空位，已選 ${selected.length} 張，繼續...`, '#4cff91');
       phase = 'BOOK';
+      seatFailCount = 0;
     } else {
-      setO('此 Zone 無座位，返回...', '#ff8844');
-      log('Zone 無座位，返回重選', 'warn');
-      phase = 'ZONE';
+      seatFailCount++;
+      if (seatFailCount >= 3) {
+        setO('此 Zone 無座位，返回重選...', '#ff8844');
+        log('Zone 無座位，返回重選', 'warn');
+        phase = 'CHECK';
+        checkClicked = false;
+        seatFailCount = 0;
+      } else {
+        setO('搜尋可用座位...', '#88aaff');
+      }
     }
     return;
   }
 
+  seatFailCount = 0;
   const seat = allAvail[0];
   seatsTried.add(seat);
-  setO(`點擊座位 (${selected.length + 1}/${seatCount})...`, '#88aaff');
+  const curSelected = selected.length;
+  setO(`點擊座位 (${curSelected + 1}/${seatCount})...`, '#88aaff');
   seat.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
 
-  // 短暫等待確認是否成功
   setTimeout(() => {
     const nowSelected = document.querySelectorAll('svg.seat.selected').length;
-    if (nowSelected > selected.length) {
+    if (nowSelected > curSelected) {
       seatsSelected = nowSelected;
       log(`✓ 座位選定 (${nowSelected}/${seatCount})`, 'success');
-      setO(`✓ 座位 ${nowSelected}/${seatCount} 選定`, '#4cff91');
+      setO(`✓ 座位 ${nowSelected}/${seatCount} 已選`, '#4cff91');
       chrome.storage.local.set({ seatsSelected: nowSelected });
       chrome.runtime.sendMessage({ type: 'SEATS', count: nowSelected }).catch(() => {});
-    } else {
-      setO(`✗ 座位失敗，換下一個...`, '#ffcc44');
     }
   }, 300);
 }
 
 // ════════════════════════════════════════════════════════
-// STEP 4 — 點擊 Booking
+// STEP 5 — 點擊 Booking
 // ════════════════════════════════════════════════════════
 function handleBook() {
   const bookBtn = document.querySelector('button.btn-book');
-  if (!bookBtn) {
-    setO('等待 Booking 按鈕...', '#88aaff');
-    return;
-  }
-  if (bookBtn.disabled) {
-    setO('Booking 按鈕尚未啟用...', '#ffcc44');
-    return;
-  }
+  if (!bookBtn) { setO('等待 Booking 按鈕...', '#88aaff'); return; }
+  if (bookBtn.disabled) { setO('Booking 未啟用，等待...', '#ffcc44'); return; }
 
   setO('點擊 Booking！', '#4cff91');
-  log('點擊 Booking 按鈕', 'success');
+  log('點擊 Booking 確認', 'success');
   phase = 'CONFIRM';
   humanClick(bookBtn);
 }
 
 // ════════════════════════════════════════════════════════
-// STEP 5 — 最終確認
+// STEP 6 — 最終確認（ยืนยันตัวเลือกของฉัน）
 // ════════════════════════════════════════════════════════
 function handleConfirm() {
-  // ยืนยันตัวเลือกของฉัน = 確認我的選擇
   const confirmBtn = document.querySelector('button.btn-accept') ||
     [...document.querySelectorAll('button')]
-      .find(b => b.textContent.includes('ยืนยัน') || b.textContent.includes('Confirm'));
+      .find(b => b.textContent.includes('ยืนยัน') && !b.classList.contains('popup-styled'));
 
-  if (!confirmBtn) {
-    setO('等待確認按鈕...', '#88aaff');
-    return;
-  }
+  if (!confirmBtn) { setO('等待最終確認按鈕...', '#88aaff'); return; }
 
-  setO('✓ 點擊確認！完成！', '#4cff91');
-  log('點擊最終確認！搶票完成！', 'success');
+  setO('✓ 最終確認！搶票完成！', '#4cff91');
+  log('最終確認完成！', 'success');
   phase = 'DONE';
   isRunning = false;
   clearTimeout(tickerTimeout);
-  chrome.storage.local.set({ isRunning: false });
+  chrome.storage.local.set({ isRunning: false, currentStep: 'DONE' });
   chrome.runtime.sendMessage({ type: 'STEP', step: 'DONE' }).catch(() => {});
   humanClick(confirmBtn);
   setTimeout(() => rmO(), 8000);
 }
 
-// ── 模擬真人點擊 ──────────────────────────────────────────
+// ── 輔助 ──────────────────────────────────────────────────
+function isVisible(el) {
+  if (!el) return false;
+  return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length) &&
+    getComputedStyle(el).visibility !== 'hidden' &&
+    getComputedStyle(el).display !== 'none';
+}
+
 function humanClick(el) {
   if (!el) return;
   const rect = el.getBoundingClientRect?.() || { left: 0, top: 0, width: 0, height: 0 };
   const x = rect.left + rect.width  / 2 + (Math.random() - 0.5) * 2;
   const y = rect.top  + rect.height / 2 + (Math.random() - 0.5) * 2;
-  const opts = {
-    bubbles: true, cancelable: true,
-    clientX: x, clientY: y,
-    screenX: x + window.screenX, screenY: y + window.screenY,
-    view: window,
-  };
-  ['mouseover', 'mouseenter', 'mousedown', 'mouseup', 'click'].forEach(type => {
-    el.dispatchEvent(new MouseEvent(type, opts));
-  });
+  const opts = { bubbles: true, cancelable: true, clientX: x, clientY: y, view: window };
+  ['mouseover','mouseenter','mousedown','mouseup','click'].forEach(type =>
+    el.dispatchEvent(new MouseEvent(type, opts)));
 }
 
-// ── Log ───────────────────────────────────────────────────
 function log(text, level = 'info') {
   chrome.runtime.sendMessage({ type: 'LOG', text, level }).catch(() => {});
 }
