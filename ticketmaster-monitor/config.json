@@ -5,5 +5,7 @@
   "interval_seconds": 30,
   "telegram_bot_token": "8672830368:AAHArvmXhAQM14glu5sfN9jNfPJ6AzCg38c",
   "telegram_chat_id": "8612292857",
-  "line_notify_token": ""
+  "line_notify_token": "",
+  "line_channel_access_token": "xtGgROlKzCOLK4EyvSmH+3qRN4SFuBLHowhfviGNiR00rQXt1dkClfQ0gQwBDHhRuRNtxYBvZwWWik+m7HbEAKXuBRdgZBnjjVaV7fC2rAyYj6/XMJjmDE3pXv6RwyEEPjY7NT2H7C5GYt8ygZpvGAdB04t89/1O/w1cDnyilFU=",
+  "line_user_id": "Uc8f1f77024c8d054753c3b17e4eb1dd9"
 }

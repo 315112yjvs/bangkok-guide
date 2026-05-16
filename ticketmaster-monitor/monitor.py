@@ -52,17 +52,30 @@ def telegram(token: str, chat_id: str, msg: str):
 
 
 def line_notify(token: str, msg: str):
-    if not token:
+    """LINE Notify（已停止，保留 stub 相容舊 config）"""
+    pass
+
+
+def line_push(channel_token: str, user_id: str, msg: str):
+    if not channel_token or not user_id:
         return
     import requests
     try:
-        requests.post(
-            "https://notify-api.line.me/api/notify",
-            headers={"Authorization": f"Bearer {token}"},
-            data={"message": "\n" + msg},
+        r = requests.post(
+            "https://api.line.me/v2/bot/message/push",
+            headers={
+                "Authorization": f"Bearer {channel_token}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "to": user_id,
+                "messages": [{"type": "text", "text": msg}],
+            },
             timeout=10,
             verify=False,
         )
+        if r.status_code != 200:
+            print(f"  [LINE 失敗] {r.status_code} {r.text}")
     except Exception as e:
         print(f"  [LINE 失敗] {e}")
 
@@ -140,9 +153,10 @@ def run():
     event_url  = cfg["event_url"]
     event_name = cfg["event_name"]
     interval   = cfg["interval_seconds"]
-    tg_token   = cfg["telegram_bot_token"]
-    tg_chat    = cfg["telegram_chat_id"]
-    line_token = cfg.get("line_notify_token", "")
+    tg_token    = cfg["telegram_bot_token"]
+    tg_chat     = cfg["telegram_chat_id"]
+    line_token  = cfg.get("line_channel_access_token", "")
+    line_uid    = cfg.get("line_user_id", "")
 
     print("=" * 55)
     print("  Ticketmaster 掉落票監控")
@@ -154,7 +168,7 @@ def run():
 
     startup_msg = f"🔍 監控啟動\n{event_name}\n每 {interval} 秒檢查一次\n{event_url}"
     telegram(tg_token, tg_chat, startup_msg)
-    line_notify(line_token, startup_msg)
+    line_push(line_token, line_uid, startup_msg)
 
     notified = False
 
@@ -199,7 +213,7 @@ def run():
                         f"{event_url}"
                     )
                     telegram(tg_token, tg_chat, msg)
-                    line_notify(line_token, msg)
+                    line_push(line_token, line_uid, msg)
                     print("  → Telegram + LINE 通知已送出")
                     notified = True
                 elif not avail and notified:
