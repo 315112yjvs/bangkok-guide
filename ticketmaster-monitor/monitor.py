@@ -39,14 +39,14 @@ def load_config() -> dict:
 def telegram(token: str, chat_id: str, msg: str):
     if not token or not chat_id:
         return
-    import urllib.request
-    import urllib.parse
+    import requests
     try:
-        data = urllib.parse.urlencode({"chat_id": chat_id, "text": msg}).encode()
-        req  = urllib.request.Request(
-            f"https://api.telegram.org/bot{token}/sendMessage", data=data
+        requests.post(
+            f"https://api.telegram.org/bot{token}/sendMessage",
+            json={"chat_id": chat_id, "text": msg},
+            timeout=10,
+            verify=False,  # bypass macOS SSL cert issue
         )
-        urllib.request.urlopen(req, timeout=10)
     except Exception as e:
         print(f"  [Telegram 失敗] {e}")
 
