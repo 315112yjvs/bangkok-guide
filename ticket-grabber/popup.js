@@ -28,7 +28,6 @@ async function init() {
   if (data.targetTicket)   $('targetTicket').value   = data.targetTicket;
   if (data.targetZone)     $('targetZone').value      = data.targetZone;
   if (data.seatCount)      $('seatCount').value       = data.seatCount;
-  if (data.seatDirection)  $('seatDirection').value   = data.seatDirection;
   if (data.priorityRows != null) $('priorityRows').value = data.priorityRows;
   if (data.autoRefresh)    $('autoRefresh').checked   = data.autoRefresh;
   if (data.interval)       $('intervalInput').value   = data.interval;
@@ -51,7 +50,6 @@ async function save() {
     targetZone:    $('targetZone').value.trim(),
     zoneKeywords,
     seatCount:     parseInt($('seatCount').value)  || 1,
-    seatDirection: $('seatDirection').value,
     priorityRows:  parseInt($('priorityRows').value) ?? 5,
     autoRefresh:   $('autoRefresh').checked,
     interval:      parseInt($('intervalInput').value) || 500,
@@ -61,7 +59,7 @@ async function save() {
 }
 
 // 所有輸入欄位變更時自動儲存
-['targetDate','targetTicket','targetZone','seatCount','seatDirection',
+['targetDate','targetTicket','targetZone','seatCount',
  'priorityRows','intervalInput','autoRefresh','passportId','passportCountry'].forEach(id => {
   const el = $(id);
   if (!el) return;
@@ -85,7 +83,6 @@ function getSettings() {
     targetTicket:  $('targetTicket').value.trim(),
     zoneKeywords:  rawZone ? rawZone.split(/[,，\s]+/).map(s => s.trim()).filter(Boolean) : [],
     seatCount:     parseInt($('seatCount').value)  || 1,
-    seatDirection: $('seatDirection').value,
     priorityRows:  parseInt($('priorityRows').value) ?? 5,
     autoRefresh:   $('autoRefresh').checked,
     interval:      parseInt($('intervalInput').value) || 500,

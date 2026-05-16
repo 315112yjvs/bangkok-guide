@@ -100,7 +100,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
 // ── startFromStorage：從 storage 讀取設定並啟動 ─────────
 const STORAGE_KEYS = [
   'isRunning','targetDate','targetTicket','zoneKeywords','targetZone',
-  'seatCount','seatDirection','priorityRows','autoRefresh','interval',
+  'seatCount','priorityRows','autoRefresh','interval',
   'currentStep','triedZones','passportId','passportCountry',
 ];
 
@@ -115,7 +115,6 @@ function startFromStorage(data) {
     targetTicket:  data.targetTicket  || '',
     zoneKeywords,
     seatCount:     data.seatCount     || 1,
-    seatDirection: data.seatDirection || 'MIDDLE',
     priorityRows:  data.priorityRows  ?? 5,
     passportId:      data.passportId      || '',
     passportCountry: data.passportCountry || '',
