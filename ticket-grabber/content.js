@@ -545,11 +545,26 @@ function handleZones() {
 
     log(`選 Zone: ${chosen.display}（已試：${triedUpper.join(',') || '無'}）`, 'info');
 
+    // 根據 zone 在地圖上的 X 位置判斷左/中/右，供 fixed.php 自動選最佳座位方向
+    let zonePosition = 'CENTER';
+    if (chosen.area) {
+      const mapImg = document.querySelector('img[usemap]');
+      const imgW   = mapImg?.naturalWidth || mapImg?.offsetWidth || 0;
+      const { cx } = getZoneCoords(chosen.area);
+      if (imgW > 0 && cx !== null) {
+        const rel = cx / imgW;
+        if (rel < 0.4)      zonePosition = 'LEFT';
+        else if (rel > 0.6) zonePosition = 'RIGHT';
+        else                zonePosition = 'CENTER';
+      }
+    }
+
     stepDone.ZONES = true;
     chrome.storage.local.set({
       zonesPageUrl: location.href,
       currentZone:  chosen.name,   // 儲存原始 name 供 triedZones 追蹤
       zoneReloadCount: 0,
+      zonePosition,
     });
     setO(`✓ Zone: ${chosen.display} → 點擊進入...`, '#4cff91');
     log(`Zone ${chosen.display}`, 'success');
@@ -569,12 +584,13 @@ function handleZones() {
 // STEP 4 — fixed.php
 // 功能：多座位、方向選擇、alert 攔截、Zone 回退
 // ════════════════════════════════════════════════════════
-let fixedPhase     = 'INIT';
-let fixedRetry     = 0;   // 連續偵測不到座位的次數（≥2 換 zone）
-let seatClickFails = 0;   // 點擊失敗累計（≥20 重整頁面）
-let seatsSelected  = 0;
-let triedSeatIds   = new Set();
-let _triedZones    = [];
+let fixedPhase          = 'INIT';
+let fixedRetry          = 0;   // 連續偵測不到座位的次數（≥2 換 zone）
+let seatClickFails      = 0;   // 點擊失敗累計（≥10 重整頁面）
+let seatsSelected       = 0;
+let triedSeatIds        = new Set();
+let _triedZones         = [];
+let _currentZonePos     = 'CENTER'; // LEFT | CENTER | RIGHT（由 zones.php 計算並存入 storage）
 
 function resetFixed() {
   fixedPhase     = 'INIT';
@@ -582,6 +598,15 @@ function resetFixed() {
   seatClickFails = 0;
   seatsSelected  = 0;
   triedSeatIds   = new Set();
+  _currentZonePos = 'CENTER';
+}
+
+// 由 zone 在地圖上的位置推導最佳座位方向：
+// 左區 → 靠右（面向舞台中心）；右區 → 靠左；中區 → 中間
+function bestSeatDir(zonePos) {
+  if (zonePos === 'LEFT')   return 'RIGHT';
+  if (zonePos === 'RIGHT')  return 'LEFT';
+  return 'MIDDLE';
 }
 
 // 統一的 reload / 換 Zone 邏輯：無論哪種原因，2 次 reload 後換 Zone
@@ -733,11 +758,13 @@ function handleFixed() {
 
   // ── INIT ──
   if (fixedPhase==='INIT') {
-    chrome.storage.local.get(['triedZones','currentZone'], d=>{
-      _triedZones = (d.triedZones||[]).map(z=>z.toUpperCase());
-      const zoneName = d.currentZone || new URLSearchParams(location.search).get('zone') || '?';
-      setO(`進入 Zone: ${zoneName}，掃描座位中...`, '#88aaff');
-      log(`進入 Zone: ${zoneName}`, 'info');
+    chrome.storage.local.get(['triedZones','currentZone','zonePosition'], d=>{
+      _triedZones     = (d.triedZones||[]).map(z=>z.toUpperCase());
+      _currentZonePos = d.zonePosition || 'CENTER';
+      const zoneName  = d.currentZone || new URLSearchParams(location.search).get('zone') || '?';
+      const dir       = bestSeatDir(_currentZonePos);
+      setO(`進入 Zone: ${zoneName}（${_currentZonePos}），最佳方向：${dir}`, '#88aaff');
+      log(`進入 Zone: ${zoneName}，位置：${_currentZonePos}，座位方向：${dir}`, 'info');
     });
     fixedPhase='SELECT';
     return;
@@ -797,8 +824,8 @@ function handleFixed() {
     }
     fixedRetry = 0; // 有偵測到座位則重置連續計數
 
-    // 依排數優先 + 方向排序
-    available = sortSeats(available, settings.seatDirection||'MIDDLE', settings.priorityRows??5);
+    // 依排數優先 + 方向排序（自動依 zone 位置決定最佳方向）
+    available = sortSeats(available, bestSeatDir(_currentZonePos), settings.priorityRows??5);
 
     const seat   = available[0];
     const seatId = seat.id || seat.dataset?.seat || '?';
