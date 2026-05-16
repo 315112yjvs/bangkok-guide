@@ -784,7 +784,14 @@ function handleFixed() {
       fixedRetry++;
       if (fixedRetry >= 2) {
         fixedRetry = 0;
-        reloadOrSwitchZone('無可用座位');
+        const alreadySelected = document.querySelectorAll('input[id^="hid-checkseat"]').length;
+        if (alreadySelected > 0) {
+          fixedPhase = 'CONFIRM';
+          log(`無更多可用座位，已選 ${alreadySelected} 張，直接結帳`, 'warn');
+          setO(`已選 ${alreadySelected} 張，前往結帳...`, '#4cff91');
+        } else {
+          reloadOrSwitchZone('無可用座位');
+        }
       }
       return;
     }
@@ -817,7 +824,14 @@ function handleFixed() {
 
         if (seatClickFails >= 10) {
           seatClickFails = 0;
-          reloadOrSwitchZone('點擊失敗 10 次');
+          const alreadySelected = document.querySelectorAll('input[id^="hid-checkseat"]').length;
+          if (alreadySelected > 0) {
+            fixedPhase = 'CONFIRM';
+            log(`連續失敗，已選 ${alreadySelected} 張，直接結帳`, 'warn');
+            setO(`已選 ${alreadySelected} 張，前往結帳...`, '#4cff91');
+          } else {
+            reloadOrSwitchZone('點擊失敗 10 次');
+          }
           return;
         }
       } else {
