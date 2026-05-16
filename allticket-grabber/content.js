@@ -388,13 +388,17 @@ function handleVerify() {
   setO('等待驗證彈窗或票券資訊頁...', '#88aaff');
 }
 
-// 判斷是否已在票券資訊頁
+// 判斷是否已在票券資訊頁（Ticket Information）
+// 關鍵區別：票券資訊頁沒有 svg.seat 座位圖
 function onTicketInfoPage() {
+  // 最可靠：有 #GMM10 同意勾選框
   const cb = document.getElementById('GMM10') ||
     document.querySelector('input.form-check-input[type="checkbox"]');
   if (cb && isVisible(cb)) return true;
+  // 次選：有 btn-book 但沒有座位地圖（svg.seat）
   const bookBtn = document.querySelector('button.btn-book');
-  if (bookBtn && isVisible(bookBtn)) return true;
+  const hasSeatMap = !!document.querySelector('svg.seat');
+  if (bookBtn && isVisible(bookBtn) && !hasSeatMap) return true;
   return false;
 }
 
@@ -402,11 +406,36 @@ function onTicketInfoPage() {
 // STEP 7 — 勾選同意框 + 點擊 Booking
 // ════════════════════════════════════════════════════════
 function handleBook() {
-  // 勾選同意框（#GMM10）
+  // 若出現「Please select seat」彈窗 → 點 OK 並返回 SEAT 重選
+  const okBtn = [...document.querySelectorAll('button')]
+    .find(b => b.textContent.trim().toUpperCase() === 'OK' && isVisible(b));
+  if (okBtn) {
+    const popupText = okBtn.closest('[class*="modal"], [class*="popup"], [class*="swal"]')
+                     ?.textContent || document.body.textContent;
+    if (popupText.includes('select seat') || popupText.includes('Please select')) {
+      setO('未選座位，點 OK 返回...', '#ff8844');
+      log('未選到座位，返回座位圖', 'warn');
+      humanClick(okBtn);
+      phase = 'SEAT';
+      seatsTried.clear();
+      return;
+    }
+    // 其他 OK 彈窗（如驗證）直接點
+    humanClick(okBtn);
+    return;
+  }
+
+  // 確認我們真的在票券資訊頁
   const consentCb = document.getElementById('GMM10') ||
     document.querySelector('input.form-check-input[type="checkbox"]');
 
-  if (consentCb && isVisible(consentCb) && !consentCb.checked) {
+  if (!consentCb || !isVisible(consentCb)) {
+    setO('等待票券資訊頁...', '#88aaff');
+    return;
+  }
+
+  // 勾選同意框
+  if (!consentCb.checked) {
     setO('勾選同意條款...', '#88aaff');
     consentCb.click();
     consentCb.dispatchEvent(new Event('change', { bubbles: true }));
@@ -416,7 +445,7 @@ function handleBook() {
 
   const bookBtn = document.querySelector('button.btn-book');
   if (!bookBtn || !isVisible(bookBtn)) { setO('等待 Booking 按鈕...', '#88aaff'); return; }
-  if (bookBtn.disabled) { setO('Booking 未啟用，等待勾選...', '#ffcc44'); return; }
+  if (bookBtn.disabled) { setO('Booking 未啟用，稍等...', '#ffcc44'); return; }
 
   setO('✓ 點擊 Booking！完成搶票！', '#4cff91');
   log('點擊 Booking！前往付款頁面', 'success');
