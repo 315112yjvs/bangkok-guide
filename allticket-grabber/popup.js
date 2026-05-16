@@ -2,13 +2,15 @@
 const $ = id => document.getElementById(id);
 
 const STEP_LABEL = {
-  IDLE:    '待機',
-  BUY:     '等待開賣',
-  ZONE:    '選 Zone',
-  SEAT:    '選座位',
-  BOOK:    '確認訂單',
-  CONFIRM: '最終確認',
-  DONE:    '完成！',
+  IDLE:   '待機',
+  BUY:    '等待開賣',
+  CHECK:  '查詢座位數',
+  ZONE:   '選 Zone',
+  SEAT:   '選座位',
+  ACCEPT: '確認選擇',
+  VERIFY: '驗證同意',
+  BOOK:   '勾選 + 訂票',
+  DONE:   '完成！',
 };
 
 async function init() {
@@ -46,9 +48,9 @@ async function updatePageHint() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const url = tab?.url || '';
   const isAllTicket = url.includes('allticket.com');
-  $('pageTag').textContent = isAllTicket ? 'AllTicket 活動頁' : '不在 allticket.com';
-  $('pageTag').style.background = isAllTicket ? '#f0fff4' : '#fff3f0';
-  $('pageTag').style.color      = isAllTicket ? '#27ae60' : '#e74c3c';
+  const tag = $('pageTag');
+  tag.textContent = isAllTicket ? 'AllTicket 活動頁 ✓' : '請前往 allticket.com';
+  tag.className   = isAllTicket ? 'page-tag ok' : 'page-tag err';
 }
 
 $('startBtn').addEventListener('click', async () => {
@@ -84,14 +86,14 @@ function updateUI(running, seats = 0, step = '') {
   $('statusText').textContent      = running ? '搶票中...' : '未啟動';
   $('startWrap').style.display     = running ? 'none'  : 'block';
   $('stopWrap').style.display      = running ? 'block' : 'none';
-  $('seatCount-badge').textContent = `${seats} 張`;
-  $('stepBadge').textContent       = STEP_LABEL[step] || step || '-';
+  $('seat-badge').textContent = `${seats} 張`;
+  $('stepBadge').textContent  = STEP_LABEL[step] || step || '-';
 }
 
 chrome.runtime.onMessage.addListener(msg => {
   if (msg.type === 'LOG')   addLog(msg.text, msg.level);
   if (msg.type === 'SEATS') {
-    $('seatCount-badge').textContent = `${msg.count} 張`;
+    $('seat-badge').textContent = `${msg.count} 張`;
     chrome.storage.local.set({ seatsSelected: msg.count });
   }
   if (msg.type === 'STEP') {

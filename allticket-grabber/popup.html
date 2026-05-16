@@ -8,179 +8,205 @@
     body{
       width:340px;
       font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans TC',sans-serif;
-      font-size:13px;background:#f5f5f7;color:#1a1a2e;
+      font-size:13px;background:#0a1628;color:#d0d8e8;
     }
 
+    /* ── Header ── */
     .header{
-      background:#fff;border-bottom:3px solid #e74c3c;
+      background:#0d2137;border-bottom:2px solid #f5a623;
       padding:13px 16px;display:flex;align-items:center;gap:10px;
     }
     .header-icon{
       width:36px;height:36px;border-radius:10px;
-      background:linear-gradient(135deg,#e74c3c,#c0392b);
+      background:linear-gradient(135deg,#1a3a5c,#0d2137);
+      border:1.5px solid #f5a623;
       display:flex;align-items:center;justify-content:center;
       font-size:18px;flex-shrink:0;
     }
-    .header-text h1{font-size:14px;font-weight:800;color:#1a1a2e}
-    .header-text .sub{font-size:10px;color:#999;margin-top:1px}
+    .header-text h1{font-size:14px;font-weight:800;color:#f5a623;letter-spacing:.3px}
+    .header-text .sub{font-size:10px;color:#5a7a9a;margin-top:1px}
     .status-dot{
       width:10px;height:10px;border-radius:50%;
-      background:#ddd;margin-left:auto;flex-shrink:0;transition:all .3s;
+      background:#2a3a4a;margin-left:auto;flex-shrink:0;transition:all .3s;
+      border:1.5px solid #3a5a7a;
     }
     .status-dot.active{
-      background:#27ae60;box-shadow:0 0 0 3px rgba(39,174,96,.2);
+      background:#f5a623;border-color:#f5a623;
+      box-shadow:0 0 0 3px rgba(245,166,35,.25);
       animation:pulse 1.3s infinite;
     }
     @keyframes pulse{
-      0%,100%{box-shadow:0 0 0 3px rgba(39,174,96,.2)}
-      50%{box-shadow:0 0 0 6px rgba(39,174,96,.05)}
+      0%,100%{box-shadow:0 0 0 3px rgba(245,166,35,.2)}
+      50%{box-shadow:0 0 0 7px rgba(245,166,35,.05)}
     }
 
-    .card{
-      background:#fff;margin:8px 12px 0;border-radius:10px;
-      padding:12px 14px;box-shadow:0 1px 4px rgba(0,0,0,.06);
-    }
+    /* ── Cards ── */
     .status-card{
-      background:#fff;margin:10px 12px 0;border-radius:10px;
-      padding:10px 14px;box-shadow:0 1px 4px rgba(0,0,0,.06);
+      background:#0d2137;margin:10px 12px 0;border-radius:10px;
+      padding:10px 14px;border:1px solid #1a3a5c;
     }
+    .card{
+      background:#0d2137;margin:8px 12px 0;border-radius:10px;
+      padding:12px 14px;border:1px solid #1a3a5c;
+    }
+
     .status-row{display:flex;align-items:center;gap:8px}
-    .status-label{font-size:11px;font-weight:600;color:#aaa}
-    #statusText{font-size:12px;font-weight:700;color:#1a1a2e}
+    .status-label{font-size:11px;font-weight:600;color:#5a7a9a}
+    #statusText{font-size:12px;font-weight:700;color:#d0d8e8}
     #stepBadge{
       margin-left:auto;font-size:10px;font-weight:700;
       padding:2px 9px;border-radius:20px;
-      background:#fff0f0;color:#e74c3c;border:1px solid #f5c6c6;
+      background:rgba(245,166,35,.15);color:#f5a623;
+      border:1px solid rgba(245,166,35,.3);
     }
-    #pageHint{margin-top:5px;font-size:10px;color:#aaa}
+    #pageHint{margin-top:5px;font-size:10px;color:#5a7a9a}
     .page-tag{
-      background:#f0f4ff;color:#3a5bd9;border-radius:4px;
-      padding:1px 6px;font-weight:600;font-size:10px;
+      border-radius:4px;padding:1px 6px;font-weight:600;font-size:10px;
+      background:rgba(245,166,35,.12);color:#f5a623;
     }
+    .page-tag.ok{background:rgba(39,174,96,.12);color:#2ecc71}
+    .page-tag.err{background:rgba(231,76,60,.12);color:#e74c3c}
 
     .card-title{
-      font-size:10px;font-weight:700;color:#e74c3c;
+      font-size:10px;font-weight:700;color:#f5a623;
       text-transform:uppercase;letter-spacing:.8px;
       margin-bottom:10px;display:flex;align-items:center;gap:5px;
     }
-    .card-title::after{content:'';flex:1;height:1px;background:#fde8e8}
+    .card-title::after{content:'';flex:1;height:1px;background:rgba(245,166,35,.2)}
 
+    /* ── Fields ── */
     .field{margin-bottom:9px}
     .field:last-child{margin-bottom:0}
     .field-label{
-      font-size:11px;font-weight:600;color:#555;
+      font-size:11px;font-weight:600;color:#8aa0ba;
       margin-bottom:4px;display:flex;align-items:center;gap:5px;
     }
-    .field-hint{font-size:10px;color:#bbb;font-weight:400}
+    .field-hint{font-size:10px;color:#3a5a7a;font-weight:400}
 
-    input[type=text],input[type=number],select{
+    input[type=text],input[type=number]{
       width:100%;padding:7px 10px;
-      background:#f9f9fc;border:1.5px solid #e8e8f0;
-      border-radius:7px;color:#1a1a2e;font-size:12px;
+      background:#061020;border:1.5px solid #1a3a5c;
+      border-radius:7px;color:#d0d8e8;font-size:12px;
       outline:none;transition:border .2s;
       appearance:none;-webkit-appearance:none;
     }
-    input:focus,select:focus{
-      border-color:#e74c3c;box-shadow:0 0 0 3px rgba(231,76,60,.08);background:#fff;
+    input:focus{
+      border-color:#f5a623;
+      box-shadow:0 0 0 3px rgba(245,166,35,.1);
     }
 
+    /* ── Toggle ── */
     .toggle-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
     .toggle-row:last-child{margin-bottom:0}
-    .toggle-label{font-size:12px;color:#444;font-weight:500}
+    .toggle-label{font-size:12px;color:#8aa0ba;font-weight:500}
     .toggle{position:relative;width:38px;height:20px;flex-shrink:0}
     .toggle input{opacity:0;width:0;height:0}
     .slider{
-      position:absolute;inset:0;background:#e0e0e8;
+      position:absolute;inset:0;background:#1a3a5c;
       border-radius:20px;cursor:pointer;transition:.25s;
+      border:1px solid #2a4a6c;
     }
     .slider::before{
-      content:'';position:absolute;width:14px;height:14px;left:3px;top:3px;
-      background:#fff;border-radius:50%;transition:.25s;
-      box-shadow:0 1px 3px rgba(0,0,0,.2);
+      content:'';position:absolute;width:14px;height:14px;left:2px;top:2px;
+      background:#5a7a9a;border-radius:50%;transition:.25s;
     }
-    input:checked+.slider{background:#e74c3c}
-    input:checked+.slider::before{transform:translateX(18px)}
+    input:checked+.slider{background:rgba(245,166,35,.25);border-color:#f5a623}
+    input:checked+.slider::before{transform:translateX(18px);background:#f5a623}
 
     .interval-row{display:flex;align-items:center;gap:8px;margin-top:7px}
     .interval-row input{width:70px}
-    .interval-row span{font-size:12px;color:#999}
+    .interval-row span{font-size:12px;color:#5a7a9a}
 
+    /* ── Buttons ── */
     .btn-start{
       width:100%;padding:11px;
-      background:linear-gradient(135deg,#e74c3c,#c0392b);
-      color:#fff;font-size:14px;font-weight:800;
+      background:linear-gradient(135deg,#c8870a,#f5a623);
+      color:#0d2137;font-size:14px;font-weight:800;
       border-radius:9px;border:none;cursor:pointer;
-      box-shadow:0 3px 12px rgba(231,76,60,.35);transition:all .2s;
+      box-shadow:0 3px 12px rgba(245,166,35,.3);transition:all .2s;
     }
-    .btn-start:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(231,76,60,.4)}
+    .btn-start:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(245,166,35,.45)}
     .btn-stop{
-      width:100%;padding:11px;background:#f5f5f7;color:#666;
+      width:100%;padding:11px;background:#061020;color:#8aa0ba;
       font-size:13px;font-weight:700;border-radius:9px;
-      border:1.5px solid #e0e0e8;cursor:pointer;transition:all .2s;
+      border:1.5px solid #1a3a5c;cursor:pointer;transition:all .2s;
     }
-    .btn-stop:hover{background:#fff0f0;color:#e74c3c;border-color:#f5c6c6}
+    .btn-stop:hover{background:#0d2137;color:#f5a623;border-color:rgba(245,166,35,.4)}
 
+    /* ── Log ── */
     .log-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-    .log-title{font-size:10px;font-weight:700;color:#e74c3c;text-transform:uppercase;letter-spacing:.8px}
-    #seatCount-badge{
-      font-size:10px;font-weight:700;color:#fff;
-      background:#e74c3c;padding:2px 8px;border-radius:10px;
+    .log-title{font-size:10px;font-weight:700;color:#f5a623;text-transform:uppercase;letter-spacing:.8px}
+    #seat-badge{
+      font-size:10px;font-weight:700;color:#0d2137;
+      background:#f5a623;padding:2px 8px;border-radius:10px;
     }
     .log-box{
-      background:#f9f9fc;border:1.5px solid #ebebf5;
+      background:#061020;border:1px solid #1a3a5c;
       border-radius:8px;padding:8px 10px;height:95px;
       overflow-y:auto;font-family:'SF Mono',Consolas,monospace;font-size:10.5px;
     }
-    .log-box::-webkit-scrollbar{width:4px}
-    .log-box::-webkit-scrollbar-thumb{background:#ddd;border-radius:2px}
-    .log-entry{margin-bottom:2px;line-height:1.5;color:#999}
-    .log-entry.success{color:#27ae60}
-    .log-entry.warn{color:#e67e22}
+    .log-box::-webkit-scrollbar{width:3px}
+    .log-box::-webkit-scrollbar-thumb{background:#1a3a5c;border-radius:2px}
+    .log-entry{margin-bottom:2px;line-height:1.5;color:#3a5a7a}
+    .log-entry.success{color:#2ecc71}
+    .log-entry.warn{color:#f39c12}
     .log-entry.error{color:#e74c3c}
-    .log-entry.info{color:#2980b9}
+    .log-entry.info{color:#3498db}
+
+    /* ── Zone priority hint ── */
+    .zone-hint{
+      font-size:10px;color:#3a5a7a;margin-top:5px;line-height:1.5;
+      padding:5px 8px;background:#061020;border-radius:6px;
+      border-left:2px solid rgba(245,166,35,.3);
+    }
 
     .bottom-pad{height:12px}
   </style>
 </head>
 <body>
 
+<!-- Header -->
 <div class="header">
-  <div class="header-icon">🎫</div>
+  <div class="header-icon">⚡</div>
   <div class="header-text">
     <h1>AllTicket 搶票助手</h1>
-    <div class="sub">allticket.com 專用自動搶票</div>
+    <div class="sub">allticket.com 自動搶票 · 票價高→低</div>
   </div>
   <div class="status-dot" id="statusDot"></div>
 </div>
 
+<!-- 狀態 -->
 <div class="status-card">
   <div class="status-row">
     <span class="status-label">狀態</span>
     <span id="statusText">未啟動</span>
     <span id="stepBadge">-</span>
   </div>
-  <div id="pageHint" style="margin-top:5px;font-size:10px;color:#aaa">
+  <div id="pageHint" style="margin-top:5px;font-size:10px;color:#5a7a9a">
     目前頁面：<span class="page-tag" id="pageTag">偵測中...</span>
   </div>
 </div>
 
+<!-- 啟動/停止 -->
 <div class="card" style="margin-top:10px">
   <div id="startWrap">
-    <button class="btn-start" id="startBtn">🚀 &nbsp;開始搶票</button>
+    <button class="btn-start" id="startBtn">⚡ &nbsp;開始搶票</button>
   </div>
   <div id="stopWrap" style="display:none">
-    <button class="btn-stop" id="stopBtn">⏹ &nbsp;停止搶票</button>
+    <button class="btn-stop" id="stopBtn">⏹ &nbsp;停止</button>
   </div>
 </div>
 
+<!-- 搶票條件 -->
 <div class="card">
   <div class="card-title">搶票條件</div>
   <div class="field">
     <div class="field-label">
       Zone 關鍵字
-      <span class="field-hint">逗號分隔，留空＝自動選有位</span>
+      <span class="field-hint">逗號分隔，留空＝自動選票價最高</span>
     </div>
-    <input type="text" id="zoneKeywords" placeholder="如：A1, B1, B2（留空自動選最多空位）">
+    <input type="text" id="zoneKeywords" placeholder="如：A1, B1（留空自動選票價最高可用 Zone）">
+    <div class="zone-hint">票價順序：A1 &gt; A2 &gt; B1 &gt; B2 &gt; B &gt; C &gt; G &gt; H &gt; I &gt; D/E/F</div>
   </div>
   <div class="field">
     <div class="field-label">
@@ -191,26 +217,28 @@
   </div>
 </div>
 
+<!-- 自動化設定 -->
 <div class="card">
   <div class="card-title">自動化設定</div>
   <div class="toggle-row">
-    <span class="toggle-label">等待開賣自動重整頁面</span>
+    <span class="toggle-label">等待開賣自動重整</span>
     <label class="toggle">
       <input type="checkbox" id="autoRefresh">
       <span class="slider"></span>
     </label>
   </div>
   <div class="interval-row">
-    <span class="toggle-label" style="font-size:12px;color:#444;font-weight:500">偵測間隔</span>
+    <span class="toggle-label" style="font-size:12px;color:#8aa0ba;font-weight:500">偵測間隔</span>
     <input type="number" id="intervalInput" value="400" min="200" max="3000" step="100">
     <span>毫秒</span>
   </div>
 </div>
 
+<!-- Log -->
 <div class="card">
   <div class="log-header">
     <div class="log-title">操作記錄</div>
-    <span id="seatCount-badge">0 張</span>
+    <span id="seat-badge">0 張</span>
   </div>
   <div class="log-box" id="logBox">
     <div class="log-entry info">[系統] 插件載入，請設定後啟動</div>

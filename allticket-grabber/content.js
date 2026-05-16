@@ -4,12 +4,14 @@
 let tickerTimeout = null;
 let isRunning     = false;
 let settings      = null;
-let phase         = 'IDLE';  // IDLE | BUY | CHECK | ZONE | SEAT | BOOK | CONFIRM | DONE
+// 流程: BUY → CHECK → ZONE → SEAT → ACCEPT → VERIFY → BOOK → DONE
+let phase         = 'IDLE';
 let tickCount     = 0;
 let overlayEl     = null;
 let seatsTried    = new Set();
 let seatsSelected = 0;
-let checkClicked  = false;  // CHECK SEAT AVAILABLE 已點過
+let checkClicked  = false;
+let acceptClicked = false;
 
 // ── Overlay ──────────────────────────────────────────────
 function createOverlay() {
@@ -51,6 +53,7 @@ function start(cfg) {
   tickCount     = 0;
   seatsSelected = 0;
   checkClicked  = false;
+  acceptClicked = false;
   seatsTried    = new Set();
   phase         = 'BUY';
   createOverlay();
@@ -107,12 +110,13 @@ function tick() {
   tickCount++;
   setO2(`偵測 ${tickCount} 次 | 步驟: ${phase}`);
 
-  if      (phase === 'BUY')     handleBuy();
-  else if (phase === 'CHECK')   handleCheck();
-  else if (phase === 'ZONE')    handleZone();
-  else if (phase === 'SEAT')    handleSeat();
-  else if (phase === 'BOOK')    handleBook();
-  else if (phase === 'CONFIRM') handleConfirm();
+  if      (phase === 'BUY')    handleBuy();
+  else if (phase === 'CHECK')  handleCheck();
+  else if (phase === 'ZONE')   handleZone();
+  else if (phase === 'SEAT')   handleSeat();
+  else if (phase === 'ACCEPT') handleAccept();
+  else if (phase === 'VERIFY') handleVerify();
+  else if (phase === 'BOOK')   handleBook();
 }
 
 // ════════════════════════════════════════════════════════
@@ -257,7 +261,7 @@ function handleZone() {
 let seatFailCount = 0;
 
 function handleSeat() {
-  // 確認彈窗
+  // 有時 Yes/No 彈窗仍在
   const yesBtn = document.querySelector('button.btn-primary.popup-styled');
   if (yesBtn && isVisible(yesBtn)) { humanClick(yesBtn); return; }
 
@@ -265,8 +269,9 @@ function handleSeat() {
   const selected  = document.querySelectorAll('svg.seat.selected');
 
   if (selected.length >= seatCount) {
-    setO(`已選 ${selected.length} 張，前往 Booking...`, '#4cff91');
-    phase = 'BOOK';
+    setO(`已選 ${selected.length} 張，點擊確認選擇...`, '#4cff91');
+    phase = 'ACCEPT';
+    acceptClicked = false;
     seatFailCount = 0;
     return;
   }
@@ -276,8 +281,9 @@ function handleSeat() {
 
   if (!allAvail.length) {
     if (selected.length > 0) {
-      setO(`無更多空位，已選 ${selected.length} 張，繼續...`, '#4cff91');
-      phase = 'BOOK';
+      setO(`無更多空位，已選 ${selected.length} 張，前往確認...`, '#4cff91');
+      phase = 'ACCEPT';
+      acceptClicked = false;
       seatFailCount = 0;
     } else {
       seatFailCount++;
@@ -314,37 +320,82 @@ function handleSeat() {
 }
 
 // ════════════════════════════════════════════════════════
-// STEP 5 — 點擊 Booking
+// STEP 5 — 點擊 ยืนยันตัวเลือกของฉัน（確認我的選擇）
 // ════════════════════════════════════════════════════════
-function handleBook() {
-  const bookBtn = document.querySelector('button.btn-book');
-  if (!bookBtn) { setO('等待 Booking 按鈕...', '#88aaff'); return; }
-  if (bookBtn.disabled) { setO('Booking 未啟用，等待...', '#ffcc44'); return; }
+function handleAccept() {
+  const acceptBtn = document.querySelector('button.btn-accept') ||
+    [...document.querySelectorAll('button')]
+      .find(b => b.textContent.includes('ยืนยัน') && isVisible(b) && !b.classList.contains('popup-styled'));
 
-  setO('點擊 Booking！', '#4cff91');
-  log('點擊 Booking 確認', 'success');
-  phase = 'CONFIRM';
-  humanClick(bookBtn);
+  if (!acceptBtn || !isVisible(acceptBtn)) {
+    setO('等待確認選擇按鈕...', '#88aaff');
+    return;
+  }
+
+  if (!acceptClicked) {
+    acceptClicked = true;
+    setO('點擊「確認我的選擇」...', '#4cff91');
+    log('點擊 ยืนยันตัวเลือกของฉัน', 'success');
+    phase = 'VERIFY';
+    humanClick(acceptBtn);
+  }
 }
 
 // ════════════════════════════════════════════════════════
-// STEP 6 — 最終確認（ยืนยันตัวเลือกของฉัน）
+// STEP 6 — 處理驗證彈窗（กรุณาคลิก ยินยอม → OK）
 // ════════════════════════════════════════════════════════
-function handleConfirm() {
-  const confirmBtn = document.querySelector('button.btn-accept') ||
-    [...document.querySelectorAll('button')]
-      .find(b => b.textContent.includes('ยืนยัน') && !b.classList.contains('popup-styled'));
+function handleVerify() {
+  // 找彈窗中的 OK 按鈕（出現在 modal/dialog 內）
+  const okBtn = [...document.querySelectorAll('button')]
+    .find(b => b.textContent.trim().toUpperCase() === 'OK' && isVisible(b));
 
-  if (!confirmBtn) { setO('等待最終確認按鈕...', '#88aaff'); return; }
+  if (okBtn) {
+    setO('點擊驗證同意 OK...', '#88aaff');
+    log('同意驗證資訊', 'info');
+    humanClick(okBtn);
+    return;
+  }
 
-  setO('✓ 最終確認！搶票完成！', '#4cff91');
-  log('最終確認完成！', 'success');
+  // OK 已被點或沒出現 → 偵測是否已進入票券資訊頁（有 #GMM10 勾選框）
+  const consentCb = document.getElementById('GMM10') ||
+    document.querySelector('input.form-check-input[type="checkbox"]');
+  if (consentCb && isVisible(consentCb)) {
+    setO('票券資訊頁，準備勾選同意...', '#88aaff');
+    phase = 'BOOK';
+    return;
+  }
+
+  setO('等待驗證彈窗或票券資訊頁...', '#88aaff');
+}
+
+// ════════════════════════════════════════════════════════
+// STEP 7 — 勾選同意框 + 點擊 Booking
+// ════════════════════════════════════════════════════════
+function handleBook() {
+  // 勾選同意框（#GMM10）
+  const consentCb = document.getElementById('GMM10') ||
+    document.querySelector('input.form-check-input[type="checkbox"]');
+
+  if (consentCb && isVisible(consentCb) && !consentCb.checked) {
+    setO('勾選同意條款...', '#88aaff');
+    consentCb.click();
+    consentCb.dispatchEvent(new Event('change', { bubbles: true }));
+    log('勾選同意授權資訊', 'info');
+    return;
+  }
+
+  const bookBtn = document.querySelector('button.btn-book');
+  if (!bookBtn || !isVisible(bookBtn)) { setO('等待 Booking 按鈕...', '#88aaff'); return; }
+  if (bookBtn.disabled) { setO('Booking 未啟用，等待勾選...', '#ffcc44'); return; }
+
+  setO('✓ 點擊 Booking！完成搶票！', '#4cff91');
+  log('點擊 Booking！前往付款頁面', 'success');
   phase = 'DONE';
   isRunning = false;
   clearTimeout(tickerTimeout);
   chrome.storage.local.set({ isRunning: false, currentStep: 'DONE' });
   chrome.runtime.sendMessage({ type: 'STEP', step: 'DONE' }).catch(() => {});
-  humanClick(confirmBtn);
+  humanClick(bookBtn);
   setTimeout(() => rmO(), 8000);
 }
 
