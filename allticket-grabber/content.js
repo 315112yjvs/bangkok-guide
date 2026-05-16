@@ -261,7 +261,14 @@ function handleZone() {
 let seatFailCount = 0;
 
 function handleSeat() {
-  // 有時 Yes/No 彈窗仍在
+  // 若頁面已跳到票券資訊（罕見情況），直接 BOOK
+  if (onTicketInfoPage()) {
+    setO('偵測到票券資訊頁，直接跳至訂票...', '#88aaff');
+    phase = 'BOOK';
+    return;
+  }
+
+  // Yes/No 彈窗
   const yesBtn = document.querySelector('button.btn-primary.popup-styled');
   if (yesBtn && isVisible(yesBtn)) { humanClick(yesBtn); return; }
 
@@ -323,6 +330,22 @@ function handleSeat() {
 // STEP 5 — 點擊 ยืนยันตัวเลือกของฉัน（確認我的選擇）
 // ════════════════════════════════════════════════════════
 function handleAccept() {
+  // 若已到票券資訊頁（有勾選框），直接跳 BOOK
+  if (onTicketInfoPage()) {
+    setO('已在票券資訊頁，準備勾選...', '#88aaff');
+    phase = 'BOOK';
+    return;
+  }
+
+  // 處理 OK 彈窗（可能先於 btn-accept 出現）
+  const okBtn = [...document.querySelectorAll('button')]
+    .find(b => b.textContent.trim().toUpperCase() === 'OK' && isVisible(b));
+  if (okBtn) {
+    setO('點擊驗證 OK...', '#88aaff');
+    humanClick(okBtn);
+    return;
+  }
+
   const acceptBtn = document.querySelector('button.btn-accept') ||
     [...document.querySelectorAll('button')]
       .find(b => b.textContent.includes('ยืนยัน') && isVisible(b) && !b.classList.contains('popup-styled'));
@@ -345,10 +368,16 @@ function handleAccept() {
 // STEP 6 — 處理驗證彈窗（กรุณาคลิก ยินยอม → OK）
 // ════════════════════════════════════════════════════════
 function handleVerify() {
-  // 找彈窗中的 OK 按鈕（出現在 modal/dialog 內）
+  // 若已到票券資訊頁，直接跳 BOOK
+  if (onTicketInfoPage()) {
+    setO('票券資訊頁，準備勾選同意...', '#88aaff');
+    phase = 'BOOK';
+    return;
+  }
+
+  // OK 彈窗
   const okBtn = [...document.querySelectorAll('button')]
     .find(b => b.textContent.trim().toUpperCase() === 'OK' && isVisible(b));
-
   if (okBtn) {
     setO('點擊驗證同意 OK...', '#88aaff');
     log('同意驗證資訊', 'info');
@@ -356,16 +385,17 @@ function handleVerify() {
     return;
   }
 
-  // OK 已被點或沒出現 → 偵測是否已進入票券資訊頁（有 #GMM10 勾選框）
-  const consentCb = document.getElementById('GMM10') ||
-    document.querySelector('input.form-check-input[type="checkbox"]');
-  if (consentCb && isVisible(consentCb)) {
-    setO('票券資訊頁，準備勾選同意...', '#88aaff');
-    phase = 'BOOK';
-    return;
-  }
-
   setO('等待驗證彈窗或票券資訊頁...', '#88aaff');
+}
+
+// 判斷是否已在票券資訊頁
+function onTicketInfoPage() {
+  const cb = document.getElementById('GMM10') ||
+    document.querySelector('input.form-check-input[type="checkbox"]');
+  if (cb && isVisible(cb)) return true;
+  const bookBtn = document.querySelector('button.btn-book');
+  if (bookBtn && isVisible(bookBtn)) return true;
+  return false;
 }
 
 // ════════════════════════════════════════════════════════
