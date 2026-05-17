@@ -209,8 +209,7 @@ async def main():
     event_list = "\n".join(f"  {e['name']}" for e in events)
     notify_all(cfg, f"🔍 監控啟動（3 場次同時並行）\n{event_list}\n間隔 {interval_min}–{interval_max}s 隨機")
 
-    notified   = {e["id"]: False for e in events}
-    last_beat  = datetime.now()
+    notified = {e["id"]: False for e in events}
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(
@@ -232,16 +231,6 @@ async def main():
 
         while True:
             ts = datetime.now().strftime("%H:%M:%S")
-
-            # 心跳
-            if (datetime.now() - last_beat).total_seconds() >= heartbeat_m * 60:
-                lines = []
-                for e in events:
-                    icon = "🟢" if notified[e["id"]] else "🔴"
-                    lines.append(f"{icon} {e['name']}")
-                notify_all(cfg, "💓 監控中\n" + "\n".join(lines))
-                print(f"[{ts}] 💓 心跳推送")
-                last_beat = datetime.now()
 
             # 三場同時並行
             print(f"[{ts}] 🔄 同時檢查 {len(events)} 場...")
