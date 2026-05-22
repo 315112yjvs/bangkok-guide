@@ -68,9 +68,9 @@ function stopCountdown() {
   if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
 }
 
-// ── 開始 ────────────────────────────────────────────────
-$('btnStart').addEventListener('click', () => {
-  const cfg = {
+// ── 自動存檔（欄位變動即存）──────────────────────────────
+function readCfg() {
+  return {
     session:    $('session').value.trim(),
     areas:      $('areas').value.split(',').map(s => s.trim()).filter(Boolean),
     qty:        parseInt($('qty').value)      || 1,
@@ -79,8 +79,18 @@ $('btnStart').addEventListener('click', () => {
     saleTime:   $('saleTime').value.trim(),
     verifyCode: $('verifyCode').value.trim(),
   };
+}
 
-  chrome.storage.local.set({ tix_cfg: cfg, tix_running: true }, () => {
+['session', 'areas', 'qty', 'interval', 'ticketType', 'saleTime', 'verifyCode'].forEach(id => {
+  $(`${id}`).addEventListener('input',  () => chrome.storage.local.set({ tix_cfg: readCfg() }));
+  $(`${id}`).addEventListener('change', () => chrome.storage.local.set({ tix_cfg: readCfg() }));
+});
+
+// ── 開始 ────────────────────────────────────────────────
+$('btnStart').addEventListener('click', () => {
+  const cfg = readCfg();
+
+  chrome.storage.local.set({ tix_cfg: cfg, tix_running: true  }, () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs[0]) chrome.tabs.sendMessage(tabs[0].id, { action: 'START', cfg });
     });
