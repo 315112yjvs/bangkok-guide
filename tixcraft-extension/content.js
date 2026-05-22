@@ -153,11 +153,21 @@ function stopKeepalive() {
 function setupObserver() {
   if (mutObs) return;
   if (!['DETAIL', 'GAME', 'AREA'].includes(PAGE)) return;
-  mutObs = new MutationObserver(() => {
+  let obsTimer = null;
+  mutObs = new MutationObserver((mutations) => {
     if (!isRunning || done) return;
-    clearTimeout(tickTimer);
-    tick();
-    scheduleTick();
+    // 忽略 HUD 自身的 DOM 變化，避免無限迴圈
+    const isOwnHUD = mutations.every(m =>
+      overlayEl && (m.target === overlayEl || overlayEl.contains(m.target)));
+    if (isOwnHUD) return;
+    // 防抖 100ms，避免連續 DOM 變化重複觸發
+    clearTimeout(obsTimer);
+    obsTimer = setTimeout(() => {
+      if (!isRunning || done) return;
+      clearTimeout(tickTimer);
+      tick();
+      scheduleTick();
+    }, 100);
   });
   mutObs.observe(document.body, { childList: true, subtree: true, attributes: false });
 }
@@ -192,7 +202,8 @@ function start(newCfg) {
   console.log('[TixCraft搶票] 啟動 PAGE=', PAGE, 'cfg=', JSON.stringify(cfg));
   setupObserver();
   startKeepalive();
-  scheduleTick();
+  tick();         // 立刻執行第一次
+  scheduleTick(); // 之後持續排程
 }
 
 function stop() {
