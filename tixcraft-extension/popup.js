@@ -33,6 +33,7 @@ chrome.storage.local.get(['tix_cfg', 'tix_running'], (d) => {
   $('interval').value   = String(cfg.interval || 300);
   $('ticketType').value = cfg.ticketType || '';
   $('saleTime').value   = cfg.saleTime   || '';
+  $('verifyCode').value = cfg.verifyCode || '';
 
   if (d.tix_running) { setRunning(true); startCountdown(cfg.saleTime || ''); }
 });
@@ -76,6 +77,7 @@ $('btnStart').addEventListener('click', () => {
     interval:   parseInt($('interval').value) || 300,
     ticketType: $('ticketType').value.trim(),
     saleTime:   $('saleTime').value.trim(),
+    verifyCode: $('verifyCode').value.trim(),
   };
 
   chrome.storage.local.set({ tix_cfg: cfg, tix_running: true }, () => {

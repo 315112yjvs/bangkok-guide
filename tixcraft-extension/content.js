@@ -11,6 +11,7 @@ const PAGE = (() => {
   if (p.includes('/activity/game/'))   return 'GAME';
   if (p.includes('/ticket/area/'))     return 'AREA';
   if (p.includes('/ticket/ticket/'))   return 'TICKET';
+  if (p.includes('/ticket/verify/'))   return 'VERIFY';
   return 'OTHER';
 })();
 
@@ -255,42 +256,51 @@ function tick() {
   else if (PAGE === 'GAME')   handleGame();
   else if (PAGE === 'AREA')   handleArea();
   else if (PAGE === 'TICKET') handleTicket();
-  else if (PAGE === 'OTHER')  checkForVerifyPage();
+  else if (PAGE === 'VERIFY') handleVerify();
 }
 
 // ════════════════════════════════════════════════════════
-// VERIFY — 身份驗證頁（信用卡友先購、會員先購等）
-// 偵測到後暫停，保持 tix_running=true，等使用者送出後自動繼續
+// VERIFY — 身份驗證頁 (/ticket/verify/)
+// 有預填驗證碼 → 自動送出；無 → 暫停等手動
 // ════════════════════════════════════════════════════════
-function checkForVerifyPage() {
-  const p = location.pathname;
-  const byUrl =
-    p.includes('/verify')      ||
-    p.includes('/creditcard')  ||
-    p.includes('/member/auth') ||
-    p.includes('/ticket/auth');
-
-  const byDom =
-    !!document.querySelector('input[name*="card"]')          ||
-    !!document.querySelector('input[placeholder*="卡號"]')    ||
-    !!document.querySelector('input[maxlength="16"]')        ||  // 16 碼信用卡欄位
-    !!document.querySelector('input[maxlength="19"]')        ||  // 含分隔符格式
-    (!!document.querySelector('form') &&
-     !!document.querySelector('input[name*="member"], input[name*="Member"]'));
-
-  if (byUrl || byDom) handleVerify();
-}
-
-function handleVerify() {
+async function handleVerify() {
   if (verifyNotified) return;
+
+  const form = document.querySelector('form');
+  if (!form) { hud('等待驗證頁載入...', '#88aaff'); return; }
+
   verifyNotified = true;
-
-  // 更新 HUD 樣式為警告色
   if (overlayEl) overlayEl.style.borderColor = '#ffbd2e';
-  hud('🔐 身份驗證：請手動填寫', '#ffbd2e', '送出後將自動繼續搶票');
-  console.log('[TixCraft搶票] 偵測到身份驗證頁，暫停等待手動操作');
 
-  // tix_running 維持 true，下一頁的 content script 會自動接著執行
+  if (!cfg.verifyCode) {
+    hud('🔐 請手動填寫驗證碼', '#ffbd2e', '送出後自動繼續搶票');
+    console.log('[TixCraft搶票] 驗證頁暫停，等待手動輸入');
+    return;
+  }
+
+  // ── 自動填入 ──────────────────────────────────────────
+  const input =
+    form.querySelector('input[type="text"]') ||
+    form.querySelector('input:not([type="hidden"]):not([type="submit"])');
+
+  if (!input) { hud('找不到驗證碼輸入欄', '#ff4757'); return; }
+
+  hud('🔐 自動填入驗證碼...', '#00d4ff');
+  input.value = cfg.verifyCode.trim();
+  input.dispatchEvent(new Event('input',  { bubbles: true }));
+  input.dispatchEvent(new Event('change', { bubbles: true }));
+
+  await wait(gaussRandom(400, 100));
+
+  const submitBtn = Array.from(form.querySelectorAll('button, input[type="submit"]'))
+    .find(b => isVisible(b) && !b.disabled &&
+      (b.textContent.includes('送出') || b.value?.includes('送出') ||
+       b.type === 'submit'));
+
+  hud('🔐 送出驗證碼', '#4cff91');
+  console.log('[TixCraft搶票] 自動送出身份驗證');
+  if (submitBtn) doClick(submitBtn);
+  else form.submit();
 }
 
 // ════════════════════════════════════════════════════════
