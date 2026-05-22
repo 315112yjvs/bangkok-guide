@@ -281,7 +281,7 @@
     }
 
     /* ── ACTION BUTTON ───────────────────────────────── */
-    .footer { padding: 0 12px 12px; }
+    .footer { padding: 10px 12px 0; }
 
     .btn-start {
       width: 100%;
@@ -368,6 +368,16 @@
   </div>
 </div>
 
+<!-- ACTION -->
+<div class="footer">
+  <button class="btn-start" id="btnStart">
+    <span class="icon">▶</span> 開始搶票
+  </button>
+  <button class="btn-stop" id="btnStop">
+    <span class="icon">■</span> 停止搶票
+  </button>
+</div>
+
 <!-- STATUS -->
 <div class="status-bar" id="statusBar">
   <span class="status-icon">○</span>
@@ -451,16 +461,6 @@
     </div>
   </div>
 
-</div>
-
-<!-- ACTION -->
-<div class="footer">
-  <button class="btn-start" id="btnStart">
-    <span class="icon">▶</span> 開始搶票
-  </button>
-  <button class="btn-stop" id="btnStop">
-    <span class="icon">■</span> 停止搶票
-  </button>
 </div>
 
 <script src="popup.js"></script>
