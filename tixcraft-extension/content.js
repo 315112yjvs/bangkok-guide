@@ -30,6 +30,7 @@ let ticketSetup      = false;
 let captchaSolving   = false;
 let keepaliveTimer   = null;
 let mutObs           = null;
+let verifyNotified   = false;
 
 // ── Gaussian 隨機 (Box-Muller) ──────────────────────────
 function gaussRandom(mean, std) {
@@ -197,6 +198,7 @@ function start(newCfg) {
   areaClicked      = false;
   ticketSetup      = false;
   captchaSolving   = false;
+  verifyNotified   = false;
   createOverlay();
   hud('就緒，開始搶票', '#4cff91', PAGE);
   console.log('[TixCraft搶票] 啟動 PAGE=', PAGE, 'cfg=', JSON.stringify(cfg));
@@ -253,6 +255,42 @@ function tick() {
   else if (PAGE === 'GAME')   handleGame();
   else if (PAGE === 'AREA')   handleArea();
   else if (PAGE === 'TICKET') handleTicket();
+  else if (PAGE === 'OTHER')  checkForVerifyPage();
+}
+
+// ════════════════════════════════════════════════════════
+// VERIFY — 身份驗證頁（信用卡友先購、會員先購等）
+// 偵測到後暫停，保持 tix_running=true，等使用者送出後自動繼續
+// ════════════════════════════════════════════════════════
+function checkForVerifyPage() {
+  const p = location.pathname;
+  const byUrl =
+    p.includes('/verify')      ||
+    p.includes('/creditcard')  ||
+    p.includes('/member/auth') ||
+    p.includes('/ticket/auth');
+
+  const byDom =
+    !!document.querySelector('input[name*="card"]')          ||
+    !!document.querySelector('input[placeholder*="卡號"]')    ||
+    !!document.querySelector('input[maxlength="16"]')        ||  // 16 碼信用卡欄位
+    !!document.querySelector('input[maxlength="19"]')        ||  // 含分隔符格式
+    (!!document.querySelector('form') &&
+     !!document.querySelector('input[name*="member"], input[name*="Member"]'));
+
+  if (byUrl || byDom) handleVerify();
+}
+
+function handleVerify() {
+  if (verifyNotified) return;
+  verifyNotified = true;
+
+  // 更新 HUD 樣式為警告色
+  if (overlayEl) overlayEl.style.borderColor = '#ffbd2e';
+  hud('🔐 身份驗證：請手動填寫', '#ffbd2e', '送出後將自動繼續搶票');
+  console.log('[TixCraft搶票] 偵測到身份驗證頁，暫停等待手動操作');
+
+  // tix_running 維持 true，下一頁的 content script 會自動接著執行
 }
 
 // ════════════════════════════════════════════════════════
