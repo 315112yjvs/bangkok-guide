@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan:    #00d4ff;
+      --purple:  #7c3aed;
+      --green:   #00ff88;
+      --warn:    #ffbd2e;
+      --err:     #ff4757;
+      --bg:      #08060f;
+      --bg2:     #0f0c1a;
+      --bg3:     #16122a;
+      --border:  rgba(0,212,255,.12);
+      --text:    #c8d0e8;
+      --muted:   #4a5070;
+    }
+
+    body {
+      width: 340px;
+      background: var(--bg);
+      color: var(--text);
+      font: 12px/1.5 -apple-system, 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    .header {
+      background: linear-gradient(135deg, #0f0820 0%, #0a1628 100%);
+      padding: 14px 16px 12px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle, rgba(0,212,255,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo {
+      width: 38px; height: 38px;
+      background: linear-gradient(135deg, #0f1e3a, #1a0f3a);
+      border: 1.5px solid rgba(0,212,255,.3);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 0 12px rgba(0,212,255,.1);
+      flex-shrink: 0;
+    }
+    .header-info { flex: 1; }
+    .header-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: .3px;
+    }
+    .header-title span {
+      background: linear-gradient(90deg, var(--cyan), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .header-sub {
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+    .pulse {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--muted);
+      flex-shrink: 0;
+      transition: all .3s;
+    }
+    .pulse.on {
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(0,255,136,.2);
+      animation: blink 1.4s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%,100% { box-shadow: 0 0 0 3px rgba(0,255,136,.2); }
+      50%      { box-shadow: 0 0 0 6px rgba(0,255,136,.05); }
+    }
+
+    /* ── PIPELINE ────────────────────────────────────── */
+    .pipeline {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-top: 12px;
+      padding: 0 2px;
+    }
+    .step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      position: relative;
+    }
+    .step-dot {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--bg3);
+      border: 1.5px solid var(--muted);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px;
+      color: var(--muted);
+      transition: all .3s;
+      position: relative;
+      z-index: 1;
+    }
+    .step-label {
+      font-size: 9px;
+      color: var(--muted);
+      font-weight: 600;
+      letter-spacing: .3px;
+      text-transform: uppercase;
+    }
+    .step-arrow {
+      width: 24px;
+      height: 1px;
+      background: var(--muted);
+      margin-bottom: 16px;
+      flex-shrink: 0;
+      position: relative;
+      opacity: .4;
+    }
+    .step.active .step-dot {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      box-shadow: 0 0 10px rgba(0,212,255,.25);
+      background: rgba(0,212,255,.08);
+    }
+    .step.active .step-label { color: var(--cyan); }
+    .step.done .step-dot {
+      border-color: var(--green);
+      color: var(--green);
+      background: rgba(0,255,136,.08);
+    }
+    .step.done .step-label { color: var(--green); }
+
+    /* ── STATUS BAR ──────────────────────────────────── */
+    .status-bar {
+      margin: 10px 12px 0;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 34px;
+    }
+    .status-icon { font-size: 13px; flex-shrink: 0; }
+    .status-text {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      flex: 1;
+    }
+    .status-badge {
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 20px;
+      background: rgba(0,212,255,.1);
+      color: var(--cyan);
+      border: 1px solid rgba(0,212,255,.2);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      white-space: nowrap;
+    }
+    .status-bar.ok   .status-text  { color: var(--green); }
+    .status-bar.warn .status-text  { color: var(--warn);  }
+    .status-bar.err  .status-text  { color: var(--err);   }
+
+    /* ── CARDS ───────────────────────────────────────── */
+    .cards { padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; }
+
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 11px 13px;
+    }
+    .card-title {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,212,255,.2), transparent);
+    }
+
+    /* ── FIELDS ──────────────────────────────────────── */
+    .field { margin-bottom: 8px; }
+    .field:last-child { margin-bottom: 0; }
+    .field-row { display: flex; gap: 8px; }
+    .field-row .field { flex: 1; }
+
+    .lbl {
+      font-size: 10px;
+      font-weight: 600;
+      color: #6070a0;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .lbl-hint { font-weight: 400; color: #374060; }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    select {
+      width: 100%;
+      background: var(--bg);
+      border: 1.5px solid rgba(255,255,255,.06);
+      border-radius: 7px;
+      color: var(--text);
+      padding: 6px 9px;
+      font-size: 12px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      appearance: none;
+    }
+    input::placeholder { color: #2a3050; }
+    input:focus, select:focus {
+      border-color: rgba(0,212,255,.4);
+      box-shadow: 0 0 0 3px rgba(0,212,255,.07);
+    }
+    select option { background: #0f0c1a; }
+
+    .hint {
+      font-size: 10px;
+      color: #374060;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+    .hint a { color: rgba(0,212,255,.6); text-decoration: none; }
+    .hint a:hover { color: var(--cyan); }
+
+    /* ── OCR STATUS ──────────────────────────────────── */
+    .ocr-status {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11px;
+      color: var(--green);
+      margin-top: 8px;
+      padding: 6px 9px;
+      background: rgba(0,255,136,.05);
+      border: 1px solid rgba(0,255,136,.12);
+      border-radius: 7px;
+    }
+    .ocr-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px rgba(0,255,136,.5);
+      flex-shrink: 0;
+    }
+
+    /* ── ACTION BUTTON ───────────────────────────────── */
+    .footer { padding: 0 12px 12px; }
+
+    .btn-start {
+      width: 100%;
+      padding: 11px;
+      background: linear-gradient(135deg, #0a2a4a, #1a0f3a);
+      border: 1.5px solid rgba(0,212,255,.35);
+      border-radius: 10px;
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all .2s;
+      letter-spacing: .3px;
+    }
+    .btn-start:hover {
+      background: linear-gradient(135deg, #0e3560, #220f50);
+      border-color: rgba(0,212,255,.6);
+      box-shadow: 0 0 20px rgba(0,212,255,.15);
+    }
+    .btn-start .icon { font-size: 15px; }
+
+    .btn-stop {
+      width: 100%;
+      padding: 11px;
+      background: rgba(255,71,87,.06);
+      border: 1.5px solid rgba(255,71,87,.2);
+      border-radius: 10px;
+      color: var(--err);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all .2s;
+    }
+    .btn-stop:hover {
+      background: rgba(255,71,87,.1);
+      border-color: rgba(255,71,87,.4);
+    }
+    .btn-stop.show { display: flex; }
+    .btn-start.hide { display: none; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div class="logo">🎯</div>
+    <div class="header-info">
+      <div class="header-title">TixCraft <span>搶票助手</span></div>
+      <div class="header-sub">全自動流程 · OCR 驗證碼識別</div>
+    </div>
+    <div class="pulse" id="pulse"></div>
+  </div>
+
+  <!-- Pipeline steps -->
+  <div class="pipeline">
+    <div class="step" id="s-detail">
+      <div class="step-dot">①</div>
+      <div class="step-label">場次</div>
+    </div>
+    <div class="step-arrow"></div>
+    <div class="step" id="s-area">
+      <div class="step-dot">②</div>
+      <div class="step-label">票區</div>
+    </div>
+    <div class="step-arrow"></div>
+    <div class="step" id="s-ticket">
+      <div class="step-dot">③</div>
+      <div class="step-label">購票</div>
+    </div>
+    <div class="step-arrow"></div>
+    <div class="step" id="s-done">
+      <div class="step-dot">✓</div>
+      <div class="step-label">完成</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATUS -->
+<div class="status-bar" id="statusBar">
+  <span class="status-icon">○</span>
+  <span class="status-text" id="statusText">尚未啟動</span>
+  <span class="status-badge" id="pageBadge">—</span>
+</div>
+
+<!-- CARDS -->
+<div class="cards">
+
+  <!-- 場次 & 票區 -->
+  <div class="card">
+    <div class="card-title">搶票條件</div>
+
+    <div class="field">
+      <div class="lbl">
+        場次關鍵字
+        <span class="lbl-hint">留空 = 自動選第一個</span>
+      </div>
+      <input type="text" id="session" placeholder="例：05/23、18:00">
+    </div>
+
+    <div class="field">
+      <div class="lbl">
+        票區優先順序
+        <span class="lbl-hint">逗號分隔</span>
+      </div>
+      <input type="text" id="areas" placeholder="例：A區,B區">
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <div class="lbl">張數</div>
+        <select id="qty">
+          <option value="1">1 張</option>
+          <option value="2">2 張</option>
+          <option value="3">3 張</option>
+          <option value="4">4 張</option>
+        </select>
+      </div>
+      <div class="field">
+        <div class="lbl">票種關鍵字</div>
+        <input type="text" id="ticketType" placeholder="全票+福利券">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="lbl">
+        開賣時間
+        <span class="lbl-hint">留空 = 立即搶</span>
+      </div>
+      <input type="time" id="saleTime" placeholder="18:00">
+      <div class="hint">設定後將在 T-20 秒自動切換高速模式</div>
+    </div>
+  </div>
+
+  <!-- OCR -->
+  <div class="card">
+    <div class="card-title">自動化設定</div>
+
+    <div class="field">
+      <div class="lbl">
+        偵測間隔
+        <span class="lbl-hint">ms</span>
+      </div>
+      <input type="number" id="interval" value="300" min="100" max="2000" step="50">
+    </div>
+
+    <div class="ocr-status">
+      <span class="ocr-dot"></span>
+      驗證碼 OCR 自動識別已啟用
+    </div>
+  </div>
+
+</div>
+
+<!-- ACTION -->
+<div class="footer">
+  <button class="btn-start" id="btnStart">
+    <span class="icon">▶</span> 開始搶票
+  </button>
+  <button class="btn-stop" id="btnStop">
+    <span class="icon">■</span> 停止搶票
+  </button>
+</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
