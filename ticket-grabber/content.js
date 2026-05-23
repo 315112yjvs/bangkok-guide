@@ -292,9 +292,11 @@ function handlePassport() {
 
   // ── Phase type：點選類型按鈕 ────────────────────────────
   if (passportPhase === 'type') {
-    const keyword = isThaiId ? 'บัตรประชาชน' : 'พาสปอร์ต';
+    const thKeyword = isThaiId ? 'บัตรประชาชน' : 'พาสปอร์ต';
+    const enKeyword = isThaiId ? 'Thai ID Card' : 'Passport Number';
     const typeBtn = [...document.querySelectorAll('button')]
-      .find(el => el.textContent.includes('ยืนยัน') && el.textContent.includes(keyword));
+      .find(el => (el.textContent.includes('ยืนยัน') && el.textContent.includes(thKeyword)) ||
+                  (el.textContent.includes('Verify') && el.textContent.includes(enKeyword)));
 
     if (!typeBtn) {
       passportPhase = 'fill'; return; // 舊格式，無類型按鈕
@@ -345,11 +347,14 @@ function handlePassport() {
   const numberInput = document.querySelector('#txt_verifycode') ||
                       document.querySelector('input[type="tel"]') ||
                       [...document.querySelectorAll('input[type="text"]')]
-                        .find(i => !(i.placeholder || '').includes('ประเทศ'));
+                        .find(i => !(i.placeholder || '').includes('ประเทศ') &&
+                                   !(i.placeholder || '').toLowerCase().includes('country'));
 
   const submitBtn = document.querySelector('#btnconfirm') ||
                     [...document.querySelectorAll('button')]
-                      .find(b => b.textContent.includes('ตกลง') && b.type === 'submit');
+                      .find(b => (b.textContent.includes('ตกลง') || b.textContent.trim() === 'OK') && b.type === 'submit') ||
+                    [...document.querySelectorAll('button')]
+                      .find(b => b.textContent.trim() === 'OK');
 
   if (!numberInput) { setO('等待輸入框出現...', '#88aaff'); return; }
   if (!submitBtn)   { setO('找不到確認按鈕...', '#ffcc44');  return; }
