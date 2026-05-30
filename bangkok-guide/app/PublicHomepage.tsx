@@ -11,7 +11,7 @@ import type { Location, Category } from '@/lib/types'
 
 type Props = { locations: Location[] }
 
-type SpecialFilter = 'all' | 'trending' | 'local'
+type SpecialFilter = 'all' | 'trending' | 'local' | 'nearby'
 
 const NEIGHBORHOODS = [
   'Sukhumvit', 'Silom', 'Sathorn', 'Siam', 'Ari', 'Thonglor',
@@ -33,7 +33,33 @@ export function PublicHomepage({ locations }: Props) {
   const [specialFilter, setSpecialFilter] = useState<SpecialFilter>('all')
   const [activeArea, setActiveArea] = useState('all')
   const [query, setQuery] = useState('')
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
+  const [locating, setLocating] = useState(false)
   const sheetRef = useRef<HTMLDivElement>(null)
+
+  function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number) {
+    const R = 6371
+    const dLat = (lat2 - lat1) * Math.PI / 180
+    const dLng = (lng2 - lng1) * Math.PI / 180
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLng / 2) ** 2
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+  }
+
+  function requestLocation() {
+    setLocating(true)
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude })
+        setLocating(false)
+        setSpecialFilter('nearby')
+      },
+      () => {
+        setLocating(false)
+        alert(lang === 'zh' ? '無法取得位置，請確認已開啟定位權限' : 'Could not get location. Please allow location access.')
+      },
+      { timeout: 10000 }
+    )
+  }
 
   const availableAreas = useMemo(() => {
     const areas = new Set<string>()
@@ -45,11 +71,12 @@ export function PublicHomepage({ locations }: Props) {
   }, [locations])
 
   const filtered = useMemo(() => {
-    return locations.filter((loc) => {
+    const base = locations.filter((loc) => {
       const matchCat = activeCategory === 'all' || loc.category === activeCategory
       const matchArea = activeArea === 'all' || detectArea(loc.address) === activeArea
       const matchSpecial =
         specialFilter === 'all' ||
+        specialFilter === 'nearby' ||
         (specialFilter === 'trending' && loc.trending) ||
         (specialFilter === 'local' && (
           loc.source === 'pantip' || loc.source === 'wongnai' || (loc.local_ratio ?? 0) >= 60
@@ -59,7 +86,14 @@ export function PublicHomepage({ locations }: Props) {
         .some((s) => s?.toLowerCase().includes(q))
       return matchCat && matchArea && matchSpecial && matchSearch
     })
-  }, [locations, activeCategory, activeArea, specialFilter, query])
+    if (specialFilter === 'nearby' && userLocation) {
+      return [...base].sort((a, b) =>
+        haversineKm(userLocation.lat, userLocation.lng, a.lat, a.lng) -
+        haversineKm(userLocation.lat, userLocation.lng, b.lat, b.lng)
+      )
+    }
+    return base
+  }, [locations, activeCategory, activeArea, specialFilter, query, userLocation])
 
   const trending = useMemo(() =>
     specialFilter !== 'all' ? [] : filtered.filter((l) => l.trending).slice(0, 6),
@@ -135,10 +169,10 @@ export function PublicHomepage({ locations }: Props) {
         <div className="bg-white border-b border-gray-100 px-3 py-2">
           <div className="flex gap-2 overflow-x-auto no-scrollbar">
             {([
-              { id: 'all',      label: lang === 'zh' ? '全部顯示' : 'All',          icon: '' },
-              { id: 'trending', label: lang === 'zh' ? '📈 本週熱門' : '📈 Trending', icon: '' },
-              { id: 'local',    label: lang === 'zh' ? '🇹🇭 在地私藏' : '🇹🇭 Local Picks', icon: '' },
-            ] as { id: SpecialFilter; label: string; icon: string }[]).map(({ id, label }) => (
+              { id: 'all',      label: lang === 'zh' ? '全部顯示' : 'All' },
+              { id: 'trending', label: lang === 'zh' ? '📈 本週熱門' : '📈 Trending' },
+              { id: 'local',    label: lang === 'zh' ? '🇹🇭 在地私藏' : '🇹🇭 Local Picks' },
+            ] as { id: SpecialFilter; label: string }[]).map(({ id, label }) => (
               <button
                 key={id}
                 onClick={() => setSpecialFilter(id)}
@@ -151,6 +185,21 @@ export function PublicHomepage({ locations }: Props) {
                 {label}
               </button>
             ))}
+            <button
+              onClick={() => {
+                if (specialFilter === 'nearby') { setSpecialFilter('all'); return }
+                if (userLocation) { setSpecialFilter('nearby'); return }
+                requestLocation()
+              }}
+              disabled={locating}
+              className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+                specialFilter === 'nearby'
+                  ? 'bg-[#1e1b4b] text-white shadow-sm'
+                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+              }`}
+            >
+              {locating ? '⏳' : '📍'} {lang === 'zh' ? '附近' : 'Near Me'}
+            </button>
             <div className="w-px bg-gray-200 mx-0.5" />
             {/* Area chips */}
             {availableAreas.map((area) => (
@@ -179,7 +228,7 @@ export function PublicHomepage({ locations }: Props) {
               <div className="flex-1 h-px bg-gradient-to-r from-orange-200 to-transparent" />
             </div>
             <div className="grid grid-cols-2 gap-3">
-              {trending.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} />)}
+              {trending.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} />)}
             </div>
           </section>
         )}
@@ -197,7 +246,7 @@ export function PublicHomepage({ locations }: Props) {
               </div>
             )}
             <div className="grid grid-cols-2 gap-3">
-              {rest.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} />)}
+              {rest.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} />)}
             </div>
           </section>
         )}
