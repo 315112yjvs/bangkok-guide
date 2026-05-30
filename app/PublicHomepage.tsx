@@ -220,23 +220,16 @@ export function PublicHomepage({ locations }: Props) {
         <div className="bg-white border-b border-gray-100 py-2 relative">
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
           <div className="flex gap-2 overflow-x-auto no-scrollbar px-3">
-            {([
-              { id: 'all',      label: lang === 'zh' ? '全部顯示' : 'All' },
-              { id: 'trending', label: lang === 'zh' ? '📈 本週熱門' : '📈 Trending' },
-              { id: 'local',    label: lang === 'zh' ? '🇹🇭 在地私藏' : '🇹🇭 Local Picks' },
-            ] as { id: SpecialFilter; label: string }[]).map(({ id, label }) => (
-              <button
-                key={id}
-                onClick={() => changeFilter(id)}
-                className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
-                  specialFilter === id
-                    ? 'bg-[#1e1b4b] text-white shadow-sm'
-                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                }`}
-              >
-                {label}
-              </button>
-            ))}
+            <button
+              onClick={() => changeFilter('all')}
+              className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+                specialFilter === 'all'
+                  ? 'bg-[#1e1b4b] text-white shadow-sm'
+                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+              }`}
+            >
+              {lang === 'zh' ? '全部顯示' : 'All'}
+            </button>
             <button
               onClick={() => {
                 if (specialFilter === 'nearby') { changeFilter('all'); return }
