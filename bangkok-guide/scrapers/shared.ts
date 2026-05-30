@@ -1,8 +1,11 @@
+import type { Category } from '@/lib/types'
+
 export type ScrapedItem = {
   name_en: string
   name_zh: string
   description_en: string
   description_zh: string
+  category?: Category
   address: string
   lat: number
   lng: number
@@ -11,6 +14,7 @@ export type ScrapedItem = {
   rating: number
   price_range: 1 | 2 | 3 | 4
   trending: boolean
+  highlights?: string[]
 }
 
 export async function firecrawlScrape(url: string): Promise<string> {

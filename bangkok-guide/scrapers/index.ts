@@ -7,6 +7,7 @@ import { scrapeWongnai } from './wongnai'
 import { scrapeGoogleMaps } from './googlemaps'
 import { scrapeTikTok } from './tiktok'
 import { scrapeInstagram } from './instagram'
+import { enrichItem } from './enricher'
 
 const SOURCE_MAP = {
   pantip: scrapePantip,
@@ -26,10 +27,22 @@ export async function runAllScrapers(): Promise<number> {
       const items = await scraper()
       for (const item of items) {
         if (!isDuplicate(item, existing)) {
+          const category = item.category ?? 'food'
+
+          // Google Maps items are already enriched inline; enrich others via Places API
+          const enriched = source !== 'googlemaps'
+            ? await enrichItem(item.name_en, category, item.lat, item.lng)
+            : {
+                description_en: item.description_en,
+                description_zh: item.description_zh,
+                highlights: item.highlights ?? [],
+              }
+
           const pending: PendingLocation = {
             ...item,
+            ...enriched,
             id: uuidv4(),
-            category: 'food',
+            category,
             source: source as PendingLocation['source'],
             scraped_at: new Date().toISOString(),
           }
