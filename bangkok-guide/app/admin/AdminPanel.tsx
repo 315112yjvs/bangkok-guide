@@ -137,10 +137,11 @@ function ApprovedCard({ item, onRemove }: { item: Location; onRemove: (id: strin
 // ---- MANUAL ADD FORM ----
 function AddForm({ onAdded }: { onAdded: () => void }) {
   const empty = {
-    name_zh: '', name_en: '', description_zh: '', description_en: '',
-    category: 'food' as Category, address: '', lat: 0, lng: 0,
+    name_zh: '', name_en: '', name_th: '', description_zh: '', description_en: '',
+    category: 'food' as Category, address: '', address_th: '', lat: 0, lng: 0,
     photosInput: '', source: 'manual' as Source,
     source_url: '', rating: 4, price_range: 2 as 1|2|3|4, trending: false,
+    hashtagsInput: '', local_ratio: '' as string,
   }
   const [form, setForm] = useState(empty)
   const [saving, setSaving] = useState(false)
@@ -157,11 +158,13 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
   async function submit(e: React.FormEvent) {
     e.preventDefault()
     setSaving(true)
-    const { photosInput, ...rest } = form
+    const { photosInput, hashtagsInput, local_ratio, ...rest } = form
     const payload = {
       ...rest,
       action: 'add',
       photos: photosInput ? photosInput.split(',').map((s) => s.trim()).filter(Boolean) : [],
+      hashtags: hashtagsInput ? hashtagsInput.split(',').map((s) => s.trim()).filter(Boolean) : [],
+      local_ratio: local_ratio !== '' ? Number(local_ratio) : undefined,
     }
     await fetch('/api/locations', {
       method: 'POST',
@@ -182,6 +185,7 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
       <div className="grid grid-cols-2 gap-4">
         <div><label className={label}>中文名稱</label><input className={inp} value={form.name_zh} onChange={field('name_zh')} required /></div>
         <div><label className={label}>English Name</label><input className={inp} value={form.name_en} onChange={field('name_en')} required /></div>
+        <div className="col-span-2"><label className={label}>泰文店名 ชื่อร้าน（複製給計程車用）</label><input className={inp} value={form.name_th} onChange={field('name_th')} placeholder="เช่น ร้านอาหาร..." /></div>
         <div className="col-span-2"><label className={label}>中文描述</label><textarea className={inp} rows={2} value={form.description_zh} onChange={field('description_zh')} /></div>
         <div className="col-span-2"><label className={label}>English Description</label><textarea className={inp} rows={2} value={form.description_en} onChange={field('description_en')} /></div>
         <div>
@@ -196,7 +200,8 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
             {(['manual','pantip','wongnai','googlemaps','tiktok','instagram'] as Source[]).map(s => <option key={s} value={s}>{s}</option>)}
           </select>
         </div>
-        <div className="col-span-2"><label className={label}>地址</label><input className={inp} value={form.address} onChange={field('address')} /></div>
+        <div className="col-span-2"><label className={label}>地址（英文）</label><input className={inp} value={form.address} onChange={field('address')} /></div>
+        <div className="col-span-2"><label className={label}>泰文地址 ที่อยู่（選填）</label><input className={inp} value={form.address_th} onChange={field('address_th')} placeholder="ที่อยู่ภาษาไทย..." /></div>
         <div><label className={label}>緯度 (lat)</label><input type="number" step="any" className={inp} value={form.lat} onChange={field('lat')} /></div>
         <div><label className={label}>經度 (lng)</label><input type="number" step="any" className={inp} value={form.lng} onChange={field('lng')} /></div>
         <div className="col-span-2"><label className={label}>照片 URLs（逗號分隔）</label><input className={inp} value={form.photosInput} onChange={field('photosInput')} placeholder="https://..." /></div>
@@ -208,9 +213,11 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
           </select>
         </div>
         <div><label className={label}>Source URL</label><input className={inp} value={form.source_url} onChange={field('source_url')} /></div>
+        <div><label className={label}>在地客比例 % (0–100)</label><input type="number" min="0" max="100" className={inp} value={form.local_ratio} onChange={field('local_ratio')} placeholder="例：80 代表八成是泰國人" /></div>
+        <div className="col-span-2"><label className={label}>泰文 Hashtags（逗號分隔）</label><input className={inp} value={form.hashtagsInput} onChange={field('hashtagsInput')} placeholder="คาเฟ่เปิดใหม่, บรรยากาศดี" /></div>
         <div className="flex items-center gap-2 pt-5">
           <input type="checkbox" id="trending" checked={form.trending} onChange={field('trending')} className="w-4 h-4" />
-          <label htmlFor="trending" className="text-sm font-semibold text-gray-600">標記為熱門</label>
+          <label htmlFor="trending" className="text-sm font-semibold text-gray-600">標記為熱門（顯示在 Trend Radar）</label>
         </div>
       </div>
       <button type="submit" disabled={saving} className="mt-6 bg-[#0f172a] text-white rounded-xl px-6 py-3 text-sm font-bold disabled:opacity-50">
