@@ -871,7 +871,7 @@
     ],
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJT7siK9qe4jAR4g9RuT8DvNA",
     "rating": 4.5,
-    "price_range": 2,
+    "price_range": 3,
     "trending": false,
     "highlights": [
       "Steak",
@@ -896,7 +896,7 @@
     ],
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJQZUlAOie4jARFrO5SofhpiI",
     "rating": 4.5,
-    "price_range": 2,
+    "price_range": 3,
     "trending": false,
     "highlights": [
       "The pool"
@@ -1219,7 +1219,7 @@
     ],
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJ-bH8jeOe4jARQNQjkFdBAhs",
     "rating": 4.5,
-    "price_range": 3,
+    "price_range": 4,
     "trending": false,
     "highlights": [
       "Sushi",
@@ -1243,7 +1243,7 @@
     ],
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJDdCqIP-e4jARxR8vNaxyt9U",
     "rating": 4.6,
-    "price_range": 2,
+    "price_range": 4,
     "trending": false,
     "highlights": [
       "Rooftop View",
@@ -1267,7 +1267,7 @@
     ],
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJW3-qd-ae4jARzIgMyGy195g",
     "rating": 4.6,
-    "price_range": 2,
+    "price_range": 4,
     "trending": false,
     "highlights": [
       "Rooftop View",
@@ -1292,7 +1292,7 @@
     ],
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJw14X4AOf4jARWu3MODg3Lz4",
     "rating": 4.4,
-    "price_range": 2,
+    "price_range": 3,
     "trending": false,
     "highlights": [
       "Cocktails",
@@ -4389,7 +4389,7 @@
     ],
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJc1wrNx-f4jARWsCaAbz1Os4",
     "rating": 4.4,
-    "price_range": 2,
+    "price_range": 3,
     "trending": false,
     "highlights": [
       "Rooftop View",
@@ -4436,7 +4436,7 @@
     ],
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJBSV8teOe4jARCc18BvYpuEs",
     "rating": 4.7,
-    "price_range": 3,
+    "price_range": 4,
     "trending": false,
     "highlights": [
       "Green Curry",
@@ -4461,7 +4461,7 @@
     ],
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJvcDIreae4jARzV1hGAAb8-g",
     "rating": 4.6,
-    "price_range": 2,
+    "price_range": 3,
     "trending": false,
     "highlights": [
       "Espresso",

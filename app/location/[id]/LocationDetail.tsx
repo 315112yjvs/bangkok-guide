@@ -131,19 +131,6 @@ export function LocationDetail({ location }: { location: Location }) {
           </svg>
         </button>
 
-        {/* Photo strip */}
-        {allPhotos.length > 1 && (
-          <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5">
-            {allPhotos.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActivePhoto(i)}
-                className={`w-1.5 h-1.5 rounded-full transition-all ${i === activePhoto ? 'bg-white w-4' : 'bg-white/50'}`}
-              />
-            ))}
-          </div>
-        )}
-
         {/* Trending badge */}
         {location.trending && (
           <div className="absolute bottom-4 left-4">
@@ -194,7 +181,7 @@ export function LocationDetail({ location }: { location: Location }) {
           {location.price_range > 0 && (
             <span className="text-sm text-gray-400 font-semibold">{'฿'.repeat(location.price_range)}</span>
           )}
-          <span className="text-xs text-gray-400">{location.category === 'food' ? '餐廳' : location.category === 'cafe' ? '咖啡廳' : location.category === 'shopping' ? '購物' : location.category === 'nightlife' ? '夜生活' : '飯店'}</span>
+          <span className="text-xs text-gray-400">{{ food: '餐廳', cafe: '咖啡廳', shopping: '購物', nightlife: '夜生活', hotel: '飯店' }[location.category] ?? location.category}</span>
         </div>
 
         {/* Description */}
