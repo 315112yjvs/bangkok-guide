@@ -47,6 +47,22 @@ export function PublicHomepage({ locations }: Props) {
     setSavedIds(new Set(ids))
   }, [])
 
+  useEffect(() => {
+    if (!navigator.geolocation) return
+    setLocating(true)
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude })
+        setLocating(false)
+        setSpecialFilter('nearby')
+        setRestPage(1)
+      },
+      () => { setLocating(false) },
+      { timeout: 10000 }
+    )
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   function handleToggleSave(id: string) {
     setSavedIds((prev) => {
       const next = new Set(prev)
@@ -74,10 +90,7 @@ export function PublicHomepage({ locations }: Props) {
         setSpecialFilter('nearby')
         setRestPage(1)
       },
-      () => {
-        setLocating(false)
-        alert(lang === 'zh' ? '無法取得位置，請確認已開啟定位權限' : 'Could not get location. Please allow location access.')
-      },
+      () => { setLocating(false) },
       { timeout: 10000 }
     )
   }
@@ -114,10 +127,12 @@ export function PublicHomepage({ locations }: Props) {
       return matchCat && matchArea && matchSpecial && matchSearch
     })
     if (specialFilter === 'nearby' && userLocation) {
-      return [...base].sort((a, b) =>
-        haversineKm(userLocation.lat, userLocation.lng, a.lat, a.lng) -
-        haversineKm(userLocation.lat, userLocation.lng, b.lat, b.lng)
-      )
+      return [...base]
+        .filter((l) => haversineKm(userLocation.lat, userLocation.lng, l.lat, l.lng) <= 5)
+        .sort((a, b) =>
+          haversineKm(userLocation.lat, userLocation.lng, a.lat, a.lng) -
+          haversineKm(userLocation.lat, userLocation.lng, b.lat, b.lng)
+        )
     }
     return base
   }, [locations, activeCategory, activeArea, specialFilter, query, userLocation, savedIds])
