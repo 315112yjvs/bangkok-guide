@@ -271,6 +271,12 @@ export function AdminPanel() {
     loadData()
   }
 
+  async function handleRejectAll() {
+    if (!confirm(`確定要駁回全部 ${pending.length} 筆待審核地點嗎？`)) return
+    await fetch('/api/pending', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ all: true }) })
+    loadData()
+  }
+
   async function handleRemove(id: string) {
     await fetch('/api/locations', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) })
     loadData()
@@ -406,7 +412,17 @@ export function AdminPanel() {
 
         {tab === 'pending' && (
           <div className="space-y-3">
-            <h1 className="text-xl font-black text-[#0f172a] mb-4">待審核地點</h1>
+            <div className="flex items-center justify-between mb-4">
+              <h1 className="text-xl font-black text-[#0f172a]">待審核地點</h1>
+              {pending.length > 0 && (
+                <button
+                  onClick={handleRejectAll}
+                  className="text-xs font-bold px-4 py-2 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
+                >
+                  全部駁回 ({pending.length})
+                </button>
+              )}
+            </div>
             {pending.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">沒有待審核的地點</p>}
             {pending.map((item) => (
               <PendingCard key={item.id} item={item} onApprove={handleApprove} onReject={handleReject} />
