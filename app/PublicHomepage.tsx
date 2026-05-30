@@ -13,6 +13,8 @@ type Props = { locations: Location[] }
 
 type SpecialFilter = 'all' | 'trending' | 'local' | 'nearby'
 
+const PAGE_SIZE = 12
+
 const NEIGHBORHOODS = [
   'Sukhumvit', 'Silom', 'Sathorn', 'Siam', 'Ari', 'Thonglor',
   'Ekkamai', 'Phrom Phong', 'Asok', 'Nana', 'Ratchada',
@@ -35,6 +37,7 @@ export function PublicHomepage({ locations }: Props) {
   const [query, setQuery] = useState('')
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
   const [locating, setLocating] = useState(false)
+  const [restPage, setRestPage] = useState(1)
   const sheetRef = useRef<HTMLDivElement>(null)
 
   function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number) {
@@ -52,6 +55,7 @@ export function PublicHomepage({ locations }: Props) {
         setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude })
         setLocating(false)
         setSpecialFilter('nearby')
+        setRestPage(1)
       },
       () => {
         setLocating(false)
@@ -59,6 +63,11 @@ export function PublicHomepage({ locations }: Props) {
       },
       { timeout: 10000 }
     )
+  }
+
+  function changeFilter(f: SpecialFilter) {
+    setSpecialFilter(f)
+    setRestPage(1)
   }
 
   const availableAreas = useMemo(() => {
@@ -99,17 +108,18 @@ export function PublicHomepage({ locations }: Props) {
     specialFilter !== 'all' ? [] : filtered.filter((l) => l.trending).slice(0, 6),
     [filtered, specialFilter]
   )
-  const rest = useMemo(() =>
+  const restAll = useMemo(() =>
     specialFilter !== 'all' ? filtered : filtered.filter((l) => !l.trending),
     [filtered, specialFilter]
   )
+  const restVisible = restAll.slice(0, restPage * PAGE_SIZE)
+  const hasMore = restVisible.length < restAll.length
 
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen overflow-hidden relative shadow-xl">
 
-      {/* HERO + MAP layer (fixed behind sheet) */}
+      {/* HERO */}
       <div className="sticky top-0 z-0 h-[55vw] max-h-60 min-h-40">
-        {/* Hero image */}
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&fit=crop"
@@ -119,8 +129,6 @@ export function PublicHomepage({ locations }: Props) {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0f1428]/90 via-[#0f1428]/50 to-transparent" />
         </div>
-
-        {/* Hero text + search */}
         <div className="relative z-10 p-4 pb-2 flex flex-col h-full">
           <div className="flex justify-between items-start mb-1">
             <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest">{strings[lang].siteName as string}</span>
@@ -139,10 +147,10 @@ export function PublicHomepage({ locations }: Props) {
               className="flex-1 text-sm outline-none text-gray-700 placeholder-gray-400 bg-transparent"
               placeholder={strings[lang].searchPlaceholder as string}
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={(e) => { setQuery(e.target.value); setRestPage(1) }}
             />
             {query && (
-              <button onClick={() => setQuery('')} className="text-gray-400 text-sm font-bold">✕</button>
+              <button onClick={() => { setQuery(''); setRestPage(1) }} className="text-gray-400 text-sm font-bold">✕</button>
             )}
           </div>
         </div>
@@ -150,22 +158,24 @@ export function PublicHomepage({ locations }: Props) {
 
       {/* MAP strip */}
       <div className="h-36">
-        <LocationMap locations={filtered} lang={lang} userLocation={userLocation} />
+        <LocationMap
+          locations={filtered}
+          lang={lang}
+          userLocation={userLocation}
+          nearbyMode={specialFilter === 'nearby'}
+        />
       </div>
 
       {/* BOTTOM SHEET */}
       <div ref={sheetRef} className="relative z-10 bg-gray-50 rounded-t-3xl -mt-5 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
-        {/* Drag handle */}
         <div className="flex justify-center pt-3 pb-1">
           <div className="w-9 h-1 bg-gray-300 rounded-full" />
         </div>
 
-        {/* Category tabs */}
         <div className="bg-white border-b border-gray-100">
-          <CategoryTabs active={activeCategory} onChange={(cat) => { setActiveCategory(cat); setSpecialFilter('all') }} lang={lang} />
+          <CategoryTabs active={activeCategory} onChange={(cat) => { setActiveCategory(cat); changeFilter('all') }} lang={lang} />
         </div>
 
-        {/* Special filter chips */}
         <div className="bg-white border-b border-gray-100 px-3 py-2">
           <div className="flex gap-2 overflow-x-auto no-scrollbar">
             {([
@@ -175,7 +185,7 @@ export function PublicHomepage({ locations }: Props) {
             ] as { id: SpecialFilter; label: string }[]).map(({ id, label }) => (
               <button
                 key={id}
-                onClick={() => setSpecialFilter(id)}
+                onClick={() => changeFilter(id)}
                 className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
                   specialFilter === id
                     ? 'bg-[#1e1b4b] text-white shadow-sm'
@@ -187,8 +197,8 @@ export function PublicHomepage({ locations }: Props) {
             ))}
             <button
               onClick={() => {
-                if (specialFilter === 'nearby') { setSpecialFilter('all'); return }
-                if (userLocation) { setSpecialFilter('nearby'); return }
+                if (specialFilter === 'nearby') { changeFilter('all'); return }
+                if (userLocation) { changeFilter('nearby'); return }
                 requestLocation()
               }}
               disabled={locating}
@@ -201,11 +211,10 @@ export function PublicHomepage({ locations }: Props) {
               {locating ? '⏳' : '📍'} {lang === 'zh' ? '附近' : 'Near Me'}
             </button>
             <div className="w-px bg-gray-200 mx-0.5" />
-            {/* Area chips */}
             {availableAreas.map((area) => (
               <button
                 key={area}
-                onClick={() => setActiveArea(activeArea === area ? 'all' : area)}
+                onClick={() => { setActiveArea(activeArea === area ? 'all' : area); setRestPage(1) }}
                 className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
                   activeArea === area
                     ? 'bg-indigo-100 text-indigo-700 border border-indigo-200'
@@ -234,7 +243,7 @@ export function PublicHomepage({ locations }: Props) {
         )}
 
         {/* Main list */}
-        {rest.length > 0 && (
+        {restVisible.length > 0 && (
           <section className="px-3 pt-3 pb-10">
             {trending.length > 0 && (
               <div className="flex items-center gap-2 mb-3 mt-1">
@@ -246,8 +255,16 @@ export function PublicHomepage({ locations }: Props) {
               </div>
             )}
             <div className="grid grid-cols-2 gap-3">
-              {rest.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} />)}
+              {restVisible.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} />)}
             </div>
+            {hasMore && (
+              <button
+                onClick={() => setRestPage((p) => p + 1)}
+                className="mt-4 w-full py-3 rounded-2xl bg-white border border-gray-200 text-sm font-bold text-gray-500 hover:bg-gray-50 transition-colors"
+              >
+                {lang === 'zh' ? `顯示更多 (${restAll.length - restVisible.length} 筆)` : `Load more (${restAll.length - restVisible.length})`}
+              </button>
+            )}
           </section>
         )}
 
