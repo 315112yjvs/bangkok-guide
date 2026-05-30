@@ -126,9 +126,13 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
             </p>
             <p className="text-xs text-gray-500 mb-2">★ {selected.rating.toFixed(1)}</p>
             <a
-              href={selected.source_url?.includes('place_id:')
-                ? selected.source_url
-                : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selected.name_en + (selected.address ? ' ' + selected.address : ' Bangkok'))}`}
+              href={(() => {
+                const q = encodeURIComponent(selected.name_en + (selected.address ? ' ' + selected.address : ' Bangkok'))
+                const pid = selected.source_url?.match(/place_id:([^&\s]+)/)?.[1]
+                return pid
+                  ? `https://www.google.com/maps/search/?api=1&query=${q}&query_place_id=${pid}`
+                  : `https://www.google.com/maps/search/?api=1&query=${q}`
+              })()}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-bold text-[#1e1b4b] underline"

@@ -39,9 +39,11 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   const thaiName = location.name_th ?? extractThai(location.name_en) ?? extractThai(location.name_zh)
   const thaiAddress = location.address_th
 
-  const mapsUrl = location.source_url?.includes('place_id:')
-    ? location.source_url
-    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name_en + (location.address ? ' ' + location.address : ' Bangkok'))}`
+  const queryStr = encodeURIComponent(location.name_en + (location.address ? ' ' + location.address : ' Bangkok'))
+  const placeId = location.source_url?.match(/place_id:([^&\s]+)/)?.[1]
+  const mapsUrl = placeId
+    ? `https://www.google.com/maps/search/?api=1&query=${queryStr}&query_place_id=${placeId}`
+    : `https://www.google.com/maps/search/?api=1&query=${queryStr}`
 
   const rawPhoto = location.photos[0] ?? ''
   const photo = rawPhoto.startsWith('places/')
