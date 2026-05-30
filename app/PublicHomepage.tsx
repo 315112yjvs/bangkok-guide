@@ -49,17 +49,21 @@ export function PublicHomepage({ locations }: Props) {
 
   useEffect(() => {
     if (!navigator.geolocation) return
-    setLocating(true)
-    navigator.geolocation.getCurrentPosition(
+    let firstFix = true
+    const watchId = navigator.geolocation.watchPosition(
       (pos) => {
-        setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude })
-        setLocating(false)
-        setSpecialFilter('nearby')
-        setRestPage(1)
+        const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude }
+        setUserLocation(loc)
+        if (firstFix) {
+          firstFix = false
+          setSpecialFilter('nearby')
+          setRestPage(1)
+        }
       },
-      () => { setLocating(false) },
-      { timeout: 10000 }
+      () => {},
+      { enableHighAccuracy: true, maximumAge: 5000 }
     )
+    return () => navigator.geolocation.clearWatch(watchId)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -82,17 +86,21 @@ export function PublicHomepage({ locations }: Props) {
   }
 
   function requestLocation() {
-    setLocating(true)
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude })
-        setLocating(false)
-        setSpecialFilter('nearby')
-        setRestPage(1)
-      },
-      () => { setLocating(false) },
-      { timeout: 10000 }
-    )
+    if (userLocation) {
+      changeFilter('nearby')
+    } else {
+      setLocating(true)
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude })
+          setLocating(false)
+          setSpecialFilter('nearby')
+          setRestPage(1)
+        },
+        () => { setLocating(false) },
+        { timeout: 10000 }
+      )
+    }
   }
 
   function changeFilter(f: SpecialFilter) {
