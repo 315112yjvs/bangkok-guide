@@ -111,25 +111,117 @@ function PendingCard({
 }
 
 // ---- APPROVED CARD ----
-function ApprovedCard({ item, onRemove }: { item: Location; onRemove: (id: string) => void }) {
+function ApprovedCard({ item, onRemove, onUpdate }: {
+  item: Location
+  onRemove: (id: string) => void
+  onUpdate: (id: string, updates: Partial<Location>) => void
+}) {
+  const [editing, setEditing] = useState(false)
+  const [form, setForm] = useState({
+    name_zh: item.name_zh,
+    name_en: item.name_en,
+    name_th: item.name_th ?? '',
+    description_zh: item.description_zh,
+    description_en: item.description_en,
+    address: item.address,
+    address_th: item.address_th ?? '',
+    rating: item.rating,
+    price_range: item.price_range,
+    highlights: (item.highlights ?? []).join(', '),
+    hashtags: (item.hashtags ?? []).join(', '),
+    local_ratio: item.local_ratio?.toString() ?? '',
+    source_url: item.source_url,
+  })
+  const [saving, setSaving] = useState(false)
+
   const raw = item.photos[0] ?? ''
   const photo = raw.startsWith('places/')
     ? `https://places.googleapis.com/v1/${raw}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
     : raw || 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=220&h=120&fit=crop'
+
+  async function save() {
+    setSaving(true)
+    const updates: Partial<Location> = {
+      ...form,
+      highlights: form.highlights ? form.highlights.split(',').map(s => s.trim()).filter(Boolean) : [],
+      hashtags: form.hashtags ? form.hashtags.split(',').map(s => s.trim()).filter(Boolean) : [],
+      local_ratio: form.local_ratio !== '' ? Number(form.local_ratio) : undefined,
+      price_range: Number(form.price_range) as 1|2|3|4,
+      rating: Number(form.rating),
+    }
+    await onUpdate(item.id, updates)
+    setSaving(false)
+    setEditing(false)
+  }
+
+  const inp = 'w-full border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs outline-none focus:border-indigo-400'
+
   return (
-    <div className="bg-white rounded-2xl overflow-hidden border border-transparent hover:border-slate-200 transition-colors flex">
-      <div className="relative w-20 shrink-0">
-        <Image src={photo} alt={item.name_en} fill className="object-cover" sizes="80px" />
-      </div>
-      <div className="flex-1 p-3 flex items-center justify-between gap-2">
-        <div className="min-w-0">
-          <h3 className="font-bold text-sm text-[#0f172a] truncate">{item.name_zh || item.name_en}</h3>
-          <p className="text-[10px] text-gray-400">{item.category} · ★ {item.rating}</p>
+    <div className="bg-white rounded-2xl overflow-hidden border border-transparent hover:border-slate-200 transition-colors">
+      <div className="flex">
+        <div className="relative w-20 shrink-0">
+          <Image src={photo} alt={item.name_en} fill className="object-cover" sizes="80px" unoptimized={raw.startsWith('places/')} />
         </div>
-        <button onClick={() => onRemove(item.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-slate-50 text-slate-500 hover:bg-red-50 hover:text-red-600 shrink-0">
-          下架
-        </button>
+        <div className="flex-1 p-3 flex items-center gap-2 min-w-0">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-1.5">
+              <h3 className="font-bold text-sm text-[#0f172a] truncate">{item.name_zh || item.name_en}</h3>
+              {item.trending && <span className="text-[10px]">🔥</span>}
+            </div>
+            <p className="text-[10px] text-gray-400">{item.category} · ★ {item.rating}</p>
+          </div>
+          <div className="flex items-center gap-1 shrink-0">
+            <button
+              onClick={() => onUpdate(item.id, { trending: !item.trending })}
+              title={item.trending ? '取消熱門' : '設為熱門'}
+              className={`text-xs font-bold px-2 py-1.5 rounded-lg transition-colors ${
+                item.trending ? 'bg-orange-100 text-orange-600' : 'bg-slate-50 text-slate-400 hover:bg-orange-50 hover:text-orange-500'
+              }`}
+            >
+              🔥
+            </button>
+            <button
+              onClick={() => setEditing(!editing)}
+              className="text-xs font-bold px-2 py-1.5 rounded-lg bg-slate-50 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
+            >
+              ✏️
+            </button>
+            <button
+              onClick={() => { if (confirm(`確定下架「${item.name_zh || item.name_en}」？`)) onRemove(item.id) }}
+              className="text-xs font-bold px-2.5 py-1.5 rounded-lg bg-slate-50 text-slate-500 hover:bg-red-50 hover:text-red-600 transition-colors"
+            >
+              下架
+            </button>
+          </div>
+        </div>
       </div>
+
+      {editing && (
+        <div className="border-t border-gray-100 p-4 bg-gray-50 space-y-2">
+          <div className="grid grid-cols-2 gap-2">
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">中文名稱</p><input className={inp} value={form.name_zh} onChange={e => setForm(f => ({...f, name_zh: e.target.value}))} /></div>
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">English Name</p><input className={inp} value={form.name_en} onChange={e => setForm(f => ({...f, name_en: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">泰文店名</p><input className={inp} value={form.name_th} onChange={e => setForm(f => ({...f, name_th: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">中文描述</p><textarea className={inp} rows={2} value={form.description_zh} onChange={e => setForm(f => ({...f, description_zh: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">English Description</p><textarea className={inp} rows={2} value={form.description_en} onChange={e => setForm(f => ({...f, description_en: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">地址</p><input className={inp} value={form.address} onChange={e => setForm(f => ({...f, address: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">泰文地址</p><input className={inp} value={form.address_th} onChange={e => setForm(f => ({...f, address_th: e.target.value}))} /></div>
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">評分</p><input type="number" min="0" max="5" step="0.1" className={inp} value={form.rating} onChange={e => setForm(f => ({...f, rating: Number(e.target.value)}))} /></div>
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">價位 (1–4)</p><input type="number" min="1" max="4" className={inp} value={form.price_range} onChange={e => setForm(f => ({...f, price_range: e.target.value as unknown as 1|2|3|4}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">亮點（逗號分隔）</p><input className={inp} value={form.highlights} onChange={e => setForm(f => ({...f, highlights: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">Hashtags（逗號分隔）</p><input className={inp} value={form.hashtags} onChange={e => setForm(f => ({...f, hashtags: e.target.value}))} /></div>
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">在地客 %</p><input type="number" min="0" max="100" className={inp} value={form.local_ratio} onChange={e => setForm(f => ({...f, local_ratio: e.target.value}))} /></div>
+          </div>
+          <div className="flex gap-2 pt-1">
+            <button onClick={save} disabled={saving} className="flex-1 bg-[#0f172a] text-white text-xs font-bold rounded-xl py-2 disabled:opacity-50">
+              {saving ? '儲存中...' : '儲存'}
+            </button>
+            <button onClick={() => setEditing(false)} className="px-4 bg-gray-200 text-gray-600 text-xs font-bold rounded-xl py-2">
+              取消
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -288,6 +380,11 @@ export function AdminPanel() {
 
   async function handleRemove(id: string) {
     await fetch('/api/locations', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) })
+    loadData()
+  }
+
+  async function handleUpdate(id: string, updates: Partial<Location>) {
+    await fetch('/api/locations', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id, ...updates }) })
     loadData()
   }
 
@@ -466,7 +563,7 @@ export function AdminPanel() {
             <div className="space-y-2">
               {approved.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">還沒有上架的地點</p>}
               {approved.map((item) => (
-                <ApprovedCard key={item.id} item={item} onRemove={handleRemove} />
+                <ApprovedCard key={item.id} item={item} onRemove={handleRemove} onUpdate={handleUpdate} />
               ))}
             </div>
           </div>
