@@ -37,7 +37,7 @@
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJBYCkBQCZ4jARMk27YRVj-vM",
     "rating": 4.9,
     "price_range": 2,
-    "trending": false,
+    "trending": true,
     "highlights": [
       "Mango Sticky Rice",
       "A lot for what you pay"
@@ -61,7 +61,7 @@
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJjYPUa8GZ4jARi9fgigQOiR8",
     "rating": 4.7,
     "price_range": 2,
-    "trending": false,
+    "trending": true,
     "highlights": [
       "Green Curry",
       "Mango Sticky Rice",
@@ -86,7 +86,7 @@
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJuT3ek1uf4jARN0abB7juMBQ",
     "rating": 4.9,
     "price_range": 2,
-    "trending": false,
+    "trending": true,
     "highlights": [
       "Tom Yum",
       "Massaman Curry",
@@ -111,7 +111,7 @@
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJF17aWaSZ4jARedn2EWVUJ_w",
     "rating": 4.7,
     "price_range": 2,
-    "trending": false,
+    "trending": true,
     "highlights": [
       "Pad Thai",
       "Tom Yum",
