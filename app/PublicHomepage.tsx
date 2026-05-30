@@ -232,9 +232,14 @@ export function PublicHomepage({ locations }: Props) {
         {/* TREND RADAR */}
         {trending.length > 0 && (
           <section className="mx-3 mt-4 mb-2 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-            <div className="bg-[#1a1a2e] px-4 py-3.5">
-              <p className="text-white font-black text-[15px] tracking-tight leading-tight">{strings[lang].trendingSection as string}</p>
-              <p className="text-white/40 text-[10px] mt-0.5">{lang === 'zh' ? '本週曼谷最夯打卡點' : 'Most-talked spots this week'}</p>
+            <div className="bg-gradient-to-r from-[#134e35] to-[#1a6b47] px-4 py-3.5 flex items-center justify-between">
+              <div>
+                <p className="text-white font-black text-[15px] tracking-tight leading-tight">{strings[lang].trendingSection as string}</p>
+                <p className="text-white/50 text-[10px] mt-0.5">{lang === 'zh' ? '每週一刷新' : 'Updated weekly'}</p>
+              </div>
+              <span className="text-[10px] font-black text-[#134e35] bg-white/90 px-2.5 py-1 rounded-full shrink-0">
+                {lang === 'zh' ? '本週熱榜' : 'This Week'}
+              </span>
             </div>
             <div className="bg-gray-50">
               <div className="flex gap-3 overflow-x-auto no-scrollbar p-3 pb-4">
