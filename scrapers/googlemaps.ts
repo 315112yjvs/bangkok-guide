@@ -1,4 +1,4 @@
-import type { ScrapedItem } from './shared'
+import { sleep, type ScrapedItem } from './shared'
 
 const BANGKOK_LAT = 13.7563
 const BANGKOK_LNG = 100.5018
@@ -64,12 +64,12 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
           photos: photoUrl ? [photoUrl] : [],
           source_url: `https://www.google.com/maps/place/?q=place_id:${place.place_id}`,
           rating: place.rating ?? 4.0,
-          price_range: ((place.price_level ?? 1) + 1) as 1 | 2 | 3 | 4,
+          price_range: Math.min((place.price_level ?? 1) + 1, 4) as 1 | 2 | 3 | 4,
           trending: false,
         })
       }
 
-      await new Promise((r) => setTimeout(r, 1000))
+      await sleep(1000)
     } catch (err) {
       console.error('Google Maps scrape failed for', query, err)
     }
