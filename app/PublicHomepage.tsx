@@ -186,10 +186,12 @@ export function PublicHomepage({ locations }: Props) {
         (specialFilter === 'saved' && savedIds.has(loc.id)) ||
         (specialFilter === 'trending' && loc.trending) ||
         (specialFilter === 'local' && (
-          loc.source === 'pantip' || loc.source === 'wongnai' || (loc.local_ratio ?? 0) >= 60
+          loc.source === 'pantip' || loc.source === 'wongnai' || (loc.local_ratio ?? 0) >= 60 ||
+          // approximation: high-rated food/cafe not from tourist-focused sources
+          (loc.rating >= 4.7 && (loc.category === 'food' || loc.category === 'cafe') && loc.source !== 'instagram')
         ))
       const q = query.toLowerCase()
-      const matchSearch = !q || [loc.name_zh, loc.name_en, loc.description_zh, loc.description_en, loc.address]
+      const matchSearch = !q || [loc.name_zh, loc.name_en, loc.description_zh, loc.description_en, loc.address, ...(loc.highlights ?? [])]
         .some((s) => s?.toLowerCase().includes(q))
       return matchCat && matchArea && matchSpecial && matchSearch
     })

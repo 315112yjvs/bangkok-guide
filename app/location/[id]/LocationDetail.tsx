@@ -28,6 +28,7 @@ export function LocationDetail({ location }: { location: Location }) {
   const { lang } = useLanguage()
   const [activePhoto, setActivePhoto] = useState(0)
   const [placeData, setPlaceData] = useState<PlaceData | null>(null)
+  const [loadingPlace, setLoadingPlace] = useState(true)
   const [saved, setSaved] = useState(false)
   const [copied, setCopied] = useState(false)
 
@@ -55,11 +56,12 @@ export function LocationDetail({ location }: { location: Location }) {
 
   // Fetch extra photos + editorial from Places API
   useEffect(() => {
-    if (!placeId) return
+    if (!placeId) { setLoadingPlace(false); return }
     fetch(`/api/place/${placeId}`)
       .then((r) => r.json())
       .then((d: PlaceData) => setPlaceData(d))
       .catch(() => {})
+      .finally(() => setLoadingPlace(false))
   }, [placeId])
 
   // Build photo list: combine stored + fetched
@@ -107,7 +109,7 @@ export function LocationDetail({ location }: { location: Location }) {
             priority
           />
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300" />
+          <div className={`w-full h-full ${loadingPlace ? 'animate-pulse bg-gray-200' : 'bg-gradient-to-br from-gray-200 to-gray-300'}`} />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
 
@@ -210,8 +212,13 @@ export function LocationDetail({ location }: { location: Location }) {
           </div>
         )}
 
-        {/* Review snippets */}
-        {(placeData?.reviewSnippets?.length ?? 0) > 0 && (
+        {/* Review snippets — skeleton while loading */}
+        {loadingPlace && placeId && (
+          <div className="mb-4 space-y-2">
+            {[1,2].map(i => <div key={i} className="animate-pulse h-14 bg-gray-100 rounded-xl" />)}
+          </div>
+        )}
+        {!loadingPlace && (placeData?.reviewSnippets?.length ?? 0) > 0 && (
           <div className="mb-4">
             <h2 className="text-[13px] font-black text-gray-700 mb-2 uppercase tracking-wide">
               {lang === 'zh' ? '旅客評論' : 'Reviews'}
