@@ -151,10 +151,11 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
   async function submit(e: React.FormEvent) {
     e.preventDefault()
     setSaving(true)
+    const { photosInput, ...rest } = form
     const payload = {
-      ...form,
+      ...rest,
       action: 'add',
-      photos: form.photosInput ? form.photosInput.split(',').map((s) => s.trim()).filter(Boolean) : [],
+      photos: photosInput ? photosInput.split(',').map((s) => s.trim()).filter(Boolean) : [],
     }
     await fetch('/api/locations', {
       method: 'POST',
