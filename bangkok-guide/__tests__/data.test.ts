@@ -1,9 +1,19 @@
 import { readLocations, writeLocations, readPending, writePending } from '@/lib/data'
-import { writeFileSync } from 'fs'
+import { writeFileSync, mkdtempSync, rmSync } from 'fs'
 import { join } from 'path'
+import { tmpdir } from 'os'
 
-const locPath = join(process.cwd(), 'data', 'locations.json')
-const pendPath = join(process.cwd(), 'data', 'pending.json')
+// Override the data paths to use a temp directory
+let tmpDir: string
+
+beforeAll(() => {
+  tmpDir = mkdtempSync(join(tmpdir(), 'bangkok-guide-test-'))
+  process.env.DATA_DIR = tmpDir
+})
+
+afterAll(() => {
+  rmSync(tmpDir, { recursive: true, force: true })
+})
 
 const mockLocation = {
   id: 'test-1',
@@ -24,8 +34,8 @@ const mockLocation = {
 }
 
 beforeEach(() => {
-  writeFileSync(locPath, '[]')
-  writeFileSync(pendPath, '[]')
+  writeFileSync(join(tmpDir, 'locations.json'), '[]')
+  writeFileSync(join(tmpDir, 'pending.json'), '[]')
 })
 
 describe('readLocations', () => {
