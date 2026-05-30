@@ -4956,5 +4956,77 @@
     "id": "b2013be4-379c-4f47-b927-6b1c228616a4",
     "source": "googlemaps",
     "approved_at": "2026-05-30T18:04:24.166Z"
+  },
+  {
+    "name_en": "SHAKARICH",
+    "name_zh": "SHAKARICH",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Ramen and Sushi.",
+    "description_zh": "必點：拉麵、壽司、義大利麵。曼谷少見的多國料理餐廳，每道都用心製作，從日式到歐陸風味應有盡有。",
+    "category": "food",
+    "address": "No.416, 6-7, ถ. ทองหล่อ Klongton Nua, เขตวัฒนา กรุงเทพมหานคร 10110, Thailand",
+    "lat": 13.7334515,
+    "lng": 100.58291779999999,
+    "photos": [
+      "places/ChIJWY30I1Oe4jARlP_8fcdYYhw/photos/Ab43m-u9nRv4oaUVcQbKcHkdnRwB-shWjGMuamMu8zOm13d4xgdusBOuOcknLVJJ6hTnpsczwA4dScD-yvYqkzITRK958QQMvuyzLhhfkE02Lvn_0QTvNzp3_G7_BRXnpuxV9DUS3vqHEh00AcJCR9W20773pq309kxNs3APegd4W4M8k1Fpwb1FeEYilFoF9LLHRrdh9k6wzj5t8Ia-0TGSCXFu86HwXtP5hKz-L--9bW5DNj9kP2AYjwIvinke6Qvn-x2jp3q3ZWEk4FKmTKBJv8lSgMuwmoeT3vdN5ofbYiiU9w"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=SHAKARICH%20No.416%2C%206-7%2C%20%E0%B8%96.%20%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A5%E0%B9%88%E0%B8%AD%20Klongton%20Nua%2C%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110%2C%20Thailand&query_place_id=ChIJWY30I1Oe4jARlP_8fcdYYhw",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Ramen",
+      "Sushi",
+      "Pasta"
+    ],
+    "id": "6a22028f-0cdb-4f20-8b54-220fa251cd6e",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T18:12:04.602Z"
+  },
+  {
+    "name_en": "Laoteng",
+    "name_zh": "Laoteng",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Dim Sum and Steak.",
+    "description_zh": "必點：點心、牛排。老牌泰式港點餐廳，傳統推車點心搭配厚切牛排，混搭得毫不違和。晚來吃不到，一定要早到。",
+    "category": "food",
+    "address": "โรงแรมอโนมา ชั้นที่ 2 เลขที่ 99 Thanon Ratchadamri, ลุมพินี Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.7465415,
+    "lng": 100.54100609999999,
+    "photos": [
+      "places/ChIJxZck1Saf4jARmu-2U6gOqws/photos/Ab43m-tu-woSsyMbNrX8AOV_DVuH2vDaW_CmCgyP9FHhEOZV-dfazXdAThlO35s8cL3xd1n6VWbdNGoW47aEfmMpxBA8OcGNmbDRZfsEpp5cAQjW5sQZgXco4rE14jlunKeDmxuR-hkMMcidQJSYg1Rz31pj13yFJiFCy5J0tQmgvkgLzgrUoqgUDlFHBRmz9wvHwlBHuEUsmrhQx6sxuZ-3_YX5ESgIuHgyy8ibMDJhd_dk1xUOHDnvJI-8qMHAet3BS7q2HavPY9ij8FhueLxcJA6V36aDUDmqn7fhSWAL5nXFrBGfiwaV0zTK0ZblJO0BFfQQIlCmop84Ntcf2zlf57SmLcfPlB7vfX-4KfyA5YmuN-zVqdIVDiyEeCHapt5YO1mHr67_mfTV4xotyDLnxCn0RSBPqv-oq6NBVcO2RLlfrQ"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Laoteng%20%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%81%E0%B8%A3%E0%B8%A1%E0%B8%AD%E0%B9%82%E0%B8%99%E0%B8%A1%E0%B8%B2%20%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88%202%20%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%2099%20Thanon%20Ratchadamri%2C%20%E0%B8%A5%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%B4%E0%B8%99%E0%B8%B5%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJxZck1Saf4jARmu-2U6gOqws",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Dim Sum",
+      "Steak"
+    ],
+    "id": "252a9b1f-f020-4a58-b86d-5d479c6feb68",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T18:12:09.118Z"
+  },
+  {
+    "name_en": "Little Dragon Restaurant",
+    "name_zh": "Little Dragon Restaurant",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok. Known for Dim Sum.",
+    "description_zh": "必點：蝦餃、燒賣、叉燒包。曼谷唐人街老字號，推車點餐的傳統港式飲茶，每日現做，咬下去還燙手。",
+    "category": "food",
+    "address": "ใกล้ 1464 Soi Charoen Krung 44, Khwaeng Bang Rak, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.720865199999999,
+    "lng": 100.51597,
+    "photos": [
+      "places/ChIJZ3GkiqeZ4jARyhuDZ7aiSkU/photos/Ab43m-v3Y_nePoz39TKg3f8NhmoEzkwyqIca9pP54G2j6DcHZvDtIZNUNd1HnutCdG619jnBXYyo3q02nzh4MicjBBlpI0SuqZM5IdFPq2rnRmRUrXN8qsj_bpt4Kj_A_F0C8Weejco5Z0he9TaEf82PTCfdW5OV2Bgn1RWTG5g2726fja51U1VrV-5CEN8z10JntrpAO-KwQei_eVlFQMogGVAPbqaeUpojSX1OuSU9_X8ZLcEXDd24chc2H1u_cTO6SYyOfCiBSfjm3WMSykfT84MhfJ6hHyAxYlChUT7n3-s"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Little%20Dragon%20Restaurant%20%E0%B9%83%E0%B8%81%E0%B8%A5%E0%B9%89%201464%20Soi%20Charoen%20Krung%2044%2C%20Khwaeng%20Bang%20Rak%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJZ3GkiqeZ4jARyhuDZ7aiSkU",
+    "rating": 4.4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Dim Sum"
+    ],
+    "id": "e8174d65-115e-4d72-88a4-b8f65c69c676",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T18:12:12.082Z"
   }
 ]
