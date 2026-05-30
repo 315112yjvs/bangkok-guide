@@ -20,9 +20,9 @@ export function LocationCard({ location, lang }: Props) {
   const name = lang === 'zh' ? location.name_zh : location.name_en
   const desc = lang === 'zh' ? location.description_zh : location.description_en
 
-  const mapsUrl = location.lat && location.lng
-    ? `https://www.google.com/maps?q=${location.lat},${location.lng}`
-    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name_en + ' Bangkok')}`
+  const mapsUrl = location.source_url?.includes('place_id:')
+    ? location.source_url
+    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name_en + (location.address ? ' ' + location.address : ' Bangkok'))}`
 
   const rawPhoto = location.photos[0] ?? ''
   const photo = rawPhoto.startsWith('places/')
