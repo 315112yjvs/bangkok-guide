@@ -14,7 +14,7 @@
     "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJL9DOr2KZ4jAR--KZokj__o0",
     "rating": 4.7,
     "price_range": 2,
-    "trending": false,
+    "trending": true,
     "highlights": [
       "Espresso"
     ],
