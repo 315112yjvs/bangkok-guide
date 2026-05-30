@@ -20,10 +20,32 @@ function extractThai(text: string): string | null {
   return thai && thai.length >= 3 ? thai : null
 }
 
+// Typical Bangkok business hours by category (Asia/Bangkok = UTC+7)
+const CATEGORY_HOURS: Record<string, { open: number; close: number }> = {
+  food:      { open: 10, close: 22 },
+  cafe:      { open: 8,  close: 21 },
+  shopping:  { open: 10, close: 21 },
+  nightlife: { open: 18, close: 26 }, // 26 = 02:00 next day
+  hotel:     { open: 0,  close: 24 },
+}
+
+function isOpenNow(category: string): boolean {
+  const now = new Date()
+  // Bangkok is UTC+7
+  const bkkHour = (now.getUTCHours() + 7) % 24
+  const hours = CATEGORY_HOURS[category] ?? { open: 9, close: 22 }
+  if (hours.close > 24) {
+    // spans midnight: open if >= open OR < (close - 24)
+    return bkkHour >= hours.open || bkkHour < (hours.close - 24)
+  }
+  return bkkHour >= hours.open && bkkHour < hours.close
+}
+
 type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void; compact?: boolean }
 
 export function LocationCard({ location, lang, distanceKm, saved = false, onToggleSave, compact = false }: Props) {
   const [copied, setCopied] = useState(false)
+  const open = isOpenNow(location.category)
 
   function toggleSave(e: React.MouseEvent) {
     e.preventDefault()
@@ -92,8 +114,8 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
         <div className="flex items-start justify-between gap-1 mb-0.5">
           <div className="flex items-center gap-1 flex-1 min-w-0">
             <h3 className="text-[13px] font-bold text-[#1a1a2e] leading-tight line-clamp-1 flex-1">{name}</h3>
-            <span className="shrink-0 text-[7px] font-black text-emerald-600 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded-full">
-              {lang === 'zh' ? '營業中' : 'Open'}
+            <span className={`shrink-0 text-[7px] font-black px-1.5 py-0.5 rounded-full ${open ? 'text-emerald-600 bg-emerald-50 border border-emerald-200' : 'text-gray-400 bg-gray-50 border border-gray-200'}`}>
+              {open ? (lang === 'zh' ? '營業中' : 'Open') : (lang === 'zh' ? '已打烊' : 'Closed')}
             </span>
           </div>
           {(thaiName || thaiAddress) && (
