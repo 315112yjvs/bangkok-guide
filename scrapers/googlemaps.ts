@@ -1,6 +1,7 @@
 import { sleep, type ScrapedItem } from './shared'
 import { extractHighlights } from './enricher'
-import { buildDescZh, buildDescEn, cleanHighlights } from '../lib/buildDescriptions'
+import { buildDescEn, cleanHighlights } from '../lib/buildDescriptions'
+import { generateDescriptionZh } from './translate'
 
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 const BANGKOK_LAT = 13.7563
@@ -113,12 +114,13 @@ async function fetchPlacesQuery(query: string, category: QueryConfig['category']
     const price_range = PRICE_MAP[place.priceLevel ?? ''] ?? 2
     const baseLoc = { category, rating, price_range }
     const q = encodeURIComponent(name_en + ' ' + place.formattedAddress)
+    const description_zh = await generateDescriptionZh(name_en, editorial, highlights, category)
 
     items.push({
       name_en,
       name_zh: name_en,
       description_en: buildDescEn(baseLoc, highlights, editorial),
-      description_zh: buildDescZh(baseLoc, highlights, editorial),
+      description_zh,
       category,
       address: place.formattedAddress,
       lat: place.location.latitude,
