@@ -429,11 +429,11 @@ export function AdminPanel() {
 
   async function runReenrich() {
     setReenriching(true)
-    setReenrichStatus('更新中...')
+    setReenrichStatus('重建中...')
     try {
-      const res = await fetch('/api/reenrich', { method: 'POST' })
+      const res = await fetch('/api/rebuild-descriptions', { method: 'POST' })
       const data = await res.json()
-      setReenrichStatus(data.ok ? `✓ 更新 ${data.updated}/${data.total} 筆` : '失敗')
+      setReenrichStatus(data.ok ? `✓ 重建 ${data.updated}/${data.total} 筆` : '失敗')
       loadData()
     } catch {
       setReenrichStatus('連線失敗')

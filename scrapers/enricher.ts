@@ -1,4 +1,5 @@
 import { translateName, generateDescriptionZh } from './translate'
+import { buildDescZh, buildDescEn, cleanHighlights } from '../lib/buildDescriptions'
 
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 
@@ -200,23 +201,28 @@ export async function enrichItem(
     return null
   }
 
-  const highlights = place.reviews ? extractHighlights(place.reviews) : []
+  const rawHighlights = place.reviews ? extractHighlights(place.reviews) : []
+  const highlights = cleanHighlights(rawHighlights)
   const editorial = place.editorialSummary?.text
-  const primaryType = place.primaryTypeDisplayName?.text
-  const { description_en, description_zh } = buildDescriptions(editorial, highlights, category, primaryType)
   const photoRef = place.photos?.[0]?.name ?? ''
 
   const name_en = place.displayName?.text ?? name
   const name_zh = await translateName(name_en)
+
+  // Use Claude if available, otherwise fall back to template builder
   const description_zh_rich = await generateDescriptionZh(
-    name_en, place.editorialSummary?.text, highlights, category
+    name_en, editorial, highlights, category
   )
+  const price_range = 2 as 1|2|3|4
+  const baseLoc = { category, rating: place.rating ?? 4.0, price_range, local_ratio: 0, trending: false }
+  const description_en = buildDescEn(baseLoc, highlights, editorial)
+  const description_zh = description_zh_rich || buildDescZh({ ...baseLoc, source: 'googlemaps' as const, name_en }, highlights, editorial)
 
   return {
     name_en,
     name_zh,
     description_en,
-    description_zh: description_zh_rich,
+    description_zh,
     highlights,
     lat: place.location?.latitude ?? lat ?? 13.7563,
     lng: place.location?.longitude ?? lng ?? 100.5018,
