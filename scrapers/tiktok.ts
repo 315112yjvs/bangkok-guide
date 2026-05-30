@@ -1,29 +1,55 @@
 import { firecrawlSearch, sleep, type ScrapedItem } from './shared'
 
+// site:tiktok.com searches return real TikTok video titles + descriptions
+// Individual video pages and hashtag pages are JS-blocked, so search is our only viable path
 const QUERIES = [
-  'Bangkok restaurant must try viral trending 2024 best food',
-  'Bangkok street food hidden gem local favorite 2024',
-  'Bangkok cafe aesthetic trendy 2024 must visit',
+  'site:tiktok.com ร้านอาหารเด็ด กรุงเทพ 2024 ต้องลอง',
+  'site:tiktok.com ร้านอาหาร กรุงเทพ แนะนำ อร่อย',
+  'site:tiktok.com คาเฟ่ กรุงเทพ น่าไป ถ่ายรูป 2024',
+  'site:tiktok.com Bangkok restaurant must try hidden gem 2024',
+  'site:tiktok.com Bangkok best food viral trending 2024',
+  'site:tiktok.com ร้านอาหาร สุขุมวิท ทองหล่อ เอกมัย',
+  'site:tiktok.com Bangkok bar cocktail rooftop nightlife 2024',
+  'site:tiktok.com Bangkok brunch cafe aesthetic 2024',
+  'site:tiktok.com ร้านอาหาร ย่านเยาวราช ไชน่าทาวน์ กรุงเทพ',
+  'site:tiktok.com Bangkok Michelin restaurant Thai food 2024',
 ]
 
-const PLACE_PATTERN = /(?:^|\n)[\s*-]*([A-Z][A-Za-z\s&''.()]{3,50})(?:\s*[-–—]|\s*:|\s*–|\n|,)/gm
+const EN_PLACE_PATTERN = /(?:^|\n)[\s*\d.-]*([A-Z][A-Za-z\s&''.()\-]{3,50})(?:\s*[-–—]|\s*:|\s*–|\n|,)/gm
+// Extract place names from TikTok hashtags: #Rongros #BaanYing → ["Rongros", "BaanYing"]
+const HASHTAG_PATTERN = /#([A-Z][A-Za-z\s]{2,30})(?=\s|#|$)/g
 
-function extractNames(text: string): string[] {
+function extractNames(title: string, description: string): string[] {
   const names: string[] = []
   const seen = new Set<string>()
-  const SKIP = /^(The Best|Best |Top |Most |More |What |When |Where |How |Why |Tips |Read |Check |See |Visit |Open |Book |Get |Make |Try |Also |Note |Find |Here |This |That |These |With |From |For |And |But |Are |Was |Has |Have |About |After |Before |During |Other |Some |Many |All |Any )/i
 
+  const SKIP_TITLE = /^(The Best|Best |Top |Most |More |What |When |Where |How |Why |Tips |Read |Check |See |Visit |Open |Book |Get |Make |Try |Also |Note |Find |Here |This |That |These |TikTok|Bangkok|Follow|Share|Like|Comment|Video|Watch|Discover|Explore|Keywords)/i
+  const SKIP_TAG = /^(Bangkok|Thailand|Thai|Food|Best|Top|Must|Try|Viral|Trending|Restaurant|Cafe|Bar|Hotel|Travel|Visit|Trip|Tour|Guide|Review|Fyp|Foryou|Tiktok|Lifestyle|Vlog|Foodie|Eatery|Dining|Brunch|Lunch|Dinner|Michelin|Star|Hidden|Gem)/i
+
+  // From title: extract proper-noun place names
   let match: RegExpExecArray | null
-  PLACE_PATTERN.lastIndex = 0
-  while ((match = PLACE_PATTERN.exec(text)) !== null) {
+  EN_PLACE_PATTERN.lastIndex = 0
+  while ((match = EN_PLACE_PATTERN.exec(title)) !== null) {
     const name = match[1].trim().replace(/\s+/g, ' ')
     if (name.length < 4 || name.length > 50) continue
-    if (SKIP.test(name)) continue
+    if (SKIP_TITLE.test(name)) continue
     if (seen.has(name.toLowerCase())) continue
     seen.add(name.toLowerCase())
     names.push(name)
-    if (names.length >= 6) break
   }
+
+  // From description hashtags: #Rongros, #BaanYing, etc.
+  HASHTAG_PATTERN.lastIndex = 0
+  while ((match = HASHTAG_PATTERN.exec(description)) !== null) {
+    const name = match[1].trim()
+    if (name.length < 3) continue
+    if (SKIP_TAG.test(name)) continue
+    if (seen.has(name.toLowerCase())) continue
+    seen.add(name.toLowerCase())
+    names.push(name)
+    if (names.length >= 8) break
+  }
+
   return names
 }
 
@@ -32,16 +58,19 @@ export async function scrapeTikTok(): Promise<ScrapedItem[]> {
 
   for (const query of QUERIES) {
     try {
-      const searchResults = await firecrawlSearch(query, 3)
+      const searchResults = await firecrawlSearch(query, 5)
       for (const result of searchResults) {
-        const text = result.markdown ?? result.description ?? result.title ?? ''
-        const names = extractNames(text)
+        if (!result.url.includes('tiktok.com')) continue
+        const title = result.title ?? ''
+        const desc = result.description ?? ''
+        const names = extractNames(title, desc)
+        console.log(`[TikTok] "${title.slice(0, 60)}" → ${names.join(', ')}`)
         for (const name of names) {
           results.push({
             name_en: name,
             name_zh: name,
-            description_en: `Trending Bangkok spot — ${result.title ?? ''}`.slice(0, 120),
-            description_zh: `曼谷熱門打卡地點`,
+            description_en: `TikTok viral Bangkok — ${title}`.slice(0, 120),
+            description_zh: `TikTok 熱傳曼谷打卡點`,
             address: 'Bangkok, Thailand',
             lat: 13.7563,
             lng: 100.5018,
@@ -53,11 +82,12 @@ export async function scrapeTikTok(): Promise<ScrapedItem[]> {
           })
         }
       }
-      await sleep(1500)
+      await sleep(1000)
     } catch (err) {
-      console.error('TikTok scrape failed for query:', query, err)
+      console.error('[TikTok] search failed:', query, err)
     }
   }
 
+  console.log(`[TikTok] Total raw candidates: ${results.length}`)
   return results
 }
