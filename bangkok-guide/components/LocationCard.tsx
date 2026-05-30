@@ -24,7 +24,10 @@ export function LocationCard({ location, lang }: Props) {
     ? `https://www.google.com/maps?q=${location.lat},${location.lng}`
     : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location.name_en + ' Bangkok')}`
 
-  const photo = location.photos[0] ?? 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&h=300&fit=crop'
+  const rawPhoto = location.photos[0] ?? ''
+  const photo = rawPhoto.startsWith('places/')
+    ? `https://places.googleapis.com/v1/${rawPhoto}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+    : rawPhoto || 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&h=300&fit=crop'
 
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">

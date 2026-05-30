@@ -88,10 +88,7 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
           category
         )
 
-        const photoName = place.photos?.[0]?.name
-        const photoUrl = photoName
-          ? `https://places.googleapis.com/v1/${photoName}/media?maxWidthPx=800&key=${apiKey}`
-          : ''
+        const photoRef = place.photos?.[0]?.name ?? ''
 
         results.push({
           name_en: place.displayName.text,
@@ -102,7 +99,7 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
           address: place.formattedAddress,
           lat: place.location.latitude,
           lng: place.location.longitude,
-          photos: photoUrl ? [photoUrl] : [],
+          photos: photoRef ? [photoRef] : [],
           source_url: `https://www.google.com/maps/place/?q=place_id:${place.id}`,
           rating: place.rating ?? 4.0,
           price_range: PRICE_MAP[place.priceLevel ?? ''] ?? 2,
