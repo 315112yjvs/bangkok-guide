@@ -159,15 +159,13 @@ export function buildDescriptions(
   const baseEn = editorial ?? `Highly recommended ${typeLabel} in Bangkok.`
   const description_en = baseEn + highlightEn
 
-  const highlightZh = highlights.length > 0
-    ? `必點：${highlights.join('、')}。`
-    : ''
+  // description_zh excludes highlights (shown separately as pills)
   let description_zh: string
   if (editorial) {
     const condensed = editorial.length > 60 ? editorial.slice(0, 60) + '…' : editorial
-    description_zh = highlightZh + condensed
+    description_zh = condensed
   } else if (highlights.length > 0) {
-    description_zh = `${highlightZh}曼谷人氣${catZh}，深受好評。`
+    description_zh = `曼谷人氣${catZh}，深受本地人喜愛。`
   } else {
     description_zh = `曼谷熱門${catZh}，評價極佳。`
   }

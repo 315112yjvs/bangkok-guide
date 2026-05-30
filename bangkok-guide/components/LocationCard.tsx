@@ -6,13 +6,23 @@ import type { Location, Source } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
 
-const SOURCE_BADGE: Record<Source, { label: keyof typeof strings.zh; icon: string; color: string }> = {
-  tiktok:     { label: 'sourceTikTok',    icon: '🎵', color: 'bg-emerald-500' },
-  instagram:  { label: 'sourceIG',        icon: '📷', color: 'bg-purple-500' },
-  pantip:     { label: 'sourcePantip',    icon: '💬', color: 'bg-orange-500' },
-  wongnai:    { label: 'sourceWongnai',   icon: '🍽️', color: 'bg-red-500' },
-  googlemaps: { label: 'sourceGoogleMaps',icon: '📍', color: 'bg-blue-500' },
-  manual:     { label: 'sourceManual',    icon: '✍️', color: 'bg-amber-500' },
+// Inline SVG icons for source badges (no emoji)
+const SOURCE_SVG: Record<Source, string> = {
+  tiktok:     '<path d="M9 12a3 3 0 1 0 3 3V4a5 5 0 0 0 5 5" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>',
+  instagram:  '<rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="2" fill="none"/><circle cx="17.5" cy="6.5" r="1" fill="white"/>',
+  pantip:     '<path d="M4 4h16v12H4z M8 16l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
+  wongnai:    '<path d="M12 2C8 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-4-8-8-8z" stroke="white" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="white"/>',
+  googlemaps: '<path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z" fill="white"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/>',
+  manual:     '<path d="M11 4H4v14h14v-7M18 2l-8 8M15 2h5v5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
+}
+
+const SOURCE_BADGE: Record<Source, { label: keyof typeof strings.zh; color: string }> = {
+  tiktok:     { label: 'sourceTikTok',    color: 'bg-emerald-500' },
+  instagram:  { label: 'sourceIG',        color: 'bg-purple-500' },
+  pantip:     { label: 'sourcePantip',    color: 'bg-orange-500' },
+  wongnai:    { label: 'sourceWongnai',   color: 'bg-red-500' },
+  googlemaps: { label: 'sourceGoogleMaps',color: 'bg-blue-500' },
+  manual:     { label: 'sourceManual',    color: 'bg-amber-500' },
 }
 
 function extractThai(text: string): string | null {
@@ -34,7 +44,9 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
 
   const badge = SOURCE_BADGE[location.source]
   const name = lang === 'zh' ? location.name_zh : location.name_en
-  const desc = lang === 'zh' ? location.description_zh : location.description_en
+  // Strip "必點：..." prefix from description since highlights shown separately as pills
+  const rawDesc = lang === 'zh' ? location.description_zh : location.description_en
+  const desc = rawDesc?.replace(/^必點：[^。]*。\s*/, '') || rawDesc
 
   const thaiName = location.name_th ?? extractThai(location.name_en) ?? extractThai(location.name_zh)
   const thaiAddress = location.address_th
@@ -48,7 +60,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   const rawPhoto = location.photos[0] ?? ''
   const photo = rawPhoto.startsWith('places/')
     ? `https://places.googleapis.com/v1/${rawPhoto}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-    : rawPhoto || 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=400&h=300&fit=crop'
+    : rawPhoto || 'https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=400&h=300&fit=crop'
 
   const visibleHighlights = (location.highlights ?? []).slice(0, 2)
   const extraHighlights = (location.highlights?.length ?? 0) - 2
@@ -68,8 +80,9 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
         <Image src={photo} alt={name} fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" unoptimized={rawPhoto.startsWith('places/')} />
         {/* Source badge */}
         <div className="absolute top-1.5 left-1.5">
-          <span className={`inline-flex items-center gap-1 text-[8px] font-bold px-2 py-0.5 rounded-full text-white shadow-sm ${badge.color}`}>
-            {badge.icon} {strings[lang][badge.label] as string}
+          <span className={`inline-flex items-center gap-1 text-[8px] font-bold px-1.5 py-0.5 rounded-full text-white shadow-sm ${badge.color}`}>
+            <svg width="9" height="9" viewBox="0 0 24 24" dangerouslySetInnerHTML={{ __html: SOURCE_SVG[location.source] }} />
+            {strings[lang][badge.label] as string}
           </span>
         </div>
         {/* Trending badge */}
