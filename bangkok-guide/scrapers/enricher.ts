@@ -3,6 +3,7 @@ const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 type PlaceResult = {
   displayName?: { text: string }
   formattedAddress?: string
+  primaryTypeDisplayName?: { text: string }
   rating?: number
   location?: { latitude: number; longitude: number }
   photos?: Array<{ name: string }>
@@ -31,6 +32,7 @@ async function findPlace(name: string, lat?: number, lng?: number): Promise<Plac
         'X-Goog-FieldMask': [
           'places.displayName',
           'places.formattedAddress',
+          'places.primaryTypeDisplayName',
           'places.rating',
           'places.location',
           'places.photos',
@@ -48,33 +50,88 @@ async function findPlace(name: string, lat?: number, lng?: number): Promise<Plac
   }
 }
 
+// Ordered list of food/drink items to look for in review text
+const KNOWN_ITEMS: [string, string][] = [
+  ['pad thai', 'Pad Thai'],
+  ['pad kra pao', 'Pad Kra Pao'],
+  ['som tum', 'Som Tum'],
+  ['tom yum', 'Tom Yum'],
+  ['tom kha', 'Tom Kha'],
+  ['green curry', 'Green Curry'],
+  ['massaman', 'Massaman Curry'],
+  ['khao man gai', 'Khao Man Gai'],
+  ['mango sticky rice', 'Mango Sticky Rice'],
+  ['mango sorbet', 'Mango Sorbet'],
+  ['boat noodles', 'Boat Noodles'],
+  ['papaya salad', 'Papaya Salad'],
+  ['larb', 'Larb'],
+  ['satay', 'Satay'],
+  ['dim sum', 'Dim Sum'],
+  ['dumplings', 'Dumplings'],
+  ['ramen', 'Ramen'],
+  ['sushi', 'Sushi'],
+  ['omakase', 'Omakase'],
+  ['pasta', 'Pasta'],
+  ['steak', 'Steak'],
+  ['tiramisu', 'Tiramisu'],
+  ['croissant', 'Croissant'],
+  ['espresso', 'Espresso'],
+  ['pour over', 'Pour Over'],
+  ['cold brew', 'Cold Brew'],
+  ['thai tea', 'Thai Tea'],
+  ['craft beer', 'Craft Beer'],
+  ['cocktail', 'Cocktails'],
+  ['rooftop', 'Rooftop View'],
+  ['city view', 'City View'],
+  ['live music', 'Live Music'],
+]
+
 export function extractHighlights(
   reviews: Array<{ text?: { text: string }; originalText?: { text: string } }>
 ): string[] {
-  const allText = reviews.map(r => r.text?.text ?? r.originalText?.text ?? '').join(' ')
+  const allText = reviews
+    .map(r => r.text?.text ?? r.originalText?.text ?? '')
+    .join(' ')
+    .toLowerCase()
 
+  // First pass: known food/drink items
+  const found: string[] = []
+  for (const [keyword, label] of KNOWN_ITEMS) {
+    if (allText.includes(keyword)) {
+      found.push(label)
+      if (found.length >= 3) break
+    }
+  }
+
+  if (found.length >= 2) return found
+
+  // Second pass: pattern-based extraction for other items
   const patterns = [
-    /(?:try|order|get|have|love|best|famous for|known for|recommend(?:ed)?)\s+(?:the\s+)?([A-Z][a-z]+(?:\s+[a-z]+){0,3})/g,
-    /([A-Z][a-z]+(?:\s+[a-z]+){0,2})\s+(?:is amazing|is great|is delicious|is excellent|was amazing|was delicious)/g,
-    /(?:must[- ]try|must[- ]have|must[- ]order)\s+(?:the\s+)?([A-Z][a-z]+(?:\s+[a-z]+){0,3})/gi,
+    /(?:try|order|get|love|best|famous for|known for|recommend(?:ed)?)\s+(?:the\s+)?([a-z][a-z\s]{2,25}?)(?:[.,!]|$)/gi,
+    /([a-z][a-z\s]{2,20}?)\s+(?:is amazing|is great|is delicious|is excellent|was incredible|was outstanding)/gi,
+    /must[- ](?:try|order|have)\s+(?:the\s+)?([a-z][a-z\s]{2,25}?)(?:[.,!]|$)/gi,
   ]
 
   const freq = new Map<string, number>()
   for (const pat of patterns) {
     let m
     while ((m = pat.exec(allText)) !== null) {
-      const item = m[1].trim()
-      if (item.length >= 4 && item.length <= 40 && !/^\d/.test(item)) {
+      const item = m[1].trim().replace(/\s+/g, ' ')
+      if (item.length >= 4 && item.length <= 30 && !/^\d/.test(item)) {
+        // Skip overly generic words
+        if (/^(the|this|that|here|food|place|dish|meal|service|staff|everything|nothing|something)$/i.test(item)) continue
         const key = item.toLowerCase()
         freq.set(key, (freq.get(key) ?? 0) + 1)
       }
     }
   }
 
-  return Array.from(freq.entries())
+  const extra = Array.from(freq.entries())
     .sort((a, b) => b[1] - a[1])
-    .slice(0, 3)
-    .map(([key]) => key.replace(/^\w/, (c: string) => c.toUpperCase()))
+    .slice(0, 3 - found.length)
+    .map(([key]) => key.replace(/^\w/, c => c.toUpperCase()))
+
+  return [...found, ...extra].slice(0, 3)
 }
 
 const CAT_ZH: Record<string, string> = {
@@ -84,21 +141,30 @@ const CAT_ZH: Record<string, string> = {
 export function buildDescriptions(
   editorial: string | undefined,
   highlights: string[],
-  category: string
+  category: string,
+  primaryType?: string
 ): { description_en: string; description_zh: string } {
   const catZh = CAT_ZH[category] ?? '地點'
+  const typeLabel = primaryType ?? (category === 'cafe' ? 'specialty cafe' : `${category} spot`)
 
-  const highlightEn = highlights.length > 0 ? ` Must-try: ${highlights.join(', ')}.` : ''
-  const description_en = (editorial ?? `Popular ${category} in Bangkok.`) + highlightEn
+  const highlightEn = highlights.length > 0
+    ? ` Must-try: ${highlights.join(', ')}.`
+    : ''
 
-  let description_zh = highlights.length > 0
+  const baseEn = editorial ?? `Highly recommended ${typeLabel} in Bangkok.`
+  const description_en = baseEn + highlightEn
+
+  const highlightZh = highlights.length > 0
     ? `必點：${highlights.join('、')}。`
-    : `曼谷人氣${catZh}。`
+    : ''
+  let description_zh: string
   if (editorial) {
     const condensed = editorial.length > 60 ? editorial.slice(0, 60) + '…' : editorial
-    description_zh += condensed
+    description_zh = highlightZh + condensed
+  } else if (highlights.length > 0) {
+    description_zh = `${highlightZh}曼谷人氣${catZh}，深受好評。`
   } else {
-    description_zh += `曼谷人氣${catZh}。`
+    description_zh = `曼谷熱門${catZh}，評價極佳。`
   }
 
   return { description_en, description_zh }
@@ -127,7 +193,8 @@ export async function enrichItem(
 
   const highlights = place.reviews ? extractHighlights(place.reviews) : []
   const editorial = place.editorialSummary?.text
-  const { description_en, description_zh } = buildDescriptions(editorial, highlights, category)
+  const primaryType = place.primaryTypeDisplayName?.text
+  const { description_en, description_zh } = buildDescriptions(editorial, highlights, category, primaryType)
   const photoRef = place.photos?.[0]?.name ?? ''
 
   return {
