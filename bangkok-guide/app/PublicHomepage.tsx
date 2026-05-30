@@ -203,9 +203,9 @@ export function PublicHomepage({ locations }: Props) {
       <div className="sticky top-0 z-0 h-[55vw] max-h-60 min-h-40">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&fit=crop"
+            src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&fit=crop"
             alt="Bangkok"
-            fill className="object-cover opacity-40"
+            fill className="object-cover opacity-65"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0f1428]/90 via-[#0f1428]/50 to-transparent" />
