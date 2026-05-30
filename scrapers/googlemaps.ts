@@ -1,8 +1,9 @@
 import { sleep, type ScrapedItem } from './shared'
+import { extractHighlights, buildDescriptions } from './enricher'
 
+const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 const BANGKOK_LAT = 13.7563
 const BANGKOK_LNG = 100.5018
-const RADIUS = 10000 // 10km
 
 const SEARCH_QUERIES = [
   { query: 'best restaurant Bangkok', category: 'food' as const },
@@ -12,14 +13,24 @@ const SEARCH_QUERIES = [
   { query: 'boutique hotel Bangkok', category: 'hotel' as const },
 ]
 
+const PRICE_MAP: Record<string, 1 | 2 | 3 | 4> = {
+  PRICE_LEVEL_FREE: 1,
+  PRICE_LEVEL_INEXPENSIVE: 1,
+  PRICE_LEVEL_MODERATE: 2,
+  PRICE_LEVEL_EXPENSIVE: 3,
+  PRICE_LEVEL_VERY_EXPENSIVE: 4,
+}
+
 type GMPlace = {
-  name: string
-  formatted_address: string
+  displayName: { text: string }
+  formattedAddress: string
   rating?: number
-  geometry: { location: { lat: number; lng: number } }
-  photos?: Array<{ photo_reference: string }>
-  price_level?: number
-  place_id: string
+  priceLevel?: string
+  location: { latitude: number; longitude: number }
+  photos?: Array<{ name: string }>
+  id: string
+  editorialSummary?: { text: string }
+  reviews?: Array<{ text?: { text: string }; originalText?: { text: string } }>
 }
 
 export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
@@ -31,41 +42,72 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
 
   const results: ScrapedItem[] = []
 
-  for (const { query } of SEARCH_QUERIES) {
+  for (const { query, category } of SEARCH_QUERIES) {
     try {
-      const url = new URL('https://maps.googleapis.com/maps/api/place/textsearch/json')
-      url.searchParams.set('query', query)
-      url.searchParams.set('location', `${BANGKOK_LAT},${BANGKOK_LNG}`)
-      url.searchParams.set('radius', String(RADIUS))
-      url.searchParams.set('key', apiKey)
+      const res = await fetch(PLACES_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Goog-Api-Key': apiKey,
+          'X-Goog-FieldMask': [
+            'places.displayName',
+            'places.formattedAddress',
+            'places.rating',
+            'places.priceLevel',
+            'places.location',
+            'places.photos',
+            'places.id',
+            'places.editorialSummary',
+            'places.reviews',
+          ].join(','),
+        },
+        body: JSON.stringify({
+          textQuery: query,
+          maxResultCount: 10,
+          locationBias: {
+            circle: {
+              center: { latitude: BANGKOK_LAT, longitude: BANGKOK_LNG },
+              radius: 10000,
+            },
+          },
+        }),
+      })
 
-      const res = await fetch(url.toString())
       const data = await res.json()
 
-      if (data.status !== 'OK') {
-        console.error('Places API error:', data.status, data.error_message)
+      if (!data.places?.length) {
+        console.error('Google Maps (Places API New) error for', query, JSON.stringify(data).slice(0, 200))
         continue
       }
 
-      for (const place of (data.results as GMPlace[]).slice(0, 8)) {
-        const photoRef = place.photos?.[0]?.photo_reference
-        const photoUrl = photoRef
-          ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=${photoRef}&key=${apiKey}`
+      for (const place of (data.places as GMPlace[]).slice(0, 8)) {
+        const highlights = place.reviews ? extractHighlights(place.reviews) : []
+        const { description_en, description_zh } = buildDescriptions(
+          place.editorialSummary?.text,
+          highlights,
+          category
+        )
+
+        const photoName = place.photos?.[0]?.name
+        const photoUrl = photoName
+          ? `https://places.googleapis.com/v1/${photoName}/media?maxWidthPx=800&key=${apiKey}`
           : ''
 
         results.push({
-          name_en: place.name,
-          name_zh: place.name,
-          description_en: `${place.name} — ${place.formatted_address}`,
-          description_zh: `${place.name} — ${place.formatted_address}`,
-          address: place.formatted_address,
-          lat: place.geometry.location.lat,
-          lng: place.geometry.location.lng,
+          name_en: place.displayName.text,
+          name_zh: place.displayName.text,
+          description_en,
+          description_zh,
+          category,
+          address: place.formattedAddress,
+          lat: place.location.latitude,
+          lng: place.location.longitude,
           photos: photoUrl ? [photoUrl] : [],
-          source_url: `https://www.google.com/maps/place/?q=place_id:${place.place_id}`,
+          source_url: `https://www.google.com/maps/place/?q=place_id:${place.id}`,
           rating: place.rating ?? 4.0,
-          price_range: Math.min((place.price_level ?? 1) + 1, 4) as 1 | 2 | 3 | 4,
+          price_range: PRICE_MAP[place.priceLevel ?? ''] ?? 2,
           trending: false,
+          highlights,
         })
       }
 

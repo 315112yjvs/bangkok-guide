@@ -17,6 +17,7 @@ export type Location = {
   rating: number
   price_range: 1 | 2 | 3 | 4
   trending: boolean
+  highlights?: string[]
   approved_at?: string
 }
 

@@ -36,7 +36,16 @@ export function LocationCard({ location, lang }: Props) {
           {strings[lang][badge.label] as string}
         </span>
         <h3 className="text-[13px] font-bold text-[#1a1a2e] leading-tight mb-0.5 line-clamp-1">{name}</h3>
-        <p className="text-[10px] text-gray-400 mb-2 line-clamp-1">{desc}</p>
+        <p className="text-[10px] text-gray-400 mb-1 line-clamp-2">{desc}</p>
+        {location.highlights && location.highlights.length > 0 && (
+          <div className="flex flex-wrap gap-1 mb-1.5">
+            {location.highlights.map((h) => (
+              <span key={h} className="text-[8px] bg-amber-50 text-amber-700 border border-amber-100 px-1.5 py-0.5 rounded-full font-semibold">
+                {h}
+              </span>
+            ))}
+          </div>
+        )}
         <div className="flex items-center justify-between">
           <span className="text-[10px] font-bold text-amber-500">★ {location.rating.toFixed(1)}</span>
           <a
