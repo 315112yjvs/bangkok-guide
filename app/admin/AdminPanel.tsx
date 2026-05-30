@@ -485,7 +485,7 @@ export function AdminPanel() {
           <textarea
             value={customKeywords}
             onChange={(e) => setCustomKeywords(e.target.value)}
-            placeholder={'例：\nThonglor new restaurant 2025\nAri café brunch\nSukhumvit rooftop bar'}
+            placeholder={'例：\nThonglor new restaurant 2025\nAri café brunch:cafe\nSukhumvit rooftop bar:nightlife\n（冒號後可指定分類）'}
             rows={3}
             className="w-full bg-white/5 border border-white/10 rounded-lg px-2.5 py-2 text-[11px] text-slate-300 placeholder-slate-600 resize-none outline-none focus:border-white/20 mb-2"
           />

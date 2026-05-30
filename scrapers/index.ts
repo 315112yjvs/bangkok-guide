@@ -70,12 +70,23 @@ export async function runAllScrapers(customKeywords?: string[]): Promise<number>
   const newItems: PendingLocation[] = []
 
   // Custom keywords — run through Google Maps Places API directly
+  // Supports "keyword:category" syntax, e.g. "Thonglor brunch:cafe" or "rooftop bar:nightlife"
   if (customKeywords && customKeywords.length > 0) {
-    console.log(`Running custom keyword scraper: ${customKeywords.join(', ')}`)
+    const VALID_CATS = ['food', 'cafe', 'shopping', 'nightlife', 'hotel'] as const
+    type ValidCat = typeof VALID_CATS[number]
+    const queries = customKeywords.map((kw) => {
+      const colonIdx = kw.lastIndexOf(':')
+      if (colonIdx > 0) {
+        const possibleCat = kw.slice(colonIdx + 1).trim().toLowerCase()
+        if ((VALID_CATS as readonly string[]).includes(possibleCat)) {
+          return { query: kw.slice(0, colonIdx).trim(), category: possibleCat as ValidCat }
+        }
+      }
+      return { query: kw, category: 'food' as ValidCat }
+    })
+    console.log(`Running custom keyword scraper: ${queries.map(q => `"${q.query}" (${q.category})`).join(', ')}`)
     try {
-      const items = await scrapeGoogleMapsQueries(
-        customKeywords.map((kw) => ({ query: kw, category: 'food' as const }))
-      )
+      const items = await scrapeGoogleMapsQueries(queries)
       await processItems(items, 'googlemaps', existing, newItems)
     } catch (err) {
       console.error('Custom keyword scraper failed:', err)
