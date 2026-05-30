@@ -26,21 +26,40 @@ export async function runAllScrapers(): Promise<number> {
     try {
       const items = await scraper()
       for (const item of items) {
-        if (!isDuplicate(item, existing)) {
-          const category = item.category ?? 'food'
+        if (isDuplicate(item, existing)) continue
 
-          // Google Maps items are already enriched inline; enrich others via Places API
-          const enriched = source !== 'googlemaps'
-            ? await enrichItem(item.name_en, category, item.lat, item.lng)
-            : {
-                description_en: item.description_en,
-                description_zh: item.description_zh,
-                highlights: item.highlights ?? [],
-              }
+        const category = item.category ?? 'food'
+
+        if (source === 'googlemaps') {
+          // Google Maps items are already fully enriched inline
+          const pending: PendingLocation = {
+            ...item,
+            id: uuidv4(),
+            category,
+            source: 'googlemaps',
+            scraped_at: new Date().toISOString(),
+          }
+          newItems.push(pending)
+          existing.push(pending)
+        } else {
+          // Validate + enrich via Google Maps — skip if place not found
+          const enriched = await enrichItem(item.name_en, category, item.lat, item.lng)
+          if (!enriched) {
+            console.log(`Skipping "${item.name_en}" — not found on Google Maps`)
+            continue
+          }
 
           const pending: PendingLocation = {
             ...item,
-            ...enriched,
+            name_en: enriched.name_en,
+            name_zh: enriched.name_en,
+            description_en: enriched.description_en,
+            description_zh: enriched.description_zh,
+            highlights: enriched.highlights,
+            lat: enriched.lat,
+            lng: enriched.lng,
+            photos: enriched.photos,
+            rating: enriched.rating,
             id: uuidv4(),
             category,
             source: source as PendingLocation['source'],

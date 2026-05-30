@@ -1,6 +1,11 @@
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 
 type PlaceResult = {
+  displayName?: { text: string }
+  formattedAddress?: string
+  rating?: number
+  location?: { latitude: number; longitude: number }
+  photos?: Array<{ name: string }>
   editorialSummary?: { text: string }
   reviews?: Array<{ text?: { text: string }; originalText?: { text: string } }>
 }
@@ -23,7 +28,15 @@ async function findPlace(name: string, lat?: number, lng?: number): Promise<Plac
       headers: {
         'Content-Type': 'application/json',
         'X-Goog-Api-Key': apiKey,
-        'X-Goog-FieldMask': 'places.editorialSummary,places.reviews',
+        'X-Goog-FieldMask': [
+          'places.displayName',
+          'places.formattedAddress',
+          'places.rating',
+          'places.location',
+          'places.photos',
+          'places.editorialSummary',
+          'places.reviews',
+        ].join(','),
       },
       body: JSON.stringify(body),
     })
@@ -91,14 +104,40 @@ export function buildDescriptions(
   return { description_en, description_zh }
 }
 
+export type EnrichedItem = {
+  name_en: string
+  description_en: string
+  description_zh: string
+  highlights: string[]
+  lat: number
+  lng: number
+  photos: string[]
+  rating: number
+}
+
+// Returns null if the name can't be matched to a real Bangkok place on Google Maps.
 export async function enrichItem(
   name: string,
   category: string,
   lat?: number,
   lng?: number
-): Promise<{ description_en: string; description_zh: string; highlights: string[] }> {
+): Promise<EnrichedItem | null> {
   const place = await findPlace(name, lat, lng)
-  const highlights = place?.reviews ? extractHighlights(place.reviews) : []
-  const editorial = place?.editorialSummary?.text
-  return { ...buildDescriptions(editorial, highlights, category), highlights }
+  if (!place) return null
+
+  const highlights = place.reviews ? extractHighlights(place.reviews) : []
+  const editorial = place.editorialSummary?.text
+  const { description_en, description_zh } = buildDescriptions(editorial, highlights, category)
+  const photoRef = place.photos?.[0]?.name ?? ''
+
+  return {
+    name_en: place.displayName?.text ?? name,
+    description_en,
+    description_zh,
+    highlights,
+    lat: place.location?.latitude ?? lat ?? 13.7563,
+    lng: place.location?.longitude ?? lng ?? 100.5018,
+    photos: photoRef ? [photoRef] : [],
+    rating: place.rating ?? 4.0,
+  }
 }
