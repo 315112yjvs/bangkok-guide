@@ -1,54 +1,72 @@
-import { firecrawlScrape, sleep, type ScrapedItem } from './shared'
+import { firecrawlSearch, firecrawlScrape, sleep, type ScrapedItem } from './shared'
 
 const PANTIP_QUERIES = [
-  'https://pantip.com/search#q=%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3+%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E&st=topic',
-  'https://pantip.com/search#q=%E0%B8%84%E0%B8%B2%E0%B9%80%E0%B8%9F%E0%B9%88+%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F+Bangkok&st=topic',
+  'site:pantip.com ร้านอาหาร กรุงเทพ แนะนำ อร่อย',
+  'site:pantip.com คาเฟ่ กรุงเทพ น่าไป',
 ]
 
-function parseRestaurantsFromMarkdown(markdown: string, sourceUrl: string): ScrapedItem[] {
-  const items: ScrapedItem[] = []
-  const lines = markdown.split('\n')
-  let i = 0
-  while (i < lines.length) {
-    const line = lines[i].trim()
-    const nameMatch = line.match(/^\*\*(.{3,50})\*\*/) || line.match(/^#{1,3}\s+(.{3,50})/)
-    if (nameMatch) {
-      const rawName = nameMatch[1].trim()
-      if (rawName.length >= 3 && /[a-zA-Z\d]/.test(rawName)) {
-        const description = lines.slice(i + 1, i + 4).join(' ').replace(/#+/g, '').trim().slice(0, 200)
-        items.push({
-          name_en: rawName,
-          name_zh: rawName,
-          description_en: description,
-          description_zh: description,
-          address: 'Bangkok, Thailand',
-          lat: 13.7563,
-          lng: 100.5018,
-          photos: [],
-          source_url: sourceUrl,
-          rating: 4.0,
-          price_range: 2,
-          trending: true,
-        })
-      }
+const THAI_PLACE_PATTERN = /(?:^|\n)[\s*\d.-]*(?:ร้าน|คาเฟ่|บาร์|ห้องอาหาร|โรงแรม)?\s*([A-Z][A-Za-zก-๙\s&''.()]{3,50})(?:\s*[-–—:\n])/gm
+const EN_PLACE_PATTERN = /(?:^|\n)[\s*\d.-]*([A-Z][A-Za-z\s&''.()]{3,50})(?:\s*[-–—:\n])/gm
+
+function extractNamesFromPantip(text: string): string[] {
+  const names: string[] = []
+  const seen = new Set<string>()
+  const SKIP = /^(ที่|การ|มี|ไป|แต่|และ|หรือ|จาก|The Best|Best |Top |Most )/i
+
+  for (const pattern of [THAI_PLACE_PATTERN, EN_PLACE_PATTERN]) {
+    let match: RegExpExecArray | null
+    pattern.lastIndex = 0
+    while ((match = pattern.exec(text)) !== null) {
+      const name = match[1].trim().replace(/\s+/g, ' ')
+      if (name.length < 3 || name.length > 50) continue
+      if (SKIP.test(name)) continue
+      if (seen.has(name.toLowerCase())) continue
+      seen.add(name.toLowerCase())
+      names.push(name)
+      if (names.length >= 8) break
     }
-    i++
-    if (items.length >= 10) break
+    if (names.length >= 8) break
   }
-  return items
+  return names
 }
 
 export async function scrapePantip(): Promise<ScrapedItem[]> {
   const results: ScrapedItem[] = []
-  for (const url of PANTIP_QUERIES) {
+
+  for (const query of PANTIP_QUERIES) {
     try {
-      const markdown = await firecrawlScrape(url)
-      const items = parseRestaurantsFromMarkdown(markdown, url)
-      results.push(...items)
+      const searchResults = await firecrawlSearch(query, 3)
+      for (const result of searchResults) {
+        if (!result.url.includes('pantip.com')) continue
+        try {
+          const markdown = await firecrawlScrape(result.url)
+          const names = extractNamesFromPantip(markdown)
+          for (const name of names) {
+            results.push({
+              name_en: name,
+              name_zh: name,
+              description_en: `Recommended on Pantip — ${result.title ?? ''}`.slice(0, 120),
+              description_zh: `Pantip 泰國論壇推薦`,
+              address: 'Bangkok, Thailand',
+              lat: 13.7563,
+              lng: 100.5018,
+              photos: [],
+              source_url: result.url,
+              rating: 4.0,
+              price_range: 2,
+              trending: false,
+            })
+          }
+          await sleep(1500)
+        } catch {
+          // skip individual page errors
+        }
+      }
       await sleep(2000)
     } catch (err) {
-      console.error('Pantip scrape failed for', url, err)
+      console.error('Pantip scrape failed:', err)
     }
   }
+
   return results
 }

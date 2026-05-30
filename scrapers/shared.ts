@@ -35,6 +35,26 @@ export async function firecrawlScrape(url: string): Promise<string> {
   return data.data?.markdown ?? ''
 }
 
+export type SearchResult = { url: string; title: string; description: string; markdown?: string }
+
+export async function firecrawlSearch(query: string, limit = 5): Promise<SearchResult[]> {
+  const apiKey = process.env.FIRECRAWL_API_KEY
+  if (!apiKey) throw new Error('FIRECRAWL_API_KEY not set')
+
+  const res = await fetch('https://api.firecrawl.dev/v1/search', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ query, limit }),
+  })
+
+  if (!res.ok) throw new Error(`Firecrawl search error: ${res.status}`)
+  const data = await res.json()
+  return (data.data ?? []) as SearchResult[]
+}
+
 export function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }

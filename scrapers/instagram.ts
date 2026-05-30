@@ -1,51 +1,63 @@
-import { firecrawlScrape, sleep, type ScrapedItem } from './shared'
+import { firecrawlSearch, sleep, type ScrapedItem } from './shared'
 
-const IG_URLS = [
-  'https://www.instagram.com/explore/tags/bangkokfood/',
-  'https://www.instagram.com/explore/tags/bangkokcafe/',
+const QUERIES = [
+  'Bangkok Instagram worthy restaurant photo aesthetic 2024',
+  'Bangkok rooftop bar nightlife best view 2024',
+  'Bangkok luxury hotel brunch afternoon tea best 2024',
 ]
 
-function parseInstagramMarkdown(markdown: string, sourceUrl: string): ScrapedItem[] {
-  const items: ScrapedItem[] = []
-  const namePattern = /(?:📍|🍽️|☕|at\s+|@)([A-Z][A-Za-z\s&'.]{2,40})(?:\n|,|!|\.|$)/g
-  let match
+const PLACE_PATTERN = /(?:^|\n)[\s*-]*([A-Z][A-Za-z\s&''.()]{3,50})(?:\s*[-–—]|\s*:|\s*–|\n|,)/gm
+
+function extractNames(text: string): string[] {
+  const names: string[] = []
   const seen = new Set<string>()
+  const SKIP = /^(The Best|Best |Top |Most |More |What |When |Where |How |Why |Tips |Read |Check |See |Visit |Open |Book |Get |Make |Try |Also |Note |Find |Here |This |That |These |With |From |For |And |But |Are |Was |Has |Have |About |After |Before |During |Other |Some |Many |All |Any )/i
 
-  while ((match = namePattern.exec(markdown)) !== null) {
-    const name = match[1].trim()
-    if (seen.has(name) || name.length < 4) continue
-    seen.add(name)
-
-    items.push({
-      name_en: name,
-      name_zh: name,
-      description_en: `Trending on Instagram in Bangkok`,
-      description_zh: `IG 曼谷爆紅`,
-      address: 'Bangkok, Thailand',
-      lat: 13.7563,
-      lng: 100.5018,
-      photos: [],
-      source_url: sourceUrl,
-      rating: 4.0,
-      price_range: 2,
-      trending: true,
-    })
-
-    if (items.length >= 8) break
+  let match: RegExpExecArray | null
+  PLACE_PATTERN.lastIndex = 0
+  while ((match = PLACE_PATTERN.exec(text)) !== null) {
+    const name = match[1].trim().replace(/\s+/g, ' ')
+    if (name.length < 4 || name.length > 50) continue
+    if (SKIP.test(name)) continue
+    if (seen.has(name.toLowerCase())) continue
+    seen.add(name.toLowerCase())
+    names.push(name)
+    if (names.length >= 6) break
   }
-  return items
+  return names
 }
 
 export async function scrapeInstagram(): Promise<ScrapedItem[]> {
   const results: ScrapedItem[] = []
-  for (const url of IG_URLS) {
+
+  for (const query of QUERIES) {
     try {
-      const markdown = await firecrawlScrape(url)
-      results.push(...parseInstagramMarkdown(markdown, url))
-      await sleep(3000)
+      const searchResults = await firecrawlSearch(query, 3)
+      for (const result of searchResults) {
+        const text = result.markdown ?? result.description ?? result.title ?? ''
+        const names = extractNames(text)
+        for (const name of names) {
+          results.push({
+            name_en: name,
+            name_zh: name,
+            description_en: `Instagram-worthy Bangkok spot — ${result.title ?? ''}`.slice(0, 120),
+            description_zh: `IG 曼谷打卡熱點`,
+            address: 'Bangkok, Thailand',
+            lat: 13.7563,
+            lng: 100.5018,
+            photos: [],
+            source_url: result.url,
+            rating: 4.2,
+            price_range: 2,
+            trending: true,
+          })
+        }
+      }
+      await sleep(1500)
     } catch (err) {
-      console.error('Instagram scrape failed', err)
+      console.error('Instagram scrape failed for query:', query, err)
     }
   }
+
   return results
 }
