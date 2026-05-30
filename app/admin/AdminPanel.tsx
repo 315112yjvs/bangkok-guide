@@ -230,6 +230,8 @@ export function AdminPanel() {
   const [scraperRunning, setScraperRunning] = useState(false)
   const [deployStatus, setDeployStatus] = useState<string>('未上傳')
   const [deploying, setDeploying] = useState(false)
+  const [reenrichStatus, setReenrichStatus] = useState<string>('')
+  const [reenriching, setReenriching] = useState(false)
 
   useEffect(() => {
     if (sessionStorage.getItem('admin_authed') === '1') setAuthed(true)
@@ -296,6 +298,21 @@ export function AdminPanel() {
     }
   }
 
+  async function runReenrich() {
+    setReenriching(true)
+    setReenrichStatus('更新中...')
+    try {
+      const res = await fetch('/api/reenrich', { method: 'POST' })
+      const data = await res.json()
+      setReenrichStatus(data.ok ? `✓ 更新 ${data.updated}/${data.total} 筆` : '失敗')
+      loadData()
+    } catch {
+      setReenrichStatus('連線失敗')
+    } finally {
+      setReenriching(false)
+    }
+  }
+
   if (!authed) return <AuthOverlay onAuth={() => setAuthed(true)} />
 
   const navLink = (t: Tab, label: string, count?: number) => (
@@ -350,6 +367,17 @@ export function AdminPanel() {
             {deploying ? '上傳中...' : '存檔並上傳'}
           </button>
           <p className="text-slate-500 text-[10px] text-center mt-1.5">{deployStatus}</p>
+          <button
+            onClick={runReenrich}
+            disabled={reenriching}
+            className="mt-3 w-full bg-violet-600 hover:bg-violet-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5 flex items-center justify-center gap-2"
+          >
+            <svg className={`w-3.5 h-3.5 ${reenriching ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+              <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/>
+            </svg>
+            {reenriching ? '更新中...' : '重新更新描述'}
+          </button>
+          {reenrichStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{reenrichStatus}</p>}
         </div>
       </div>
 

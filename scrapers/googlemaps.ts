@@ -6,11 +6,32 @@ const BANGKOK_LAT = 13.7563
 const BANGKOK_LNG = 100.5018
 
 const SEARCH_QUERIES = [
-  { query: 'best restaurant Bangkok', category: 'food' as const },
-  { query: 'best cafe Bangkok', category: 'cafe' as const },
+  // Food — varied areas and cuisines
+  { query: 'best Thai restaurant Sukhumvit Bangkok', category: 'food' as const },
+  { query: 'best restaurant Silom Bangkok', category: 'food' as const },
+  { query: 'best Thai food Ari Phahonyothin Bangkok', category: 'food' as const },
+  { query: 'street food Bangkok Yaowarat Chinatown', category: 'food' as const },
+  { query: 'fine dining restaurant Bangkok Sathorn', category: 'food' as const },
+  { query: 'hidden gem local food Bangkok', category: 'food' as const },
+  { query: 'seafood restaurant Bangkok', category: 'food' as const },
+  { query: 'Japanese restaurant Bangkok Thonglor', category: 'food' as const },
+  { query: 'Thai street food Ekkamai Bangkok', category: 'food' as const },
+  // Cafe
+  { query: 'specialty coffee cafe Thonglor Bangkok', category: 'cafe' as const },
+  { query: 'aesthetic cafe Bangkok Ari', category: 'cafe' as const },
+  { query: 'best cafe Sukhumvit Bangkok', category: 'cafe' as const },
+  { query: 'coffee roastery Bangkok', category: 'cafe' as const },
+  // Shopping
   { query: 'night market Bangkok shopping', category: 'shopping' as const },
-  { query: 'rooftop bar Bangkok nightlife', category: 'nightlife' as const },
-  { query: 'boutique hotel Bangkok', category: 'hotel' as const },
+  { query: 'Chatuchak weekend market Bangkok', category: 'shopping' as const },
+  { query: 'mall Bangkok MBK Siam', category: 'shopping' as const },
+  // Nightlife
+  { query: 'rooftop bar Bangkok night view', category: 'nightlife' as const },
+  { query: 'cocktail bar Bangkok Ekkamai Thonglor', category: 'nightlife' as const },
+  { query: 'jazz bar live music Bangkok', category: 'nightlife' as const },
+  // Hotel
+  { query: 'boutique hotel Bangkok Silom', category: 'hotel' as const },
+  { query: 'luxury hotel Bangkok Sukhumvit', category: 'hotel' as const },
 ]
 
 const PRICE_MAP: Record<string, 1 | 2 | 3 | 4> = {
@@ -24,6 +45,7 @@ const PRICE_MAP: Record<string, 1 | 2 | 3 | 4> = {
 type GMPlace = {
   displayName: { text: string }
   formattedAddress: string
+  primaryTypeDisplayName?: { text: string }
   rating?: number
   priceLevel?: string
   location: { latitude: number; longitude: number }
@@ -52,6 +74,7 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
           'X-Goog-FieldMask': [
             'places.displayName',
             'places.formattedAddress',
+            'places.primaryTypeDisplayName',
             'places.rating',
             'places.priceLevel',
             'places.location',
@@ -85,7 +108,8 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
         const { description_en, description_zh } = buildDescriptions(
           place.editorialSummary?.text,
           highlights,
-          category
+          category,
+          place.primaryTypeDisplayName?.text
         )
 
         const photoRef = place.photos?.[0]?.name ?? ''
