@@ -1,5 +1,6 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import { IconPin } from './icons/CategoryIcons'
 import type { Location, Source } from '@/lib/types'
@@ -74,7 +75,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   }
 
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <Link href={`/location/${location.id}`} className="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {/* Photo */}
       <div className="relative h-28 w-full">
         <Image src={photo} alt={name} fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" unoptimized={rawPhoto.startsWith('places/')} />
@@ -172,6 +173,6 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
