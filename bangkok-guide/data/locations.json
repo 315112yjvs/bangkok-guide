@@ -1049,31 +1049,6 @@
     "approved_at": "2026-05-30T11:31:50.175Z"
   },
   {
-    "name_en": "Phed Phed Bistro",
-    "name_zh": "Phed Phed Bistro",
-    "description_en": "Highly recommended Thai Restaurant in Bangkok. Must-try: To order no spicy level, All every menu, This place.",
-    "description_zh": "必點：To order no spicy level、All every menu、This place。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.766746399999999,
-    "lng": 100.4432475,
-    "photos": [
-      "places/ChIJwzjLehyZ4jARDxGl4rwgoxc/photos/Ab43m-vZ7hBiAENVE0yPdv3xI_CPapWnr1Q72C37vca4oWs4XkrU8hi2Xhx15uJ_xUJrZydntUZH-70sJgrI-c-lf0eWzPiwWzcdQoWlsJlcgX04m5xOKS1Fvw9YTttSOv70hOVR3T8xSmj1abaiIEepUhA8WoLcJcImYSs43QG12pJPWG-OhTvBYyBxd8QV0DLqD_cuqXb1XnrqYfSqnZt6hCDMuhROY3O8D2RMsGsGcXy_N0NdAgvW30rb9inM4EoWNKHPD-wbJfYqoQcl5ka_f4aXtTizVFDQZFo1-T9T2to8pNTdCDZnguEluT0GTI1XmxHVrCOL5SzpJ3aqEZoGzPqNMyyV1bSa1-gkU-sRKZd4i5yrIerf96HdvfgamLCvGdgGz9GEFq6cUBixrf58rFonJyIMw5Ck7dX2hIc0WOEwRg"
-    ],
-    "source_url": "https://pantip.com/topic/42476077",
-    "rating": 3.8,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "To order no spicy level",
-      "All every menu",
-      "This place"
-    ],
-    "id": "5124b131-044a-4e62-8350-ad554c0e9adf",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:31:50.925Z"
-  },
-  {
     "name_en": "Hi tiktok",
     "name_zh": "Hi tiktok",
     "description_en": "Highly recommended Restaurant in Bangkok.",
@@ -1164,30 +1139,6 @@
     "category": "food",
     "source": "instagram",
     "approved_at": "2026-05-30T11:37:36.694Z"
-  },
-  {
-    "name_en": "GRAB ME (แกร็บมี คาเฟ่หมูทอด) - บรรทัดทอง",
-    "name_zh": "GRAB ME (แกร็บมี คาเฟ่หมูทอด) - บรรทัดทอง",
-    "description_en": "Highly recommended Restaurant in Bangkok. Must-try: Better service, It so much.",
-    "description_zh": "必點：Better service、It so much。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.742185899999999,
-    "lng": 100.52125029999999,
-    "photos": [
-      "places/ChIJx8k41RGf4jARVFCYlmERLGA/photos/Ab43m-tKb3yywjgf22g_aBAMGipyT9RXa3yQHkcBbE_zKaQIszevKnzv_GHM50-UzEUeIUujVJ_RlH9Henf0Nks42k0bCFTsrIbkr5_XYyVTId9P3_PQm5SELdtU2klZzOxYEgREh7vTE4HS3amIN_E-CBoooOfCo28B1oP8hFKUNr0RihBRld1ii2b1kvzeEt77z03h4f5VPAD2fksLWeChi9zEeAm5mO15LaQPBdS_PwLgnsHlYAz2nQz-UcO3j0pJl0EdjNpETJd18xxqVpMZlkPl0wmPv3-ZA4XOt_70G9XAdA"
-    ],
-    "source_url": "https://www.lemon8-app.com/@alilshan_/7457493185284260359?region=sg",
-    "rating": 3.9,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "Better service",
-      "It so much"
-    ],
-    "id": "863e4f71-0876-4799-86ba-61a820f4d801",
-    "category": "food",
-    "source": "tiktok",
-    "approved_at": "2026-05-30T11:37:39.829Z"
   },
   {
     "name_en": "Bangkok Scuba Academy",
@@ -1285,101 +1236,6 @@
     "id": "e994731b-53b0-4cd7-9d1b-2a61539f41e0",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:37:51.447Z"
-  },
-  {
-    "name_en": "Bangkok Scuba Academy",
-    "name_zh": "Bangkok Scuba Academy",
-    "description_en": "Highly recommended Sports Activity Location in Bangkok. Must-try: Diving with bsa, Experiences of my life, Diving with them.",
-    "description_zh": "必點：Diving with bsa、Experiences of my life、Diving with them。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.7295802,
-    "lng": 100.4844629,
-    "photos": [
-      "places/ChIJRfvnCHSZ4jAR_-K46URQkLA/photos/Ab43m-trIcSJkCwwYmj3FUNz0usd0fy7N2ITCMwXQFrumLAZlnTzQMJZgDAusQVl-MP8iOg4UbjTMRJf9LwJC81Xf5He7vmDEDX2jLQHzTZaFm7ZzDZvt6_l3AprHkoJiHq00h_T2g3sSTukHGxEZ55oBW4scEEqBH_D-31a1xMe5zZGCpICfAFml7M-hy5l4PES15RMAQZv9X9wuJ5b1IN9G9bAtgeL3iISYA-OjalFlgvmd7riTNdViHuKhUgoNWcgUE0LSppOcn300ZNIqAwsa6rSdDEka1HtV17YcAthJ6bZkA"
-    ],
-    "source_url": "https://www.youtube.com/watch?v=SYrHJ2d-yy4",
-    "rating": 5,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "Diving with bsa",
-      "Experiences of my life",
-      "Diving with them"
-    ],
-    "id": "1c6fec35-5c14-461e-b16d-63c9718818ba",
-    "category": "food",
-    "source": "tiktok",
-    "approved_at": "2026-05-30T11:45:42.118Z"
-  },
-  {
-    "name_en": "SAOLE.BANGKOK",
-    "name_zh": "SAOLE.BANGKOK",
-    "description_en": "Highly recommended Seafood Restaurant in Bangkok. Must-try: This place.",
-    "description_zh": "必點：This place。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.739045100000002,
-    "lng": 100.5811597,
-    "photos": [
-      "places/ChIJlSvqtF2f4jARZQIAY5R2wzY/photos/Ab43m-tXkFz4MSw1LiV7lgYzCWXt1XQ-sDhH0EqIejHlURngsYE4whoQ5gpudvXiydJshpQ4Pb5nRh81TjSx81YwSlKhprJoFZSkiXhslDbmoUNegIXVyxPKuw19BSqQK5JuiAbphc5AXBgfvp6CPc3hLgMYWxgdZyZ1dKW_tTW7drs8lPPE2JuyG6GdiQrPFtp08vbqF4N0nU_JHnA7TKXWmmrBbbdgRjo7CYLAhFokOMteYZE3A5obNHnt0sw7vZ-2k8tBxXZul5Ep_MYL7ScErW9F95NayuIHNw6WV8nJdvTlP6r_d398FbPGMAh2NIMB7-wgzlJ40SgJ8JvxKd6AOHznDbeUqM375O9EcNuh-fQ_OUQ3D68zCp3TAne2K9YPscQANnUVydm1EaL23CTTTZ6bv1_a6HQX6GqO7dU0_wM-ROIh"
-    ],
-    "source_url": "https://www.instagram.com/p/DUYLSGyEWEt/",
-    "rating": 4.3,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "This place"
-    ],
-    "id": "0f71e809-0a31-4164-b513-e882c7d3d6c9",
-    "category": "food",
-    "source": "instagram",
-    "approved_at": "2026-05-30T11:45:45.094Z"
-  },
-  {
-    "name_en": "The Old Siam Plaza",
-    "name_zh": "The Old Siam Plaza",
-    "description_en": "Cheerful, traditional venue with 3 levels of stalls & boutiques selling food, silks, jewelry & more. Must-try: Which.",
-    "description_zh": "必點：Which。Cheerful, traditional venue with 3 levels of stalls & boutiq…",
-    "address": "Bangkok, Thailand",
-    "lat": 13.745681699999999,
-    "lng": 100.5000172,
-    "photos": [
-      "places/ChIJ--JkFRqZ4jARIs3bti0zBBg/photos/Ab43m-uSgFBvrjd5VqVv5WhDXk4O2_UWGaEQ9bnSy7_J7t4CSXHQmQ6wdAJ3ZNqQ8QH3CYkLWFFJTuXBcoyLSvn07rC68LMqDH79MQglozc3izj7c5cSWs6QV6G5BSpG04mQaC9GTWtRAmfuJVOh9cfhAvTIyfGzkynyy6xtKhMtAqRhI89CYCNzfqFJwcWum_btj2KTwvf9hkUCBcGBYQSGyfR-88v6QLnNvHIkExIzn4v_fBW0KTsTyJuuCU5KJOCRiZxjguV6bHMtXXL0XtHDzMjNLeA2V3qwNVJ0ybS5R-egpxIkBRYYS5l5jJZinfhfV0TM5sjIMGTi29L17UVHvpaXO39zSOvdQBhlV1d289UU1c-3QJr6z0kiMDDhOCKjCI9kP2AKZYtVAuaWTkTqMnSZbWWIOkQioXVnJZm_C1ODpC77"
-    ],
-    "source_url": "https://www.timeout.com/bangkok/restaurants/bangkoks-best-afternoon-tea",
-    "rating": 4.2,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "Which"
-    ],
-    "id": "ebaafb96-c652-4f90-b55e-6b4e2f545c9d",
-    "category": "food",
-    "source": "instagram",
-    "approved_at": "2026-05-30T11:45:47.431Z"
-  },
-  {
-    "name_en": "GRAB ME (แกร็บมี คาเฟ่หมูทอด) - บรรทัดทอง",
-    "name_zh": "GRAB ME (แกร็บมี คาเฟ่หมูทอด) - บรรทัดทอง",
-    "description_en": "Highly recommended Restaurant in Bangkok. Must-try: Better service, It so much.",
-    "description_zh": "必點：Better service、It so much。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.742185899999999,
-    "lng": 100.52125029999999,
-    "photos": [
-      "places/ChIJx8k41RGf4jARVFCYlmERLGA/photos/Ab43m-sK6p5m7nCEDIilXonPoGEcsPHoyYlKdWXmccP0SOC-Fa9QRTGBXRCnj8ihwbkFF0Tu2E2zeDAckwmFmAd-U4OBe6FLQMaaiGuDyCQo4L5EOykIX4JwWT8NERIr7gQR-3RDw9k9KtIWj842bTSDOd4C2wutQqYf0Ej_oGASvcosSe8lz_1IdpbtBwwwXuUrKd4OMJXFmCSlQbO2B7kcpbvuWHP3tQDYz55NnGi-eoRLxUeqakxtUlO5Wx7UvqvQkIdZ2rMDtA91QflbC91gIyCMFxD6Cv8wzgbPamDUhmslmw"
-    ],
-    "source_url": "https://www.lemon8-app.com/@alilshan_/7457493185284260359?region=sg",
-    "rating": 3.9,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "Better service",
-      "It so much"
-    ],
-    "id": "2f4bb627-87ae-473d-a39e-d28e76894f5c",
-    "category": "food",
-    "source": "tiktok",
-    "approved_at": "2026-05-30T11:45:51.029Z"
   },
   {
     "name_en": "The Westin Grande Sukhumvit, Bangkok",
@@ -2561,30 +2417,6 @@
     "approved_at": "2026-05-30T11:55:54.403Z"
   },
   {
-    "name_en": "Mezzaluna",
-    "name_zh": "Mezzaluna",
-    "description_en": "Highly recommended Fine Dining Restaurant in Bangkok. Must-try: With bangkok on this trip, Oysters.",
-    "description_zh": "必點：With bangkok on this trip、Oysters。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.7219248,
-    "lng": 100.5170156,
-    "photos": [
-      "places/ChIJmXuobsWY4jARc3EtJwWV21s/photos/Ab43m-tLcpSe0TO_PEDfcMOe_hx3Zi9iAi4I2oAe--KwSGdJdb57LkC3Ngjey3SWoRYiiyNz4dwqyMV1X4oOTlB_AboHR1iY8wZW9plXTcXyJDJShrPgDHHr8AhnSrDVg0EARCnqvcuDo3NkMjTgRf1ztJ1bzDh7XNwMZRDkI-dJGyCsKxEZ1RBGrZJl_RMGaDx6nlVjZY5CEKoK6jJ1DburfnKSkigJvItZ74zkXrhxOnHqnM0ygbTEpoVD9bWetAnKhi6asbX9FMOVskUuyVYYBzYHjD5lsZb04124zRoDG-Zj4NL8i8LehxZ55HDTWykSP8gI9gJVLIJxUq5cl5YzgcpO-HEFrP6nrjm2yCq6bAPGqztjmZci_sj2Kpifve4aJ9niiqXokpGHUG_9QUmfrlReF5rc34cEHbsmFLhTdmp35ZEv"
-    ],
-    "source_url": "https://www.tiktok.com/@biteswithlily/video/7600359961448795413",
-    "rating": 4.5,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "With bangkok on this trip",
-      "Oysters"
-    ],
-    "id": "b40a0085-e476-41fd-aab8-6a2d4de623b6",
-    "category": "food",
-    "source": "tiktok",
-    "approved_at": "2026-05-30T11:55:54.569Z"
-  },
-  {
     "name_en": "Siam Paragon Food Hall",
     "name_zh": "Siam Paragon Food Hall",
     "description_en": "Highly recommended Food Court in Bangkok. Must-try: Crab meat fried rice.",
@@ -2632,29 +2464,6 @@
     "approved_at": "2026-05-30T11:55:54.919Z"
   },
   {
-    "name_en": "SAOLE.BANGKOK",
-    "name_zh": "SAOLE.BANGKOK",
-    "description_en": "Highly recommended Seafood Restaurant in Bangkok. Must-try: This place.",
-    "description_zh": "必點：This place。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.739045100000002,
-    "lng": 100.5811597,
-    "photos": [
-      "places/ChIJlSvqtF2f4jARZQIAY5R2wzY/photos/Ab43m-tYCU9ua9qcVKXEmq5OoPHpZ1uXBzKVpFeX89YAq_kKOZ1MBUu4IsOv6DwH4WCEvBZkSxp5rur0kAysFTNnoP1FY2OL2KA2hVOBbXjiKRk_TjYOVH_lNyz105b9RRSNLBDRVgYAiZpbG7PytYXNojPijnA0FtmuPIGDIagnaq1OVfikIYyemWrvKL4VXrQ397qeSRSwb1MePOxxsMm0325pMagbtXHROg-F8RXQGLUI_O6PmWa7S1sGC-y39F6-ZusSSI05AUBmerVsvEMHCodAEpUYIYq4azg58-r9TUgjHU2cQVbqtewh4biXm4laFaSZPBzlWEUZbhCF4K9BQ7E3A0Vo-UPKKqtTtr01bpLrhJeae-SDig2Y-5epUEwfJ_drhCmK_UoS6xoFqg-gTFa_F0nrUG3PngDWI22Ts1U63u4c"
-    ],
-    "source_url": "https://www.instagram.com/p/DUYLSGyEWEt/",
-    "rating": 4.3,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "This place"
-    ],
-    "id": "194e29a3-76f2-425e-ac55-b41bc6b53f90",
-    "category": "food",
-    "source": "instagram",
-    "approved_at": "2026-05-30T11:55:56.141Z"
-  },
-  {
     "name_en": "Sathon",
     "name_zh": "Sathon",
     "description_en": "Highly recommended food spot in Bangkok.",
@@ -2676,50 +2485,6 @@
     "approved_at": "2026-05-30T11:55:57.109Z"
   },
   {
-    "name_en": "The Old Siam Plaza",
-    "name_zh": "The Old Siam Plaza",
-    "description_en": "Cheerful, traditional venue with 3 levels of stalls & boutiques selling food, silks, jewelry & more. Must-try: Which.",
-    "description_zh": "必點：Which。Cheerful, traditional venue with 3 levels of stalls & boutiq…",
-    "address": "Bangkok, Thailand",
-    "lat": 13.745681699999999,
-    "lng": 100.5000172,
-    "photos": [
-      "places/ChIJ--JkFRqZ4jARIs3bti0zBBg/photos/Ab43m-tQEnJIb5DyzUD71DC7a1R0jIvBtCAQVxs8RefYiQI163NYi5aBBEMVoO1jpDzJpZSdbO4fbc_puBSp2sULhmO9zkHdE__B5XSI9itYt23dpZCeg2nNseb64lOqqZiMX-RRE11DtG1sBkCpgBNKO9pAOe8CFaU69gdltOhbsmH1QI2H8V11GNDu3X6oUI49EvAMmgydNRPKaTaLq9AP6PALY1Q1uXPXRIvjigiD4eJtxs3d7y8odgJp5Hekqa9_tQjwvrXAxk6HX51mY-0KxM9xYpYxbKbWvB4pssxGi66xsxjNVrmzvu5__SVM4ADqWXRpdgVXEjneZujMdchQiuY-Npd0-L8tk6ddQx22_GY1yWcK2Kd4g4iOHFX9l2oVozV6MImkwHoPjY46mk_kKecm6qAoWlDSZLurvNHMd_jyoWA7"
-    ],
-    "source_url": "https://www.timeout.com/bangkok/restaurants/bangkoks-best-afternoon-tea",
-    "rating": 4.2,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "Which"
-    ],
-    "id": "cc059320-3696-4743-9b1a-31f515a5f254",
-    "category": "food",
-    "source": "instagram",
-    "approved_at": "2026-05-30T11:55:58.006Z"
-  },
-  {
-    "name_en": "EBBE",
-    "name_zh": "EBBE",
-    "description_en": "Highly recommended Restaurant in Bangkok.",
-    "description_zh": "曼谷熱門餐廳，評價極佳。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.744107,
-    "lng": 100.5405856,
-    "photos": [
-      "places/ChIJYQNCaACf4jAR-XBuUJBdo-Q/photos/Ab43m-tysugjI7io6vaJAuH2sBwOaoyGUWP38YDZWn3r1RgkL_a8z0vkiK02BcS_JLOt7IflWmgb2no-md5bPqD22ZkgkArq3SwvPx-pb4ecXTNLRGjBZVeG1lqxP4Y3gs6D-rVhaxBmGbcVrRAiaEY14CNQJ4RKvefuOQAtcAyXkcQPeFV7-Edw3DO16y4ueWhwDWkFV7ckdn4EL0OBGsnXLdqQxgiLY1ij64FJddGwaQZntaKjyRLWb0o9TlUDWhrLDFRzZ_RRR-xOlxpBmKOPi9N0TGvHlPPZBeZ_VG6sT1n9MwC2yKuYfe9ZGAdvn8IQ3MkDX7PHZTGEGouNv9y2cxXDAf1qr7As0t8FbciPSNbB7UPWhpzMDNEDgm6jMRhojNmwqpeemzPjDn_p2cUnqpLAYsQAxS1HgVrCgftouDSZ6p_8chLLiYG386jHXy4r"
-    ],
-    "source_url": "https://pantip.com/topic/30528203",
-    "rating": 4.9,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [],
-    "id": "437b8cd8-57b4-4f88-ba3b-7f27b2e1e6df",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:56:02.457Z"
-  },
-  {
     "name_en": "Lhong Tou Cafe at Yaowarat",
     "name_zh": "Lhong Tou Cafe at Yaowarat",
     "description_en": "Highly recommended Cafe in Bangkok.",
@@ -2739,149 +2504,6 @@
     "category": "food",
     "source": "pantip",
     "approved_at": "2026-05-30T11:56:02.941Z"
-  },
-  {
-    "name_en": "Aroi Sushi",
-    "name_zh": "Aroi Sushi",
-    "description_en": "Highly recommended Japanese Restaurant in Bangkok. Must-try: Sushi, Steak.",
-    "description_zh": "必點：Sushi、Steak。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.7443373,
-    "lng": 100.5853087,
-    "photos": [
-      "places/ChIJS3jasVqe4jARB3lcX4YGz78/photos/Ab43m-smwIH5uFsVHEBGPlyDklBMe1lOFZsAP8rB5jCKGF062cmyo69miE1tBYbSFIq3wXGM8RVOnAcn95K5FfdisKKo-KCmo0qLn7EUI27ezXD2e3Ov3eM90-f0wg968eRBbOCls8BKpWsYceZE_8-hT9wR6lfgB9BHQXQ6m0l3natklegY7PhNoIaIMMX_MACxg5UqhOTEK5er_cN3yrnq0Y2LTUpM09ReOXeaDshDPzwzil8YEJ_mkfUb_8Kl4kLPGYkX15ZeRP7c7ysuOz0B61aaes5i9TkTt_LwrW2L-aRWmvV4C-8M3mSfmihoOx9BAUTeQHQuhc7JxidMbo_gaNKwiou5IXWl6Ap4KCEU7HoWjD1AMP2geJ0nTgiIkEe6V9ZZ01GSPTXbddf2-nzWq-mqdDVoU46I5HQ3P-g8OLCUEm4g"
-    ],
-    "source_url": "https://pantip.com/topic/36937705",
-    "rating": 4.4,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Sushi",
-      "Steak"
-    ],
-    "id": "f745de2c-8085-428f-b3be-09808d09e1b2",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:56:03.137Z"
-  },
-  {
-    "name_en": "Copper Beyond Buffet Gaysorn Amarin",
-    "name_zh": "Copper Beyond Buffet Gaysorn Amarin",
-    "description_en": "Highly recommended Buffet Restaurant in Bangkok. Must-try: Pad Thai, Pad Kra Pao, Green Curry.",
-    "description_zh": "必點：Pad Thai、Pad Kra Pao、Green Curry。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.743693799999999,
-    "lng": 100.5413349,
-    "photos": [
-      "places/ChIJO8MKjW2f4jARj37d2JR3l8c/photos/Ab43m-tDubSDwHozKfnLmAbkg-X8VHCnk6wpsbB6hRsefnSXzia2_vId7NShwFT_lYRsxuGVz_RRMd2ynLShq326HSnpdYJra_LlpC8N7aPu-G-hyxfU3tO_mYHHxplEFRgTNE451YR9JrVIlqu7uZm8kJljgbhkFTfajVgxKOdn4Qf3nZWsW6lZzFkmAx7WnCQROSFigJSQ521PqFpdrECELkSP3uWYEVoHEMAoTXpBrYl5ntL9zz5arnsCNwrbLssnk0a1y57nZy-nt2PFQpr3n9m0jd4X1zCO7F1lcVUP6WFPMQ"
-    ],
-    "source_url": "https://pantip.com/topic/42476077",
-    "rating": 4.4,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Pad Thai",
-      "Pad Kra Pao",
-      "Green Curry"
-    ],
-    "id": "28c50ed5-6b7c-4b52-92e3-5d02a4f87e6d",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:56:03.752Z"
-  },
-  {
-    "name_en": "Phed Phed Hey",
-    "name_zh": "Phed Phed Hey",
-    "description_en": "Highly recommended Restaurant in Bangkok. Must-try: Papaya Salad.",
-    "description_zh": "必點：Papaya Salad。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.724051399999999,
-    "lng": 100.52855149999999,
-    "photos": [
-      "places/ChIJ_561gQeZ4jARG87h9VJY1t8/photos/Ab43m-vCIbI44JZa6pUiut0fSJh2Uetds3YOhpY7DCKgCgoKEMpvqJt7c_sdsRLy8OEk7ePxbxl9Fgd_bcE06YcsQl_HiEHtEPKVsi_zvBmN9O1cpKQuYapWcwmeNtr6F6t0hRjpnWhgHfqgeAHjUljvBvuUqfwXc2eu0sRc6b8HAeQLxklSjZpbrgYxlQHa-RDu7NFD5nxUxL2PvTwdXTZLMaQTHDeA_RQJ0wYayHqFomuFauSOWdUt7mMEuorw80yunaY0T_bl_lq_JMh4nSWygufwJt9l7ECR4mpCtDR3HBif6GADi4jMPhTlCEInHCe4rO1Y5Zwck_Ssn3i5_qr3Giq9OjQkmySM_L5yify3eCttpA7cOWKozXgEjygsJq9KcwiUUBlJoPyIJpz0OttaCK77VxcvrUDN77BE3_kibI5hZ1Nvd6emBXiv7XJAQQ"
-    ],
-    "source_url": "https://pantip.com/topic/42476077",
-    "rating": 4.3,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Papaya Salad"
-    ],
-    "id": "8b96c617-710c-4358-8fa3-7b4ae3887257",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:56:03.936Z"
-  },
-  {
-    "name_en": "Phed Phed Bistro",
-    "name_zh": "Phed Phed Bistro",
-    "description_en": "Highly recommended Thai Restaurant in Bangkok. Must-try: To order no spicy level, All every menu, This place.",
-    "description_zh": "必點：To order no spicy level、All every menu、This place。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.766746399999999,
-    "lng": 100.4432475,
-    "photos": [
-      "places/ChIJwzjLehyZ4jARDxGl4rwgoxc/photos/Ab43m-tphMyqvcEXzt202thrNC_HmjBF01iTcgl-GCcZCpkzfSN8KQ8cxoxdaY6aWCqwZkyzDy8KNLS8up99ajNmUKzW53Rin2CESJtJOedLxR2iyLKo-Z48SlgiBm6JQJCahHi563tQeP-F3kwKFBmznwgOVHHp3hCL39BzOpF83nj-wKT8EvaOGWMNKQ3IoIoXsXJFzfrwF6aZNcVPdrN7Hh5gjQMs7vmWGEisd03pDST2RhIoPaVSMHYXT_fI4SYWXSeDEoA4WZra5jNf4HPpx35lBOCDEDTolWmUyfDxpX_KZSU6KMf7vuRGUiZGB4_xLdp2UaUbtflWfnMoFKmA3azaNKDizsGFFw74NgfD1TYHlXnPed3zAzANYHihIMlKeYyADznMZmr1xpdg0C5U3b-qiiU8qwuqFc94J_P7W6-MJA"
-    ],
-    "source_url": "https://pantip.com/topic/42476077",
-    "rating": 3.8,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "To order no spicy level",
-      "All every menu",
-      "This place"
-    ],
-    "id": "99e88883-b6e6-4ae1-a79e-dc27cd9161c5",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:56:04.119Z"
-  },
-  {
-    "name_en": "Hi tiktok",
-    "name_zh": "Hi tiktok",
-    "description_en": "Highly recommended Restaurant in Bangkok.",
-    "description_zh": "曼谷熱門餐廳，評價極佳。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.7632558,
-    "lng": 100.5040574,
-    "photos": [
-      "places/ChIJucwCOdyZ4jARSgYALokD4WQ/photos/Ab43m-uoUk08gbK-DNknvANCWYuebFupVwjRbRH7y72yiiKLkvzMJFDPDgbTivrPCzsZP6AQJJ8n4v0-slAUckhSqGZaTZI9Rpplyv9wWjquRvAhu2zR5TGEspVAjg5Rj0EdhouwenZP44eT9l1CTznvRMnqA5SYAAcvV_D-IV2uGoF_FjylSbRnZaoQPDzSLqSuHXIFcNwhSQADZ-jGwaLvhIxPuHJJpUJbdk6rld5wMeCnsGJkj2TUwg5OI-og3Jxn3d3fa9Z8ZDFdDja9KRcd8hLKMldyri_AjOV0Eqmu6ShVNXBSjZ-lAiExXcXxyhY6xJUs2KJxVZepv8q2bUGqm_nQUw-zrBzjQiFLSUXlRuNiFB7mF4260uSU_--EflU7r3YxtQUHw7TtAMZhUrxbqtFZeuiJSrnyWMu3zoV-wQNhHQ"
-    ],
-    "source_url": "https://pantip.com/topic/41540339",
-    "rating": 5,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [],
-    "id": "57b45c33-7247-4668-b000-45fdd3e1c564",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:56:04.320Z"
-  },
-  {
-    "name_en": "Craftsman Roastery at Old Town",
-    "name_zh": "Craftsman Roastery at Old Town",
-    "description_en": "Highly recommended Coffee Shop in Bangkok. Must-try: For big families, Places to relax, The coffee.",
-    "description_zh": "必點：For big families、Places to relax、The coffee。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.751484699999999,
-    "lng": 100.4970993,
-    "photos": [
-      "places/ChIJlaHpMpKZ4jARF6mlIwCPXgI/photos/Ab43m-t-jVeKnhTKkiYmIoBTESCQeo10386SXMBVPhs8F-sZJApHfx5o6NAlIonzmu1pMLTJCgksneWul51uhhvNICQAOCy5o9kcSzd7SHl4AcpA2CuMNo8vgwZdrluhxIylNz9sSEaqZAt7hVgSbsOcdJzLvxzgUADyMEM-PyXWcgpzaJB9TA2f2BOKmYgkZ4wxscZ1iYDtUvRAwCYI1reafaQG1msESVRbrcwKW2zpXFbr15T-fKgookejHYWkUxxHKk97VQKhZ6gGRYjV1VZWnNuTifWE7JmBmJO8IiaBQldh5weth3yTR6xkWTiu4Ao-U02gdHqtKE33IUR6bjqV_6_3T2zlbsrQ7cNclrhr9k2TygG0P_VSgDHD_D1S0-ATHxKyNqXtdSV9Txgoks6KmbO1VDEInMffLz6YSJYc8QZy_7d6L8S56zNIibGVnqRI"
-    ],
-    "source_url": "https://pantip.com/topic/41540339",
-    "rating": 4.8,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "For big families",
-      "Places to relax",
-      "The coffee"
-    ],
-    "id": "998fc632-971f-44fe-b9d5-96b7576bb1fa",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:56:04.503Z"
   },
   {
     "name_en": "Moom Muum Park Soi 11",
@@ -4378,31 +4000,6 @@
     "approved_at": "2026-05-30T11:57:45.220Z"
   },
   {
-    "name_en": "Bangkok View Rooftop Bar",
-    "name_zh": "Bangkok View Rooftop Bar",
-    "description_en": "Highly recommended Bar in Bangkok. Must-try: Rooftop View, This place, Value for your money.",
-    "description_zh": "必點：Rooftop View、This place、Value for your money。曼谷人氣夜生活場所，深受好評。",
-    "category": "nightlife",
-    "address": "2 Thanon Khao San, Khwaeng Talat Yot, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
-    "lat": 13.7594614,
-    "lng": 100.4957199,
-    "photos": [
-      "places/ChIJK2TX7reZ4jAR1Cf9mV-RKKw/photos/Ab43m-uqDCVutPHeISm-Q18_-AtIT3efuF5DYVKtLvPz5tWBDHfNlA9h95mI1qKrBSIaqt8ohWWlqvz64rn0C-znaW3TyQfl3W_XeXtl416hdI2Xb8VzdN8hKJow4vlPHrLjoQNh_10zv0O8OtThalB-53Zq3zSbdT1w51g8Y9KcXKkYGYaHicnb9ELurRhevHkIhflB_9ysiNPJ6fBtxt7CY_rJZetmsGymd2VRWbm7gG2t3fjvc55rEmzUjuxbQDFH9UMKouiVZDDPNzAX704dpjNoBCy_lNVYTT8lLhE2h4IUMh6rkEGeMhQvrzSI1GDe7nq2aUedh4U6IyrNPIihNkiMFjM1hwnBH4hstS2gpfmVLdo44kgCdZWNYniQw2WHkBKcrmlBSwoYi-PACIQPjpeaBF54p7-nzzZFctb8FxEFbCTg"
-    ],
-    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJK2TX7reZ4jAR1Cf9mV-RKKw",
-    "rating": 3.9,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Rooftop View",
-      "This place",
-      "Value for your money"
-    ],
-    "id": "3501cf41-56b8-48d5-8b67-8b930bf2b1a5",
-    "source": "googlemaps",
-    "approved_at": "2026-05-30T11:57:45.223Z"
-  },
-  {
     "name_en": "On Top Rooftop Bar",
     "name_zh": "On Top Rooftop Bar",
     "description_en": "Highly recommended Bar in Bangkok. Must-try: Cocktails, Rooftop View.",
@@ -4787,29 +4384,6 @@
     "approved_at": "2026-05-30T11:57:45.247Z"
   },
   {
-    "name_en": "G Boutique Silom Hotel",
-    "name_zh": "G Boutique Silom Hotel",
-    "description_en": "Bright rooms in a casual hotel offering massages & free Wi-Fi, plus a library & a business center. Must-try: Hotel to stay.",
-    "description_zh": "必點：Hotel to stay。Bright rooms in a casual hotel offering massages & free Wi-F…",
-    "category": "hotel",
-    "address": "173/7 Surawong Rd, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
-    "lat": 13.728076999999999,
-    "lng": 100.52589230000001,
-    "photos": [
-      "places/ChIJW82qkdOY4jARI2EyjPkLaPQ/photos/Ab43m-u2W2Hp9iwBOJA7epJEKxb328zPEZL252HVULQYT8wFw06I0R3oART3vspgy6SXAU_jgO9x4SDhYx9NcqNiaryDN_eOsaMXwrTUHLoym-gOmu2HDSd4e4uO1WjoXsSHWUjY9ss_-wAAPOXYmM4sMK1GZjDqrK51Q7WcQWebTq78ywsCW7Z-Klr5yrACev5yjNlSlVikKX-bmnqaDnBn3nHumeAY8mE6qA3N55R8VxbVNoKyi7lnnXrrJdKHNtvQn3rD1h0IdBLBuCNHg7VTk3TsJ63dHORv-NCdWN7PiwECiQ"
-    ],
-    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJW82qkdOY4jARI2EyjPkLaPQ",
-    "rating": 3.9,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Hotel to stay"
-    ],
-    "id": "53e3e6c6-5163-401a-9ddd-129cf674dfdf",
-    "source": "googlemaps",
-    "approved_at": "2026-05-30T11:57:45.248Z"
-  },
-  {
     "name_en": "The Quarter Silom by UHG",
     "name_zh": "The Quarter Silom by UHG",
     "description_en": "Informal rooms in a contemporary hotel featuring an outdoor pool, a restaurant & a hot tub. Must-try: Location.",
@@ -4856,31 +4430,6 @@
     "id": "27f11b3a-8337-4fcf-bb3e-ddb09a557159",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.273Z"
-  },
-  {
-    "name_en": "Furama Silom",
-    "name_zh": "Furama Silom",
-    "description_en": "Contemporary rooms in an upscale lodging featuring a warm restaurant, a rooftop pool & a gym. Must-try: Rooftop View, One free, The buffet breakfast.",
-    "description_zh": "必點：Rooftop View、One free、The buffet breakfast。Contemporary rooms in an upscale lodging featuring a warm re…",
-    "category": "hotel",
-    "address": "533 Si Lom Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
-    "lat": 13.72476,
-    "lng": 100.52529899999999,
-    "photos": [
-      "places/ChIJwb3uUy2f4jAROxAKxblEpeA/photos/Ab43m-vhvmbtvdHA6dQS0PUHDzKtroLnDQAeNbg_rxEa9NGb-0ldnCpGavR0pt1GCDMdYu6yx_p9Ot95e68xPsIkN3WZcjxFape8DvHCJhGDjTLT8s7irrpiGbjfBhR_NTlOw5zMk90093FYIE6dj3KFBUdssqNdsQVMvKOQi11UcTV5XRWFia5t2n9DTeR7AeoB8qgCHIFG5h5DYEN5a4FFubPBeLAAQelOobr-x7-OQoydxi4lCaezu8eThJWUubDZS1plmc8mFL5DZbdNmgIQrdttxMh5cavK6mM-pVxsO24TCEU1UbfP-RS8qg4C0wFj0iz6NKOjxaXId2CHAyUGXBeHvjot4Lr5x5yYaAQMn3Qjheso9uC91GtnVGbXKRnyLFPa5ofpmG8O7X6QNcpaPiDjomem7eNmKXMyBeTmWI-3l-oO"
-    ],
-    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJwb3uUy2f4jAROxAKxblEpeA",
-    "rating": 3.9,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Rooftop View",
-      "One free",
-      "The buffet breakfast"
-    ],
-    "id": "c6715d9e-5e31-4613-90ef-8efaae58dc38",
-    "source": "googlemaps",
-    "approved_at": "2026-05-30T11:57:45.276Z"
   },
   {
     "name_en": "Sora Hotel Silom",
@@ -5056,53 +4605,6 @@
     "approved_at": "2026-05-30T11:57:45.288Z"
   },
   {
-    "name_en": "SAOLE.BANGKOK",
-    "name_zh": "SAOLE.BANGKOK",
-    "description_en": "Highly recommended Seafood Restaurant in Bangkok. Must-try: This place.",
-    "description_zh": "必點：This place。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.739045100000002,
-    "lng": 100.5811597,
-    "photos": [
-      "places/ChIJlSvqtF2f4jARZQIAY5R2wzY/photos/Ab43m-uXXidrbk0ICOF04HnB9FgBe2D_n9v-qllvYxSVi7vhGKWnZUDj7F3epQpBfuRBi0oC3uE_KFsuyGNPy58hyLsbw4cosGwlQi5L2zK1yfP_xpg_GVZFFY4GYXdbBjDUc9mnC9ey2izyxpnbrHW9Ic0g2XNMtK_Gii4l3Id2VaxIGaFDNr40Z7_3BDh8cbQYoym5W0QUMPx9zo9D7cjY8ux4Eek5lpOaRE-GBJsaV3YK2w1_xYB7JuXO616229vLn37_R6MV26y722hjoI-6Na7QkbKvCIkeZIbhhjjqj15x2RBDOGHOjb0jF30PDowjhEVHjs2FR8ZNFT9g92ar0iTsZBjkoYjNTS_-9Mtf0CyCUOdZ_MBYxLzsbacj3e1OlY6DMlfn8E-D-MJnbgRBcKC0LsgpIcZIt9wBh06HSfO-h1v9"
-    ],
-    "source_url": "https://www.instagram.com/p/DUYLSGyEWEt/",
-    "rating": 4.3,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "This place"
-    ],
-    "id": "0f35d1d7-fc75-4162-997d-688effefdbf1",
-    "category": "food",
-    "source": "instagram",
-    "approved_at": "2026-05-30T15:27:02.960Z"
-  },
-  {
-    "name_en": "Nawa Thai Cuisine",
-    "name_zh": "Nawa Thai Cuisine",
-    "description_en": "Highly recommended Thai Restaurant in Bangkok. Must-try: To food lovers, Decision.",
-    "description_zh": "必點：To food lovers、Decision。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.723275600000001,
-    "lng": 100.5838735,
-    "photos": [
-      "places/ChIJBcsS30qf4jARijfxeJq66YI/photos/Ab43m-sPYyzgoSv2vbFfesx2bL6PcKpPDp8Gw-GnbsuzBtTTzgdiFIQrBg2fklj9OIU8qIETc5dsaj51EF2__V5E-ZZsQGnOIHsVJ6wCZ03dQWX5CwZj7r_Z76X_wwdUrXfWYNNgKqUPRndt88FOdJXnDsQKgAXyyk7OidJ2u2U6zq2hqIG4pMpox3GcFy30jpUQ_7KoRGWb3cH8WjMObg2zB-35riCLZZsTyzbwCXXNqUFlN2IFjxEUDfL2aTUqU8p_53MhAWrYpPK5jTQrO7geJ9fEF9K9tH9NfN3ZqRUtaJ62gqVRIAGEHHJv1CAPB0xZmVyX0rSz0DoDYX1oluF6PxvuCOgPjW0dibzfO-lfFcvaQMeEegyaocTnMf_KzV90icDp6Hh7cEBWRK51TL1Hmtugnlk5d076VjFLsgsOwqflpw"
-    ],
-    "source_url": "https://www.tiktok.com/@mico.cruz/video/7529479018379365650",
-    "rating": 4.8,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "To food lovers",
-      "Decision"
-    ],
-    "id": "c9215ade-f67a-4bbe-8e7b-8795a7d3de86",
-    "category": "food",
-    "source": "tiktok",
-    "approved_at": "2026-05-30T15:27:05.953Z"
-  },
-  {
     "name_en": "The Warehouse Bangkok",
     "name_zh": "The Warehouse Bangkok",
     "description_en": "Highly recommended Community Center in Bangkok.",
@@ -5122,30 +4624,6 @@
     "category": "food",
     "source": "instagram",
     "approved_at": "2026-05-30T15:27:08.970Z"
-  },
-  {
-    "name_en": "Mezzaluna",
-    "name_zh": "Mezzaluna",
-    "description_en": "Highly recommended Fine Dining Restaurant in Bangkok. Must-try: With bangkok on this trip, Oysters.",
-    "description_zh": "必點：With bangkok on this trip、Oysters。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.7219248,
-    "lng": 100.5170156,
-    "photos": [
-      "places/ChIJmXuobsWY4jARc3EtJwWV21s/photos/Ab43m-v6tUbbRCSzaTBFLrXUla4g39libETMIeE31hY2BJrEtQHg14AHUC0s3afIXrK-OchCFIsHNFeYxfWenSG8aOIKAROmDzOvt0MJfVdwHUhLUfvVY2CYiNCORi14hTEwvQNlSycCTD6h_eVRdjwBQ2FcT9Mit8Z_0_KEPleiDephKBQj39u5zugE0Ah7nYBO7ZSNOSJTdrI1gxsw5WxwKONe9xrGXlC9Z-RBgZGotAebev7xg26H5J6ouB8MA0u4IcJpUEa97lyjD5h96pRrmoOnK2RmeacGEdB5Sp8azQoK0_H9b_lDdbHHBbMwIIQ8_TNedjndY8duTqSiEfCZuOsbNxe8EdhM1eqtvuMGDtgqNYS0_XlpspdO0gaDLsZATW-9QBc8Xm0017Rgbf-XHIrGwS2gqNZFR4lialPzqM5Qsg89"
-    ],
-    "source_url": "https://www.tiktok.com/@biteswithlily/video/7600359961448795413",
-    "rating": 4.5,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "With bangkok on this trip",
-      "Oysters"
-    ],
-    "id": "df90a2c2-08ff-4784-8b6d-69a9f98ecd50",
-    "category": "food",
-    "source": "tiktok",
-    "approved_at": "2026-05-30T15:27:12.702Z"
   },
   {
     "name_en": "The Grand Palace",
@@ -5169,31 +4647,6 @@
     "category": "food",
     "source": "tiktok",
     "approved_at": "2026-05-30T15:27:15.684Z"
-  },
-  {
-    "name_en": "ABBA BANGKOK",
-    "name_zh": "ABBA BANGKOK",
-    "description_en": "Highly recommended Coffee Shop in Bangkok. Must-try: Thai Tea, Coffee this time, Their house made yoghurt.",
-    "description_zh": "必點：Thai Tea、Coffee this time、Their house made yoghurt。曼谷人氣餐廳，深受好評。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.7315946,
-    "lng": 100.5307304,
-    "photos": [
-      "places/ChIJVV68TwCf4jARsuynl-FqPmQ/photos/Ab43m-vI9koumopBU3O7b-Ik3mqBe5K8HoEA_x9PzvCoQGSAuFChbuf-BBOi8A5OS2VUCJhD2GnJZFH1oCspAw6YP6FNGn4xkzofD_ltSB81Xjc_5mx700IN6FI5DdYiY1S5pHSEUvTtfKBPHNrqIuf2OPk5lcm2DDEtUHgadkGDdH80oADB_ZIKv9NUcQIohAoPTpJPX-WVmfN7EVQZhYdmpxPmVCoUqQOaOyREF9AKDZNgiUtxwUk_ZiFc_38pnY1Je1XrcTIL4MPhAPtilwA-gW5JoIIdcvF0L8_ohiEOy0l5i5rQkE9Yw95oaall89GsExl7FQHVB39R9Q0_5B97wuBaMUoRKor7UuvOaXeN3YrZTPthcLEsqI1LROj1Run_Wai39ICNs4fgs-atxxgPVkkKxtH1enVdT0fdtqXJLVZUk8G3Ib2w9f7jACydvAv6"
-    ],
-    "source_url": "https://www.tiktok.com/@chaoatc/video/7632263143242173717",
-    "rating": 4.9,
-    "price_range": 2,
-    "trending": true,
-    "highlights": [
-      "Thai Tea",
-      "Coffee this time",
-      "Their house made yoghurt"
-    ],
-    "id": "8d151edb-ec48-4a62-b041-ccc186cc1956",
-    "category": "food",
-    "source": "tiktok",
-    "approved_at": "2026-05-30T15:27:17.854Z"
   },
   {
     "name_en": "Warm Window Silom",

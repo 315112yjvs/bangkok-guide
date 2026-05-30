@@ -278,13 +278,17 @@ export function PublicHomepage({ locations }: Props) {
                 requestLocation()
               }}
               disabled={locating}
-              className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+              className={`flex items-center gap-1 text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
                 specialFilter === 'nearby'
                   ? 'bg-[#1e1b4b] text-white shadow-sm'
                   : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
               }`}
             >
-              {locating ? '⏳' : '📍'} {lang === 'zh' ? '附近' : 'Near Me'}
+              {locating
+                ? <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>
+                : <svg className="w-3 h-3 shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              }
+              {lang === 'zh' ? '附近' : 'Near Me'}
             </button>
             <button
               onClick={() => changeFilter(specialFilter === 'saved' ? 'all' : 'saved')}
@@ -388,7 +392,9 @@ export function PublicHomepage({ locations }: Props) {
         )}
         {filtered.length === 0 && specialFilter !== 'saved' && (
           <div className="flex flex-col items-center justify-center py-20 text-gray-400">
-            <p className="text-4xl mb-3">🗺️</p>
+            <svg className="w-12 h-12 mb-4 text-gray-200" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
+            </svg>
             <p className="text-sm">{strings[lang].emptyState as string}</p>
           </div>
         )}
