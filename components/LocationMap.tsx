@@ -161,7 +161,7 @@ export function LocationMap({ locations, lang, userLocation: externalLocation, n
   }, [])
 
   return (
-    <APIProvider apiKey={apiKey}>
+    <APIProvider apiKey={apiKey} libraries={['marker']}>
       <div className="h-36 w-full">
         <Map
           defaultCenter={{ lat: 13.7563, lng: 100.5018 }}
