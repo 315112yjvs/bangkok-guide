@@ -437,6 +437,8 @@ export function AdminPanel() {
     }
   }
 
+  const isVercel = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname)
+
   if (!authed) return <AuthOverlay onAuth={() => setAuthed(true)} />
 
   const navLink = (t: Tab, label: string, count?: number) => (
@@ -455,7 +457,13 @@ export function AdminPanel() {
   )
 
   return (
-    <div className="flex min-h-screen bg-slate-100">
+    <div className="flex min-h-screen bg-slate-100 flex-col">
+      {isVercel && (
+        <div className="bg-amber-400 text-amber-900 text-xs font-bold px-4 py-2.5 flex items-center gap-2">
+          ⚠️ 目前在 Vercel 上，所有編輯、🔥 熱門切換、上下架操作都無法儲存。請在本機執行 <code className="bg-amber-300 px-1.5 py-0.5 rounded font-mono">npm run dev</code> 後至 <code className="bg-amber-300 px-1.5 py-0.5 rounded font-mono">localhost:3000/admin</code> 操作。
+        </div>
+      )}
+      <div className="flex flex-1">
       {/* SIDEBAR */}
       <div className="w-56 bg-[#0f172a] flex flex-col shrink-0">
         <div className="px-5 py-6 border-b border-white/10">
@@ -570,6 +578,7 @@ export function AdminPanel() {
         )}
 
         {tab === 'add' && <AddForm onAdded={() => { loadData(); setTab('approved') }} />}
+      </div>
       </div>
     </div>
   )
