@@ -25,6 +25,7 @@ export const strings = {
     sourceGoogleMaps: 'Google Maps',
     sourceManual: '編輯精選',
     expandMap: '展開地圖',
+    emptyState: '找不到符合的地點',
     priceRange: ['', '$', '$$', '$$$', '$$$$'],
   },
   en: {
@@ -51,6 +52,7 @@ export const strings = {
     sourceGoogleMaps: 'Google Maps',
     sourceManual: "Editor's Pick",
     expandMap: 'Expand Map',
+    emptyState: 'No locations found',
     priceRange: ['', '$', '$$', '$$$', '$$$$'],
   },
 } satisfies Record<Lang, Record<string, string | string[]>>
