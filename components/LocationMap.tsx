@@ -1,6 +1,6 @@
 'use client'
 import { APIProvider, Map, AdvancedMarker, InfoWindow } from '@vis.gl/react-google-maps'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import type { Location } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
@@ -13,12 +13,27 @@ const CATEGORY_COLORS: Record<string, string> = {
   hotel:     '#0369a1',
 }
 
-type Props = { locations: Location[]; lang: Lang }
+type Props = { locations: Location[]; lang: Lang; userLocation?: { lat: number; lng: number } | null }
 
-export function LocationMap({ locations, lang }: Props) {
+export function LocationMap({ locations, lang, userLocation: externalLocation }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
+  const [internalLocation, setInternalLocation] = useState<{ lat: number; lng: number } | null>(null)
+  const watchIdRef = useRef<number | null>(null)
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''
   const selected = locations.find((l) => l.id === selectedId) ?? null
+  const userLoc = externalLocation ?? internalLocation
+
+  useEffect(() => {
+    if (!navigator.geolocation) return
+    watchIdRef.current = navigator.geolocation.watchPosition(
+      (pos) => setInternalLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
+      () => {},
+      { enableHighAccuracy: true, maximumAge: 5000 }
+    )
+    return () => {
+      if (watchIdRef.current !== null) navigator.geolocation.clearWatch(watchIdRef.current)
+    }
+  }, [])
 
   return (
     <APIProvider apiKey={apiKey}>
@@ -49,6 +64,15 @@ export function LocationMap({ locations, lang }: Props) {
               </AdvancedMarker>
             )
           })}
+
+          {userLoc && (
+            <AdvancedMarker position={userLoc} zIndex={999}>
+              <div className="relative flex items-center justify-center">
+                <div className="absolute w-10 h-10 rounded-full bg-blue-400/30 animate-ping" />
+                <div className="w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow-lg" />
+              </div>
+            </AdvancedMarker>
+          )}
 
           {selected && (
             <InfoWindow

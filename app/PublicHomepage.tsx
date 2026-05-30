@@ -150,7 +150,7 @@ export function PublicHomepage({ locations }: Props) {
 
       {/* MAP strip */}
       <div className="h-36">
-        <LocationMap locations={filtered} lang={lang} />
+        <LocationMap locations={filtered} lang={lang} userLocation={userLocation} />
       </div>
 
       {/* BOTTOM SHEET */}
