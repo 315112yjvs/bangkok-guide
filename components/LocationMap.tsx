@@ -1,6 +1,7 @@
 'use client'
-import { APIProvider, Map, AdvancedMarker, InfoWindow, useMap } from '@vis.gl/react-google-maps'
+import { APIProvider, Map, InfoWindow, useMap } from '@vis.gl/react-google-maps'
 import { useState, useEffect, useRef } from 'react'
+import { MarkerClusterer } from '@googlemaps/markerclusterer'
 import type { Location } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
@@ -20,20 +21,20 @@ type Props = {
   nearbyMode?: boolean
 }
 
-// Inner component has access to the map instance via useMap()
-function MapContent({
-  locations, lang, userLoc, nearbyMode,
-}: {
+function MapContent({ locations, lang, userLoc, nearbyMode }: {
   locations: Location[]
   lang: Lang
   userLoc: { lat: number; lng: number } | null
   nearbyMode: boolean
 }) {
   const map = useMap()
+  const clustererRef = useRef<MarkerClusterer | null>(null)
+  const markersRef = useRef<google.maps.marker.AdvancedMarkerElement[]>([])
+  const userMarkerRef = useRef<google.maps.marker.AdvancedMarkerElement | null>(null)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const selected = locations.find((l) => l.id === selectedId) ?? null
 
-  // Fit bounds to filtered locations when they change
+  // Fit bounds
   useEffect(() => {
     if (!map) return
     if (nearbyMode && userLoc) {
@@ -52,34 +53,67 @@ function MapContent({
     map.fitBounds(bounds, 40)
   }, [map, locations, userLoc, nearbyMode])
 
+  // Create clustered markers imperatively
+  useEffect(() => {
+    if (!map) return
+
+    // Clean up old markers
+    markersRef.current.forEach((m) => { m.map = null })
+    markersRef.current = []
+    clustererRef.current?.clearMarkers()
+
+    const newMarkers = locations.map((loc) => {
+      const color = CATEGORY_COLORS[loc.category] ?? '#1e1b4b'
+      const el = document.createElement('div')
+      el.style.cssText = `width:26px;height:26px;border-radius:50%;border:2.5px solid white;background:${color};cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center`
+      el.innerHTML = `<div style="width:8px;height:8px;background:white;border-radius:50%"></div>`
+
+      const marker = new google.maps.marker.AdvancedMarkerElement({
+        position: { lat: loc.lat, lng: loc.lng },
+        content: el,
+        map: null,
+      })
+      marker.addListener('click', () => setSelectedId((prev) => prev === loc.id ? null : loc.id))
+      return marker
+    })
+
+    markersRef.current = newMarkers
+
+    if (!clustererRef.current) {
+      clustererRef.current = new MarkerClusterer({ map, markers: newMarkers })
+    } else {
+      clustererRef.current.addMarkers(newMarkers)
+    }
+
+    return () => {
+      newMarkers.forEach((m) => { m.map = null })
+      clustererRef.current?.clearMarkers()
+    }
+  }, [map, locations])
+
+  // User location dot
+  useEffect(() => {
+    if (!map) return
+    if (userMarkerRef.current) { userMarkerRef.current.map = null; userMarkerRef.current = null }
+    if (!userLoc) return
+
+    const el = document.createElement('div')
+    el.style.cssText = 'position:relative;width:16px;height:16px'
+    el.innerHTML = `
+      <div style="position:absolute;inset:-12px;border-radius:50%;background:rgba(59,130,246,0.2);animation:ping 1.5s cubic-bezier(0,0,0.2,1) infinite"></div>
+      <div style="width:16px;height:16px;border-radius:50%;background:#3b82f6;border:2.5px solid white;box-shadow:0 2px 6px rgba(59,130,246,0.5)"></div>
+    `
+
+    userMarkerRef.current = new google.maps.marker.AdvancedMarkerElement({
+      position: userLoc,
+      content: el,
+      map,
+      zIndex: 999,
+    })
+  }, [map, userLoc])
+
   return (
     <>
-      {locations.map((loc) => {
-        const color = CATEGORY_COLORS[loc.category] ?? '#1e1b4b'
-        const isSelected = selectedId === loc.id
-        return (
-          <AdvancedMarker
-            key={loc.id}
-            position={{ lat: loc.lat, lng: loc.lng }}
-            onClick={(e) => { e.stop(); setSelectedId(isSelected ? null : loc.id) }}
-          >
-            <div
-              className="w-7 h-7 rounded-full border-2 border-white shadow-md flex items-center justify-center cursor-pointer transition-transform hover:scale-110"
-              style={{ background: color, transform: isSelected ? 'scale(1.25)' : undefined }}
-            />
-          </AdvancedMarker>
-        )
-      })}
-
-      {userLoc && (
-        <AdvancedMarker position={userLoc} zIndex={999}>
-          <div className="relative flex items-center justify-center">
-            <div className="absolute w-10 h-10 rounded-full bg-blue-400/30 animate-ping" />
-            <div className="w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow-lg" />
-          </div>
-        </AdvancedMarker>
-      )}
-
       {selected && (
         <InfoWindow
           position={{ lat: selected.lat, lng: selected.lng }}
