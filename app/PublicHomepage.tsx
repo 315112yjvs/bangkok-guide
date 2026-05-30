@@ -99,7 +99,7 @@ export function PublicHomepage({ locations }: Props) {
       {filtered.length === 0 && (
         <div className="flex flex-col items-center justify-center py-20 text-gray-400">
           <p className="text-4xl mb-3">🗺️</p>
-          <p className="text-sm">找不到符合的地點</p>
+          <p className="text-sm">{strings[lang].emptyState as string}</p>
         </div>
       )}
     </div>
