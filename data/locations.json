@@ -39,8 +39,7 @@
     "price_range": 2,
     "trending": true,
     "highlights": [
-      "Mango Sticky Rice",
-      "A lot for what you pay"
+      "Mango Sticky Rice"
     ],
     "id": "4211b771-9cc4-4463-9907-74d763fdead2",
     "source": "googlemaps",
@@ -138,9 +137,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Dumplings",
-      "Meal we had in bangkok",
-      "This place"
+      "Dumplings"
     ],
     "id": "dc4a0509-9d1f-4947-8c55-7b117624a2d4",
     "source": "googlemaps",
@@ -188,8 +185,7 @@
     "price_range": 1,
     "trending": false,
     "highlights": [
-      "Pad Thai",
-      "To go back again"
+      "Pad Thai"
     ],
     "id": "a3f2c177-47ef-4348-866a-5e766bcfee63",
     "source": "googlemaps",
@@ -234,9 +230,7 @@
     "rating": 4.6,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Their ice cream"
-    ],
+    "highlights": [],
     "id": "7da2342c-3126-46c8-89e4-048fbd9e3aeb",
     "source": "googlemaps",
     "approved_at": "2026-05-30T08:00:42.345Z"
@@ -281,9 +275,7 @@
     "price_range": 1,
     "trending": false,
     "highlights": [
-      "In the area",
-      "Pancakes",
-      "Checking it out"
+      "Pancakes"
     ],
     "id": "58a9aef3-2bbf-4475-9ad4-051e049da312",
     "source": "googlemaps",
@@ -327,8 +319,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Espresso",
-      "The food"
+      "Espresso"
     ],
     "id": "c5e24756-487a-4193-b391-b3a1d15bb10f",
     "source": "googlemaps",
@@ -351,8 +342,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Espresso",
-      "Coffee we had in bangkok"
+      "Espresso"
     ],
     "id": "98db7fd4-0e9e-426a-a343-16077f0f17b1",
     "source": "googlemaps",
@@ -374,10 +364,7 @@
     "rating": 4.7,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Is truly inspiring",
-      "With floral cafe"
-    ],
+    "highlights": [],
     "id": "ea3fd0fd-5ee7-4a52-8c70-2cdb56bfc4fe",
     "source": "googlemaps",
     "approved_at": "2026-05-30T08:00:43.228Z"
@@ -421,10 +408,7 @@
     "rating": 4.2,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Place to buy handbags",
-      "The quality"
-    ],
+    "highlights": [],
     "id": "c0a4a7eb-5a7b-401c-b2e9-308da1a1c91c",
     "source": "googlemaps",
     "approved_at": "2026-05-30T08:00:43.511Z"
@@ -446,9 +430,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Thai Tea",
-      "Even better deals",
-      "Places to shop in bangkok"
+      "Thai Tea"
     ],
     "id": "ec78dcc6-f930-4f59-99f8-584ce27c2083",
     "source": "googlemaps",
@@ -471,8 +453,6 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Some local thai foods",
-      "To push through",
       "Extremely crowded"
     ],
     "id": "07c2c484-01e0-4465-980b-2eecb51e905f",
@@ -569,8 +549,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Mango Sticky Rice",
-      "Service ever"
+      "Mango Sticky Rice"
     ],
     "id": "ab586da9-60a7-4ed6-95e1-bfe940568eee",
     "source": "googlemaps",
@@ -642,8 +621,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Rooftop View",
-      "View from a rooftop bar"
+      "Rooftop View"
     ],
     "id": "a9ef3a41-9cf5-4311-afe5-00fe40328ed1",
     "source": "googlemaps",
@@ -786,9 +764,7 @@
     "rating": 4.9,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Locations in town"
-    ],
+    "highlights": [],
     "id": "cf273bfc-b565-4178-a43a-c04477f84961",
     "source": "googlemaps",
     "approved_at": "2026-05-30T08:00:45.845Z"
@@ -830,9 +806,7 @@
     "rating": 4.6,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Choice"
-    ],
+    "highlights": [],
     "id": "d3c30e0b-cca6-4385-86b5-6bee6c777b75",
     "source": "googlemaps",
     "approved_at": "2026-05-30T08:00:46.163Z"
@@ -853,9 +827,7 @@
     "rating": 4.4,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Little kitchen option"
-    ],
+    "highlights": [],
     "id": "40aa47e6-75c8-41fd-8076-b1b11346d583",
     "source": "googlemaps",
     "approved_at": "2026-05-30T08:00:46.311Z"
@@ -877,8 +849,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Rooftop View",
-      "Barista"
+      "Rooftop View"
     ],
     "id": "b8256cf1-4819-43fe-afe3-633ffeeb22d1",
     "source": "googlemaps",
@@ -925,11 +896,7 @@
     "rating": 4.5,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "The food",
-      "The restaurant",
-      "The pool"
-    ],
+    "highlights": [],
     "id": "e3ee5941-bd60-4b0a-98ae-8097bc95c1ea",
     "source": "googlemaps",
     "approved_at": "2026-05-30T08:00:46.778Z"
@@ -1063,11 +1030,7 @@
     "rating": 3.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "To order no spicy level",
-      "All every menu",
-      "This place"
-    ],
+    "highlights": [],
     "id": "5124b131-044a-4e62-8350-ad554c0e9adf",
     "category": "food",
     "source": "pantip",
@@ -1109,11 +1072,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "For big families",
-      "Places to relax",
-      "The coffee"
-    ],
+    "highlights": [],
     "id": "91abe184-a13e-49e5-984f-8e87d5a96222",
     "category": "food",
     "source": "pantip",
@@ -1134,9 +1093,7 @@
     "rating": 4.3,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "This place"
-    ],
+    "highlights": [],
     "id": "bac98120-0104-4b27-8fbe-b0ef97e00eec",
     "category": "food",
     "source": "instagram",
@@ -1157,9 +1114,7 @@
     "rating": 4.2,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "Which"
-    ],
+    "highlights": [],
     "id": "172635be-b889-47eb-969a-a29291e8af9d",
     "category": "food",
     "source": "instagram",
@@ -1180,10 +1135,7 @@
     "rating": 3.9,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "Better service",
-      "It so much"
-    ],
+    "highlights": [],
     "id": "863e4f71-0876-4799-86ba-61a820f4d801",
     "category": "food",
     "source": "tiktok",
@@ -1204,11 +1156,7 @@
     "rating": 5,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "Diving with bsa",
-      "Experiences of my life",
-      "Diving with them"
-    ],
+    "highlights": [],
     "id": "ec9ddb86-cd9c-45f2-9c1b-a5b8156fd518",
     "category": "food",
     "source": "tiktok",
@@ -1301,11 +1249,7 @@
     "rating": 5,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "Diving with bsa",
-      "Experiences of my life",
-      "Diving with them"
-    ],
+    "highlights": [],
     "id": "1c6fec35-5c14-461e-b16d-63c9718818ba",
     "category": "food",
     "source": "tiktok",
@@ -1326,9 +1270,7 @@
     "rating": 4.3,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "This place"
-    ],
+    "highlights": [],
     "id": "0f71e809-0a31-4164-b513-e882c7d3d6c9",
     "category": "food",
     "source": "instagram",
@@ -1349,9 +1291,7 @@
     "rating": 4.2,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "Which"
-    ],
+    "highlights": [],
     "id": "ebaafb96-c652-4f90-b55e-6b4e2f545c9d",
     "category": "food",
     "source": "instagram",
@@ -1372,10 +1312,7 @@
     "rating": 3.9,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "Better service",
-      "It so much"
-    ],
+    "highlights": [],
     "id": "2f4bb627-87ae-473d-a39e-d28e76894f5c",
     "category": "food",
     "source": "tiktok",
@@ -1398,9 +1335,7 @@
     "price_range": 3,
     "trending": false,
     "highlights": [
-      "Sushi",
-      "Around",
-      "In bangkok"
+      "Sushi"
     ],
     "id": "d06b1a38-db12-4234-8dca-b8c6bb66f8a5",
     "source": "googlemaps",
@@ -1423,8 +1358,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Rooftop View",
-      "From the menu"
+      "Rooftop View"
     ],
     "id": "b400829a-2a80-4b01-876a-0ab8e9da2e87",
     "source": "googlemaps",
@@ -1447,9 +1381,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Rooftop View",
-      "To everyone",
-      "S location"
+      "Rooftop View"
     ],
     "id": "6ed59fe9-2008-47b0-ad0f-cd082705360a",
     "source": "googlemaps",
@@ -1521,9 +1453,7 @@
     "rating": 4.7,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "And the overall taste"
-    ],
+    "highlights": [],
     "id": "bbecd4bb-ae46-43c5-9d30-cde50a6e7dd5",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:46:19.762Z"
@@ -1545,9 +1475,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Cocktails",
-      "You visit",
-      "The price"
+      "Cocktails"
     ],
     "id": "1e7b6f82-a383-4f9c-93d3-b94b83814d1e",
     "source": "googlemaps",
@@ -1643,8 +1571,6 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Their mocktails",
-      "Birds",
       "Khao soi"
     ],
     "id": "d225de58-f9af-4365-94e6-4eb48e8166f8",
@@ -1692,8 +1618,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Tom Yum",
-      "The food"
+      "Tom Yum"
     ],
     "id": "46ae31e1-979f-40ce-8236-cffb14a8fd9b",
     "source": "googlemaps",
@@ -1759,9 +1684,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Per person one cup"
-    ],
+    "highlights": [],
     "id": "923ebf14-548d-44f9-a3c5-ff19939363a0",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:46:22.260Z"
@@ -1782,11 +1705,7 @@
     "rating": 4.6,
     "price_range": 4,
     "trending": false,
-    "highlights": [
-      "For those who enjoy",
-      "To eat the dish",
-      "To try for those who enjoy"
-    ],
+    "highlights": [],
     "id": "92a0447a-790d-49e5-b087-9dd151987bd3",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:46:22.459Z"
@@ -1807,10 +1726,7 @@
     "rating": 4.5,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "A few bites and move on",
-      "The food here"
-    ],
+    "highlights": [],
     "id": "1026ee6a-c113-4150-8449-2b6e09e6abfa",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:46:22.626Z"
@@ -1831,9 +1747,7 @@
     "rating": 5,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "The service"
-    ],
+    "highlights": [],
     "id": "f04b34cb-0927-43cd-972b-e115cbf8af84",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:46:22.809Z"
@@ -1855,8 +1769,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Sushi",
-      "To come back to"
+      "Sushi"
     ],
     "id": "027cbfd5-c1af-449a-a9ae-c463de30b0d6",
     "source": "googlemaps",
@@ -1947,9 +1860,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Live Music",
-      "This restaurant",
-      "Buri and another menu"
+      "Live Music"
     ],
     "id": "90c6f806-67b0-48a7-a7da-878dc083baaa",
     "source": "googlemaps",
@@ -1972,8 +1883,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Omakase",
-      "The place"
+      "Omakase"
     ],
     "id": "d19d845c-acdc-44d5-b5d1-5c1cb99a3526",
     "source": "googlemaps",
@@ -2020,9 +1930,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Sushi",
-      "Roof top in bangkok",
-      "Friends for dinner"
+      "Sushi"
     ],
     "id": "71d191a0-86f1-42d7-9471-d35e305b11c4",
     "source": "googlemaps",
@@ -2045,8 +1953,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Pad Thai",
-      "The food"
+      "Pad Thai"
     ],
     "id": "543ed23a-cc83-42ab-b792-5a46f677c9e5",
     "source": "googlemaps",
@@ -2070,7 +1977,6 @@
     "trending": false,
     "highlights": [
       "Green Curry",
-      "Their desserts variety",
       "Flavors from north"
     ],
     "id": "85f934ee-4f9e-48ac-9bc4-c44edf699399",
@@ -2094,9 +2000,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Pad Thai",
-      "With this place",
-      "For easy access"
+      "Pad Thai"
     ],
     "id": "bbbb8d5d-d20b-45c5-8d9d-9fee8a9c1114",
     "source": "googlemaps",
@@ -2119,8 +2023,6 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "And will be back",
-      "Some spicy thai food",
       "Great wines as well"
     ],
     "id": "40f01f2d-add0-457e-95cd-80e394ff1d83",
@@ -2194,9 +2096,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Tom Yum",
-      "Its crab dishes",
-      "For crab lovers"
+      "Tom Yum"
     ],
     "id": "c2c6fb00-1533-4ec0-946d-d60b16d1deff",
     "source": "googlemaps",
@@ -2218,9 +2118,7 @@
     "rating": 4.5,
     "price_range": 1,
     "trending": false,
-    "highlights": [
-      "In the khao soi"
-    ],
+    "highlights": [],
     "id": "52822c6b-89ca-4331-a26e-8c1cb52f71dd",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:46:25.976Z"
@@ -2288,10 +2186,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "In thailand",
-      "T vibe and the coffee"
-    ],
+    "highlights": [],
     "id": "a1b1a31a-7a62-487b-9af2-f3ab8c4c3a10",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:46:26.509Z"
@@ -2312,10 +2207,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "This spot",
-      "To try once"
-    ],
+    "highlights": [],
     "id": "0618e1c4-49b3-43bb-b793-4c614cfdf84d",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:46:26.692Z"
@@ -2337,9 +2229,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Espresso",
-      "In bkk",
-      "Coffee originality in bkk"
+      "Espresso"
     ],
     "id": "43a59c28-8042-46dd-b719-361321f5ffb7",
     "source": "googlemaps",
@@ -2362,8 +2252,6 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "It out",
-      "What you pay for",
       "Good bread"
     ],
     "id": "61b1dca1-4bc2-4707-947a-0ce29368ee1e",
@@ -2387,8 +2275,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Espresso",
-      "Items for sale"
+      "Espresso"
     ],
     "id": "5830845d-9978-416d-97f6-b468896cd948",
     "source": "googlemaps",
@@ -2459,8 +2346,7 @@
     "trending": false,
     "highlights": [
       "Pasta",
-      "Pasta",
-      "The staff"
+      "Pasta"
     ],
     "id": "e377c8bd-929e-4c54-814e-4cb7a138ca23",
     "source": "googlemaps",
@@ -2503,9 +2389,7 @@
     "price_range": 2,
     "trending": true,
     "highlights": [
-      "Thai Tea",
-      "Coffee this time",
-      "Their house made yoghurt"
+      "Thai Tea"
     ],
     "id": "ce521b83-5509-4767-b625-0e4be1706496",
     "category": "food",
@@ -2528,7 +2412,6 @@
     "price_range": 2,
     "trending": true,
     "highlights": [
-      "This tour to anyone",
       "Authentic street food"
     ],
     "id": "c993adc6-40b0-4ee1-86df-1549c40dad77",
@@ -2552,7 +2435,6 @@
     "price_range": 2,
     "trending": true,
     "highlights": [
-      "With bangkok on this trip",
       "Oysters"
     ],
     "id": "63ec87ba-d90b-4b15-b4d2-31581c065740",
@@ -2576,7 +2458,6 @@
     "price_range": 2,
     "trending": true,
     "highlights": [
-      "With bangkok on this trip",
       "Oysters"
     ],
     "id": "b40a0085-e476-41fd-aab8-6a2d4de623b6",
@@ -2622,10 +2503,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "To food lovers",
-      "Decision"
-    ],
+    "highlights": [],
     "id": "9db851db-a1ba-40b9-8caf-77105b78beaa",
     "category": "food",
     "source": "tiktok",
@@ -2646,9 +2524,7 @@
     "rating": 4.3,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "This place"
-    ],
+    "highlights": [],
     "id": "194e29a3-76f2-425e-ac55-b41bc6b53f90",
     "category": "food",
     "source": "instagram",
@@ -2690,9 +2566,7 @@
     "rating": 4.2,
     "price_range": 2,
     "trending": true,
-    "highlights": [
-      "Which"
-    ],
+    "highlights": [],
     "id": "cc059320-3696-4743-9b1a-31f515a5f254",
     "category": "food",
     "source": "instagram",
@@ -2827,11 +2701,7 @@
     "rating": 3.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "To order no spicy level",
-      "All every menu",
-      "This place"
-    ],
+    "highlights": [],
     "id": "99e88883-b6e6-4ae1-a79e-dc27cd9161c5",
     "category": "food",
     "source": "pantip",
@@ -2873,11 +2743,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "For big families",
-      "Places to relax",
-      "The coffee"
-    ],
+    "highlights": [],
     "id": "998fc632-971f-44fe-b9d5-96b7576bb1fa",
     "category": "food",
     "source": "pantip",
@@ -2994,9 +2860,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Everything right",
-      "The yum",
-      "This place"
+      "Everything right"
     ],
     "id": "1f1da7de-8d30-4b8a-aae5-83c586990a93",
     "source": "googlemaps",
@@ -3019,8 +2883,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Thai Tea",
-      "If you travel to bangkok"
+      "Thai Tea"
     ],
     "id": "bf94bb9b-9086-4d0d-9a65-04460e21213d",
     "source": "googlemaps",
@@ -3043,9 +2906,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Satay",
-      "Some digestive drink too",
-      "Try it"
+      "Satay"
     ],
     "id": "6dd236e3-aa8d-458c-ab21-a909b1c6b23c",
     "source": "googlemaps",
@@ -3092,9 +2953,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Bold flavors"
-    ],
+    "highlights": [],
     "id": "4a2a0657-8651-4eb4-8721-a545d5c6f5c7",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.124Z"
@@ -3139,11 +2998,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Lunch in bangkok",
-      "Their homemade ice creams",
-      "Every flavor"
-    ],
+    "highlights": [],
     "id": "01ac3082-5a18-477e-b0ec-84338478c867",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.132Z"
@@ -3165,8 +3020,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Dumplings",
-      "Large"
+      "Dumplings"
     ],
     "id": "22d04996-07d7-4818-a4db-96d04e7f9cda",
     "source": "googlemaps",
@@ -3263,10 +3117,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Suited ones",
-      "Them next time"
-    ],
+    "highlights": [],
     "id": "92cc6c36-948d-4b51-ad9b-7252519130a0",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.143Z"
@@ -3288,8 +3139,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Pad Thai",
-      "Anything like it anywhere"
+      "Pad Thai"
     ],
     "id": "d7d4377e-19f9-40cf-ab9b-421ea3a3b26b",
     "source": "googlemaps",
@@ -3361,8 +3211,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Larb",
-      "To everyone"
+      "Larb"
     ],
     "id": "9e5280a8-4293-4941-a69c-bb50ba9112aa",
     "source": "googlemaps",
@@ -3410,9 +3259,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Dim Sum",
-      "Food place in the area",
-      "The atmosphere"
+      "Dim Sum"
     ],
     "id": "5522a0d1-8d0a-4717-b490-103bad86e416",
     "source": "googlemaps",
@@ -3434,9 +3281,7 @@
     "rating": 4.9,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "For all"
-    ],
+    "highlights": [],
     "id": "a06f89c1-f234-41e9-a3a9-6a606443bce8",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.157Z"
@@ -3457,9 +3302,7 @@
     "rating": 4.3,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Food section"
-    ],
+    "highlights": [],
     "id": "fafba103-af29-4dcb-abe0-b8d7c8e3c636",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.158Z"
@@ -3482,8 +3325,7 @@
     "trending": false,
     "highlights": [
       "Dim Sum",
-      "Dim sum",
-      "A seat"
+      "Dim sum"
     ],
     "id": "f083f792-fc3c-4989-9107-03e64a896ebd",
     "source": "googlemaps",
@@ -3551,8 +3393,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Mango Sticky Rice",
-      "A place must visit"
+      "Mango Sticky Rice"
     ],
     "id": "71656845-6c90-428e-b0d6-c3aa2958af36",
     "source": "googlemaps",
@@ -3575,8 +3416,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Cocktails",
-      "Also beef tacos"
+      "Cocktails"
     ],
     "id": "f8ae2ab9-7982-46a3-b363-c288ffb9a724",
     "source": "googlemaps",
@@ -3599,8 +3439,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Pudding",
-      "This again"
+      "Pudding"
     ],
     "id": "24b989f2-f474-460d-aee1-f1738f20e248",
     "source": "googlemaps",
@@ -3646,8 +3485,6 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Course",
-      "This place",
       "Ingredients from abroad"
     ],
     "id": "002a74b5-2992-4592-95d2-10ca69a9a4dd",
@@ -3697,8 +3534,7 @@
     "trending": false,
     "highlights": [
       "Massaman Curry",
-      "White wine from greece",
-      "This restaurant to friends"
+      "White wine from greece"
     ],
     "id": "38e99cd3-ca61-4511-b28c-a5d4c4eb14ec",
     "source": "googlemaps",
@@ -3720,11 +3556,7 @@
     "rating": 4.6,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "More than four dishes",
-      "A visit",
-      "Them"
-    ],
+    "highlights": [],
     "id": "61dd6ce6-7066-4ae1-adf3-bd4c388c95a8",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.178Z"
@@ -3771,8 +3603,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Cocktails",
-      "Them this time"
+      "Cocktails"
     ],
     "id": "e1b349d0-9308-45b1-bde9-10fbc7a00d0e",
     "source": "googlemaps",
@@ -3795,9 +3626,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Mango Sticky Rice",
-      "In bangkok",
-      "To come here again"
+      "Mango Sticky Rice"
     ],
     "id": "57a9e0b3-3b49-4fbd-88b6-9585e8450fc9",
     "source": "googlemaps",
@@ -3843,8 +3672,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Cocktails",
-      "Bold"
+      "Cocktails"
     ],
     "id": "689f4bc5-fe72-4998-9268-befde99fb8f0",
     "source": "googlemaps",
@@ -3866,9 +3694,7 @@
     "rating": 4.9,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "The vibes"
-    ],
+    "highlights": [],
     "id": "a359811a-e19d-4887-adf6-1f8d30e99616",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.188Z"
@@ -3890,8 +3716,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Rooftop View",
-      "Some work done"
+      "Rooftop View"
     ],
     "id": "18149b91-6dde-4cbe-8fe7-5ff7ca705d57",
     "source": "googlemaps",
@@ -3914,8 +3739,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Croissant",
-      "Every single time"
+      "Croissant"
     ],
     "id": "a7d55ceb-6bf0-4ec1-955e-bc52bd396d1e",
     "source": "googlemaps",
@@ -3937,10 +3761,7 @@
     "rating": 4.5,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Way possible",
-      "To avoid this place"
-    ],
+    "highlights": [],
     "id": "e075fc57-73c5-453a-bd27-3b4f57a697ae",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.192Z"
@@ -3984,11 +3805,7 @@
     "rating": 4.3,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Journaling here",
-      "Next time",
-      "Not to use plastic"
-    ],
+    "highlights": [],
     "id": "31965cbb-213c-4c02-b5a5-78e102d316b5",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.195Z"
@@ -4009,11 +3826,7 @@
     "rating": 4.7,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "More of the menu soon",
-      "Another flat white",
-      "Idea"
-    ],
+    "highlights": [],
     "id": "4dd41780-2401-4446-8e3e-a55e154c1a92",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.198Z"
@@ -4055,10 +3868,7 @@
     "rating": 4.5,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "In the uk",
-      "A table"
-    ],
+    "highlights": [],
     "id": "acc7b0c2-9fc5-4b7f-b41b-07d442a82ea9",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.200Z"
@@ -4103,9 +3913,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Thai Tea",
-      "Her signature thai tea",
-      "Bored of"
+      "Thai Tea"
     ],
     "id": "4219fc17-412c-4f2c-993e-fc1513cd2d79",
     "source": "googlemaps",
@@ -4127,9 +3935,7 @@
     "rating": 4.8,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Coffee next time"
-    ],
+    "highlights": [],
     "id": "d9e28d1f-291f-4938-a41e-40ce785d055e",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.205Z"
@@ -4151,9 +3957,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Croissant",
-      "Number",
-      "Sitting upstairs"
+      "Croissant"
     ],
     "id": "e7aebaad-9788-4dba-a426-0242b10c1388",
     "source": "googlemaps",
@@ -4176,8 +3980,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Espresso",
-      "It enough"
+      "Espresso"
     ],
     "id": "19523ce7-654e-4090-a5ad-acfa794af065",
     "source": "googlemaps",
@@ -4200,9 +4003,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Espresso",
-      "A caffeine boost",
-      "Way to describe it"
+      "Espresso"
     ],
     "id": "b9557d63-02d9-4599-a8fd-3d5c5f847a85",
     "source": "googlemaps",
@@ -4224,9 +4025,7 @@
     "rating": 4.7,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Seats"
-    ],
+    "highlights": [],
     "id": "13b55149-6ef1-46ff-a708-d60042b0f60d",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.211Z"
@@ -4247,10 +4046,7 @@
     "rating": 4.5,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "If you are a waffle lover",
-      "The signature waffle"
-    ],
+    "highlights": [],
     "id": "b42c024b-4afb-4c55-ae04-84b91cca0119",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.213Z"
@@ -4272,9 +4068,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Espresso",
-      "Coffee spots in the area",
-      "Heir matcha selection"
+      "Espresso"
     ],
     "id": "a8fc8ca9-9341-4701-83df-feca19367d1c",
     "source": "googlemaps",
@@ -4296,11 +4090,7 @@
     "rating": 4.9,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Coffee i had in thailand",
-      "Their coffee",
-      "Of origin"
-    ],
+    "highlights": [],
     "id": "afe7c1ac-83fb-4eb2-a63d-067c88252b9d",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.216Z"
@@ -4321,11 +4111,7 @@
     "rating": 3.7,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "For you",
-      "Its lively atmosphere",
-      "Some really great deals"
-    ],
+    "highlights": [],
     "id": "4f66b36e-6eba-4ba2-add6-cc4cf497d5e4",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.217Z"
@@ -4347,9 +4133,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Live Music",
-      "Tattoos for example",
-      "There too"
+      "Live Music"
     ],
     "id": "090908c5-774a-47da-bb78-ae254a8d1fee",
     "source": "googlemaps",
@@ -4371,9 +4155,7 @@
     "rating": 4.5,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "There by public transport"
-    ],
+    "highlights": [],
     "id": "5d2bd04c-6e8b-4b8c-aa1b-858bfeb5d91c",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.220Z"
@@ -4396,7 +4178,6 @@
     "trending": false,
     "highlights": [
       "Rooftop View",
-      "This place",
       "Value for your money"
     ],
     "id": "3501cf41-56b8-48d5-8b67-8b930bf2b1a5",
@@ -4468,9 +4249,7 @@
     "price_range": 3,
     "trending": false,
     "highlights": [
-      "Cocktails",
-      "That one instead",
-      "To eat before or after"
+      "Cocktails"
     ],
     "id": "cf6214b3-34b7-41a0-a525-371c5e5f46a2",
     "source": "googlemaps",
@@ -4494,8 +4273,7 @@
     "trending": false,
     "highlights": [
       "Cocktails",
-      "Delicious cocktails",
-      "Cocktail bars in bangkok"
+      "Delicious cocktails"
     ],
     "id": "290cbe3a-884e-4450-84c3-c76f98c3ab24",
     "source": "googlemaps",
@@ -4591,9 +4369,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Cocktails",
-      "It a second time",
-      "The cocktails"
+      "Cocktails"
     ],
     "id": "aefad5aa-7a8b-4626-846c-2ab89c63829c",
     "source": "googlemaps",
@@ -4615,9 +4391,7 @@
     "rating": 4.9,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Pretty quickly"
-    ],
+    "highlights": [],
     "id": "f037ed6d-06f0-4358-ac01-5eaf799443ab",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.235Z"
@@ -4639,9 +4413,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Live Music",
-      "To smoke weed",
-      "Music"
+      "Live Music"
     ],
     "id": "aa67ad13-e524-4e1a-9eb1-3fa705e68ef5",
     "source": "googlemaps",
@@ -4663,9 +4435,7 @@
     "rating": 5,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "For you"
-    ],
+    "highlights": [],
     "id": "782908cc-485d-4584-9eac-d869f431c4bb",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.239Z"
@@ -4687,9 +4457,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Cocktails",
-      "Part of the experience",
-      "Coming here"
+      "Cocktails"
     ],
     "id": "54bec309-a2b0-4203-bd3b-5d995d62f403",
     "source": "googlemaps",
@@ -4759,10 +4527,7 @@
     "rating": 4.4,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Around",
-      "Staying here"
-    ],
+    "highlights": [],
     "id": "4e71fbad-1448-4f9d-9ae9-e757fd0ade69",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.246Z"
@@ -4784,8 +4549,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Steak",
-      "Travelers"
+      "Steak"
     ],
     "id": "18071c33-4a72-4728-8c84-64186299802d",
     "source": "googlemaps",
@@ -4807,9 +4571,7 @@
     "rating": 3.9,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Hotel to stay"
-    ],
+    "highlights": [],
     "id": "53e3e6c6-5163-401a-9ddd-129cf674dfdf",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.248Z"
@@ -4830,9 +4592,7 @@
     "rating": 4.2,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Location"
-    ],
+    "highlights": [],
     "id": "4aee41f9-455f-4a43-9721-2dc9b5d8c94a",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.249Z"
@@ -4853,11 +4613,7 @@
     "rating": 4.3,
     "price_range": 2,
     "trending": false,
-    "highlights": [
-      "Related to service",
-      "This place",
-      "Around bangkok"
-    ],
+    "highlights": [],
     "id": "27f11b3a-8337-4fcf-bb3e-ddb09a557159",
     "source": "googlemaps",
     "approved_at": "2026-05-30T11:57:45.273Z"
@@ -4879,9 +4635,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Rooftop View",
-      "One free",
-      "The buffet breakfast"
+      "Rooftop View"
     ],
     "id": "c6715d9e-5e31-4613-90ef-8efaae58dc38",
     "source": "googlemaps",
@@ -4928,9 +4682,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Rooftop View",
-      "Neighborhoods",
-      "The location"
+      "Rooftop View"
     ],
     "id": "4d70caa0-79c1-4d65-afa3-4c977718119d",
     "source": "googlemaps",
@@ -4953,9 +4705,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Rooftop View",
-      "This hotel",
-      "Selections"
+      "Rooftop View"
     ],
     "id": "a487a1ca-8acd-4f2d-9073-30bcf1cf19d7",
     "source": "googlemaps",
@@ -5002,9 +4752,7 @@
     "price_range": 3,
     "trending": false,
     "highlights": [
-      "Green Curry",
-      "Luxury collection so much",
-      "It enough"
+      "Green Curry"
     ],
     "id": "8703095d-2c3f-4a6b-859f-4c5f19911802",
     "source": "googlemaps",
@@ -5052,9 +4800,7 @@
     "price_range": 2,
     "trending": false,
     "highlights": [
-      "Dumplings",
-      "A full workout in there",
-      "To the main attractions"
+      "Dumplings"
     ],
     "id": "da21704f-48c5-42d4-a5bb-fa06ab946a30",
     "source": "googlemaps",
