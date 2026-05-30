@@ -1143,30 +1143,6 @@
     "approved_at": "2026-05-30T11:31:53.192Z"
   },
   {
-    "name_en": "Bangkok",
-    "name_zh": "Bangkok",
-    "description_en": "Veteran Thai eatery in laid-back quarters with both traditional floor-mat seating & Western tables. Must-try: Pad Thai, Satay.",
-    "description_zh": "必點：Pad Thai、Satay。Veteran Thai eatery in laid-back quarters with both traditio…",
-    "address": "Bangkok, Thailand",
-    "lat": 25.6842321,
-    "lng": -80.3989319,
-    "photos": [
-      "places/ChIJxTVt1eTA2YgRcC0j2ms5mfE/photos/Ab43m-s2JRJJn9KPV5s_dEldZ5gRsglJM8IAo-zc6sX7KsO06XGNlQMcjlNK2Z5xEGmjCoF9OD_ZtlIWfg1s4dnFPFMFiIu0TwRwOphc56SdkOp5R6x4knHiBFZqyENGXxtYa9YwlWMEXhLLmCqWIyFlPfLhVZsrvylpYinCRHOnzJpr6VvR8CJD9HBHWmQOvtndFkAQs9iyNKgZ773cYazcp0-TiSfJjumn3KrpXKxduDkUTqrU83F4IFiZjvnbt8p69meJqGcIVwBrHmH0OoZc2KyXOzV9UBuxCqyuxsCChuW8kB00z-x1P-vvNwS1wsdyVlkikvP0U-jOcq4hUlz1nhMV2cmWh93v60CcsAlu_M5lEVMpnlk6LqStympmCWgwVPOEo_2ll6Woc9gj_navTkE1r68akqiZ5Tn8S6I4CwDkbOJI"
-    ],
-    "source_url": "https://pantip.com/topic/37394267",
-    "rating": 4,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Pad Thai",
-      "Satay"
-    ],
-    "id": "416722fb-f529-4672-8698-af4bcb4d5142",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:31:53.991Z"
-  },
-  {
     "name_en": "SAOLE.BANGKOK",
     "name_zh": "SAOLE.BANGKOK",
     "description_en": "Highly recommended Seafood Restaurant in Bangkok. Must-try: This place.",
@@ -2952,30 +2928,6 @@
     "category": "food",
     "source": "pantip",
     "approved_at": "2026-05-30T11:56:04.503Z"
-  },
-  {
-    "name_en": "Bangkok",
-    "name_zh": "Bangkok",
-    "description_en": "Veteran Thai eatery in laid-back quarters with both traditional floor-mat seating & Western tables. Must-try: Pad Thai, Satay.",
-    "description_zh": "必點：Pad Thai、Satay。Veteran Thai eatery in laid-back quarters with both traditio…",
-    "address": "Bangkok, Thailand",
-    "lat": 25.6842321,
-    "lng": -80.3989319,
-    "photos": [
-      "places/ChIJxTVt1eTA2YgRcC0j2ms5mfE/photos/Ab43m-tVjNHn1Ur8BK2wghM0600w6LPQT-RX_EJJpcSaxNiDLcwJwjgkGeT7jwpsMo5c8OY56B64OvfXogvpuxcweke7klFWcBKaAgapQ9zWu6OFmJdy6fpNFVaEAvHp3f3uhjiM4yXpTFjvCN_DX7BPH1KFRDelrENjECgwzF9kKcbI5HFZh4Xe96DXG3vU7j-qexV5h8ZDudEYPvVYNbs1qYuTCyp7Qs4Rz3UEdoUd3wg8CnE-Bv4CXQa3gk3QscnhOcKZMtH2oSrB9Ph-MTLsFNqq5aeTcVV7ERlN22_QA1RieoUKFtuDE7MKKeZZUz56h92Qtgidazve-XRcVuUcdwB387EqXuIZKM8wOSHA1vplfDhz-Hakzt1t6G1jGGpAjERcbZHlPn1_57C-_eWviT90K_MyAa3AAh055BKEq20EJC-x"
-    ],
-    "source_url": "https://pantip.com/topic/37394267",
-    "rating": 4,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Pad Thai",
-      "Satay"
-    ],
-    "id": "59887a6f-f94a-47fd-89a9-7fcb48871dff",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-05-30T11:56:04.886Z"
   },
   {
     "name_en": "Moom Muum Park Soi 11",
