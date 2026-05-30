@@ -228,16 +228,24 @@ export function PublicHomepage({ locations }: Props) {
           </div>
         </div>
 
-        {/* TREND RADAR — distinct warm background */}
+        {/* TREND RADAR */}
         {trending.length > 0 && (
-          <section className="mx-3 mt-4 mb-2 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-100 overflow-hidden">
-            <div className="px-3 pt-3 pb-1 flex items-center gap-2">
-              <span className="bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[11px] font-black px-3 py-1 rounded-full">
-                🔥 {strings[lang].trendingSection as string}
-              </span>
+          <section className="mx-3 mt-4 mb-2 rounded-2xl overflow-hidden shadow-md">
+            <div className="bg-gradient-to-r from-orange-600 via-rose-500 to-pink-600 px-4 py-3 flex items-center gap-3">
+              <span className="text-3xl leading-none">🔥</span>
+              <div>
+                <p className="text-white font-black text-[15px] leading-tight">{strings[lang].trendingSection as string}</p>
+                <p className="text-white/60 text-[10px] mt-0.5">{lang === 'zh' ? '本週曼谷最夯打卡點' : 'Most-talked spots this week'}</p>
+              </div>
             </div>
-            <div className="p-3 grid grid-cols-2 gap-3">
-              {trending.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} />)}
+            <div className="bg-[#fff8f5] border-x border-b border-orange-100 rounded-b-2xl overflow-hidden">
+              <div className="flex gap-3 overflow-x-auto no-scrollbar p-3 pb-4">
+                {trending.map((loc) => (
+                  <div key={loc.id} className="shrink-0 w-44">
+                    <LocationCard location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} />
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         )}
