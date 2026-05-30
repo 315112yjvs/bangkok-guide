@@ -7,12 +7,11 @@ export async function GET() {
   return NextResponse.json(readLocations())
 }
 
-// POST: approve a pending item (body: { id: string }) OR add a manual location (body: full Location fields without id/approved_at)
+// POST: approve a pending item (body: { action:'approve', id:string }) OR add a manual location (body: { action:'add', ...fields })
 export async function POST(req: NextRequest) {
   const body = await req.json()
 
-  // Approve from pending: body has only { id }
-  if (body.id && !body.name_zh) {
+  if (body.action === 'approve') {
     const pending = readPending()
     const item = pending.find((p) => p.id === body.id)
     if (!item) return NextResponse.json({ error: 'Not found' }, { status: 404 })
@@ -24,7 +23,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true })
   }
 
-  // Manual add: body has full location fields
+  // Manual add
   const location: Location = {
     ...body,
     id: uuidv4(),
@@ -37,6 +36,7 @@ export async function POST(req: NextRequest) {
 // DELETE: remove an approved location by id
 export async function DELETE(req: NextRequest) {
   const { id } = await req.json()
+  if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
   writeLocations(readLocations().filter((l) => l.id !== id))
   return NextResponse.json({ ok: true })
 }
