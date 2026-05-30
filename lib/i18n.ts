@@ -55,7 +55,8 @@ export const strings = {
   },
 } satisfies Record<Lang, Record<string, string | string[]>>
 
-export function t(lang: Lang, key: keyof typeof strings.zh): string {
+export function t(lang: Lang, key: keyof typeof strings.zh, index?: number): string {
   const val = strings[lang][key]
-  return Array.isArray(val) ? val.join('') : val
+  if (Array.isArray(val)) return index !== undefined ? (val[index] ?? '') : val.join('')
+  return val
 }
