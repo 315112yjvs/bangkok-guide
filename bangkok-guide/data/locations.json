@@ -4564,5 +4564,281 @@
     "id": "1ba36788-aee5-4910-9744-15b9a6b3fda0",
     "source": "googlemaps",
     "approved_at": "2026-05-30T15:27:21.170Z"
+  },
+  {
+    "name_en": "SAOLE.BANGKOK",
+    "name_zh": "SAOLE.BANGKOK 曼谷餐廳",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok.",
+    "description_zh": "必點：泰式炒河粉、青咖喱。傳統曼谷小館，用料實在份量大，在地人下班最愛的宵夜據點，坐在騎樓邊吃邊看街景才夠道地。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.739045100000002,
+    "lng": 100.5811597,
+    "photos": [
+      "places/ChIJlSvqtF2f4jARZQIAY5R2wzY/photos/Ab43m-t266rGdW-bUeYeFOuxRK8vamx_XQLnXvMEwLNmK0NMP9qLH12mcGmdm4NQ-rrbe0iw2m4eJyVzXZYi4bxZFKwab0sAXdH9dtDSE8FgwDmW-3wWmbSYrIr3KVU3sXD-5AlNrp0FmTcDeO_2_aUaeto7Nr4mIzgzOKOQdxwqhw0IGieqaumktelEldiaEb9Z1rvO-PVaAkgyR78s9zx6xBJsO8wBzV-MsHcs6SWdpRkudYmFPOCx4YKPJlgI58s_eEeG7Z0UkacWvn8hfMDKPZ7Zl1MVMZG7H9Q98M2jEbg8gGUeIbyLBKnwdptomiKVlml_aeakuBuCoSqWLIUIBwtV3LDiDwXuXNSHe_cMyBLm2T1R369GFw3r1Nf5Mig2o4wZUiU7GLAMolAphUUSGo7kYmTEn_m_c-UWipbvt-ST5g"
+    ],
+    "source_url": "https://www.instagram.com/p/DUYLSGyEWEt/",
+    "rating": 4.3,
+    "price_range": 2,
+    "trending": true,
+    "highlights": [],
+    "id": "849226bc-40f0-4ca0-a1ac-35b040d08a0f",
+    "category": "food",
+    "source": "instagram",
+    "approved_at": "2026-05-30T17:56:32.323Z"
+  },
+  {
+    "name_en": "The Warehouse Bangkok",
+    "name_zh": "The Warehouse Bangkok 倉庫餐廳",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok.",
+    "description_zh": "必點：手工漢堡、自釀啤酒。舊倉庫改建的餐酒館，工業風格濃厚，是在地年輕人最愛的聚集地。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7337824,
+    "lng": 100.5144096,
+    "photos": [
+      "places/ChIJo4cd1_-Z4jART3mBwIFB-Rk/photos/Ab43m-uBaUIiD1F7C0BSRkVQuIYuWgpjjTR3IBhHdSWU0ocWn2g8YYYMRL9bVKEUc7n5h7bi9j4_rwGxAJjCGPVihps-HgcNQ4_lF-Zfn7yY8YZfN7fL5-TG69XUKYxreil0H5cRY_b0jEZxmnmA-vTFOMGkkx2R8dUjVAki0bdm_Ux5FNd8bUrOeZ8m0fVIeZ6K7LByEMTV7aZ74bZYFKZrQytSfQwkHPf6J6tLC79ev2aJJANSl1a4o5IVka6M_5NTLp0XDytZgN6Raeesik-Stl7mgliQCoDWCgzQ8mItGYssukuhHUkk944Al5TTwHekEmTHmcQzQtfOKgBRHBWMgVz6MsHDvkExXOoCMTFoBmsHR79dwJ6D6UtbHjpdU5Jve4QkP1ogptX3VocLW7hFb01554pr7jJvq4-L9up7-O81mxF9_W_YRCqkQw7rWx3z"
+    ],
+    "source_url": "https://www.timeout.com/bangkok/restaurants/bangkoks-best-afternoon-tea",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": true,
+    "highlights": [],
+    "id": "459ef70b-0dcb-4d64-be1f-521407bc0e34",
+    "category": "food",
+    "source": "instagram",
+    "approved_at": "2026-05-30T17:56:33.905Z"
+  },
+  {
+    "name_en": "Nawa Thai Cuisine",
+    "name_zh": "Nawa 泰式料理",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for To food lovers and Decision.",
+    "description_zh": "必點：咖哩蟹、青木瓜沙拉。曼谷在地人氣食堂，每道菜都用料實在，咖哩香氣直接嗆鼻，一吃就停不下來。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.723275600000001,
+    "lng": 100.5838735,
+    "photos": [
+      "places/ChIJBcsS30qf4jARijfxeJq66YI/photos/Ab43m-tMEZrk6v8Ce-Yu6jAtGwvnA089k2vmUspCd58N9_1da0jRREU-mkDpZBEIyABxKFzAevqXCcB8FVGrJj6C5l0ig_-7Vy4esPcQDCu9LAKPvDm93zEuBOLYTEIJg1TqQ7V6zMCahV32Kh3CV9kz2G7RZcu3qmObxO1_HwwgPhOgD03hfyndFQ-_GSCpj5UMRX_WXKLAp2j1958niAnYRvlVBEexNP60TCRDlRrm3bKIvPgaWc3Ags60X8unchOYAKvQxbFxK-FGSc4mS88LEt0mNBc2Ec8khYmtz5gko3OWTlPRKKVcnLL_WF8yq4cPjyotLXHGRWHAUAZkQGHoIIbBSHBCHf6u6T5Yccpeac2b-_3uH2UJsJrjTIQGl2a8Z6K8AncgMonvPfOKPg_nW9ShqjV6Cxj-bT_jjeay49y8Ag"
+    ],
+    "source_url": "https://www.tiktok.com/@mico.cruz/video/7529479018379365650",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": true,
+    "highlights": [
+      "To food lovers",
+      "Decision"
+    ],
+    "id": "508bebdc-fb48-4255-9648-43c2eeb773a6",
+    "category": "food",
+    "source": "tiktok",
+    "approved_at": "2026-05-30T17:56:36.821Z"
+  },
+  {
+    "name_en": "INDDEE",
+    "name_zh": "INDDEE 泰式餐廳",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for The manager.",
+    "description_zh": "必點：經理人特製餐點。INDDEE的經理親自掌廚，用心打造每一道菜色，是這間店最獨特的靈魂。來這裡就是為了吃經理的手藝。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.737682699999999,
+    "lng": 100.54229099999999,
+    "photos": [
+      "places/ChIJkeHE36Gf4jARwYY0UIcD6-g/photos/Ab43m-sqal46x2hCPtRJsAARAcnGppCTAHWoANDwGstGx-bgLiOiefYuf2Vk3s_ws5MfJoqM7r2raQjOSTbzN3Vl2hKELrdfzWN2Go3sfeupzeNjwGlhpLSJEMzr4kBKD_YJ0oIqc2r_PdT9ucgmiprhtA-wnoDsDdLBjJp40hcyO_scPGfZmSZCZuMqV5OUIQxp5X4TylqBu4FhCzK-mLZ2PNW0ojgTb-fl5OwGQJ6XrwteGNSk2M9X1dURYDV1w6Cb2SSVjhuGspS2BIzyRNBaBGPMel0T5prN046U45kZmA1tZg"
+    ],
+    "source_url": "https://www.tiktok.com/@biteswithlily/video/7600359961448795413",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": true,
+    "highlights": [
+      "The manager"
+    ],
+    "id": "5567a919-bbf8-4a2e-8c6f-98bd912a1df9",
+    "category": "food",
+    "source": "tiktok",
+    "approved_at": "2026-05-30T17:56:44.684Z"
+  },
+  {
+    "name_en": "ABBA BANGKOK",
+    "name_zh": "ABBA曼谷酒吧",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Thai Tea and Coffee this time.",
+    "description_zh": "必點：泰式奶茶、咖啡。ABBA是曼谷咖啡愛好者的私房去處，泰奶濃郁香醇，咖啡豆選得講究，每一杯都能喝出用心。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7315946,
+    "lng": 100.5307304,
+    "photos": [
+      "places/ChIJVV68TwCf4jARsuynl-FqPmQ/photos/Ab43m-uJ-KU-suYsALwXhQ41Yp_It_u3Pg8CS1eSTqqQHaotpke6HJOcpyhXZHIms9_zz3fu6qRuJji9wniAmKhunthtLzwGhzyXslTjQkqwgQVuDVOQ9gWRBuP7QpT8fFc3js1zeX3wV3XxZvGQt_6cEgd3uANxuF54fekV4h4ABlj_HZDBX4jV6K1nuaFkVFSln2X9_w8LHFntxmhXkC3IceEq1xzqHa7Qfx426PaA37T-y89pcF6wZlm2OUAhzoXha_cHVM48ojVLIjHI_KpkQD4oQKnpnWigXKH_JcHS_KLFeS8nNQLfXHlugSU_XM8xVDkWGjF1CzVtq7xp9t3kyTybmElzLS7lbT3kIFP1kwV4IgpppGvV3GxStNJcRBUXWa77srVzDmJQnmz4vJL6Dka9f8xzq8xTqINKUkcn7Bkaufnw5OP90OkLwkCb0mhS"
+    ],
+    "source_url": "https://www.tiktok.com/@chaoatc/video/7632263143242173717",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": true,
+    "highlights": [
+      "Thai Tea",
+      "Coffee this time"
+    ],
+    "id": "a994735c-edf8-4ef6-894f-7507248c443f",
+    "category": "food",
+    "source": "tiktok",
+    "approved_at": "2026-05-30T17:56:48.372Z"
+  },
+  {
+    "name_en": "ARUN Riverside Bangkok (อรุณริเวอร์ไซด์)",
+    "name_zh": "ARUN Riverside Bangkok (อรุณริเวอร์ไซด์)",
+    "description_en": "A mid-range, highly praised hotel in Bangkok. Known for Rooftop View.",
+    "description_zh": "必點：河畔屋頂景觀。站在高處俯瞰湄南河夜景，曼谷的燈火在腳下閃爍。這間飯店就是為了這道景色而生。",
+    "category": "hotel",
+    "address": "87, 89 Thanon Maha Rat, พระบรมมหาราชวัง, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7449604,
+    "lng": 100.4911221,
+    "photos": [
+      "places/ChIJKVehJuWZ4jARmq0n3vHhjSc/photos/Ab43m-u00nIEwsFuzTZeGApFMODfnspls2FQV5u8tzsFg5wNA-AevOHDJPqOxDQhlVXh8Vd8EKwsWBWK_CYE1N8GwmPgpJr_YBe-PLrCsWio2GrhqjOWT5Qh9bDlb4W2X7aSXMFXliYKcOKdw4v--GmFWw96EKCauMZNovrHilw6V_6sS9oB6Gw42KyspQxIgJOrglglkF9SIvgF-F1phqa-9sOZb4_RgcwSMm8vBsonC4-T6IN42XIsja0PctnVMBFVMBpBuXdZXDCyJE2MzLBPYREQxQxtczEiSVD9KeNzak3ypA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=ARUN%20Riverside%20Bangkok%20(%E0%B8%AD%E0%B8%A3%E0%B8%B8%E0%B8%93%E0%B8%A3%E0%B8%B4%E0%B9%80%E0%B8%A7%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B9%84%E0%B8%8B%E0%B8%94%E0%B9%8C)%2087%2C%2089%20Thanon%20Maha%20Rat%2C%20%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%A3%E0%B8%A1%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%A7%E0%B8%B1%E0%B8%87%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJKVehJuWZ4jARmq0n3vHhjSc",
+    "rating": 4.6,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Rooftop View"
+    ],
+    "id": "0781c9c2-062c-467c-a1f5-71c5206bdbba",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T17:56:53.171Z"
+  },
+  {
+    "name_en": "Riva Arun Bangkok",
+    "name_zh": "Riva Arun Bangkok",
+    "description_en": "Bright rooms & suites in an elegant hotel with an elegant rooftop restaurant offering river views.",
+    "description_zh": "必點：屋頂景觀。Riva Arun 房間寬敞雅致，頂樓餐廳面河而設，適合黃昏時分來杯飲品，看湄南河夜景點燈。",
+    "category": "hotel",
+    "address": "392, 25-28 Thanon Maha Rat, Khwaeng Phra Borom Maha Ratchawang, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7442385,
+    "lng": 100.49192550000001,
+    "photos": [
+      "places/ChIJabWJSASZ4jARPcdaAXzr_UM/photos/Ab43m-um2ryxYZ4WTQuErW_L-wCBMkHMjaZv-LoMDr6l4eYELw0QTcjSxBKPpyNRDLUncUeUxvJ2ecfWURz4u74DqYYbFtAbgzp2QuM1aQ2nF8SyjK_BfEZKcdbAYNJeLeznlIJoa805u-lqpPDsBUyIUzVjcWsn_dvzMtuDvkKMjOyQoHqDkoqgm-iRUFb_32ndg5s0sF3gTCXyDFW1ITiF2pkaXvjNkc-_8nLf8QqCtrTOBExEtvl5pciwRs_4CHBAnhqxcVwW0AtMv6mEjsjbA1knlrrgjeFDIr41UbPSXWHNmNS2qifS19UyCAgVRzr4r-vMsKbWCnVCiaOYF0HOv6foITNZ8-ChGxogiZKvKYIdiKufFq9kDoAgCH4lmpDj5EERmlWSyGSLFGortftgLxcuPZgvC7wsMaZvrD1Vfjs"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Riva%20Arun%20Bangkok%20392%2C%2025-28%20Thanon%20Maha%20Rat%2C%20Khwaeng%20Phra%20Borom%20Maha%20Ratchawang%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJabWJSASZ4jARPcdaAXzr_UM",
+    "rating": 4.6,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Rooftop View"
+    ],
+    "id": "a781a578-0f54-4d89-a520-ac148da25cfa",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T17:56:57.325Z"
+  },
+  {
+    "name_en": "Aroi Sushi",
+    "name_zh": "Aroi 壽司",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok. Known for Sushi and Steak.",
+    "description_zh": "必點：壽司、牛排。曼谷少見的日式牛排融合壽司吧，新鮮漁貨和熟成牛肉在同一張檯上享受，用餐氛圍輕鬆自在。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7443373,
+    "lng": 100.5853087,
+    "photos": [
+      "places/ChIJS3jasVqe4jARB3lcX4YGz78/photos/Ab43m-t-kQYlOd4D9xNXARauObS1HT5dfvR52lJQ2vrPkgWrD87vtitSwN4G_ZKX_yV3Qu2wQl6N4WGUlRt0BjzVhBsHMrGOvRYJEbdL_NKSePsS3LoQ8m-WGGOdshnYAFoOeBS_U8Bofh0A16YE2EVb8SLr0PvjEU0PaCHh5RNbFznbC3aavwa4qbpG1NA8oLoOG-QIYU37SxBIeqy0C7P52KOW-Dzi3tpEOWqwaZeHlzhu9q9_uX1H--vv50Yhyr_xh1x8Cy4586s3FFrMmwyoANAoZBtCj-1qAdv9J9iCnz2MIwpjcPP3poQrcbO4sZmfcg_eFBtoSFVyuuzY2lT0qLA9HpJ75E6wuX7exSkbIgVq8xQPvDzw19ajbav4M6HuJs1erLmp8Zep7RADM48vTsku8556TETUDL482dgjNtLL1x4L"
+    ],
+    "source_url": "https://pantip.com/topic/36937705",
+    "rating": 4.4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Sushi",
+      "Steak"
+    ],
+    "id": "ddb27fb2-bbb7-426a-b9c2-1f70422a0985",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-05-30T17:57:14.568Z"
+  },
+  {
+    "name_en": "Phed Phed Hey",
+    "name_zh": "辣辣嘿泰式餐廳",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok. Known for Papaya Salad.",
+    "description_zh": "必點：青木瓜沙拉。曼谷最道地的木瓜沙拉小館，酸辣比例拿捏得恰到好處，每天現做現賣，在地人都來這裡。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.724051399999999,
+    "lng": 100.52855149999999,
+    "photos": [
+      "places/ChIJ_561gQeZ4jARG87h9VJY1t8/photos/Ab43m-uitXiHuUi202ch7JVHsvjAJhCGd9ju3P1YMIDAFgGSb2F2ozIE-Gwb408wSDS7RLwuiDAa3x3ufi6S3410Y8N5x2CWUk2yavHXmS794bigX3BhpjWpehyktkMRA64McyBkSKSATbTDds1Gzx_v2NMIyOYJApeqi53MekDFYNNh1d0eXeFgNzfatWCiWXZZioBaFeEbQMxi5zGVaXqzJvilkUzbaL_oTINHFidaWpL-2RlVtHoT7cJFDsVlC5zlWOHm35wqWMyRcDm1KoBTK6sCJVtwb8p8ySoAEJf5VD-0KQLJkE3RHMXt2Yc9sSOd0_W8fBjxb13Yf8aLJx4mvQMh0z01GIbKuat6P8OTH8a4W35AL1sJa_dRsJmPN2vm7mz_vw7KdnJomioDlBRM_WB17NC4fRQxTyERCYu2k-3fkaFcX1v2DCrBGLd-yA"
+    ],
+    "source_url": "https://pantip.com/topic/42476077",
+    "rating": 4.3,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Papaya Salad"
+    ],
+    "id": "d1d2835b-6ac3-4d01-92aa-7d63016fde1e",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-05-30T17:57:30.465Z"
+  },
+  {
+    "name_en": "Phed Phed Bistro",
+    "name_zh": "Phed Phed 小酒館",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok. Known for To order no spicy level and All every menu.",
+    "description_zh": "必點：所有菜色均可選擇不辣等級。Phed Phed 擅長泰式經典料理，每道菜都能客製化辣度，讓怕辣的旅客也能盡情享受道地風味。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.766746399999999,
+    "lng": 100.4432475,
+    "photos": [
+      "places/ChIJwzjLehyZ4jARDxGl4rwgoxc/photos/Ab43m-s8ad3_yyJoD6xfwYxcLPntDl9hbYUX0osFxFpRLHxQ0EzFQMze5GU6WVzq1uYUnO20-V5dCNhlWNo8OF4UJUOqdvg8EnXJf3d_GUAkxTxOkzjPXAvqcEjQNsWH1pUafwKSU1Ky_xpUTXhBjfyX9VfRK8-0N80m75U0DaZ1L-l0EMIZftSYqQnjakdQeyH55PHmMETEvLlULn-gLN-iANDkS91EZrmKgwVWtOnjojdWDcv-23i_tAfv4gD2E8Ep_dyhx9A859QhfskWObvSNde5oyUU-XDzKp_qBlrDLpphsaVzqR-CeLBi4Vx-N38-tti4ZfTcYI6KbT6ZVlX1Nj5eLA0AjVuve3eWtnHBbhPEY-PifLg95c7NJnjfsEiK7k1rS73K7kbm1YuJ2kfk0xStAHmpiSUd6nBuE1KMmqsU_Q"
+    ],
+    "source_url": "https://pantip.com/topic/42476077",
+    "rating": 3.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "To order no spicy level",
+      "All every menu"
+    ],
+    "id": "86c690ad-6c32-4bde-bf0c-ce1cb32a4890",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-05-30T17:57:30.982Z"
+  },
+  {
+    "name_en": "Hi tiktok",
+    "name_zh": "Hi Tiktok 泰式餐廳",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok.",
+    "description_zh": "必點：炸雞、芒果糯米飯。曼谷年輕人的最愛，平價又道地的泰式小食天堂，夜晚人氣爆棚。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7632558,
+    "lng": 100.5040574,
+    "photos": [
+      "places/ChIJucwCOdyZ4jARSgYALokD4WQ/photos/Ab43m-tJCyGVyezG1e8no34QWgauSXjQUQwfAkIx74-T8zOeJHTWBmAlhQRfyLAAPl8yjWWlpATxxbCr9KQMvIXeqiyGqEOscgQxp65VyPGhuYDp5Ign1ISHzt_ztLxWYoXCYhLM5BIOqWadx3lEVx4BAkYwwjvtzbAm-N8yW0Y8xXnl55qDS2SFCp4egK3iyuckc4j7P74JMDHiqiY0i7CxkZTJCoVP97D5FvB9SNjILvaCCp7lEAA14gNAZlhvtz9wgiVSYQkcrtwTSqsb514C2_Jor7mn9RL02AEF5Q215sXRvsHms0Q1LHjcLUSDlF-Bm-mMsPYYSoI2WQ6bXa7vJN9HGj1a1uDIQV80sobUNz-a3xZ72H2bc4LGyifjjZa9pjhrhXVJH3YIZB7oJ9P33WH9xdkirsvhhsZDXgefve97uw"
+    ],
+    "source_url": "https://pantip.com/topic/41540339",
+    "rating": 5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "690d3964-7821-44ac-bc7e-cdddb36977be",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-05-30T17:57:53.819Z"
+  },
+  {
+    "name_en": "Craftsman Roastery at Old Town",
+    "name_zh": "Craftsman Roastery 古城烘焙坊",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for For big families and Places to relax.",
+    "description_zh": "必點：咖啡、放鬆的氛圍。古城區手工烘焙坊，寬敞舒適適合大家庭聚聚，啜飲一杯精心烘焙的咖啡，感受曼谷老城的悠閒步調。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.751484699999999,
+    "lng": 100.4970993,
+    "photos": [
+      "places/ChIJlaHpMpKZ4jARF6mlIwCPXgI/photos/Ab43m-uT1o_1gCl5iEV8c6-7-UKDo_cmMtQW_JEipL0U5mgRP1f5LecPyWmpzXPDeTLheoDqZ1LfpLUWpcAObV9JqtVS-Cx4DXW6u7ze27uFNaIopHUsnKQ7W2DdH7RKEd1-Lq68nWcuLVkxFGMlzGnJfodxZBv1HvSC7Saxzgo7aJohgIVPtday_vNUfanphh1aSe3t5tRv5XoqPj73LJQ8nt5UEhzi6HYdmoxYuduNcRMnBRPWIsEi433wKGG66GNQMPihOEJ-Qib_bci8rdhZ_DmRzgowwMnd9tG216YLOnxIZnK-ICFg_Z2lOED-jp0DdyqlZT-x_jAOwrOlFbD-MoNRoQsZtaJFMgJbmn749MSe_oQGvaYB7PrMDaXZ9a8N6K7ywT3QSl8E79uyHGI_101mJB2Ci3_JtFQBfoXMhhcbbYBFROGJAGFiBs7ZkMhl"
+    ],
+    "source_url": "https://pantip.com/topic/41540339",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "For big families",
+      "Places to relax",
+      "The coffee"
+    ],
+    "id": "c4f036b7-82c8-449a-8484-1d31c8af731a",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-05-30T17:57:55.379Z"
   }
 ]
