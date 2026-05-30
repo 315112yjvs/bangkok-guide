@@ -9,6 +9,7 @@ type PlaceResult = {
   photos?: Array<{ name: string }>
   editorialSummary?: { text: string }
   reviews?: Array<{ text?: { text: string }; originalText?: { text: string } }>
+  businessStatus?: 'OPERATIONAL' | 'CLOSED_TEMPORARILY' | 'CLOSED_PERMANENTLY' | string
 }
 
 async function findPlace(name: string, lat?: number, lng?: number): Promise<PlaceResult | null> {
@@ -34,6 +35,7 @@ async function findPlace(name: string, lat?: number, lng?: number): Promise<Plac
           'places.displayName',
           'places.formattedAddress',
           'places.primaryTypeDisplayName',
+          'places.businessStatus',
           'places.rating',
           'places.location',
           'places.photos',
@@ -191,6 +193,11 @@ export async function enrichItem(
 ): Promise<EnrichedItem | null> {
   const place = await findPlace(name, lat, lng)
   if (!place) return null
+
+  if (place.businessStatus && place.businessStatus !== 'OPERATIONAL') {
+    console.log(`Skipping "${name}" — ${place.businessStatus}`)
+    return null
+  }
 
   const highlights = place.reviews ? extractHighlights(place.reviews) : []
   const editorial = place.editorialSummary?.text
