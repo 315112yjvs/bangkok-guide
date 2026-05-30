@@ -1,26 +1,5 @@
 [
   {
-    "name_en": "EBBE",
-    "name_zh": "EBBE 餐廳",
-    "description_en": "A mid-range, top-rated restaurant in Bangkok.",
-    "description_zh": "必點：松露漢堡、起司牛肋。隱身巷弄的精緻漢堡專門店，每一口都是用心調配的肉汁與香氣，是曼谷漢堡控的私房口袋名單。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.744107,
-    "lng": 100.5405856,
-    "photos": [
-      "places/ChIJYQNCaACf4jAR-XBuUJBdo-Q/photos/Ab43m-v9bWXXsyAbO18ADPPIt6Ye-Rdk3Ete28S3SFnbfe60SStpmFh0yNV3eUB3xhcMeEkI_DnDgPSlVd0JVfRuIyXzc1yFPpB_sWkq7t6apViM-l9SeeS6xlvkFhHbJOE1ecOYKDSM9EYzi9H08AKoj6UPBzv0AD3mjV05J6B3qIG_uOz55r893lLiSFXmkZjA2CnBboGlr1Pa9dIMuMkMQAvaEH_cnSR8005EZzQU6mSgGGMo_EneIFvocaG7VUe2C8zi3eY9Ug6Z4eZiv0EoDsXZq789oY0k3esY9LZe_--uj0XgZHzkMsQElbimoy-mANfaynxutW35Ghj_-Spiiii_3ewb6dO6Me566zLfR8o4-pAOkpdFfZBNP1X2JtSc6KEf-tNdRMnUV0n8j-Bc-sJZTfP9O3nou6luf6UUxJgcQqRKv5_oroKokgv4UDgx"
-    ],
-    "source_url": "https://pantip.com/topic/30528203",
-    "rating": 4.9,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [],
-    "id": "a9bd5cd5-1231-4a1b-b445-f8ac790673c3",
-    "category": "food",
-    "source": "pantip",
-    "scraped_at": "2026-05-30T17:41:53.470Z"
-  },
-  {
     "name_en": "Lhong Tou Cafe at Yaowarat",
     "name_zh": "隆都咖啡館 耀華力路",
     "description_en": "A mid-range, well-regarded restaurant in Bangkok.",
@@ -109,77 +88,6 @@
     "category": "food",
     "source": "pantip",
     "scraped_at": "2026-05-30T17:42:30.334Z"
-  },
-  {
-    "name_en": "Oranuch Thai Dining",
-    "name_zh": "Oranuch Thai Dining",
-    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Mango Sticky Rice and Papaya Salad.",
-    "description_zh": "必點：芒果糯米飯、青木瓜沙律。道地泰菜小館，芒果選得甜，糯米火候恰到好處，一口咬下去整個曼谷的滋味都在裡面。",
-    "category": "food",
-    "address": "36/1 Soi Sukhumvit 23, คลองเตย Watthana, Krung Thep Maha Nakhon 10110, Thailand",
-    "lat": 13.741239499999999,
-    "lng": 100.5635101,
-    "photos": [
-      "places/ChIJ0eGdrOaf4jARsbK1ylUw0wU/photos/Ab43m-tVvz6ww077MVI3RQhr0dJJ95VT5e0kh26WJP6QknhvKzJM7ioY7ZPOZayF3Lxys7HQSduoffMdV2mg_o9P-fe6BGnZ2TC-k4q4Ku04-s3tb__cZGStaPvlTaX7QQrfWY0MwISEAxlAkvh3_VUrlE9SMZgnHjFyisfjLvcQDjx1KRCx34ivqwwAaid_mF3i9IDbJcgMglwdzuugSIX8g28EOxaJRliMagBOragnfRUP1iaBq-wSOK1ydK6-oTEer4MYcLtF8oufKKxKRlj75VeCNbRGv5A2bYlVwkGwzyGL8iGDYH0f8y6YgVOTdxmgKqliZyCWRc1kNQlz1IlxMQLeKGT4yZCyUfQ2Ho4DQLOyesmF1ZDTwu-mCimfdkpd7DVFuFm0llghp3ADF1TLUtzIA80HB0FQyE3Vmj_nh61NbgwA"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=Oranuch%20Thai%20Dining%2036%2F1%20Soi%20Sukhumvit%2023%2C%20%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%95%E0%B8%A2%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ0eGdrOaf4jARsbK1ylUw0wU",
-    "rating": 4.6,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Mango Sticky Rice",
-      "Papaya Salad"
-    ],
-    "id": "5ec560b9-119c-4694-9201-e46c64a9ba31",
-    "source": "googlemaps",
-    "scraped_at": "2026-05-30T17:51:11.807Z"
-  },
-  {
-    "name_en": "Sawasdee Banh Mi Centric Ari",
-    "name_zh": "Sawasdee Banh Mi Centric Ari",
-    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Vietnamese food here and Banh mi.",
-    "description_zh": "必點：越南法國麵包、越南菜。Ari區隱藏的越南料理小店，麵包脆香、餡料新鮮，咬下去汁液四溢，根本是曼谷最道地的越南味。",
-    "category": "food",
-    "address": "27 Phahon Yotin 5, Phaya Thai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
-    "lat": 13.777854399999999,
-    "lng": 100.54239079999999,
-    "photos": [
-      "places/ChIJR8biX5Cf4jARnPCLAi6KdKo/photos/Ab43m-tkxBCxBxeb5POn6thWgN6Tv_Nesr71h-4wI8BQJFJV5iRZPFnQyEeSffYo20KiWqVpGyZoOM0MOBvhTOEQcQr1O1nBhnfYxX9bUjlDUMCELJ1kCSwUpsAEpiSVgoeHvjqtusbU7Ls9S8xkP8nYzpQeV-VP07gJLqxYlv3y8-VpOYRWJhZnNDYnXwPfC6vxBFeanW1jfXpeBykyD0PMUPsOmzAHqeTVZ8F4kW_Jw-vSIC2eDCmgW5ykIeFX2I0kpb2p0BVGO7dlSQ_XZT69gh4jFeudVBFAXNx1fcLKWGi9ugShmthwhIE3oH_-cqtbpEYDEEfCBlxRPXf7l39GVjBmjcMxa9dC6RDs7YZt9UKqsPrF1zBPS4xQZpO-eO9AjUzbNiu9MZMAR2zYOEVB0CCGF_-yBMAyPQ0JCoPYPv8Sxu71IWbRg4MBtLa7Hg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=Sawasdee%20Banh%20Mi%20Centric%20Ari%2027%20Phahon%20Yotin%205%2C%20Phaya%20Thai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJR8biX5Cf4jARnPCLAi6KdKo",
-    "rating": 4.8,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Vietnamese food here",
-      "Banh mi"
-    ],
-    "id": "3b227926-e8ba-48eb-8ecd-4d84ebd34398",
-    "source": "googlemaps",
-    "scraped_at": "2026-05-30T17:51:11.833Z"
-  },
-  {
-    "name_en": "Tiger 虎 Ari",
-    "name_zh": "Tiger 虎 Ari",
-    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Live Music.",
-    "description_zh": "必點：現場音樂。Tiger Ari是曼谷隱藏的音樂酒吧，駐唱樂隊每晚帶動氣氛，啤酒配live band是在地人的夜生活必備。",
-    "category": "food",
-    "address": "356 โครงการ ลาวิลล่า ชั้น3 Phahon Yothin Road, Khwaeng Samsen Nai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
-    "lat": 13.7798875,
-    "lng": 100.5450862,
-    "photos": [
-      "places/ChIJMfRYaQCf4jAROB-GF55z-k0/photos/Ab43m-sSj5fBu6TyU_Qjt5TmM5Y7HjYwI_lZ9_SmdLgPrK4tzdiBT3kXAgCxryBYLIuyEdj0CQrtJGK57KxmWVGidy0gbgNYOaWMOAk9tMzRpQPNR2v1YMtCN8IHNX3u8ciXDiOi4LHmOrG8U01iVe9fTbih86LSNf4lbGytquj1Hv-3WfabDWirGqejx-rj2BRvyqyt6_UPgoav-tflTZMjhPF1z-FWBKQiuJQkN43UaEXNwLXc3iFYJkj_OTesaAAKd0ntBkJ3PC49a_F9t1n1MWFEa6E_3nmvYd5p5sSEk5qFgMcj2_5Ka-3N_8xp_O1yi7r35BxqVb1EpFgYo2yoAeHLcW7fo97YPOZCmpU_DkCqcKI7CT2Veyo8jzg_w1THkCAPBXAydE2gE8jjogZi8-x50SprwPAPWNUDh9GW2Hg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=Tiger%20%E8%99%8E%20Ari%20356%20%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%20%E0%B8%A5%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%A5%E0%B8%A5%E0%B9%88%E0%B8%B2%20%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%993%20Phahon%20Yothin%20Road%2C%20Khwaeng%20Samsen%20Nai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJMfRYaQCf4jAROB-GF55z-k0",
-    "rating": 4.8,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Live Music"
-    ],
-    "id": "cd0539f9-6e9b-4491-ba21-4de8144ede28",
-    "source": "googlemaps",
-    "scraped_at": "2026-05-30T17:51:11.837Z"
   },
   {
     "name_en": "The Hidden Bangkok",
@@ -302,30 +210,6 @@
     "id": "b12cfd05-86c9-44e0-abd6-80675c691bc2",
     "source": "googlemaps",
     "scraped_at": "2026-05-30T17:51:11.901Z"
-  },
-  {
-    "name_en": "Kohaku 琥珀 こはく Omakase",
-    "name_zh": "Kohaku 琥珀 こはく Omakase",
-    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Sushi and Omakase.",
-    "description_zh": "必點：握壽司、omakase套餐。東京師傅坐鎮，新鮮漁獲每日直送，在吧檯享受師傅的精湛刀工與故事。價格不菲但值得一試。",
-    "category": "food",
-    "address": "3F, Ginza Thonglor, Hotel Nikko Bangkok, 27 ถ. ทองหล่อ แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110, Thailand",
-    "lat": 13.7251246,
-    "lng": 100.5791433,
-    "photos": [
-      "places/ChIJdaGhK0JhHTERe6YGl7oq7x8/photos/Ab43m-taDk0IY0pq1v0sG2Vu136JZdQOfpozsPU_Ubkb1_5TkT4osG-1CMsGg-80XRYty342159Irseq3caYNS2JfWgpBc5cJUSGQG9mJWnjNtiEY0gapfWuUykSZNOQzquTUB8LQlzddY9fiBFl17dkX7wIggE36glPa1SmwuOktx38PIQnhJmelOw-PcOQpz4hP6g8lwgFBXIzdpqGjdkR4m48o6cE9tZlSm97k4x6_izumRoz0liFqcHYdewbgXRI97N_xn0HO7B_NdQbyDk583zaI-P68IzxF-0TUCfYC5EkFkcTlQvB5DgMJig8uTt6oOzU_BOqPvr3K_ykvZJKMzgxhXKhkune6jEqX-DppUzQdl--cHcYbU2NgMvTP7dqZ3fGfkPWQXdzQe_z31XJlzAlL8MBE4l0DQTLXsH5t4XIWtO8-8o_UElF-CAIqfeu"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=Kohaku%20%E7%90%A5%E7%8F%80%20%E3%81%93%E3%81%AF%E3%81%8F%20Omakase%203F%2C%20Ginza%20Thonglor%2C%20Hotel%20Nikko%20Bangkok%2C%2027%20%E0%B8%96.%20%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A5%E0%B9%88%E0%B8%AD%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110%2C%20Thailand&query_place_id=ChIJdaGhK0JhHTERe6YGl7oq7x8",
-    "rating": 4.9,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [
-      "Sushi",
-      "Omakase"
-    ],
-    "id": "b2013be4-379c-4f47-b927-6b1c228616a4",
-    "source": "googlemaps",
-    "scraped_at": "2026-05-30T17:51:11.910Z"
   },
   {
     "name_en": "SHAKARICH",
