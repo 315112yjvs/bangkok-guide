@@ -33,6 +33,18 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ ok: true, id: location.id })
 }
 
+// PATCH: update fields on an approved location
+export async function PATCH(req: NextRequest) {
+  const { id, ...updates } = await req.json()
+  if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
+  const locations = readLocations()
+  const idx = locations.findIndex((l) => l.id === id)
+  if (idx === -1) return NextResponse.json({ error: 'Not found' }, { status: 404 })
+  locations[idx] = { ...locations[idx], ...updates }
+  writeLocations(locations)
+  return NextResponse.json({ ok: true })
+}
+
 // DELETE: remove an approved location by id
 export async function DELETE(req: NextRequest) {
   const { id } = await req.json()

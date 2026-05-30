@@ -104,16 +104,10 @@ export function PublicHomepage({ locations }: Props) {
     return base
   }, [locations, activeCategory, activeArea, specialFilter, query, userLocation])
 
-  const TRENDING_DAYS = 30
-  const trending = useMemo(() => {
-    if (specialFilter !== 'all') return []
-    const cutoff = Date.now() - TRENDING_DAYS * 24 * 60 * 60 * 1000
-    return filtered.filter((l) => {
-      if (l.trending) return true
-      if (l.approved_at && new Date(l.approved_at).getTime() > cutoff) return true
-      return false
-    }).slice(0, 6)
-  }, [filtered, specialFilter])
+  const trending = useMemo(() =>
+    specialFilter !== 'all' ? [] : filtered.filter((l) => l.trending).slice(0, 6),
+    [filtered, specialFilter]
+  )
   const restAll = useMemo(() =>
     specialFilter !== 'all' ? filtered : filtered.filter((l) => !l.trending),
     [filtered, specialFilter]
