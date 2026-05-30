@@ -1,5 +1,6 @@
 import { sleep, type ScrapedItem } from './shared'
 import { extractHighlights, buildDescriptions } from './enricher'
+import { translateNames, generateDescriptionZh } from './translate'
 
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 const BANGKOK_LAT = 13.7563
@@ -86,19 +87,29 @@ export async function scrapeGoogleMapsQueries(queries: QueryConfig[]): Promise<S
       })
       const data = await res.json()
       if (!data.places?.length) continue
-      for (const place of (data.places as GMPlace[]).slice(0, 8)) {
-        if (place.businessStatus && place.businessStatus !== 'OPERATIONAL') continue
+      const validPlaces = (data.places as GMPlace[]).slice(0, 8).filter(
+        p => !p.businessStatus || p.businessStatus === 'OPERATIONAL'
+      )
+      const nameEns = validPlaces.map(p => p.displayName.text)
+      const nameZhs = await translateNames(nameEns)
+      for (let i = 0; i < validPlaces.length; i++) {
+        const place = validPlaces[i]
         const highlights = place.reviews ? extractHighlights(place.reviews) : []
-        const { description_en, description_zh } = buildDescriptions(
+        const { description_en } = buildDescriptions(
           place.editorialSummary?.text, highlights, category, place.primaryTypeDisplayName?.text
         )
+        const description_zh = await generateDescriptionZh(
+          place.displayName.text, place.editorialSummary?.text, highlights, category
+        )
+        const name_en = place.displayName.text
+        const q = encodeURIComponent(name_en + ' ' + place.formattedAddress)
         results.push({
-          name_en: place.displayName.text, name_zh: place.displayName.text,
+          name_en, name_zh: nameZhs[i] ?? name_en,
           description_en, description_zh, category,
           address: place.formattedAddress,
           lat: place.location.latitude, lng: place.location.longitude,
           photos: place.photos?.[0]?.name ? [place.photos[0].name] : [],
-          source_url: `https://www.google.com/maps/place/?q=place_id:${place.id}`,
+          source_url: `https://www.google.com/maps/search/?api=1&query=${q}&query_place_id=${place.id}`,
           rating: place.rating ?? 4.0,
           price_range: PRICE_MAP[place.priceLevel ?? ''] ?? 2,
           trending: false, highlights,
@@ -163,32 +174,37 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
         continue
       }
 
-      for (const place of (data.places as GMPlace[]).slice(0, 8)) {
-        if (place.businessStatus && place.businessStatus !== 'OPERATIONAL') {
-          console.log(`Skipping "${place.displayName.text}" — ${place.businessStatus}`)
-          continue
+      const validPlaces2 = (data.places as GMPlace[]).slice(0, 8).filter(p => {
+        if (p.businessStatus && p.businessStatus !== 'OPERATIONAL') {
+          console.log(`Skipping "${p.displayName.text}" — ${p.businessStatus}`)
+          return false
         }
+        return true
+      })
+      const nameEns2 = validPlaces2.map(p => p.displayName.text)
+      const nameZhs2 = await translateNames(nameEns2)
+      for (let i = 0; i < validPlaces2.length; i++) {
+        const place = validPlaces2[i]
         const highlights = place.reviews ? extractHighlights(place.reviews) : []
-        const { description_en, description_zh } = buildDescriptions(
-          place.editorialSummary?.text,
-          highlights,
-          category,
-          place.primaryTypeDisplayName?.text
+        const { description_en } = buildDescriptions(
+          place.editorialSummary?.text, highlights, category, place.primaryTypeDisplayName?.text
         )
-
-        const photoRef = place.photos?.[0]?.name ?? ''
-
+        const description_zh = await generateDescriptionZh(
+          place.displayName.text, place.editorialSummary?.text, highlights, category
+        )
+        const name_en = place.displayName.text
+        const q = encodeURIComponent(name_en + ' ' + place.formattedAddress)
         results.push({
-          name_en: place.displayName.text,
-          name_zh: place.displayName.text,
+          name_en,
+          name_zh: nameZhs2[i] ?? name_en,
           description_en,
           description_zh,
           category,
           address: place.formattedAddress,
           lat: place.location.latitude,
           lng: place.location.longitude,
-          photos: photoRef ? [photoRef] : [],
-          source_url: `https://www.google.com/maps/place/?q=place_id:${place.id}`,
+          photos: place.photos?.[0]?.name ? [place.photos[0].name] : [],
+          source_url: `https://www.google.com/maps/search/?api=1&query=${q}&query_place_id=${place.id}`,
           rating: place.rating ?? 4.0,
           price_range: PRICE_MAP[place.priceLevel ?? ''] ?? 2,
           trending: false,
