@@ -46,6 +46,7 @@ type GMPlace = {
   displayName: { text: string }
   formattedAddress: string
   primaryTypeDisplayName?: { text: string }
+  businessStatus?: string
   rating?: number
   priceLevel?: string
   location: { latitude: number; longitude: number }
@@ -53,6 +54,63 @@ type GMPlace = {
   id: string
   editorialSummary?: { text: string }
   reviews?: Array<{ text?: { text: string }; originalText?: { text: string } }>
+}
+
+type QueryConfig = { query: string; category: 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel' }
+
+export async function scrapeGoogleMapsQueries(queries: QueryConfig[]): Promise<ScrapedItem[]> {
+  const apiKey = process.env.GOOGLE_MAPS_API_KEY
+  if (!apiKey) return []
+
+  const results: ScrapedItem[] = []
+
+  for (const { query, category } of queries) {
+    try {
+      const res = await fetch(PLACES_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Goog-Api-Key': apiKey,
+          'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://bangkok-guide-alpha.vercel.app/',
+          'X-Goog-FieldMask': [
+            'places.displayName', 'places.formattedAddress', 'places.primaryTypeDisplayName',
+            'places.businessStatus', 'places.rating', 'places.priceLevel',
+            'places.location', 'places.photos', 'places.id', 'places.editorialSummary', 'places.reviews',
+          ].join(','),
+        },
+        body: JSON.stringify({
+          textQuery: query,
+          maxResultCount: 10,
+          locationBias: { circle: { center: { latitude: BANGKOK_LAT, longitude: BANGKOK_LNG }, radius: 10000 } },
+        }),
+      })
+      const data = await res.json()
+      if (!data.places?.length) continue
+      for (const place of (data.places as GMPlace[]).slice(0, 8)) {
+        if (place.businessStatus && place.businessStatus !== 'OPERATIONAL') continue
+        const highlights = place.reviews ? extractHighlights(place.reviews) : []
+        const { description_en, description_zh } = buildDescriptions(
+          place.editorialSummary?.text, highlights, category, place.primaryTypeDisplayName?.text
+        )
+        results.push({
+          name_en: place.displayName.text, name_zh: place.displayName.text,
+          description_en, description_zh, category,
+          address: place.formattedAddress,
+          lat: place.location.latitude, lng: place.location.longitude,
+          photos: place.photos?.[0]?.name ? [place.photos[0].name] : [],
+          source_url: `https://www.google.com/maps/place/?q=place_id:${place.id}`,
+          rating: place.rating ?? 4.0,
+          price_range: PRICE_MAP[place.priceLevel ?? ''] ?? 2,
+          trending: false, highlights,
+        })
+      }
+      await sleep(1000)
+    } catch (err) {
+      console.error('Google Maps scrape failed for', query, err)
+    }
+  }
+
+  return results
 }
 
 export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
@@ -76,6 +134,7 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
             'places.displayName',
             'places.formattedAddress',
             'places.primaryTypeDisplayName',
+            'places.businessStatus',
             'places.rating',
             'places.priceLevel',
             'places.location',
@@ -105,6 +164,10 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
       }
 
       for (const place of (data.places as GMPlace[]).slice(0, 8)) {
+        if (place.businessStatus && place.businessStatus !== 'OPERATIONAL') {
+          console.log(`Skipping "${place.displayName.text}" — ${place.businessStatus}`)
+          continue
+        }
         const highlights = place.reviews ? extractHighlights(place.reviews) : []
         const { description_en, description_zh } = buildDescriptions(
           place.editorialSummary?.text,

@@ -235,6 +235,7 @@ export function AdminPanel() {
   const [approved, setApproved] = useState<Location[]>([])
   const [scraperStatus, setScraperStatus] = useState<string>('就緒')
   const [scraperRunning, setScraperRunning] = useState(false)
+  const [customKeywords, setCustomKeywords] = useState('')
   const [deployStatus, setDeployStatus] = useState<string>('未上傳')
   const [deploying, setDeploying] = useState(false)
   const [reenrichStatus, setReenrichStatus] = useState<string>('')
@@ -292,9 +293,14 @@ export function AdminPanel() {
 
   async function runScraper() {
     setScraperRunning(true)
-    setScraperStatus('爬取中...')
+    const keywords = customKeywords.split('\n').map(s => s.trim()).filter(Boolean)
+    setScraperStatus(keywords.length ? `搜尋「${keywords[0]}」等 ${keywords.length} 個關鍵字...` : '爬取中...')
     try {
-      const res = await fetch('/api/scraper', { method: 'POST' })
+      const res = await fetch('/api/scraper', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ customKeywords: keywords.length ? keywords : [] }),
+      })
       const data = await res.json()
       setScraperStatus(`完成 — 新增 ${data.added ?? 0} 筆`)
       loadData()
@@ -365,6 +371,14 @@ export function AdminPanel() {
           {navLink('add', '手動新增')}
         </nav>
         <div className="p-4 border-t border-white/10">
+          <p className="text-slate-400 text-[10px] font-semibold mb-1.5 uppercase tracking-wide">自訂關鍵字（每行一個）</p>
+          <textarea
+            value={customKeywords}
+            onChange={(e) => setCustomKeywords(e.target.value)}
+            placeholder={'例：\nThonglor new restaurant 2025\nAri café brunch\nSukhumvit rooftop bar'}
+            rows={3}
+            className="w-full bg-white/5 border border-white/10 rounded-lg px-2.5 py-2 text-[11px] text-slate-300 placeholder-slate-600 resize-none outline-none focus:border-white/20 mb-2"
+          />
           <button
             onClick={runScraper}
             disabled={scraperRunning}
