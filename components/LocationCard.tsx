@@ -21,9 +21,9 @@ function extractThai(text: string): string | null {
   return thai && thai.length >= 3 ? thai : null
 }
 
-type Props = { location: Location; lang: Lang }
+type Props = { location: Location; lang: Lang; distanceKm?: number }
 
-export function LocationCard({ location, lang }: Props) {
+export function LocationCard({ location, lang, distanceKm }: Props) {
   const [copied, setCopied] = useState(false)
 
   const badge = SOURCE_BADGE[location.source]
@@ -124,6 +124,11 @@ export function LocationCard({ location, lang }: Props) {
             {location.price_range > 0 && (
               <span className="text-[9px] text-gray-400 font-semibold">
                 {'฿'.repeat(location.price_range)}
+              </span>
+            )}
+            {distanceKm !== undefined && (
+              <span className="text-[9px] font-bold text-indigo-500">
+                📍 {distanceKm < 1 ? `${Math.round(distanceKm * 1000)}m` : `${distanceKm.toFixed(1)}km`}
               </span>
             )}
           </div>
