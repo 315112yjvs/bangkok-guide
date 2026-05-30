@@ -203,7 +203,7 @@ export function PublicHomepage({ locations }: Props) {
       <div className="sticky top-0 z-0 h-[55vw] max-h-60 min-h-40">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?w=800&fit=crop"
+            src="https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=800&fit=crop"
             alt="Bangkok"
             fill className="object-cover opacity-65"
             priority
