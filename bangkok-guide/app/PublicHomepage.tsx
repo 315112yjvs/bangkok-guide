@@ -176,8 +176,9 @@ export function PublicHomepage({ locations }: Props) {
           <CategoryTabs active={activeCategory} onChange={(cat) => { setActiveCategory(cat); changeFilter('all') }} lang={lang} />
         </div>
 
-        <div className="bg-white border-b border-gray-100 px-3 py-2">
-          <div className="flex gap-2 overflow-x-auto no-scrollbar">
+        <div className="bg-white border-b border-gray-100 py-2 relative">
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="flex gap-2 overflow-x-auto no-scrollbar px-3">
             {([
               { id: 'all',      label: lang === 'zh' ? '全部顯示' : 'All' },
               { id: 'trending', label: lang === 'zh' ? '📈 本週熱門' : '📈 Trending' },
@@ -227,16 +228,15 @@ export function PublicHomepage({ locations }: Props) {
           </div>
         </div>
 
-        {/* TREND RADAR */}
+        {/* TREND RADAR — distinct warm background */}
         {trending.length > 0 && (
-          <section className="px-3 pt-4 pb-2">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[11px] font-black px-3 py-1 rounded-full flex items-center gap-1">
+          <section className="mx-3 mt-4 mb-2 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-100 overflow-hidden">
+            <div className="px-3 pt-3 pb-1 flex items-center gap-2">
+              <span className="bg-gradient-to-r from-orange-500 to-pink-500 text-white text-[11px] font-black px-3 py-1 rounded-full">
                 🔥 {strings[lang].trendingSection as string}
               </span>
-              <div className="flex-1 h-px bg-gradient-to-r from-orange-200 to-transparent" />
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="p-3 grid grid-cols-2 gap-3">
               {trending.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} />)}
             </div>
           </section>
