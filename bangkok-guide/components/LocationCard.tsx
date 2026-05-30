@@ -32,7 +32,7 @@ export function LocationCard({ location, lang }: Props) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <div className="relative h-24 w-full">
-        <Image src={photo} alt={name} fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" />
+        <Image src={photo} alt={name} fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" unoptimized={rawPhoto.startsWith('places/')} />
       </div>
       <div className="p-2.5">
         <span className={`inline-block text-[9px] font-bold px-2 py-0.5 rounded-lg mb-1 ${badge.style}`}>
