@@ -16,16 +16,56 @@ type SpecialFilter = 'all' | 'trending' | 'local' | 'nearby' | 'saved'
 
 const PAGE_SIZE = 12
 
-const NEIGHBORHOODS = [
-  'Sukhumvit', 'Silom', 'Sathorn', 'Siam', 'Ari', 'Thonglor',
-  'Ekkamai', 'Phrom Phong', 'Asok', 'Nana', 'Ratchada',
-  'Chatuchak', 'Yaowarat', 'Chinatown',
+// Address text aliases → neighbourhood label
+const ADDR_ALIASES: [string, string][] = [
+  ['sukhumvit', 'Sukhumvit'], ['watthana', 'Sukhumvit'], ['khlong toei', 'Sukhumvit'],
+  ['klong toei', 'Sukhumvit'], ['klongtoei', 'Sukhumvit'],
+  ['silom', 'Silom'], ['si lom', 'Silom'], ['bang rak', 'Silom'],
+  ['sathorn', 'Sathorn'], ['sa thon', 'Sathorn'],
+  ['siam', 'Siam'], ['pathum wan', 'Siam'], ['phathumwan', 'Siam'], ['ratchaprasong', 'Siam'],
+  ['thonglor', 'Thonglor'], ['thong lo', 'Thonglor'], ['thong lor', 'Thonglor'],
+  ['ekkamai', 'Ekkamai'],
+  ['phrom phong', 'Phrom Phong'], ['phromphong', 'Phrom Phong'],
+  ['asok', 'Asok'], ['asoke', 'Asok'],
+  ['nana', 'Nana'],
+  ['ratchada', 'Ratchada'], ['ratchadaphisek', 'Ratchada'], ['lat phrao', 'Ratchada'],
+  ['huai khwang', 'Ratchada'], ['huay khwang', 'Ratchada'],
+  ['chatuchak', 'Chatuchak'], ['jatujak', 'Chatuchak'], ['jj market', 'Chatuchak'],
+  ['yaowarat', 'Yaowarat'], ['chinatown', 'Yaowarat'], ['china town', 'Yaowarat'],
+  ['phra nakhon', 'Yaowarat'], ['rattanakosin', 'Yaowarat'],
+  ['ari', 'Ari'], ['phahon yothin', 'Ari'],
+  ['lumphini', 'Silom'],
 ]
 
-function detectArea(address: string): string | null {
+// Coordinate bounding boxes as fallback (listed most-specific first)
+const AREA_BOUNDS: { name: string; latMin: number; latMax: number; lngMin: number; lngMax: number }[] = [
+  { name: 'Chatuchak',         latMin: 13.796, latMax: 13.835, lngMin: 100.536, lngMax: 100.580 },
+  { name: 'Ari',               latMin: 13.769, latMax: 13.796, lngMin: 100.534, lngMax: 100.563 },
+  { name: 'Victory Monument',  latMin: 13.754, latMax: 13.775, lngMin: 100.525, lngMax: 100.548 },
+  { name: 'Ratchada',          latMin: 13.758, latMax: 13.810, lngMin: 100.556, lngMax: 100.610 },
+  { name: 'Khaosan',           latMin: 13.754, latMax: 13.770, lngMin: 100.492, lngMax: 100.514 },
+  { name: 'Yaowarat',          latMin: 13.728, latMax: 13.758, lngMin: 100.490, lngMax: 100.522 },
+  { name: 'Riverside',         latMin: 13.700, latMax: 13.740, lngMin: 100.495, lngMax: 100.525 },
+  { name: 'Siam',              latMin: 13.739, latMax: 13.762, lngMin: 100.516, lngMax: 100.542 },
+  { name: 'Silom',             latMin: 13.714, latMax: 13.742, lngMin: 100.512, lngMax: 100.548 },
+  { name: 'Sathorn',           latMin: 13.714, latMax: 13.740, lngMin: 100.537, lngMax: 100.570 },
+  { name: 'Nana',              latMin: 13.736, latMax: 13.754, lngMin: 100.550, lngMax: 100.566 },
+  { name: 'Asok',              latMin: 13.728, latMax: 13.748, lngMin: 100.556, lngMax: 100.574 },
+  { name: 'Phrom Phong',       latMin: 13.720, latMax: 13.740, lngMin: 100.563, lngMax: 100.584 },
+  { name: 'Thonglor',          latMin: 13.712, latMax: 13.736, lngMin: 100.576, lngMax: 100.600 },
+  { name: 'Ekkamai',           latMin: 13.703, latMax: 13.724, lngMin: 100.591, lngMax: 100.625 },
+  { name: 'Sukhumvit',         latMin: 13.700, latMax: 13.760, lngMin: 100.540, lngMax: 100.640 },
+]
+
+function detectArea(address: string, lat?: number, lng?: number): string | null {
   const lower = address.toLowerCase()
-  for (const n of NEIGHBORHOODS) {
-    if (lower.includes(n.toLowerCase())) return n
+  for (const [alias, label] of ADDR_ALIASES) {
+    if (lower.includes(alias)) return label
+  }
+  if (lat !== undefined && lng !== undefined) {
+    for (const b of AREA_BOUNDS) {
+      if (lat >= b.latMin && lat <= b.latMax && lng >= b.lngMin && lng <= b.lngMax) return b.name
+    }
   }
   return null
 }
@@ -111,7 +151,7 @@ export function PublicHomepage({ locations }: Props) {
   const availableAreas = useMemo(() => {
     const areas = new Set<string>()
     for (const loc of locations) {
-      const a = detectArea(loc.address)
+      const a = detectArea(loc.address, loc.lat, loc.lng)
       if (a) areas.add(a)
     }
     return Array.from(areas).sort()
@@ -120,7 +160,7 @@ export function PublicHomepage({ locations }: Props) {
   const filtered = useMemo(() => {
     const base = locations.filter((loc) => {
       const matchCat = activeCategory === 'all' || loc.category === activeCategory
-      const matchArea = activeArea === 'all' || detectArea(loc.address) === activeArea
+      const matchArea = activeArea === 'all' || detectArea(loc.address, loc.lat, loc.lng) === activeArea
       const matchSpecial =
         specialFilter === 'all' ||
         specialFilter === 'nearby' ||
