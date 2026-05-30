@@ -205,7 +205,7 @@ export function PublicHomepage({ locations }: Props) {
           <Image
             src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=800&fit=crop"
             alt="Bangkok"
-            fill className="object-cover"
+            fill className="object-cover opacity-40"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0f1428]/90 via-[#0f1428]/50 to-transparent" />
@@ -238,7 +238,7 @@ export function PublicHomepage({ locations }: Props) {
       </div>
 
       {/* MAP strip */}
-      <div className="h-36">
+      <div className="h-56">
         <LocationMap
           locations={filtered}
           lang={lang}
