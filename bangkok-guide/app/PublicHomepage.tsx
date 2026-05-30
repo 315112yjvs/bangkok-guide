@@ -1,5 +1,5 @@
 'use client'
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/hooks/useLanguage'
 import { strings } from '@/lib/i18n'
@@ -12,7 +12,7 @@ import type { Location, Category } from '@/lib/types'
 
 type Props = { locations: Location[] }
 
-type SpecialFilter = 'all' | 'trending' | 'local' | 'nearby'
+type SpecialFilter = 'all' | 'trending' | 'local' | 'nearby' | 'saved'
 
 const PAGE_SIZE = 12
 
@@ -39,7 +39,23 @@ export function PublicHomepage({ locations }: Props) {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
   const [locating, setLocating] = useState(false)
   const [restPage, setRestPage] = useState(1)
+  const [savedIds, setSavedIds] = useState<Set<string>>(new Set())
   const sheetRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const ids: string[] = JSON.parse(localStorage.getItem('saved_locations') ?? '[]')
+    setSavedIds(new Set(ids))
+  }, [])
+
+  function handleToggleSave(id: string) {
+    setSavedIds((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      localStorage.setItem('saved_locations', JSON.stringify(Array.from(next)))
+      return next
+    })
+  }
 
   function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number) {
     const R = 6371
@@ -87,6 +103,7 @@ export function PublicHomepage({ locations }: Props) {
       const matchSpecial =
         specialFilter === 'all' ||
         specialFilter === 'nearby' ||
+        (specialFilter === 'saved' && savedIds.has(loc.id)) ||
         (specialFilter === 'trending' && loc.trending) ||
         (specialFilter === 'local' && (
           loc.source === 'pantip' || loc.source === 'wongnai' || (loc.local_ratio ?? 0) >= 60
@@ -103,14 +120,14 @@ export function PublicHomepage({ locations }: Props) {
       )
     }
     return base
-  }, [locations, activeCategory, activeArea, specialFilter, query, userLocation])
+  }, [locations, activeCategory, activeArea, specialFilter, query, userLocation, savedIds])
 
   const trending = useMemo(() =>
-    specialFilter !== 'all' ? [] : filtered.filter((l) => l.trending).slice(0, 6),
+    specialFilter === 'all' ? filtered.filter((l) => l.trending).slice(0, 6) : [],
     [filtered, specialFilter]
   )
   const restAll = useMemo(() =>
-    specialFilter !== 'all' ? filtered : filtered.filter((l) => !l.trending),
+    specialFilter === 'all' ? filtered.filter((l) => !l.trending) : filtered,
     [filtered, specialFilter]
   )
   const restVisible = restAll.slice(0, restPage * PAGE_SIZE)
@@ -212,6 +229,20 @@ export function PublicHomepage({ locations }: Props) {
             >
               {locating ? '⏳' : '📍'} {lang === 'zh' ? '附近' : 'Near Me'}
             </button>
+            <button
+              onClick={() => changeFilter(specialFilter === 'saved' ? 'all' : 'saved')}
+              className={`flex items-center gap-1 text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+                specialFilter === 'saved'
+                  ? 'bg-red-500 text-white shadow-sm'
+                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+              }`}
+            >
+              <svg width="10" height="10" viewBox="0 0 24 24" fill={specialFilter === 'saved' ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.5}>
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+              {lang === 'zh' ? '我的收藏' : 'Saved'}
+              {savedIds.size > 0 && <span className={`text-[9px] font-black ${specialFilter === 'saved' ? 'text-white/80' : 'text-red-400'}`}>{savedIds.size}</span>}
+            </button>
             <div className="w-px bg-gray-200 mx-0.5" />
             {availableAreas.map((area) => (
               <button
@@ -245,7 +276,7 @@ export function PublicHomepage({ locations }: Props) {
               <div className="flex gap-3 overflow-x-auto no-scrollbar p-3 pb-4">
                 {trending.map((loc) => (
                   <div key={loc.id} className="shrink-0 w-44">
-                    <LocationCard location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} />
+                    <LocationCard location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} saved={savedIds.has(loc.id)} onToggleSave={handleToggleSave} />
                   </div>
                 ))}
               </div>
@@ -276,7 +307,7 @@ export function PublicHomepage({ locations }: Props) {
               </div>
             )}
             <div className="grid grid-cols-2 gap-3">
-              {restVisible.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} />)}
+              {restVisible.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} saved={savedIds.has(loc.id)} onToggleSave={handleToggleSave} />)}
             </div>
             {hasMore && (
               <button
@@ -289,7 +320,16 @@ export function PublicHomepage({ locations }: Props) {
           </section>
         )}
 
-        {filtered.length === 0 && (
+        {filtered.length === 0 && specialFilter === 'saved' && (
+          <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
+            <svg className="w-12 h-12 mb-4 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
+            <p className="text-sm font-bold text-gray-400 mb-1">{lang === 'zh' ? '還沒有收藏任何地點' : 'No saved places yet'}</p>
+            <p className="text-xs text-gray-300 text-center">{lang === 'zh' ? '點擊卡片上的 ♡ 加入收藏清單' : 'Tap ♡ on any card to save it here'}</p>
+          </div>
+        )}
+        {filtered.length === 0 && specialFilter !== 'saved' && (
           <div className="flex flex-col items-center justify-center py-20 text-gray-400">
             <p className="text-4xl mb-3">🗺️</p>
             <p className="text-sm">{strings[lang].emptyState as string}</p>

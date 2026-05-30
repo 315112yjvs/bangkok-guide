@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { IconPin } from './icons/CategoryIcons'
 import type { Location, Source } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
@@ -20,24 +20,15 @@ function extractThai(text: string): string | null {
   return thai && thai.length >= 3 ? thai : null
 }
 
-type Props = { location: Location; lang: Lang; distanceKm?: number }
+type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void }
 
-export function LocationCard({ location, lang, distanceKm }: Props) {
+export function LocationCard({ location, lang, distanceKm, saved = false, onToggleSave }: Props) {
   const [copied, setCopied] = useState(false)
-  const [saved, setSaved] = useState(false)
-
-  useEffect(() => {
-    const ids: string[] = JSON.parse(localStorage.getItem('saved_locations') ?? '[]')
-    setSaved(ids.includes(location.id))
-  }, [location.id])
 
   function toggleSave(e: React.MouseEvent) {
     e.preventDefault()
     e.stopPropagation()
-    const ids: string[] = JSON.parse(localStorage.getItem('saved_locations') ?? '[]')
-    const next = saved ? ids.filter((id) => id !== location.id) : [...ids, location.id]
-    localStorage.setItem('saved_locations', JSON.stringify(next))
-    setSaved(!saved)
+    onToggleSave?.(location.id)
   }
 
   const badge = SOURCE_BADGE[location.source]
