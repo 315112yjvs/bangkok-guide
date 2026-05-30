@@ -1,3 +1,5 @@
+import { translateName, generateDescriptionZh } from './translate'
+
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 
 type PlaceResult = {
@@ -175,6 +177,7 @@ export function buildDescriptions(
 
 export type EnrichedItem = {
   name_en: string
+  name_zh: string
   description_en: string
   description_zh: string
   highlights: string[]
@@ -205,10 +208,17 @@ export async function enrichItem(
   const { description_en, description_zh } = buildDescriptions(editorial, highlights, category, primaryType)
   const photoRef = place.photos?.[0]?.name ?? ''
 
+  const name_en = place.displayName?.text ?? name
+  const name_zh = await translateName(name_en)
+  const description_zh_rich = await generateDescriptionZh(
+    name_en, place.editorialSummary?.text, highlights, category
+  )
+
   return {
-    name_en: place.displayName?.text ?? name,
+    name_en,
+    name_zh,
     description_en,
-    description_zh,
+    description_zh: description_zh_rich,
     highlights,
     lat: place.location?.latitude ?? lat ?? 13.7563,
     lng: place.location?.longitude ?? lng ?? 100.5018,

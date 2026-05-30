@@ -46,7 +46,7 @@ async function processItems(
       const pending: PendingLocation = {
         ...item,
         name_en: enriched.name_en,
-        name_zh: enriched.name_en,
+        name_zh: enriched.name_zh,
         description_en: enriched.description_en,
         description_zh: enriched.description_zh,
         highlights: enriched.highlights,
