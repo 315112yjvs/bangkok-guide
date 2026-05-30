@@ -277,6 +277,14 @@ export function AdminPanel() {
     loadData()
   }
 
+  async function handleApproveAll() {
+    if (!confirm(`確定要全部上架 ${pending.length} 筆待審核地點嗎？`)) return
+    await Promise.all(pending.map((item) =>
+      fetch('/api/locations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'approve', id: item.id }) })
+    ))
+    loadData()
+  }
+
   async function handleRemove(id: string) {
     await fetch('/api/locations', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) })
     loadData()
@@ -415,12 +423,20 @@ export function AdminPanel() {
             <div className="flex items-center justify-between mb-4">
               <h1 className="text-xl font-black text-[#0f172a]">待審核地點</h1>
               {pending.length > 0 && (
-                <button
-                  onClick={handleRejectAll}
-                  className="text-xs font-bold px-4 py-2 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
-                >
-                  全部駁回 ({pending.length})
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={handleApproveAll}
+                    className="text-xs font-bold px-4 py-2 rounded-xl bg-green-50 text-green-700 hover:bg-green-100 transition-colors"
+                  >
+                    全部上架 ({pending.length})
+                  </button>
+                  <button
+                    onClick={handleRejectAll}
+                    className="text-xs font-bold px-4 py-2 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
+                  >
+                    全部駁回
+                  </button>
+                </div>
               )}
             </div>
             {pending.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">沒有待審核的地點</p>}
