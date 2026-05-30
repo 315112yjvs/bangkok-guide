@@ -185,13 +185,14 @@ export function PublicHomepage({ locations }: Props) {
     return base
   }, [locations, activeCategory, activeArea, specialFilter, query, userLocation, savedIds])
 
+  const showTrending = specialFilter === 'all' && activeArea === 'all' && activeCategory === 'all' && !query
   const trending = useMemo(() =>
-    specialFilter === 'all' ? filtered.filter((l) => l.trending).slice(0, 6) : [],
-    [filtered, specialFilter]
+    showTrending ? filtered.filter((l) => l.trending).slice(0, 6) : [],
+    [filtered, showTrending]
   )
   const restAll = useMemo(() =>
-    specialFilter === 'all' ? filtered.filter((l) => !l.trending) : filtered,
-    [filtered, specialFilter]
+    showTrending ? filtered.filter((l) => !l.trending) : filtered,
+    [filtered, showTrending]
   )
   const restVisible = restAll.slice(0, restPage * PAGE_SIZE)
   const hasMore = restVisible.length < restAll.length
@@ -363,7 +364,7 @@ export function PublicHomepage({ locations }: Props) {
               </div>
             )}
             <div className="grid grid-cols-2 gap-3">
-              {restVisible.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} saved={savedIds.has(loc.id)} onToggleSave={handleToggleSave} />)}
+              {restVisible.map((loc) => <LocationCard key={loc.id} location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} saved={savedIds.has(loc.id)} onToggleSave={handleToggleSave} compact />)}
             </div>
             {hasMore && (
               <button
