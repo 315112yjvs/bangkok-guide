@@ -62,9 +62,9 @@ export function LocationMap({ locations, lang }: Props) {
                 </p>
                 <p className="text-xs text-gray-500 mb-2">★ {selected.rating.toFixed(1)}</p>
                 <a
-                  href={selected.lat && selected.lng
-                    ? `https://www.google.com/maps?q=${selected.lat},${selected.lng}`
-                    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selected.name_en + ' Bangkok')}`}
+                  href={selected.source_url?.includes('place_id:')
+                    ? selected.source_url
+                    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selected.name_en + (selected.address ? ' ' + selected.address : ' Bangkok'))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-bold text-[#1e1b4b] underline"
