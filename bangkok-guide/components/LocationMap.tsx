@@ -73,7 +73,7 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
         content: el,
         map: null,
       })
-      marker.addListener('click', () => setSelectedId((prev) => prev === loc.id ? null : loc.id))
+      marker.addListener('click', () => setSelectedId((prev: string | null) => prev === loc.id ? null : loc.id))
       return marker
     })
 
@@ -143,22 +143,8 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
 }
 
 export function LocationMap({ locations, lang, userLocation: externalLocation, nearbyMode = false }: Props) {
-  const [internalLocation, setInternalLocation] = useState<{ lat: number; lng: number } | null>(null)
-  const watchIdRef = useRef<number | null>(null)
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''
-  const userLoc = externalLocation ?? internalLocation
-
-  useEffect(() => {
-    if (!navigator.geolocation) return
-    watchIdRef.current = navigator.geolocation.watchPosition(
-      (pos) => setInternalLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
-      () => {},
-      { enableHighAccuracy: true, maximumAge: 5000 }
-    )
-    return () => {
-      if (watchIdRef.current !== null) navigator.geolocation.clearWatch(watchIdRef.current)
-    }
-  }, [])
+  const userLoc = externalLocation ?? null
 
   return (
     <APIProvider apiKey={apiKey} libraries={['marker']}>
