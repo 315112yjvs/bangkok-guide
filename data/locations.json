@@ -1,1 +1,884 @@
-[]
+[
+  {
+    "name_en": "Piccolo vicolo",
+    "name_zh": "Piccolo vicolo",
+    "description_en": "Popular cafe in Bangkok. Must-try: Valrhona chocolate chip.",
+    "description_zh": "必點：Valrhona chocolate chip。曼谷人氣咖啡廳。",
+    "category": "cafe",
+    "address": "535 31 ตรอก Rama VI Soi 17, Khwaeng Thanon Phetchaburi, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.751354599999999,
+    "lng": 100.5263866,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJL9DOr2KZ4jAR--KZokj__o0/photos/Ab43m-sBEctaa2kSPrfY8cqbrB6malcGLF-RnMENUImhc4hM0cRju3MNKU19rYOFOSQP4b5ugkMo9TCEhJCvbMpsJtHpaKLO2SRixj7_BiuTxzzRFLpYKT_sdS-lQroCGWXQnqs1UsDJ_DWKu-CqgJBwT_F34qZxv-cT2E0GrILZbhUCNXg0ZN9LTshNB5AzuAvVIrIE3MN3srgfXNacf52g6Jk1K4JCPHW_lFSFqhTVIpWgSIh3qQoBYxYom_lXe-6l627DegpIAackCgjJAc6gWd41QJmP4VR8rXtPw1IhiqWEoCp2_mWqPPUZwLFDuHtfLQbsGteNJ1rxTAbYy0z066nqrBH57X8PlDwDr9YEJsCiOwXqowavpeg7TLKV4_1ezbGylF3m9lq_BkZ984FD7NUfQG6BTG4eLj_hZ3jwMoseBMhtLL1BM4FFf7lKAwQS/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJL9DOr2KZ4jAR--KZokj__o0",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Valrhona chocolate chip"
+    ],
+    "id": "6df546f1-1a3e-4737-b762-dd0ccf3df738",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T07:47:42.844Z"
+  },
+  {
+    "name_en": "The Island Bangkok – Top Rated Thai Restaurant & Bar",
+    "name_zh": "The Island Bangkok – Top Rated Thai Restaurant & Bar",
+    "description_en": "Popular food in Bangkok.",
+    "description_zh": "曼谷人氣餐廳。曼谷人氣餐廳。",
+    "category": "food",
+    "address": "49 Soi Samsen 4, Khwaeng Ban Phan Thom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.763558,
+    "lng": 100.50033599999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJBYCkBQCZ4jARMk27YRVj-vM/photos/Ab43m-upBmejIf4NAo-eYAodzA9UKO2J0PrjZIAA4pxMGBKEu_r1G2C7SRVsgaAUvZvLzToJVq8Mk46x7jl9TnWTjhFP4HNqwymoptYXlGY4ST9SHtP0DMrGXxdkXQL2L0zmXAem0jLTBH-EakVsOdil7WcGulYF5_NsmlevmGyyAtKWjBB9_ql1MUTM4NWdhBjpS7eJX3F_rQnQUNDMHQaDO303agCOnUErC3yUMm6fp_lCTV36M6HUMtLMgBMfPeDb9lxto0fQRS-vAYzDrnD2ULdASJR5tXVqk9B6JoXWRIbPqWMR80xQD9HQREfCXgtkjeAMaXErbTrwnewiVrvzyX8cAaMmUeXyoHtu4233dSo1mOxDxG3ONMfami2hWBuR31Cz5R6Q7PlC5K2llRAyT5ruLrQxmvkz1vpTWaEt2v81BCKAL8mjgoF3QflJZbGk/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJBYCkBQCZ4jARMk27YRVj-vM",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "4211b771-9cc4-4463-9907-74d763fdead2",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:40.733Z"
+  },
+  {
+    "name_en": "RONGROS",
+    "name_zh": "RONGROS",
+    "description_en": "Popular food in Bangkok. Must-try: The food.",
+    "description_zh": "必點：The food。曼谷人氣餐廳。",
+    "category": "food",
+    "address": "392/16 Thanon Maha Rat, Khwaeng Phra Borom Maha Ratchawang, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7442546,
+    "lng": 100.49170869999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJjYPUa8GZ4jARi9fgigQOiR8/photos/Ab43m-sCQeg4ZAqdAykK2028F1Oleo__PiKmug6C6yhAU-AlIWxLlyviu7UdI1hsxcu-FS1alrRsNDr05B3WSg9blBwzh6sAbKcd1L8zswSqQs24G4IrdEWv9IWfHmr032rnGtQnIG2tkEPGxlehGxj0A9GLmtxi2o9NPkEsldknPohVHOoCd7RrUW6kRM94O3VZ3P4nIV3yXZoNg9m7EXz9sjDzyHJm0Qy2hgmilDEW_fwPQTaB9UlV7pZ2azpO_H_nYc4PADUdZ10onIOJwtqWms4lMKXewK4gPPSkQazOwLpfFg/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJjYPUa8GZ4jARi9fgigQOiR8",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "The food"
+    ],
+    "id": "b61ddbd1-1362-4886-a5af-09e2bfe5c09a",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:41.167Z"
+  },
+  {
+    "name_en": "Baannok Bangkok | บ้านนอกเข้ากรุง",
+    "name_zh": "Baannok Bangkok | บ้านนอกเข้ากรุง",
+    "description_en": "Popular food in Bangkok.",
+    "description_zh": "曼谷人氣餐廳。曼谷人氣餐廳。",
+    "category": "food",
+    "address": "อาคาร วีฟร์ ชั้นที่ 2, 34/3 Lang Suan Rd, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.7416977,
+    "lng": 100.54335090000001,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJuT3ek1uf4jARN0abB7juMBQ/photos/Ab43m-vrlMv2nxkZK-NVo7uXgwJqLf43HhsiORkmXOtmrkkdzJ5fNEqD5ed3662AJYWzJcY4YzERwJLoMvGpwOiXaX_FnpGDvzZtFof8FjkxVEqsKGy7tB-XhPUO2zvrjsW4U-1FEdFKSiRMwnRoNEijIAeBkq9MHWnqufksO56eqdu7uouwARo8gcGJnMiMo1gbCyRVdyqC3KIgfPxCbJBAay1AD3a3nWJUDIHLEZte0fbm1HJZ6o8dOohIX4PO7pmQPbzRbQiqQufV2hJPyJn4_NSNOcfObb6zzE5kf6396a0tND1cCvGu57PGsDMnEydXgJIbKXAMrVTzN-S6I5gm892FzXVM-bjo4-Q-cWdCCc5obNsIhLvafzUSYR7Xjpc5yjBk3Dc9cCrGjOQLfxuknMwGRncQJI91pWIv294ChKDYwv2R/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJuT3ek1uf4jARN0abB7juMBQ",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "4f88c33f-b76f-497f-ba11-3d9984809863",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:41.329Z"
+  },
+  {
+    "name_en": "SOI Bangkok Restaurant",
+    "name_zh": "SOI Bangkok Restaurant",
+    "description_en": "Popular food in Bangkok. Must-try: Food, Their craft beers if.",
+    "description_zh": "必點：Food、Their craft beers if。曼谷人氣餐廳。",
+    "category": "food",
+    "address": "195 N Sathon Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.721710199999999,
+    "lng": 100.5262374,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJF17aWaSZ4jARedn2EWVUJ_w/photos/Ab43m-vN8t3mSTQ1heHNqQU4j8MZJ18oR3RGftKSztmqxfH9cLnag71tC4YmGrtgGtxAg42jtxIK5W60FKUC5k9waJOCoICa87e-B_3ZifBE_-zJZxoxRm2gNnYcHhsNIMwHp4e4iAtvMlTXGQEnkelofGM2xy40b6S6IY8ydyNrSj65PuhOAbV6XeMc205FDFcv7JYE_OL5P5BD-NsMWvH5exk9miqvlg2nQNVU0fSF-XGzbQI-piMrIHhUHZ6OMnMp9VF6c6Xd34gGQk0NTFZb-zPG2HNb_KueJ7gr69jLc_PAI-E4dPeGdNLZNcZFd4mevDf4Zy3SDkJHqitKG_PXH1UiOBMUdqgN5zX4-luuFvU2u3WMmd4Cm39-fgPQagZTei8OMWWABpCIMPevkAj5bUjNueuVPqI88_yYNPtNR3Vb75Ef69hB_k4zqcZyUR7E/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJF17aWaSZ4jARedn2EWVUJ_w",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Food",
+      "Their craft beers if"
+    ],
+    "id": "02f35f7d-c8ee-40a1-9cec-54afc9ba7ad5",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:41.495Z"
+  },
+  {
+    "name_en": "TANA (ธนา)",
+    "name_zh": "TANA (ธนา)",
+    "description_en": "Popular food in Bangkok. Must-try: Food.",
+    "description_zh": "必點：Food。曼谷人氣餐廳。",
+    "category": "food",
+    "address": "117 Thanon Maha Rat, Khwaeng Phra Borom Maha Ratchawang, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.745184499999999,
+    "lng": 100.4915506,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJxxrpyPKZ4jARYICwYOfrnmk/photos/Ab43m-trz_w5esKuy8WlSqyrIeDPOQ_JUb7LczatOznXmfmFNhTsXpXgtkUiP-0knXJIpcMGp41Jevrii7BStEOy8TaIjGhcH0-bYO37sWmKswtLza_4MT2YcFx3BWx72EgVReYpQgl8jLymj27LMxBLkDVRulIS1Ii3_1sW__UduU7HcEg1qP-RcRmRo_imgDQWY4sgS5Xz5PaT9ouih2Spnfr-H3GJ9EKY8OKs7Rzerl45D5MMuA50dYExJansyFVfmY1h6a2ld2gcsseQWqQ8c9zd05g2tud-UXPGLVP28x3yiw/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJxxrpyPKZ4jARYICwYOfrnmk",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Food"
+    ],
+    "id": "dc4a0509-9d1f-4947-8c55-7b117624a2d4",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:41.661Z"
+  },
+  {
+    "name_en": "THE SIXTH 6th",
+    "name_zh": "THE SIXTH 6th",
+    "description_en": "Popular food in Bangkok.",
+    "description_zh": "曼谷人氣餐廳。曼谷人氣餐廳。",
+    "category": "food",
+    "address": "6 Thanon Maha Rat, Khwaeng Phra Borom Maha Ratchawang, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7457049,
+    "lng": 100.4913201,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJfX5VxgWZ4jARunaN7-8daME/photos/Ab43m-tGdeR844nr81jjFMAGYwq_L50C_9u7iULTmaH_CXF6ZstapEc5VjHeX8cTXSrJ00XIuOKqe1-BVr-J1UuRx42q8bXDpZObEjJPrj70Q3QsMoOnOCIsUc7Yo_itJMjS_Up0SqXCdGFUqDj-wyiW8JDSRpH3boPSz7q2TeKdGRwtoKUNOZCmHGyoifEzP6D6RUaJSePW-h98qUC4lfY7MAIWBpyVkajpGZD6A5qjJW73JoLK7zrMgqlGb4xiB3_ae0mTS-5tg-v9BIQkQZWCb4JJMfKGjKYzLKwSfkI6r-jcqTVi7vwDzmMtRJY077X5BlSJ3nnPSeW3P6vRs8FHZJSlfZt30q2yhr_vcXH4fn-bgoSnmGL7qt-cz5Ddl93o_3a1oy1GzbslsZ6UrozoQC7A-yY54XyfSJpPN8LD8eH4fZid/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJfX5VxgWZ4jARunaN7-8daME",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "40fd0399-2ed3-4827-8890-68f8c8118781",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:41.862Z"
+  },
+  {
+    "name_en": "MaeThum Padthai",
+    "name_zh": "MaeThum Padthai",
+    "description_en": "Popular food in Bangkok.",
+    "description_zh": "曼谷人氣餐廳。曼谷人氣餐廳。",
+    "category": "food",
+    "address": "6/3 Thanon Siri Phong, Khwaeng Samran Rat, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7536694,
+    "lng": 100.502369,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJX0LkNJqZ4jARHOJRM7KBeRc/photos/Ab43m-ss_2hL5o9qPwFswctbUKt4gBw76F-53O7mx2YAxYDdyH6AyYoHFiVBsA4VNQ_nWMuHlNJ3sqz3tcDZxSpHjwMQ77Nyq6L8zeza3NpRGfhzR_krKFDKLnG4FTznwhABpJtbCsSnh3fJ-1vqZtty8Wi2VeXth-RZnAyHuMs9RPXVnjzdB1qAFU_yBOD7ZlkUNfy9X6psdzCa2BvD2ta0LnYP9rwd3B6W-fckjcyBnb6STTMDCd64RZ4PpHJkIQj2gu3RFSR2foMXmLarnzsMoSnpEXME3_tlGDycYzhvmBk76vadlrBDARdZheTfY6oY4grMAZIMr5-qrQr7Iuw5yLhyZXVY3OeFlWqhnicJfcPrcAOnUFrcsiiNeG0SGU_YE5v-ZLpa7iNCrkCmI9dv-zzA1byDKI2Fj_pP_uaqLDxnqQ/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJX0LkNJqZ4jARHOJRM7KBeRc",
+    "rating": 4.9,
+    "price_range": 1,
+    "trending": false,
+    "highlights": [],
+    "id": "a3f2c177-47ef-4348-866a-5e766bcfee63",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:42.012Z"
+  },
+  {
+    "name_en": "Kin Lom Chom Saphan",
+    "name_zh": "Kin Lom Chom Saphan",
+    "description_en": "Popular food in Bangkok.",
+    "description_zh": "曼谷人氣餐廳。曼谷人氣餐廳。",
+    "category": "food",
+    "address": "11, 6 Chakrabongse Rd, Khwaeng Wat Sam Phraya, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.766126,
+    "lng": 100.4976464,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJrfiORG6Z4jARSNgY2uztUlM/photos/Ab43m-tk8Lkc6ldyAEcC38lnis_NVJkdGNVTSmcg5yM0Y8DeCjzWKTZ7U8994S5VaT1JqQJId2x3slPrM4gBtdpGrGb5EUoQSYky37juEeGmOFGB7gBmjZknCj66hrJOQbp7Z70FFhB8PUk4UuSCk8mplnkiJuDtvlZYs_VCXChpUZDGKEMNmyP5Gp-Tm9IQLuXcNYBs_vTEX5Zp7Q4F9eZf2VhVXroxOt-5HWeywZVvCnsHl7liLv8U27IE1cXK6m6mQNK3KGzEyTOGwPaheYuiD5aNAJukJSjWe9LWtz1vSPaxK66gG9Fk4vmkM1JkZd15iH82VQb_7TpZ61nmFyCfEkdfpO8HNA0vuU7NHNmivG3OaQKPPTApgFjFKjwdJwNqvd12oAR8EC3raSwzcmBYj8UoQjMOKJd8RBS79W4hZIDF_w/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJrfiORG6Z4jARSNgY2uztUlM",
+    "rating": 4.5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "e694188a-3f28-4285-bf11-65863b6cbaac",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:42.177Z"
+  },
+  {
+    "name_en": "JEDI Café & Bar",
+    "name_zh": "JEDI Café & Bar",
+    "description_en": "Popular cafe in Bangkok.",
+    "description_zh": "曼谷人氣咖啡廳。曼谷人氣咖啡廳。",
+    "category": "cafe",
+    "address": "10 Boripat Rd, Khwaeng Ban Bat, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100, Thailand",
+    "lat": 13.7549099,
+    "lng": 100.50607240000001,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJM8aSiw6Z4jAR4D1VRAr6kqs/photos/Ab43m-soQcsrfclnBS3K_ATIhgwZ3x0X2Pd4V4wEJ8_8CVsJAviDt--qaThEGCtqpXJCtamJXvHcPWI1lMSKnWwSk5Sf8cll9hGInlbzKOwZXD4E6wv9CDrCa9_PKdQfT6L9isH3dpH8V0PN57mjrNharzNeq1zp5GNi0Sk-_5VoQkZ4_lKF11riPVRlxiXO21zgenitxt0y9X-2Y5AOUSNI8ONC8-9ZZ2Q947N_EtFqwfJVewUdIGmIFSLv7LAjMrGWEGJxNbZI-gZBBxkI0u2iZkRRf2iP1EW5PEBRYKclieeB2xX8Dv-1inr_pPdteuWjy1Dhm6F-vRERM46UimMrTIMGf-Xr1uJe0G315nvdmqSPhnS_zajF1LlfoVY8vN_ax-e7j1zHzbsp9NkOmrevrtGgv3BPGjV88d5lQXOJ9b1tn9pt/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJM8aSiw6Z4jAR4D1VRAr6kqs",
+    "rating": 4.6,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "7da2342c-3126-46c8-89e4-048fbd9e3aeb",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:42.345Z"
+  },
+  {
+    "name_en": "RISE COFFEE - One Bangkok",
+    "name_zh": "RISE COFFEE - One Bangkok",
+    "description_en": "Popular cafe in Bangkok. Must-try: Fruit.",
+    "description_zh": "必點：Fruit。曼谷人氣咖啡廳。",
+    "category": "cafe",
+    "address": "ชั้น บี1, The Storeys One Bangkok, Thanon Witthayu, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.726205799999999,
+    "lng": 100.5475311,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJ931sDQCf4jARTtgGPfel9-8/photos/Ab43m-uFsS-sNkAsX_erlYlVCKnlyZUCL0RtPNfykuAa7vTmvTP5JsuDrCM2F8EDi9xLz3x629mxR-GoorAvxAAUU-OmSahWV-aGAF9SQrNRNt6CCiJaJLmcS_cJCvPnW_6hIc8BJZHLS1A4mmK2aItfTO9GpoFli9m185ywdQPKDLWSL3jyEVFyVKzj2SC0vEL11XtGpkNbYKt1jJQQixo9abvfU4PNzpZjUJgIoU1NTyf_zyhQn_ubOpMtRCMEDtosQ2kDKQdWkYqN1h_WxIYs5k9rvvVVgYXLxKng1T7oN9vexA/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJ931sDQCf4jARTtgGPfel9-8",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Fruit"
+    ],
+    "id": "892bb0ce-7a2e-4c3a-9448-a09e99eed2fe",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:42.478Z"
+  },
+  {
+    "name_en": "WHITE DRAGON Cafe & Bistro (All Day Breakfast)",
+    "name_zh": "WHITE DRAGON Cafe & Bistro (All Day Breakfast)",
+    "description_en": "Popular cafe in Bangkok. Must-try: The banana coffee, Benedict.",
+    "description_zh": "必點：The banana coffee、Benedict。曼谷人氣咖啡廳。",
+    "category": "cafe",
+    "address": "202, 204 Yaowarat Rd, Khwaeng Samphanthawong, Khet Samphanthawong, Krung Thep Maha Nakhon 10100, Thailand",
+    "lat": 13.74364,
+    "lng": 100.50535939999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJRwyJH8iZ4jARc9QiAeKaGz0/photos/Ab43m-svUgII1wrVVQWOvTecwfXIY_M6w7S-7BN-P8H7qle2woE9PgoBgFuQkcxdG2eIfdTN-dD6tCvja3RdfKwbC-ehEzSImKxKFepwU4DXCUiFo5Z_oYgBuBWwRxnNKcxOncOGENfLe3Eux9wHnbamuHlCCD8LDHp_NaEKYgRP7PuKL_79PUanGUQN_xt0UQSQQIgec-a8273pCrD8EMN5QpRkfeGpo1qFmuFmTwooqfFsG8GLfU0-yRpqui7au1qm1YML8tRuiZXAR_GEpOq-mJOPYQRTNFNwUVyius9xusp-1w/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJRwyJH8iZ4jARc9QiAeKaGz0",
+    "rating": 4.8,
+    "price_range": 1,
+    "trending": false,
+    "highlights": [
+      "The banana coffee",
+      "Benedict"
+    ],
+    "id": "58a9aef3-2bbf-4475-9ad4-051e049da312",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:42.627Z"
+  },
+  {
+    "name_en": "A KEEN HOUSE - One Bangkok",
+    "name_zh": "A KEEN HOUSE - One Bangkok",
+    "description_en": "Popular cafe in Bangkok.",
+    "description_zh": "曼谷人氣咖啡廳。曼谷人氣咖啡廳。",
+    "category": "cafe",
+    "address": "One Bangkok, 3rd Floor, Parade Building, 1877 ถ. พระรามที่ 4 แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330, Thailand",
+    "lat": 13.726016000000001,
+    "lng": 100.54681819999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJz6yiWQCf4jARsBX3NyPz5v0/photos/Ab43m-sgZOOxxuyBIFml1nOoYKpDvzNOWQ57zKXyZ_aifGxnYOZ8D2PwKkRF6dg4-gvNAnd5pLppiM0iWiEnnfZ2KEHb0zbc5lGaUtwRaiWJc74ScI4w8BInQHbvqF15QlpJURvvqmASk4nxYo93zmYJlP7XrasYOBpk34GWos_kuGZv59q69SHAVFWCG26tJ2rpcDMXtt7SeVHTFLajHOW79AxIhqKx062nk3PK7tNVqmjCoGkPSnHbEtM4WcZBtKHcZ328EjDojZqoDZdNvqGoqs03FdCqMg3U3KzWYfNa24sIPw/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJz6yiWQCf4jARsBX3NyPz5v0",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "1f21c42b-b886-4bc5-9756-6bc67e3f7d95",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:42.779Z"
+  },
+  {
+    "name_en": "KLAIRE - Coffee & Brunch",
+    "name_zh": "KLAIRE - Coffee & Brunch",
+    "description_en": "Popular cafe in Bangkok. Must-try: The food.",
+    "description_zh": "必點：The food。曼谷人氣咖啡廳。",
+    "category": "cafe",
+    "address": "589 Thanon Phra Sumen, Khwaeng Wat Bowon Niwet, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.757453,
+    "lng": 100.5044647,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJr7j8GheZ4jARiNWjGqP4_KU/photos/Ab43m-vRv6BUN5o3LV4oSpXbVAomYTelvUYkQ8SJNVX-3jeeQyLIpyy20qMGFwV72W9QYpKuSqphugcLd9UZgx2nDkCJjA1u2MDSQ2luD2179kp1xbYaux3qzyR4ELVITn_5iAZloOJA4C9oGuqHjXkpNTMIwztXcfm8iNanLQUu6GoWST98L3v_-N-Py3ggGY89Jdqk7h6HMrWi2uQJd-pCmOdNOzAL8awcknnbfAkwhQ-Ljuv1tI60VGtN4fQHXL44D0i0HAunwC4BjKZzC4Z6DPCFUXXUnKLigzeoeHuEoJQHRs1GRZXQMxk1B7LBMAlG5s19zzYMifTCOBZUd2fOT-2izvg1DdN79Z314dBzkuao62yZFesAK_EQ-YdYigkJskYe8NHtp-yJA-wr3lqyLX2ii5V2flw6KhEGjheYRsw/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJr7j8GheZ4jARiNWjGqP4_KU",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "The food"
+    ],
+    "id": "c5e24756-487a-4193-b391-b3a1d15bb10f",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:42.912Z"
+  },
+  {
+    "name_en": "Mother Roaster Pratu Phi",
+    "name_zh": "Mother Roaster Pratu Phi",
+    "description_en": "Popular cafe in Bangkok.",
+    "description_zh": "曼谷人氣咖啡廳。曼谷人氣咖啡廳。",
+    "category": "cafe",
+    "address": "457 Maha Chai Rd, Khwaeng Samran Rat, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7509866,
+    "lng": 100.5043134,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJzRsgM4WZ4jAR8o0W2exGr-g/photos/Ab43m-tcK60uREBGgPzALC0Oh-NaJdkVjdmsqKke0xA5RIUyOsRDzMqdCCam7AaSypuvRAO7AiFaY2e-2VnuyD11fluIxqhiDptzI4g0QzIPX0NSoTFDr4grkJLnOxgZ3eKDLbNZG0Tz2Cf0FUk3JvPobqgUbRyC9OAXNx38Q6b0u6ZNgnZnGBmclfA7O80Q40WIHXtzguEH58QQySIyDpO0Qgf1F0VpITcf1G1sL0W0XKYJmeWyGqjae6QXy5mUetcyHy-EDC22mRVOSQX1Hs9E2zHsEG0qJIfZYVmBnfbo9l6VurEoWw6lSMdN7OHdHWdx5cLRNMxdQwW8iQxuCeaD95cD2_ZBAHpSNFwKsZigt_NbHVMykpWRI_nKH3gKpk6pIdSsREOC1gNwSVE0t0UhkHXPSZIXPopLrCrn0x8RW65cx581ZBuyhDed-2QzaMkm/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJzRsgM4WZ4jAR8o0W2exGr-g",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "98db7fd4-0e9e-426a-a343-16077f0f17b1",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:43.079Z"
+  },
+  {
+    "name_en": "Floral Café at Napasorn",
+    "name_zh": "Floral Café at Napasorn",
+    "description_en": "Popular cafe in Bangkok.",
+    "description_zh": "曼谷人氣咖啡廳。曼谷人氣咖啡廳。",
+    "category": "cafe",
+    "address": "67 Chakkraphet Rd, Khwaeng Wang Burapha Phirom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7422925,
+    "lng": 100.49671269999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJr0_8WhuZ4jARkLSG8nhL7n8/photos/Ab43m-uS_R5afReUY_IGOxPvHJzHvRnNJ83VjkLnwRekBB8vbRAJDbgynoXSGWYicVwB1HbbqycoK2dOWVurL0hLz3cKKjrNOwtZuKnIL8pD3U5oebZIe7c8vPuuMMtemDTO3HHssVSsRzMNv2yr9lkqn0t_2U6_ZD7mH1bwHv15ZXVhi6-0GIpCeREPwcDN2WcX3ZaX_5krtuJEFzOyjng1Iu3FQ1y4MlOl-Zi_xUMuZVbtFlCu5SxOCyJtx95IqyoetpyD9ILkFR9A94d5SdGPVc--Rpe1bL7X_Fo1POJ4hiPYHQ/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJr0_8WhuZ4jARkLSG8nhL7n8",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "ea3fd0fd-5ee7-4a52-8c70-2cdb56bfc4fe",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:43.228Z"
+  },
+  {
+    "name_en": "Pratunam Night Market",
+    "name_zh": "Pratunam Night Market",
+    "description_en": "Popular shopping in Bangkok.",
+    "description_zh": "曼谷人氣購物景點。曼谷人氣購物景點。",
+    "category": "shopping",
+    "address": "Unnamed Road Khwaeng Thanon Phaya Thai, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.753551799999999,
+    "lng": 100.5397266,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJI9TeGYmf4jARlg5uqppFqHc/photos/Ab43m-tJMZHLT6BjbxDS7sR4Lix7KgfP14rjd8UX4ZUHUYD1ZY3IuXtq95iQIsb-fjFOH_gPRFDZFcjchMhSg_XAdEgjjcOidUukG5fb40QhSGrKVgMqm_X-NcdGTrhMHrUmZX-jHRGeaH-pNYa8wpS4rBEuDZtplGdWMOSrdCqQQvZmP-Uu1hMLiG_2qoDqwfBLdsEK8gwA1l4NF8fo614COEe3KkDuU5BnX4w1vAv9mTCCynVhQeujGFlnAaoAPbR-GudhpheG4cyzpFIQIv_IEvZjhKObn6csRFjDDI8tl6DbfB5nTTFsiSW1JR2Riu1hJoPtA63V2hst7iefdpxf_9jyxN2OxC44qQgFZvsK_ZzvKTHVWgIgT-Ko8BFvkBScEqoNIxc5_Jj-OewV9Y6pFGO-SAmKpVCpRi1eVj6pwo6ZiA/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJI9TeGYmf4jARlg5uqppFqHc",
+    "rating": 4.4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "075f695e-207e-4e92-aea9-61ff646a745b",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:43.362Z"
+  },
+  {
+    "name_en": "Palladium Night Market",
+    "name_zh": "Palladium Night Market",
+    "description_en": "Popular shopping in Bangkok. Must-try: The quality.",
+    "description_zh": "必點：The quality。曼谷人氣購物景點。",
+    "category": "shopping",
+    "address": "487 Thanon Phetchaburi, Khwaeng Makkasan, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.750750799999999,
+    "lng": 100.5413195,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJUz2Lksee4jARRfdBI1BIKOQ/photos/Ab43m-thkcPLtvC7ra_2dRvZwY95DltsXeTFHmwWLxcGyLF6m7ZmQOn4ukz8oIhAa0AME7cyeQRF80IL0Xk-ag9h9voRYl8QaRufxgCPhzUCW19U0lZnJQwOUDq1AE0s7JhXmnl99-MZEpqBabP2Mfxg86ODk165rrNdDxpKbP_5fXHMndlbUny185-Owpha0TBcC-7zcpSEVk_VXK07cqE-gxlqpGj4yUWRDFjqDA52OCgeyWTDI2tlg_7VaPkLe73pLuTD0wMwHSbs8sui6TS2eNfghQZStU4Qxs1jzrNXi2R0JBWRJXAlBvihvlh0HoSuaS86WeLiRYorM4uvv-IZbVSVjdku93i7XVW_XQnF03AN4MclU3cYq9xHGPdyxZK-KFzOH8_a3bc_9h9H0y582DVM4Q4MA5zpeYsNXUVT_fb_fQ/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJUz2Lksee4jARRfdBI1BIKOQ",
+    "rating": 4.2,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "The quality"
+    ],
+    "id": "c0a4a7eb-5a7b-401c-b2e9-308da1a1c91c",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:43.511Z"
+  },
+  {
+    "name_en": "Pratunam Market",
+    "name_zh": "Pratunam Market",
+    "description_en": "Popular shopping in Bangkok.",
+    "description_zh": "曼谷人氣購物景點。曼谷人氣購物景點。",
+    "category": "shopping",
+    "address": "Soi Phetchaburi 21, Khwaeng Thanon Phaya Thai, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.752803499999999,
+    "lng": 100.54059769999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJdVyFquif4jARGn8fUTV28PM/photos/Ab43m-ujlZb8HgWjwayrOKCRUtJAYx2NneiBg-6uyYR9i1DRnMCTr1PsfWr5pZgxg95fV-s_YzpqcmWltwjBVGjwFBewmzdujXZWvPY_Jg5LAS2vaaGafT7tTVNn45Ycx7Bas7cMLgmzwbc_vPeHl84v4_eAET22qIJgE89BHg5eVkqt4D8R8XsabWZU6GWy14Y7DCQiylSxbmWuF__64ysKWBGfI-G8Zy28UhR6ebhqT4uEV2zMqPYjB_FAYJYKTvzQOV8EsYVUPlfvY95t0IloXBtuuX1RQl8l5cVP4cb1aGZtGfmXDIkcSw42rtwwTkxAs-4wH5YDT-RHvHd7qg1pQBpiJezPYL-l1dQZKE_NhlhuhfAqDUNIlvOlWXql1eCehm_46nmvUB3MYr-gwaA50j8KCxjmUQIF3HOqeDFZYEStoUBT51nvzlcuH3p_Q3if/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJdVyFquif4jARGn8fUTV28PM",
+    "rating": 4.4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "ec78dcc6-f930-4f59-99f8-584ce27c2083",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:43.660Z"
+  },
+  {
+    "name_en": "Sampheng Market",
+    "name_zh": "Sampheng Market",
+    "description_en": "Popular shopping in Bangkok.",
+    "description_zh": "曼谷人氣購物景點。曼谷人氣購物景點。",
+    "category": "shopping",
+    "address": "130 Ratchawong Rd, Khwaeng Chakkrawat, Khet Samphanthawong, Krung Thep Maha Nakhon 10100, Thailand",
+    "lat": 13.7415296,
+    "lng": 100.5062578,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJu3jkshiZ4jARij9xWHjr6r4/photos/Ab43m-tdJWadYwuW8J5ucb-qFUE7mLBZSHgBMOsR4i3FDon5F7030QQUxPuk5Ge1Yrl0ZWS_TBrDfz8os657v4eGCmrKp5T373AUcImzlirIqBRid1xP8xd6iI-Fbru13Ga5oxQ8x9tCW96SgbpfWww6S2zO_5SW_c2Q6SL5nJ0F1XgZgmBHLaVTXuALw6GyPPwlET4n-sNYKX9JuiSR6uh_2ZfrqopiDwgqzMF-URNAbuOCGYyqaTiQrEZCYGsQNiogjo8SO2symmZ1XfBnGuJEWT8nKHR0ymSrtPCAQniuoPhqO1ujejtn0VcGipQNHzIxLL2GPfGd3WAZwxh5MiSf6ahU_RVpK14l3WDhmUYjMJSgpuTYADO8ZsNuDTB-bgnjHfA5yLpxJNLy9bAQV4QmHcGJRj0tS1NrMAevvcO6eXo/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJu3jkshiZ4jARij9xWHjr6r4",
+    "rating": 4.4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "07c2c484-01e0-4465-980b-2eecb51e905f",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:43.811Z"
+  },
+  {
+    "name_en": "Jodd Fairs Ratchada",
+    "name_zh": "Jodd Fairs Ratchada",
+    "description_en": "Popular shopping in Bangkok.",
+    "description_zh": "曼谷人氣購物景點。曼谷人氣購物景點。",
+    "category": "shopping",
+    "address": "129 Thanon Ratchadaphisek, Khwaeng Din Daeng, Khet Din Daeng, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.76792,
+    "lng": 100.5711979,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJk31AdLKf4jARXwt8iVGkqwI/photos/Ab43m-ulM_y1h9B879XMxc0BYCv6EBeqUNIjxHzQ5dKYxUVlU82tE-2dMJ9o782jh_X_PJlFrFo6K6_iPes6aetqeB-aE4nwO-a_nqFh5_VScX4anleqbI4l0M3w2kLXT3MSHDZVtAVoe32QmM8hBfkZkvYjo6fQkUWcOxYBPdkNbMLmVH1OX-wZbd5njdr76AeGc8Z92w5ZzrYnOFbdQADQbHbtVmGVzfspYuoBLKyI3tP8zrx3X-LmZzkEqBnuRWqMSboHXStvbDnKhVpTqZDbPiOaXYpLgYBZO0IJ5alDxBNF_lJqRaJGnHkBdeshMsWd7Jba9ZT4jetah9Yd8O8LvZaTa_HKWCnuLslJ8gJS5X6uijrSP5oL9oL-X88MTvf4cuO9B9V5RSdcIBsxQd4t_fvp3VjcrJAgol5DUpi9k8b0Ids/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJk31AdLKf4jARXwt8iVGkqwI",
+    "rating": 4.2,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "fcd0bd1e-3228-40ed-9ca2-6565594f9b44",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:43.980Z"
+  },
+  {
+    "name_en": "Chinatown Night Market",
+    "name_zh": "Chinatown Night Market",
+    "description_en": "Popular shopping in Bangkok.",
+    "description_zh": "曼谷人氣購物景點。曼谷人氣購物景點。",
+    "category": "shopping",
+    "address": "148 Maha Chak Rd, Khwaeng Chakkrawat, Khet Samphanthawong, Krung Thep Maha Nakhon 10100, Thailand",
+    "lat": 13.7410037,
+    "lng": 100.50847379999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJD-NLSWyZ4jARCQ3OoWjiHYs/photos/Ab43m-tsVm6q-cqZp_WMn2_idIUKVn_S7MDmQJyrzufy-1HsAjXL9DXgGEn73LAjXY7n4GMKduFdAWMb0fElERIovVgWAqk5ss5MpydF9poWdH5BtIBcDlexlNlmzZ_AtAeNDzNXSiZdyAw4zeGxmxoIjETvY_ADiYQsdBuFYWD55jn047xXOBgcPy-wvH0Y-hRq-b9OSaqFC3oQem1dkhim1qlcUjHjdKLePY0aNiXEJt17AkNDGciwRVLSK_oH2NQ-DfjeSoda9KpXq_kBxIYwB1rxQhC0TzNUre6cj9f9G0LjA2gXrShWo85-jbM33UzRAUSSkl4HX6b6jX-ah_fuXht3-eUCE1GjTDzKhEQhl0eLBHLRxXvz1t0SCRJwGNfIqPpz_-SouP94_n5kV6jb5LfoJkAKqsRVNT-R6tFUFGDl2Q/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJD-NLSWyZ4jARCQ3OoWjiHYs",
+    "rating": 4.5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "fc5f916f-54c7-4bea-b908-70606d94e1d3",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:44.130Z"
+  },
+  {
+    "name_en": "Chatuchak Weekend Market",
+    "name_zh": "Chatuchak Weekend Market",
+    "description_en": "Massive market with over 15,000 stalls offering an eclectic variety of goods, from antiques to pets. Must-try: The market.",
+    "description_zh": "必點：The market。Massive market with over 15,000 stalls offering an eclectic …",
+    "category": "shopping",
+    "address": "587, 10 Kamphaeng Phet 2 Rd, Khwaeng Chatuchak, Khet Chatuchak, Krung Thep Maha Nakhon 10900, Thailand",
+    "lat": 13.799781,
+    "lng": 100.55042449999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJ3fiD6BSc4jARS324hNeR8ZE/photos/Ab43m-vsOF8DlukEFCXhtfKbDK5QVdaGWK_vtHfFTuIHjQOFvVrzxd94eStH63sMN6HzQaB7rFBvt69vgMgkde0DjwlQ6D40zgb9Dbwr-mygnNNjK1bk3vaMAT-2hSn97yxjJGkcM8oreGAQ1JqLRTTkbl4W1RixgqJqx8fsa897LBjBdTetn-fOMcZznQ61SwimainN4O9zLEuKsqQhho7VswEz4S5rAsN3sUBmVbM4XWFfdx7dRukAIB4Pi4GENwT8httzZePJK3FJJPe89v9khL2rtKmbAzWJ_NcpgSQ6wEdiMzYq-FxMdY3MhHT33P7-IrBsea4H2KMZ7qK1FD210Yn3F2lwTYyMeYV3Hmty6fNaME42pjzmbGWQEJ4rcSXQRK_Xo37-Lm-lCWrPRqIwL-C0Sxk_3xObxtcTisiIoegR63IGUo59LIgaiAoLhn9G/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJ3fiD6BSc4jARS324hNeR8ZE",
+    "rating": 4.4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "The market"
+    ],
+    "id": "1cb653f9-6c65-427d-bbad-28d8712c5573",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:44.295Z"
+  },
+  {
+    "name_en": "Watergate Night Market",
+    "name_zh": "Watergate Night Market",
+    "description_en": "Popular shopping in Bangkok.",
+    "description_zh": "曼谷人氣購物景點。曼谷人氣購物景點。",
+    "category": "shopping",
+    "address": "QG2R+JRC, Makkasan, Ratchathewi, Bangkok 10400, Thailand",
+    "lat": 13.7515536,
+    "lng": 100.54203059999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJ65RNC8ae4jARd4-dSXtgB24/photos/Ab43m-sr1gWFdaTBrjyZp2P83K-vnXdEulQBClB_z506kBjVnqBNmaEKxcx7SX1y5nkv8TPTxpg1SX1LDWk6eUhdsRaN6pvhTN0d9xjwlj6OYCtBfE4-EGtfwHKYmeQoiPNvu_ryz334xJDEHppBmYXUF5_DF1qrUIFaD0nbzH7J8L-p1JoytRA11Q_hb7sEPMrlZ46i4tkF5dtwA5LqjcF5PUzyeNI8d1Mtp7P4wcETCVQPOmneMxIQN2WDo_0YMJEVW3y2RKbK12PO5Fs1SLY-U7ihl3zlzsCi5jd5y0qmKc0T3xkREGJ2O1faj0T1gPAGi6p0U4oOQTrudqLU63YXlQVvF_dWSrFmf1re3_9gUTF0qGqnnuruHsSFQK4rwyr7MsVKDqco1QO1DFG3PyjKamI2P5pq8xCKRjw3OZrxFqMe5Ok/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJ65RNC8ae4jARd4-dSXtgB24",
+    "rating": 4.3,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "ab586da9-60a7-4ed6-95e1-bfe940568eee",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:44.446Z"
+  },
+  {
+    "name_en": "Octave Rooftop Lounge & Bar",
+    "name_zh": "Octave Rooftop Lounge & Bar",
+    "description_en": "Vibrant rooftop lounge offering cocktails & bar bites, plus regular live DJs amid scenic city views.",
+    "description_zh": "曼谷人氣夜生活場所。Vibrant rooftop lounge offering cocktails & bar bites, plus …",
+    "category": "nightlife",
+    "address": "2 ซอย, Sukhumvit Rd, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.723502300000002,
+    "lng": 100.58054260000002,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJhxshNqWf4jARgYxEW8hBGcE/photos/Ab43m-syfg6btMOnUXhe3CPn_-sLWsPs2zgA03zbUBir1Q4a4MPzg_3D6Wxk6LHHibbekM2Q4cbN6FZTGMU9tAXSvL31nARyFOgINQMd13971q4ipdGTm9nLhu8QwMxIrzr-tFH5i9TWkocFykHbqruxoXixsWv2a3UiX59PBgtj8U-CshHouy9K04L1GTe1JUXqffEuHn1ac7XanRc-JZRU35UpDoHCq-1lIsvpm6KVXQkHK_FvMsrYLpRgAbu559mauTXkxjQ-_E4pdV1xFIT9Z-lzXQS-BaTlqo7XWJYAvz-SrA/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJhxshNqWf4jARgYxEW8hBGcE",
+    "rating": 4.4,
+    "price_range": 3,
+    "trending": false,
+    "highlights": [],
+    "id": "924a1354-d5b2-4a02-a102-830c019eb656",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:44.594Z"
+  },
+  {
+    "name_en": "Starlight Rooftop Bar",
+    "name_zh": "Starlight Rooftop Bar",
+    "description_en": "Popular nightlife in Bangkok. Must-try: Mercure.",
+    "description_zh": "必點：Mercure。曼谷人氣夜生活場所。",
+    "category": "nightlife",
+    "address": "R Floor, 222 Surawong Rd, Khwaeng Si Phraya, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7277235,
+    "lng": 100.5236465,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJL9CeFuGZ4jARQuX3E4CjsHE/photos/Ab43m-tuBXtyCjlQrDQsfJVezm2T8tnPe3uOA1pMhPMU7egTay83Yvr_CTsUUZHI3dza7sU95RVZ7FIJfZhr9n7RSTXyqIISmChA1eWMXmSVkDmsoqeYqqe4LGC7kMLaf-xgK_BodENXVpht10Cy6zRiYBDSpuuarSvJ8cDd4SiEs-CE-sHD9v38673YS_jpsWY64z3RZ6LIjE2dESGOzpWcQmYHVF88rX58YlEdQrKCMj4xi0u1gjGd060nuETaIyObqJWKYO77RoetFvxKNvZ4K09NNOzE60i9wcAs3EO4b_5HPw/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJL9CeFuGZ4jARQuX3E4CjsHE",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Mercure"
+    ],
+    "id": "29c77a70-20aa-4dca-90c4-ee0c2de32d32",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:44.763Z"
+  },
+  {
+    "name_en": "View Rooftop Bangkok",
+    "name_zh": "View Rooftop Bangkok",
+    "description_en": "Popular nightlife in Bangkok.",
+    "description_zh": "曼谷人氣夜生活場所。曼谷人氣夜生活場所。",
+    "category": "nightlife",
+    "address": "9th Floor, Novotel Bangkok, Platinum Pratunam, 220 Thanon Phetchaburi, Khwaeng Thanon Phetchaburi, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.749584400000002,
+    "lng": 100.54066329999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJR4LgSl-f4jARSMzR8x4RA3E/photos/Ab43m-vEOgsqeVKDUijVYwIsX8EmNgw3CXWMPrmc7XSa1iz0ufnKgHVLbh5s5zIfCKU_esxdDiMYYsPD2ve6ZDY5zJRMBLZ7ablDnWzrrwBTA7fEZMUuCqrwp4WpcHhJgKKbPPQo3yxf52w5oXsFx9S0lv0ORCCzwZ2KukAAyqfpNtP1W8Y4N1jOfce5qBWyy8Q2a1Tw_sBItnbJ--GN1c9tts7b7x5pb002nWJkFaXlfCZvekblIfG9EePc_m97BNM1cH3VRacQYnawvFOI37ArTItKZs8e_r1ANUako5cOomY5Qg/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJR4LgSl-f4jARSMzR8x4RA3E",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "a9ef3a41-9cf5-4311-afe5-00fe40328ed1",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:44.913Z"
+  },
+  {
+    "name_en": "Sky Bar",
+    "name_zh": "Sky Bar",
+    "description_en": "Rooftop cocktail bar located on the 63rd floor of a 250m-high skyscraper & hotel with city views. Must-try: Cocktails and view towards, Hangovertini, The bartender here.",
+    "description_zh": "必點：Cocktails and view towards、Hangovertini、The bartender here。Rooftop cocktail bar located on the 63rd floor of a 250m-hig…",
+    "category": "nightlife",
+    "address": "64th Floor, State Tower Bangkok, 1055 Si Lom Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.721423099999999,
+    "lng": 100.5168806,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJVTBnbMWY4jARzZ5CS7DwHVk/photos/Ab43m-tmCGrgdzEAJMQSvqIUUx_atzj_dF3wwwUGMwBSoTkw62to0lKpoGh9Yvbj6DYs95h4XOTXOItuTfTtqy31V5AUcdaUJULCM3lLoTRVpZuiFlVloP6AnNLFi9URk-h-DW5Qpx1AI0XE6BCFlNtOVC4_3gEiYvO0TSLsZAaKv-JRJV8W2ZHAhLw7k7hojmgu0P8no_6njzRzD0m05pvV0LDPDgM7YHMqk7C6Z7F_pS8zdrQ56P9omtFb4yqsqzLa7RcCOSCPAEvEfriPrfm8VYXxqw-J8EBPVwpY8lrxysemkx-MkF-LVytY64bBSa2f1UE8fWOR7QnvhHWzEtkN0dxCN88lmZwdSVUNwhRXo5vYLyoyQmVFcsMtC7loFM74D5hx81lsnGL5mw8H6NlIxaLgGiaHRWAnNzTbkkjnO5GIITH_/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJVTBnbMWY4jARzZ5CS7DwHVk",
+    "rating": 3.9,
+    "price_range": 4,
+    "trending": false,
+    "highlights": [
+      "Cocktails and view towards",
+      "Hangovertini",
+      "The bartender here"
+    ],
+    "id": "e524a6d5-6224-417e-8096-69935c1a9730",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:45.061Z"
+  },
+  {
+    "name_en": "Sky Beach Bangkok",
+    "name_zh": "Sky Beach Bangkok",
+    "description_en": "Popular nightlife in Bangkok.",
+    "description_zh": "曼谷人氣夜生活場所。曼谷人氣夜生活場所。",
+    "category": "nightlife",
+    "address": "78th Floor, The Standard, Bangkok Mahanakhon, 114 Thanon Naradhiwat Rajanagarindra, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.723462699999999,
+    "lng": 100.5284147,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJF4OXv_WZ4jARbcNPlcou0Yo/photos/Ab43m-tRZ2UynY2eJPP2T2yVMk_2yzxi2g7vn8FCYWSTtEOPTSwg_H5ODc_CBsWHz3seB5utuECXmY0cnO16Z35PE9eFAEKzuhGey-9Pbo6jkjim1blfr_ag1TjEkFiZt_8NEi5xOcWKgFyu-YbbgjpswAnp_IKn1xAsIgwG0zFvLB_6AW75906B4aQtymBIHLUfiKTdPoKgsbNUNr_WKtUsjj6ET3CmG1xJpf2jrvWZJadZCRQD4w1eeCVhDzy7itCZl3QbFeCRVZqEEaSots1vdOAQKpoPzMwuF3p9JKgi7HSByeWmjwVg1sRv03YRwVn9xcJwtdTwCxUAIKZt7ZyBtFVW38EELJWA0slybqSJ5DLK9cge4X41cbn3gBcHQnQvMrdsFU91vFfM9Itlt-hRafrTyro5IgOF1YKedwptWjuUUQ/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJF4OXv_WZ4jARbcNPlcou0Yo",
+    "rating": 4.6,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "7f9a27f3-3b41-43f5-bdef-a5f54c3dcd98",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:45.228Z"
+  },
+  {
+    "name_en": "Sanay Rooftop Bar Khaosan - เสน่ห์ รูฟท็อป บาร์ ข้าวสาร",
+    "name_zh": "Sanay Rooftop Bar Khaosan - เสน่ห์ รูฟท็อป บาร์ ข้าวสาร",
+    "description_en": "Popular nightlife in Bangkok.",
+    "description_zh": "曼谷人氣夜生活場所。曼谷人氣夜生活場所。",
+    "category": "nightlife",
+    "address": "19 Thanon Tani, Khwaeng Talat Yot, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.760680899999999,
+    "lng": 100.4978153,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJlfTGdoSZ4jAR3QxxLj97yVM/photos/Ab43m-uFoqkpA4u5uR1CAKGoeRUtJNB2jiwnCINyg9gp8ZFkUhTEgSeskxk0Mfjlq_jXeBYrJh3koiKibnxs8BLtewe7bURIpRi4TWsFKKmpIshQHyWHSKcrpIenvghLDxsIGCXVQa9duGD8cE7qi7pcf5b1n9GaYBebzqU-ifsDXvyTA6kP1YWScxskWkcVoSXT5dTeZhfSS0okNJ0jNAPDMBt5le8YMJw5BcSAV3H2HsT5o-H6P1DlxObmTRmtT0VHRocsrxwro2NmCtvhlLBJw_HItT7G1-qoEGYHwLf07AKJPw/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJlfTGdoSZ4jAR3QxxLj97yVM",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "aafce428-5dbe-4395-9792-ca5e4c844e68",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:45.378Z"
+  },
+  {
+    "name_en": "SIN Rooftop Bar Bangkok",
+    "name_zh": "SIN Rooftop Bar Bangkok",
+    "description_en": "Popular nightlife in Bangkok.",
+    "description_zh": "曼谷人氣夜生活場所。曼谷人氣夜生活場所。",
+    "category": "nightlife",
+    "address": "Avani+ Riverside Bangkok Hotel, 257 Charoen Nakhon Rd, Khwaeng Samre, Khet Thon Buri, Krung Thep Maha Nakhon 10600, Thailand",
+    "lat": 13.7054599,
+    "lng": 100.4910546,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJVwZugw2Z4jARb9AqXVD9nRk/photos/Ab43m-tzzqltcTOYhIAiYHZfnDKAQnqveNc0Rc75EZJ7QU_uFSuP4npjz1vfFtjT5nEjlnUTz4Q79MaxGpuRbA81v-mzPrZGO41d5hVudrWssBQVOCWR93GpsTfW2z_z7dI50iPvHIaI6ZdRJgwkfcr8xkYdWCh3H2OtGI5Uj4roYHtc-b9mF4JwFMc_4wj7hiAL3Xqv5K25Q0z1Tx74c_WjdOw_HC-p5r2vi299IbaWmjyRib2KqzbY97C64ddz0kFDGMmCJONozVfu4J5EH-qBUtIIcB81F2Etygu1wwUXjoM0lVrMyo-N5Nt-ce6YQ1aSBGLy2IuWoAj8OLkbzJzmxLBIyre2rzZXdPOiHWlrsau_NTgrtaqrQ9pnQCiOxSOgQCvkXoD09o8Tr65xz7FejP71TEW18OCa5IgxzARUKCTDAzrH/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJVwZugw2Z4jARb9AqXVD9nRk",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "e030041f-e0e1-4fde-93f2-2b382d35a0cf",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:45.528Z"
+  },
+  {
+    "name_en": "The Speakeasy Rooftop Bar Bangkok",
+    "name_zh": "The Speakeasy Rooftop Bar Bangkok",
+    "description_en": "Popular nightlife in Bangkok. Must-try: Amazing rooftop bar with, Food, The service.",
+    "description_zh": "必點：Amazing rooftop bar with、Food、The service。曼谷人氣夜生活場所。",
+    "category": "nightlife",
+    "address": "55, 555 Lang Suan Rd, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.740205699999999,
+    "lng": 100.5436412,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJ5178Viqf4jARZKFL40SO2RU/photos/Ab43m-t010chQ6c6Jn_EztmaNiIWX3r32LcDjHbh_MCWeY7TYZVbf63iVXbMVBbDiy1UShL1QJUH1WqWmcxMfo9iGpSNp2eDj3Nf7u5Q2-cJ87gLANbcwJbEeG1iIiZQUyh83JcPZP5lk-yrD9MPjrqH0PWJ9bRTpA1eGUBp-UyTVlCbRB-6L6OqQhd1RzqNY8aonfrPN_4j8mcTrkXyB5uArvcvChidLk2PUiTZsADyTa-0AWSnrMbZXGi6GOo1woFdz6OkmXK547IQyl-Qmpo_f2RyvSnmoZxsT86z8o7MoSap2g/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJ5178Viqf4jARZKFL40SO2RU",
+    "rating": 4.7,
+    "price_range": 3,
+    "trending": false,
+    "highlights": [
+      "Amazing rooftop bar with",
+      "Food",
+      "The service"
+    ],
+    "id": "982f9a71-dc03-4947-acb8-8c8ac24ec1f1",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:45.678Z"
+  },
+  {
+    "name_en": "De Phanakron Boutique Hotel",
+    "name_zh": "De Phanakron Boutique Hotel",
+    "description_en": "Popular hotel in Bangkok. Must-try: The breakfast.",
+    "description_zh": "必點：The breakfast。曼谷人氣飯店。",
+    "category": "hotel",
+    "address": "45 3 Soi Samsen 6, Khwaeng Ban Phan Thom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7635828,
+    "lng": 100.5014727,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJO33U92uZ4jAR6iGO67Q5HC8/photos/Ab43m-sSbJ4ac3cVA1fGC-xLr7WxRf6EPhyK3TkQFoALOcZuvpqaziCRoM_s4iwBQeXhh3UkVhtSqvDUcOOg0GXsCPa0aijGVkC8VCLwJXW2YUGDRX17aNfZdecGn3RXQE_KMyuzj1E0BV33bfosl3sGVI64QavylSVcb24Ml1KBDUFKOq2a1SqHMZ6W0WtshuXU9bojAgHopreN8Zrcj46GTvEYUHcTFzFC171e03O7zaubLgAZN8rPHDrGNQ5GGch1fW0WHDEuiausxdITjAvulWmw3MK1Z4eu_oNaAToUeGa-qg/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJO33U92uZ4jAR6iGO67Q5HC8",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "The breakfast"
+    ],
+    "id": "cf273bfc-b565-4178-a43a-c04477f84961",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:45.845Z"
+  },
+  {
+    "name_en": "Dinso Home Boutique Hotel",
+    "name_zh": "Dinso Home Boutique Hotel",
+    "description_en": "Simple rooms in an unassuming hotel offering a patio & a restaurant, plus free breakfast.",
+    "description_zh": "曼谷人氣飯店。Simple rooms in an unassuming hotel offering a patio & a res…",
+    "category": "hotel",
+    "address": "78 Parinayok Soi 3, Khwaeng Wat Bowon Niwet, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7560339,
+    "lng": 100.50180590000001,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJDx55lZqf4jARmBaCiwpvvC4/photos/Ab43m-skPEgLzW2rZO6tHbnR_q6pbdXVwwEwYRCd6qRlGtVfsAAq9LBsi0qGj95RhwT3SsXcFDRzvx0puKXvf7WvJyiRzb6IEqyA4ujYSVXFT6q00aNvWhVTyfCir99ceRBOcDbAMRRLrEvRVqIgJx8sjkB9TCj8vjMaOV0IbR7pssqBBgy61UWplZFSHKYER-Wd_H4hK5cFhbc0_EyO1FI1AmfWL0oiCzE8qkzyhz4fsHNG0ja4ApUsKRDRr0JQde-cYgxh6Tq6w7aTIvMcdyeXtw1hq179cKvGLkAjU-lAS9vVJA/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJDx55lZqf4jARmBaCiwpvvC4",
+    "rating": 4.1,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "8dd40415-92b4-423b-a777-e86adf6eb1b5",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:45.994Z"
+  },
+  {
+    "name_en": "Lilit Bang Lumphu Hotel - Bangkok",
+    "name_zh": "Lilit Bang Lumphu Hotel - Bangkok",
+    "description_en": "Popular hotel in Bangkok.",
+    "description_zh": "曼谷人氣飯店。曼谷人氣飯店。",
+    "category": "hotel",
+    "address": "55/8 Trok Soi Ban, ซอย พานถม แขวงบ้านพานถม เขตพระนคร กรุงเทพมหานคร 10200, Thailand",
+    "lat": 13.761619,
+    "lng": 100.5012689,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJ2fJWh2uZ4jARd_yIk0iAQss/photos/Ab43m-spJ8kcKyn2khfiI1t8ju2ueuGzlWJq0LjzlLg7wlprvAVPJG-Aoow-hvjtbzr5dFvHRhf5cKdYs12HCetGYQSznCr-Va4E7WjmkRRQm7_sEjEqhr0oqYHfmyTjaMWGswpOmmNWAjmA9USe3--EWTfQxWt1MpYu9l9Hyw9zLSqMLyyab-3_8Np4KJj5H2i8fqlOv5EmT8Z4tTwtkClJvTx7v4y5gJbSGqtayE2wz8xFOQRZml9n9x4RsaNUzHM2--nBBfCTBeLriIElu1Ibh3xk2AavqdoOGGVyd4mUxAeRXbDznq_FCChfQdD-LTaCfGa9q3MfF6YdKBBnejhM0RNrZCBE2f2Vl4147ghbfZ28N5nLEvCFTPjEubhb87gJmIX0ZOobvu5Khe5rFDmBtbsviloZzCg12RBwtzGQ7iYlppw/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJ2fJWh2uZ4jARd_yIk0iAQss",
+    "rating": 4.6,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "d3c30e0b-cca6-4385-86b5-6bee6c777b75",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:46.163Z"
+  },
+  {
+    "name_en": "LiT BANGKOK Hotel",
+    "name_zh": "LiT BANGKOK Hotel",
+    "description_en": "Refined hotel in a modern building offering an outdoor pool, a gym & a spa, plus dining & 2 bars. Must-try: Every thing.",
+    "description_zh": "必點：Every thing。Refined hotel in a modern building offering an outdoor pool,…",
+    "category": "hotel",
+    "address": "36/1 Soi Kasem San 1, Khwaeng Wang Mai, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.748102399999999,
+    "lng": 100.5295718,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJBwEClDmZ4jAR1czJ_5QiuEo/photos/Ab43m-uzGZvl-T4CuaFFSODhHx2G8NVqKqn2zZ3DxAMsPzMaFifG0U_9jkXUxP-mJQshjdzB_RtYv6vqwbcCXLAWVOtYYVD3LD8rw5t8y5_Fw_kZtrFddwRctb_svrhpoT6JFLeoByzLjIQbXB6HcaUKXoUbAKyOiR6Iwp4qQ72__Y3zJ2ng2LD7hWZHHf5jqB9ux0nYZgyK1S_EJbfgLKJ4WRbE6bxMGV6IiPxhgxVvYEdvZMniuGz5EJAYJN3L34BJIoE1MNun2YwAW1XDSfSAAhO8OeQ9M68LcRLFq2DMhu7Riw/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJBwEClDmZ4jAR1czJ_5QiuEo",
+    "rating": 4.4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Every thing"
+    ],
+    "id": "40aa47e6-75c8-41fd-8076-b1b11346d583",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:46.311Z"
+  },
+  {
+    "name_en": "Hotel Once Bangkok",
+    "name_zh": "Hotel Once Bangkok",
+    "description_en": "Elegant hotel offering free shuttle boat service & a chic rooftop bar/restaurant with river views. Must-try: The breakfast.",
+    "description_zh": "必點：The breakfast。Elegant hotel offering free shuttle boat service & a chic ro…",
+    "category": "hotel",
+    "address": "2074, 99 Soi Charoen Krung 72/2, Khwaeng Wat Phraya Krai, Khet Bang Kho Laem, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.7070344,
+    "lng": 100.5074959,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJBduZ_5WY4jAR4DQ3q9rKqRs/photos/Ab43m-tUjjkJoKJdaZI_PA4oLz-94fLrUsUEAUaMGwFYlShYVbmIQWzo7ai-wq7APdEV0Ph975YhPHshBy9Y9_TzzbLkL8LVIq_vhfG3HQWosTE4mregV2ZmMwC008RcXzcbAyu0b5YpOSfw6CsMATOZLlBkWGrwJNfiiBm6vb-v2Hk9kk_zzxk2grX_k7aSyg8FLsFbqQqoEVdzSYN6IHxYc7LOFwnEUFIxk3r5aW2T_atktCexTyuIzbTTXLf7AF4DY7RL891s9wocElCc7Z5_96HBQxhv4gJznKnfh8ppaSoOnPY_z9EbKhdbP8Z4dYmRlUDVQfxC51PHwh6jmdo3jkrQ9DnDdBYZk0J4LEEwfHoPN0Sv_J7C1lCW1yc_7mdJRWw9nbpXvNdaPblvRrJEdxWu-2LWTDs4Ia5xHMYYColC_272/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJBduZ_5WY4jAR4DQ3q9rKqRs",
+    "rating": 4.5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "The breakfast"
+    ],
+    "id": "b8256cf1-4819-43fe-afe3-633ffeeb22d1",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:46.479Z"
+  },
+  {
+    "name_en": "Hotel Muse Bangkok, Autograph Collection",
+    "name_zh": "Hotel Muse Bangkok, Autograph Collection",
+    "description_en": "Refined quarters in a plush 1920s European–style hotel with a bar, dining & an outdoor pool. Must-try: The staff.",
+    "description_zh": "必點：The staff。Refined quarters in a plush 1920s European–style hotel with …",
+    "category": "hotel",
+    "address": "55, 555 Lang Suan Rd, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.7402029,
+    "lng": 100.5433529,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJT7siK9qe4jAR4g9RuT8DvNA/photos/Ab43m-tOdPqhrLknVw9Yo_b94wWPpWJyE5cgCzQtMhU9xXn_JLe-T4kP_LKVzYyQddSRMDb4BGBOEL1MX0lBymD1n2Gcu2YdEt0F62ai9VYm3KQA3a41EeRozxvKkz_SP95Dk1Dl7d7hQHFY85zPUumGbXwd6tD-DpWgzeQ-myU9bm0VhWHkKtWalpzrA1DKihgNM9WLw85HzlALLsU_D6v0XsjvjOiJXdaEJdscvyma8YGQeRxwKdHW9uonYfAtsxQna_jO7pHDR_CUx4PGdTUHJBA-rBOfJpvgGjtnPrYhfv8hLg/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJT7siK9qe4jAR4g9RuT8DvNA",
+    "rating": 4.5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "The staff"
+    ],
+    "id": "30ddbeb1-eeed-42e5-96bf-238e3c5ec12f",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:46.614Z"
+  },
+  {
+    "name_en": "Ad Lib Bangkok",
+    "name_zh": "Ad Lib Bangkok",
+    "description_en": "Stylish lodging offering modern rooms, an outdoor pool & swanky dining, plus free all-day breakfast. Must-try: The food, The restaurant, The pool.",
+    "description_zh": "必點：The food、The restaurant、The pool。Stylish lodging offering modern rooms, an outdoor pool & swa…",
+    "category": "hotel",
+    "address": "230/5 Soi Sukhumvit 1/1, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7452607,
+    "lng": 100.55210939999999,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJQZUlAOie4jARFrO5SofhpiI/photos/Ab43m-vd5FeLVN5eOCmIYE3VqfV4dsEaPiXQjThKATSBNlZYZOY410Q8ugbTSAo3fWK2eXuL24bLkzyi2Gh4GGPNgS9SN20W3HyC68Vbdl13VgDpkxYL36VJB9V75QxWTcEyxHCi-MEhY3J3ozPxA3RJ1mYNw54kNprct6MdMZDaVjTtikP7OKG3T3BNF3baA3F9-_Tb5yp3UwWT3XMe95mkLB26PO-kFHhEeQ13HQMDQFVu64AJYXLmzTFY24O18aDbCj4la5SxhM4rG7bKHnB_0TsR6FhbNaK2Y6vmrZ5bv3KTvQ/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJQZUlAOie4jARFrO5SofhpiI",
+    "rating": 4.5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "The food",
+      "The restaurant",
+      "The pool"
+    ],
+    "id": "e3ee5941-bd60-4b0a-98ae-8097bc95c1ea",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:46.778Z"
+  },
+  {
+    "name_en": "Nature Boutique Hotel",
+    "name_zh": "Nature Boutique Hotel",
+    "description_en": "Humble rooms, some in converted shipping containers, in a simple hotel with a salon & dining.",
+    "description_zh": "曼谷人氣飯店。Humble rooms, some in converted shipping containers, in a si…",
+    "category": "hotel",
+    "address": "1/19 ถนนวิภาวดี-รังสิต ซอย 38 Khwaeng Lat Yao, Khet Chatuchak, Krung Thep Maha Nakhon 10900, Thailand",
+    "lat": 13.8321615,
+    "lng": 100.5594268,
+    "photos": [
+      "https://places.googleapis.com/v1/places/ChIJqzkuEvGc4jARUxWT0vq7kHU/photos/Ab43m-tLOD2LMlVkKytBnn6Z2Y05jiFai1iDAP0XSnhMUhHYdrs7Gg7OekiTyHq8ywLqkJrwD-W5mcMvh1K_P6qTPAJLng-OcD0g7GJKjYlWFtMNKvHST7Fu-jGxI4xjud1q_RY3Mz7hzc4Hd7uAko2RrFuMNQBDR2_m0wDYstUQEL7jYJ5oJmwLR2RHX49lVVsbv8sRYXwz9Qh6F5fp6TF85DgGE6gWTCp5yHfcIfR63vqWUH20dhxXMW1BPzvbI5SzZp5HLGYJODwqPqwTvn5FpqiyERvbZqbgeAcno3GcHgei9Q/media?maxWidthPx=800&key=AIzaSyAMM7Qf-yGCCMUNJY9S_rZ-9nt7HaZRuTs"
+    ],
+    "source_url": "https://www.google.com/maps/place/?q=place_id:ChIJqzkuEvGc4jARUxWT0vq7kHU",
+    "rating": 4.3,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "d8b78348-885f-4be4-b5db-a8a0265ee07d",
+    "source": "googlemaps",
+    "approved_at": "2026-05-30T08:00:46.912Z"
+  }
+]
