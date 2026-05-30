@@ -20,6 +20,6 @@ export type Location = {
   approved_at?: string
 }
 
-export type PendingLocation = Location & {
+export type PendingLocation = Omit<Location, 'approved_at'> & {
   scraped_at: string
 }

@@ -29,7 +29,7 @@ describe('isDuplicate', () => {
   })
 
   it('returns true for partial match (>= 80% similarity)', () => {
-    expect(isDuplicate({ name_en: 'Jay Fai Restaurant' }, [base])).toBe(true)
+    expect(isDuplicate({ name_en: 'Jay Fay' }, [base])).toBe(true)
   })
 
   it('returns false for unrelated name', () => {
@@ -38,5 +38,9 @@ describe('isDuplicate', () => {
 
   it('returns false for empty existing array', () => {
     expect(isDuplicate({ name_en: 'Jay Fai' }, [])).toBe(false)
+  })
+
+  it('returns false when candidate name_en is empty string', () => {
+    expect(isDuplicate({ name_en: '' }, [base])).toBe(false)
   })
 })
