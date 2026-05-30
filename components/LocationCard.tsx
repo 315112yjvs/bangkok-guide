@@ -20,9 +20,9 @@ function extractThai(text: string): string | null {
   return thai && thai.length >= 3 ? thai : null
 }
 
-type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void }
+type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void; compact?: boolean }
 
-export function LocationCard({ location, lang, distanceKm, saved = false, onToggleSave }: Props) {
+export function LocationCard({ location, lang, distanceKm, saved = false, onToggleSave, compact = false }: Props) {
   const [copied, setCopied] = useState(false)
 
   function toggleSave(e: React.MouseEvent) {
@@ -150,11 +150,11 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 bg-[#1e1b4b] text-white text-[10px] font-bold px-2.5 py-1.5 rounded-xl hover:bg-[#2d2a6e] transition-colors active:scale-95"
+              className={`flex items-center gap-1 bg-[#1e1b4b] text-white text-[10px] font-bold rounded-xl hover:bg-[#2d2a6e] transition-colors active:scale-95 ${compact ? 'px-2 py-1.5' : 'px-2.5 py-1.5'}`}
               onClick={(e) => e.stopPropagation()}
             >
               <IconPin size={11} />
-              {strings[lang].navigate as string}
+              {!compact && (strings[lang].navigate as string)}
             </a>
           </div>
         </div>

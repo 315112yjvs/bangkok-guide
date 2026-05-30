@@ -332,7 +332,7 @@ export function PublicHomepage({ locations }: Props) {
               <div className="flex gap-3 overflow-x-auto no-scrollbar p-3 pb-4">
                 {trending.map((loc) => (
                   <div key={loc.id} className="shrink-0 w-44">
-                    <LocationCard location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} saved={savedIds.has(loc.id)} onToggleSave={handleToggleSave} />
+                    <LocationCard location={loc} lang={lang} distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined} saved={savedIds.has(loc.id)} onToggleSave={handleToggleSave} compact />
                   </div>
                 ))}
               </div>
