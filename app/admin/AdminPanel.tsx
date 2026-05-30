@@ -69,7 +69,10 @@ function PendingCard({
   onApprove: (id: string) => void
   onReject: (id: string) => void
 }) {
-  const photo = item.photos[0] ?? 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=220&h=120&fit=crop'
+  const raw = item.photos[0] ?? ''
+  const photo = raw.startsWith('places/')
+    ? `https://places.googleapis.com/v1/${raw}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+    : raw || 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=220&h=120&fit=crop'
   return (
     <div className="bg-white rounded-2xl overflow-hidden border border-transparent hover:border-indigo-200 transition-colors flex">
       <div className="relative w-28 shrink-0">
@@ -109,7 +112,10 @@ function PendingCard({
 
 // ---- APPROVED CARD ----
 function ApprovedCard({ item, onRemove }: { item: Location; onRemove: (id: string) => void }) {
-  const photo = item.photos[0] ?? 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=220&h=120&fit=crop'
+  const raw = item.photos[0] ?? ''
+  const photo = raw.startsWith('places/')
+    ? `https://places.googleapis.com/v1/${raw}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+    : raw || 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=220&h=120&fit=crop'
   return (
     <div className="bg-white rounded-2xl overflow-hidden border border-transparent hover:border-slate-200 transition-colors flex">
       <div className="relative w-20 shrink-0">
