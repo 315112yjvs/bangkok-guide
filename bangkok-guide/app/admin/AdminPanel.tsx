@@ -222,6 +222,8 @@ export function AdminPanel() {
   const [approved, setApproved] = useState<Location[]>([])
   const [scraperStatus, setScraperStatus] = useState<string>('就緒')
   const [scraperRunning, setScraperRunning] = useState(false)
+  const [deployStatus, setDeployStatus] = useState<string>('未上傳')
+  const [deploying, setDeploying] = useState(false)
 
   useEffect(() => {
     if (sessionStorage.getItem('admin_authed') === '1') setAuthed(true)
@@ -274,6 +276,20 @@ export function AdminPanel() {
     }
   }
 
+  async function deploy() {
+    setDeploying(true)
+    setDeployStatus('上傳中...')
+    try {
+      const res = await fetch('/api/deploy', { method: 'POST' })
+      const data = await res.json()
+      setDeployStatus(data.ok ? '✓ 已推送到 Vercel' : `失敗：${data.error?.slice(0, 60)}`)
+    } catch {
+      setDeployStatus('連線失敗')
+    } finally {
+      setDeploying(false)
+    }
+  }
+
   if (!authed) return <AuthOverlay onAuth={() => setAuthed(true)} />
 
   const navLink = (t: Tab, label: string, count?: number) => (
@@ -316,6 +332,18 @@ export function AdminPanel() {
             {scraperRunning ? '執行中...' : '執行爬蟲'}
           </button>
           <p className="text-slate-500 text-[10px] text-center mt-1.5">{scraperStatus}</p>
+          <button
+            onClick={deploy}
+            disabled={deploying}
+            className="mt-3 w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5 flex items-center justify-center gap-2"
+          >
+            <svg className={`w-3.5 h-3.5 ${deploying ? 'animate-pulse' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+              <polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/>
+              <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
+            </svg>
+            {deploying ? '上傳中...' : '存檔並上傳'}
+          </button>
+          <p className="text-slate-500 text-[10px] text-center mt-1.5">{deployStatus}</p>
         </div>
       </div>
 
