@@ -131,6 +131,7 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
     hashtags: (item.hashtags ?? []).join(', '),
     local_ratio: item.local_ratio?.toString() ?? '',
     source_url: item.source_url,
+    social_embed_url: item.social_embed_url ?? '',
   })
   const [saving, setSaving] = useState(false)
 
@@ -148,6 +149,7 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
       local_ratio: form.local_ratio !== '' ? Number(form.local_ratio) : undefined,
       price_range: Number(form.price_range) as 1|2|3|4,
       rating: Number(form.rating),
+      social_embed_url: form.social_embed_url || undefined,
     }
     await onUpdate(item.id, updates)
     setSaving(false)
@@ -211,6 +213,7 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">亮點（逗號分隔）</p><input className={inp} value={form.highlights} onChange={e => setForm(f => ({...f, highlights: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">Hashtags（逗號分隔）</p><input className={inp} value={form.hashtags} onChange={e => setForm(f => ({...f, hashtags: e.target.value}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">在地客 %</p><input type="number" min="0" max="100" className={inp} value={form.local_ratio} onChange={e => setForm(f => ({...f, local_ratio: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">社群貼文 URL（TikTok / Instagram）</p><input className={inp} value={form.social_embed_url} onChange={e => setForm(f => ({...f, social_embed_url: e.target.value}))} placeholder="https://www.tiktok.com/@.../video/... 或 https://www.instagram.com/p/..." /></div>
           </div>
           <div className="flex gap-2 pt-1">
             <button onClick={save} disabled={saving} className="flex-1 bg-[#0f172a] text-white text-xs font-bold rounded-xl py-2 disabled:opacity-50">
@@ -233,7 +236,7 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
     category: 'food' as Category, address: '', address_th: '', lat: 0, lng: 0,
     photosInput: '', source: 'manual' as Source,
     source_url: '', rating: 4, price_range: 2 as 1|2|3|4, trending: false,
-    hashtagsInput: '', local_ratio: '' as string,
+    hashtagsInput: '', local_ratio: '' as string, social_embed_url: '',
   }
   const [form, setForm] = useState(empty)
   const [saving, setSaving] = useState(false)
@@ -250,13 +253,14 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
   async function submit(e: React.FormEvent) {
     e.preventDefault()
     setSaving(true)
-    const { photosInput, hashtagsInput, local_ratio, ...rest } = form
+    const { photosInput, hashtagsInput, local_ratio, social_embed_url, ...rest } = form
     const payload = {
       ...rest,
       action: 'add',
       photos: photosInput ? photosInput.split(',').map((s) => s.trim()).filter(Boolean) : [],
       hashtags: hashtagsInput ? hashtagsInput.split(',').map((s) => s.trim()).filter(Boolean) : [],
       local_ratio: local_ratio !== '' ? Number(local_ratio) : undefined,
+      social_embed_url: social_embed_url || undefined,
     }
     await fetch('/api/locations', {
       method: 'POST',
@@ -307,6 +311,7 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
         <div><label className={label}>Source URL</label><input className={inp} value={form.source_url} onChange={field('source_url')} /></div>
         <div><label className={label}>在地客比例 % (0–100)</label><input type="number" min="0" max="100" className={inp} value={form.local_ratio} onChange={field('local_ratio')} placeholder="例：80 代表八成是泰國人" /></div>
         <div className="col-span-2"><label className={label}>泰文 Hashtags（逗號分隔）</label><input className={inp} value={form.hashtagsInput} onChange={field('hashtagsInput')} placeholder="คาเฟ่เปิดใหม่, บรรยากาศดี" /></div>
+        <div className="col-span-2"><label className={label}>社群貼文 URL（TikTok / Instagram，選填）</label><input className={inp} value={form.social_embed_url} onChange={field('social_embed_url')} placeholder="https://www.tiktok.com/@.../video/... 或 https://www.instagram.com/p/..." /></div>
         <div className="flex items-center gap-2 pt-5">
           <input type="checkbox" id="trending" checked={form.trending} onChange={field('trending')} className="w-4 h-4" />
           <label htmlFor="trending" className="text-sm font-semibold text-gray-600">標記為熱門（顯示在 Trend Radar）</label>

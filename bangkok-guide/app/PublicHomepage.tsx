@@ -7,6 +7,7 @@ import { LanguageToggle } from '@/components/LanguageToggle'
 import { CategoryTabs } from '@/components/CategoryTabs'
 import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
+import { SocialEmbed } from '@/components/SocialEmbed'
 import type { Location, Category } from '@/lib/types'
 
 type Props = { locations: Location[] }
@@ -230,15 +231,12 @@ export function PublicHomepage({ locations }: Props) {
 
         {/* TREND RADAR */}
         {trending.length > 0 && (
-          <section className="mx-3 mt-4 mb-2 rounded-2xl overflow-hidden shadow-md">
-            <div className="bg-gradient-to-r from-orange-600 via-rose-500 to-pink-600 px-4 py-3 flex items-center gap-3">
-              <span className="text-3xl leading-none">🔥</span>
-              <div>
-                <p className="text-white font-black text-[15px] leading-tight">{strings[lang].trendingSection as string}</p>
-                <p className="text-white/60 text-[10px] mt-0.5">{lang === 'zh' ? '本週曼谷最夯打卡點' : 'Most-talked spots this week'}</p>
-              </div>
+          <section className="mx-3 mt-4 mb-2 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+            <div className="bg-[#1a1a2e] px-4 py-3.5">
+              <p className="text-white font-black text-[15px] tracking-tight leading-tight">{strings[lang].trendingSection as string}</p>
+              <p className="text-white/40 text-[10px] mt-0.5">{lang === 'zh' ? '本週曼谷最夯打卡點' : 'Most-talked spots this week'}</p>
             </div>
-            <div className="bg-[#fff8f5] border-x border-b border-orange-100 rounded-b-2xl overflow-hidden">
+            <div className="bg-gray-50">
               <div className="flex gap-3 overflow-x-auto no-scrollbar p-3 pb-4">
                 {trending.map((loc) => (
                   <div key={loc.id} className="shrink-0 w-44">
@@ -246,6 +244,16 @@ export function PublicHomepage({ locations }: Props) {
                   </div>
                 ))}
               </div>
+              {trending.some((l) => l.social_embed_url) && (
+                <div className="px-3 pb-4 space-y-4 border-t border-gray-100 pt-3">
+                  {trending.filter((l) => l.social_embed_url).map((loc) => (
+                    <div key={loc.id}>
+                      <p className="text-[11px] font-bold text-gray-500 mb-2">{lang === 'zh' ? loc.name_zh : loc.name_en}</p>
+                      <SocialEmbed url={loc.social_embed_url!} />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </section>
         )}
