@@ -458,15 +458,15 @@ export function AdminPanel() {
   )
 
   return (
-    <div className="flex min-h-screen bg-slate-100 flex-col">
+    <div className="flex h-screen bg-slate-100 flex-col overflow-hidden">
       {isVercel && (
         <div className="bg-amber-400 text-amber-900 text-xs font-bold px-4 py-2.5 flex items-center gap-2">
           ⚠️ 目前在 Vercel 上，所有編輯、🔥 熱門切換、上下架操作都無法儲存。請在本機執行 <code className="bg-amber-300 px-1.5 py-0.5 rounded font-mono">npm run dev</code> 後至 <code className="bg-amber-300 px-1.5 py-0.5 rounded font-mono">localhost:3000/admin</code> 操作。
         </div>
       )}
-      <div className="flex flex-1">
+      <div className="flex flex-1 overflow-hidden">
       {/* SIDEBAR */}
-      <div className="w-56 bg-[#0f172a] flex flex-col shrink-0">
+      <div className="w-56 bg-[#0f172a] flex flex-col shrink-0 overflow-y-auto">
         <div className="px-5 py-6 border-b border-white/10">
           <div className="text-white font-black text-sm tracking-wide">Bangkok Guide</div>
           <div className="text-slate-500 text-xs mt-0.5">管理後台</div>
