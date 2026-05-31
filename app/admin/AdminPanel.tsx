@@ -66,9 +66,10 @@ function PendingCard({
   onReject,
 }: {
   item: PendingLocation
-  onApprove: (id: string) => void
+  onApprove: (id: string, category: Category) => void
   onReject: (id: string) => void
 }) {
+  const [cat, setCat] = useState<Category>(item.category as Category)
   const raw = item.photos[0] ?? ''
   const photo = raw.startsWith('places/')
     ? `https://places.googleapis.com/v1/${raw}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
@@ -86,7 +87,16 @@ function PendingCard({
           </span>
         </div>
         <div className="flex items-center gap-2 mb-1.5">
-          <span className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold">{item.category}</span>
+          <select
+            value={cat}
+            onChange={(e) => setCat(e.target.value as Category)}
+            className="text-[10px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-semibold outline-none cursor-pointer hover:bg-slate-200"
+          >
+            {(['food','cafe','shopping','nightlife','hotel'] as Category[]).map(c => (
+              <option key={c} value={c}>{c}</option>
+            ))}
+          </select>
+          <span className="text-[10px] font-bold text-amber-500">★ {item.rating.toFixed(1)}</span>
           <span className="text-[10px] text-gray-400 truncate">{item.address}</span>
         </div>
         <p className="text-xs text-gray-500 line-clamp-2 mb-2">{item.description_zh || item.description_en}</p>
@@ -100,7 +110,7 @@ function PendingCard({
             <button onClick={() => onReject(item.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100">
               駁回
             </button>
-            <button onClick={() => onApprove(item.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-green-50 text-green-700 hover:bg-green-100">
+            <button onClick={() => onApprove(item.id, cat)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-green-50 text-green-700 hover:bg-green-100">
               上架
             </button>
           </div>
@@ -333,8 +343,10 @@ export function AdminPanel() {
   const [scraperStatus, setScraperStatus] = useState<string>('就緒')
   const [scraperRunning, setScraperRunning] = useState(false)
   const [customKeywords, setCustomKeywords] = useState('')
-  const [deployStatus, setDeployStatus] = useState<string>('未上傳')
+  const [deployStatus, setDeployStatus] = useState<string>('')
   const [deploying, setDeploying] = useState(false)
+  const [approvedSearch, setApprovedSearch] = useState('')
+  const [pendingSourceFilter, setPendingSourceFilter] = useState<string>('all')
 
   useEffect(() => {
     if (sessionStorage.getItem('admin_authed') === '1') setAuthed(true)
@@ -353,11 +365,11 @@ export function AdminPanel() {
     if (authed) loadData()
   }, [authed, loadData])
 
-  async function handleApprove(id: string) {
+  async function handleApprove(id: string, category?: Category) {
     await fetch('/api/locations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'approve', id }),
+      body: JSON.stringify({ action: 'approve', id, ...(category ? { category } : {}) }),
     })
     loadData()
   }
@@ -374,8 +386,9 @@ export function AdminPanel() {
   }
 
   async function handleApproveAll() {
-    if (!confirm(`確定要全部上架 ${pending.length} 筆待審核地點嗎？`)) return
-    await Promise.all(pending.map((item) =>
+    const visible = pendingSourceFilter === 'all' ? pending : pending.filter(p => p.source === pendingSourceFilter)
+    if (!confirm(`確定要全部上架 ${visible.length} 筆待審核地點嗎？`)) return
+    await Promise.all(visible.map((item) =>
       fetch('/api/locations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'approve', id: item.id }) })
     ))
     loadData()
@@ -494,7 +507,7 @@ export function AdminPanel() {
             </svg>
             {deploying ? '上傳中...' : '存檔並上傳'}
           </button>
-          <p className="text-slate-500 text-[10px] text-center mt-1.5">{deployStatus}</p>
+          {deployStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{deployStatus}</p>}
         </div>
       </div>
 
@@ -516,7 +529,7 @@ export function AdminPanel() {
 
         {tab === 'pending' && (
           <div className="space-y-3">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-2">
               <h1 className="text-xl font-black text-[#0f172a]">待審核地點</h1>
               {pending.length > 0 && (
                 <div className="flex gap-2">
@@ -524,7 +537,7 @@ export function AdminPanel() {
                     onClick={handleApproveAll}
                     className="text-xs font-bold px-4 py-2 rounded-xl bg-green-50 text-green-700 hover:bg-green-100 transition-colors"
                   >
-                    全部上架 ({pending.length})
+                    全部上架 ({pendingSourceFilter === 'all' ? pending.length : pending.filter(p => p.source === pendingSourceFilter).length})
                   </button>
                   <button
                     onClick={handleRejectAll}
@@ -535,8 +548,28 @@ export function AdminPanel() {
                 </div>
               )}
             </div>
+            {/* Source filter */}
+            {pending.length > 0 && (
+              <div className="flex gap-2 flex-wrap mb-1">
+                {(['all', ...Array.from(new Set(pending.map(p => p.source)))]) .map((src) => (
+                  <button
+                    key={src}
+                    onClick={() => setPendingSourceFilter(src)}
+                    className={`text-[11px] font-bold px-3 py-1 rounded-full transition-colors ${
+                      pendingSourceFilter === src
+                        ? 'bg-[#0f172a] text-white'
+                        : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                    }`}
+                  >
+                    {src === 'all' ? `全部 (${pending.length})` : `${SOURCE_LABEL[src as Source] ?? src} (${pending.filter(p => p.source === src).length})`}
+                  </button>
+                ))}
+              </div>
+            )}
             {pending.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">沒有待審核的地點</p>}
-            {pending.map((item) => (
+            {pending
+              .filter(item => pendingSourceFilter === 'all' || item.source === pendingSourceFilter)
+              .map((item) => (
               <PendingCard key={item.id} item={item} onApprove={handleApprove} onReject={handleReject} />
             ))}
           </div>
@@ -544,12 +577,27 @@ export function AdminPanel() {
 
         {tab === 'approved' && (
           <div>
-            <h1 className="text-xl font-black text-[#0f172a] mb-4">已上架地點</h1>
+            <div className="flex items-center gap-3 mb-4">
+              <h1 className="text-xl font-black text-[#0f172a]">已上架地點</h1>
+              <div className="flex-1 relative">
+                <svg className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                </svg>
+                <input
+                  value={approvedSearch}
+                  onChange={(e) => setApprovedSearch(e.target.value)}
+                  placeholder="搜尋地點名稱..."
+                  className="w-full pl-8 pr-3 py-1.5 text-xs border border-gray-200 rounded-xl outline-none focus:border-indigo-400"
+                />
+              </div>
+            </div>
             <div className="space-y-2">
               {approved.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">還沒有上架的地點</p>}
-              {approved.map((item) => (
-                <ApprovedCard key={item.id} item={item} onRemove={handleRemove} onUpdate={handleUpdate} />
-              ))}
+              {approved
+                .filter(item => !approvedSearch || item.name_zh?.toLowerCase().includes(approvedSearch.toLowerCase()) || item.name_en.toLowerCase().includes(approvedSearch.toLowerCase()))
+                .map((item) => (
+                  <ApprovedCard key={item.id} item={item} onRemove={handleRemove} onUpdate={handleUpdate} />
+                ))}
             </div>
           </div>
         )}

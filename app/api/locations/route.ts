@@ -17,7 +17,11 @@ export async function POST(req: NextRequest) {
     if (!item) return NextResponse.json({ error: 'Not found' }, { status: 404 })
     const { scraped_at, ...rest } = item as PendingLocation
     void scraped_at
-    const approved: Location = { ...rest, approved_at: new Date().toISOString() }
+    const approved: Location = {
+      ...rest,
+      ...(body.category ? { category: body.category } : {}),
+      approved_at: new Date().toISOString(),
+    }
     writeLocations([...readLocations(), approved])
     writePending(pending.filter((p) => p.id !== body.id))
     return NextResponse.json({ ok: true })
