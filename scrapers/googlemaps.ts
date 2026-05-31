@@ -21,7 +21,6 @@ const SEARCH_QUERIES = [
   { query: 'dim sum restaurant Bangkok', category: 'food' as const },
   { query: 'brunch restaurant Bangkok Thonglor', category: 'food' as const },
   { query: 'rooftop restaurant Bangkok dinner', category: 'food' as const },
-  { query: 'ร้านอาหารไทย กรุงเทพ อร่อย ติดดาว', category: 'food' as const },
   { query: 'authentic Thai food Bangkok local favourite', category: 'food' as const },
   // Cafe
   { query: 'specialty coffee cafe Thonglor Bangkok', category: 'cafe' as const },
@@ -29,7 +28,6 @@ const SEARCH_QUERIES = [
   { query: 'best cafe Sukhumvit Bangkok', category: 'cafe' as const },
   { query: 'coffee roastery Bangkok', category: 'cafe' as const },
   { query: 'brunch cafe Bangkok Ekkamai aesthetic', category: 'cafe' as const },
-  { query: 'คาเฟ่ กรุงเทพ สวย บรรยากาศดี', category: 'cafe' as const },
   { query: 'cafe Bangkok Siam Chidlom hidden gem', category: 'cafe' as const },
   // Shopping
   { query: 'night market Bangkok shopping', category: 'shopping' as const },
@@ -47,6 +45,26 @@ const SEARCH_QUERIES = [
   { query: 'boutique hotel Bangkok Silom', category: 'hotel' as const },
   { query: 'luxury hotel Bangkok Sukhumvit', category: 'hotel' as const },
   { query: 'design hotel Bangkok riverside', category: 'hotel' as const },
+
+  // ── Thai-language queries — surfaces local favourites not found via English ──
+  // Food
+  { query: 'ร้านอาหารไทย กรุงเทพ อร่อย คนไทยชอบ', category: 'food' as const, local: true },
+  { query: 'ข้าวมันไก่ กรุงเทพ เด็ด', category: 'food' as const, local: true },
+  { query: 'ก๋วยเตี๋ยว ร้านดัง กรุงเทพ', category: 'food' as const, local: true },
+  { query: 'ส้มตำ ร้านดัง กรุงเทพ', category: 'food' as const, local: true },
+  { query: 'หมูกระทะ กรุงเทพ อร่อย', category: 'food' as const, local: true },
+  { query: 'อาหารอีสาน กรุงเทพ เด็ด', category: 'food' as const, local: true },
+  { query: 'ผัดไทย ร้านดัง กรุงเทพ', category: 'food' as const, local: true },
+  { query: 'ร้านอาหารเช้า กรุงเทพ คนไทย', category: 'food' as const, local: true },
+  { query: 'ต้มยำ ร้านดัง กรุงเทพ', category: 'food' as const, local: true },
+  { query: 'ร้านอาหาร ย่านลาดพร้าว ยอดนิยม', category: 'food' as const, local: true },
+  { query: 'ร้านอาหาร ย่านรัชดา พระราม 9', category: 'food' as const, local: true },
+  // Cafe
+  { query: 'คาเฟ่ กรุงเทพ คนไทยชอบ สวย', category: 'cafe' as const, local: true },
+  { query: 'ร้านกาแฟ สด กรุงเทพ อร่อย', category: 'cafe' as const, local: true },
+  { query: 'คาเฟ่เปิดใหม่ กรุงเทพ 2025', category: 'cafe' as const, local: true },
+  // Nightlife
+  { query: 'บาร์คนไทย กรุงเทพ สนุก', category: 'nightlife' as const, local: true },
 ]
 
 const PRICE_MAP: Record<string, 1 | 2 | 3 | 4> = {
@@ -71,9 +89,9 @@ type GMPlace = {
   reviews?: Array<{ text?: { text: string }; originalText?: { text: string } }>
 }
 
-export type QueryConfig = { query: string; category: 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel' }
+export type QueryConfig = { query: string; category: 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel'; local?: boolean }
 
-async function fetchPlacesQuery(query: string, category: QueryConfig['category'], apiKey: string): Promise<ScrapedItem[]> {
+async function fetchPlacesQuery(query: string, category: QueryConfig['category'], apiKey: string, local = false): Promise<ScrapedItem[]> {
   const res = await fetch(PLACES_URL, {
     method: 'POST',
     headers: {
@@ -131,6 +149,7 @@ async function fetchPlacesQuery(query: string, category: QueryConfig['category']
       price_range,
       trending: false,
       highlights,
+      local_ratio: local ? 75 : undefined,
     })
   }
   return items
@@ -141,9 +160,9 @@ export async function scrapeGoogleMapsQueries(queries: QueryConfig[]): Promise<S
   if (!apiKey) return []
 
   const results: ScrapedItem[] = []
-  for (const { query, category } of queries) {
+  for (const { query, category, local } of queries) {
     try {
-      const items = await fetchPlacesQuery(query, category, apiKey)
+      const items = await fetchPlacesQuery(query, category, apiKey, local)
       results.push(...items)
       await sleep(1000)
     } catch (err) {
@@ -161,9 +180,9 @@ export async function scrapeGoogleMaps(): Promise<ScrapedItem[]> {
   }
 
   const results: ScrapedItem[] = []
-  for (const { query, category } of SEARCH_QUERIES) {
+  for (const { query, category, local } of SEARCH_QUERIES) {
     try {
-      const items = await fetchPlacesQuery(query, category, apiKey)
+      const items = await fetchPlacesQuery(query, category, apiKey, local)
       console.log(`[GM] "${query}" → ${items.length} items`)
       results.push(...items)
       await sleep(1000)
