@@ -307,8 +307,26 @@ async function handleVerify() {
 // DETAIL / GAME — 找「立即訂購」或先點「立即購票」
 // ════════════════════════════════════════════════════════
 function handleDetail() {
-  const orderBtn = document.querySelector('button[data-href*="ticket/area"]');
-  if (orderBtn && !orderBtn.disabled && isVisible(orderBtn)) {
+  const allOrderBtns = Array.from(document.querySelectorAll('button[data-href*="ticket/area"]'))
+    .filter(b => !b.disabled && isVisible(b));
+
+  if (allOrderBtns.length) {
+    const sessionKw = (cfg.session || '').replace(/\s+/g, '');
+    let orderBtn = null;
+
+    if (sessionKw) {
+      orderBtn = allOrderBtns.find(b => {
+        const row = b.closest('tr') || b.closest('li') || b.parentElement;
+        return (row?.textContent.replace(/\s+/g, '') || '').includes(sessionKw);
+      });
+      if (!orderBtn) {
+        hud(`找不到場次「${cfg.session}」，等待中...`, '#ffbd2e');
+        return;
+      }
+    } else {
+      orderBtn = allOrderBtns[0];
+    }
+
     const label = orderBtn.closest('tr')?.textContent.trim().replace(/\s+/g, ' ').substring(0, 40) || '';
     hud('點擊「立即訂購」', '#4cff91', label);
     done = true;
