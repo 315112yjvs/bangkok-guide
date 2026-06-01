@@ -124,7 +124,7 @@ export async function scrapeInstagram(): Promise<ScrapedItem[]> {
 
         // Collect post links from the grid
         const postLinks = await page.$$eval('a[href*="/p/"]', (els) =>
-          [...new Set(els.map(el => el.getAttribute('href') ?? ''))].filter(h => h.startsWith('/p/')).slice(0, 12)
+          Array.from(new Set(els.map(el => el.getAttribute('href') ?? ''))).filter(h => h.startsWith('/p/')).slice(0, 12)
         )
         console.log(`[Instagram] #${hashtag} → ${postLinks.length} posts`)
 
@@ -188,7 +188,7 @@ export async function scrapeInstagram(): Promise<ScrapedItem[]> {
         await sleep(1500)
 
         const postLinks = await page.$$eval('a[href*="/p/"]', (els) =>
-          [...new Set(els.map(el => el.getAttribute('href') ?? ''))].filter(h => h.startsWith('/p/')).slice(0, 15)
+          Array.from(new Set(els.map(el => el.getAttribute('href') ?? ''))).filter(h => h.startsWith('/p/')).slice(0, 15)
         )
         console.log(`[Instagram] @${account} → ${postLinks.length} posts`)
 
