@@ -12,6 +12,19 @@ const HASHTAGS = [
   'ร้านอร่อยกรุงเทพ',
 ]
 
+// Bangkok food blogger accounts to scrape
+const ACCOUNTS = [
+  'chasing_delicious',
+  'tha.nud.chim',
+  'eatguide',
+  'kinraideeva',
+  'dinewithpigs',
+  'ginyuudai',
+  'dekchaipeemmaiginpak',
+  'delicioushours',
+  'em.foodie.bkk',
+]
+
 let _client: Anthropic | null = null
 function client() {
   if (!_client) _client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
@@ -161,6 +174,69 @@ export async function scrapeInstagram(): Promise<ScrapedItem[]> {
         await sleep(3000)
       } catch (err) {
         console.error(`[Instagram] Failed for #${hashtag}:`, err)
+      }
+    }
+
+    // Scrape food blogger accounts
+    console.log('[Instagram] Scraping food blogger accounts...')
+    for (const account of ACCOUNTS) {
+      try {
+        await page.goto(`https://www.instagram.com/${account}/`, { waitUntil: 'networkidle', timeout: 20000 })
+        await sleep(2000)
+
+        await page.evaluate(() => window.scrollBy(0, 800))
+        await sleep(1500)
+
+        const postLinks = await page.$$eval('a[href*="/p/"]', (els) =>
+          [...new Set(els.map(el => el.getAttribute('href') ?? ''))].filter(h => h.startsWith('/p/')).slice(0, 15)
+        )
+        console.log(`[Instagram] @${account} → ${postLinks.length} posts`)
+
+        const captions: string[] = []
+        const seenUrls = new Set<string>()
+
+        for (const href of postLinks) {
+          if (seenUrls.has(href)) continue
+          seenUrls.add(href)
+          try {
+            await page.goto(`https://www.instagram.com${href}`, { waitUntil: 'networkidle', timeout: 15000 })
+            await sleep(1500)
+
+            const caption = await page.$eval(
+              'h1, [data-testid="post-comment-root"] span, article span',
+              el => el.textContent ?? ''
+            ).catch(() => '')
+
+            if (caption.length > 20) captions.push(caption.slice(0, 800))
+          } catch {
+            // skip individual post errors
+          }
+        }
+
+        if (captions.length > 0) {
+          const names = await extractVenueNames(captions)
+          console.log(`[Instagram] @${account} → Claude found: ${names.join(', ')}`)
+          for (const name of names) {
+            results.push({
+              name_en: name,
+              name_zh: name,
+              description_en: `Recommended by Bangkok food blogger @${account}`.slice(0, 120),
+              description_zh: `曼谷美食部落客 @${account} 推薦`,
+              address: 'Bangkok, Thailand',
+              lat: 13.7563,
+              lng: 100.5018,
+              photos: [],
+              source_url: `https://www.instagram.com/${account}/`,
+              rating: 4.3,
+              price_range: 2,
+              trending: true,
+            })
+          }
+        }
+
+        await sleep(3000)
+      } catch (err) {
+        console.error(`[Instagram] Failed for @${account}:`, err)
       }
     }
   } catch (err) {
