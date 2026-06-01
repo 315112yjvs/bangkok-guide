@@ -150,6 +150,9 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
                 {distanceKm < 1 ? `${Math.round(distanceKm * 1000)}m` : `${distanceKm.toFixed(1)}km`}
               </span>
             )}
+            {location.area && location.area !== 'Bangkok' && (
+              <span className="shrink-0 text-[9px] text-gray-400 font-medium truncate">{location.area}</span>
+            )}
           </div>
           <div className="flex items-center gap-1 shrink-0">
             <button

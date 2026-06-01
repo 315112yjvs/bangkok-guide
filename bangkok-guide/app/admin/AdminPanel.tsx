@@ -81,6 +81,7 @@ function PendingCard({
     category: (item.category as Category) || 'food' as Category,
     rating: item.rating,
     price_range: item.price_range,
+    area: (item as PendingLocation & { area?: string }).area ?? '',
     address: item.address,
     highlights: (item.highlights ?? []).join(', '),
   })
@@ -160,7 +161,7 @@ function PendingCard({
             <div>
               <p className="text-[10px] font-semibold text-gray-500 mb-1">分類</p>
               <select className={inp} value={form.category} onChange={e => setForm(f => ({...f, category: e.target.value as Category}))}>
-                {((['food','cafe','shopping','nightlife','hotel','attraction'] as Category[])).map(c => <option key={c} value={c}>{c}</option>)}
+                {(['food','cafe','shopping','nightlife','hotel','attraction'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">評分</p><input type="number" min="0" max="5" step="0.1" className={inp} value={form.rating} onChange={e => setForm(f => ({...f, rating: Number(e.target.value)}))} /></div>
@@ -170,6 +171,7 @@ function PendingCard({
                 {[1,2,3,4].map(n => <option key={n} value={n}>{'$'.repeat(n)}</option>)}
               </select>
             </div>
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">區域</p><input className={inp} placeholder="e.g. Thonglor" value={form.area ?? ''} onChange={e => setForm(f => ({...f, area: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">地址</p><input className={inp} value={form.address} onChange={e => setForm(f => ({...f, address: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">亮點（逗號分隔）</p><input className={inp} value={form.highlights} onChange={e => setForm(f => ({...f, highlights: e.target.value}))} /></div>
           </div>
@@ -364,7 +366,7 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
         <div>
           <label className={label}>分類</label>
           <select className={inp} value={form.category} onChange={field('category')}>
-            {((['food','cafe','shopping','nightlife','hotel','attraction'] as Category[])).map(c => <option key={c} value={c}>{c}</option>)}
+            {(['food','cafe','shopping','nightlife','hotel','attraction'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
         <div>
@@ -414,6 +416,7 @@ export function AdminPanel() {
   const [deploying, setDeploying] = useState(false)
   const [approvedSearch, setApprovedSearch] = useState('')
   const [pendingSourceFilter, setPendingSourceFilter] = useState<string>('all')
+  const [pendingAreaFilter, setPendingAreaFilter] = useState<string>('all')
 
   useEffect(() => {
     if (sessionStorage.getItem('admin_authed') === '1') setAuthed(true)
@@ -457,7 +460,10 @@ export function AdminPanel() {
   }
 
   async function handleApproveAll() {
-    const visible = pendingSourceFilter === 'all' ? pending : pending.filter(p => p.source === pendingSourceFilter)
+    const visible = pending.filter(p =>
+      (pendingSourceFilter === 'all' || p.source === pendingSourceFilter) &&
+      (pendingAreaFilter === 'all' || (p as PendingLocation & { area?: string }).area === pendingAreaFilter)
+    )
     if (!confirm(`確定要全部上架 ${visible.length} 筆待審核地點嗎？`)) return
     await Promise.all(visible.map((item) =>
       fetch('/api/locations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'approve', id: item.id }) })
@@ -608,7 +614,10 @@ export function AdminPanel() {
                     onClick={handleApproveAll}
                     className="text-xs font-bold px-4 py-2 rounded-xl bg-green-50 text-green-700 hover:bg-green-100 transition-colors"
                   >
-                    全部上架 ({pendingSourceFilter === 'all' ? pending.length : pending.filter(p => p.source === pendingSourceFilter).length})
+                    全部上架 ({pending.filter(p =>
+                      (pendingSourceFilter === 'all' || p.source === pendingSourceFilter) &&
+                      (pendingAreaFilter === 'all' || (p as PendingLocation & { area?: string }).area === pendingAreaFilter)
+                    ).length})
                   </button>
                   <button
                     onClick={handleRejectAll}
@@ -619,30 +628,41 @@ export function AdminPanel() {
                 </div>
               )}
             </div>
-            {/* Source filter */}
-            {pending.length > 0 && (
-              <div className="flex gap-2 flex-wrap mb-1">
-                {(['all', ...Array.from(new Set(pending.map(p => p.source)))]) .map((src) => (
-                  <button
-                    key={src}
-                    onClick={() => setPendingSourceFilter(src)}
-                    className={`text-[11px] font-bold px-3 py-1 rounded-full transition-colors ${
-                      pendingSourceFilter === src
-                        ? 'bg-[#0f172a] text-white'
-                        : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-                    }`}
-                  >
-                    {src === 'all' ? `全部 (${pending.length})` : `${SOURCE_LABEL[src as Source] ?? src} (${pending.filter(p => p.source === src).length})`}
-                  </button>
-                ))}
-              </div>
-            )}
+            {/* Source + Area filters */}
+            {pending.length > 0 && (() => {
+              const areas = Array.from(new Set(pending.map(p => (p as PendingLocation & { area?: string }).area).filter(Boolean))).sort()
+              const filtered = pending.filter(p =>
+                (pendingSourceFilter === 'all' || p.source === pendingSourceFilter) &&
+                (pendingAreaFilter === 'all' || (p as PendingLocation & { area?: string }).area === pendingAreaFilter)
+              )
+              return (
+                <>
+                  <div className="flex gap-2 flex-wrap mb-1">
+                    {(['all', ...Array.from(new Set(pending.map(p => p.source)))]).map((src) => (
+                      <button key={src} onClick={() => setPendingSourceFilter(src)}
+                        className={`text-[11px] font-bold px-3 py-1 rounded-full transition-colors ${pendingSourceFilter === src ? 'bg-[#0f172a] text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}>
+                        {src === 'all' ? `全部 (${pending.length})` : `${SOURCE_LABEL[src as Source] ?? src} (${pending.filter(p => p.source === src).length})`}
+                      </button>
+                    ))}
+                  </div>
+                  {areas.length > 0 && (
+                    <div className="flex gap-1.5 flex-wrap mb-2">
+                      {(['all', ...areas]).map((a) => (
+                        <button key={a} onClick={() => setPendingAreaFilter(a as string)}
+                          className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full transition-colors ${pendingAreaFilter === a ? 'bg-indigo-600 text-white' : 'bg-indigo-50 text-indigo-500 hover:bg-indigo-100'}`}>
+                          {a === 'all' ? '所有區域' : a as string}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  {filtered.length === 0 && <p className="text-gray-400 text-sm py-8 text-center">沒有符合條件的地點</p>}
+                  {filtered.map((item) => (
+                    <PendingCard key={item.id} item={item} onApprove={handleApprove} onReject={handleReject} onUpdate={handleUpdatePending} />
+                  ))}
+                </>
+              )
+            })()}
             {pending.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">沒有待審核的地點</p>}
-            {pending
-              .filter(item => pendingSourceFilter === 'all' || item.source === pendingSourceFilter)
-              .map((item) => (
-              <PendingCard key={item.id} item={item} onApprove={handleApprove} onReject={handleReject} onUpdate={handleUpdatePending} />
-            ))}
           </div>
         )}
 

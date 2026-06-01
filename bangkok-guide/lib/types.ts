@@ -19,6 +19,7 @@ export type Location = {
   rating: number
   price_range: 1 | 2 | 3 | 4
   trending: boolean
+  area?: string          // Bangkok neighbourhood, e.g. "Thonglor", "Silom"
   highlights?: string[]
   hashtags?: string[]    // Thai/EN trending hashtags
   local_ratio?: number   // 0–100 (% local customers)

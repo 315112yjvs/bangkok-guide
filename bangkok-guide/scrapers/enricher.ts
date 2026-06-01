@@ -140,8 +140,63 @@ export function extractHighlights(
   return [...found, ...extra].slice(0, 3)
 }
 
+// Bangkok area extraction from Google formattedAddress
+const AREA_PATTERNS: Array<[RegExp, string]> = [
+  [/thong lo|thonglor|thong lor/i, 'Thonglor'],
+  [/ekkamai|ekamai/i, 'Ekkamai'],
+  [/phrom phong|prompong|phrompong/i, 'Phrom Phong'],
+  [/asok|asoke/i, 'Asok'],
+  [/on nut|on-nut|onnut/i, 'On Nut'],
+  [/udom suk/i, 'Udom Suk'],
+  [/bearing|samrong/i, 'Bearing'],
+  [/nana(?!\s*plaza)/i, 'Nana'],
+  [/phloen chit|ploenchit|ploen chit/i, 'Ploenchit'],
+  [/chit lom|chidlom/i, 'Chidlom'],
+  [/siam(?!\s*paragon|\s*square|\s*center)/i, 'Siam'],
+  [/ratchadamri/i, 'Ratchadamri'],
+  [/silom/i, 'Silom'],
+  [/surawong|surawongse/i, 'Surawong'],
+  [/sathorn/i, 'Sathorn'],
+  [/charoen krung|charoenkrung/i, 'Charoen Krung'],
+  [/ari\b/i, 'Ari'],
+  [/phahon yothin|phahonyothin/i, 'Phahonyothin'],
+  [/ratchayothin/i, 'Ratchayothin'],
+  [/lat phrao|ladprao|lad phrao/i, 'Lat Phrao'],
+  [/ratchadaphisek|ratchada\b/i, 'Ratchada'],
+  [/huai khwang|huay kwang|huaikhwang/i, 'Huai Khwang'],
+  [/chatuchak/i, 'Chatuchak'],
+  [/mo chit/i, 'Mo Chit'],
+  [/don mueang|don muang/i, 'Don Mueang'],
+  [/yaowarat/i, 'Yaowarat'],
+  [/khao san|khaosan|ko san/i, 'Khao San'],
+  [/bang rak|bangrak/i, 'Bang Rak'],
+  [/pratunam|pratunam/i, 'Pratunam'],
+  [/ratchathewi/i, 'Ratchathewi'],
+  [/bang phlat|bangphlat/i, 'Bang Phlat'],
+  [/thon buri|thonburi/i, 'Thon Buri'],
+  [/khlong san/i, 'Khlong San'],
+  [/phra khanong/i, 'Phra Khanong'],
+  [/wang thong lang/i, 'Wang Thong Lang'],
+  [/min buri/i, 'Min Buri'],
+  // District-level fallbacks
+  [/watthana/i, 'Sukhumvit'],
+  [/khlong toei/i, 'Sukhumvit'],
+  [/phra nakhon/i, 'Old City'],
+  [/samphanthawong/i, 'Yaowarat'],
+  [/pathum wan|pathumwan/i, 'Siam'],
+  [/phaya thai/i, 'Phaya Thai'],
+  [/bang sue/i, 'Bang Sue'],
+]
+
+export function extractArea(formattedAddress: string): string {
+  for (const [pattern, area] of AREA_PATTERNS) {
+    if (pattern.test(formattedAddress)) return area
+  }
+  return 'Bangkok'
+}
+
 const CAT_ZH: Record<string, string> = {
-  food: '餐廳', cafe: '咖啡廳', shopping: '購物景點', nightlife: '夜生活場所', hotel: '飯店',
+  food: '餐廳', cafe: '咖啡廳', shopping: '購物景點', nightlife: '夜生活場所', hotel: '飯店', attraction: '景點',
 }
 
 export function buildDescriptions(
@@ -184,6 +239,8 @@ export type EnrichedItem = {
   lng: number
   photos: string[]
   rating: number
+  area: string
+  address: string
 }
 
 // Returns null if the name can't be matched to a real Bangkok place on Google Maps.
@@ -232,6 +289,9 @@ export async function enrichItem(
   const description_en = buildDescEn(baseLoc, highlights, editorial)
   const description_zh = description_zh_rich || buildDescZh({ ...baseLoc, source: 'googlemaps' as const, name_en }, highlights, editorial)
 
+  const formattedAddress = place.formattedAddress ?? ''
+  const area = extractArea(formattedAddress)
+
   return {
     name_en,
     name_zh,
@@ -242,5 +302,7 @@ export async function enrichItem(
     lng: place.location?.longitude ?? lng ?? 100.5018,
     photos: photoRef ? [photoRef] : [],
     rating: place.rating ?? 4.0,
+    area,
+    address: formattedAddress || 'Bangkok, Thailand',
   }
 }

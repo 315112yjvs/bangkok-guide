@@ -54,6 +54,8 @@ async function processItems(
         lng: enriched.lng,
         photos: enriched.photos,
         rating: enriched.rating,
+        area: enriched.area,
+        address: enriched.address,
         id: uuidv4(),
         category,
         source: source as PendingLocation['source'],
