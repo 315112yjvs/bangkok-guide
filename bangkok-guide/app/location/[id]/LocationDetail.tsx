@@ -183,7 +183,7 @@ export function LocationDetail({ location }: { location: Location }) {
           {location.price_range > 0 && (
             <span className="text-sm text-gray-400 font-semibold">{'฿'.repeat(location.price_range)}</span>
           )}
-          <span className="text-xs text-gray-400">{{ food: '餐廳', cafe: '咖啡廳', shopping: '購物', nightlife: '夜生活', hotel: '飯店' }[location.category] ?? location.category}</span>
+          <span className="text-xs text-gray-400">{{ food: '餐廳', cafe: '咖啡廳', shopping: '購物', nightlife: '夜生活', hotel: '飯店', attraction: '景點' }[location.category as string] ?? location.category}</span>
         </div>
 
         {/* Description */}

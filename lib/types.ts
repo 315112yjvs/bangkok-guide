@@ -1,4 +1,4 @@
-export type Category = 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel'
+export type Category = 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel' | 'attraction'
 export type Source = 'pantip' | 'wongnai' | 'googlemaps' | 'tiktok' | 'instagram' | 'manual'
 
 export type Location = {
