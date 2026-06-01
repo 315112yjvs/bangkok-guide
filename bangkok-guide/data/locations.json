@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "name_en": "TALK DIRTY COFFEE & CAFE",
+    "name_zh": "TALK DIRTY COFFEE & CAFE",
+    "description_en": "A mid-range, top-rated specialty café in Bangkok. Known for Espresso and Needed caffeine bad.",
+    "description_zh": "必點：濃縮咖啡。這間咖啡館以深焙濃郁的義式濃縮著稱，是曼谷咖啡愛好者的秘密據點。小空間卻充滿個性，咖啡師手藝一流。",
+    "category": "cafe",
+    "address": "MRT Fai Chai Station, Phran Nok Phutthamonthon Sai 4 Rd, Khwaeng Bang Khun Si, Khet Bangkok Noi, Krung Thep Maha Nakhon 10700, Thailand",
+    "lat": 13.755203999999999,
+    "lng": 100.46843679999999,
+    "photos": [
+      "places/ChIJqcIIjzqZ4jAREMfGRcUs2cY/photos/Ab43m-tWc4pUhtABB5tTtuuRo4oQwP3CyeT1UaUVe-NhfBavW57m4a_ctpnsUgjNYZVmmcXV_9A3ueaKYi5JCwmVmTJuzeYx6VFbe_zyo8DdB1khmvgCXuIO_iSIc--5GZ-Pbr-xhzD25l9_eyvJ18gGorqusRIyYnK6XST22ybQYNgY_WZwFZ779ndmKdnS6HDGerNajxArEgCLU4Hni1lp9I0XfyIU6U3tH0V_NgFzbLzUdySL3JDBKW1pI90eSbN7JzIqtZGbjSejEwL5iswNu7Hc9vQyaNS1a30mCpju2j0bFg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=TALK%20DIRTY%20COFFEE%20%26%20CAFE%20MRT%20Fai%20Chai%20Station%2C%20Phran%20Nok%20Phutthamonthon%20Sai%204%20Rd%2C%20Khwaeng%20Bang%20Khun%20Si%2C%20Khet%20Bangkok%20Noi%2C%20Krung%20Thep%20Maha%20Nakhon%2010700%2C%20Thailand&query_place_id=ChIJqcIIjzqZ4jAREMfGRcUs2cY",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Espresso",
+      "Needed caffeine bad",
+      "Chance to try"
+    ],
+    "local_ratio": 75,
+    "id": "fdc3e766-ebc1-4f52-bb13-cbfe05a3249a",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:07:02.514Z"
+  }
+]
