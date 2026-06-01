@@ -307,24 +307,42 @@ async function handleVerify() {
 // DETAIL / GAME — 找「立即訂購」或先點「立即購票」
 // ════════════════════════════════════════════════════════
 function handleDetail() {
-  const allOrderBtns = Array.from(document.querySelectorAll('button[data-href*="ticket/area"]'))
-    .filter(b => !b.disabled && isVisible(b));
+  const sessionKws = (cfg.session || '').split(',')
+    .map(s => s.trim().replace(/\s+/g, '')).filter(Boolean);
 
-  if (allOrderBtns.length) {
-    const sessionKw = (cfg.session || '').replace(/\s+/g, '');
+  // 所有場次按鈕（含已售完/未開放）
+  const allBtns  = Array.from(document.querySelectorAll('button[data-href*="ticket/area"]'));
+  const availBtns = allBtns.filter(b => !b.disabled && isVisible(b));
+
+  if (availBtns.length) {
     let orderBtn = null;
 
-    if (sessionKw) {
-      orderBtn = allOrderBtns.find(b => {
-        const row = b.closest('tr') || b.closest('li') || b.parentElement;
-        return (row?.textContent.replace(/\s+/g, '') || '').includes(sessionKw);
-      });
+    if (sessionKws.length) {
+      for (const kw of sessionKws) {
+        orderBtn = availBtns.find(b => {
+          const row = b.closest('tr') || b.closest('li') || b.parentElement;
+          return (row?.textContent.replace(/\s+/g, '') || '').includes(kw);
+        });
+        if (orderBtn) break;
+      }
+
       if (!orderBtn) {
-        hud(`找不到場次「${cfg.session}」，等待中...`, '#ffbd2e');
+        // 判斷關鍵字在表格中存不存在（可能尚未開放）
+        const inTable = allBtns.some(b => {
+          const row = b.closest('tr') || b.closest('li') || b.parentElement;
+          const text = row?.textContent.replace(/\s+/g, '') || '';
+          return sessionKws.some(kw => text.includes(kw));
+        });
+
+        if (inTable) {
+          hud(`⏳ 場次「${cfg.session}」尚未開放`, '#ffbd2e', '等待開放中...');
+        } else {
+          hud(`⚠ 找不到場次「${cfg.session}」`, '#ff4757', '請確認關鍵字是否正確');
+        }
         return;
       }
     } else {
-      orderBtn = allOrderBtns[0];
+      orderBtn = availBtns[0];
     }
 
     const label = orderBtn.closest('tr')?.textContent.trim().replace(/\s+/g, ' ').substring(0, 40) || '';
@@ -381,14 +399,21 @@ function handleArea() {
     if (match) { chosen = match; break; }
   }
 
+  let usedFallback = false;
   if (!chosen) {
     const avail = links.filter(a => remaining(a) > 0);
     if (!avail.length) { hud('所有票區售罄！', '#ff4757'); return; }
     avail.sort((a, b) => remaining(b) - remaining(a));
     chosen = avail[0];
+    usedFallback = true;
   }
 
-  hud(`選票區：${chosen.textContent.trim().replace(/\s+/g, ' ')}`, '#4cff91');
+  const areaLabel = chosen.textContent.trim().replace(/\s+/g, ' ');
+  if (usedFallback && priorities.length) {
+    hud(`⚠ 備選票區：${areaLabel}`, '#ffbd2e', `找不到：${priorities.join(' / ')}`);
+  } else {
+    hud(`選票區：${areaLabel}`, '#4cff91');
+  }
   areaClicked = true;
   chrome.storage.local.set({ tix_running: true });
   doClick(chosen);
