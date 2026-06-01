@@ -138,5 +138,93 @@
     "category": "food",
     "source": "pantip",
     "approved_at": "2026-06-01T12:15:20.388Z"
+  },
+  {
+    "name_en": "Kamu Kamu",
+    "name_zh": "Kamu Kamu",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok. Known for Drinks.",
+    "description_zh": "必點：特色調酒。Kamu Kamu以創意雞尾酒聞名，調酒師將泰國在地食材與國際技法完美結合，每杯都是藝術品。夜晚氛圍輕鬆愜意，是曼谷酒客的私房名單。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.746312500000002,
+    "lng": 100.53156249999999,
+    "photos": [
+      "places/ChIJBVgMFE-f4jARbXwn7oWGAwE/photos/Ab43m-vQbjtKCEJWmuNRpex0mLRxj6YhAWcxLiCXN6tmlTVqSszT8d2a1QQ2lSOgoECbrDMxlaLjdv2C-sOXtpK93cHA4JHG9QWRU8oDDIIM1AmioK-ycIK1XUYoKK4cqJxzjm-jMIJbKTyyRck8errqhpTKd5aaJGkH3t2b_Kx_SeCfAf-e7sQlE-jNPCDfwbQvXSP8_vy-JXJC8XJrSgh7eKXOoMd5YDcrgCyhFtZLsnu57as28zjsJjAqRhZZktiKqQZPBLdFTWtbBGs7qFxWUibQ5PhXjpg-S0NZV1QehYiukYDVv36-Q4rAttqh_GQ42jN9OwKD6-gRNIU2VawUIya0F6l_Ay0i_aInffCaUqusMW2VE3QwutHLkLCywV8IzONkr2SxlQpAN9BIM8H8Wo3r2CSE5qwRLiExLijPcv0mrQ"
+    ],
+    "source_url": "https://pantip.com/topic/42019735",
+    "rating": 3.6,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Drinks"
+    ],
+    "id": "36eaa220-6cc5-49e1-9075-58eab4dcbb0d",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-06-01T12:16:26.954Z"
+  },
+  {
+    "name_en": "ขอนแก่นขนส่ง",
+    "name_zh": "ขอนแก่นขนส่ง",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok.",
+    "description_zh": "必點：叢集肉類串燒、東北部辛辣沙律。這間食堂匯聚了泰國東北部的道地風味，老闆親切，份量大氣。入夜後當地人絡繹不絕，是品嚐庶民美食的最佳去處。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7563309,
+    "lng": 100.5017651,
+    "photos": [],
+    "source_url": "https://pantip.com/topic/31188449",
+    "rating": 3.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "04b27d97-078f-4167-a5e4-54187827e528",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-06-01T12:17:34.207Z"
+  },
+  {
+    "name_en": "FLOOR/ 9",
+    "name_zh": "FLOOR/ 9",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Cocktails.",
+    "description_zh": "必點：特調雞尾酒。九樓隱密酒吧，調酒師手藝高超，每杯都是藝術品。夜景配美酒，是曼谷夜生活的隱藏版選擇。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.726445,
+    "lng": 100.54315229999999,
+    "photos": [
+      "places/ChIJb-dn3Oyf4jARn7pPZwmIN3w/photos/Ab43m-ss6GOu_e5yiY_5XhW9I7F8ylwdMLr09TlV8WldpaytmUbqwPDXkjiohhyPQyE2_cholbxi_Dk0XQR7zoBmE6LqMZjM7ETtNUjYq6_4NvlhMz72min7zxsCAERDcOC6rkmoovGlVSn8rJ9PvrXfe6u7q4F2lF4wffqdajowG17SCCCerTGKKyu0aGRmXfeoTZqM1FEHBKvgyT2CZAwIvz_mvLRGwFTI6WmniVWfEwEwZTMJUnIjbF2JwT1fYVAX3To54tERutXqr9tcrOcsish3FWnafd0w9i0n1Ym1CFun_zxQ1akq_CdHNSliKUz2jo0uQUu1NuWO6QkBmw6dic9LxQ-IWcN8zq64sf0FCFfzaouapwPMo1so4GVq2I4V7_Ox8NIdeapfUbt6EPpMyTzipfPMkU04SU7y2Sugnuwxgsk"
+    ],
+    "source_url": "https://pantip.com/topic/42036345",
+    "rating": 4.6,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Cocktails"
+    ],
+    "id": "aaac4a26-76ad-4faa-a38f-4685668fe27b",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-06-01T12:17:57.221Z"
+  },
+  {
+    "name_en": "Three Sixty Lounge",
+    "name_zh": "Three Sixty Lounge",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Rooftop View.",
+    "description_zh": "必點：屋頂美景。三百六十度酒廊坐擁曼谷全景，日落時分格外迷人，是俯瞰城市夜景的絕佳去處。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7288002,
+    "lng": 100.5113133,
+    "photos": [
+      "places/ChIJbSLDx92Y4jARM9xY2YMxPN8/photos/Ab43m-v1XOg46eniwa4WJZ5QVNFSjD5IhHrkKfcgl2iGxAgtNdtiUp1hEOE9GAKkAn5jCjlu69SnEXK6ozQXdzV3noN_fo5ZHw3lzQ_x2dKCxVbs3S92lh1yhpNN5RlnUOmZzutIC9XLL31XZbLgD96woNQrqBkbyDTH5wvvb0waJVkrL5HUdGmOBKsLj2LLT6ljwHk5QZGxtXRT6EIDsrhCQy8x5OHFL5DyDn4UUv1giva3jH0vQ6K1OnJTEUoigQgbmiFccP4hiva5MAb-BzLYC6S2YLRSuUDFizFfV9mVQTB91w"
+    ],
+    "source_url": "https://pantip.com/topic/33401871",
+    "rating": 4.5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Rooftop View"
+    ],
+    "id": "6a99bdac-3cec-4723-95ed-03c5e2f34266",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-06-01T12:18:12.819Z"
   }
 ]
