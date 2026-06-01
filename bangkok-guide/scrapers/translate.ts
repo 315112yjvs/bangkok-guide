@@ -1,4 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk'
+import { firecrawlSearch } from './shared'
 
 let _client: Anthropic | null = null
 function client(): Anthropic {
@@ -6,8 +7,6 @@ function client(): Anthropic {
   return _client
 }
 
-// Translate a batch of English location names → Traditional Chinese.
-// Returns array in same order. Falls back to original on error.
 export async function translateNames(names: string[]): Promise<string[]> {
   if (!process.env.ANTHROPIC_API_KEY || names.length === 0) return names
 
@@ -44,45 +43,72 @@ ${JSON.stringify(names, null, 2)}`
   }
 }
 
-// Translate a single English name → Traditional Chinese
 export async function translateName(name: string): Promise<string> {
   const results = await translateNames([name])
   return results[0] ?? name
 }
 
-// Generate a proper Chinese description from English editorial + highlights
+async function fetchWebContext(nameEn: string): Promise<string> {
+  if (!process.env.FIRECRAWL_API_KEY) return ''
+  try {
+    const results = await firecrawlSearch(`"${nameEn}" Bangkok`, 3)
+    return results
+      .filter(r => r.description && r.description.length > 40)
+      .map(r => r.description?.slice(0, 300))
+      .join(' | ')
+      .slice(0, 600)
+  } catch {
+    return ''
+  }
+}
+
 export async function generateDescriptionZh(
   nameEn: string,
   editorial: string | undefined,
   highlights: string[],
   category: string
 ): Promise<string> {
+  const CAT_ZH: Record<string, string> = {
+    food: '餐廳', cafe: '咖啡廳', shopping: '購物景點',
+    nightlife: '夜生活場所', hotel: '飯店', attraction: '景點',
+  }
+  const catZh = CAT_ZH[category] ?? '地點'
+
   if (!process.env.ANTHROPIC_API_KEY) {
-    const catZh: Record<string, string> = {
-      food: '餐廳', cafe: '咖啡廳', shopping: '購物景點', nightlife: '夜生活場所', hotel: '飯店',
-    }
-    const highlightZh = highlights.length > 0 ? `必點：${highlights.join('、')}。` : ''
-    return `${highlightZh}曼谷熱門${catZh[category] ?? '地點'}，評價極佳。`
+    const hlZh = highlights.length > 0 ? `必點：${highlights.join('、')}。` : ''
+    return `${hlZh}曼谷熱門${catZh}，評價極佳。`
   }
 
-  const context = editorial
-    ? `Editorial: "${editorial}"`
-    : `Category: ${category}${highlights.length ? `, highlights: ${highlights.join(', ')}` : ''}`
+  // Collect all available real facts
+  const facts: string[] = []
+  if (editorial) facts.push(`Google 簡介：「${editorial}」`)
+  if (highlights.length > 0) facts.push(`招牌品項：${highlights.join('、')}`)
 
-  const prompt = `Write a short Traditional Chinese (繁體中文) description for a Bangkok travel guide listing.
+  // No Google editorial — search web for real info
+  if (!editorial) {
+    const web = await fetchWebContext(nameEn)
+    if (web) facts.push(`網路資料：${web}`)
+  }
 
-Place: ${nameEn}
-${context}
-${highlights.length ? `Must-try items: ${highlights.join(', ')}` : ''}
+  // No real data at all — skip Claude, use safe template
+  if (facts.length === 0) {
+    return `曼谷人氣${catZh}，值得一訪。`
+  }
 
-Requirements:
-- 20-50 Chinese characters
-- Start with must-try items if available: "必點：X、Y。"
-- Then 1-2 sentences about the vibe or what makes it special
-- No generic filler like "評價極佳" unless truly warranted
-- Sound like a local recommendation
+  const prompt = `根據以下真實資料，用繁體中文為曼谷旅遊指南寫一段簡短介紹。
 
-Return ONLY the Chinese description text, no quotes.`
+場所名稱：${nameEn}
+類別：${catZh}
+
+參考資料：
+${facts.join('\n')}
+
+要求：
+- 20–50 個中文字
+- 只能寫參考資料中有提到的內容，絕對不可自行補充未提及的細節
+- 若有招牌品項，以「必點：X、Y。」開頭
+- 文字要像在地人推薦的語氣
+- 只輸出中文介紹文字，不加引號`
 
   try {
     const msg = await client().messages.create({
@@ -91,8 +117,8 @@ Return ONLY the Chinese description text, no quotes.`
       messages: [{ role: 'user', content: prompt }],
     })
     const text = msg.content[0].type === 'text' ? msg.content[0].text.trim() : ''
-    return text || `曼谷熱門${category === 'cafe' ? '咖啡廳' : '餐廳'}。`
+    return text || `曼谷熱門${catZh}。`
   } catch {
-    return `曼谷熱門${category === 'cafe' ? '咖啡廳' : '餐廳'}。`
+    return `曼谷熱門${catZh}。`
   }
 }
