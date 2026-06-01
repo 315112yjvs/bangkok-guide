@@ -160,7 +160,7 @@ function PendingCard({
             <div>
               <p className="text-[10px] font-semibold text-gray-500 mb-1">分類</p>
               <select className={inp} value={form.category} onChange={e => setForm(f => ({...f, category: e.target.value as Category}))}>
-                {(['food','cafe','shopping','nightlife','hotel'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
+                {(['food','cafe','shopping','nightlife','hotel','attraction'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">評分</p><input type="number" min="0" max="5" step="0.1" className={inp} value={form.rating} onChange={e => setForm(f => ({...f, rating: Number(e.target.value)}))} /></div>
@@ -364,7 +364,7 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
         <div>
           <label className={label}>分類</label>
           <select className={inp} value={form.category} onChange={field('category')}>
-            {(['food','cafe','shopping','nightlife','hotel'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
+            {(['food','cafe','shopping','nightlife','hotel','attraction'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
         <div>
