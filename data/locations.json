@@ -96,27 +96,6 @@
     "approved_at": "2026-06-01T12:14:20.905Z"
   },
   {
-    "name_en": "Chester's Grill",
-    "name_zh": "Chester's Grill",
-    "description_en": "A mid-range, well-regarded restaurant in Bangkok.",
-    "description_zh": "必點：肋排、牛排。曼谷在地人最愛的燒烤餐廳，炭火烤肉香氣四溢，份量大又實在，夜晚總是座無虛席。",
-    "address": "Bangkok, Thailand",
-    "lat": 13.7597033,
-    "lng": 100.4863881,
-    "photos": [
-      "places/ChIJOcuJM3WZ4jARQdeNBNcnJv4/photos/Ab43m-vmJk4Ihq-iZ2LXTWDLCvb1GSPoq2cHLt70ek0FrO2WP-jVgIOvle9KRwt-0Yll6mBFz12RVaAlNqhdz_HYT21Ps5NY1Vdt6nuQ7S1PPg0rvkxOQAS4ZkvcI9ZvwoGprtiEOQ6hyugTl4nJWg71FMbwW_8PdAuh5KaPfVgVkMw77EvQVWlWAFr50Cirrus83NWfT0kWgqL5u3LK9pzBcBECI8N_5KO0j3s-3x64N4b_CQlBol5qgOEGtrTNO9BvRrHov54uhDkNYnJ1TYBQFJdTL4Hz0hye-CloxxM__2OEXw"
-    ],
-    "source_url": "https://pantip.com/topic/42019735",
-    "rating": 4,
-    "price_range": 2,
-    "trending": false,
-    "highlights": [],
-    "id": "103774c8-2c7d-4c1e-a321-8c4f6bc4d434",
-    "category": "food",
-    "source": "pantip",
-    "approved_at": "2026-06-01T12:15:06.020Z"
-  },
-  {
     "name_en": "ข้าวหมกไก่สยาม บางบัวทอง",
     "name_zh": "ข้าวหมกไก่สยาม บางบัวทอง",
     "description_en": "A mid-range, well-regarded restaurant in Bangkok. Known for It here.",
@@ -226,5 +205,244 @@
     "category": "food",
     "source": "pantip",
     "approved_at": "2026-06-01T12:18:12.819Z"
+  },
+  {
+    "name_en": "Moom Muum Park Soi 11",
+    "name_zh": "Moom Muum Park Soi 11",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Pad Thai and Mango Sticky Rice.",
+    "description_zh": "必點：泰式炒麵、芒果糯米飯、特調雞尾酒。Moom Muum Park精緻小酒館，融合道地泰菜與創意調酒，傍晚時分最是熱鬧。",
+    "category": "food",
+    "address": "20 Soi Sukhumvit 11, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.743685999999999,
+    "lng": 100.55690609999999,
+    "photos": [
+      "places/ChIJ1zFwmTef4jARhVxggmEDBUY/photos/Ab43m-uNsR_cH0PSBx6y9vPaId5PFS83zUpEXZoaFRQ-usj7DYTUq81H-Pb_5Ty1oESBChKz4iXYgjLXS3EwqZUxBa_1suw3QiUtSohuPO_1nLLI5vBBNM7cAKCEXs5azHuLZCX6xo3_7MUsYaHlGCzQ1jbTYkYsFBin7q_q4-UK2NAXKAQfPXldNYLqLC-CZZrKHwsqnjadBzlCRs1xD0KkwHOvp_XhdYuLpaDnxSSLB7IkELI002v-JVIgEnuSfTy40F0EHJMiPVH40Xc9F0AAxe9gUW-4AVGBurye2xZixqG68w"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Moom%20Muum%20Park%20Soi%2011%2020%20Soi%20Sukhumvit%2011%2C%20Khwaeng%20Khlong%20Toei%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ1zFwmTef4jARhVxggmEDBUY",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Pad Thai",
+      "Mango Sticky Rice",
+      "Cocktails"
+    ],
+    "id": "d83301c0-1b80-43cc-8ed7-9a88ca3e0353",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:20:45.217Z"
+  },
+  {
+    "name_en": "Sri Trat Restaurant and Bar",
+    "name_zh": "Sri Trat Restaurant and Bar",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Tom Yum and Dumplings.",
+    "description_zh": "必點：冬陰功、水餃。曼谷在地人必訪，酸辣湯頭濃郁夠味，小籠包皮薄餡香，一口一個停不下來。",
+    "category": "food",
+    "address": "90 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.736803700000001,
+    "lng": 100.5680964,
+    "photos": [
+      "places/ChIJoc-7O_ye4jARa2GblY_w4Bo/photos/Ab43m-vsxLN0Db2--ZN0kLS6HXeapcgttFtKdPxZl2JiYqNxiRRfugp-uDTVOip0fG5ThuxS5j191JV_hdd8SWTYNAqkg2nTXqjih6syb4WOS3xHmMDzhcxAVUCrHl3Ezts8PGgjkHm8LyuBCbKozDRlL-1Vksv8GmETz41hS9C1ouJZ7ZUBNkrBUR71DBkOjCR0ayxlZDxYu4uZW1pKJzGIAIHPVqsKZzMAzz8zzWEW4hkRMsxuu9csAG4EqJeGsWXvU5ZywgQrQijW9jDUsZ2ZWutdQIoDPr8iYAOLj0yoGF8DMba9gRnjaDhz8rMSSw5FMaOt9V--ZKkUqGWuUrqpsE5sAqb_H4n8JpfSVnyHrW2cjjEZoOyreRvT5MEqafuDN8B66kng3pwARh13y-WgTNzUWB0Iyr7cewm5flLT9lUiIQGvHPWxEytPUAGtmUkW"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Sri%20Trat%20Restaurant%20and%20Bar%2090%20Soi%20Sukhumvit%2033%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJoc-7O_ye4jARa2GblY_w4Bo",
+    "rating": 4.5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Tom Yum",
+      "Dumplings"
+    ],
+    "id": "7975ce77-e22d-40b9-a6eb-6c87216a90ba",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:21:12.693Z"
+  },
+  {
+    "name_en": "Mariga",
+    "name_zh": "Mariga",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok.",
+    "description_zh": "必點：咖喱麵、泰式炒飯。Mariga是曼谷老字號泰餐廳，道地南泰風味，份量大又便宜，在地人必吃。",
+    "category": "food",
+    "address": "43 Sukhumvit Soi 15, Nua, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.741453199999999,
+    "lng": 100.5585818,
+    "photos": [
+      "places/ChIJsVHlc0ef4jARH5KLLPC4zdo/photos/Ab43m-vwof3I2nrY_T9SS_we0SWwccL8XDahWzVntZqjCZ3P8ZawpBaRaxWbrDk-ZQTIU7YqPS06Z4sO66EM_FR2nUW7NRBtXkgXINvGLm2zQj_-1qxPkJq_NmlQhx6enKT-Aa7pWGWMLyIKvLT1wwkBu6LQ6BbxNwpIdljW9BmeFvOE2t1oxGdo0JAqmBvotudpGxXh0GvA7qxMUOySwF8ZnNxkl5Oj3VZpRqjhm7UZDilev6QcDChErFwGQ7KaLIK0hIF_c8taGoAa9tlhxV3NQDr0evhjVfkIauLHUwxCl62NUlR42yrwEhQAaoCclLuLCekOSe0feQ3mY7Eqqlp4-Pks5mpL915sz71DQneo121NPQaHbWoGMUWTFtNWF-UG2rJrZgyXP8InQgbgbBlYVmWz_IsV2yoJcwWVAe14zZZpcGsE"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Mariga%2043%20Sukhumvit%20Soi%2015%2C%20Nua%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJsVHlc0ef4jARH5KLLPC4zdo",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "37e8b90d-04a9-40e7-80e5-c64166a47844",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:21:42.325Z"
+  },
+  {
+    "name_en": "Jirakaan Restaurant (จิรกาล)",
+    "name_zh": "Jirakaan Restaurant (จิรกาล)",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Tom Yum and Steak.",
+    "description_zh": "必點：冬陰功湯、牛排。傳統泰式風味搭配西餐手法，湯頭麻辣濃郁，牛排火候完美。在地人私房食堂，份量大又划算。",
+    "category": "food",
+    "address": "76 Soi Sukhumvit 51, Klongton Nue, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.730243699999999,
+    "lng": 100.57732109999999,
+    "photos": [
+      "places/ChIJd1SaQ7Sf4jARoFvSOzrxAn4/photos/Ab43m-v4ZRo8hX05YFhKwG4bKyv6Wxso-aa_8DMcHXkglLoKHmtinOne2Fr52KaUjYmYEN9ywpwnkTArb_3Q4k6DWYCQ2y5YxrkosRQPyGn3_5K4z0RVcFDdAr7VUrtFpQRvAUzTixCXyFPHAQqfTUn8Oki_bP21LqwV0X1wLb8HoggnBSdiFZ-H2rkNwUsbdCIUS_AFx8oKbS6rpCcomSD4dOBoWNKE3-tp83R59tOYqD6fuyXccZ8vu_T3JuTuxjXKlVif1Hj67AwlkiUgSOz6dTMjGFuoQsI9wGodO4LRoZ6Mhw"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Jirakaan%20Restaurant%20(%E0%B8%88%E0%B8%B4%E0%B8%A3%E0%B8%81%E0%B8%B2%E0%B8%A5)%2076%20Soi%20Sukhumvit%2051%2C%20Klongton%20Nue%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJd1SaQ7Sf4jARoFvSOzrxAn4",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Tom Yum",
+      "Steak"
+    ],
+    "id": "417026c9-34d6-4705-bd79-beae338f073e",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:22:05.292Z"
+  },
+  {
+    "name_en": "Madam Saranair Thai Food restaurant",
+    "name_zh": "Madam Saranair Thai Food restaurant",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Everything right and The yum.",
+    "description_zh": "必點：招牌菜、泰式沙拉。曼谷在地人氣食堂，每道菜都道地夠味，尤其那碗酸辣開胃的涼拌菜，一吃就停不下來。",
+    "category": "food",
+    "address": "139/1 Soi Sukhumvit 21 (Asoke Soi 1 sub-district, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.740256299999999,
+    "lng": 100.5615624,
+    "photos": [
+      "places/ChIJ1bV7lOSe4jARZfwCIKXKyNU/photos/Ab43m-vwZLuGWHvAy7gqitw6oNJON_dvg6AJRej-Q63TWe_Fqj10GJzgOmIxCcJ6NGsiJNY_VxCbt0wrJUXdQvXoonRQFagPVA7OgFJROqELMfsehRd07QcXYh_FR2fQdFP54Xqn8O8bQIDS4Jz5EASYRSqmkxyCGvgYcu1rpWFzx4bZQxehkwP-lntFS02Xbh8itbQDL7FcsPjiAyJn1x3y-uPM-8lmKt21iLldXuiIo8GaNRICUP6-OpPlB-99P-t3qSWzQzhDyEQ5T4lHa68-AUQGlmNZD_xvjf7buw3i9Hhhe0LfcMGBpUnqQtAlnZ47V8DCskJ-2G7RXUcdstruTmyEs4cT4n_ZRQvBnE8VkMuFrW7SkxcEz9np2OQE5YgfMIWuSofU44tkgAJ_-J_VUpsQgVkyvl8JAGU9UDTT8bli84c"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Madam%20Saranair%20Thai%20Food%20restaurant%20139%2F1%20Soi%20Sukhumvit%2021%20(Asoke%20Soi%201%20sub-district%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ1bV7lOSe4jARZfwCIKXKyNU",
+    "rating": 4.5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Everything right",
+      "The yum"
+    ],
+    "id": "d0de7126-5370-4d55-8747-9f0dd2b9490b",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:22:37.058Z"
+  },
+  {
+    "name_en": "Blue Elephant Bangkok Sukhumvit Thai Heritage Cuisine",
+    "name_zh": "Blue Elephant Bangkok Sukhumvit Thai Heritage Cuisine",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Satay and Some digestive drink too.",
+    "description_zh": "必點：沙嗲、消化飲品。曼谷蘇坤蒙路上的泰式美食殿堂，傳承正宗泰國料理精髓，每一口都是地道風味。",
+    "category": "food",
+    "address": "27 Soi Sukhumvit 13, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.744829399999999,
+    "lng": 100.55787889999999,
+    "photos": [
+      "places/ChIJWTPA0Jef4jAR1hY7Yo3bYes/photos/Ab43m-vmbnczIamTFjxd1PuXrsfX_h4EtFVjpSkM70grqFWuJh4zpY9rs2y6UBk-UCP90plIlJVvgmZsgvrQdXn-1P-aZM7d_6Hnj2mJTrFnt2PRUjZ98LHNrrwz458co_3RANRVV_c4WF_lV1gCXADXRTpA9KgzP5hTLktZIrikF2lu5BNHVw2zMHVYXQPkDfygm2mjFEpYCPj2DGJHB4WxkhNoYncQ9buFBLcyH952rcRZjeuQJuc9yUZuJtQrzB-QVf_9urLP_PT7K6EBJRWOOOrCPqvZEq4h42vzCg7pInGHuw"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Blue%20Elephant%20Bangkok%20Sukhumvit%20Thai%20Heritage%20Cuisine%2027%20Soi%20Sukhumvit%2013%2C%20Khwaeng%20Khlong%20Toei%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJWTPA0Jef4jAR1hY7Yo3bYes",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Satay",
+      "Some digestive drink too",
+      "Try it"
+    ],
+    "id": "d13c583d-4b5f-42c0-a8b5-db40674f24e6",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:22:54.545Z"
+  },
+  {
+    "name_en": "ร้านขจร | Kajohn Authentic Southern Thai Cuisine",
+    "name_zh": "ร้านขจร | Kajohn Authentic Southern Thai Cuisine",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Thai Tea.",
+    "description_zh": "必點：泰式奶茶。ร้านขจร是曼谷道地南泰菜館，老闆親自把關食材，那杯濃郁香甜的泰奶茶是必喝，配著酸辣開胃的南部菜餚最對味。",
+    "category": "food",
+    "address": "245, 4 Thanon Chakkraphatdi Phong, Khwaeng Khlong Maha Nak, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100, Thailand",
+    "lat": 13.7559825,
+    "lng": 100.5096848,
+    "photos": [
+      "places/ChIJY3fswo-Z4jARm0mwI29TW1M/photos/Ab43m-t2sefD9evQ9whfCZzqpWIEQrzr7QGPUQhPrKlCW3ZJJNt08HoTAs0p833QXHRMpxgpYSTwkPdxeVQG-jWpcAJb6B5Av2E_ZRH8OHNZW2xvNKdKWJKXxwzNMTEyo44Qh-lJuDcxs9SQfLCCpRbvex5nP0i7ASO5a4pXw3JqLB4rM-CjVOqlS-gOMZj1bmQH24RqOTdjkXHtG7MqaDWSXUO5QS6VFF9T1gv-Q6QBcC2ci8B-OlA4AGQvMM101yhhu8trDl0FUwNzORo7A576vg5ykZlV638fQOg0cDxe4TZKZg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%82%E0%B8%88%E0%B8%A3%20%7C%20Kajohn%20Authentic%20Southern%20Thai%20Cuisine%20245%2C%204%20Thanon%20Chakkraphatdi%20Phong%2C%20Khwaeng%20Khlong%20Maha%20Nak%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100%2C%20Thailand&query_place_id=ChIJY3fswo-Z4jARm0mwI29TW1M",
+    "rating": 4.9,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Thai Tea"
+    ],
+    "id": "4110aec4-e9b0-421c-a2a3-60908c648e76",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:23:12.340Z"
+  },
+  {
+    "name_en": "Oranuch Thai Dining",
+    "name_zh": "Oranuch Thai Dining",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Mango Sticky Rice and Papaya Salad.",
+    "description_zh": "必點：芒果糯米飯、木瓜沙律。道地泰式小館，芒果選得夠甜，糯米火候恰到好處，一口咬下去就是曼谷的夏日滋味。",
+    "category": "food",
+    "address": "36/1 Soi Sukhumvit 23, คลองเตย Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.741239499999999,
+    "lng": 100.5635101,
+    "photos": [
+      "places/ChIJ0eGdrOaf4jARsbK1ylUw0wU/photos/Ab43m-vRoZIXJRKqn4JY4aSbNHlvmiy90IrDch4ybiJiMgr4BovJc8eJIV80Zgey9No4NE5S2j1nLVp0gY9vsLRuhpElH57clnyCmCA4QC09FBICpHp421MTIWJJIDqrr7e6bWW5IYSqIIJ10-BvDlH98kzWTCOL2F4G564rz7GdlEC3MVeYgo0kaxNNjJrWdC2wfZU-AJvD1bf6NEZGB1yjkaWzY6mh0PdLWrT-EJjppqV-OklJdvN_Q-fAeAJuHRHgBluhcNgnNtRQTs7lVbPqyodC3DCAjTNEetuljxJHrJP-L7hLEhPfOfKOceL-d8LPi_pihaaGztXWTxke2UAw6UDANQLF5LNe5U7kNjzWlPDKo3DH1kBWpsqwA6mAZDc1AWQypG2v6g9DV00ksjG3HvHaDrxEwJFS8lZZQYMN2C5iAwqr"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Oranuch%20Thai%20Dining%2036%2F1%20Soi%20Sukhumvit%2023%2C%20%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%95%E0%B8%A2%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ0eGdrOaf4jARsbK1ylUw0wU",
+    "rating": 4.6,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Mango Sticky Rice",
+      "Papaya Salad"
+    ],
+    "id": "e2861580-57cf-4169-86ff-5efeb9ab888c",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:23:32.090Z"
+  },
+  {
+    "name_en": "lay lao - Silom",
+    "name_zh": "lay lao - Silom",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Massaman Curry and Papaya Salad.",
+    "description_zh": "必點：馬沙曼咖哩、木瓜沙拉。Lay Lao在席隆巷弄裡藏著道地泰味，咖哩濃郁香辣，沙拉爽脆開胃，在地人的最愛食堂。",
+    "category": "food",
+    "address": "56 Silom Rd (Yada Building สีลม Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7287149,
+    "lng": 100.5343388,
+    "photos": [
+      "places/ChIJrXZ_LqKf4jARZxKF8PiB-Ek/photos/Ab43m-v_aJhYuvOE2sFoCv9YKKY3jjB8s5C6QiZ7eb-czHPyXyLA1aTnqWPdpluQkBUQHTBfi0g_5HScDaji1VUWQ79oMflUEkC0UjpQYB0SNhwkymNF4WZkZfdDfhUD7iIdLDMbjYqoTyJQkbu4iX6_H1hF70xkhr_Q7DGkpqeGL-Yu1lY4aHEQ7CTZR48HnF__qOS7zvDWkVdpe-c4RDNurDUjc6e1J2BEkRmd8tZXJSegrygfZ8_q7UE8uwwsnppYHNu9Dn21NXpEzbnXue62SKJ__s0Xy8t2NNmZY-xzDvePzy0pxl0iEFrHat8AZEA4684GaBbX-t1RVhpAhYHJ0gOGhDVONmVCC6VD18o0-A5sjJsxQnLckcPLXFWdiWULFaTWuzwPrsisnHAdzIp9UUhJyRNIj_o3zay27A_V8I4gYmYE"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=lay%20lao%20-%20Silom%2056%20Silom%20Rd%20(Yada%20Building%20%E0%B8%AA%E0%B8%B5%E0%B8%A5%E0%B8%A1%20Khwaeng%20Suriya%20Wong%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJrXZ_LqKf4jARZxKF8PiB-Ek",
+    "rating": 4.5,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Massaman Curry",
+      "Papaya Salad"
+    ],
+    "id": "9ab33e40-e447-4434-86ff-5f5f5f09e567",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:23:48.409Z"
+  },
+  {
+    "name_en": "SOI Bangkok Restaurant",
+    "name_zh": "SOI Bangkok Restaurant",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Pad Thai and Tom Yum.",
+    "description_zh": "必點：炒粿條、冬陰功、沙爹。SOI餐廳是曼谷人的廚房，每道菜都用料實在，醬汁層次豐富，吃得出街邊小店的靈魂。",
+    "category": "food",
+    "address": "195 N Sathon Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.721710199999999,
+    "lng": 100.5262374,
+    "photos": [
+      "places/ChIJF17aWaSZ4jARedn2EWVUJ_w/photos/Ab43m-vwA3hX6VvRzDET2MrOBdaG80bmnGx3Xs0sn4iF9YG6tKSD4uJnSmlm_kY1yxfY7YJjtNEm8J0Xc6xgCrP95pyZWkloIcU0Hdv4ZrErkr2ou3NR3WYjHQI_iRghz-ivFl_Or8KMHR0l0FperX-kXNvU5uhDQfCs_qK9ZV14uz4cBWWz-ZbIl8Ur4L3GR47ZPkV6_TK-oyRoqVNQRfQYEIiU_1VmsGRfKBGCV3_GAXsIiFc8sCodklESkYHsf0z9-c3wTFWUu2a1ZK2voAtKwfjQH5rlevXffJNN_08AYz7BQJSZiDknIqNBd5uZUz3-PTPtk00aR1viNSHuS8g4himrR7WQGzlXOnCQ16wCnZry65S5P7LUhbxS6Wlue0bs5SdUFnsG5bmwRp9IecTtLpN797k9l4fKkhKfH2aCG97NZS_bZ0XEFVLRI6sedX8m"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=SOI%20Bangkok%20Restaurant%20195%20N%20Sathon%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJF17aWaSZ4jARedn2EWVUJ_w",
+    "rating": 4.7,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Pad Thai",
+      "Tom Yum",
+      "Satay"
+    ],
+    "id": "dd8b3b8b-09af-4891-910d-c4c44dd9ceb3",
+    "source": "googlemaps",
+    "approved_at": "2026-06-01T12:24:05.358Z"
   }
 ]
