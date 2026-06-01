@@ -19,6 +19,18 @@ const EN_PLACE_PATTERN = /(?:^|\n)[\s*\d.-]*([A-Z][A-Za-z\s&''.()\-]{3,50})(?:\s
 // Extract place names from TikTok hashtags: #Rongros #BaanYing → ["Rongros", "BaanYing"]
 const HASHTAG_PATTERN = /#([A-Z][A-Za-z\s]{2,30})(?=\s|#|$)/g
 
+// Bangkok districts, landmarks, and generic terms that are not venues
+const SKIP_NAMES = new Set([
+  'sathon', 'sathorn', 'silom', 'sukhumvit', 'ekkamai', 'thonglor', 'thong lor',
+  'asok', 'asoke', 'ari', 'chatuchak', 'yaowarat', 'chinatown', 'china town',
+  'siam', 'ratchada', 'riverside', 'pratunam', 'bang na', 'on nut',
+  'phrom phong', 'nana', 'victory monument', 'khaosan', 'khao san',
+  'grand palace', 'the grand palace', 'wat pho', 'wat arun', 'wat traimit',
+  'jim thompson', 'lumphini park', 'erawan shrine', 'terminal 21',
+  'central world', 'centralworld', 'siam paragon', 'mbk', 'iconsiam',
+  'bangkok', 'thailand', 'thai',
+])
+
 function extractNames(title: string, description: string): string[] {
   const names: string[] = []
   const seen = new Set<string>()
@@ -33,6 +45,7 @@ function extractNames(title: string, description: string): string[] {
     const name = match[1].trim().replace(/\s+/g, ' ')
     if (name.length < 4 || name.length > 50) continue
     if (SKIP_TITLE.test(name)) continue
+    if (SKIP_NAMES.has(name.toLowerCase())) continue
     if (seen.has(name.toLowerCase())) continue
     seen.add(name.toLowerCase())
     names.push(name)
@@ -44,6 +57,7 @@ function extractNames(title: string, description: string): string[] {
     const name = match[1].trim()
     if (name.length < 3) continue
     if (SKIP_TAG.test(name)) continue
+    if (SKIP_NAMES.has(name.toLowerCase())) continue
     if (seen.has(name.toLowerCase())) continue
     seen.add(name.toLowerCase())
     names.push(name)

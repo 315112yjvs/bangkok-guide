@@ -12,9 +12,11 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.100.1",
     "@googlemaps/markerclusterer": "^2.6.2",
+    "@playwright/browser-chromium": "^1.60.0",
     "@vis.gl/react-google-maps": "^1.8.3",
     "jest-util": "^30.4.1",
     "next": "14.2.35",
+    "playwright": "^1.60.0",
     "react": "^18",
     "react-dom": "^18",
     "uuid": "^14.0.0"

@@ -15,6 +15,7 @@ export type ScrapedItem = {
   price_range: 1 | 2 | 3 | 4
   trending: boolean
   highlights?: string[]
+  local_ratio?: number
 }
 
 export async function firecrawlScrape(url: string): Promise<string> {

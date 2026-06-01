@@ -64,48 +64,125 @@ function PendingCard({
   item,
   onApprove,
   onReject,
+  onUpdate,
 }: {
   item: PendingLocation
-  onApprove: (id: string) => void
+  onApprove: (id: string, category: Category) => void
   onReject: (id: string) => void
+  onUpdate: (id: string, updates: Partial<PendingLocation>) => void
 }) {
+  const [editing, setEditing] = useState(false)
+  const [saving, setSaving] = useState(false)
+  const [form, setForm] = useState({
+    name_zh: item.name_zh || '',
+    name_en: item.name_en,
+    description_zh: item.description_zh || '',
+    description_en: item.description_en || '',
+    category: (item.category as Category) || 'food' as Category,
+    rating: item.rating,
+    price_range: item.price_range,
+    address: item.address,
+    highlights: (item.highlights ?? []).join(', '),
+  })
+
   const raw = item.photos[0] ?? ''
   const photo = raw.startsWith('places/')
     ? `https://places.googleapis.com/v1/${raw}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
     : raw || 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=220&h=120&fit=crop'
+
+  async function save() {
+    setSaving(true)
+    const updates = {
+      ...form,
+      highlights: form.highlights ? form.highlights.split(',').map(s => s.trim()).filter(Boolean) : [],
+      price_range: Number(form.price_range) as 1|2|3|4,
+      rating: Number(form.rating),
+    }
+    await fetch('/api/pending', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: item.id, ...updates }),
+    })
+    onUpdate(item.id, updates)
+    setSaving(false)
+    setEditing(false)
+  }
+
+  const inp = 'w-full border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs outline-none focus:border-indigo-400'
+
   return (
-    <div className="bg-white rounded-2xl overflow-hidden border border-transparent hover:border-indigo-200 transition-colors flex">
-      <div className="relative w-28 shrink-0">
-        <Image src={photo} alt={item.name_en} fill className="object-cover" sizes="112px" />
-      </div>
-      <div className="flex-1 p-4">
-        <div className="flex items-start justify-between gap-2 mb-1">
-          <h3 className="font-bold text-[#0f172a] text-sm leading-tight">{item.name_zh || item.name_en}</h3>
-          <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${SOURCE_STYLE[item.source]}`}>
-            {SOURCE_LABEL[item.source]}
-          </span>
+    <div className="bg-white rounded-2xl overflow-hidden border border-transparent hover:border-indigo-200 transition-colors">
+      <div className="flex">
+        <div className="relative w-28 shrink-0">
+          <Image src={photo} alt={item.name_en} fill className="object-cover" sizes="112px" />
         </div>
-        <div className="flex items-center gap-2 mb-1.5">
-          <span className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold">{item.category}</span>
-          <span className="text-[10px] text-gray-400 truncate">{item.address}</span>
-        </div>
-        <p className="text-xs text-gray-500 line-clamp-2 mb-2">{item.description_zh || item.description_en}</p>
-        <div className="flex items-center justify-between">
-          {item.source_url ? (
-            <a href={item.source_url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-indigo-500 underline truncate max-w-[160px]">
-              {item.source_url.replace(/^https?:\/\//, '')}
-            </a>
-          ) : <span />}
-          <div className="flex gap-1.5 shrink-0">
-            <button onClick={() => onReject(item.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100">
-              駁回
-            </button>
-            <button onClick={() => onApprove(item.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-green-50 text-green-700 hover:bg-green-100">
-              上架
-            </button>
+        <div className="flex-1 p-4">
+          <div className="flex items-start justify-between gap-2 mb-1">
+            <h3 className="font-bold text-[#0f172a] text-sm leading-tight">{form.name_zh || form.name_en}</h3>
+            <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${SOURCE_STYLE[item.source]}`}>
+              {SOURCE_LABEL[item.source]}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded font-semibold">{form.category}</span>
+            <span className="text-[10px] font-bold text-amber-500">★ {Number(form.rating).toFixed(1)}</span>
+            <span className="text-[10px] text-gray-400 truncate">{form.address}</span>
+          </div>
+          <p className="text-xs text-gray-500 line-clamp-2 mb-2">{form.description_zh || form.description_en}</p>
+          <div className="flex items-center justify-between">
+            {item.source_url ? (
+              <a href={item.source_url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-indigo-500 underline truncate max-w-[160px]">
+                {item.source_url.replace(/^https?:\/\//, '')}
+              </a>
+            ) : <span />}
+            <div className="flex gap-1.5 shrink-0">
+              <button onClick={() => setEditing(!editing)} className="text-xs font-bold px-2.5 py-1.5 rounded-lg bg-slate-50 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+                ✏️
+              </button>
+              <button onClick={() => onReject(item.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100">
+                駁回
+              </button>
+              <button onClick={() => onApprove(item.id, form.category)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-green-50 text-green-700 hover:bg-green-100">
+                上架
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
+      {editing && (
+        <div className="border-t border-gray-100 p-4 bg-gray-50 space-y-2">
+          <div className="grid grid-cols-2 gap-2">
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">中文名稱</p><input className={inp} value={form.name_zh} onChange={e => setForm(f => ({...f, name_zh: e.target.value}))} /></div>
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">English Name</p><input className={inp} value={form.name_en} onChange={e => setForm(f => ({...f, name_en: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">中文描述</p><textarea className={inp} rows={2} value={form.description_zh} onChange={e => setForm(f => ({...f, description_zh: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">English Description</p><textarea className={inp} rows={2} value={form.description_en} onChange={e => setForm(f => ({...f, description_en: e.target.value}))} /></div>
+            <div>
+              <p className="text-[10px] font-semibold text-gray-500 mb-1">分類</p>
+              <select className={inp} value={form.category} onChange={e => setForm(f => ({...f, category: e.target.value as Category}))}>
+                {(['food','cafe','shopping','nightlife','hotel'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </div>
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">評分</p><input type="number" min="0" max="5" step="0.1" className={inp} value={form.rating} onChange={e => setForm(f => ({...f, rating: Number(e.target.value)}))} /></div>
+            <div>
+              <p className="text-[10px] font-semibold text-gray-500 mb-1">價位 (1–4)</p>
+              <select className={inp} value={form.price_range} onChange={e => setForm(f => ({...f, price_range: Number(e.target.value) as 1|2|3|4}))}>
+                {[1,2,3,4].map(n => <option key={n} value={n}>{'$'.repeat(n)}</option>)}
+              </select>
+            </div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">地址</p><input className={inp} value={form.address} onChange={e => setForm(f => ({...f, address: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">亮點（逗號分隔）</p><input className={inp} value={form.highlights} onChange={e => setForm(f => ({...f, highlights: e.target.value}))} /></div>
+          </div>
+          <div className="flex gap-2 pt-1">
+            <button onClick={save} disabled={saving} className="flex-1 bg-[#0f172a] text-white text-xs font-bold rounded-xl py-2 disabled:opacity-50">
+              {saving ? '儲存中...' : '儲存'}
+            </button>
+            <button onClick={() => setEditing(false)} className="px-4 bg-gray-200 text-gray-600 text-xs font-bold rounded-xl py-2">
+              取消
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -333,10 +410,10 @@ export function AdminPanel() {
   const [scraperStatus, setScraperStatus] = useState<string>('就緒')
   const [scraperRunning, setScraperRunning] = useState(false)
   const [customKeywords, setCustomKeywords] = useState('')
-  const [deployStatus, setDeployStatus] = useState<string>('未上傳')
+  const [deployStatus, setDeployStatus] = useState<string>('')
   const [deploying, setDeploying] = useState(false)
-  const [reenrichStatus, setReenrichStatus] = useState<string>('')
-  const [reenriching, setReenriching] = useState(false)
+  const [approvedSearch, setApprovedSearch] = useState('')
+  const [pendingSourceFilter, setPendingSourceFilter] = useState<string>('all')
 
   useEffect(() => {
     if (sessionStorage.getItem('admin_authed') === '1') setAuthed(true)
@@ -355,13 +432,17 @@ export function AdminPanel() {
     if (authed) loadData()
   }, [authed, loadData])
 
-  async function handleApprove(id: string) {
+  async function handleApprove(id: string, category?: Category) {
     await fetch('/api/locations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'approve', id }),
+      body: JSON.stringify({ action: 'approve', id, ...(category ? { category } : {}) }),
     })
     loadData()
+  }
+
+  function handleUpdatePending(id: string, updates: Partial<PendingLocation>) {
+    setPending(prev => prev.map(p => p.id === id ? { ...p, ...updates } : p))
   }
 
   async function handleReject(id: string) {
@@ -376,8 +457,9 @@ export function AdminPanel() {
   }
 
   async function handleApproveAll() {
-    if (!confirm(`確定要全部上架 ${pending.length} 筆待審核地點嗎？`)) return
-    await Promise.all(pending.map((item) =>
+    const visible = pendingSourceFilter === 'all' ? pending : pending.filter(p => p.source === pendingSourceFilter)
+    if (!confirm(`確定要全部上架 ${visible.length} 筆待審核地點嗎？`)) return
+    await Promise.all(visible.map((item) =>
       fetch('/api/locations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'approve', id: item.id }) })
     ))
     loadData()
@@ -427,21 +509,6 @@ export function AdminPanel() {
     }
   }
 
-  async function runReenrich() {
-    setReenriching(true)
-    setReenrichStatus('更新中...')
-    try {
-      const res = await fetch('/api/reenrich', { method: 'POST' })
-      const data = await res.json()
-      setReenrichStatus(data.ok ? `✓ 更新 ${data.updated}/${data.total} 筆` : '失敗')
-      loadData()
-    } catch {
-      setReenrichStatus('連線失敗')
-    } finally {
-      setReenriching(false)
-    }
-  }
-
   const isVercel = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname)
 
   if (!authed) return <AuthOverlay onAuth={() => setAuthed(true)} />
@@ -462,15 +529,15 @@ export function AdminPanel() {
   )
 
   return (
-    <div className="flex min-h-screen bg-slate-100 flex-col">
+    <div className="flex h-screen bg-slate-100 flex-col overflow-hidden">
       {isVercel && (
         <div className="bg-amber-400 text-amber-900 text-xs font-bold px-4 py-2.5 flex items-center gap-2">
           ⚠️ 目前在 Vercel 上，所有編輯、🔥 熱門切換、上下架操作都無法儲存。請在本機執行 <code className="bg-amber-300 px-1.5 py-0.5 rounded font-mono">npm run dev</code> 後至 <code className="bg-amber-300 px-1.5 py-0.5 rounded font-mono">localhost:3000/admin</code> 操作。
         </div>
       )}
-      <div className="flex flex-1">
+      <div className="flex flex-1 overflow-hidden">
       {/* SIDEBAR */}
-      <div className="w-56 bg-[#0f172a] flex flex-col shrink-0">
+      <div className="w-56 bg-[#0f172a] flex flex-col shrink-0 overflow-y-auto">
         <div className="px-5 py-6 border-b border-white/10">
           <div className="text-white font-black text-sm tracking-wide">Bangkok Guide</div>
           <div className="text-slate-500 text-xs mt-0.5">管理後台</div>
@@ -485,7 +552,7 @@ export function AdminPanel() {
           <textarea
             value={customKeywords}
             onChange={(e) => setCustomKeywords(e.target.value)}
-            placeholder={'例：\nThonglor new restaurant 2025\nAri café brunch\nSukhumvit rooftop bar'}
+            placeholder={'例：\nThonglor new restaurant 2025\nAri café brunch:cafe\nSukhumvit rooftop bar:nightlife\n（冒號後可指定分類）'}
             rows={3}
             className="w-full bg-white/5 border border-white/10 rounded-lg px-2.5 py-2 text-[11px] text-slate-300 placeholder-slate-600 resize-none outline-none focus:border-white/20 mb-2"
           />
@@ -511,18 +578,7 @@ export function AdminPanel() {
             </svg>
             {deploying ? '上傳中...' : '存檔並上傳'}
           </button>
-          <p className="text-slate-500 text-[10px] text-center mt-1.5">{deployStatus}</p>
-          <button
-            onClick={runReenrich}
-            disabled={reenriching}
-            className="mt-3 w-full bg-violet-600 hover:bg-violet-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5 flex items-center justify-center gap-2"
-          >
-            <svg className={`w-3.5 h-3.5 ${reenriching ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/>
-            </svg>
-            {reenriching ? '更新中...' : '重新更新描述'}
-          </button>
-          {reenrichStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{reenrichStatus}</p>}
+          {deployStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{deployStatus}</p>}
         </div>
       </div>
 
@@ -544,7 +600,7 @@ export function AdminPanel() {
 
         {tab === 'pending' && (
           <div className="space-y-3">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-2">
               <h1 className="text-xl font-black text-[#0f172a]">待審核地點</h1>
               {pending.length > 0 && (
                 <div className="flex gap-2">
@@ -552,7 +608,7 @@ export function AdminPanel() {
                     onClick={handleApproveAll}
                     className="text-xs font-bold px-4 py-2 rounded-xl bg-green-50 text-green-700 hover:bg-green-100 transition-colors"
                   >
-                    全部上架 ({pending.length})
+                    全部上架 ({pendingSourceFilter === 'all' ? pending.length : pending.filter(p => p.source === pendingSourceFilter).length})
                   </button>
                   <button
                     onClick={handleRejectAll}
@@ -563,21 +619,56 @@ export function AdminPanel() {
                 </div>
               )}
             </div>
+            {/* Source filter */}
+            {pending.length > 0 && (
+              <div className="flex gap-2 flex-wrap mb-1">
+                {(['all', ...Array.from(new Set(pending.map(p => p.source)))]) .map((src) => (
+                  <button
+                    key={src}
+                    onClick={() => setPendingSourceFilter(src)}
+                    className={`text-[11px] font-bold px-3 py-1 rounded-full transition-colors ${
+                      pendingSourceFilter === src
+                        ? 'bg-[#0f172a] text-white'
+                        : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                    }`}
+                  >
+                    {src === 'all' ? `全部 (${pending.length})` : `${SOURCE_LABEL[src as Source] ?? src} (${pending.filter(p => p.source === src).length})`}
+                  </button>
+                ))}
+              </div>
+            )}
             {pending.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">沒有待審核的地點</p>}
-            {pending.map((item) => (
-              <PendingCard key={item.id} item={item} onApprove={handleApprove} onReject={handleReject} />
+            {pending
+              .filter(item => pendingSourceFilter === 'all' || item.source === pendingSourceFilter)
+              .map((item) => (
+              <PendingCard key={item.id} item={item} onApprove={handleApprove} onReject={handleReject} onUpdate={handleUpdatePending} />
             ))}
           </div>
         )}
 
         {tab === 'approved' && (
           <div>
-            <h1 className="text-xl font-black text-[#0f172a] mb-4">已上架地點</h1>
+            <div className="flex items-center gap-3 mb-4">
+              <h1 className="text-xl font-black text-[#0f172a]">已上架地點</h1>
+              <div className="flex-1 relative">
+                <svg className="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                </svg>
+                <input
+                  value={approvedSearch}
+                  onChange={(e) => setApprovedSearch(e.target.value)}
+                  placeholder="搜尋地點名稱..."
+                  className="w-full pl-8 pr-3 py-1.5 text-xs border border-gray-200 rounded-xl outline-none focus:border-indigo-400"
+                />
+              </div>
+            </div>
             <div className="space-y-2">
               {approved.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">還沒有上架的地點</p>}
-              {approved.map((item) => (
-                <ApprovedCard key={item.id} item={item} onRemove={handleRemove} onUpdate={handleUpdate} />
-              ))}
+              {approved
+                .filter(item => !approvedSearch || item.name_zh?.toLowerCase().includes(approvedSearch.toLowerCase()) || item.name_en.toLowerCase().includes(approvedSearch.toLowerCase()))
+                .map((item) => (
+                  <ApprovedCard key={item.id} item={item} onRemove={handleRemove} onUpdate={handleUpdate} />
+                ))}
             </div>
           </div>
         )}

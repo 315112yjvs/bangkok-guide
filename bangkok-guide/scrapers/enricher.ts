@@ -201,6 +201,20 @@ export async function enrichItem(
     return null
   }
 
+  // Skip tourist attractions, landmarks, government buildings, and districts
+  const placeType = (place.primaryTypeDisplayName?.text ?? '').toLowerCase()
+  const NON_VENUE_TYPES = [
+    'tourist attraction', 'historical landmark', 'monument', 'museum', 'art museum',
+    'religious site', 'buddhist temple', 'hindu temple', 'mosque', 'church', 'cathedral',
+    'palace', 'government office', 'city hall', 'embassy', 'national park', 'park',
+    'neighborhood', 'subdistrict', 'locality', 'transit station', 'train station',
+    'subway station', 'airport', 'hospital', 'university', 'school', 'library',
+  ]
+  if (NON_VENUE_TYPES.some(t => placeType.includes(t))) {
+    console.log(`Skipping "${name}" — non-venue type: ${place.primaryTypeDisplayName?.text}`)
+    return null
+  }
+
   const rawHighlights = place.reviews ? extractHighlights(place.reviews) : []
   const highlights = cleanHighlights(rawHighlights)
   const editorial = place.editorialSummary?.text
