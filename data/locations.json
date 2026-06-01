@@ -24,5 +24,119 @@
     "id": "fdc3e766-ebc1-4f52-bb13-cbfe05a3249a",
     "source": "googlemaps",
     "approved_at": "2026-06-01T12:07:02.514Z"
+  },
+  {
+    "name_en": "Lhong Tou Cafe at Yaowarat",
+    "name_zh": "Lhong Tou Cafe at Yaowarat",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok.",
+    "description_zh": "必點：泰式奶茶、芒果糯米飯。Yaowarat 老字號咖啡館，混合懷舊南洋風情與當代咖啡文化，是在地人躲避觀光客的秘密角落。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7391887,
+    "lng": 100.5115376,
+    "photos": [
+      "places/ChIJ28w-PCGZ4jARQGYsDC0QPV8/photos/Ab43m-vxKeoclYz4QFKwWcaLAkycLfQkEN58YR3MJijV58nw4_FppZuzKjKVOcnF4m8PJOMxZhIrC6sP0EDNXTvfYtweO_ITV0_tFQZ15I5L4nlzsfMjbQJAsEgtYbFksERIh44zA3fnH1yVqZXeMf3u4iPVrJ-tY0eaw7Klh8LY1V4_b7O4wOYOApLmaoCqZj_V3U5LFoEk62fbFO5zeBuGdM3bqXhKENfpHoyZuPEhMpbWhfBfBk_WoVJe9QIubDoN7C9QV3KcMf7AB2KDiNbb0epnGQV7VQia3iQKR-4bTEVOXw"
+    ],
+    "source_url": "https://pantip.com/topic/36937705",
+    "rating": 4.2,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "5bf9a8e1-2879-479e-922e-e5b0c873c087",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-06-01T12:13:21.404Z"
+  },
+  {
+    "name_en": "Aroi Sushi",
+    "name_zh": "Aroi Sushi",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok. Known for Sushi and Steak.",
+    "description_zh": "必點：壽司、牛排。新鮮海味與頂級和牛的完美碰撞，師傅的刀工讓每一貫都是藝術品。曼谷上班族的私房食堂。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7443373,
+    "lng": 100.5853087,
+    "photos": [
+      "places/ChIJS3jasVqe4jARB3lcX4YGz78/photos/Ab43m-vSyj_KZnjEnuEC4L0ebD-efUYyEY5gjHeCvCMv_qGfII8ZoJUDKGn3IdY0GuIqRrXCQAPqWREQCJg2rQuK9U7vQCytKUesLS2L8Yb5ttRtrfA6XjxVDTcLaBgTQI9F4IaUluD3ixEL1Hss09euI9CNchzfSufORfvku-xhst-w-VDiI7G2JdhKyQBEMvUk1ulJ74JqMHcz6Mwn-p98VtYQNnNE4kv9-wUYgLQDtftvuqQoPB6oUjAxTGLicder8PNGC97H9wbrYhkYxtCSZjm5E-nx3IXjYpUwHDFMHs0jWTLgo-J5aikKZMI259GwJfP3qGaTh-0zFw5iTj3_XaRC8ZnfD8VYnGv6U3XyZpkT9V5Bf-lTgTlKNjqy-IQ2ojeRlXU2vtHNZDV4p3xcFXtQN-k_Bs79um-pJrKBrjJOaf5_"
+    ],
+    "source_url": "https://pantip.com/topic/36937705",
+    "rating": 4.4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Sushi",
+      "Steak"
+    ],
+    "id": "e40a5c74-87c3-453c-b846-6b6932f301f0",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-06-01T12:13:50.373Z"
+  },
+  {
+    "name_en": "Naraipizzeria X Khanoykorshabu",
+    "name_zh": "Naraipizzeria X Khanoykorshabu",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Tom Yum and Sushi.",
+    "description_zh": "必點：冬陰功、壽司、義大利麵。泰義混搭餐廳，把東南亞風味融入西餐，湯頭濃郁、手藝扎實，是曼谷上班族的秘密食堂。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7615337,
+    "lng": 100.53698729999999,
+    "photos": [
+      "places/ChIJ9a5Uwrae4jAR3PuCqb0Dvdg/photos/Ab43m-tXiDht-k2bs_J8N9wCGyBG6Sq1f84DqxiPZXAhb_vyNjn9f-0FVtLvWeIHAWr5MBeV0n5lOc5PzZSlyxhWEqNMp10DTb6wOU-g4gq2-y-3Ai7ILiXKZt8emM2dukN7Ode9632yGDwyCicOjEUlhfxmvLW5M3yxksY9JUhWNuVSp-YZ0xSFhVVpIJxAEbX1LphiQlvJkvvMMVfoUWfOAFWre9bpLS9UwGpjH1_aylCGWheKEaiyzWjepajM3f9LMW_GLMXQJO0m9Zy9QJoP1uWIBhwo_CRZ-mIA9kJys7CmiiflecsyH07NXHJg5sB7DpeR0yq1rfXDK8cCPGa9N2YWYl1YdLqdZ7P49nEY0vw2Iyu1ZvrT_5KEkndXkiHQm-Yrr9K_15uxjAQNurEiK93iPwbz3GY-KngosL4SIin73oEG"
+    ],
+    "source_url": "https://pantip.com/topic/42019735",
+    "rating": 4.8,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "Tom Yum",
+      "Sushi",
+      "Pasta"
+    ],
+    "id": "55dc6914-e6cb-46cc-913b-dd20ad90c1db",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-06-01T12:14:20.905Z"
+  },
+  {
+    "name_en": "Chester's Grill",
+    "name_zh": "Chester's Grill",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok.",
+    "description_zh": "必點：肋排、牛排。曼谷在地人最愛的燒烤餐廳，炭火烤肉香氣四溢，份量大又實在，夜晚總是座無虛席。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.7597033,
+    "lng": 100.4863881,
+    "photos": [
+      "places/ChIJOcuJM3WZ4jARQdeNBNcnJv4/photos/Ab43m-vmJk4Ihq-iZ2LXTWDLCvb1GSPoq2cHLt70ek0FrO2WP-jVgIOvle9KRwt-0Yll6mBFz12RVaAlNqhdz_HYT21Ps5NY1Vdt6nuQ7S1PPg0rvkxOQAS4ZkvcI9ZvwoGprtiEOQ6hyugTl4nJWg71FMbwW_8PdAuh5KaPfVgVkMw77EvQVWlWAFr50Cirrus83NWfT0kWgqL5u3LK9pzBcBECI8N_5KO0j3s-3x64N4b_CQlBol5qgOEGtrTNO9BvRrHov54uhDkNYnJ1TYBQFJdTL4Hz0hye-CloxxM__2OEXw"
+    ],
+    "source_url": "https://pantip.com/topic/42019735",
+    "rating": 4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [],
+    "id": "103774c8-2c7d-4c1e-a321-8c4f6bc4d434",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-06-01T12:15:06.020Z"
+  },
+  {
+    "name_en": "ข้าวหมกไก่สยาม บางบัวทอง",
+    "name_zh": "ข้าวหมกไก่สยาม บางบัวทอง",
+    "description_en": "A mid-range, well-regarded restaurant in Bangkok. Known for It here.",
+    "description_zh": "必點：泰式燜雞飯、雞湯。南邦區老字號，雞肉軟嫩入味，米飯吸飽雞油香氣，是在地人的日常食堂。",
+    "address": "Bangkok, Thailand",
+    "lat": 13.8257079,
+    "lng": 100.4123947,
+    "photos": [
+      "places/ChIJufHvCPSQ4jARA6I2-trVLGg/photos/Ab43m-t2nQIFeisCEf0XxvuTSYdvHuJJVhnnsAJ_oSBkRI0zgQpFRcHrHxtBPlnM9JCwPmQlC15XJ8E8H6u4Fb19-aSb_ol2CeSmceReqbW3SJhbf7rkkY4fjmhz_AXy7wLH5uHx3f_3WljAYzZNrnPktX7zPoP7cNcs2619vY2QdVj8gUMbNtRGOD2rCXdWzVA4u6ufJGafbW1xcDc1xOKHbFY54uLV3x0COXrgjUILoTXlu-zfluX3UydB322mwnn5SRQlXS5N_PR3TcQoup56XJGZu9KhXB5HDlneORffyIImGAcAoytFVmjEPTyBCTp3W8qTEK7iwtn555oGHMxVxiWnaPlDgwQHWLTlkz8OtHM3D8nIqHHLBtRZeiBFWqcvDELuPQpHJH76Lr-0pqFdE3oCno79uYEC7hX9p4icJDLLAlH2"
+    ],
+    "source_url": "https://pantip.com/topic/42019735",
+    "rating": 4.4,
+    "price_range": 2,
+    "trending": false,
+    "highlights": [
+      "It here"
+    ],
+    "id": "6eeceffd-efc3-486a-b14f-e88afb1979e1",
+    "category": "food",
+    "source": "pantip",
+    "approved_at": "2026-06-01T12:15:20.388Z"
   }
 ]
