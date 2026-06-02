@@ -75,13 +75,13 @@
     if (cfg.autoBuy) waitForPageAndBuy(cfg);
   }
 
-  // 偵測頁面類型後分流（polling，最多等 10 秒）
+  // 偵測頁面類型後分流（日曆優先，polling 最多等 10 秒）
   function waitForPageAndBuy(cfg, elapsed) {
     elapsed = elapsed || 0;
-    if (document.querySelector('input.ticket_quantity')) {
-      selectAndBuy(cfg);
-    } else if (document.querySelector('td.day.has-event')) {
+    if (document.querySelector('td.day.has-event, #event-round')) {
       selectCalendarAndBuy(cfg);
+    } else if (document.querySelector('input.ticket_quantity')) {
+      selectAndBuy(cfg);
     } else if (elapsed < 10000) {
       setTimeout(() => waitForPageAndBuy(cfg, elapsed + 300), 300);
     } else {
@@ -89,12 +89,12 @@
     }
   }
 
-  // 統一入口：自動判斷是一般票還是日曆選日期
+  // 統一入口：日曆型優先，避免被隱藏的 ticket_quantity 誤導
   function triggerBuy(cfg) {
-    if (document.querySelector('input.ticket_quantity')) {
-      selectAndBuy(cfg);
-    } else if (document.querySelector('td.day.has-event')) {
+    if (document.querySelector('td.day.has-event, #event-round')) {
       selectCalendarAndBuy(cfg);
+    } else if (document.querySelector('input.ticket_quantity')) {
+      selectAndBuy(cfg);
     } else {
       toast('找不到票種或日曆，請確認頁面已載入', '#dc3545');
     }
@@ -103,41 +103,54 @@
   // ── 日曆模式：選第一個可用日期 → 第一個時段 → Next ───────────
 
   function selectCalendarAndBuy(cfg) {
-    // 第一個有活動且未停用的日期（優先同月，否則含 .old）
-    const firstDate =
-      document.querySelector('td.day.has-event:not(.disabled):not(.old)') ||
-      document.querySelector('td.day.has-event:not(.disabled)');
-
-    if (!firstDate) {
-      toast('找不到可選的活動日期', '#dc3545');
-      return;
+    // 若已有選取的日期就跳過，否則點第一個可用日期
+    const hasSelectedDate = document.querySelector('td.day.active, td.active.has-event');
+    if (!hasSelectedDate) {
+      const firstDate =
+        document.querySelector('td.day.has-event:not(.disabled):not(.old)') ||
+        document.querySelector('td.day.has-event:not(.disabled)');
+      if (!firstDate) {
+        toast('找不到可選的活動日期', '#dc3545');
+        return;
+      }
+      toast('選擇日期中…', '#17a2b8');
+      firstDate.click();
     }
 
-    toast('選擇日期中…', '#17a2b8');
-    firstDate.click();
-
-    // 等 #event-round 出現時段卡片後點第一個
+    // 等 #event-round 出現後處理時段
     waitForRound(cfg, 0);
   }
 
   function waitForRound(cfg, elapsed) {
-    const firstRound = document.querySelector(
-      '#event-round .card:not(.disabled):not(.sold-out):not([class*="sold"])'
-    ) || document.querySelector('#event-round .card');
+    const container = document.getElementById('event-round');
 
-    if (firstRound) {
-      toast('選擇時段中…', '#17a2b8');
-      firstRound.click();
-      setTimeout(() => {
-        const nextBtn = document.getElementById('btn-next-round') ||
-                        document.querySelector('button[id*="next"]');
-        if (nextBtn) {
-          nextBtn.click();
-        } else {
-          toast('找不到 Next 按鈕，請手動點擊', '#dc3545');
+    if (container) {
+      const selectedRound = container.querySelector('.card.selected, .card.active');
+      const firstRound    = container.querySelector(
+        '.card:not(.disabled):not(.sold-out):not([class*="sold"])'
+      ) || container.querySelector('.card');
+
+      if (selectedRound || firstRound) {
+        // 若時段尚未選取才點擊
+        if (!selectedRound && firstRound) {
+          toast('選擇時段中…', '#17a2b8');
+          firstRound.click();
         }
-      }, 350);
-    } else if (elapsed < 6000) {
+        // 等畫面更新後點 Next
+        setTimeout(() => {
+          const nextBtn = document.getElementById('btn-next-round') ||
+                          document.querySelector('button[id*="next"]');
+          if (nextBtn) {
+            nextBtn.click();
+          } else {
+            toast('找不到 Next 按鈕，請手動點擊', '#dc3545');
+          }
+        }, 350);
+        return;
+      }
+    }
+
+    if (elapsed < 6000) {
       setTimeout(() => waitForRound(cfg, elapsed + 200), 200);
     } else {
       toast('等待時段超時，請手動選擇', '#dc3545');
