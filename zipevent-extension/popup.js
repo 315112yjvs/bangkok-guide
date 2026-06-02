@@ -24,17 +24,27 @@ document.addEventListener('DOMContentLoaded', function () {
         return reset();
       }
 
-      // 讀取目前設定並傳給 content script
-      chrome.storage.sync.get({
-        zoneKeywords:  '',
-        maxPrice:      '',
-        ticketQty:     1,
-        autoFill:      true,
-        autoBuy:       false,
-        autoPay:       false,
-        paymentMethod: '12',
-        billing: { enabled: false, taxId: '', type: '1', name: '', address: '' }
-      }, function (cfg) {
+      // 先把目前 UI 的值存入 storage，再觸發搶票
+      // 確保使用者剛改的設定（還沒按儲存）也會生效
+      const pmEl = document.querySelector('input[name="pm"]:checked');
+      const btEl = document.querySelector('input[name="bt"]:checked');
+      const cfg = {
+        zoneKeywords:  document.getElementById('zoneKeywords').value.trim(),
+        maxPrice:      document.getElementById('maxPrice').value.trim(),
+        ticketQty:     parseInt(document.getElementById('ticketQty').value) || 1,
+        autoFill:      document.getElementById('autoFill').checked,
+        autoBuy:       document.getElementById('autoBuy').checked,
+        autoPay:       document.getElementById('autoPay').checked,
+        paymentMethod: pmEl ? pmEl.value : '12',
+        billing: {
+          enabled: document.getElementById('billingEnabled').checked,
+          taxId:   document.getElementById('taxId').value.trim(),
+          type:    btEl ? btEl.value : '1',
+          name:    document.getElementById('billName').value.trim(),
+          address: document.getElementById('billAddress').value.trim()
+        }
+      };
+      chrome.storage.sync.set(cfg, function () {
         chrome.tabs.sendMessage(tab.id, { action: 'startSnipe', cfg }, function (resp) {
           if (chrome.runtime.lastError) {
             setStatus('❌ 頁面未就緒，請重新整理後再試', 'err');
@@ -47,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
           reset();
         });
-      });
+      }); // chrome.storage.sync.set
     });
 
     function setStatus(msg, cls) {

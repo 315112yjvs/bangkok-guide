@@ -72,7 +72,19 @@
     fab.addEventListener('click', () => selectAndBuy(cfg));
     document.body.appendChild(fab);
 
-    if (cfg.autoBuy) setTimeout(() => selectAndBuy(cfg), 1500);
+    if (cfg.autoBuy) waitForTicketsAndBuy(cfg);
+  }
+
+  // 等票種 input 出現後再觸發（polling，最多等 10 秒）
+  function waitForTicketsAndBuy(cfg, elapsed) {
+    elapsed = elapsed || 0;
+    if (document.querySelector('input.ticket_quantity')) {
+      selectAndBuy(cfg);
+    } else if (elapsed < 10000) {
+      setTimeout(() => waitForTicketsAndBuy(cfg, elapsed + 300), 300);
+    } else {
+      toast('等待票種超時，請手動操作', '#dc3545');
+    }
   }
 
   // 根據設定選票種 + 調整張數 + 點 Buy Ticket
@@ -121,14 +133,10 @@
         if (!keywords.some(k => ticketName.includes(k))) continue;
       }
 
-      // 需要調整的張數差
-      const current = parseInt(inp.value) || 0;
-      const diff = targetQty - current;
-      const group = inp.closest('.ticket-quantity-group') || inp.parentElement;
-      const addBtn = group.querySelector('.btn-add-quantity');
-      const rmBtn  = group.querySelector('.btn-remove-quantity');
-
-      if (diff !== 0) actions.push({ addBtn, rmBtn, diff });
+      // 直接設定張數（比逐一點按鈕快 10 倍）
+      if (parseInt(inp.value) !== targetQty) {
+        setVal(inp, targetQty);
+      }
       matched++;
 
       // 沒有關鍵字時只選第一個，找到就停
@@ -143,18 +151,7 @@
       return;
     }
 
-    // 逐一調整張數（每次點擊間隔 120ms 避免過快）
-    let delay = 0;
-    actions.forEach(({ addBtn, rmBtn, diff }) => {
-      const btn = diff > 0 ? addBtn : rmBtn;
-      const times = Math.abs(diff);
-      for (let i = 0; i < times; i++) {
-        setTimeout(() => btn && btn.click(), delay);
-        delay += 120;
-      }
-    });
-
-    // 等調整完再點 Buy Ticket
+    // 短暫等待 DOM 更新後點 Buy Ticket
     setTimeout(() => {
       const buyBtn = document.getElementById('btn-get-ticket') ||
                      document.querySelector('.btn-buy-ticket') ||
@@ -164,7 +161,7 @@
       } else {
         toast('找不到 Buy Ticket 按鈕，請手動點擊', '#dc3545');
       }
-    }, delay + 200);
+    }, 150);
   }
 
   // ── 結帳頁：自動填表 ──────────────────────────────────────────
@@ -214,12 +211,33 @@
       if (cfg.autoPay) {
         setTimeout(() => {
           const btn = findPayNow();
-          if (btn) {
-            toast('3 秒後自動付款…', '#fd7e14');
-            setTimeout(() => btn.click(), 3000);
-          } else {
-            toast('找不到 Pay Now 按鈕，請手動點擊', '#dc3545');
-          }
+          if (!btn) { toast('找不到 Pay Now 按鈕，請手動點擊', '#dc3545'); return; }
+
+          let cancelled = false;
+          let remaining = 3;
+
+          const showCountdown = () => {
+            toast(`⚠️ ${remaining} 秒後自動付款… 按 ESC 取消`, '#fd7e14');
+          };
+          showCountdown();
+
+          const onKey = (e) => {
+            if (e.key === 'Escape') {
+              cancelled = true;
+              document.removeEventListener('keydown', onKey);
+              toast('已取消自動付款', '#6c757d');
+            }
+          };
+          document.addEventListener('keydown', onKey);
+
+          const tick = setInterval(() => {
+            remaining--;
+            if (cancelled) { clearInterval(tick); return; }
+            if (remaining > 0) { showCountdown(); return; }
+            clearInterval(tick);
+            document.removeEventListener('keydown', onKey);
+            btn.click();
+          }, 1000);
         }, 800);
       }
     }, cfg.billing?.enabled ? 700 : 300);
