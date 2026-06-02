@@ -99,7 +99,7 @@
     let matched = 0;
     const actions = []; // { addBtn, rmBtn, diff }
 
-    rows.forEach(row => {
+    for (const row of rows) {
       const inp = row.querySelector('input.ticket_quantity');
 
       // 票名
@@ -114,10 +114,12 @@
       });
 
       // 篩選：票價上限
-      if (price > maxPrice) return;
+      if (price > maxPrice) continue;
 
-      // 篩選：關鍵字（有設定才過濾）
-      if (keywords.length > 0 && !keywords.some(k => ticketName.includes(k))) return;
+      // 篩選：有關鍵字才比對；沒有關鍵字 = 選第一個符合票價的票種即止
+      if (keywords.length > 0) {
+        if (!keywords.some(k => ticketName.includes(k))) continue;
+      }
 
       // 需要調整的張數差
       const current = parseInt(inp.value) || 0;
@@ -128,7 +130,10 @@
 
       if (diff !== 0) actions.push({ addBtn, rmBtn, diff });
       matched++;
-    });
+
+      // 沒有關鍵字時只選第一個，找到就停
+      if (keywords.length === 0) break;
+    }
 
     if (matched === 0) {
       toast(
