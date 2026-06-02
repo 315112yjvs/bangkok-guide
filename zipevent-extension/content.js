@@ -92,37 +92,6 @@
     }
   }
 
-  // ── 純座位圖模式：點第一個可用 area 區塊 ─────────────────────
-
-  function selectZoneMap(cfg) {
-    const keywords = (cfg.zoneKeywords || '')
-      .split(',').map(k => k.trim().toLowerCase()).filter(Boolean);
-
-    // select_zone(GUID, zoneName, isSoldOut) — 第三參數 true = 售罄
-    const areas = Array.from(document.querySelectorAll('area[href*="select_zone"]'))
-      .filter(a => {
-        const href = a.getAttribute('href') || '';
-        // 解析第三參數判斷是否售罄
-        const m = href.match(/select_zone\([^,]+,\s*'([^']*)',\s*(true|false)\)/);
-        if (m && m[2] === 'true') return false; // 售罄跳過
-        // 關鍵字比對（title 或 alt）
-        const name = (a.title || a.alt || '').toLowerCase();
-        if (keywords.length > 0 && !keywords.some(k => name.includes(k))) return false;
-        return true;
-      });
-
-    if (areas.length === 0) {
-      toast(keywords.length ? `找不到符合「${cfg.zoneKeywords}」的座位區` : '找不到可用座位區', '#dc3545');
-      return;
-    }
-
-    toast('選擇座位區…', '#17a2b8');
-    areas[0].click();
-
-    // 等待票種清單出現後繼續
-    setTimeout(() => waitForPageAndBuy(cfg, 0), 600);
-  }
-
   // 統一入口
   function triggerBuy(cfg) {
     if (isBookPage) {
@@ -258,10 +227,10 @@
       const namePara = row.querySelector('p');
       const ticketName = namePara ? namePara.innerText.trim().toLowerCase() : '';
 
-      // 票價
+      // 票價：必須有小數點（如 320.00），避免誤抓 "A1" 裡的 "1"
       let price = 0;
       row.querySelectorAll('p').forEach(p => {
-        const m = p.innerText.match(/[\d,]+\.?\d*/);
+        const m = p.innerText.match(/[\d,]+\.\d{2}/);
         if (m && !price) price = parseFloat(m[0].replace(/,/g, ''));
       });
 
@@ -313,8 +282,22 @@
 
   function initOrderPage(cfg) {
     if (!cfg.autoFill) return;
-    toast('自動填表啟動中…', '#17a2b8');
-    setTimeout(() => fillOrderForm(cfg), 900);
+    waitForOrderForm(cfg, 0);
+  }
+
+  // 等結帳表單關鍵欄位出現再填（最多等 8 秒）
+  function waitForOrderForm(cfg, elapsed) {
+    const ready = document.getElementById('has_consent') ||
+                  document.getElementById('payment_12') ||
+                  document.getElementById('payment_24');
+    if (ready) {
+      toast('自動填表啟動中…', '#17a2b8');
+      setTimeout(() => fillOrderForm(cfg), 300);
+    } else if (elapsed < 8000) {
+      setTimeout(() => waitForOrderForm(cfg, elapsed + 200), 200);
+    } else {
+      toast('等待結帳表單超時，請手動操作', '#dc3545');
+    }
   }
 
   function fillOrderForm(cfg) {
