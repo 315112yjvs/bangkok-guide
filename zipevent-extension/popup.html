@@ -94,6 +94,19 @@
     }
     .field input[type="text"]:focus { border-color: #007bff; }
 
+    /* Quantity buttons */
+    .qty-btn {
+      width: 26px; height: 26px;
+      border: 1.5px solid #007bff; border-radius: 50%;
+      background: #fff; color: #007bff;
+      font-size: 16px; font-weight: 700;
+      cursor: pointer; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      transition: all .15s;
+      padding: 0;
+    }
+    .qty-btn:hover { background: #007bff; color: #fff; }
+
     /* Warning */
     .warn {
       display: none;
@@ -146,9 +159,22 @@
   <div class="row">
     <div class="row-text">
       <div class="label">自動點擊「Buy Ticket」</div>
-      <div class="desc">進入活動頁面時自動觸發購票</div>
+      <div class="desc">進入活動頁面自動設定張數並購票</div>
     </div>
     <label class="toggle"><input type="checkbox" id="autoBuy"><span class="slider"></span></label>
+  </div>
+
+  <div class="row">
+    <div class="row-text">
+      <div class="label">購票張數</div>
+      <div class="desc">快速購票時自動設定的數量</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <button class="qty-btn" id="qtyMinus">−</button>
+      <span id="qtyDisplay" style="font-size:15px;font-weight:700;min-width:20px;text-align:center;">1</span>
+      <button class="qty-btn" id="qtyPlus">+</button>
+      <input type="hidden" id="ticketQty" value="1">
+    </div>
   </div>
 
   <div class="row">

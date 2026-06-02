@@ -1,16 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ── 張數 +/- ────────────────────────────────────────────────
+  function updateQtyDisplay(val) {
+    const n = Math.max(1, Math.min(10, parseInt(val) || 1));
+    document.getElementById('ticketQty').value  = n;
+    document.getElementById('qtyDisplay').textContent = n;
+    return n;
+  }
+
+  document.getElementById('qtyMinus').addEventListener('click', () => {
+    updateQtyDisplay(parseInt(document.getElementById('ticketQty').value) - 1);
+  });
+  document.getElementById('qtyPlus').addEventListener('click', () => {
+    updateQtyDisplay(parseInt(document.getElementById('ticketQty').value) + 1);
+  });
+
   // ── 讀取已儲存設定 ──────────────────────────────────────────
   chrome.storage.sync.get({
     autoFill:      true,
     autoBuy:       false,
     autoPay:       false,
+    ticketQty:     1,
     paymentMethod: '12',
     billing: { enabled: false, taxId: '', type: '1', name: '', address: '' }
   }, function (cfg) {
     document.getElementById('autoFill').checked = cfg.autoFill;
     document.getElementById('autoBuy').checked  = cfg.autoBuy;
     document.getElementById('autoPay').checked  = cfg.autoPay;
+    updateQtyDisplay(cfg.ticketQty || 1);
 
     const pmRadio = document.querySelector(`input[name="pm"][value="${cfg.paymentMethod}"]`);
     if (pmRadio) pmRadio.checked = true;
@@ -49,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
       autoFill:      document.getElementById('autoFill').checked,
       autoBuy:       document.getElementById('autoBuy').checked,
       autoPay:       document.getElementById('autoPay').checked,
+      ticketQty:     parseInt(document.getElementById('ticketQty').value) || 1,
       paymentMethod: pmEl ? pmEl.value : '12',
       billing: {
         enabled: document.getElementById('billingEnabled').checked,

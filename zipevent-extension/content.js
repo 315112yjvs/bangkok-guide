@@ -46,9 +46,11 @@
   // ── 活動頁面：加入快速購票浮動按鈕 ──────────────────────────
 
   function initEventPage(cfg) {
+    const qty = parseInt(cfg.ticketQty) || 1;
+
     const fab = document.createElement('div');
     fab.id = 'zipevent-fab';
-    fab.innerHTML = '🎟️ 快速購票';
+    fab.innerHTML = `🎟️ 快速購票 ${qty > 1 ? '×' + qty : ''}`.trim();
     fab.style.cssText = `
       position:fixed;bottom:24px;right:20px;z-index:2147483647;
       background:linear-gradient(135deg,#007bff,#0056b3);
@@ -66,22 +68,53 @@
       fab.style.transform = '';
       fab.style.boxShadow = '0 4px 16px rgba(0,123,255,.45)';
     });
-    fab.addEventListener('click', clickBuy);
+    fab.addEventListener('click', () => setQtyAndBuy(qty));
     document.body.appendChild(fab);
 
     if (cfg.autoBuy) {
-      setTimeout(clickBuy, 1500);
+      setTimeout(() => setQtyAndBuy(qty), 1500);
     }
   }
 
-  function clickBuy() {
+  // 設定張數後點擊 Buy Ticket
+  function setQtyAndBuy(targetQty) {
+    const qtyInput = document.querySelector('input.ticket_quantity');
+    if (qtyInput) {
+      const current = parseInt(qtyInput.value) || 1;
+      const diff = targetQty - current;
+
+      if (diff > 0) {
+        const addBtn = document.querySelector('.btn-add-quantity');
+        let clicked = 0;
+        const interval = setInterval(() => {
+          if (clicked >= diff || !addBtn) { clearInterval(interval); doClickBuy(); return; }
+          addBtn.click();
+          clicked++;
+        }, 120);
+        return;
+      } else if (diff < 0) {
+        const rmBtn = document.querySelector('.btn-remove-quantity');
+        let clicked = 0;
+        const interval = setInterval(() => {
+          if (clicked >= Math.abs(diff) || !rmBtn) { clearInterval(interval); doClickBuy(); return; }
+          rmBtn.click();
+          clicked++;
+        }, 120);
+        return;
+      }
+    }
+    doClickBuy();
+  }
+
+  function doClickBuy() {
+    // 優先右側 Order panel 的 Buy Ticket（class btn-buy-ticket 或 id btn-get-ticket）
     const btn = document.getElementById('btn-get-ticket') ||
                 document.querySelector('.btn-buy-ticket') ||
-                document.querySelector('button.btn-primary[class*="buy"]');
+                document.querySelector('#footer-buy-btn');
     if (btn) {
       btn.click();
     } else {
-      toast('找不到購票按鈕，請手動點擊', '#dc3545');
+      toast('找不到 Buy Ticket 按鈕，請手動點擊', '#dc3545');
     }
   }
 
@@ -187,6 +220,7 @@
     autoFill:      true,
     autoBuy:       false,
     autoPay:       false,
+    ticketQty:     1,
     paymentMethod: '12',
     billing: { enabled: false, taxId: '', type: '1', name: '', address: '' }
   }, function (cfg) {
