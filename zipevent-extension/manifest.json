@@ -9,6 +9,7 @@
     {
       "matches": [
         "https://www.zipeventapp.com/e/*",
+        "https://www.zipeventapp.com/event/book/*",
         "https://www.zipeventapp.com/walkin/*"
       ],
       "js": ["content.js"],

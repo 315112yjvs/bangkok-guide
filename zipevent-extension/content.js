@@ -40,8 +40,9 @@
 
   const pagePath = window.location.pathname.toLowerCase();
   const isEventPage = pagePath.startsWith('/e/');
+  const isBookPage  = pagePath.startsWith('/event/book/');
   const isOrderPage = pagePath.startsWith('/walkin/');
-  if (!isEventPage && !isOrderPage) return;
+  if (!isEventPage && !isBookPage && !isOrderPage) return;
 
   // ── 活動頁：選票 + Buy Ticket ─────────────────────────────────
 
@@ -97,6 +98,21 @@
       selectAndBuy(cfg);
     } else {
       toast('找不到票種或日曆，請確認頁面已載入', '#dc3545');
+    }
+  }
+
+  // 等待購票按鈕可點擊（最多 3 秒，#btn-create-order 選票後才啟用）
+  function waitForBuyBtn(elapsed) {
+    const btn = document.getElementById('btn-get-ticket') ||
+                document.getElementById('btn-create-order') ||
+                document.querySelector('.btn-buy-ticket') ||
+                document.getElementById('footer-buy-btn');
+    if (btn && !btn.disabled) {
+      btn.click();
+    } else if (elapsed < 3000) {
+      setTimeout(() => waitForBuyBtn(elapsed + 100), 100);
+    } else {
+      toast('找不到可點擊的購票按鈕，請手動點擊', '#dc3545');
     }
   }
 
@@ -221,17 +237,8 @@
       return;
     }
 
-    // 短暫等待 DOM 更新後點 Buy Ticket
-    setTimeout(() => {
-      const buyBtn = document.getElementById('btn-get-ticket') ||
-                     document.querySelector('.btn-buy-ticket') ||
-                     document.getElementById('footer-buy-btn');
-      if (buyBtn) {
-        buyBtn.click();
-      } else {
-        toast('找不到 Buy Ticket 按鈕，請手動點擊', '#dc3545');
-      }
-    }, 150);
+    // 等待 DOM 更新後點購票按鈕（#btn-create-order 初始為 disabled，需等啟用）
+    waitForBuyBtn(0);
   }
 
   // ── 結帳頁：自動填表 ──────────────────────────────────────────
@@ -371,7 +378,7 @@
     paymentMethod: '12',
     billing: { enabled: false, taxId: '', type: '1', name: '', address: '' }
   }, function (cfg) {
-    if (isEventPage) initEventPage(cfg);
+    if (isEventPage || isBookPage) initEventPage(cfg);
     else if (isOrderPage) initOrderPage(cfg);
   });
 })();
