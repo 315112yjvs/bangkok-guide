@@ -1,5 +1,68 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ── 開始搶票按鈕 ─────────────────────────────────────────────
+  document.getElementById('snipeBtn').addEventListener('click', function () {
+    const btn    = document.getElementById('snipeBtn');
+    const label  = document.getElementById('snipeLabel');
+    const icon   = document.getElementById('snipeIcon');
+    const status = document.getElementById('snipeStatus');
+
+    btn.disabled = true;
+    icon.textContent  = '⏳';
+    label.textContent = '搶票中…';
+    status.textContent = '';
+    status.className = 'snipe-status';
+
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      const tab = tabs[0];
+      if (!tab || !tab.url) {
+        setStatus('❌ 無法取得當前頁面', 'err');
+        return reset();
+      }
+      if (!tab.url.includes('zipeventapp.com/e/')) {
+        setStatus('❌ 請先前往 Zipevent 活動頁面', 'err');
+        return reset();
+      }
+
+      // 讀取目前設定並傳給 content script
+      chrome.storage.sync.get({
+        zoneKeywords:  '',
+        maxPrice:      '',
+        ticketQty:     1,
+        autoFill:      true,
+        autoBuy:       false,
+        autoPay:       false,
+        paymentMethod: '12',
+        billing: { enabled: false, taxId: '', type: '1', name: '', address: '' }
+      }, function (cfg) {
+        chrome.tabs.sendMessage(tab.id, { action: 'startSnipe', cfg }, function (resp) {
+          if (chrome.runtime.lastError) {
+            setStatus('❌ 頁面未就緒，請重新整理後再試', 'err');
+            return reset();
+          }
+          if (resp && resp.error) {
+            setStatus('❌ ' + resp.error, 'err');
+          } else {
+            setStatus('✓ 已觸發搶票！', 'ok');
+          }
+          reset();
+        });
+      });
+    });
+
+    function setStatus(msg, cls) {
+      status.textContent = msg;
+      status.className   = 'snipe-status ' + (cls || '');
+    }
+    function reset() {
+      setTimeout(() => {
+        btn.disabled      = false;
+        icon.textContent  = '🚀';
+        label.textContent = '開始搶票';
+      }, 1800);
+    }
+  });
+
   // ── 張數 +/- ────────────────────────────────────────────────
   function setQty(n) {
     n = Math.max(1, Math.min(10, parseInt(n) || 1));

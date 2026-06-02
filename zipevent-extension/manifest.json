@@ -3,7 +3,7 @@
   "name": "Zipevent Auto Buyer",
   "version": "1.0",
   "description": "自動購買 Zipevent 活動票券",
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs", "activeTab"],
   "host_permissions": ["https://www.zipeventapp.com/*"],
   "content_scripts": [
     {

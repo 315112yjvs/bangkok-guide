@@ -106,6 +106,27 @@
     }
     .warn.show { display: block; }
 
+    /* Start snipe button */
+    .btn-snipe {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: calc(100% - 16px); margin: 6px 8px 2px;
+      padding: 13px; border: none; border-radius: 10px;
+      font-size: 15px; font-weight: 800; cursor: pointer;
+      background: linear-gradient(135deg, #28a745, #1a7d32);
+      color: #fff; letter-spacing: .3px;
+      box-shadow: 0 4px 14px rgba(40,167,69,.4);
+      transition: all .2s;
+    }
+    .btn-snipe:hover { background: linear-gradient(135deg,#22963d,#155927); transform:translateY(-1px); box-shadow:0 6px 18px rgba(40,167,69,.5); }
+    .btn-snipe:active { transform:translateY(0); }
+    .btn-snipe:disabled { background:#aaa; box-shadow:none; cursor:default; transform:none; }
+    .snipe-status {
+      text-align: center; font-size: 12px; padding: 4px 8px 2px;
+      min-height: 20px; color: #666;
+    }
+    .snipe-status.err { color: #dc3545; }
+    .snipe-status.ok  { color: #28a745; }
+
     /* Save */
     .btn-save {
       display: block; width: calc(100% - 16px); margin: 4px 8px 8px;
@@ -126,6 +147,13 @@
   <h1>🎟️ Zipevent Auto Buyer</h1>
   <p>zipeventapp.com 自動購票助手</p>
 </div>
+
+<!-- 開始搶票 -->
+<button class="btn-snipe" id="snipeBtn">
+  <span id="snipeIcon">🚀</span>
+  <span id="snipeLabel">開始搶票</span>
+</button>
+<div class="snipe-status" id="snipeStatus"></div>
 
 <!-- 搶票目標 -->
 <div class="section">

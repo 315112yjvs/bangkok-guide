@@ -249,6 +249,23 @@
     return null;
   }
 
+  // ── 來自 popup 的訊息 ────────────────────────────────────────
+
+  chrome.runtime.onMessage.addListener(function (msg, _sender, sendResponse) {
+    if (msg.action === 'startSnipe') {
+      if (isEventPage) {
+        selectAndBuy(msg.cfg);
+        sendResponse({ ok: true });
+      } else if (isOrderPage) {
+        fillOrderForm(msg.cfg);
+        sendResponse({ ok: true });
+      } else {
+        sendResponse({ error: '不是活動頁面' });
+      }
+    }
+    return true; // 保持 channel 開啟
+  });
+
   // ── 入口 ─────────────────────────────────────────────────────
 
   chrome.storage.sync.get({
