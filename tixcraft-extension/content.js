@@ -385,9 +385,18 @@ function handleArea() {
 
   if (!links.length) { hud('等待票區載入...', '#88aaff'); return; }
 
+  // 回傳剩餘數；無「剩餘 X」文字則回傳 null（不代表售罄，只是未顯示數量）
   function remaining(a) {
     const m = a.textContent.match(/剩餘\s*(\d+)/);
-    return m ? parseInt(m[1]) : 0;
+    return m ? parseInt(m[1]) : null;
+  }
+
+  // opacity 已過濾，再確認沒有明確的「剩餘 0」或售罄文字
+  function notSoldOut(a) {
+    const r = remaining(a);
+    if (r !== null && r === 0) return false;
+    const text = a.textContent.replace(/\s+/g, '');
+    return !text.includes('售完') && !text.includes('已售罄') && !text.includes('售罄');
   }
 
   const priorities = (cfg.areas || []).map(s => s.trim()).filter(Boolean);
@@ -395,15 +404,15 @@ function handleArea() {
 
   for (const kw of priorities) {
     const kw2 = kw.replace(/\s+/g, '');
-    const match = links.find(a => a.textContent.replace(/\s+/g, '').includes(kw2) && remaining(a) > 0);
+    const match = links.find(a => a.textContent.replace(/\s+/g, '').includes(kw2) && notSoldOut(a));
     if (match) { chosen = match; break; }
   }
 
   let usedFallback = false;
   if (!chosen) {
-    const avail = links.filter(a => remaining(a) > 0);
+    const avail = links.filter(a => notSoldOut(a));
     if (!avail.length) { hud('所有票區售罄！', '#ff4757'); return; }
-    avail.sort((a, b) => remaining(b) - remaining(a));
+    avail.sort((a, b) => (remaining(b) ?? 9999) - (remaining(a) ?? 9999));
     chosen = avail[0];
     usedFallback = true;
   }
