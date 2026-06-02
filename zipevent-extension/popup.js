@@ -1,5 +1,46 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ── 自動儲存（debounce 400ms）────────────────────────────────
+  let saveTimer = null;
+
+  function collectCfg() {
+    const pmEl = document.querySelector('input[name="pm"]:checked');
+    const btEl = document.querySelector('input[name="bt"]:checked');
+    return {
+      zoneKeywords:  document.getElementById('zoneKeywords').value.trim(),
+      maxPrice:      document.getElementById('maxPrice').value.trim(),
+      ticketQty:     parseInt(document.getElementById('ticketQty').value) || 1,
+      autoFill:      document.getElementById('autoFill').checked,
+      autoBuy:       document.getElementById('autoBuy').checked,
+      autoPay:       document.getElementById('autoPay').checked,
+      paymentMethod: pmEl ? pmEl.value : '12',
+      billing: {
+        enabled: document.getElementById('billingEnabled').checked,
+        taxId:   document.getElementById('taxId').value.trim(),
+        type:    btEl ? btEl.value : '1',
+        name:    document.getElementById('billName').value.trim(),
+        address: document.getElementById('billAddress').value.trim()
+      }
+    };
+  }
+
+  function autoSave() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(() => {
+      chrome.storage.sync.set(collectCfg(), () => {
+        const ind = document.getElementById('savedIndicator');
+        ind.style.opacity = '1';
+        setTimeout(() => ind.style.opacity = '0', 1200);
+      });
+    }, 400);
+  }
+
+  // 監聽所有欄位變動
+  document.querySelectorAll('input, textarea, select').forEach(el => {
+    el.addEventListener('change', autoSave);
+    el.addEventListener('input',  autoSave);
+  });
+
   // ── 開始搶票按鈕 ─────────────────────────────────────────────
   document.getElementById('snipeBtn').addEventListener('click', function () {
     const btn    = document.getElementById('snipeBtn');
@@ -26,26 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return reset();
       }
 
-      // 先把目前 UI 的值存入 storage，再觸發搶票
-      // 確保使用者剛改的設定（還沒按儲存）也會生效
-      const pmEl = document.querySelector('input[name="pm"]:checked');
-      const btEl = document.querySelector('input[name="bt"]:checked');
-      const cfg = {
-        zoneKeywords:  document.getElementById('zoneKeywords').value.trim(),
-        maxPrice:      document.getElementById('maxPrice').value.trim(),
-        ticketQty:     parseInt(document.getElementById('ticketQty').value) || 1,
-        autoFill:      document.getElementById('autoFill').checked,
-        autoBuy:       document.getElementById('autoBuy').checked,
-        autoPay:       document.getElementById('autoPay').checked,
-        paymentMethod: pmEl ? pmEl.value : '12',
-        billing: {
-          enabled: document.getElementById('billingEnabled').checked,
-          taxId:   document.getElementById('taxId').value.trim(),
-          type:    btEl ? btEl.value : '1',
-          name:    document.getElementById('billName').value.trim(),
-          address: document.getElementById('billAddress').value.trim()
-        }
-      };
+      const cfg = collectCfg();
       chrome.storage.sync.set(cfg, function () {
         chrome.tabs.sendMessage(tab.id, { action: 'startSnipe', cfg }, function (resp) {
           if (chrome.runtime.lastError) {
@@ -59,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
           reset();
         });
-      }); // chrome.storage.sync.set
+      });
     });
 
     function setStatus(msg, cls) {
@@ -80,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     n = Math.max(1, Math.min(10, parseInt(n) || 1));
     document.getElementById('ticketQty').value        = n;
     document.getElementById('qtyDisplay').textContent = n;
+    autoSave();
   }
   document.getElementById('qtyMinus').addEventListener('click', () =>
     setQty(parseInt(document.getElementById('ticketQty').value) - 1));
@@ -118,44 +141,14 @@ document.addEventListener('DOMContentLoaded', function () {
     syncUI();
   });
 
-  // ── 事件 ────────────────────────────────────────────────────
+  // ── UI 同步 ──────────────────────────────────────────────────
   document.getElementById('billingEnabled').addEventListener('change', syncUI);
   document.getElementById('autoPay').addEventListener('change', syncUI);
-  document.getElementById('saveBtn').addEventListener('click', save);
 
   function syncUI() {
     document.getElementById('billingFields')
       .classList.toggle('show', document.getElementById('billingEnabled').checked);
     document.getElementById('autoPayWarn')
       .classList.toggle('show', document.getElementById('autoPay').checked);
-  }
-
-  // ── 儲存 ─────────────────────────────────────────────────────
-  function save() {
-    const pmEl = document.querySelector('input[name="pm"]:checked');
-    const btEl = document.querySelector('input[name="bt"]:checked');
-
-    const cfg = {
-      zoneKeywords:  document.getElementById('zoneKeywords').value.trim(),
-      maxPrice:      document.getElementById('maxPrice').value.trim(),
-      ticketQty:     parseInt(document.getElementById('ticketQty').value) || 1,
-      autoFill:      document.getElementById('autoFill').checked,
-      autoBuy:       document.getElementById('autoBuy').checked,
-      autoPay:       document.getElementById('autoPay').checked,
-      paymentMethod: pmEl ? pmEl.value : '12',
-      billing: {
-        enabled: document.getElementById('billingEnabled').checked,
-        taxId:   document.getElementById('taxId').value.trim(),
-        type:    btEl ? btEl.value : '1',
-        name:    document.getElementById('billName').value.trim(),
-        address: document.getElementById('billAddress').value.trim()
-      }
-    };
-
-    chrome.storage.sync.set(cfg, function () {
-      const msg = document.getElementById('savedMsg');
-      msg.style.display = 'block';
-      setTimeout(() => msg.style.display = 'none', 2000);
-    });
   }
 });

@@ -127,17 +127,11 @@
     .snipe-status.err { color: #dc3545; }
     .snipe-status.ok  { color: #28a745; }
 
-    /* Save */
-    .btn-save {
-      display: block; width: calc(100% - 16px); margin: 4px 8px 8px;
-      padding: 10px; background: #007bff; color: #fff;
-      border: none; border-radius: 9px; font-size: 14px; font-weight: 700;
-      cursor: pointer; transition: background .2s;
-    }
-    .btn-save:hover { background: #0056b3; }
-    .saved {
-      text-align: center; color: #28a745; font-size: 12px;
-      padding: 3px 0 6px; display: none;
+    /* Auto-save indicator */
+    .saved-indicator {
+      text-align: center; color: #28a745; font-size: 11px;
+      padding: 2px 0 6px; opacity: 0;
+      transition: opacity .3s;
     }
   </style>
 </head>
@@ -261,8 +255,7 @@
   </div>
 </div>
 
-<button class="btn-save" id="saveBtn">儲存設定</button>
-<div class="saved" id="savedMsg">✓ 設定已儲存</div>
+<div class="saved-indicator" id="savedIndicator">✓ 已自動儲存</div>
 
 <script src="popup.js"></script>
 </body>
