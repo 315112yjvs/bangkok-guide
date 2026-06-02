@@ -76,15 +76,15 @@
     if (cfg.autoBuy) waitForPageAndBuy(cfg);
   }
 
-  // 偵測頁面類型後分流（日曆優先，polling 最多等 10 秒）
+  // autoBuy 入口：等頁面就緒後分流
   function waitForPageAndBuy(cfg, elapsed) {
     elapsed = elapsed || 0;
-    if (document.querySelector('td.day.has-event, #event-round')) {
+    if (isBookPage) {
+      waitForTicketList(cfg, 0);
+    } else if (document.querySelector('td.day.has-event, #event-round')) {
       selectCalendarAndBuy(cfg);
     } else if (document.querySelector('input.ticket_quantity')) {
       selectAndBuy(cfg);
-    } else if (document.querySelector('area[href*="select_zone"]')) {
-      selectZoneMap(cfg);
     } else if (elapsed < 10000) {
       setTimeout(() => waitForPageAndBuy(cfg, elapsed + 300), 300);
     } else {
@@ -123,18 +123,28 @@
     setTimeout(() => waitForPageAndBuy(cfg, 0), 600);
   }
 
-  // 統一入口：日曆型優先，避免被隱藏的 ticket_quantity 誤導
+  // 統一入口
   function triggerBuy(cfg) {
-    if (document.querySelector('td.day.has-event, #event-round')) {
+    if (isBookPage) {
+      // /event/book/ 頁面：完全忽略座位圖，直接等 Tickets 清單出現
+      waitForTicketList(cfg, 0);
+    } else if (document.querySelector('td.day.has-event, #event-round')) {
       selectCalendarAndBuy(cfg);
     } else if (document.querySelector('input.ticket_quantity')) {
-      // 一般票種列表（含 /event/book/ 的座位圖頁下方清單）
       selectAndBuy(cfg);
-    } else if (document.querySelector('area[href*="select_zone"]')) {
-      // 純座位圖（無票種清單）：點第一個可用區域
-      selectZoneMap(cfg);
     } else {
       toast('找不到票種或日曆，請確認頁面已載入', '#dc3545');
+    }
+  }
+
+  // 等 Tickets 清單（input.ticket_quantity）出現後執行選票
+  function waitForTicketList(cfg, elapsed) {
+    if (document.querySelector('input.ticket_quantity')) {
+      selectAndBuy(cfg);
+    } else if (elapsed < 8000) {
+      setTimeout(() => waitForTicketList(cfg, elapsed + 200), 200);
+    } else {
+      toast('等待票種清單超時，請手動操作', '#dc3545');
     }
   }
 
