@@ -69,21 +69,78 @@
       fab.style.transform = '';
       fab.style.boxShadow = '0 4px 16px rgba(0,123,255,.45)';
     });
-    fab.addEventListener('click', () => selectAndBuy(cfg));
+    fab.addEventListener('click', () => triggerBuy(cfg));
     document.body.appendChild(fab);
 
-    if (cfg.autoBuy) waitForTicketsAndBuy(cfg);
+    if (cfg.autoBuy) waitForPageAndBuy(cfg);
   }
 
-  // 等票種 input 出現後再觸發（polling，最多等 10 秒）
-  function waitForTicketsAndBuy(cfg, elapsed) {
+  // 偵測頁面類型後分流（polling，最多等 10 秒）
+  function waitForPageAndBuy(cfg, elapsed) {
     elapsed = elapsed || 0;
     if (document.querySelector('input.ticket_quantity')) {
       selectAndBuy(cfg);
+    } else if (document.querySelector('td.day.has-event')) {
+      selectCalendarAndBuy(cfg);
     } else if (elapsed < 10000) {
-      setTimeout(() => waitForTicketsAndBuy(cfg, elapsed + 300), 300);
+      setTimeout(() => waitForPageAndBuy(cfg, elapsed + 300), 300);
     } else {
-      toast('等待票種超時，請手動操作', '#dc3545');
+      toast('等待頁面超時，請手動操作', '#dc3545');
+    }
+  }
+
+  // 統一入口：自動判斷是一般票還是日曆選日期
+  function triggerBuy(cfg) {
+    if (document.querySelector('input.ticket_quantity')) {
+      selectAndBuy(cfg);
+    } else if (document.querySelector('td.day.has-event')) {
+      selectCalendarAndBuy(cfg);
+    } else {
+      toast('找不到票種或日曆，請確認頁面已載入', '#dc3545');
+    }
+  }
+
+  // ── 日曆模式：選第一個可用日期 → 第一個時段 → Next ───────────
+
+  function selectCalendarAndBuy(cfg) {
+    // 第一個有活動且未停用的日期（優先同月，否則含 .old）
+    const firstDate =
+      document.querySelector('td.day.has-event:not(.disabled):not(.old)') ||
+      document.querySelector('td.day.has-event:not(.disabled)');
+
+    if (!firstDate) {
+      toast('找不到可選的活動日期', '#dc3545');
+      return;
+    }
+
+    toast('選擇日期中…', '#17a2b8');
+    firstDate.click();
+
+    // 等 #event-round 出現時段卡片後點第一個
+    waitForRound(cfg, 0);
+  }
+
+  function waitForRound(cfg, elapsed) {
+    const firstRound = document.querySelector(
+      '#event-round .card:not(.disabled):not(.sold-out):not([class*="sold"])'
+    ) || document.querySelector('#event-round .card');
+
+    if (firstRound) {
+      toast('選擇時段中…', '#17a2b8');
+      firstRound.click();
+      setTimeout(() => {
+        const nextBtn = document.getElementById('btn-next-round') ||
+                        document.querySelector('button[id*="next"]');
+        if (nextBtn) {
+          nextBtn.click();
+        } else {
+          toast('找不到 Next 按鈕，請手動點擊', '#dc3545');
+        }
+      }, 350);
+    } else if (elapsed < 6000) {
+      setTimeout(() => waitForRound(cfg, elapsed + 200), 200);
+    } else {
+      toast('等待時段超時，請手動選擇', '#dc3545');
     }
   }
 
@@ -277,7 +334,7 @@
   chrome.runtime.onMessage.addListener(function (msg, _sender, sendResponse) {
     if (msg.action === 'startSnipe') {
       if (isEventPage) {
-        selectAndBuy(msg.cfg);
+        triggerBuy(msg.cfg);
         sendResponse({ ok: true });
       } else if (isOrderPage) {
         fillOrderForm(msg.cfg);
