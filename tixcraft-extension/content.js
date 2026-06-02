@@ -203,6 +203,11 @@ function start(newCfg) {
   createOverlay();
   hud('就緒，開始搶票', '#4cff91', PAGE);
   console.log('[TixCraft搶票] 啟動 PAGE=', PAGE, 'cfg=', JSON.stringify(cfg));
+  // 自動確認 window.confirm() 彈窗（會員碼驗證頁會連彈兩次）
+  window.__origConfirm = window.confirm;
+  window.__origAlert   = window.alert;
+  window.confirm = () => true;
+  window.alert   = () => {};
   setupObserver();
   startKeepalive();
   tick();         // 立刻執行第一次
@@ -216,6 +221,8 @@ function stop() {
   stopObserver();
   stopKeepalive();
   removeOverlay();
+  if (window.__origConfirm) { window.confirm = window.__origConfirm; delete window.__origConfirm; }
+  if (window.__origAlert)   { window.alert   = window.__origAlert;   delete window.__origAlert; }
   chrome.storage.local.set({ tix_running: false });
 }
 
