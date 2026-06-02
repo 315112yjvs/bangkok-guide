@@ -83,6 +83,8 @@
       selectCalendarAndBuy(cfg);
     } else if (document.querySelector('input.ticket_quantity')) {
       selectAndBuy(cfg);
+    } else if (document.querySelector('area[href*="select_zone"]')) {
+      selectZoneMap(cfg);
     } else if (elapsed < 10000) {
       setTimeout(() => waitForPageAndBuy(cfg, elapsed + 300), 300);
     } else {
@@ -90,12 +92,47 @@
     }
   }
 
+  // ── 純座位圖模式：點第一個可用 area 區塊 ─────────────────────
+
+  function selectZoneMap(cfg) {
+    const keywords = (cfg.zoneKeywords || '')
+      .split(',').map(k => k.trim().toLowerCase()).filter(Boolean);
+
+    // select_zone(GUID, zoneName, isSoldOut) — 第三參數 true = 售罄
+    const areas = Array.from(document.querySelectorAll('area[href*="select_zone"]'))
+      .filter(a => {
+        const href = a.getAttribute('href') || '';
+        // 解析第三參數判斷是否售罄
+        const m = href.match(/select_zone\([^,]+,\s*'([^']*)',\s*(true|false)\)/);
+        if (m && m[2] === 'true') return false; // 售罄跳過
+        // 關鍵字比對（title 或 alt）
+        const name = (a.title || a.alt || '').toLowerCase();
+        if (keywords.length > 0 && !keywords.some(k => name.includes(k))) return false;
+        return true;
+      });
+
+    if (areas.length === 0) {
+      toast(keywords.length ? `找不到符合「${cfg.zoneKeywords}」的座位區` : '找不到可用座位區', '#dc3545');
+      return;
+    }
+
+    toast('選擇座位區…', '#17a2b8');
+    areas[0].click();
+
+    // 等待票種清單出現後繼續
+    setTimeout(() => waitForPageAndBuy(cfg, 0), 600);
+  }
+
   // 統一入口：日曆型優先，避免被隱藏的 ticket_quantity 誤導
   function triggerBuy(cfg) {
     if (document.querySelector('td.day.has-event, #event-round')) {
       selectCalendarAndBuy(cfg);
     } else if (document.querySelector('input.ticket_quantity')) {
+      // 一般票種列表（含 /event/book/ 的座位圖頁下方清單）
       selectAndBuy(cfg);
+    } else if (document.querySelector('area[href*="select_zone"]')) {
+      // 純座位圖（無票種清單）：點第一個可用區域
+      selectZoneMap(cfg);
     } else {
       toast('找不到票種或日曆，請確認頁面已載入', '#dc3545');
     }
@@ -353,7 +390,7 @@
 
   chrome.runtime.onMessage.addListener(function (msg, _sender, sendResponse) {
     if (msg.action === 'startSnipe') {
-      if (isEventPage) {
+      if (isEventPage || isBookPage) {
         triggerBuy(msg.cfg);
         sendResponse({ ok: true });
       } else if (isOrderPage) {
