@@ -408,11 +408,22 @@ function handleArea() {
     if (match) { chosen = match; break; }
   }
 
+  function getPrice(a) {
+    const text = a.textContent.replace(/,/g, '');
+    const m = text.match(/(?:NT\$?|\$)\s*(\d+)/) || text.match(/(\d{3,5})\s*(?:元|NT)/);
+    return m ? parseInt(m[1]) : 0;
+  }
+
   let usedFallback = false;
   if (!chosen) {
     const avail = links.filter(a => notSoldOut(a));
     if (!avail.length) { hud('所有票區售罄！', '#ff4757'); return; }
-    avail.sort((a, b) => (remaining(b) ?? 9999) - (remaining(a) ?? 9999));
+    // 無設定優先區域時，由貴到便宜排序
+    avail.sort((a, b) => {
+      const pa = getPrice(a), pb = getPrice(b);
+      if (pa !== pb) return pb - pa;
+      return (remaining(b) ?? 9999) - (remaining(a) ?? 9999);
+    });
     chosen = avail[0];
     usedFallback = true;
   }
@@ -470,14 +481,14 @@ function handleTicket() {
   solveCaptchaWithOCR(captchaImg, captchaInput);
 }
 
-// ── Canvas 前處理（3倍放大 + 灰階 + 對比拉伸 + 二值化）──
-async function preprocessCaptcha(imgEl) {
+// ── Canvas 前處理（4倍放大 + 灰階 + 對比拉伸 + 二值化，threshold 可調）──
+async function preprocessCaptcha(imgEl, threshold = 120) {
   await new Promise(resolve => {
     if (imgEl.complete && imgEl.naturalWidth) { resolve(); return; }
     imgEl.onload = resolve;
   });
 
-  const scale  = 3;
+  const scale  = 4;
   const canvas = document.createElement('canvas');
   canvas.width  = imgEl.naturalWidth  * scale;
   canvas.height = imgEl.naturalHeight * scale;
@@ -498,7 +509,7 @@ async function preprocessCaptcha(imgEl) {
 
   for (let i = 0; i < data.length; i += 4) {
     const g   = (0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2] - min) / range * 255;
-    const bw  = g > 140 ? 255 : 0;
+    const bw  = g > threshold ? 255 : 0;
     data[i] = data[i + 1] = data[i + 2] = bw;
   }
 
@@ -506,7 +517,7 @@ async function preprocessCaptcha(imgEl) {
   return canvas.toDataURL('image/png').split(',')[1];
 }
 
-// ── OCR.space 自動識別驗證碼 ─────────────────────────────
+// ── OCR.space 自動識別驗證碼（Engine1 + Engine2 並行，挑最佳）──
 async function solveCaptchaWithOCR(imgEl, inputEl) {
   if (captchaSolving) return;
   captchaSolving = true;
@@ -514,17 +525,43 @@ async function solveCaptchaWithOCR(imgEl, inputEl) {
   const ocrKey = 'K84710177388957';
   let retries  = 0;
 
+  // 驗證碼應為 4-6 位英數字
+  function isValidCaptcha(s) {
+    return s && /^[a-z0-9]{4,6}$/.test(s);
+  }
+
   async function attempt() {
     try {
       hud('📸 前處理驗證碼...', '#88aaff');
-      const base64 = await preprocessCaptcha(imgEl);
-      if (!base64) throw new Error('圖片前處理失敗');
 
-      hud('🔍 OCR 識別中...', '#88aaff');
-      const text = await callOCRSpace(base64, ocrKey);
-      if (!text) throw new Error('未識別出文字');
+      // 用兩種閾值前處理，搭配兩種 engine，共三組並行
+      const [b115, b130, b145] = await Promise.all([
+        preprocessCaptcha(imgEl, 115),
+        preprocessCaptcha(imgEl, 130),
+        preprocessCaptcha(imgEl, 145),
+      ]);
 
-      console.log('[TixCraft搶票] OCR 結果:', text);
+      hud('🔍 OCR 並行識別中...', '#88aaff');
+
+      const results = await Promise.allSettled([
+        callOCRSpace(b115, ocrKey, '1'), // engine1 淺閾值
+        callOCRSpace(b130, ocrKey, '1'), // engine1 中閾值
+        callOCRSpace(b145, ocrKey, '2'), // engine2 深閾值
+      ]);
+
+      console.log('[TixCraft搶票] OCR 並行結果:', results.map(r => r.value ?? r.reason?.message));
+
+      const texts = results
+        .filter(r => r.status === 'fulfilled' && r.value)
+        .map(r => r.value);
+
+      // 優先取符合格式的結果
+      const valid = texts.find(t => isValidCaptcha(t));
+      const text  = valid || texts[0] || '';
+
+      if (!text) throw new Error('所有 OCR 方案均未識別出文字');
+
+      console.log('[TixCraft搶票] OCR 採用:', text, valid ? '(有效)' : '(強制)');
       hud(`✅ 識別：${text}`, '#4cff91', '填入並送出...');
 
       inputEl.value = text;
@@ -561,15 +598,15 @@ async function solveCaptchaWithOCR(imgEl, inputEl) {
 }
 
 // ── OCR.space API ─────────────────────────────────────
-async function callOCRSpace(base64, apiKey) {
+async function callOCRSpace(base64, apiKey, engine = '1') {
   const form = new FormData();
   form.append('apikey',           apiKey);
   form.append('base64Image',      `data:image/png;base64,${base64}`);
   form.append('language',         'eng');
-  form.append('OCREngine',        '2');
+  form.append('OCREngine',        engine);
   form.append('isOverlayRequired','false');
   form.append('detectOrientation','false');
-  form.append('scale',            'true');
+  form.append('scale',            'false'); // 已在前處理放大，不重複縮放
 
   const res = await fetch('https://api.ocr.space/parse/image', { method: 'POST', body: form });
   if (!res.ok) throw new Error(`OCR API ${res.status}`);
