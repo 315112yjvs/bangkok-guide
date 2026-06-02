@@ -19,7 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
         setStatus('❌ 無法取得當前頁面', 'err');
         return reset();
       }
-      if (!tab.url.includes('zipeventapp.com/e/')) {
+      const validPage = tab.url.includes('zipeventapp.com/e/') ||
+                        tab.url.includes('zipeventapp.com/event/book/');
+      if (!validPage) {
         setStatus('❌ 請先前往 Zipevent 活動頁面', 'err');
         return reset();
       }
