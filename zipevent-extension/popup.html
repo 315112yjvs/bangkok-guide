@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>Zipevent Auto Buyer</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 300px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      color: #222;
+      background: #f0f2f5;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #007bff 0%, #0046b3 100%);
+      color: #fff;
+      padding: 14px 16px 12px;
+      text-align: center;
+    }
+    .header h1 { font-size: 15px; font-weight: 700; letter-spacing: .3px; }
+    .header p  { font-size: 11px; opacity: .75; margin-top: 3px; }
+
+    .section {
+      background: #fff;
+      margin: 6px 8px;
+      border-radius: 10px;
+      padding: 12px 14px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    }
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 8px;
+    }
+
+    /* Toggle row */
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid #f4f4f4;
+    }
+    .row:last-child { border-bottom: none; }
+    .row-text .label { font-size: 13px; font-weight: 500; }
+    .row-text .desc  { font-size: 11px; color: #aaa; margin-top: 1px; }
+
+    .toggle { position: relative; width: 38px; height: 21px; flex-shrink: 0; }
+    .toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .slider {
+      position: absolute; inset: 0;
+      background: #ccc; border-radius: 21px; cursor: pointer; transition: .25s;
+    }
+    .slider::before {
+      content: '';
+      position: absolute;
+      width: 15px; height: 15px;
+      left: 3px; bottom: 3px;
+      background: #fff; border-radius: 50%; transition: .25s;
+    }
+    input:checked + .slider { background: #007bff; }
+    input:checked + .slider::before { transform: translateX(17px); }
+
+    /* Radio chips */
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+    .chip {
+      display: flex; align-items: center; gap: 4px;
+      padding: 4px 10px;
+      border: 1.5px solid #ddd; border-radius: 14px;
+      cursor: pointer; font-size: 12px; transition: all .2s;
+    }
+    .chip input[type="radio"] { accent-color: #007bff; width: 12px; height: 12px; }
+    .chip:has(input:checked) {
+      border-color: #007bff;
+      background: #e8f1ff;
+      color: #007bff;
+      font-weight: 600;
+    }
+
+    /* Billing fields */
+    .billing { margin-top: 8px; display: none; }
+    .billing.show { display: block; }
+    .field { margin-bottom: 7px; }
+    .field label { font-size: 11px; color: #777; display: block; margin-bottom: 3px; }
+    .field input[type="text"] {
+      width: 100%; padding: 6px 9px;
+      border: 1.5px solid #e0e0e0; border-radius: 7px;
+      font-size: 13px; outline: none; transition: border-color .2s;
+    }
+    .field input[type="text"]:focus { border-color: #007bff; }
+
+    /* Warning */
+    .warn {
+      display: none;
+      background: #fff8e6; border: 1px solid #ffc107;
+      border-radius: 7px; padding: 7px 10px;
+      font-size: 11px; color: #856404; margin-top: 6px;
+    }
+    .warn.show { display: block; }
+
+    /* Save button */
+    .btn-save {
+      display: block;
+      width: calc(100% - 16px);
+      margin: 4px 8px 8px;
+      padding: 10px;
+      background: #007bff; color: #fff;
+      border: none; border-radius: 9px;
+      font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: background .2s;
+    }
+    .btn-save:hover { background: #0056b3; }
+    .saved {
+      text-align: center;
+      color: #28a745;
+      font-size: 12px;
+      padding: 3px 0 6px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🎟️ Zipevent Auto Buyer</h1>
+  <p>zipeventapp.com 自動購票助手</p>
+</div>
+
+<!-- 自動化設定 -->
+<div class="section">
+  <div class="section-title">自動化設定</div>
+
+  <div class="row">
+    <div class="row-text">
+      <div class="label">自動填表</div>
+      <div class="desc">進入結帳頁面時自動勾選與填寫</div>
+    </div>
+    <label class="toggle"><input type="checkbox" id="autoFill" checked><span class="slider"></span></label>
+  </div>
+
+  <div class="row">
+    <div class="row-text">
+      <div class="label">自動點擊「Buy Ticket」</div>
+      <div class="desc">進入活動頁面時自動觸發購票</div>
+    </div>
+    <label class="toggle"><input type="checkbox" id="autoBuy"><span class="slider"></span></label>
+  </div>
+
+  <div class="row">
+    <div class="row-text">
+      <div class="label">自動付款</div>
+      <div class="desc">填表完成後自動點擊「Pay Now」</div>
+    </div>
+    <label class="toggle"><input type="checkbox" id="autoPay"><span class="slider"></span></label>
+  </div>
+
+  <div class="warn" id="autoPayWarn">
+    ⚠️ 自動付款將於 3 秒後直接扣款，請確認帳單資訊正確
+  </div>
+</div>
+
+<!-- 付款方式 -->
+<div class="section">
+  <div class="section-title">付款方式</div>
+  <div class="chips">
+    <label class="chip">
+      <input type="radio" name="pm" value="12" checked> QR 付款
+    </label>
+    <label class="chip">
+      <input type="radio" name="pm" value="24"> 信用卡 / 簽帳卡
+    </label>
+  </div>
+</div>
+
+<!-- 發票資訊 -->
+<div class="section">
+  <div class="section-title">發票資訊</div>
+
+  <div class="row">
+    <div class="row-text">
+      <div class="label">索取電子發票</div>
+      <div class="desc">需填寫稅籍與地址</div>
+    </div>
+    <label class="toggle"><input type="checkbox" id="billingEnabled"><span class="slider"></span></label>
+  </div>
+
+  <div class="billing" id="billingFields">
+    <div class="field">
+      <label>稅籍編號 (Tax ID)</label>
+      <input type="text" id="taxId" placeholder="0-000-000-0000">
+    </div>
+
+    <div class="field">
+      <label>類型</label>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="bt" value="1" checked> 個人</label>
+        <label class="chip"><input type="radio" name="bt" value="2"> 公司</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>發票名稱</label>
+      <input type="text" id="billName" placeholder="姓名或公司名稱">
+    </div>
+
+    <div class="field">
+      <label>發票地址</label>
+      <input type="text" id="billAddress" placeholder="完整地址">
+    </div>
+  </div>
+</div>
+
+<button class="btn-save" id="saveBtn">儲存設定</button>
+<div class="saved" id="savedMsg">✓ 設定已儲存</div>
+
+<script src="popup.js"></script>
+</body>
+</html>
