@@ -166,6 +166,14 @@
   // ── 日曆模式：選第一個可用日期 → 第一個時段 → Next ───────────
 
   function selectCalendarAndBuy(cfg) {
+    // 若有待完成訂單的 Cancel 按鈕，先關閉（搶新票）
+    const cancelBtn = document.querySelector('.btn-cancel:not([style*="display:none"])');
+    if (cancelBtn && /^cancel$/i.test(cancelBtn.textContent.trim())) {
+      cancelBtn.click();
+      setTimeout(() => selectCalendarAndBuy(cfg), 400);
+      return;
+    }
+
     // 若已有選取的日期就跳過，否則點第一個可用日期
     const hasSelectedDate = document.querySelector('td.day.active, td.active.has-event');
     if (!hasSelectedDate) {
@@ -201,8 +209,7 @@
         }
         // 等畫面更新後點 Next
         setTimeout(() => {
-          const nextBtn = document.getElementById('btn-next-round') ||
-                          document.querySelector('button[id*="next"]');
+          const nextBtn = findNextBtn();
           if (nextBtn) {
             nextBtn.click();
           } else {
@@ -401,6 +408,15 @@
       const el = document.getElementById('bill_address');
       if (el) { setVal(el, b.address); done.push('發票地址'); }
     }
+  }
+
+  function findNextBtn() {
+    // 依優先順序：Order panel 的 Next → footer Next → 任何文字為 Next 的按鈕
+    return document.getElementById('btn-next-round') ||
+           document.getElementById('footer-unfinished-btn') ||
+           document.querySelector('.btn-continue[href*="/event/book/"]') ||
+           Array.from(document.querySelectorAll('button, a.btn'))
+             .find(b => /^next$/i.test(b.textContent.trim()) && !b.disabled);
   }
 
   function findPayNow() {
