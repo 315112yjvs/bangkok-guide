@@ -232,7 +232,7 @@
     }
 
     let matched = 0;
-    const actions = []; // { addBtn, rmBtn, diff }
+    let totalDelay = 0;
 
     for (const row of rows) {
       const inp = row.querySelector('input.ticket_quantity');
@@ -256,10 +256,24 @@
         if (!keywords.some(k => ticketName.includes(k))) continue;
       }
 
-      // 直接設定張數（比逐一點按鈕快 10 倍）
-      if (parseInt(inp.value) !== targetQty) {
-        setVal(inp, targetQty);
+      const current = parseInt(inp.value) || 0;
+      const diff    = targetQty - current;
+      const group   = inp.closest('.ticket-quantity-group') || inp.parentElement;
+      const addBtn  = group?.querySelector('.btn-add-quantity');
+      const rmBtn   = group?.querySelector('.btn-remove-quantity');
+
+      if (diff > 0 && addBtn) {
+        for (let i = 0; i < diff; i++) {
+          setTimeout(() => addBtn.click(), totalDelay + i * 60);
+        }
+        totalDelay += diff * 60;
+      } else if (diff < 0 && rmBtn) {
+        for (let i = 0; i < Math.abs(diff); i++) {
+          setTimeout(() => rmBtn.click(), totalDelay + i * 60);
+        }
+        totalDelay += Math.abs(diff) * 60;
       }
+
       matched++;
 
       // 沒有關鍵字時只選第一個，找到就停
@@ -274,8 +288,8 @@
       return;
     }
 
-    // 等待 DOM 更新後點購票按鈕（#btn-create-order 初始為 disabled，需等啟用）
-    waitForBuyBtn(0);
+    // 等按鈕點擊完成 + DOM 更新後，輪詢購票按鈕變可用
+    setTimeout(() => waitForBuyBtn(0), totalDelay + 200);
   }
 
   // ── 結帳頁：自動填表 ──────────────────────────────────────────
