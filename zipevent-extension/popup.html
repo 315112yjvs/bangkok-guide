@@ -6,7 +6,7 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      width: 300px;
+      width: 310px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 14px;
       color: #222;
@@ -19,7 +19,7 @@
       padding: 14px 16px 12px;
       text-align: center;
     }
-    .header h1 { font-size: 15px; font-weight: 700; letter-spacing: .3px; }
+    .header h1 { font-size: 15px; font-weight: 700; }
     .header p  { font-size: 11px; opacity: .75; margin-top: 3px; }
 
     .section {
@@ -30,26 +30,33 @@
       box-shadow: 0 1px 4px rgba(0,0,0,.08);
     }
     .section-title {
-      font-size: 11px;
-      font-weight: 700;
-      color: #888;
-      text-transform: uppercase;
-      letter-spacing: .6px;
-      margin-bottom: 8px;
+      font-size: 11px; font-weight: 700; color: #888;
+      text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px;
     }
 
-    /* Toggle row */
+    /* Row */
     .row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 7px 0;
-      border-bottom: 1px solid #f4f4f4;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 7px 0; border-bottom: 1px solid #f4f4f4;
     }
     .row:last-child { border-bottom: none; }
     .row-text .label { font-size: 13px; font-weight: 500; }
     .row-text .desc  { font-size: 11px; color: #aaa; margin-top: 1px; }
 
+    /* Field group */
+    .field { margin-bottom: 9px; }
+    .field:last-child { margin-bottom: 0; }
+    .field > label { font-size: 11px; color: #777; display: block; margin-bottom: 4px; font-weight: 600; }
+    .field input[type="text"],
+    .field input[type="number"] {
+      width: 100%; padding: 7px 10px;
+      border: 1.5px solid #e0e0e0; border-radius: 7px;
+      font-size: 13px; outline: none; transition: border-color .2s;
+    }
+    .field input:focus { border-color: #007bff; }
+    .field .hint { font-size: 11px; color: #aaa; margin-top: 3px; }
+
+    /* Toggle */
     .toggle { position: relative; width: 38px; height: 21px; flex-shrink: 0; }
     .toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
     .slider {
@@ -57,83 +64,59 @@
       background: #ccc; border-radius: 21px; cursor: pointer; transition: .25s;
     }
     .slider::before {
-      content: '';
-      position: absolute;
-      width: 15px; height: 15px;
-      left: 3px; bottom: 3px;
+      content: ''; position: absolute;
+      width: 15px; height: 15px; left: 3px; bottom: 3px;
       background: #fff; border-radius: 50%; transition: .25s;
     }
     input:checked + .slider { background: #007bff; }
     input:checked + .slider::before { transform: translateX(17px); }
 
-    /* Radio chips */
-    .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
-    .chip {
-      display: flex; align-items: center; gap: 4px;
-      padding: 4px 10px;
-      border: 1.5px solid #ddd; border-radius: 14px;
-      cursor: pointer; font-size: 12px; transition: all .2s;
-    }
-    .chip input[type="radio"] { accent-color: #007bff; width: 12px; height: 12px; }
-    .chip:has(input:checked) {
-      border-color: #007bff;
-      background: #e8f1ff;
-      color: #007bff;
-      font-weight: 600;
-    }
-
-    /* Billing fields */
-    .billing { margin-top: 8px; display: none; }
-    .billing.show { display: block; }
-    .field { margin-bottom: 7px; }
-    .field label { font-size: 11px; color: #777; display: block; margin-bottom: 3px; }
-    .field input[type="text"] {
-      width: 100%; padding: 6px 9px;
-      border: 1.5px solid #e0e0e0; border-radius: 7px;
-      font-size: 13px; outline: none; transition: border-color .2s;
-    }
-    .field input[type="text"]:focus { border-color: #007bff; }
-
-    /* Quantity buttons */
+    /* Qty counter */
+    .qty-wrap { display: flex; align-items: center; gap: 7px; }
     .qty-btn {
-      width: 26px; height: 26px;
-      border: 1.5px solid #007bff; border-radius: 50%;
-      background: #fff; color: #007bff;
-      font-size: 16px; font-weight: 700;
-      cursor: pointer; line-height: 1;
+      width: 26px; height: 26px; border-radius: 50%;
+      border: 1.5px solid #007bff; background: #fff; color: #007bff;
+      font-size: 17px; font-weight: 700; cursor: pointer;
       display: flex; align-items: center; justify-content: center;
-      transition: all .15s;
-      padding: 0;
+      transition: all .15s; line-height: 1; padding: 0;
     }
     .qty-btn:hover { background: #007bff; color: #fff; }
+    .qty-num { font-size: 15px; font-weight: 700; min-width: 22px; text-align: center; }
+
+    /* Radio chips */
+    .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+    .chip {
+      display: flex; align-items: center; gap: 4px;
+      padding: 4px 10px; border: 1.5px solid #ddd; border-radius: 14px;
+      cursor: pointer; font-size: 12px; transition: all .2s;
+    }
+    .chip input { accent-color: #007bff; width: 12px; height: 12px; }
+    .chip:has(input:checked) {
+      border-color: #007bff; background: #e8f1ff; color: #007bff; font-weight: 600;
+    }
+
+    /* Billing collapse */
+    .billing { margin-top: 8px; display: none; }
+    .billing.show { display: block; }
 
     /* Warning */
     .warn {
-      display: none;
-      background: #fff8e6; border: 1px solid #ffc107;
-      border-radius: 7px; padding: 7px 10px;
-      font-size: 11px; color: #856404; margin-top: 6px;
+      display: none; background: #fff8e6; border: 1px solid #ffc107;
+      border-radius: 7px; padding: 7px 10px; font-size: 11px; color: #856404; margin-top: 6px;
     }
     .warn.show { display: block; }
 
-    /* Save button */
+    /* Save */
     .btn-save {
-      display: block;
-      width: calc(100% - 16px);
-      margin: 4px 8px 8px;
-      padding: 10px;
-      background: #007bff; color: #fff;
-      border: none; border-radius: 9px;
-      font-size: 14px; font-weight: 700;
+      display: block; width: calc(100% - 16px); margin: 4px 8px 8px;
+      padding: 10px; background: #007bff; color: #fff;
+      border: none; border-radius: 9px; font-size: 14px; font-weight: 700;
       cursor: pointer; transition: background .2s;
     }
     .btn-save:hover { background: #0056b3; }
     .saved {
-      text-align: center;
-      color: #28a745;
-      font-size: 12px;
-      padding: 3px 0 6px;
-      display: none;
+      text-align: center; color: #28a745; font-size: 12px;
+      padding: 3px 0 6px; display: none;
     }
   </style>
 </head>
@@ -144,49 +127,65 @@
   <p>zipeventapp.com 自動購票助手</p>
 </div>
 
-<!-- 自動化設定 -->
+<!-- 搶票目標 -->
+<div class="section">
+  <div class="section-title">搶票目標</div>
+
+  <div class="field">
+    <label>票區 / 票種關鍵字</label>
+    <input type="text" id="zoneKeywords" placeholder="例：VIP, 一般, Zone A（逗號分隔）">
+    <div class="hint">留空 = 不過濾，自動選第一個可購買的票種</div>
+  </div>
+
+  <div class="field">
+    <label>最高可接受票價（THB）</label>
+    <input type="number" id="maxPrice" placeholder="例：5000（留空 = 不限制）" min="0">
+  </div>
+
+  <div class="row" style="margin-top:4px;">
+    <div class="row-text">
+      <div class="label">購票張數</div>
+      <div class="desc">每個符合票種加購的數量</div>
+    </div>
+    <div class="qty-wrap">
+      <button class="qty-btn" id="qtyMinus">−</button>
+      <span class="qty-num" id="qtyDisplay">1</span>
+      <button class="qty-btn" id="qtyPlus">+</button>
+      <input type="hidden" id="ticketQty" value="1">
+    </div>
+  </div>
+</div>
+
+<!-- 自動化 -->
 <div class="section">
   <div class="section-title">自動化設定</div>
 
   <div class="row">
     <div class="row-text">
       <div class="label">自動填表</div>
-      <div class="desc">進入結帳頁面時自動勾選與填寫</div>
+      <div class="desc">進結帳頁自動勾選確認項目</div>
     </div>
     <label class="toggle"><input type="checkbox" id="autoFill" checked><span class="slider"></span></label>
   </div>
 
   <div class="row">
     <div class="row-text">
-      <div class="label">自動點擊「Buy Ticket」</div>
-      <div class="desc">進入活動頁面自動設定張數並購票</div>
+      <div class="label">自動點擊 Buy Ticket</div>
+      <div class="desc">進活動頁自動選票並觸發購買</div>
     </div>
     <label class="toggle"><input type="checkbox" id="autoBuy"><span class="slider"></span></label>
   </div>
 
   <div class="row">
     <div class="row-text">
-      <div class="label">購票張數</div>
-      <div class="desc">快速購票時自動設定的數量</div>
-    </div>
-    <div style="display:flex;align-items:center;gap:6px;">
-      <button class="qty-btn" id="qtyMinus">−</button>
-      <span id="qtyDisplay" style="font-size:15px;font-weight:700;min-width:20px;text-align:center;">1</span>
-      <button class="qty-btn" id="qtyPlus">+</button>
-      <input type="hidden" id="ticketQty" value="1">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="row-text">
       <div class="label">自動付款</div>
-      <div class="desc">填表完成後自動點擊「Pay Now」</div>
+      <div class="desc">填表後自動點擊 Pay Now</div>
     </div>
     <label class="toggle"><input type="checkbox" id="autoPay"><span class="slider"></span></label>
   </div>
 
   <div class="warn" id="autoPayWarn">
-    ⚠️ 自動付款將於 3 秒後直接扣款，請確認帳單資訊正確
+    ⚠️ 自動付款將於 3 秒倒數後直接扣款，確認帳單與付款方式正確再開啟
   </div>
 </div>
 
@@ -194,12 +193,8 @@
 <div class="section">
   <div class="section-title">付款方式</div>
   <div class="chips">
-    <label class="chip">
-      <input type="radio" name="pm" value="12" checked> QR 付款
-    </label>
-    <label class="chip">
-      <input type="radio" name="pm" value="24"> 信用卡 / 簽帳卡
-    </label>
+    <label class="chip"><input type="radio" name="pm" value="12" checked> QR 付款</label>
+    <label class="chip"><input type="radio" name="pm" value="24"> 信用卡 / 簽帳卡</label>
   </div>
 </div>
 
@@ -216,27 +211,24 @@
   </div>
 
   <div class="billing" id="billingFields">
-    <div class="field">
-      <label>稅籍編號 (Tax ID)</label>
-      <input type="text" id="taxId" placeholder="0-000-000-0000">
+    <div class="field" style="margin-top:8px;">
+      <label>稅籍編號（Tax ID）</label>
+      <input type="text" id="taxId" placeholder="0-000-000-0000（個人可留空）">
     </div>
-
     <div class="field">
       <label>類型</label>
       <div class="chips">
         <label class="chip"><input type="radio" name="bt" value="1" checked> 個人</label>
-        <label class="chip"><input type="radio" name="bt" value="2"> 公司</label>
+        <label class="chip"><input type="radio" name="bt" value="2"> 公司行號</label>
       </div>
     </div>
-
     <div class="field">
-      <label>發票名稱</label>
-      <input type="text" id="billName" placeholder="姓名或公司名稱">
+      <label>發票名稱（姓名或公司名）</label>
+      <input type="text" id="billName" placeholder="">
     </div>
-
     <div class="field">
       <label>發票地址</label>
-      <input type="text" id="billAddress" placeholder="完整地址">
+      <input type="text" id="billAddress" placeholder="">
     </div>
   </div>
 </div>

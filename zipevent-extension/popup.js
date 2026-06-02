@@ -1,72 +1,72 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // ── 張數 +/- ────────────────────────────────────────────────
-  function updateQtyDisplay(val) {
-    const n = Math.max(1, Math.min(10, parseInt(val) || 1));
-    document.getElementById('ticketQty').value  = n;
+  function setQty(n) {
+    n = Math.max(1, Math.min(10, parseInt(n) || 1));
+    document.getElementById('ticketQty').value        = n;
     document.getElementById('qtyDisplay').textContent = n;
-    return n;
   }
+  document.getElementById('qtyMinus').addEventListener('click', () =>
+    setQty(parseInt(document.getElementById('ticketQty').value) - 1));
+  document.getElementById('qtyPlus').addEventListener('click', () =>
+    setQty(parseInt(document.getElementById('ticketQty').value) + 1));
 
-  document.getElementById('qtyMinus').addEventListener('click', () => {
-    updateQtyDisplay(parseInt(document.getElementById('ticketQty').value) - 1);
-  });
-  document.getElementById('qtyPlus').addEventListener('click', () => {
-    updateQtyDisplay(parseInt(document.getElementById('ticketQty').value) + 1);
-  });
-
-  // ── 讀取已儲存設定 ──────────────────────────────────────────
+  // ── 讀取設定 ─────────────────────────────────────────────────
   chrome.storage.sync.get({
+    zoneKeywords:  '',
+    maxPrice:      '',
+    ticketQty:     1,
     autoFill:      true,
     autoBuy:       false,
     autoPay:       false,
-    ticketQty:     1,
     paymentMethod: '12',
     billing: { enabled: false, taxId: '', type: '1', name: '', address: '' }
   }, function (cfg) {
+    document.getElementById('zoneKeywords').value  = cfg.zoneKeywords;
+    document.getElementById('maxPrice').value      = cfg.maxPrice;
+    setQty(cfg.ticketQty);
+
     document.getElementById('autoFill').checked = cfg.autoFill;
     document.getElementById('autoBuy').checked  = cfg.autoBuy;
     document.getElementById('autoPay').checked  = cfg.autoPay;
-    updateQtyDisplay(cfg.ticketQty || 1);
 
-    const pmRadio = document.querySelector(`input[name="pm"][value="${cfg.paymentMethod}"]`);
-    if (pmRadio) pmRadio.checked = true;
+    const pmEl = document.querySelector(`input[name="pm"][value="${cfg.paymentMethod}"]`);
+    if (pmEl) pmEl.checked = true;
 
     document.getElementById('billingEnabled').checked = cfg.billing.enabled;
     document.getElementById('taxId').value            = cfg.billing.taxId    || '';
     document.getElementById('billName').value         = cfg.billing.name     || '';
     document.getElementById('billAddress').value      = cfg.billing.address  || '';
-
-    const btRadio = document.querySelector(`input[name="bt"][value="${cfg.billing.type || '1'}"]`);
-    if (btRadio) btRadio.checked = true;
+    const btEl = document.querySelector(`input[name="bt"][value="${cfg.billing.type || '1'}"]`);
+    if (btEl) btEl.checked = true;
 
     syncUI();
   });
 
-  // ── 事件綁定 ────────────────────────────────────────────────
+  // ── 事件 ────────────────────────────────────────────────────
   document.getElementById('billingEnabled').addEventListener('change', syncUI);
   document.getElementById('autoPay').addEventListener('change', syncUI);
   document.getElementById('saveBtn').addEventListener('click', save);
 
-  // ── 同步 UI 狀態 ─────────────────────────────────────────────
   function syncUI() {
-    const billingOn = document.getElementById('billingEnabled').checked;
-    document.getElementById('billingFields').classList.toggle('show', billingOn);
-
-    const autoPayOn = document.getElementById('autoPay').checked;
-    document.getElementById('autoPayWarn').classList.toggle('show', autoPayOn);
+    document.getElementById('billingFields')
+      .classList.toggle('show', document.getElementById('billingEnabled').checked);
+    document.getElementById('autoPayWarn')
+      .classList.toggle('show', document.getElementById('autoPay').checked);
   }
 
-  // ── 儲存設定 ─────────────────────────────────────────────────
+  // ── 儲存 ─────────────────────────────────────────────────────
   function save() {
     const pmEl = document.querySelector('input[name="pm"]:checked');
     const btEl = document.querySelector('input[name="bt"]:checked');
 
     const cfg = {
+      zoneKeywords:  document.getElementById('zoneKeywords').value.trim(),
+      maxPrice:      document.getElementById('maxPrice').value.trim(),
+      ticketQty:     parseInt(document.getElementById('ticketQty').value) || 1,
       autoFill:      document.getElementById('autoFill').checked,
       autoBuy:       document.getElementById('autoBuy').checked,
       autoPay:       document.getElementById('autoPay').checked,
-      ticketQty:     parseInt(document.getElementById('ticketQty').value) || 1,
       paymentMethod: pmEl ? pmEl.value : '12',
       billing: {
         enabled: document.getElementById('billingEnabled').checked,

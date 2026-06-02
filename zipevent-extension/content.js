@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  // ── 工具函式 ────────────────────────────────────────────────
+  // ── 工具 ─────────────────────────────────────────────────────
 
   function setVal(el, value) {
     if (!el) return;
@@ -29,32 +29,33 @@
       background:${color || '#28a745'};color:#fff;
       padding:10px 16px;border-radius:8px;font-size:13px;
       font-family:-apple-system,sans-serif;
-      box-shadow:0 2px 12px rgba(0,0,0,.25);max-width:260px;
-      line-height:1.4;
+      box-shadow:0 2px 12px rgba(0,0,0,.25);max-width:270px;line-height:1.4;
     `;
     el.textContent = msg;
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 5000);
   }
 
-  // ── 偵測頁面類型 ─────────────────────────────────────────────
+  // ── 頁面偵測 ─────────────────────────────────────────────────
 
-  const path = window.location.pathname.toLowerCase();
-  const isEventPage = path.startsWith('/e/');
-  const isOrderPage = path.startsWith('/walkin/');
+  const pagePath = window.location.pathname.toLowerCase();
+  const isEventPage = pagePath.startsWith('/e/');
+  const isOrderPage = pagePath.startsWith('/walkin/');
+  if (!isEventPage && !isOrderPage) return;
 
-  // ── 活動頁面：加入快速購票浮動按鈕 ──────────────────────────
+  // ── 活動頁：選票 + Buy Ticket ─────────────────────────────────
 
   function initEventPage(cfg) {
     const qty = parseInt(cfg.ticketQty) || 1;
+    const label = qty > 1 ? `快速購票 ×${qty}` : '快速購票';
 
     const fab = document.createElement('div');
     fab.id = 'zipevent-fab';
-    fab.innerHTML = `🎟️ 快速購票 ${qty > 1 ? '×' + qty : ''}`.trim();
+    fab.textContent = '🎟️ ' + label;
     fab.style.cssText = `
       position:fixed;bottom:24px;right:20px;z-index:2147483647;
       background:linear-gradient(135deg,#007bff,#0056b3);
-      color:#fff;padding:12px 20px;border-radius:25px;
+      color:#fff;padding:12px 22px;border-radius:25px;
       cursor:pointer;font-size:14px;font-weight:700;
       font-family:-apple-system,sans-serif;
       box-shadow:0 4px 16px rgba(0,123,255,.45);
@@ -68,57 +69,100 @@
       fab.style.transform = '';
       fab.style.boxShadow = '0 4px 16px rgba(0,123,255,.45)';
     });
-    fab.addEventListener('click', () => setQtyAndBuy(qty));
+    fab.addEventListener('click', () => selectAndBuy(cfg));
     document.body.appendChild(fab);
 
-    if (cfg.autoBuy) {
-      setTimeout(() => setQtyAndBuy(qty), 1500);
-    }
+    if (cfg.autoBuy) setTimeout(() => selectAndBuy(cfg), 1500);
   }
 
-  // 設定張數後點擊 Buy Ticket
-  function setQtyAndBuy(targetQty) {
-    const qtyInput = document.querySelector('input.ticket_quantity');
-    if (qtyInput) {
-      const current = parseInt(qtyInput.value) || 1;
+  // 根據設定選票種 + 調整張數 + 點 Buy Ticket
+  function selectAndBuy(cfg) {
+    const keywords = (cfg.zoneKeywords || '')
+      .split(',').map(k => k.trim().toLowerCase()).filter(Boolean);
+    const maxPrice = parseFloat(cfg.maxPrice) || Infinity;
+    const targetQty = parseInt(cfg.ticketQty) || 1;
+
+    // 取得所有不重複的票種 <tr>（有 input.ticket_quantity）
+    const seen = new Set();
+    const rows = Array.from(document.querySelectorAll('tr')).filter(row => {
+      const inp = row.querySelector('input.ticket_quantity');
+      if (!inp || seen.has(inp.id)) return false;
+      seen.add(inp.id);
+      return true;
+    });
+
+    if (rows.length === 0) {
+      toast('找不到票種，請確認頁面已載入', '#dc3545');
+      return;
+    }
+
+    let matched = 0;
+    const actions = []; // { addBtn, rmBtn, diff }
+
+    rows.forEach(row => {
+      const inp = row.querySelector('input.ticket_quantity');
+
+      // 票名
+      const namePara = row.querySelector('p');
+      const ticketName = namePara ? namePara.innerText.trim().toLowerCase() : '';
+
+      // 票價
+      let price = 0;
+      row.querySelectorAll('p').forEach(p => {
+        const m = p.innerText.match(/[\d,]+\.?\d*/);
+        if (m && !price) price = parseFloat(m[0].replace(/,/g, ''));
+      });
+
+      // 篩選：票價上限
+      if (price > maxPrice) return;
+
+      // 篩選：關鍵字（有設定才過濾）
+      if (keywords.length > 0 && !keywords.some(k => ticketName.includes(k))) return;
+
+      // 需要調整的張數差
+      const current = parseInt(inp.value) || 0;
       const diff = targetQty - current;
+      const group = inp.closest('.ticket-quantity-group') || inp.parentElement;
+      const addBtn = group.querySelector('.btn-add-quantity');
+      const rmBtn  = group.querySelector('.btn-remove-quantity');
 
-      if (diff > 0) {
-        const addBtn = document.querySelector('.btn-add-quantity');
-        let clicked = 0;
-        const interval = setInterval(() => {
-          if (clicked >= diff || !addBtn) { clearInterval(interval); doClickBuy(); return; }
-          addBtn.click();
-          clicked++;
-        }, 120);
-        return;
-      } else if (diff < 0) {
-        const rmBtn = document.querySelector('.btn-remove-quantity');
-        let clicked = 0;
-        const interval = setInterval(() => {
-          if (clicked >= Math.abs(diff) || !rmBtn) { clearInterval(interval); doClickBuy(); return; }
-          rmBtn.click();
-          clicked++;
-        }, 120);
-        return;
+      if (diff !== 0) actions.push({ addBtn, rmBtn, diff });
+      matched++;
+    });
+
+    if (matched === 0) {
+      toast(
+        keywords.length ? `找不到符合「${cfg.zoneKeywords}」的票種` : '找不到可購買的票種',
+        '#dc3545'
+      );
+      return;
+    }
+
+    // 逐一調整張數（每次點擊間隔 120ms 避免過快）
+    let delay = 0;
+    actions.forEach(({ addBtn, rmBtn, diff }) => {
+      const btn = diff > 0 ? addBtn : rmBtn;
+      const times = Math.abs(diff);
+      for (let i = 0; i < times; i++) {
+        setTimeout(() => btn && btn.click(), delay);
+        delay += 120;
       }
-    }
-    doClickBuy();
+    });
+
+    // 等調整完再點 Buy Ticket
+    setTimeout(() => {
+      const buyBtn = document.getElementById('btn-get-ticket') ||
+                     document.querySelector('.btn-buy-ticket') ||
+                     document.getElementById('footer-buy-btn');
+      if (buyBtn) {
+        buyBtn.click();
+      } else {
+        toast('找不到 Buy Ticket 按鈕，請手動點擊', '#dc3545');
+      }
+    }, delay + 200);
   }
 
-  function doClickBuy() {
-    // 優先右側 Order panel 的 Buy Ticket（class btn-buy-ticket 或 id btn-get-ticket）
-    const btn = document.getElementById('btn-get-ticket') ||
-                document.querySelector('.btn-buy-ticket') ||
-                document.querySelector('#footer-buy-btn');
-    if (btn) {
-      btn.click();
-    } else {
-      toast('找不到 Buy Ticket 按鈕，請手動點擊', '#dc3545');
-    }
-  }
-
-  // ── 結帳頁面：自動填表 ────────────────────────────────────────
+  // ── 結帳頁：自動填表 ──────────────────────────────────────────
 
   function initOrderPage(cfg) {
     if (!cfg.autoFill) return;
@@ -129,7 +173,7 @@
   function fillOrderForm(cfg) {
     const done = [];
 
-    // 1. 「รับทราบ」確認選項（每個 custom_data 問題選第一個 radio）
+    // 1. 「รับทราบ」確認 radio（每題選第一個選項）
     const ackGroups = {};
     document.querySelectorAll('input[type="radio"][name*="custom_data"]').forEach(r => {
       const m = r.name.match(/custom_data\[(\d+)\]/);
@@ -139,24 +183,20 @@
       if (!r.checked) { tap(r); done.push('確認選項'); }
     });
 
-    // 2. 不索取發票 — 確保 req_bill 未勾選（除非使用者有設定帳單資訊）
+    // 2. 發票
     const reqBill = document.getElementById('req_bill');
-    if (!cfg.billing?.enabled && reqBill?.checked) {
-      reqBill.click();
-    }
-
-    // 3. 帳單資訊（若有設定）
     if (cfg.billing?.enabled) {
       if (reqBill && !reqBill.checked) reqBill.click();
       setTimeout(() => fillBilling(cfg.billing, done), 400);
+    } else {
+      if (reqBill && reqBill.checked) reqBill.click();
     }
 
-    // 4. 付款方式（12 = QR / 24 = 信用卡）
-    const pmId = 'payment_' + (cfg.paymentMethod || '12');
-    const pmEl = document.getElementById(pmId);
+    // 3. 付款方式（12=QR / 24=信用卡）
+    const pmEl = document.getElementById('payment_' + (cfg.paymentMethod || '12'));
     if (pmEl && !pmEl.checked) { tap(pmEl); done.push('付款方式'); }
 
-    // 5. 同意條款 checkbox
+    // 4. 同意條款
     const consent = document.getElementById('has_consent');
     if (consent && !consent.checked) { consent.click(); done.push('服務條款'); }
 
@@ -168,12 +208,12 @@
 
       if (cfg.autoPay) {
         setTimeout(() => {
-          const payBtn = findPayNow();
-          if (payBtn) {
+          const btn = findPayNow();
+          if (btn) {
             toast('3 秒後自動付款…', '#fd7e14');
-            setTimeout(() => payBtn.click(), 3000);
+            setTimeout(() => btn.click(), 3000);
           } else {
-            toast('找不到 Pay Now 按鈕，請手動付款', '#dc3545');
+            toast('找不到 Pay Now 按鈕，請手動點擊', '#dc3545');
           }
         }, 800);
       }
@@ -181,7 +221,6 @@
   }
 
   function fillBilling(b, done) {
-    // 國家：Thailand（預設）
     const thaiRadio = document.getElementById('bill_country_type_1');
     if (thaiRadio && !thaiRadio.checked) tap(thaiRadio);
 
@@ -190,7 +229,6 @@
       if (el) { setVal(el, b.taxId); done.push('稅籍編號'); }
     }
 
-    // 類型：1=個人 2=公司
     const typeEl = document.getElementById('tax_type_' + (b.type || '1'));
     if (typeEl && !typeEl.checked) tap(typeEl);
 
@@ -198,7 +236,6 @@
       const el = document.getElementById('bill_name');
       if (el) { setVal(el, b.name); done.push('發票名稱'); }
     }
-
     if (b.address) {
       const el = document.getElementById('bill_address');
       if (el) { setVal(el, b.address); done.push('發票地址'); }
@@ -214,13 +251,13 @@
 
   // ── 入口 ─────────────────────────────────────────────────────
 
-  if (!isEventPage && !isOrderPage) return;
-
   chrome.storage.sync.get({
+    zoneKeywords:  '',
+    maxPrice:      '',
+    ticketQty:     1,
     autoFill:      true,
     autoBuy:       false,
     autoPay:       false,
-    ticketQty:     1,
     paymentMethod: '12',
     billing: { enabled: false, taxId: '', type: '1', name: '', address: '' }
   }, function (cfg) {
