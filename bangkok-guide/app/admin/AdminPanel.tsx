@@ -22,7 +22,6 @@ const TAG_OPTIONS: { value: LocationTag; emoji: string; zh: string; hint: string
   { value: 'trending',    emoji: '🔥', zh: '本週熱門', hint: '社群正在瘋傳，高流量話題' },
   { value: 'hidden_gem',  emoji: '🗺', zh: '在地私藏', hint: '在地人才知道，觀光客少' },
   { value: 'new_opening', emoji: '✨', zh: '新開幕',   hint: '近期開幕，新鮮值得嘗試' },
-  { value: 'evergreen',   emoji: '📌', zh: '長青推薦', hint: '經典不敗，長期高評價' },
 ]
 
 function resolveTag(item: Location | PendingLocation): LocationTag {
@@ -309,6 +308,7 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
     highlights: (item.highlights ?? []).join(', '),
     hashtags: (item.hashtags ?? []).join(', '),
     local_ratio: item.local_ratio?.toString() ?? '',
+    source: item.source,
     source_url: item.source_url,
     social_embed_url: item.social_embed_url ?? '',
   })
@@ -328,6 +328,7 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
       local_ratio: form.local_ratio !== '' ? Number(form.local_ratio) : undefined,
       price_range: Number(form.price_range) as 1|2|3|4,
       rating: Number(form.rating),
+      source: form.source as Source,
       social_embed_url: form.social_embed_url || undefined,
     }
     await onUpdate(item.id, updates)
@@ -385,6 +386,12 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">English Description</p><textarea className={inp} rows={2} value={form.description_en} onChange={e => setForm(f => ({...f, description_en: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">地址</p><input className={inp} value={form.address} onChange={e => setForm(f => ({...f, address: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">泰文地址</p><input className={inp} value={form.address_th} onChange={e => setForm(f => ({...f, address_th: e.target.value}))} /></div>
+            <div>
+              <p className="text-[10px] font-semibold text-gray-500 mb-1">來源</p>
+              <select className={inp} value={form.source} onChange={e => setForm(f => ({...f, source: e.target.value as Source}))}>
+                {(['googlemaps','tiktok','instagram','pantip','wongnai','manual'] as Source[]).map(s => <option key={s} value={s}>{SOURCE_LABEL[s]}</option>)}
+              </select>
+            </div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">評分</p><input type="number" min="0" max="5" step="0.1" className={inp} value={form.rating} onChange={e => setForm(f => ({...f, rating: Number(e.target.value)}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">價位 (1–4)</p><input type="number" min="1" max="4" className={inp} value={form.price_range} onChange={e => setForm(f => ({...f, price_range: e.target.value as unknown as 1|2|3|4}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">亮點（逗號分隔）</p><input className={inp} value={form.highlights} onChange={e => setForm(f => ({...f, highlights: e.target.value}))} /></div>
