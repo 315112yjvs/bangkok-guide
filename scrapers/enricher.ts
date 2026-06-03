@@ -6,6 +6,7 @@ const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 type PlaceResult = {
   displayName?: { text: string }
   formattedAddress?: string
+  primaryType?: string
   primaryTypeDisplayName?: { text: string }
   rating?: number
   location?: { latitude: number; longitude: number }
@@ -37,6 +38,7 @@ async function findPlace(name: string, lat?: number, lng?: number): Promise<Plac
         'X-Goog-FieldMask': [
           'places.displayName',
           'places.formattedAddress',
+          'places.primaryType',
           'places.primaryTypeDisplayName',
           'places.businessStatus',
           'places.rating',
@@ -241,6 +243,7 @@ export type EnrichedItem = {
   rating: number
   area: string
   address: string
+  category: string
 }
 
 // Returns null if the name can't be matched to a real Bangkok place on Google Maps.
@@ -278,14 +281,33 @@ export async function enrichItem(
   const photoRef = place.photos?.[0]?.name ?? ''
 
   const name_en = place.displayName?.text ?? name
+
+  // Override category based on name keywords or Google's primaryType
+  const nameLower = name_en.toLowerCase()
+  const googleType = (place.primaryType ?? '').toLowerCase()
+  let resolvedCategory = category
+  if (/caf[eé]|coffee|brew|roast|espresso|cappuccino|latte/.test(nameLower) ||
+      /cafe|coffee_shop/.test(googleType)) {
+    resolvedCategory = 'cafe'
+  } else if (/bar|pub|club|lounge|rooftop|cocktail/.test(nameLower) ||
+      /bar|night_club/.test(googleType)) {
+    resolvedCategory = 'nightlife'
+  } else if (/hotel|resort|hostel|inn|suites/.test(nameLower) ||
+      /hotel|lodging/.test(googleType)) {
+    resolvedCategory = 'hotel'
+  } else if (/market|mall|shop|boutique|store/.test(nameLower) ||
+      /shopping_mall|store/.test(googleType)) {
+    resolvedCategory = 'shopping'
+  }
+
   const name_zh = await translateName(name_en)
 
   // Use Claude if available, otherwise fall back to template builder
   const description_zh_rich = await generateDescriptionZh(
-    name_en, editorial, highlights, category
+    name_en, editorial, highlights, resolvedCategory
   )
   const price_range = 2 as 1|2|3|4
-  const baseLoc = { category, rating: place.rating ?? 4.0, price_range, local_ratio: 0, tag: 'evergreen' }
+  const baseLoc = { category: resolvedCategory, rating: place.rating ?? 4.0, price_range, local_ratio: 0, tag: 'evergreen' }
   const description_en = buildDescEn(baseLoc, highlights, editorial)
   const description_zh = description_zh_rich || buildDescZh({ ...baseLoc, source: 'googlemaps' as const, name_en }, highlights, editorial)
 
@@ -304,5 +326,6 @@ export async function enrichItem(
     rating: place.rating ?? 4.0,
     area,
     address: formattedAddress || 'Bangkok, Thailand',
+    category: resolvedCategory,
   }
 }

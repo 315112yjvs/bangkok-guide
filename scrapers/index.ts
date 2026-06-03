@@ -57,7 +57,7 @@ async function processItems(
         area: enriched.area,
         address: enriched.address,
         id: uuidv4(),
-        category,
+        category: (enriched.category ?? category) as Category,
         source: source as PendingLocation['source'],
         scraped_at: new Date().toISOString(),
       }
