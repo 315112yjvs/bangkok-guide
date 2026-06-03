@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { IconPin } from '@/components/icons/CategoryIcons'
-import type { Location } from '@/lib/types'
+import type { Location, LocationTag } from '@/lib/types'
 import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
 
@@ -21,6 +21,20 @@ const SOURCE_LABEL: Record<string, string> = {
 const SOURCE_COLOR: Record<string, string> = {
   tiktok: 'bg-emerald-500', instagram: 'bg-purple-500', pantip: 'bg-orange-500',
   wongnai: 'bg-red-500', googlemaps: 'bg-blue-500', manual: 'bg-amber-500',
+}
+
+const TAG_META: Record<LocationTag, { emoji: string; zh: string; color: string }> = {
+  trending:    { emoji: '🔥', zh: '本週熱門', color: 'bg-orange-500' },
+  hidden_gem:  { emoji: '🗺', zh: '在地私藏', color: 'bg-emerald-600' },
+  new_opening: { emoji: '✨', zh: '新開幕',   color: 'bg-violet-500' },
+  evergreen:   { emoji: '📌', zh: '長青推薦', color: 'bg-sky-500' },
+}
+
+function resolveTag(loc: Location): LocationTag {
+  if (loc.tag) return loc.tag
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  if ((loc as any).trending === true) return 'trending'
+  return 'evergreen'
 }
 
 export function LocationDetail({ location }: { location: Location }) {
@@ -133,14 +147,18 @@ export function LocationDetail({ location }: { location: Location }) {
           </svg>
         </button>
 
-        {/* Trending badge */}
-        {location.trending && (
-          <div className="absolute bottom-4 left-4">
-            <span className="text-[10px] font-black bg-orange-500 text-white px-2 py-1 rounded-full">
-              本週熱門
-            </span>
-          </div>
-        )}
+        {/* Tag badge */}
+        {(() => {
+          const tag = resolveTag(location)
+          const meta = TAG_META[tag]
+          return (
+            <div className="absolute bottom-4 left-4">
+              <span className={`text-[10px] font-black ${meta.color} text-white px-2 py-1 rounded-full`}>
+                {meta.emoji} {meta.zh}
+              </span>
+            </div>
+          )
+        })()}
       </div>
 
       {/* Thumbnail strip */}

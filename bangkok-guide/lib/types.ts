@@ -1,5 +1,6 @@
 export type Category = 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel' | 'attraction'
 export type Source = 'pantip' | 'wongnai' | 'googlemaps' | 'tiktok' | 'instagram' | 'manual'
+export type LocationTag = 'trending' | 'hidden_gem' | 'new_opening' | 'evergreen'
 
 export type Location = {
   id: string
@@ -18,7 +19,7 @@ export type Location = {
   source_url: string
   rating: number
   price_range: 1 | 2 | 3 | 4
-  trending: boolean
+  tag?: LocationTag      // editorial classification
   area?: string          // Bangkok neighbourhood, e.g. "Thonglor", "Silom"
   highlights?: string[]
   hashtags?: string[]    // Thai/EN trending hashtags

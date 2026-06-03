@@ -147,7 +147,7 @@ async function fetchPlacesQuery(query: string, category: QueryConfig['category']
       source_url: `https://www.google.com/maps/search/?api=1&query=${q}&query_place_id=${place.id}`,
       rating,
       price_range,
-      trending: false,
+      tag: 'evergreen',
       highlights,
       local_ratio: local ? 75 : undefined,
     })

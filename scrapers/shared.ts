@@ -1,4 +1,4 @@
-import type { Category } from '@/lib/types'
+import type { Category, LocationTag } from '@/lib/types'
 
 export type ScrapedItem = {
   name_en: string
@@ -13,7 +13,7 @@ export type ScrapedItem = {
   source_url: string
   rating: number
   price_range: 1 | 2 | 3 | 4
-  trending: boolean
+  tag?: LocationTag
   highlights?: string[]
   local_ratio?: number
 }

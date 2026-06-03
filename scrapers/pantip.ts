@@ -100,7 +100,7 @@ export async function scrapePantip(): Promise<ScrapedItem[]> {
               source_url: result.url,
               rating: 4.0,
               price_range: 2,
-              trending: false,
+              tag: 'evergreen',
             })
           }
           await sleep(1500)

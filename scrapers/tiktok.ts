@@ -92,7 +92,7 @@ export async function scrapeTikTok(): Promise<ScrapedItem[]> {
             source_url: result.url,
             rating: 4.2,
             price_range: 2,
-            trending: true,
+            tag: 'trending',
           })
         }
       }

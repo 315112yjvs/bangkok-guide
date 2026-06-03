@@ -16,7 +16,6 @@ const base: Location = {
   source_url: '',
   rating: 4.9,
   price_range: 3,
-  trending: false,
 }
 
 describe('isDuplicate', () => {

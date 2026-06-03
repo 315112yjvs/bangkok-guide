@@ -36,7 +36,7 @@ function parseWongnai(markdown: string, sourceUrl: string): ScrapedItem[] {
       source_url: sourceUrl,
       rating,
       price_range: 2,
-      trending: false,
+      tag: 'evergreen',
     })
 
     if (items.length >= 15) break

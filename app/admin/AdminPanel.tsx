@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-import type { Location, PendingLocation, Category, Source } from '@/lib/types'
+import type { Location, PendingLocation, Category, Source, LocationTag } from '@/lib/types'
 
 type Tab = 'pending' | 'approved' | 'add'
 
@@ -16,6 +16,65 @@ const SOURCE_STYLE: Record<Source, string> = {
   wongnai: 'bg-red-50 text-red-700 border-red-200',
   googlemaps: 'bg-blue-50 text-blue-700 border-blue-200',
   manual: 'bg-gray-50 text-gray-600 border-gray-200',
+}
+
+const TAG_OPTIONS: { value: LocationTag; emoji: string; zh: string; hint: string }[] = [
+  { value: 'trending',    emoji: '🔥', zh: '本週熱門', hint: '社群正在瘋傳，高流量話題' },
+  { value: 'hidden_gem',  emoji: '🗺', zh: '在地私藏', hint: '在地人才知道，觀光客少' },
+  { value: 'new_opening', emoji: '✨', zh: '新開幕',   hint: '近期開幕，新鮮值得嘗試' },
+  { value: 'evergreen',   emoji: '📌', zh: '長青推薦', hint: '經典不敗，長期高評價' },
+]
+
+function resolveTag(item: Location | PendingLocation): LocationTag {
+  if ('tag' in item && item.tag) return item.tag as LocationTag
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  if ((item as any).trending === true) return 'trending'
+  return 'evergreen'
+}
+
+// Scoring widget — helper only, not persisted
+function ScoringWidget() {
+  const [scores, setScores] = useState({ social: 0, verified: 0, recency: 0, utility: 0 })
+  const total = scores.social + scores.verified + scores.recency + scores.utility
+  const criteria = [
+    { key: 'social',   label: '社群訊號', max: 40, hint: '被多少帳號提及、互動量' },
+    { key: 'verified', label: '親身確認', max: 30, hint: '你親自去過 / 有可信照片' },
+    { key: 'recency',  label: '時效性',   max: 20, hint: '近3個月有提及' },
+    { key: 'utility',  label: '旅客實用', max: 10, hint: '台灣人容易抵達、合適' },
+  ] as const
+  const getTag = (): LocationTag => {
+    if (total >= 70) return 'trending'
+    if (total >= 50 && scores.social <= 20) return 'hidden_gem'
+    if (scores.recency >= 15) return 'new_opening'
+    return 'evergreen'
+  }
+  const suggestedTag = TAG_OPTIONS.find(t => t.value === getTag())!
+  return (
+    <div className="border border-gray-100 rounded-xl p-3 bg-white mt-2">
+      <p className="text-[10px] font-black text-gray-400 uppercase tracking-wide mb-2">評分輔助工具</p>
+      <div className="space-y-1.5">
+        {criteria.map(({ key, label, max, hint }) => (
+          <div key={key}>
+            <div className="flex items-center justify-between mb-0.5">
+              <span className="text-[10px] font-semibold text-gray-600">{label} <span className="text-gray-300">({hint})</span></span>
+              <span className="text-[10px] font-bold text-gray-500">{scores[key]}/{max}</span>
+            </div>
+            <input
+              type="range" min={0} max={max} value={scores[key]}
+              onChange={e => setScores(s => ({ ...s, [key]: Number(e.target.value) }))}
+              className="w-full h-1.5 accent-indigo-500"
+            />
+          </div>
+        ))}
+      </div>
+      <div className="mt-2 flex items-center justify-between">
+        <span className="text-[11px] font-black text-gray-700">總分 {total}/100</span>
+        <span className="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">
+          建議：{suggestedTag.emoji} {suggestedTag.zh}
+        </span>
+      </div>
+    </div>
+  )
 }
 
 // ---- AUTH OVERLAY ----
@@ -67,11 +126,12 @@ function PendingCard({
   onUpdate,
 }: {
   item: PendingLocation
-  onApprove: (id: string, category: Category) => void
+  onApprove: (id: string, category: Category, tag: LocationTag) => void
   onReject: (id: string) => void
   onUpdate: (id: string, updates: Partial<PendingLocation>) => void
 }) {
   const [editing, setEditing] = useState(false)
+  const [showScoring, setShowScoring] = useState(false)
   const [saving, setSaving] = useState(false)
   const [form, setForm] = useState({
     name_zh: item.name_zh || '',
@@ -79,6 +139,7 @@ function PendingCard({
     description_zh: item.description_zh || '',
     description_en: item.description_en || '',
     category: (item.category as Category) || 'food' as Category,
+    tag: resolveTag(item),
     rating: item.rating,
     price_range: item.price_range,
     area: (item as PendingLocation & { area?: string }).area ?? '',
@@ -144,16 +205,25 @@ function PendingCard({
               <button onClick={() => setEditing(!editing)} className="text-xs font-bold px-2.5 py-1.5 rounded-lg bg-slate-50 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
                 ✏️
               </button>
+              <button onClick={() => setShowScoring(!showScoring)} className="text-xs font-bold px-2.5 py-1.5 rounded-lg bg-indigo-50 text-indigo-500 hover:bg-indigo-100 transition-colors">
+                📊
+              </button>
               <button onClick={() => onReject(item.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100">
                 駁回
               </button>
-              <button onClick={() => onApprove(item.id, form.category)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-green-50 text-green-700 hover:bg-green-100">
+              <button onClick={() => onApprove(item.id, form.category, form.tag)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-green-50 text-green-700 hover:bg-green-100">
                 上架
               </button>
             </div>
           </div>
         </div>
       </div>
+
+      {showScoring && (
+        <div className="border-t border-gray-100 px-4 pb-3 pt-3 bg-gray-50">
+          <ScoringWidget />
+        </div>
+      )}
 
       {editing && (
         <div className="border-t border-gray-100 p-4 bg-gray-50 space-y-2">
@@ -166,6 +236,12 @@ function PendingCard({
               <p className="text-[10px] font-semibold text-gray-500 mb-1">分類</p>
               <select className={inp} value={form.category} onChange={e => setForm(f => ({...f, category: e.target.value as Category}))}>
                 {(['food','cafe','shopping','nightlife','hotel','attraction'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </div>
+            <div>
+              <p className="text-[10px] font-semibold text-indigo-600 mb-1">標籤分類</p>
+              <select className={inp} value={form.tag} onChange={e => setForm(f => ({...f, tag: e.target.value as LocationTag}))}>
+                {TAG_OPTIONS.map(t => <option key={t.value} value={t.value}>{t.emoji} {t.zh}</option>)}
               </select>
             </div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">評分</p><input type="number" min="0" max="5" step="0.1" className={inp} value={form.rating} onChange={e => setForm(f => ({...f, rating: Number(e.target.value)}))} /></div>
@@ -253,20 +329,18 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-1.5">
               <h3 className="font-bold text-sm text-[#0f172a] truncate">{item.name_zh || item.name_en}</h3>
-              {item.trending && <span className="text-[10px]">🔥</span>}
+              <span className="text-[10px]">{TAG_OPTIONS.find(t => t.value === resolveTag(item))?.emoji}</span>
             </div>
             <p className="text-[10px] text-gray-400">{item.category} · ★ {item.rating}</p>
           </div>
           <div className="flex items-center gap-1 shrink-0">
-            <button
-              onClick={() => onUpdate(item.id, { trending: !item.trending })}
-              title={item.trending ? '取消熱門' : '設為熱門'}
-              className={`text-xs font-bold px-2 py-1.5 rounded-lg transition-colors ${
-                item.trending ? 'bg-orange-100 text-orange-600' : 'bg-slate-50 text-slate-400 hover:bg-orange-50 hover:text-orange-500'
-              }`}
+            <select
+              value={resolveTag(item)}
+              onChange={e => onUpdate(item.id, { tag: e.target.value as LocationTag })}
+              className="text-[10px] font-bold border border-gray-200 rounded-lg px-1.5 py-1 outline-none focus:border-indigo-400 bg-white"
             >
-              🔥
-            </button>
+              {TAG_OPTIONS.map(t => <option key={t.value} value={t.value}>{t.emoji} {t.zh}</option>)}
+            </select>
             <button
               onClick={() => setEditing(!editing)}
               className="text-xs font-bold px-2 py-1.5 rounded-lg bg-slate-50 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
@@ -320,7 +394,7 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
     name_zh: '', name_en: '', name_th: '', description_zh: '', description_en: '',
     category: 'food' as Category, address: '', address_th: '', lat: 0, lng: 0,
     photosInput: '', source: 'manual' as Source,
-    source_url: '', rating: 4, price_range: 2 as 1|2|3|4, trending: false,
+    source_url: '', rating: 4, price_range: 2 as 1|2|3|4, tag: 'evergreen' as LocationTag,
     hashtagsInput: '', local_ratio: '' as string, social_embed_url: '',
   }
   const [form, setForm] = useState(empty)
@@ -338,9 +412,10 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
   async function submit(e: React.FormEvent) {
     e.preventDefault()
     setSaving(true)
-    const { photosInput, hashtagsInput, local_ratio, social_embed_url, ...rest } = form
+    const { photosInput, hashtagsInput, local_ratio, social_embed_url, tag, ...rest } = form
     const payload = {
       ...rest,
+      tag,
       action: 'add',
       photos: photosInput ? photosInput.split(',').map((s) => s.trim()).filter(Boolean) : [],
       hashtags: hashtagsInput ? hashtagsInput.split(',').map((s) => s.trim()).filter(Boolean) : [],
@@ -397,9 +472,11 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
         <div><label className={label}>在地客比例 % (0–100)</label><input type="number" min="0" max="100" className={inp} value={form.local_ratio} onChange={field('local_ratio')} placeholder="例：80 代表八成是泰國人" /></div>
         <div className="col-span-2"><label className={label}>泰文 Hashtags（逗號分隔）</label><input className={inp} value={form.hashtagsInput} onChange={field('hashtagsInput')} placeholder="คาเฟ่เปิดใหม่, บรรยากาศดี" /></div>
         <div className="col-span-2"><label className={label}>社群貼文 URL（TikTok / Instagram，選填）</label><input className={inp} value={form.social_embed_url} onChange={field('social_embed_url')} placeholder="https://www.tiktok.com/@.../video/... 或 https://www.instagram.com/p/..." /></div>
-        <div className="flex items-center gap-2 pt-5">
-          <input type="checkbox" id="trending" checked={form.trending} onChange={field('trending')} className="w-4 h-4" />
-          <label htmlFor="trending" className="text-sm font-semibold text-gray-600">標記為熱門（顯示在 Trend Radar）</label>
+        <div>
+          <label className={label}>標籤分類</label>
+          <select className={inp} value={form.tag} onChange={field('tag')}>
+            {TAG_OPTIONS.map(t => <option key={t.value} value={t.value}>{t.emoji} {t.zh} — {t.hint}</option>)}
+          </select>
         </div>
       </div>
       <button type="submit" disabled={saving} className="mt-6 bg-[#0f172a] text-white rounded-xl px-6 py-3 text-sm font-bold disabled:opacity-50">
@@ -441,11 +518,11 @@ export function AdminPanel() {
     if (authed) loadData()
   }, [authed, loadData])
 
-  async function handleApprove(id: string, category?: Category) {
+  async function handleApprove(id: string, category?: Category, tag?: LocationTag) {
     await fetch('/api/locations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'approve', id, ...(category ? { category } : {}) }),
+      body: JSON.stringify({ action: 'approve', id, ...(category ? { category } : {}), ...(tag ? { tag } : {}) }),
     })
     loadData()
   }
@@ -472,7 +549,7 @@ export function AdminPanel() {
     )
     if (!confirm(`確定要全部上架 ${visible.length} 筆待審核地點嗎？`)) return
     await Promise.all(visible.map((item) =>
-      fetch('/api/locations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'approve', id: item.id }) })
+      fetch('/api/locations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'approve', id: item.id, tag: resolveTag(item) }) })
     ))
     loadData()
   }

@@ -20,6 +20,7 @@ export async function POST(req: NextRequest) {
     const approved: Location = {
       ...rest,
       ...(body.category ? { category: body.category } : {}),
+      ...(body.tag ? { tag: body.tag } : {}),
       approved_at: new Date().toISOString(),
     }
     writeLocations([...readLocations(), approved])

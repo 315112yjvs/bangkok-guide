@@ -285,7 +285,7 @@ export async function enrichItem(
     name_en, editorial, highlights, category
   )
   const price_range = 2 as 1|2|3|4
-  const baseLoc = { category, rating: place.rating ?? 4.0, price_range, local_ratio: 0, trending: false }
+  const baseLoc = { category, rating: place.rating ?? 4.0, price_range, local_ratio: 0, tag: 'evergreen' }
   const description_en = buildDescEn(baseLoc, highlights, editorial)
   const description_zh = description_zh_rich || buildDescZh({ ...baseLoc, source: 'googlemaps' as const, name_en }, highlights, editorial)
 

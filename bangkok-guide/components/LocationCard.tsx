@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { IconPin } from './icons/CategoryIcons'
-import type { Location, Source } from '@/lib/types'
+import type { Location, Source, LocationTag } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
 
@@ -31,6 +31,20 @@ function extractThai(text: string): string | null {
   return thai && thai.length >= 3 ? thai : null
 }
 
+function resolveTag(loc: Location): LocationTag {
+  if (loc.tag) return loc.tag
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  if ((loc as any).trending === true) return 'trending'
+  return 'evergreen'
+}
+
+const TAG_BADGE: Record<LocationTag, { emoji: string; zh: string; en: string; color: string }> = {
+  trending:    { emoji: '🔥', zh: '本週熱門', en: 'Trending',   color: 'bg-orange-500' },
+  hidden_gem:  { emoji: '🗺', zh: '在地私藏', en: 'Hidden Gem', color: 'bg-emerald-600' },
+  new_opening: { emoji: '✨', zh: '新開幕',   en: 'New',        color: 'bg-violet-500' },
+  evergreen:   { emoji: '📌', zh: '長青',     en: 'Classic',    color: 'bg-sky-500' },
+}
+
 
 type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void; compact?: boolean }
 
@@ -49,9 +63,8 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   const rawDesc = lang === 'zh' ? location.description_zh : location.description_en
   const desc = rawDesc?.replace(/^必點：[^。]*。\s*/, '') || rawDesc
 
-  const isNewThisWeek = location.approved_at
-    ? Date.now() - new Date(location.approved_at).getTime() < 7 * 24 * 60 * 60 * 1000
-    : false
+  const tag = resolveTag(location)
+  const tagMeta = TAG_BADGE[tag]
 
   const thaiName = location.name_th ?? extractThai(location.name_en) ?? extractThai(location.name_zh)
   const thaiAddress = location.address_th
@@ -90,29 +103,12 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
             {strings[lang][badge.label] as string}
           </span>
         </div>
-        {/* Trending / new badge */}
-        {(location.trending || isNewThisWeek) && (
-          <div className="absolute top-1.5 right-1.5 flex flex-col items-end gap-0.5">
-            {location.trending && (
-              <span className="inline-flex items-center gap-0.5 text-[8px] font-black bg-orange-500 text-white px-1.5 py-0.5 rounded-full shadow-sm">
-                本週熱門
-              </span>
-            )}
-            {isNewThisWeek && !location.trending && (
-              <span className="inline-flex items-center text-[8px] font-black bg-emerald-500 text-white px-1.5 py-0.5 rounded-full shadow-sm">
-                本週新增
-              </span>
-            )}
-          </div>
-        )}
-        {/* Local ratio badge — only when not trending (avoid overlap) */}
-        {!location.trending && location.local_ratio !== undefined && location.local_ratio >= 60 && (
-          <div className="absolute top-1.5 right-1.5">
-            <span className="inline-block text-[8px] font-bold bg-[#1a1a2e]/80 text-white px-1.5 py-0.5 rounded-full">
-              🇹🇭 {location.local_ratio}%
-            </span>
-          </div>
-        )}
+        {/* Tag badge */}
+        <div className="absolute top-1.5 right-1.5">
+          <span className={`inline-flex items-center gap-0.5 text-[8px] font-black ${tagMeta.color} text-white px-1.5 py-0.5 rounded-full shadow-sm`}>
+            {tagMeta.emoji} {lang === 'zh' ? tagMeta.zh : tagMeta.en}
+          </span>
+        </div>
       </div>
 
       <div className="p-2.5">

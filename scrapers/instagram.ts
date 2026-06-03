@@ -181,7 +181,7 @@ export async function scrapeInstagram(): Promise<ScrapedItem[]> {
               source_url: url,
               rating: 4.2,
               price_range: 2,
-              trending: true,
+              tag: 'trending',
               category: v.category as ScrapedItem['category'],
             })
           }
@@ -216,7 +216,7 @@ export async function scrapeInstagram(): Promise<ScrapedItem[]> {
               source_url: url,
               rating: 4.3,
               price_range: 2,
-              trending: true,
+              tag: 'trending',
               category: v.category as ScrapedItem['category'],
             })
           }
