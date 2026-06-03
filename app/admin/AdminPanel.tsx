@@ -195,23 +195,41 @@ function PendingCard({
             <span className="text-[10px] text-gray-400 truncate">{form.address}</span>
           </div>
           <p className="text-xs text-gray-500 line-clamp-2 mb-2">{form.description_zh || form.description_en}</p>
+
+          {/* Inline tag picker */}
+          <div className="flex gap-1 mb-2.5 flex-wrap">
+            {TAG_OPTIONS.map((t) => (
+              <button
+                key={t.value}
+                onClick={() => setForm(f => ({ ...f, tag: t.value }))}
+                className={`text-[10px] font-bold px-2 py-0.5 rounded-full border transition-all ${
+                  form.tag === t.value
+                    ? 'bg-[#0f172a] text-white border-[#0f172a]'
+                    : 'bg-white text-gray-400 border-gray-200 hover:border-gray-400 hover:text-gray-600'
+                }`}
+              >
+                {t.emoji} {t.zh}
+              </button>
+            ))}
+          </div>
+
           <div className="flex items-center justify-between">
             {item.source_url ? (
-              <a href={item.source_url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-indigo-500 underline truncate max-w-[160px]">
+              <a href={item.source_url} target="_blank" rel="noopener noreferrer" className="text-[10px] text-indigo-500 underline truncate max-w-[120px]">
                 {item.source_url.replace(/^https?:\/\//, '')}
               </a>
             ) : <span />}
             <div className="flex gap-1.5 shrink-0">
-              <button onClick={() => setEditing(!editing)} className="text-xs font-bold px-2.5 py-1.5 rounded-lg bg-slate-50 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
-                ✏️
-              </button>
-              <button onClick={() => setShowScoring(!showScoring)} className="text-xs font-bold px-2.5 py-1.5 rounded-lg bg-indigo-50 text-indigo-500 hover:bg-indigo-100 transition-colors">
+              <button onClick={() => setShowScoring(!showScoring)} title="評分輔助" className="text-xs font-bold px-2.5 py-1.5 rounded-lg bg-indigo-50 text-indigo-500 hover:bg-indigo-100 transition-colors">
                 📊
+              </button>
+              <button onClick={() => setEditing(!editing)} title="編輯" className="text-xs font-bold px-2.5 py-1.5 rounded-lg bg-slate-50 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-colors">
+                ✏️
               </button>
               <button onClick={() => onReject(item.id)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100">
                 駁回
               </button>
-              <button onClick={() => onApprove(item.id, form.category, form.tag)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-green-50 text-green-700 hover:bg-green-100">
+              <button onClick={() => onApprove(item.id, form.category, form.tag)} className="text-xs font-bold px-3 py-1.5 rounded-lg bg-green-600 text-white hover:bg-green-700">
                 上架
               </button>
             </div>
