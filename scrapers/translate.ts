@@ -75,14 +75,21 @@ export async function generateDescriptionZh(
   const catZh = CAT_ZH[category] ?? '地點'
 
   if (!process.env.ANTHROPIC_API_KEY) {
-    const hlZh = highlights.length > 0 ? `必點：${highlights.join('、')}。` : ''
-    return `${hlZh}曼谷熱門${catZh}，評價極佳。`
+    return `曼谷人氣${catZh}，評價不錯，值得一訪。`
   }
+
+  // Filter out generic review snippets that aren't actual menu items
+  // (e.g. "Experience from here", "Good service", long sentences)
+  const JUNK_PATTERNS = /experience|service|atmosphere|ambiance|recommend|visit|great|good|nice|best|love|worth|came here|first time|go back|every time|must try|will return/i
+  const meaningfulHighlights = highlights.filter(h =>
+    h.length <= 30 &&           // real item names are short
+    !h.includes(' ') || h.split(' ').length <= 3  // max 3 words
+  ).filter(h => !JUNK_PATTERNS.test(h))
 
   // Collect all available real facts
   const facts: string[] = []
   if (editorial) facts.push(`Google 簡介：「${editorial}」`)
-  if (highlights.length > 0) facts.push(`招牌品項：${highlights.join('、')}`)
+  if (meaningfulHighlights.length > 0) facts.push(`招牌品項：${meaningfulHighlights.join('、')}`)
 
   // No Google editorial — search web for real info
   if (!editorial) {
@@ -92,7 +99,7 @@ export async function generateDescriptionZh(
 
   // No real data at all — skip Claude, use safe template
   if (facts.length === 0) {
-    return `曼谷人氣${catZh}，值得一訪。`
+    return `曼谷人氣${catZh}，評價不錯，值得一訪。`
   }
 
   const prompt = `根據以下真實資料，用繁體中文為曼谷旅遊指南寫一段簡短介紹。
