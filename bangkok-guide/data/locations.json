@@ -19,9 +19,12 @@
       "Experience from here"
     ],
     "id": "4309ddb8-0c2e-452f-bde4-05a204ecfdd3",
-    "source": "googlemaps",
+    "source": "tiktok",
     "area": "",
-    "approved_at": "2026-06-03T11:28:42.785Z"
+    "approved_at": "2026-06-03T11:28:42.785Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Heng Chun Seng (Sacred Heart Convent School)",
@@ -68,5 +71,30 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-03T11:32:25.075Z"
+  },
+  {
+    "name_en": "Café Amazon experience",
+    "name_zh": "Café Amazon experience",
+    "description_en": "Not just a café — it's a six-floor coffee world ☕🌿 Café Amazon Experience sits right next to Ari BTS, with a bakery, matcha bar, co-working space, and rooftop views over the BTS line. Thailand's most familiar coffee brand, completely reimagined.",
+    "description_zh": "不只是咖啡廳，是六層樓的咖啡體驗 ☕🌿 Café Amazon Experience 就在 Ari BTS 旁，從烘焙坊、抹茶吧到共享辦公室，每層都有不同世界，頂樓還能俯瞰 BTS 軌道與城市天際線。",
+    "category": "cafe",
+    "address": "Ari Doi St., Khwaeng Samsen Nai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7789453,
+    "lng": 100.54454419999999,
+    "photos": [
+      "places/ChIJh9xVTwCf4jARa0z9Ree4D_s/photos/Ab43m-uUfm3ZH499sruZgks2hyHY6L2DLjkUVY9kGOxRyh6STMQ8sKBlnZkt6XeAr9054ueywH8IL-HbMayBgfKKimyE6HPaI6371VnSx-c17LHjqnw7J4qajAEl1S8nIHPxaNlKymQ2dOT1WR8059T6Wvk8gKJVGZSIKjVEbnOZEGaKRhvWGhDyLSU7MMf_AZT047xQV9_-z9QGl5UGdy_CVEsZcd_gjJ9HtHhUVlG6idCnP2mcfZG8IVIyk2hw5dffGdBurdYdyfWrTOpO6s-V4pmFxUjhKJFKuHDpiLuOOF-O2xzmrPkqPNxYi713FmA1P6jCPY7vZOlhle--pSITYXX9Fa8uHhmNeu0HV1bzCogbXD7D3h8GgDEmbC9RRoBO7541K640h8dLIBro2kOHFWTskvcCt2Al05QlzYVvT1BcOV-QoY-5UxI0JAgq0sSf"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Amazon%20experience%20Ari%20Doi%20St.%2C%20Khwaeng%20Samsen%20Nai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJh9xVTwCf4jARa0z9Ree4D_s",
+    "rating": 4.1,
+    "price_range": 1,
+    "tag": "new_opening",
+    "highlights": [],
+    "id": "40f140df-1954-438e-b43b-3961b16fd866",
+    "source": "instagram",
+    "area": "",
+    "approved_at": "2026-06-03T11:41:07.109Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   }
 ]
