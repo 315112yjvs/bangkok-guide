@@ -3,9 +3,9 @@ export type Lang = 'zh' | 'en'
 export const strings = {
   zh: {
     siteName: '曼谷旅遊指南',
-    heroTitle: '探索曼谷',
-    heroTitleAccent: '最值得去的地方',
-    heroSubtitle: '精選在地美食、咖啡廳、購物、夜生活、飯店',
+    heroTitle: '住在曼谷的人',
+    heroTitleAccent: '告訴你這週在瘋什麼',
+    heroSubtitle: '泰國社群即時熱度，用中文呈現給台灣人',
     searchPlaceholder: '搜尋餐廳、咖啡廳...',
     categoryAll: '全部',
     categoryFood: '美食',
@@ -34,9 +34,9 @@ export const strings = {
   },
   en: {
     siteName: 'Bangkok Guide',
-    heroTitle: 'Discover',
-    heroTitleAccent: 'The Best of Bangkok',
-    heroSubtitle: 'Curated food, cafes, shopping, nightlife & hotels',
+    heroTitle: 'Bangkok Locals',
+    heroTitleAccent: "Tell You What's Trending",
+    heroSubtitle: "Real-time Thai social picks, curated for you in Chinese",
     searchPlaceholder: 'Search restaurants, cafes...',
     categoryAll: 'All',
     categoryFood: 'Food',

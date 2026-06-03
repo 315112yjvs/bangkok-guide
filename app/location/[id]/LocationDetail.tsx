@@ -186,6 +186,16 @@ export function LocationDetail({ location }: { location: Location }) {
           <span className="text-xs text-gray-400">{{ food: '餐廳', cafe: '咖啡廳', shopping: '購物', nightlife: '夜生活', hotel: '飯店', attraction: '景點' }[location.category as string] ?? location.category}</span>
         </div>
 
+        {/* Curator note */}
+        {location.curator_note && (
+          <div className="mb-4 bg-indigo-50 border border-indigo-100 rounded-2xl px-4 py-3">
+            <p className="text-[11px] font-black text-indigo-400 uppercase tracking-wide mb-1">
+              {lang === 'zh' ? '在地人怎麼說' : "Local's Take"}
+            </p>
+            <p className="text-[14px] text-indigo-700 leading-relaxed font-medium">{location.curator_note}</p>
+          </div>
+        )}
+
         {/* Description */}
         {cleanDesc && (
           <div className="mb-4">

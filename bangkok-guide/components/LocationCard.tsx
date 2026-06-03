@@ -49,6 +49,10 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   const rawDesc = lang === 'zh' ? location.description_zh : location.description_en
   const desc = rawDesc?.replace(/^必點：[^。]*。\s*/, '') || rawDesc
 
+  const isNewThisWeek = location.approved_at
+    ? Date.now() - new Date(location.approved_at).getTime() < 7 * 24 * 60 * 60 * 1000
+    : false
+
   const thaiName = location.name_th ?? extractThai(location.name_en) ?? extractThai(location.name_zh)
   const thaiAddress = location.address_th
 
@@ -86,12 +90,19 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
             {strings[lang][badge.label] as string}
           </span>
         </div>
-        {/* Trending badge */}
-        {location.trending && (
-          <div className="absolute top-1.5 right-1.5">
-            <span className="inline-flex items-center gap-0.5 text-[8px] font-black bg-orange-500 text-white px-1.5 py-0.5 rounded-full shadow-sm">
-              本週熱門
-            </span>
+        {/* Trending / new badge */}
+        {(location.trending || isNewThisWeek) && (
+          <div className="absolute top-1.5 right-1.5 flex flex-col items-end gap-0.5">
+            {location.trending && (
+              <span className="inline-flex items-center gap-0.5 text-[8px] font-black bg-orange-500 text-white px-1.5 py-0.5 rounded-full shadow-sm">
+                本週熱門
+              </span>
+            )}
+            {isNewThisWeek && !location.trending && (
+              <span className="inline-flex items-center text-[8px] font-black bg-emerald-500 text-white px-1.5 py-0.5 rounded-full shadow-sm">
+                本週新增
+              </span>
+            )}
           </div>
         )}
         {/* Local ratio badge — only when not trending (avoid overlap) */}
@@ -122,7 +133,14 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
         </div>
 
         {/* Description */}
-        <p className="text-[10px] text-gray-500 mb-1.5 line-clamp-1">{desc}</p>
+        <p className="text-[10px] text-gray-500 mb-1 line-clamp-1">{desc}</p>
+
+        {/* Curator note */}
+        {location.curator_note && (
+          <p className="text-[10px] text-indigo-600 bg-indigo-50 rounded-lg px-2 py-1 mb-1 line-clamp-1 font-medium">
+            💬 {location.curator_note}
+          </p>
+        )}
 
         {/* Highlights */}
         {visibleHighlights.length > 0 && (

@@ -84,6 +84,8 @@ function PendingCard({
     area: (item as PendingLocation & { area?: string }).area ?? '',
     address: item.address,
     highlights: (item.highlights ?? []).join(', '),
+    curator_note: item.curator_note ?? '',
+    social_embed_url: item.social_embed_url ?? '',
   })
 
   const raw = item.photos[0] ?? ''
@@ -98,6 +100,8 @@ function PendingCard({
       highlights: form.highlights ? form.highlights.split(',').map(s => s.trim()).filter(Boolean) : [],
       price_range: Number(form.price_range) as 1|2|3|4,
       rating: Number(form.rating),
+      curator_note: form.curator_note || undefined,
+      social_embed_url: form.social_embed_url || undefined,
     }
     await fetch('/api/pending', {
       method: 'PATCH',
@@ -174,6 +178,8 @@ function PendingCard({
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">區域</p><input className={inp} placeholder="e.g. Thonglor" value={form.area ?? ''} onChange={e => setForm(f => ({...f, area: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">地址</p><input className={inp} value={form.address} onChange={e => setForm(f => ({...f, address: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">亮點（逗號分隔）</p><input className={inp} value={form.highlights} onChange={e => setForm(f => ({...f, highlights: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-indigo-500 mb-1">💬 在地人怎麼說（選填）</p><textarea className={inp} rows={2} placeholder="你自己的觀察，1–2句即可" value={form.curator_note} onChange={e => setForm(f => ({...f, curator_note: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">社群貼文 URL（TikTok / IG）</p><input className={inp} value={form.social_embed_url} onChange={e => setForm(f => ({...f, social_embed_url: e.target.value}))} placeholder="https://www.tiktok.com/..." /></div>
           </div>
           <div className="flex gap-2 pt-1">
             <button onClick={save} disabled={saving} className="flex-1 bg-[#0f172a] text-white text-xs font-bold rounded-xl py-2 disabled:opacity-50">

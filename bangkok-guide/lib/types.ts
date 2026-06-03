@@ -23,6 +23,7 @@ export type Location = {
   highlights?: string[]
   hashtags?: string[]    // Thai/EN trending hashtags
   local_ratio?: number   // 0–100 (% local customers)
+  curator_note?: string      // short personal observation from the site owner
   social_embed_url?: string  // TikTok or Instagram post URL to embed
   approved_at?: string
 }
