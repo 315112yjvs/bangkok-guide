@@ -139,7 +139,7 @@ export function PublicHomepage({ locations }: Props) {
       <div className="sticky top-0 z-0 h-[68vw] max-h-80 min-h-52 overflow-hidden">
         {/* Photo — full brightness, gradient does the work */}
         <Image
-          src="https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=800&fit=crop"
+          src="/hero-bangkok.jpg"
           alt="Bangkok"
           fill className="object-cover object-center"
           priority
