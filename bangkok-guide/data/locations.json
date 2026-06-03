@@ -96,5 +96,51 @@
     "name_th": "",
     "address_th": "",
     "hashtags": []
+  },
+  {
+    "name_en": "UNO! (centralwOrld)",
+    "name_zh": "UNO! (centralwOrld)",
+    "description_en": "Competition-grade Geisha coffee for just 85 baht ☕ UNO! Coffee sits quietly in CentralWorld's office zone — one of Bangkok's trendiest new spots making the world's most prized beans surprisingly easy on the wallet.",
+    "description_zh": "世界頂級藝妓咖啡，在這裡只要 85 元 ☕ UNO! Coffee 藏在 CentralWorld 辦公室區，用平價讓你喝到競賽級的 Geisha Panama，開門前就有人排隊，上午來最安全。",
+    "category": "cafe",
+    "address": "The Offices At Central World ชั้น, 1 Rama I Rd, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.745797399999999,
+    "lng": 100.5382162,
+    "photos": [
+      "places/ChIJS7jebACf4jARR8YHQyxz00M/photos/Ab43m-uenRxp6yFCi1Hiwu9mG3uvKRWdGKkfRvfBu_O6ilwjD3-0o9j0ypCgfjCdMnxWiUKjF9utSTcaYXjiPe2qHDNdXWcdQBQtmj0FcabS3lmckd1C1MgqBQmreu0fjR8eP4c1-IeV_PXLF1eTjbQY8EQkLkGizO0YjhWMOzsOFDSg4-ywVDAnxuaSQZ3ZjVE-9fx_YjSR00sfJPZo2zwdFpJDznnul8zBPs0A1rhlgFYFnvQBzo1wCYoYbZBjq8U8NFVEDO-gYoKNmCME2skX1Ad2QOvGXKPJj5mI-MXVGedqevW3Zzalb-egzaToYng9bte4rhoXgR95Ha79HeNlTfaDqzK9SxbiJ5kGbHgmC5rPsErpzLtM-xy49iUHPUyZPEIClThPq6GutLUQSFIoZo_c_uhTYQDk6rFV141RbZLTAhEXjfShx-5JqWvz_a4p"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=UNO!%20(centralwOrld)%20The%20Offices%20At%20Central%20World%20%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%2C%201%20Rama%20I%20Rd%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJS7jebACf4jARR8YHQyxz00M",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Geisha Panama"
+    ],
+    "id": "1268aaa1-bf31-4c4d-a228-3ae48eb92bcf",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-03T11:44:55.780Z"
+  },
+  {
+    "name_en": "Muek Mun Kai Chicken Rice",
+    "name_zh": "Muek Mun Kai Chicken Rice",
+    "description_en": "Singaporean friends say it rivals the best back home 🍚 Muek Mun Kai is a tiny shophouse tucked in a quiet soi — silky Hainanese chicken, five bold dipping sauces, and rice from just 69 baht. Come before lunch or risk missing out.",
+    "description_zh": "新加坡朋友說比新加坡還好吃 🍚 Muek Mun Kai 藏在小巷裡，嫩滑白斬雞配五種沾醬，一碗才 69 銖，午後就賣完，要來要趁早。",
+    "category": "food",
+    "address": "47/1 Soi Phetchaburi 5, Khwaeng Thung Phaya Thai, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7557703,
+    "lng": 100.5287185,
+    "photos": [
+      "places/ChIJSUv0DUCZ4jAR1i5h7plXW8w/photos/Ab43m-ua6xhwxr5jjyWm_eq8wpd6tAawlW-hLpC5u4wRfy4y1i7L5YT0AOgwSzIkvUILtXI0kd8dYTO2-fjrB0yaRRuoQlkLeKEdkjO1iBPx5TcWPmTY0iXahg8h2JTc-Ktzysom4xvb6uKHNByU-vopuf5lg-5dco0Ko2mtFfTRymtPJKaxK3WPQWK6rlOXHAYNPilbzErRtULMZk3fl3sqwZpDaGDgfn0_WXdUZF60hpB2hIAnWXHrkuFT65vMQDj9DNW-K4jxg0oXeVDnHre5zOjMaqF45g-KNPICRCdK9M6mJ9afoiv5cfS7qnTNqMAZwly8xGQUt_0rMmbw4ur4AY4Q2_EbYzWmqEprUzrzH9DoGSOe3ZeRvloB5HWz7Aq-NSeRlm3WnCtNq-S0qjc8ebnCyMEmlsMjYDKL6RMFhg4LKQ"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Muek%20Mun%20Kai%20Chicken%20Rice%2047%2F1%20Soi%20Phetchaburi%205%2C%20Khwaeng%20Thung%20Phaya%20Thai%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJSUv0DUCZ4jAR1i5h7plXW8w",
+    "rating": 4.5,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "id": "f37f3783-3c18-4faa-94e4-f8b5441d2564",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-03T11:46:20.725Z"
   }
 ]
