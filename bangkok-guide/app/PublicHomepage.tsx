@@ -225,6 +225,18 @@ export function PublicHomepage({ locations }: Props) {
         <div className="bg-white border-b border-gray-100 py-2 relative">
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
           <div className="flex gap-2 overflow-x-auto no-scrollbar px-3">
+            {/* All */}
+            <button
+              onClick={() => { setSpecialFilter('all'); setActiveTag('all') }}
+              className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+                specialFilter === 'all' && activeTag === 'all'
+                  ? 'bg-[#1e1b4b] text-white shadow-sm'
+                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+              }`}
+            >
+              {lang === 'zh' ? '全部' : 'All'}
+            </button>
+            <div className="w-px bg-gray-200 mx-0.5" />
             {/* Nearby */}
             <button
               onClick={() => {
