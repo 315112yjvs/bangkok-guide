@@ -136,39 +136,62 @@ export function PublicHomepage({ locations }: Props) {
     <div className="max-w-md mx-auto bg-white min-h-screen overflow-hidden relative shadow-xl">
 
       {/* HERO */}
-      <div className="sticky top-0 z-0 h-[55vw] max-h-60 min-h-40">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=800&fit=crop"
-            alt="Bangkok"
-            fill className="object-cover opacity-65"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0f1428]/90 via-[#0f1428]/50 to-transparent" />
-        </div>
-        <div className="relative z-10 p-4 pb-2 flex flex-col h-full">
-          <div className="flex justify-between items-start mb-1">
-            <span className="text-white/60 text-[10px] font-bold uppercase tracking-widest">{strings[lang].siteName as string}</span>
+      <div className="sticky top-0 z-0 h-[68vw] max-h-80 min-h-52 overflow-hidden">
+        {/* Photo — full brightness, gradient does the work */}
+        <Image
+          src="https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=800&fit=crop"
+          alt="Bangkok"
+          fill className="object-cover object-center"
+          priority
+        />
+        {/* Gradient: dark at very top (for readability) + heavy at bottom */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/85" />
+
+        <div className="relative z-10 h-full flex flex-col">
+          {/* Top bar */}
+          <div className="flex justify-between items-center px-4 pt-4">
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+              <span className="text-white/70 text-[9px] font-bold tracking-[0.15em] uppercase">{strings[lang].siteName as string}</span>
+            </div>
             <LanguageToggle lang={lang} setLang={setLang} />
           </div>
-          <h1 className="text-white text-xl font-black leading-tight">
-            {strings[lang].heroTitle as string}{' '}
-            <span className="text-amber-400">{strings[lang].heroTitleAccent as string}</span>
-          </h1>
-          <p className="text-white/60 text-[11px] mt-0.5 mb-2">{strings[lang].heroSubtitle as string}</p>
-          <div className="flex items-center gap-2 bg-white/95 backdrop-blur rounded-2xl px-3 py-2.5 shadow-lg">
-            <svg className="w-4 h-4 text-gray-400 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
-            </svg>
-            <input
-              className="flex-1 text-sm outline-none text-gray-700 placeholder-gray-400 bg-transparent"
-              placeholder={strings[lang].searchPlaceholder as string}
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-            {query && (
-              <button onClick={() => setQuery('')} className="text-gray-400 text-sm font-bold">✕</button>
-            )}
+
+          {/* Push content to bottom */}
+          <div className="flex-1" />
+
+          {/* Bottom editorial block */}
+          <div className="px-4 pb-4">
+            {/* Live badge */}
+            <div className="flex items-center gap-2 mb-2.5">
+              <span className="inline-flex items-center gap-1 bg-orange-500/90 text-white text-[9px] font-black px-2 py-0.5 rounded-full tracking-wide">
+                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                LIVE
+              </span>
+              <span className="text-white/40 text-[10px]">{lang === 'zh' ? '每日更新 · 泰國社群精選' : 'Daily updates · Thai social picks'}</span>
+            </div>
+
+            {/* Title */}
+            <h1 className="font-black leading-[1.1] mb-1">
+              <span className="text-[26px] text-white block">{strings[lang].heroTitle as string}</span>
+              <span className="text-[26px] text-amber-400 block">{strings[lang].heroTitleAccent as string}</span>
+            </h1>
+
+            {/* Search — frosted glass pill */}
+            <div className="mt-3 flex items-center gap-2 bg-white/12 backdrop-blur-md border border-white/20 rounded-full px-4 py-2.5">
+              <svg className="w-3.5 h-3.5 text-white/50 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
+              </svg>
+              <input
+                className="flex-1 text-[13px] outline-none text-white placeholder-white/40 bg-transparent"
+                placeholder={strings[lang].searchPlaceholder as string}
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
+              {query && (
+                <button onClick={() => setQuery('')} className="text-white/50 font-bold text-sm leading-none">✕</button>
+              )}
+            </div>
           </div>
         </div>
       </div>
