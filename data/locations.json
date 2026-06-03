@@ -1,1 +1,72 @@
-[]
+[
+  {
+    "name_en": "Natura Café",
+    "name_zh": "Natura Café",
+    "description_en": "Skip the city noise 🌴 Natura Café hides inside a century-old orchard — bamboo structures, a quiet canal, and tropical greens all around. The perfect afternoon escape with a coffee in hand.",
+    "description_zh": "不用出城，曼谷就有叢林秘境 🌴 Natura Café 藏在百年果園裡，竹木建築、運河水景、熱帶植物包圍的座位，配一杯咖啡就是最療癒的午後。",
+    "category": "cafe",
+    "address": "9 Thanon Chom Thong, Khwaeng Chom Thong, Khet Chom Thong, Krung Thep Maha Nakhon 10150, Thailand",
+    "lat": 13.6913804,
+    "lng": 100.4670246,
+    "photos": [
+      "places/ChIJ8wpY8NiZ4jAR9ke7bdw2Guc/photos/Ab43m-tQXtjAORZlQe32XMkqW3VXX8zYCTBlu11RJMPECcUBjMhA0koPMO2-sbwVBsFaQriIEaeZi5spnTTGSYnjn9PtLgpcnHWPPcB7dzJbcBxYyxu4FqTfgqKTrzTqVpOLenFTAdDKiRazrb5iWxKSG-d5g8sIMHAWH_MwrbPaaetmu_w-M-pDPhaIN5fJJIp3tZ0e3Yx7R7eVkT8aHjEblTBj9mw8ejZUeB-FRP2MNZnuVU45KtYXBrOSG6rbVL6fCv-oPfOv7BJOJqweHZJ4Mdijew_Q5LuenixzbCkYMBy5Xy8WeawI5ajU43VbwuMKonimsDJBJFFiSBHoOnjESRb4aH4y5i1vN0fTZuOEcqmTnWQI_h20n1kUt4twG9nnQHAX3G_ZKILA9uiKV6k1mQ4NzSkUc3Q0uxfjMSrWs0Zf_g"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Natura%20Caf%C3%A9%209%20Thanon%20Chom%20Thong%2C%20Khwaeng%20Chom%20Thong%2C%20Khet%20Chom%20Thong%2C%20Krung%20Thep%20Maha%20Nakhon%2010150%2C%20Thailand&query_place_id=ChIJ8wpY8NiZ4jAR9ke7bdw2Guc",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Experience from here"
+    ],
+    "id": "4309ddb8-0c2e-452f-bde4-05a204ecfdd3",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-03T11:28:42.785Z"
+  },
+  {
+    "name_en": "Heng Chun Seng (Sacred Heart Convent School)",
+    "name_zh": "Heng Chun Seng (Sacred Heart Convent School)",
+    "description_en": "A 72-year-old gem hiding in Khlong Toei 🍲 Wang Chun Seng's charcoal hot pot is the real deal — rich broth, tender offal, and old-school flavors that locals have been lining up for since breakfast.",
+    "description_zh": "曼谷 Khlong Toei 藏著一家 72 年老店 🍲 王春盛的炭爐牛雜火鍋，湯頭濃郁帶古早甜味，牛肚牛筋燉得軟嫩入味，早上七點就開門，連本地人都排隊來報到。",
+    "category": "food",
+    "address": "เลขที่ 8/28 Sunthonkosa Rd, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7188489,
+    "lng": 100.5577721,
+    "photos": [
+      "places/ChIJ2drD1JGf4jARd0BwomeYdW0/photos/Ab43m-vAGsxwv4SWsHs_3xnGf-zk6nD_uxDoyWjDjRju3sf0NBTuM7jkXh7wdeGkjCUadsNymUyY22c3nHxsbfMh-KIR7GoPfVA_gRhmbATQ3PeU8QRo7kGUyHdxfbkanu0d1oAIfR1I12TocH_VBdTUPUPMWSuhD1X41tz-PAwT-6SufBw4uIamhIIuVoHbP2YfKeXDozJgFL3OAUbIo4mn0yyhBBbaCERXI2zTGttA_5ud1Akc64u37ax9TfcgonTlfgyWwlX722z2CgEdC3Od4tLoWkiAq11uBPxUurL2pnKbqe5XXQh15Duu8hoHIqvoDOCqi2Le12SPb0wSaNYO4ZFkwan_l70G9GGiCQbpR6iUYaWqGg92TOZOGmvM1DTefxzdFRf3LeSQh0JNzR2wSa3v1JTBFQ5AOuYhjkEhsUaMWuM"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Heng%20Chun%20Seng%20(Sacred%20Heart%20Convent%20School)%20%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%208%2F28%20Sunthonkosa%20Rd%2C%20Khwaeng%20Khlong%20Tan%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ2drD1JGf4jARd0BwomeYdW0",
+    "rating": 4.4,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Braised beef soup"
+    ],
+    "id": "555db732-4fce-4771-8958-91f22fb1b244",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-03T11:31:44.026Z"
+  },
+  {
+    "name_en": "San Nae Deul Korean Restaurant",
+    "name_zh": "San Nae Deul Korean Restaurant",
+    "description_en": "A cozy Korean corner on Surawong 🥩 San Nae Deul is run by a hands-on Korean owner who grills the meat for you — the pork belly is tender, the sundubu-jjigae is among Bangkok's best, and the whole meal feels like dinner at a friend's home.",
+    "description_zh": "藏在蘇拉旺街角的韓式小館 🥩 San Nae Deul 由韓國老闆親自顧爐，五花肉嫩而不柴，純豆腐鍋被封為曼谷最好吃之一，像在韓國朋友家吃飯一樣暖。",
+    "category": "food",
+    "address": "1 7 Soi Ekkamai 2, Khwaeng Phra Khanong Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.723512699999999,
+    "lng": 100.5850365,
+    "photos": [
+      "places/ChIJyfrRza-f4jARePgTQSNXo3s/photos/Ab43m-tVdq95IiP1FR4mcE3M9CoJ3cIW-pwy-6NmkQVfMdPKhoz-2ZEfIqozw5QPiE3xrUke1PAJtcSqU1iJb5XJoxEsYXjCVv9a70mDhAf7Yl4SuA0qfpKIYt_7yxMtbswvhwlpDrCIx65hFdzgGe8jLmypIooEGTBQpgum3fwuQdCTt-sTozmLeB1AObpJW_BAKtpEF_eIf5W0E9JucWty9rSrQXTCAA4hm6ETcRVlDFvZzm5k7m0ookIK5rgrBT2APf1nMQEAeZ53U3Vux3ugbpRX7LDSzGauOamCBx6T-i7XtpnG_zQamBYRYxVUDFj4M1RU483_ReXmydRJ3yAqFgDhk9NWIcd-XdL5KQOsy49JKTC0Krnzc8srx0ReYGRMPfKZWdkVF1bzlHuXcVMGkYF3H9WhjEfKIM1ubhHu45x9IFq2ra0PCCqBBwMM6g"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=San%20Nae%20Deul%20Korean%20Restaurant%201%207%20Soi%20Ekkamai%202%2C%20Khwaeng%20Phra%20Khanong%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJyfrRza-f4jARePgTQSNXo3s",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "id": "fb5047cf-8082-4680-bd47-162f2c0bb92e",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-03T11:32:25.075Z"
+  }
+]
