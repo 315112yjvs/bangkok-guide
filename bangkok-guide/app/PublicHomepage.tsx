@@ -18,7 +18,7 @@ const TAG_META: Record<LocationTag, { emoji: string; zh: string; en: string; col
   evergreen:   { emoji: '📌', zh: '長青推薦', en: 'Always Good',     color: 'from-blue-700 to-sky-500' },
 }
 
-const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'new_opening', 'evergreen']
+const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'new_opening']
 
 function resolveTag(loc: Location): LocationTag {
   if (loc.tag) return loc.tag
