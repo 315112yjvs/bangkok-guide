@@ -106,14 +106,30 @@
     }
   }
 
-  // 等 Tickets 清單（input.ticket_quantity）出現後執行選票
+  // 等 Tickets 清單出現 或 Register/免費票按鈕啟用
   function waitForTicketList(cfg, elapsed) {
+    elapsed = elapsed || 0;
+
+    // 付費票：有量選器 → 走選票流程
     if (document.querySelector('input.ticket_quantity')) {
       selectAndBuy(cfg);
-    } else if (elapsed < 8000) {
-      setTimeout(() => waitForTicketList(cfg, elapsed + 200), 200);
+      return;
+    }
+
+    // 免費票 / Register：btn-create-order 直接啟用就點
+    const freeBtn = document.getElementById('btn-create-order');
+    if (freeBtn && !freeBtn.disabled) {
+      toast('搶到了！正在登記…', '#28a745');
+      freeBtn.click();
+      return;
+    }
+
+    // 最多等 10 分鐘（600000ms），每 300ms 偵測一次
+    if (elapsed < 600000) {
+      if (elapsed === 0) toast('監控中，等待票種開賣…', '#17a2b8');
+      setTimeout(() => waitForTicketList(cfg, elapsed + 300), 300);
     } else {
-      toast('等待票種清單超時，請手動操作', '#dc3545');
+      toast('等待超時（10 分鐘），請手動操作', '#dc3545');
     }
   }
 
