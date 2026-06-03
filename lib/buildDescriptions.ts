@@ -1,6 +1,8 @@
 const GARBAGE_PATTERNS = [
   /^(the |a |an )?(food|place|spot|experience|restaurant|cafe|bar|vibe|ambiance|atmosphere|service|staff|everything|nothing|meal|dishes?|menu|price|value|quality|things?)$/i,
   /^(this|that|here|very|so|just|definitely|really|absolutely|must|highly|great|good|nice|amazing|excellent|wonderful|perfect|awesome|best|top|my|our|their|we|you|i|they)(\s.*)?$/i,
+  // Starts with preposition/pronoun — catches "Of them", "From here", "In Bangkok"
+  /^(of|from|with|by|in|on|at|for|to|is|was|are|were|has|have|had|it|its|he|she|they|we|you)\b/i,
   /bangkok|thailand|city|town|area|district|street|road|bts|mrt|sky/i,
   /^(some |the )?\w{1,3}$/,
   /will be back|come back|back again|next time|go back|be back/i,
@@ -8,6 +10,8 @@ const GARBAGE_PATTERNS = [
   /per person|per head|baht|thb|usd|\$\d/i,
   /a lot for|lot of|worth (the|it|every)/i,
   /^(and |but |so |also |even )/i,
+  // Generic review phrases that aren't food items
+  /experience|atmosphere|ambiance|service|ambience|vibe|staff|value|recommend/i,
 ]
 
 export function cleanHighlights(highlights: string[] | undefined): string[] {
