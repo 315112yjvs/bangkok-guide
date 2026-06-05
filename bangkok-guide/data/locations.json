@@ -854,5 +854,272 @@
     "id": "ee55ea39-2833-44e8-9700-f8b715286a18",
     "approved_at": "2026-06-05T12:33:13.570Z",
     "highlights": []
+  },
+  {
+    "name_zh": "AantArm Cafe",
+    "name_en": "AantArm Cafe",
+    "name_th": "",
+    "description_zh": "像去朋友家吃飯一樣暖 🥩 AantArm Cafe 藏在 Talat Phlu 巷弄裡，牛柳一份才 180 銖，奶油煎得香氣四溢，老闆一家人親切迎客，TikTok 爆紅卻完全不失家常味，早上九點前去排隊才搶得到位子。",
+    "description_en": "The homiest steak spot Bangkok didn't expect 🥩 AantArm Cafe is a family-run gem tucked in Talat Phlu — beef tenderloin for 180 baht, pan-seared in butter by owners who treat every customer like a friend. Gone viral on TikTok for all the right reasons. Queue before 9am or you won't get a seat.",
+    "category": "cafe",
+    "address": "1231/6 ถ. เทอดไท Khwaeng Talat Phlu, Khet Thon Buri, Krung Thep Maha Nakhon 10600, Thailand",
+    "address_th": "",
+    "lat": 13.7205921,
+    "lng": 100.4764144,
+    "source": "googlemaps",
+    "source_url": "https://maps.app.goo.gl/XJsTkxKUS5SV2Lcz8",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "evergreen",
+    "action": "add",
+    "photos": [
+      "places/ChIJTVQxg1uY4jARGtQTwopM_uI/photos/AaVGc3kRuoz_kEpMqg116svWfmCCfFSQmAHbQK4gP0CcQhGFy3_0GxPKHg-FydjqQs9ixCqkLl2rXhPCP9POkJPt0ycj3FT7s6cEg4Rc94IbmBuEUKmalSNLJOi6EpUOXf-othixBH-Z0q4-PiBuMtRDs6-wjiT3GYulBq3LFHJ7_89bSPp6ny20RN4PWhe7xTHvyD1UJFpnNMQ8i3d5CifdfWSh41y085SGN9nEKsRNCTtBW0K5SulVpOBibnAvB6-Cy5NVQYAcqHurhmKCdiqHTCP6JI9Z1VgrScDj8Ex4NnqwHvoEE-k8de378G_ZJfg3uegpkvhHmrIWQxbxFYKV4hiPn2QLvUsJXYEaI4IoFnUfFdtNRjg9jCB79y5ZKJJOeVjUtLihU4sRXE-q2wMVM9pR-z-vLlkH7HGe_3eVyDeTsw",
+      "places/ChIJTVQxg1uY4jARGtQTwopM_uI/photos/AaVGc3k6_u_T81hDuiDtR1pI5ESwq_yXCRKwrwEkkT8jJp4n3ZAWpmF5Z6HRsvYGsmygsRAWDKol0oUU6h8QzFtCxl3wiDPKaGmJ0QetFQPhn0ztCbR2j2sJQKZddPSr9yvcZ_uvVJcVAIhHnRnRADSWKKQluXH258anzdMt_XbuC2Tcw0MY1o3DG5h4PH-rtKGP_A-1Wwf_sJHzAgK4y7-RusW1jrevhYub-lqIqU_SmCYmfnya2cXcUq7eN6NoS0Vh2zLVmS4QBdX447Cil3bB3tn-aCQNnTtDZzkagY8CqBl9hE4_fdb5YahIB1uSXyBzA4ILtvwC-Gn38pdcG_H8AhfzUHx0IvNs5ffNGOWlfG710ZAWDvwb6YOw-joBVs56P7hvLt236tV3SB1rqzTqHgPrxVTYI0KLvIfBTTCOCXQdXQ",
+      "places/ChIJTVQxg1uY4jARGtQTwopM_uI/photos/AaVGc3nOhTB9k0gnb2AkDcACJvJRXQxd7Q6l-bT_A6FetO-G7hTM6tFQHTIU7TSZ9_Q3D9cqxHNtU3KR5xkL4wPCB0X91CVpkMKhxGP0FoMinpIrLH43eVYvYpbeMKwFPBloqnm9yL1Vyc1JGIOieEnCopZDesZGxJ498YRtXfl_WebcqZnYerDalA9WK8O8IM2AvKl8vucfblZPD52sryzf1d9XZoUlX9g8-CzTypKaidivovsboxD5nynohbMgBkY8MZj8s_MBBh7JTz9BjyuI1CXVlay8tJipeSox8V5XOrC7W9XDTC7nHPm5ll2EL8RUCH0UMAHfNE4i79ZtL-Pq1dUpLVBDP7wdiT-A-CfZsROtwTiOi-42XcjApOimZoCqeid-eYXNfNyaCJ364hZhJ8F2tnDxyEehEQ-52WdJsKynTI3CGtS-LMMJyURDBw",
+      "places/ChIJTVQxg1uY4jARGtQTwopM_uI/photos/AaVGc3nukZRWf_w8XwUoxwSN_AWjiZEuZHVCQ4V8YmLzFJas5oVJw4-cfwoc9EUtESFP0Yek24SysZC571ndlrbN9yRlfewB4xB4lG_0C0_sfaO1IIDjctFzkHEZnVKX_KRKaQhWURxancbgO037x0E-F8q45Qu4XeJFB5TR6Gag8MgL3tpgcKXZOey7uq_CETAJN7D4K_35noAID7eDN2xogIBq_-eEjzkJ2EJqpYzD_gEQ3haDBqTXBcQkSPlKDK53TcvfvqQhm4ieGy0A21Sj03Q6blijbGSWTUlUY6IEI5GLfEHVpLbXr424GEXkD0VCVkfxSAw0m1U4xgVfM4-3DrUP2MDOqwnMEJ3EC233Pnr2f8B5l2xAS78I6IJSCRYUioA33kmMlxOpfDN6EBjQhihiMjaw2Dr5yJ7AgfT4DbhbhptPQl3ko6OP77bbX3Wj",
+      "places/ChIJTVQxg1uY4jARGtQTwopM_uI/photos/AaVGc3kPhfcmSaNYlN7-g6UJcDkVN_uW0POz-uvnR5y0o5MwlO6juToizJw5cPReaBGhTvzxnhh-gZh927QumiLfqF7O0N0s4cxdzYiWdxO1JE91oH07eaXPXtZ9KpxOWn0opKSA7e1InFihCZJBuM5y7kWXdj5LDHXX75QVlAS8xjR75rVrA7fGJHMEaSdJvnR4jXgdvlaDM4nRckZFTLGb3Dzpt3lxcqsMIG1ARoaxcheAYUKk1ci-oX17-QSP3jZfs0cl2rundcLMuZcCfprlAhrV7ETIWUN0bvyeGjyDKNsXqhoXWgsL1_PdJRyXVSDZ73RWTA0ZXT3uBN1AoCGYxkiuxTOysmG8mqBohe3Dxyb66HKkxFOyYcuJmj7Uvb3s8KBf8xX92S_GodxaFmfWl85e_usLZqwNe3wEpQgvN77mznsrSuZODOqrhg3WoLjZ",
+      "places/ChIJTVQxg1uY4jARGtQTwopM_uI/photos/AaVGc3kcOlGSX6zTt544weCzOinLwXAKFbe3_xyC9Cwoqyr-7ZYBu5ejQLG_JeWB1ZL65B4Xx_VCeCZAq-LJYCmiF7H5n9evaOlBhmP-0GRw6kcMjYZQm50xHikglI929usc-5hNy_Go0EAoYzRtTMm-0AUmjuAF2XKw181iKeuK_ESoGWFVN0wPYAe-sTkXfNsaymOKO1ktSF05wzVClvB93CZVXcmE0s6zZ2ni-lZ2rMk7ThzIKx0PlhVfhvWdj_TDo6P11Ed_rlbHNLSlXeLWNIU21Xpf44EwTkyI_IUgz3iSc_X1xWT8MDmsadG7whEnJ9rHiFHX9KhOt1SJeUffQqn4tMxk3HckTb6t7KtSxYwKpmzcT8blUcXQ823KLXdUnQqHM5EeunrD2STmckbUPrbwZ0bZRelXNXGc4L_TAWr-iLr-8sMU6YSjqv_78TdR"
+    ],
+    "hashtags": [],
+    "id": "6a3f3bc4-6edd-483a-bfd9-c7ae463154ef",
+    "approved_at": "2026-06-05T14:15:08.995Z"
+  },
+  {
+    "name_en": "The Rock Pub",
+    "name_zh": "The Rock Pub",
+    "description_en": "Established nightspot known for its regular live rock music shows and cozy eclectic decor.",
+    "description_zh": "昭和年代的老舊海報、霓虹燈牌、堆疊的唱片，The Rock Pub 就像個時光膠囊。點杯調酒在手，舞台上的樂手彈起吉他，低沈的鼓聲震動著整間酒吧，陌生人變成朋友一起搖頭晃腦。曼谷夜生活裡，這種有溫度、有故事的地方，才是真正值得一再回訪的。🎸🍹",
+    "category": "nightlife",
+    "address": "1011/3-4 Phahon Yothin Road, Phaya Thai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7714594,
+    "lng": 100.5415361,
+    "photos": [
+      "places/ChIJFejkoMye4jARv9OWUJf7H_M/photos/AaVGc3ne5xWgt0Xsd-A7T3e3FjgbxLwsQKkHSZCgolktBVIjuYxJphAqLSIGcNcQrn7CSxcb2jyokJgOGcletjoXJbIkiv38Pp9ZzXs-E-LT7S8LRPEVeEX7b1LeBvtZZ1MkmH3O15qL6fbiiNRhJlZalyTrndivcAsioI_5wHtfbXThj7BeI0pWHjHdWz00v-yK6E0mjxdAtA9QzKmJBRXToCkK5kkvf2SIP3WTykqwTIzvR_74UXkV01B9rrOIm8GUyprHk3bubuN9NlM44MLCuh7Ln7DXaBcRYXLSXwKQIOtZh07R3CwWRSAln-kUnu8iRplZo_FJgsVTqccLpnCOUMDZpZwyUC4ykG5nOxW9iuqAD--E7UNrxRWJVNfTPFboge83-GmP5pq5mJ3BNW7qaSsaOMMVyqSMwa8pJizLozPhZKsH"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Rock%20Pub%201011%2F3-4%20Phahon%20Yothin%20Road%2C%20Phaya%20Thai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJFejkoMye4jARv9OWUJf7H_M",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Cocktails",
+      "Rock n roll music"
+    ],
+    "local_ratio": 75,
+    "id": "5f2d2931-c758-42ea-8382-d238e55d97e4",
+    "source": "googlemaps",
+    "approved_at": "2026-06-05T14:15:51.509Z"
+  },
+  {
+    "name_en": "Brick Bar",
+    "name_zh": "Brick Bar",
+    "description_en": "Ska & reggae music venue with late-night hours, featuring space for over 1,000 guests.",
+    "description_zh": "夜幕降臨時，Brick Bar 就是你的目的地 🎸 磚紅色的老倉庫改造成這間傳奇酒吧，一千多人的場地卻藏不住 ska 和 reggae 現場樂隊的靈魂。煙霧、燈光、舞池裡陌生人變朋友，那種被音樂包圍、整個身體跟著節奏搖晃的感覺，只有在這裡才能真正體會曼谷夜晚最野的溫度。",
+    "category": "nightlife",
+    "address": "Talat Yot, Phra Nakhon, Bangkok 10200, Thailand",
+    "lat": 13.758647999999999,
+    "lng": 100.498587,
+    "photos": [
+      "places/ChIJkQ351hKZ4jARWUMwyuYNn2c/photos/AaVGc3m-XUaoNnItMiFhZOHQKdMMIlsTgEmbCGtUF2E_SzARFF85E5VtZQ_TD8KjxQ_yzz5oC9cafHcY1afKWWqf53lrjWo8URumUxAli00TNg7zQ2xWtrjN0diRxkxD_DVolqjyuXOCh_VV3frqz7HyAfP4jP3nzLv6eVqSROP5AN4mgt0A95tLX5a9QzLlDRwMyQsCoAIeiSTisqd5UqoZc_4Jk975qbhxI8Sai3vGE3Yo9FTpRwnLmd3hZGOsoN64ziU026M18c6yYScplWg-1rCL9-ne6dM7KjM_k8OaqIxtn-OXU67SvkBSTGwBLPw3A3vm-3ZKQekwHYFenEX2feoampJASxYbP1l80nZ6pY47LT0Fzm_bHtO_b7du7TCWTbd544xSZqC8z-H4FGppGjDGMi0Hx9wXRnYADBt1UOKWdmGLm1isffFc0RdP8A"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Brick%20Bar%20Talat%20Yot%2C%20Phra%20Nakhon%2C%20Bangkok%2010200%2C%20Thailand&query_place_id=ChIJkQ351hKZ4jARWUMwyuYNn2c",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [],
+    "local_ratio": 75,
+    "id": "c02ce985-49f2-458f-88dd-568400933d50",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T14:16:21.306Z"
+  },
+  {
+    "name_en": "Mariga",
+    "name_zh": "Mariga",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok.",
+    "description_zh": "Mariga 就像在曼谷找到的一個秘密角落 ✨ 坐進去的那刻，彷彿被溫暖的燈光和木質調的裝潢包圍，整個空間散發出舒服的氛圍。菜色一道道上桌，每一口都能感受到用心，配著周圍輕鬆的對話聲和餐具碰撞的聲音，這就是曼谷最治癒的用餐時刻。",
+    "category": "food",
+    "address": "43 Sukhumvit Soi 15, Nua, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.741453199999999,
+    "lng": 100.5585818,
+    "photos": [
+      "places/ChIJsVHlc0ef4jARH5KLLPC4zdo/photos/AaVGc3ny5XD7ecv1YSOOU5g6pdCO7Gwt-CmqudjbbkUxf8TBVTD7wRa5SZfSi2wubTn5mfTZcSFcrCX9KYWEgjdRSPpgnx9YFs3fnd_Y--Kszk31GTouWXCAQPsJzRf6U98QL_t3DT3OZ3CpJJTl49QEGksv5DsrsTbdzBO-jbETXNfk86q9SdbQax_XRQ1jzQR7zN0y8uzvRBaYuAJEMcsnuNV4JL154dLXn0inU5JPzREiTjZUSDf7NYuXEJ31BKCtwbKCXLkxSbqNCFBmAqqk5KtVia3XJIUGbEGJL5E4nczCMHZKR6K6GM0iUk8ufrZIT_STa6hsNrQVwoCE6uJhWAZr4t_wKbUGpzeH2_Nq-EPRV4AUPFdcwoRp_UPvtotcDdYcnh3dywqHS6EBOzXFZqTsZjebXhZB26IGNN_OdB5rNlzJ"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Mariga%2043%20Sukhumvit%20Soi%2015%2C%20Nua%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJsVHlc0ef4jARH5KLLPC4zdo",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [],
+    "id": "ebbf692b-388c-4b49-af5c-88ca5b6055c3",
+    "source": "googlemaps",
+    "approved_at": "2026-06-05T14:17:12.503Z"
+  },
+  {
+    "name_en": "Jirakaan Restaurant (จิรกาล)",
+    "name_zh": "Jirakaan Restaurant (จิรกาล)",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Tom Yum and Steak.",
+    "description_zh": "來 Jirakaan 就是要點招牌酸辣湯，那股濃郁的檸檬香茅味道一瞬間就能喚醒你的味蕾 🍲 坐在這裡，一邊享受道地泰式風味，一邊咬著嫩到不行的牛排，真的是把曼谷最好的食材都集中在一盤裡。燈光溫暖的餐廳氛圍，讓你忘記外頭的炎熱，只想一口接一口地吃下去。",
+    "category": "food",
+    "address": "76 Soi Sukhumvit 51, Klongton Nue, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.730243699999999,
+    "lng": 100.57732109999999,
+    "photos": [
+      "places/ChIJd1SaQ7Sf4jARoFvSOzrxAn4/photos/AaVGc3nEnXoBHrlqleNh3hbh79kb7ykxKykjteH5F8Y363YmzAEr34WElD9N2c8f6c-MOAImhtZhLCA8Zx6t4jMIBc_iK7wYIlFZNyqXcc9rcH0lSiRBhZxrDGu6TIkWljpYR3ioasUsHf3DBUCMgDT65-4zLrl1r7uzZy0iaS_CYkWKmu21rV6ushTOkbgpCQ4Ml1vMaCJyffwMC5O2wW0hl6MirvuTZJox0-dvLp5DgMdp6Bb-rkuhbkSj6-j1UOISec2o4ZYFbSDT0C95rYV5UokK8dE1uJYZJ-SRNjMh_ggCVEApydLg6r8pxYlISq-4bjaTbKmHWNEopanSpOdjFmQOrAeRiCBYRcw74LvTKjUG1DjheLpAgQrMBJVx2JyRZBpdktCARvZniD5mhMamajsFVj6jmoJXpx5h0EgNesE"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Jirakaan%20Restaurant%20(%E0%B8%88%E0%B8%B4%E0%B8%A3%E0%B8%81%E0%B8%B2%E0%B8%A5)%2076%20Soi%20Sukhumvit%2051%2C%20Klongton%20Nue%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJd1SaQ7Sf4jARoFvSOzrxAn4",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Tom Yum",
+      "Steak"
+    ],
+    "id": "8fc66940-4e54-4ae1-bb1a-e8c84c833195",
+    "source": "googlemaps",
+    "approved_at": "2026-06-05T14:17:38.588Z"
+  },
+  {
+    "name_en": "Sri Trat Restaurant and Bar",
+    "name_zh": "Sri Trat Restaurant and Bar",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Tom Yum and Dumplings.",
+    "description_zh": "坐在 Sri Trat 的角落位置，一口熱湯一口小籠包，這就是曼谷的日常 🍜 Tom Yum 的酸辣在舌尖炸開，手工水餃一口咬下去湯汁飽滿，配著昏黃的燈光和周圍熟客的談笑聲，整個空間都溫暖起來了。正宗泰式味道在這裡沒有任何妥協，是那種讓你一來再來的餐廳。",
+    "category": "food",
+    "address": "90 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.736803700000001,
+    "lng": 100.5680964,
+    "photos": [
+      "places/ChIJoc-7O_ye4jARa2GblY_w4Bo/photos/AaVGc3nD0UZfA3vtX0cBsD2rbFs5Aitg332i0-iRbBmiUdc-uRERMxUVUi0IH9Tq7P6Rg_841e6r-qU9fai0R1qSMJnnWQVtHqW_giFrxWVY0h2vr_U7hAzH3IDm5cJmIDW1x30mhHjX0SkHJ2W9ozvXcWjp84v-kMe_BcEnRyJSKPZ1UocOY8PLYUMwKnz6qEobAeJpvYZX-UaA2PR85kn2Yxr_miYcWfyDWHgRM6s-LcFAqeTuG9I_qYMmuX-WtbsoqgftgpVCS1_huephdtO-17FE-xXE7OtGPglqDNs-RyukuRziWaDc7BfEzD6GU_k9iR10XhsIIJY3PLXVECNl1PvMzIuTk0DJzUDkAJxKXNd-FP_iojuTC4rMyyCa6RiRb2Dr2dwnM8t3Fgh_X2Iw3zJG1-CunP1d4-XRV-vCVTKTsRLEvpJ1F9VoTYT1NB6o"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Sri%20Trat%20Restaurant%20and%20Bar%2090%20Soi%20Sukhumvit%2033%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJoc-7O_ye4jARa2GblY_w4Bo",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Tom Yum",
+      "Dumplings"
+    ],
+    "id": "371e28b8-9061-4dd6-ab73-a92f4d23db74",
+    "source": "googlemaps",
+    "approved_at": "2026-06-05T14:17:57.254Z"
+  },
+  {
+    "name_en": "Blue Elephant Bangkok Sukhumvit Thai Heritage Cuisine",
+    "name_zh": "Blue Elephant Bangkok Sukhumvit Thai Heritage Cuisine",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Satay and Some digestive drink too.",
+    "description_zh": "曼谷最道地的泰菜食堂就在這裡 🌶️ Blue Elephant Bangkok 的沙嗲一咬下去，花生醬的香氣在嘴裡爆開，烤到焦香的肉串配著酸辣醬汁，根本停不下來。老牌泰菜館的氛圍很在地，點上一盤沙嗲、一碗湯麵，彷彿坐進了曼谷人的日常餐桌裡，那才是最道地的泰式滋味。",
+    "category": "food",
+    "address": "27 Soi Sukhumvit 13, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.744829399999999,
+    "lng": 100.55787889999999,
+    "photos": [
+      "places/ChIJWTPA0Jef4jAR1hY7Yo3bYes/photos/AaVGc3nDdfc9ImJMyOAgMsNCnq9FmCfdb8s6jY-XIgJtQy-dPsJofBfn37DQGhgTdMVgJtwm3UiT75jdhAeI437ixR-3BOJBByBbdgJQ-xYJ-S7rOWkcZhiXpsP9nhP4uGbgM8U_KgQdiljDxCuWDx6uyFsnCrEvUfWE0Na2Zsn-_2YeUw5QxJrh1cG1k1OYnhTiD8cMhpxpUg1wkRd3dv77qvTxr9v5i3r3leujnpUihh9Uxvm6sZm196edtJ0PDXFr7AVApnBygF_dyTQd2TdAOeOI_iZeiltPSrsV-DA5pgUNbZ2jrTkm6s0dFCk1GgNah-tmaEsCllXh7cHm45EdsIIb7JmxtBls4mvIoCeExWIZP5WlK2XPBMs_QWidkqBDcq2LfS6foGdi80SbCswHSi39GZVXd9k5DYoDJN-2APkfxLtDs_zgJiA-i82GfuaX"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Blue%20Elephant%20Bangkok%20Sukhumvit%20Thai%20Heritage%20Cuisine%2027%20Soi%20Sukhumvit%2013%2C%20Khwaeng%20Khlong%20Toei%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJWTPA0Jef4jAR1hY7Yo3bYes",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Satay",
+      "Some digestive drink too",
+      "Try it"
+    ],
+    "id": "a9668ad9-833d-472e-b71a-bef07efe4e53",
+    "source": "googlemaps",
+    "approved_at": "2026-06-05T14:18:54.589Z"
+  },
+  {
+    "name_en": "ร้านขจร | Kajohn Authentic Southern Thai Cuisine",
+    "name_zh": "ร้านขจร | Kajohn Authentic Southern Thai Cuisine",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Thai Tea.",
+    "description_zh": "隱藏版泰南美食，就在這間不起眼的小店 🍵 Kajohn 的招牌泰奶濃到不行，一口下去整個下午都亮了起來。點份酸辣海鮮湯或咖喱，配著地道泰南風味，彷彿瞬間移動到南方小鎮。簡樸的環境反而讓食物更有靈魂，這才是曼谷人私藏的味道啦。",
+    "category": "food",
+    "address": "245, 4 Thanon Chakkraphatdi Phong, Khwaeng Khlong Maha Nak, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100, Thailand",
+    "lat": 13.7559825,
+    "lng": 100.5096848,
+    "photos": [
+      "places/ChIJY3fswo-Z4jARm0mwI29TW1M/photos/AaVGc3kX5SAJ37OnY5nHtaHNVop4LjwR-5oBd0j-tB_byGezBtgYTFBkebYLSEugLxuV_PKtQ6etpyXDHWekm-F7c6Y9M-BJ4_62oElW0J_xgMKFaH2FqWgf8BCli_LWKij1GjutMNSH1Vm9v4zOQVvQp_fNg4Mue89x1ULrFxmB-LbNUU814X1W0E1Bv8xRfAY-yyT12iKEHGkBzdvjAVEXu-Tjyw35zyXJbHBXToq92h4sf1tTCOQhRkT3VR2_q_WivnhPtqv7-0pt0-6SSiVGOjM8Y2qBUPOXPArjRWHIAtvaRU_uFpenJTaM5j-h1O7V8FW3colVUG2Ry_6EBW0bmELt54viFdc1JSaguTNl1dqQhi8SkKfelOhI-CLkVaLGCsHZhO4JBplxvHFGeX1Y1iRBEP8wg5hY3n84GWizfKI"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%82%E0%B8%88%E0%B8%A3%20%7C%20Kajohn%20Authentic%20Southern%20Thai%20Cuisine%20245%2C%204%20Thanon%20Chakkraphatdi%20Phong%2C%20Khwaeng%20Khlong%20Maha%20Nak%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100%2C%20Thailand&query_place_id=ChIJY3fswo-Z4jARm0mwI29TW1M",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Thai Tea"
+    ],
+    "id": "aa4721a6-d181-45bf-9855-dc73e13cc116",
+    "source": "googlemaps",
+    "approved_at": "2026-06-05T14:19:14.324Z"
+  },
+  {
+    "name_en": "Tamnanthai Restaurant Nana-Ploenchit",
+    "name_zh": "Tamnanthai Restaurant Nana-Ploenchit",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Pad Thai and Tom Yum.",
+    "description_zh": "來 Tamnanthai 點一碗道地的冬陰功，湯頭香到整條巷子都聞得到 🍜 坐在 Nana-Ploenchit 這間老牌泰菜館裡，咬下軟Q的河粉、嚐著青咖喱的辛香在舌尖炸開，每一口都像在吃曼谷人從小吃到大的家常味。簡單的擺設、熱情的服務，這才是我最愛的泰國餐廳啦。",
+    "category": "food",
+    "address": "18 Soi Sukhumvit 4, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7396496,
+    "lng": 100.55275590000001,
+    "photos": [
+      "places/ChIJX3ZGm92e4jARqsXwPuT5xSs/photos/AaVGc3lddQPDa1fEkO_xaWaeG6tw0Ag5C5nZWeiLK-GJAfWfuTserOCGnKuGjBpg2xclfs39BYyaWd0Sd9KobuuxcxHeDHUpsQoVikH5FSauo-_E-IkkcLy0XXpMInjFz1YAc5Uo1xMcvCDd2XYKtZnNGSdSuTYFeKERjOiMph-g-2A4_tsgvLqnvM2Pi-7SQfG3EWsgdCu0GkAM5HLUtr0bSHrIjplo9OyM7hTKVlA_PcspmBCglEFPlzXlfwUaahaWKZNOiu88iHzSnt3QJCxfC5dYYtDAzkLkNxTDNo8VVLWO3i0fZLGwnbRb4SpBENYScSLer-yu-wkIlTXaB38LIik3gcAR9ciDRWFC6EdGcSybYPuc0Rh3pa9eCXaunxyMAHInfm9_7oImxYt0CQ8_ZSqtuJ0vYFSkHNSHT47zHZY2szGq_7_DmiGbh9FzhQ"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Tamnanthai%20Restaurant%20Nana-Ploenchit%2018%20Soi%20Sukhumvit%204%2C%20Khwaeng%20Khlong%20Toei%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJX3ZGm92e4jARqsXwPuT5xSs",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Pad Thai",
+      "Tom Yum",
+      "Green Curry"
+    ],
+    "id": "84b19815-5ba6-4b75-a9a0-8d7424eb64da",
+    "source": "googlemaps",
+    "approved_at": "2026-06-05T14:19:30.758Z"
+  },
+  {
+    "name_en": "Oranuch Thai Dining",
+    "name_zh": "Oranuch Thai Dining",
+    "description_en": "A mid-range, highly praised restaurant in Bangkok. Known for Mango Sticky Rice and Papaya Salad.",
+    "description_zh": "Oranuch Thai Dining 就是那種一坐下來就被香氣圍繞的地方 🌶️ 現做的青木瓜沙拉酸辣到位，每一口都是泰國街頭的靈魂味道，再來一碗招牌芒果糯米飯，甜蜜的芒果配軟綿的糯米，瞬間就能感受到曼谷最地道的美食溫度，這就是為什麼在地人一吃就回不了頭。",
+    "category": "food",
+    "address": "36/1 Soi Sukhumvit 23, คลองเตย Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.741239499999999,
+    "lng": 100.5635101,
+    "photos": [
+      "places/ChIJ0eGdrOaf4jARsbK1ylUw0wU/photos/AaVGc3lsaoudCCWojufTxXCut5HzN9VoE-X-xzHS5tfLvboo_5C__RT6VU5TkpVZquDrHrtDW7utjkhHyDOgtEmB6BSmP4SeAAsg7pEFyAqdUoVK7wVFyO1-hmBwqKmu4jT3kZTfyKywqdyWkK_zuiXp9gXpRC65WS1xkd4xLBmfE6TWEmdmkDa7CuUnX6g5gTkEcmTLOYHlpDG17bIrQShEsKmR-nwVb5l-Of8l8rcVLy6KuiAAWqvObMUZLOTT-73KqTMn93miXbfTxb0_YFo4aWeMBLCzmQziKNxEFNUJt4YzlnzUV8EhDkEKO2B_SHbYxMjhsMwJ0Yw6uUPYP6nwogO9011MaI6ihPwTG5_PoqL8VBco8kaWooD4bxK9HipNgwCNrb7vNZVn7DzPQFC79mc-3bYNax7loLkxxm8yYQQ-abd7"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Oranuch%20Thai%20Dining%2036%2F1%20Soi%20Sukhumvit%2023%2C%20%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%95%E0%B8%A2%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ0eGdrOaf4jARsbK1ylUw0wU",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Mango Sticky Rice",
+      "Papaya Salad"
+    ],
+    "id": "9257f5dc-55c4-4ff8-b2d3-5f123d42b478",
+    "source": "googlemaps",
+    "approved_at": "2026-06-05T14:19:52.667Z"
+  },
+  {
+    "name_en": "BIB: Break in Bangkok",
+    "name_zh": "BIB: Break in Bangkok",
+    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Every flavor.",
+    "description_zh": "在 BIB 點一杯咖啡，咬下剛烤好的麵包，每一口都是曼谷的故事 ☕️ Break in Bangkok 藏在巷弄裡，老闆把每種食材都玩出新花樣——從濃郁到清爽、從經典到實驗性，沒有兩次是一樣的味道。坐在這裡，看著晨光灑進來，感受曼谷人的慢生活，突然就懂為什麼大家都說這是隱藏版餐廳了。",
+    "category": "food",
+    "address": "Trinity Mall, 425 Si Lom 3, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7250652,
+    "lng": 100.5306019,
+    "photos": [
+      "places/ChIJs9xmR0qf4jARS8uu9Dx9pSw/photos/AaVGc3l-YAFcz2mGFcPyiFPhAKTotgB68pNGj5j_ooy4m-mZcuApr9imVG3wxqP0N8JZq5MZQ5OrR91biNF5dmFVszOTI5lj6YaBqbUlFQnMm7vN1AWRvxTAv1VgaWpHJMeY2_RAPlB2CGUPxc_4sKphVVjZUroUIh5f0zJY2I7_jbu0mnW6n7oK_EElBu6PKIiKcLGu858jre2AzfuCil_0pZei4znY1A2XAAdSk5s1BHXKR8bPHvYyasWYc-eXB1tI5E3qI-MQfHJsMtA99341G9GL0qDwoMKHMQbW9G-yga6HYT1BcaJ_2CzoAQJITcMecHFEEjolQxjAJRJXe3QqjV2r6-RkiI8oUnswss-IQ5lxdUIiD0p27_atJ2elr1mU5-VQfCcH4NElhHr_c-wiVMA_P1LbnOv2r2CuH2Vc03Kgqi4c"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=BIB%3A%20Break%20in%20Bangkok%20Trinity%20Mall%2C%20425%20Si%20Lom%203%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJs9xmR0qf4jARS8uu9Dx9pSw",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Every flavor"
+    ],
+    "id": "05ec4a84-3935-47af-a3a1-9610d35dc501",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T14:21:03.599Z"
   }
 ]
