@@ -360,5 +360,73 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-05T09:30:41.053Z"
+  },
+  {
+    "name_en": "VIBE Coffee & Plant-Based Food",
+    "name_zh": "VIBE Coffee & Plant-Based Food",
+    "description_en": "Plant-based never felt this good 🌱 Tucked in Soi Sukhumvit 36, VIBE Coffee is a bright, airy café with floor-to-ceiling windows and a menu that makes even meat-lovers rethink everything — vegan satay, moo ping, Thai and Western dishes, all done right.",
+    "description_zh": "吃素不將就 🌱 VIBE Coffee 藏在 Thonglor 巷弄裡，落地窗採光明亮、空間舒適，植物肉沙嗲、烤豬串通通有素食版，連肉食主義者也說驚艷，配一杯阿拉比卡咖啡，身心都舒暢。",
+    "category": "food",
+    "address": "118 สุขุมวิท 36 Soi Saen Sabai, Khwaeng Phra Khanong, Khet Phra Khanong, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7173084,
+    "lng": 100.5763028,
+    "photos": [
+      "places/ChIJt8NDElSf4jARQ8--RfcUxqc/photos/AaVGc3nABa5T8O22Km8rFlFgKpZoXdXBWU0Gl66weSeSSJIwvkBjEJu6itn5YRnkzytLhi_8nzpwEcfqBEipXqHFpoHlDQODMvC13eUG1pNijVZUcC_gdBjz8GdCAXd2uUullT158YTKUBmXfIqZ-lQqvzGrrea5JtKHHJxQEvJ34CgaZcOUjKf2eLzlChk_O4Sq9ibS_-PPye_aITp8_jx5CO4kBP8_Tfj_jIM3zxGbcElLYiXXh3tMjvtf24lxRLtIf9WAjTpNZS8tG5bO1GcVkvG6hR4l31JgOkbRtMtjO8MmhHZRGYTmneukzPOYQP5HMvqGQ-4Uwt_pme7gbMC7v_mhwW8HCPL6vvm7fgLQ-ubk1MgNrUrGRW0yDRlAFop91iayTCD6Hf3wOn49G41BiKWSiqQbpTp0PRXfeNQInc5eBg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=VIBE%20Coffee%20%26%20Plant-Based%20Food%20118%20%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%97%2036%20Soi%20Saen%20Sabai%2C%20Khwaeng%20Phra%20Khanong%2C%20Khet%20Phra%20Khanong%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJt8NDElSf4jARQ8--RfcUxqc",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "id": "4468b80f-77fe-4ecf-aa2c-c1282b49a2bd",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T10:54:37.012Z"
+  },
+  {
+    "name_en": "BOTANICESSENCE",
+    "name_zh": "BOTANICESSENCE",
+    "description_en": "Bangkok's most fragrant basement find 🌿 BOTANICESSENCE at M-Square Plaza is an essential oil lover's dream — a vast selection of pure oils, knowledgeable staff, and the kind of sensory experience that makes you linger far longer than planned.",
+    "description_zh": "曼谷最香的地下室 🌿 BOTANICESSENCE 藏在 M-Square Plaza 地下樓，超過百種純天然精油任你聞，專業又親切的店員帶你找到最對味的那瓶，香氛迷的朝聖地。",
+    "category": "shopping",
+    "address": "M-Square Plaza, B1 Floor, Maleenont Tower, Khwaeng Khlong Tan, Klong-Toey Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7175604,
+    "lng": 100.5722272,
+    "photos": [
+      "places/ChIJVdS5mAmf4jAR0Q6b-C_R2R8/photos/AaVGc3lDpzgyXlXEFP5twPKpxOZYEPY_1ixZVqw9qgXg5KFHBRWKxmjMfXXO7AdWH80s_gX1ifjcTYbCvODN4qAOzHOeah7OuR7wxN9NMa1WTJQPtfDBh2AgaE22y3ZKGnQ88zF8cSTGDGYwVPyM35-QLZnQa2VyjNy41scv1XLzyY7ap-3r0K05lweYhnsAHOAF0VcKQw2BkneijU9UmZTedJPamTA9VmXkfQk6sODm2QfBjW6jzhLshmlah2SBPx2DCu72nEIoSERypFKu9QkSU4gW4V5lARatpv0kol6GcGZ-krUdtHlVldaq3P7K4qU-x-E4HtrsLlkxABfObsmBXK28e36Rrjwcx0tx7xWBq02uGP9sMsxNVlBIp-tIOb5T53kOGeMl8N5VKxTbMRKuLy_RtFrj8I2soytGA6FEDPc"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=BOTANICESSENCE%20M-Square%20Plaza%2C%20B1%20Floor%2C%20Maleenont%20Tower%2C%20Khwaeng%20Khlong%20Tan%2C%20Klong-Toey%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJVdS5mAmf4jAR0Q6b-C_R2R8",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "id": "a1a8d427-65fe-4a89-9629-a18b4de096e7",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T10:55:59.829Z"
+  },
+  {
+    "name_en": "Tong Lai Sun",
+    "name_zh": "Tong Lai Sun",
+    "description_en": "The Chinese comfort food Bangkok didn't know it needed 🥟 Tucked in Soi Sukhumvit 41 near BTS Phrom Phong, Tong Lai Sun is a no-frills gem beloved by locals and expats alike — soup dumplings, spicy boiled beef, and wok-fried rice that genuinely taste like home.",
+    "description_zh": "在曼谷吃到讓人想家的中國菜 🥟 東來順藏在蓬蓬巷弄裡，湯包皮薄汁多、水煮牛肉鮮辣下飯、炒飯鑊氣十足，氛圍樸實溫暖，是當地人和日僑下班後最愛報到的那種地方。",
+    "category": "food",
+    "address": "2/52 Soi Sukhumvit 41, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7296538,
+    "lng": 100.57207230000002,
+    "photos": [
+      "places/ChIJlaVN-QCf4jAR5Aew14zyZ9I/photos/AaVGc3mUp1WQ4yKvIso2Gc-z8Gbf7qjdxeHisH7Kz_Rx2mUQ_pKZoodPLB_Azi5vxCF04hLcdn9Uk9GekZl3eMkfPuwY_x_OduJY2MYhza1G4ld5PPp-ImkLKSSx-nD9D946FCuJ8089Hs1F5oX-0aL7FdIT96dbJrTVJKnP2o7zLfiDpOtOtYOFpLAW3dbKmme3ie-vzuemxB6YkQzNNrLDHNTxBK4fI646dTPud5n2njvgLadIJET9HU3Sct0N4sNbaarH4j_XRwIDwjc1XvM3XvNMKAM6GvJuuu1YOpqxI6CCFD2pmoiyS5syEe5PF3X6JPKyDN7FWBtB8fcxuq-LsofghZCyye_e6Sfq8I5MD2vUQAoGRjRbqqJHpIaVAbQyTbwHa7wryQDxHHdcbSdqgrUTbR8ek6vkTWEGM_obb_TfxzU"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Tong%20Lai%20Sun%202%2F52%20Soi%20Sukhumvit%2041%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJlaVN-QCf4jAR5Aew14zyZ9I",
+    "rating": 4.2,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Dumplings"
+    ],
+    "id": "2793e363-f092-4e8f-b339-b070ad1a5aae",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T10:58:50.147Z"
   }
 ]
