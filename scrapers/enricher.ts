@@ -1,4 +1,4 @@
-import { generateDescriptionZh, generateDescriptionEn } from './translate'
+import { generateDescriptionZh, translateZhToEn } from './translate'
 import { buildDescZh, buildDescEn, cleanHighlights } from '../lib/buildDescriptions'
 
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
@@ -305,10 +305,8 @@ export async function enrichItem(
   const formattedAddress = place.formattedAddress ?? ''
   const area = extractArea(formattedAddress)
 
-  const [description_zh, description_en] = await Promise.all([
-    generateDescriptionZh(name_en, editorial, highlights, resolvedCategory, area),
-    generateDescriptionEn(name_en, editorial, highlights, resolvedCategory, area),
-  ])
+  const description_zh = await generateDescriptionZh(name_en, editorial, highlights, resolvedCategory, area)
+  const description_en = await translateZhToEn(description_zh)
 
   return {
     name_en,

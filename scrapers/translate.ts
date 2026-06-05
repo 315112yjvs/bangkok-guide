@@ -126,34 +126,12 @@ ${contextLines.length > 0 ? `參考資料：\n${contextLines.join('\n')}` : ''}`
   }
 }
 
-export async function generateDescriptionEn(
-  nameEn: string,
-  editorial: string | undefined,
-  highlights: string[],
-  category: string,
-  area?: string
-): Promise<string> {
-  if (!process.env.ANTHROPIC_API_KEY) return editorial ?? `A well-regarded ${category} spot in Bangkok.`
+export async function translateZhToEn(descZh: string): Promise<string> {
+  if (!process.env.ANTHROPIC_API_KEY) return descZh
 
-  const facts = await buildFacts(nameEn, editorial, highlights)
-  const areaLine = area && area !== 'Bangkok' ? `Area: ${area}` : ''
-  const contextLines = [...(areaLine ? [areaLine] : []), ...facts]
+  const prompt = `Translate the following Traditional Chinese Bangkok travel guide description into natural English. Keep the same vivid, atmospheric tone — like a friend recommending it on Instagram. Output only the translation, no quotes.
 
-  const prompt = `Write a vivid, scene-setting description for a Bangkok travel guide.
-
-Style:
-- Like a friend recommending it on Instagram — atmospheric and experiential
-- Describe being THERE, not just listing features
-- 2–3 sentences, natural and evocative
-- If data is limited, use the name, category, and area to write something evocative
-- Output the description only, no quotes
-
-Style example:
-"Riverside mookata with the best view in Bangkok 🔥 Everyday Mookrata sits right along the Chao Phraya River — grill your pork and seafood while boats drift past, live music plays in the background, and the city lights reflect off the water. The kind of evening you won't want to end."
-
-Place: ${nameEn}
-Category: ${category}
-${contextLines.length > 0 ? `Data:\n${contextLines.join('\n')}` : ''}`
+Chinese: ${descZh}`
 
   try {
     const msg = await client().messages.create({
@@ -162,8 +140,8 @@ ${contextLines.length > 0 ? `Data:\n${contextLines.join('\n')}` : ''}`
       messages: [{ role: 'user', content: prompt }],
     })
     const text = msg.content[0].type === 'text' ? msg.content[0].text.trim() : ''
-    return text || (editorial ?? `A well-regarded ${category} spot in Bangkok.`)
+    return text || descZh
   } catch {
-    return editorial ?? `A well-regarded ${category} spot in Bangkok.`
+    return descZh
   }
 }
