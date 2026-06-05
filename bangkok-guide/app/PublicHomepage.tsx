@@ -153,11 +153,7 @@ export function PublicHomepage({ locations }: Props) {
 
         <div className="relative z-10 h-full flex flex-col">
           {/* Top bar */}
-          <div className="flex justify-between items-center px-4 pt-5">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-              <span className="text-white/60 text-[10px] font-semibold tracking-[0.18em] uppercase">{strings[lang].siteName as string}</span>
-            </div>
+          <div className="flex justify-end items-center px-4 pt-5">
             <LanguageToggle lang={lang} setLang={setLang} />
           </div>
 
