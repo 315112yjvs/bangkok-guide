@@ -266,5 +266,99 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-05T09:15:52.455Z"
+  },
+  {
+    "name_en": "TrueLove @ Neverland (Husky Cafe)",
+    "name_zh": "TrueLove @ Neverland (Husky Cafe)",
+    "description_en": "The most wholesome afternoon Bangkok has to offer 🐺 TrueLove @ Neverland is a husky café tucked inside an Ari residential lane — home to 30+ fluffy dogs with big personalities. Two sessions daily, limited spots, arrive early or the huskies won't wait.",
+    "description_zh": "曼谷最療癒的下午，是和哈士奇一起度過的 🐺 TrueLove @ Neverland 藏在 Ari 住宅巷裡，30 隻哈士奇等你來玩，每天兩場限時入場，建議提早到，牠們可比你更受歡迎。",
+    "category": "cafe",
+    "address": "153 Soi Ari Samphan 2, Phaya Thai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7727506,
+    "lng": 100.536068,
+    "photos": [
+      "places/ChIJvUMXl66e4jARALcMSWimOWU/photos/AaVGc3kGdL2qk_NZXGme3HvkVu9o0psl8QTL4idX78JMxCDf3I3Y5gEWLjXNRcoiYlMfIS6xjtMR_H2g0t3FWpmoZ60EFkfGoR2iJtRTFXqBvj8CNX0MYYQPtwXLdpXYWm5b6nftISNQuFJQ6b67eli4pXrOYAwQ_8mJOaX6fsE8cr9W5Tgj1fmHcrvnd6XstiIj2O_hEmhAzclXnsWJkKpHhx0H4lCDaP-OH8jYuHwtEyvmX-nMlfORIyLxKceqdPV2t6_YZg50g65JyRhcB8QzDbicIPn3b-Cq3wyKTZOAlztvy1BtIy16hPXlZ_FMrwf4V3Q3huGpbnV_8n6LylYFzwIewbsiMCNrnlL2Q7CvE1jBEwxlC-BDbbSEIC6qt1tBgigVgG0Iuylsyfpc0_GVyHTcBfSvDXweAV-v2m9_JevvAif-"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=TrueLove%20%40%20Neverland%20(Husky%20Cafe)%20153%20Soi%20Ari%20Samphan%202%2C%20Phaya%20Thai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJvUMXl66e4jARALcMSWimOWU",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [],
+    "id": "fcdbb901-e8ec-48ce-b084-9c428f121e58",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T09:18:35.445Z"
+  },
+  {
+    "name_en": "Ongtong Khaosoi Ari Branch",
+    "name_zh": "Ongtong Khaosoi Ari Branch",
+    "description_en": "Skip the trip to Chiang Mai — Ari's got you covered 🍜 Ongtong Khaosoi is a Michelin-recommended gem serving northern Thai flavours with ingredients sourced fresh from Chiang Mai. Creamy curry broth, tender stewed beef, and a signature chrysanthemum milk to wash it all down.",
+    "description_zh": "不用去清邁，在 Ari 就能吃到道地北部麵 🍜 Ongtong Khaosoi 榮獲米其林推薦，食材直送自清邁，咖哩湯頭濃郁香滑，燉牛肉軟嫩入味，再配一杯招牌菊花鮮奶，北部風味一次滿足。",
+    "category": "food",
+    "address": "31 Phahonyothin Soi 7, Phaya Thai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7811904,
+    "lng": 100.5443932,
+    "photos": [
+      "places/ChIJT2m3lx2c4jARfziuf8CSZBY/photos/AaVGc3l40XzDufILAd8exzRIi_PkUp2qocsHSWZqm2gLBOs8no2P2Z6D9g80DnS4qUpY9RtGBXxoBI7ETfc_Yojb_cKMNXoj6Vg6esak1-g3CzYYR_hex4gO3xEDc15_l556CE0jeSSO19oCzNpAapaOq9z5aROcFBmLlaPA3N3UrQfvTefLsilkF49wy_KI4CZsLfmhvAI1EemdRp9mpe6_h9Hf8XiWBzfjQ5jNiCbHYH2Kx2afuJdpPS5yfsTTbXx_Z4fXZaCNBq1vsp_LodC-dwExDrHkla-uLh5fY9V5n1iX1Mr49uCKoQ4w7p-s0dqiOhAChNvzkVA_B8BUB80yIPslZByBN7mkoc8afQ8ZDkwvi6nESYywt5mLMpuzEGUctPmQIidCn0dZrio9cZZxkbVd-oaXBrZFphkc4z7zHU7yLUKt17CXaXC5KE_VozKj"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Ongtong%20Khaosoi%20Ari%20Branch%2031%20Phahonyothin%20Soi%207%2C%20Phaya%20Thai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJT2m3lx2c4jARfziuf8CSZBY",
+    "rating": 4.3,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Satay",
+      "Khao soi"
+    ],
+    "id": "d3af8569-2691-4a7c-ac52-771b197e4bc5",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T09:23:06.515Z"
+  },
+  {
+    "name_en": "Roasted Honey Glazed Pork Mae Sumontha",
+    "name_zh": "Roasted Honey Glazed Pork Mae Sumontha",
+    "description_en": "The one stall worth getting lost in Chatuchak for 🍖 Mae Sumontha's honey glazed roasted pork is market legend — juicy, perfectly balanced sweet and savory, best enjoyed with a steamy bao bun or sticky rice. Follow the smell and you'll find it.",
+    "description_zh": "週末逛恰圖恰，必繞路來找這攤 🍖 แม่สุมณฑา 的蜂蜜烤豬已是市場傳奇，豬肉鮮嫩多汁、甜鹹恰到好處，配上熱騰騰的刈包或糯米飯，光是香味就讓人走不動腿。",
+    "category": "food",
+    "address": "587 โครงการ 22 ซอย 4 /2ตลาดนัด จตุจักร 10 Kamphaeng Phet 2 Rd, Khwaeng Chatuchak, Khet Chatuchak, Krung Thep Maha Nakhon 10900, Thailand",
+    "lat": 13.7993369,
+    "lng": 100.54984189999999,
+    "photos": [
+      "places/ChIJyaweqRWc4jARszM8RKge0Gw/photos/AaVGc3mm7dTa4svWdGx8Ws5ae2AJrCvUpvQ7sN9F2n_4as5oQW5jlW8C-R7ecNQCCartwqObhIUKBnXMlorGKCDDmzs2KpXu5iMywa3mFDBnIfrv3svM05hWQO5NCMbYao2hGBSA7c8XFaRsScyCKxceqrS_s_wdaoI2gKhhuHgW8w__EVuIwkKTWGjjF9cY1O8tIM1PKabJ_7hQI9P0z7LhjtKJnEcMMOkF9d4roNFDSKchkeg-u5ym2-umFFATD3JmABGMLoiXFQoZMU1mOe6kAZBa9Y1HtGMhkzAJ1u8IiKTOKmsNfZ3VN4jtmSxFdoAGz0sifFQOkrliKG_WWYG0SVB24ZCqHAJRD8JNBudRajhwFeDjpNc1Q8isVEcIL5Uq404r3LM_4Tl4uyIYV2w0DEuMwCvZ4evKzQ7XeJdw4sbrGAP6"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Roasted%20Honey%20Glazed%20Pork%20Mae%20Sumontha%20587%20%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%2022%20%E0%B8%8B%E0%B8%AD%E0%B8%A2%204%20%2F2%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%99%E0%B8%B1%E0%B8%94%20%E0%B8%88%E0%B8%95%E0%B8%B8%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%2010%20Kamphaeng%20Phet%202%20Rd%2C%20Khwaeng%20Chatuchak%2C%20Khet%20Chatuchak%2C%20Krung%20Thep%20Maha%20Nakhon%2010900%2C%20Thailand&query_place_id=ChIJyaweqRWc4jARszM8RKge0Gw",
+    "rating": 4.5,
+    "price_range": 1,
+    "tag": "evergreen",
+    "highlights": [
+      "Another menu too",
+      "If you are there"
+    ],
+    "id": "54434528-52d2-4829-8b4e-a03467a45b87",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T09:24:02.914Z"
+  },
+  {
+    "name_en": "เจียงฮวา 江花 Charm ｜เสี่ยวหลงเปา ข้าวหมูพะโล้ และอาหารไต้หวันแท้",
+    "name_zh": "เจียงฮวา 江花 Charm ｜เสี่ยวหลงเปา ข้าวหมูพะโล้ และอาหารไต้หวันแท้",
+    "description_en": "A little taste of Taiwan in the heart of Bangkok 🍚 Jiang Hua is a home away from home for Taiwanese expats — and the braised pork rice is the star. One bite of that glossy, slow-cooked lu rou fan and homesickness disappears completely.",
+    "description_zh": "身在曼谷，心回台灣 🍚 江花台灣料理是異鄉遊子的秘密基地，一碗滷肉飯端上桌，油亮的肉燥香氣四溢，那個味道不用多說，就是家的感覺。",
+    "category": "food",
+    "address": "Chok Chai 4 Soi 28, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.808210299999999,
+    "lng": 100.5966129,
+    "photos": [
+      "places/ChIJoV2yMwCd4jARg7_k2d5F6GM/photos/AaVGc3kFTRlMmayABW2-2OnpcQ-MTObC_Nk-cLn6EqhsgzgEi0AdWkXoMwWem7YZmw38US0Ctkk1ftpYewzhxUH9cnrQAcshWFzT1BKtnsKjWxt0Ey7gDbHMAqULFLlQKPihPcCsg1v4vXFxwDRGMJxW9e4CAF2YbUaWbiSGFTTwgfSU2iKRanoFw9ELbRHBpbfIyc87HiKeVoKZoNTL-fx2fvxbfPYoqp6ifDti6o2_j-Tif_joWRkbbWnh8U69MKvzfnBiFkfsT4H8zcmfZj3CATWqFjgLEZQkzZrYDAGIkwPoO-gCAin-bepRE2Px0mANyyWUXyXDcfqud9yLPnYaAYLYgvGfaIZjrff35Qm244GzgJj8dhqSvNs9YDMfr0N93UePkajI_ZTkLYV2ooFfx6jT3Vp5l5r2gf2utrSqr8L8o-R-cJLG_7J1MQBrUA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B9%80%E0%B8%88%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%AE%E0%B8%A7%E0%B8%B2%20%E6%B1%9F%E8%8A%B1%20Charm%20%EF%BD%9C%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%AB%E0%B8%A5%E0%B8%87%E0%B9%80%E0%B8%9B%E0%B8%B2%20%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%9E%E0%B8%B0%E0%B9%82%E0%B8%A5%E0%B9%89%20%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%84%E0%B8%95%E0%B9%89%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%81%E0%B8%97%E0%B9%89%20Chok%20Chai%204%20Soi%2028%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230%2C%20Thailand&query_place_id=ChIJoV2yMwCd4jARg7_k2d5F6GM",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [],
+    "id": "09898b6d-93a0-41c7-ad38-adcf539a09b6",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T09:30:41.053Z"
   }
 ]
