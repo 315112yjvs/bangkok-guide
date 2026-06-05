@@ -4,7 +4,7 @@ export const strings = {
   zh: {
     siteName: '曼谷旅遊指南',
     heroTitle: '住在曼谷的人',
-    heroTitleAccent: '告訴你這週在瘋什麼',
+    heroTitleAccent: '最近在瘋什麼',
     heroSubtitle: '泰國社群即時熱度，用中文呈現給台灣人',
     searchPlaceholder: '搜尋餐廳、咖啡廳...',
     categoryAll: '全部',
