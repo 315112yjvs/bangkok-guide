@@ -96,15 +96,13 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
       {/* Photo */}
       <div className="relative h-28 w-full">
         <Image src={photo} alt={name} fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" unoptimized={rawPhoto.startsWith('places/')} />
-        {/* Source badge — skip Google Maps */}
-        {location.source !== 'googlemaps' && (
-          <div className="absolute top-1.5 left-1.5">
-            <span className={`inline-flex items-center gap-1 text-[8px] font-bold px-1.5 py-0.5 rounded-full text-white shadow-sm ${badge.color}`}>
-              <svg width="9" height="9" viewBox="0 0 24 24" dangerouslySetInnerHTML={{ __html: SOURCE_SVG[location.source] }} />
-              {strings[lang][badge.label] as string}
-            </span>
-          </div>
-        )}
+        {/* Source badge */}
+        <div className="absolute top-1.5 left-1.5">
+          <span className={`inline-flex items-center gap-1 text-[8px] font-bold px-1.5 py-0.5 rounded-full text-white shadow-sm ${badge.color}`}>
+            <svg width="9" height="9" viewBox="0 0 24 24" dangerouslySetInnerHTML={{ __html: SOURCE_SVG[location.source] }} />
+            {strings[lang][badge.label] as string}
+          </span>
+        </div>
         {/* Tag badge — skip evergreen */}
         {tag !== 'evergreen' && (
           <div className="absolute top-1.5 right-1.5">
