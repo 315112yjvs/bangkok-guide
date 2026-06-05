@@ -10,7 +10,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ placeId
       headers: {
         'X-Goog-Api-Key': apiKey,
         'X-Goog-FieldMask': 'photos,editorialSummary,reviews',
-        'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://bangkok-guide-alpha.vercel.app/',
+        'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.bkk-local.com/',
       },
       next: { revalidate: 86400 },
     })

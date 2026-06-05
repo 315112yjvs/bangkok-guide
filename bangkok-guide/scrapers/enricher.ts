@@ -34,7 +34,7 @@ async function findPlace(name: string, lat?: number, lng?: number): Promise<Plac
       headers: {
         'Content-Type': 'application/json',
         'X-Goog-Api-Key': apiKey,
-        'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://bangkok-guide-alpha.vercel.app/',
+        'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.bkk-local.com/',
         'X-Goog-FieldMask': [
           'places.displayName',
           'places.formattedAddress',

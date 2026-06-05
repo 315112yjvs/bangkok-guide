@@ -97,7 +97,7 @@ async function fetchPlacesQuery(query: string, category: QueryConfig['category']
     headers: {
       'Content-Type': 'application/json',
       'X-Goog-Api-Key': apiKey,
-      'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://bangkok-guide-alpha.vercel.app/',
+      'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.bkk-local.com/',
       'X-Goog-FieldMask': [
         'places.displayName', 'places.formattedAddress', 'places.primaryTypeDisplayName',
         'places.businessStatus', 'places.rating', 'places.priceLevel',
