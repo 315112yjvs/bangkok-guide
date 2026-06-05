@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × TikTok 爆紅地點 × 每日更新',
     url: 'https://www.bkk-local.com',
     siteName: '曼谷人',
-    images: [{ url: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&h=630&fit=crop', width: 1200, height: 630 }],
+    images: [{ url: 'https://www.bkk-local.com/hero-bangkok.jpg', width: 1200, height: 900 }],
     locale: 'zh_TW',
     type: 'website',
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '曼谷人 | BKK Local',
     description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 每日更新',
-    images: ['https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=1200&h=630&fit=crop'],
+    images: ['https://www.bkk-local.com/hero-bangkok.jpg'],
   },
 }
 
