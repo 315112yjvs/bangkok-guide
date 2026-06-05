@@ -588,7 +588,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=BARTELS%20Asok%20-%20Sourdough%20Sandwiches%2C%20Coffee%20%26%20Juicery%20199%2F9-11%20Sukhumvit%20Rd%2C%20Khwaeng%20Khlong%20Toei%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJa7RbIkGf4jARxc9xrSROCts",
     "rating": 4.8,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "highlights": [],
     "id": "b6f36185-158f-40c0-8adf-a6ffc255151d",
     "source": "googlemaps",
@@ -610,7 +610,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Living%20Room%20at%20Baan%20Trok%20Tua%20Ngork%20Pom%20Prap%2C%20Pom%20Prap%20Sattru%20Phai%2C%20Bangkok%2010100%2C%20Thailand&query_place_id=ChIJPdNaJwCZ4jAR78vTIhsv30Q",
     "rating": 4.6,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "highlights": [],
     "id": "cc73d19d-e3a8-4460-bc7f-d27ea2d1147b",
     "source": "googlemaps",
@@ -829,5 +829,29 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-05T11:36:58.669Z"
+  },
+  {
+    "name_zh": "TAIBAN (ใต้บ้าน)",
+    "name_en": "TAIBAN (ใต้บ้าน)",
+    "name_th": "",
+    "description_zh": "躲進暹羅商圈的老洋房咖啡廳，推開木門的瞬間整個世界都安靜了 ☕ TAIBAN 就像朋友家的客廳，斑駁磚牆、復古傢俱、柔和午後光線灑進來，點杯手沖咖啡窩在角落，看著來來往往的曼谷人步調都跟著慢了下來。這裡的每一杯都能喝到故事，難怪是在地上班族逃離塵囂的秘密基地。",
+    "description_en": "Hidden in the quiet sois near Siam, Taiban feels like stumbling into a local's secret — all exposed brick, vintage finds, and that perfect golden-hour light streaming through the windows. Order something from their all-day brunch menu, settle into one of their cozy corners, and watch Bangkok's creative types come and go, laptop bags slung over shoulders and iced coffees in hand. It's the kind of cafe that makes you want to stay all afternoon, no rush.",
+    "category": "cafe",
+    "address": "476/5 Thanon Rama IV, Khwaeng Rong Muang, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "address_th": "",
+    "lat": 13.7384617,
+    "lng": 100.5179186,
+    "source": "googlemaps",
+    "source_url": "https://maps.app.goo.gl/ixpTjWGXsMfusCQy6",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "evergreen",
+    "action": "add",
+    "photos": [
+      "places/ChIJcxvckaeZ4jARfnIztkIvpnM/photos/AaVGc3ndEq6qAc2LtFn175EKCyFk_aOwKqk0MNO9RHDgttVppR-b138mzTP_vU7Wuy0g8_UEyQbVm9Y-L_2yGGMLhs-cKClgEBSNWG-pi17HDUNZDpfsRB8pous8Rcm9XQoI2WddkZBTcoiRiYmJzpTSTNEgngiwHdJo6fW8SQXGLabrzFP-2ZWi-Ozo5ql6qCZeKw5GoBOex5TFgQf8XOBsaFBVDBCXkq5yDDjgHas68MyEceO7TyL9tlUoYd0vKqQaOeNYLMAhFair1gWb1vypnQ5zMC_3Be0b01hdw1pj_WsC7_c4QXQHaTrpzVUt1MLoAS3zd9FAtO_OFC69NWeZ2bS1Xld_Uf1v6Mo2SmFBrI-UFv7aX4F2i1Ex1SQLiZLMSvbaBIqzvEfq82X-k49PjS2J8TB8BAhVUjlJyAT1ytxrgw"
+    ],
+    "hashtags": [],
+    "id": "ee55ea39-2833-44e8-9700-f8b715286a18",
+    "approved_at": "2026-06-05T12:33:13.570Z"
   }
 ]
