@@ -141,60 +141,58 @@ export function PublicHomepage({ locations }: Props) {
     <div className="max-w-md mx-auto bg-white min-h-screen overflow-hidden relative shadow-xl">
 
       {/* HERO */}
-      <div className="sticky top-0 z-0 h-[68vw] max-h-80 min-h-52 overflow-hidden">
-        {/* Photo — full brightness, gradient does the work */}
+      <div className="sticky top-0 z-0 h-[72vw] max-h-96 min-h-60 overflow-hidden">
         <Image
           src="/hero-bangkok.jpg"
           alt="Bangkok"
-          fill className="object-cover object-center"
+          fill className="object-cover object-center scale-105"
           priority
         />
-        {/* Gradient: dark at very top (for readability) + heavy at bottom */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/85" />
+        {/* layered gradient: subtle top bar darkening + heavy title backdrop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/90" />
 
         <div className="relative z-10 h-full flex flex-col">
           {/* Top bar */}
-          <div className="flex justify-between items-center px-4 pt-4">
-            <div className="flex items-center gap-1.5">
+          <div className="flex justify-between items-center px-4 pt-5">
+            <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-              <span className="text-white/70 text-[9px] font-bold tracking-[0.15em] uppercase">{strings[lang].siteName as string}</span>
+              <span className="text-white/60 text-[10px] font-semibold tracking-[0.18em] uppercase">{strings[lang].siteName as string}</span>
             </div>
             <LanguageToggle lang={lang} setLang={setLang} />
           </div>
 
-          {/* Push content to bottom */}
           <div className="flex-1" />
 
           {/* Bottom editorial block */}
-          <div className="px-4 pb-4">
-            {/* Live badge */}
-            <div className="flex items-center gap-2 mb-2.5">
-              <span className="inline-flex items-center gap-1 bg-orange-500/90 text-white text-[9px] font-black px-2 py-0.5 rounded-full tracking-wide">
+          <div className="px-5 pb-5">
+            {/* Live badge + subtitle */}
+            <div className="flex items-center gap-2 mb-3">
+              <span className="inline-flex items-center gap-1.5 bg-orange-500 text-white text-[9px] font-black px-2.5 py-1 rounded-full tracking-widest uppercase shadow-lg">
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                 LIVE
               </span>
-              <span className="text-white/40 text-[10px]">{lang === 'zh' ? '每日更新 · 泰國社群精選' : 'Daily updates · Thai social picks'}</span>
+              <span className="text-white/50 text-[11px] tracking-wide">{lang === 'zh' ? '每日更新 · 泰國社群精選' : 'Daily updates · Thai social picks'}</span>
             </div>
 
-            {/* Title */}
-            <h1 className="font-black leading-[1.1] mb-1">
-              <span className="text-[26px] text-white block">{strings[lang].heroTitle as string}</span>
-              <span className="text-[26px] text-amber-400 block">{strings[lang].heroTitleAccent as string}</span>
+            {/* Title — 六分糖字型 */}
+            <h1 className="leading-[1.15] mb-4">
+              <span className="font-liufen text-[32px] text-white drop-shadow-lg block">{strings[lang].heroTitle as string}</span>
+              <span className="font-liufen text-[32px] text-amber-400 drop-shadow-lg block">{strings[lang].heroTitleAccent as string}</span>
             </h1>
 
-            {/* Search — frosted glass pill */}
-            <div className="mt-3 flex items-center gap-2 bg-white/12 backdrop-blur-md border border-white/20 rounded-full px-4 py-2.5">
-              <svg className="w-3.5 h-3.5 text-white/50 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            {/* Search bar */}
+            <div className="flex items-center gap-2.5 bg-white/15 backdrop-blur-xl border border-white/25 rounded-2xl px-4 py-3 shadow-lg">
+              <svg className="w-4 h-4 text-white/50 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
               </svg>
               <input
-                className="flex-1 text-[13px] outline-none text-white placeholder-white/40 bg-transparent"
+                className="flex-1 text-[14px] outline-none text-white placeholder-white/45 bg-transparent"
                 placeholder={strings[lang].searchPlaceholder as string}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
               {query && (
-                <button onClick={() => setQuery('')} className="text-white/50 font-bold text-sm leading-none">✕</button>
+                <button onClick={() => setQuery('')} className="text-white/60 hover:text-white text-sm leading-none transition-colors">✕</button>
               )}
             </div>
           </div>
