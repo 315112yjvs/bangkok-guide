@@ -302,13 +302,13 @@ export async function enrichItem(
 
   const name_zh = name_en  // keep original name, no translation
 
-  const [description_zh, description_en] = await Promise.all([
-    generateDescriptionZh(name_en, editorial, highlights, resolvedCategory),
-    generateDescriptionEn(name_en, editorial, highlights, resolvedCategory),
-  ])
-
   const formattedAddress = place.formattedAddress ?? ''
   const area = extractArea(formattedAddress)
+
+  const [description_zh, description_en] = await Promise.all([
+    generateDescriptionZh(name_en, editorial, highlights, resolvedCategory, area),
+    generateDescriptionEn(name_en, editorial, highlights, resolvedCategory, area),
+  ])
 
   return {
     name_en,

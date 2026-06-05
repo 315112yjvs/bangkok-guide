@@ -81,7 +81,8 @@ export async function generateDescriptionZh(
   nameEn: string,
   editorial: string | undefined,
   highlights: string[],
-  category: string
+  category: string,
+  area?: string
 ): Promise<string> {
   const CAT_ZH: Record<string, string> = {
     food: '餐廳', cafe: '咖啡廳', shopping: '購物景點',
@@ -92,7 +93,8 @@ export async function generateDescriptionZh(
   if (!process.env.ANTHROPIC_API_KEY) return `曼谷人氣${catZh}，評價不錯，值得一訪。`
 
   const facts = await buildFacts(nameEn, editorial, highlights)
-  if (facts.length === 0) return `曼谷人氣${catZh}，評價不錯，值得一訪。`
+  const areaLine = area && area !== 'Bangkok' ? `區域：${area}` : ''
+  const contextLines = [...(areaLine ? [areaLine] : []), ...facts]
 
   const prompt = `你是曼谷旅遊指南的編輯，用繁體中文為以下地點寫一段生動介紹。
 
@@ -101,7 +103,7 @@ export async function generateDescriptionZh(
 - 描述「在這裡的體驗」，而不只是列出特色
 - 可帶入氛圍、景色或當下的感受
 - 40–80 個中文字
-- 只根據提供的資料寫，不補充未知細節
+- 若資料有限，根據店名、類別、區域發揮想像力，寫出有溫度的介紹
 - 直接輸出文字，不加引號
 
 風格範例：
@@ -109,8 +111,7 @@ export async function generateDescriptionZh(
 
 地點名稱：${nameEn}
 類別：${catZh}
-參考資料：
-${facts.join('\n')}`
+${contextLines.length > 0 ? `參考資料：\n${contextLines.join('\n')}` : ''}`
 
   try {
     const msg = await client().messages.create({
@@ -129,12 +130,14 @@ export async function generateDescriptionEn(
   nameEn: string,
   editorial: string | undefined,
   highlights: string[],
-  category: string
+  category: string,
+  area?: string
 ): Promise<string> {
   if (!process.env.ANTHROPIC_API_KEY) return editorial ?? `A well-regarded ${category} spot in Bangkok.`
 
   const facts = await buildFacts(nameEn, editorial, highlights)
-  if (facts.length === 0) return editorial ?? `A well-regarded ${category} spot in Bangkok.`
+  const areaLine = area && area !== 'Bangkok' ? `Area: ${area}` : ''
+  const contextLines = [...(areaLine ? [areaLine] : []), ...facts]
 
   const prompt = `Write a vivid, scene-setting description for a Bangkok travel guide.
 
@@ -142,7 +145,7 @@ Style:
 - Like a friend recommending it on Instagram — atmospheric and experiential
 - Describe being THERE, not just listing features
 - 2–3 sentences, natural and evocative
-- Only use the provided data, never invent details
+- If data is limited, use the name, category, and area to write something evocative
 - Output the description only, no quotes
 
 Style example:
@@ -150,8 +153,7 @@ Style example:
 
 Place: ${nameEn}
 Category: ${category}
-Data:
-${facts.join('\n')}`
+${contextLines.length > 0 ? `Data:\n${contextLines.join('\n')}` : ''}`
 
   try {
     const msg = await client().messages.create({
