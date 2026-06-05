@@ -424,6 +424,47 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
   }
   const [form, setForm] = useState(empty)
   const [saving, setSaving] = useState(false)
+  const [importName, setImportName] = useState('')
+  const [importUrl, setImportUrl] = useState('')
+  const [importing, setImporting] = useState(false)
+  const [importError, setImportError] = useState('')
+
+  async function quickImport() {
+    if (!importName.trim()) return
+    setImporting(true)
+    setImportError('')
+    try {
+      const res = await fetch('/api/quickimport', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: importName.trim(), mapsUrl: importUrl.trim() || undefined, category: form.category }),
+      })
+      if (!res.ok) { setImportError('找不到這個地點，請確認名稱後重試'); return }
+      const data = await res.json()
+      setForm(f => ({
+        ...f,
+        name_en: data.name_en ?? f.name_en,
+        name_zh: data.name_zh ?? f.name_zh,
+        description_zh: data.description_zh ?? f.description_zh,
+        description_en: data.description_en ?? f.description_en,
+        category: data.category ?? f.category,
+        address: data.address ?? f.address,
+        lat: data.lat ?? f.lat,
+        lng: data.lng ?? f.lng,
+        rating: data.rating ?? f.rating,
+        photosInput: (data.photos ?? []).join(', '),
+        hashtagsInput: (data.hashtags ?? []).join(', '),
+        source: 'googlemaps',
+        source_url: importUrl.trim() || f.source_url,
+      }))
+      setImportName('')
+      setImportUrl('')
+    } catch {
+      setImportError('匯入失敗，請稍後再試')
+    } finally {
+      setImporting(false)
+    }
+  }
 
   function field(key: keyof typeof form) {
     return (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -462,7 +503,42 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
 
   return (
     <form onSubmit={submit} className="bg-white rounded-2xl p-6 max-w-2xl">
-      <h2 className="text-lg font-black text-[#0f172a] mb-5">手動新增地點</h2>
+      <h2 className="text-lg font-black text-[#0f172a] mb-4">新增地點</h2>
+
+      {/* ── QUICK IMPORT ── */}
+      <div className="mb-6 bg-indigo-50 border border-indigo-100 rounded-2xl p-4">
+        <p className="text-xs font-black text-indigo-600 uppercase tracking-wide mb-3">⚡ 快速匯入</p>
+        <div className="flex gap-2 mb-2">
+          <input
+            type="text"
+            value={importName}
+            onChange={e => setImportName(e.target.value)}
+            placeholder="店名（英文或泰文）"
+            className="flex-1 border border-indigo-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-indigo-400 bg-white"
+            onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), quickImport())}
+          />
+          <button
+            type="button"
+            onClick={quickImport}
+            disabled={importing || !importName.trim()}
+            className="shrink-0 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white text-xs font-bold px-4 py-2 rounded-xl transition-colors flex items-center gap-1.5"
+          >
+            {importing
+              ? <><svg className="w-3.5 h-3.5 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>匯入中…</>
+              : '自動填入'}
+          </button>
+        </div>
+        <input
+          type="text"
+          value={importUrl}
+          onChange={e => setImportUrl(e.target.value)}
+          placeholder="Google Maps URL（選填，提高比對準確度）"
+          className="w-full border border-indigo-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-indigo-400 bg-white"
+        />
+        {importError && <p className="text-xs text-red-500 mt-2">{importError}</p>}
+        <p className="text-[10px] text-indigo-400 mt-2">自動查詢地址、座標、評分、照片，並用 AI 生成中英文介紹</p>
+      </div>
+
       <div className="grid grid-cols-2 gap-4">
         <div><label className={label}>中文名稱</label><input className={inp} value={form.name_zh} onChange={field('name_zh')} required /></div>
         <div><label className={label}>English Name</label><input className={inp} value={form.name_en} onChange={field('name_en')} required /></div>
