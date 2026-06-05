@@ -47,6 +47,7 @@ export function PublicHomepage({ locations }: Props) {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
   const [locating, setLocating] = useState(false)
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set())
+  const [mapExpanded, setMapExpanded] = useState(false)
 
   useEffect(() => {
     const ids: string[] = JSON.parse(localStorage.getItem('saved_locations') ?? '[]')
@@ -71,6 +72,10 @@ export function PublicHomepage({ locations }: Props) {
     return () => navigator.geolocation.clearWatch(watchId)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(() => {
+    if (specialFilter === 'nearby') setMapExpanded(true)
+  }, [specialFilter])
 
   function handleToggleSave(id: string) {
     setSavedIds((prev) => {
@@ -196,8 +201,8 @@ export function PublicHomepage({ locations }: Props) {
         </div>
       </div>
 
-      {/* MAP strip */}
-      <div className="h-56">
+      {/* MAP strip — collapsible */}
+      <div className={`overflow-hidden transition-[height] duration-300 ease-in-out ${mapExpanded ? 'h-56' : 'h-0'}`}>
         <LocationMap
           locations={filtered}
           lang={lang}
@@ -208,8 +213,20 @@ export function PublicHomepage({ locations }: Props) {
 
       {/* BOTTOM SHEET */}
       <div className="relative z-10 bg-gray-50 rounded-t-3xl -mt-5 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
-        <div className="flex justify-center pt-3 pb-1">
+        <div className="flex justify-center items-center pt-3 pb-1 relative">
           <div className="w-9 h-1 bg-gray-300 rounded-full" />
+          <button
+            onClick={() => setMapExpanded(v => !v)}
+            className="absolute right-3 flex items-center gap-1.5 text-[11px] font-bold text-gray-400 hover:text-[#1e1b4b] transition-colors active:scale-95"
+          >
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7M9 20l6-3M9 20V7m6 13l4.553 2.276A1 1 0 0021 21.382V10.618a1 1 0 00-.553-.894L15 7M15 20V7M9 7l6-3" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            {lang === 'zh' ? (mapExpanded ? '收起地圖' : '查看地圖') : (mapExpanded ? 'Hide Map' : 'Map')}
+            <svg className={`w-2.5 h-2.5 transition-transform duration-200 ${mapExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+              <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
 
         {/* Category tabs */}
@@ -336,6 +353,19 @@ export function PublicHomepage({ locations }: Props) {
                 </section>
               )
             })}
+            {filtered.length === 0 && (
+              <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
+                <span className="text-5xl mb-4">
+                  {({'hotel': '🏨', 'attraction': '🗺️', 'shopping': '🛍️', 'nightlife': '🍸', 'food': '🍜', 'cafe': '☕'} as Record<string, string>)[activeCategory] ?? '🔍'}
+                </span>
+                <p className="text-sm font-bold text-gray-400 mb-1">
+                  {lang === 'zh' ? '這個類別暫無推薦' : 'No picks in this category yet'}
+                </p>
+                <p className="text-xs text-gray-300 text-center">
+                  {lang === 'zh' ? '持續更新中，敬請期待！' : 'We are curating picks — check back soon!'}
+                </p>
+              </div>
+            )}
           </div>
         )}
 
