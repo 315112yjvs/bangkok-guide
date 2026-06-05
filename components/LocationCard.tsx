@@ -92,7 +92,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   }
 
   return (
-    <Link href={`/location/${location.id}`} className="block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <Link href={`/location/${location.id}`} className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {/* Photo */}
       <div className="relative h-36 w-full">
         <Image src={photo} alt={name} fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" unoptimized={rawPhoto.startsWith('places/')} />
@@ -106,7 +106,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
         )}
       </div>
 
-      <div className="p-2.5">
+      <div className="p-2.5 flex flex-col flex-1">
         {/* Name row */}
         <div className="flex items-start justify-between gap-1 mb-0.5">
           <div className="flex items-center gap-1 flex-1 min-w-0">
@@ -148,7 +148,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
         )}
 
         {/* Footer */}
-        <div className="flex items-center justify-between gap-1">
+        <div className="flex items-center justify-between gap-1 mt-auto">
           <div className="flex items-center gap-1.5 min-w-0 flex-1">
             <span className="shrink-0 text-[10px] font-bold text-amber-500">★ {location.rating.toFixed(1)}</span>
             {location.price_range > 0 && (

@@ -338,7 +338,7 @@ export function PublicHomepage({ locations }: Props) {
                   {/* Horizontal scroll cards */}
                   <div className="flex gap-3 overflow-x-auto no-scrollbar px-3 pb-1">
                     {items.map((loc) => (
-                      <div key={loc.id} className="shrink-0 w-44">
+                      <div key={loc.id} className="shrink-0 w-44 h-[260px]">
                         <LocationCard
                           location={loc}
                           lang={lang}
