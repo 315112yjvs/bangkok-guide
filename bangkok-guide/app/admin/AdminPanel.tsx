@@ -595,6 +595,8 @@ export function AdminPanel() {
   const [approved, setApproved] = useState<Location[]>([])
   const [scraperStatus, setScraperStatus] = useState<string>('就緒')
   const [scraperRunning, setScraperRunning] = useState(false)
+  const [retranslating, setRetranslating] = useState(false)
+  const [retranslateStatus, setRetranslateStatus] = useState('')
   const [customKeywords, setCustomKeywords] = useState('')
   const [deployStatus, setDeployStatus] = useState<string>('')
   const [deploying, setDeploying] = useState(false)
@@ -685,6 +687,21 @@ export function AdminPanel() {
     }
   }
 
+  async function retranslate() {
+    setRetranslating(true)
+    setRetranslateStatus('翻譯中...')
+    try {
+      const res = await fetch('/api/retranslate', { method: 'POST' })
+      const data = await res.json()
+      setRetranslateStatus(`完成，更新了 ${data.updated} 筆`)
+      loadData()
+    } catch {
+      setRetranslateStatus('失敗，請重試')
+    } finally {
+      setRetranslating(false)
+    }
+  }
+
   async function deploy() {
     setDeploying(true)
     setDeployStatus('上傳中...')
@@ -757,6 +774,17 @@ export function AdminPanel() {
             {scraperRunning ? '執行中...' : '執行爬蟲'}
           </button>
           <p className="text-slate-500 text-[10px] text-center mt-1.5">{scraperStatus}</p>
+          <button
+            onClick={retranslate}
+            disabled={retranslating}
+            className="mt-2 w-full bg-violet-600 hover:bg-violet-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5 flex items-center justify-center gap-2"
+          >
+            <svg className={`w-3.5 h-3.5 ${retranslating ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+              <path d="M5 8l4-4 4 4M9 4v9M19 16l-4 4-4-4M15 20v-9"/>
+            </svg>
+            {retranslating ? '翻譯中...' : '重新翻譯英文'}
+          </button>
+          {retranslateStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{retranslateStatus}</p>}
           <button
             onClick={deploy}
             disabled={deploying}
