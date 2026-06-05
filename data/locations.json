@@ -142,5 +142,78 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-03T11:46:20.725Z"
+  },
+  {
+    "name_en": "A KEEN HOUSE",
+    "name_zh": "A KEEN HOUSE",
+    "description_en": "A glass-house hideaway tucked in Ekkamai 🌿 A Keen House is a converted three-storey townhouse with Scandi-minimal meets wabi-sabi vibes — natural light, curated corners, and creative drinks like the Date Cream Latte. The kind of café you stumble upon and keep coming back to.",
+    "description_zh": "Ekkamai 巷弄裡的玻璃屋咖啡廳 🌿 A Keen House 由三層老街屋改建而成，北歐簡約混日式侘寂，自然光灑進玻璃溫室座位，配一杯 Date Cream Latte，安靜得像個秘密。",
+    "category": "cafe",
+    "address": "4 Soi Sukjai Sukhumvit 40, Khwaeng Phra Khanong, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7169817,
+    "lng": 100.5811389,
+    "photos": [
+      "places/ChIJS1-3ni6f4jARAS9TqmgpsLM/photos/AaVGc3mpktdPmi_LWhdIe6SqtiI6VHpBr4ICimi7-tuqK9gXjFcJ2hhUreTygJkuYdk2ldz0Q9KJrT7p8tw-N_NFdA5Ae6mMwFsIsuX_pQLSpI11rejt9F1RCO1-QbhwmYAZ_ZwOcpekNQt9NAEQe0e_TFwTMSH8XX7h1U1YjOCQ6hbUbNo9L3SwuR6Vb4ZE1dFlPjE3v4gmm9BKD5wuQ-tMDMkqdhxPvH-k0s800tKbMURxjkXaOgorpMGxOyUf-9u6FRISe-o_lq7nKilcyjViAAaOLcwft8_C6Db9Doa8ivwthFd9MNID5m9oQIoPGKkCyMqC5WxSSg3IATNKwvIqOgqcAkUrP9g7eeYYmV8QpyRc1BO1vorb3ui5HTYQ_l5rcnUPlbQxkY47DRyR99WdJPri1-4S-3vFuC6sblCI192JpzKv"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=A%20KEEN%20HOUSE%204%20Soi%20Sukjai%20Sukhumvit%2040%2C%20Khwaeng%20Phra%20Khanong%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJS1-3ni6f4jARAS9TqmgpsLM",
+    "rating": 4.7,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Croissant",
+      "Clean"
+    ],
+    "id": "bea35baf-6948-4313-938c-4b1b203e7012",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T09:09:51.923Z"
+  },
+  {
+    "name_en": "Ekamai Mookata",
+    "name_zh": "Ekamai Mookata",
+    "description_en": "The perfect after-work unwind 🔥 Ekamai Mookata hides down Soi Ekkamai 24 — open-air garden, live Thai music, and a sizzling charcoal grill loaded with fresh pork. Cold beer, good company, and nowhere else to be.",
+    "description_zh": "下班後最想去的那種地方 🔥 Ekamai Mookata 藏在 Ekamai 24 巷，露天庭院配現場泰式音樂，豬肉鮮嫩、湯頭香濃，邊烤邊涮邊喝啤酒，夜晚就該這樣過。",
+    "category": "food",
+    "address": "392 Soi Om Sin Sena 3, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7357654,
+    "lng": 100.5892865,
+    "photos": [
+      "places/ChIJ7_g6IWCf4jARCB15EZJY77A/photos/AaVGc3mXVDBB6zWjjSOEjG5mrc0hB1SM5S2VHY7gvvVYWS9SOf8e24Qi2hnDpzoVkZ4bvqgsNPjkN2kg_e6MI6fiOs9k7hlXz6i5PajfSJNn7ak6E09g_SVm9hUcSp7XJg4O-ku7ps6xjTrAlTRVlTS8_5UF7z0K1Wm_EYpMFDpk0kBOR-2ZFkA16zWlejwKQtrZBsNAPyf3Qeo7MtducWYPReFcgCHIg3T6FUK7HUq8H6iND4RVZlCDU-6aUqYIF7_HLL_8GiF7d2xpP4O7cG8dTfFfv0O1VtDO4ZoHXjiB-QozZbLNG-XaKz-l789N0dLRbz1glHlrduIDnOgdVOF81GBiRy3zsXQuNaBuzogXTNgbWwhgXeXK4bDyXIOJ0eXmLAmaCBAPshu-dRJ3xZfAzAJEoOMQiSHvjDPPYTaPA32JkA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Ekamai%20Mookata%20392%20Soi%20Om%20Sin%20Sena%203%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ7_g6IWCf4jARCB15EZJY77A",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music"
+    ],
+    "id": "b535fe59-02bd-40d7-b0d5-0c2497f1f1fa",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T09:11:38.355Z"
+  },
+  {
+    "name_en": "ครัวพิศมัย",
+    "name_zh": "ครัวพิศมัย",
+    "description_en": "A no-frills Isan kitchen tucked in Ratchathewi 🌶️ ครัวพิศมัย serves honest, homestyle northeastern Thai food — bold, spicy, and just the way locals like it. Nothing fancy, everything delicious.",
+    "description_zh": "藏在拉差貼威巷弄裡的家常東北菜 🌶️ ครัวพิศมัย 料理樸實不花俏，每一口都是道地的อีสาน味，辣得過癮、鹹得剛好，像在泰國朋友家裡吃飯。",
+    "category": "food",
+    "address": "68/36 Soi Phetchaburi 7, Khwaeng Thung Phaya Thai, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7558592,
+    "lng": 100.52968,
+    "photos": [
+      "places/ChIJX4tkNjWZ4jARa74olkgPf8g/photos/AaVGc3mFXpuQQWDuKdEAFAWY_s8R3QepZkg9b0JhK7qQ7Fut8lVJmnguqzaZgxjIcSBKkakrie2HQMm8lTvPmNFemd5aa6gGjcOOFG9PPJC8ogJBfvXA6LavWk4J7qNSuAFT2EtQx_d_QqzPORc4dIhL9D8D9fXZJITnEWOM2tcokQgiCdLa1oPUEJb_1xwGd7D5JtOqvIU7SlrVHoU4h7ju6A4FcCTH_qqdBlE64guWdqpLjAqA9oWli0lOMeMZkCcKdgSRiC5yN-VbmMr9z1ULMour7h8K92pnThOyXL4-WLIvLEc2mosme_wXOm3a23lyxI4FTFzgOZPylIJmaeOxCy1uejN_kg03VNJCRLYWT-wc04dkQQgw73XTmjM-m5usCSM8TTysSXMf2lfo_taPzOU1PBQ4tCltGbY3vPxQzWqEkA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B8%A7%E0%B8%9E%E0%B8%B4%E0%B8%A8%E0%B8%A1%E0%B8%B1%E0%B8%A2%2068%2F36%20Soi%20Phetchaburi%207%2C%20Khwaeng%20Thung%20Phaya%20Thai%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJX4tkNjWZ4jARa74olkgPf8g",
+    "rating": 4.5,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum"
+    ],
+    "id": "65efab73-3f6d-4964-bab4-fcff6b2a7c6c",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T09:13:43.970Z"
   }
 ]
