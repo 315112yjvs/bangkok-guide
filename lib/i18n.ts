@@ -2,7 +2,7 @@ export type Lang = 'zh' | 'en'
 
 export const strings = {
   zh: {
-    siteName: '曼谷旅遊指南',
+    siteName: '曼谷人',
     heroTitle: '住在曼谷的人',
     heroTitleAccent: '告訴你最近在瘋什麼',
     heroSubtitle: '泰國社群即時熱度，用中文呈現給台灣人',
@@ -33,7 +33,7 @@ export const strings = {
     priceRange: ['', '$', '$$', '$$$', '$$$$'],
   },
   en: {
-    siteName: 'Bangkok Guide',
+    siteName: 'BKK Local',
     heroTitle: 'Bangkok Locals',
     heroTitleAccent: "Tell You What's Trending",
     heroSubtitle: "Real-time Thai social picks, curated for you in Chinese",
