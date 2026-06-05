@@ -278,7 +278,7 @@ export async function enrichItem(
   const rawHighlights = place.reviews ? extractHighlights(place.reviews) : []
   const highlights = cleanHighlights(rawHighlights)
   const editorial = place.editorialSummary?.text
-  const photoRef = place.photos?.[0]?.name ?? ''
+  const photos = (place.photos ?? []).slice(0, 6).map(p => p.name).filter(Boolean)
 
   const name_en = place.displayName?.text ?? name
 
@@ -318,7 +318,7 @@ export async function enrichItem(
     highlights,
     lat: place.location?.latitude ?? lat ?? 13.7563,
     lng: place.location?.longitude ?? lng ?? 100.5018,
-    photos: photoRef ? [photoRef] : [],
+    photos,
     rating: place.rating ?? 4.0,
     area,
     address: formattedAddress || 'Bangkok, Thailand',
