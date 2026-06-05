@@ -757,5 +757,52 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-05T11:30:53.237Z"
+  },
+  {
+    "name_en": "Chan Charoen",
+    "name_zh": "Chan Charoen",
+    "description_en": "A time capsule of southern-style Thai-Chinese comfort food 🍜 Chan Charoen on Chan Road is all jade-green tiles and 1970s charm — their braised pork leg over rice is slow-cooked, rich, and deeply satisfying. Simple, affordable, and the kind of place that keeps locals coming back every week.",
+    "description_zh": "仿若走進 70 年代中國的翠綠小館 🍜 Chan Charoen 就在 Chan Road 上，招牌南派豬腳飯湯頭濃郁、肉質軟嫩，搭上廣東麵條更是一絕，復古磁磚牆面超上鏡，樸實又道地，是曼谷老饕的私藏口袋名單。",
+    "category": "food",
+    "address": "264 22-23 Thanon Chan, Khwaeng Wat Phraya Krai, Khet Bang Kho Laem, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.7086189,
+    "lng": 100.51509589999999,
+    "photos": [
+      "places/ChIJSaQdG8mZ4jARIDgibS69VcE/photos/AaVGc3nZ7J14E9htb60Ca14K38NTY1Ex9jKe1sp-F65Yp-y99_phTCx-TAUu-ETgflapcKgDfTCdvYRpcUpodzK9Ctb820I6dUPmFJFe1kyWEuiP83UkC3RTfHS26ejsZ3CXyPzhnIDtSkCxXJUMbF-YBMt7dM8UykGyDbpc1FBQmLgD69nRDqjno8SFmyWAE0wx4cOU1CE6HN8_WS46IG9E7Dnb1AnAERbRpTaGxX-LSlFfKkUdo5pfedDzP0LRUAVzWWL-3PzLylTSRyrl-EFtjnuzN7We_DLJJVCSmX4JSan-kZ09FKOnHQFDYDf3UOZ-M_rba66i03AqvwL2Pl3RvDG-2ohQvY4Pv2iNLUj8GsgNdcsA3HsFI9Nt3Q6HhakjFPpD8M8gjQIsUTaOWAu8eOrOEhJsl0llKzviItuuw8bgCTAh"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Chan%20Charoen%20264%2022-23%20Thanon%20Chan%2C%20Khwaeng%20Wat%20Phraya%20Krai%2C%20Khet%20Bang%20Kho%20Laem%2C%20Krung%20Thep%20Maha%20Nakhon%2010120%2C%20Thailand&query_place_id=ChIJSaQdG8mZ4jARIDgibS69VcE",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "id": "8ce6fae7-d677-44bf-9995-a8c9f66f459f",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T11:32:13.802Z"
+  },
+  {
+    "name_en": "Kuay Jab Mr. Joe",
+    "name_zh": "Kuay Jab Mr. Joe",
+    "description_en": "Three generations of Bangkok's best crispy pork 🐷 Kuay Jab Mr. Joe on Chan Road is a Michelin-recognised gem — deeply peppery pork broth, silky rolled rice noodles, and crispy pork belly with skin that actually crunches. Cheap, no-frills, and worth setting your alarm for. Opens at 7:30am.",
+    "description_zh": "曼谷最強脆皮豬，傳承三代五十年 🐷 Mr. Joe 的粿汁湯頭濃郁帶胡椒香，脆皮豬腩外酥內嫩、一口下去爆汁，米其林掛名卻依然平價，早上七點半開門，建議趁早來報到。",
+    "category": "food",
+    "address": "313/7 Thanon Chan, Khwaeng Wat Phraya Krai, Khet Bang Kho Laem, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.709182499999999,
+    "lng": 100.5141618,
+    "photos": [
+      "places/ChIJCVuwI7mY4jARZ_DeXklRjKQ/photos/AaVGc3lV5h3W-EpGTtH7JeHwqQGcq6qmJRXv6fblnCNPOcCLvUYubkXoYY1Bqbqj7PKd2yBugacCBxjIjJJh-Cuq9N504QIkaue0Oh0qVqXsqj6_z5MlAJqRHRpSyFqtMVX91wByeOY73UxlaLOD8PoXFE3nfAcZuJcvhJDsb1dD029hrRBmvXdEtppnvDy8HruSP2VVNd6RL5NwyIfHktNLKj_DBBeLCnh-gHFs9vASONfSoA7VgN1mDMwRKmJy7jDkfvuRp9rE7tDI9nRbEKtxxZ8wUX2Oyli3bqfQdbKfiiOoR9y4k4_bnfLSDzm-DojjuSJle4t4GgLmj8rwp5K9TlZFx3OelEn-nPOuDwi_SGOTJW9LLlg6XDziwjCdpFnGabeFfmnmES5oaWocqh6AUiS2R16JvR5jQmtEvioxVQOsjmA_"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Kuay%20Jab%20Mr.%20Joe%20313%2F7%20Thanon%20Chan%2C%20Khwaeng%20Wat%20Phraya%20Krai%2C%20Khet%20Bang%20Kho%20Laem%2C%20Krung%20Thep%20Maha%20Nakhon%2010120%2C%20Thailand&query_place_id=ChIJCVuwI7mY4jARZ_DeXklRjKQ",
+    "rating": 4.5,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "The crispy pork",
+      "The skin"
+    ],
+    "id": "6bb2bf3c-dd69-49f0-8378-40d4fa4989f0",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-05T11:33:01.503Z"
   }
 ]
