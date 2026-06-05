@@ -132,6 +132,7 @@ function PendingCard({
   const [editing, setEditing] = useState(false)
   const [showScoring, setShowScoring] = useState(false)
   const [saving, setSaving] = useState(false)
+  const [suggestingNote, setSuggestingNote] = useState(false)
   const [form, setForm] = useState({
     name_zh: item.name_zh || '',
     name_en: item.name_en,
@@ -271,7 +272,26 @@ function PendingCard({
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">區域</p><input className={inp} placeholder="e.g. Thonglor" value={form.area ?? ''} onChange={e => setForm(f => ({...f, area: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">地址</p><input className={inp} value={form.address} onChange={e => setForm(f => ({...f, address: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">亮點（逗號分隔）</p><input className={inp} value={form.highlights} onChange={e => setForm(f => ({...f, highlights: e.target.value}))} /></div>
-            <div className="col-span-2"><p className="text-[10px] font-semibold text-indigo-500 mb-1">💬 在地人怎麼說（選填）</p><textarea className={inp} rows={2} placeholder="你自己的觀察，1–2句即可" value={form.curator_note} onChange={e => setForm(f => ({...f, curator_note: e.target.value}))} /></div>
+            <div className="col-span-2">
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-[10px] font-semibold text-indigo-500">💬 在地人怎麼說（選填）</p>
+                <button
+                  type="button"
+                  disabled={suggestingNote}
+                  onClick={async () => {
+                    setSuggestingNote(true)
+                    const res = await fetch('/api/suggest-note', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name_en: form.name_en, description_zh: form.description_zh }) })
+                    const { note } = await res.json()
+                    if (note) setForm(f => ({ ...f, curator_note: note }))
+                    setSuggestingNote(false)
+                  }}
+                  className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 hover:bg-violet-100 disabled:opacity-50 transition-colors"
+                >
+                  {suggestingNote ? 'AI 生成中...' : '✨ AI 建議'}
+                </button>
+              </div>
+              <textarea className={inp} rows={2} placeholder="你自己的觀察，1–2句即可" value={form.curator_note} onChange={e => setForm(f => ({...f, curator_note: e.target.value}))} />
+            </div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">社群貼文 URL（TikTok / IG）</p><input className={inp} value={form.social_embed_url} onChange={e => setForm(f => ({...f, social_embed_url: e.target.value}))} placeholder="https://www.tiktok.com/..." /></div>
           </div>
           <div className="flex gap-2 pt-1">
@@ -650,11 +670,12 @@ export function AdminPanel() {
       (pendingSourceFilter === 'all' || p.source === pendingSourceFilter) &&
       (pendingAreaFilter === 'all' || (p as PendingLocation & { area?: string }).area === pendingAreaFilter)
     )
-    if (!confirm(`確定要全部上架 ${visible.length} 筆待審核地點嗎？`)) return
+    if (!confirm(`確定要全部上架 ${visible.length} 筆待審核地點嗎？上架後會自動部署。`)) return
     await Promise.all(visible.map((item) =>
       fetch('/api/locations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'approve', id: item.id, tag: resolveTag(item) }) })
     ))
     loadData()
+    deploy()
   }
 
   async function handleRemove(id: string) {

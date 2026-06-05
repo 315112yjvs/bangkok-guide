@@ -28,12 +28,17 @@ type Props = {
   active: Category | 'all'
   onChange: (cat: Category | 'all') => void
   lang: Lang
+  counts?: Partial<Record<Category | 'all', number>>
 }
 
-export function CategoryTabs({ active, onChange, lang }: Props) {
+export function CategoryTabs({ active, onChange, lang, counts }: Props) {
+  const visibleTabs = counts
+    ? TABS.filter(({ id }) => id === 'all' || (counts[id] ?? 0) > 0)
+    : TABS
+
   return (
     <div className="flex gap-4 px-4 py-3 overflow-x-auto bg-white border-b border-gray-100 no-scrollbar">
-      {TABS.map(({ id, labelKey, Icon }) => (
+      {visibleTabs.map(({ id, labelKey, Icon }) => (
         <button
           key={id}
           onClick={() => onChange(id)}

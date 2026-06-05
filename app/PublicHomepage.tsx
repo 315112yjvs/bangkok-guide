@@ -125,6 +125,14 @@ export function PublicHomepage({ locations }: Props) {
     return base
   }, [locations, activeCategory, activeTag, specialFilter, query, userLocation, savedIds])
 
+  const categoryCounts = useMemo(() => {
+    const counts: Partial<Record<Category | 'all', number>> = { all: locations.length }
+    for (const loc of locations) {
+      counts[loc.category] = (counts[loc.category] ?? 0) + 1
+    }
+    return counts
+  }, [locations])
+
   const showSections = specialFilter === 'all' && activeTag === 'all' && !query
 
   const sectionsByTag = useMemo(() => {
@@ -229,6 +237,7 @@ export function PublicHomepage({ locations }: Props) {
             active={activeCategory}
             onChange={(cat) => { setActiveCategory(cat); setActiveTag('all') }}
             lang={lang}
+            counts={categoryCounts}
           />
         </div>
 
