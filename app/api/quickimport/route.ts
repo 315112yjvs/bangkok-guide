@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { enrichItem } from '@/scrapers/enricher'
-import { translateName } from '@/scrapers/translate'
 import type { Category } from '@/lib/types'
 
 export const runtime = 'nodejs'
@@ -31,10 +30,7 @@ export async function POST(req: NextRequest) {
   const enriched = await enrichItem(name.trim(), cat, coords?.lat, coords?.lng)
   if (!enriched) return NextResponse.json({ error: 'place not found' }, { status: 404 })
 
-  // enrichItem may return name_zh that's already translated; if not, translate now
-  const name_zh = enriched.name_zh && enriched.name_zh !== enriched.name_en
-    ? enriched.name_zh
-    : await translateName(enriched.name_en)
+  const name_zh = enriched.name_en  // keep original name
 
   const detectedCat: Category =
     TYPE_TO_CATEGORY[enriched.category] ?? cat

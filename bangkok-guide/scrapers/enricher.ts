@@ -1,4 +1,4 @@
-import { translateName, generateDescriptionZh } from './translate'
+import { generateDescriptionZh, generateDescriptionEn } from './translate'
 import { buildDescZh, buildDescEn, cleanHighlights } from '../lib/buildDescriptions'
 
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
@@ -300,16 +300,12 @@ export async function enrichItem(
     resolvedCategory = 'shopping'
   }
 
-  const name_zh = await translateName(name_en)
+  const name_zh = name_en  // keep original name, no translation
 
-  // Use Claude if available, otherwise fall back to template builder
-  const description_zh_rich = await generateDescriptionZh(
-    name_en, editorial, highlights, resolvedCategory
-  )
-  const price_range = 2 as 1|2|3|4
-  const baseLoc = { category: resolvedCategory, rating: place.rating ?? 4.0, price_range, local_ratio: 0, tag: 'evergreen' }
-  const description_en = buildDescEn(baseLoc, highlights, editorial)
-  const description_zh = description_zh_rich || buildDescZh({ ...baseLoc, source: 'googlemaps' as const, name_en }, highlights, editorial)
+  const [description_zh, description_en] = await Promise.all([
+    generateDescriptionZh(name_en, editorial, highlights, resolvedCategory),
+    generateDescriptionEn(name_en, editorial, highlights, resolvedCategory),
+  ])
 
   const formattedAddress = place.formattedAddress ?? ''
   const area = extractArea(formattedAddress)
