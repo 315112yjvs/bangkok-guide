@@ -160,7 +160,7 @@ ${facts.join('\n')}`
       messages: [{ role: 'user', content: prompt }],
     })
     const text = msg.content[0].type === 'text' ? msg.content[0].text.trim() : ''
-    return text || editorial ?? `A well-regarded ${category} spot in Bangkok.`
+    return text || (editorial ?? `A well-regarded ${category} spot in Bangkok.`)
   } catch {
     return editorial ?? `A well-regarded ${category} spot in Bangkok.`
   }
