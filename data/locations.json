@@ -956,8 +956,8 @@
   {
     "name_en": "Jirakaan Restaurant (จิรกาล)",
     "name_zh": "Jirakaan Restaurant (จิรกาล)",
-    "description_en": "You absolutely have to order the signature tamarind soup at Jirakaan — that rich lemongrass aroma just hits different and instantly wakes up your taste buds 🍲 Sitting here, you're getting all the authentic Thai flavors while biting into beef so tender it melts in your mouth. Honestly, it feels like they've packed Bangkok's best ingredients onto one plate. The warm lighting in the restaurant is chef's kiss — you completely forget about the heat outside and just keep going bite after bite.",
-    "description_zh": "來 Jirakaan 就是要點招牌酸辣湯，那股濃郁的檸檬香茅味道一瞬間就能喚醒你的味蕾 🍲 坐在這裡，一邊享受道地泰式風味，一邊咬著嫩到不行的牛排，真的是把曼谷最好的食材都集中在一盤裡。燈光溫暖的餐廳氛圍，讓你忘記外頭的炎熱，只想一口接一口地吃下去。",
+    "description_en": "Dining at the table of King Rama V 🕰️ Jirakaan — meaning \"once upon a time\" — is Bangkok's most enchanting culinary time capsule. The menu revives forgotten royal recipes from the Rattanakosin Era, each dish narrated with history and heart. A century-old tree anchors the dining room, and every bite feels like a page from an old cookbook finally brought to life.",
+    "description_zh": "穿越時光回到拉瑪五世的餐桌 🕰️ จิรกาล 以「從前從前」為名，專門復刻曼谷王朝時期近乎失傳的古老食譜，每道菜都是一段泰式飲食史，擁有百年老樹坐落餐廳正中央，氛圍典雅迷人，是曼谷最有靈魂的泰菜體驗之一。",
     "category": "food",
     "address": "76 Soi Sukhumvit 51, Klongton Nue, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
     "lat": 13.730243699999999,
@@ -975,13 +975,16 @@
     ],
     "id": "8fc66940-4e54-4ae1-bb1a-e8c84c833195",
     "source": "googlemaps",
-    "approved_at": "2026-06-05T14:17:38.588Z"
+    "approved_at": "2026-06-05T14:17:38.588Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Sri Trat Restaurant and Bar",
     "name_zh": "Sri Trat Restaurant and Bar",
-    "description_en": "Tucked away in a corner of Sri Trat, a spoonful of steaming broth, a bite of delicate dumplings—this is Bangkok's everyday magic 🍜 The sour and spicy punch of Tom Yum explodes on your tongue, and when you sink your teeth into the handmade dumplings, they burst with savory broth. Under the warm, dim lighting with the chatter and laughter of regulars all around you, the whole place just wraps you in warmth. Authentic Thai flavors never take shortcuts here—it's the kind of restaurant that keeps calling you back.",
-    "description_zh": "坐在 Sri Trat 的角落位置，一口熱湯一口小籠包，這就是曼谷的日常 🍜 Tom Yum 的酸辣在舌尖炸開，手工水餃一口咬下去湯汁飽滿，配著昏黃的燈光和周圍熟客的談笑聲，整個空間都溫暖起來了。正宗泰式味道在這裡沒有任何妥協，是那種讓你一來再來的餐廳。",
+    "description_en": "Bangkok's best eastern Thai cooking, hidden in Soi 33 🦀 Sri Trat is a charming rustic villa with exposed brick walls and a giant mural of the owner's mother — a former Trat beauty queen. The menu brings her coastal recipes to life: tamarind sweet chilli sea bass, spicy crab curry, and chamuang leaf pork that linger long after the meal. Michelin Bib Gourmand, and worth every baht. Book ahead.",
+    "description_zh": "曼谷最值得訂位的東部泰菜 🦀 Sri Trat 在素坤逸 33 巷的老磚屋裡，用老闆母親的家傳食譜重現達府海岸風味，酸辣螃蟹咖哩、羅望子甜辣炸鱸魚道道令人難忘，米其林 Bib Gourmand 加持，早點訂位才搶得到。",
     "category": "food",
     "address": "90 Soi Sukhumvit 33, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
     "lat": 13.736803700000001,
@@ -999,13 +1002,16 @@
     ],
     "id": "371e28b8-9061-4dd6-ab73-a92f4d23db74",
     "source": "googlemaps",
-    "approved_at": "2026-06-05T14:17:57.254Z"
+    "approved_at": "2026-06-05T14:17:57.254Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Blue Elephant Bangkok Sukhumvit Thai Heritage Cuisine",
     "name_zh": "Blue Elephant Bangkok Sukhumvit Thai Heritage Cuisine",
-    "description_en": "The most authentic Thai street food vibes are right here 🌶️ One bite of the satay at Blue Elephant Bangkok and the peanut sauce just explodes on your palate — charred meat skewers paired with tangy, spicy dipping sauce that you literally can't stop eating. The whole vibe of this old-school Thai restaurant feels so local and lived-in, like you're sitting down to an actual Bangkok family dinner when you order a plate of satay and a bowl of noodle soup. That's when you know you've found the real deal Thai flavors.",
-    "description_zh": "曼谷最道地的泰菜食堂就在這裡 🌶️ Blue Elephant Bangkok 的沙嗲一咬下去，花生醬的香氣在嘴裡爆開，烤到焦香的肉串配著酸辣醬汁，根本停不下來。老牌泰菜館的氛圍很在地，點上一盤沙嗲、一碗湯麵，彷彿坐進了曼谷人的日常餐桌裡，那才是最道地的泰式滋味。",
+    "description_en": "A century-old teak house hiding in the heart of Sukhumvit 🐘 Blue Elephant's Soi 13 outpost is shaded by a giant Monkey Pod tree and worlds away from the street outside. Master Chef Nooror's heritage Thai recipes — rich crab curry, fragrant tom kha, refined pad thai — honour royal culinary traditions with every dish. And the outdoor cocktail bar beneath the canopy? One of Bangkok's most magical spots after dark.",
+    "description_zh": "素坤逸鬧區裡的百年柚木老宅 🐘 Blue Elephant Sukhumvit 藏在 Soi 13 深處，巨大雨豆樹遮天蔽日，主廚 Nooror 以宮廷秘方重現泰菜精髓，螃蟹咖哩、香茅椰奶湯每道都像一段歷史，露天雞尾酒吧更是入夜後的曼谷秘境。",
     "category": "food",
     "address": "27 Soi Sukhumvit 13, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
     "lat": 13.744829399999999,
@@ -1024,13 +1030,16 @@
     ],
     "id": "a9668ad9-833d-472e-b71a-bef07efe4e53",
     "source": "googlemaps",
-    "approved_at": "2026-06-05T14:18:54.589Z"
+    "approved_at": "2026-06-05T14:18:54.589Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "ร้านขจร | Kajohn Authentic Southern Thai Cuisine",
     "name_zh": "ร้านขจร | Kajohn Authentic Southern Thai Cuisine",
-    "description_en": "Hidden gem Thai Southern food tucked away in this unassuming little shop 🍵 Kajohn's signature Thai milk tea is ridiculously rich — one sip and your whole afternoon lights up. Grab their sour and spicy seafood soup or curry, layered with authentic Southern Thai flavors, and you'll feel like you've teleported straight to a small town down south. The humble vibe actually gives the food more soul — this is the real taste Bangkok locals keep to themselves.",
-    "description_zh": "隱藏版泰南美食，就在這間不起眼的小店 🍵 Kajohn 的招牌泰奶濃到不行，一口下去整個下午都亮了起來。點份酸辣海鮮湯或咖喱，配著地道泰南風味，彷彿瞬間移動到南方小鎮。簡樸的環境反而讓食物更有靈魂，這才是曼谷人私藏的味道啦。",
+    "description_en": "Southern Thai flavors so authentic, locals from the south say it tastes like home 🦀 Kajohn is tucked in an old shophouse near Wat Saket — seafood sourced fresh from the southern coast, with standout dishes like yellow prawn curry, crispy salted pork belly, and fried squid that keeps regulars coming back. A Google 4.9 rating that's thoroughly earned.",
+    "description_zh": "曼谷最道地的南部泰菜，連南部人都說像家鄉味 🦀 ขจร 藏在金山寺附近的老街屋裡，海鮮直送自南部，招牌黃咖哩蝦、炸魷魚、鹹脆五花肉每道都辣得過癮、鮮得剛好，Google 評分 4.9，實至名歸。",
     "category": "food",
     "address": "245, 4 Thanon Chakkraphatdi Phong, Khwaeng Khlong Maha Nak, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100, Thailand",
     "lat": 13.7559825,
@@ -1047,13 +1056,16 @@
     ],
     "id": "aa4721a6-d181-45bf-9855-dc73e13cc116",
     "source": "googlemaps",
-    "approved_at": "2026-06-05T14:19:14.324Z"
+    "approved_at": "2026-06-05T14:19:14.324Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Tamnanthai Restaurant Nana-Ploenchit",
     "name_zh": "Tamnanthai Restaurant Nana-Ploenchit",
-    "description_en": "Head to Tamnanthai and order a bowl of authentic tom yum – the aroma is so incredible it fills the entire alley 🍜 Sitting in this old-school Thai restaurant in Nana-Ploenchit, biting into silky smooth rice noodles and letting the spicy green curry explode on your tongue, every bite tastes like the homestyle comfort food Bangkok locals have grown up eating. Simple décor, genuine hospitality – this is exactly the kind of Thai restaurant I love.",
-    "description_zh": "來 Tamnanthai 點一碗道地的冬陰功，湯頭香到整條巷子都聞得到 🍜 坐在 Nana-Ploenchit 這間老牌泰菜館裡，咬下軟Q的河粉、嚐著青咖喱的辛香在舌尖炸開，每一口都像在吃曼谷人從小吃到大的家常味。簡單的擺設、熱情的服務，這才是我最愛的泰國餐廳啦。",
+    "description_en": "A true Thai gem hiding behind a hotel in Nana 🍛 Tamnanthai is the kind of place you almost walk past — and deeply regret if you do. Rich red curry, bold tom yum seafood hotpot, and garlic pork liver that regulars keep coming back for. Warm family service, honest flavors, and prices that make it even harder to leave.",
+    "description_zh": "藏在 Nana 飯店後巷的道地泰菜秘境 🍛 Tamnanthai 遠離觀光喧囂，紅咖哩、冬蔭海鮮鍋、蒜炒豬肝每道都鮮香夠味，老闆娘親切招呼像家人，來過三次還是想再回來的那種店。",
     "category": "food",
     "address": "18 Soi Sukhumvit 4, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
     "lat": 13.7396496,
@@ -1072,13 +1084,16 @@
     ],
     "id": "84b19815-5ba6-4b75-a9a0-8d7424eb64da",
     "source": "googlemaps",
-    "approved_at": "2026-06-05T14:19:30.758Z"
+    "approved_at": "2026-06-05T14:19:30.758Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Oranuch Thai Dining",
     "name_zh": "Oranuch Thai Dining",
-    "description_en": "Oranuch Thai Dining is one of those places where you get wrapped up in incredible aromas the moment you sit down 🌶️ Their fresh green papaya salad hits that perfect balance of sour and spicy — every bite tastes like authentic Thai street food vibes. Then get their signature mango sticky rice, and seriously, the sweetness of the mango paired with that pillowy soft glutinous rice just transports you straight to Bangkok's most genuine food scene. This is exactly why locals keep coming back for more.",
-    "description_zh": "Oranuch Thai Dining 就是那種一坐下來就被香氣圍繞的地方 🌶️ 現做的青木瓜沙拉酸辣到位，每一口都是泰國街頭的靈魂味道，再來一碗招牌芒果糯米飯，甜蜜的芒果配軟綿的糯米，瞬間就能感受到曼谷最地道的美食溫度，這就是為什麼在地人一吃就回不了頭。",
+    "description_en": "This isn't just Thai food — it's Aunty Ying's cuisine 🌿 Oranuch is tucked inside a traditional Thai house on Sukhumvit 23, surrounded by lush greenery and warm candlelight. The Penang curry is deeply aromatic, the crab curry hits every note, and the owner herself often comes out to welcome guests. One of Bangkok's most underrated gems — and one of its most memorable meals.",
+    "description_zh": "這裡不只是泰菜，是 Aunty Ying 的料理 🌿 Oranuch 藏在素坤逸 23 巷的傳統泰式老宅裡，花木扶疏、燈光溫柔，Penang 咖哩濃郁芬芳、螃蟹咖哩鮮辣過癮，每一道都像是老闆娘親手為你烹調，是曼谷最值得穿越叢林去找的那一家。",
     "category": "food",
     "address": "36/1 Soi Sukhumvit 23, คลองเตย Watthana, Krung Thep Maha Nakhon 10110, Thailand",
     "lat": 13.741239499999999,
@@ -1096,13 +1111,16 @@
     ],
     "id": "9257f5dc-55c4-4ff8-b2d3-5f123d42b478",
     "source": "googlemaps",
-    "approved_at": "2026-06-05T14:19:52.667Z"
+    "approved_at": "2026-06-05T14:19:52.667Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "BIB: Break in Bangkok",
     "name_zh": "BIB: Break in Bangkok",
-    "description_en": "Grab a coffee at BIB and bite into a freshly baked pastry — every bite tells a Bangkok story ☕️ Break in Bangkok is tucked away in a quiet alley, where the owner plays with every ingredient, turning them into something magical. From rich and bold to light and delicate, from classics to experimental creations, no two visits taste the same. Sitting here as the morning light pours in, soaking up that slow-living Bangkok vibe, you'll finally understand why everyone calls this a hidden gem.",
-    "description_zh": "在 BIB 點一杯咖啡，咬下剛烤好的麵包，每一口都是曼谷的故事 ☕️ Break in Bangkok 藏在巷弄裡，老闆把每種食材都玩出新花樣——從濃郁到清爽、從經典到實驗性，沒有兩次是一樣的味道。坐在這裡，看著晨光灑進來，感受曼谷人的慢生活，突然就懂為什麼大家都說這是隱藏版餐廳了。",
+    "description_en": "A creative Thai kitchen hiding in plain sight at Trinity Mall 🍽️ BIB: Break in Bangkok blends bold Thai flavors with modern twists — salted egg spaghetti, beef fat fried rice, and grilled beef tongue that keeps diners coming back. Cozy, intimate, and just inventive enough to surprise you every visit. Reservations recommended.",
+    "description_zh": "矽隆的隱藏版創意泰菜 🍽️ BIB: Break in Bangkok 藏在 Trinity Mall 角落，鹹蛋黃義大利麵、牛油炒飯、烤牛舌一道比一道驚喜，泰式靈魂遇上現代手法，空間小巧溫馨、建議提前訂位。",
     "category": "food",
     "address": "Trinity Mall, 425 Si Lom 3, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
     "lat": 13.7250652,
@@ -1120,6 +1138,31 @@
     "id": "05ec4a84-3935-47af-a3a1-9610d35dc501",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T14:21:03.599Z"
+    "approved_at": "2026-06-05T14:21:03.599Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
+  },
+  {
+    "name_en": "Khao-Sō-i Soi Convent Silom",
+    "name_zh": "Khao-Sō-i Soi Convent Silom",
+    "description_en": "A 31-spice family recipe that takes you straight to Chiang Mai 🍜 Khao-Sō-i Soi Convent is tucked just off Silom — rich, aromatic curry broth, silky fresh noodles, and your choice of beef, pork, chicken, or seafood. Free-flow drinks and a welcoming vibe make it one of the best Northern Thai spots near BTS Sala Daeng.",
+    "description_zh": "31 種香料秘傳湯底，一口就回到清邁 🍜 Khao-Sō-i Soi Convent 藏在矽隆巷弄裡，咖哩湯頭濃郁芬芳、麵條彈滑入味，牛肉、豬肉、海鮮任你選，飲料無限續，是 Sala Daeng 站附近最值得繞路的北部料理。",
+    "category": "food",
+    "address": "14/2-3 Convent Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7255182,
+    "lng": 100.5341859,
+    "photos": [
+      "places/ChIJVTsWtUWf4jARsH54mJQ6ivU/photos/AaVGc3mvJVfFR0DE3rRFaol0BWkE-MQSykWsStNespPYKgI1G-dhvS9efkv9OY-8cS5TExe9lGfW-h8MqIAwzga_v6-IMiLBS1F4rsQDHkHasVW-6dRRFT8QI2j0Ke4z4KBRD5ugRyN6LEQZAHeplPHmyjCHdfQdiWyafvXL56TRIESrI8vkUJWqDOvaH4T8H8_0q7m91nKzvgnMUIEnqeuikir8sga3ZFCtZJwI29RT6inbk7wJHkSWEP4jHTGTihmvUc-7bxsOEc1CKp-irVDizw56SstrWDnHWaa3ryVCt0Boo3p9a0o9ZcJhNB6IAuJOctaRXkExUnnFHnUxOzhb7MPmOBMmNYjCes9qGhqOE7H-sT6LwHgwplSg_1SU2QAjMYSxtVooGNOepF4eAjh-fudF6-vx5DfR3ZyA4DXGLqbDCSZCXQiHWr_mMtScTstI"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Khao-S%C5%8D-i%20Soi%20Convent%20Silom%2014%2F2-3%20Convent%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJVTsWtUWf4jARsH54mJQ6ivU",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "id": "e950c379-9235-40f0-93dc-e68386dffdca",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-08T07:50:26.747Z"
   }
 ]
