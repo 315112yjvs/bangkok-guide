@@ -99,8 +99,8 @@ function AuthOverlay({ onAuth }: { onAuth: () => void }) {
   return (
     <div className="fixed inset-0 bg-[#0f172a] flex items-center justify-center">
       <form onSubmit={submit} className="bg-white rounded-2xl p-8 w-80 shadow-2xl">
-        <h1 className="text-xl font-black text-[#0f172a] mb-1">管理後台</h1>
-        <p className="text-sm text-gray-400 mb-6">Bangkok Guide Admin</p>
+        <h1 className="text-xl font-black text-[#0f172a] mb-1">曼谷人</h1>
+        <p className="text-sm text-gray-400 mb-6">BKK LOCAL Admin</p>
         <input
           type="password"
           value={pw}
@@ -767,8 +767,8 @@ export function AdminPanel() {
       {/* SIDEBAR */}
       <div className="w-56 bg-[#0f172a] flex flex-col shrink-0 overflow-y-auto">
         <div className="px-5 py-6 border-b border-white/10">
-          <div className="text-white font-black text-sm tracking-wide">Bangkok Guide</div>
-          <div className="text-slate-500 text-xs mt-0.5">管理後台</div>
+          <div className="text-white font-black text-sm tracking-wide">BKK LOCAL</div>
+          <div className="text-slate-500 text-xs mt-0.5">曼谷人 管理後台</div>
         </div>
         <nav className="flex-1 p-3 space-y-1">
           {navLink('pending', '待審核地點', pending.length)}
