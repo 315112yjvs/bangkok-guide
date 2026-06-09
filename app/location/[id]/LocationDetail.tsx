@@ -93,15 +93,16 @@ export function LocationDetail({ location }: { location: Location }) {
       .finally(() => setLoadingPlace(false))
   }, [placeId])
 
-  // Build photo list: combine stored + fetched
-  const storedPhoto = location.photos[0]
-    ? location.photos[0].startsWith('places/')
-      ? `https://places.googleapis.com/v1/${location.photos[0]}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-      : location.photos[0]
-    : null
+  // Build photo list: use all stored photos, fall back to Places API fetch
+  const storedPhotos = location.photos
+    .filter(Boolean)
+    .map(p => p.startsWith('places/')
+      ? `https://places.googleapis.com/v1/${p}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+      : p
+    )
   const allPhotos = placeData?.photos.length
     ? placeData.photos
-    : storedPhoto ? [storedPhoto] : []
+    : storedPhotos
 
   function toggleSave() {
     try {
