@@ -51,12 +51,22 @@ export async function translateName(name: string): Promise<string> {
 async function fetchWebContext(nameEn: string): Promise<string> {
   if (!process.env.FIRECRAWL_API_KEY) return ''
   try {
-    const results = await firecrawlSearch(`"${nameEn}" Bangkok`, 3)
-    return results
-      .filter(r => r.description && r.description.length > 40)
-      .map(r => r.description?.slice(0, 300))
-      .join(' | ')
-      .slice(0, 600)
+    // Search with multiple queries to get richer, more specific content
+    const queries = [
+      `"${nameEn}" Bangkok restaurant review menu`,
+      `${nameEn} Bangkok ร้านอาหาร`,
+    ]
+    const allResults: string[] = []
+    for (const q of queries) {
+      const results = await firecrawlSearch(q, 4)
+      for (const r of results) {
+        const content = r.markdown || r.description || ''
+        if (content.length > 60) allResults.push(content.slice(0, 800))
+        if (allResults.join('').length > 2500) break
+      }
+      if (allResults.join('').length > 2500) break
+    }
+    return allResults.join('\n\n---\n\n').slice(0, 3000)
   } catch {
     return ''
   }
@@ -70,10 +80,9 @@ async function buildFacts(nameEn: string, editorial: string | undefined, highlig
   const facts: string[] = []
   if (editorial) facts.push(`Google summary: "${editorial}"`)
   if (cleanHighlights.length > 0) facts.push(`Known for: ${cleanHighlights.join(', ')}`)
-  if (!editorial) {
-    const web = await fetchWebContext(nameEn)
-    if (web) facts.push(`Web context: ${web}`)
-  }
+  // Always search the web for specific facts (menu, story, location details)
+  const web = await fetchWebContext(nameEn)
+  if (web) facts.push(`Web research:\n${web}`)
   return facts
 }
 
@@ -96,27 +105,29 @@ export async function generateDescriptionZh(
   const areaLine = area && area !== 'Bangkok' ? `區域：${area}` : ''
   const contextLines = [...(areaLine ? [areaLine] : []), ...facts]
 
-  const prompt = `你是曼谷旅遊指南的編輯，用繁體中文為以下地點寫一段生動介紹。
+  const prompt = `你是曼谷旅遊指南的編輯，用繁體中文為以下地點寫一段精準生動的介紹。
 
-風格要求：
-- 像朋友在 Instagram 推薦的語氣，有臨場感、有畫面
-- 描述「在這裡的體驗」，而不只是列出特色
-- 可帶入氛圍、景色或當下的感受
-- 40–80 個中文字
-- 若資料有限，根據店名、類別、區域發揮想像力，寫出有溫度的介紹
+核心原則：
+- **優先使用具體事實**：特定菜名、巷弄位置、店主故事、招牌特色、營業時間、獨特賣點
+- 有什麼事實就寫什麼，**絕對不要補充資料裡沒有的內容**
+- 文字要像熟悉這家店的朋友推薦，有具體資訊才有說服力
+- 50–100 個中文字
 - 直接輸出文字，不加引號
 
-風格範例：
-「河邊烤肉的夜晚，沒有比這更對了 🔥 Everyday Mookrata Riverside 就坐落在昭披耶河畔，看著船來船往、微風吹過，一邊炭烤豬肉海鮮、一邊配現場音樂，曼谷夜晚最放鬆的方式就是這樣。」
+好的範例（有具體事實）：
+「藏在 Soi Nana 巷弄裡，由新泰夫妻檔打造 🦆 北泰 Lanna 料理遇上娘惹風味，鴨肉酥脆貼葉、炸蠔驚喜連連。一樓是復古上海酒吧，雞尾酒靈感取自老唐人街黑幫傳說，偶有噴火表演，週二至週日開到深夜。」
+
+差的範例（空洞氛圍，避免）：
+「走進去就會愛上的地方 🕯️ 昏黃的燈光、復古的裝潢，調酒師俐落地搖晃著各式烈酒，感受曼谷夜生活的精緻與慵懶。」
 
 地點名稱：${nameEn}
 類別：${catZh}
-${contextLines.length > 0 ? `參考資料：\n${contextLines.join('\n')}` : ''}`
+${contextLines.length > 0 ? `參考資料（從這裡挑出具體事實來寫）：\n${contextLines.join('\n')}` : ''}`
 
   try {
     const msg = await client().messages.create({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 300,
+      model: 'claude-sonnet-4-6',
+      max_tokens: 400,
       messages: [{ role: 'user', content: prompt }],
     })
     const text = msg.content[0].type === 'text' ? msg.content[0].text.trim() : ''
@@ -129,7 +140,7 @@ ${contextLines.length > 0 ? `參考資料：\n${contextLines.join('\n')}` : ''}`
 export async function translateZhToEn(descZh: string): Promise<string> {
   if (!process.env.ANTHROPIC_API_KEY) return descZh
 
-  const prompt = `Translate the following Traditional Chinese Bangkok travel guide description into natural English. Keep the same vivid, atmospheric tone — like a friend recommending it on Instagram. Output only the translation, no quotes.
+  const prompt = `Translate the following Traditional Chinese Bangkok travel guide description into natural English. Keep all the specific facts, dish names, place names, and details — don't make it vaguer. Keep the same vivid, friend-recommending tone. Output only the translation, no quotes.
 
 Chinese: ${descZh}`
 
