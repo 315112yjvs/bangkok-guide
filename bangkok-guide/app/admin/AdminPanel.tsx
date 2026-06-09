@@ -133,6 +133,7 @@ function PendingCard({
   const [showScoring, setShowScoring] = useState(false)
   const [saving, setSaving] = useState(false)
   const [suggestingNote, setSuggestingNote] = useState(false)
+  const [regenerating, setRegenerating] = useState(false)
   const [form, setForm] = useState({
     name_zh: item.name_zh || '',
     name_en: item.name_en,
@@ -248,7 +249,38 @@ function PendingCard({
           <div className="grid grid-cols-2 gap-2">
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">中文名稱</p><input className={inp} value={form.name_zh} onChange={e => setForm(f => ({...f, name_zh: e.target.value}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">English Name</p><input className={inp} value={form.name_en} onChange={e => setForm(f => ({...f, name_en: e.target.value}))} /></div>
-            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">中文描述</p><textarea className={inp} rows={2} value={form.description_zh} onChange={e => setForm(f => ({...f, description_zh: e.target.value}))} /></div>
+            <div className="col-span-2">
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-[10px] font-semibold text-gray-500">中文描述</p>
+                <button
+                  type="button"
+                  disabled={regenerating}
+                  onClick={async () => {
+                    setRegenerating(true)
+                    const res = await fetch('/api/quickimport', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ name: form.name_en, mapsUrl: item.source_url, category: form.category }),
+                    })
+                    if (res.ok) {
+                      const data = await res.json()
+                      setForm(f => ({
+                        ...f,
+                        description_zh: data.description_zh ?? f.description_zh,
+                        description_en: data.description_en ?? f.description_en,
+                        highlights: (data.highlights ?? []).join(', ') || f.highlights,
+                        category: data.category ?? f.category,
+                      }))
+                    }
+                    setRegenerating(false)
+                  }}
+                  className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-orange-50 text-orange-600 hover:bg-orange-100 disabled:opacity-50 transition-colors"
+                >
+                  {regenerating ? '生成中...' : '🔄 重新生成描述'}
+                </button>
+              </div>
+              <textarea className={inp} rows={2} value={form.description_zh} onChange={e => setForm(f => ({...f, description_zh: e.target.value}))} />
+            </div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">English Description</p><textarea className={inp} rows={2} value={form.description_en} onChange={e => setForm(f => ({...f, description_en: e.target.value}))} /></div>
             <div>
               <p className="text-[10px] font-semibold text-gray-500 mb-1">分類</p>

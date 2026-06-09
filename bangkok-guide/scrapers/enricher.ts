@@ -282,22 +282,29 @@ export async function enrichItem(
 
   const name_en = place.displayName?.text ?? name
 
-  // Override category based on name keywords or Google's primaryType
+  // Resolve category: trust Google primaryType first, then name keywords as fallback
   const nameLower = name_en.toLowerCase()
   const googleType = (place.primaryType ?? '').toLowerCase()
   let resolvedCategory = category
-  if (/caf[eé]|coffee|brew|roast|espresso|cappuccino|latte/.test(nameLower) ||
-      /cafe|coffee_shop/.test(googleType)) {
+
+  // Google primaryType is the most reliable signal
+  if (/^(cafe|coffee_shop|tea_house)$/.test(googleType)) {
     resolvedCategory = 'cafe'
-  } else if (/bar|pub|club|lounge|rooftop|cocktail/.test(nameLower) ||
-      /bar|night_club/.test(googleType)) {
+  } else if (/^(restaurant|food|meal_takeaway|meal_delivery|bakery|thai_restaurant|japanese_restaurant|chinese_restaurant|italian_restaurant|seafood_restaurant|fast_food_restaurant)$/.test(googleType) || googleType.includes('restaurant')) {
+    resolvedCategory = 'food'
+  } else if (/^(bar|night_club|pub|liquor_store)$/.test(googleType)) {
     resolvedCategory = 'nightlife'
-  } else if (/hotel|resort|hostel|inn|suites/.test(nameLower) ||
-      /hotel|lodging/.test(googleType)) {
+  } else if (/^(lodging|hotel|motel|resort_hotel|extended_stay_hotel)$/.test(googleType)) {
     resolvedCategory = 'hotel'
-  } else if (/market|mall|shop|boutique|store/.test(nameLower) ||
-      /shopping_mall|store/.test(googleType)) {
+  } else if (/^(shopping_mall|store|clothing_store|department_store|supermarket|market)$/.test(googleType)) {
     resolvedCategory = 'shopping'
+  } else if (/^(tourist_attraction|amusement_park|zoo|aquarium|museum|art_gallery|park)$/.test(googleType)) {
+    resolvedCategory = 'attraction'
+  } else {
+    // Fallback to name keywords only when Google type is ambiguous
+    if (/caf[eé]|coffee|brew|roast/.test(nameLower)) resolvedCategory = 'cafe'
+    else if (/bar|pub|club|lounge/.test(nameLower)) resolvedCategory = 'nightlife'
+    else if (/hotel|resort|hostel/.test(nameLower)) resolvedCategory = 'hotel'
   }
 
   const name_zh = name_en  // keep original name, no translation
