@@ -882,13 +882,14 @@
     ],
     "hashtags": [],
     "id": "6a3f3bc4-6edd-483a-bfd9-c7ae463154ef",
-    "approved_at": "2026-06-05T14:15:08.995Z"
+    "approved_at": "2026-06-05T14:15:08.995Z",
+    "highlights": []
   },
   {
     "name_en": "The Rock Pub",
     "name_zh": "The Rock Pub",
-    "description_en": "Vintage posters from the Showa era, glowing neon signs, stacks of vinyl records — The Rock Pub feels like a time capsule. Cocktail in hand, the guitarist on stage starts playing, deep drum beats vibrating through the entire bar, and strangers become friends bobbing their heads together. In Bangkok's nightlife, these are the places with soul and history that you actually want to come back to again and again. 🎸🍹",
-    "description_zh": "昭和年代的老舊海報、霓虹燈牌、堆疊的唱片，The Rock Pub 就像個時光膠囊。點杯調酒在手，舞台上的樂手彈起吉他，低沈的鼓聲震動著整間酒吧，陌生人變成朋友一起搖頭晃腦。曼谷夜生活裡，這種有溫度、有故事的地方，才是真正值得一再回訪的。🎸🍹",
+    "description_en": "Bangkok's one and only rock institution since 1987 🤘 The Rock Pub is a cave-like den covered in rock memorabilia, where live bands shred Metallica, Pantera, and Rage every single night. Nearly four decades in and still the only place in the city for rock and metal lovers — no cover charge, cold beers, and bands that actually know how to play.",
+    "description_zh": "搖滾迷在曼谷唯一需要的地方 🤘 The Rock Pub 自 1987 年屹立至今，洞窟風黑牆掛滿搖滾周邊，每晚現場樂團演奏 Metallica、Pantera、Rage Against the Machine，台上台下同樣燃燒，37 年了還是沒有對手。",
     "category": "nightlife",
     "address": "1011/3-4 Phahon Yothin Road, Phaya Thai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
     "lat": 13.7714594,
@@ -907,13 +908,16 @@
     "local_ratio": 75,
     "id": "5f2d2931-c758-42ea-8382-d238e55d97e4",
     "source": "googlemaps",
-    "approved_at": "2026-06-05T14:15:51.509Z"
+    "approved_at": "2026-06-05T14:15:51.509Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Brick Bar",
     "name_zh": "Brick Bar",
-    "description_en": "When night falls, Brick Bar is where you need to be 🎸 This legendary venue is tucked inside a brick-red converted warehouse, and even with a thousand-person capacity, you can't contain the soul of the live ska and reggae bands. Smoke, lights, strangers becoming friends on the dance floor—that feeling of being completely wrapped in music, your whole body moving with the rhythm, you can only truly experience that raw, wild side of Bangkok nights right here.",
-    "description_zh": "夜幕降臨時，Brick Bar 就是你的目的地 🎸 磚紅色的老倉庫改造成這間傳奇酒吧，一千多人的場地卻藏不住 ska 和 reggae 現場樂隊的靈魂。煙霧、燈光、舞池裡陌生人變朋友，那種被音樂包圍、整個身體跟著節奏搖晃的感覺，只有在這裡才能真正體會曼谷夜晚最野的溫度。",
+    "description_en": "The most soulful night on Khao San Road 🎸 Tucked inside Buddy Lodge Hotel, Brick Bar is all red brick arches and medieval tavern vibes — three live bands a night playing ska and reggae to a crowd of locals and travelers who actually know the words. A thousand people in, yet somehow it still feels like a house party.",
+    "description_zh": "考山路最有靈魂的夜晚在這裡 🎸 Brick Bar 藏在 Buddy Lodge Hotel 裡，紅磚拱頂、中世紀酒館氛圍，每晚三場現場樂團輪番上陣演奏 Ska 與 Reggae，本地人與旅人肩並肩跟著唱，容納千人卻像在朋友的地下室派對。",
     "category": "nightlife",
     "address": "Talat Yot, Phra Nakhon, Bangkok 10200, Thailand",
     "lat": 13.758647999999999,
@@ -930,13 +934,16 @@
     "id": "c02ce985-49f2-458f-88dd-568400933d50",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T14:16:21.306Z"
+    "approved_at": "2026-06-05T14:16:21.306Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Mariga",
     "name_zh": "Mariga",
-    "description_en": "Mariga is like a secret corner you stumble upon in Bangkok ✨ The moment you sit down, you're wrapped in warm lighting and woody vibes, and the whole space just radiates this cozy atmosphere. Dishes arrive one after another, and every bite shows how much care goes into them. With the gentle chatter around you and the soft clink of cutlery, it's honestly the most healing dining experience Bangkok has to offer.",
-    "description_zh": "Mariga 就像在曼谷找到的一個秘密角落 ✨ 坐進去的那刻，彷彿被溫暖的燈光和木質調的裝潢包圍，整個空間散發出舒服的氛圍。菜色一道道上桌，每一口都能感受到用心，配著周圍輕鬆的對話聲和餐具碰撞的聲音，這就是曼谷最治癒的用餐時刻。",
+    "description_en": "Named after the marigold — Thailand's flower of devotion 🌼 Mariga at Samala Hotel is a quiet gem on Sukhumvit 15, where 28-year-old Chef Khing crafts a culinary journey across every Thai region. Northern hang lay curry, southern chili dips, and a crab roe fried rice that steals the show. Refined, heartfelt, and deeply Thai.",
+    "description_zh": "以萬壽菊為名的泰菜殿堂 🌼 Mariga 藏在 Samala Hotel 裡，由年僅 28 歲的主廚 Khing 掌廚，北部掛肉咖哩、南部辣椒蝦醬、螃蟹卵炒飯每道都是對泰國各地風土的深情致敬，細膩而大器。",
     "category": "food",
     "address": "43 Sukhumvit Soi 15, Nua, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
     "lat": 13.741453199999999,
@@ -951,7 +958,10 @@
     "highlights": [],
     "id": "ebbf692b-388c-4b49-af5c-88ca5b6055c3",
     "source": "googlemaps",
-    "approved_at": "2026-06-05T14:17:12.503Z"
+    "approved_at": "2026-06-05T14:17:12.503Z",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Jirakaan Restaurant (จิรกาล)",
