@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import type { Location, PendingLocation, Category, Source, LocationTag } from '@/lib/types'
 
@@ -749,18 +749,12 @@ export function AdminPanel() {
   const [approved, setApproved] = useState<Location[]>([])
   const [scraperStatus, setScraperStatus] = useState<string>('就緒')
   const [scraperRunning, setScraperRunning] = useState(false)
-  const [retranslating, setRetranslating] = useState(false)
-  const [retranslateStatus, setRetranslateStatus] = useState('')
   const [customKeywords, setCustomKeywords] = useState('')
   const [deployStatus, setDeployStatus] = useState<string>('')
   const [deploying, setDeploying] = useState(false)
   const [approvedSearch, setApprovedSearch] = useState('')
   const [pendingSourceFilter, setPendingSourceFilter] = useState<string>('all')
   const [pendingAreaFilter, setPendingAreaFilter] = useState<string>('all')
-  const [batchRunning, setBatchRunning] = useState(false)
-  const [batchProgress, setBatchProgress] = useState({ done: 0, total: 0, ok: 0, fail: 0, current: '' })
-  const batchStopRef = useRef(false)
-  const abortRef = useRef<AbortController | null>(null)
 
   useEffect(() => {
     if (sessionStorage.getItem('admin_authed') === '1') setAuthed(true)
@@ -803,84 +797,9 @@ export function AdminPanel() {
     loadData()
   }
 
-  async function handleApproveAll() {
-    const visible = pending.filter(p =>
-      (pendingSourceFilter === 'all' || p.source === pendingSourceFilter) &&
-      (pendingAreaFilter === 'all' || (p as PendingLocation & { area?: string }).area === pendingAreaFilter)
-    )
-    if (!confirm(`確定要全部上架 ${visible.length} 筆待審核地點嗎？上架後會自動部署。`)) return
-    await Promise.all(visible.map((item) =>
-      fetch('/api/locations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'approve', id: item.id, tag: resolveTag(item) }) })
-    ))
-    loadData()
-    deploy()
-  }
-
   async function handleRemove(id: string) {
     await fetch('/api/locations', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) })
     loadData()
-  }
-
-  function stopBatch() {
-    batchStopRef.current = true
-    abortRef.current?.abort()
-    setBatchProgress(p => ({ ...p, current: '停止中…' }))
-  }
-
-  async function generateAllDescriptions() {
-    const visible = pending.filter(p =>
-      (pendingSourceFilter === 'all' || p.source === pendingSourceFilter) &&
-      (pendingAreaFilter === 'all' || (p as PendingLocation & { area?: string }).area === pendingAreaFilter)
-    )
-    if (visible.length === 0) return
-    if (!confirm(`要對這 ${visible.length} 筆待審核地點「上網查證生成」中英描述嗎？\n\n每筆約 30–40 秒，會逐筆覆蓋現有描述並存檔。過程中可隨時停止，已完成的會保留。請保持本機後台開著。`)) return
-
-    batchStopRef.current = false
-    setBatchRunning(true)
-    setBatchProgress({ done: 0, total: visible.length, ok: 0, fail: 0, current: '' })
-
-    let ok = 0, fail = 0
-    for (let i = 0; i < visible.length; i++) {
-      if (batchStopRef.current) break
-      const item = visible[i]
-      setBatchProgress({ done: i, total: visible.length, ok, fail, current: item.name_en })
-      const ctrl = new AbortController()
-      abortRef.current = ctrl
-      try {
-        const res = await fetch('/api/generate-description', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name_en: item.name_en,
-            address: item.address,
-            source_url: item.source_url,
-            category: item.category,
-          }),
-          signal: ctrl.signal,
-        })
-        const data = await res.json()
-        if (res.ok && data.description_zh) {
-          await fetch('/api/pending', {
-            method: 'PATCH',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ id: item.id, description_zh: data.description_zh, description_en: data.description_en || item.description_en }),
-          })
-          ok++
-        } else {
-          fail++
-        }
-      } catch {
-        // Aborted by the stop button → exit immediately without counting as a failure
-        if (batchStopRef.current) break
-        fail++
-      }
-      setBatchProgress({ done: i + 1, total: visible.length, ok, fail, current: item.name_en })
-    }
-
-    abortRef.current = null
-    setBatchRunning(false)
-    batchStopRef.current = false
-    await loadData()
   }
 
   async function handleUpdate(id: string, updates: Partial<Location>) {
@@ -905,21 +824,6 @@ export function AdminPanel() {
       setScraperStatus('執行失敗')
     } finally {
       setScraperRunning(false)
-    }
-  }
-
-  async function retranslate() {
-    setRetranslating(true)
-    setRetranslateStatus('翻譯中...')
-    try {
-      const res = await fetch('/api/retranslate', { method: 'POST' })
-      const data = await res.json()
-      setRetranslateStatus(`完成，更新了 ${data.updated} 筆`)
-      loadData()
-    } catch {
-      setRetranslateStatus('失敗，請重試')
-    } finally {
-      setRetranslating(false)
     }
   }
 
@@ -996,17 +900,6 @@ export function AdminPanel() {
           </button>
           <p className="text-slate-500 text-[10px] text-center mt-1.5">{scraperStatus}</p>
           <button
-            onClick={retranslate}
-            disabled={retranslating}
-            className="mt-2 w-full bg-violet-600 hover:bg-violet-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5 flex items-center justify-center gap-2"
-          >
-            <svg className={`w-3.5 h-3.5 ${retranslating ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path d="M5 8l4-4 4 4M9 4v9M19 16l-4 4-4-4M15 20v-9"/>
-            </svg>
-            {retranslating ? '翻譯中...' : '重新翻譯英文'}
-          </button>
-          {retranslateStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{retranslateStatus}</p>}
-          <button
             onClick={deploy}
             disabled={deploying}
             className="mt-3 w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5 flex items-center justify-center gap-2"
@@ -1043,35 +936,9 @@ export function AdminPanel() {
               <h1 className="text-xl font-black text-[#0f172a]">待審核地點</h1>
               {pending.length > 0 && (
                 <div className="flex gap-2">
-                  {batchRunning ? (
-                    <button
-                      onClick={stopBatch}
-                      className="text-xs font-bold px-4 py-2 rounded-xl bg-red-100 text-red-700 hover:bg-red-200 transition-colors"
-                    >
-                      ■ 停止生成
-                    </button>
-                  ) : (
-                    <button
-                      onClick={generateAllDescriptions}
-                      className="text-xs font-bold px-4 py-2 rounded-xl bg-blue-50 text-blue-700 hover:bg-blue-100 transition-colors"
-                    >
-                      🌐 全部上網生成
-                    </button>
-                  )}
-                  <button
-                    onClick={handleApproveAll}
-                    disabled={batchRunning}
-                    className="text-xs font-bold px-4 py-2 rounded-xl bg-green-50 text-green-700 hover:bg-green-100 disabled:opacity-40 transition-colors"
-                  >
-                    全部上架 ({pending.filter(p =>
-                      (pendingSourceFilter === 'all' || p.source === pendingSourceFilter) &&
-                      (pendingAreaFilter === 'all' || (p as PendingLocation & { area?: string }).area === pendingAreaFilter)
-                    ).length})
-                  </button>
                   <button
                     onClick={handleRejectAll}
-                    disabled={batchRunning}
-                    className="text-xs font-bold px-4 py-2 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 disabled:opacity-40 transition-colors"
+                    className="text-xs font-bold px-4 py-2 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
                   >
                     全部駁回
                   </button>
@@ -1079,21 +946,6 @@ export function AdminPanel() {
               )}
             </div>
 
-            {/* Batch progress */}
-            {batchRunning && (
-              <div className="bg-blue-50 border border-blue-100 rounded-xl px-4 py-3 mb-2">
-                <div className="flex items-center justify-between text-xs font-bold text-blue-700 mb-1.5">
-                  <span>上網查證生成中… {batchProgress.done}/{batchProgress.total}（✓{batchProgress.ok} ✗{batchProgress.fail}）</span>
-                  <span className="text-blue-400 font-normal truncate ml-2 max-w-[50%]">{batchProgress.current}</span>
-                </div>
-                <div className="h-1.5 bg-blue-100 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-blue-500 transition-all duration-300"
-                    style={{ width: `${batchProgress.total ? (batchProgress.done / batchProgress.total) * 100 : 0}%` }}
-                  />
-                </div>
-              </div>
-            )}
             {/* Source + Area filters */}
             {pending.length > 0 && (() => {
               const areas = Array.from(new Set(pending.map(p => (p as PendingLocation & { area?: string }).area).filter(Boolean))).sort()
