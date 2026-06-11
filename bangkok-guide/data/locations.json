@@ -831,31 +831,6 @@
     "approved_at": "2026-06-05T11:36:58.669Z"
   },
   {
-    "name_zh": "TAIBAN (ใต้บ้าน)",
-    "name_en": "TAIBAN (ใต้บ้าน)",
-    "name_th": "",
-    "description_zh": "躲進暹羅商圈的老洋房咖啡廳，推開木門的瞬間整個世界都安靜了 ☕ TAIBAN 就像朋友家的客廳，斑駁磚牆、復古傢俱、柔和午後光線灑進來，點杯手沖咖啡窩在角落，看著來來往往的曼谷人步調都跟著慢了下來。這裡的每一杯都能喝到故事，難怪是在地上班族逃離塵囂的秘密基地。",
-    "description_en": "Escape into a vintage café tucked away in the Siamese business district, and the moment you push open that wooden door, the whole world goes quiet ☕ TAIBAN feels like your friend's living room — weathered brick walls, retro furniture, and soft afternoon light pouring through the windows. Order a hand-pour coffee and curl up in the corner, and you'll notice even the pace of the Bangkok locals flowing past seems to slow down. Every cup here tells a story, so it's no wonder this place is the secret hideaway for local office workers desperately seeking escape from the city's chaos.",
-    "category": "cafe",
-    "address": "476/5 Thanon Rama IV, Khwaeng Rong Muang, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
-    "address_th": "",
-    "lat": 13.7384617,
-    "lng": 100.5179186,
-    "source": "googlemaps",
-    "source_url": "https://maps.app.goo.gl/ixpTjWGXsMfusCQy6",
-    "rating": 4.4,
-    "price_range": 2,
-    "tag": "new_opening",
-    "action": "add",
-    "photos": [
-      "places/ChIJcxvckaeZ4jARfnIztkIvpnM/photos/AaVGc3ndEq6qAc2LtFn175EKCyFk_aOwKqk0MNO9RHDgttVppR-b138mzTP_vU7Wuy0g8_UEyQbVm9Y-L_2yGGMLhs-cKClgEBSNWG-pi17HDUNZDpfsRB8pous8Rcm9XQoI2WddkZBTcoiRiYmJzpTSTNEgngiwHdJo6fW8SQXGLabrzFP-2ZWi-Ozo5ql6qCZeKw5GoBOex5TFgQf8XOBsaFBVDBCXkq5yDDjgHas68MyEceO7TyL9tlUoYd0vKqQaOeNYLMAhFair1gWb1vypnQ5zMC_3Be0b01hdw1pj_WsC7_c4QXQHaTrpzVUt1MLoAS3zd9FAtO_OFC69NWeZ2bS1Xld_Uf1v6Mo2SmFBrI-UFv7aX4F2i1Ex1SQLiZLMSvbaBIqzvEfq82X-k49PjS2J8TB8BAhVUjlJyAT1ytxrgw"
-    ],
-    "hashtags": [],
-    "id": "ee55ea39-2833-44e8-9700-f8b715286a18",
-    "approved_at": "2026-06-05T12:33:13.570Z",
-    "highlights": []
-  },
-  {
     "name_zh": "AantArm Cafe",
     "name_en": "AantArm Cafe",
     "name_th": "",
@@ -3275,5 +3250,29 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-10T11:55:33.334Z"
+  },
+  {
+    "name_en": "TAIBAN (ใต้บ้าน)",
+    "name_zh": "TAIBAN (ใต้บ้าน)",
+    "description_en": "Coffee, paint, and a Bangkok afternoon — all at once 🎨 TAIBAN (meaning \"under the house\") is tucked beneath a Hua Lamphong hostel in a leafy courtyard that doubles as an open-air painting studio. Order a drink, grab a canvas from 150 baht, and paint under the trees with all tools provided at no extra cost. No art skills required, no rush. Just one of Bangkok's most quietly joyful ways to spend a few hours.",
+    "description_zh": "喝咖啡、同時在路邊作畫，這就是 TAIBAN 🎨 藏在華藍蓬站旁的老宅院子裡，點杯拿鐵、買張畫布，在綠蔭下自在揮灑，畫具全包只收畫布費，不需要任何基礎，是曼谷最有藝術療癒感的咖啡廳。",
+    "category": "food",
+    "address": "476/5 Thanon Rama IV, Khwaeng Rong Muang, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.7384617,
+    "lng": 100.5179186,
+    "photos": [
+      "places/ChIJcxvckaeZ4jARfnIztkIvpnM/photos/AaVGc3kPeKnQgNJlyOj7KscDcnIdWDAP7Gc3-yo-HnHjZMofNNccAZOz4AGA_LXlerJhCK_otSSHXRu18362XkG5ylpKAtTahdsJQfGk9DSL9nqCbbzWKFrXqlxVAptvZF2mbyQePr57KY-iDK9sjqzkAhZX8BAE0nBz4QWpfVBJkOtC-8mZPLbPHU6NdsrF30D6qI4xWgZMlgzyUfBCHgYn_-PuTM1eu5CmK-QMwYbpOHe9nWYYwuT9nSSpSDZC-TD_VXaaGLaKJVimniUHr-KI0cN9rml-ILc8e-fcXzSaak2dF8VMGbrd8aFScxWdz3FSk-pySNkVY0HYkR6i9KBtbxaZB6xiUs2Jy70AHuQA9SHZZomDWshy3lQ30AqwaZWzpWI777PILXklnrsEum54xpU8Jv-RRAQe9Xx09CUkB-i7Cg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=TAIBAN%20(%E0%B9%83%E0%B8%95%E0%B9%89%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99)%20476%2F5%20Thanon%20Rama%20IV%2C%20Khwaeng%20Rong%20Muang%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJcxvckaeZ4jARfnIztkIvpnM",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "trending",
+    "highlights": [
+      "A bit humid during the day"
+    ],
+    "id": "3168e935-7a4f-4998-8f71-bdb5e23636d7",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-11T10:53:59.632Z"
   }
 ]
