@@ -3,9 +3,6 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  other: {
-    'google-site-verification': 'waReMwJmdacJwtXEdAojUrwDs3DM3o3hPhpDz9LHGtc',
-  },
   title: '曼谷人 | BKK LOCAL',
   description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 每日更新',
   icons: {
@@ -17,15 +14,13 @@ export const metadata: Metadata = {
     description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × TikTok 爆紅地點 × 每日更新',
     url: 'https://www.bkk-local.com',
     siteName: '曼谷人',
-    images: [{ url: 'https://www.bkk-local.com/logo.jpg', width: 3375, height: 3375 }],
     locale: 'zh_TW',
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: '曼谷人 | BKK LOCAL',
     description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 每日更新',
-    images: ['https://www.bkk-local.com/logo.jpg'],
   },
 }
 
