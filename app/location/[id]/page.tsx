@@ -16,25 +16,15 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const loc = locations.find((l) => l.id === id)
   if (!loc) return {}
 
-  const photo = loc.photos[0]
-    ? loc.photos[0].startsWith('places/')
-      ? `https://places.googleapis.com/v1/${loc.photos[0]}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-      : loc.photos[0]
-    : 'https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=1200&h=630&fit=crop'
-
   const title = `${loc.name_en} — 曼谷人`
   const description = loc.description_zh || loc.description_en || ''
 
+  // og:image / twitter:image 由 opengraph-image.tsx 自動產生（品牌化地點圖）
   return {
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      images: [{ url: photo, width: 800, height: 600 }],
-      type: 'article',
-    },
-    twitter: { card: 'summary_large_image', title, description, images: [photo] },
+    openGraph: { title, description, type: 'article' },
+    twitter: { card: 'summary_large_image', title, description },
   }
 }
 
