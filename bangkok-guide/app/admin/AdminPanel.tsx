@@ -135,6 +135,8 @@ function PendingCard({
   const [suggestingNote, setSuggestingNote] = useState(false)
   const [regenerating, setRegenerating] = useState(false)
   const [webGenerating, setWebGenerating] = useState(false)
+  const [copied, setCopied] = useState(false)
+  const [pasteBox, setPasteBox] = useState('')
   const [form, setForm] = useState({
     name_zh: item.name_zh || '',
     name_en: item.name_en,
@@ -174,6 +176,41 @@ function PendingCard({
     onUpdate(item.id, updates)
     setSaving(false)
     setEditing(false)
+  }
+
+  async function saveAndApprove() {
+    await save()
+    onApprove(item.id, form.category, form.tag)
+  }
+
+  function copyNameLink() {
+    const text = [item.name_en, item.source_url].filter(Boolean).join('\n')
+    navigator.clipboard.writeText(text).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    })
+  }
+
+  function applyPaste() {
+    const raw = pasteBox.trim()
+    if (!raw) return
+    // 找英文段起點（🇬🇧 / 🇺🇸 旗子，或 "English" 字樣）。國旗 = 兩個 regional indicator surrogate pairs
+    const idx = raw.search(/🇬🇧|🇺🇸|\bEnglish\b/)
+    let zhPart = raw, enPart = ''
+    if (idx > 0) { zhPart = raw.slice(0, idx); enPart = raw.slice(idx) }
+    const clean = (s: string) =>
+      s.replace(/^\s+/, '')
+       .replace(/^(?:\uD83C[\uDDE6-\uDDFF]\s*){1,2}/, '')           // 去開頭國旗
+       .replace(/^\s*(繁體中文|中文|英文|English|EN|ZH)\s*[:：]?\s*/i, '') // 去開頭標籤
+       .trim()
+    const zh = clean(zhPart)
+    const en = clean(enPart)
+    setForm(f => ({
+      ...f,
+      description_zh: zh || f.description_zh,
+      description_en: en || f.description_en,
+    }))
+    setPasteBox('')
   }
 
   const inp = 'w-full border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs outline-none focus:border-indigo-400'
@@ -222,6 +259,9 @@ function PendingCard({
               </a>
             ) : <span />}
             <div className="flex gap-1.5 shrink-0">
+              <button onClick={copyNameLink} title="複製店名＋地圖連結" className={`text-xs font-bold px-2.5 py-1.5 rounded-lg transition-colors ${copied ? 'bg-green-100 text-green-700' : 'bg-blue-50 text-blue-500 hover:bg-blue-100'}`}>
+                {copied ? '✓ 已複製' : '📋'}
+              </button>
               <button onClick={() => setShowScoring(!showScoring)} title="評分輔助" className="text-xs font-bold px-2.5 py-1.5 rounded-lg bg-indigo-50 text-indigo-500 hover:bg-indigo-100 transition-colors">
                 📊
               </button>
@@ -250,6 +290,27 @@ function PendingCard({
           <div className="grid grid-cols-2 gap-2">
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">中文名稱</p><input className={inp} value={form.name_zh} onChange={e => setForm(f => ({...f, name_zh: e.target.value}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">English Name</p><input className={inp} value={form.name_en} onChange={e => setForm(f => ({...f, name_en: e.target.value}))} /></div>
+            <div className="col-span-2 bg-indigo-50/60 border border-indigo-100 rounded-lg p-2">
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-[10px] font-bold text-indigo-500">↧ 貼上 AI 回覆（自動拆中英）</p>
+                <button
+                  type="button"
+                  onClick={applyPaste}
+                  disabled={!pasteBox.trim()}
+                  className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-500 text-white hover:bg-indigo-600 disabled:opacity-40 transition-colors"
+                >
+                  拆分填入 ↓
+                </button>
+              </div>
+              <textarea
+                className={inp}
+                rows={3}
+                placeholder="把 AI 輸出的中英整段貼進來（例如「🇹🇼 中文… 🇬🇧 English…」），按「拆分填入」自動分到下面欄位"
+                value={pasteBox}
+                onChange={e => setPasteBox(e.target.value)}
+              />
+            </div>
+
             <div className="col-span-2">
               <div className="flex items-center justify-between mb-1">
                 <p className="text-[10px] font-semibold text-gray-500">中文描述</p>
@@ -367,6 +428,9 @@ function PendingCard({
           <div className="flex gap-2 pt-1">
             <button onClick={save} disabled={saving} className="flex-1 bg-[#0f172a] text-white text-xs font-bold rounded-xl py-2 disabled:opacity-50">
               {saving ? '儲存中...' : '儲存'}
+            </button>
+            <button onClick={saveAndApprove} disabled={saving} className="flex-1 bg-green-600 text-white text-xs font-bold rounded-xl py-2 hover:bg-green-700 disabled:opacity-50">
+              {saving ? '處理中...' : '儲存並上架'}
             </button>
             <button onClick={() => setEditing(false)} className="px-4 bg-gray-200 text-gray-600 text-xs font-bold rounded-xl py-2">
               取消
