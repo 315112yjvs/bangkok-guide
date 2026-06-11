@@ -134,6 +134,7 @@ function PendingCard({
   const [saving, setSaving] = useState(false)
   const [suggestingNote, setSuggestingNote] = useState(false)
   const [regenerating, setRegenerating] = useState(false)
+  const [webGenerating, setWebGenerating] = useState(false)
   const [form, setForm] = useState({
     name_zh: item.name_zh || '',
     name_en: item.name_en,
@@ -252,32 +253,69 @@ function PendingCard({
             <div className="col-span-2">
               <div className="flex items-center justify-between mb-1">
                 <p className="text-[10px] font-semibold text-gray-500">中文描述</p>
-                <button
-                  type="button"
-                  disabled={regenerating}
-                  onClick={async () => {
-                    setRegenerating(true)
-                    const res = await fetch('/api/quickimport', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({ name: form.name_en, mapsUrl: item.source_url, category: form.category }),
-                    })
-                    if (res.ok) {
-                      const data = await res.json()
-                      setForm(f => ({
-                        ...f,
-                        description_zh: data.description_zh ?? f.description_zh,
-                        description_en: data.description_en ?? f.description_en,
-                        highlights: (data.highlights ?? []).join(', ') || f.highlights,
-                        category: data.category ?? f.category,
-                      }))
-                    }
-                    setRegenerating(false)
-                  }}
-                  className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-orange-50 text-orange-600 hover:bg-orange-100 disabled:opacity-50 transition-colors"
-                >
-                  {regenerating ? '生成中...' : '🔄 重新生成描述'}
-                </button>
+                <div className="flex items-center gap-1.5">
+                  <button
+                    type="button"
+                    disabled={webGenerating || regenerating}
+                    onClick={async () => {
+                      setWebGenerating(true)
+                      try {
+                        const res = await fetch('/api/generate-description', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({
+                            name_en: form.name_en,
+                            address: form.address,
+                            source_url: item.source_url,
+                            category: form.category,
+                          }),
+                        })
+                        const data = await res.json()
+                        if (res.ok && data.description_zh) {
+                          setForm(f => ({
+                            ...f,
+                            description_zh: data.description_zh,
+                            description_en: data.description_en || f.description_en,
+                          }))
+                        } else {
+                          alert('生成失敗：' + (data.error ?? '未知錯誤'))
+                        }
+                      } catch (e) {
+                        alert('生成失敗：' + (e instanceof Error ? e.message : String(e)))
+                      }
+                      setWebGenerating(false)
+                    }}
+                    className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 disabled:opacity-50 transition-colors"
+                  >
+                    {webGenerating ? '查證中...' : '🌐 上網查證生成'}
+                  </button>
+                  <button
+                    type="button"
+                    disabled={regenerating || webGenerating}
+                    onClick={async () => {
+                      setRegenerating(true)
+                      const res = await fetch('/api/quickimport', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name: form.name_en, mapsUrl: item.source_url, category: form.category }),
+                      })
+                      if (res.ok) {
+                        const data = await res.json()
+                        setForm(f => ({
+                          ...f,
+                          description_zh: data.description_zh ?? f.description_zh,
+                          description_en: data.description_en ?? f.description_en,
+                          highlights: (data.highlights ?? []).join(', ') || f.highlights,
+                          category: data.category ?? f.category,
+                        }))
+                      }
+                      setRegenerating(false)
+                    }}
+                    className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-orange-50 text-orange-600 hover:bg-orange-100 disabled:opacity-50 transition-colors"
+                  >
+                    {regenerating ? '生成中...' : '🔄 快速重生成'}
+                  </button>
+                </div>
               </div>
               <textarea className={inp} rows={2} value={form.description_zh} onChange={e => setForm(f => ({...f, description_zh: e.target.value}))} />
             </div>
