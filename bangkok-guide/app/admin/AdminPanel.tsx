@@ -696,6 +696,7 @@ export function AdminPanel() {
   const [batchRunning, setBatchRunning] = useState(false)
   const [batchProgress, setBatchProgress] = useState({ done: 0, total: 0, ok: 0, fail: 0, current: '' })
   const batchStopRef = useRef(false)
+  const abortRef = useRef<AbortController | null>(null)
 
   useEffect(() => {
     if (sessionStorage.getItem('admin_authed') === '1') setAuthed(true)
@@ -756,7 +757,11 @@ export function AdminPanel() {
     loadData()
   }
 
-  function stopBatch() { batchStopRef.current = true }
+  function stopBatch() {
+    batchStopRef.current = true
+    abortRef.current?.abort()
+    setBatchProgress(p => ({ ...p, current: '停止中…' }))
+  }
 
   async function generateAllDescriptions() {
     const visible = pending.filter(p =>
@@ -775,6 +780,8 @@ export function AdminPanel() {
       if (batchStopRef.current) break
       const item = visible[i]
       setBatchProgress({ done: i, total: visible.length, ok, fail, current: item.name_en })
+      const ctrl = new AbortController()
+      abortRef.current = ctrl
       try {
         const res = await fetch('/api/generate-description', {
           method: 'POST',
@@ -785,6 +792,7 @@ export function AdminPanel() {
             source_url: item.source_url,
             category: item.category,
           }),
+          signal: ctrl.signal,
         })
         const data = await res.json()
         if (res.ok && data.description_zh) {
@@ -798,11 +806,14 @@ export function AdminPanel() {
           fail++
         }
       } catch {
+        // Aborted by the stop button → exit immediately without counting as a failure
+        if (batchStopRef.current) break
         fail++
       }
       setBatchProgress({ done: i + 1, total: visible.length, ok, fail, current: item.name_en })
     }
 
+    abortRef.current = null
     setBatchRunning(false)
     batchStopRef.current = false
     await loadData()
