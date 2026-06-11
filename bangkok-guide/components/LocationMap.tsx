@@ -1,5 +1,6 @@
 'use client'
 import { APIProvider, Map, InfoWindow, useMap } from '@vis.gl/react-google-maps'
+import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import { MarkerClusterer } from '@googlemaps/markerclusterer'
 import type { Location } from '@/lib/types'
@@ -121,10 +122,15 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
           pixelOffset={[0, -36]}
         >
           <div className="p-1 max-w-[180px]">
-            <p className="font-bold text-sm text-[#1a1a2e] mb-0.5">
-              {lang === 'zh' ? selected.name_zh : selected.name_en}
-            </p>
-            <p className="text-xs text-gray-500 mb-2">★ {selected.rating.toFixed(1)}</p>
+            <Link href={`/location/${selected.id}`} className="block group">
+              <p className="font-bold text-sm text-[#1a1a2e] mb-0.5 group-hover:underline">
+                {lang === 'zh' ? selected.name_zh : selected.name_en}
+              </p>
+              <p className="text-xs text-gray-500 mb-1.5">★ {selected.rating.toFixed(1)}</p>
+              <span className="inline-block text-xs font-bold text-white bg-[#1e1b4b] rounded-full px-3 py-1 mb-2">
+                {strings[lang].viewDetail as string} →
+              </span>
+            </Link>
             <a
               href={(() => {
                 const q = encodeURIComponent(selected.name_en + (selected.address ? ' ' + selected.address : ' Bangkok'))
@@ -135,7 +141,7 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
               })()}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold text-[#1e1b4b] underline"
+              className="block text-xs text-gray-500 underline"
             >
               {strings[lang].openMaps as string}
             </a>
