@@ -27,7 +27,7 @@ async function fetchPlaceFacts(placeId: string): Promise<string> {
       headers: {
         'X-Goog-Api-Key': apiKey,
         'X-Goog-FieldMask':
-          'displayName,formattedAddress,editorialSummary,reviews,rating,regularOpeningHours,primaryTypeDisplayName,websiteUri',
+          'displayName,formattedAddress,editorialSummary,reviews,rating,primaryTypeDisplayName,websiteUri',
         'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.bkk-local.com/',
       },
       next: { revalidate: 86400 },
@@ -80,13 +80,14 @@ ${source_url ? `Google Maps 連結：${source_url}` : ''}
 ${placeFacts ? `【Google 官方資料與真實評論（最可靠，請優先採用）】\n${placeFacts}\n` : ''}
 
 【務必遵守】
-- 先用 web_search 查證這家店的真實資訊（招牌餐點/飲品、特色、所在巷弄、店主背景、營業時間、價位）。搜尋時帶上店名與地址，確認是曼谷同一家店，不要寫成同名的別家。
+- 先用 web_search 查證這家店的真實資訊（招牌餐點/飲品、特色、所在巷弄、店主背景）。搜尋時帶上店名與地址，確認是曼谷同一家店，不要寫成同名的別家。
 - 只寫查得到的具體事實，絕對不要憑空想像或用空泛氛圍詞填充。
+- **絕對不要寫營業時間（幾點到幾點、星期幾營業），也不要寫價格、價位、人均消費或任何金額。** 這些資訊會單獨呈現，描述裡出現就是錯。
 - 中文 50–100 字；英文是中文的自然翻譯，保留所有具體事實，語氣像熟門熟路的朋友推薦。
 - 開頭可用一個貼切的 emoji。
 
 【好範例】
-藏在 Soi Nana 巷弄裡，由新泰夫妻檔打造 🦆 北泰 Lanna 料理遇上娘惹風味，鴨肉酥脆貼葉、炸蠔驚喜連連。一樓是復古上海酒吧，雞尾酒靈感取自老唐人街傳說，週二至週日開到深夜。
+藏在 Soi Nana 巷弄裡，由新泰夫妻檔打造 🦆 北泰 Lanna 料理遇上娘惹風味，鴨肉酥脆貼葉、炸蠔驚喜連連。一樓是復古上海酒吧，雞尾酒靈感取自老唐人街傳說，氣氛迷人。
 
 【壞範例（空泛，禁止）】
 走進去就會愛上的地方 🕯️ 昏黃的燈光、復古的裝潢，感受曼谷夜生活的精緻與慵懶。
