@@ -3,9 +3,6 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  verification: {
-    google: 'waReMwJmdacJwtXEdAojUrwDs3DM3o3hPhpDz9LHGtc',
-  },
   title: '曼谷人 | BKK LOCAL',
   description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 每日更新',
   icons: {
@@ -32,6 +29,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-TW">
+      <head>
+        <meta name="google-site-verification" content="waReMwJmdacJwtXEdAojUrwDs3DM3o3hPhpDz9LHGtc" />
+      </head>
       <body className="bg-gray-100 min-h-screen">{children}<Analytics /></body>
     </html>
   )
