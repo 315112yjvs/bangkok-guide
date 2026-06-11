@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       : loc.photos[0]
     : 'https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=1200&h=630&fit=crop'
 
-  const title = `${loc.name_en} — 曼谷旅遊指南`
+  const title = `${loc.name_en} — 曼谷人`
   const description = loc.description_zh || loc.description_en || ''
 
   return {
