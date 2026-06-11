@@ -1,7 +1,7 @@
 import { readLocations } from '@/lib/data'
 import { PublicHomepage } from './PublicHomepage'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 3600
 
 export default function Page() {
   const locations = readLocations()

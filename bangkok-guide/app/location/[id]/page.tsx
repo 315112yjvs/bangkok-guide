@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { readLocations } from '@/lib/data'
 import { LocationDetail } from './LocationDetail'
 
+export const revalidate = 3600
+
 export async function generateStaticParams() {
   const locations = readLocations()
   return locations.map((l) => ({ id: l.id }))

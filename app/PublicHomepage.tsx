@@ -55,25 +55,6 @@ export function PublicHomepage({ locations }: Props) {
   }, [])
 
   useEffect(() => {
-    if (!navigator.geolocation) return
-    let firstFix = true
-    const watchId = navigator.geolocation.watchPosition(
-      (pos) => {
-        const loc = { lat: pos.coords.latitude, lng: pos.coords.longitude }
-        setUserLocation(loc)
-        if (firstFix) {
-          firstFix = false
-          setSpecialFilter('nearby')
-        }
-      },
-      () => {},
-      { enableHighAccuracy: true, maximumAge: 5000 }
-    )
-    return () => navigator.geolocation.clearWatch(watchId)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
     if (specialFilter === 'nearby') setMapExpanded(true)
   }, [specialFilter])
 
