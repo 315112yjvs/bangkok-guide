@@ -1,12 +1,15 @@
 'use client'
 import { useState, useMemo, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useLanguage } from '@/hooks/useLanguage'
 import { strings } from '@/lib/i18n'
 import { LanguageToggle } from '@/components/LanguageToggle'
 import { CategoryTabs } from '@/components/CategoryTabs'
 import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
+import { CATEGORY_META, areaToSlug } from '@/lib/collections'
+import { getArea } from '@/lib/area'
 import type { Location, Category, LocationTag } from '@/lib/types'
 
 type Props = { locations: Location[] }
@@ -87,7 +90,7 @@ export function PublicHomepage({ locations }: Props) {
     const base = locations.filter((loc) => {
       const matchCat = activeCategory === 'all' || loc.category === activeCategory
       const matchTag = activeTag === 'all' || resolveTag(loc) === activeTag
-      const matchArea = activeArea === 'all' || (loc.area ?? '') === activeArea
+      const matchArea = activeArea === 'all' || getArea(loc) === activeArea
       const matchSpecial =
         specialFilter === 'all' ||
         specialFilter === 'nearby' ||
@@ -111,8 +114,8 @@ export function PublicHomepage({ locations }: Props) {
   const areas = useMemo(() => {
     const counts = new Map<string, number>()
     for (const loc of locations) {
-      const a = loc.area
-      if (a && a !== 'Bangkok') counts.set(a, (counts.get(a) ?? 0) + 1)
+      const a = getArea(loc)
+      if (a !== 'Bangkok') counts.set(a, (counts.get(a) ?? 0) + 1)
     }
     return Array.from(counts.entries()).sort((a, b) => b[1] - a[1]).map(([a]) => a)
   }, [locations])
@@ -430,6 +433,42 @@ export function PublicHomepage({ locations }: Props) {
             )}
           </section>
         )}
+
+        {/* SEO 內部連結頁腳：分類 + 熱門區域 */}
+        <footer className="bg-white border-t border-gray-100 px-5 py-6">
+          <p className="text-[11px] font-black text-gray-400 uppercase tracking-wide mb-2.5">
+            {lang === 'zh' ? '依分類探索曼谷' : 'Explore Bangkok by category'}
+          </p>
+          <div className="flex flex-wrap gap-2 mb-5">
+            {Object.values(CATEGORY_META).map((c) => (
+              <Link
+                key={c.slug}
+                href={`/category/${c.slug}`}
+                className="text-[12px] font-semibold px-3 py-1.5 rounded-full bg-gray-100 text-gray-600 hover:bg-[#1e1b4b] hover:text-white transition-colors"
+              >
+                {c.emoji} {lang === 'zh' ? c.h1Zh : c.h1En}
+              </Link>
+            ))}
+          </div>
+          {areas.length > 0 && (
+            <>
+              <p className="text-[11px] font-black text-gray-400 uppercase tracking-wide mb-2.5">
+                {lang === 'zh' ? '熱門區域' : 'Popular areas'}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {areas.slice(0, 12).map((a) => (
+                  <Link
+                    key={a}
+                    href={`/area/${areaToSlug(a)}`}
+                    className="text-[12px] font-semibold px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-[#1e1b4b] hover:text-[#1e1b4b] transition-colors"
+                  >
+                    📍 {a}
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
+        </footer>
       </div>
     </div>
   )
