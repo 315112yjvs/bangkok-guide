@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { readLocations } from '@/lib/data'
 import { CATEGORY_SLUGS, listAreas } from '@/lib/collections'
+import { THEMES } from '@/lib/themes'
 
 const BASE_URL = 'https://www.bkk-local.com'
 
@@ -30,6 +31,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  // 主題情境頁（IG 打卡、高空夜景…，高意圖、優先度高）
+  const themeUrls: MetadataRoute.Sitemap = THEMES.map((t) => ({
+    url: `${BASE_URL}/theme/${t.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'daily',
+    priority: 0.9,
+  }))
+
   return [
     {
       url: BASE_URL,
@@ -37,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1,
     },
+    ...themeUrls,
     ...categoryUrls,
     ...areaUrls,
     ...locationUrls,

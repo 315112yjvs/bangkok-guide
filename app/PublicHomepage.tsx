@@ -10,6 +10,7 @@ import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
 import { CATEGORY_META, areaToSlug } from '@/lib/collections'
 import { getArea } from '@/lib/area'
+import { THEMES } from '@/lib/themes'
 import type { Location, Category, LocationTag } from '@/lib/types'
 
 type Props = { locations: Location[] }
@@ -434,8 +435,22 @@ export function PublicHomepage({ locations }: Props) {
           </section>
         )}
 
-        {/* SEO 內部連結頁腳：分類 + 熱門區域 */}
+        {/* SEO 內部連結頁腳：主題 + 分類 + 熱門區域 */}
         <footer className="bg-white border-t border-gray-100 px-5 py-6">
+          <p className="text-[11px] font-black text-gray-400 uppercase tracking-wide mb-2.5">
+            {lang === 'zh' ? '主題玩法' : 'Curated themes'}
+          </p>
+          <div className="flex flex-wrap gap-2 mb-5">
+            {THEMES.map((t) => (
+              <Link
+                key={t.slug}
+                href={`/theme/${t.slug}`}
+                className="text-[12px] font-semibold px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-colors"
+              >
+                {t.emoji} {lang === 'zh' ? t.h1Zh : t.h1En}
+              </Link>
+            ))}
+          </div>
           <p className="text-[11px] font-black text-gray-400 uppercase tracking-wide mb-2.5">
             {lang === 'zh' ? '依分類探索曼谷' : 'Explore Bangkok by category'}
           </p>
