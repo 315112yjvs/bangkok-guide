@@ -6,6 +6,7 @@ import { MarkerClusterer } from '@googlemaps/markerclusterer'
 import type { Location } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
+import { buildMapsUrl } from '@/lib/maps'
 
 const CATEGORY_COLORS: Record<string, string> = {
   food:      '#dc2626',
@@ -132,13 +133,7 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
               </span>
             </Link>
             <a
-              href={(() => {
-                const q = encodeURIComponent(selected.name_en + (selected.address ? ' ' + selected.address : ' Bangkok'))
-                const pid = selected.source_url?.match(/place_id:([^&\s]+)/)?.[1]
-                return pid
-                  ? `https://www.google.com/maps/search/?api=1&query=${q}&query_place_id=${pid}`
-                  : `https://www.google.com/maps/search/?api=1&query=${q}`
-              })()}
+              href={buildMapsUrl(selected)}
               target="_blank"
               rel="noopener noreferrer"
               className="block text-xs text-gray-500 underline"

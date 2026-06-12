@@ -6,6 +6,7 @@ import { IconPin } from '@/components/icons/CategoryIcons'
 import type { Location, LocationTag } from '@/lib/types'
 import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
+import { buildMapsUrl, extractPlaceId } from '@/lib/maps'
 
 type PlaceData = { photos: string[]; editorial: string | null; reviewSnippets: string[] }
 
@@ -67,13 +68,8 @@ export function LocationDetail({ location }: { location: Location }) {
   const name = lang === 'zh' ? location.name_zh : location.name_en
   const desc = lang === 'zh' ? location.description_zh : location.description_en
 
-  const placeId = location.source_url?.match(/place_id:([^&\s]+)/)?.[1] ??
-    location.source_url?.match(/query_place_id=([^&\s]+)/)?.[1]
-
-  const queryStr = encodeURIComponent(location.name_en + (location.address ? ' ' + location.address : ' Bangkok'))
-  const mapsUrl = placeId
-    ? `https://www.google.com/maps/search/?api=1&query=${queryStr}&query_place_id=${placeId}`
-    : `https://www.google.com/maps/search/?api=1&query=${queryStr}`
+  const placeId = extractPlaceId(location.source_url)
+  const mapsUrl = buildMapsUrl(location)
 
   // Load saved state
   useEffect(() => {

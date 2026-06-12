@@ -6,6 +6,7 @@ import { IconPin } from './icons/CategoryIcons'
 import type { Location, Source, LocationTag } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
+import { buildMapsUrl } from '@/lib/maps'
 
 // Inline SVG icons for source badges (no emoji)
 const SOURCE_SVG: Record<Source, string> = {
@@ -69,11 +70,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   const thaiName = location.name_th ?? extractThai(location.name_en) ?? extractThai(location.name_zh)
   const thaiAddress = location.address_th
 
-  const queryStr = encodeURIComponent(location.name_en + (location.address ? ' ' + location.address : ' Bangkok'))
-  const placeId = location.source_url?.match(/place_id:([^&\s]+)/)?.[1]
-  const mapsUrl = placeId
-    ? `https://www.google.com/maps/search/?api=1&query=${queryStr}&query_place_id=${placeId}`
-    : `https://www.google.com/maps/search/?api=1&query=${queryStr}`
+  const mapsUrl = buildMapsUrl(location)
 
   const rawPhoto = location.photos[0] ?? ''
   const photo = rawPhoto.startsWith('places/')
