@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 每日更新',
   icons: {
     icon: '/logo-circle.png',
-    apple: '/logo-circle.png',
+    apple: '/apple-icon.png',
   },
   openGraph: {
     title: '曼谷人 | BKK LOCAL',
