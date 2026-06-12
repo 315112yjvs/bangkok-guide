@@ -142,6 +142,7 @@ export function LocationDetail({ location }: { location: Location }) {
         {/* Back */}
         <button
           onClick={() => router.back()}
+          aria-label={lang === 'zh' ? '返回' : 'Back'}
           className="absolute top-4 left-4 w-9 h-9 rounded-full bg-black/40 backdrop-blur flex items-center justify-center text-white hover:bg-black/60 transition-colors"
         >
           <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -152,6 +153,7 @@ export function LocationDetail({ location }: { location: Location }) {
         {/* Share */}
         <button
           onClick={shareLocation}
+          aria-label={lang === 'zh' ? '分享' : 'Share'}
           className="absolute top-4 right-16 w-9 h-9 rounded-full bg-black/40 backdrop-blur flex items-center justify-center hover:bg-black/60 transition-colors"
         >
           {shared
@@ -163,6 +165,8 @@ export function LocationDetail({ location }: { location: Location }) {
         {/* Save */}
         <button
           onClick={toggleSave}
+          aria-label={saved ? (lang === 'zh' ? '取消收藏' : 'Unsave') : (lang === 'zh' ? '收藏' : 'Save')}
+          aria-pressed={saved}
           className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/40 backdrop-blur flex items-center justify-center hover:bg-black/60 transition-colors"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill={saved ? '#ef4444' : 'none'} stroke={saved ? '#ef4444' : 'white'} strokeWidth={2.5}>

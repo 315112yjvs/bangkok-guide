@@ -188,7 +188,7 @@ export function PublicHomepage({ locations }: Props) {
                 onChange={(e) => setQuery(e.target.value)}
               />
               {query && (
-                <button onClick={() => setQuery('')} className="text-white/60 hover:text-white text-sm leading-none transition-colors">✕</button>
+                <button onClick={() => setQuery('')} aria-label={lang === 'zh' ? '清除搜尋' : 'Clear search'} className="text-white/60 hover:text-white text-sm leading-none transition-colors">✕</button>
               )}
             </div>
           </div>

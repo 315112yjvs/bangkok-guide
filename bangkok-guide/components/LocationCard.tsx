@@ -163,6 +163,8 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
           <div className="flex items-center gap-1 shrink-0">
             <button
               onClick={toggleSave}
+              aria-label={saved ? (lang === 'zh' ? '取消收藏' : 'Unsave') : (lang === 'zh' ? '收藏' : 'Save')}
+              aria-pressed={saved}
               className={`shrink-0 p-1.5 rounded-xl transition-colors ${saved ? 'text-red-500 bg-red-50' : 'text-gray-300 bg-gray-50 hover:text-red-400 hover:bg-red-50'}`}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.5}>
@@ -173,6 +175,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${strings[lang].navigate as string} — ${name}`}
               className="shrink-0 flex items-center gap-1 h-7 bg-[#1e1b4b] text-white text-[10px] font-bold rounded-xl px-2.5 whitespace-nowrap hover:bg-[#2d2a6e] transition-colors active:scale-95"
               onClick={(e) => e.stopPropagation()}
             >
