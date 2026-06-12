@@ -8,6 +8,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.bkk-local.com'),
   title: '曼谷人 | BKK LOCAL',
   appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: '曼谷人' },
   description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 每日更新',
