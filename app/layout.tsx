@@ -1,9 +1,15 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/next'
+import { RegisterSW } from '@/components/RegisterSW'
 import './globals.css'
+
+export const viewport: Viewport = {
+  themeColor: '#1e1b4b',
+}
 
 export const metadata: Metadata = {
   title: '曼谷人 | BKK LOCAL',
+  appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: '曼谷人' },
   description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 每日更新',
   icons: {
     icon: '/logo-circle.png',
@@ -29,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-TW">
-      <body className="bg-gray-100 min-h-screen">{children}<Analytics /></body>
+      <body className="bg-gray-100 min-h-screen">{children}<Analytics /><RegisterSW /></body>
     </html>
   )
 }
