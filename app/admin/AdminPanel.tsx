@@ -32,7 +32,7 @@ function resolveTag(item: Location | PendingLocation): LocationTag {
 }
 
 // Scoring widget — helper only, not persisted
-function ScoringWidget() {
+function ScoringWidget({ onApply }: { onApply?: (tag: LocationTag) => void }) {
   const [scores, setScores] = useState({ social: 0, verified: 0, recency: 0, utility: 0 })
   const total = scores.social + scores.verified + scores.recency + scores.utility
   const criteria = [
@@ -68,9 +68,20 @@ function ScoringWidget() {
       </div>
       <div className="mt-2 flex items-center justify-between">
         <span className="text-[11px] font-black text-gray-700">總分 {total}/100</span>
-        <span className="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">
-          建議：{suggestedTag.emoji} {suggestedTag.zh}
-        </span>
+        <div className="flex items-center gap-1.5">
+          <span className="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">
+            建議：{suggestedTag.emoji} {suggestedTag.zh}
+          </span>
+          {onApply && (
+            <button
+              type="button"
+              onClick={() => onApply(suggestedTag.value)}
+              className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-600 text-white hover:bg-indigo-500 transition-colors"
+            >
+              套用
+            </button>
+          )}
+        </div>
       </div>
     </div>
   )
@@ -123,11 +134,13 @@ function PendingCard({
   onApprove,
   onReject,
   onUpdate,
+  isDuplicate,
 }: {
   item: PendingLocation
   onApprove: (id: string, category: Category, tag: LocationTag) => void
   onReject: (id: string) => void
   onUpdate: (id: string, updates: Partial<PendingLocation>) => void
+  isDuplicate?: boolean
 }) {
   const [editing, setEditing] = useState(false)
   const [showScoring, setShowScoring] = useState(false)
@@ -223,7 +236,14 @@ function PendingCard({
         </div>
         <div className="flex-1 p-4">
           <div className="flex items-start justify-between gap-2 mb-1">
-            <h3 className="font-bold text-[#0f172a] text-sm leading-tight">{form.name_zh || form.name_en}</h3>
+            <div className="flex items-center gap-1.5 flex-wrap">
+              <h3 className="font-bold text-[#0f172a] text-sm leading-tight">{form.name_zh || form.name_en}</h3>
+              {isDuplicate && (
+                <span className="text-[9px] font-black px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 border border-amber-300 shrink-0">
+                  ⚠️ 可能已上架
+                </span>
+              )}
+            </div>
             <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${SOURCE_STYLE[item.source]}`}>
               {SOURCE_LABEL[item.source]}
             </span>
@@ -281,7 +301,7 @@ function PendingCard({
 
       {showScoring && (
         <div className="border-t border-gray-100 px-4 pb-3 pt-3 bg-gray-50">
-          <ScoringWidget />
+          <ScoringWidget onApply={(t) => setForm(f => ({ ...f, tag: t }))} />
         </div>
       )}
 
@@ -755,6 +775,7 @@ export function AdminPanel() {
   const [approvedSearch, setApprovedSearch] = useState('')
   const [pendingSourceFilter, setPendingSourceFilter] = useState<string>('all')
   const [pendingAreaFilter, setPendingAreaFilter] = useState<string>('all')
+  const [hasUnsaved, setHasUnsaved] = useState(false)
 
   useEffect(() => {
     if (sessionStorage.getItem('admin_authed') === '1') setAuthed(true)
@@ -779,6 +800,7 @@ export function AdminPanel() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ action: 'approve', id, ...(category ? { category } : {}), ...(tag ? { tag } : {}) }),
     })
+    setHasUnsaved(true)
     loadData()
   }
 
@@ -799,11 +821,13 @@ export function AdminPanel() {
 
   async function handleRemove(id: string) {
     await fetch('/api/locations', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) })
+    setHasUnsaved(true)
     loadData()
   }
 
   async function handleUpdate(id: string, updates: Partial<Location>) {
     await fetch('/api/locations', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id, ...updates }) })
+    setHasUnsaved(true)
     loadData()
   }
 
@@ -833,12 +857,31 @@ export function AdminPanel() {
     try {
       const res = await fetch('/api/deploy', { method: 'POST' })
       const data = await res.json()
-      setDeployStatus(data.ok ? '✓ 已推送到 Vercel' : `失敗：${data.error?.slice(0, 60)}`)
+      if (data.ok) {
+        setDeployStatus('✓ 已推送到 Vercel')
+        setHasUnsaved(false)
+      } else {
+        setDeployStatus(`失敗：${data.error?.slice(0, 60)}`)
+      }
     } catch {
       setDeployStatus('連線失敗')
     } finally {
       setDeploying(false)
     }
+  }
+
+  // 重複偵測：用 place_id 或正規化店名比對已上架地點
+  const pid = (url?: string) =>
+    url?.match(/place_id:([^&\s]+)/)?.[1] ?? url?.match(/query_place_id=([^&\s]+)/)?.[1] ?? null
+  const approvedKeys = new Set<string>()
+  for (const a of approved) {
+    const k = pid(a.source_url); if (k) approvedKeys.add('p:' + k)
+    if (a.name_en) approvedKeys.add('n:' + a.name_en.trim().toLowerCase())
+  }
+  const isDup = (item: PendingLocation) => {
+    const k = pid(item.source_url)
+    if (k && approvedKeys.has('p:' + k)) return true
+    return Boolean(item.name_en) && approvedKeys.has('n:' + item.name_en.trim().toLowerCase())
   }
 
   const isVercel = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname)
@@ -899,16 +942,24 @@ export function AdminPanel() {
             {scraperRunning ? '執行中...' : '執行爬蟲'}
           </button>
           <p className="text-slate-500 text-[10px] text-center mt-1.5">{scraperStatus}</p>
+          {hasUnsaved && !deploying && (
+            <p className="text-amber-400 text-[10px] text-center mt-3 font-bold flex items-center justify-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+              有變更未上傳，記得按下方按鈕
+            </p>
+          )}
           <button
             onClick={deploy}
             disabled={deploying}
-            className="mt-3 w-full bg-emerald-600 hover:bg-emerald-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5 flex items-center justify-center gap-2"
+            className={`mt-2 w-full disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5 flex items-center justify-center gap-2 transition-colors ${
+              hasUnsaved ? 'bg-amber-500 hover:bg-amber-400 ring-2 ring-amber-300/50 animate-pulse' : 'bg-emerald-600 hover:bg-emerald-500'
+            }`}
           >
             <svg className={`w-3.5 h-3.5 ${deploying ? 'animate-pulse' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/>
               <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
             </svg>
-            {deploying ? '上傳中...' : '存檔並上傳'}
+            {deploying ? '上傳中...' : hasUnsaved ? '⬆ 存檔並上傳（有變更）' : '存檔並上傳'}
           </button>
           {deployStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{deployStatus}</p>}
         </div>
@@ -975,7 +1026,7 @@ export function AdminPanel() {
                   )}
                   {filtered.length === 0 && <p className="text-gray-400 text-sm py-8 text-center">沒有符合條件的地點</p>}
                   {filtered.map((item) => (
-                    <PendingCard key={item.id} item={item} onApprove={handleApprove} onReject={handleReject} onUpdate={handleUpdatePending} />
+                    <PendingCard key={item.id} item={item} onApprove={handleApprove} onReject={handleReject} onUpdate={handleUpdatePending} isDuplicate={isDup(item)} />
                   ))}
                 </>
               )
@@ -1011,7 +1062,7 @@ export function AdminPanel() {
           </div>
         )}
 
-        {tab === 'add' && <AddForm onAdded={() => { loadData(); setTab('approved') }} />}
+        {tab === 'add' && <AddForm onAdded={() => { setHasUnsaved(true); loadData(); setTab('approved') }} />}
       </div>
       </div>
     </div>
