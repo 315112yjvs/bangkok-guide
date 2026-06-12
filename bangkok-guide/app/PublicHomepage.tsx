@@ -42,6 +42,7 @@ export function PublicHomepage({ locations }: Props) {
   const { lang, setLang } = useLanguage()
   const [activeCategory, setActiveCategory] = useState<Category | 'all'>('all')
   const [activeTag, setActiveTag] = useState<LocationTag | 'all'>('all')
+  const [activeArea, setActiveArea] = useState<string>('all')
   const [specialFilter, setSpecialFilter] = useState<SpecialFilter>('all')
   const [query, setQuery] = useState('')
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
@@ -86,6 +87,7 @@ export function PublicHomepage({ locations }: Props) {
     const base = locations.filter((loc) => {
       const matchCat = activeCategory === 'all' || loc.category === activeCategory
       const matchTag = activeTag === 'all' || resolveTag(loc) === activeTag
+      const matchArea = activeArea === 'all' || (loc.area ?? '') === activeArea
       const matchSpecial =
         specialFilter === 'all' ||
         specialFilter === 'nearby' ||
@@ -93,7 +95,7 @@ export function PublicHomepage({ locations }: Props) {
       const q = query.toLowerCase()
       const matchSearch = !q || [loc.name_zh, loc.name_en, loc.description_zh, loc.description_en, loc.address, ...(loc.highlights ?? [])]
         .some((s) => s?.toLowerCase().includes(q))
-      return matchCat && matchTag && matchSpecial && matchSearch
+      return matchCat && matchTag && matchArea && matchSpecial && matchSearch
     })
     if (specialFilter === 'nearby' && userLocation) {
       return [...base]
@@ -104,7 +106,16 @@ export function PublicHomepage({ locations }: Props) {
         )
     }
     return base
-  }, [locations, activeCategory, activeTag, specialFilter, query, userLocation, savedIds])
+  }, [locations, activeCategory, activeTag, activeArea, specialFilter, query, userLocation, savedIds])
+
+  const areas = useMemo(() => {
+    const counts = new Map<string, number>()
+    for (const loc of locations) {
+      const a = loc.area
+      if (a && a !== 'Bangkok') counts.set(a, (counts.get(a) ?? 0) + 1)
+    }
+    return Array.from(counts.entries()).sort((a, b) => b[1] - a[1]).map(([a]) => a)
+  }, [locations])
 
   const categoryCounts = useMemo(() => {
     const counts: Partial<Record<Category | 'all', number>> = { all: locations.length }
@@ -114,7 +125,7 @@ export function PublicHomepage({ locations }: Props) {
     return counts
   }, [locations])
 
-  const showSections = specialFilter === 'all' && activeTag === 'all' && !query
+  const showSections = specialFilter === 'all' && activeTag === 'all' && activeArea === 'all' && !query
 
   const sectionsByTag = useMemo(() => {
     if (!showSections) return null
@@ -228,9 +239,9 @@ export function PublicHomepage({ locations }: Props) {
           <div className="flex gap-2 overflow-x-auto no-scrollbar px-3">
             {/* All */}
             <button
-              onClick={() => { setSpecialFilter('all'); setActiveTag('all') }}
+              onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all') }}
               className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
-                specialFilter === 'all' && activeTag === 'all'
+                specialFilter === 'all' && activeTag === 'all' && activeArea === 'all'
                   ? 'bg-[#1e1b4b] text-white shadow-sm'
                   : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
               }`}
@@ -293,6 +304,37 @@ export function PublicHomepage({ locations }: Props) {
             })}
           </div>
         </div>
+
+        {/* Area chips */}
+        {areas.length > 0 && (
+          <div className="bg-white border-b border-gray-100 py-2 relative">
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
+            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
+              <svg className="w-3.5 h-3.5 text-gray-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z" strokeLinejoin="round"/><circle cx="12" cy="9" r="2.5"/>
+              </svg>
+              <button
+                onClick={() => setActiveArea('all')}
+                className={`text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
+                  activeArea === 'all' ? 'bg-emerald-600 text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                }`}
+              >
+                {lang === 'zh' ? '所有區域' : 'All Areas'}
+              </button>
+              {areas.map((a) => (
+                <button
+                  key={a}
+                  onClick={() => setActiveArea(activeArea === a ? 'all' : a)}
+                  className={`text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
+                    activeArea === a ? 'bg-emerald-600 text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  }`}
+                >
+                  {a}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* 4-section view (default) */}
         {showSections && sectionsByTag && (
