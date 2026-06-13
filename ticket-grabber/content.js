@@ -496,16 +496,36 @@ function handleZones() {
     });
   }
 
-  const kws = (settings.zoneKeywords||[]).map(k=>k.toUpperCase());
+  const kws = (settings.zoneKeywords||[]).map(k=>k.trim().toUpperCase()).filter(Boolean);
+
+  // 區域比對：精確優先，其次前綴。
+  // 前綴僅在關鍵字後面接「數字 / 空白 / - / _」時才算，
+  // 例如填 'A' 命中 A1/A2，但不會誤中 GA、VIP-A、AA。
+  // 回傳該 zone 命中的優先資訊（idx 越小＝你填的越前面；exact 0=精確 1=前綴），不符合回 null。
+  const kwRank = (zoneName) => {
+    const z = zoneName.toUpperCase();
+    for (let i = 0; i < kws.length; i++) {
+      const k = kws[i];
+      if (z === k) return { idx: i, exact: 0 };
+      if (z.startsWith(k) && /[0-9\s\-_]/.test(z.charAt(k.length)))
+        return { idx: i, exact: 1 };
+    }
+    return null;
+  };
 
   // 決定候選範圍：有關鍵字只考慮匹配的 zone，沒有則全部
   let pool;
   if (kws.length) {
-    pool = zoneMap.filter(z =>
-      kws.some(kw => z.name.toUpperCase() === kw ||
-                     z.name.toUpperCase().includes(kw) ||
-                     kw.includes(z.name.toUpperCase()))
-    );
+    // 嚴格照「關鍵字順序 → 精確優先 → 地圖原始順序」排序，
+    // 確保永遠先試你最想要的區，不再跟著地圖 DOM 順序亂跳。
+    pool = zoneMap
+      .map((z, domIdx) => ({ z, rank: kwRank(z.name), domIdx }))
+      .filter(o => o.rank !== null)
+      .sort((a, b) =>
+        a.rank.idx   - b.rank.idx   ||
+        a.rank.exact - b.rank.exact ||
+        a.domIdx     - b.domIdx)
+      .map(o => o.z);
     if (!pool.length) {
       setO(`Zone [${kws.join('/')}] 頁面上找不到，等待...`, '#ffcc44');
       return;
