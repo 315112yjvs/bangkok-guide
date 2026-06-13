@@ -11,6 +11,43 @@ function client() {
   return _client
 }
 
+const CLASSIFY_RULES = `分類定義（依「主要性質」判斷，不要只看名字裡有沒有某個字）：
+- nightlife：以喝酒/夜生活為主 — 酒吧、調酒吧、speakeasy、pub、夜店、屋頂酒吧、wine bar、jazz bar。名字有「Restaurant and Bar / Dining and Bar」但主要是吃飯的餐廳 → 歸 food。
+- cafe：咖啡廳、specialty coffee、烘豆店、以 brunch 為主的咖啡館、甜點/茶飲店。
+- food：餐廳、小館、街邊美食、以用餐為主。
+- shopping：商場、市集、選物店、商店。
+- hotel：飯店、resort、青旅、住宿。
+- attraction：景點、寺廟、公園、美術館、藝廊、打卡地標、拍照景點。`
+
+// 依店名+描述，用 AI 判斷最適合的分類。失敗時回傳 fallback。
+export async function classifyCategory(
+  name: string,
+  description: string,
+  fallback: Category = 'food'
+): Promise<Category> {
+  if (!process.env.ANTHROPIC_API_KEY) return fallback
+  try {
+    const msg = await client().messages.create({
+      model: 'claude-haiku-4-5-20251001',
+      max_tokens: 20,
+      messages: [{
+        role: 'user',
+        content: `${CLASSIFY_RULES}
+
+地點：${name} — ${(description || '').slice(0, 200)}
+
+只回傳一個分類字（food / cafe / nightlife / shopping / hotel / attraction），不要其他文字。`,
+      }],
+    })
+    const raw = msg.content[0].type === 'text' ? msg.content[0].text.trim().toLowerCase() : ''
+    const found = (['food', 'cafe', 'nightlife', 'shopping', 'hotel', 'attraction'] as Category[])
+      .find((c) => raw.includes(c))
+    return found ?? fallback
+  } catch {
+    return fallback
+  }
+}
+
 // 用 Claude 從社群搜尋結果的標題/摘要裡，抽出「真正的店家/景點名稱」。
 // 取代脆弱的 regex 抽取，大幅降低雜訊（地名、通用詞、Top 10 之類）。
 export async function extractVenuesFromSnippets(

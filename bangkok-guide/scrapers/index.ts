@@ -8,6 +8,7 @@ import { scrapeGoogleMaps, scrapeGoogleMapsQueries } from './googlemaps'
 import { scrapeTikTok } from './tiktok'
 import { scrapeInstagram } from './instagram'
 import { enrichItem } from './enricher'
+import { classifyCategory } from './extract'
 
 const SOURCE_MAP = {
   pantip: scrapePantip,
@@ -28,10 +29,13 @@ async function processItems(
     const category = (item.category ?? 'food') as Category
 
     if (source === 'googlemaps') {
+      // AI 依主要性質重新分類；標籤一律預設「在地私藏」
+      const aiCat = await classifyCategory(item.name_en, item.description_zh || item.description_en || '', category)
       const pending: PendingLocation = {
         ...item,
         id: uuidv4(),
-        category,
+        category: aiCat,
+        tag: 'hidden_gem',
         source: 'googlemaps',
         scraped_at: new Date().toISOString(),
       }
@@ -43,6 +47,11 @@ async function processItems(
         console.log(`Skipping "${item.name_en}" — not found or closed on Google Maps`)
         continue
       }
+      const aiCat = await classifyCategory(
+        enriched.name_en,
+        enriched.description_zh || enriched.description_en || '',
+        (enriched.category ?? category) as Category
+      )
       const pending: PendingLocation = {
         ...item,
         name_en: enriched.name_en,
@@ -57,7 +66,8 @@ async function processItems(
         area: enriched.area,
         address: enriched.address,
         id: uuidv4(),
-        category: (enriched.category ?? category) as Category,
+        category: aiCat,
+        tag: 'hidden_gem',
         source: source as PendingLocation['source'],
         scraped_at: new Date().toISOString(),
       }
