@@ -8,12 +8,13 @@ function detectStep(url) {
   if (url.includes('zones.php'))           return 'ZONES';
   if (url.includes('verify_condition'))    return 'VERIFY';
   if (url.includes('verify.php'))          return 'PASSPORT';
+  if (/queue|waitingroom|waiting-room/i.test(url)) return 'QUEUE';
   if (url.includes('thaiticketmajor.com')) return 'CONCERT';
   return 'CONCERT';
 }
 
 function stepLabel(step) {
-  return { CONCERT:'選場次', VERIFY:'條款', PASSPORT:'填證件', CAPTCHA:'等待驗證', ZONES:'Zone', FIXED:'選座', DONE:'完成！', '':'-' }[step] || step || '-';
+  return { CONCERT:'選場次', VERIFY:'條款', PASSPORT:'填證件', CAPTCHA:'等待驗證', QUEUE:'排隊中', ZONES:'Zone', FIXED:'選座', DONE:'完成！', '':'-' }[step] || step || '-';
 }
 
 // ── 初始化 ────────────────────────────────────────────────
@@ -71,7 +72,7 @@ async function save() {
 async function updatePageHint() {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   const step = detectStep(tab?.url || '');
-  const labels = { CONCERT:'演唱會頁', VERIFY:'條款頁', PASSPORT:'證件驗證', ZONES:'Zone 選擇', FIXED:'座位選擇', DONE:'完成頁' };
+  const labels = { CONCERT:'演唱會頁', VERIFY:'條款頁', PASSPORT:'證件驗證', QUEUE:'排隊／等候室', ZONES:'Zone 選擇', FIXED:'座位選擇', DONE:'完成頁' };
   $('pageTag').textContent = labels[step] || '未知頁面';
 }
 

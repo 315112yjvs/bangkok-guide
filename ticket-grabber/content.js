@@ -15,6 +15,7 @@ function getPage() {
   if (p.includes('verify.php'))       return 'PASSPORT';
   if (p.includes('zones.php'))        return 'ZONES';
   if (p.includes('fixed.php'))        return 'FIXED';
+  if (/queue|waiting[-_]?room/i.test(location.href)) return 'QUEUE';
   if (location.hostname === 'www.thaiticketmajor.com' ||
       location.hostname === 'thaiticketmajor.com') return 'CONCERT';
   return 'OTHER';
@@ -41,9 +42,42 @@ function createOverlay() {
   `;
   document.body.appendChild(overlayEl);
 }
-const setO  = (t,c='#aaa')=>{ if(!overlayEl)createOverlay(); const e=document.getElementById('__s__'); if(e){e.textContent=t;e.style.color=c;} };
+// 卡關偵測：每次狀態文字「真的改變」就記錄時間，停留過久即視為卡關
+let _lastStatusText = '';
+let _statusChangedAt = Date.now();
+let _stallWarned = false;
+const setO  = (t,c='#aaa')=>{
+  if(!overlayEl)createOverlay();
+  const e=document.getElementById('__s__'); if(e){e.textContent=t;e.style.color=c;}
+  if (t !== _lastStatusText) { _lastStatusText = t; _statusChangedAt = Date.now(); _stallWarned = false; }
+};
 const setO2 = t=>{ if(!overlayEl)return; const e=document.getElementById('__c__'); if(e)e.textContent=t; };
 const rmO   = ()=>{ overlayEl?.remove(); overlayEl=null; };
+
+// ── 提示音（Web Audio）＋ 桌面通知 ─────────────────────────
+// 桌面通知交給 background service worker 處理（content script 無權直接呼叫）。
+function notify(title, message, sticky = false) {
+  chrome.runtime.sendMessage({ type: 'NOTIFY', title, message, sticky }).catch(() => {});
+}
+let _audioCtx = null;
+function beep(freq = 880, dur = 200, when = 0) {
+  try {
+    _audioCtx = _audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    if (_audioCtx.state === 'suspended') _audioCtx.resume();
+    const t0   = _audioCtx.currentTime + when;
+    const osc  = _audioCtx.createOscillator();
+    const gain = _audioCtx.createGain();
+    osc.type = 'square';
+    osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0.18, t0);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur / 1000);
+    osc.connect(gain).connect(_audioCtx.destination);
+    osc.start(t0);
+    osc.stop(t0 + dur / 1000);
+  } catch (e) {}
+}
+const alarm        = () => { beep(880,180,0); beep(1175,180,0.22); beep(880,180,0.44); }; // 警示三連音
+const successChime = () => { beep(660,150,0); beep(880,150,0.16); beep(1320,320,0.32); }; // 成功上行音
 
 // ── 啟動 / 停止 ───────────────────────────────────────────
 function start(cfg, initialDone = {}) {
@@ -54,6 +88,11 @@ function start(cfg, initialDone = {}) {
   passportFilled = false;
   passportPhase  = 'type';
   refreshPending = false;
+  captchaLogged  = false;
+  queueNotified  = false;
+  _lastCaptchaBeep = 0;
+  _statusChangedAt = Date.now();
+  _stallWarned     = false;
   resetFixed();
   createOverlay();
   const page = getPage();
@@ -146,18 +185,42 @@ chrome.storage.local.get(STORAGE_KEYS, data => {
 // ── 主迴圈 ────────────────────────────────────────────────
 let tickCount = 0;
 let captchaLogged = false;
+let queueNotified = false;
+let _lastCaptchaBeep = 0;
+const STALL_MS = 20000; // 行動頁同一狀態停留超過此秒數即視為卡關
 
 function tick() {
   if (!isRunning) return;
   tickCount++;
   setO2(`偵測次數：${tickCount}`);
   const page = getPage();
+  if (page !== 'QUEUE') queueNotified = false;
   if      (page==='CONCERT')  { captchaLogged=false; handleConcert();  }
   else if (page==='VERIFY')   { captchaLogged=false; handleVerify();   }
   else if (page==='PASSPORT') { captchaLogged=false; handlePassport(); }
   else if (page==='ZONES')    { captchaLogged=false; handleZones();    }
   else if (page==='FIXED')    { captchaLogged=false; handleFixed();    }
+  else if (page==='QUEUE')    { captchaLogged=false; handleQueue();    }
   else                         handleCaptcha(); // 驗證/未知頁面
+
+  checkStall(page);
+}
+
+// ── 卡關偵測 ──────────────────────────────────────────────
+// 只在「應該要往前推進」的行動頁啟用（排除選場等開賣、驗證碼、排隊這些正常久候情境）。
+// 同一狀態文字停留超過 STALL_MS 仍沒進展，多半是版型變動抓不到元素，發聲音＋通知提醒。
+const STALL_PAGES = ['VERIFY','PASSPORT','ZONES','FIXED'];
+function checkStall(page) {
+  if (!STALL_PAGES.includes(page)) return;
+  if (_stallWarned) return;
+  if (Date.now() - _statusChangedAt < STALL_MS) return;
+  _stallWarned = true;
+  const secs = Math.round(STALL_MS / 1000);
+  log(`⚠️ 已在「${page}」頁停留 ${secs} 秒無進展，可能版型變動或卡關，請查看分頁`, 'warn');
+  // 直接改顏色標紅，不經過 setO（避免重置卡關計時造成重複警示）
+  const e = document.getElementById('__s__'); if (e) e.style.color = '#ff5555';
+  notify('⚠️ 搶票卡關', `在 ${page} 頁停留 ${secs} 秒無進展，請查看分頁`, true);
+  alarm();
 }
 
 // ── 驗證/CAPTCHA 頁面 ─────────────────────────────────────
@@ -168,9 +231,36 @@ function handleCaptcha() {
     log('偵測到人工驗證頁面，請完成驗證後系統將自動繼續', 'warn');
     chrome.storage.local.set({ currentStep: 'CAPTCHA' });
     chrome.runtime.sendMessage({ type: 'STEP', step: 'CAPTCHA' }).catch(() => {});
+    notify('🔔 需要人工驗證', '請回到分頁完成驗證，完成後會自動繼續搶票', true);
   }
+  // 每 ~3 秒重複響鈴，避免你離開螢幕時錯過驗證視窗
+  const now = Date.now();
+  if (now - _lastCaptchaBeep > 3000) { _lastCaptchaBeep = now; alarm(); }
   // 繼續等待，不做任何點擊；當頁面跳轉至 zones.php，
   // 新的 content script 會透過 storage 自動恢復並繼續搶票
+}
+
+// ── 排隊／等候室頁面 ──────────────────────────────────────
+// 這類頁面通常輪到你時會自動跳轉，所以保持等待即可；
+// 只在進入時通知一次，並嘗試點一次明顯的「繼續／進入」按鈕（若有）。
+let _queueProceedClicked = false;
+function handleQueue() {
+  setO('偵測到排隊／等候室，保持等待中...', '#ffcc44');
+  if (!queueNotified) {
+    queueNotified = true;
+    _queueProceedClicked = false;
+    log('進入排隊／等候室頁面，輪到你時將自動繼續', 'warn');
+    chrome.storage.local.set({ currentStep: 'QUEUE' });
+    chrome.runtime.sendMessage({ type: 'STEP', step: 'QUEUE' }).catch(() => {});
+    notify('🎫 排隊中', '已進入等候室，輪到你時會自動繼續搶票');
+  }
+  // 嘗試點一次明顯的繼續按鈕（多數等候室會自動跳轉，這是保險）
+  if (!_queueProceedClicked) {
+    const proceed = [...document.querySelectorAll('button, a, input[type="submit"]')]
+      .find(el => /continue|proceed|enter\b|ดำเนินการต่อ|ต่อไป|เข้าสู่/i.test(
+        (el.textContent || '') + ' ' + (el.value || '')));
+    if (proceed) { _queueProceedClicked = true; humanClick(proceed); }
+  }
 }
 
 // ════════════════════════════════════════════════════════
@@ -916,6 +1006,8 @@ function handleFixed() {
     setO('✓ 點擊「ยืนยันที่นั่ง」！', '#4cff91');
     log(`已選 ${selected.length} 個座位，點擊確認！`, 'success');
     setStep('DONE');
+    notify('🎉 搶到票了！', `已選定 ${selected.length} 個座位，請盡快完成結帳付款`, true);
+    successChime();
     humanClick(confirmBtn);
     clearTimeout(tickerInterval); tickerInterval=null;
     chrome.storage.local.set({isRunning:false});
