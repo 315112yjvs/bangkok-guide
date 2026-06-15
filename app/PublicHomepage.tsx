@@ -141,10 +141,10 @@ export function PublicHomepage({ locations }: Props) {
   }, [filtered, showSections])
 
   return (
-    <div className="max-w-md mx-auto bg-white min-h-screen overflow-hidden relative shadow-xl">
+    <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen overflow-hidden relative shadow-xl lg:shadow-2xl">
 
       {/* HERO */}
-      <div className="sticky top-0 z-0 h-[72vw] max-h-96 min-h-60 overflow-hidden">
+      <div className="sticky top-0 z-0 h-[72vw] max-h-96 min-h-60 lg:h-[440px] lg:max-h-[440px] overflow-hidden">
         <Image
           src="/hero-bangkok.jpg"
           alt="Bangkok"
@@ -163,7 +163,7 @@ export function PublicHomepage({ locations }: Props) {
           <div className="flex-1" />
 
           {/* Bottom editorial block */}
-          <div className="px-5 pb-5">
+          <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl">
             {/* Live badge + subtitle */}
             <div className="flex items-center gap-2 mb-3">
               <span className="inline-flex items-center gap-1.5 bg-orange-500 text-white text-[9px] font-black px-2.5 py-1 rounded-full tracking-widest uppercase shadow-lg">
@@ -175,8 +175,8 @@ export function PublicHomepage({ locations }: Props) {
 
             {/* Title — 六分糖字型 */}
             <h1 className="leading-[1.15] mb-4">
-              <span className="font-liufen text-[32px] text-white drop-shadow-lg block">{strings[lang].heroTitle as string}</span>
-              <span className="font-liufen text-[32px] text-amber-400 drop-shadow-lg block">{strings[lang].heroTitleAccent as string}</span>
+              <span className="font-liufen text-[32px] lg:text-[52px] text-white drop-shadow-lg block">{strings[lang].heroTitle as string}</span>
+              <span className="font-liufen text-[32px] lg:text-[52px] text-amber-400 drop-shadow-lg block">{strings[lang].heroTitleAccent as string}</span>
             </h1>
 
             {/* Search bar */}
@@ -199,7 +199,7 @@ export function PublicHomepage({ locations }: Props) {
       </div>
 
       {/* MAP strip — collapsible */}
-      <div className={`overflow-hidden transition-[height] duration-300 ease-in-out ${mapExpanded ? 'h-56' : 'h-0'}`}>
+      <div className={`overflow-hidden transition-[height] duration-300 ease-in-out ${mapExpanded ? 'h-56 lg:h-96' : 'h-0'}`}>
         <LocationMap
           locations={filtered}
           lang={lang}
@@ -367,7 +367,7 @@ export function PublicHomepage({ locations }: Props) {
                   {/* Horizontal scroll cards */}
                   <div className="flex gap-3 overflow-x-auto no-scrollbar px-3 pb-1">
                     {items.map((loc) => (
-                      <div key={loc.id} className="shrink-0 w-44 h-[260px]">
+                      <div key={loc.id} className="shrink-0 w-44 lg:w-52 h-[260px] lg:h-[300px]">
                         <LocationCard
                           location={loc}
                           lang={lang}
@@ -402,7 +402,7 @@ export function PublicHomepage({ locations }: Props) {
         {!showSections && (
           <section className="px-3 pt-3 pb-10">
             {filtered.length > 0 ? (
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
                 {filtered.map((loc) => (
                   <LocationCard
                     key={loc.id}

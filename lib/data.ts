@@ -20,6 +20,26 @@ export function readLocations(): Location[] {
   return JSON.parse(readFileSync(locPath(), 'utf-8'))
 }
 
+// Slim projection for the homepage/listing cards. Drops fields that only the
+// detail page needs (source_url is ~15% of the payload, plus approved_at,
+// extra photos, hashtags…) so the client bundle ships far fewer bytes.
+// Keeps everything LocationCard and the client-side filter/search rely on.
+export function toCardLocation(loc: Location): Location {
+  return {
+    ...loc,
+    source_url: '',
+    photos: loc.photos?.slice(0, 1) ?? [],
+    hashtags: undefined,
+    social_embed_url: undefined,
+    local_ratio: undefined,
+    approved_at: undefined,
+  }
+}
+
+export function readCardLocations(): Location[] {
+  return readLocations().map(toCardLocation)
+}
+
 export function writeLocations(locations: Location[]): void {
   ensureFile(locPath(), '[]')
   writeFileSync(locPath(), JSON.stringify(locations, null, 2))
