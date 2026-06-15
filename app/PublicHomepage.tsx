@@ -1,7 +1,6 @@
 'use client'
 import { useState, useMemo, useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useLanguage } from '@/hooks/useLanguage'
 import { strings } from '@/lib/i18n'
 import { LanguageToggle } from '@/components/LanguageToggle'
@@ -9,7 +8,6 @@ import { CategoryTabs } from '@/components/CategoryTabs'
 import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
 import { getArea } from '@/lib/area'
-import { THEMES } from '@/lib/themes'
 import type { Location, Category, LocationTag } from '@/lib/types'
 
 type Props = { locations: Location[] }
@@ -434,23 +432,6 @@ export function PublicHomepage({ locations }: Props) {
           </section>
         )}
 
-        {/* 主題玩法（上方分類頁籤與區域 chips 已涵蓋分類/區域，這裡只保留獨特的主題情境） */}
-        <footer className="bg-white border-t border-gray-100 px-5 py-6">
-          <p className="text-[11px] font-black text-gray-400 uppercase tracking-wide mb-2.5">
-            {lang === 'zh' ? '主題玩法' : 'Curated themes'}
-          </p>
-          <div className="flex flex-wrap gap-2">
-            {THEMES.map((t) => (
-              <Link
-                key={t.slug}
-                href={`/theme/${t.slug}`}
-                className="text-[12px] font-semibold px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100 hover:bg-amber-500 hover:text-white hover:border-amber-500 transition-colors"
-              >
-                {t.emoji} {lang === 'zh' ? t.h1Zh : t.h1En}
-              </Link>
-            ))}
-          </div>
-        </footer>
       </div>
     </div>
   )
