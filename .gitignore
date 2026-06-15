@@ -36,3 +36,13 @@ yarn-error.log*
 next-env.d.ts
 
 .superpowers/
+
+# python build artifacts
+__pycache__/
+*.pyc
+
+# playwright mcp working files
+.playwright-mcp/
+
+# claude code local config
+.claude/
