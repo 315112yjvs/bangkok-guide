@@ -212,9 +212,13 @@ function PendingCard({
     let zhPart = raw, enPart = ''
     if (idx > 0) { zhPart = raw.slice(0, idx); enPart = raw.slice(idx) }
     const clean = (s: string) =>
-      s.replace(/^\s+/, '')
+      s.replace(/\*\*/g, '')                                        // 去 Markdown 粗體 **
+       .replace(/__/g, '')                                          // 去 Markdown 粗體 __
+       .replace(/[-*_=]{3,}/g, '')                                  // 去分隔線 --- *** ===（單字內 1-2 個連字號不受影響）
+       .replace(/^\s+/, '')
        .replace(/^(?:\uD83C[\uDDE6-\uDDFF]\s*){1,2}/, '')           // 去開頭國旗
        .replace(/^\s*(繁體中文|中文|英文|English|EN|ZH)\s*[:：]?\s*/i, '') // 去開頭標籤
+       .replace(/\n{3,}/g, '\n\n')                                  // 收斂多餘空行
        .trim()
     const zh = clean(zhPart)
     const en = clean(enPart)
