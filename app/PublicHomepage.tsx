@@ -1,5 +1,5 @@
 'use client'
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { useLanguage } from '@/hooks/useLanguage'
 import { strings } from '@/lib/i18n'
@@ -55,6 +55,34 @@ export function PublicHomepage({ locations }: Props) {
     const ids: string[] = JSON.parse(localStorage.getItem('saved_locations') ?? '[]')
     setSavedIds(new Set(ids))
   }, [])
+
+  // 進地點頁再返回時，還原先前的篩選狀態（含「附近」的定位座標），
+  // 不然元件重新掛載會重置回「全部」。用 sessionStorage 限本次造訪。
+  const FILTER_KEY = 'bkk_home_filters'
+  const skipFirstSave = useRef(true)
+  useEffect(() => {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(FILTER_KEY) ?? 'null')
+      if (saved) {
+        if (saved.specialFilter) setSpecialFilter(saved.specialFilter)
+        if (saved.activeCategory) setActiveCategory(saved.activeCategory)
+        if (saved.activeTag) setActiveTag(saved.activeTag)
+        if (saved.activeArea) setActiveArea(saved.activeArea)
+        if (saved.query) setQuery(saved.query)
+        if (saved.userLocation) setUserLocation(saved.userLocation)
+      }
+    } catch {}
+  }, [])
+
+  useEffect(() => {
+    // 跳過掛載時的第一次（避免用預設值覆蓋掉剛還原的內容）
+    if (skipFirstSave.current) { skipFirstSave.current = false; return }
+    try {
+      sessionStorage.setItem(FILTER_KEY, JSON.stringify({
+        specialFilter, activeCategory, activeTag, activeArea, query, userLocation,
+      }))
+    } catch {}
+  }, [specialFilter, activeCategory, activeTag, activeArea, query, userLocation])
 
   useEffect(() => {
     if (specialFilter === 'nearby') setMapExpanded(true)
