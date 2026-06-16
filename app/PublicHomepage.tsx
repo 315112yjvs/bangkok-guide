@@ -161,9 +161,9 @@ export function PublicHomepage({ locations }: Props) {
           <div className="flex-1" />
 
           {/* Bottom editorial block */}
-          <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl">
+          <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl lg:mx-auto lg:text-center">
             {/* Live badge + subtitle */}
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-2 mb-3 lg:justify-center">
               <span className="inline-flex items-center gap-1.5 bg-orange-500 text-white text-[9px] font-black px-2.5 py-1 rounded-full tracking-widest uppercase shadow-lg">
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                 LIVE
@@ -183,7 +183,7 @@ export function PublicHomepage({ locations }: Props) {
                 <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
               </svg>
               <input
-                className="flex-1 text-[14px] outline-none text-white placeholder-white/45 bg-transparent"
+                className="flex-1 text-[14px] text-left outline-none text-white placeholder-white/45 bg-transparent"
                 placeholder={strings[lang].searchPlaceholder as string}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
@@ -237,7 +237,7 @@ export function PublicHomepage({ locations }: Props) {
         {/* Filter row */}
         <div className="bg-white border-b border-gray-100 py-2 relative">
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
-          <div className="flex gap-2 overflow-x-auto no-scrollbar px-3">
+          <div className="flex gap-2 overflow-x-auto no-scrollbar px-3 lg:justify-center">
             {/* All */}
             <button
               onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all') }}
