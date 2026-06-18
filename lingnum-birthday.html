@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東方靈數 · 生日 & 身分證計算機</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif;
+  background: #0d0d1a;
+  color: #e8e0d5;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.page { max-width: 700px; margin: 0 auto; }
+
+header { text-align: center; padding: 32px 0 22px; }
+header h1 { font-size: 1.55em; color: #d4a855; letter-spacing: 0.12em; margin-bottom: 8px; }
+header p  { color: #555; font-size: 0.85em; }
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 14px;
+}
+
+.card-title {
+  color: #d4a855; font-size: 0.9em; letter-spacing: 0.06em;
+  margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
+}
+
+/* ── Inputs ── */
+.date-row { display: flex; gap: 10px; margin-bottom: 14px; }
+.date-field { display: flex; flex-direction: column; gap: 5px; }
+.date-field.yr { flex: 2.5; }
+.date-field.mo, .date-field.dy { flex: 1.5; }
+.date-field label { font-size: 0.75em; color: #555; letter-spacing: 0.06em; }
+
+.date-field input,
+.date-field select,
+.id-input {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  color: #e8e0d5;
+  padding: 10px 12px;
+  font-size: 0.92em;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.date-field input:focus,
+.date-field select:focus,
+.id-input:focus { border-color: #d4a855; }
+
+select option { background: #1a1a2e; }
+
+.id-row { display: flex; gap: 10px; margin-bottom: 8px; }
+.id-row .id-input { flex: 1; letter-spacing: 0.08em; font-family: monospace; }
+
+.hint { font-size: 0.78em; color: #555; margin-top: 4px; }
+
+.btn-calc {
+  display: block; width: 100%; padding: 13px;
+  background: linear-gradient(135deg, #d4a855, #b8893d);
+  color: #0d0d1a; font-size: 0.92em; font-weight: bold;
+  font-family: inherit; border: none; border-radius: 10px;
+  cursor: pointer; letter-spacing: 0.14em;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-calc:hover  { opacity: 0.88; }
+.btn-calc:active { transform: scale(0.99); }
+
+.btn-calc-sm {
+  padding: 10px 20px; white-space: nowrap;
+  background: linear-gradient(135deg, #d4a855, #b8893d);
+  color: #0d0d1a; font-size: 0.88em; font-weight: bold;
+  font-family: inherit; border: none; border-radius: 8px;
+  cursor: pointer; letter-spacing: 0.1em;
+  transition: opacity 0.2s;
+}
+.btn-calc-sm:hover { opacity: 0.88; }
+
+/* ── Section divider ── */
+.section-divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 6px 0 14px;
+  font-size: 0.8em; color: #555; letter-spacing: 0.1em;
+}
+.section-divider::before,
+.section-divider::after {
+  content: ''; flex: 1;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── Pair chips ── */
+.pairs-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 16px; }
+.pair-chip {
+  display: inline-flex; flex-direction: column; align-items: center;
+  gap: 3px; padding: 7px 11px; border-radius: 9px;
+  font-size: 0.82em; border: 1px solid; min-width: 42px;
+}
+.pair-chip .pnum  { font-size: 1em; font-weight: bold; letter-spacing: 0.04em; font-family: monospace; }
+.pair-chip .pname { font-size: 0.72em; }
+
+.tc-生氣 { background:rgba(76,175,80,0.15);  border-color:#4CAF50; color:#81C784; }
+.tc-天醫 { background:rgba(33,150,243,0.15); border-color:#2196F3; color:#64B5F6; }
+.tc-延年 { background:rgba(156,39,176,0.15); border-color:#9C27B0; color:#CE93D8; }
+.tc-伏位 { background:rgba(120,120,120,0.1); border-color:#444;    color:#777; }
+.tc-禍害 { background:rgba(255,152,0,0.15);  border-color:#FF9800; color:#FFB74D; }
+.tc-六煞 { background:rgba(255,87,34,0.15);  border-color:#FF5722; color:#FF8A65; }
+.tc-五鬼 { background:rgba(244,67,54,0.15);  border-color:#F44336; color:#EF9A9A; }
+.tc-絕命 { background:rgba(183,28,28,0.15);  border-color:#B71C1C; color:#EF9A9A; }
+
+/* ── Stats bars ── */
+.stat-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.stat-label { width: 40px; font-size: 0.8em; text-align: right; }
+.stat-track { flex: 1; background:rgba(255,255,255,0.06); border-radius:4px; height:6px; overflow:hidden; }
+.stat-fill  { height:100%; border-radius:4px; transition:width 0.65s ease; }
+.stat-pct   { width:80px; font-size:0.74em; color:#444; }
+
+/* ── Dominant type ── */
+.dominant-card { border-radius:12px; padding:16px 18px; margin-bottom:12px; border:2px solid; }
+.dominant-card .dtype { font-size:1.3em; font-weight:bold; margin-bottom:4px; }
+.dominant-card .dsub  { font-size:0.82em; font-style:italic; color:#888; margin-bottom:10px; }
+.dominant-card .ddesc { font-size:0.85em; line-height:1.75; color:#b0a898; }
+
+/* ── Life table ── */
+.life-table { width:100%; border-collapse:collapse; font-size:0.84em; }
+.life-table th { color:#555; font-weight:normal; padding:5px 10px; border-bottom:1px solid rgba(255,255,255,0.07); text-align:left; font-size:0.8em; letter-spacing:0.05em; }
+.life-table td { padding:7px 10px; border-bottom:1px solid rgba(255,255,255,0.04); }
+.life-table tr:last-child td { border-bottom:none; }
+
+/* ── Scenario grid ── */
+.scenario-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:12px; }
+.scenario-card { background:rgba(212,168,85,0.05); border:1px solid rgba(212,168,85,0.18); border-radius:11px; padding:13px; }
+.scenario-card .s-icon  { font-size:1.2em; margin-bottom:4px; }
+.scenario-card .s-title { color:#c9a85c; font-size:0.8em; font-weight:bold; margin-bottom:8px; letter-spacing:0.05em; }
+.scenario-card .s-nums  { display:flex; flex-wrap:wrap; gap:5px; }
+
+.num-tag {
+  background:rgba(212,168,85,0.12); border:1px solid rgba(212,168,85,0.22);
+  border-radius:5px; padding:3px 8px;
+  font-size:0.8em; color:#d4a855; font-family:monospace; letter-spacing:0.06em;
+}
+
+/* ── Tip ── */
+.tip {
+  background:rgba(212,168,85,0.05); border-left:3px solid #d4a855;
+  border-radius:0 8px 8px 0; padding:11px 14px; margin-top:13px;
+  font-size:0.83em; color:#c9a85c; line-height:1.65;
+}
+
+/* ── Avoid chips ── */
+.avoid-row { display:flex; flex-wrap:wrap; gap:7px; margin:10px 0; }
+.avoid-chip { display:inline-flex; flex-direction:column; align-items:center; gap:2px; padding:6px 11px; border-radius:8px; }
+.avoid-chip .anum  { font-weight:bold; font-family:monospace; font-size:0.95em; }
+.avoid-chip .aname { font-size:0.72em; color:#888; }
+
+/* ── Remedy ── */
+.remedy {
+  background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07);
+  border-radius:9px; padding:13px 15px; margin-top:12px;
+  font-size:0.83em; line-height:1.85; color:#999;
+}
+.remedy strong { color:#d4a855; }
+
+/* ── Group badge ── */
+.group-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(212,168,85,0.1); border:1px solid rgba(212,168,85,0.25);
+  border-radius:20px; padding:4px 12px;
+  font-size:0.8em; color:#c9a85c; margin-bottom:12px;
+}
+
+/* ── Converted number badge ── */
+.convert-badge {
+  background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px; padding:8px 12px; margin-bottom:12px;
+  font-size:0.82em; color:#888; line-height:1.7;
+}
+.convert-badge span { color:#d4a855; font-family:monospace; letter-spacing:0.06em; }
+
+/* ── Score gauge ── */
+.score-box {
+  display:flex; align-items:center; gap:18px;
+  background:rgba(212,168,85,0.05); border:1px solid rgba(212,168,85,0.2);
+  border-radius:14px; padding:18px 20px; margin-bottom:14px;
+}
+.score-num { font-size:2.8em; font-weight:bold; font-family:monospace; line-height:1; letter-spacing:0.02em; }
+.score-num small { font-size:0.4em; color:#666; font-weight:normal; }
+.score-meta { flex:1; }
+.score-grade { font-size:1.05em; font-weight:bold; margin-bottom:6px; letter-spacing:0.06em; }
+.score-track { background:rgba(255,255,255,0.08); border-radius:5px; height:9px; overflow:hidden; margin-bottom:6px; }
+.score-bar { height:100%; border-radius:5px; transition:width 0.7s ease; }
+.score-desc { font-size:0.8em; color:#999; line-height:1.6; }
+
+.hidden { display:none; }
+
+footer { text-align:center; color:#333; font-size:0.77em; padding:28px 0 12px; }
+
+@media (max-width:480px) {
+  header h1 { font-size:1.2em; }
+  .scenario-grid { grid-template-columns:1fr 1fr; }
+  .pair-chip { min-width:38px; padding:6px 9px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <h1>✦ 東方靈數計算機 ✦</h1>
+  <p>生日 · 身分證字號，解析先天靈數能量，找到屬於你的幸運數字</p>
+</header>
+
+<!-- ① 生日輸入 -->
+<div class="card">
+  <div class="card-title">☽ 出生年月日</div>
+  <div class="date-row">
+    <div class="date-field yr">
+      <label>西元年</label>
+      <input type="number" id="inp-year" placeholder="例：1990" min="1900" max="2025">
+    </div>
+    <div class="date-field mo">
+      <label>月份</label>
+      <select id="inp-month"><option value="">月</option></select>
+    </div>
+    <div class="date-field dy">
+      <label>日期</label>
+      <select id="inp-day"><option value="">日</option></select>
+    </div>
+  </div>
+  <button class="btn-calc" onclick="doCalcBD()">✦ 計算生日靈數</button>
+</div>
+
+<!-- 生日結果 -->
+<div id="bd-results" class="hidden">
+  <div class="section-divider">生日靈數分析</div>
+  <div class="card">
+    <div class="card-title">◈ 靈數配對解析</div>
+    <div id="bd-seq-label" style="font-size:0.78em;color:#444;margin-bottom:10px;"></div>
+    <div class="pairs-row" id="bd-pairs"></div>
+    <div id="bd-stats"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">★ 主命靈數</div>
+    <div id="bd-dominant"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">◐ 人生大運</div>
+    <div id="bd-life"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">✦ 幸運數字推薦</div>
+    <div id="bd-lucky"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">◇ 建議避開 · 化解口訣</div>
+    <div id="bd-avoid"></div>
+  </div>
+</div>
+
+<!-- ② 身分證輸入 -->
+<div class="card">
+  <div class="card-title">🪪 身分證字號</div>
+  <div class="id-row">
+    <input type="text" class="id-input" id="inp-id" placeholder="例：A123456789" maxlength="10"
+      onkeydown="if(event.keyCode==13)doCalcID()">
+    <button class="btn-calc-sm" onclick="doCalcID()">計算</button>
+  </div>
+  <p class="hint">英文字母自動轉換：A=01　B=02　…　Z=26　（大小寫皆可）</p>
+</div>
+
+<!-- 身分證結果 -->
+<div id="id-results" class="hidden">
+  <div class="section-divider">身分證靈數分析</div>
+
+  <!-- 人格類型 -->
+  <div class="card">
+    <div class="card-title">◈ 人格靈數（不含開頭0）</div>
+    <div id="id-convert-badge"></div>
+    <div class="pairs-row" id="id-pairs"></div>
+    <div id="id-stats"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">★ 主命靈數</div>
+    <div id="id-dominant"></div>
+  </div>
+
+  <!-- 人生大運（完整號碼） -->
+  <div class="card">
+    <div class="card-title">◐ 人生大運（含開頭0）</div>
+    <div id="id-life-label" style="font-size:0.78em;color:#444;margin-bottom:10px;"></div>
+    <div id="id-life"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">✦ 幸運數字推薦</div>
+    <div id="id-lucky"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">◇ 建議避開 · 化解口訣</div>
+    <div id="id-avoid"></div>
+  </div>
+</div>
+
+<!-- ③ 手機號碼 / 任意數字輸入 -->
+<div class="card">
+  <div class="card-title">📱 手機號碼 · 任意數字評分</div>
+  <div class="id-row">
+    <input type="text" class="id-input" id="inp-num" placeholder="例：0912345678 或任意一串數字" maxlength="20"
+      inputmode="numeric" onkeydown="if(event.keyCode==13)doCalcNum()">
+    <button class="btn-calc-sm" onclick="doCalcNum()">評分</button>
+  </div>
+  <p class="hint">輸入手機號碼、車牌、密碼等任意數字，自動給出 0～10 分能量評分（非數字會自動略過）</p>
+</div>
+
+<!-- 數字評分結果 -->
+<div id="num-results" class="hidden">
+  <div class="section-divider">數字能量評分</div>
+  <div class="card">
+    <div class="card-title">⭐ 綜合評分（滿分 10 分）</div>
+    <div id="num-score"></div>
+    <div id="num-seq-label" style="font-size:0.78em;color:#444;margin:4px 0 12px;"></div>
+    <div class="pairs-row" id="num-pairs"></div>
+    <div id="num-stats"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">★ 主命靈數</div>
+    <div id="num-dominant"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">◇ 建議避開 · 化解口訣</div>
+    <div id="num-avoid"></div>
+  </div>
+</div>
+
+<footer>知識來源：神仙補習班「東方靈數」／本工具僅供參考娛樂</footer>
+</div>
+
+<script>
+// ── Init dropdowns ────────────────────────────────────────────
+(function() {
+  var mSel = document.getElementById('inp-month');
+  for (var i = 1; i <= 12; i++) {
+    var o = document.createElement('option');
+    o.value = i; o.textContent = i + ' 月'; mSel.appendChild(o);
+  }
+  var dSel = document.getElementById('inp-day');
+  for (var i = 1; i <= 31; i++) {
+    var o = document.createElement('option');
+    o.value = i; o.textContent = i + ' 日'; dSel.appendChild(o);
+  }
+})();
+
+// ── Letter → 2-digit number ───────────────────────────────────
+function letterToNum(ch) {
+  var n = ch.toLowerCase().charCodeAt(0) - 96;
+  if (n < 1 || n > 26) return null;
+  return String(n).padStart(2, '0');
+}
+
+function convertInput(str) {
+  var out = '';
+  for (var i = 0; i < str.length; i++) {
+    var code = str.charCodeAt(i);
+    if (code >= 48 && code <= 57) {
+      out += str[i];
+    } else {
+      var n = letterToNum(str[i]);
+      if (n !== null) out += n;
+    }
+  }
+  return out;
+}
+
+// ── Core algorithm (from n.b-6877.com) ───────────────────────
+function ht5(num) {
+  for (var i = 0; i < num.length; i++) { if (num[i] !== '5') break; num[i] = '0'; }
+  for (var i = num.length - 1; i >= 0; i--) { if (num[i] !== '5') break; num[i] = '0'; }
+  for (var i = 0; i < num.length; i++) {
+    var n0 = i > 0 ? num[i-1] : false, n1 = num[i], n2 = '0';
+    for (var j = i+1; j < num.length; j++) { if (num[j] !== '5') { n2 = num[j]; break; } }
+    if (n1 === '5' && (n0 === '0' || n2 === '0')) num[i] = '0';
+  }
+  return num;
+}
+
+function ht0(num) {
+  var saved = false;
+  for (var i = 0; i < num.length; i++) { if (num[i] !== '0') { saved = num[i]; break; } }
+  if (saved === false) return num;
+  for (var i = 0; i < num.length; i++) { if (num[i] !== '0') break; num[i] = saved; }
+  saved = false;
+  for (var i = 0; i < num.length; i++) {
+    if (num[i] !== '0') { saved = num[i]; } else { num[i] = saved; }
+  }
+  return num;
+}
+
+function _calc(number) {
+  if (number.length < 2) return [];
+  if (typeof number === 'string') number = number.split('');
+  number = ht5(number);
+  number = ht0(Array.from(number));
+  var ns = [];
+  for (var i = 0; i < number.length; i++) {
+    var n0 = i > 0 ? number[i-1] : false, n1 = number[i];
+    if (n1 === '5') {
+      var tail = false, j;
+      for (j = i; j < number.length; j++) { if (number[j] !== '5') { tail = number[j]; break; } }
+      for (var k = 0; k < j - i + 1; k++) { if (k > 0) ns.push(n0); if (k !== j - i) ns.push(tail); }
+      i = j - 1; continue;
+    }
+    ns.push(n1);
+  }
+  return ns;
+}
+
+function calculate(number) {
+  var arr = _calc(number);
+  var pairs = [];
+  for (var i = 0; i < arr.length - 1; i++) pairs.push(arr[i] + arr[i+1]);
+  return pairs;
+}
+
+// ── Lookup ────────────────────────────────────────────────────
+var PAIR_MAP = {
+  '17':'禍害','71':'禍害','89':'禍害','98':'禍害','46':'禍害','64':'禍害','23':'禍害','32':'禍害',
+  '16':'六煞','61':'六煞','47':'六煞','74':'六煞','38':'六煞','83':'六煞','92':'六煞','29':'六煞',
+  '18':'五鬼','81':'五鬼','79':'五鬼','97':'五鬼','42':'五鬼','24':'五鬼','36':'五鬼','63':'五鬼',
+  '12':'絕命','21':'絕命','96':'絕命','69':'絕命','84':'絕命','48':'絕命','73':'絕命','37':'絕命',
+  '00':'伏位','11':'伏位','22':'伏位','33':'伏位','44':'伏位','55':'伏位',
+  '66':'伏位','77':'伏位','88':'伏位','99':'伏位',
+  '19':'延年','91':'延年','87':'延年','78':'延年','34':'延年','43':'延年','26':'延年','62':'延年',
+  '13':'天醫','31':'天醫','68':'天醫','86':'天醫','49':'天醫','94':'天醫','72':'天醫','27':'天醫',
+  '14':'生氣','41':'生氣','76':'生氣','67':'生氣','93':'生氣','39':'生氣','82':'生氣','28':'生氣',
+};
+
+function pairType(p) { return PAIR_MAP[p] || '──'; }
+
+var TC = {
+  '生氣': { bg:'rgba(76,175,80,0.15)',  b:'#4CAF50', t:'#81C784', bar:'#4CAF50' },
+  '天醫': { bg:'rgba(33,150,243,0.15)', b:'#2196F3', t:'#64B5F6', bar:'#2196F3' },
+  '延年': { bg:'rgba(156,39,176,0.15)', b:'#9C27B0', t:'#CE93D8', bar:'#9C27B0' },
+  '伏位': { bg:'rgba(120,120,120,0.1)', b:'#444',    t:'#777',    bar:'#666'    },
+  '禍害': { bg:'rgba(255,152,0,0.15)',  b:'#FF9800', t:'#FFB74D', bar:'#FF9800' },
+  '六煞': { bg:'rgba(255,87,34,0.15)',  b:'#FF5722', t:'#FF8A65', bar:'#FF5722' },
+  '五鬼': { bg:'rgba(244,67,54,0.15)',  b:'#F44336', t:'#EF9A9A', bar:'#F44336' },
+  '絕命': { bg:'rgba(183,28,28,0.15)',  b:'#B71C1C', t:'#EF9A9A', bar:'#B71C1C' },
+};
+
+function tc(name) { return TC[name] || { bg:'rgba(100,100,100,0.1)', b:'#555', t:'#888', bar:'#666' }; }
+
+var TYPE_INFO = {
+  '生氣': { emoji:'🌱', label:'生氣型', sub:'充滿活力 · 積極進取 · 事業心旺盛', desc:'你天生充滿生命力，對目標有強烈的驅動力。在事業上往往能率先出擊、帶動他人前進。財運與行動力是你最大的優勢，適合需要開創性思維的工作環境。' },
+  '天醫': { emoji:'💙', label:'天醫型', sub:'智慧理性 · 善於分析 · 重視健康', desc:'你擁有出色的邏輯分析能力，能在複雜局面中找到關鍵線索。重視知識與身體健康，決策往往準確。是眾人心目中可信賴、可依靠的人，貴人緣佳。' },
+  '延年': { emoji:'💜', label:'延年型', sub:'重視關係 · 持久穩定 · 善於溝通', desc:'你天生重視長久的人際連結，在感情與合作上有很大的優勢。性格穩重、做事有始有終。是職場與家庭中的定海神針，婚姻緣與合夥運極佳。' },
+  '伏位': { emoji:'⚪', label:'伏位型', sub:'內斂沉穩 · 蓄勢待發 · 潛力豐沛', desc:'你的能量是潛藏型的，善於觀察、等待最佳時機出擊。表面平靜，內心卻有深厚的能量儲備。一旦時機成熟，爆發力驚人。建議主動補充生氣能量以激活潛力。' },
+  '禍害': { emoji:'🟠', label:'禍害型（建議化解）', sub:'容易遇到口舌是非 · 小人阻礙', desc:'先天帶有禍害能量，在人際與工作上容易遇到是非或阻礙。情緒起伏較大，需注意言行。透過在生活數字中加入「生氣」配對，可有效化解並提升整體運勢。' },
+  '六煞': { emoji:'🔴', label:'六煞型（建議化解）', sub:'感情財務容易受損 · 易被拖累', desc:'先天帶有六煞能量，在感情、財務方面較容易遇到不順或被他人拖累。透過加入「延年」數字配對，能穩定磁場、化解煞氣，讓關係與財運回歸正軌。' },
+  '五鬼': { emoji:'❗', label:'五鬼型（建議化解）', sub:'容易遇到暗中損耗 · 小人陷害', desc:'先天帶有五鬼能量，生活中容易有暗中阻礙或意外損耗，需謹慎防範小人。需同時補充「生氣 → 天醫 → 延年」三組能量（順序不可變）才能完整化解。' },
+  '絕命': { emoji:'🔴', label:'絕命型（建議化解）', sub:'健康或重大決策容易出差錯', desc:'先天帶有絕命能量，在健康與關鍵決策上容易遇到挑戰，需提高警覺。透過加入「天醫」數字配對，能提升判斷力、守護健康，化解絕命帶來的不利影響。' },
+};
+
+var STAGES  = ['0~10歲','11~15歲','16~20歲','21~25歲','26~30歲','31~35歲','36~40歲','41~45歲','46~50歲','51~70歲','71~90歲','91~110歲'];
+var STAGES2 = ['51~60歲','61~70歲','71~80歲','81~90歲','91~100歲','101~110歲'];
+
+function stageLabel(i, total) {
+  if (i > 8 && total > 10) return STAGES2[i - 9] || '──';
+  return STAGES[i] || '──';
+}
+
+function buildLucky(dominant) {
+  var ANTIDOTE = { '禍害':'生氣', '六煞':'延年', '絕命':'天醫', '五鬼':'生氣', '伏位':'生氣' };
+  var baseType = ANTIDOTE[dominant] || dominant;
+
+  // positive-pair transition map: starting digit → list of positive pairs
+  var POS = ['生氣','天醫','延年','伏位'];
+  var trans = {};
+  for (var d = 0; d <= 9; d++) {
+    var ds = String(d);
+    trans[ds] = Object.keys(PAIR_MAP).filter(function(p) {
+      return p[0] === ds && POS.indexOf(PAIR_MAP[p]) !== -1;
+    });
+  }
+
+  var basePairs = Object.keys(PAIR_MAP).filter(function(p) { return PAIR_MAP[p] === baseType; });
+
+  // 4-digit: basePair + 2 more positive pairs
+  var results4 = [];
+  basePairs.forEach(function(p1) {
+    trans[p1[1]].forEach(function(p2) {
+      trans[p2[1]].forEach(function(p3) {
+        var num = p1[0] + p1[1] + p2[1] + p3[1];
+        var score = [p1,p2,p3].filter(function(p){ return PAIR_MAP[p] === baseType; }).length;
+        results4.push({ num: num, score: score });
+      });
+    });
+  });
+  results4.sort(function(a,b){ return b.score - a.score || a.num.localeCompare(b.num); });
+  var seen4 = {}, all4 = [];
+  results4.forEach(function(r){ if(!seen4[r.num]){ seen4[r.num]=true; all4.push(r.num); } });
+
+  var phone4 = all4.slice(0,6);
+  var plate4 = all4.length >= 12 ? all4.slice(6,12) : all4.slice(0,6);
+
+  // 6-digit: basePair + 4 more positive pairs
+  var results6 = [];
+  basePairs.forEach(function(p1) {
+    trans[p1[1]].forEach(function(p2) {
+      trans[p2[1]].forEach(function(p3) {
+        trans[p3[1]].forEach(function(p4) {
+          trans[p4[1]].forEach(function(p5) {
+            var num = p1[0]+p1[1]+p2[1]+p3[1]+p4[1]+p5[1];
+            var score = [p1,p2,p3,p4,p5].filter(function(p){ return PAIR_MAP[p]===baseType; }).length;
+            results6.push({ num: num, score: score });
+          });
+        });
+      });
+    });
+  });
+  results6.sort(function(a,b){ return b.score - a.score || a.num.localeCompare(b.num); });
+  var seen6 = {}, pass6 = [];
+  results6.forEach(function(r){ if(!seen6[r.num] && pass6.length<6){ seen6[r.num]=true; pass6.push(r.num); } });
+
+  return { phone4: phone4, plate4: plate4, door2: basePairs, pass6: pass6, baseType: baseType };
+}
+
+var BAD_PAIRS = {
+  '禍害': ['17','71','89','98','46','64','23','32'],
+  '六煞': ['16','61','47','74','38','83','92','29'],
+  '五鬼': ['18','81','79','97','42','24','36','63'],
+  '絕命': ['12','21','96','69','84','48','73','37'],
+};
+
+
+// ── Shared: build realSeq from pairs ─────────────────────────
+function buildSeq(pairs) {
+  var namesCount = {}, totalNames = 0, prevGood = null, realSeq = [];
+  pairs.forEach(function(pair) {
+    var n = pairType(pair);
+    if (n === '伏位') {
+      var inherit = prevGood || '伏位';
+      realSeq.push({ pair: pair, type: '伏位', real: inherit, isFuwei: true });
+      namesCount[inherit] = (namesCount[inherit] || 0) + 1;
+    } else {
+      prevGood = n;
+      realSeq.push({ pair: pair, type: n, real: n, isFuwei: false });
+      namesCount[n] = (namesCount[n] || 0) + 1;
+    }
+    totalNames++;
+  });
+  var sorted = Object.keys(namesCount)
+    .filter(function(k) { return namesCount[k] > 0; })
+    .sort(function(a, b) { return namesCount[b] - namesCount[a]; });
+  return { realSeq: realSeq, namesCount: namesCount, totalNames: totalNames, sorted: sorted, dominant: sorted[0] };
+}
+
+// ── Render functions (all accept prefix for element IDs) ──────
+function renderPairs(pfx, realSeq) {
+  var html = '';
+  realSeq.forEach(function(item) {
+    var chipClass = 'tc-' + (item.isFuwei ? '伏位' : item.real);
+    var nameHtml = item.isFuwei && item.real !== '伏位'
+      ? '<span style="color:#444;font-style:italic">' + item.real + '↑</span>'
+      : item.real;
+    html += '<div class="pair-chip ' + chipClass + '"><span class="pnum">' + item.pair + '</span><span class="pname">' + nameHtml + '</span></div>';
+  });
+  document.getElementById(pfx + 'pairs').innerHTML = html;
+}
+
+function renderStats(pfx, sorted, namesCount, total) {
+  var html = '';
+  sorted.forEach(function(name) {
+    var c = tc(name);
+    var pct = (namesCount[name] / total * 100).toFixed(1);
+    html += '<div class="stat-row">'
+          + '<span class="stat-label" style="color:' + c.t + '">' + name + '</span>'
+          + '<div class="stat-track"><div class="stat-fill" style="width:' + pct + '%;background:' + c.bar + '"></div></div>'
+          + '<span class="stat-pct">' + namesCount[name] + '次 (' + pct + '%)</span></div>';
+  });
+  document.getElementById(pfx + 'stats').innerHTML = html;
+}
+
+function renderDominant(pfx, dominant) {
+  var info = TYPE_INFO[dominant] || { emoji:'？', label:dominant, sub:'', desc:'' };
+  var c = tc(dominant);
+  document.getElementById(pfx + 'dominant').innerHTML =
+    '<div class="dominant-card" style="background:' + c.bg + ';border-color:' + c.b + '">'
+    + '<div class="dtype" style="color:' + c.t + '">' + info.emoji + '&nbsp;' + info.label + '</div>'
+    + '<div class="dsub">' + info.sub + '</div>'
+    + '<div class="ddesc">' + info.desc + '</div></div>';
+}
+
+function renderLife(pfx, realSeq, total) {
+  var html = '<table class="life-table"><tr><th>人生階段</th><th>數字</th><th>靈數</th></tr>';
+  var BAD = ['禍害','六煞','五鬼','絕命'], GOOD = ['生氣','天醫','延年'];
+  realSeq.forEach(function(item, i) {
+    var c = tc(item.real);
+    var sfx = BAD.includes(item.real) ? ' ⚠' : GOOD.includes(item.real) ? ' ✦' : '';
+    html += '<tr><td style="color:#555">' + stageLabel(i, total) + '</td>'
+          + '<td style="font-family:monospace;color:#666">' + item.pair + '</td>'
+          + '<td style="color:' + c.t + '">' + item.real + sfx + '</td></tr>';
+  });
+  html += '</table><p style="font-size:0.76em;color:#444;margin-top:8px;">✦ 旺運階段　⚠ 建議補充化解數字</p>';
+  document.getElementById(pfx + 'life').innerHTML = html;
+}
+
+function renderLucky(pfx, lucky, dominant, namesCount) {
+  var baseType = lucky.baseType;
+  var isAntidote = baseType !== dominant;
+  var BAD_ANTIDOTE = { '禍害':'生氣', '六煞':'延年', '絕命':'天醫', '五鬼':'生氣', '伏位':'生氣' };
+  var tip = isAntidote
+    ? '你帶有「' + dominant + '」能量，以下數字以「' + baseType + '」配對為核心，優先加入新號碼中進行化解。'
+    : '你屬於「' + dominant + '」，以下數字由你的核心配對鏈式組合而成，可持續強化正向磁場。';
+
+  function scene(icon, title, nums) {
+    var s = '<div class="scenario-card"><div class="s-icon">' + icon + '</div><div class="s-title">' + title + '</div><div class="s-nums">';
+    nums.forEach(function(n) { s += '<span class="num-tag">' + n + '</span>'; });
+    return s + '</div></div>';
+  }
+
+  var pairList = lucky.door2.join('、');
+  var html = '<div class="group-badge">✦ ' + baseType + ' 核心配對：' + pairList + '</div>';
+  html += '<div class="scenario-grid">';
+  html += scene('📱', '手機尾 4 碼', lucky.phone4);
+  html += scene('🚗', '車牌數字',    lucky.plate4);
+  html += scene('🏠', '住址門牌號',  lucky.door2.slice(0,6).map(function(n){ return n+'號'; }));
+  html += scene('🔑', '6 位數字密碼', lucky.pass6.slice(0,4));
+  html += '</div><div class="tip">💡 ' + tip + '</div>';
+
+  document.getElementById(pfx + 'lucky').innerHTML = html;
+}
+
+function renderAvoid(pfx, namesCount, sourceLabel) {
+  var presentBad = Object.keys(BAD_PAIRS).filter(function(t) { return namesCount[t] > 0; });
+  var html = '';
+
+  if (presentBad.length) {
+    html += '<p style="font-size:0.83em;color:#888;margin-bottom:10px;">你的' + sourceLabel + '中已含有以下不利靈數，選號碼時要格外避開：</p>';
+    html += '<div class="avoid-row">';
+    presentBad.forEach(function(bt) {
+      BAD_PAIRS[bt].forEach(function(p) {
+        html += '<div class="avoid-chip tc-' + bt + '"><span class="anum">' + p + '</span><span class="aname">' + bt + '</span></div>';
+      });
+    });
+    html += '</div>';
+  } else {
+    html += '<p style="font-size:0.84em;color:#4CAF50;margin-bottom:8px;">✓ ' + sourceLabel + '靈數組合良好，無明顯不利配對。</p>';
+    html += '<p style="font-size:0.8em;color:#555;margin-bottom:10px;">通用建議仍應避開以下配對：</p>';
+    html += '<div class="avoid-row">';
+    Object.keys(BAD_PAIRS).forEach(function(bt) {
+      BAD_PAIRS[bt].slice(0,3).forEach(function(p) {
+        html += '<div class="avoid-chip tc-' + bt + '"><span class="anum">' + p + '</span><span class="aname">' + bt + '</span></div>';
+      });
+    });
+    html += '</div>';
+  }
+
+  html += '<div class="remedy">'
+        + '<strong>化解口訣</strong>（不利靈數可用以下配對補強）<br>'
+        + '・<strong>天醫</strong> 化解 <strong>絕命</strong>：補 13 / 31 / 68 / 86 / 49 / 94<br>'
+        + '・<strong>延年</strong> 化解 <strong>六煞</strong>：補 19 / 91 / 87 / 78 / 34 / 43<br>'
+        + '・<strong>生氣</strong> 化解 <strong>禍害</strong>：補 14 / 41 / 76 / 67 / 93 / 39<br>'
+        + '・<strong>五鬼</strong> 須依序補 生氣 → 天醫 → 延年（順序不可變）'
+        + '</div>';
+
+  document.getElementById(pfx + 'avoid').innerHTML = html;
+}
+
+// ── 生日計算 ──────────────────────────────────────────────────
+function doCalcBD() {
+  var yearVal  = document.getElementById('inp-year').value.trim();
+  var monthVal = document.getElementById('inp-month').value;
+  var dayVal   = document.getElementById('inp-day').value;
+
+  if (!yearVal || !monthVal || !dayVal) { alert('請填寫完整的出生年月日'); return; }
+  var y = parseInt(yearVal);
+  if (isNaN(y) || y < 1900 || y > 2025) { alert('請輸入合理的西元年份（1900～2025）'); return; }
+
+  var numStr = String(y) + String(parseInt(monthVal)).padStart(2,'0') + String(parseInt(dayVal)).padStart(2,'0');
+  var pairs = calculate(numStr);
+  if (!pairs.length) { alert('計算失敗，請確認輸入'); return; }
+
+  var r = buildSeq(pairs);
+
+  document.getElementById('bd-seq-label').textContent = '數字序列：' + numStr;
+  renderPairs('bd-', r.realSeq);
+  renderStats('bd-', r.sorted, r.namesCount, r.totalNames);
+  renderDominant('bd-', r.dominant);
+  renderLife('bd-', r.realSeq, pairs.length);
+  renderLucky('bd-', buildLucky(r.dominant), r.dominant, r.namesCount);
+  renderAvoid('bd-', r.namesCount, '生日');
+
+  var res = document.getElementById('bd-results');
+  res.classList.remove('hidden');
+  setTimeout(function() { res.scrollIntoView({ behavior:'smooth', block:'start' }); }, 50);
+}
+
+// ── 身分證計算 ────────────────────────────────────────────────
+function doCalcID() {
+  var raw = document.getElementById('inp-id').value.trim().toUpperCase();
+  if (!raw) { alert('請輸入身分證字號'); return; }
+  if (!/^[A-Z][0-9]{9}$/.test(raw)) { alert('格式應為：1 個英文字母 + 9 位數字，例如 A123456789'); return; }
+
+  var fullNum = convertInput(raw);  // e.g. A123456789 → 01123456789 (11 digits)
+
+  // 人格類型：去掉開頭 0
+  var personalNum = fullNum.startsWith('0') ? fullNum.slice(1) : fullNum;
+
+  var personalPairs = calculate(personalNum);
+  var lifePairs     = calculate(fullNum);
+
+  if (!personalPairs.length) { alert('計算失敗'); return; }
+
+  var rp = buildSeq(personalPairs);
+
+  // Show conversion badge
+  var letter = raw[0];
+  var letterNum = convertInput(letter);
+  document.getElementById('id-convert-badge').innerHTML =
+    '<div class="convert-badge">'
+    + raw + ' → ' + letter + '＝<span>' + letterNum + '</span>，轉換後完整數字：<span>' + fullNum + '</span><br>'
+    + '人格類型使用：<span>' + personalNum + '</span>（去掉開頭0）'
+    + '</div>';
+
+  renderPairs('id-', rp.realSeq);
+  renderStats('id-', rp.sorted, rp.namesCount, rp.totalNames);
+  renderDominant('id-', rp.dominant);
+
+  // 人生大運 uses full number
+  var rl = buildSeq(lifePairs);
+  document.getElementById('id-life-label').textContent = '完整數字序列：' + fullNum;
+  renderLife('id-', rl.realSeq, lifePairs.length);
+
+  renderLucky('id-', buildLucky(rp.dominant), rp.dominant, rp.namesCount);
+  renderAvoid('id-', rp.namesCount, '身分證');
+
+  var res = document.getElementById('id-results');
+  res.classList.remove('hidden');
+  setTimeout(function() { res.scrollIntoView({ behavior:'smooth', block:'start' }); }, 50);
+}
+
+// ── 數字評分 ──────────────────────────────────────────────────
+// 每個靈數配對的吉凶分值（滿分 10），整串取加權平均
+var SCORE_VAL = {
+  '生氣':10, '天醫':9, '延年':8, '伏位':6,
+  '禍害':4, '六煞':3, '五鬼':2, '絕命':1,
+};
+
+function calcScore(realSeq) {
+  if (!realSeq.length) return 0;
+  var sum = 0;
+  realSeq.forEach(function(item) {
+    sum += (SCORE_VAL[item.real] != null ? SCORE_VAL[item.real] : 5);
+  });
+  return sum / realSeq.length;  // 0~10
+}
+
+function renderScore(pfx, score) {
+  var s10 = Math.round(score * 10) / 10;          // 一位小數
+  var pct = Math.max(0, Math.min(100, score * 10));
+  var grade, color, desc;
+  if (score >= 8.5)      { grade='極佳 · 旺運號碼'; color='#4CAF50'; desc='整串數字以吉星配對為主，能量流暢，非常適合長期使用。'; }
+  else if (score >= 7)   { grade='良好 · 正向磁場'; color='#81C784'; desc='吉多於凶，整體磁場正向，是不錯的選擇。'; }
+  else if (score >= 5.5) { grade='中等 · 吉凶參半'; color='#d4a855'; desc='吉凶相間，可用但建議搭配吉數配對加強。'; }
+  else if (score >= 4)   { grade='偏弱 · 建議調整'; color='#FF9800'; desc='凶星配對偏多，建議參考下方避開與化解口訣調整。'; }
+  else                   { grade='不佳 · 建議避開'; color='#F44336'; desc='凶星配對過多，能量耗損明顯，建議更換或大幅調整。'; }
+
+  document.getElementById(pfx + 'score').innerHTML =
+    '<div class="score-box">'
+    + '<div class="score-num" style="color:' + color + '">' + s10.toFixed(1) + '<small>/10</small></div>'
+    + '<div class="score-meta">'
+    +   '<div class="score-grade" style="color:' + color + '">' + grade + '</div>'
+    +   '<div class="score-track"><div class="score-bar" style="width:' + pct + '%;background:' + color + '"></div></div>'
+    +   '<div class="score-desc">' + desc + '</div>'
+    + '</div></div>';
+}
+
+function doCalcNum() {
+  var raw = document.getElementById('inp-num').value;
+  var digits = (raw.match(/\d/g) || []).join('');  // 只取數字
+  if (digits.length < 2) { alert('請至少輸入 2 位數字'); return; }
+
+  var pairs = calculate(digits);
+  if (!pairs.length) { alert('計算失敗，請確認輸入'); return; }
+
+  var r = buildSeq(pairs);
+  var score = calcScore(r.realSeq);
+
+  renderScore('num-', score);
+  document.getElementById('num-seq-label').textContent = '評分數字：' + digits;
+  renderPairs('num-', r.realSeq);
+  renderStats('num-', r.sorted, r.namesCount, r.totalNames);
+  renderDominant('num-', r.dominant);
+  renderAvoid('num-', r.namesCount, '號碼');
+
+  var res = document.getElementById('num-results');
+  res.classList.remove('hidden');
+  setTimeout(function() { res.scrollIntoView({ behavior:'smooth', block:'start' }); }, 50);
+}
+</script>
+</body>
+</html>
