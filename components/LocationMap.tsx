@@ -7,6 +7,7 @@ import type { Location } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
 import { buildMapsUrl } from '@/lib/maps'
+import { ErrorBoundary } from './ErrorBoundary'
 
 const CATEGORY_COLORS: Record<string, string> = {
   food:      '#dc2626',
@@ -58,6 +59,8 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
   // Create clustered markers imperatively
   useEffect(() => {
     if (!map) return
+    // marker 函式庫尚未載入時先跳過，避免拋錯讓整頁白屏
+    if (!window.google?.maps?.marker?.AdvancedMarkerElement) return
 
     // Clean up old markers
     markersRef.current.forEach((m) => { m.map = null })
@@ -96,6 +99,7 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
   // User location dot
   useEffect(() => {
     if (!map) return
+    if (!window.google?.maps?.marker?.AdvancedMarkerElement) return
     if (userMarkerRef.current) { userMarkerRef.current.map = null; userMarkerRef.current = null }
     if (!userLoc) return
 
@@ -151,19 +155,31 @@ export function LocationMap({ locations, lang, userLocation: externalLocation, n
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ''
   const userLoc = externalLocation ?? null
 
+  const fallback = (
+    <div className="h-56 w-full flex items-center justify-center bg-gray-100 text-gray-400 text-xs">
+      {lang === 'zh' ? '地圖暫時無法顯示' : 'Map unavailable'}
+    </div>
+  )
+
+  // 沒有 API key 就不要嘗試掛載地圖（否則會拋錯）
+  if (!apiKey) return fallback
+
+  // 地圖載入或繪製出錯時只壞地圖區塊，不影響整頁
   return (
-    <APIProvider apiKey={apiKey} libraries={['marker']}>
-      <div className="h-56 w-full">
-        <Map
-          defaultCenter={{ lat: 13.7563, lng: 100.5018 }}
-          defaultZoom={12}
-          mapId="bangkok-guide-map"
-          disableDefaultUI
-          gestureHandling="cooperative"
-        >
-          <MapContent locations={locations} lang={lang} userLoc={userLoc} nearbyMode={nearbyMode} />
-        </Map>
-      </div>
-    </APIProvider>
+    <ErrorBoundary fallback={fallback}>
+      <APIProvider apiKey={apiKey} libraries={['marker']}>
+        <div className="h-56 w-full">
+          <Map
+            defaultCenter={{ lat: 13.7563, lng: 100.5018 }}
+            defaultZoom={12}
+            mapId="bangkok-guide-map"
+            disableDefaultUI
+            gestureHandling="cooperative"
+          >
+            <MapContent locations={locations} lang={lang} userLoc={userLoc} nearbyMode={nearbyMode} />
+          </Map>
+        </div>
+      </APIProvider>
+    </ErrorBoundary>
   )
 }
