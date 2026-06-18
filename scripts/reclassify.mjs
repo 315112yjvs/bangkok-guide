@@ -41,7 +41,7 @@ ${list}`
   return JSON.parse(m[0])
 }
 
-const PATHS = ['data/locations.json', 'bangkok-guide/data/locations.json']
+const PATHS = ['data/locations.json']
 const locs = JSON.parse(readFileSync(PATHS[0], 'utf-8'))
 
 const BATCH = 25

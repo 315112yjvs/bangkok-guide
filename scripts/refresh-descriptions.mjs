@@ -161,7 +161,7 @@ async function fetchEditorial(placeId) {
       headers: {
         'X-Goog-Api-Key': API_KEY,
         'X-Goog-FieldMask': 'editorialSummary',
-        'Referer': 'https://bangkok-guide-alpha.vercel.app/',
+        'Referer': 'https://www.bkk-local.com/',
       },
     })
     if (!res.ok) return null
