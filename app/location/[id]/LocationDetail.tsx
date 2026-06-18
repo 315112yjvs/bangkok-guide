@@ -100,6 +100,12 @@ export function LocationDetail({ location }: { location: Location }) {
     ? placeData.photos
     : storedPhotos
 
+  // 照片載入失敗（例如 Google 帳單停用導致 403）時換成預設圖，避免破圖
+  const FALLBACK_PHOTO = 'https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=800&h=600&fit=crop'
+  const [brokenUrls, setBrokenUrls] = useState<Set<string>>(new Set())
+  const srcOf = (url: string) => (brokenUrls.has(url) ? FALLBACK_PHOTO : url)
+  const markBroken = (url: string) => setBrokenUrls((prev) => (prev.has(url) ? prev : new Set(prev).add(url)))
+
   function toggleSave() {
     try {
       const ids = JSON.parse(localStorage.getItem('saved_locations') ?? '[]') as string[]
@@ -127,12 +133,13 @@ export function LocationDetail({ location }: { location: Location }) {
       <div className="relative w-full h-72 bg-gray-100">
         {allPhotos.length > 0 ? (
           <Image
-            src={allPhotos[activePhoto] ?? allPhotos[0]}
+            src={srcOf(allPhotos[activePhoto] ?? allPhotos[0])}
             alt={name}
             fill
             className="object-cover"
             unoptimized
             priority
+            onError={() => markBroken(allPhotos[activePhoto] ?? allPhotos[0])}
           />
         ) : (
           <div className={`w-full h-full ${loadingPlace ? 'animate-pulse bg-gray-200' : 'bg-gradient-to-br from-gray-200 to-gray-300'}`} />
@@ -197,7 +204,7 @@ export function LocationDetail({ location }: { location: Location }) {
               onClick={() => setActivePhoto(i)}
               className={`shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all ${i === activePhoto ? 'border-[#1e1b4b]' : 'border-transparent'}`}
             >
-              <Image src={url} alt="" width={64} height={64} className="object-cover w-full h-full" unoptimized />
+              <Image src={srcOf(url)} alt="" width={64} height={64} className="object-cover w-full h-full" unoptimized onError={() => markBroken(url)} />
             </button>
           ))}
         </div>

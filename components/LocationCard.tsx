@@ -73,9 +73,12 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   const mapsUrl = buildMapsUrl(location)
 
   const rawPhoto = location.photos[0] ?? ''
+  const FALLBACK_PHOTO = 'https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=400&h=300&fit=crop'
   const photo = rawPhoto.startsWith('places/')
     ? `https://places.googleapis.com/v1/${rawPhoto}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-    : rawPhoto || 'https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=400&h=300&fit=crop'
+    : rawPhoto || FALLBACK_PHOTO
+  // 照片載入失敗（例如 Google 帳單停用導致 403）時換成預設圖，避免顯示破圖
+  const [imgSrc, setImgSrc] = useState(photo)
 
   const visibleHighlights = (location.highlights ?? []).slice(0, 2)
   const extraHighlights = (location.highlights?.length ?? 0) - 2
@@ -92,7 +95,15 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
     <Link href={`/location/${location.id}`} className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {/* Photo */}
       <div className="relative h-36 w-full">
-        <Image src={photo} alt={name} fill className="object-cover" sizes="(max-width: 768px) 50vw, 33vw" unoptimized={rawPhoto.startsWith('places/')} />
+        <Image
+          src={imgSrc}
+          alt={name}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 50vw, 33vw"
+          unoptimized={imgSrc.includes('places.googleapis.com')}
+          onError={() => { if (imgSrc !== FALLBACK_PHOTO) setImgSrc(FALLBACK_PHOTO) }}
+        />
         {/* Tag badge — skip evergreen */}
         {tag !== 'evergreen' && (
           <div className="absolute top-1.5 right-1.5">
