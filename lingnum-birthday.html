@@ -359,6 +359,8 @@ footer { text-align:center; color:#333; font-size:0.77em; padding:28px 0 12px; }
     var o = document.createElement('option');
     o.value = i; o.textContent = i + ' 日'; dSel.appendChild(o);
   }
+  // 西元年上限動態抓當年，避免逐年寫死
+  document.getElementById('inp-year').max = new Date().getFullYear();
 })();
 
 // ── Letter → 2-digit number ───────────────────────────────────
@@ -685,7 +687,8 @@ function doCalcBD() {
 
   if (!yearVal || !monthVal || !dayVal) { alert('請填寫完整的出生年月日'); return; }
   var y = parseInt(yearVal);
-  if (isNaN(y) || y < 1900 || y > 2025) { alert('請輸入合理的西元年份（1900～2025）'); return; }
+  var maxY = new Date().getFullYear();
+  if (isNaN(y) || y < 1900 || y > maxY) { alert('請輸入合理的西元年份（1900～' + maxY + '）'); return; }
 
   var numStr = String(y) + String(parseInt(monthVal)).padStart(2,'0') + String(parseInt(dayVal)).padStart(2,'0');
   var pairs = calculate(numStr);
