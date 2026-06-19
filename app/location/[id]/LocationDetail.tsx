@@ -25,10 +25,10 @@ const SOURCE_COLOR: Record<string, string> = {
 }
 
 const TAG_META: Record<LocationTag, { emoji: string; zh: string; color: string }> = {
-  trending:    { emoji: '🔥', zh: '本週熱門', color: 'bg-orange-500' },
+  trending:    { emoji: '🔥', zh: '話題爆紅', color: 'bg-orange-500' },
   hidden_gem:  { emoji: '🗺', zh: '在地私藏', color: 'bg-emerald-600' },
   new_opening: { emoji: '✨', zh: '新開幕',   color: 'bg-violet-500' },
-  evergreen:   { emoji: '📌', zh: '長青推薦', color: 'bg-sky-500' },
+  evergreen:   { emoji: '📌', zh: '經典必訪', color: 'bg-sky-500' },
 }
 
 function resolveTag(loc: Location): LocationTag {

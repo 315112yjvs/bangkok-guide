@@ -9,10 +9,10 @@ export const contentType = 'image/png'
 const FONT_URL = 'https://www.bkk-local.com/fonts/liufen.otf'
 
 const TAG_META: Record<LocationTag, { zh: string; color: string }> = {
-  trending:    { zh: '本週熱門', color: '#f97316' },
+  trending:    { zh: '話題爆紅', color: '#f97316' },
   hidden_gem:  { zh: '在地私藏', color: '#059669' },
   new_opening: { zh: '新開幕',   color: '#8b5cf6' },
-  evergreen:   { zh: '長青推薦', color: '#0ea5e9' },
+  evergreen:   { zh: '經典必訪', color: '#0ea5e9' },
 }
 
 const CAT_LABEL: Record<string, string> = {
