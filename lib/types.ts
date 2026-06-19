@@ -4,6 +4,7 @@ export type LocationTag = 'trending' | 'hidden_gem' | 'new_opening' | 'evergreen
 
 export type Location = {
   id: string
+  slug?: string          // 網址用的英文店名 slug（由 name_en 產生，readLocations 自動補上）
   name_zh: string
   name_en: string
   name_th?: string       // Thai name for copy-to-taxi

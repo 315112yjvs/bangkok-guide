@@ -64,7 +64,7 @@ export default function Page() {
           <ul>
             {featured.map((l) => (
               <li key={l.id}>
-                <Link href={`/location/${l.id}`}>{l.name_zh}（{l.name_en}）</Link>
+                <Link href={`/location/${l.slug ?? l.id}`}>{l.name_zh}（{l.name_en}）</Link>
               </li>
             ))}
           </ul>

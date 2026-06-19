@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs'
 import { join } from 'path'
 import type { Location, PendingLocation } from './types'
+import { buildSlugMap } from './slug'
 
 function dataDir(): string {
   return process.env.DATA_DIR ?? join(process.cwd(), 'data')
@@ -17,7 +18,9 @@ function ensureFile(path: string, fallback: string): void {
 
 export function readLocations(): Location[] {
   ensureFile(locPath(), '[]')
-  return JSON.parse(readFileSync(locPath(), 'utf-8'))
+  const raw: Location[] = JSON.parse(readFileSync(locPath(), 'utf-8'))
+  const slugMap = buildSlugMap(raw)
+  return raw.map((l) => ({ ...l, slug: l.slug || slugMap.get(l.id) }))
 }
 
 // Slim projection for the homepage/listing cards. Drops fields that only the

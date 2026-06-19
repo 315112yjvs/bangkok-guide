@@ -92,7 +92,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   }
 
   return (
-    <Link href={`/location/${location.id}`} className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <Link href={`/location/${location.slug ?? location.id}`} className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       {/* Photo */}
       <div className="relative h-36 w-full">
         <Image

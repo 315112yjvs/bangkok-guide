@@ -127,7 +127,7 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
           pixelOffset={[0, -36]}
         >
           <div className="p-1 max-w-[180px]">
-            <Link href={`/location/${selected.id}`} className="block group">
+            <Link href={`/location/${selected.slug ?? selected.id}`} className="block group">
               <p className="font-bold text-sm text-[#1a1a2e] mb-0.5 group-hover:underline">
                 {lang === 'zh' ? selected.name_zh : selected.name_en}
               </p>

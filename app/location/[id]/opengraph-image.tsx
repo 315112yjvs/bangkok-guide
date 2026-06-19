@@ -52,7 +52,7 @@ async function loadPhoto(loc: Location): Promise<string | null> {
 export default async function Image({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const locations = readLocations()
-  const loc = locations.find((l) => l.id === id)
+  const loc = locations.find((l) => l.slug === id) ?? locations.find((l) => l.id === id)
 
   const [liufen, photo] = await Promise.all([
     fetch(FONT_URL).then((r) => r.arrayBuffer()),

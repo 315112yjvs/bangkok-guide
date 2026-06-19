@@ -49,7 +49,7 @@ export function LocationDetail({ location }: { location: Location }) {
   const [shared, setShared] = useState(false)
 
   async function shareLocation() {
-    const url = `https://www.bkk-local.com/location/${location.id}`
+    const url = `https://www.bkk-local.com/location/${location.slug ?? location.id}`
     const text = lang === 'zh'
       ? `${name} — 曼谷人 BKK LOCAL 推薦`
       : `${name} — Recommended by BKK LOCAL`

@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const locations = readLocations()
 
   const locationUrls: MetadataRoute.Sitemap = locations.map((loc) => ({
-    url: `${BASE_URL}/location/${loc.id}`,
+    url: `${BASE_URL}/location/${loc.slug ?? loc.id}`,
     lastModified: loc.approved_at ? new Date(loc.approved_at) : new Date(),
     changeFrequency: 'weekly',
     priority: 0.7,

@@ -1,10 +1,19 @@
-import { notFound } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import { readLocations } from '@/lib/data'
 import type { Location } from '@/lib/types'
 import { LocationDetail } from './LocationDetail'
 
 export const revalidate = 3600
+
+// 以 slug 或舊 uuid 找地點；byUuid=true 代表是舊網址、需轉到新 slug 網址
+function resolveLocation(param: string, locations: Location[]) {
+  const bySlug = locations.find((l) => l.slug === param)
+  if (bySlug) return { loc: bySlug, byUuid: false }
+  const byId = locations.find((l) => l.id === param)
+  if (byId) return { loc: byId, byUuid: true }
+  return { loc: null, byUuid: false }
+}
 
 // schema.org 類型對應
 const SCHEMA_TYPE: Record<string, string> = {
@@ -28,7 +37,7 @@ function buildJsonLd(loc: Location) {
     '@context': 'https://schema.org',
     '@type': SCHEMA_TYPE[loc.category] ?? 'LocalBusiness',
     name: loc.name_en,
-    url: `https://www.bkk-local.com/location/${loc.id}`,
+    url: `https://www.bkk-local.com/location/${loc.slug ?? loc.id}`,
     description: loc.description_en || loc.description_zh || undefined,
     ...(photo ? { image: photo } : {}),
     ...(loc.price_range > 0 ? { priceRange: '฿'.repeat(loc.price_range) } : {}),
@@ -49,13 +58,13 @@ function buildJsonLd(loc: Location) {
 
 export async function generateStaticParams() {
   const locations = readLocations()
-  return locations.map((l) => ({ id: l.id }))
+  return locations.map((l) => ({ id: l.slug ?? l.id }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
   const locations = readLocations()
-  const loc = locations.find((l) => l.id === id)
+  const { loc } = resolveLocation(id, locations)
   if (!loc) return {}
 
   const title = `${loc.name_en} — 曼谷人`
@@ -65,7 +74,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title,
     description,
-    alternates: { canonical: `/location/${id}` },
+    alternates: { canonical: `/location/${loc.slug ?? loc.id}` },
     openGraph: { title, description, type: 'article' },
     twitter: { card: 'summary_large_image', title, description },
   }
@@ -74,8 +83,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 export default async function LocationPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const locations = readLocations()
-  const location = locations.find((l) => l.id === id)
+  const { loc: location, byUuid } = resolveLocation(id, locations)
   if (!location) notFound()
+  // 舊的 uuid 網址 → 永久轉到新的英文店名網址（308，讓 Google 轉移權重）
+  if (byUuid && location.slug) permanentRedirect(`/location/${location.slug}`)
   return (
     <>
       <script
