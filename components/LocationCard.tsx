@@ -7,6 +7,7 @@ import type { Location, Source, LocationTag } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
 import { buildMapsUrl } from '@/lib/maps'
+import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 
 // Inline SVG icons for source badges (no emoji)
 const SOURCE_SVG: Record<Source, string> = {
@@ -72,12 +73,8 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
 
   const mapsUrl = buildMapsUrl(location)
 
-  const rawPhoto = location.photos[0] ?? ''
-  const FALLBACK_PHOTO = 'https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=400&h=300&fit=crop'
-  const photo = rawPhoto.startsWith('places/')
-    ? `https://places.googleapis.com/v1/${rawPhoto}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-    : rawPhoto || FALLBACK_PHOTO
-  // 照片載入失敗（例如 Google 帳單停用導致 403）時換成預設圖，避免顯示破圖
+  // 照片走 /api/photo 代理（CDN 快取、不外露 key）；載入失敗時換預設圖避免破圖
+  const photo = photoUrl(location.photos[0], 800)
   const [imgSrc, setImgSrc] = useState(photo)
 
   const visibleHighlights = (location.highlights ?? []).slice(0, 2)
@@ -101,7 +98,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
           fill
           className="object-cover"
           sizes="(max-width: 768px) 50vw, 33vw"
-          unoptimized={imgSrc.includes('places.googleapis.com')}
+          unoptimized
           onError={() => { if (imgSrc !== FALLBACK_PHOTO) setImgSrc(FALLBACK_PHOTO) }}
         />
         {/* Tag badge — skip evergreen */}

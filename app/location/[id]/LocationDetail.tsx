@@ -7,6 +7,7 @@ import type { Location, LocationTag } from '@/lib/types'
 import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
 import { buildMapsUrl, extractPlaceId } from '@/lib/maps'
+import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 
 type PlaceData = { photos: string[]; editorial: string | null; reviewSnippets: string[] }
 
@@ -89,19 +90,11 @@ export function LocationDetail({ location }: { location: Location }) {
       .finally(() => setLoadingPlace(false))
   }, [placeId])
 
-  // Build photo list: use all stored photos, fall back to Places API fetch
-  const storedPhotos = location.photos
-    .filter(Boolean)
-    .map(p => p.startsWith('places/')
-      ? `https://places.googleapis.com/v1/${p}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
-      : p
-    )
-  const allPhotos = placeData?.photos.length
-    ? placeData.photos
-    : storedPhotos
+  // 照片：優先用 Places API 抓到的，否則用既有的；全部走 /api/photo 代理
+  const allRefs = placeData?.photos.length ? placeData.photos : location.photos.filter(Boolean)
+  const allPhotos = allRefs.map((r) => photoUrl(r, 800))
 
   // 照片載入失敗（例如 Google 帳單停用導致 403）時換成預設圖，避免破圖
-  const FALLBACK_PHOTO = 'https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=800&h=600&fit=crop'
   const [brokenUrls, setBrokenUrls] = useState<Set<string>>(new Set())
   const srcOf = (url: string) => (brokenUrls.has(url) ? FALLBACK_PHOTO : url)
   const markBroken = (url: string) => setBrokenUrls((prev) => (prev.has(url) ? prev : new Set(prev).add(url)))

@@ -50,6 +50,8 @@ export function PublicHomepage({ locations }: Props) {
   const [locating, setLocating] = useState(false)
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set())
   const [mapExpanded, setMapExpanded] = useState(false)
+  // 地圖只在使用者開過後才掛載，避免每次進首頁就載入 Google 地圖（省 Dynamic Maps 用量）
+  const [mapEverOpened, setMapEverOpened] = useState(false)
 
   useEffect(() => {
     const ids: string[] = JSON.parse(localStorage.getItem('saved_locations') ?? '[]')
@@ -85,7 +87,7 @@ export function PublicHomepage({ locations }: Props) {
   }, [specialFilter, activeCategory, activeTag, activeArea, query, userLocation])
 
   useEffect(() => {
-    if (specialFilter === 'nearby') setMapExpanded(true)
+    if (specialFilter === 'nearby') { setMapExpanded(true); setMapEverOpened(true) }
   }, [specialFilter])
 
   function handleToggleSave(id: string) {
@@ -226,12 +228,14 @@ export function PublicHomepage({ locations }: Props) {
 
       {/* MAP strip — collapsible */}
       <div className={`overflow-hidden transition-[height] duration-300 ease-in-out ${mapExpanded ? 'h-56 lg:h-96' : 'h-0'}`}>
-        <LocationMap
-          locations={filtered}
-          lang={lang}
-          userLocation={userLocation}
-          nearbyMode={specialFilter === 'nearby'}
-        />
+        {mapEverOpened && (
+          <LocationMap
+            locations={filtered}
+            lang={lang}
+            userLocation={userLocation}
+            nearbyMode={specialFilter === 'nearby'}
+          />
+        )}
       </div>
 
       {/* BOTTOM SHEET */}
@@ -239,7 +243,7 @@ export function PublicHomepage({ locations }: Props) {
         <div className="flex justify-center items-center pt-3 pb-1 relative">
           <div className="w-9 h-1 bg-gray-300 rounded-full" />
           <button
-            onClick={() => setMapExpanded(v => !v)}
+            onClick={() => { setMapExpanded(v => !v); setMapEverOpened(true) }}
             className="absolute right-3 flex items-center gap-1.5 text-[11px] font-bold text-gray-400 hover:text-[#1e1b4b] transition-colors active:scale-95"
           >
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">

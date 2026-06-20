@@ -17,9 +17,10 @@ export async function GET(_req: Request, { params }: { params: Promise<{ placeId
     if (!res.ok) return NextResponse.json({ photos: [] })
     const data = await res.json()
 
+    // 只回傳照片 ref（不含 key），前端再經 /api/photo 代理載入
     const photos = ((data.photos ?? []) as Array<{ name: string }>)
       .slice(0, 6)
-      .map((p) => `https://places.googleapis.com/v1/${p.name}/media?maxWidthPx=800&key=${apiKey}`)
+      .map((p) => p.name)
 
     const editorial: string | null = data.editorialSummary?.text ?? null
 
