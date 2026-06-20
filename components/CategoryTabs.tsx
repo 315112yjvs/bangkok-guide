@@ -37,7 +37,7 @@ export function CategoryTabs({ active, onChange, lang, counts }: Props) {
     : TABS
 
   return (
-    <div className="flex gap-4 px-4 py-3 overflow-x-auto bg-white border-b border-gray-100 no-scrollbar">
+    <div className="flex gap-4 px-4 py-3 overflow-x-auto bg-white border-b border-gray-100 no-scrollbar lg:justify-center">
       {visibleTabs.map(({ id, labelKey, Icon }) => (
         <button
           key={id}
