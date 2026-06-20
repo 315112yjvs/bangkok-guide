@@ -49,6 +49,12 @@ export function LocationDetail({ location }: { location: Location }) {
   const [copied, setCopied] = useState(false)
   const [shared, setShared] = useState(false)
 
+  // 這個分頁來過首頁就正常返回（保留捲動/篩選）；直接從外部分享連結進來的就導去首頁
+  function goBack() {
+    if (typeof window !== 'undefined' && sessionStorage.getItem('bkk_visited_home')) router.back()
+    else router.push('/')
+  }
+
   async function shareLocation() {
     const url = `https://www.bkk-local.com/location/${location.slug ?? location.id}`
     const text = lang === 'zh'
@@ -141,7 +147,7 @@ export function LocationDetail({ location }: { location: Location }) {
 
         {/* Back */}
         <button
-          onClick={() => router.back()}
+          onClick={goBack}
           aria-label={lang === 'zh' ? '返回' : 'Back'}
           className="absolute top-4 left-4 w-9 h-9 rounded-full bg-black/40 backdrop-blur flex items-center justify-center text-white hover:bg-black/60 transition-colors"
         >

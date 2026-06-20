@@ -56,6 +56,8 @@ export function PublicHomepage({ locations }: Props) {
   useEffect(() => {
     const ids: string[] = JSON.parse(localStorage.getItem('saved_locations') ?? '[]')
     setSavedIds(new Set(ids))
+    // 標記「這個分頁來過首頁」，地點頁的返回鈕用它判斷要 router.back() 還是回首頁
+    try { sessionStorage.setItem('bkk_visited_home', '1') } catch {}
   }, [])
 
   // 進地點頁再返回時，還原先前的篩選狀態（含「附近」的定位座標），
