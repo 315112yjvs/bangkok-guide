@@ -269,7 +269,7 @@ export function PublicHomepage({ locations }: Props) {
         {/* Filter row */}
         <div className="bg-white border-b border-gray-100 py-2 relative">
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
-          <div className="flex gap-2 overflow-x-auto no-scrollbar px-3 lg:justify-center">
+          <div className="flex gap-2 overflow-x-auto no-scrollbar px-3">
             {/* All */}
             <button
               onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all') }}
