@@ -12,7 +12,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ placeId
         'X-Goog-FieldMask': 'photos,editorialSummary,reviews',
         'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.bkk-local.com/',
       },
-      next: { revalidate: 86400 },
+      next: { revalidate: 2592000 }, // 30 天（店家資訊變動慢，少打 Place Details）
     })
     if (!res.ok) return NextResponse.json({ photos: [] })
     const data = await res.json()

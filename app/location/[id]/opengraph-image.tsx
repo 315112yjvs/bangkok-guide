@@ -31,14 +31,10 @@ async function loadPhoto(loc: Location): Promise<string | null> {
   const first = loc.photos?.find(Boolean)
   if (!first) return null
   try {
-    let url: string
-    if (first.startsWith('places/')) {
-      const key = process.env.GOOGLE_MAPS_API_KEY
-      if (!key) return null
-      url = `https://places.googleapis.com/v1/${first}/media?maxWidthPx=1200&key=${key}`
-    } else {
-      url = first
-    }
+    // 透過自家 /api/photo 代理抓圖，與全站共用 CDN 快取（同一張圖 Google 只打一次）
+    const url = first.startsWith('places/')
+      ? `https://www.bkk-local.com/api/photo?ref=${encodeURIComponent(first)}&w=1200`
+      : first
     const res = await fetch(url, { headers: { Referer: 'https://www.bkk-local.com/' } })
     if (!res.ok) return null
     const buf = await res.arrayBuffer()
