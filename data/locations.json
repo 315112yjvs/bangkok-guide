@@ -24,7 +24,8 @@
     "approved_at": "2026-06-03T11:28:42.785Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "natura-caf"
   },
   {
     "name_en": "Heng Chun Seng (Sacred Heart Convent School)",
@@ -48,7 +49,8 @@
     "id": "555db732-4fce-4771-8958-91f22fb1b244",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-03T11:31:44.026Z"
+    "approved_at": "2026-06-03T11:31:44.026Z",
+    "slug": "heng-chun-seng-sacred-heart-convent-school"
   },
   {
     "name_en": "San Nae Deul Korean Restaurant",
@@ -70,7 +72,8 @@
     "id": "fb5047cf-8082-4680-bd47-162f2c0bb92e",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-03T11:32:25.075Z"
+    "approved_at": "2026-06-03T11:32:25.075Z",
+    "slug": "san-nae-deul-korean-restaurant"
   },
   {
     "name_en": "Café Amazon experience",
@@ -95,7 +98,8 @@
     "approved_at": "2026-06-03T11:41:07.109Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "caf-amazon-experience"
   },
   {
     "name_en": "UNO! (centralwOrld)",
@@ -119,7 +123,8 @@
     "id": "1268aaa1-bf31-4c4d-a228-3ae48eb92bcf",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-03T11:44:55.780Z"
+    "approved_at": "2026-06-03T11:44:55.780Z",
+    "slug": "uno-centralworld"
   },
   {
     "name_en": "Muek Mun Kai Chicken Rice",
@@ -141,7 +146,8 @@
     "id": "f37f3783-3c18-4faa-94e4-f8b5441d2564",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-03T11:46:20.725Z"
+    "approved_at": "2026-06-03T11:46:20.725Z",
+    "slug": "muek-mun-kai-chicken-rice"
   },
   {
     "name_en": "A KEEN HOUSE",
@@ -166,7 +172,8 @@
     "id": "bea35baf-6948-4313-938c-4b1b203e7012",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T09:09:51.923Z"
+    "approved_at": "2026-06-05T09:09:51.923Z",
+    "slug": "a-keen-house"
   },
   {
     "name_en": "Ekamai Mookata",
@@ -190,7 +197,8 @@
     "id": "b535fe59-02bd-40d7-b0d5-0c2497f1f1fa",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T09:11:38.355Z"
+    "approved_at": "2026-06-05T09:11:38.355Z",
+    "slug": "ekamai-mookata"
   },
   {
     "name_en": "ครัวพิศมัย",
@@ -214,7 +222,8 @@
     "id": "65efab73-3f6d-4964-bab4-fcff6b2a7c6c",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T09:13:43.970Z"
+    "approved_at": "2026-06-05T09:13:43.970Z",
+    "slug": "place-65efab73"
   },
   {
     "name_en": "ปิ้งเนย สาขาอนุสาวรีย์ชัยฯ",
@@ -239,7 +248,8 @@
     "id": "f24416bd-f12c-47de-97fb-abf889500d28",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T09:14:49.621Z"
+    "approved_at": "2026-06-05T09:14:49.621Z",
+    "slug": "place-f24416bd"
   },
   {
     "name_en": "Landhaus Bakery",
@@ -265,7 +275,8 @@
     "id": "6d9ecb72-4e47-4dbc-8ef6-82968789b77a",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T09:15:52.455Z"
+    "approved_at": "2026-06-05T09:15:52.455Z",
+    "slug": "landhaus-bakery"
   },
   {
     "name_en": "TrueLove @ Neverland (Husky Cafe)",
@@ -287,7 +298,8 @@
     "id": "fcdbb901-e8ec-48ce-b084-9c428f121e58",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T09:18:35.445Z"
+    "approved_at": "2026-06-05T09:18:35.445Z",
+    "slug": "truelove-neverland-husky-cafe"
   },
   {
     "name_en": "Ongtong Khaosoi Ari Branch",
@@ -312,7 +324,8 @@
     "id": "d3af8569-2691-4a7c-ac52-771b197e4bc5",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T09:23:06.515Z"
+    "approved_at": "2026-06-05T09:23:06.515Z",
+    "slug": "ongtong-khaosoi-ari-branch"
   },
   {
     "name_en": "Roasted Honey Glazed Pork Mae Sumontha",
@@ -337,7 +350,8 @@
     "id": "54434528-52d2-4829-8b4e-a03467a45b87",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T09:24:02.914Z"
+    "approved_at": "2026-06-05T09:24:02.914Z",
+    "slug": "roasted-honey-glazed-pork-mae-sumontha"
   },
   {
     "name_en": "เจียงฮวา 江花 Charm ｜เสี่ยวหลงเปา ข้าวหมูพะโล้ และอาหารไต้หวันแท้",
@@ -359,7 +373,8 @@
     "id": "09898b6d-93a0-41c7-ad38-adcf539a09b6",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T09:30:41.053Z"
+    "approved_at": "2026-06-05T09:30:41.053Z",
+    "slug": "charm"
   },
   {
     "name_en": "VIBE Coffee & Plant-Based Food",
@@ -381,7 +396,8 @@
     "id": "4468b80f-77fe-4ecf-aa2c-c1282b49a2bd",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T10:54:37.012Z"
+    "approved_at": "2026-06-05T10:54:37.012Z",
+    "slug": "vibe-coffee-and-plant-based-food"
   },
   {
     "name_en": "BOTANICESSENCE",
@@ -403,7 +419,8 @@
     "id": "a1a8d427-65fe-4a89-9629-a18b4de096e7",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T10:55:59.829Z"
+    "approved_at": "2026-06-05T10:55:59.829Z",
+    "slug": "botanicessence"
   },
   {
     "name_en": "Tong Lai Sun",
@@ -427,7 +444,8 @@
     "id": "2793e363-f092-4e8f-b339-b070ad1a5aae",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T10:58:50.147Z"
+    "approved_at": "2026-06-05T10:58:50.147Z",
+    "slug": "tong-lai-sun"
   },
   {
     "name_en": "Kobe Tonteki Phrom Phong",
@@ -452,7 +470,8 @@
     "id": "f8ec6531-da75-4f12-b931-6b73b27367aa",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T10:59:50.497Z"
+    "approved_at": "2026-06-05T10:59:50.497Z",
+    "slug": "kobe-tonteki-phrom-phong"
   },
   {
     "name_en": "Taling Pling Sukhumvit 34",
@@ -474,7 +493,8 @@
     "id": "69860893-6e71-4664-89cb-12d3594bdb59",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:00:43.314Z"
+    "approved_at": "2026-06-05T11:00:43.314Z",
+    "slug": "taling-pling-sukhumvit-34"
   },
   {
     "name_en": "Folk Lane by Toby's Sukhumvit 38",
@@ -499,7 +519,8 @@
     "id": "4cd065e7-d1ab-4cae-bd39-7ec7db978f9e",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:14:43.082Z"
+    "approved_at": "2026-06-05T11:14:43.082Z",
+    "slug": "folk-lane-by-tobys-sukhumvit-38"
   },
   {
     "name_en": "Bangkok Banjom",
@@ -521,7 +542,8 @@
     "id": "7b21d1c0-300b-47a8-9406-3df8243f2adc",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:15:43.814Z"
+    "approved_at": "2026-06-05T11:15:43.814Z",
+    "slug": "bangkok-banjom"
   },
   {
     "name_en": "The Office Thonglor",
@@ -546,7 +568,8 @@
     "id": "4f41e0b7-939c-426d-bf3e-7ccc6f852a22",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:18:26.511Z"
+    "approved_at": "2026-06-05T11:18:26.511Z",
+    "slug": "the-office-thonglor"
   },
   {
     "name_en": "Jerome Cheesecake (Market Place Thonglor)",
@@ -571,7 +594,8 @@
     "id": "b4eb0710-3b9e-449d-97dd-21bdb13f6195",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:19:33.347Z"
+    "approved_at": "2026-06-05T11:19:33.347Z",
+    "slug": "jerome-cheesecake-market-place-thonglor"
   },
   {
     "name_en": "BARTELS Asok - Sourdough Sandwiches, Coffee & Juicery",
@@ -593,7 +617,8 @@
     "id": "b6f36185-158f-40c0-8adf-a6ffc255151d",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:20:49.696Z"
+    "approved_at": "2026-06-05T11:20:49.696Z",
+    "slug": "bartels-asok-sourdough-sandwiches-coffee-and-juicery"
   },
   {
     "name_en": "The Living Room at Baan Trok Tua Ngork",
@@ -615,7 +640,8 @@
     "id": "cc73d19d-e3a8-4460-bc7f-d27ea2d1147b",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:21:48.828Z"
+    "approved_at": "2026-06-05T11:21:48.828Z",
+    "slug": "the-living-room-at-baan-trok-tua-ngork"
   },
   {
     "name_en": "Baan Saen Saep",
@@ -639,7 +665,8 @@
     "id": "5f861848-a449-480e-9095-4e0d58c293fd",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:23:30.362Z"
+    "approved_at": "2026-06-05T11:23:30.362Z",
+    "slug": "baan-saen-saep"
   },
   {
     "name_en": "ร้านฮ๊อทพ๊อทหอยย๊า",
@@ -663,7 +690,8 @@
     "id": "5138774e-9583-4bab-b06a-4ad5147b0c1c",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:25:04.544Z"
+    "approved_at": "2026-06-05T11:25:04.544Z",
+    "slug": "place-5138774e"
   },
   {
     "name_en": "Peppina (Sukhumvit Flagship Branch)",
@@ -687,7 +715,8 @@
     "id": "9aae4b5b-8f7f-4f17-8989-11b08642f180",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:26:32.960Z"
+    "approved_at": "2026-06-05T11:26:32.960Z",
+    "slug": "peppina-sukhumvit-flagship-branch"
   },
   {
     "name_en": "Truth or Dare Langsuan",
@@ -712,7 +741,8 @@
     "id": "37f398da-7863-4aae-a3bc-43c661d94eac",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:27:35.928Z"
+    "approved_at": "2026-06-05T11:27:35.928Z",
+    "slug": "truth-or-dare-langsuan"
   },
   {
     "name_en": "Rongsi Pochana Langsuan",
@@ -734,7 +764,8 @@
     "id": "51197932-9ed0-4bfe-a5d0-66f6c136e73f",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:28:37.907Z"
+    "approved_at": "2026-06-05T11:28:37.907Z",
+    "slug": "rongsi-pochana-langsuan"
   },
   {
     "name_en": "Just A Drink Maybe - Bagel Coffee Shop",
@@ -756,7 +787,8 @@
     "id": "e93287bd-f1ba-4372-bcb4-d193fbd4f64e",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:30:53.237Z"
+    "approved_at": "2026-06-05T11:30:53.237Z",
+    "slug": "just-a-drink-maybe-bagel-coffee-shop"
   },
   {
     "name_en": "Chan Charoen",
@@ -778,7 +810,8 @@
     "id": "8ce6fae7-d677-44bf-9995-a8c9f66f459f",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:32:13.802Z"
+    "approved_at": "2026-06-05T11:32:13.802Z",
+    "slug": "chan-charoen"
   },
   {
     "name_en": "Kuay Jab Mr. Joe",
@@ -803,7 +836,8 @@
     "id": "6bb2bf3c-dd69-49f0-8378-40d4fa4989f0",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:33:01.503Z"
+    "approved_at": "2026-06-05T11:33:01.503Z",
+    "slug": "kuay-jab-mr-joe"
   },
   {
     "name_en": "Everyday Mookrata Riverside",
@@ -828,7 +862,8 @@
     "id": "dd08c759-d34f-462e-b3f2-6aa194093845",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-05T11:36:58.669Z"
+    "approved_at": "2026-06-05T11:36:58.669Z",
+    "slug": "everyday-mookrata-riverside"
   },
   {
     "name_zh": "AantArm Cafe",
@@ -858,7 +893,8 @@
     "hashtags": [],
     "id": "6a3f3bc4-6edd-483a-bfd9-c7ae463154ef",
     "approved_at": "2026-06-05T14:15:08.995Z",
-    "highlights": []
+    "highlights": [],
+    "slug": "aantarm-cafe"
   },
   {
     "name_en": "The Rock Pub",
@@ -886,7 +922,8 @@
     "approved_at": "2026-06-05T14:15:51.509Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "the-rock-pub"
   },
   {
     "name_en": "Brick Bar",
@@ -912,7 +949,8 @@
     "approved_at": "2026-06-05T14:16:21.306Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "brick-bar"
   },
   {
     "name_en": "Mariga",
@@ -936,7 +974,8 @@
     "approved_at": "2026-06-05T14:17:12.503Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "mariga"
   },
   {
     "name_en": "Jirakaan Restaurant (จิรกาล)",
@@ -963,7 +1002,8 @@
     "approved_at": "2026-06-05T14:17:38.588Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "jirakaan-restaurant"
   },
   {
     "name_en": "Sri Trat Restaurant and Bar",
@@ -990,7 +1030,8 @@
     "approved_at": "2026-06-05T14:17:57.254Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "sri-trat-restaurant-and-bar"
   },
   {
     "name_en": "Blue Elephant Bangkok Sukhumvit Thai Heritage Cuisine",
@@ -1018,7 +1059,8 @@
     "approved_at": "2026-06-05T14:18:54.589Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "blue-elephant-bangkok-sukhumvit-thai-heritage-cuisine"
   },
   {
     "name_en": "ร้านขจร | Kajohn Authentic Southern Thai Cuisine",
@@ -1044,7 +1086,8 @@
     "approved_at": "2026-06-05T14:19:14.324Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "kajohn-authentic-southern-thai-cuisine"
   },
   {
     "name_en": "Tamnanthai Restaurant Nana-Ploenchit",
@@ -1072,7 +1115,8 @@
     "approved_at": "2026-06-05T14:19:30.758Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "tamnanthai-restaurant-nana-ploenchit"
   },
   {
     "name_en": "Oranuch Thai Dining",
@@ -1099,7 +1143,8 @@
     "approved_at": "2026-06-05T14:19:52.667Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "oranuch-thai-dining"
   },
   {
     "name_en": "BIB: Break in Bangkok",
@@ -1126,7 +1171,8 @@
     "approved_at": "2026-06-05T14:21:03.599Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "bib-break-in-bangkok"
   },
   {
     "name_en": "Khao-Sō-i Soi Convent Silom",
@@ -1148,7 +1194,8 @@
     "id": "e950c379-9235-40f0-93dc-e68386dffdca",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-08T07:50:26.747Z"
+    "approved_at": "2026-06-08T07:50:26.747Z",
+    "slug": "khao-s-i-soi-convent-silom"
   },
   {
     "name_en": "Silo",
@@ -1172,7 +1219,8 @@
     "id": "81709262-8a0c-413a-babf-78a77dfe46c7",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:03:03.137Z"
+    "approved_at": "2026-06-09T11:03:03.137Z",
+    "slug": "silo"
   },
   {
     "name_en": "lay lao - Silom",
@@ -1197,7 +1245,8 @@
     "id": "d2018ef0-23d6-4975-bfa4-5efd7caeb6fa",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:03:45.956Z"
+    "approved_at": "2026-06-09T11:03:45.956Z",
+    "slug": "lay-lao-silom"
   },
   {
     "name_en": "Scarlett Wine Bar & Restaurant",
@@ -1223,7 +1272,8 @@
     "id": "4c324d21-02a7-4104-8df4-20340259a618",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:04:38.006Z"
+    "approved_at": "2026-06-09T11:04:38.006Z",
+    "slug": "scarlett-wine-bar-and-restaurant"
   },
   {
     "name_en": "SOI Bangkok Restaurant",
@@ -1249,7 +1299,8 @@
     "id": "103ba9ad-ae43-4c93-905a-4252d1bfe941",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:05:30.106Z"
+    "approved_at": "2026-06-09T11:05:30.106Z",
+    "slug": "soi-bangkok-restaurant"
   },
   {
     "name_en": "The Standard Grill",
@@ -1275,7 +1326,8 @@
     "id": "d9fd5d7e-f939-497f-9c43-2be3fed8211f",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:06:42.491Z"
+    "approved_at": "2026-06-09T11:06:42.491Z",
+    "slug": "the-standard-grill"
   },
   {
     "name_en": "EAT ME RESTAURANT",
@@ -1301,7 +1353,8 @@
     "id": "c096e726-9030-4421-a972-9abcde934b79",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:07:42.894Z"
+    "approved_at": "2026-06-09T11:07:42.894Z",
+    "slug": "eat-me-restaurant"
   },
   {
     "name_en": "Khun Ake Mam Ari Pad Thai",
@@ -1326,7 +1379,8 @@
     "id": "2f9d86f2-48ff-4312-9fd0-0019472c97fb",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:08:42.380Z"
+    "approved_at": "2026-06-09T11:08:42.380Z",
+    "slug": "khun-ake-mam-ari-pad-thai"
   },
   {
     "name_en": "Paknang.bkk",
@@ -1350,7 +1404,8 @@
     "id": "f5fd401f-2228-4c1a-b8b2-407955b92147",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:09:43.404Z"
+    "approved_at": "2026-06-09T11:09:43.404Z",
+    "slug": "paknang-bkk"
   },
   {
     "name_en": "Lay Lao",
@@ -1376,7 +1431,8 @@
     "id": "e30982b2-dd0f-4b2a-a787-459d456cdaff",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:10:38.449Z"
+    "approved_at": "2026-06-09T11:10:38.449Z",
+    "slug": "lay-lao"
   },
   {
     "name_en": "Kenny's BKK - Ari",
@@ -1401,7 +1457,8 @@
     "id": "40f23c4d-262f-4a4f-acf2-199607948ffe",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:11:22.885Z"
+    "approved_at": "2026-06-09T11:11:22.885Z",
+    "slug": "kennys-bkk-ari"
   },
   {
     "name_en": "ถึงเจียงใหม่ บางกอก | Thungchiangmai bangkok",
@@ -1425,7 +1482,8 @@
     "id": "a6784f0e-e98d-4474-a0f5-b2c59acaf02b",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:12:15.966Z"
+    "approved_at": "2026-06-09T11:12:15.966Z",
+    "slug": "thungchiangmai-bangkok"
   },
   {
     "name_en": "The Island Bangkok – Top Rated Thai Restaurant & Bar",
@@ -1449,7 +1507,8 @@
     "id": "154c234d-90b6-46c4-b44c-ced99f454bc8",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:13:26.973Z"
+    "approved_at": "2026-06-09T11:13:26.973Z",
+    "slug": "the-island-bangkok-top-rated-thai-restaurant-and-bar"
   },
   {
     "name_en": "Sawasdee Banh Mi Centric Ari",
@@ -1474,7 +1533,8 @@
     "id": "9ef6e7cd-5b26-4c56-9000-cbda9dfc73ad",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:14:21.520Z"
+    "approved_at": "2026-06-09T11:14:21.520Z",
+    "slug": "sawasdee-banh-mi-centric-ari"
   },
   {
     "name_en": "HAGOW Yaowarat",
@@ -1500,7 +1560,8 @@
     "id": "36f74228-52be-4bfb-aa2c-9a37305832cc",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:15:40.602Z"
+    "approved_at": "2026-06-09T11:15:40.602Z",
+    "slug": "hagow-yaowarat"
   },
   {
     "name_en": "Cholos Mexican Chinatown",
@@ -1525,7 +1586,8 @@
     "id": "a163e339-1a53-4b69-9cf8-2b6a21cfc152",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:17:46.369Z"
+    "approved_at": "2026-06-09T11:17:46.369Z",
+    "slug": "cholos-mexican-chinatown"
   },
   {
     "name_en": "Nai Ek Roll Noodle",
@@ -1547,7 +1609,8 @@
     "id": "8e357e4c-e7ab-43ca-be69-6c75bf1562a5",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:18:32.623Z"
+    "approved_at": "2026-06-09T11:18:32.623Z",
+    "slug": "nai-ek-roll-noodle"
   },
   {
     "name_en": "ไฟเขียวเยาวราช Fikeaw Yaowarat",
@@ -1571,7 +1634,8 @@
     "id": "f3827f8d-da22-44c6-bc75-28e1c6f2fdc6",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:19:15.655Z"
+    "approved_at": "2026-06-09T11:19:15.655Z",
+    "slug": "fikeaw-yaowarat"
   },
   {
     "name_en": "Maison Dunand",
@@ -1595,7 +1659,8 @@
     "id": "8409bffe-31aa-4a40-9e33-f8865023859e",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:20:07.270Z"
+    "approved_at": "2026-06-09T11:20:07.270Z",
+    "slug": "maison-dunand"
   },
   {
     "name_en": "Saawaan",
@@ -1619,7 +1684,8 @@
     "id": "f794696c-cef8-48d1-9cbf-f6cadaf81ddd",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:20:47.405Z"
+    "approved_at": "2026-06-09T11:20:47.405Z",
+    "slug": "saawaan"
   },
   {
     "name_en": "The House on Sathorn",
@@ -1645,7 +1711,8 @@
     "id": "4686b26b-76d4-411e-bc88-0f5f90380b29",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:21:31.292Z"
+    "approved_at": "2026-06-09T11:21:31.292Z",
+    "slug": "the-house-on-sathorn"
   },
   {
     "name_en": "Lahnyai",
@@ -1670,7 +1737,8 @@
     "id": "8d054dac-2e9e-4d59-b1be-f198b4905a82",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:22:11.521Z"
+    "approved_at": "2026-06-09T11:22:11.521Z",
+    "slug": "lahnyai"
   },
   {
     "name_en": "PARK SATHORN RESTAURANT",
@@ -1696,7 +1764,8 @@
     "id": "a5b37eec-5538-423e-8e6c-bbe681b180f1",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:22:48.972Z"
+    "approved_at": "2026-06-09T11:22:48.972Z",
+    "slug": "park-sathorn-restaurant"
   },
   {
     "name_en": "Capricci",
@@ -1722,7 +1791,8 @@
     "id": "44b37851-dfbc-468b-b59d-1daec13e93e0",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:23:35.424Z"
+    "approved_at": "2026-06-09T11:23:35.424Z",
+    "slug": "capricci"
   },
   {
     "name_en": "Le Du Kaan",
@@ -1746,7 +1816,8 @@
     "id": "992b883e-8a43-428b-82b4-d794959c5a68",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:24:16.446Z"
+    "approved_at": "2026-06-09T11:24:16.446Z",
+    "slug": "le-du-kaan"
   },
   {
     "name_en": "รสกรุง - Ros Krung Esarn Thai Cafe",
@@ -1772,7 +1843,8 @@
     "id": "f74f872d-f8a1-407d-88a3-26814c3d9a7e",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:25:24.137Z"
+    "approved_at": "2026-06-09T11:25:24.137Z",
+    "slug": "ros-krung-esarn-thai-cafe"
   },
   {
     "name_en": "Madame K Kitchen & Bar",
@@ -1797,7 +1869,8 @@
     "id": "9f1d3fba-74a0-45b7-a8bf-b240da903a27",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:35:19.959Z"
+    "approved_at": "2026-06-09T11:35:19.959Z",
+    "slug": "madame-k-kitchen-and-bar"
   },
   {
     "name_en": "Din Restaurant and Jazz Bar",
@@ -1821,7 +1894,8 @@
     "id": "12239ad3-c0b6-46a4-bb45-8cb5924fbe98",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T11:36:24.822Z"
+    "approved_at": "2026-06-09T11:36:24.822Z",
+    "slug": "din-restaurant-and-jazz-bar"
   },
   {
     "name_en": "Olive Kitchen - Khaosan",
@@ -1846,7 +1920,8 @@
     "id": "dd5b70f9-6530-4636-b390-124ade2156b2",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:11:01.135Z"
+    "approved_at": "2026-06-09T14:11:01.135Z",
+    "slug": "olive-kitchen-khaosan"
   },
   {
     "name_en": "Kodtalay The Riverfront Seafood Buffet",
@@ -1871,7 +1946,8 @@
     "id": "eadc3481-7472-4202-8218-e2bb33d12e9c",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:11:46.534Z"
+    "approved_at": "2026-06-09T14:11:46.534Z",
+    "slug": "kodtalay-the-riverfront-seafood-buffet"
   },
   {
     "name_en": "Herethep Seafood",
@@ -1895,7 +1971,8 @@
     "id": "100223a1-6ce8-468e-bcca-fc27e17083d9",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:12:49.754Z"
+    "approved_at": "2026-06-09T14:12:49.754Z",
+    "slug": "herethep-seafood"
   },
   {
     "name_en": "Mungkorn Seafood Buffet & Fish Market",
@@ -1917,7 +1994,8 @@
     "id": "b25c2bf9-76df-4e3c-8331-59e61f57cd77",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:13:30.885Z"
+    "approved_at": "2026-06-09T14:13:30.885Z",
+    "slug": "mungkorn-seafood-buffet-and-fish-market"
   },
   {
     "name_en": "SEA Bangkok",
@@ -1943,7 +2021,8 @@
     "approved_at": "2026-06-09T14:13:31.301Z",
     "name_th": "",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "slug": "sea-bangkok"
   },
   {
     "name_en": "Ministry of Crab Bangkok",
@@ -1965,7 +2044,8 @@
     "id": "6d8cf025-d92c-41a6-8dab-fa1dc687a2ca",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:16:05.450Z"
+    "approved_at": "2026-06-09T14:16:05.450Z",
+    "slug": "ministry-of-crab-bangkok"
   },
   {
     "name_en": "Horsamut",
@@ -1987,7 +2067,8 @@
     "id": "d7614add-3606-4b46-93ec-ae61eb22e01c",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:16:48.650Z"
+    "approved_at": "2026-06-09T14:16:48.650Z",
+    "slug": "horsamut"
   },
   {
     "name_en": "Kitaohji Bangkok",
@@ -2011,7 +2092,8 @@
     "id": "1527829d-f0ac-4c30-99f9-db41dde692a5",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:17:29.317Z"
+    "approved_at": "2026-06-09T14:17:29.317Z",
+    "slug": "kitaohji-bangkok"
   },
   {
     "name_en": "MAGURO @Marché Thonglor | Japanese Dining and Bar",
@@ -2035,7 +2117,8 @@
     "id": "8535e9c2-a2b9-42d7-89bd-3162d489125b",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:18:19.500Z"
+    "approved_at": "2026-06-09T14:18:19.500Z",
+    "slug": "maguro-march-thonglor-japanese-dining-and-bar"
   },
   {
     "name_en": "Sushi Yorokobu",
@@ -2060,7 +2143,8 @@
     "id": "e6b9dd4a-8752-4662-9611-1347089f7328",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:19:03.783Z"
+    "approved_at": "2026-06-09T14:19:03.783Z",
+    "slug": "sushi-yorokobu"
   },
   {
     "name_en": "Kozuri Hand Roll theCOMMONS Thonglor",
@@ -2082,7 +2166,8 @@
     "id": "eeed20a9-87f1-4dd6-9d3d-61a87ff0cde7",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:19:42.749Z"
+    "approved_at": "2026-06-09T14:19:42.749Z",
+    "slug": "kozuri-hand-roll-thecommons-thonglor"
   },
   {
     "name_en": "Sho 小料理 翔",
@@ -2107,7 +2192,8 @@
     "id": "eb724f59-c355-4f58-9202-91e8d90ec876",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:20:31.287Z"
+    "approved_at": "2026-06-09T14:20:31.287Z",
+    "slug": "sho"
   },
   {
     "name_en": "Endo Sushi",
@@ -2132,7 +2218,8 @@
     "id": "84103905-3c56-4e2d-8ecd-995f2476e551",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:25:50.514Z"
+    "approved_at": "2026-06-09T14:25:50.514Z",
+    "slug": "endo-sushi"
   },
   {
     "name_en": "Miyabi Kappo",
@@ -2156,7 +2243,8 @@
     "id": "7c1eeb64-45fe-4e9d-923a-2c9aacbf2d8f",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:26:34.567Z"
+    "approved_at": "2026-06-09T14:26:34.567Z",
+    "slug": "miyabi-kappo"
   },
   {
     "name_en": "Terra Thonglor",
@@ -2178,7 +2266,8 @@
     "id": "1b13770b-c776-4f08-892b-9c3619c10811",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:27:44.770Z"
+    "approved_at": "2026-06-09T14:27:44.770Z",
+    "slug": "terra-thonglor"
   },
   {
     "name_en": "เฮียด่วน Hereduan - 段哥 Thai Street food",
@@ -2202,7 +2291,8 @@
     "id": "1650bd4b-2269-4e37-9b11-6613a05586b0",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:28:43.983Z"
+    "approved_at": "2026-06-09T14:28:43.983Z",
+    "slug": "hereduan-thai-street-food"
   },
   {
     "name_en": "KHAO (Ekkamai)",
@@ -2227,7 +2317,8 @@
     "id": "e0e0bdb9-4ae2-429c-bac3-4086ae6d6e2d",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:29:28.070Z"
+    "approved_at": "2026-06-09T14:29:28.070Z",
+    "slug": "khao-ekkamai"
   },
   {
     "name_en": "เฮงหอยทอด - เอกมัย",
@@ -2249,7 +2340,8 @@
     "id": "4f3c54f2-4159-46b3-b6e4-5e739517bae9",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:30:11.914Z"
+    "approved_at": "2026-06-09T14:30:11.914Z",
+    "slug": "place-4f3c54f2"
   },
   {
     "name_en": "Johnny Market Ekkamai",
@@ -2271,7 +2363,8 @@
     "id": "fc6c2ea5-74c9-40a4-94dc-f2a09b0ba0a5",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:30:56.429Z"
+    "approved_at": "2026-06-09T14:30:56.429Z",
+    "slug": "johnny-market-ekkamai"
   },
   {
     "name_en": "ซาวเอกมัย ZAO EKKAMAI",
@@ -2295,7 +2388,8 @@
     "id": "b7fce2af-3cfe-4617-a901-e12147295cde",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:31:37.683Z"
+    "approved_at": "2026-06-09T14:31:37.683Z",
+    "slug": "zao-ekkamai"
   },
   {
     "name_en": "Somtamnua",
@@ -2320,7 +2414,8 @@
     "id": "315df415-9e42-40ba-8221-ec0f829b56ea",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:33:12.766Z"
+    "approved_at": "2026-06-09T14:33:12.766Z",
+    "slug": "somtamnua"
   },
   {
     "name_en": "Nhong Rim Klong",
@@ -2344,7 +2439,8 @@
     "id": "afa673e4-be94-4491-ac1a-1019455dc0c1",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:33:49.233Z"
+    "approved_at": "2026-06-09T14:33:49.233Z",
+    "slug": "nhong-rim-klong"
   },
   {
     "name_en": "SUMDAY Dimsum Park Silom - ซัมเดย์ติ่มซำ ปาร์ค สีลม",
@@ -2369,7 +2465,8 @@
     "id": "be0d195a-e2f1-4e32-b34c-2107ea6aad82",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:34:33.460Z"
+    "approved_at": "2026-06-09T14:34:33.460Z",
+    "slug": "sumday-dimsum-park-silom"
   },
   {
     "name_en": "HongKong Dimsum and Noodle",
@@ -2393,7 +2490,8 @@
     "id": "8e56afca-2f71-4b1d-b36d-793a2b7f0b52",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:35:20.578Z"
+    "approved_at": "2026-06-09T14:35:20.578Z",
+    "slug": "hongkong-dimsum-and-noodle"
   },
   {
     "name_en": "Little Dragon Restaurant",
@@ -2417,7 +2515,8 @@
     "id": "53a098fd-d89c-435c-82be-9ac07152fdc2",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:36:09.714Z"
+    "approved_at": "2026-06-09T14:36:09.714Z",
+    "slug": "little-dragon-restaurant"
   },
   {
     "name_en": "Laoteng",
@@ -2442,7 +2541,8 @@
     "id": "01ac74b4-d0d8-4022-9498-dadb460d21b1",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:38:06.544Z"
+    "approved_at": "2026-06-09T14:38:06.544Z",
+    "slug": "laoteng"
   },
   {
     "name_en": "Mott 32 Bangkok",
@@ -2467,7 +2567,8 @@
     "id": "b3bca6f0-fa56-47d0-8584-dc22ad8ee98c",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:38:55.356Z"
+    "approved_at": "2026-06-09T14:38:55.356Z",
+    "slug": "mott-32-bangkok"
   },
   {
     "name_en": "Yu Her Bao",
@@ -2492,7 +2593,8 @@
     "id": "841e2569-f03d-4d63-a7f4-59ea67c6555d",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:39:46.707Z"
+    "approved_at": "2026-06-09T14:39:46.707Z",
+    "slug": "yu-her-bao"
   },
   {
     "name_en": "Man Ho Bistro",
@@ -2517,7 +2619,8 @@
     "id": "83d07749-e7a4-4651-a406-55853879abc5",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:40:39.959Z"
+    "approved_at": "2026-06-09T14:40:39.959Z",
+    "slug": "man-ho-bistro"
   },
   {
     "name_en": "NICO NICO - Café & Brunch Place",
@@ -2542,7 +2645,8 @@
     "id": "85528930-224f-4efa-92d1-980f2c5fa507",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:41:20.873Z"
+    "approved_at": "2026-06-09T14:41:20.873Z",
+    "slug": "nico-nico-caf-and-brunch-place"
   },
   {
     "name_en": "Breakfast Story Thonglor",
@@ -2567,7 +2671,8 @@
     "id": "a441a0be-8450-474d-8aea-6848dc631e12",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:42:05.091Z"
+    "approved_at": "2026-06-09T14:42:05.091Z",
+    "slug": "breakfast-story-thonglor"
   },
   {
     "name_en": "Stoke Bangkok",
@@ -2591,7 +2696,8 @@
     "id": "346f4839-90a1-4617-9a8d-6f6c5bafa1fd",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:42:47.912Z"
+    "approved_at": "2026-06-09T14:42:47.912Z",
+    "slug": "stoke-bangkok"
   },
   {
     "name_en": "Lucca Thonglor – Mediterranean Restaurant, Rooftop & All-Day Brunch",
@@ -2617,7 +2723,8 @@
     "id": "3eb24bed-6bb6-409a-988e-43a93e80a25d",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:43:36.145Z"
+    "approved_at": "2026-06-09T14:43:36.145Z",
+    "slug": "lucca-thonglor-mediterranean-restaurant-rooftop-and-all-day-brunch"
   },
   {
     "name_en": "Café Craft by CHANINTR",
@@ -2641,7 +2748,8 @@
     "id": "c998d9f4-f7e9-45e9-b6fb-ef0183f1b993",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:44:26.909Z"
+    "approved_at": "2026-06-09T14:44:26.909Z",
+    "slug": "caf-craft-by-chanintr"
   },
   {
     "name_en": "D'ARK The Strand - Comfort Food & Specialty Coffee",
@@ -2666,7 +2774,8 @@
     "id": "c8212b6f-0efc-430e-9bcc-077c73318796",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:45:48.677Z"
+    "approved_at": "2026-06-09T14:45:48.677Z",
+    "slug": "dark-the-strand-comfort-food-and-specialty-coffee"
   },
   {
     "name_en": "ROAST coffee & eatery",
@@ -2691,7 +2800,8 @@
     "id": "38e61cdd-c0f7-4d83-a097-6ac88ed20ea2",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-09T14:46:32.296Z"
+    "approved_at": "2026-06-09T14:46:32.296Z",
+    "slug": "roast-coffee-and-eatery"
   },
   {
     "name_en": "View Rooftop Bangkok",
@@ -2716,7 +2826,8 @@
     "id": "b79fc99f-1974-4fc4-a831-87fcdf0178b8",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:25:05.701Z"
+    "approved_at": "2026-06-10T11:25:05.701Z",
+    "slug": "view-rooftop-bangkok"
   },
   {
     "name_en": "Paradise Lost Bangkok - Rooftop Bar",
@@ -2741,7 +2852,8 @@
     "id": "bf0ed91a-800f-4e2a-ba9b-7568a2424812",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:26:27.103Z"
+    "approved_at": "2026-06-10T11:26:27.103Z",
+    "slug": "paradise-lost-bangkok-rooftop-bar"
   },
   {
     "name_en": "Sanay Rooftop Bar Khaosan - เสน่ห์ รูฟท็อป บาร์ ข้าวสาร",
@@ -2766,7 +2878,8 @@
     "id": "c31acfe3-71f7-4e7a-8663-054a341406f3",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:27:13.452Z"
+    "approved_at": "2026-06-10T11:27:13.452Z",
+    "slug": "sanay-rooftop-bar-khaosan"
   },
   {
     "name_en": "Bangkok Heightz Rooftop (Restaurant & Bar 39th floor)",
@@ -2791,7 +2904,8 @@
     "id": "27a38423-e8ba-4cde-a1b3-d1b2dea73c2b",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:28:17.183Z"
+    "approved_at": "2026-06-10T11:28:17.183Z",
+    "slug": "bangkok-heightz-rooftop-restaurant-and-bar-39th-floor"
   },
   {
     "name_en": "Blue Sky Rooftop Restaurant & Bar at Centara Grand at Central Plaza Ladprao Bangkok",
@@ -2816,7 +2930,8 @@
     "id": "26735f1d-c5f4-4d0a-bc71-7d1b9b101d50",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:29:03.816Z"
+    "approved_at": "2026-06-10T11:29:03.816Z",
+    "slug": "blue-sky-rooftop-restaurant-and-bar-at-centara-grand-at-central-plaza-ladprao-bangkok"
   },
   {
     "name_en": "Top Knot Rooftop Bar & Restaurant",
@@ -2841,7 +2956,8 @@
     "id": "7f4716c7-4a22-46cb-afdc-f7e4cf3f41d8",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:29:40.968Z"
+    "approved_at": "2026-06-10T11:29:40.968Z",
+    "slug": "top-knot-rooftop-bar-and-restaurant"
   },
   {
     "name_en": "Dark Waters Rooftop Bar",
@@ -2866,7 +2982,8 @@
     "id": "2bd32ce4-80f3-4f34-ad35-9b726c1a1a03",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:30:24.516Z"
+    "approved_at": "2026-06-10T11:30:24.516Z",
+    "slug": "dark-waters-rooftop-bar"
   },
   {
     "name_en": "Pastel Rooftop Bar & Mediterranean Dining",
@@ -2888,7 +3005,8 @@
     "id": "61221e7b-c74a-4a07-baa6-c473703ddf82",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:31:06.116Z"
+    "approved_at": "2026-06-10T11:31:06.116Z",
+    "slug": "pastel-rooftop-bar-and-mediterranean-dining"
   },
   {
     "name_en": "The Family",
@@ -2912,7 +3030,8 @@
     "id": "33847bcf-cbb6-4bb4-ab24-e7adb4f67a7f",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:31:58.694Z"
+    "approved_at": "2026-06-10T11:31:58.694Z",
+    "slug": "the-family"
   },
   {
     "name_en": "Myth I Bangkok Street food | Best mango sticky rice",
@@ -2938,7 +3057,8 @@
     "id": "b6658bf3-d2bb-453d-aa1d-f0a6082627ac",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:32:55.162Z"
+    "approved_at": "2026-06-10T11:32:55.162Z",
+    "slug": "myth-i-bangkok-street-food-best-mango-sticky-rice"
   },
   {
     "name_en": "Panda Thai Food & Vegetarian",
@@ -2962,7 +3082,8 @@
     "id": "f4634bf6-e66d-4b19-9b90-bcf224d25bac",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:33:45.565Z"
+    "approved_at": "2026-06-10T11:33:45.565Z",
+    "slug": "panda-thai-food-and-vegetarian"
   },
   {
     "name_en": "Aonchorn Thai restaurant ออนชอน ราชดำเนิน",
@@ -2987,7 +3108,8 @@
     "id": "a5daeec1-89d4-4630-aae0-e785bef4011c",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:34:26.830Z"
+    "approved_at": "2026-06-10T11:34:26.830Z",
+    "slug": "aonchorn-thai-restaurant"
   },
   {
     "name_en": "MaeThum Padthai",
@@ -3011,7 +3133,8 @@
     "id": "34b161cc-d8b8-4a9c-97f8-a14d5f863fe4",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:35:09.215Z"
+    "approved_at": "2026-06-10T11:35:09.215Z",
+    "slug": "maethum-padthai"
   },
   {
     "name_en": "101 & Co. Coffee Roastery - Coffee of Thonglor",
@@ -3035,7 +3158,8 @@
     "id": "5f0eb263-d0b9-481c-8072-0a00978ad50b",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:35:53.431Z"
+    "approved_at": "2026-06-10T11:35:53.431Z",
+    "slug": "101-and-co-coffee-roastery-coffee-of-thonglor"
   },
   {
     "name_en": "Voiij coffee and stuff",
@@ -3057,7 +3181,8 @@
     "id": "10e13646-7324-400b-aad7-0c59de82ec93",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:46:56.435Z"
+    "approved_at": "2026-06-10T11:46:56.435Z",
+    "slug": "voiij-coffee-and-stuff"
   },
   {
     "name_en": "RISE COFFEE - Thonglor",
@@ -3082,7 +3207,8 @@
     "id": "403650a1-1178-4acd-a96a-bd0f5b1317c1",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:47:52.350Z"
+    "approved_at": "2026-06-10T11:47:52.350Z",
+    "slug": "rise-coffee-thonglor"
   },
   {
     "name_en": "Beans Coffee Roasters",
@@ -3104,7 +3230,8 @@
     "id": "3820c787-bc7c-4abf-b446-0dac256d01c8",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:48:48.087Z"
+    "approved_at": "2026-06-10T11:48:48.087Z",
+    "slug": "beans-coffee-roasters"
   },
   {
     "name_en": "LOCAL BOYS COFFEE CO. THONGLOR",
@@ -3129,7 +3256,8 @@
     "id": "dab9e888-2bbf-49ce-9739-0a5c830e6523",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:49:55.366Z"
+    "approved_at": "2026-06-10T11:49:55.366Z",
+    "slug": "local-boys-coffee-co-thonglor"
   },
   {
     "name_en": "Bump Coffee Space Thonglor",
@@ -3151,7 +3279,8 @@
     "id": "39a23786-a1cd-40ec-ba44-1e0413d250be",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:52:19.334Z"
+    "approved_at": "2026-06-10T11:52:19.334Z",
+    "slug": "bump-coffee-space-thonglor"
   },
   {
     "name_en": "NANA Coffee Roasters Ari",
@@ -3176,7 +3305,8 @@
     "id": "1c87ed75-8cc6-4cd6-8985-3dd82c0106d0",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:53:02.186Z"
+    "approved_at": "2026-06-10T11:53:02.186Z",
+    "slug": "nana-coffee-roasters-ari"
   },
   {
     "name_en": "OIKOS - Brunch & Bar",
@@ -3201,7 +3331,8 @@
     "id": "441bdbd3-8abe-4303-8357-b0ca6c0d5da7",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:53:42.335Z"
+    "approved_at": "2026-06-10T11:53:42.335Z",
+    "slug": "oikos-brunch-and-bar"
   },
   {
     "name_en": "Lolā cafe",
@@ -3223,7 +3354,8 @@
     "id": "28881824-4a6d-4bf1-bbf8-72184197ce24",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:54:27.784Z"
+    "approved_at": "2026-06-10T11:54:27.784Z",
+    "slug": "lol-cafe"
   },
   {
     "name_en": "BAY Aree",
@@ -3249,7 +3381,8 @@
     "id": "15ad3be7-0df6-49e0-ab02-f3e28699ef6f",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-10T11:55:33.334Z"
+    "approved_at": "2026-06-10T11:55:33.334Z",
+    "slug": "bay-aree"
   },
   {
     "name_en": "TAIBAN (ใต้บ้าน)",
@@ -3273,7 +3406,8 @@
     "id": "3168e935-7a4f-4998-8f71-bdb5e23636d7",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T10:53:59.632Z"
+    "approved_at": "2026-06-11T10:53:59.632Z",
+    "slug": "taiban"
   },
   {
     "name_en": "qraft. (Ari soi1)",
@@ -3297,7 +3431,8 @@
     "id": "d555dee0-15ea-40d6-bf72-fed51ad5557f",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T10:54:54.432Z"
+    "approved_at": "2026-06-11T10:54:54.432Z",
+    "slug": "qraft-ari-soi1"
   },
   {
     "name_en": "TRUST Cafe and Studio",
@@ -3321,7 +3456,8 @@
     "id": "c1e8566b-a001-488e-90b8-3b67f2124f5b",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T10:55:39.601Z"
+    "approved_at": "2026-06-11T10:55:39.601Z",
+    "slug": "trust-cafe-and-studio"
   },
   {
     "name_en": "ONDA cafe",
@@ -3345,7 +3481,8 @@
     "id": "59373c8d-aeaf-4a6e-a855-8bc0b5197120",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T10:56:18.555Z"
+    "approved_at": "2026-06-11T10:56:18.555Z",
+    "slug": "onda-cafe"
   },
   {
     "name_en": "Ari Cafe & Bistro",
@@ -3371,7 +3508,8 @@
     "id": "5a50cb9d-f005-4dde-8160-8a75785602fe",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T10:56:54.800Z"
+    "approved_at": "2026-06-11T10:56:54.800Z",
+    "slug": "ari-cafe-and-bistro"
   },
   {
     "name_en": "Bru Cafe",
@@ -3397,7 +3535,8 @@
     "id": "e5b6d834-3ad7-448a-bc07-873b3761799a",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T10:57:46.853Z"
+    "approved_at": "2026-06-11T10:57:46.853Z",
+    "slug": "bru-cafe"
   },
   {
     "name_en": "Ryoku Cafe",
@@ -3419,7 +3558,8 @@
     "id": "9353b8ee-8c33-4652-abaa-156457d338aa",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T10:58:27.769Z"
+    "approved_at": "2026-06-11T10:58:27.769Z",
+    "slug": "ryoku-cafe"
   },
   {
     "name_en": "Sarnies Cafe Sukhumvit",
@@ -3443,7 +3583,8 @@
     "id": "32660131-c7d9-4e6b-aefc-7d2a7d83ef34",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T10:59:19.020Z"
+    "approved_at": "2026-06-11T10:59:19.020Z",
+    "slug": "sarnies-cafe-sukhumvit"
   },
   {
     "name_en": "Zen Den Coffee House",
@@ -3467,7 +3608,8 @@
     "id": "3b286464-3b95-473d-963d-e33768d5e092",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:03:34.990Z"
+    "approved_at": "2026-06-11T11:03:34.990Z",
+    "slug": "zen-den-coffee-house"
   },
   {
     "name_en": "GLIG CAFE",
@@ -3493,7 +3635,8 @@
     "id": "70d7ae88-ff0a-47d9-9193-a90fcadc6501",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:04:38.757Z"
+    "approved_at": "2026-06-11T11:04:38.757Z",
+    "slug": "glig-cafe"
   },
   {
     "name_en": "SINGLE LANE Specialty Coffee",
@@ -3515,7 +3658,8 @@
     "id": "361ee46c-a9bc-4f1e-8e46-ae348d52f145",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:05:43.475Z"
+    "approved_at": "2026-06-11T11:05:43.475Z",
+    "slug": "single-lane-specialty-coffee"
   },
   {
     "name_en": "Hario Cafe",
@@ -3541,7 +3685,8 @@
     "id": "926223c8-0806-4ff6-a816-d23d6c184ebe",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:06:26.008Z"
+    "approved_at": "2026-06-11T11:06:26.008Z",
+    "slug": "hario-cafe"
   },
   {
     "name_en": "Artis Coffee Bangkok",
@@ -3565,7 +3710,8 @@
     "id": "c024beeb-9cd4-4e7c-b471-52e767464390",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:07:13.073Z"
+    "approved_at": "2026-06-11T11:07:13.073Z",
+    "slug": "artis-coffee-bangkok"
   },
   {
     "name_en": "Orin Coffee roaster & Specialty tea",
@@ -3590,7 +3736,8 @@
     "id": "336996f9-c8a7-4fe8-b755-186cd04df9b8",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:23:05.141Z"
+    "approved_at": "2026-06-11T11:23:05.141Z",
+    "slug": "orin-coffee-roaster-and-specialty-tea"
   },
   {
     "name_en": "Ceresia Coffee Roasters",
@@ -3614,7 +3761,8 @@
     "id": "9dfe36d1-9e9d-4c80-8cdd-2bebf2d226d6",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:24:22.826Z"
+    "approved_at": "2026-06-11T11:24:22.826Z",
+    "slug": "ceresia-coffee-roasters"
   },
   {
     "name_en": "Mother Roaster Pratu Phi",
@@ -3638,7 +3786,8 @@
     "id": "6b03c2f0-7888-47f5-bf1a-e85a572b8c8a",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:27:57.455Z"
+    "approved_at": "2026-06-11T11:27:57.455Z",
+    "slug": "mother-roaster-pratu-phi"
   },
   {
     "name_en": "Samer Café",
@@ -3660,7 +3809,8 @@
     "id": "31c10945-0860-4af9-9bfa-d9f52b23ba82",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:28:51.909Z"
+    "approved_at": "2026-06-11T11:28:51.909Z",
+    "slug": "samer-caf"
   },
   {
     "name_en": "Brave Roasters / Siam Discovery",
@@ -3685,7 +3835,8 @@
     "id": "c57bf3cc-b861-4203-974c-2c42eaaf1951",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:29:26.441Z"
+    "approved_at": "2026-06-11T11:29:26.441Z",
+    "slug": "brave-roasters-siam-discovery"
   },
   {
     "name_en": "Beans Coffee Roaster Emsphere",
@@ -3711,7 +3862,8 @@
     "id": "b1ce2d19-0fe3-4049-8931-0d5b326ba1f6",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:30:13.193Z"
+    "approved_at": "2026-06-11T11:30:13.193Z",
+    "slug": "beans-coffee-roaster-emsphere"
   },
   {
     "name_en": "a Coffee Roaster by li-bra-ry",
@@ -3733,7 +3885,8 @@
     "id": "ea17042a-748b-4803-b689-d038381962ba",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:31:06.342Z"
+    "approved_at": "2026-06-11T11:31:06.342Z",
+    "slug": "a-coffee-roaster-by-li-bra-ry"
   },
   {
     "name_en": "Remedy Coffee Roastery",
@@ -3757,7 +3910,8 @@
     "id": "3c66813e-c123-49a5-ae7d-c481190b9b84",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:32:02.294Z"
+    "approved_at": "2026-06-11T11:32:02.294Z",
+    "slug": "remedy-coffee-roastery"
   },
   {
     "name_en": "POPCUP EKKAMAI",
@@ -3781,7 +3935,8 @@
     "id": "d7c3aae8-ea33-4323-9106-7e6188698931",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:33:33.579Z"
+    "approved_at": "2026-06-11T11:33:33.579Z",
+    "slug": "popcup-ekkamai"
   },
   {
     "name_en": "BABYCCINO",
@@ -3803,7 +3958,8 @@
     "id": "bbdbd53c-ff2f-41fb-babf-df12a5285414",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:34:17.146Z"
+    "approved_at": "2026-06-11T11:34:17.146Z",
+    "slug": "babyccino"
   },
   {
     "name_en": "Kaizen Coffee Ekamai",
@@ -3828,7 +3984,8 @@
     "id": "bdd262a9-04ee-43b1-b373-a0d20b8a51a9",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:40:46.121Z"
+    "approved_at": "2026-06-11T11:40:46.121Z",
+    "slug": "kaizen-coffee-ekamai"
   },
   {
     "name_en": "Hoshi Cafe",
@@ -3853,7 +4010,8 @@
     "id": "6155ec62-a855-44a8-a714-06afe4a70526",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:42:06.951Z"
+    "approved_at": "2026-06-11T11:42:06.951Z",
+    "slug": "hoshi-cafe"
   },
   {
     "name_en": "Bad habit rabbit",
@@ -3878,7 +4036,8 @@
     "id": "0ee54019-813c-4420-b1fb-cddce3e6fdea",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:45:32.258Z"
+    "approved_at": "2026-06-11T11:45:32.258Z",
+    "slug": "bad-habit-rabbit"
   },
   {
     "name_en": "Daisie May's Home Cafe Ekamai 22",
@@ -3900,7 +4059,8 @@
     "id": "eb066a46-1553-4bbf-bea1-96ac91f9794d",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:47:51.012Z"
+    "approved_at": "2026-06-11T11:47:51.012Z",
+    "slug": "daisie-mays-home-cafe-ekamai-22"
   },
   {
     "name_en": "Lazy Daisy Brunch and Bar",
@@ -3924,7 +4084,8 @@
     "id": "aee7a4b0-9df3-4360-978d-c51fa837908b",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:48:57.514Z"
+    "approved_at": "2026-06-11T11:48:57.514Z",
+    "slug": "lazy-daisy-brunch-and-bar"
   },
   {
     "name_en": "Chim Chim Bangkok Restaurant & All-day Café",
@@ -3946,7 +4107,8 @@
     "id": "db212abd-4b80-4e49-b4b4-4efe24217669",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:50:37.396Z"
+    "approved_at": "2026-06-11T11:50:37.396Z",
+    "slug": "chim-chim-bangkok-restaurant-and-all-day-caf"
   },
   {
     "name_en": "The Coffee Academics",
@@ -3970,7 +4132,8 @@
     "id": "244cc363-4673-447d-aadd-ad415975bb61",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:52:15.679Z"
+    "approved_at": "2026-06-11T11:52:15.679Z",
+    "slug": "the-coffee-academics"
   },
   {
     "name_en": "Dolcetto Italian Cafe Bangkok",
@@ -3995,7 +4158,8 @@
     "id": "4b11cfaa-d78f-4a2e-9336-b366778862b8",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:53:04.999Z"
+    "approved_at": "2026-06-11T11:53:04.999Z",
+    "slug": "dolcetto-italian-cafe-bangkok"
   },
   {
     "name_en": "Sarnies Roastery",
@@ -4019,7 +4183,8 @@
     "id": "5a856d7d-e9da-4eff-8217-84a989891564",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:54:28.331Z"
+    "approved_at": "2026-06-11T11:54:28.331Z",
+    "slug": "sarnies-roastery"
   },
   {
     "name_en": "MUJI Coffee (Central Chidlom)",
@@ -4041,7 +4206,8 @@
     "id": "6747c4c8-1952-45e6-aa37-863e6110efb4",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:55:12.114Z"
+    "approved_at": "2026-06-11T11:55:12.114Z",
+    "slug": "muji-coffee-central-chidlom"
   },
   {
     "name_en": "Smith & Co. (Chidlom)",
@@ -4067,7 +4233,8 @@
     "id": "becc37f7-ba25-4ba5-9725-b2667ffe2894",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:55:49.316Z"
+    "approved_at": "2026-06-11T11:55:49.316Z",
+    "slug": "smith-and-co-chidlom"
   },
   {
     "name_en": "Samantao Heritage Coffee",
@@ -4089,7 +4256,8 @@
     "id": "a06df101-4317-459f-9194-9ffdb3fedb07",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:56:29.266Z"
+    "approved_at": "2026-06-11T11:56:29.266Z",
+    "slug": "samantao-heritage-coffee"
   },
   {
     "name_en": "Or Tor Kor Market",
@@ -4114,7 +4282,8 @@
     "id": "63371670-a630-4e4f-8d48-cb81324ee3f9",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:57:45.983Z"
+    "approved_at": "2026-06-11T11:57:45.983Z",
+    "slug": "or-tor-kor-market"
   },
   {
     "name_en": "Starlight Rooftop Bar",
@@ -4139,7 +4308,8 @@
     "id": "d27bc2f8-ffc4-4617-8ae0-3551a0c1853b",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:59:12.418Z"
+    "approved_at": "2026-06-11T11:59:12.418Z",
+    "slug": "starlight-rooftop-bar"
   },
   {
     "name_en": "Octave Rooftop Lounge & Bar",
@@ -4164,7 +4334,8 @@
     "id": "c93d8779-cd2f-475e-b023-380bb165c9c3",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T11:59:49.183Z"
+    "approved_at": "2026-06-11T11:59:49.183Z",
+    "slug": "octave-rooftop-lounge-and-bar"
   },
   {
     "name_en": "Sky Beach Bangkok",
@@ -4189,7 +4360,8 @@
     "id": "3de2050f-1280-47bd-a235-edc95445a643",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T12:00:28.656Z"
+    "approved_at": "2026-06-11T12:00:28.656Z",
+    "slug": "sky-beach-bangkok"
   },
   {
     "name_en": "Gaze Cocktail Bar",
@@ -4214,7 +4386,8 @@
     "id": "aad336c4-c5cb-4782-8f34-5337c47b49dd",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-11T12:01:12.434Z"
+    "approved_at": "2026-06-11T12:01:12.434Z",
+    "slug": "gaze-cocktail-bar"
   },
   {
     "name_en": "My Grandparent's House",
@@ -4243,7 +4416,8 @@
     "id": "66e6f493-eb4c-493d-a6e0-61ef43dab07c",
     "category": "cafe",
     "source": "pantip",
-    "approved_at": "2026-06-15T09:41:16.216Z"
+    "approved_at": "2026-06-15T09:41:16.216Z",
+    "slug": "my-grandparents-house"
   },
   {
     "name_en": "Aroi Sushi",
@@ -4273,7 +4447,8 @@
     "id": "d3b4997b-a6b7-4405-9400-12cac5371e64",
     "category": "food",
     "source": "pantip",
-    "approved_at": "2026-06-15T09:42:57.796Z"
+    "approved_at": "2026-06-15T09:42:57.796Z",
+    "slug": "aroi-sushi"
   },
   {
     "name_en": "Yoong Khao Hom",
@@ -4302,7 +4477,8 @@
     "id": "502bb220-45aa-4e00-8906-8d10196a8d3a",
     "category": "food",
     "source": "pantip",
-    "approved_at": "2026-06-15T09:45:51.610Z"
+    "approved_at": "2026-06-15T09:45:51.610Z",
+    "slug": "yoong-khao-hom"
   },
   {
     "name_en": "Penlaos Rama 3 - เป็นลาว พระราม 3",
@@ -4329,7 +4505,8 @@
     "id": "b5ef1b09-b168-4cfd-810f-ee0e05491037",
     "category": "food",
     "source": "pantip",
-    "approved_at": "2026-06-15T09:46:49.495Z"
+    "approved_at": "2026-06-15T09:46:49.495Z",
+    "slug": "penlaos-rama-3-3"
   },
   {
     "name_en": "BlueMoon.bkk",
@@ -4358,7 +4535,8 @@
     "id": "41609391-3bc0-4de6-8574-9d2e7c0db143",
     "category": "nightlife",
     "source": "pantip",
-    "approved_at": "2026-06-15T09:48:49.539Z"
+    "approved_at": "2026-06-15T09:48:49.539Z",
+    "slug": "bluemoon-bkk"
   },
   {
     "name_en": "Three Sixty Lounge",
@@ -4389,7 +4567,8 @@
     "id": "53eae43f-e3aa-4046-a459-f7838bf7bc28",
     "category": "nightlife",
     "source": "pantip",
-    "approved_at": "2026-06-15T09:49:50.449Z"
+    "approved_at": "2026-06-15T09:49:50.449Z",
+    "slug": "three-sixty-lounge"
   },
   {
     "name_en": "Moom Muum Park Soi 11",
@@ -4415,7 +4594,8 @@
     "id": "7413acc9-6039-4da0-8062-cc364bb3d460",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:51:00.808Z"
+    "approved_at": "2026-06-15T09:51:00.808Z",
+    "slug": "moom-muum-park-soi-11"
   },
   {
     "name_en": "Madam Saranair Thai Food restaurant",
@@ -4441,7 +4621,8 @@
     "id": "faf1730a-7484-41cf-a060-15a5c0b00e77",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:51:48.965Z"
+    "approved_at": "2026-06-15T09:51:48.965Z",
+    "slug": "madam-saranair-thai-food-restaurant"
   },
   {
     "name_en": "Kinnaree by Vanessa WU",
@@ -4467,7 +4648,8 @@
     "id": "fb6c7810-6c99-4a54-8b7b-c4f22a85aa49",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:52:27.196Z"
+    "approved_at": "2026-06-15T09:52:27.196Z",
+    "slug": "kinnaree-by-vanessa-wu"
   },
   {
     "name_en": "Pasta Ama Saladaeng",
@@ -4491,7 +4673,8 @@
     "id": "e814f82d-4f97-4784-97a5-7838435bf6e5",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:53:07.064Z"
+    "approved_at": "2026-06-15T09:53:07.064Z",
+    "slug": "pasta-ama-saladaeng"
   },
   {
     "name_en": "Do Nūa - La Villa Ari",
@@ -4515,7 +4698,8 @@
     "id": "60ca17f6-50b4-467f-8ea0-5eceaf1dd41a",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:53:37.161Z"
+    "approved_at": "2026-06-15T09:53:37.161Z",
+    "slug": "do-n-a-la-villa-ari"
   },
   {
     "name_en": "Kopihub Prime l Ari",
@@ -4539,7 +4723,8 @@
     "id": "f1171626-3d41-4cf8-b660-7526a1b0737f",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:54:07.502Z"
+    "approved_at": "2026-06-15T09:54:07.502Z",
+    "slug": "kopihub-prime-l-ari"
   },
   {
     "name_en": "O’ganic Concept ARI",
@@ -4561,7 +4746,8 @@
     "id": "786aabf2-223e-45a6-ab91-2bd98a5b1856",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:55:09.643Z"
+    "approved_at": "2026-06-15T09:55:09.643Z",
+    "slug": "oganic-concept-ari"
   },
   {
     "name_en": "Vela Bhirom Restaurant - ร้านอาหารเวฬาภิรมย์",
@@ -4583,7 +4769,8 @@
     "id": "6babf0e9-8764-4b17-8398-29ab23572515",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:56:05.185Z"
+    "approved_at": "2026-06-15T09:56:05.185Z",
+    "slug": "vela-bhirom-restaurant"
   },
   {
     "name_en": "Armenio's Modern Grandma",
@@ -4609,7 +4796,8 @@
     "id": "5efc4243-01a7-488f-a116-ed80a0bdb642",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:56:58.755Z"
+    "approved_at": "2026-06-15T09:56:58.755Z",
+    "slug": "armenios-modern-grandma"
   },
   {
     "name_en": "THE SIXTH 6th",
@@ -4635,7 +4823,8 @@
     "id": "428cf5ac-4941-41c4-a3ac-df1e339fe8e2",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:58:22.677Z"
+    "approved_at": "2026-06-15T09:58:22.677Z",
+    "slug": "the-sixth-6th"
   },
   {
     "name_en": "Laem Charoen Seafood Central World",
@@ -4657,7 +4846,8 @@
     "id": "17beafac-9a49-4acc-a2f8-a23abedad887",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:59:17.780Z"
+    "approved_at": "2026-06-15T09:59:17.780Z",
+    "slug": "laem-charoen-seafood-central-world"
   },
   {
     "name_en": "Sushi Juban Takumi Thonglor 寿司十番匠トンロー",
@@ -4682,7 +4872,8 @@
     "id": "3ff173f2-b85d-43b3-8df2-cdca1807b4c2",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T09:59:49.603Z"
+    "approved_at": "2026-06-15T09:59:49.603Z",
+    "slug": "sushi-juban-takumi-thonglor"
   },
   {
     "name_en": "Ryuzu Omakase",
@@ -4707,7 +4898,8 @@
     "id": "f6be869c-3fb2-48d3-a9b6-02da4d070247",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:01:31.952Z"
+    "approved_at": "2026-06-15T10:01:31.952Z",
+    "slug": "ryuzu-omakase"
   },
   {
     "name_en": "Kimukatsu Thonglor",
@@ -4731,7 +4923,8 @@
     "id": "f291e556-a93c-4fc8-90ec-31701f83b55b",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:02:03.675Z"
+    "approved_at": "2026-06-15T10:02:03.675Z",
+    "slug": "kimukatsu-thonglor"
   },
   {
     "name_en": "Tamnak Isan Ekamai",
@@ -4757,7 +4950,8 @@
     "id": "ed56cd54-f955-41a0-8f4a-09bb4ab2e73a",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:03:05.536Z"
+    "approved_at": "2026-06-15T10:03:05.536Z",
+    "slug": "tamnak-isan-ekamai"
   },
   {
     "name_en": "kungfudimsum",
@@ -4782,7 +4976,8 @@
     "id": "e1701ad0-84ad-4ba4-b90a-d9661c193a04",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:04:41.615Z"
+    "approved_at": "2026-06-15T10:04:41.615Z",
+    "slug": "kungfudimsum"
   },
   {
     "name_en": "Butler",
@@ -4807,7 +5002,8 @@
     "id": "c519dd76-6f0c-4558-8150-48d1a0195a3c",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:05:13.836Z"
+    "approved_at": "2026-06-15T10:05:13.836Z",
+    "slug": "butler"
   },
   {
     "name_en": "Tulum Skybar",
@@ -4832,7 +5028,8 @@
     "id": "5bee9259-1cb9-4a0d-ab40-dfd99e2619d8",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:05:48.935Z"
+    "approved_at": "2026-06-15T10:05:48.935Z",
+    "slug": "tulum-skybar"
   },
   {
     "name_en": "Cacao & Love",
@@ -4856,7 +5053,8 @@
     "id": "deb4c135-7fc1-4a58-b30d-338e673e8322",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:06:19.657Z"
+    "approved_at": "2026-06-15T10:06:19.657Z",
+    "slug": "cacao-and-love"
   },
   {
     "name_en": "Pacamara Coffee Roaster Thonglor 25",
@@ -4882,7 +5080,8 @@
     "id": "06605ac3-a058-44f4-b149-fe26e7435791",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:06:51.073Z"
+    "approved_at": "2026-06-15T10:06:51.073Z",
+    "slug": "pacamara-coffee-roaster-thonglor-25"
   },
   {
     "name_en": "Kaffa: Brunch and Brew",
@@ -4907,7 +5106,8 @@
     "id": "ad259682-a831-424c-a78a-4727fe91871f",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:08:19.818Z"
+    "approved_at": "2026-06-15T10:08:19.818Z",
+    "slug": "kaffa-brunch-and-brew"
   },
   {
     "name_en": "Aribica Specialty Coffee (Sahakorn branch)",
@@ -4932,7 +5132,8 @@
     "id": "f5348ad5-6081-4028-901f-c8d66b720e9c",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:08:56.390Z"
+    "approved_at": "2026-06-15T10:08:56.390Z",
+    "slug": "aribica-specialty-coffee-sahakorn-branch"
   },
   {
     "name_en": "Sunset Coffee Roaster (Talat Noi)",
@@ -4957,7 +5158,8 @@
     "id": "180440ea-36bb-46ba-ba77-f1c13dc3c917",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:10:46.085Z"
+    "approved_at": "2026-06-15T10:10:46.085Z",
+    "slug": "sunset-coffee-roaster-talat-noi"
   },
   {
     "name_en": "Midsummer Cafe & Roastery SONGWAT | Thai Coffee",
@@ -4982,7 +5184,8 @@
     "id": "1a1c1ae4-e2e8-477b-9325-c54bb5565829",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:11:21.137Z"
+    "approved_at": "2026-06-15T10:11:21.137Z",
+    "slug": "midsummer-cafe-and-roastery-songwat-thai-coffee"
   },
   {
     "name_en": "prove",
@@ -5004,6 +5207,470 @@
     "id": "fb7f7340-399e-44c6-985c-5ec93ed13165",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-06-15T10:11:50.455Z"
+    "approved_at": "2026-06-15T10:11:50.455Z",
+    "slug": "prove"
+  },
+  {
+    "name_en": "Café Tartine",
+    "name_zh": "Café Tartine",
+    "description_en": "A little slice of Paris tucked off Witthayu Road 🥐 Café Tartine has been serving fresh croissants and honest French café fare since 2009 — the signature Eggs Dolphin Bay Benedict is the dish to order, the build-your-own baguette lets you customize a hearty lunch, and the lemon meringue pie pairs beautifully with jasmine tea. Generous portions, warm and attentive service, and a quiet, cozy atmosphere just steps from BTS Ploenchit. The kind of café that turns a quick coffee stop into a long, relaxed morning.",
+    "description_zh": "Ruamrudee 巷弄裡的巴黎早餐時光 🥐 Café Tartine 自 2009 年起在這裡飄香，新鮮現烤可頌、招牌 Dolphin Bay 班尼迪克蛋是必點，自由組合的法式長棍三明治、檸檬蛋白霜派配茉莉花茶完美收尾，份量大方、價格親民，是逛 Ploenchit 一帶最值得放慢腳步的法式咖啡廳。",
+    "category": "cafe",
+    "address": "65 2 Thanon Witthayu, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.7418266,
+    "lng": 100.549497,
+    "photos": [
+      "places/ChIJGeftrN2e4jARJNTfjce9KBQ/photos/AaVGc3lMLudp8xGgnZcgX15IVdeNiWRxd8kOFh-APGM8tEzaxTsv-8KXBYQB9Dhp33eB3q3qhf7Kk-G-KdgAkBelhmCcPmxSuHBvabkUzynplGQWJmXzhgDOO6irNtTa5XIcgenQBpJ0o3XhpWMdF8u02GaVHnFz4InztJ__i1c_awjou16dPK9dnzQ_vKX1KG80DCIkOqDng8q2Uj23Ov8zCAsKktqtMha7RV8dYyHyHfm4HyEu-7nbT2mqvUU6VQftqpkSOshgswbV2bxVwv_Q31yP3MAIBIhddcL1-04TkjfnlEvC4OVO3dg8qGWSU8JbyX5NSwmGzEQavXtdeD8Mh1iuBN7nPAs3ylJ4GP_ZcHwJ3AsaVHru8HSHM8potOVqkQMALT3VOkHZYJkYPCUnJ7E0_wGzsPOT3legxSwC6lpe7bM7BnyX3EUd6s3pUg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Tartine%2065%202%20Thanon%20Witthayu%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJGeftrN2e4jARJNTfjce9KBQ",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Broccoli bacon quiche",
+      "Other dishes and desserts"
+    ],
+    "id": "832f60be-a487-4314-8aa3-df0c1276d8e5",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:35:15.965Z",
+    "slug": "caf-tartine"
+  },
+  {
+    "name_en": "On Top Rooftop Bar",
+    "name_zh": "On Top Rooftop Bar",
+    "description_en": "A quietly excellent rooftop tucked in Charoen Krung 50 🌆 On Top Rooftop Bar sits on the 5th floor of a building down this charming alley in Bang Rak — rated 4.8 by guests, and far less crowded than the big-name rooftops nearby. A solid choice for travelers who want skyline views and good cocktails without the tourist scrum.",
+    "description_zh": "曼隆 50 巷裡的低調精緻天台 🌆 On Top Rooftop Bar 藏在 Charoen Krung 50 巷的五樓，Google 評分高達 4.8，不像鄰近大牌天台般擁擠喧鬧，是這一帶在地人才知道的安靜選擇，適合想避開觀光人潮、好好享受曼谷夜景的那種夜晚。",
+    "category": "nightlife",
+    "address": "5th floor, 53 Charoen Krung 50 Alley, Bangrak, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.719508,
+    "lng": 100.5140461,
+    "photos": [
+      "places/ChIJifmbDACZ4jARJWbSDzNlJZI/photos/AaVGc3m8APpNQ0NzMISB4i0lH73q4T0Y1ypKwmaWiaSdvREjsR5EESfngK5XCoG2mxUITvTmotp7kLeZVsrpMfdj2IGXdGMmxE2dZwhMNIBfeTXGInQZUI8ZgHgwY6CqUJGGIXe2LE98soR8mTKJY2wh5CJeX3GC0zXmLNGLl4PstAVPbavzVdJVG61Fs1_d4SCBOfq47uQd20Wb3cB1DtWiJs-nOXxv-Wph6PbN1kvFVaWHFzBXQ2Ll7YB9WdNuhSU_FScN5jG7NJgrw-bATMLScCje6oFy889CkC1xI6vL2YedVfUNI10lA2nJab0r7h0kd-ANu7zn0_DyKaE3JYlUA-rGkfl6YjBbM_0-i6x0sdYxJVSz4ztYAaUt4FjMhnridUwH8P5XcPxLnl3kpL_im0OxS70Ox6yzrJftJkz7QP8azA92-p0KS1Ri-xJaK6An"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=On%20Top%20Rooftop%20Bar%205th%20floor%2C%2053%20Charoen%20Krung%2050%20Alley%2C%20Bangrak%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJifmbDACZ4jARJWbSDzNlJZI",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Rooftop View"
+    ],
+    "id": "41b90afc-227e-4d60-a00b-b05bdb0b98f0",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:36:11.199Z",
+    "slug": "on-top-rooftop-bar"
+  },
+  {
+    "name_en": "The Speakeasy Rooftop Bar Bangkok",
+    "name_zh": "The Speakeasy Rooftop Bar Bangkok",
+    "description_en": "A hidden 1920s European speakeasy, 24 floors above Langsuan 🥃 The Speakeasy at Hotel Muse spans two floors of golden Art Deco glamour — a glowing dome bar downstairs, and a secret staircase behind a painting leading to a quieter rooftop terrace above. Over 50 premium gins, cocktails inspired by King Rama V's royal travels, and the Blind Pig Cigar Lounge for an extra layer of old-world indulgence. Live jazz, weekend DJ sets, and a five-minute walk from BTS Chit Lom. Smart casual, and best enjoyed slowly with a martini in hand.",
+    "description_zh": "1920 年代歐洲的秘密酒吧，藏在 Langsuan 上空 🥃 The Speakeasy 坐落 Hotel Muse 24-25 樓，金色圓頂與隱藏樓梯後是另一個世界，超過 50 款琴酒、招牌調酒以拉瑪五世國王的旅行故事為靈感，畫作後方的密道通往樓上更隱密的天台，Blind Pig 雪茄室適合愛好者，週末現場 DJ 接力，是 Chidlom 一帶最有戲劇感的調酒夜晚。",
+    "category": "nightlife",
+    "address": "55, 555 Lang Suan Rd, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.740205699999999,
+    "lng": 100.5436412,
+    "photos": [
+      "places/ChIJ5178Viqf4jARZKFL40SO2RU/photos/AaVGc3nO9zg1W86-Mh9b9CRu31tNikdU-96UD3HCdgjan_35aFzP0TJRXWV07e2qrR29JqOCZAfAgisIgExBCZpsCFZigYF_zEpDR6FabMW2_isZ2o0sSJRqeIx7cntOagVOhNcYXnQZS-j7tk8wZdTKLFqhix679RWRpjr1G12MDVT1OlpZzlyf084P1Hw4KqxKUnVAdP2B9r9vp_QEu__s0ouzfEboFk9kJazzxZy36dJa8al4kmm0UroalUR5_MnWnE90M3uFTPVucABHPfgwyQCSqUaLSmjE1Fm4TrqTqhgyRAXLqA4xpMP3iB06HGrGYdq2IVn82zNL0OuPy_IdYXfrZR4Zor2WYGyDckKUKqsoiTzXaGplf06yAyL-tlUXt9Zu7IUyYlEBJPjDr5RAymqRY74xVbSuzv6lFtm0S_umS8DwMTJhLPizI_ITbEAO"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Speakeasy%20Rooftop%20Bar%20Bangkok%2055%2C%20555%20Lang%20Suan%20Rd%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJ5178Viqf4jARZKFL40SO2RU",
+    "rating": 4.7,
+    "price_range": 3,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Rooftop View"
+    ],
+    "id": "6facec4b-4e9d-4546-a884-2b9789e6ded0",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:36:41.502Z",
+    "slug": "the-speakeasy-rooftop-bar-bangkok"
+  },
+  {
+    "name_en": "TYME Rooftop",
+    "name_zh": "TYME Rooftop",
+    "description_en": "Front-row seats to Wat Arun, no crowds required 🌅 TYME Rooftop sits on the 5th floor of INN A DAY, a boutique hotel near Wat Pho — and it's quietly become one of the area's best-kept secrets. Golden hour lights up the temple spires across the river; after dark, Wat Arun glows and reflects on the water below. Low-key but never dull, with attentive service, decent cocktails, and crispy beef nachos that regulars order every visit. Reservations recommended for window seats — the view alone is worth the trip.",
+    "description_zh": "鄭王廟正對面，曼谷最值得安靜坐下來的天台 🌅 TYME Rooftop 藏在 INN A DAY 飯店五樓，是 Wat Pho 一帶最讓人意外的隱藏景點，夕陽把鄭王廟染成金色、入夜後廟身燈光倒映河面，氛圍低調卻迷人、調酒師認真調製手中那一杯，牛肉莎莎脆餅是常客必點，是觀光人潮裡最值得提前訂位的那個安靜角落。",
+    "category": "nightlife",
+    "address": "5th Floor, INN A DAY, Maharaj - Tha Tien, Khwaeng Phra Borom Maha Ratchawang, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.745025799999999,
+    "lng": 100.4910874,
+    "photos": [
+      "places/ChIJf62MLQCZ4jAR21q3BqXlLTg/photos/AaVGc3mCjW7IiRkiEZkfAAn-FZlIsIJ2Rh2SWSlACWD8Fw-I2w7hU11XfkxgkJvsisFuEpCtgTWKucMj1Gsv4y44QCd4imOM0lPEv_2rTPKxJNNu2Ic9C9z6fjJM17HO7hTcZ6Z6CWqaxrWqao7nzU9Tef2OImOYL7UhOlAxwisjkq7mifw-NsOWuJVmJvT4-YjerBd4nB6k4zoMUKJGsxAi33Q212PkHUUuuv54cgpA7jx82DD__Lr7Ak4bgLIP1lte6REO5HISaXeW0JSFj3afPy2O2VIeTelY7h6bG3QECAX8bHq8WbMF9aon7E_DXso0dW0LOw7lgfTl8-KwZ6KRn63YshTgtbEl_wTfEtx1u5m6JG4Df5D3usL8Mn4yvmx8x5E1MUsaZNkYgPDDxJ20Vsg6Xm7L8_-3WBfDZS4slfhp1zLTsH8J0-XMaIX7R66k"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=TYME%20Rooftop%205th%20Floor%2C%20INN%20A%20DAY%2C%20Maharaj%20-%20Tha%20Tien%2C%20Khwaeng%20Phra%20Borom%20Maha%20Ratchawang%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJf62MLQCZ4jAR21q3BqXlLTg",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Rooftop View"
+    ],
+    "id": "ff3c6ca0-999e-4830-98cd-8cd459495fed",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:37:12.226Z",
+    "slug": "tyme-rooftop"
+  },
+  {
+    "name_en": "Rabbit Hole",
+    "name_zh": "Rabbit Hole",
+    "description_en": "Find the wooden door, find Bangkok's best cocktails 🐇 Rabbit Hole on Thonglor Road has no sign — just an unmarked wooden door between Soi 5 and 7. Step inside and discover a three-storey converted shophouse with a marble bar, floor-to-ceiling copper spirit rack, and two Diageo World Class champion bartenders behind the counter. The Cosa Nostra — cherry-infused cognac in a cigar-smoked glass — is the signature. Consistently ranked among Asia's 50 Best Bars, and still feels like a secret worth keeping.",
+    "description_zh": "找到那扇木門，就找到了曼谷最好的調酒 🐇 Rabbit Hole 藏在通羅路 5-7 巷之間，沒有招牌只有一扇木門，走進三層樓老街屋、大理石吧台、玫瑰金酒架映入眼簾，由 Diageo World Class 冠軍調酒師掌杯，Cosa Nostra 煙燻威士忌是必點，連亞洲 50 最佳酒吧也認證，是通羅夜晚最值得尋找的地方。",
+    "category": "nightlife",
+    "address": "125 Soi Thong Lo, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7298215,
+    "lng": 100.58104399999999,
+    "photos": [
+      "places/ChIJv47qiKyf4jARy55PeaiCrv4/photos/AaVGc3ngDI9HaY0YZT2Romb1ApMELch-47D2xWRge64mQO6ZlLTvhrKbPTOMkLxgH9vjYdZd0U32viQ1S8vCHA3YYPkctc7uhan4ARoVDYMOPZlF69xHzDAWT3Ymq9FrBGXpkrbWfL_1Narei8JFSk4nppteoPzQaL23CEOeRYXI1S4wuQ7hW6HjCsHb1Y4j6h1muRNLV7wj_yCY4UeNA_OFqae0HIOyQYbVVr7y8oV6FwVkWpamTxmNYQnQg4Z0Q239ETmQkOHU317NW06E9HIgkOpn4wsFE3qFq04rrGhlD2lfN_ZyUlfoxCov6-E5fbfVDnHlwEFDI-XA31p1wa2O13jbdCaif5W6-q3FQtYLRJW7yWbgBpNQsP8JmUw_Vt2pMc9x26UJmNbFiJ_EYv-gcQo3cOu6X_nb-1VF_h_MnKP35l1ll_6tZl2iQi5RvnkE"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Rabbit%20Hole%20125%20Soi%20Thong%20Lo%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJv47qiKyf4jARy55PeaiCrv4",
+    "rating": 4.5,
+    "price_range": 3,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails"
+    ],
+    "id": "1072d883-c39b-4a44-b35c-5662b5534e2a",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:37:51.772Z",
+    "slug": "rabbit-hole"
+  },
+  {
+    "name_en": "Dry Wave Cocktail Studio",
+    "name_zh": "Dry Wave Cocktail Studio",
+    "description_en": "Asia's 50 Best Bars No. 5, where two classics become one glass 🌊 Dry Wave Cocktail Studio sits on the 2nd floor of SODALITY in Thonglor Soi 13 — wave-patterned sandstone walls, terracotta marble bar, and a treehouse feel with a mature tree growing right through the outdoor terrace. Bartender Palm Muttarattana's \"Super Classic\" menu splices two eras of cocktails into one: a Negroni-Espresso Martini hybrid, and the must-try Morning Tijuana, blending a mezcal margarita with a breakfast martini for a bold strawberry-paprika finish. Intimate, artistic, and one of Bangkok's most inventive bars right now.",
+    "description_zh": "亞洲 50 最佳酒吧第 5 名，把兩杯經典調成一杯 🌊 Dry Wave Cocktail Studio 藏在通羅 13 巷 SODALITY 二樓，沙浪紋牆面與陶土色大理石吧台打造祕境氛圍，調酒師 Palm 把 Negroni 與 Espresso Martini 融合成一杯、招牌 Morning Tijuana 結合梅斯卡爾瑪格麗特與早餐馬丁尼，戶外露台環繞一棵老樹，是曼谷最值得慢慢品的調酒實驗室。",
+    "category": "nightlife",
+    "address": "SODALITY 2nd Floor, 263 Soi Thong Lo 13, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.733720499999999,
+    "lng": 100.5806374,
+    "photos": [
+      "places/ChIJYRzUEACf4jAR5YxPdMHC300/photos/AaVGc3nZeGie3y9vWOE1Md9iXjNyzDpCq-AED3aMME1O0j-LqOVdoMSGCuv83oTN5xVbtF45LRw9fnl94N1Ukxpy40QY76AGgueSCZB9CvRpbCkC5seGiWhecbbjoZacHNSFkbVrYierRjKBFdiZrijUauNxknf7iAjTp7yTEptdQTU0tbS-n2rql9uuEQ7UXNVUr8wS902HeVixn2xnhCRM1J0wjUN64J0ltUw_AInMJtwzSlVW82AIl4wdnIvQCZlCr2IyZ7sgjsUdT-UVSbs989DUv2GsztILVraXezCPgldwZ-9t4phhIkTr7800g4f8mmLf5bsT0CoIKF_NC0I4ohQibfoL5nNIFmSlzEA5HcN-oJHhFvM4ZcvtUKUvSWtgGbe1JcIEC0ZZnW-hle7XkWmGJ7YWwlQERKf3m7dbSw4kst6f"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Dry%20Wave%20Cocktail%20Studio%20SODALITY%202nd%20Floor%2C%20263%20Soi%20Thong%20Lo%2013%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJYRzUEACf4jAR5YxPdMHC300",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails"
+    ],
+    "id": "cac37b06-3c92-478a-947e-5d926e469973",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:38:35.560Z",
+    "slug": "dry-wave-cocktail-studio"
+  },
+  {
+    "name_en": "Another Round",
+    "name_zh": "Another Round",
+    "description_en": "A rooftop hiding behind a parking garage elevator 🥃 Another Round sits on Thonglor Soi 13 — take the lift up from what looks like a parking entrance, and you land somewhere unexpectedly polished: warm brown tones, mirrored surfaces catching the skyline, and a live singer most nights from around 8pm. It feels more like a regulars' spot than a headline venue, the kind of place that fills through word of mouth. The dry-aged beef and pad krapao both hold their own. Tables with a view go fast before 9pm — time your arrival, then let the night slow down from there.",
+    "description_zh": "停車場電梯直達的通羅天台秘境 🥃 Another Round 藏在通羅 13 巷某棟大樓的停車場入口，搭電梯上樓後別有洞天，暖棕色調與鏡面映著城市天際線，每晚約八點有現場歌手駐唱，氛圍更像熟客的私房聚點而非熱門打卡點，乾式熟成牛排、打拋豬都夠水準，傍晚九點前先搶到看景座位，夜晚就慢慢沉浸其中。",
+    "category": "nightlife",
+    "address": "Soi Thong Lo, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7338509,
+    "lng": 100.5799625,
+    "photos": [
+      "places/ChIJD75XDlKf4jARvAglbw_g6UU/photos/AaVGc3nAF5iq8ww0Zlp2jdw-bzNoKHg8V5HqSX7Aw3X5Fz9U-bDsFwYmbvYk6cFS3QELX3paxjbcBGR8-eTw1IWjNG4-AQn7EVrboHN1YxVBtE-FrITWHOK6dJ37bWS9_q8FqlFGhnsjPhCC6lwpWwPW5Eg85ZBqWQOn5qmzV29kwAwu0YjeOC5mceM_j00Ws4VO_NGuwvRvop2pL_rRd47K7HbCv2soShK5OzzEbsk5C1_2_StaUfE0qDuPVNyK4I4dnFEabHIhFvkRtdPSFRg9CtoN3LIgfuBVdVczUKNJyA0jEt6cCis6gvrIXbBsp2TVn91QD_GYyIctYN0WqitE1XRuPp5oMu96z49BcAEbYXFWHDu1r-FBc6htwKwEvVOuVWSgyOObMUbyuGo5UpxyKX-pRhhtr7gZdJbt-_O831U"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Another%20Round%20Soi%20Thong%20Lo%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJD75XDlKf4jARvAglbw_g6UU",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Rooftop View",
+      "Live Music"
+    ],
+    "id": "14b88968-3d33-4c87-b407-66d1d3e8031d",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:39:24.966Z",
+    "slug": "another-round"
+  },
+  {
+    "name_en": "Thaipioka",
+    "name_zh": "Thaipioka",
+    "description_en": "The unmarked wooden door hiding inside a hotel 🚪 Thaipioka is tucked inside Salil Hotel on Thonglor Soi 1 — step through the door and you're into a warm, teak-heavy room with soft orange lighting and just enough greenery to soften the edges. Easy to reach from BTS Thonglor in under 10 minutes, it sets the tone early for a night out in the neighbourhood: understated, polished, and quietly confident from the very first sip.",
+    "description_zh": "Salil 飯店裡的無名木門酒吧 🚪 Thaipioka 藏在通羅 1 巷的 Salil Hotel 內，推開那扇沒有招牌的木門，迎面是暖橘燈光與滿室柚木的溫潤空間、綠植點綴其中，是通羅酒吧路線的最佳起點，氛圍低調卻有質感，從 BTS 通羅站走進來不到十分鐘，是夜晚慢慢開始的最佳第一站。",
+    "category": "nightlife",
+    "address": "44/7, Thonglor Soi 1, Salil Hotel, 55 ถ. สุขุมวิท แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110, Thailand",
+    "lat": 13.7272999,
+    "lng": 100.5786277,
+    "photos": [
+      "places/ChIJCYYw3Kuf4jAR6FHb--UAYcM/photos/AaVGc3n2G2-XUELeGJ9pPfGWOt_z9AWgjhjCtw1L9TxgACDCk_ttO10IX_ZrWFfyKI8fQFkK5he-gvFNsWeifSFDw4uJ_0zUpiMK4_wma3geB0MgIEkncrfv0uXsyuSj1XlJk9cwdMfQqozZE-ABjUlGTdCZEfqzdJnLDhqLKtWQqAIxU3baNRG_dni-qom12-W2dVSzq3IYh-WeU8n4W6nSvvqXgr2KHu_PlxRcFPEHtjDjVLRw-edwFGlMtFeBL9k_D2QHSG8Y7Nerq9f7MiufGk0tHP_tzJcsyPjFGW3rIrwlAo6sEJcPLQfMIotwg0dUXhn9E3v9Zd4cKwf0GD_jGujtzw-hdzmEwkb_k1fEgzHKf8BIolqTITPZVIYpk7VzKnVD2IJLNTyE_88_G1B4_7jJ6qCMrQdlcRJuEx2Vl-5Upac"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Thaipioka%2044%2F7%2C%20Thonglor%20Soi%201%2C%20Salil%20Hotel%2C%2055%20%E0%B8%96.%20%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%97%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110%2C%20Thailand&query_place_id=ChIJCYYw3Kuf4jAR6FHb--UAYcM",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "The dj lineup"
+    ],
+    "id": "dd474a3e-e9c7-4c3f-a711-8f5f365ebd6a",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:40:10.470Z",
+    "slug": "thaipioka"
+  },
+  {
+    "name_en": "BECKA BAR",
+    "name_zh": "BECKA BAR",
+    "description_en": "A speakeasy hiding behind a photo booth 🌊 BECKA BAR sits on the 9th floor of The Residence on Thonglor — soaring ceilings, a glass wall opening onto the skyline, and ten signature cocktails each inspired by a body of water from six different regions. The Salty Dog is the crowd favourite, live music plays nightly, and the chic, elegant interior makes it equally suited to a date night or a night out with friends. Open daily from 5pm, sunset views start around 5:30.",
+    "description_zh": "照片牆後藏著一間秘密酒吧 🌊 BECKA BAR 坐落 The Residence on Thonglor 九樓，玻璃高牆引進城市天際線，靈感取自全球六大洲的水域、十款招牌調酒各有故事，招牌 Salty Dog 是常客必點，每晚現場音樂、氛圍親密低調，是通羅夜晚約會或聚會最值得收進口袋的隱藏酒吧。",
+    "category": "nightlife",
+    "address": "The Resident on Thong Lo 9 Floor, 73 Sukhumvit 55 (Thonglor Khwaeng Khlong Tan Nuea, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7394319,
+    "lng": 100.58427069999999,
+    "photos": [
+      "places/ChIJp7eIDhyf4jARrD2vvJo1mBE/photos/AaVGc3k5dJg3PuLtS2MEpw-if_n7yVKTHq1eN-TO8rA1wvWXZGRcJNdOI4CNkyLT_SDlj9p80Vmp6b97WFtiI8zhvWuS4z8Xx3ySWWQhrwtssmbw6Kz7t2ktcmKKCbe73sxA1VYO0WSHZh7tRECE05nZRjCFGJkgXbZnGip0fiyWvHCfUbqnEh1mAaVmLHfs6Crc2erDG08Afv2A7aRU6JiA6Ca4CtfmEejUGbJSqnhOKB_5vTSUIgGJELb1rpdVYVTYYR-WaEbXyMdfQE9XcZN9-rZ9w0F4a22eXIn160DZpoJLg_fRh-ypWWrG7OR1q0WdAjqSwWcGqu9yrh2YoznmLueXRz71KLmzE0ruiFQiCcS1_-_03J_lpbY9nl4r7O-_hJl7WXPubPaeUWgYDnRvAcCapAGxdIiwMz9Xb9PefF_XOByg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=BECKA%20BAR%20The%20Resident%20on%20Thong%20Lo%209%20Floor%2C%2073%20Sukhumvit%2055%20(Thonglor%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJp7eIDhyf4jARrD2vvJo1mBE",
+    "rating": 5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Rooftop View"
+    ],
+    "id": "8626764d-ccaf-4f82-a2c8-64c65d62920f",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:41:12.145Z",
+    "slug": "becka-bar"
+  },
+  {
+    "name_en": "Abandoned Mansion",
+    "name_zh": "Abandoned Mansion",
+    "description_en": "Bangkok's only gangster-themed speakeasy 🕰️ Abandoned Mansion is hidden in the basement of a hotel on Sukhumvit 14, near Asoke BTS — Prohibition Era vibes, gold-copper-blue vintage interiors, and cocktails named after notorious 1920s outlaws like Al Capone and Bonnie and Clyde. Live jazz every single night, a dedicated cigar room, and a 4.9 rating ranking it #21 of nearly 9,000 Bangkok restaurants on Tripadvisor. The kind of place that makes you forget what decade you're in.",
+    "description_zh": "曼谷唯一的黑幫主題地下酒吧 🕰️ Abandoned Mansion 藏在 Asoke BTS 旁飯店的地下室，禁酒令時代風情、金銅藍色調裝潢，調酒以歷史黑幫人物命名、Bonnie and Clyde 是常客最愛，每晚現場爵士樂演出，雪茄室與酒窖一應俱全，Tripadvisor 曼谷餐廳第 21 名、4.9 高分，是一秒穿越 1920 年代的曼谷夜晚。",
+    "category": "nightlife",
+    "address": "41 Soi Sukhumvit 14, Klongtoey, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.735256999999999,
+    "lng": 100.5600491,
+    "photos": [
+      "places/ChIJ82hpAWaf4jARIPIc3KEAPtw/photos/AaVGc3k0BspSCryIJ4n7Edb_qdOF_BbZfdQN7sZk_lrFAFIw-s5021t1EJouXt305FUK2Fcglb0X27Y5KBbIx6KsSmxSozrGV52fnx91lRa-I6fBwcFB61dvYIneQaR8wSTt16C1hu143s3vsvf_P8pLX1GRbJF_fj_4YueXMVAmdMyJxO_n0esrhbSKURGEirfhsUql6udvubCLvnYGLCSpENJIML1RUAyhwV-j4tZsgTPJiMnNmMBYwBHTQI0Bmq3c47888TqoWxHLqSMpGiiwoo3RA1k7q5E8KBE8ht3K5I4bGbk1pU1Ml5WFG5o4HyjbDzPfyg1Dex6HYH6xggCng1Gxp2kssFmfLiMRpxTrewImZDthzmdRvx9HpTEMNHLnr9PL5mMi5pPmxXqU4sxfSnQnJ-jtq3isOw3OawaDvy3Ecg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Abandoned%20Mansion%2041%20Soi%20Sukhumvit%2014%2C%20Klongtoey%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ82hpAWaf4jARIPIc3KEAPtw",
+    "rating": 4.8,
+    "price_range": 3,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Live Music"
+    ],
+    "id": "9110b76a-c066-43ac-a86e-1ccc166d18e2",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:43:11.396Z",
+    "slug": "abandoned-mansion"
+  },
+  {
+    "name_en": "Thee & Thou",
+    "name_zh": "Thee & Thou",
+    "description_en": "A jazz café-bar dressed as a fairytale castle 🏰 Thee & Thou sits on Ratchawithi Road, with every corner filled with intricate details that feel straight out of a Disney animation. The live jazz reinterprets familiar movie soundtracks in swing or bossa nova arrangements — relaxing, genuinely joyful, and proof that jazz doesn't have to be moody to work. The cocktails match the theme: visually enchanting, well-balanced, never style over substance. Open daily 7:30am to midnight — equal parts romantic and nostalgic.",
+    "description_zh": "童話城堡裡的爵士咖啡酒吧 🏰 Thee & Thou 藏在拉差威提路上，每個角落都精緻得像迪士尼動畫場景，現場爵士樂以搖擺或波薩諾瓦改編你熟悉的電影配樂，調酒也呼應童話主題、視覺夢幻卻不失層次，從早上 7:30 到午夜，是曼谷少見既浪漫又帶點童心的爵士酒吧咖啡廳。",
+    "category": "nightlife",
+    "address": "459/3-4 Thanon Ratchawithi, Khwaeng Thanon Phaya Thai, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.765217199999999,
+    "lng": 100.53951440000002,
+    "photos": [
+      "places/ChIJ4yQBKV-f4jARKF07stUaQCk/photos/AaVGc3lKtsFWHxLG93qG6mnj6WsOqNjIBdGS7dWCcmPHmJpT7Z-keSLbtxXT8rTlUsFrRBMDZ0wvxC9ZiCErOdJjATEPvqQfXCgl_eei-q7WQVge-sfQKQYTlijQ4c8hX4EMVxh5jdlJf34OT4LS3NFd_ju6eOueXw3Mp7A7OrFrGn3TVnfxgmemST1eVFdnvV38O0vdPjz084HQfXe_WJ_8FSQm3Xtf-s-dSYLOV6_gCudTlmGzf1k93wwQy2njYIzCAPvemf2I_1mUhWXXckzFBrcHJ3DyVKUPsNtds6kofJhQ4UmSFe1eD8_t5BMYNZDexqpvztNKqqegUUn-hx_VCTNy4jCUHZLDA88jtEJgp4Y-GcMUDP_0uuvSfPi-8VTroUyUANh1ndSLOX41J8O1EGPuwK6CJBhE47hh-WGKos7I2hSMANU3gt9r9dMjZjll"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Thee%20%26%20Thou%20459%2F3-4%20Thanon%20Ratchawithi%2C%20Khwaeng%20Thanon%20Phaya%20Thai%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJ4yQBKV-f4jARKF07stUaQCk",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Visiting this place"
+    ],
+    "id": "6515b43b-0e11-49f1-96b3-4a11a146c80b",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:43:38.921Z",
+    "slug": "thee-and-thou"
+  },
+  {
+    "name_en": "BROWN SUGAR",
+    "name_zh": "BROWN SUGAR",
+    "description_en": "Bangkok's jazz institution since 1985 🎷 Brown Sugar has moved a few times — from Sarasin Langsuan to its current home on Soi Nana, Chinatown — but the old-school charm has never changed. Acoustic sets kick off at 8pm, full bands take over by 10pm, spanning jazz, blues, soul, and funk, with Saturday night's \"Motherfunky\" set drawing regulars from across the city. Crisp nachos, solid Thai basil chicken, and over four decades of live music credibility. No cover charge, just walk in and find a seat.",
+    "description_zh": "1985 年至今，曼谷爵士樂的活招牌 🎷 Brown Sugar 從沙拉信路一路搬到中國城那那巷，骨子裡的老派魅力始終未變，每晚現場演出從八點木吉他組開始、十點搖身一變樂團大秀，爵士、藍調、靈魂樂輪番上陣，週六深夜「Motherfunky」場更是常客必追的夜晚，配上招牌玉米片與泰式打拋雞，40 年功力一聽便知。",
+    "category": "nightlife",
+    "address": "18 ซ. นานา Khwaeng Pom Prap, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100, Thailand",
+    "lat": 13.7400381,
+    "lng": 100.51403119999999,
+    "photos": [
+      "places/ChIJvVYzLGuZ4jARIaO0mY6LjWw/photos/AaVGc3ny0Amz5hbhLPxlwAQMvTYM7KeKoBxiCaiEDOYfDpk7iAQ97L9ZIq7-ToOk5n-vLqRA6Joiuk_iwBXbdlsdZI8opTZYOOBkLCiQZtM94jIwdZ0OqBr1aE8_twj-yN5LAlQDcj5WvNVXUmLKeM30PGBijwTJ-Qvl3AMqsDRo8NsWW5gaMGzPpOvMgL83yyQfhlooTKTav2KsepDi9Hawc4jkUvqcnk4kb3sOp6jMJaMshKLVgqA8yXTKuJPYX_B1JGxpeyOVuSOWLQ7hINcTQslY319kZNjUPlCkiF-X7jb6iC_Bs66-0FUyVECC5Bal9gzDEQA3jgc_dS4-VV7Sj4_3Jdiz1x07Qx-He7lMP0bn5oqM2zM6S-0L0nsZSl3r1R_YQCsW8sIWSbX4YGWOpBE88gSzNfjgfczKaGE-FmqBApAvvcKlVMRoQcCrPUD5"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=BROWN%20SUGAR%2018%20%E0%B8%8B.%20%E0%B8%99%E0%B8%B2%E0%B8%99%E0%B8%B2%20Khwaeng%20Pom%20Prap%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100%2C%20Thailand&query_place_id=ChIJvVYzLGuZ4jARIaO0mY6LjWw",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Coming here"
+    ],
+    "id": "3cc3f09a-f003-4a15-b7fd-3ef74553e5c8",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:44:06.475Z",
+    "slug": "brown-sugar"
+  },
+  {
+    "name_en": "Adhere The 13th Blues Bar",
+    "name_zh": "Adhere The 13th Blues Bar",
+    "description_en": "The blues bar regulars call the best in Asia 🎸 Adhere The 13th is run by a couple whose love for blues and reggae built this tiny gem just off Khao San Road — small enough that the band plays a few feet from your table. Acoustic sets start around 8:30pm, full bands take over by 10pm, and the crowd is a genuine mix of locals and travelers who keep coming back night after night. Cash only, no frills, just real music and real atmosphere. More house party than bar — and unforgettable because of it.",
+    "description_zh": "亞洲最好的藍調酒吧，就藏在考山路旁的小巷 🎸 Adhere The 13th 由一對熱愛藍調與雷鬼的夫妻創立，空間迷你卻塞滿靈魂，樂手就坐在離你幾步遠的地方演奏，每晚酒吧駐唱從 8 點木吉他組開始，10 點全團上陣，常客連續三晚都捨不得離開，比起酒吧，更像一場放鬆的家庭派對。",
+    "category": "nightlife",
+    "address": "13 Thanon Samsen, Khwaeng Wat Sam Phraya, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7630805,
+    "lng": 100.49865989999999,
+    "photos": [
+      "places/ChIJBQ-8SmyZ4jAR9NLZe8fDmxM/photos/AaVGc3lE_dsdLj91VmfockdWvtFcO3rSTYkYqTvlHebvBW6rQRuJ1OfpOjOE98mENHU1eEns_PnwXC-4PBW9B1JExZvQlZJ3WgX5GfZ1xBRRHPyboKb_aarJhi-sozMhI_9uMe_R50Mq0WDPMqu6X22msrmSYSXSJQTj2PapPeeqYrNJtTi-qBCbCNJtV0mEXDkprAXx-wmfoTMCyOvfMPGfAjsHxk1l9IIfO6iYRqL-2-jdixGzxoM5NUsb0wQD2soVPMwa2ylk59raibaPEQmJQdlqYQH2qavi4MH_s-27bWvaa2R_PgAyz-ETX-vvlOcL1XT1lSAWkVj8ck2EFnLwh71-zhkQ4-DCSFdisYbCHLiyNcU1SB11XUavihydxr3VVNVWnad50m4DDu89lyO9Pzv0TrR571oqbPyYnaIvPSQ9hQ"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Adhere%20The%2013th%20Blues%20Bar%2013%20Thanon%20Samsen%2C%20Khwaeng%20Wat%20Sam%20Phraya%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJBQ-8SmyZ4jAR9NLZe8fDmxM",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music",
+      "Crowded"
+    ],
+    "id": "55f8ac18-6b72-483b-898b-53eec52f0c27",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:44:31.576Z",
+    "slug": "adhere-the-13th-blues-bar"
+  },
+  {
+    "name_en": "Cielo Sky Bar & Restaurant",
+    "name_zh": "Cielo Sky Bar & Restaurant",
+    "description_en": "A 46th-floor glass floor, surprisingly affordable for the view 🌆 Cielo Sky Bar sits atop Skywalk Condominium in the W District, just steps from BTS Phra Khanong — far from the tourist circuit but with a genuinely impressive 360-degree panorama. Art Deco design meets 1960s elegance, the Thai Mojito is a local favourite, and the glass-floor skywalk adds a thrilling extra (not for the faint-hearted). Quieter, friendlier, and easier on the wallet than Bangkok's more famous rooftops — and the sunset here is just as stunning.",
+    "description_zh": "46 樓玻璃地板，比想像中更實惠的天際線 🌆 Cielo Sky Bar 藏在 Phra Khanong 的 Skywalk 公寓頂樓，遠離觀光人潮卻擁有 360 度全景視野，Art Deco 裝潢混搭 1960 年代優雅，泰式莫吉托、玻璃步道刺激好玩，距離 BTS Phra Khanong 站只要 5 分鐘，是曼谷天台酒吧中少數價格親民又不擁擠的隱藏選擇。",
+    "category": "nightlife",
+    "address": "1595/ 500 Sukhumvit Rd, พระโขนงเหนือ Watthana, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7144788,
+    "lng": 100.5935391,
+    "photos": [
+      "places/ChIJIxuKzr6f4jARbYUS3lwpNdA/photos/AaVGc3nFj7h0piQE-vVRrGRDsVmE2TbEjMs5rWdI9DLhB8731415Fr6JWpL39d0GjSdhPS7T1UKJMQW7uiV8Omt7IYyAms2wsjoWMSddmqTIaYSAr0s-6BjNMF5ZoCJqXme9VYUvUTkpfOTTrh3xdqds3-XeXKdoavAAlowzssHXRxMSXNpNC95RvGHErfZYLN4dttrKmfue2aUIPSf5cYcXjwcTHSqAvhMjXuAL2hpVcFGtnDPuW3L1fYeW4dSWkKW-bc_HUlvEYxahFDgjrGHav1vzFnXs7Siz_BV_-H53UUkQcRCq5ZTY1eYWdtXIFjv8s8PFkmC5NwGspPLswfDNHjY5UIaY-G5ORrizCSSyX5OxaewZR67o2khlUCDKXmtoXPWJAApdTzGE260i927ChJDspIL-G41Vvg6u_DyVrvM4ZF-h-apgv1RKzvEbWArA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Cielo%20Sky%20Bar%20%26%20Restaurant%201595%2F%20500%20Sukhumvit%20Rd%2C%20%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%82%E0%B8%99%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJIxuKzr6f4jARbYUS3lwpNdA",
+    "rating": 4.4,
+    "price_range": 3,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Rooftop View",
+      "Live Music"
+    ],
+    "id": "5b810f17-a84a-4b92-be48-5bd81268fe60",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:44:59.576Z",
+    "slug": "cielo-sky-bar-and-restaurant"
+  },
+  {
+    "name_en": "ROGUE AFFAIR Cocktail Bar",
+    "name_zh": "ROGUE AFFAIR Cocktail Bar",
+    "description_en": "A spy-themed hideout on the 6th floor of Passa Hotel 🕵️ ROGUE AFFAIR gives nothing away from street level — take the lift up and discover a constantly rotating concept, from a James Bond casino theme to a John Wick-inspired \"Continental\" night, complete with matching cocktails and décor. Signature drinks like The Janitor and Casablanca are crafted by competition-trained bartenders, with DJs spinning Friday and Saturday nights. A short walk from Patpong and Lumphini Park — and one of Silom's best-kept cocktail secrets.",
+    "description_zh": "特務主題酒吧藏在 Passa Hotel 六樓 🕵️ ROGUE AFFAIR 從外觀完全看不出端倪，搭電梯上樓才發現別有洞天，主題每季更換、曾以「John Wick: The Continental」為靈感打造整套調酒與裝潢，招牌 The Janitor、Casablanca 各有風格，週五六現場 DJ 接力，是矽隆巷弄裡最讓人意外驚喜的隱藏酒吧。",
+    "category": "nightlife",
+    "address": "63 Soi Convent 2, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7267871,
+    "lng": 100.5356421,
+    "photos": [
+      "places/ChIJD8M9Ltif4jARzg8KXX8GgjM/photos/AaVGc3mSzn12iwtuptJZyw76LKcWCuK4RIneCk9PLWhVZrOaJDflEQOrug4mCTdvj-34zqlR_OuyaIYpplnH6D-TPPpEEGVulQ2zbQ82pTRU5f7j9E4avzTmwJ7F1S4nyP7tMQmMV01XZa-59NPRWVKXjPn_wne-4azT22xmzO8rX-ea7Hy3wDMu6XlPjkVdr9yRtJHhEViNnU3VtbE0LWYWX6Jk6rexicyYSED6_N--xmtM0ZQp2-Y6HKcSfq-NbPwF1YZxH8kDUfJfTSmRbaxf4isGMBypmm9fn5gyLKKJDc8mFZFnre9jp9VXqoFkaAKOpedH94UfSaGa1slUGESiHJuEkLd9yUzvVyr-_l6Dv5us6gXMLi9yZe0gBe4WxubL5jotyigrETWdUPhxiPDBKep7wWlIgJdZjPYMlCiQyS8"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=ROGUE%20AFFAIR%20Cocktail%20Bar%2063%20Soi%20Convent%202%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJD8M9Ltif4jARzg8KXX8GgjM",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails"
+    ],
+    "id": "5a8d7990-d0ac-4bfa-9d42-7884eb04c92d",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:45:35.144Z",
+    "slug": "rogue-affair-cocktail-bar"
+  },
+  {
+    "name_en": "Wine Climats ไวน์ คลีม่า",
+    "name_zh": "Wine Climats ไวน์ คลีม่า",
+    "description_en": "Thailand's first dedicated Burgundy wine bar, tucked off busy Silom Road 🍷 Wine Climats is the brainchild of Khun A, one of Thailand's most prolific Burgundy importers, with a list built around the owner's own imports — names like Lafarge, Arnoux-Lachaux, and Domaine des Comtes Lafon, all at fair mark-ups. Around 20 seats only, so call ahead. A Le Cordon Bleu-trained chef crafts the French menu to match, with soft live music every Friday night. Intimate, knowledgeable, and exactly the kind of hidden gem wine lovers hope to stumble upon in Bangkok.",
+    "description_zh": "泰國第一家勃根地葡萄酒專門酒吧，藏在矽隆巷弄裡 🍷 Wine Climats 由深耕勃根地酒業十二年的老闆 Khun A 創立，僅 20 個座位卻收藏 Lafarge、Domaine des Comtes Lafon 等名莊珍釀，Le Cordon Bleu 主廚掌廚的法式料理完美襯托每一杯，每週五夜晚有現場音樂輕輕流瀉，氛圍親密卻不拘謹，是矽隆最值得提前訂位的那杯紅酒。",
+    "category": "nightlife",
+    "address": "2nd Floor, 281/16 Si Lom Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.728019900000001,
+    "lng": 100.53396839999999,
+    "photos": [
+      "places/ChIJbz-r6_ef4jAR-rS8uY0OiFo/photos/AaVGc3mCqnx4s5Pl4_qTBwtRoCLIaqiCKoMqkhl5AOqMTsDDaNQr_7_E9N5tqPmKgpHqGUzJaAh1aou3QEFSjzX60xL90GcETvrobJhlqZZ-Ly7wH9y6MOIVGHcAf0s2Mb0x5bwIlq3FzPkhlGrSTpWoJTSGtiAGL92-9h5_19qSiB248HVlj449XSUqyEC_Ndyo5e2CH41IWAIhdEL28RODzAEkneSz9qJtzNgjZGDwPqVL_bzPdJyrCQ1NlibFb66r1FI7S9o9FaUnRsCGVXjP3UwYt3N3Rle0t_wpxXo0TO5Br-zDMkPm0iuiIr6GjDfIbAFlhM32YkPmjdogRqMx0YlfPLj5GgL_V0ru0Jo34F293mZMCL8eA_JYcmG5opOO28-V86Y4i8Tti9QLA7J4ALfdEOiHvM_4QIWJaH4J0lV8faE"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Wine%20Climats%20%E0%B9%84%E0%B8%A7%E0%B8%99%E0%B9%8C%20%E0%B8%84%E0%B8%A5%E0%B8%B5%E0%B8%A1%E0%B9%88%E0%B8%B2%202nd%20Floor%2C%20281%2F16%20Si%20Lom%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJbz-r6_ef4jAR-rS8uY0OiFo",
+    "rating": 5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live band"
+    ],
+    "id": "1f079f6c-ffcc-4aa5-962b-67a0b491fa67",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:46:03.479Z",
+    "slug": "wine-climats"
+  },
+  {
+    "name_en": "The Wine Merchant Silom",
+    "name_zh": "The Wine Merchant Silom",
+    "description_en": "The Wine Merchant's most ambitious venue yet, inside Park Silom 🍷 This newest addition to The Wine Merchant's growing portfolio pairs the brand's signature well-curated, well-priced selection with a serious kitchen — premium cold cuts, artisanal cheeses, and a handful of pasta mains and other dishes. The focus leans classic Europe, with an especially deep showing from Bordeaux, Champagne, and Austria across a wide range of price points and vintages. A polished, reliable choice for business drinks or a proper wine date in the heart of Silom.",
+    "description_zh": "Park Silom 裡最高端的葡萄酒之選 🍷 The Wine Merchant 在矽隆全新落成的 Park Silom 商場開設旗艦店，是品牌目前最具規模的酒吧，精選歐洲經典產區為主、波爾多與香檳選擇尤其豐富，搭配頂級冷盤起司與義大利麵主菜，價格範圍橫跨各年份各檔次，是矽隆商務聚會或品酒約會的理想之選。",
+    "category": "nightlife",
+    "address": "G-FLOOR, PARK SILOM BUILDING, 1 Convent Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.728062099999999,
+    "lng": 100.53360110000001,
+    "photos": [
+      "places/ChIJYQWozDyf4jARKkzaaxpF9rA/photos/AaVGc3kcKviuXn0Jo9IKAfZL_QLXRMB2CPDThNcF4w71qNhcGbAtZA6e7LtR6elAwcWshVQ1hcZ1bI3xU3sA5jsRNQ0Te1cSqm-nB5lzSwQR3iFzeLyglEVjhAkcqNF8pSsyRkA9TytIzytrGRAk_4CCIZKTcOcYdPfJao_16lZhmfh2nXobU7WbdgeXpQKq2u67hMUiCVKeL80VmfXDAEwtX2TlyCWfaS7YqJxC5wdDGr_BLOlOtJZOTpOkUOGf93R2DCPAk_iVpiFU58-P3o3wIH5Fkxm2OpebSmVK-rgr8FI1ZgyAQb7N5Bw1DvWamu5uIgB9fGTUAeXbfLHROghg7OTIwinxpOI3gwHaq_0fq5mnIGnaMhY483uTD1JKZWJTS-ncuj6JMZCkwTlOVgvTh6iSczXYvkw7a8QzHDuagzU"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Wine%20Merchant%20Silom%20G-FLOOR%2C%20PARK%20SILOM%20BUILDING%2C%201%20Convent%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJYQWozDyf4jARKkzaaxpF9rA",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Love the place"
+    ],
+    "id": "05e88fe8-cf35-48b6-9680-3bf74b183104",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:46:33.748Z",
+    "slug": "the-wine-merchant-silom"
+  },
+  {
+    "name_en": "The Drunken room - Cocktail Bar",
+    "name_zh": "The Drunken room - Cocktail Bar",
+    "description_en": "A New York subway tunnel, tucked into Silom 🚇 Pili Pala Drunken Room channels American subway design into a narrow space with curved ceilings and stylized walls — just 30 seats, shoulder-to-shoulder, like chatting with strangers on the train ride home. The Cacao Old Fashioned blends coffee beans and cacao for a fragrant caffeinated twist, and the Grape Manhattan comes finished with a frozen grape. Natural wines, craft beers, and live DJs Thursday through Saturday spinning disco, house, and hip-hop. Unpretentious and easy to love.",
+    "description_zh": "紐約地鐵搬進矽隆巷弄裡 🚇 Pili Pala Drunken Room 以美式地鐵為靈感打造彎曲天花板與隧道造型內裝，僅 30 個座位卻擠出親密氛圍，像跟陌生人肩並肩搭車回家一樣自在，招牌可可古典雞尾酒咖啡香氣十足、葡萄曼哈頓加了一顆冰凍葡萄，週四至週六現場 DJ 接力，是矽隆最不拘謹的小酒館。",
+    "category": "nightlife",
+    "address": "Si Lom Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.726795099999999,
+    "lng": 100.53088609999999,
+    "photos": [
+      "places/ChIJfekTsYKf4jARtPKZ06ZaSoA/photos/AaVGc3mSzSMJ8thVgdDDiBW5liS_ieoqbCRyHtSWueojjQCoFFcI1UeWshWOdxYGKn7P3cmFLXIOvgyVoU2QQHjhxXlqbNpJpl0fjrK1F5vluQeL8UdHSS6-SUpsH0GzCVDI4q1kwzbsKiUF6Ms7id3jfINxHH4sRNwMbwGmAF6rm3CP0dC_ru1c_XUQPYwwbWXali_eokEe0VxebIy-9syBuk6QMA71AjRxj4vGm80dd3T02IEPbys6onOxvDNmPIEoXn_hT5XeA_EYf69vInP80RQIGH5sDe0gTsDuWqgHbB4lIgdoeuZgOG_LmM45fIqPSLSK-GegDS5nYmqSpMenp-s1vdV31JZ3JKH18cFf1vkF8gSIhNIwSWPlhooclZQoBbIXOK0V1hOx7xPhqyRdXGBsbauZrIGMKWzVAEURl0H3rQ"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Drunken%20room%20-%20Cocktail%20Bar%20Si%20Lom%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJfekTsYKf4jARtPKZ06ZaSoA",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Other drinks on the menu"
+    ],
+    "id": "f46da73c-4d54-4889-88b7-db3ef2a66405",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-06-21T06:47:17.246Z"
   }
 ]
