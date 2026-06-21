@@ -56,6 +56,15 @@ function buildJsonLd(loc: Location) {
   return data
 }
 
+// 安全地把 JSON-LD 嵌進 <script>：跳脫會破壞 script 標籤 / 注入腳本的字元，
+// 避免店名/描述/地址若含 </script> 造成 XSS
+function safeJsonLd(obj: unknown): string {
+  return JSON.stringify(obj)
+    .replace(/</g, '\\u003c')
+    .replace(/>/g, '\\u003e')
+    .replace(/&/g, '\\u0026')
+}
+
 export async function generateStaticParams() {
   const locations = readLocations()
   return locations.map((l) => ({ id: l.slug ?? l.id }))
@@ -91,7 +100,7 @@ export default async function LocationPage({ params }: { params: Promise<{ id: s
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(location)) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(buildJsonLd(location)) }}
       />
       <LocationDetail location={location} />
     </>
