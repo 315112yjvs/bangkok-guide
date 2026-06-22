@@ -209,7 +209,7 @@ export function PublicHomepage({ locations }: Props) {
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                 LIVE
               </span>
-              <span className="text-white/50 text-[11px] tracking-wide">{lang === 'zh' ? '每週更新 · 泰國社群精選' : 'Weekly updates · Thai social picks'}</span>
+              <span className="bg-black/30 backdrop-blur-md text-white/90 text-[11px] tracking-wide px-2.5 py-1 rounded-full">{lang === 'zh' ? '每週更新 · 泰國社群精選' : 'Weekly updates · Thai social picks'}</span>
             </div>
 
             {/* Title — 六分糖字型 */}
