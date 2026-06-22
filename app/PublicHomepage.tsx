@@ -6,6 +6,7 @@ import { strings } from '@/lib/i18n'
 import { LanguageToggle } from '@/components/LanguageToggle'
 import { CategoryTabs } from '@/components/CategoryTabs'
 import { TAG_ICON } from '@/components/icons/TagIcons'
+import { shuffle } from '@/lib/shuffle'
 import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
 import { getArea } from '@/lib/area'
@@ -53,12 +54,15 @@ export function PublicHomepage({ locations }: Props) {
   const [mapExpanded, setMapExpanded] = useState(false)
   // 地圖只在使用者開過後才掛載，避免每次進首頁就載入 Google 地圖（省 Dynamic Maps 用量）
   const [mapEverOpened, setMapEverOpened] = useState(false)
+  // 掛載後啟用各分區隨機排序（首屏 SSR 維持原序，避免 hydration 不一致）
+  const [randomized, setRandomized] = useState(false)
 
   useEffect(() => {
     const ids: string[] = JSON.parse(localStorage.getItem('saved_locations') ?? '[]')
     setSavedIds(new Set(ids))
     // 標記「這個分頁來過首頁」，地點頁的返回鈕用它判斷要 router.back() 還是回首頁
     try { sessionStorage.setItem('bkk_visited_home', '1') } catch {}
+    setRandomized(true)
   }, [])
 
   // 進地點頁再返回時，還原先前的篩選狀態（含「附近」的定位座標），
@@ -166,10 +170,11 @@ export function PublicHomepage({ locations }: Props) {
     const map: Partial<Record<LocationTag, Location[]>> = {}
     for (const tag of TAG_ORDER) {
       const items = filtered.filter((l) => resolveTag(l) === tag)
-      if (items.length > 0) map[tag] = items
+      // 掛載後每次造訪隨機排序，讓同樣的店庫每次逛都有新鮮感（首屏 SSR 維持原序避免 hydration 不一致）
+      if (items.length > 0) map[tag] = randomized ? shuffle(items) : items
     }
     return map
-  }, [filtered, showSections])
+  }, [filtered, showSections, randomized])
 
   return (
     <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen overflow-hidden relative shadow-xl lg:shadow-2xl">

@@ -1,9 +1,11 @@
 'use client'
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { useLanguage } from '@/hooks/useLanguage'
 import { LanguageToggle } from '@/components/LanguageToggle'
 import { LocationCard } from '@/components/LocationCard'
 import { CATEGORY_META } from '@/lib/collections'
+import { shuffle } from '@/lib/shuffle'
 import type { Location } from '@/lib/types'
 
 type Props = {
@@ -21,6 +23,9 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, emoji, r
   const { lang, setLang } = useLanguage()
   const h1 = lang === 'zh' ? h1Zh : h1En
   const desc = lang === 'zh' ? descZh : descEn
+  // 掛載後隨機排序，讓每次造訪看到的店家順序不同（首屏 SSR 維持原序避免 hydration 不一致）
+  const [items, setItems] = useState(locations)
+  useEffect(() => { setItems(shuffle(locations)) }, [locations])
 
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen shadow-xl">
@@ -48,7 +53,7 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, emoji, r
       <div className="bg-gray-50 px-3 pt-3 pb-6">
         {locations.length > 0 ? (
           <div className="grid grid-cols-2 gap-3">
-            {locations.map((loc) => (
+            {items.map((loc) => (
               <LocationCard key={loc.id} location={loc} lang={lang} compact />
             ))}
           </div>
