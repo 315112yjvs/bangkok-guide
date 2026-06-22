@@ -23,6 +23,9 @@ const TAG_META: Record<LocationTag, { emoji: string; zh: string; en: string; col
 
 const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'new_opening', 'evergreen']
 
+// 每個首頁分區最多顯示幾筆（其餘按「看全部」進完整清單）
+const SECTION_LIMIT = 15
+
 function resolveTag(loc: Location): LocationTag {
   if (loc.tag) return loc.tag
   // backward-compat: old JSON has `trending: boolean`
@@ -404,9 +407,9 @@ export function PublicHomepage({ locations }: Props) {
                       {items.length} {lang === 'zh' ? '筆' : 'places'}
                     </span>
                   </div>
-                  {/* Horizontal scroll cards */}
+                  {/* Horizontal scroll cards — 每區隨機抽 SECTION_LIMIT 筆，其餘按「看全部」進完整清單 */}
                   <div className="flex gap-3 overflow-x-auto no-scrollbar px-3 pb-1">
-                    {items.map((loc) => (
+                    {items.slice(0, SECTION_LIMIT).map((loc) => (
                       <div key={loc.id} className="shrink-0 w-44 lg:w-52 h-[260px] lg:h-[300px]">
                         <LocationCard
                           location={loc}
@@ -418,6 +421,18 @@ export function PublicHomepage({ locations }: Props) {
                         />
                       </div>
                     ))}
+                    {items.length > SECTION_LIMIT && (
+                      <button
+                        onClick={() => { setActiveTag(tag); setSpecialFilter('all'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
+                        className="shrink-0 w-32 lg:w-36 h-[260px] lg:h-[300px] rounded-2xl bg-gray-100 hover:bg-gray-200 transition-colors flex flex-col items-center justify-center gap-2 text-gray-500"
+                      >
+                        <span className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center">
+                          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        </span>
+                        <span className="text-[12px] font-bold">{lang === 'zh' ? '看全部' : 'See all'}</span>
+                        <span className="text-[11px] text-gray-400">{items.length} {lang === 'zh' ? '筆' : 'places'}</span>
+                      </button>
+                    )}
                   </div>
                 </section>
               )
