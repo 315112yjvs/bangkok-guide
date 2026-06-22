@@ -203,13 +203,15 @@ export function PublicHomepage({ locations }: Props) {
 
           {/* Bottom editorial block */}
           <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl lg:mx-auto lg:text-center">
-            {/* Live badge + subtitle */}
-            <div className="flex items-center gap-2 mb-3 lg:justify-center">
-              <span className="inline-flex items-center gap-1.5 bg-rose-600 text-white text-[9px] font-black px-2.5 py-1 rounded-full tracking-widest uppercase shadow-lg">
-                <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                LIVE
+            {/* Live badge + subtitle — 共用同一顆紅色膠囊 */}
+            <div className="flex mb-3 lg:justify-center">
+              <span className="inline-flex items-center gap-2 bg-rose-600 text-white px-3 py-1.5 rounded-full shadow-lg">
+                <span className="inline-flex items-center gap-1.5 text-[9px] font-black tracking-widest uppercase">
+                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  LIVE
+                </span>
+                <span className="text-[11px] tracking-wide text-white/95">{lang === 'zh' ? '每週更新 · 泰國社群精選' : 'Weekly updates · Thai social picks'}</span>
               </span>
-              <span className="bg-black/30 backdrop-blur-md text-white/90 text-[11px] tracking-wide px-2.5 py-1 rounded-full">{lang === 'zh' ? '每週更新 · 泰國社群精選' : 'Weekly updates · Thai social picks'}</span>
             </div>
 
             {/* Title — 六分糖字型 */}
