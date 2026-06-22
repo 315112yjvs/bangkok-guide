@@ -13,7 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        liufen: ['LiuFenTang', 'sans-serif'],
+        liufen: ['OpenHuninn', 'sans-serif'],
       },
     },
   },

@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'LiuFenTang';
-  /* 子集化字型（只含標題用到的字，7MB → ~114KB）。完整 liufen.otf 保留給 OG 圖 server 端用 */
-  src: url('/fonts/liufen-subset.woff2') format('woff2');
+  font-family: 'OpenHuninn';
+  /* 粉圓體 jf-open 粉圓 2.1，子集化成全站用到的字（4.7MB → ~346KB）*/
+  src: url('/fonts/openhuninn-subset.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -26,8 +26,8 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  /* 內文用系統字型（含繁中 fallback），不再下載 7MB 字型；裝飾字型只給 .font-liufen 標題 */
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  /* 全站字型：粉圓體 OpenHuninn，未涵蓋的字 fallback 到系統繁中字型 */
+  font-family: 'OpenHuninn', -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
 }
 
 @layer utilities {
