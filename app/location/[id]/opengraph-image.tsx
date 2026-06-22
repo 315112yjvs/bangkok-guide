@@ -1,12 +1,12 @@
 import { ImageResponse } from 'next/og'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 import { readLocations } from '@/lib/data'
 import type { Location, LocationTag } from '@/lib/types'
 
 export const alt = '曼谷人 BKK LOCAL'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
-
-const FONT_URL = 'https://www.bkk-local.com/fonts/liufen.otf'
 
 const TAG_META: Record<LocationTag, { zh: string; color: string }> = {
   trending:    { zh: '話題爆紅', color: '#f97316' },
@@ -50,10 +50,9 @@ export default async function Image({ params }: { params: Promise<{ id: string }
   const locations = readLocations()
   const loc = locations.find((l) => l.slug === id) ?? locations.find((l) => l.id === id)
 
-  const [liufen, photo] = await Promise.all([
-    fetch(FONT_URL).then((r) => r.arrayBuffer()),
-    loc ? loadPhoto(loc) : Promise.resolve(null),
-  ])
+  const openhuninn = readFileSync(join(process.cwd(), 'public/fonts/og-openhuninn.woff'))
+  const notoThai = readFileSync(join(process.cwd(), 'public/fonts/og-noto-thai.woff'))
+  const photo = loc ? await loadPhoto(loc) : null
 
   const name = loc?.name_zh || loc?.name_en || '曼谷人'
   const rating = loc?.rating
@@ -68,7 +67,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
           height: '100%',
           display: 'flex',
           position: 'relative',
-          fontFamily: 'LiuFen',
+          fontFamily: 'OpenHuninn',
           background: 'linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%)',
         }}
       >
@@ -142,7 +141,10 @@ export default async function Image({ params }: { params: Promise<{ id: string }
     ),
     {
       ...size,
-      fonts: [{ name: 'LiuFen', data: liufen, style: 'normal', weight: 400 }],
+      fonts: [
+        { name: 'OpenHuninn', data: openhuninn, style: 'normal', weight: 400 },
+        { name: 'NotoSansThai', data: notoThai, style: 'normal', weight: 400 },
+      ],
     }
   )
 }

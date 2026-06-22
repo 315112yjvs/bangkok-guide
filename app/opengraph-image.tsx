@@ -7,7 +7,8 @@ export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function Image() {
-  const liufen = readFileSync(join(process.cwd(), 'public/fonts/liufen.otf'))
+  const openhuninn = readFileSync(join(process.cwd(), 'public/fonts/og-openhuninn.woff'))
+  const notoThai = readFileSync(join(process.cwd(), 'public/fonts/og-noto-thai.woff'))
   const heroBuf = readFileSync(join(process.cwd(), 'public/hero-bangkok.jpg'))
   const hero = `data:image/jpeg;base64,${heroBuf.toString('base64')}`
 
@@ -19,7 +20,7 @@ export default async function Image() {
           height: '100%',
           display: 'flex',
           position: 'relative',
-          fontFamily: 'LiuFen',
+          fontFamily: 'OpenHuninn',
           background: 'linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%)',
         }}
       >
@@ -88,7 +89,10 @@ export default async function Image() {
     ),
     {
       ...size,
-      fonts: [{ name: 'LiuFen', data: liufen, style: 'normal', weight: 400 }],
+      fonts: [
+        { name: 'OpenHuninn', data: openhuninn, style: 'normal', weight: 400 },
+        { name: 'NotoSansThai', data: notoThai, style: 'normal', weight: 400 },
+      ],
     }
   )
 }
