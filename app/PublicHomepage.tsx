@@ -205,11 +205,11 @@ export function PublicHomepage({ locations }: Props) {
           <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl lg:mx-auto lg:text-center">
             {/* Live badge + subtitle */}
             <div className="flex items-center gap-2 mb-3 lg:justify-center">
-              <span className="inline-flex items-center gap-1.5 bg-orange-500 text-white text-[9px] font-black px-2.5 py-1 rounded-full tracking-widest uppercase shadow-lg">
+              <span className="inline-flex items-center gap-1.5 bg-rose-600 text-white text-[9px] font-black px-2.5 py-1 rounded-full tracking-widest uppercase shadow-lg">
                 <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                 LIVE
               </span>
-              <span className="text-white/50 text-[11px] tracking-wide">{lang === 'zh' ? '每日更新 · 泰國社群精選' : 'Daily updates · Thai social picks'}</span>
+              <span className="text-white/50 text-[11px] tracking-wide">{lang === 'zh' ? '每週更新 · 泰國社群精選' : 'Weekly updates · Thai social picks'}</span>
             </div>
 
             {/* Title — 六分糖字型 */}

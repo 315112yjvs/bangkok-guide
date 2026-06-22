@@ -17,14 +17,14 @@ export const CATEGORY_META: Record<string, CollectionMeta> = {
   cafe: {
     slug: 'cafe', emoji: '☕',
     h1Zh: '曼谷咖啡廳推薦', h1En: 'Best Cafes in Bangkok',
-    titleZh: '曼谷咖啡廳推薦 ☕ 在地人精選每日更新', titleEn: 'Best Cafes in Bangkok',
-    descZh: '住在曼谷的人精選的咖啡廳，從 specialty 烘豆、隱藏巷弄咖啡到網美打卡店，每日更新。',
+    titleZh: '曼谷咖啡廳推薦 ☕ 在地人精選每週更新', titleEn: 'Best Cafes in Bangkok',
+    descZh: '住在曼谷的人精選的咖啡廳，從 specialty 烘豆、隱藏巷弄咖啡到網美打卡店，每週更新。',
     descEn: 'Hand-picked Bangkok cafes by locals, from specialty roasters to hidden-soi gems.',
   },
   food: {
     slug: 'food', emoji: '🍜',
     h1Zh: '曼谷美食餐廳推薦', h1En: 'Best Restaurants in Bangkok',
-    titleZh: '曼谷美食推薦 🍜 在地餐廳精選每日更新', titleEn: 'Best Restaurants in Bangkok',
+    titleZh: '曼谷美食推薦 🍜 在地餐廳精選每週更新', titleEn: 'Best Restaurants in Bangkok',
     descZh: '住在曼谷的人精選的餐廳，泰式、異國料理到在地小館，幫你避開地雷踩到真正好吃的。',
     descEn: 'Hand-picked Bangkok restaurants by locals, from Thai classics to hidden eats.',
   },

@@ -49,7 +49,7 @@ export default async function Image() {
             display: 'flex',
             alignItems: 'center',
             gap: 12,
-            background: '#f97316',
+            background: '#e11d48',
             color: 'white',
             fontSize: 28,
             padding: '8px 26px',
@@ -57,7 +57,7 @@ export default async function Image() {
             letterSpacing: 4,
           }}
         >
-          ● LIVE · 每日更新
+          ● LIVE · 每週更新
         </div>
 
         {/* Bottom editorial block */}
