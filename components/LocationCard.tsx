@@ -8,6 +8,7 @@ import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
 import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
+import { TAG_ICON } from './icons/TagIcons'
 
 // Inline SVG icons for source badges (no emoji)
 const SOURCE_SVG: Record<Source, string> = {
@@ -67,6 +68,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
 
   const tag = resolveTag(location)
   const tagMeta = TAG_BADGE[tag]
+  const TagIcon = TAG_ICON[tag]
 
   const thaiName = location.name_th ?? extractThai(location.name_en) ?? extractThai(location.name_zh)
   const thaiAddress = location.address_th
@@ -105,7 +107,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
         {tag !== 'evergreen' && (
           <div className="absolute top-1.5 right-1.5">
             <span className={`inline-flex items-center gap-0.5 text-[10px] font-black ${tagMeta.color} text-white px-2 py-0.5 rounded-full shadow-sm`}>
-              {tagMeta.emoji} {lang === 'zh' ? tagMeta.zh : tagMeta.en}
+              <TagIcon size={11} className="shrink-0" /> {lang === 'zh' ? tagMeta.zh : tagMeta.en}
             </span>
           </div>
         )}

@@ -5,6 +5,7 @@ import { useLanguage } from '@/hooks/useLanguage'
 import { strings } from '@/lib/i18n'
 import { LanguageToggle } from '@/components/LanguageToggle'
 import { CategoryTabs } from '@/components/CategoryTabs'
+import { TAG_ICON } from '@/components/icons/TagIcons'
 import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
 import { getArea } from '@/lib/area'
@@ -323,17 +324,18 @@ export function PublicHomepage({ locations }: Props) {
             {/* Tag filters */}
             {TAG_ORDER.map((tag) => {
               const m = TAG_META[tag]
+              const Icon = TAG_ICON[tag]
               return (
                 <button
                   key={tag}
                   onClick={() => { setActiveTag(activeTag === tag ? 'all' : tag); setSpecialFilter('all') }}
-                  className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+                  className={`inline-flex items-center gap-1 text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
                     activeTag === tag
                       ? 'bg-[#1e1b4b] text-white shadow-sm'
                       : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
                 >
-                  {m.emoji} {lang === 'zh' ? m.zh : m.en}
+                  <Icon size={13} className="shrink-0" /> {lang === 'zh' ? m.zh : m.en}
                 </button>
               )
             })}
@@ -378,13 +380,14 @@ export function PublicHomepage({ locations }: Props) {
               const items = sectionsByTag[tag]
               if (!items || items.length === 0) return null
               const meta = TAG_META[tag]
+              const Icon = TAG_ICON[tag]
               return (
                 <section key={tag} className="mt-4">
                   {/* Section header */}
                   <div className={`mx-3 rounded-2xl bg-gradient-to-r ${meta.color} px-4 py-3 flex items-center justify-between mb-2`}>
                     <div>
-                      <p className="text-white font-black text-[15px] tracking-tight leading-tight">
-                        {meta.emoji} {lang === 'zh' ? meta.zh : meta.en}
+                      <p className="flex items-center gap-1.5 text-white font-black text-[15px] tracking-tight leading-tight">
+                        <Icon size={17} className="shrink-0" /> {lang === 'zh' ? meta.zh : meta.en}
                       </p>
                       <p className="text-white/50 text-[10px] mt-0.5">
                         {lang === 'zh'

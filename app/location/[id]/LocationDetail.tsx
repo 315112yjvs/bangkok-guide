@@ -8,6 +8,7 @@ import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
 import { buildMapsUrl, extractPlaceId } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
+import { TAG_ICON } from '@/components/icons/TagIcons'
 
 type PlaceData = { photos: string[]; editorial: string | null; reviewSnippets: string[] }
 
@@ -184,10 +185,11 @@ export function LocationDetail({ location }: { location: Location }) {
         {(() => {
           const tag = resolveTag(location)
           const meta = TAG_META[tag]
+          const TagIcon = TAG_ICON[tag]
           return (
             <div className="absolute bottom-4 left-4">
-              <span className={`text-[10px] font-black ${meta.color} text-white px-2 py-1 rounded-full`}>
-                {meta.emoji} {meta.zh}
+              <span className={`inline-flex items-center gap-1 text-[10px] font-black ${meta.color} text-white px-2 py-1 rounded-full`}>
+                <TagIcon size={12} className="shrink-0" /> {meta.zh}
               </span>
             </div>
           )
