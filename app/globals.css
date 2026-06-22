@@ -4,7 +4,8 @@
 
 @font-face {
   font-family: 'LiuFenTang';
-  src: url('/fonts/liufen.otf') format('opentype');
+  /* 子集化字型（只含標題用到的字，7MB → ~114KB）。完整 liufen.otf 保留給 OG 圖 server 端用 */
+  src: url('/fonts/liufen-subset.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -25,7 +26,8 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'LiuFenTang', Arial, Helvetica, sans-serif;
+  /* 內文用系統字型（含繁中 fallback），不再下載 7MB 字型；裝飾字型只給 .font-liufen 標題 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
 }
 
 @layer utilities {
