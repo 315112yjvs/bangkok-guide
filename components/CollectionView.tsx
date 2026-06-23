@@ -1,11 +1,12 @@
 'use client'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useMemo } from 'react'
 import { useLanguage } from '@/hooks/useLanguage'
 import { LanguageToggle } from '@/components/LanguageToggle'
 import { LocationCard } from '@/components/LocationCard'
 import { CATEGORY_META } from '@/lib/collections'
-import { shuffle } from '@/lib/shuffle'
+import { seededShuffle } from '@/lib/shuffle'
+import { useShuffleSeed } from '@/hooks/useShuffleSeed'
 import type { Location } from '@/lib/types'
 
 type Props = {
@@ -23,9 +24,9 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, emoji, r
   const { lang, setLang } = useLanguage()
   const h1 = lang === 'zh' ? h1Zh : h1En
   const desc = lang === 'zh' ? descZh : descEn
-  // 掛載後隨機排序，讓每次造訪看到的店家順序不同（首屏 SSR 維持原序避免 hydration 不一致）
-  const [items, setItems] = useState(locations)
-  useEffect(() => { setItems(shuffle(locations)) }, [locations])
+  // 用分頁種子洗牌：一進站隨機，返回同一頁維持同序（首屏 SSR 維持原序避免 hydration 不一致）
+  const seed = useShuffleSeed()
+  const items = useMemo(() => (seed != null ? seededShuffle(locations, seed) : locations), [locations, seed])
 
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen shadow-xl">
