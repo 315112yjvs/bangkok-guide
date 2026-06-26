@@ -92,8 +92,14 @@ ${placeFacts ? `【Google 官方資料與真實評論（最可靠，請優先採
 【壞範例（空泛，禁止）】
 走進去就會愛上的地方 🕯️ 昏黃的燈光、復古的裝潢，感受曼谷夜生活的精緻與慵懶。
 
+【再判斷一個標籤 tag（依這家店的本質與知名度）】
+- trending（話題爆紅）：社群正在瘋傳、TikTok/IG 爆紅、排隊名店、近期話題度高、網美打卡熱點。
+- hidden_gem（在地私藏）：在地人才知道、藏在巷弄、觀光客少、低調私房店。
+- new_opening（新開幕）：查證到近期才新開幕（近一年內）。沒明確證據就不要選這個。
+- evergreen（經典必訪）：老字號、經典不敗、知名地標、來曼谷必訪的代表店、評價成熟穩定的名店。
+
 查證完成後，你的回覆「最後一行」只輸出一個 JSON（不要加任何說明文字或 markdown 標記）：
-{"zh":"中文介紹","en":"English description"}`
+{"zh":"中文介紹","en":"English description","tag":"trending 或 hidden_gem 或 new_opening 或 evergreen"}`
 
   try {
     let messages: Anthropic.MessageParam[] = [{ role: 'user', content: prompt }]
@@ -122,7 +128,7 @@ ${placeFacts ? `【Google 官方資料與真實評論（最可靠，請優先採
 
     // Extract the JSON object (take the last {...} that parses).
     const matches = finalText.match(/\{[\s\S]*?"zh"[\s\S]*?"en"[\s\S]*?\}/g)
-    let parsed: { zh?: string; en?: string } | null = null
+    let parsed: { zh?: string; en?: string; tag?: string } | null = null
     if (matches) {
       for (let i = matches.length - 1; i >= 0; i--) {
         try { parsed = JSON.parse(matches[i]); break } catch { /* try previous */ }
@@ -136,9 +142,13 @@ ${placeFacts ? `【Google 官方資料與真實評論（最可靠，請優先採
       )
     }
 
+    const VALID_TAGS = ['trending', 'hidden_gem', 'new_opening', 'evergreen']
+    const tag = parsed.tag && VALID_TAGS.includes(parsed.tag) ? parsed.tag : undefined
+
     return NextResponse.json({
       description_zh: parsed.zh,
       description_en: parsed.en ?? '',
+      ...(tag ? { tag } : {}),
       grounded: Boolean(placeFacts),
     })
   } catch (err) {

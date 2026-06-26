@@ -362,6 +362,7 @@ function PendingCard({
                             ...f,
                             description_zh: data.description_zh,
                             description_en: data.description_en || f.description_en,
+                            ...(data.tag ? { tag: data.tag } : {}),
                           }))
                         } else {
                           alert('生成失敗：' + (data.error ?? '未知錯誤'))
@@ -851,10 +852,12 @@ export function AdminPanel() {
           })
           const data = await res.json()
           if (res.ok && data.description_zh) {
+            const updates: Partial<PendingLocation> = { description_zh: data.description_zh, description_en: data.description_en }
+            if (data.tag) updates.tag = data.tag
             saveChain = saveChain.then(() => fetch('/api/pending', {
               method: 'PATCH',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ id: item.id, description_zh: data.description_zh, description_en: data.description_en }),
+              body: JSON.stringify({ id: item.id, ...updates }),
             }))
             await saveChain
             ok++
