@@ -781,6 +781,8 @@ export function AdminPanel() {
   const [pendingSourceFilter, setPendingSourceFilter] = useState<string>('all')
   const [pendingAreaFilter, setPendingAreaFilter] = useState<string>('all')
   const [hasUnsaved, setHasUnsaved] = useState(false)
+  const [batchRunning, setBatchRunning] = useState(false)
+  const [batchMsg, setBatchMsg] = useState('')
 
   useEffect(() => {
     if (sessionStorage.getItem('admin_authed') === '1') setAuthed(true)
@@ -828,6 +830,70 @@ export function AdminPanel() {
     await fetch('/api/locations', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) })
     setHasUnsaved(true)
     loadData()
+  }
+
+  // 批次：對所有「缺描述」的待審店家 AI 生成中英描述並存回。
+  // 3 筆並行加速；寫回 pending.json 用 promise chain 序列化避免競態。可中斷續跑（已生成的會跳過）。
+  async function batchGenerate() {
+    setBatchRunning(true)
+    try {
+      const list: PendingLocation[] = await fetch('/api/pending').then(r => r.json())
+      const todo = list.filter(p => !p.description_zh || p.description_zh.trim().length < 20)
+      if (todo.length === 0) { setBatchMsg('沒有需要生成的店家（都已有描述）'); setBatchRunning(false); return }
+      let done = 0, ok = 0, fail = 0
+      let saveChain: Promise<unknown> = Promise.resolve()
+      const genOne = async (item: PendingLocation) => {
+        try {
+          const res = await fetch('/api/generate-description', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name_en: item.name_en, address: item.address, source_url: item.source_url, category: item.category }),
+          })
+          const data = await res.json()
+          if (res.ok && data.description_zh) {
+            saveChain = saveChain.then(() => fetch('/api/pending', {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id: item.id, description_zh: data.description_zh, description_en: data.description_en }),
+            }))
+            await saveChain
+            ok++
+          } else { fail++ }
+        } catch { fail++ }
+        done++
+        setBatchMsg(`AI 生成中 ${done}/${todo.length}（成功 ${ok}、失敗 ${fail}）`)
+      }
+      let idx = 0
+      const worker = async () => { while (idx < todo.length) await genOne(todo[idx++]) }
+      await Promise.all(Array.from({ length: 3 }, worker))
+      setBatchMsg(`完成：成功 ${ok}、失敗 ${fail}${fail ? '（失敗的可再按一次續跑）' : ''}。請檢查後按「一鍵全部上架」`)
+      loadData()
+    } finally {
+      setBatchRunning(false)
+    }
+  }
+
+  // 一鍵把全部待審上架（你檢查後再按）
+  async function bulkApprove() {
+    const list: PendingLocation[] = await fetch('/api/pending').then(r => r.json())
+    if (list.length === 0) return
+    if (!confirm(`確定一鍵上架全部 ${list.length} 筆待審店家嗎？`)) return
+    setBatchRunning(true)
+    try {
+      for (let i = 0; i < list.length; i++) {
+        setBatchMsg(`上架中 ${i + 1}/${list.length}`)
+        await fetch('/api/locations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'approve', id: list[i].id }),
+        })
+      }
+      setHasUnsaved(true)
+      setBatchMsg(`已上架 ${list.length} 筆，記得按左下「存檔並上傳」推上線`)
+      loadData()
+    } finally {
+      setBatchRunning(false)
+    }
   }
 
   async function handleUpdate(id: string, updates: Partial<Location>) {
@@ -993,14 +1059,32 @@ export function AdminPanel() {
               {pending.length > 0 && (
                 <div className="flex gap-2">
                   <button
+                    onClick={batchGenerate}
+                    disabled={batchRunning}
+                    className="text-xs font-bold px-4 py-2 rounded-xl bg-indigo-600 text-white hover:bg-indigo-500 disabled:opacity-50 transition-colors"
+                  >
+                    {batchRunning ? '處理中…' : '🤖 AI 自動生成全部描述'}
+                  </button>
+                  <button
+                    onClick={bulkApprove}
+                    disabled={batchRunning}
+                    className="text-xs font-bold px-4 py-2 rounded-xl bg-green-600 text-white hover:bg-green-500 disabled:opacity-50 transition-colors"
+                  >
+                    ⬆ 一鍵全部上架
+                  </button>
+                  <button
                     onClick={handleRejectAll}
-                    className="text-xs font-bold px-4 py-2 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
+                    disabled={batchRunning}
+                    className="text-xs font-bold px-4 py-2 rounded-xl bg-red-50 text-red-600 hover:bg-red-100 disabled:opacity-50 transition-colors"
                   >
                     全部駁回
                   </button>
                 </div>
               )}
             </div>
+            {batchMsg && (
+              <p className="text-xs font-semibold text-indigo-600 bg-indigo-50 rounded-lg px-3 py-2 -mt-1">{batchMsg}</p>
+            )}
 
             {/* Source + Area filters */}
             {pending.length > 0 && (() => {
