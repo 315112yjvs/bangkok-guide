@@ -7,6 +7,7 @@ import { LocationCard } from '@/components/LocationCard'
 import { CATEGORY_META } from '@/lib/collections'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
+import { MIcon } from '@/components/icons/MaterialIcons'
 import type { Location } from '@/lib/types'
 
 type Props = {
@@ -15,12 +16,12 @@ type Props = {
   h1En: string
   descZh: string
   descEn: string
-  emoji: string
+  icon: string
   // 同類交叉連結（其他分類 / 熱門區域）
   related: { href: string; label: string }[]
 }
 
-export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, emoji, related }: Props) {
+export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, related }: Props) {
   const { lang, setLang } = useLanguage()
   const h1 = lang === 'zh' ? h1Zh : h1En
   const desc = lang === 'zh' ? descZh : descEn
@@ -41,8 +42,8 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, emoji, r
           </Link>
           <LanguageToggle lang={lang} setLang={setLang} />
         </div>
-        <h1 className="text-white font-liufen text-[30px] leading-tight mb-2">
-          {emoji} {h1}
+        <h1 className="flex items-center gap-2 text-white font-liufen text-[30px] leading-tight mb-2">
+          <MIcon name={icon} size={30} className="shrink-0" /> {h1}
         </h1>
         <p className="text-white/60 text-[13px] leading-relaxed">{desc}</p>
         <p className="text-white/40 text-[11px] mt-2">
@@ -95,9 +96,9 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, emoji, r
             <Link
               key={c.slug}
               href={`/category/${c.slug}`}
-              className="text-[12px] font-semibold px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-[#1e1b4b] hover:text-[#1e1b4b] transition-colors"
+              className="inline-flex items-center gap-1 text-[12px] font-semibold px-3 py-1.5 rounded-full bg-white border border-gray-200 text-gray-600 hover:border-[#1e1b4b] hover:text-[#1e1b4b] transition-colors"
             >
-              {c.emoji} {lang === 'zh' ? c.h1Zh : c.h1En}
+              <MIcon name={c.icon} size={14} className="shrink-0" /> {lang === 'zh' ? c.h1Zh : c.h1En}
             </Link>
           ))}
         </div>

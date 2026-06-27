@@ -9,6 +9,7 @@ import { strings } from '@/lib/i18n'
 import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from './icons/TagIcons'
+import { MIcon } from './icons/MaterialIcons'
 
 // Inline SVG icons for source badges (no emoji)
 const SOURCE_SVG: Record<Source, string> = {
@@ -135,8 +136,8 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
 
         {/* Curator note */}
         {location.curator_note && (
-          <p className="text-[10px] text-indigo-600 bg-indigo-50 rounded-lg px-2 py-1 mb-1 line-clamp-1 font-medium">
-            💬 {location.curator_note}
+          <p className="flex items-center gap-1 text-[10px] text-indigo-600 bg-indigo-50 rounded-lg px-2 py-1 mb-1 line-clamp-1 font-medium">
+            <MIcon name="format_quote" size={12} className="shrink-0" /> {location.curator_note}
           </p>
         )}
 

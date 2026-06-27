@@ -45,7 +45,7 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
       h1En={theme.h1En}
       descZh={theme.descZh}
       descEn={theme.descEn}
-      emoji={theme.emoji}
+      icon={theme.icon}
       related={related}
     />
   )

@@ -17,6 +17,7 @@ function text(loc: Location): string {
 
 export type Theme = {
   slug: string
+  icon: string
   emoji: string
   h1Zh: string
   h1En: string
@@ -30,6 +31,7 @@ export type Theme = {
 export const THEMES: Theme[] = [
   {
     slug: 'ig',
+    icon: 'photo_camera',
     emoji: '📸',
     h1Zh: '曼谷 IG 打卡景點',
     h1En: 'Bangkok IG Photo Spots',
@@ -41,6 +43,7 @@ export const THEMES: Theme[] = [
   },
   {
     slug: 'rooftop',
+    icon: 'nightlife',
     emoji: '🌆',
     h1Zh: '曼谷高空酒吧 & 夜景',
     h1En: 'Bangkok Rooftop Bars & Night Views',
@@ -52,6 +55,7 @@ export const THEMES: Theme[] = [
   },
   {
     slug: 'brunch',
+    icon: 'brunch_dining',
     emoji: '🥐',
     h1Zh: '曼谷早午餐',
     h1En: 'Bangkok Brunch',
@@ -63,6 +67,7 @@ export const THEMES: Theme[] = [
   },
   {
     slug: 'hidden',
+    icon: 'explore',
     emoji: '🗺️',
     h1Zh: '曼谷在地私藏',
     h1En: "Bangkok Hidden Gems",
@@ -74,6 +79,7 @@ export const THEMES: Theme[] = [
   },
   {
     slug: 'new',
+    icon: 'auto_awesome',
     emoji: '✨',
     h1Zh: '曼谷本週新熱點',
     h1En: "Bangkok's Newest Hotspots",

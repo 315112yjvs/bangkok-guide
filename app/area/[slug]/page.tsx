@@ -48,7 +48,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
       h1En={`${area} Local Picks`}
       descZh={`住在曼谷的人精選 ${area} 的咖啡廳、餐廳、酒吧與打卡景點。`}
       descEn={`Hand-picked spots in ${area}, Bangkok — cafes, eats, bars and more.`}
-      emoji="📍"
+      icon="place"
       related={related}
     />
   )

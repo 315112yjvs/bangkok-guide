@@ -44,7 +44,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       h1En={meta.h1En}
       descZh={meta.descZh}
       descEn={meta.descEn}
-      emoji={meta.emoji}
+      icon={meta.icon}
       related={related}
     />
   )

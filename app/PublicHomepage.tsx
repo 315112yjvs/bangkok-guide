@@ -9,6 +9,7 @@ import { TAG_ICON } from '@/components/icons/TagIcons'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
 import { LANDMARKS, type Landmark } from '@/lib/landmarks'
+import { MIcon } from '@/components/icons/MaterialIcons'
 import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
 import { getArea } from '@/lib/area'
@@ -402,18 +403,18 @@ export function PublicHomepage({ locations }: Props) {
         <div className="bg-white border-b border-gray-100 py-2 relative">
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
           <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
-            <span className="text-[11px] font-bold text-gray-400 shrink-0 pr-0.5">
-              {lang === 'zh' ? '🎯 地標附近' : '🎯 Near'}
+            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-400 shrink-0 pr-0.5">
+              <MIcon name="near_me" size={14} className="shrink-0" /> {lang === 'zh' ? '地標附近' : 'Near'}
             </span>
             {LANDMARKS.map((lm) => (
               <button
                 key={lm.id}
                 onClick={() => selectLandmark(lm)}
-                className={`text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
+                className={`inline-flex items-center gap-1 text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
                   landmark?.id === lm.id ? 'bg-[#1e1b4b] text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
               >
-                {lm.emoji} {lang === 'zh' ? lm.zh : lm.en}
+                <MIcon name={lm.icon} size={13} className="shrink-0" /> {lang === 'zh' ? lm.zh : lm.en}
               </button>
             ))}
           </div>
@@ -477,8 +478,8 @@ export function PublicHomepage({ locations }: Props) {
             })}
             {filtered.length === 0 && (
               <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
-                <span className="text-5xl mb-4">
-                  {({'hotel': '🏨', 'attraction': '🗺️', 'shopping': '🛍️', 'nightlife': '🍸', 'food': '🍜', 'cafe': '☕'} as Record<string, string>)[activeCategory] ?? '🔍'}
+                <span className="mb-4 text-gray-300">
+                  <MIcon name={({ hotel: 'hotel', attraction: 'attractions', shopping: 'shopping_bag', nightlife: 'local_bar', food: 'restaurant', cafe: 'local_cafe' } as Record<string, string>)[activeCategory] ?? 'search'} size={56} />
                 </span>
                 <p className="text-sm font-bold text-gray-400 mb-1">
                   {lang === 'zh' ? '這個類別暫無推薦' : 'No picks in this category yet'}
@@ -501,7 +502,7 @@ export function PublicHomepage({ locations }: Props) {
                     key={loc.id}
                     location={loc}
                     lang={lang}
-                    distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined}
+                    distanceKm={nearbyAnchor ? haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, loc.lat, loc.lng) : undefined}
                     saved={savedIds.has(loc.id)}
                     onToggleSave={handleToggleSave}
                     compact
