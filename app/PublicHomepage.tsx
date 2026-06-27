@@ -8,6 +8,7 @@ import { CategoryTabs } from '@/components/CategoryTabs'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
+import { LANDMARKS, type Landmark } from '@/lib/landmarks'
 import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
 import { getArea } from '@/lib/area'
@@ -53,6 +54,9 @@ export function PublicHomepage({ locations }: Props) {
   const [specialFilter, setSpecialFilter] = useState<SpecialFilter>('all')
   const [query, setQuery] = useState('')
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
+  const [landmark, setLandmark] = useState<Landmark | null>(null)
+  // 附近的中心點：選了地標就用地標座標，否則用 GPS
+  const nearbyAnchor = landmark ? { lat: landmark.lat, lng: landmark.lng } : userLocation
   const [locating, setLocating] = useState(false)
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set())
   const [mapExpanded, setMapExpanded] = useState(false)
@@ -82,6 +86,7 @@ export function PublicHomepage({ locations }: Props) {
         if (saved.activeArea) setActiveArea(saved.activeArea)
         if (saved.query) setQuery(saved.query)
         if (saved.userLocation) setUserLocation(saved.userLocation)
+        if (saved.landmark) setLandmark(saved.landmark)
       }
     } catch {}
   }, [])
@@ -91,10 +96,10 @@ export function PublicHomepage({ locations }: Props) {
     if (skipFirstSave.current) { skipFirstSave.current = false; return }
     try {
       sessionStorage.setItem(FILTER_KEY, JSON.stringify({
-        specialFilter, activeCategory, activeTag, activeArea, query, userLocation,
+        specialFilter, activeCategory, activeTag, activeArea, query, userLocation, landmark,
       }))
     } catch {}
-  }, [specialFilter, activeCategory, activeTag, activeArea, query, userLocation])
+  }, [specialFilter, activeCategory, activeTag, activeArea, query, userLocation, landmark])
 
   useEffect(() => {
     if (specialFilter === 'nearby') { setMapExpanded(true); setMapEverOpened(true) }
@@ -111,6 +116,7 @@ export function PublicHomepage({ locations }: Props) {
   }
 
   function requestLocation() {
+    setLandmark(null) // GPS 附近：清掉地標
     if (userLocation) { setSpecialFilter('nearby'); return }
     setLocating(true)
     navigator.geolocation.getCurrentPosition(
@@ -122,6 +128,16 @@ export function PublicHomepage({ locations }: Props) {
       () => setLocating(false),
       { timeout: 10000 }
     )
+  }
+
+  // 選地標：以該地標為中心顯示附近
+  function selectLandmark(lm: Landmark) {
+    if (landmark?.id === lm.id) { setLandmark(null); setSpecialFilter('all'); return } // 再點一次取消
+    setLandmark(lm)
+    setSpecialFilter('nearby')
+    setActiveTag('all')
+    setActiveArea('all')
+    setMapEverOpened(true)
   }
 
   const filtered = useMemo(() => {
@@ -138,16 +154,16 @@ export function PublicHomepage({ locations }: Props) {
         .some((s) => s?.toLowerCase().includes(q))
       return matchCat && matchTag && matchArea && matchSpecial && matchSearch
     })
-    if (specialFilter === 'nearby' && userLocation) {
+    if (specialFilter === 'nearby' && nearbyAnchor) {
       return [...base]
-        .filter((l) => haversineKm(userLocation.lat, userLocation.lng, l.lat, l.lng) <= 5)
+        .filter((l) => haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, l.lat, l.lng) <= 5)
         .sort((a, b) =>
-          haversineKm(userLocation.lat, userLocation.lng, a.lat, a.lng) -
-          haversineKm(userLocation.lat, userLocation.lng, b.lat, b.lng)
+          haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, a.lat, a.lng) -
+          haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, b.lat, b.lng)
         )
     }
     return base
-  }, [locations, activeCategory, activeTag, activeArea, specialFilter, query, userLocation, savedIds])
+  }, [locations, activeCategory, activeTag, activeArea, specialFilter, query, userLocation, landmark, savedIds])
 
   const areas = useMemo(() => {
     const counts = new Map<string, number>()
@@ -245,7 +261,7 @@ export function PublicHomepage({ locations }: Props) {
           <LocationMap
             locations={filtered}
             lang={lang}
-            userLocation={userLocation}
+            userLocation={nearbyAnchor}
             nearbyMode={specialFilter === 'nearby'}
           />
         )}
@@ -285,7 +301,7 @@ export function PublicHomepage({ locations }: Props) {
           <div className="flex gap-2 overflow-x-auto no-scrollbar px-3 lg:justify-center">
             {/* All */}
             <button
-              onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all') }}
+              onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all'); setLandmark(null) }}
               className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
                 specialFilter === 'all' && activeTag === 'all' && activeArea === 'all'
                   ? 'bg-[#1e1b4b] text-white shadow-sm'
@@ -298,13 +314,12 @@ export function PublicHomepage({ locations }: Props) {
             {/* Nearby */}
             <button
               onClick={() => {
-                if (specialFilter === 'nearby') { setSpecialFilter('all'); return }
-                if (userLocation) { setSpecialFilter('nearby'); return }
+                if (specialFilter === 'nearby' && !landmark) { setSpecialFilter('all'); return }
                 requestLocation()
               }}
               disabled={locating}
               className={`flex items-center gap-1 text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
-                specialFilter === 'nearby'
+                specialFilter === 'nearby' && !landmark
                   ? 'bg-[#1e1b4b] text-white shadow-sm'
                   : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
               }`}
@@ -383,6 +398,27 @@ export function PublicHomepage({ locations }: Props) {
           </div>
         )}
 
+        {/* Landmark chips — 選地標看附近 */}
+        <div className="bg-white border-b border-gray-100 py-2 relative">
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
+            <span className="text-[11px] font-bold text-gray-400 shrink-0 pr-0.5">
+              {lang === 'zh' ? '🎯 地標附近' : '🎯 Near'}
+            </span>
+            {LANDMARKS.map((lm) => (
+              <button
+                key={lm.id}
+                onClick={() => selectLandmark(lm)}
+                className={`text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
+                  landmark?.id === lm.id ? 'bg-[#1e1b4b] text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                }`}
+              >
+                {lm.emoji} {lang === 'zh' ? lm.zh : lm.en}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* 4-section view (default) */}
         {showSections && sectionsByTag && (
           <div className="pb-10">
@@ -416,7 +452,7 @@ export function PublicHomepage({ locations }: Props) {
                         <LocationCard
                           location={loc}
                           lang={lang}
-                          distanceKm={userLocation ? haversineKm(userLocation.lat, userLocation.lng, loc.lat, loc.lng) : undefined}
+                          distanceKm={nearbyAnchor ? haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, loc.lat, loc.lng) : undefined}
                           saved={savedIds.has(loc.id)}
                           onToggleSave={handleToggleSave}
                           compact
