@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { IconPin } from './icons/CategoryIcons'
 import type { Location, Source, LocationTag } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
@@ -79,6 +79,16 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   // 照片走 /api/photo 代理（CDN 快取、不外露 key）；載入失敗時換預設圖避免破圖
   const photo = photoUrl(location.photos[0], 800)
   const [imgSrc, setImgSrc] = useState(photo)
+  // 圖片載入失敗時先重試一次（冷快取/暫時性錯誤常一試就過），第二次才換預設圖
+  const retried = useRef(false)
+  function handleImgError() {
+    if (!retried.current && photo.startsWith('/api/photo')) {
+      retried.current = true
+      setImgSrc(`${photo}&t=${Date.now()}`)
+    } else if (imgSrc !== FALLBACK_PHOTO) {
+      setImgSrc(FALLBACK_PHOTO)
+    }
+  }
 
   const visibleHighlights = (location.highlights ?? []).slice(0, 2)
   const extraHighlights = (location.highlights?.length ?? 0) - 2
@@ -102,7 +112,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
           className="object-cover"
           sizes="(max-width: 768px) 50vw, 33vw"
           unoptimized
-          onError={() => { if (imgSrc !== FALLBACK_PHOTO) setImgSrc(FALLBACK_PHOTO) }}
+          onError={handleImgError}
         />
         {/* Tag badge — skip evergreen */}
         {tag !== 'evergreen' && (

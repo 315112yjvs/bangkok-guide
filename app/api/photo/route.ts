@@ -16,21 +16,38 @@ export async function GET(req: NextRequest) {
   const key = process.env.GOOGLE_MAPS_API_KEY
   if (!key) return new NextResponse('no key', { status: 500 })
 
-  try {
-    const res = await fetch(
-      `https://places.googleapis.com/v1/${ref}/media?maxWidthPx=${w}&key=${key}`,
-      { headers: { Referer: 'https://www.bkk-local.com/' } }
-    )
-    if (!res.ok) return new NextResponse('upstream error', { status: res.status })
-    const buf = await res.arrayBuffer()
-    return new NextResponse(buf, {
-      headers: {
-        'Content-Type': res.headers.get('content-type') ?? 'image/jpeg',
-        // 瀏覽器 + Vercel CDN 都長快取；照片內容不變所以 immutable
-        'Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
-      },
-    })
-  } catch {
-    return new NextResponse('fetch failed', { status: 502 })
+  const url = `https://places.googleapis.com/v1/${ref}/media?maxWidthPx=${w}&key=${key}`
+
+  // 抓 Google 照片，加 10 秒逾時；遇到逾時或 5xx 暫時性錯誤再重試一次
+  // （冷啟動/暫時性失敗常一試就過，可減少卡片掉成預設圖）
+  async function fetchOnce() {
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 10000)
+    try {
+      return await fetch(url, { headers: { Referer: 'https://www.bkk-local.com/' }, signal: ctrl.signal })
+    } finally {
+      clearTimeout(timer)
+    }
   }
+
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const res = await fetchOnce()
+      if (res.ok) {
+        const buf = await res.arrayBuffer()
+        return new NextResponse(buf, {
+          headers: {
+            'Content-Type': res.headers.get('content-type') ?? 'image/jpeg',
+            // 瀏覽器 + Vercel CDN 都長快取；照片內容不變所以 immutable
+            'Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
+          },
+        })
+      }
+      // 4xx（ref 失效等）不重試，直接回錯誤；5xx 才再試一次
+      if (res.status < 500) return new NextResponse('upstream error', { status: res.status })
+    } catch {
+      // 逾時/網路錯誤 → 進入下一輪重試
+    }
+  }
+  return new NextResponse('fetch failed', { status: 502 })
 }
