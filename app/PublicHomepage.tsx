@@ -28,6 +28,8 @@ const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'new_opening', 'ever
 
 // 每個首頁分區最多顯示幾筆（其餘按「看全部」進完整清單）
 const SECTION_LIMIT = 15
+// 篩選/搜尋的網格視圖一次顯示幾筆（其餘按「載入更多」），避免一次渲染上百張卡片
+const GRID_PAGE = 30
 
 function resolveTag(loc: Location): LocationTag {
   if (loc.tag) return loc.tag
@@ -63,6 +65,8 @@ export function PublicHomepage({ locations }: Props) {
   const [mapExpanded, setMapExpanded] = useState(false)
   // 地圖只在使用者開過後才掛載，避免每次進首頁就載入 Google 地圖（省 Dynamic Maps 用量）
   const [mapEverOpened, setMapEverOpened] = useState(false)
+  // 網格視圖目前顯示的筆數（篩選/搜尋條件一變就重置回第一頁）
+  const [gridLimit, setGridLimit] = useState(GRID_PAGE)
   // 每分頁一個洗牌種子：一進站隨機，之後同分頁返回維持同樣順序（不會重洗）
   const shuffleSeed = useShuffleSeed()
 
@@ -105,6 +109,11 @@ export function PublicHomepage({ locations }: Props) {
   useEffect(() => {
     if (specialFilter === 'nearby') { setMapExpanded(true); setMapEverOpened(true) }
   }, [specialFilter])
+
+  // 篩選/搜尋條件一變，網格視圖回到第一頁
+  useEffect(() => {
+    setGridLimit(GRID_PAGE)
+  }, [activeCategory, activeTag, activeArea, specialFilter, query, landmark])
 
   function handleToggleSave(id: string) {
     setSavedIds((prev) => {
@@ -496,19 +505,34 @@ export function PublicHomepage({ locations }: Props) {
         {!showSections && (
           <section className="px-3 pt-3 pb-10">
             {filtered.length > 0 ? (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                {filtered.map((loc) => (
-                  <LocationCard
-                    key={loc.id}
-                    location={loc}
-                    lang={lang}
-                    distanceKm={nearbyAnchor ? haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, loc.lat, loc.lng) : undefined}
-                    saved={savedIds.has(loc.id)}
-                    onToggleSave={handleToggleSave}
-                    compact
-                  />
-                ))}
-              </div>
+              <>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                  {filtered.slice(0, gridLimit).map((loc) => (
+                    <LocationCard
+                      key={loc.id}
+                      location={loc}
+                      lang={lang}
+                      distanceKm={nearbyAnchor ? haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, loc.lat, loc.lng) : undefined}
+                      saved={savedIds.has(loc.id)}
+                      onToggleSave={handleToggleSave}
+                      compact
+                    />
+                  ))}
+                </div>
+                {filtered.length > gridLimit && (
+                  <div className="flex justify-center mt-6">
+                    <button
+                      onClick={() => setGridLimit((n) => n + GRID_PAGE)}
+                      className="flex items-center gap-1.5 text-[13px] font-bold text-[#1e1b4b] bg-white border border-gray-200 rounded-full px-6 py-2.5 shadow-sm hover:bg-gray-50 transition-colors active:scale-95"
+                    >
+                      {lang === 'zh' ? '載入更多' : 'Load more'}
+                      <span className="text-[11px] text-gray-400 font-semibold">
+                        {Math.min(gridLimit, filtered.length)} / {filtered.length}
+                      </span>
+                    </button>
+                  </div>
+                )}
+              </>
             ) : specialFilter === 'saved' ? (
               <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
                 <svg className="w-12 h-12 mb-4 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>

@@ -34,6 +34,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-TW">
+      <head>
+        {/* 提早下載粉圓子集字型，避免首屏文字先用系統字再跳字（減少版面位移）*/}
+        <link
+          rel="preload"
+          href="/fonts/openhuninn-subset.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="bg-gray-100 min-h-screen">{children}<Analytics /><RegisterSW /></body>
     </html>
   )
