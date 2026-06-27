@@ -98,8 +98,14 @@ ${placeFacts ? `【Google 官方資料與真實評論（最可靠，請優先採
 - new_opening（新開幕）：查證到近期才新開幕（近一年內）。沒明確證據就不要選這個。
 - evergreen（經典必訪）：老字號、經典不敗、知名地標、來曼谷必訪的代表店、評價成熟穩定的名店。
 
+【再挑 1–2 個 highlight（卡片小標籤）】
+- 只放「招牌餐點/飲品的具體名稱」或「明確特色」。簡短英文，每個 1–3 個字。
+- 好例：Tom Yum、Khao Soi、Satay、Croissant、Rooftop View、Live Music、Riverside、Omakase。
+- 嚴禁評論碎句、形容詞或空泛詞，例如 Clean、Soulful、Try it、Experience from here、A bit noisy、Booking in advance、If you are there 這類一律不要。
+- 查不到具體招牌或特色就回空陣列 []。
+
 查證完成後，你的回覆「最後一行」只輸出一個 JSON（不要加任何說明文字或 markdown 標記）：
-{"zh":"中文介紹","en":"English description","tag":"trending 或 hidden_gem 或 new_opening 或 evergreen"}`
+{"zh":"中文介紹","en":"English description","tag":"trending 或 hidden_gem 或 new_opening 或 evergreen","highlights":["招牌1","招牌2"]}`
 
   try {
     let messages: Anthropic.MessageParam[] = [{ role: 'user', content: prompt }]
@@ -128,7 +134,7 @@ ${placeFacts ? `【Google 官方資料與真實評論（最可靠，請優先採
 
     // Extract the JSON object (take the last {...} that parses).
     const matches = finalText.match(/\{[\s\S]*?"zh"[\s\S]*?"en"[\s\S]*?\}/g)
-    let parsed: { zh?: string; en?: string; tag?: string } | null = null
+    let parsed: { zh?: string; en?: string; tag?: string; highlights?: string[] } | null = null
     if (matches) {
       for (let i = matches.length - 1; i >= 0; i--) {
         try { parsed = JSON.parse(matches[i]); break } catch { /* try previous */ }
@@ -145,10 +151,19 @@ ${placeFacts ? `【Google 官方資料與真實評論（最可靠，請優先採
     const VALID_TAGS = ['trending', 'hidden_gem', 'new_opening', 'evergreen']
     const tag = parsed.tag && VALID_TAGS.includes(parsed.tag) ? parsed.tag : undefined
 
+    const highlights = Array.isArray(parsed.highlights)
+      ? parsed.highlights
+          .filter((h): h is string => typeof h === 'string')
+          .map((h) => h.trim())
+          .filter((h) => h.length >= 2 && h.length <= 24)
+          .slice(0, 2)
+      : undefined
+
     return NextResponse.json({
       description_zh: parsed.zh,
       description_en: parsed.en ?? '',
       ...(tag ? { tag } : {}),
+      ...(highlights ? { highlights } : {}),
       grounded: Boolean(placeFacts),
     })
   } catch (err) {

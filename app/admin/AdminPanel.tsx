@@ -854,6 +854,7 @@ export function AdminPanel() {
           if (res.ok && data.description_zh) {
             const updates: Partial<PendingLocation> = { description_zh: data.description_zh, description_en: data.description_en }
             if (data.tag) updates.tag = data.tag
+            if (Array.isArray(data.highlights)) updates.highlights = data.highlights
             saveChain = saveChain.then(() => fetch('/api/pending', {
               method: 'PATCH',
               headers: { 'Content-Type': 'application/json' },
@@ -870,6 +871,47 @@ export function AdminPanel() {
       const worker = async () => { while (idx < todo.length) await genOne(todo[idx++]) }
       await Promise.all(Array.from({ length: 3 }, worker))
       setBatchMsg(`完成：成功 ${ok}、失敗 ${fail}${fail ? '（失敗的可再按一次續跑）' : ''}。請檢查後按「一鍵全部上架」`)
+      loadData()
+    } finally {
+      setBatchRunning(false)
+    }
+  }
+
+  // 批次：用 AI 重挑全部已上架店家的 highlight，修掉從評論硬抓的廢話（haiku 快又便宜）
+  async function batchFixHighlights() {
+    const list: Location[] = await fetch('/api/locations').then(r => r.json())
+    if (list.length === 0) return
+    if (!confirm(`要用 AI 重新整理全部 ${list.length} 筆已上架店家的 highlight 嗎？（修掉不相關的廢話標籤）`)) return
+    setBatchRunning(true)
+    try {
+      let done = 0, ok = 0, fail = 0
+      let saveChain: Promise<unknown> = Promise.resolve()
+      const fixOne = async (loc: Location) => {
+        try {
+          const res = await fetch('/api/suggest-highlights', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name_en: loc.name_en, description_zh: loc.description_zh, description_en: loc.description_en, category: loc.category }),
+          })
+          const data = await res.json()
+          if (res.ok && Array.isArray(data.highlights)) {
+            saveChain = saveChain.then(() => fetch('/api/locations', {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ id: loc.id, highlights: data.highlights }),
+            }))
+            await saveChain
+            ok++
+          } else { fail++ }
+        } catch { fail++ }
+        done++
+        setBatchMsg(`整理 highlight ${done}/${list.length}（成功 ${ok}、失敗 ${fail}）`)
+      }
+      let idx = 0
+      const worker = async () => { while (idx < list.length) await fixOne(list[idx++]) }
+      await Promise.all(Array.from({ length: 4 }, worker))
+      setHasUnsaved(true)
+      setBatchMsg(`highlight 整理完成：成功 ${ok}、失敗 ${fail}。記得按「存檔並上傳」`)
       loadData()
     } finally {
       setBatchRunning(false)
@@ -1142,7 +1184,19 @@ export function AdminPanel() {
                   className="w-full pl-8 pr-3 py-1.5 text-xs border border-gray-200 rounded-xl outline-none focus:border-indigo-400"
                 />
               </div>
+              {approved.length > 0 && (
+                <button
+                  onClick={batchFixHighlights}
+                  disabled={batchRunning}
+                  className="shrink-0 text-xs font-bold px-4 py-2 rounded-xl bg-amber-500 text-white hover:bg-amber-400 disabled:opacity-50 transition-colors"
+                >
+                  {batchRunning ? '處理中…' : '✨ AI 整理全部 highlight'}
+                </button>
+              )}
             </div>
+            {batchMsg && (
+              <p className="text-xs font-semibold text-amber-700 bg-amber-50 rounded-lg px-3 py-2 mb-3">{batchMsg}</p>
+            )}
             <div className="space-y-2">
               {approved.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">還沒有上架的地點</p>}
               {approved
