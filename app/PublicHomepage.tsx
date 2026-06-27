@@ -377,7 +377,7 @@ export function PublicHomepage({ locations }: Props) {
                 <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z" strokeLinejoin="round"/><circle cx="12" cy="9" r="2.5"/>
               </svg>
               <button
-                onClick={() => setActiveArea('all')}
+                onClick={() => { setActiveArea('all'); setSpecialFilter('all'); setLandmark(null) }}
                 className={`text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
                   activeArea === 'all' ? 'bg-emerald-600 text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
@@ -387,7 +387,7 @@ export function PublicHomepage({ locations }: Props) {
               {areas.map((a) => (
                 <button
                   key={a}
-                  onClick={() => setActiveArea(activeArea === a ? 'all' : a)}
+                  onClick={() => { setActiveArea(activeArea === a ? 'all' : a); setSpecialFilter('all'); setLandmark(null) }}
                   className={`text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
                     activeArea === a ? 'bg-emerald-600 text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
