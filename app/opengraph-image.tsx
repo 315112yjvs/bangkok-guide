@@ -8,9 +8,8 @@ export const contentType = 'image/png'
 
 export default async function Image() {
   const openhuninn = readFileSync(join(process.cwd(), 'public/fonts/og-openhuninn.woff'))
-  const notoThai = readFileSync(join(process.cwd(), 'public/fonts/og-noto-thai.woff'))
-  const heroBuf = readFileSync(join(process.cwd(), 'public/hero-bangkok.jpg'))
-  const hero = `data:image/jpeg;base64,${heroBuf.toString('base64')}`
+  const logoBuf = readFileSync(join(process.cwd(), 'public/icon-512.png'))
+  const logo = `data:image/png;base64,${logoBuf.toString('base64')}`
 
   return new ImageResponse(
     (
@@ -19,80 +18,56 @@ export default async function Image() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          position: 'relative',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 56,
           fontFamily: 'OpenHuninn',
-          background: 'linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%)',
+          background: '#ffffff',
+          position: 'relative',
         }}
       >
+        {/* top accent bar */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 12,
+            background: 'linear-gradient(90deg, #1e1b4b 0%, #1e1b4b 55%, #f97316 100%)',
+          }}
+        />
+
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={hero}
-          alt=""
-          width={1200}
-          height={630}
-          style={{ position: 'absolute', inset: 0, width: 1200, height: 630, objectFit: 'cover' }}
-        />
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background:
-              'linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 55%, rgba(0,0,0,0.5) 100%)',
-          }}
-        />
+        <img src={logo} alt="" width={420} height={420} style={{ width: 420, height: 420 }} />
 
-        {/* LIVE badge */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 48,
-            left: 56,
-            display: 'flex',
-            alignItems: 'center',
-            gap: 12,
-            background: '#e11d48',
-            color: 'white',
-            fontSize: 28,
-            padding: '8px 26px',
-            borderRadius: 999,
-            letterSpacing: 4,
-          }}
-        >
-          ● LIVE · 每週更新
-        </div>
-
-        {/* Bottom editorial block */}
-        <div
-          style={{
-            position: 'absolute',
-            left: 56,
-            right: 56,
-            bottom: 52,
-            display: 'flex',
-            flexDirection: 'column',
-          }}
-        >
-          <div style={{ display: 'flex', color: 'white', fontSize: 104, lineHeight: 1.05, marginBottom: 8 }}>
-            曼谷人
-          </div>
-          <div style={{ display: 'flex', color: '#fbbf24', fontSize: 44, letterSpacing: 14, marginBottom: 22 }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div style={{ display: 'flex', color: '#1e1b4b', fontSize: 132, lineHeight: 1 }}>曼谷人</div>
+          <div
+            style={{
+              display: 'flex',
+              color: '#f97316',
+              fontSize: 56,
+              letterSpacing: 18,
+              marginTop: 10,
+              marginBottom: 28,
+            }}
+          >
             BKK LOCAL
           </div>
-          <div style={{ display: 'flex', color: 'rgba(255,255,255,0.92)', fontSize: 36, lineHeight: 1.3 }}>
-            住在曼谷的人告訴你最近在瘋什麼
+          <div style={{ display: 'flex', width: 92, height: 6, background: '#f97316', borderRadius: 999, marginBottom: 28 }} />
+          <div style={{ display: 'flex', color: '#1e1b4b', fontSize: 38, lineHeight: 1.35 }}>
+            住在曼谷的人
           </div>
-          <div style={{ display: 'flex', color: 'rgba(255,255,255,0.7)', fontSize: 28, marginTop: 8 }}>
-            在地私藏 × 美食咖啡廳 × TikTok 爆紅地點
+          <div style={{ display: 'flex', color: '#1e1b4b', fontSize: 38, lineHeight: 1.35 }}>
+            告訴你最近在瘋什麼
           </div>
         </div>
       </div>
     ),
     {
       ...size,
-      fonts: [
-        { name: 'OpenHuninn', data: openhuninn, style: 'normal', weight: 400 },
-        { name: 'NotoSansThai', data: notoThai, style: 'normal', weight: 400 },
-      ],
+      fonts: [{ name: 'OpenHuninn', data: openhuninn, style: 'normal', weight: 400 }],
     }
   )
 }
