@@ -8,7 +8,7 @@ import { CategoryTabs } from '@/components/CategoryTabs'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
-import { LANDMARKS, type Landmark } from '@/lib/landmarks'
+import { type Landmark } from '@/lib/landmarks'
 import { MIcon } from '@/components/icons/MaterialIcons'
 import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
@@ -138,16 +138,6 @@ export function PublicHomepage({ locations }: Props) {
       () => setLocating(false),
       { timeout: 10000 }
     )
-  }
-
-  // 選地標：以該地標為中心顯示附近
-  function selectLandmark(lm: Landmark) {
-    if (landmark?.id === lm.id) { setLandmark(null); setSpecialFilter('all'); return } // 再點一次取消
-    setLandmark(lm)
-    setSpecialFilter('nearby')
-    setActiveTag('all')
-    setActiveArea('all')
-    setMapEverOpened(true)
   }
 
   const filtered = useMemo(() => {
@@ -407,27 +397,6 @@ export function PublicHomepage({ locations }: Props) {
             </div>
           </div>
         )}
-
-        {/* Landmark chips — 選地標看附近 */}
-        <div className="bg-white border-b border-gray-100 py-2 relative">
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
-          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
-            <span className="inline-flex items-center gap-1 text-[11px] font-bold text-gray-400 shrink-0 pr-0.5">
-              <MIcon name="near_me" size={14} className="shrink-0" /> {lang === 'zh' ? '地標附近' : 'Near'}
-            </span>
-            {LANDMARKS.map((lm) => (
-              <button
-                key={lm.id}
-                onClick={() => selectLandmark(lm)}
-                className={`inline-flex items-center gap-1 text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
-                  landmark?.id === lm.id ? 'bg-[#1e1b4b] text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                }`}
-              >
-                <MIcon name={lm.icon} size={13} className="shrink-0" /> {lang === 'zh' ? lm.zh : lm.en}
-              </button>
-            ))}
-          </div>
-        </div>
 
         {/* 4-section view (default) */}
         {showSections && sectionsByTag && (
