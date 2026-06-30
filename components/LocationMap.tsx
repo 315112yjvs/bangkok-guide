@@ -156,7 +156,7 @@ export function LocationMap({ locations, lang, userLocation: externalLocation, n
   const userLoc = externalLocation ?? null
 
   const fallback = (
-    <div className="h-56 w-full flex items-center justify-center bg-gray-100 text-gray-400 text-xs">
+    <div className="h-full w-full flex items-center justify-center bg-gray-100 text-gray-400 text-xs">
       {lang === 'zh' ? '地圖暫時無法顯示' : 'Map unavailable'}
     </div>
   )
@@ -168,7 +168,7 @@ export function LocationMap({ locations, lang, userLocation: externalLocation, n
   return (
     <ErrorBoundary fallback={fallback}>
       <APIProvider apiKey={apiKey} libraries={['marker']}>
-        <div className="h-56 w-full">
+        <div className="h-full w-full">
           <Map
             defaultCenter={{ lat: 13.7563, lng: 100.5018 }}
             defaultZoom={12}
