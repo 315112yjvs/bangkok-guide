@@ -64,6 +64,22 @@ const SEARCH_QUERIES = [
   { query: 'คาเฟ่เปิดใหม่ กรุงเทพ 2025', category: 'cafe' as const, local: true },
   // Nightlife
   { query: 'บาร์คนไทย กรุงเทพ สนุก', category: 'nightlife' as const, local: true },
+
+  // ── 在地老店 / 傳說級 / 隱藏店（泰國人找店的講法，最能避開觀光客店）──
+  { query: 'ร้านเจ้าเก่า กรุงเทพ ในตำนาน อร่อย', category: 'food' as const, local: true },
+  { query: 'ร้านลับ กรุงเทพ คนท้องถิ่น เด็ด', category: 'food' as const, local: true },
+  { query: 'ร้านเด็ด บิบกูร์มองด์ มิชลิน กรุงเทพ', category: 'food' as const, local: true },
+  { query: 'ร้านอาหาร คนไทยรีวิว Wongnai กรุงเทพ', category: 'food' as const, local: true },
+
+  // ── 觀光客較少去的住宅/在地生活圈 ──
+  { query: 'ร้านอาหารเด็ด ย่านลาดพร้าว เกษตร นวมินทร์', category: 'food' as const, local: true },
+  { query: 'ร้านอร่อย ย่านรามคำแหง บางกะปิ', category: 'food' as const, local: true },
+  { query: 'ร้านอาหาร ย่านอ่อนนุช อุดมสุข เด็ด', category: 'food' as const, local: true },
+  { query: 'ร้านเด็ด ฝั่งธน ปิ่นเกล้า จรัญ', category: 'food' as const, local: true },
+  { query: 'ร้านอาหาร ย่านประชาชื่น งามวงศ์วาน', category: 'food' as const, local: true },
+  { query: 'ร้านอาหาร ย่านบางนา ศรีนครินทร์', category: 'food' as const, local: true },
+  { query: 'คาเฟ่ ย่านลาดพร้าว เกษตร คนไทยชอบ', category: 'cafe' as const, local: true },
+  { query: 'ร้านกาแฟลับ ฝั่งธน คนท้องถิ่น', category: 'cafe' as const, local: true },
 ]
 
 const PRICE_MAP: Record<string, 1 | 2 | 3 | 4> = {
@@ -106,6 +122,9 @@ async function fetchPlacesQuery(query: string, category: QueryConfig['category']
     body: JSON.stringify({
       textQuery: query,
       maxResultCount: 10,
+      // 用泰國在地視角排序：regionCode 一律 TH；在地查詢再切成泰文，讓 Google 回傳當地人常去的店
+      regionCode: 'TH',
+      languageCode: local ? 'th' : 'en',
       locationBias: { circle: { center: { latitude: BANGKOK_LAT, longitude: BANGKOK_LNG }, radius: 10000 } },
     }),
   })
