@@ -47,7 +47,8 @@ describe('readLocations', () => {
 describe('writeLocations + readLocations', () => {
   it('round-trips a location', () => {
     writeLocations([mockLocation])
-    expect(readLocations()).toEqual([mockLocation])
+    // readLocations 會依 id/name 補上 slug（給 /location/[slug] 用），故一併驗證
+    expect(readLocations()).toEqual([{ ...mockLocation, slug: 'test' }])
   })
 })
 
