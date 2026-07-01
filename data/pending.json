@@ -1,56 +1,5 @@
 [
   {
-    "name_en": "SPICE Thai Cuisine and Bar",
-    "name_zh": "SPICE Thai Cuisine and Bar",
-    "description_en": "A mid-range, top-rated restaurant in Bangkok. Known for Steak and Craft Beer.",
-    "description_zh": "曼谷熱門餐廳。",
-    "category": "food",
-    "address": "187 10 Thep Rak Rd, Khwaeng Khlong Thanon, Khet Sai Mai, Krung Thep Maha Nakhon 10220, Thailand",
-    "lat": 13.8889219,
-    "lng": 100.6101996,
-    "photos": [
-      "places/ChIJocESKACD4jARl1xl2ZcHQlk/photos/AaVGc3kUWAdttCBQ_KTH_QLV5P8PqquIS0zR1NsFoZnnTte_1HebrMKN57kuk1pxk57Bh3vMFR2LKonDWbPRHOCDlH53VIDqdEnRIgGypAJENsKbAH4_7_fh-fvk-G5B7_zEPdIMvNNVfpcnmzCE5qKN90yTiBwhb-cx-XLQTY5ZM99qNd-aYsgT5V74WtwkhJaFITWFhuMOg7hS3JjSyIOR-jMFULFPelzdN9P86qlmPmH0ypFZbi94PTYrA8DMD5HKamFk6SFzNKPjyGZ46L7BSn1k1AeKg_iRh54D8IMPSTGRcuru98f4sEQMOyl1HQPqLZvsY9F449FFNpZaIt2pycj7OYfnZ1UmsGx-Cb5AxKyaFEndstMl7orEfjXZFTKIfjj0FHffczs0VKvUeVSa62qB4FWr5Eg7r4KvIGxAp99em40UTEx2xvROBAhI-Bzu"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=SPICE%20Thai%20Cuisine%20and%20Bar%20187%2010%20Thep%20Rak%20Rd%2C%20Khwaeng%20Khlong%20Thanon%2C%20Khet%20Sai%20Mai%2C%20Krung%20Thep%20Maha%20Nakhon%2010220%2C%20Thailand&query_place_id=ChIJocESKACD4jARl1xl2ZcHQlk",
-    "rating": 5,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "highlights": [
-      "Steak",
-      "Craft Beer",
-      "Live Music"
-    ],
-    "local_ratio": 75,
-    "id": "3f54fe59-460c-4a0d-844e-a9b6170728a7",
-    "source": "googlemaps",
-    "scraped_at": "2026-06-13T10:01:37.766Z"
-  },
-  {
-    "name_en": "Jek Meng Hainanese Chicken Rice",
-    "name_zh": "Jek Meng Hainanese Chicken Rice",
-    "description_en": "A mid-range, well-regarded restaurant in Bangkok. Known for Last seat and Sauce.",
-    "description_zh": "曼谷熱門餐廳。",
-    "category": "food",
-    "address": "112/1-3 Charat Mueang Alley, Khwaeng Rong Muang, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
-    "lat": 13.742447799999999,
-    "lng": 100.5213467,
-    "photos": [
-      "places/ChIJcwK74S6Z4jARzqUhQsNBF1A/photos/AaVGc3nRnJFYsrPZzcnIwuoIzT-kwfLe4DnppV9jjpHTEVUoUhRW16XQRVTCw9dXv2NQ_qwBOYkQnp9hE1bkzO7F0l7GWktVqHws9DvAKBDilieV5esvHzZMCMEYvbr219JmGwf-o66mSy2ox6X_T8nytXRKPwOhDkc14JV4Em_XoLQmV4sgf4W9zAVbDW115debbPhaVNq2ToBqs_UebxVNyVv17CE5A5qLLiVc8jBTy8njzWDYyVqgxowH09XWaZRPAV9kBI7VSMA4q2KzizR8njUr4lvUa5-C77eYwS4Eqdiyns4jDg2HiJLQVx3qAojHMv8-6YpO1JcN0bl6Q5p6rLjNOtPpPQjoOjVr_bSBvobd0hbhfY1_GE-1xVAPiRl9CJzhusdjNV60Sx3LSBj0Rih0bjr7ROAiHFol-L45n1U"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=Jek%20Meng%20Hainanese%20Chicken%20Rice%20112%2F1-3%20Charat%20Mueang%20Alley%2C%20Khwaeng%20Rong%20Muang%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJcwK74S6Z4jARzqUhQsNBF1A",
-    "rating": 4.4,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "highlights": [
-      "Last seat",
-      "Sauce"
-    ],
-    "local_ratio": 75,
-    "id": "e491b3a1-0e3c-4f27-8090-f9a937bd17d8",
-    "source": "googlemaps",
-    "scraped_at": "2026-06-13T10:01:38.177Z"
-  },
-  {
     "name_en": "Je Aoun Chicken Rice",
     "name_zh": "Je Aoun Chicken Rice",
     "description_en": "A budget-friendly, well-regarded restaurant in Bangkok. Known for Dim Sum and Dumplings.",
