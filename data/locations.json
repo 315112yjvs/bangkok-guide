@@ -6855,6 +6855,347 @@
     "id": "c248ca5e-bce0-41e9-9e09-08bbc1b19e45",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-07-01T13:57:22.429Z"
+    "approved_at": "2026-07-01T13:57:22.429Z",
+    "slug": "kope-hya-tai-kee-na-saranrom"
+  },
+  {
+    "name_en": "Kope Hya Tai Kee The Parq Rama 4",
+    "name_zh": "Kope Hya Tai Kee The Parq Rama 4",
+    "description_en": "Bangkok's most beloved 70-year-old café, now with air conditioning ☕ Kope Hya Tai Kee brings its iconic 1952 Thai-Chinese breakfast culture to The Parq on Rama 4 — the same sizzling Kai Kra Ta iron-pan eggs, crispy mini baguette, and signature sugarcane Cafe-Té coffee, all in a comfortable air-conditioned mall setting. Steps from MRT Klong Toei. The perfect option when you want the nostalgia without the heat of the original open-air shophouse.",
+    "description_zh": "1952 年老城咖啡廳的新據點，現在有冷氣了 ☕ Kope Hya Tai Kee The Parq 分店把 70 年經典帶進 Rama 4 的現代商場，招牌鐵鍋煎蛋、小法棍、甘蔗汁咖啡一樣美味，多了冷氣與舒適座位，MRT Klong Toei 步行即達，是為懷舊早餐找個涼爽落腳處的最佳選擇。",
+    "category": "food",
+    "address": "Unit-114 88 Thanon Ratchadaphisek, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7214979,
+    "lng": 100.5576545,
+    "photos": [
+      "places/ChIJk0M9d0Of4jAR6mAP669aaio/photos/AaVGc3nv2i2ROvQ7r1_W8Z8KbbaETaZZ_ZbvAktNLj6zvE9hKv2JBxO5y-WhGpqTjwuifLL7ndJ4KCb-g5lS26cMZkVAsncVQUBo4K1UpHexRbxW0C3vm0acc7PmadQdGE3wbyYFG-rnhX1r84SbvmmSOjd7_PD65livdHs9JWzgOUmtmqdzXkbSWTbfJmQNaIQBVNFucFjn4JkoTfbLfeJmUz4My_YM7g9NfiP3cDvQanfAjey0HMBHmj2MaLrWv_IoT6w-jLJGdTxPxL9HsxcstAKTTsNeIpEwQS2WR9KFrf-99TXuTJtfe6p55S8Vo5F1vSaocn2p2Rv6TSvsyR9ZhOMOwP6EMsrY4h7gByKOPdS6uFPyeUfExxG-itC0d_jp-6rfvXeuVfUAcGDZcX5Esmb7ovwtEapX-xEC5YZmfD3q1PgrXJHZ_CNcHU5rg1bY"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Kope%20Hya%20Tai%20Kee%20The%20Parq%20Rama%204%20Unit-114%2088%20Thanon%20Ratchadaphisek%2C%20Khwaeng%20Khlong%20Toei%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJk0M9d0Of4jAR6mAP669aaio",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "local_ratio": 75,
+    "id": "1a8b2c4a-ed1c-47cb-a302-88b3b4c504df",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:00:34.855Z",
+    "slug": "kope-hya-tai-kee-the-parq-rama-4"
+  },
+  {
+    "name_en": "Kope Hya Tai Kee",
+    "name_zh": "Kope Hya Tai Kee",
+    "description_en": "The quieter, more atmospheric sibling of Bangkok's most iconic café ☕ Kope Hya Tai Kee on Siri Phong Road is the branch locals recommend over the tourist-heavy Giant Swing location — same marble round tables, wooden chairs, and 70-year recipe, but noticeably calmer and easier to get a seat. The Kai Kra Ta iron-pan eggs with minced pork and crispy baguette are the must-order, the Thai milk tea is rich and perfectly sweet, and the hexagonal light frames and vintage menu illustrations add real character. Ten minutes on foot from MRT Sam Yot, and the most relaxed way to experience old town Bangkok over breakfast.",
+    "description_zh": "大鐘樓旁最道地的泰中早餐時光 ☕ Kope Hya Tai Kee Siri Phong 分店比原店更安靜、更好坐，大理石圓桌、木質老椅、六角燈框裝潢保留了 70 年歲月感，鐵鍋煎蛋配豬肉碎醬小法棍香氣四溢，泰式奶茶甜而不膩，MRT Sam Yot 步行 10 分鐘，逛完大皇宮後最值得坐下來感受老城慢時光的地方。",
+    "category": "food",
+    "address": "Thanon Siri Phong, Khwaeng Samran Rat, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.753164199999999,
+    "lng": 100.50226459999999,
+    "photos": [
+      "places/ChIJkTwiHRSZ4jARrHxwA41ji4c/photos/AaVGc3m_EBUPQ5WJpDwyW0yHMSZfcNL8dqsL6B7LQJ4MOWRfT1oatev3zcYqbGlcyTNExJHXW8d2SW29TKl5oabtlxwOKoa1uh1Uns0Ce_lDGmrvJQZNy6qWBqq9VxfMgk-1wdcUMnmlsmokosjSNmriNB7aS5N32An078SoLVRX67HOp62ado_IENY7oXbZ9LMc-xwghF74Nxd4Kz9wt4mOnxde653y3TNeFthvwKWOb7-W7IDzof-xETQ5LCwvnT3WUahnzKw3iBI2Ni8FqHUS7CSe70tb2IXUdNyBCB0vOzjAWTwvvajRnriKwcIyLd2RJqeHrx1SSwp0zqleXphKGBP0P0l_e8CoOmLgLkQPsNoq2bq930hsw_h8Nm16Ly1H5U9qRBHI9q-s6ztHMjBU3zJ2BhtChR4Vwd48yhMRQ16YNQ"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Kope%20Hya%20Tai%20Kee%20Thanon%20Siri%20Phong%2C%20Khwaeng%20Samran%20Rat%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJkTwiHRSZ4jARrHxwA41ji4c",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Yourself a seat"
+    ],
+    "local_ratio": 75,
+    "id": "29afe9f1-d42b-4a94-9f5a-9f3358741335",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:01:34.085Z",
+    "slug": "kope-hya-tai-kee"
+  },
+  {
+    "name_en": "On Lok Yun",
+    "name_zh": "On Lok Yun",
+    "description_en": "Bangkok's most beloved old-school breakfast café since 1933 ☕ On Lok Yun on Charoen Krung Road is a living piece of old Bangkok — faded Milo tins stacked on the shelves, ceiling fans spinning slowly, and a menu that hasn't needed updating in decades. The coconut kaya custard with soft white bread is the must-order, the French toast is warm and fluffy, and the Thai iced coffee is smoky and deeply satisfying. Open from 5:30am until 3:30pm, steps from Memorial Bridge, and Tripadvisor ranked #678 in Bangkok. Come early on weekends or expect a queue — and just join it, it moves fast.",
+    "description_zh": "1933 年開始的老城區早晨傳奇 ☕ On Lok Yun 就在昭披耶河邊的耶裡舊鋪仔街，老舊米勎罐子疊滿架、吊扇緩緩搖轉，椰漿卡士達吐司入口即化、法式吐司每口都是溫暖、炸雞蛋配培根附送免費茶水，泰式冰咖啡煙燻濃郁一喝難忘，TripAdvisor 曼谷前 700 名，早上五點半就開門，是老城最適合慢慢開始一天的地方。",
+    "category": "food",
+    "address": "72 ถ. เจริญกรุง Khwaeng Wang Burapha Phirom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.746988499999999,
+    "lng": 100.50063089999999,
+    "photos": [
+      "places/ChIJ3Sbd0P6Z4jARdVP-cMH6PmY/photos/AaVGc3nSpmZpFVcVm06EeWHH_O5zYtUaULV5tj_Iq3FhUxO7a-4ZnkD0PAElq_Hlcu798AkFv8Ccv-RSsAg6Rv0-DqpEMHZsNIudk-ZujbotgJSIS30j8FQSVxRieRStrM0NmZebIoqhodGlAAQstTTFGBWTUeupW0GOUjnWc0Bd5CpGOvxNcvfOIKv_27Q_l9-wjm4MCqij-SvhhOhlLZj-B6e7HCyVC-T_lmZnAWRP4CWap2EsIZors3DDCle4m7tlol3R9VUh6cT0PuPKJ3h0hzDHkAacVtWGKSNjp0ik08M8AgYEgVfe_8_E98EOmGjOsxkOgFFN_QfX67dRjJ8w43-4-2TRrlCGiT1EJ18gbe-KEEdEizOD1j0gL_hflTwpztfeEZEmuw5C5KRzUP5krLSq3aZbENIVqaMEoAaWQP1zo_-6RTTB36s6FLw5SA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=On%20Lok%20Yun%2072%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Wang%20Burapha%20Phirom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJ3Sbd0P6Z4jARdVP-cMH6PmY",
+    "rating": 4.5,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Once"
+    ],
+    "local_ratio": 75,
+    "id": "beb38541-85c6-4d04-bb6c-81310af50318",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:02:06.116Z",
+    "slug": "on-lok-yun"
+  },
+  {
+    "name_en": "KOH NAI SOI",
+    "name_zh": "KOH NAI SOI",
+    "description_en": "Ramkhamhaeng's most welcoming halal breakfast spot ☕ KOH NAI SOI is tucked down a quiet alley off Soi Ramkhamhaeng 8 — a clean, modern café serving a wonderfully eclectic mix of Thai, Chinese, and Western breakfast and brunch, all halal certified. Eggs Benedict, signature roti, pathongko with pandan custard dip, congee, and quality coffee from Americano to caramel macchiato. QR code ordering, food arrives in under five minutes, and the team is genuinely warm. Open from 6am, closed Fridays. The kind of local find that makes your whole neighbourhood feel different.",
+    "description_zh": "Ramkhamhaeng 巷弄裡最親切的清真早午餐小店 ☕ KOH NAI SOI 藏在 Ramkhamhaeng 8 巷小路裡，泰式中式美式早午餐一次搞定，班尼迪克蛋、炸油條配椰絲卡士達醬、粥品飲料一應俱全，清真認證、使用新鮮食材、QR Code 點餐服務超快，六點開門到下午，週五公休，是住在拉瑪堪恆一帶最值得早起的理由。",
+    "category": "food",
+    "address": "37 Soi Ramkhamhaeng 8 Yaek 2, Khwaeng Hua Mak, Khet Bang Kapi, Krung Thep Maha Nakhon 10240, Thailand",
+    "lat": 13.7475062,
+    "lng": 100.6084959,
+    "photos": [
+      "places/ChIJVYO8aGif4jARf6UW4nbxVoQ/photos/AaVGc3kFLQ5F-wMpn_wUUfcXGxrJPeUea3MgNVEsFh_F81jY4aQ0yal7WOTdpSeIeA0DI3CVzLFg8h2zeqW5EuYimmOq0HfIXiekobCgvfrxVsX0LWn4jrQtrkink2S-YB4FYa_hqexrGXlw63d887DZVjD5OuNxrtqQHlVPAsLkEE9budFUAniJya1yWaZNmwTzcOLmCIa4tU5wrBdwfMmW6iMy-pABQTc6_rZdxlFUqYzGR5QiPN5XLr07PuvD7nJegBaPA61HQJ6kY51QuzjgnjrFRRYbSF4MwEkVcYqhQ9dN41unfpokL6mNdjT60HCOp_HO2ZD2iERdOiqBY3QIDjPqSp74ClzGCJspQxMNi1NlYKdDxKh86saFVoQKMWZGb1vdu9I43qJ8Xvh4ULWAxgq8ARKkIgDKziQib6jRSfDkQWJl"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=KOH%20NAI%20SOI%2037%20Soi%20Ramkhamhaeng%208%20Yaek%202%2C%20Khwaeng%20Hua%20Mak%2C%20Khet%20Bang%20Kapi%2C%20Krung%20Thep%20Maha%20Nakhon%2010240%2C%20Thailand&query_place_id=ChIJVYO8aGif4jARf6UW4nbxVoQ",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum",
+      "Pasta"
+    ],
+    "local_ratio": 75,
+    "id": "6de5dcb5-7f96-46f9-9fa5-0605800839bd",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:02:52.249Z",
+    "slug": "koh-nai-soi"
+  },
+  {
+    "name_en": "โกปี๊เฮี้ยะไถ่กี่ ณ ประชาธิปไตย ข้างวัดมกุฏฯ",
+    "name_zh": "โกปี๊เฮี้ยะไถ่กี่ ณ ประชาธิปไตย ข้างวัดมกุฏฯ",
+    "description_en": "The quietest Kope Hya Tai Kee, by the Democracy Monument ☕ This branch of the beloved 1952 café sits on Prachathipatai Road beside Wat Makut — a less-known outpost that locals prefer precisely because there's no queue. Same marble round tables, same ceiling fans, same iron-pan Kai Kra Ta with crispy baguette, and the same sugarcane Cafe-Té coffee that made the brand famous. The perfect breakfast stop after visiting Wat Saket or the Democracy Monument, without the tourist rush of the Giant Swing original.",
+    "description_zh": "民主紀念碑旁最不擁擠的泰中早餐 ☕ โกปี๊เฮี้ยะไถ่กี่ 這個分店藏在 Prachathipatai 路上、Wat Makut 旁安靜角落，比大鐘樓原店更清幽、不用排隊，大理石圓桌、老椅子原汁原味保留，招牌鐵鍋煎蛋配法棍、甘蔗汁咖啡道地滋味，逛完黃金山寺或民主紀念碑後最值得轉進來坐一坐的地方。",
+    "category": "food",
+    "address": "110 Prachathipatai Rd, Khwaeng Bang Khun Phrom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7654627,
+    "lng": 100.5063187,
+    "photos": [
+      "places/ChIJfyX3DAmZ4jARov4yzd-QDIY/photos/AaVGc3lcSErYzGahhSgKnnc1fjchqkYHi4Im3aTlsewC9av_4QneL39N3r9Qp4fScG35sBa3PhJy_Pw9N5-TajAvcHiMfPF3fFRobzZ-2UoATOuCCQ_zODXigHMBEINqNzbp_Eu9ubpAvHpRLWW4GxSs04Cna-zqkOPVKSwcXSjG0TkRXzZVpXQ2Oa2-OdUr_SmPmIIBxLYPjHpJfx6l6azuRhHIuO0grUxO-KbZC5z_GWaVraE2vTwE3yc3mrrT9F4WVV3_iUk1_PTkKv5QOVrF36qCx62tty7K5RCEoBV9_6pjaDRZXjNRFG1k5CPQPlc-hucp0pCmbH4Rc7oV9-FFNF1HKNKEQ4SywyiryDezOD_H6KoALe5o7QRfh0ShNdziBY_ltq_wewXarJ36jqUKrmRXpgVDo1FqnsFNbDHBfU3IG0w"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B9%82%E0%B8%81%E0%B8%9B%E0%B8%B5%E0%B9%8A%E0%B9%80%E0%B8%AE%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%B0%E0%B9%84%E0%B8%96%E0%B9%88%E0%B8%81%E0%B8%B5%E0%B9%88%20%E0%B8%93%20%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%98%E0%B8%B4%E0%B8%9B%E0%B9%84%E0%B8%95%E0%B8%A2%20%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A1%E0%B8%81%E0%B8%B8%E0%B8%8F%E0%B8%AF%20110%20Prachathipatai%20Rd%2C%20Khwaeng%20Bang%20Khun%20Phrom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJfyX3DAmZ4jARov4yzd-QDIY",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Way to start the morning"
+    ],
+    "local_ratio": 75,
+    "id": "667f8ca9-7a8c-4914-8d8f-7b211ef37874",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:03:33.498Z",
+    "slug": "place-667f8ca9"
+  },
+  {
+    "name_en": "Breakfast Story Phloen Chit",
+    "name_zh": "Breakfast Story Phloen Chit",
+    "description_en": "Phloen Chit's most reliable all-day brunch 🥞 Breakfast Story brings its Canadian-founded brunch philosophy to the 3rd floor of Mahatun Plaza — organic eggs, real maple syrup, eggs Benedict, fluffy pancakes, and bottomless coffee from 7am to 11pm. Steps from BTS Phloen Chit, and the same honest, generous quality that made the Thonglor original a staple. The kind of dependable go-to that every neighbourhood needs.",
+    "description_zh": "Phloen Chit 最舒適的全天早午餐 🥞 Breakfast Story 把加拿大老闆的招牌早午餐精神帶進 Mahatun Plaza 三樓，有機雞蛋、真楓糖漿、班尼迪克蛋、厚鬆餅道道用心，從早上七點到晚上十一點，BTS Phloen Chit 站步行即達，是 Chidlom 一帶辦公室人員與購物後最舒服的早午餐去處。",
+    "category": "food",
+    "address": "Mahatun Plaza, 888, 3rd Floor (above Blue Cheri, 34-35 ถนน เพลินจิต แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330, Thailand",
+    "lat": 13.7417737,
+    "lng": 100.5491345,
+    "photos": [
+      "places/ChIJF5udxZSf4jARicc-U9Mo4y0/photos/AaVGc3mD0suw85TaC--NMp37go_tJvF1XYzputeOBMt_14b4JI54IVpYP0aD6on-GIfErxuHEIgp5wi0_2Pr7a_04glg37LkjFe2yQPcAE-UB4VhAh03NEYPWOrUnl-wU0G7M6IeI5hOQfwnxtrkSxkygyGqZ48LcPuu3nqCNDRAq7v0X0BK9pvcUPMaLt8dTwur3u9Y9QwmOpqaGCLm--uF53i4rMWtttpuiDj-qDMYkq2rHyyIWFG8QwRmaZaBABPNN4yQfsWaWuYuoG9CFt3-l_QLD3fk2H3p7GZz7BJ4yi0XErOi_gCO_JOQCm1H9VTrsEMHNlETLQ-4fIREoM8LeOhMRoI8T1Hg53RExudlYA-HliPCIVnNalMdauVSjpFcJDTuwIZ0AfV8tlx0ftl2oiOlPW99m5_GwqiUq91ksAhHqAvoOKLmP0WY8SdL6idh"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Breakfast%20Story%20Phloen%20Chit%20Mahatun%20Plaza%2C%20888%2C%203rd%20Floor%20(above%20Blue%20Cheri%2C%2034-35%20%E0%B8%96%E0%B8%99%E0%B8%99%20%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%88%E0%B8%B4%E0%B8%95%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%A5%E0%B8%B8%E0%B8%A1%E0%B8%9E%E0%B8%B4%E0%B8%99%E0%B8%B5%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9B%E0%B8%97%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B1%E0%B8%99%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010330%2C%20Thailand&query_place_id=ChIJF5udxZSf4jARicc-U9Mo4y0",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "local_ratio": 75,
+    "id": "6c1c3424-51a3-4365-8c0e-15f684094906",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:04:19.256Z",
+    "slug": "breakfast-story-phloen-chit"
+  },
+  {
+    "name_en": "ซ้งเตี๋ยวหมูต้มยำมะนาว Zongtiew Tom Yum Noodles",
+    "name_zh": "ซ้งเตี๋ยวหมูต้มยำมะนาว Zongtiew Tom Yum Noodles",
+    "description_en": "The tom yum noodle bowl worth crossing the river for 🍜 ซ้งเตี๋ยว on Charoen Nakhon Soi 30/2 has built a loyal following for one thing: a pork tom yum noodle soup made with fresh lime that's bright, sour, and fragrant without any eye-watering sharpness. Silky pork slices, freshly fried pork lard croutons for crunch, and a clean broth that lets every ingredient speak. The space is neat and welcoming, and Grab delivery is available for when the craving hits at home. Not far from IconSiam — a very good reason to linger on the Charoen Nakhon side.",
+    "description_zh": "IconSiam 旁最讓酸辣控魂牽夢縈的那碗麵 🍜 ซ้งเตี๋ยว 藏在 Charoen Nakhon 30/2 巷，招牌豬肉冬蔭麵湯底以新鮮萊姆提酸、清爽不嗆眼、豬肉切片嫩滑、撒上現炸豬油渣酥脆點睛，空間乾淨整潔、服務親切，絕對值得繞路特地去吃一碗，Grab 也有外送。",
+    "category": "food",
+    "address": "912 Charoen Nakhon Rd, Khwaeng Bang Lamphu Lang, Khet Khlong San, Krung Thep Maha Nakhon 10600, Thailand",
+    "lat": 13.7126468,
+    "lng": 100.5022515,
+    "photos": [
+      "places/ChIJA8USHgCZ4jARO_rv3Kch4Yw/photos/AaVGc3mEmFva4JdBRXbR79x6QHt1S5P36-krurmffuVjXRtxiR8c3uAHkzTBDkS7zkqYK_JZ6U4rGurjlbUbUWGpK_Mjxy2LiLdqHOXiqrStdun7EzJdHb7Fg9VeKfr8MXrhTmJ3059GEm6Mmuk34xe_8GZ--PKXBKntyfoZJwE3AlL5op4hElrpwaoixQ8ldmhlG4eCw3WE0Y-JBBhOfUF6OZ4OrZWz9rHjj8sq632iJfcmvxcPNzIcg9Y2EgRaOUK8nObcAIioK3dffGHW4ao30KzenC9NumlIhYb3CjtDKAGA2kCwNt5eF_GqJsvaRMveGmlV2tv7T59uYic-PGDAh8keNsxgnioGrs7ZJm_X4g2xe_Y0jMiRzsjo_VWD5jUw0ZV-r6iG_IH1zTVXwYSpmyOYBlq-39lAgBYswl5uwl3QDG-ejlkIrBfXDcnuoQGg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%8B%E0%B9%89%E0%B8%87%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B9%8B%E0%B8%A2%E0%B8%A7%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B8%A2%E0%B8%B3%E0%B8%A1%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B8%A7%20Zongtiew%20Tom%20Yum%20Noodles%20912%20Charoen%20Nakhon%20Rd%2C%20Khwaeng%20Bang%20Lamphu%20Lang%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600%2C%20Thailand&query_place_id=ChIJA8USHgCZ4jARO_rv3Kch4Yw",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum",
+      "Gaolao style"
+    ],
+    "local_ratio": 75,
+    "id": "8b1b63ac-c534-4806-a7fd-24387f6badd7",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:04:51.307Z",
+    "slug": "zongtiew-tom-yum-noodles"
+  },
+  {
+    "name_en": "Lek Yai Tomyam Bolan Noodle",
+    "name_zh": "Lek Yai Tomyam Bolan Noodle",
+    "description_en": "Ratchadaphisek's most addictive old-school tom yum noodles 🍜 เล็กใหญ่ on Vibhavadi Soi 2 has been drawing locals back with a tom yum broth that balances sour, sweet, and spicy in exactly the right proportions — no adjusting needed. Soft pork slices, stuffed wontons, and the option to order dry (no soup) make it versatile. Thousands of five-star Grab reviews, open daily until midnight, and one of those bowls that stays in your memory long after leaving Bangkok.",
+    "description_zh": "拉差達路旁最讓人念念不忘的古早味冬蔭麵 🍜 เล็กใหญ่ 古早冬蔭豬肉麵藏在 Vibhavadi 2 巷，湯頭酸甜辣三味平衡一絕、豬肉片嫩而入味、餛飩皮薄餡飽、還可加選乾麵版本，Grab 外送評論破千，是 Din Daeng 一帶上班族和學生最常回頭的那一碗，從早到深夜都開著。",
+    "category": "food",
+    "address": "126/13 ซ. วิภาวดิรังสิต2 แยก 6 Ratchadaphisek, Khet Din Daeng, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7778919,
+    "lng": 100.5591116,
+    "photos": [
+      "places/ChIJT9y3aMqf4jARRTx90LqDdU4/photos/AaVGc3kBihJoeoxX6nEFYyzRU3x0aZMac9kOdPyRmQmpBHjnhicYi1CdMZIxBcnBcNVcCpGiANXNX6AdcGJRgo99RDuRJZom6QrXLsrmk6MT6GubF4gs9rXoPMFF1p4q5XXWK3dw3aLw2bAkpYSML3TFrz-kyjZY162WT65Teos5TahMfcjw8rbMfSZVxzAnmjk75KXIu3zIek6FFvqOaEORvLAK5zYU3UFQI7C-X0VUBbLhIrziNUoMwgtTi3zBGWQoYLs51HbEbZtlkj1uh6R1AjG640765J1KnlZE46urZIVLqWUKVE1Auxx2HWh9Yw7ZVNeoygY3jLgtuoiRwE7VEMwe823jIg4hlBkZW3-SHU5QepKxrXdhD9PKv6AcIfYKFmJ5NLWXxqQ4v_UvnvYWF2MFMn3rxNBD7nlKlNZ8tu31Og"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Lek%20Yai%20Tomyam%20Bolan%20Noodle%20126%2F13%20%E0%B8%8B.%20%E0%B8%A7%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B8%B4%E0%B8%A3%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B4%E0%B8%952%20%E0%B9%81%E0%B8%A2%E0%B8%81%206%20Ratchadaphisek%2C%20Khet%20Din%20Daeng%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJT9y3aMqf4jARRTx90LqDdU4",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum",
+      "Wonton crisp for snack"
+    ],
+    "local_ratio": 75,
+    "id": "13b7de33-cc07-4589-aa4e-152e1f9b35a6",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:06:06.519Z",
+    "slug": "lek-yai-tomyam-bolan-noodle"
+  },
+  {
+    "name_en": "Leng Tew Moo",
+    "name_zh": "Leng Tew Moo",
+    "description_en": "Banthat Thong's most sought-after pork tom yum noodle bowl 🍜 เล้งเตี๋ยว on Banthat Thong Road has built a reputation for a clean, punchy pork tom yum broth — sour without being sharp, spicy without being overwhelming, and loaded with tender pork and plump wontons. The mama hotpot version turns up the heat for those who want it. Thousands of glowing Grab reviews, popular with both Thai locals and Chinese visitors who know it as \"冬陰功面,\" and open late into the night. One of the more reliable bowls on an already great street.",
+    "description_zh": "班塔通路上最讓豬肉麵控欲罷不能的一碗 🍜 เล้งเตี๋ยว 藏在班塔通路 1402 號，豬肉冬蔭麵以中文「冬陰功面」廣受中國遊客追捧，湯底酸辣清爽、豬肉鮮嫩、餛飩皮薄餡飽，Mama 熱鍋版本辣勁更足，深夜開著等你，是連 Grab 外送也破千好評的班塔通路隱藏名碗。",
+    "category": "food",
+    "address": "1402 Banthat Thong Rd, Khwaeng Wang Mai, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.7436068,
+    "lng": 100.5229104,
+    "photos": [
+      "places/ChIJcdV01cqZ4jARqO_-PU5X7kU/photos/AaVGc3lLTp4hCcFGVNw0mdBX_nayV1wDM6f9wJgoag-CI-oXg1twbuovWDQAEweJzk3ZCEwpTbOFFeVeF5lSxpDIW34a06YNjIML7KkpfkYwob-4CEdQXV3l_fnB-YmXKrov-ameYXxWViESNdwkOAKh5irJNlrYZMn43BhV8cVeV6Enhzdy-3Cy2z9Ojx00CaMHkpjnoJ4iZhKDtp82xL4R_BAWLQ-XwMbFjuJFZe6KNcJGn_fOpudWmcNJPCBscGPlvOpNbB8zRKLUZ8h7lY2DhpPLe9XNjiVpuawHNwuzlHOPA3vX3bKMeSKtTBPWb3aJc2HNPsXZdbQGfSF15m5e1lDdifuLY9r6q2CKu40BTsyW4cV5R39US2z6JDE1xlfkqUNkWh2E2QVuPHxPseIM9J_ETLPBcxcDacalFQNJMlV8Kg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Leng%20Tew%20Moo%201402%20Banthat%20Thong%20Rd%2C%20Khwaeng%20Wang%20Mai%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJcdV01cqZ4jARqO_-PU5X7kU",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum"
+    ],
+    "local_ratio": 75,
+    "id": "555e7ecd-dced-4bde-b8e5-83829ae28c55",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:06:42.624Z",
+    "slug": "leng-tew-moo"
+  },
+  {
+    "name_en": "Tom Yum Goong Banglamphu Original",
+    "name_zh": "Tom Yum Goong Banglamphu Original",
+    "description_en": "The tom yum goong Mark Wiens called mind-blowing 🦐 Tom Yum Goong Banglamphu on Soi Kraisi is just two streets from Khao San Road — a humble street-side stall with no English menu, no sign, and no air conditioning, but arguably the best tom yum goong in Bangkok. The broth is made from scratch using galangal, lemongrass, kaffir lime, and Thai chilies, then fired up to order with massive freshwater river prawns. All that thick, creamy, butteriness in the soup? Pure shrimp head fat — no evaporated milk shortcuts. 30+ years of family cooking, open 9am–6:30pm daily. Point at what the locals are eating and you won't go wrong.",
+    "description_zh": "Mark Wiens 都說這是他吃過最好的冬蔭功 🦐 Tom Yum Goong Banglamphu 藏在考山路兩個路口外的 Soi Kraisi，沒有菜單、沒有英文招牌，大鍋湯底以檸檬香茅、南薑、泰國辣椒熬製，以新鮮河蝦現炒，蝦腦油讓湯底濃郁奶香讓人停不下來，30 年家族傳承、早上九點開到傍晚六點半，無座無空調、只有真正的街頭靈魂。",
+    "category": "food",
+    "address": "ที่อยู่ Banglampuh กรุงเทพมหานคร TH หน้าอาคารจอดรถ Soi Kraisi, Khwaeng Talat Yot, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7609642,
+    "lng": 100.4983838,
+    "photos": [
+      "places/ChIJZbFGtlqZ4jAR7fLfo6jD91U/photos/AaVGc3nTGmj6NkLbxBev2EOz7GFkeZ-CUvzgHA_BBqaiEkazIM2YE3NsVjwdtPIhFPgSscLtlvznkREJ5PdB3Z9_ZhflTPW10GTr73t5W0FtKTsIpaW04AwH79W7o1FRUF_rwZFrRijQWZ4Y6t6ke3pyI9IR-g_kol3qwIcyP7_6o9vryRMzdZNoA7CrqDS_Ru10TM3repfv5AUKHVCEsBc1xBGh7YZFExkQqxz8TfIjDCDJfaXOT0kdIVBaroHnktfVCVs8oFdK_tLeCik4nVlwVNKAp7Pl6ZS077TmP4Fj94qdhMDQYUT0juzCJksMZD4FTxKE4NWfmJ-cYVDgBm4r7KAE-1MnbYKM9HqilVhN_1Mze-yBqnUYCSaxnj69Yq9ZeQDmb9EKSds3bhxz4vCSt7krLhniH6dkFRKjHzuuZCf5yeDy"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Tom%20Yum%20Goong%20Banglamphu%20Original%20%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%20Banglampuh%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%20TH%20%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%AD%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B8%88%E0%B8%AD%E0%B8%94%E0%B8%A3%E0%B8%96%20Soi%20Kraisi%2C%20Khwaeng%20Talat%20Yot%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJZbFGtlqZ4jAR7fLfo6jD91U",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum"
+    ],
+    "local_ratio": 75,
+    "id": "7827e3c7-b51f-44f4-8347-070e08b8ebb2",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:07:41.365Z",
+    "slug": "tom-yum-goong-banglamphu-original"
+  },
+  {
+    "name_en": "Plaew Nakhon Pathom (Tomyum Noodles)",
+    "name_zh": "Plaew Nakhon Pathom (Tomyum Noodles)",
+    "description_en": "A Nakhon Pathom family recipe, now feeding Huai Khwang's faithful 🍜 เปลว ก๋วยเตี๋ยวต้มยำโบราณ brings an old-school Nakhon Pathom-style pork tom yum noodle soup to Bangkok — a slightly sweet-leaning broth with roasted peanuts, generous hand-pressed minced pork patties thick enough to be a meal on their own, and all the toppings you'd hope for in a proper bowl. From 45 baht, Michelin Bib Gourmand recognised, and the evening queue is entirely warranted. One of Huai Khwang's most reliable and satisfying noodle shops.",
+    "description_zh": "來自那空帕儂的古早冬蔭麵秘方，落地慧恭 🍜 เปลว ก๋วยเตี๋ยวต้มยำโบราณ 以那空帕儂傳統配方聞名，招牌豬肉冬蔭麵湯底帶花生甜香、大塊手打豬肉片鋪頂、份量大得驚人，45 銖起物超所值，傍晚人龍大排長龍是日常，米其林 Bib Gourmand 加持，曼谷總店也在 Huai Khwang 服務在地人。",
+    "category": "food",
+    "address": "633 Soi Pracha Rat Bamphen 21, Khwaeng Huai Khwang, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.7778569,
+    "lng": 100.5838775,
+    "photos": [
+      "places/ChIJfxhlxded4jAR0RkFWksUr9g/photos/AaVGc3kHPcCHCJWi2AfwfYuceUckzZfCWG8s5289UeWVxMPwnsgG-7cxqWTVNjteAxpA0M1GuDlQPx6IjjHDfEHX6CAAi0FENa8NnSKY4dBcvwBhN_vzhrhb71qxyaHJP4bJW3qOV8BLNqRqQGb04st4563iuCbPvIQ6TBmMVvw51OC9RBktWdOfhpz8HlaE866P6uETeA6OY0bwSovvmsi2Cvs4wZfYRYHOBkgexTq6sDUbjt1AXv1bRYiXK84_FFEkeJVUYV7tF6D6oqoF7uKvIXVCxQKwrW0gZSIXVvzLCjRu6JX-YuZizHLQqCje_trIKwFAfy5WXIiPj5IyXb4nTO47zrzuwI0wLmMRtliZNjNMHMF3HI8_zN0ds2wVC8VLkeS4KQ5GFjHx2DHkBRPlnHnW7BWQSfHwp37zFg04oqB6iA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Plaew%20Nakhon%20Pathom%20(Tomyum%20Noodles)%20633%20Soi%20Pracha%20Rat%20Bamphen%2021%2C%20Khwaeng%20Huai%20Khwang%2C%20Khet%20Huai%20Khwang%2C%20Krung%20Thep%20Maha%20Nakhon%2010310%2C%20Thailand&query_place_id=ChIJfxhlxded4jAR0RkFWksUr9g",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum",
+      "Them dry",
+      "Soup on the side"
+    ],
+    "local_ratio": 75,
+    "id": "cbee8af6-3ea2-481c-82bd-643cea96526e",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:08:13.074Z",
+    "slug": "plaew-nakhon-pathom-tomyum-noodles"
+  },
+  {
+    "name_en": "Pe Aor Tom Yum Kung Noodle",
+    "name_zh": "Pe Aor Tom Yum Kung Noodle",
+    "description_en": "Pe Aor Tom Yum Kung Noodle is tucked down Phetchaburi Soi 5, featured by Luke Nguyen on Street Food Asia, and plastered with celebrity photos from the Thai stars who've been coming for decades. The broth — rich with shrimp head fat, lemongrass, galangal, and kaffir lime — is what food obsessives travel across Bangkok for. Over 20 variations of tom yum with seafood from 199 baht, up to a legendary 1,500-baht giant lobster bowl that feeds a group. Google 4.9 from 3,670+ reviews. Five-minute walk from BTS Ratchathewi, closed Mondays, and worth every step down the soi.",
+    "description_zh": "Pe Aor 藏在 Phetchaburi Soi 5 巷弄裡，Luke Nguyen「亞洲街頭美食」節目力推、明星名人照片貼滿牆，招牌蝦頭油奶香濃冬蔭功麵每口都是爆發力，20 款海鮮選項任你挑，巨型龍蝦冬蔭功套餐四人吃不完，BTS Ratchathewi 步行 5 分鐘，週一公休，平日下午來不用等。",
+    "category": "food",
+    "address": "68, 51 Thanon Phetchaburi, Khwaeng Thung Phaya Thai, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7558844,
+    "lng": 100.52943479999999,
+    "photos": [
+      "places/ChIJsW06FTWZ4jARLILZg-S3ODU/photos/AaVGc3nIJ2o20y4ZPBPqU68i9vGz0DxclKTIPIhm4vN4ZSQNzLA6ZRHfCoGbL5Pmn5NlcMJTLpc9g08AXUdrHix8W7_NU3GFSrlOl4DsfbM5wrrZ5TLH7Jg525CW0k0GbcmjFmAEFwj738dFhxr041RwGUWzuyMUJ4pD547Ds8O5r5z6C4ieRndyvCPBSZLd3KOC4wO_-trXpw0PmJMi1nNbPmLQr0ncITv4fZHFwt-kBU7rK5E3echOwZoy1RL2J3RIsDo9gM06-07qw9_LhMrQdkujjIo1758nHWV01-l9656XWd_S068aZVa5bwREsPwWQYoLSxl5pFqJR4uLU_muk2-oy27RCZKCXyx27ihW5jJjSjY_9gqniFcLqT2UvE_Yw-gaUGDlZN18nm7oAGJ5bFcm-0DvUeyqQmDWN7gmtAcG_jMrSBmoStQ5KP5z1lli"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Pe%20Aor%20Tom%20Yum%20Kung%20Noodle%2068%2C%2051%20Thanon%20Phetchaburi%2C%20Khwaeng%20Thung%20Phaya%20Thai%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJsW06FTWZ4jARLILZg-S3ODU",
+    "rating": 4.3,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum",
+      "Thai Tea"
+    ],
+    "local_ratio": 75,
+    "id": "c271eb54-c151-42f8-bc6a-ad24b8d09a5c",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:09:39.095Z",
+    "slug": "pe-aor-tom-yum-kung-noodle"
+  },
+  {
+    "name_en": "Baan Sen Sai",
+    "name_zh": "Baan Sen Sai",
+    "description_en": "Lat Phrao's most lovingly run Thai noodle restaurant 🍜 Baan Sen Sai on Nak Niwat Road was born out of 40 years of food obsession and a mission to serve premium-ingredient Thai noodles with the hospitality of a top restaurant. Google 5.0 from over 7,600 reviews — a number that speaks for itself. The wagyu beef tom yum noodle soup is the standout, with a broth that's perfectly sour and savoury without needing adjusting. The crispy pork with chili and salt over duck-egg rice is equally worth the trip. Clean, modern, artsy, and genuinely run with care. Open daily 10am–9pm.",
+    "description_zh": "Lat Phrao最用心的精品泰式麵食小館 🍜 Baan Sen Sai 由走遍泰國四十年的美食人創立，Google 5.0 滿分、7600 則評價令人驚嘆，招牌和牛切片冬蔭麵湯底酸甜平衡、乾式冬蔭麵醬汁濃郁，炸雞蛋餃子、脆豬炒椒鹽飯配鴨蛋道道有料，空間明亮整潔有藝術感，是 Nak Niwat 路上最值得出發前來的麵店。",
+    "category": "food",
+    "address": "93, 3 Thanon Nak Niwat, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
+    "lat": 13.801961499999999,
+    "lng": 100.6066884,
+    "photos": [
+      "places/ChIJnVcKH6Od4jARtRdcw7a9KSE/photos/AaVGc3mRrArD1iX_2nuz9roAHf9IdGVfMQ7HjmIEccefL1Neyt09pDaeO5muWvY-9Rh1mr-D8gM8AejFVpUzhAePv8HTKNIm3TBcnR4qRoCuLClB8oihMF_Jk1XfLZvl_uDvsbg4Krt6J_5Q8B1aDH8hjlXJXM3AL4f9Qs7198WASNek9M9BwdmeuJd82zd9Pp-S9DowLzxgtWCt-mSKEPp2BZJLOQ6FUh546SL5epaCBMJX4lZ1H7pdp9FI0VL37lnNazbbt_3EQvu_kHqJkth6Nv1bNCQyZ7HhN64D6bqa5KbBu8CH9-SYVHHaK5o7RVrKjUq8qCnLCDtzoCyvHdZNCElDJvkuD-VlUccT4z64Z_gt6bAPRBU0lhDkLWvf8DYnkxSSGxy_u-YHIhIA6b5lgkyiv6IpQrNz39IJP7K_mTCjHA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Baan%20Sen%20Sai%2093%2C%203%20Thanon%20Nak%20Niwat%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230%2C%20Thailand&query_place_id=ChIJnVcKH6Od4jARtRdcw7a9KSE",
+    "rating": 5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Boat Noodles",
+      "Dumplings"
+    ],
+    "local_ratio": 75,
+    "id": "339ee700-3c9b-48e3-8a2b-556698221bd2",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T14:10:22.954Z"
   }
 ]
