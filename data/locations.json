@@ -6801,6 +6801,60 @@
     "id": "ea199817-a934-4501-adbb-45e5bf4a1365",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-07-01T13:42:08.025Z"
+    "approved_at": "2026-07-01T13:42:08.025Z",
+    "slug": "pad-thai-fai-ta-lu-dinso-rd"
+  },
+  {
+    "name_en": "Thipsamai Padthai Pratoopee",
+    "name_zh": "Thipsamai Padthai Pratoopee",
+    "description_en": "Bangkok's most legendary pad thai, certified by a Prime Minister 🍜 Thipsamai has been making pad thai since the 1960s — using Sen Chan noodles from Chantaburi Province, a secret prawn-head oil passed down through three generations, and a charcoal flame that gives every plate its signature depth. The wrapped-in-egg version (Pad Thai Haw Kai) is the must-order: a paper-thin translucent egg blanket enclosing perfectly balanced noodles inside. Michelin Bib Gourmand, right next to Raan Jay Fai, and the freshly squeezed orange juice is almost as famous as the pad thai itself. Come at opening time to beat the queue.",
+    "description_zh": "曼谷炒河粉的傳說，從 1966 年炒到今天 🍜 Thipsamai 由泰國總理親自認證為全泰最佳炒河粉，祖傳三代秘方以蝦頭油炒製尖竹汶府 Sen Chan 米線，招牌蛋包炒河粉薄薄一層蛋皮半透明，米其林 Bib Gourmand 加持，現榨柳橙汁是必點，就在 Jay Fai 隔壁、大鐘樓旁，排隊是必要的儀式。",
+    "category": "food",
+    "address": "313, 315 Maha Chai Rd, Khwaeng Samran Rat, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7527976,
+    "lng": 100.504823,
+    "photos": [
+      "places/ChIJxU5YeBaZ4jARvm8EVZYGjGk/photos/AaVGc3mDoZczz7nqgz371Bn6lyvzlhJliL5Rc-7_Sgd0ATbLg4p13fm9bWkeT754iDQQ2wjujZGbVUkpPs0Bu1BDCs-MlKZgYPYGUYsVmd0WU2XM5ITJpJ36tGyGZ4yHfwPbJQaizg_CwO5vIh9iuDYHYi8A4ASmP2dN7HWbp5yh60RzOqCJr4sNZLtmaI0VvlPh-uafqH9OFiSWtXTq3gpkNaQFDudqZd1uzjh2b7fBrQyLtrCPi7E_2PKUczH_pMdg-cyw1TIiY2oO6Yl288VAIwTOo611INxut7YIEfMM0-rlys1OQkvh5tyOHGnOvG8pVnfVN9ULfa2HWi-U_-EPB0s1-jjirFMheTA4MHISt1TKWfqx5ozwLyFU7qXL0qfyt-JeaGX7D0zIbiSHty_m3GzThwWK3m5uuOAYVXzXkXqVHjE"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Thipsamai%20Padthai%20Pratoopee%20313%2C%20315%20Maha%20Chai%20Rd%2C%20Khwaeng%20Samran%20Rat%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJxU5YeBaZ4jARvm8EVZYGjGk",
+    "rating": 4.2,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Pad Thai",
+      "Every elements of it"
+    ],
+    "local_ratio": 75,
+    "id": "c64f7499-e8a7-436b-8324-826ef7fc8dcf",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T13:56:52.402Z",
+    "slug": "thipsamai-padthai-pratoopee"
+  },
+  {
+    "name_en": "Kope Hya Tai Kee Na Saranrom",
+    "name_zh": "Kope Hya Tai Kee Na Saranrom",
+    "description_en": "A taste of old Bangkok since 1952, right by the Giant Swing ☕ Kope Hya Tai Kee sits steps from the Giant Swing near Saranrom Park — marble round tables, wooden chairs, ceiling fans, and a menu that hasn't needed reinventing in 70 years. The signature Kai Kra Ta is the must-order: two eggs in a sizzling iron skillet, topped with minced pork and served with a crispy mini baguette. The signature Cafe-Té coffee made with sugarcane juice is smoky, sweet, and deeply satisfying. Ten minutes from MRT Sam Yot, and the perfect way to start any old town morning before the Grand Palace or Thipsamai.",
+    "description_zh": "1952 年的老城區早晨就是這個味道 ☕ Kope Hya Tai Kee 就在大鐘樓旁、沙蘭倫宮廣場一角，大理石圓桌、木質老椅、天花板電扇慢慢搖，招牌鐵鍋煎蛋佐豬肉碎醬搭小法棍酥脆下飯，「Cafe-Té」甘蔗汁咖啡入口微甜帶煙燻香氣讓人一口接一口，是逛大皇宮前或 Thipsamai 吃完後最值得坐下來感受老曼谷時光的地方。",
+    "category": "food",
+    "address": "13 ถ. เจริญกรุง Khwaeng Wang Burapha Phirom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7473836,
+    "lng": 100.49692759999999,
+    "photos": [
+      "places/ChIJJ82DqQ-Z4jARl6PzeeKcJCo/photos/AaVGc3nVmf90K0cmoJ5RJWUXX5jHB1zSLxGKTiOHs75ObxNJkLHaTn6Ak41HjBDd5qJkGbcD2CSqT8EmrtrsybWuk3nGppcMqV_6LZJNDpehmuSFLu4rdWRRyEtZQ9RI6K5k0FoCuhPFlJsEfdrvzRp9-6ZiYNN0i2P73qtOEsfkjTMNst7KC5N8r90Zn2JWL2iXpN3PZjqTtypSvS6KpQxW600reQWzkiitW4zditeIVnyFBzZ3DI-UOyTgX5H0P5Bcv_BxEtzrWV811Dy7Hg9JnfuBSvC-mmi8yttQnLEyRTw0LM_7g9-8poaZRBFJ9-n_PNUjiGU_MW6VX6oxLYan634tN2_NU_U6GgDwChd_jx6LFZ-G5uyp4K8A7LKuaDp28Qe95Gl3o-4ev71cXrz96Fnknv7aBbM6SoTFBNeWiBTA4iuD0ITfb1kvv0RCGVg2"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Kope%20Hya%20Tai%20Kee%20Na%20Saranrom%2013%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Wang%20Burapha%20Phirom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJJ82DqQ-Z4jARl6PzeeKcJCo",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Green Curry",
+      "Thai Tea"
+    ],
+    "local_ratio": 75,
+    "id": "c248ca5e-bce0-41e9-9e09-08bbc1b19e45",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T13:57:22.429Z"
   }
 ]
