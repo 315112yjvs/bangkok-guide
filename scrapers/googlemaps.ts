@@ -1,7 +1,6 @@
-import { sleep, type ScrapedItem } from './shared'
+import { sleep, categoryLabel, type ScrapedItem } from './shared'
 import { extractHighlights } from './enricher'
-import { buildDescEn, cleanHighlights } from '../lib/buildDescriptions'
-import { generateDescriptionZh } from './translate'
+import { cleanHighlights } from '../lib/buildDescriptions'
 
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 const BANGKOK_LAT = 13.7563
@@ -126,19 +125,19 @@ async function fetchPlacesQuery(query: string, category: QueryConfig['category']
 
     const rawHighlights = place.reviews ? extractHighlights(place.reviews) : []
     const highlights = cleanHighlights(rawHighlights)
-    const editorial = place.editorialSummary?.text
     const name_en = place.displayName.text
     const rating = place.rating ?? 4.0
     const price_range = PRICE_MAP[place.priceLevel ?? ''] ?? 2
     const baseLoc = { category, rating, price_range }
     const q = encodeURIComponent(name_en + ' ' + place.formattedAddress)
-    const description_zh = await generateDescriptionZh(name_en, editorial, highlights, category)
+    // 不用 AI 生成文案，只放分類標籤（文案由使用者自行填寫）
+    const label = categoryLabel(category)
 
     items.push({
       name_en,
       name_zh: name_en,
-      description_en: buildDescEn(baseLoc, highlights, editorial),
-      description_zh,
+      description_en: label.en,
+      description_zh: label.zh,
       category,
       address: place.formattedAddress,
       lat: place.location.latitude,

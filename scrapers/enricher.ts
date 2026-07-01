@@ -1,5 +1,6 @@
-import { generateDescriptionZh, translateZhToEn } from './translate'
 import { buildDescZh, buildDescEn, cleanHighlights } from '../lib/buildDescriptions'
+import { categoryLabel } from './shared'
+import type { Category } from '@/lib/types'
 
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 
@@ -277,7 +278,6 @@ export async function enrichItem(
 
   const rawHighlights = place.reviews ? extractHighlights(place.reviews) : []
   const highlights = cleanHighlights(rawHighlights)
-  const editorial = place.editorialSummary?.text
   const photos = (place.photos ?? []).slice(0, 6).map(p => p.name).filter(Boolean)
 
   const name_en = place.displayName?.text ?? name
@@ -312,8 +312,10 @@ export async function enrichItem(
   const formattedAddress = place.formattedAddress ?? ''
   const area = extractArea(formattedAddress)
 
-  const description_zh = await generateDescriptionZh(name_en, editorial, highlights, resolvedCategory, area)
-  const description_en = await translateZhToEn(description_zh)
+  // 不用 AI 生成文案，只放分類標籤（文案由使用者自行填寫）
+  const label = categoryLabel(resolvedCategory as Category)
+  const description_zh = label.zh
+  const description_en = label.en
 
   return {
     name_en,

@@ -1,5 +1,19 @@
 import type { Category, LocationTag } from '@/lib/types'
 
+// 爬蟲階段不再用 AI 生成文案（文案改由使用者自己寫），只填分類標籤
+const CATEGORY_LABEL: Record<Category, { zh: string; en: string }> = {
+  food:      { zh: '餐廳',   en: 'Restaurant' },
+  cafe:      { zh: '咖啡廳', en: 'Cafe' },
+  shopping:  { zh: '購物',   en: 'Shopping' },
+  nightlife: { zh: '酒吧',   en: 'Bar' },
+  hotel:     { zh: '飯店',   en: 'Hotel' },
+  attraction:{ zh: '景點',   en: 'Attraction' },
+}
+
+export function categoryLabel(category: Category | undefined): { zh: string; en: string } {
+  return CATEGORY_LABEL[(category ?? 'food') as Category] ?? { zh: '地點', en: 'Place' }
+}
+
 export type ScrapedItem = {
   name_en: string
   name_zh: string
