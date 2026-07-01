@@ -6033,6 +6033,344 @@
     "id": "e491b3a1-0e3c-4f27-8090-f9a937bd17d8",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-07-01T06:54:34.606Z"
+    "approved_at": "2026-07-01T06:54:34.606Z",
+    "slug": "jek-meng-hainanese-chicken-rice"
+  },
+  {
+    "name_en": "Je Aoun Chicken Rice",
+    "name_zh": "Je Aoun Chicken Rice",
+    "description_en": "The chicken rice worth detour-ing to near Chatuchak 🍚 Je Aoun at Bang Khen Market on Phahon Yothin 32/1 is one of Bangkok's most-loved khao mun gai spots — silky poached chicken, fragrant chicken-fat rice, and what many regulars call the most aromatic ginger-chili sauce in the city. The fried chicken option is equally excellent. Open almost all day, cash only, and the kind of no-frills stand where the food does all the talking.",
+    "description_zh": "恰圖恰市場旁 Foursquare 評分 8.3 的海南雞飯傳奇 🍚 Je Aoun 就在 Bang Khen 市場裡，水嫩白斬雞肉嫩骨香、炸雞酥脆不油膩、薑蒜辣醬是曼谷最芬芳的一款，雞油飯粒粒飽滿，一碗熱雞湯收尾，是來逛 Chatuchak 前必繞道的那一碗，幾乎全天候開放。",
+    "category": "food",
+    "address": "Soi Phahon Yothin 32/1, Khwaeng Lat Yao, Khet Chatuchak, Krung Thep Maha Nakhon 10900, Thailand",
+    "lat": 13.834921999999999,
+    "lng": 100.5732757,
+    "photos": [
+      "places/ChIJxwDgR_2c4jAR8dk0ZCFkjWQ/photos/AaVGc3nzjXWQq31Zsmtm4idmlM-zNeu2yH-oTw1LBNyTTYsiunPKwmp6ibU4H7COoiLxgQhr2pLFHFkx1jKFWwnjLCzAP8MY_9uUcRcod42ENcj8ASps0493QRNSm647DMvof8AMfN2vFQEbg-W2mQbNYuZspvNEXXNPvzQ4f9kVE7E6P4kfmwoegEJkThL6_LiS_WKSj2Oc7omrosbSNwfekBnURs8o5NaoMqLnf81YyWoSXG56puZ71OI8e_GuwMptf7dVzXuqsJRMExC6QTfqB1MvD6E2CYXVPDp9YHkOiHBKDN6IJ5qVlPvAjwsF_1voeLVnckEw4zqCFyGzKFmX0AzxzULRAAn0KvnIlVouxuE7i6_bPkQdMeKYXKvX6ZBHSsm83at5guVxqmV7RaEZvZbBoSG4ICevHBRnR2eekorUCyb4ZuQB4tHfjq5sAw"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Je%20Aoun%20Chicken%20Rice%20Soi%20Phahon%20Yothin%2032%2F1%2C%20Khwaeng%20Lat%20Yao%2C%20Khet%20Chatuchak%2C%20Krung%20Thep%20Maha%20Nakhon%2010900%2C%20Thailand&query_place_id=ChIJxwDgR_2c4jAR8dk0ZCFkjWQ",
+    "rating": 4,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Dim Sum",
+      "Dumplings"
+    ],
+    "local_ratio": 75,
+    "id": "ebf20edd-ff52-4f60-acdb-203070c9e32a",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:20:13.638Z",
+    "slug": "je-aoun-chicken-rice"
+  },
+  {
+    "name_en": "Tanbo Chicken Rice",
+    "name_zh": "Tanbo Chicken Rice",
+    "description_en": "Chinatown's most understated chicken rice gem 🍚 Tucked next to the famous Hua Seng Hong on Yaowarat Road, Tanbo Chicken Rice serves Singapore-style khao mun gai that quietly earned a Top 10 Bangkok Chicken Rice award. The yellow-tinted rice cooked in chicken broth and fat is the standout — more aromatic and satisfying than most. Silky poached chicken, Thai-style chili-ginger sauce, complimentary soup, all from 60 baht. Easy to walk past, impossible to regret stopping.",
+    "description_zh": "耀華力主街上最低調的雞飯傳奇 🍚 Tanbo Chicken Rice 就在華聖洪隔壁，60 銖一盤、新加坡風格海南雞飯，雞油飯泛著淡黃光澤、香氣比一般店更濃郁，嫩滑白斬雞配泰式薑蒜辣醬，隨附清甜雞湯，榮獲曼谷十大雞飯獎項，逛完中國城必繞進來的一盤。",
+    "category": "food",
+    "address": "301 Yaowarat Rd, Khwaeng Samphanthawong, Khet Samphanthawong, Krung Thep Maha Nakhon 10100, Thailand",
+    "lat": 13.740905699999999,
+    "lng": 100.5088517,
+    "photos": [
+      "places/ChIJBZ4lFQCZ4jAR_kEKWPvgMWM/photos/AaVGc3nwHcLr4N2-C8Sl0E-FJKHdPEszBM5eDwH7faP41mz7HgXhrdMimaLVO16v39C8hZHxY5CJY_Bqjp9_cCHdLzkho9kr3dIuf0Y7WaAHMCj-iW3aXjIstAUjByNyryaAMIKD3n-6KECYPPXAU1PmGpkS7hi61_LCBNtcHC40Z18vWbV7b7Laj-6ee6CIuzJzDhhu9p7y8BmiYHtichZuyAJnkPjXXETzeKNxed1NuqOby8z44rccXUxjIU0TtJEf7_OBRUxSB0iyvOzS9Oj2ztY3UaiEcH4nQH6ypNGpF_MncYTNHim6i8gbxiWQKiecr1p9edbihuif59HBP3y3DtWvzRQGYZB13qVFvVllFmjnXOqufHf3menYEU8FodLw7Q-uHeUfZ8cI5FnxVk1xxlaYdXMF1HvPnLUfRn00BOyr9TtYz98QaCo4TPKK2dry"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Tanbo%20Chicken%20Rice%20301%20Yaowarat%20Rd%2C%20Khwaeng%20Samphanthawong%2C%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100%2C%20Thailand&query_place_id=ChIJBZ4lFQCZ4jAR_kEKWPvgMWM",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Khao Man Gai"
+    ],
+    "local_ratio": 75,
+    "id": "4e7b98b9-8ce9-4578-8338-205dfdaf5cd6",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:20:44.949Z",
+    "slug": "tanbo-chicken-rice"
+  },
+  {
+    "name_en": "Korkai Chicken Rice",
+    "name_zh": "Korkai Chicken Rice",
+    "description_en": "Banthat Thong Road's most loyal chicken rice following 🍚 Korkai Chicken Rice is a neighbourhood staple on one of Bangkok's most celebrated street food strips, near Chulalongkorn University. Silky poached chicken, aromatic rice, punchy ginger-chili sauce — the kind of honest, well-executed khao mun gai that's built a cult following among students and locals alike. Now with four branches across Bangkok, Monday to Saturday until 11pm. The Banthat Thong original is the one worth queuing for.",
+    "description_zh": "班塔通路上最值得排隊的雞飯 🍚 Korkai Chicken Rice 藏在朱拉大學旁的美食街上，白斬雞嫩滑多汁、薑蒜辣醬香氣撲鼻，一盤售價親民，是大學生與在地人下課後固定報到的那間，現開四家分店仍保持原有水準，週一至週六開到晚上十一點。",
+    "category": "food",
+    "address": "1636 Banthat Thong Rd, Khwaeng Wang Mai, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.7409856,
+    "lng": 100.52241819999999,
+    "photos": [
+      "places/ChIJOUOFVoiZ4jARyPxD1xHfmeE/photos/AaVGc3nvO4fBYu4WrZD8rJRho3TTTVFX4E7AZo73R5CCvxKT0LNTZuUL3wfSLEZqP_spnX5jG7hWgDyW3zfHc6tOi5q0qBz8BbWVN3AP6Ae6jaLw8rJlMBVN-Ci_YyQxC2zmxxGI31UXsXm__VmKMnKYUTunaIK6o70jnlTwbROSwHdYizPHbFr6kjy-VNnzZsCXXchNonEJ6ZMhZj6frFVSmYFWuIa2S1_ADrCS3AK0VLTMsDegX5G_ytpXi54Dt69ngaaDgpUoR6X-o-WV0cTNBw550TWT_JN2L8j1D2SY8sl_U236TAtC24qcnB804sAxcrmQDWktcByqDgfK10qbXOQ6x8wiG3_SSmlx2wKGEFGmUw-iYckdlIXqVn3fqj0W9vFb992DdElQas46PhKxMoDZ5Wb2Z-OvqB4WIU9K4CTi1Z41"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Korkai%20Chicken%20Rice%201636%20Banthat%20Thong%20Rd%2C%20Khwaeng%20Wang%20Mai%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJOUOFVoiZ4jARyPxD1xHfmeE",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Khao Man Gai",
+      "Alongside fresh"
+    ],
+    "local_ratio": 75,
+    "id": "8231534d-518f-44bb-944c-41ae02898107",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:21:28.583Z",
+    "slug": "korkai-chicken-rice"
+  },
+  {
+    "name_en": "Sui Heng Chicken Rice",
+    "name_zh": "Sui Heng Chicken Rice",
+    "description_en": "Nearly 70 years of Hainanese chicken rice on Charoen Krung Road 🍚 Sui Heng in Yannawa has been run by the same family for three generations, and the recipe hasn't needed changing. Generous portions of silky poached chicken, fragrant rice, and a fermented soybean dipping sauce with the perfect sour-sweet-salty balance. The lime and sour plum soup on the side is the secret weapon — refreshing and deeply satisfying. Open from 6:30am and until 3am — one of Bangkok's most honest chicken rice institutions, any time of day or night.",
+    "description_zh": "曼隆路旁傳承近 70 年的三代雞飯老店 🍚 Sui Heng 在 Yannawa 默默耕耘、接待一代又一代老曼谷人，海南式白斬雞份量大、雞油飯香氣撲鼻、發酵豆醬調味汁酸甜鹹三味平衡，招牌酸梅萊姆湯清爽解膩是必點，半夜三點還開著，是深夜覓食最讓人感動的那一碗。",
+    "category": "food",
+    "address": "1739 ถ. เจริญกรุง Khwaeng Yan Nawa, Khet Sathon, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.7134417,
+    "lng": 100.5129571,
+    "photos": [
+      "places/ChIJy0BpMMeY4jARWUGwjkDCYeM/photos/AaVGc3k9yAF-fiCKTrwi2r9YEgoW54mI5xbgho4TPKMW_RWlSeu7-cDauDEyoKnb__jcgSguLfpVzdjahbG1jB92oVXMZ7keYVyEEgSAl5NheS6bU-oxbYe8wlzE7NZVt2k2TdmV5uOWLiqZ1RtKIRpJsjKim7v-Vzp5nrtvAOWeqU0OeGc0cqOYtO9bBNLqhK3db845uG1xL41hO4B_3Kvrew4jAcpGKnkyOk9DScAlpPhLfBGxvM4nTuSToBSUSlqBRbgAqwlBUaoaTN-zlVyGP0b7KNpcWEz1Mqx3gqWlVc3icUkwLjDsbeiXOMT9ZXCd66QMLpV5qhmnG3x3pbTx5NOoVruzT-uJU7PmLAZuqYBatfJo1x6K4VG-xX35FV8J0HRrG59UJdbuqK8U3S53kUeNLo3VxaYAHIuO6RSq-1kDPYJCwQu4htAXZx4dgw"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Sui%20Heng%20Chicken%20Rice%201739%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Yan%20Nawa%2C%20Khet%20Sathon%2C%20Krung%20Thep%20Maha%20Nakhon%2010120%2C%20Thailand&query_place_id=ChIJy0BpMMeY4jARWUGwjkDCYeM",
+    "rating": 4.4,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Wrong"
+    ],
+    "local_ratio": 75,
+    "id": "0e4e6718-6137-49c8-8961-abeedf08d6da",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:22:00.928Z",
+    "slug": "sui-heng-chicken-rice"
+  },
+  {
+    "name_en": "Kao Mun Gai Wannaporn",
+    "name_zh": "Kao Mun Gai Wannaporn",
+    "description_en": "Old Bangkok's most welcoming chicken rice family shop 🍚 Kao Mun Gai Wannaporn sits on Prachathipatai Road near Wat Intharawihan — a relaxed, family-run spot where the chicken is consistently juicy and tender, the rice is fragrant, and the chili sauce hits exactly the right notes. The English menu is a thoughtful touch, the soup is genuinely good, and the whole meal comes in under 100 baht. The perfect low-key lunch after a morning at the nearby temples.",
+    "description_zh": "大皇宮附近最讓人驚喜的家常雞飯 🍚 Kao Mun Gai Wannaporn 藏在 Prachathipatai 路上，嫩滑白斬雞配香濃雞油飯、辣醬恰到好處，湯頭清甜讓人喝完還想再來一碗，老闆一家親切招待，一份不到 100 銖，是逛完金山寺或大皇宮後最讓人放鬆的家庭風小館。",
+    "category": "food",
+    "address": "96/14 Prachathipatai Rd, Khwaeng Bang Khun Phrom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.765186799999999,
+    "lng": 100.50601789999999,
+    "photos": [
+      "places/ChIJYcGL7mmZ4jARtOgql5rnlxc/photos/AaVGc3mldU5jEqqSp1GpoGElg3uo5X01rq3jvPZdgZs46e_A6Cve1LMdhY-T964WaVxUErcRugp5MwaPJG3cAQiOHMmbN3MVKXzhCx5WbQZF81IiJ29jRcqHufkZj3KqNkdSQuC17ro6zOim4YPfOgY7MwKB-MfIF5iRdDMWOplTMNZ8AuD2wP8now6TU5mXP5Qkd04N1K2JEiC3gxyNTHcWgWzgHXa0ltFlkOWuqOLocj1-CNFNnAoHcS_FtXcH-GHOGKFfATB3QPTbWs_lGj1MhqfGUa8Bv4o1VIthPZzgnVvAjIXvPHREmm2yOnmvU6cckmhnubHRWYSXArMA9DwYYhmFhK0VbQ28Kr7TI6kzthSUvRv7ve6JsTVURBH98wLcKwPdXqOB5ZXshGicr3EPeN-jDYkVtb_01TXNHtXzyhjzrxN5aqL-u-SHOH629A"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Kao%20Mun%20Gai%20Wannaporn%2096%2F14%20Prachathipatai%20Rd%2C%20Khwaeng%20Bang%20Khun%20Phrom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJYcGL7mmZ4jARtOgql5rnlxc",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "local_ratio": 75,
+    "id": "2ea566e9-94c8-4875-8eb7-aec2d8434d98",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:22:43.496Z",
+    "slug": "kao-mun-gai-wannaporn"
+  },
+  {
+    "name_en": "Hoong",
+    "name_zh": "Hoong",
+    "description_en": "Silom's most quietly innovative chicken rice 🍚 Hoong (หุง, meaning \"to cook rice\") on Phiphat 2 brings a sous vide approach to the Thai classic — chicken cooked low and slow for a tenderness that goes well beyond the usual poached version, served with aromatic chicken-fat rice and house-made sauces. It's built a devoted following among Japanese expats and office workers in the Chong Nonsi area who know a good thing when they find it. The kind of lunch spot you discover once and keep coming back to.",
+    "description_zh": "矽隆最有創意的進化系雞飯 🍚 Hoong（หุง，意為「炊煮」）藏在 Phiphat 2 巷，以低溫舒肥技術重新詮釋傳統海南雞飯，雞肉嫩到入口即化、比傳統白斬雞更進一步，雞油飯香氣馥郁，在日本食客之間口碑甚佳，是 Chong Nonsi 附近上班族午餐的私藏秘密。",
+    "category": "food",
+    "address": "Sathorn Corner, 46 Phiphat 2, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.72333,
+    "lng": 100.5310848,
+    "photos": [
+      "places/ChIJBd8WuXCf4jARrZuvqFHiq5E/photos/AaVGc3mjbEt8KA3Shfw1E6haCuq1M69JF0H6hxcb6Ze88aMliSPh2XmtJvqDgiOdkpJddaN_CQ9plvApcER2gJ4dXplEHy5e4YfgTg0RqCeMZwaHYBAqmrH9NfncoOwE5R_W513B3NseJwIzuceOppHTOB3wG7moZgAjqUaZ_fMeY3UnQtvuz4Ei6VUrUK0Dt9EXiF1MpdwJgQNQmSOlsaN8AK97E9UqqPKLebVjzUx07CYmxG7sAGnW_iU2FeOeSAVMeK4ruRetJmZWR8eqEgRv68eWbJp8qn8paMZwk87eSwh6Un-L5nWXXG-g9j1blTkJo_2LnWuOaOGc9nybTtwg2NumOCUi9ic6CEeCfxGdmpyfZPibEJSiQN0zJCvFszc8bZkcYHYJSdWQks7O30dWfYtewSKde8ZEvYA-UZ3-qiuTbo_T"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Hoong%20Sathorn%20Corner%2C%2046%20Phiphat%202%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJBd8WuXCf4jARrZuvqFHiq5E",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Khao Man Gai",
+      "Combo"
+    ],
+    "local_ratio": 75,
+    "id": "466d1c6a-6a93-4c2b-87d4-2d2adb3ae0dd",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:23:31.687Z",
+    "slug": "hoong"
+  },
+  {
+    "name_en": "Mongkolchai Chicken Rice",
+    "name_zh": "Mongkolchai Chicken Rice",
+    "description_en": "The morning chicken rice of old Bangkok near Thewet market 🍚 Mongkolchai — whose name means \"crown of victory\" — has been earning that title on Samsen Road for decades. The chicken is plump and fatted, cooked to an old-school Hainanese standard, the rice is enriched with chicken broth, and the dark fermented soybean sauce with garlic, lime, and chili is the real draw. From 45 baht, open 6am to 2pm daily. The kind of place old Bangkok locals and serious food writers quietly trek across the city for.",
+    "description_zh": "泰威河市場旁老曼谷人吃早餐的那間 🍚 Mongkolchai（「勝利之冠」）在三森路默默傳承多年，椰奶燉雞入味滑嫩、雞油飯粒粒飽滿，招牌酸辣醬發酵豆蒜辣萊姆四味平衡，一份 45-55 銖，早上六點開門到下午兩點就結束，是老城區散步時最值得特地繞進去的早晨一碗。",
+    "category": "food",
+    "address": "314 Thanon Samsen, Khwaeng Dusit, Khet Dusit, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7692284,
+    "lng": 100.5034666,
+    "photos": [
+      "places/ChIJY6VqkGiZ4jAR6TAA29dNMQw/photos/AaVGc3nu91T8FNVn2kxazSXQd6f-EmQV29vTzlxqOgkNn2Gt02IedRCEsWSw7zedk8-jWZnQyVvHpTMKCT76_NP_zoImv2c-CMwvoyNm_3tjfcZh_Tb_Oqq3VsnzD-cFlmcnbGfZt9AcRwvjPtMpH93FL82ue3uOCvQ2OO-PWVTOHRpyp_D3-yY7-ixvb7BjefGIPMhfBPY_Vh6KQfC5vWszYJnXy2iKWITKGNtABIRUqh5C3NeDJCTlgKdsRxMe1em6r8E5XO-cKM-jgbqSIaPFsBJNZXisCn7ARvoIRrITm2EzzvnYXfaIuQ6gFXdwjPwyqCHbRuENrV4je-gnqoieIYBt1nUu6fI-TdVjHOAM2OAbJcSxwcQmUQdThOvpli85UH_NmgBTekRSoy4YA63bS5lSxEQygfixMaETuBlrU_vLOeuTg3mMlmezOjqiMg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Mongkolchai%20Chicken%20Rice%20314%20Thanon%20Samsen%2C%20Khwaeng%20Dusit%2C%20Khet%20Dusit%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJY6VqkGiZ4jAR6TAA29dNMQw",
+    "rating": 4.3,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "local_ratio": 75,
+    "id": "336a9c18-dd7e-4196-baa5-0738746db1e1",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:24:01.843Z",
+    "slug": "mongkolchai-chicken-rice"
+  },
+  {
+    "name_en": "Lek Yai Traditional Tom Yum Noodles • Sam Yan",
+    "name_zh": "Lek Yai Traditional Tom Yum Noodles • Sam Yan",
+    "description_en": "Banthat Thong Road's most satisfying bowl of old-school tom yum noodles 🍜 Lek Yai has been perfecting one thing for decades — a broth that's more about tangy citrus complexity than heat, with fresh lime, roasted chili powder, and enough pork or seafood to fill two people. The noodles are soft, the wontons are stuffed with minced pork, and the bowl is generously oversized at around 65 baht. Street-side tables come with the full Bangkok chaos soundtrack — grab one anyway. Open daily from 11am to midnight.",
+    "description_zh": "班塔通路上最傳統的酸辣麵湯 🍜 Lek Yai 以招牌番茄酸辣湯底聞名，鮮萊姆、烤辣椒粉香氣層次分明，豬肉丸軟嫩、蝦仁魷魚海鮮版更是鮮美，一碗份量大到讓人驚訝，65 銖起、開到午夜，是逛完 Sam Yan 最值得坐下來吃一碗的老派滋味。",
+    "category": "food",
+    "address": "1440 Banthat Thong Rd, Khwaeng Wang Mai, Pathum Wan, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.7429054,
+    "lng": 100.5228213,
+    "photos": [
+      "places/ChIJB_B7YUyZ4jARuPyeBAQ4EnI/photos/AaVGc3mzwTyeRKWbQr9Mgd_4XW2FgUkUo7olNOHOEnnh1fLw9sGC_zS8ZYzg550UasuQ2X-Q63_-WkvEwiVQzc3hJ5pQ-d57YXXOLAENeO39uTdUo2CQaaWQLrW2o8_X_9MTeR9TRARD-XKBwjPw2YzKwgwObq_j9Aj2Vl8XiuT2gxa2NyXhu9CTv3-PuptrGS8lfwZLYt6_e1R0PVjU5fyoYG4HAmHa5i_W614hQq7scQ0hFgeEOWFlf9Mo4828YuHdaFoeI5-3TKoypF8UAwJdtiTikphQ4eL23o3c2k41-dQ1HxgQ26bXS2pj-OQP97aFkSj5UGiDAD_XHy1vKKi1u0xYc4SqyxDf3muNz9lABNX2yopb_ncv6o45SDymtbYkjhXt_oB6AmNWLor7P2Je7Z0CJZB7eMlLaxBYHg4qQuQdyvCB"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Lek%20Yai%20Traditional%20Tom%20Yum%20Noodles%20%E2%80%A2%20Sam%20Yan%201440%20Banthat%20Thong%20Rd%2C%20Khwaeng%20Wang%20Mai%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJB_B7YUyZ4jARuPyeBAQ4EnI",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum",
+      "Dumplings"
+    ],
+    "local_ratio": 75,
+    "id": "22f17ffa-53fe-40d8-9730-8f84d6911abe",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:24:40.876Z",
+    "slug": "lek-yai-traditional-tom-yum-noodles-sam-yan"
+  },
+  {
+    "name_en": "ก๋วยเตี๋ยวรสเด็ด กังเลี่ยงเฮง",
+    "name_zh": "ก๋วยเตี๋ยวรสเด็ด กังเลี่ยงเฮง",
+    "description_en": "A melt-in-your-mouth braised pork noodle hiding near the Golden Mount 🍜 กังเลี่ยงเฮง is tucked in a tiny shopfront on Boriphat Road, opposite the fire station near Wat Saket. The signature braised pork noodle soup is what regulars come for — black pepper-fragrant broth, pork so tender it dissolves on the tongue without chewing, and thin noodles that soak up every drop. Under 100 baht, cramped but worth it, and the kind of hidden local gem that food hunters quietly keep to themselves.",
+    "description_zh": "金山寺旁小巷藏著一碗讓人入口即化的燉豬肉麵 🍜 กังเลี่ยงเฮง 在 Boriphat 路消防站對面的小店面裡，招牌燉豬肉麵湯底以黑胡椒提香、豬肉燉到不用咬直接化開，細麵條吸飽湯汁，一碗百銖以下、空間雖小卻讓人一吃難忘，是逛金山寺附近最值得繞進去找的那碗麵。",
+    "category": "food",
+    "address": "34 Boriphat Rd, Khwaeng Ban Bat, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100, Thailand",
+    "lat": 13.7540069,
+    "lng": 100.5057935,
+    "photos": [
+      "places/ChIJH6qIQxaZ4jARTEYezBDhxvs/photos/AaVGc3kpL73aateEdfLYNgTlS2JRv7yyhEsskK_XXAkJNqmPdXnQVJeRk6_JXdibn7rICkBTee6tOziI0lW4fH6vS67uHaf5Cfyq399SOHQr8oDQ_NBF9hvIyhsSBGmm2df_REaWI0eMma-2RTWoZLMr2Q07Hb9YvSRIsFFeyTYAOk7n9GtA63DrjmymICS7HHs14BV_wYlMNgttuIHu-G8WKBMZuvSHL2p70xq7HV-eeVpa_ltKq5y7cQ6pAZWDxQSXSTq4JAOUKxqLgRADz7TXRVZ0MwEhOu5enPPpggLE1kjLHb7TxhC27zLHjlwkECquTNeEYylKhw13CAEJ5GQizOW0QNLOHfJythrtpymKqdpqodQuZM5aATOlHZRSrsyphM7p8-kJwLAHfnyprFGHttOvVRDKi4D5uQvUppSeRbyYF4Qd"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%81%E0%B9%8B%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B9%8B%E0%B8%A2%E0%B8%A7%E0%B8%A3%E0%B8%AA%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%94%20%E0%B8%81%E0%B8%B1%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%87%E0%B9%80%E0%B8%AE%E0%B8%87%2034%20Boriphat%20Rd%2C%20Khwaeng%20Ban%20Bat%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100%2C%20Thailand&query_place_id=ChIJH6qIQxaZ4jARTEYezBDhxvs",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [],
+    "local_ratio": 75,
+    "id": "a2b3bed8-b73e-4739-922d-602c5bf0b188",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:26:36.016Z",
+    "slug": "place-a2b3bed8"
+  },
+  {
+    "name_en": "Je Ju Noodle",
+    "name_zh": "Je Ju Noodle",
+    "description_en": "Khlong San's most beloved pink noodle & coconut ice cream shop 🍜 Je Ju Noodle on Charoen Nakhon Road is a neighbourhood institution — the yen ta fo (pink-sauced noodles) is the signature, loaded with fresh fish balls, crispy pork, and tofu in a tangy, sweet fermented bean broth that earns its reputation. The tom yam noodle broth is equally worth ordering. Finish with their coconut ice cream, a ritual for regulars. A photo menu makes it easy to order, BTS Krung Thon Buri is a 10-minute walk, and the price is firmly in the \"why not come back tomorrow\" category.",
+    "description_zh": "คลองสาน 最讓人難忘的粉紅麵與椰子冰淇淋 🍜 Je Ju Noodle 就在昭披耶河旁的 Charoen Nakhon 路上，招牌เย็นตาโฟ（粉紅麵）湯底顏色鮮豔、海鮮魚板配料豐盛，酸甜平衡恰到好處，Tom Yam 麵湯頭清鮮芬芳也不容錯過，結束後再來一球招牌椰子冰淇淋，是 Klook San 在地人家喻戶曉的老字號。",
+    "category": "food",
+    "address": "1313 Charoen Nakhon Rd, Khwaeng Bang Lamphu Lang, Khet Khlong San, Krung Thep Maha Nakhon 10600, Thailand",
+    "lat": 13.7173574,
+    "lng": 100.50769939999999,
+    "photos": [
+      "places/ChIJHZfH_JKY4jAR0ntofeZNKSM/photos/AaVGc3keNnXt22kguKinkbGa5mKnPGU3Vzwjs8tYD_FZeDrUEm5NIbOlrle52RN2gx9iHR5Xx77DAaEDmMWFXABhFIOWC6_pcnGccJwrXBLxKLeDVUeKKM_P_zwe9ZzBEhB6eEvPR5NhmdEUS4H_vQt4PGzqdcbmBLZM6Hl1QuMMouhFtSaUbk_jrjTylub4jxSPe_M-4okRN80dJXFTx8LFRNRYkHAAwGEa1AzP_rZNaf718-S6uzMzQVf9GsbJl35A48Vwud-r_MkITT181AwWztsvtQuzBpoGUcTmz-iC7uXPj3JvYRfQWMxkdmY97aBWwkkkR34orUval2zK0-PbLVyo54xSU3yYRa9O1Ez0H263yXekcwfuSlUH9Dy-7scfUlBkg8UEk1gKe1YNERuU52Hv5-8uUXWPRALwCabtQsSTN1WN"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Je%20Ju%20Noodle%201313%20Charoen%20Nakhon%20Rd%2C%20Khwaeng%20Bang%20Lamphu%20Lang%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600%2C%20Thailand&query_place_id=ChIJHZfH_JKY4jAR0ntofeZNKSM",
+    "rating": 4.4,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum"
+    ],
+    "local_ratio": 75,
+    "id": "f402c564-5936-475c-aaf7-9701d5ba2246",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:27:47.429Z",
+    "slug": "je-ju-noodle"
+  },
+  {
+    "name_en": "Asawin Boat Noodles",
+    "name_zh": "Asawin Boat Noodles",
+    "description_en": "Banthat Thong Road's most authentic boat noodles, customisable spice level 🍜 Asawin Boat Noodles on the Sam Yan end of Banthat Thong serves proper Thai boat noodles the traditional way — rich, blood-seasoned broth with pork or beef, fresh ingredients, and your choice of noodles. The spice level is adjustable, the dessert options (cendol in coconut milk, Thai coconut custard) are a worthy finish, and the air-conditioned setting makes it comfortable to linger. Open daily from 11am to midnight.",
+    "description_zh": "班塔通路上最正宗的船麵，自由調整辣度 🍜 Asawin Boat Noodles 就在 Sam Yan 附近，牛肉豬肉船麵湯底以豬血提香、濃郁深邃，食材新鮮、麵條選擇多元，還有椰奶沙冰與椰奶布丁畫下甜蜜句點，開到午夜、冷氣舒服，是班塔通路上最讓人踏實坐下來吃上幾碗的船麵館。",
+    "category": "food",
+    "address": "989, 991 Banthat Thong Rd, Khwaeng Wang Mai, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.7433953,
+    "lng": 100.52311859999999,
+    "photos": [
+      "places/ChIJdVWoztef4jARZLV_wRkB6aE/photos/AaVGc3mjoOC_MmsB5TZRNV2H01L88jlLr-26EkxOuthlitENf3iziX9MYsHewNx6D9YtI0zgHBbqrVxdPwoGeu2UGnb5SQmbsZehxXbiOM1dtQrQ6wbV0KEwgB9n4s7cmyrcdgGHGXApyUQ29KcGDe21EiBdBBPu-Y_3v38lc_cFQjPHDxXek0z9zNBi7kywJPFXoxXwTx4douTFnxlYcvmug-ZGEL3nHA19hmjpZwWAgdJf4WMTJU6mCVGchRLIZqZGSu5Lm6mdorqZi9ie-kdjRMhktkMeln5SwGuNOCtyFgb3WPkjXChrmKlgF-7UeUP5bjsVOzXLNoWKkVBI0vuoX0vzq8cqvC0bxKe6NEDzRgiwgs81LOGluTPT2VseZ5pSbBfDgiGiiiRBwqPDboqqFnWbVIRI_8x4GIKxApItol5t6jXPcpcjDkOqoqoLCT3Y"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Asawin%20Boat%20Noodles%20989%2C%20991%20Banthat%20Thong%20Rd%2C%20Khwaeng%20Wang%20Mai%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJdVWoztef4jARZLV_wRkB6aE",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Boat Noodles"
+    ],
+    "local_ratio": 75,
+    "id": "c728a4e4-db87-4e48-a50c-2f5178f20b1a",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:30:57.660Z",
+    "slug": "asawin-boat-noodles"
+  },
+  {
+    "name_en": "โต๋ว ก๋วยเตี๋ยว : Dhou noodles",
+    "name_zh": "โต๋ว ก๋วยเตี๋ยว : Dhou noodles",
+    "description_en": "A comforting bowl of noodles steps from MRT Itsaraphap 🍜 โต๋ว ก๋วยเตี๋ยว on Itsaraphap Road near Wat Arun is known for its springy, chewy thin noodles and a rich nam tok pork broth with good peppery depth — and you can add ma la spice powder if you want more kick. The soup is mellow and well-rounded without being salty. Air-conditioned, open daily until 8pm, and the kind of neighbourhood noodle shop you stumble into near Wat Arun and quietly keep coming back to.",
+    "description_zh": "MRT อิสรภาพ 出口走幾步就有這碗 🍜 โต๋ว ก๋วยเตี๋ยว 藏在鄭王廟附近的 Itsaraphap 路上，以 Q 彈細米粉為招牌，豬肉水落麵湯底濃郁帶胡椒香，另可加麻辣粉提升層次，湯頭沉穩不死鹹，適合慢慢喝，是逛鄭王廟後那頓讓人放鬆的鄰里家常麵。",
+    "category": "food",
+    "address": "260 Thanon Itsaraphap, Khwaeng Wat Arun, Khet Bangkok Yai, Krung Thep Maha Nakhon 10600, Thailand",
+    "lat": 13.739792200000002,
+    "lng": 100.4844372,
+    "photos": [
+      "places/ChIJF1LXBsOZ4jARMPPzDMoFSEQ/photos/AaVGc3m8ZtJ5oAGMJ6MNt5cYlgcBCDsG1KWGQWPRhBxImlbJwNPz1rkNoTVtO0BWJAVcQ9PdQkl1CiuQ_MxNI08B0uqT11EEelvL92MHIgseWAPjzD63nsiUv0aEuCm1zSfsQ3Zm3c8_tGufDS2ugbznIr79KsOQ4SQlrGKwcm8OwRyXoclrugcfYFhp_cr_CxlSxcq6e4zaaj1TaxLyx1--48XMRKy9mfV7IRmzFNq7oNPeDpyiuyp1WuWw_ogAdncymSn3nnEanWXHbvmOHIlyC_KUEE-Oal9XBGDCrz4JbCiGCfTaSiW124gcIemXzj_33mbe9PLPzN_i13X9m2n1QYz12M5_soOkF21ufwlhEropv6Pil0zBucYaplr4sxJMB3Q5wAhXl0Y9pDPRsOitZOclTrWDk4P3PREId-f33nFr6w"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B9%82%E0%B8%95%E0%B9%8B%E0%B8%A7%20%E0%B8%81%E0%B9%8B%E0%B8%A7%E0%B8%A2%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B9%8B%E0%B8%A2%E0%B8%A7%20%3A%20Dhou%20noodles%20260%20Thanon%20Itsaraphap%2C%20Khwaeng%20Wat%20Arun%2C%20Khet%20Bangkok%20Yai%2C%20Krung%20Thep%20Maha%20Nakhon%2010600%2C%20Thailand&query_place_id=ChIJF1LXBsOZ4jARMPPzDMoFSEQ",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Tom Yum",
+      "Boat Noodles"
+    ],
+    "local_ratio": 75,
+    "id": "7aea0fe5-fc5b-4ff5-ac2f-7f3852e786c9",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:31:33.049Z",
+    "slug": "dhou-noodles"
+  },
+  {
+    "name_en": "สมยงตำซั่ว สีลม",
+    "name_zh": "สมยงตำซั่ว สีลม",
+    "description_en": "Silom's most beloved Isaan canteen — 20+ years and still packed 🌶️ สมยงตำซั่ว is tucked on Soi Convent 18/1, serving punchy northeastern Thai classics to a loyal crowd of office workers who keep coming back daily. Green papaya salad in every style (Thai, fermented fish, Lao, mango), smoky grilled pork neck, crispy chicken wings, and laab that hits every note — spicy, sour, herbaceous. Dishes from 40–200 baht, open Monday to Saturday 9am–9:30pm. Closed Sundays.",
+    "description_zh": "矽隆上班族的秘密伊善食堂，超過 20 年不敗傳奇 🌶️ สมยง 藏在 Soi Convent 18/1，烤豬頸肉焦香嫩滑、各式青木瓜沙拉任你點（ตำไทย、ตำซั่ว、ตำลาว），烤雞翅酥脆多汁、拉布豬肉香辛鮮爽，一份 40-200 銖，週一至週六早九點到晚九點半，是 Sala Daeng 一帶最讓人流連的東北泰菜飯堂。",
+    "category": "food",
+    "address": "18 1 Convent Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7252726,
+    "lng": 100.53406059999999,
+    "photos": [
+      "places/ChIJAfAglSqf4jARX-ERTCN0xo8/photos/AaVGc3kGc4jss949J5Lh1scW5Z_oQZsGE42sfRSu9SIf2gNf6JjTDLxD--BGoV8yzo1crnpJYqA7QwHLFtgvkPFVRNbxYuvulYeZn848pRRljR7u59o_3RmoQq9tDfuXaV3nx53oBGXeQzveTbFvVE223VuiXNH-VYzAQwuUKLSxq2vQUhMNgrQ9yQ-QHL6QYXazqAJGQMi3VIFi4dZoj9pxytS0ZU2Z7Mi4SnU20J0W-32HzATQ0FKh_SIwybTu_oQiiag0qDJsNn2VDzb52tu1aZ3Hm8z0Xyr6MSGPx0DHuyOYYpoLJ_S9T6AMufQN_47ZIHX8I09ZzatDfUp6TC8Ek11KkbKkkEijns_diA1rdjXVWfWJ9TUHpUy5NflZLBE9N_Ejts7NbO7oPCTarm_25M7kW8uOUmH5NPz7QKb5DbQTOHRk"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%AA%E0%B8%A1%E0%B8%A2%E0%B8%87%E0%B8%95%E0%B8%B3%E0%B8%8B%E0%B8%B1%E0%B9%88%E0%B8%A7%20%E0%B8%AA%E0%B8%B5%E0%B8%A5%E0%B8%A1%2018%201%20Convent%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJAfAglSqf4jARX-ERTCN0xo8",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Larb",
+      "Larb pla duk"
+    ],
+    "local_ratio": 75,
+    "id": "eb108b73-d8a0-4088-96ad-3d8af00710f4",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T07:42:08.746Z"
   }
 ]
