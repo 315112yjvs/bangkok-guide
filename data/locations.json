@@ -6505,6 +6505,302 @@
     "id": "ffb2c44e-5be7-4e96-ab2e-0a8dcf451a19",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-07-01T11:32:20.483Z"
+    "approved_at": "2026-07-01T11:32:20.483Z",
+    "slug": "hey-mookrata"
+  },
+  {
+    "name_en": "ติดใจหมูกระทะ เทเวศร์",
+    "name_zh": "ติดใจหมูกระทะ เทเวศร์",
+    "description_en": "Old Bangkok's most unpretentious neighbourhood mookata 🐷 ติดใจหมูกระทะ on Samsen Road near the Thewet area is the kind of place locals keep to themselves — affordable Thai BBQ hotpot with quality pork, seafood sets starting at just 189 baht per person, unlimited refills for 35 baht, and a friendly owner who treats every table like a regular. Simple outdoor seating, fan-cooled, with dessert included. Open until midnight — the perfect lazy weeknight dinner near the old city.",
+    "description_zh": "大皇宮附近最親民的在地泰式烤肉鍋 🐷 ติดใจหมูกระทะ 就在三森路的德威寺一帶，設備簡單卻乾淨，豬肉新鮮品質好，套餐含海鮮每人 189 銖、飲料 35 銖無限續，老闆娘招待親切、還附甜點，是老城區居民下班後最喜歡叫一鍋的那種地方。",
+    "category": "food",
+    "address": "244 Thanon Samsen, Khwaeng Bang Khun Phrom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.768047999999999,
+    "lng": 100.50235699999999,
+    "photos": [
+      "places/ChIJbcCg5ceZ4jARLcOSP-Ckn3Q/photos/AaVGc3mo8_0rJwG5-hzp3HnaZzaxRevAsy7uW_SvmzGShDXvevdJlz5HRzz66dAd_Rjdg7v-zX7fhnyfEcgcZedTPaZ6yDllCxjGSmb_4E708o5NLqZrY-AoOgyc2Bwkmq9etNZqxrJvD8i2527uq3PaNxu7sogjcMLcaZgHY4Bka2B-iJaoSJlZR0vHnw-Ckg1VIUDnkBSKyv1HpPHCMSehuvhgZKcT_MZfOuhafmzGfb25kqFo7sWTUXRJc-WJV54rSoK8MK8j0_rA4wyWJekrRNNyUe82CfuKtd8eD4mnjmbYCBFkfeoOySYiHsS8SNW1kwQxJkX6tkYoSBUax2SDsbZF3-KaNXwTmuiiSuZNAF-acCSkNaPI68dm_rUTp8eiELX5nnbgt32bQRRKodrXBSO8QaIG4kgTlcQndtLiD13UZA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B9%83%E0%B8%88%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%B0%20%E0%B9%80%E0%B8%97%E0%B9%80%E0%B8%A7%E0%B8%A8%E0%B8%A3%E0%B9%8C%20244%20Thanon%20Samsen%2C%20Khwaeng%20Bang%20Khun%20Phrom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJbcCg5ceZ4jARLcOSP-Ckn3Q",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Them"
+    ],
+    "local_ratio": 75,
+    "id": "8d285d18-46ed-47f4-8625-bfdffbcd86f1",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T11:34:37.803Z",
+    "slug": "place-8d285d18"
+  },
+  {
+    "name_en": "หมูกระทะ ไทยเลอ บาร์กริล",
+    "name_zh": "หมูกระทะ ไทยเลอ บาร์กริล",
+    "description_en": "A 90s café-style mookata that actually makes you want to linger 🐷🎵 ThailaoS Bar Grill on Chan Road Soi 22 is the laid-back mookata you didn't know you needed — bright vintage decor, 90s Thai music playing softly, and a proper sit-down atmosphere worlds away from the typical loud BBQ spot. Nine dipping sauces including a legendary grandma recipe that's been passed down since 1997, fresh pork, seafood, and sukiyaki options, cold draft beer, and open until midnight. The kind of place you go for one round and end up ordering another beer.",
+    "description_zh": "90 年代復古咖啡廳風格的泰式烤肉鍋 🐷🎵 ไทยเลอ บาร์กริล 藏在 Chan Road 22 巷，由 2540 年（1997）阿嬤的傳奇秘方延伸而來，空間明亮復古、播著 90 年代懷舊音樂，9 種沾醬任你選、推薦「阿嬤沾醬」與「鳳梨海鮮醬」，新鮮豬肉、海鮮、蔬菜一應俱全，比起一般嘈雜的烤肉店更有約會或朋友小聚的氣氛，開到深夜、有停車場。",
+    "category": "food",
+    "address": "Thanon Chan, Khwaeng Thung Wat Don, Khet Sathon, Krung Thep Maha Nakhon 10120, Thailand",
+    "lat": 13.706745399999999,
+    "lng": 100.5249699,
+    "photos": [
+      "places/ChIJ3Rppr1GZ4jAR4Tp2G8r0QW0/photos/AaVGc3nI_iAurNJVbC9RUI9rOOKu3bUmveVC4JOqvMnm0QgPDMbQIVeoAyWIxH5rvxzsRaG5JJaRGZ5kwCIkbv_qRJRXVV9Gxk-IVG0hgby0Yj0Dva9gGqgk7spCpb8cBTrp0ztqePz8MaAReHQiHNhFAhyGCQA1154AdPRu72dqZLB_k_KeKDxYxApURIMvtAY_ua8B8UTz7B0eSLMJaxKS8_Z55eo-r7ixRCdiwvSSCW2LhW4Pg8ic7OCze6HxAoHiaF6FGclZERwfgDLjNBDiuFxovDSJXWDvoi13C2Fwq665tuTjItv4dtXyuEWes9mE4OzRHh1bVzpMuHTxq4u8AZDuDqrAhh_zz41jfNtS5vZ-Zkp2qnZK-6bCyY5i3MbN89OFZ4o5nkykOcwbOy7gNk7qeCrLhSvIZAHwCuczJ1M"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%B0%20%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B8%AD%20%E0%B8%9A%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%81%E0%B8%A3%E0%B8%B4%E0%B8%A5%20Thanon%20Chan%2C%20Khwaeng%20Thung%20Wat%20Don%2C%20Khet%20Sathon%2C%20Krung%20Thep%20Maha%20Nakhon%2010120%2C%20Thailand&query_place_id=ChIJ3Rppr1GZ4jAR4Tp2G8r0QW0",
+    "rating": 4.9,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Thai bbq"
+    ],
+    "local_ratio": 75,
+    "id": "281cbf2c-93bf-4bbd-b4c7-7000017da8de",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T11:38:39.534Z",
+    "slug": "place-281cbf2c"
+  },
+  {
+    "name_en": "Khun Ple Mookata",
+    "name_zh": "Khun Ple Mookata",
+    "description_en": "Huai Khwang's most legendary street-side mookata 🐷 Khun Ple Mookata on Soi 20 Mithuna is a Bangkok institution — open-air seating, three house-made dipping sauces that regulars mix together for maximum effect, and sets from 300–500 baht that serious mookata fans from Singapore, Korea, and Japan all rate as among the best in the city. No reservations, walk-in only, and yes — there will be a queue on weekends. Go before 5pm to skip the wait. Opens daily at 4pm, closes 11:30pm.",
+    "description_zh": "慧恭最值得排隊的街邊泰式烤肉鍋 🐷 Khun Ple Mookata 藏在 Mithuna 20 巷小院子裡，三款沾醬各有個性、混搭更驚艷，套餐 300-500 銖物超所值，韓國人、新加坡人、泰國在地人都說好，傍晚四點開始、六點前去可以省排隊時間，開到深夜十一點半，MRT 慧恭站步行 15 分鐘。",
+    "category": "food",
+    "address": "Soi 20 Mithuna, Lane 22, Khwaeng Huai Khwang, Khet Huai Khwang, Krung Thep Maha Nakhon 10310, Thailand",
+    "lat": 13.782363199999999,
+    "lng": 100.58168549999999,
+    "photos": [
+      "places/ChIJFeKmu9ad4jARwI77uT0Y5j8/photos/AaVGc3nomthg1FeWE5cctyXvzwLJHDyuQpWIJBN0Wrx_HEc0TFsSTICgQ5vtstDsu1L5WPIKURybljDuMk-xUCvY9rfvqVqyM12M-q0vAxFZqrrD0mQQVqxARCC7CVIJnISgVwEOOFGMfYmOl_0hAULsR412YLEqOE9CxtBaWjqxOerpfIVbpEsflmJDLfd_Fi3W6d7hqKOuvwwtSaDixXjsoBA7mRfSs9ap-l73JGKQeyZY5qIi8sW9ZdTN-UfnoOEG3BYrcC9-865muXoFla8pONxL3ocfOeE4tsOZAGOXhUZevdXUNCfcBQnnULxeGNbNqNDcT-eXZUTxhIpgdZkQOua_NpnwTkZuVbEtNYTQXsT_mM0GuUQD5OvPpHG20p_7gnQ4MdCQbOwcoANdKQyRtOfBHpaLV1exNdD2bAxCKzFqCfEt"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Khun%20Ple%20Mookata%20Soi%2020%20Mithuna%2C%20Lane%2022%2C%20Khwaeng%20Huai%20Khwang%2C%20Khet%20Huai%20Khwang%2C%20Krung%20Thep%20Maha%20Nakhon%2010310%2C%20Thailand&query_place_id=ChIJFeKmu9ad4jARwI77uT0Y5j8",
+    "rating": 4.3,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Plates of meats by weight"
+    ],
+    "local_ratio": 75,
+    "id": "d629cefd-a955-473a-ba7c-cd8bc61cf2af",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T11:41:13.120Z",
+    "slug": "khun-ple-mookata"
+  },
+  {
+    "name_en": "Saneh Mookrata เสน่ห์ หมูกระทะ",
+    "name_zh": "Saneh Mookrata เสน่ห์ หมูกระทะ",
+    "description_en": "Sukhumvit 22's most surprising hidden mookata 🐷 Saneh Mookrata is tucked on a quiet stretch of Soi 22 — a clean, modern, air-conditioned space that runs on a 40-year family pork recipe from their own farm. The garlic-pepper marinated pork neck, miso pork collar, and imported Australian beef are the must-orders, paired with three house dipping sauces and proactive staff who refill the soup without being asked. Google 4.9 from nearly 300 reviews, steps from Emsphere, and one of Bangkok's most underrated BBQ spots.",
+    "description_zh": "素坤逸 22 巷裡的隱藏版精品烤肉鍋 🐷 Saneh Mookrata 以自家農場豬肉為傲、傳承 40 年秘方，蒜香黑胡椒豬頸肉、味噌豬頸排道道用心，三款沾醬各有風格、服務親切不斷補湯，室內冷氣明亮，Google 4.9 分、Emsphere 步行即達，是素坤逸一帶最讓人驚喜的街頭烤肉小館。",
+    "category": "food",
+    "address": "38/9 Sukhumvit Soi 22, Klongtoey, Khet Khlong Toei, Krung Thep Maha Nakhon 10110, Thailand",
+    "lat": 13.728829399999999,
+    "lng": 100.5650685,
+    "photos": [
+      "places/ChIJ9fzYRfWf4jAR4QUKAwqlyZY/photos/AaVGc3kFnzpj86mD2TsI90U6oJCiqVhhRcXeq3mZE-c0Te-YYP6YYFvXLTaKKzkOTVwilBwaqhNwP93TsHuqEzznULy7Kv5i7rssD4BwV7VIMaPVPXWSLD5ltKcRSzq8umRkPyqVbEEsGIqc8ircpd4R1XdUvNVabbFZ12ApsJSjFRNWq_p6OcXWbr6mvOEoJOf4Us3Qg3XFjPWzzUQWenww7QPtR2CRGgCehNPwyoM3Cd9POO_TwJvC-p4wdHsa2h-Tx4CW7FX25nOjEY0D96jkR97V6-b2BJcIp8FLzlv5zE961LHJJ2NJGWLzrJiJ25cJoCbvc4b8APRu38_eL5FpQmhRSEmCdZqFLoYQGVMa5SSaHu7YlGvmcogR6XFTFCX5kzrPMu7Fzo6MZG7d_s60na5xGmxAyNe6KHbndHWzmkGBTw"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Saneh%20Mookrata%20%E0%B9%80%E0%B8%AA%E0%B8%99%E0%B9%88%E0%B8%AB%E0%B9%8C%20%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%B0%2038%2F9%20Sukhumvit%20Soi%2022%2C%20Klongtoey%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ9fzYRfWf4jAR4QUKAwqlyZY",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Cocktails",
+      "Various things",
+      "Kimchi"
+    ],
+    "local_ratio": 75,
+    "id": "29314cc1-7eb4-4b50-9dfe-476784954b2e",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T11:41:42.785Z",
+    "slug": "saneh-mookrata"
+  },
+  {
+    "name_en": "ซอยข่อยแน Soikoinae ส้มตำ อารีย์-สะพานควาย",
+    "name_zh": "ซอยข่อยแน Soikoinae ส้มตำ อารีย์-สะพานควาย",
+    "description_en": "Ari's most local Isaan secret 🌶️ ซอยข่อยแน is tucked in a quiet corner of Phahon Yothin Soi 12 — the kind of neighbourhood Isaan spot that locals eat at every week and never tell anyone about. Punchy papaya salad, crying tiger grilled pork skewers, and bold northeastern flavours in a relaxed, no-fuss setting. The name means \"this alley\" in Thai — fitting for a place that feels like you've been let in on something. Open daily, consistently good, and the best-kept secret in the Ari area for anyone who loves Isaan food done properly.",
+    "description_zh": "Ari 最隱藏的伊善料理巷弄 🌶️ ซอยข่อยแน藏在 Phahon Yothin 12 巷的安靜角落，「ข่อยแน」取自巷弄特色，每天吃都不膩的青木瓜沙拉、哭泣老虎烤豬肉串道道夠辣夠香，是 Ari 在地人一說出來就讓外人驚訝「這裡有這種地方？」的秘密口袋名單。",
+    "category": "food",
+    "address": "436/8 Soi Phahon Yothin 12, Khwaeng Samsen Nai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.785020099999999,
+    "lng": 100.5477844,
+    "photos": [
+      "places/ChIJCUASixKd4jARVlbwIyGIplU/photos/AaVGc3kYi0mSMyhy5emSFCDfL4GdEwub6FVGg20iCoanBx5QY0TuhJ5kDsMo2ZHWfBvmAwIvUA_iyQai6tDeFOnHh-uHdN-5z2-Sn_Ch_22ZnZN7p5Z8ioP4sXb16SE5sJ0WFxgj1pDbD1aCq0zoIWpaB5w8ksPoK3X309lMFmphCdGpTLVDYJMAroo9GhwN0XEZDSmpJGLn7RoWLJpYmo3Hsm4kVY0lx6JorhW8G_4D71LM7OMot43P89HxOiSurfq-UxOr2TQ1-iTz0tnOoSbUzf9MFCr8dhCidgl5dbYT34UWqj3lxPHNshKNywYGba32WZhyvmZ_CN_rhW7qIbNI9x5vMWmyPv9Sha_kjU5VEja817ThoHkZipDvlB4i9CWLT7lr6gU82bDPp1vzc0b7m6jWG7erBiTGgysS9W2F5Pw"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B8%82%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%99%20Soikoinae%20%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%20%E0%B8%AD%E0%B8%B2%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B9%8C-%E0%B8%AA%E0%B8%B0%E0%B8%9E%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A2%20436%2F8%20Soi%20Phahon%20Yothin%2012%2C%20Khwaeng%20Samsen%20Nai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJCUASixKd4jARVlbwIyGIplU",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Mushroom",
+      "A delivery lol",
+      "Under control"
+    ],
+    "local_ratio": 75,
+    "id": "3b527e00-7864-4f1c-860a-d77ca229bb3c",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T13:20:55.990Z",
+    "slug": "soikoinae"
+  },
+  {
+    "name_en": "Zaapteamchad Papaya Salads",
+    "name_zh": "Zaapteamchad Papaya Salads",
+    "description_en": "Hidden inside Thailand's National Stadium — and absolutely worth finding 🌶️ Zaapteamchad is tucked inside the Sports Authority of Thailand stadium on Ramkhamhaeng Road, making it one of Bangkok's most surprisingly located Isaan restaurants. The salted egg papaya salad hits every note — sweet, sour, salty, spicy — the Vietnamese sausage and squid salad combo is the signature, and the chicken feet tom sup is rich and deeply satisfying. A spice level indicator means no unwanted surprises, fast service, affordable prices, and Google 4.6. Bring a group and work through the menu properly.",
+    "description_zh": "泰國國家體育場裡的伊善料理秘密據點 🌶️ แซ่บทีมชาติ Zaapteamchad 藏在 กกท 體育場裡、位置意外讓人驚喜，鹹蛋青木瓜沙拉酸甜鹹辣樣樣到位、豬香腸配花枝沙拉是必點，雞腳辣湯軟嫩入味、炸雞皮薄酥脆，辣度指示器讓你自由選擇火力，Google 4.6 分、宴請一群朋友最合適。",
+    "category": "food",
+    "address": "ร้านอยู่ติดสระว่ายน้ำ สนามราชมังคลากีฬาสถาน การกีฬาแห่งประเทศไทย 286 Ramkhamhaeng Rd, Khwaeng Hua Mak, Khet Bang Kapi, Krung Thep Maha Nakhon 10240, Thailand",
+    "lat": 13.756003699999999,
+    "lng": 100.6236239,
+    "photos": [
+      "places/ChIJOYFbR3FhHTERdhke6y1BzpI/photos/AaVGc3mEiULY9yOMFzzEd_qwkQNB5U8JfohiQo9MBQ1AjLjF3u6xDfyGRpav6B2jl3Sjq5yeVX6N6Mqnr9ENoPvOCq39zpxYrp6KOILvtXePXyTIKC4gwwBqcUiVbrW40FcC9lWteaMDJfSWf7JHkvzCWlJSXjs8619ZBCnr6NB5Og5sQ1bIzOknIFF27kKxSvBmgQHoFluxyjpL3ohvYrr_L4rq4P_Zl1ZsjZuY9Q0fWB_QWxYzIwmAzutkTTKZfMPsjy29lSSdtwzXA6ccTYaPvsidFV5W0umYTotCGou2gdQp2kyIOroW5F9ONnUElxka2nWklNia_MlI8U_XIafZLvczvLCE4DTnQRYnobziHJ8Ded3Kum8nElui8NeGPFQKVu_UDhahkNVnkaLzB_zVZbsh6fW0DoSotCMPaWFmiGwsP75TOohV1CkN_X_dSQ"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Zaapteamchad%20Papaya%20Salads%20%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%AA%E0%B8%A3%E0%B8%B0%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%A2%E0%B8%99%E0%B9%89%E0%B8%B3%20%E0%B8%AA%E0%B8%99%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%A1%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%B5%E0%B8%AC%E0%B8%B2%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%20%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B8%B5%E0%B8%AC%E0%B8%B2%E0%B9%81%E0%B8%AB%E0%B9%88%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%97%E0%B8%A8%E0%B9%84%E0%B8%97%E0%B8%A2%20286%20Ramkhamhaeng%20Rd%2C%20Khwaeng%20Hua%20Mak%2C%20Khet%20Bang%20Kapi%2C%20Krung%20Thep%20Maha%20Nakhon%2010240%2C%20Thailand&query_place_id=ChIJOYFbR3FhHTERdhke6y1BzpI",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Papaya Salad",
+      "Some orders"
+    ],
+    "local_ratio": 75,
+    "id": "dbafe020-6c49-4453-9a32-41b1c34b0091",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T13:39:01.723Z",
+    "slug": "zaapteamchad-papaya-salads"
+  },
+  {
+    "name_en": "Esan Sab Restaurant",
+    "name_zh": "Esan Sab Restaurant",
+    "description_en": "Silom's most convenient Isaan lunch fix 🌶️ Esan Sab on Saladaeng Soi 1 is the neighbourhood Isaan canteen that office workers in the Silom-Sala Daeng corridor quietly rely on — punchy papaya salad, grilled pork neck with sticky rice, and satisfying Isaan soups at prices that make it easy to come back tomorrow. Steps from BTS Sala Daeng, open 11am to 10pm, affordable and unpretentious. The kind of spot that earns its repeat customers one bowl at a time.",
+    "description_zh": "Sala Daeng BTS 步行可達的在地伊善小食堂 🌶️ Esan Sab 藏在 Saladaeng Soi 1，矽隆辦公室上班族午休的私藏秘密，青木瓜沙拉酸辣夠勁、烤豬頸肉焦香下飯、辣湯清爽解膩，菜單選擇多、價格平實，是矽隆商圈午餐最值得放棄便利商店的伊善食堂。",
+    "category": "food",
+    "address": "27 Saladaeng Soi 1, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.7256989,
+    "lng": 100.5387926,
+    "photos": [
+      "places/ChIJVa3wpy-f4jAR4lUMjHaSD78/photos/AaVGc3nzK7n8EZao8d1aNXJfsRhlgejb2CrX6Pfdr0ksPjmpGIWL5HzqGi9JygpdREPGyRLM_MQhperlE0IvK1ylPYWFTJt6mhb1xYpKnMM9hLZGqK257bjHNmQJBiPuFEoWLjE0oQ_ESA57JWxF8mqQxWWz8zuwaKIHoz9e7YIsESU9ySE3fEUDBIcBIn166w5QyM0q0HP3giDXVsI2W9_8yyQlEqKG0dHvOK9KaELFE6R54fm5_8Ay6u2zudwBnQlfygbifFcsMj6vvocv9ksqdmNXXSbjq_zrhzeXhJ5QUOK1Yb7X6zE24ulWOzZBMt-NjARntRVkUIiZtC4jzuCZkoGqu3YsPpE3PmSSNUJqbd4N8u7Z5YaUUcHEFzPPsYUpp6oUbgAgsS7juUD9zmu55ZZBVf8lfRjZOxN9VNlfklXGtg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Esan%20Sab%20Restaurant%2027%20Saladaeng%20Soi%201%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJVa3wpy-f4jAR4lUMjHaSD78",
+    "rating": 4.2,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Pad Kra Pao",
+      "Som Tum"
+    ],
+    "local_ratio": 75,
+    "id": "7cedb621-4247-4dbe-8b64-689a4e3b10b4",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T13:39:34.576Z",
+    "slug": "esan-sab-restaurant"
+  },
+  {
+    "name_en": "Zabb One Ratchada",
+    "name_zh": "Zabb One Ratchada",
+    "description_en": "Ratchada's most reliably delicious open-air Isaan canteen 🌶️ Zabb One sits right beside MRT Thailand Cultural Centre on Ratchadaphisek Road — fans stirring the warm air, tables packed with locals, and a kitchen that churns out proper northeastern Thai food fast. The som tam is fresh and punchy, the larb moo is herbaceous and well-spiced, the grilled pork neck is tender with crispy fat, and the tom saeb broth is sour-spicy and deeply satisfying. Most dishes run 60–150 baht, the menu has English photos, and portions are generous enough for sharing. Bring a group, order widely, and keep the beer coming.",
+    "description_zh": "拉差達路上最讓人汗流浹背的道地伊善食堂 🌶️ Zabb One 就在泰國文化中心 MRT 站旁，開放式空間電扇嗡嗡作響、在地人圍桌大口吃喝，青木瓜沙拉酸辣平衡、拉布豬肉香草氣息十足、烤豬頸肉嫩而焦香、tom saeb 湯頭酸辣沁心，60-150 銖一盤物超所值，菜單附英文名稱與照片，是拉差達一帶最推薦帶朋友聚餐的伊善大食堂。",
+    "category": "food",
+    "address": "Thanon Ratchadaphisek, Khwaeng Huai Khwang, Khet Huai Khwang, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.768776500000001,
+    "lng": 100.5726117,
+    "photos": [
+      "places/ChIJ6eACyIee4jARnkPL-Nydnmc/photos/AaVGc3nz8HWSUnVxiiD6TFkQX-0kG6AmbG1saS1P0CLJ0hK3kDGjDul-GJZr9elWQYzLZ34cJDrm-m0z34eKS4cGq1SPs97I6_deLdL5oKbWA4jJ79EqKJNxSH9elZiztG1D_iqU5hEmohICOaTCLpmnnFzm5avhxJsGaQQX0NR313jx6LJEeDWO7opfbdWCK70JtbMBrOYKdjte9iAYXFzaTuDhMZWEVYsksN1ASSkPoJT07K9fn7j7Pr924Ti-n26IcMmPJKYg8Qv9ZD3QWHQ4FWzG5RqunUddqGDTFOGcH_Dtpsh4drah1vV0eMIlwyMi3vG9xhuPMZEzXAQ3vuiZlC9Gx4saJQq6o15_5SXhFftME5-O1zHKop3AkNChYfNyi0WooZF-sYdoog4QgxJ0cuzuPml_918Q-ry0QDE0wCtV7lGR549eSrn13YU1hD3n"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Zabb%20One%20Ratchada%20Thanon%20Ratchadaphisek%2C%20Khwaeng%20Huai%20Khwang%2C%20Khet%20Huai%20Khwang%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJ6eACyIee4jARnkPL-Nydnmc",
+    "rating": 4.1,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Som Tum",
+      "Papaya Salad",
+      "Larb"
+    ],
+    "local_ratio": 75,
+    "id": "45c21174-1a4a-4a07-b3a1-5ddfaf60ca09",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T13:40:10.760Z",
+    "slug": "zabb-one-ratchada"
+  },
+  {
+    "name_en": "Democracy Pad Thai || Pad Thai Pra Cha Tip Pa Tai",
+    "name_zh": "Democracy Pad Thai || Pad Thai Pra Cha Tip Pa Tai",
+    "description_en": "The pad thai you'll want to come back to every day 🍜 Democracy Pad Thai on Dinso Road near the Democracy Monument is a small, heartfelt family-run spot where the owner cooks everything fresh in front of you — the wok hei is real, the portions are generous, and the prices are honest. More than one visitor came back daily for weeks in a row. The crispy chicken version is a standout, and the family's warmth is half the reason people keep returning. Closed Tuesdays. A gem that deserves every bit of love it gets.",
+    "description_zh": "民主紀念碑旁最讓人每天都回頭的手工炒河粉 🍜 Democracy Pad Thai 由親切的老闆娘在你眼前現炒，眼見為憑的鍋氣與羅望子醬香氣讓人聞了就走不動，份量大、價格親切，有旅人住在附近整整八週、每天報到，脆炸雞版本尤其不能錯過，週二公休，來之前記得確認。",
+    "category": "food",
+    "address": "17 Dinso Rd, Khwaeng Wat Bowon Niwet, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.7589379,
+    "lng": 100.50247809999999,
+    "photos": [
+      "places/ChIJzSTXlWSZ4jARpqacYLDQoG8/photos/AaVGc3lcAQrgKjddiHikD8oFvdTWPWBbnG7Hd0lbhYO2iPJHiieW78zhNHKo1LKrC-i6oPNWZ9PlkQZbOFG_pqskWpvR9wGpMddTeD0Vdl0Lt4huTSKaN8VeH0f1vkJCQmsQukFN0mxL9fg73_jRF_fIHz5awcvrmW-Nw_uPMaFg2-BZNUXDQFqqEFcnNQpzJHWSUPt4Dh-6Fj0yQ307QaiclDOIz8rxnT0tQm2X87jGy1SeprHaEyk3vu1AVl6ml07xIlzvspMNpJTE3mhprIjIQgqtWAgwK0yLFFUrWAfgPBBPmCycBRpP9DaJepVcOHuXbQu59auPGk9rb9Mx8Do_4_8GIhG5oAixyiAW5dbTa4XvrW_rwCFt5TNnzZnDhtYr4X3OafzFlbf4kIYAmOPyXhHutPU1tYSdzeforZwy-sEo_-PYiPO7n7DLVLHjo2TI"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Democracy%20Pad%20Thai%20%7C%7C%20Pad%20Thai%20Pra%20Cha%20Tip%20Pa%20Tai%2017%20Dinso%20Rd%2C%20Khwaeng%20Wat%20Bowon%20Niwet%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJzSTXlWSZ4jARpqacYLDQoG8",
+    "rating": 5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Pad Thai",
+      "Green Curry",
+      "Papaya Salad"
+    ],
+    "local_ratio": 75,
+    "id": "d02c4bc4-dbba-4cc3-ae6f-9f688c6c8c39",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T13:40:44.038Z",
+    "slug": "democracy-pad-thai-pad-thai-pra-cha-tip-pa-tai"
+  },
+  {
+    "name_en": "Pad Thai Narok Taek",
+    "name_zh": "Pad Thai Narok Taek",
+    "description_en": "Hell Breaks Loose — the most dramatic pad thai in Bangkok 🔥 Pad Thai Narok Taek (\"Hell Breaks Loose\") lives up to its name completely — chef Aom cooks over towering open flames that rise 1.5 metres above the wok, charring the noodles with genuine wok hei that indoor restaurants can't replicate. The tamarind-heavy sauce is more sour than sweet, roasted chili paste adds a proper kick, and fresh shell-on river prawns are the must-order. Served sizzling on a hot plate, rated in Bangkok's top 10 pad thai lists, and just a 5-minute taxi ride from IconSiam. Watching the chef cook is half the experience.",
+    "description_zh": "「地獄爆炸」炒河粉，Khlong San 最猛烈的鍋氣 🔥 Pad Thai Narok Taek 意為「地獄崩裂」，主廚 Aom 以熊熊火焰升至一公尺半的明火大鍋炒製，羅望子醬偏酸不過甜、旋轉辣椒醬提辣、鮮蝦肥美鮮嫩，上桌時仍在鐵板上嘶嘶作響，光是看主廚炒菜就值回票價，入榜曼谷最佳炒河粉名單，IconSiam 旁五分鐘車程。",
+    "category": "food",
+    "address": "286 Lat Ya Rd, Khwaeng Khlong San, Khet Khlong San, Krung Thep Maha Nakhon 10600, Thailand",
+    "lat": 13.7272924,
+    "lng": 100.4979537,
+    "photos": [
+      "places/ChIJ6-UApfqY4jARzSaMDr8Ml_Q/photos/AaVGc3mX3811cPw43kyvYDKTFtWIz3iAERoumda8ibE5i4s4LEJsqq7NxNLHF9e6zww8Byw_gIYAdARVhiput2fROZKs0E4dnLW1CgvN9Byx47OMY_m3kToPucY4LPh9v1BtuczQxADqU9ebaZScArCcbdeJTSV347AP_STjawEFuIYLnraqBLh2YhsHLZ9we-v5o6ycM8S9EaG4Q2uqBFzjJQd2nif0jeEP9MAXhKu0le4kMVytoKICc8G24BZcMEBCDQ15S_Cb5wagm99sCOu3lyzxaQvDz6OLPv_jwnyljseZD4Kn7Is8spk1FBYu7iIgxCfGlXJIbstCxJ-YZr6M2PiJj81vnsIuEhQhaUCT47h5g-A8_JpuDvbXAndEjGENsn7XtcUKLplr_SdcoG10StcjgXD4gpXoX9HMQHvktpCOYP6P"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Pad%20Thai%20Narok%20Taek%20286%20Lat%20Ya%20Rd%2C%20Khwaeng%20Khlong%20San%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600%2C%20Thailand&query_place_id=ChIJ6-UApfqY4jARzSaMDr8Ml_Q",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Pad Thai"
+    ],
+    "local_ratio": 75,
+    "id": "e0a3347a-8054-405b-8fa2-c8ae1d82e088",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T13:41:33.669Z",
+    "slug": "pad-thai-narok-taek"
+  },
+  {
+    "name_en": "Pad Thai Fai Ta Lu (Dinso Rd)",
+    "name_zh": "Pad Thai Fai Ta Lu (Dinso Rd)",
+    "description_en": "Michelin Bib Gourmand pad thai from a Michelin-starred chef 🔥 Pad Thai Fai Ta Lu was opened by Chef Andy Yang — the first Thai chef to earn a Michelin star in New York — and the Dinso Road flagship is where the original award lives. Huge open flames engulf the wok up front while you watch, caramelising all-natural gluten-free rice noodles in tamarind jus. The signature is the charcoal-grilled Berkshire pork loin version — savory and smoky, more depth than sweetness, unlike any pad thai you've had before. A short walk from Khaosan Road and the Democracy Monument. Open daily 10am–7pm.",
+    "description_zh": "「穿透火焰」炒河粉，米其林主廚還原最純粹的一盤 🔥 Pad Thai Fai Ta Lu 由曾在紐約摘下米其林一星的主廚 Andy Yang 創立，門口大鍋火焰竄起兩層樓高，自然無麩質米粉以羅望子汁糖焦化煮製，招牌 Berkshire 豬里脊炭烤切片鋪頂，鹹鮮勝於甜、煙燻鍋氣每口都感受得到，連續多年獲米其林 Bib Gourmand，民主紀念碑旁、考山路步行可達。",
+    "category": "food",
+    "address": "115/5 Dinso Rd, Khwaeng Wat Bowon Niwet, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+    "lat": 13.757891500000001,
+    "lng": 100.5022115,
+    "photos": [
+      "places/ChIJJy7IpBSZ4jARJOWMygJHVfM/photos/AaVGc3m5mcUyUpK8WqgGLmZxhPyZy5WQTeXLefHKaFnYO103R2-WMAjLAOlexLth4uDyAh5rNAm1IjiGdgb5-Qn8d7qwREPXywadZpD2RqI6a0JKi4_-pBQbNEBVcrjI0lex5bQO6eDJn_GXBZRU6_D0Y5Zu3SoDc26k3KUT-IqZpkEsT1EjaL8nebBDgWBz-MURnFlLlTQh5H5F7Ho9HXM6tJE5ZDvmmacrmf4SXUPYn1vONZQOgZWujwMp6JaSDXi_x49JLLlDo8QL8IoUgZP8wQIcuoSZKbP225cE9sKc8aHFHRVOA0a9odK9mAjjb24g0NxOCJZNQmOhHau4JB8BawKv4-nf05tQ3LHuiYe1sYKOGkCz3Nzuz26ILXpWCCpCpU5DbBfGUbRjNloFQEtqcfvWdFBr-mDDDlyuojJGx7salw"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Pad%20Thai%20Fai%20Ta%20Lu%20(Dinso%20Rd)%20115%2F5%20Dinso%20Rd%2C%20Khwaeng%20Wat%20Bowon%20Niwet%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200%2C%20Thailand&query_place_id=ChIJJy7IpBSZ4jARJOWMygJHVfM",
+    "rating": 4.1,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Pad Thai"
+    ],
+    "local_ratio": 75,
+    "id": "ea199817-a934-4501-adbb-45e5bf4a1365",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T13:42:08.025Z"
   }
 ]
