@@ -1,9 +1,20 @@
-// 曼谷人 PWA service worker — 保守策略：頁面/資料一律網路優先（線上永遠看到最新），
-// 只有靜態資源走快取優先，離線時才用快取備援。避免線上看到舊內容。
-const CACHE = 'bkk-local-v1'
+// 曼谷人 PWA service worker — 保守策略：頁面/資料一律網路優先（線上永遠看到最新）。
+// 靜態資源分兩種：有內容雜湊的（/_next/static、/fonts）走快取優先；
+// 根目錄圖檔（favicon/icon/logo/hero 等，網址不會變）走 stale-while-revalidate，
+// 先回快取但背景抓新版，換圖後下次就會更新，不會卡舊 icon。
+const CACHE = 'bkk-local-v2'
 
 self.addEventListener('install', () => self.skipWaiting())
-self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()))
+self.addEventListener('activate', (e) =>
+  e.waitUntil(
+    (async () => {
+      // 清掉所有舊版快取（含卡住的舊 icon）
+      const keys = await caches.keys()
+      await Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
+      await self.clients.claim()
+    })()
+  )
+)
 
 self.addEventListener('fetch', (event) => {
   const req = event.request
@@ -11,13 +22,11 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(req.url)
   if (url.origin !== self.location.origin) return
 
-  const isStatic =
-    url.pathname.startsWith('/_next/static/') ||
-    url.pathname.startsWith('/fonts/') ||
-    /\.(?:png|jpg|jpeg|webp|svg|ico|otf|woff2?)$/.test(url.pathname)
+  // 內容雜湊、永不變 → 快取優先
+  const isImmutable =
+    url.pathname.startsWith('/_next/static/') || url.pathname.startsWith('/fonts/')
 
-  if (isStatic) {
-    // 靜態資源（內容雜湊、不會變）→ 快取優先
+  if (isImmutable) {
     event.respondWith(
       caches.open(CACHE).then(async (cache) => {
         const hit = await cache.match(req)
@@ -25,6 +34,24 @@ self.addEventListener('fetch', (event) => {
         const res = await fetch(req)
         if (res.ok) cache.put(req, res.clone())
         return res
+      })
+    )
+    return
+  }
+
+  // 根目錄圖檔（網址固定但內容會換）→ stale-while-revalidate
+  const isImage = /\.(?:png|jpg|jpeg|webp|svg|ico|gif)$/.test(url.pathname)
+  if (isImage) {
+    event.respondWith(
+      caches.open(CACHE).then(async (cache) => {
+        const hit = await cache.match(req)
+        const fetching = fetch(req)
+          .then((res) => {
+            if (res.ok) cache.put(req, res.clone())
+            return res
+          })
+          .catch(() => hit)
+        return hit || fetching
       })
     )
     return
