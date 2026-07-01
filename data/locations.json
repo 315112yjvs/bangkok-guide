@@ -6371,6 +6371,140 @@
     "id": "eb108b73-d8a0-4088-96ad-3d8af00710f4",
     "source": "googlemaps",
     "area": "",
-    "approved_at": "2026-07-01T07:42:08.746Z"
+    "approved_at": "2026-07-01T07:42:08.746Z",
+    "slug": "place-eb108b73"
+  },
+  {
+    "name_en": "ส้มตำอิหยังวะ",
+    "name_zh": "ส้มตำอิหยังวะ",
+    "description_en": "The Isaan restaurant with a name that means \"What the heck is this?!\" 🌶️ ส้มตำอิหยังวะ lives up to its cheeky name — a bold, high-energy Isaan restaurant in the Ngam Wong Wan area with a papaya salad menu that goes way beyond the basics. The grilled beef shank is the standout (order it as larb or with dipping sauce), the crispy pork belly is generous and satisfying, and the squid with salted egg earns its own fan club. Clean space, friendly service, affordable prices, open until midnight. The kind of local Isaan joint you come back to every week.",
+    "description_zh": "「到底是什麼鬼好吃」的伊善料理連鎖店 🌶️ ส้มตำอิหยังวะ 以「แซ่บถึงใจ」（辣到心坎裡）為招牌，青木瓜沙拉選擇多到讓你選不完，烤牛腱肉嫩香入味堪稱招牌，炸豬三層肉外酥內嫩、鹹蛋烤花枝彈牙鮮美，空間乾淨明亮、服務親切有活力，是งามวงศ์วาน 一帶最讓人一吃再來的伊善食堂。",
+    "category": "food",
+    "address": "345 31 Soi Ngam Wong Wan 47 Yaek 42, Khwaeng Thung Song Hong, Khet Lak Si, Krung Thep Maha Nakhon 10210, Thailand",
+    "lat": 13.8700067,
+    "lng": 100.55790569999999,
+    "photos": [
+      "places/ChIJI78k4Vqd4jAR_2G0qYsBmRI/photos/AaVGc3mn8IXyO7kfQE36fUcgvKEevNaqNSR_2awJ25xEwl8Vw3NFm-ToAyKxFykz4-g4rXe6Tdtbq4K1O7jDY6ydokWgHECLAX-qptTWLpMNZNxqnhcNkwaHwSCPmno_pYqoh63sGV3DVyqxpO1hJeAFx1OpOCDb3m7imHn3rufiMRzUwpbGTFmupcaQcEZ6APyXouxsJ3-itW6aS2SdNjxpUu205RJ7J-sxhyreZVkZFwchwxY6L8LNQHTEP9u1eKCDp6iu77SbBcq-UopSUz1c97zyrW0a8TvMDisbpwv1p791x8OXHUL81QQmNpAVuiZNifr2tht4H8ZQdi9TX4yD0VyBeKUnUAaz6IerxMuBZK6u5ZBioRaBazCj30I1-DOnMl98bGp6qfan1pIGO2qAmLWOxGFqKnlxqNPM0KA-BOm7pAukN2XFc5BGwKV7QEQi"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%AD%E0%B8%B4%E0%B8%AB%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%A7%E0%B8%B0%20345%2031%20Soi%20Ngam%20Wong%20Wan%2047%20Yaek%2042%2C%20Khwaeng%20Thung%20Song%20Hong%2C%20Khet%20Lak%20Si%2C%20Krung%20Thep%20Maha%20Nakhon%2010210%2C%20Thailand&query_place_id=ChIJI78k4Vqd4jAR_2G0qYsBmRI",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Som Tum",
+      "Papaya Salad"
+    ],
+    "local_ratio": 75,
+    "id": "61ae0ad7-24d0-4a6a-89fa-e65afae9899a",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T11:29:32.822Z",
+    "slug": "place-61ae0ad7"
+  },
+  {
+    "name_en": "Jaekoy เจ๊ก้อย ส้มตำอาหารอีสาน เพชรบุรี12 (สาขา1)",
+    "name_zh": "Jaekoy เจ๊ก้อย ส้มตำอาหารอีสาน เพชรบุรี12 (สาขา1)",
+    "description_en": "Ratchathewi's most beloved late-night Isaan canteen 🌶️ Jaekoy on Phetchaburi Soi 12 has been drawing loyal crowds for years — a lively, loud, no-frills Isaan restaurant where the papaya salad is generous and punchy, the communal jimjum hotpot is loaded with fresh ingredients, and the fish-sauce-marinated prawns have their own fan club. Tripadvisor ranked, open daily until 3am, and just a short walk from BTS Ratchathewi. The kind of place that gets more fun the later you arrive.",
+    "description_zh": "拉差威提最熱鬧的深夜伊善食堂 🌶️ เจ๊ก้อย 在เพชรบุรี 12 巷傳承多年，青木瓜沙拉份量大、各種ยำ沙拉道道扎實，招牌จิ้มจุ่ม大鍋熱湯食材滿滿、魚露醃鮮蝦鮮甜辛辣，Tripadvisor 曼谷前 1100 名、從傍晚坐到凌晨三點，是下班後、夜遊後最讓人滿足的那一頓伊善飯。",
+    "category": "food",
+    "address": "362/2-3 ระหว่าง ตึกยุพินอพาร์ทเม้น 14 Soi Phayathai, Khwaeng Thanon Phetchaburi, Khet Ratchathewi, Krung Thep Maha Nakhon 10400, Thailand",
+    "lat": 13.7535942,
+    "lng": 100.530245,
+    "photos": [
+      "places/ChIJQcxNN8ue4jAR4OLc3JszrTY/photos/AaVGc3mO9WroB1XGYxa_bMSXMpwn0cm0dJMFxlCkKA0ImIhh05v7DpEJqoAxs7eTYDrr2iJSE3SRgss6e9vgwcqLkDaDkgCRA-EYb3F3Yjpq_naCjR1D9mlJlD2NTbvBQBL30u3YlzuxCmz8QP1cWZMt1CNOlmXX-nRXP3SVm3CVIrW43VSfdV_Q6yCXiVqMhS077kGSuyIxQr9FiylcMc-C9BBVhGYnQTD_h9plNS3qPosXKr5WEtzTAMVZ_EJXidburSkq9WSKVHonSrpLlpnRPY3Fki7qHESrW7qvgljV6-GoCBCSbewohzMDZ0sURCGaHDAI8UYevx6hUQMr1GVTz7RP6zDxavRbQYeyhqHXFToIcL8s-jEEanV_wT9WQkLPCWqKpFVX97wzdnA0QA3WqtWbHWVRhlIeeWbtUF58-QMCT7ml"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Jaekoy%20%E0%B9%80%E0%B8%88%E0%B9%8A%E0%B8%81%E0%B9%89%E0%B8%AD%E0%B8%A2%20%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%AD%E0%B8%B5%E0%B8%AA%E0%B8%B2%E0%B8%99%20%E0%B9%80%E0%B8%9E%E0%B8%8A%E0%B8%A3%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B512%20(%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B21)%20362%2F2-3%20%E0%B8%A3%E0%B8%B0%E0%B8%AB%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%87%20%E0%B8%95%E0%B8%B6%E0%B8%81%E0%B8%A2%E0%B8%B8%E0%B8%9E%E0%B8%B4%E0%B8%99%E0%B8%AD%E0%B8%9E%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%97%E0%B9%80%E0%B8%A1%E0%B9%89%E0%B8%99%2014%20Soi%20Phayathai%2C%20Khwaeng%20Thanon%20Phetchaburi%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJQcxNN8ue4jAR4OLc3JszrTY",
+    "rating": 4.2,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Mango Sticky Rice",
+      "Papaya Salad"
+    ],
+    "local_ratio": 75,
+    "id": "730d0e98-cd19-4200-8b83-b089f457cfd2",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T11:30:06.093Z",
+    "slug": "jaekoy-12-1"
+  },
+  {
+    "name_en": "Baan Somtum",
+    "name_zh": "Baan Somtum",
+    "description_en": "Michelin-recognised Isaan dining inside a century-old wooden house in Charoen Krung 🌶️ Baan Somtum has been Bangkok's go-to for authentic northeastern Thai cuisine since 2005, and the Bang Rak branch in OP Gardens is the brand's most atmospheric yet — a two-storey renovated wooden house with an outdoor garden dining area surrounded by ferns and a fountain. Twenty-nine varieties of som tam, including the signature Luang Prabang-style with wide papaya strips and fermented fish, grilled pork shoulder, banana blossom salad, and rare hed pawk mushroom soup. Bib Gourmand, open daily 11am–10pm, ten minutes from BTS Saphan Taksin.",
+    "description_zh": "Charoen Krung 百年老宅裡的米其林伊善料理 🌶️ Baan Somtum 自 2005 年深耕曼谷，Bangrak 分店落腳 OP Gardens 的兩層樓老木屋，29 種青木瓜沙拉任你點，招牌 Tum Luang Prabang 琅勃拉邦風格寬版木瓜絲是必點，烤豬頸肉、香炸炸雞翼、珍稀菇湯道道用料誠實，花園座位芬芳靜謐，距 BTS Saphan Taksin 步行十分鐘。",
+    "category": "food",
+    "address": "4, ร้านบ้านส้มตำ ศูนย์การค้า โอ พี การ์เด้นท์, 6 Soi Rong Phasi, แขวงเจริญกรุง, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
+    "lat": 13.725147699999999,
+    "lng": 100.51598349999999,
+    "photos": [
+      "places/ChIJm-3wI42Z4jARNylNKEMrMh4/photos/AaVGc3mjhOcKb9YFON5gZ0DjM2hIr4xM-IKW0qLTv39f-diQ1fYmzUXpEgjMDIpPola16pzlWsR5UMrbhq4jc34KSurARxBWQ12OW38xJI9LyGV-LNHZ4tcIgL015D0uhzPxpfDzVzCGZDFDYIpKPJ-8w1JINt1Ttx5oYQ_-E1dixQFsIpisjeaROEFWvUGNxe2c3C2m1236Y-sgQEOHizRNzU7rWOaR-urHcGiEPbT1NLuMh31DbgKXpw7RBH-XI7dSCi8zEdKgOdSHXF5xJWu6WlWaU9zVrgF0Ot3VHaszI8LJz8FXK0DbO-v_-1i3FN3Tt5wE8pms6Vgu524TEN7dAVFxloOa-pSvNh4Hn0Ox1JDvrbfOBBiY06e8l5AuVq22FPDNunL9GwnTnBIeF8LUB2KONzFA_tu0vErbIDUnih7raA"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Baan%20Somtum%204%2C%20%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%20%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B9%89%E0%B8%B2%20%E0%B9%82%E0%B8%AD%20%E0%B8%9E%E0%B8%B5%20%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%94%E0%B9%89%E0%B8%99%E0%B8%97%E0%B9%8C%2C%206%20Soi%20Rong%20Phasi%2C%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJm-3wI42Z4jARNylNKEMrMh4",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Som Tum",
+      "Larb"
+    ],
+    "local_ratio": 75,
+    "id": "166f39f6-f03b-4041-913a-e6358d8bc832",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T11:30:39.831Z",
+    "slug": "baan-somtum"
+  },
+  {
+    "name_en": "ตำตำ ต้นตำรับ | สามย่านมิตรทาวน์",
+    "name_zh": "ตำตำ ต้นตำรับ | สามย่านมิตรทาวน์",
+    "description_en": "Authentic Isaan comfort food, one minute from MRT Sam Yan 🌶️ ตำตำ ต้นตำรับ is tucked in the B1 level of Samyan Mitrtown — making it one of the most accessible Isaan food stops in central Bangkok. Crisp, punchy papaya salad, satisfying larb moo, and a tom saeb with tender pork ribs that's the perfect antidote to Bangkok's heat. Generous portions, fast service, student-friendly prices, and open from 10am. A reliable everyday favourite in the Chulalongkorn area.",
+    "description_zh": "MRT Samyan 站直通地下一樓的伊善快食好選擇 🌶️ ตำตำ ต้นตำรับ 藏在 Samyan Mitrtown B1 層，下地鐵走一分鐘就到，青木瓜沙拉酥脆爽辣、拉布豬肉香辛下飯、ต้มแซ่บ豬軟骨湯清爽解膩，菜單豐富份量實在，是朱拉大學一帶學生和上班族最愛的平日午餐首選。",
+    "category": "food",
+    "address": "ชั้น B1 944 944/1 Thanon Rama IV, Khwaeng Wang Mai, Pathum Wan, Krung Thep Maha Nakhon 10330, Thailand",
+    "lat": 13.7335982,
+    "lng": 100.5280044,
+    "photos": [
+      "places/ChIJIWC5L7iZ4jARbGKBdHeTIb8/photos/AaVGc3mx2Rd3BJaQQAE6IDrz7hg6J1xW0-wWJjuTxHb3EqpX9D3XcaxGpCk5_6V5QozcI6wtSwPLlmfr6ejTLQV7CgY6-AfSq78cKhu2qm9XTICCXOO80Cxt_WFvwnP6s6QFy4vXZgLNSazUi0k_YwcyzTbO1R9Tw889ivasimfKR38ZgmrYDGfMwrEgGkPBBcex-Z_SQmsmFEdcL9k95NlPjuR1zTY8tfCubVR3OuVAvsYkJ2GwF_P_zM14Ip8P_2tk9ANOPFI4zDWP4LeUn7HWTVoEA2BjLFv3QWgXFg2in_oYRs9QLN9DxSFTnOVZASvjtkwKGXuHR2LzlssA8Si5hJ_SR_wRFSMsPYTe79OvrHsO2ailKEmF6Nz3kBt59lKkIAx3UfqIXGrcMTwTcCMPfQeIsz3yg660hRTyPehk6dyVptig"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%95%E0%B8%B3%E0%B8%95%E0%B8%B3%20%E0%B8%95%E0%B9%89%E0%B8%99%E0%B8%95%E0%B8%B3%E0%B8%A3%E0%B8%B1%E0%B8%9A%20%7C%20%E0%B8%AA%E0%B8%B2%E0%B8%A1%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%A3%E0%B8%97%E0%B8%B2%E0%B8%A7%E0%B8%99%E0%B9%8C%20%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%20B1%20944%20944%2F1%20Thanon%20Rama%20IV%2C%20Khwaeng%20Wang%20Mai%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330%2C%20Thailand&query_place_id=ChIJIWC5L7iZ4jARbGKBdHeTIb8",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Pad Thai",
+      "Som Tum"
+    ],
+    "local_ratio": 75,
+    "id": "f18525d3-523b-4eaf-a5d1-8f0c4f236527",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T11:31:33.794Z",
+    "slug": "place-f18525d3"
+  },
+  {
+    "name_en": "HEY Mookrata",
+    "name_zh": "HEY Mookrata",
+    "description_en": "The mookata that breaks all the old rules — right opposite IconSiam 🍖 HEY Mookrata in the OURS complex on Charoen Nakhon Soi 10 is unlike your average Thai BBQ hotpot — polished interiors, air-con throughout, private dining rooms, and a garden zone that makes every visit feel like a proper evening out. They're the first restaurant in Thailand to serve a \"mookata cake\" — a layered grilled meat dish that's become a signature alongside imported beef cuts, fresh seafood, and a house dipping sauce that regulars say is the best in Bangkok. Open weekday evenings, all-day weekends. BTS Gold Line Charoen Nakhon station, 400m walk.",
+    "description_zh": "IconSiam 對面最有型的泰式烤肉火鍋 🍖 HEY Mookrata 坐落 OURS 商場的 Charoen Nakhon 10 巷，是曼谷首家推出「หมูกระทะเค้ก」肉餅鐵板燒的品牌，進口牛肉、新鮮海鮮、招牌特製沾醬皆用心研製，冷氣足、環境美、室內外包廂任選，金線輕軌 BTS Charoen Nakhon 站下車步行 400 公尺，傍晚五點開始、周末午間即可入座。",
+    "category": "food",
+    "address": "240, 1 Soi Pho Suwan, Khwaeng Khlong Ton Sai, Khet Khlong San, Krung Thep Maha Nakhon 10600, Thailand",
+    "lat": 13.7247351,
+    "lng": 100.50498689999999,
+    "photos": [
+      "places/ChIJ-VzpB76Z4jAR4-J-cQtNoMM/photos/AaVGc3khm5D8B59bfnRsAqWMvfOWWPgeCiY3v1mYOHsEbZfx7eKTPTfnaEmI3J5A3JC0CBIMgqGchzG2uXdko3njUXL_Hr5QAf8hq9WHtkRgfNtfnrI40baikC9n62Unub8yzOtLb2ZIyMR-yGlSLz0ICH_MsW5M7plIrMtPE0AyoYqf6CeqHqruPY4b0ZqTGgvr3TA8kdsb3G2QOSu781PWOQP1YNBclwCMf3OWcq7zy7yOum2yUiIlcvCL12fGar7un0fvhZpazf8jCK1_Nyb7NuFrLhWsKTF9FbWKi71aTX-ly7QhuUfhg-sQUHtWPHe825J81UjCXKHxiFZk7-8CXSJdKp9FH887qA5ddmsGFU-OZtoFQ0cwsgtH9VIbZnU3YN1_WSLQoRO9hdU50JI6OZLKsRvv8Kl6uTdBvEoSXqIQ6A"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=HEY%20Mookrata%20240%2C%201%20Soi%20Pho%20Suwan%2C%20Khwaeng%20Khlong%20Ton%20Sai%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600%2C%20Thailand&query_place_id=ChIJ-VzpB76Z4jAR4-J-cQtNoMM",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "His spicy shrimp salad"
+    ],
+    "local_ratio": 75,
+    "id": "ffb2c44e-5be7-4e96-ab2e-0a8dcf451a19",
+    "source": "googlemaps",
+    "area": "",
+    "approved_at": "2026-07-01T11:32:20.483Z"
   }
 ]
