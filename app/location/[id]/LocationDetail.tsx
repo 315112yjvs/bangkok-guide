@@ -17,15 +17,6 @@ function extractThai(text: string): string | null {
   return thai && thai.length >= 3 ? thai : null
 }
 
-const SOURCE_LABEL: Record<string, string> = {
-  tiktok: 'TikTok', instagram: 'Instagram', pantip: 'Pantip',
-  wongnai: 'Wongnai', googlemaps: 'Google Maps', manual: '精選',
-}
-const SOURCE_COLOR: Record<string, string> = {
-  tiktok: 'bg-emerald-500', instagram: 'bg-purple-500', pantip: 'bg-orange-500',
-  wongnai: 'bg-red-500', googlemaps: 'bg-blue-500', manual: 'bg-amber-500',
-}
-
 const TAG_META: Record<LocationTag, { emoji: string; zh: string; color: string }> = {
   trending:    { emoji: '🔥', zh: '話題爆紅', color: 'bg-orange-500' },
   hidden_gem:  { emoji: '🗺', zh: '在地私藏', color: 'bg-emerald-600' },
@@ -213,20 +204,17 @@ export function LocationDetail({ location }: { location: Location }) {
 
       <div className="px-4 pt-4 pb-24">
 
-        {/* Source + name */}
-        <div className="flex items-start justify-between gap-2 mb-1">
-          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full text-white shrink-0 ${SOURCE_COLOR[location.source] ?? 'bg-gray-400'}`}>
-            {SOURCE_LABEL[location.source] ?? location.source}
-          </span>
-          {(thaiName || thaiAddress) && (
+        {/* Thai copy button */}
+        {(thaiName || thaiAddress) && (
+          <div className="flex items-start justify-end gap-2 mb-1">
             <button
               onClick={copyThai}
               className="shrink-0 flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#f0edff] text-[#5b4fcf] hover:bg-[#e0daff] transition-colors"
             >
               {copied ? '複製了！' : 'ภาษาไทย'}
             </button>
-          )}
-        </div>
+          </div>
+        )}
 
         <h1 className="text-[22px] font-black text-[#1a1a2e] leading-tight mt-1 mb-0.5">{name}</h1>
 
