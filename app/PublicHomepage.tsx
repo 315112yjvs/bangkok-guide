@@ -12,6 +12,7 @@ import { type Landmark } from '@/lib/landmarks'
 import { MIcon } from '@/components/icons/MaterialIcons'
 import { LocationCard } from '@/components/LocationCard'
 import { LocationMap } from '@/components/LocationMap'
+import { Reveal } from '@/components/Reveal'
 import { getArea } from '@/lib/area'
 import type { Location, Category, LocationTag } from '@/lib/types'
 
@@ -220,7 +221,7 @@ export function PublicHomepage({ locations }: Props) {
           {/* Bottom editorial block */}
           <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl lg:mx-auto lg:text-center">
             {/* Live badge + subtitle — 共用同一顆紅色膠囊 */}
-            <div className="flex mb-3 lg:justify-center">
+            <div className="hero-rise hero-rise-1 flex mb-3 lg:justify-center">
               <span className="inline-flex items-center gap-2 bg-rose-600 text-white px-3 py-1.5 rounded-full shadow-lg">
                 <span className="inline-flex items-center gap-1.5 text-[9px] font-black tracking-widest uppercase">
                   <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
@@ -231,13 +232,13 @@ export function PublicHomepage({ locations }: Props) {
             </div>
 
             {/* Title — 六分糖字型 */}
-            <h1 className="leading-[1.15] mb-4">
+            <h1 className="hero-rise hero-rise-2 leading-[1.15] mb-4">
               <span className="font-liufen text-[32px] lg:text-[52px] text-white drop-shadow-lg block">{strings[lang].heroTitle as string}</span>
               <span className="font-liufen text-[32px] lg:text-[52px] text-amber-400 drop-shadow-lg block">{strings[lang].heroTitleAccent as string}</span>
             </h1>
 
             {/* Search bar */}
-            <div className="flex items-center gap-2.5 bg-white/15 backdrop-blur-xl border border-white/25 rounded-2xl px-4 py-3 shadow-lg">
+            <div className="hero-rise hero-rise-3 flex items-center gap-2.5 bg-white/15 backdrop-blur-xl border border-white/25 rounded-2xl px-4 py-3 shadow-lg">
               <svg className="w-4 h-4 text-white/50 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
               </svg>
@@ -409,6 +410,7 @@ export function PublicHomepage({ locations }: Props) {
               return (
                 <section key={tag} className="mt-4">
                   {/* Section header */}
+                  <Reveal>
                   <div className={`mx-3 rounded-2xl bg-gradient-to-r ${meta.color} px-4 py-3 flex items-center justify-between mb-2`}>
                     <div>
                       <p className="flex items-center gap-1.5 text-white font-black text-[15px] tracking-tight leading-tight">
@@ -424,10 +426,11 @@ export function PublicHomepage({ locations }: Props) {
                       {items.length} {lang === 'zh' ? '筆' : 'places'}
                     </span>
                   </div>
+                  </Reveal>
                   {/* Horizontal scroll cards — 每區隨機抽 SECTION_LIMIT 筆，其餘按「看全部」進完整清單 */}
                   <div className="flex gap-3 overflow-x-auto no-scrollbar px-3 pb-1">
-                    {items.slice(0, SECTION_LIMIT).map((loc) => (
-                      <div key={loc.id} className="shrink-0 w-44 lg:w-52 h-[260px] lg:h-[300px]">
+                    {items.slice(0, SECTION_LIMIT).map((loc, i) => (
+                      <Reveal key={loc.id} delay={i < 4 ? i * 60 : 0} className="shrink-0 w-44 lg:w-52 h-[260px] lg:h-[300px]">
                         <LocationCard
                           location={loc}
                           lang={lang}
@@ -436,7 +439,7 @@ export function PublicHomepage({ locations }: Props) {
                           onToggleSave={handleToggleSave}
                           compact
                         />
-                      </div>
+                      </Reveal>
                     ))}
                     {items.length > SECTION_LIMIT && (
                       <button
@@ -476,16 +479,17 @@ export function PublicHomepage({ locations }: Props) {
             {filtered.length > 0 ? (
               <>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                  {filtered.slice(0, gridLimit).map((loc) => (
-                    <LocationCard
-                      key={loc.id}
-                      location={loc}
-                      lang={lang}
-                      distanceKm={nearbyAnchor ? haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, loc.lat, loc.lng) : undefined}
-                      saved={savedIds.has(loc.id)}
-                      onToggleSave={handleToggleSave}
-                      compact
-                    />
+                  {filtered.slice(0, gridLimit).map((loc, i) => (
+                    <Reveal key={loc.id} delay={(i % 2) * 60}>
+                      <LocationCard
+                        location={loc}
+                        lang={lang}
+                        distanceKm={nearbyAnchor ? haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, loc.lat, loc.lng) : undefined}
+                        saved={savedIds.has(loc.id)}
+                        onToggleSave={handleToggleSave}
+                        compact
+                      />
+                    </Reveal>
                   ))}
                 </div>
                 {filtered.length > gridLimit && (

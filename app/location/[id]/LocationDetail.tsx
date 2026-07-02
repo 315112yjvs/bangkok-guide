@@ -9,6 +9,7 @@ import { SocialEmbed } from '@/components/SocialEmbed'
 import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
+import { Reveal } from '@/components/Reveal'
 
 function extractThai(text: string): string | null {
   const thai = text.match(/[฀-๿][฀-๿\s]*/g)?.join(' ').trim()
@@ -213,27 +214,27 @@ export function LocationDetail({ location }: { location: Location }) {
 
         {/* Curator note */}
         {location.curator_note && (
-          <div className="mb-4 bg-indigo-50 border border-indigo-100 rounded-2xl px-4 py-3">
+          <Reveal className="mb-4 bg-indigo-50 border border-indigo-100 rounded-2xl px-4 py-3">
             <p className="text-[11px] font-black text-indigo-400 uppercase tracking-wide mb-1">
               {lang === 'zh' ? '在地人怎麼說' : "Local's Take"}
             </p>
             <p className="text-[14px] text-indigo-700 leading-relaxed font-medium">{location.curator_note}</p>
-          </div>
+          </Reveal>
         )}
 
         {/* Description */}
         {cleanDesc && (
-          <div className="mb-4">
+          <Reveal delay={60} className="mb-4">
             <h2 className="text-[13px] font-black text-gray-700 mb-1.5 uppercase tracking-wide">
               {lang === 'zh' ? '關於' : 'About'}
             </h2>
             <p className="text-[14px] text-gray-600 leading-relaxed">{cleanDesc}</p>
-          </div>
+          </Reveal>
         )}
 
         {/* Highlights */}
         {(location.highlights?.length ?? 0) > 0 && (
-          <div className="mb-4">
+          <Reveal delay={120} className="mb-4">
             <h2 className="text-[13px] font-black text-gray-700 mb-1.5 uppercase tracking-wide">
               {lang === 'zh' ? '必點' : 'Must Try'}
             </h2>
@@ -244,12 +245,12 @@ export function LocationDetail({ location }: { location: Location }) {
                 </span>
               ))}
             </div>
-          </div>
+          </Reveal>
         )}
 
         {/* Address */}
         {location.address && (
-          <div className="mb-4">
+          <Reveal delay={180} className="mb-4">
             <h2 className="text-[13px] font-black text-gray-700 mb-1.5 uppercase tracking-wide">
               {lang === 'zh' ? '地址' : 'Address'}
             </h2>
@@ -257,17 +258,17 @@ export function LocationDetail({ location }: { location: Location }) {
             {thaiAddress && (
               <p className="text-[12px] text-gray-400 mt-0.5">{thaiAddress}</p>
             )}
-          </div>
+          </Reveal>
         )}
 
         {/* Social embed */}
         {location.social_embed_url && (
-          <div className="mb-4">
+          <Reveal className="mb-4">
             <h2 className="text-[13px] font-black text-gray-700 mb-2 uppercase tracking-wide">
               {lang === 'zh' ? '社群影片' : 'Social Video'}
             </h2>
             <SocialEmbed url={location.social_embed_url} />
-          </div>
+          </Reveal>
         )}
 
       </div>

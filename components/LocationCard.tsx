@@ -102,14 +102,17 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   }
 
   return (
-    <Link href={`/location/${location.slug ?? location.id}`} className="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+    <div className="group relative flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-[box-shadow,transform] duration-300">
+      {/* 整卡可點的連結鋪在上層（z-10）、互動按鈕疊更高（z-20）：
+          避免 <a> 巢套 <a>（無效 HTML，會導致 hydration 失敗、整頁 client 重渲染） */}
+      <Link href={`/location/${location.slug ?? location.id}`} aria-label={name} className="absolute inset-0 z-10 rounded-2xl" />
       {/* Photo */}
-      <div className="relative h-36 w-full">
+      <div className="relative h-36 w-full overflow-hidden">
         <Image
           src={imgSrc}
           alt={name}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           sizes="(max-width: 768px) 50vw, 33vw"
           unoptimized
           onError={handleImgError}
@@ -134,7 +137,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
             <button
               onClick={copyThai}
               title={strings[lang].copyThai as string}
-              className="shrink-0 flex items-center gap-0.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#f0edff] text-[#5b4fcf] hover:bg-[#e0daff] transition-colors"
+              className="relative z-20 shrink-0 flex items-center gap-0.5 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#f0edff] text-[#5b4fcf] hover:bg-[#e0daff] transition-colors"
             >
               {copied ? (strings[lang].copied as string) : 'ภาษาไทย'}
             </button>
@@ -186,7 +189,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
               onClick={toggleSave}
               aria-label={saved ? (lang === 'zh' ? '取消收藏' : 'Unsave') : (lang === 'zh' ? '收藏' : 'Save')}
               aria-pressed={saved}
-              className={`shrink-0 p-1.5 rounded-xl transition-colors ${saved ? 'text-red-500 bg-red-50' : 'text-gray-300 bg-gray-50 hover:text-red-400 hover:bg-red-50'}`}
+              className={`relative z-20 shrink-0 p-1.5 rounded-xl transition-colors ${saved ? 'text-red-500 bg-red-50' : 'text-gray-300 bg-gray-50 hover:text-red-400 hover:bg-red-50'}`}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.5}>
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -197,8 +200,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${strings[lang].navigate as string} — ${name}`}
-              className="shrink-0 flex items-center gap-1 h-7 bg-[#1e1b4b] text-white text-[10px] font-bold rounded-xl px-2.5 whitespace-nowrap hover:bg-[#2d2a6e] transition-colors active:scale-95"
-              onClick={(e) => e.stopPropagation()}
+              className="relative z-20 shrink-0 flex items-center gap-1 h-7 bg-[#1e1b4b] text-white text-[10px] font-bold rounded-xl px-2.5 whitespace-nowrap hover:bg-[#2d2a6e] transition-colors active:scale-95"
             >
               <IconPin size={11} className="shrink-0" />
               {!compact && (strings[lang].navigate as string)}
@@ -206,6 +208,6 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
