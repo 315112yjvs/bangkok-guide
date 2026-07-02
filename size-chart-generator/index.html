@@ -522,17 +522,17 @@
       <div id="measList"></div>
       <div class="row" style="margin-top:10px">
         <select id="presetSel" style="flex:1">
-          <option value="SHOULDER|h" data-i18n="pShoulder">肩寬 SHOULDER</option>
-          <option value="CHEST|h" data-i18n="pChest">胸圍 CHEST</option>
-          <option value="LENGTH|v" data-i18n="pLength">衣長／裙長 LENGTH</option>
-          <option value="UPPER ARM|v" data-i18n="pUpperArm">袖圍 UPPER ARM</option>
-          <option value="SLEEVE|h" data-i18n="pSleeve">袖長 SLEEVE</option>
-          <option value="WAIST|h" data-i18n="pWaist">腰圍 WAIST</option>
-          <option value="HIP|h" data-i18n="pHip">臀圍 HIP</option>
-          <option value="THIGH|h" data-i18n="pThigh">大腿圍 THIGH</option>
-          <option value="LEG OPENING|h" data-i18n="pLegOpen">褲口 LEG OPENING</option>
-          <option value="NEW|h" data-i18n="pCustomH">自訂（橫向線）</option>
-          <option value="NEW|v" data-i18n="pCustomV">自訂（直向線）</option>
+          <option value="shoulder|h" data-i18n="pShoulder">肩寬 SHOULDER</option>
+          <option value="chest|h" data-i18n="pChest">胸圍 CHEST</option>
+          <option value="length|v" data-i18n="pLength">衣長／裙長 LENGTH</option>
+          <option value="upperarm|v" data-i18n="pUpperArm">袖圍 UPPER ARM</option>
+          <option value="sleeve|h" data-i18n="pSleeve">袖長 SLEEVE</option>
+          <option value="waist|h" data-i18n="pWaist">腰圍 WAIST</option>
+          <option value="hip|h" data-i18n="pHip">臀圍 HIP</option>
+          <option value="thigh|h" data-i18n="pThigh">大腿圍 THIGH</option>
+          <option value="legopen|h" data-i18n="pLegOpen">褲口 LEG OPENING</option>
+          <option value="custom|h" data-i18n="pCustomH">自訂（橫向線）</option>
+          <option value="custom|v" data-i18n="pCustomV">自訂（直向線）</option>
         </select>
         <button class="btn small" id="addMeasBtn" style="margin-top:0" data-i18n="add">＋ 加入</button>
       </div>
@@ -607,6 +607,7 @@ const I18N = {
     theme:'版面顏色與文字', accentL:'主色（標題/表格）', bgL:'背景色', textL:'文字色', lineL:'測量線色',
     themeHint:'標題、單位、備註文字：直接在右邊圖上點一下就能改字。',
     meas:'測量項目（＝表格欄位）', add:'＋ 加入',
+    sizeCol:'尺寸', customLabel:'自訂',
     pShoulder:'肩寬 SHOULDER', pChest:'胸圍 CHEST', pLength:'衣長／裙長 LENGTH', pUpperArm:'袖圍 UPPER ARM',
     pSleeve:'袖長 SLEEVE', pWaist:'腰圍 WAIST', pHip:'臀圍 HIP', pThigh:'大腿圍 THIGH',
     pLegOpen:'褲口 LEG OPENING', pCustomH:'自訂（橫向線）', pCustomV:'自訂（直向線）',
@@ -663,6 +664,7 @@ const I18N = {
     theme:'สีเลย์เอาต์และข้อความ', accentL:'สีหลัก (หัวข้อ/ตาราง)', bgL:'สีพื้นหลัง', textL:'สีตัวอักษร', lineL:'สีเส้นวัด',
     themeHint:'หัวข้อ หน่วย หมายเหตุ: กดที่ข้อความบนรูปด้านขวาเพื่อแก้ได้เลย',
     meas:'รายการวัด (=คอลัมน์ตาราง)', add:'＋ เพิ่ม',
+    sizeCol:'ไซซ์', customLabel:'กำหนดเอง',
     pShoulder:'ไหล่ SHOULDER', pChest:'รอบอก CHEST', pLength:'ความยาว LENGTH', pUpperArm:'ต้นแขน UPPER ARM',
     pSleeve:'ความยาวแขน SLEEVE', pWaist:'รอบเอว WAIST', pHip:'สะโพก HIP', pThigh:'ต้นขา THIGH',
     pLegOpen:'ปลายขา LEG OPENING', pCustomH:'กำหนดเอง (เส้นแนวนอน)', pCustomV:'กำหนดเอง (เส้นแนวตั้ง)',
@@ -696,10 +698,23 @@ const I18N = {
     tExportFail:'โหลดตัวส่งออกไม่สำเร็จ ตรวจอินเทอร์เน็ตแล้วรีเฟรชหน้า',
   }
 };
+/* 測量項目名稱三語對照：切換語言時，沒被使用者改過的標籤會自動翻譯 */
+const MEAS_I18N = {
+  shoulder:{en:'SHOULDER',    zh:'肩寬',   th:'ไหล่'},
+  chest:   {en:'CHEST',       zh:'胸圍',   th:'รอบอก'},
+  length:  {en:'LENGTH',      zh:'長度',   th:'ความยาว'},
+  upperarm:{en:'UPPER ARM',   zh:'袖圍',   th:'ต้นแขน'},
+  sleeve:  {en:'SLEEVE',      zh:'袖長',   th:'ความยาวแขน'},
+  waist:   {en:'WAIST',       zh:'腰圍',   th:'รอบเอว'},
+  hip:     {en:'HIP',         zh:'臀圍',   th:'สะโพก'},
+  thigh:   {en:'THIGH',       zh:'大腿圍', th:'ต้นขา'},
+  legopen: {en:'LEG OPENING', zh:'褲口',   th:'ปลายขา'},
+};
 function t(k){
   const d = I18N[lang] || I18N.zh;
   return d[k] !== undefined ? d[k] : (I18N.zh[k] !== undefined ? I18N.zh[k] : k);
 }
+const ML = k => (MEAS_I18N[k] && (MEAS_I18N[k][lang] || MEAS_I18N[k].en)) || k;
 function applyLang(){
   document.documentElement.lang = lang === 'th' ? 'th' : 'zh-Hant';
   document.querySelectorAll('[data-i18n]').forEach(el=>{
@@ -713,10 +728,10 @@ function makeTemplates(){
   return {
     top: {
       measures: [
-        {id:uid(), label:'SHOULDER',  orient:'h', x:32, y:8,  len:36, lp:'above', visible:true},
-        {id:uid(), label:'CHEST',     orient:'h', x:26, y:45, len:48, lp:'below', visible:true},
-        {id:uid(), label:'LENGTH',    orient:'v', x:88, y:8,  len:84, lp:'right', visible:true},
-        {id:uid(), label:'UPPER ARM', orient:'v', x:14, y:12, len:32, lp:'left',  visible:true},
+        {id:uid(), key:'shoulder', label:ML('shoulder'), orient:'h', x:32, y:8,  len:36, lp:'above', visible:true},
+        {id:uid(), key:'chest',    label:ML('chest'),    orient:'h', x:26, y:45, len:48, lp:'below', visible:true},
+        {id:uid(), key:'length',   label:ML('length'),   orient:'v', x:88, y:8,  len:84, lp:'right', visible:true},
+        {id:uid(), key:'upperarm', label:ML('upperarm'), orient:'v', x:14, y:12, len:32, lp:'left',  visible:true},
       ],
       sizes: [
         {name:'S', values:['44','14','25','20']},
@@ -726,11 +741,11 @@ function makeTemplates(){
     },
     pants: {
       measures: [
-        {id:uid(), label:'WAIST',       orient:'h', x:33, y:8,  len:34, lp:'above', visible:true},
-        {id:uid(), label:'HIP',         orient:'h', x:28, y:28, len:44, lp:'below', visible:true},
-        {id:uid(), label:'THIGH',       orient:'h', x:14, y:48, len:26, lp:'below', visible:true},
-        {id:uid(), label:'LENGTH',      orient:'v', x:88, y:8,  len:86, lp:'right', visible:true},
-        {id:uid(), label:'LEG OPENING', orient:'h', x:16, y:90, len:20, lp:'below', visible:true},
+        {id:uid(), key:'waist',   label:ML('waist'),   orient:'h', x:33, y:8,  len:34, lp:'above', visible:true},
+        {id:uid(), key:'hip',     label:ML('hip'),     orient:'h', x:28, y:28, len:44, lp:'below', visible:true},
+        {id:uid(), key:'thigh',   label:ML('thigh'),   orient:'h', x:14, y:48, len:26, lp:'below', visible:true},
+        {id:uid(), key:'length',  label:ML('length'),  orient:'v', x:88, y:8,  len:86, lp:'right', visible:true},
+        {id:uid(), key:'legopen', label:ML('legopen'), orient:'h', x:16, y:90, len:20, lp:'below', visible:true},
       ],
       sizes: [
         {name:'S', values:['26','36','22','38','14']},
@@ -740,9 +755,9 @@ function makeTemplates(){
     },
     skirt: {
       measures: [
-        {id:uid(), label:'WAIST',  orient:'h', x:33, y:8,  len:34, lp:'above', visible:true},
-        {id:uid(), label:'HIP',    orient:'h', x:26, y:38, len:48, lp:'below', visible:true},
-        {id:uid(), label:'LENGTH', orient:'v', x:88, y:8,  len:84, lp:'right', visible:true},
+        {id:uid(), key:'waist',  label:ML('waist'),  orient:'h', x:33, y:8,  len:34, lp:'above', visible:true},
+        {id:uid(), key:'hip',    label:ML('hip'),    orient:'h', x:26, y:38, len:48, lp:'below', visible:true},
+        {id:uid(), key:'length', label:ML('length'), orient:'v', x:88, y:8,  len:84, lp:'right', visible:true},
       ],
       sizes: [
         {name:'S', values:['25','34','21']},
@@ -774,6 +789,16 @@ function defaultState(){
   };
 }
 
+// 舊存檔沒有 key 欄位：用標籤文字反查是哪個測量項目
+function inferMeasKeys(s){
+  (s.measures || []).forEach(m=>{
+    if(m.key) return;
+    for(const [k, names] of Object.entries(MEAS_I18N)){
+      if(Object.values(names).includes(m.label)){ m.key = k; return; }
+    }
+  });
+}
+
 const STORAGE_KEY = 'sizechart-state-v1';
 let state = loadState() || defaultState();
 
@@ -785,6 +810,7 @@ function loadState(){
     if(!s.measures || !s.sizes) return null;
     s.texts = s.texts || [];
     s.photoOriginal = s.photoOriginal || null;
+    inferMeasKeys(s);
     return s;
   }catch(e){ return null; }
 }
@@ -977,7 +1003,7 @@ function escapeHTML(s){
 
 function renderTable(){
   const vis = state.measures.filter(m=>m.visible);
-  let html = '<tr><th>SIZE</th>' + vis.map(m=>`<th contenteditable spellcheck="false" data-head="${m.id}">${escapeHTML(m.label)}</th>`).join('') + '</tr>';
+  let html = '<tr><th>' + t('sizeCol') + '</th>' + vis.map(m=>`<th contenteditable spellcheck="false" data-head="${m.id}">${escapeHTML(m.label)}</th>`).join('') + '</tr>';
   state.sizes.forEach((s,ri)=>{
     html += `<tr><td contenteditable spellcheck="false" data-size-name="${ri}">${escapeHTML(s.name)}</td>`
       + vis.map(m=>`<td contenteditable spellcheck="false" data-row="${ri}" data-meas="${m.id}">${escapeHTML(s.values[m.id] ?? '')}</td>`).join('')
@@ -1256,15 +1282,28 @@ $('#tplBtns').addEventListener('click', e=>{
   undoToast(t('tSwitched'), snapshot);
 });
 
-// 語言切換
+// 語言切換：介面 + 圖上未自訂的文字一起翻譯
+function switchChartLanguage(){
+  state.measures.forEach(m=>{
+    if(m.key && MEAS_I18N[m.key]){
+      // 標籤仍是任一語言的預設名稱（沒被使用者改過）才自動翻譯
+      if(Object.values(MEAS_I18N[m.key]).includes(m.label)) m.label = ML(m.key);
+    }
+  });
+  const unitDefaults = [I18N.zh.defaultUnit, I18N.th.defaultUnit];
+  if(unitDefaults.includes(state.unitHTML)) state.unitHTML = t('defaultUnit');
+  const noteDefaults = [I18N.zh.defaultNote, I18N.th.defaultNote];
+  if(noteDefaults.includes(state.noteHTML)) state.noteHTML = t('defaultNote');
+}
 $('#langBtns').addEventListener('click', e=>{
   const btn = e.target.closest('button[data-lang]');
   if(!btn || btn.dataset.lang === lang) return;
   lang = btn.dataset.lang;
   localStorage.setItem('sizechart-lang', lang);
+  switchChartLanguage();
   applyLang();
-  renderMeasPanel();
-  renderTextPanel();
+  renderAll();
+  save();
 });
 
 // 照片
@@ -1574,8 +1613,9 @@ $('#measList').addEventListener('click', e=>{
   undoToast(t('tDelLine'), snapshot);
 });
 $('#addMeasBtn').addEventListener('click', ()=>{
-  const [label, orient] = $('#presetSel').value.split('|');
-  const m = {id:uid(), label, orient, x:orient==='h'?30:50, y:orient==='h'?50:20, len:30, lp:orient==='h'?'above':'right', visible:true};
+  const [key, orient] = $('#presetSel').value.split('|');
+  const label = key === 'custom' ? t('customLabel') : ML(key);
+  const m = {id:uid(), key: key === 'custom' ? null : key, label, orient, x:orient==='h'?30:50, y:orient==='h'?50:20, len:30, lp:orient==='h'?'above':'right', visible:true};
   state.measures.push(m);
   state.sizes.forEach(s=> s.values[m.id]='');
   renderLines(); renderTable(); renderMeasPanel(); save();
@@ -1819,6 +1859,7 @@ fitStage();
     if((saved.savedAt || 0) < (state.savedAt || 0)) return;
     saved.texts = saved.texts || [];
     saved.photoOriginal = saved.photoOriginal || null;
+    inferMeasKeys(saved);
     state = saved;
     renderAll();
   }catch(e){}
