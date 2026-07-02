@@ -360,6 +360,37 @@
   [contenteditable]:focus{box-shadow:0 0 0 2px rgba(59,130,246,.55)}
   #stage.exporting [contenteditable]{box-shadow:none!important}
 
+  /* 文字／浮水印圖層 */
+  #textLayer{
+    position:absolute;inset:0;
+    pointer-events:none;
+    z-index:5;
+    overflow:hidden;
+  }
+  .txt-item{
+    position:absolute;
+    pointer-events:auto;
+    cursor:move;
+    white-space:pre-wrap;
+    outline:none;
+    font-family:'Playfair Display','Noto Sans TC',serif;
+    user-select:none;
+    touch-action:none;
+    padding:2px 5px;
+    line-height:1.2;
+  }
+  .txt-item.selected{box-shadow:0 0 0 1.5px #2f6fe4}
+  .txt-item[contenteditable="true"]{cursor:text;user-select:text}
+  .txt-tile{
+    position:absolute;inset:-35%;
+    pointer-events:none;
+    display:flex;flex-wrap:wrap;
+    align-content:space-around;justify-content:space-around;
+    overflow:hidden;
+  }
+  .txt-tile span{white-space:nowrap;padding:28px 36px;font-family:'Playfair Display','Noto Sans TC',serif}
+  #stage.exporting .txt-item{box-shadow:none!important}
+
   /* 互動回饋 */
   .meas.selected{color:#2f6fe4}
   #stage.exporting .meas{color:var(--line,#171310)!important}
@@ -428,6 +459,22 @@
       <div class="row"><label>水平位置</label><input type="range" id="photoX" min="-60" max="60" value="0"><span class="val" id="photoXVal">0</span></div>
       <div class="row"><label>垂直位置</label><input type="range" id="photoY" min="-60" max="60" value="0"><span class="val" id="photoYVal">0</span></div>
       <p class="hint">也可以直接在圖上拖曳照片移動、滾輪縮放。</p>
+      <div class="row" style="margin-top:12px"><label>去背容差</label><input type="range" id="bgTol" min="10" max="120" value="40"><span class="val" id="bgTolVal">40</span></div>
+      <button class="btn small" id="quickBgBtn">✂️ 快速去背（純色背景）</button>
+      <button class="btn small" id="aiBgBtn">🤖 AI 去背（高品質）</button>
+      <button class="btn small" id="trimBtn">📐 自動裁切置中</button>
+      <button class="btn small" id="restoreBtn">↩ 還原原圖</button>
+      <p class="hint">快速去背適合背景接近單色的照片，效果不夠乾淨就調高容差再按一次。AI 去背第一次使用需下載模型（約 40MB），要等一下。去背後建議按「自動裁切置中」，衣服會平整置中。</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary>文字／浮水印</summary>
+    <div class="box">
+      <div id="textList"></div>
+      <button class="btn small" id="addText">＋ 加一行文字</button>
+      <button class="btn small" id="addTile">＋ 滿版浮水印</button>
+      <p class="hint">單行文字可在圖上拖曳位置、雙擊直接改字；滿版浮水印會斜向鋪滿整張圖，適合防盜圖。</p>
     </div>
   </details>
 
@@ -505,6 +552,7 @@
       <div id="unitLabel" contenteditable spellcheck="false">單位：英吋 (inch)</div>
       <table id="sizeTable"></table>
       <div id="noteLine" contenteditable spellcheck="false">*** 商品皆為手工測量，尺寸可能有些微誤差 ***</div>
+      <div id="textLayer"></div>
     </div>
   </div>
 </main>
@@ -571,7 +619,9 @@ function defaultState(){
     noteHTML:  '*** 商品皆為手工測量，尺寸可能有些微誤差 ***',
     dots: ['#1e3a6e','#4a3226','#b3a8dc','#eed6ae'],
     photo: null,
+    photoOriginal: null,
     photoW: 62, photoX: 0, photoY: 0,
+    texts: [],
     measures: tpl.top.measures,
     sizes:    tpl.top.sizes.map(s => ({name:s.name, values:Object.fromEntries(tpl.top.measures.map((m,i)=>[m.id, s.values[i]]))})),
   };
@@ -586,6 +636,8 @@ function loadState(){
     if(!raw) return null;
     const s = JSON.parse(raw);
     if(!s.measures || !s.sizes) return null;
+    s.texts = s.texts || [];
+    s.photoOriginal = s.photoOriginal || null;
     return s;
   }catch(e){ return null; }
 }
@@ -597,9 +649,14 @@ function save(){
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     }catch(e){
       try{
-        const copy = Object.assign({}, state, {photo:null});
+        const copy = Object.assign({}, state, {photoOriginal:null});
         localStorage.setItem(STORAGE_KEY, JSON.stringify(copy));
-      }catch(e2){}
+      }catch(e2){
+        try{
+          const copy2 = Object.assign({}, state, {photo:null, photoOriginal:null});
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(copy2));
+        }catch(e3){}
+      }
     }
   }, 400);
 }
@@ -612,6 +669,7 @@ const photoEl = $('#photo'), placeholderEl = $('#photoPlaceholder');
 const tableEl = $('#sizeTable');
 const snapGuideEl = $('#snapGuide');
 let selectedId = null;
+let selectedTextId = null;
 
 /* ================= Toast 與復原 ================= */
 const toastEl = document.createElement('div');
@@ -634,11 +692,17 @@ function toast(msg, actionLabel, actionFn, ms = 4000){
 function hideToast(){ toastEl.classList.remove('show'); }
 function snap(){ return JSON.parse(JSON.stringify(state)); }
 function undoToast(msg, snapshot){
-  toast(msg, '復原', ()=>{ state = snapshot; selectedId = null; renderAll(); save(); }, 6000);
+  toast(msg, '復原', ()=>{ state = snapshot; selectedId = null; selectedTextId = null; renderAll(); save(); }, 6000);
 }
 function selectMeas(id){
   selectedId = id;
+  if(id) selectText(null);
   linesEl.querySelectorAll('.meas').forEach(el=> el.classList.toggle('selected', el.dataset.id === id));
+}
+function selectText(id){
+  selectedTextId = id;
+  if(id) selectMeas(null);
+  document.querySelectorAll('.txt-item').forEach(el=> el.classList.toggle('selected', el.dataset.id === id));
 }
 
 /* ================= 渲染 ================= */
@@ -786,6 +850,104 @@ function renderSizePanel(){
   });
 }
 
+function renderTextLayer(){
+  const layer = $('#textLayer');
+  layer.innerHTML = '';
+  state.texts.forEach(t=>{
+    if(t.mode === 'tile'){
+      const c = document.createElement('div');
+      c.className = 'txt-tile';
+      c.style.transform = `rotate(${t.rotate}deg)`;
+      c.style.opacity = t.opacity;
+      for(let i=0;i<90;i++){
+        const s = document.createElement('span');
+        s.textContent = t.text;
+        s.style.fontSize = t.size + 'px';
+        s.style.color = t.color;
+        s.style.fontWeight = t.bold ? '700' : '400';
+        c.appendChild(s);
+      }
+      layer.appendChild(c);
+    }else{
+      const el = document.createElement('div');
+      el.className = 'txt-item';
+      el.dataset.id = t.id;
+      el.textContent = t.text;
+      el.style.left = t.x + '%';
+      el.style.top = t.y + '%';
+      el.style.fontSize = t.size + 'px';
+      el.style.color = t.color;
+      el.style.opacity = t.opacity;
+      el.style.fontWeight = t.bold ? '700' : '400';
+      el.style.transform = `rotate(${t.rotate}deg)`;
+      if(t.id === selectedTextId) el.classList.add('selected');
+      layer.appendChild(el);
+      bindTextItem(el, t);
+    }
+  });
+}
+
+function renderTextPanel(){
+  const list = $('#textList');
+  list.innerHTML = '';
+  state.texts.forEach(t=>{
+    const card = document.createElement('div');
+    card.className = 'item-card';
+    card.innerHTML = `
+      <div class="row">
+        <input type="text" value="${escapeHTML(t.text)}" data-txt-text="${t.id}" style="flex:1">
+        <button class="del" data-txt-del="${t.id}" title="刪除">✕</button>
+      </div>
+      <div class="row"><label>大小</label><input type="range" min="10" max="90" value="${t.size}" data-txt-size="${t.id}"><input type="color" value="${t.color}" data-txt-color="${t.id}"></div>
+      <div class="row"><label>透明度</label><input type="range" min="5" max="100" value="${Math.round(t.opacity*100)}" data-txt-op="${t.id}"></div>
+      <div class="row"><label>旋轉</label><input type="range" min="-90" max="90" value="${t.rotate}" data-txt-rot="${t.id}"></div>
+      <div class="row"><label style="width:auto"><input type="checkbox" data-txt-bold="${t.id}"${t.bold?' checked':''}> 粗體</label><span class="hint" style="margin:0">${t.mode==='tile'?'滿版浮水印':'圖上可拖曳、雙擊改字'}</span></div>`;
+    list.appendChild(card);
+  });
+}
+
+function bindTextItem(el, t){
+  el.addEventListener('pointerdown', e=>{
+    if(el.isContentEditable) return;
+    e.preventDefault();
+    if(document.activeElement && document.activeElement.blur) document.activeElement.blur();
+    selectText(t.id);
+    const rect = stage.getBoundingClientRect();
+    const scale = rect.width / stage.offsetWidth;
+    const sx = e.clientX, sy = e.clientY, ox = t.x, oy = t.y;
+    const clamp = (v,lo,hi)=>Math.min(hi,Math.max(lo,v));
+    function onMove(ev){
+      t.x = clamp(ox + (ev.clientX - sx)/(stage.offsetWidth*scale)*100, -5, 97);
+      t.y = clamp(oy + (ev.clientY - sy)/(stage.offsetHeight*scale)*100, 0, 97);
+      el.style.left = t.x + '%';
+      el.style.top = t.y + '%';
+    }
+    function onUp(){
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      save();
+    }
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+  });
+  el.addEventListener('dblclick', ()=>{
+    el.setAttribute('contenteditable', 'true');
+    el.focus();
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  });
+  el.addEventListener('blur', ()=> el.removeAttribute('contenteditable'));
+  el.addEventListener('input', ()=>{
+    t.text = el.textContent;
+    const inp = document.querySelector(`[data-txt-text="${t.id}"]`);
+    if(inp) inp.value = t.text;
+    save();
+  });
+}
+
 function renderTplBtns(){
   document.querySelectorAll('#tplBtns button').forEach(b=>{
     b.classList.toggle('active', b.dataset.tpl === state.template);
@@ -801,6 +963,8 @@ function renderAll(){
   renderTable();
   renderMeasPanel();
   renderSizePanel();
+  renderTextLayer();
+  renderTextPanel();
   renderTplBtns();
 }
 
@@ -809,6 +973,7 @@ function bindLine(el, m){
   el.addEventListener('pointerdown', e=>{
     if(e.target.classList.contains('meas-label')) return; // 編輯文字不拖曳
     e.preventDefault();
+    if(document.activeElement && document.activeElement.blur) document.activeElement.blur();
     selectMeas(m.id);
     const handle = e.target.dataset.handle || null;
     const rect = photoZone.getBoundingClientRect();
@@ -895,7 +1060,7 @@ $('#fileInput').addEventListener('change', e=>{
   const f = e.target.files[0];
   if(!f) return;
   const reader = new FileReader();
-  reader.onload = ()=>{ state.photo = reader.result; renderPhoto(); save(); };
+  reader.onload = ()=>{ state.photo = reader.result; state.photoOriginal = null; renderPhoto(); save(); };
   reader.readAsDataURL(f);
 });
 photoZone.addEventListener('dragover', e=> e.preventDefault());
@@ -904,9 +1069,171 @@ photoZone.addEventListener('drop', e=>{
   const f = e.dataTransfer.files[0];
   if(!f || !f.type.startsWith('image/')) return;
   const reader = new FileReader();
-  reader.onload = ()=>{ state.photo = reader.result; renderPhoto(); save(); };
+  reader.onload = ()=>{ state.photo = reader.result; state.photoOriginal = null; renderPhoto(); save(); };
   reader.readAsDataURL(f);
 });
+
+/* ================= 去背與裁切 ================= */
+$('#bgTol').addEventListener('input', e=> $('#bgTolVal').textContent = e.target.value);
+
+function loadPhotoCanvas(cb){
+  const img = new Image();
+  img.onload = ()=>{
+    const scale = Math.min(1, 1400 / img.naturalWidth);
+    const w = Math.max(1, Math.round(img.naturalWidth * scale));
+    const h = Math.max(1, Math.round(img.naturalHeight * scale));
+    const c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    const ctx = c.getContext('2d');
+    ctx.drawImage(img, 0, 0, w, h);
+    cb(c, ctx);
+  };
+  img.src = state.photo;
+}
+
+function borderAvg(d, w, h){
+  let r=0, g=0, b=0, n=0;
+  const add = i=>{ r+=d[i]; g+=d[i+1]; b+=d[i+2]; n++; };
+  for(let x=0;x<w;x++){ add(x*4); add(((h-1)*w+x)*4); }
+  for(let y=0;y<h;y++){ add(y*w*4); add((y*w+w-1)*4); }
+  return [r/n, g/n, b/n];
+}
+
+function quickRemoveBg(){
+  if(!state.photo){ toast('請先上傳照片'); return; }
+  if(!state.photoOriginal) state.photoOriginal = state.photo;
+  const tol = +$('#bgTol').value;
+  loadPhotoCanvas((c, ctx)=>{
+    const w = c.width, h = c.height;
+    const im = ctx.getImageData(0, 0, w, h), d = im.data;
+    const [r, g, b] = borderAvg(d, w, h);
+    const tol2 = tol * tol * 3;
+    const dist2 = i=>{
+      const dr = d[i]-r, dg = d[i+1]-g, db = d[i+2]-b;
+      return dr*dr + dg*dg + db*db;
+    };
+    // 從四邊往內做連通填色，只清除跟背景連在一起的區域
+    const visited = new Uint8Array(w*h);
+    const stack = [];
+    for(let x=0;x<w;x++){ stack.push(x, (h-1)*w + x); }
+    for(let y=0;y<h;y++){ stack.push(y*w, y*w + w - 1); }
+    while(stack.length){
+      const p = stack.pop();
+      if(visited[p]) continue;
+      visited[p] = 1;
+      if(d[p*4+3] === 0){ /* 已透明也要繼續往內找 */ }
+      else if(dist2(p*4) > tol2) continue;
+      d[p*4+3] = 0;
+      const x = p % w, y = (p / w) | 0;
+      if(x > 0) stack.push(p-1);
+      if(x < w-1) stack.push(p+1);
+      if(y > 0) stack.push(p-w);
+      if(y < h-1) stack.push(p+w);
+    }
+    // 邊緣柔化一圈
+    const softened = [];
+    for(let y=1;y<h-1;y++){
+      for(let x=1;x<w-1;x++){
+        const p = y*w + x;
+        if(d[p*4+3] === 0) continue;
+        if(d[(p-1)*4+3]===0 || d[(p+1)*4+3]===0 || d[(p-w)*4+3]===0 || d[(p+w)*4+3]===0) softened.push(p);
+      }
+    }
+    softened.forEach(p=> d[p*4+3] = 120);
+    ctx.putImageData(im, 0, 0);
+    state.photo = c.toDataURL('image/png');
+    renderPhoto(); save();
+    toast('快速去背完成，不夠乾淨可調高容差再按一次', '還原原圖', restorePhoto, 6000);
+  });
+}
+
+function trimPhoto(){
+  if(!state.photo){ toast('請先上傳照片'); return; }
+  if(!state.photoOriginal) state.photoOriginal = state.photo;
+  loadPhotoCanvas((c, ctx)=>{
+    const w = c.width, h = c.height;
+    const d = ctx.getImageData(0, 0, w, h).data;
+    let hasAlpha = false;
+    for(let i=3;i<d.length;i+=4){ if(d[i] < 250){ hasAlpha = true; break; } }
+    const [r, g, b] = borderAvg(d, w, h);
+    const colorTol2 = 40*40*3;
+    const isContent = p=>{
+      const i = p*4;
+      if(hasAlpha) return d[i+3] > 20;
+      const dr = d[i]-r, dg = d[i+1]-g, db = d[i+2]-b;
+      return dr*dr + dg*dg + db*db > colorTol2;
+    };
+    let minX = w, minY = h, maxX = -1, maxY = -1;
+    for(let y=0;y<h;y++){
+      for(let x=0;x<w;x++){
+        if(isContent(y*w + x)){
+          if(x < minX) minX = x;
+          if(x > maxX) maxX = x;
+          if(y < minY) minY = y;
+          if(y > maxY) maxY = y;
+        }
+      }
+    }
+    if(maxX < 0){ toast('找不到內容，先確認照片或先去背'); return; }
+    const mx = Math.round((maxX - minX) * 0.03), my = Math.round((maxY - minY) * 0.03);
+    minX = Math.max(0, minX - mx); maxX = Math.min(w-1, maxX + mx);
+    minY = Math.max(0, minY - my); maxY = Math.min(h-1, maxY + my);
+    const cw = maxX - minX + 1, ch = maxY - minY + 1;
+    const c2 = document.createElement('canvas');
+    c2.width = cw; c2.height = ch;
+    c2.getContext('2d').drawImage(c, minX, minY, cw, ch, 0, 0, cw, ch);
+    state.photo = c2.toDataURL('image/png');
+    state.photoX = 0; state.photoY = 0;
+    renderPhoto(); save();
+    toast('已裁掉多餘留白並置中');
+  });
+}
+
+function restorePhoto(){
+  if(!state.photoOriginal){ toast('沒有可還原的原圖'); return; }
+  state.photo = state.photoOriginal;
+  state.photoOriginal = null;
+  renderPhoto(); save();
+  toast('已還原原圖');
+}
+
+let imglyPromise = null;
+async function aiRemoveBg(){
+  if(!state.photo){ toast('請先上傳照片'); return; }
+  if(!state.photoOriginal) state.photoOriginal = state.photo;
+  const btn = $('#aiBgBtn');
+  btn.disabled = true;
+  btn.textContent = '🤖 AI 處理中…';
+  try{
+    toast('AI 去背處理中，第一次要下載模型（約 40MB），請稍等…', null, null, 60000);
+    imglyPromise = imglyPromise || import('https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.5.5/+esm');
+    const { removeBackground } = await imglyPromise;
+    const blob = await (await fetch(state.photo)).blob();
+    const out = await removeBackground(blob, {
+      // 指定模型資源位置，並停用 worker 代理，讓雙擊開啟的 file:// 頁面也能用
+      publicPath: 'https://staticimgly.com/@imgly/background-removal-data/1.5.5/dist/',
+      proxyToWorker: false,
+    });
+    state.photo = await new Promise(res=>{
+      const fr = new FileReader();
+      fr.onload = ()=> res(fr.result);
+      fr.readAsDataURL(out);
+    });
+    renderPhoto(); save();
+    toast('AI 去背完成，建議接著按「自動裁切置中」', '還原原圖', restorePhoto, 6000);
+  }catch(err){
+    console.error(err);
+    toast('AI 去背失敗（需要網路連線），可先用快速去背', null, null, 5000);
+  }finally{
+    btn.disabled = false;
+    btn.textContent = '🤖 AI 去背（高品質）';
+  }
+}
+
+$('#quickBgBtn').addEventListener('click', quickRemoveBg);
+$('#trimBtn').addEventListener('click', trimPhoto);
+$('#restoreBtn').addEventListener('click', restorePhoto);
+$('#aiBgBtn').addEventListener('click', aiRemoveBg);
 ['photoW','photoX','photoY'].forEach(k=>{
   $('#'+k).addEventListener('input', e=>{
     state[k] = +e.target.value;
@@ -1042,10 +1369,81 @@ $('#addMeasBtn').addEventListener('click', ()=>{
   toast('已加入 ' + label + '，把線拖到照片上對的位置');
 });
 
-// 點選測量線後：方向鍵微調（Shift 加大步伐）、Delete 刪除
+/* ================= 文字／浮水印 ================= */
+$('#addText').addEventListener('click', ()=>{
+  const t = {id:uid(), mode:'single', text:'你的品牌', x:36, y:75, size:26, color:'#171310', opacity:0.9, rotate:0, bold:true};
+  state.texts.push(t);
+  renderTextLayer(); renderTextPanel(); save();
+  selectText(t.id);
+  toast('已加入文字，拖曳調整位置、雙擊改字');
+});
+$('#addTile').addEventListener('click', ()=>{
+  const t = {id:uid(), mode:'tile', text:'@yourbrand', x:0, y:0, size:22, color:'#888888', opacity:0.18, rotate:-30, bold:true};
+  state.texts.push(t);
+  renderTextLayer(); renderTextPanel(); save();
+  toast('已加入滿版浮水印，在左邊改字和透明度');
+});
+$('#textList').addEventListener('input', e=>{
+  const el = e.target, ds = el.dataset;
+  const id = ds.txtText || ds.txtSize || ds.txtColor || ds.txtOp || ds.txtRot;
+  if(!id) return;
+  const t = state.texts.find(x=>x.id===id);
+  if(!t) return;
+  if(ds.txtText !== undefined) t.text = el.value;
+  else if(ds.txtSize !== undefined) t.size = +el.value;
+  else if(ds.txtColor !== undefined) t.color = el.value;
+  else if(ds.txtOp !== undefined) t.opacity = +el.value/100;
+  else if(ds.txtRot !== undefined) t.rotate = +el.value;
+  renderTextLayer(); save();
+});
+$('#textList').addEventListener('change', e=>{
+  if(e.target.dataset.txtBold === undefined) return;
+  const t = state.texts.find(x=>x.id===e.target.dataset.txtBold);
+  if(!t) return;
+  t.bold = e.target.checked;
+  renderTextLayer(); save();
+});
+$('#textList').addEventListener('click', e=>{
+  const del = e.target.closest('[data-txt-del]');
+  if(!del) return;
+  const snapshot = snap();
+  state.texts = state.texts.filter(t=>t.id !== del.dataset.txtDel);
+  if(selectedTextId === del.dataset.txtDel) selectedTextId = null;
+  renderTextLayer(); renderTextPanel(); save();
+  undoToast('已刪除文字', snapshot);
+});
+
+// 點選測量線或文字後：方向鍵微調（Shift 加大步伐）、Delete 刪除
 document.addEventListener('keydown', e=>{
   const a = document.activeElement;
   if(a && (a.isContentEditable || a.tagName==='INPUT' || a.tagName==='SELECT' || a.tagName==='TEXTAREA')) return;
+  if(selectedTextId){
+    const t = state.texts.find(x=>x.id===selectedTextId);
+    if(!t) return;
+    if(e.key==='Delete' || e.key==='Backspace'){
+      e.preventDefault();
+      const snapshot = snap();
+      state.texts = state.texts.filter(x=>x.id!==selectedTextId);
+      selectedTextId = null;
+      renderTextLayer(); renderTextPanel(); save();
+      undoToast('已刪除文字', snapshot);
+      return;
+    }
+    const step = e.shiftKey ? 2 : 0.5;
+    let handled = true;
+    if(e.key==='ArrowLeft') t.x -= step;
+    else if(e.key==='ArrowRight') t.x += step;
+    else if(e.key==='ArrowUp') t.y -= step;
+    else if(e.key==='ArrowDown') t.y += step;
+    else handled = false;
+    if(handled){
+      e.preventDefault();
+      const el = document.querySelector(`.txt-item[data-id="${t.id}"]`);
+      if(el){ el.style.left = t.x + '%'; el.style.top = t.y + '%'; }
+      save();
+    }
+    return;
+  }
   if(!selectedId) return;
   const m = state.measures.find(x=>x.id===selectedId);
   if(!m) return;
@@ -1076,7 +1474,10 @@ document.addEventListener('keydown', e=>{
 
 // 點空白處取消選取
 stage.addEventListener('pointerdown', e=>{
-  if(!e.target.closest('.meas')) selectMeas(null);
+  if(!e.target.closest('.meas') && !e.target.closest('.txt-item')){
+    selectMeas(null);
+    selectText(null);
+  }
 });
 
 // 尺寸列
