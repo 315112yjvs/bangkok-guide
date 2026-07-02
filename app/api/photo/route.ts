@@ -33,21 +33,55 @@ export async function GET(req: NextRequest) {
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
       const res = await fetchOnce()
-      if (res.ok) {
-        const buf = await res.arrayBuffer()
-        return new NextResponse(buf, {
-          headers: {
-            'Content-Type': res.headers.get('content-type') ?? 'image/jpeg',
-            // 瀏覽器 + Vercel CDN 都長快取；照片內容不變所以 immutable
-            'Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
-          },
-        })
+      if (res.ok) return imageResponse(res)
+      // 403/404：照片 ref 過期（Google 會定期換掉 ref）→ 用 ref 內含的 place id
+      // 換一個現行 ref 再抓一次，成功的話 CDN 照樣以原網址快取，前端不用改
+      if (res.status === 403 || res.status === 404) {
+        const healed = await fetchWithFreshRef(ref, w, key)
+        if (healed) return imageResponse(healed)
+        return new NextResponse('upstream error', { status: res.status })
       }
-      // 4xx（ref 失效等）不重試，直接回錯誤；5xx 才再試一次
+      // 其他 4xx 不重試，直接回錯誤；5xx 才再試一次
       if (res.status < 500) return new NextResponse('upstream error', { status: res.status })
     } catch {
       // 逾時/網路錯誤 → 進入下一輪重試
     }
   }
   return new NextResponse('fetch failed', { status: 502 })
+}
+
+async function imageResponse(res: Response) {
+  const buf = await res.arrayBuffer()
+  return new NextResponse(buf, {
+    headers: {
+      'Content-Type': res.headers.get('content-type') ?? 'image/jpeg',
+      // 瀏覽器 + Vercel CDN 都長快取；照片內容不變所以 immutable
+      'Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',
+    },
+  })
+}
+
+// ref 格式 places/{placeId}/photos/{photoId}：跟 Place Details 要現行照片清單，
+// 抓第一張頂替過期的 ref（總比破圖換預設圖好）
+async function fetchWithFreshRef(staleRef: string, w: number, key: string): Promise<Response | null> {
+  try {
+    const placeId = staleRef.split('/')[1]
+    const detail = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
+      headers: {
+        'X-Goog-Api-Key': key,
+        'X-Goog-FieldMask': 'photos',
+        'Referer': 'https://www.bkk-local.com/',
+      },
+    })
+    if (!detail.ok) return null
+    const data = await detail.json()
+    const fresh: string | undefined = data.photos?.[0]?.name
+    if (!fresh || fresh === staleRef) return null
+    const res = await fetch(`https://places.googleapis.com/v1/${fresh}/media?maxWidthPx=${w}&key=${key}`, {
+      headers: { Referer: 'https://www.bkk-local.com/' },
+    })
+    return res.ok ? res : null
+  } catch {
+    return null
+  }
 }
