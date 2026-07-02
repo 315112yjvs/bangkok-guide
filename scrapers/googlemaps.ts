@@ -116,7 +116,7 @@ async function fetchPlacesQuery(query: string, category: QueryConfig['category']
       'X-Goog-FieldMask': [
         'places.displayName', 'places.formattedAddress', 'places.primaryTypeDisplayName',
         'places.businessStatus', 'places.rating', 'places.priceLevel',
-        'places.location', 'places.photos', 'places.id', 'places.editorialSummary', 'places.reviews',
+        'places.location', 'places.photos', 'places.id',
       ].join(','),
     },
     body: JSON.stringify({

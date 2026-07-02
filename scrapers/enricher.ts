@@ -45,8 +45,6 @@ async function findPlace(name: string, lat?: number, lng?: number): Promise<Plac
           'places.rating',
           'places.location',
           'places.photos',
-          'places.editorialSummary',
-          'places.reviews',
         ].join(','),
       },
       body: JSON.stringify(body),

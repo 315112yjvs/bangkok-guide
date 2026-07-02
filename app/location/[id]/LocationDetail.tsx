@@ -6,11 +6,9 @@ import { IconPin } from '@/components/icons/CategoryIcons'
 import type { Location, LocationTag } from '@/lib/types'
 import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
-import { buildMapsUrl, extractPlaceId } from '@/lib/maps'
+import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
-
-type PlaceData = { photos: string[]; editorial: string | null; reviewSnippets: string[] }
 
 function extractThai(text: string): string | null {
   const thai = text.match(/[฀-๿][฀-๿\s]*/g)?.join(' ').trim()
@@ -35,8 +33,6 @@ export function LocationDetail({ location }: { location: Location }) {
   const router = useRouter()
   const { lang } = useLanguage()
   const [activePhoto, setActivePhoto] = useState(0)
-  const [placeData, setPlaceData] = useState<PlaceData | null>(null)
-  const [loadingPlace, setLoadingPlace] = useState(true)
   const [saved, setSaved] = useState(false)
   const [copied, setCopied] = useState(false)
   const [shared, setShared] = useState(false)
@@ -67,7 +63,6 @@ export function LocationDetail({ location }: { location: Location }) {
   const name = lang === 'zh' ? location.name_zh : location.name_en
   const desc = lang === 'zh' ? location.description_zh : location.description_en
 
-  const placeId = extractPlaceId(location.source_url)
   const mapsUrl = buildMapsUrl(location)
 
   // Load saved state
@@ -78,18 +73,8 @@ export function LocationDetail({ location }: { location: Location }) {
     } catch { /* ignore */ }
   }, [location.id])
 
-  // Fetch extra photos + editorial from Places API
-  useEffect(() => {
-    if (!placeId) { setLoadingPlace(false); return }
-    fetch(`/api/place/${placeId}`)
-      .then((r) => r.json())
-      .then((d: PlaceData) => setPlaceData(d))
-      .catch(() => {})
-      .finally(() => setLoadingPlace(false))
-  }, [placeId])
-
-  // 照片：優先用 Places API 抓到的，否則用既有的；全部走 /api/photo 代理
-  const allRefs = placeData?.photos.length ? placeData.photos : location.photos.filter(Boolean)
+  // 照片：用爬蟲時已存的 refs（不再即時打 Google Place Details 省費用）；全部走 /api/photo 代理
+  const allRefs = location.photos.filter(Boolean)
   const allPhotos = allRefs.map((r) => photoUrl(r, 800))
 
   // 照片載入失敗（例如 Google 帳單停用導致 403）時換成預設圖，避免破圖
@@ -114,8 +99,7 @@ export function LocationDetail({ location }: { location: Location }) {
     })
   }
 
-  const fullDesc = placeData?.editorial || desc
-  const cleanDesc = fullDesc?.replace(/^必點：[^。]*。\s*/, '') ?? ''
+  const cleanDesc = desc?.replace(/^必點：[^。]*。\s*/, '') ?? ''
 
   return (
     <div className="max-w-md mx-auto bg-white min-h-screen shadow-xl">
@@ -133,7 +117,7 @@ export function LocationDetail({ location }: { location: Location }) {
             onError={() => markBroken(allPhotos[activePhoto] ?? allPhotos[0])}
           />
         ) : (
-          <div className={`w-full h-full ${loadingPlace ? 'animate-pulse bg-gray-200' : 'bg-gradient-to-br from-gray-200 to-gray-300'}`} />
+          <div className="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300" />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
 
@@ -258,27 +242,6 @@ export function LocationDetail({ location }: { location: Location }) {
                 <span key={h} className="text-[12px] bg-amber-50 text-amber-700 border border-amber-200 px-3 py-1 rounded-full font-semibold">
                   {h}
                 </span>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Review snippets — skeleton while loading */}
-        {loadingPlace && placeId && (
-          <div className="mb-4 space-y-2">
-            {[1,2].map(i => <div key={i} className="animate-pulse h-14 bg-gray-100 rounded-xl" />)}
-          </div>
-        )}
-        {!loadingPlace && (placeData?.reviewSnippets?.length ?? 0) > 0 && (
-          <div className="mb-4">
-            <h2 className="text-[13px] font-black text-gray-700 mb-2 uppercase tracking-wide">
-              {lang === 'zh' ? '旅客評論' : 'Reviews'}
-            </h2>
-            <div className="space-y-2">
-              {placeData!.reviewSnippets.map((snippet, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-3">
-                  <p className="text-[12px] text-gray-600 leading-relaxed line-clamp-3">"{snippet}"</p>
-                </div>
               ))}
             </div>
           </div>

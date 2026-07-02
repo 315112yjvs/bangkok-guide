@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 
 // 不需登入即可呼叫的 API：
 //  - /api/admin/auth：登入端點本身
-//  - /api/place：公開地點詳情頁用來抓 Google 營業資訊（已有每日快取）
-const PUBLIC_API = ['/api/admin/auth', '/api/place', '/api/photo']
+//  - /api/photo：公開詳情頁/卡片的照片代理（CDN 快取）
+const PUBLIC_API = ['/api/admin/auth', '/api/photo']
 
 async function sha256Hex(input: string): Promise<string> {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(input))
