@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+# 殘留的舊子資料夾（含自己的 node_modules 大檔），別讓 git add 誤加
+/bangkok-guide/
 /.pnp
 .pnp.js
 .yarn/install-state.gz
