@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>尺寸圖產生器 Size Chart Maker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<style>
+  :root{
+    --ui-bg:#f1efe9;
+    --ui-panel:#ffffff;
+    --ui-border:#e2ddd2;
+    --ui-text:#2b2822;
+    --ui-accent:#c0392b;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Noto Sans TC',system-ui,sans-serif;
+    background:var(--ui-bg);
+    color:var(--ui-text);
+    display:flex;
+    min-height:100vh;
+  }
+
+  /* ============ 左側控制面板 ============ */
+  #panel{
+    width:320px;
+    min-width:320px;
+    background:var(--ui-panel);
+    border-right:1px solid var(--ui-border);
+    height:100vh;
+    overflow-y:auto;
+    padding:16px 16px 60px;
+  }
+  #panel h1{
+    font-size:17px;
+    margin:4px 0 2px;
+  }
+  #panel .sub{
+    font-size:12px;
+    color:#8a8478;
+    margin:0 0 14px;
+  }
+  details{
+    border:1px solid var(--ui-border);
+    border-radius:10px;
+    margin-bottom:10px;
+    background:#fcfbf8;
+  }
+  summary{
+    cursor:pointer;
+    padding:10px 12px;
+    font-weight:700;
+    font-size:13.5px;
+    user-select:none;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  summary::before{
+    content:'▸';
+    font-size:11px;
+    color:#a09a8c;
+    transition:transform .15s;
+  }
+  details[open] summary::before{transform:rotate(90deg)}
+  .box{padding:2px 12px 12px}
+  .row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:8px 0;
+  }
+  .row label{
+    font-size:12.5px;
+    width:78px;
+    min-width:78px;
+    color:#5c584e;
+  }
+  .row input[type=text], .row select, .row input[type=number]{
+    flex:1;
+    min-width:0;
+    padding:6px 8px;
+    border:1px solid var(--ui-border);
+    border-radius:7px;
+    font-size:13px;
+    font-family:inherit;
+    background:#fff;
+  }
+  .row input[type=range]{flex:1}
+  .row input[type=color]{
+    width:34px;height:28px;border:1px solid var(--ui-border);
+    border-radius:6px;padding:1px;background:#fff;cursor:pointer;
+  }
+  .row .val{font-size:11px;color:#8a8478;width:34px;text-align:right}
+  button{
+    font-family:inherit;
+    cursor:pointer;
+  }
+  .btn{
+    display:block;
+    width:100%;
+    padding:9px;
+    border:1px solid var(--ui-border);
+    border-radius:8px;
+    background:#fff;
+    font-size:13px;
+    font-weight:600;
+    margin-top:8px;
+  }
+  .btn:hover{background:#f5f2ea}
+  .btn.primary{
+    background:var(--ui-accent);
+    border-color:var(--ui-accent);
+    color:#fff;
+    font-size:14.5px;
+    padding:12px;
+  }
+  .btn.primary:hover{background:#a93226}
+  .btn.small{
+    width:auto;display:inline-block;
+    padding:5px 10px;font-size:12px;margin-top:6px;
+  }
+  .item-card{
+    border:1px solid var(--ui-border);
+    border-radius:8px;
+    padding:8px 10px;
+    margin:8px 0;
+    background:#fff;
+  }
+  .item-card .row{margin:5px 0}
+  .del{
+    border:none;background:none;color:#b8503f;
+    font-size:15px;line-height:1;padding:2px 4px;
+  }
+  .del:hover{color:#8c2d1f}
+  .color-item{display:flex;align-items:center;gap:8px;margin:6px 0}
+  .color-item input[type=color]{
+    width:38px;height:30px;border:1px solid var(--ui-border);
+    border-radius:7px;padding:1px;background:#fff;cursor:pointer;
+  }
+  .color-item span{flex:1;font-size:12px;color:#8a8478}
+  .hint{font-size:11.5px;color:#a09a8c;margin:6px 0 0;line-height:1.5}
+  .tpl-btns{display:flex;gap:6px}
+  .tpl-btns button{
+    flex:1;padding:9px 4px;border:1px solid var(--ui-border);
+    border-radius:8px;background:#fff;font-size:13px;font-weight:600;
+  }
+  .tpl-btns button.active{
+    background:var(--ui-text);color:#fff;border-color:var(--ui-text);
+  }
+
+  /* ============ 右側預覽區 ============ */
+  #main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:20px;
+    overflow:auto;
+  }
+  #topbar{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-bottom:14px;
+    font-size:12.5px;
+    color:#8a8478;
+  }
+  #stageWrap{
+    transform-origin:top center;
+  }
+
+  /* ============ 尺寸圖本體（3:4）============ */
+  #stage{
+    width:600px;
+    height:800px;
+    background:var(--bg,#faf8f4);
+    color:var(--text,#171310);
+    box-shadow:0 10px 40px rgba(60,50,30,.18);
+    display:flex;
+    flex-direction:column;
+    padding:34px 36px 26px;
+    position:relative;
+    font-family:'Playfair Display','Noto Sans TC',serif;
+  }
+  .chart-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+  }
+  #chartTitle{
+    font-size:44px;
+    line-height:1.02;
+    font-weight:800;
+    letter-spacing:1px;
+    color:var(--accent,#e8392e);
+    outline:none;
+    min-width:60px;
+  }
+  #dots{
+    display:grid;
+    grid-template-columns:repeat(2,auto);
+    gap:10px;
+    padding-top:6px;
+  }
+  #dots .dot{
+    width:34px;height:34px;border-radius:50%;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);
+  }
+
+  #photoZone{
+    flex:1;
+    position:relative;
+    margin:8px 0 4px;
+  }
+  #photoClip{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+  }
+  #photo{
+    position:absolute;
+    left:50%;top:50%;
+    max-width:none;
+    user-select:none;
+    pointer-events:none;
+  }
+  #photoPlaceholder{
+    position:absolute;
+    inset:14%;
+    border:2px dashed #c9c2b2;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#a09a8c;
+    font-family:'Noto Sans TC',sans-serif;
+    font-size:15px;
+    cursor:pointer;
+    text-align:center;
+    line-height:1.7;
+  }
+  #photoPlaceholder:hover{background:rgba(0,0,0,.03)}
+
+  /* 測量線 */
+  .meas{
+    position:absolute;
+    color:var(--line,#171310);
+    touch-action:none;
+  }
+  .meas .bar{
+    position:absolute;
+    inset:0;
+    cursor:move;
+  }
+  .meas.h{height:24px;margin-top:-12px}
+  .meas.h .bar::before{
+    content:'';position:absolute;left:0;right:0;top:50%;
+    height:2.5px;margin-top:-1.25px;background:currentColor;
+  }
+  .meas.h .bar::after{
+    content:'';position:absolute;left:0;top:50%;
+    width:2.5px;height:16px;margin-top:-8px;background:currentColor;
+    box-shadow:calc(var(--w,100px) - 2.5px) 0 0 currentColor;
+  }
+  .meas.v{width:24px;margin-left:-12px}
+  .meas.v .bar::before{
+    content:'';position:absolute;top:0;bottom:0;left:50%;
+    width:2.5px;margin-left:-1.25px;background:currentColor;
+  }
+  .meas.v .bar::after{
+    content:'';position:absolute;top:0;left:50%;
+    height:2.5px;width:16px;margin-left:-8px;background:currentColor;
+    box-shadow:0 calc(var(--h,100px) - 2.5px) 0 currentColor;
+  }
+  .meas-label{
+    position:absolute;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    white-space:nowrap;
+    outline:none;
+    cursor:text;
+    padding:1px 3px;
+  }
+  .meas.h .meas-label{left:50%;transform:translateX(-50%)}
+  .meas.h[data-lp="above"] .meas-label{bottom:100%}
+  .meas.h[data-lp="below"] .meas-label{top:100%}
+  .meas.v .meas-label{top:50%;transform:translateY(-50%)}
+  .meas.v[data-lp="left"] .meas-label{right:100%;margin-right:4px}
+  .meas.v[data-lp="right"] .meas-label{left:100%;margin-left:4px}
+
+  .handle{
+    position:absolute;
+    width:14px;height:14px;
+    border-radius:50%;
+    background:#fff;
+    border:2px solid #3b82f6;
+    z-index:3;
+    opacity:0;
+    transition:opacity .12s;
+  }
+  .meas:hover .handle{opacity:1}
+  .meas.h .handle{top:50%;margin-top:-7px;cursor:ew-resize}
+  .meas.h .handle[data-handle="a"]{left:-7px}
+  .meas.h .handle[data-handle="b"]{right:-7px}
+  .meas.v .handle{left:50%;margin-left:-7px;cursor:ns-resize}
+  .meas.v .handle[data-handle="a"]{top:-7px}
+  .meas.v .handle[data-handle="b"]{bottom:-7px}
+  #stage.exporting .handle{display:none}
+  #stage.exporting #photoPlaceholder{display:none}
+
+  /* 尺寸表 */
+  #unitLabel{
+    text-align:right;
+    font-size:11.5px;
+    font-family:'Noto Sans TC',sans-serif;
+    color:#7d786c;
+    outline:none;
+    margin-bottom:4px;
+  }
+  #sizeTable{
+    width:100%;
+    border-collapse:collapse;
+    border:3px solid var(--accent,#e8392e);
+    background:#fff;
+    table-layout:fixed;
+  }
+  #sizeTable th,#sizeTable td{
+    border-top:3px solid var(--accent,#e8392e);
+    border-bottom:3px solid var(--accent,#e8392e);
+    padding:11px 4px;
+    text-align:center;
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:.5px;
+    outline:none;
+  }
+  #sizeTable th{font-size:15px;letter-spacing:1px}
+  #sizeTable th:first-child,#sizeTable td:first-child{
+    border-right:3px solid var(--accent,#e8392e);
+    width:18%;
+  }
+  #noteLine{
+    text-align:center;
+    font-size:13.5px;
+    font-weight:700;
+    margin-top:14px;
+    outline:none;
+    font-family:'Noto Sans TC',serif;
+  }
+
+  [contenteditable]:hover{box-shadow:0 0 0 1px rgba(59,130,246,.35)}
+  [contenteditable]:focus{box-shadow:0 0 0 2px rgba(59,130,246,.55)}
+  #stage.exporting [contenteditable]{box-shadow:none!important}
+
+  @media (max-width:860px){
+    body{flex-direction:column}
+    #panel{width:100%;min-width:0;height:auto;max-height:45vh;border-right:none;border-bottom:1px solid var(--ui-border)}
+  }
+</style>
+</head>
+<body>
+
+<aside id="panel">
+  <h1>尺寸圖產生器</h1>
+  <p class="sub">輸出 3:4（1080 × 1440）尺寸圖，圖上文字可直接點擊修改，測量線可拖曳移動、拉端點改長度。</p>
+
+  <details open>
+    <summary>模版</summary>
+    <div class="box">
+      <div class="tpl-btns" id="tplBtns">
+        <button data-tpl="top">上衣</button>
+        <button data-tpl="pants">褲子</button>
+        <button data-tpl="skirt">裙子</button>
+      </div>
+      <p class="hint">切換模版會載入該類型的預設測量項目與尺寸表（照片與顏色會保留）。</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary>商品照片</summary>
+    <div class="box">
+      <input type="file" id="fileInput" accept="image/*" hidden>
+      <button class="btn" id="uploadBtn">上傳照片</button>
+      <div class="row"><label>圖片大小</label><input type="range" id="photoW" min="20" max="120" value="62"><span class="val" id="photoWVal">62%</span></div>
+      <div class="row"><label>水平位置</label><input type="range" id="photoX" min="-40" max="40" value="0"><span class="val" id="photoXVal">0</span></div>
+      <div class="row"><label>垂直位置</label><input type="range" id="photoY" min="-40" max="40" value="0"><span class="val" id="photoYVal">0</span></div>
+    </div>
+  </details>
+
+  <details open>
+    <summary>顏色選項圓點</summary>
+    <div class="box">
+      <div id="colorList"></div>
+      <button class="btn small" id="addColor">＋ 新增顏色</button>
+      <p class="hint">對應這件商品有的顏色，會顯示在標題下方。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>版面顏色與文字</summary>
+    <div class="box">
+      <div class="row"><label>主色（標題/表格）</label><input type="color" id="accentColor"></div>
+      <div class="row"><label>背景色</label><input type="color" id="bgColor"></div>
+      <div class="row"><label>文字色</label><input type="color" id="textColor"></div>
+      <div class="row"><label>測量線色</label><input type="color" id="lineColor"></div>
+      <p class="hint">標題、單位、備註文字：直接在右邊圖上點一下就能改字。</p>
+    </div>
+  </details>
+
+  <details open>
+    <summary>測量項目（＝表格欄位）</summary>
+    <div class="box">
+      <div id="measList"></div>
+      <button class="btn small" data-add-meas="h">＋ 橫向測量線</button>
+      <button class="btn small" data-add-meas="v">＋ 直向測量線</button>
+    </div>
+  </details>
+
+  <details open>
+    <summary>尺寸列</summary>
+    <div class="box">
+      <div id="sizeList"></div>
+      <button class="btn small" id="addSize">＋ 新增尺寸</button>
+      <p class="hint">表格裡的數字直接點擊修改。</p>
+    </div>
+  </details>
+
+  <button class="btn primary" id="exportBtn">⬇ 匯出 PNG（1080 × 1440）</button>
+  <button class="btn" id="resetBtn">重設為預設值</button>
+</aside>
+
+<main id="main">
+  <div id="topbar">預覽（實際輸出為 1080 × 1440 px）</div>
+  <div id="stageWrap">
+    <div id="stage">
+      <div class="chart-head">
+        <div id="chartTitle" contenteditable spellcheck="false">SIZE<br>CHART</div>
+        <div id="dots"></div>
+      </div>
+      <div id="photoZone">
+        <div id="photoClip"><img id="photo" hidden alt=""></div>
+        <div id="photoPlaceholder">點擊上傳商品照片<br><span style="font-size:12px">建議使用去背或淺色背景平拍照</span></div>
+        <div id="lines"></div>
+      </div>
+      <div id="unitLabel" contenteditable spellcheck="false">單位：英吋 (inch)</div>
+      <table id="sizeTable"></table>
+      <div id="noteLine" contenteditable spellcheck="false">*** 商品皆為手工測量，尺寸可能有些微誤差 ***</div>
+    </div>
+  </div>
+</main>
+
+<script>
+/* ================= 預設模版 ================= */
+let uidCounter = 1;
+const uid = () => 'm' + (uidCounter++) + '_' + Math.random().toString(36).slice(2,6);
+
+function makeTemplates(){
+  return {
+    top: {
+      measures: [
+        {id:uid(), label:'SHOULDER',  orient:'h', x:32, y:8,  len:36, lp:'above', visible:true},
+        {id:uid(), label:'CHEST',     orient:'h', x:26, y:45, len:48, lp:'below', visible:true},
+        {id:uid(), label:'LENGTH',    orient:'v', x:88, y:8,  len:84, lp:'right', visible:true},
+        {id:uid(), label:'UPPER ARM', orient:'v', x:14, y:12, len:32, lp:'left',  visible:true},
+      ],
+      sizes: [
+        {name:'S', values:['44','14','25','20']},
+        {name:'M', values:['46','16','26','21']},
+        {name:'L', values:['48','18','27.5','22']},
+      ]
+    },
+    pants: {
+      measures: [
+        {id:uid(), label:'WAIST',       orient:'h', x:33, y:8,  len:34, lp:'above', visible:true},
+        {id:uid(), label:'HIP',         orient:'h', x:28, y:28, len:44, lp:'below', visible:true},
+        {id:uid(), label:'THIGH',       orient:'h', x:14, y:48, len:26, lp:'below', visible:true},
+        {id:uid(), label:'LENGTH',      orient:'v', x:88, y:8,  len:86, lp:'right', visible:true},
+        {id:uid(), label:'LEG OPENING', orient:'h', x:16, y:90, len:20, lp:'below', visible:true},
+      ],
+      sizes: [
+        {name:'S', values:['26','36','22','38','14']},
+        {name:'M', values:['28','38','23','39','15']},
+        {name:'L', values:['30','40','24','40','16']},
+      ]
+    },
+    skirt: {
+      measures: [
+        {id:uid(), label:'WAIST',  orient:'h', x:33, y:8,  len:34, lp:'above', visible:true},
+        {id:uid(), label:'HIP',    orient:'h', x:26, y:38, len:48, lp:'below', visible:true},
+        {id:uid(), label:'LENGTH', orient:'v', x:88, y:8,  len:84, lp:'right', visible:true},
+      ],
+      sizes: [
+        {name:'S', values:['25','34','21']},
+        {name:'M', values:['27','36','21.5']},
+        {name:'L', values:['29','38','22']},
+      ]
+    }
+  };
+}
+
+function defaultState(){
+  const tpl = makeTemplates();
+  return {
+    template: 'top',
+    accent:  '#e8392e',
+    bg:      '#faf8f4',
+    text:    '#171310',
+    line:    '#171310',
+    titleHTML: 'SIZE<br>CHART',
+    unitHTML:  '單位：英吋 (inch)',
+    noteHTML:  '*** 商品皆為手工測量，尺寸可能有些微誤差 ***',
+    dots: ['#1e3a6e','#4a3226','#b3a8dc','#eed6ae'],
+    photo: null,
+    photoW: 62, photoX: 0, photoY: 0,
+    measures: tpl.top.measures,
+    sizes:    tpl.top.sizes.map(s => ({name:s.name, values:Object.fromEntries(tpl.top.measures.map((m,i)=>[m.id, s.values[i]]))})),
+  };
+}
+
+const STORAGE_KEY = 'sizechart-state-v1';
+let state = loadState() || defaultState();
+
+function loadState(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(!raw) return null;
+    const s = JSON.parse(raw);
+    if(!s.measures || !s.sizes) return null;
+    return s;
+  }catch(e){ return null; }
+}
+let saveTimer = null;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(()=>{
+    try{
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }catch(e){
+      try{
+        const copy = Object.assign({}, state, {photo:null});
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(copy));
+      }catch(e2){}
+    }
+  }, 400);
+}
+
+/* ================= DOM ================= */
+const $ = sel => document.querySelector(sel);
+const stage = $('#stage'), stageWrap = $('#stageWrap');
+const linesEl = $('#lines'), photoZone = $('#photoZone');
+const photoEl = $('#photo'), placeholderEl = $('#photoPlaceholder');
+const tableEl = $('#sizeTable');
+
+/* ================= 渲染 ================= */
+function applyTheme(){
+  stage.style.setProperty('--accent', state.accent);
+  stage.style.setProperty('--bg', state.bg);
+  stage.style.setProperty('--text', state.text);
+  stage.style.setProperty('--line', state.line);
+  $('#accentColor').value = state.accent;
+  $('#bgColor').value = state.bg;
+  $('#textColor').value = state.text;
+  $('#lineColor').value = state.line;
+}
+
+function renderTexts(){
+  $('#chartTitle').innerHTML = state.titleHTML;
+  $('#unitLabel').innerHTML = state.unitHTML;
+  $('#noteLine').innerHTML = state.noteHTML;
+}
+
+function renderDots(){
+  const el = $('#dots');
+  el.innerHTML = '';
+  state.dots.forEach(c=>{
+    const d = document.createElement('div');
+    d.className = 'dot';
+    d.style.background = c;
+    el.appendChild(d);
+  });
+  const list = $('#colorList');
+  list.innerHTML = '';
+  state.dots.forEach((c,i)=>{
+    const row = document.createElement('div');
+    row.className = 'color-item';
+    row.innerHTML = `<input type="color" value="${c}" data-i="${i}"><span>${c}</span><button class="del" data-i="${i}" title="刪除">✕</button>`;
+    list.appendChild(row);
+  });
+}
+
+function renderPhoto(){
+  if(state.photo){
+    photoEl.src = state.photo;
+    photoEl.hidden = false;
+    placeholderEl.style.display = 'none';
+  }else{
+    photoEl.hidden = true;
+    placeholderEl.style.display = 'flex';
+  }
+  photoEl.style.width = state.photoW + '%';
+  photoEl.style.transform = `translate(calc(-50% + ${state.photoX}%), calc(-50% + ${state.photoY}%))`;
+  $('#photoW').value = state.photoW; $('#photoWVal').textContent = state.photoW + '%';
+  $('#photoX').value = state.photoX; $('#photoXVal').textContent = state.photoX;
+  $('#photoY').value = state.photoY; $('#photoYVal').textContent = state.photoY;
+}
+
+function positionLine(el, m){
+  if(m.orient === 'h'){
+    el.style.left = m.x + '%';
+    el.style.top = m.y + '%';
+    el.style.width = m.len + '%';
+    el.style.height = '';
+    // 端點右側短豎線用 box-shadow 畫，需要 px 寬度
+    requestAnimationFrame(()=> el.style.setProperty('--w', el.offsetWidth + 'px'));
+  }else{
+    el.style.left = m.x + '%';
+    el.style.top = m.y + '%';
+    el.style.height = m.len + '%';
+    el.style.width = '';
+    requestAnimationFrame(()=> el.style.setProperty('--h', el.offsetHeight + 'px'));
+  }
+}
+
+function renderLines(){
+  linesEl.innerHTML = '';
+  state.measures.filter(m=>m.visible).forEach(m=>{
+    const el = document.createElement('div');
+    el.className = 'meas ' + m.orient;
+    el.dataset.lp = m.lp;
+    el.dataset.id = m.id;
+    el.innerHTML = `
+      <div class="bar"></div>
+      <div class="handle" data-handle="a"></div>
+      <div class="handle" data-handle="b"></div>
+      <div class="meas-label" contenteditable spellcheck="false">${escapeHTML(m.label)}</div>`;
+    linesEl.appendChild(el);
+    positionLine(el, m);
+    bindLine(el, m);
+  });
+}
+
+function escapeHTML(s){
+  return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+
+function renderTable(){
+  const vis = state.measures.filter(m=>m.visible);
+  let html = '<tr><th>SIZE</th>' + vis.map(m=>`<th contenteditable spellcheck="false" data-head="${m.id}">${escapeHTML(m.label)}</th>`).join('') + '</tr>';
+  state.sizes.forEach((s,ri)=>{
+    html += `<tr><td contenteditable spellcheck="false" data-size-name="${ri}">${escapeHTML(s.name)}</td>`
+      + vis.map(m=>`<td contenteditable spellcheck="false" data-row="${ri}" data-meas="${m.id}">${escapeHTML(s.values[m.id] ?? '')}</td>`).join('')
+      + '</tr>';
+  });
+  tableEl.innerHTML = html;
+}
+
+function renderMeasPanel(){
+  const list = $('#measList');
+  list.innerHTML = '';
+  state.measures.forEach(m=>{
+    const card = document.createElement('div');
+    card.className = 'item-card';
+    const lpOptions = m.orient === 'h'
+      ? `<option value="above"${m.lp==='above'?' selected':''}>線上方</option><option value="below"${m.lp==='below'?' selected':''}>線下方</option>`
+      : `<option value="left"${m.lp==='left'?' selected':''}>線左側</option><option value="right"${m.lp==='right'?' selected':''}>線右側</option>`;
+    card.innerHTML = `
+      <div class="row">
+        <input type="text" value="${escapeHTML(m.label)}" data-meas-label="${m.id}" style="flex:1">
+        <button class="del" data-meas-del="${m.id}" title="刪除">✕</button>
+      </div>
+      <div class="row">
+        <label>方向</label>
+        <select data-meas-orient="${m.id}">
+          <option value="h"${m.orient==='h'?' selected':''}>橫向</option>
+          <option value="v"${m.orient==='v'?' selected':''}>直向</option>
+        </select>
+        <select data-meas-lp="${m.id}">${lpOptions}</select>
+      </div>
+      <div class="row">
+        <label style="width:auto"><input type="checkbox" data-meas-vis="${m.id}"${m.visible?' checked':''}> 顯示</label>
+      </div>`;
+    list.appendChild(card);
+  });
+}
+
+function renderSizePanel(){
+  const list = $('#sizeList');
+  list.innerHTML = '';
+  state.sizes.forEach((s,i)=>{
+    const row = document.createElement('div');
+    row.className = 'color-item';
+    row.innerHTML = `<input type="text" value="${escapeHTML(s.name)}" data-size-input="${i}" style="flex:1;padding:6px 8px;border:1px solid var(--ui-border);border-radius:7px;font-size:13px"><button class="del" data-size-del="${i}" title="刪除">✕</button>`;
+    list.appendChild(row);
+  });
+}
+
+function renderTplBtns(){
+  document.querySelectorAll('#tplBtns button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.tpl === state.template);
+  });
+}
+
+function renderAll(){
+  applyTheme();
+  renderTexts();
+  renderDots();
+  renderPhoto();
+  renderLines();
+  renderTable();
+  renderMeasPanel();
+  renderSizePanel();
+  renderTplBtns();
+}
+
+/* ================= 測量線拖曳 ================= */
+function bindLine(el, m){
+  el.addEventListener('pointerdown', e=>{
+    if(e.target.classList.contains('meas-label')) return; // 編輯文字不拖曳
+    e.preventDefault();
+    const handle = e.target.dataset.handle || null;
+    const rect = photoZone.getBoundingClientRect();
+    const startX = e.clientX, startY = e.clientY;
+    const o = {x:m.x, y:m.y, len:m.len};
+    const clamp = (v,lo,hi)=>Math.min(hi,Math.max(lo,v));
+
+    function onMove(ev){
+      const dx = (ev.clientX - startX) / rect.width * 100;
+      const dy = (ev.clientY - startY) / rect.height * 100;
+      if(!handle){
+        if(m.orient==='h'){
+          m.x = clamp(o.x + dx, -5, 105 - m.len);
+          m.y = clamp(o.y + dy, 0, 100);
+        }else{
+          m.x = clamp(o.x + dx, 0, 100);
+          m.y = clamp(o.y + dy, -2, 102 - m.len);
+        }
+      }else if(handle==='a'){
+        if(m.orient==='h'){
+          const nx = clamp(o.x + dx, -5, o.x + o.len - 6);
+          m.len = o.len - (nx - o.x); m.x = nx;
+        }else{
+          const ny = clamp(o.y + dy, -2, o.y + o.len - 6);
+          m.len = o.len - (ny - o.y); m.y = ny;
+        }
+      }else{
+        if(m.orient==='h'){
+          m.len = clamp(o.len + dx, 6, 105 - m.x);
+        }else{
+          m.len = clamp(o.len + dy, 6, 102 - m.y);
+        }
+      }
+      positionLine(el, m);
+    }
+    function onUp(){
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+      save();
+    }
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+  });
+
+  const label = el.querySelector('.meas-label');
+  label.addEventListener('input', ()=>{
+    m.label = label.textContent;
+    const head = tableEl.querySelector(`[data-head="${m.id}"]`);
+    if(head) head.textContent = m.label;
+    const inp = document.querySelector(`[data-meas-label="${m.id}"]`);
+    if(inp) inp.value = m.label;
+    save();
+  });
+}
+
+/* ================= 事件綁定 ================= */
+// 模版切換
+$('#tplBtns').addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-tpl]');
+  if(!btn || btn.dataset.tpl === state.template) return;
+  if(!confirm('切換模版會重設測量項目與尺寸表（照片與顏色保留），確定嗎？')) return;
+  const t = makeTemplates()[btn.dataset.tpl];
+  state.template = btn.dataset.tpl;
+  state.measures = t.measures;
+  state.sizes = t.sizes.map(s=>({name:s.name, values:Object.fromEntries(t.measures.map((m,i)=>[m.id, s.values[i]]))}));
+  renderAll(); save();
+});
+
+// 照片
+$('#uploadBtn').addEventListener('click', ()=> $('#fileInput').click());
+placeholderEl.addEventListener('click', ()=> $('#fileInput').click());
+$('#fileInput').addEventListener('change', e=>{
+  const f = e.target.files[0];
+  if(!f) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{ state.photo = reader.result; renderPhoto(); save(); };
+  reader.readAsDataURL(f);
+});
+photoZone.addEventListener('dragover', e=> e.preventDefault());
+photoZone.addEventListener('drop', e=>{
+  e.preventDefault();
+  const f = e.dataTransfer.files[0];
+  if(!f || !f.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{ state.photo = reader.result; renderPhoto(); save(); };
+  reader.readAsDataURL(f);
+});
+['photoW','photoX','photoY'].forEach(k=>{
+  $('#'+k).addEventListener('input', e=>{
+    state[k] = +e.target.value;
+    renderPhoto(); save();
+  });
+});
+
+// 顏色圓點
+$('#colorList').addEventListener('input', e=>{
+  if(e.target.type === 'color'){
+    state.dots[+e.target.dataset.i] = e.target.value;
+    renderDots(); save();
+  }
+});
+$('#colorList').addEventListener('click', e=>{
+  const del = e.target.closest('.del');
+  if(del){ state.dots.splice(+del.dataset.i,1); renderDots(); save(); }
+});
+$('#addColor').addEventListener('click', ()=>{
+  state.dots.push('#888888'); renderDots(); save();
+});
+
+// 版面顏色
+[['accentColor','accent'],['bgColor','bg'],['textColor','text'],['lineColor','line']].forEach(([id,key])=>{
+  $('#'+id).addEventListener('input', e=>{
+    state[key] = e.target.value; applyTheme(); save();
+  });
+});
+
+// 圖上可編輯文字
+[['chartTitle','titleHTML'],['unitLabel','unitHTML'],['noteLine','noteHTML']].forEach(([id,key])=>{
+  $('#'+id).addEventListener('input', e=>{ state[key] = e.target.innerHTML; save(); });
+});
+
+// 表格編輯（事件代理）
+tableEl.addEventListener('input', e=>{
+  const t = e.target;
+  if(t.dataset.head){
+    const m = state.measures.find(m=>m.id===t.dataset.head);
+    if(m){
+      m.label = t.textContent;
+      const lbl = linesEl.querySelector(`.meas[data-id="${m.id}"] .meas-label`);
+      if(lbl) lbl.textContent = m.label;
+      const inp = document.querySelector(`[data-meas-label="${m.id}"]`);
+      if(inp) inp.value = m.label;
+    }
+  }else if(t.dataset.sizeName !== undefined){
+    state.sizes[+t.dataset.sizeName].name = t.textContent;
+    const inp = document.querySelector(`[data-size-input="${t.dataset.sizeName}"]`);
+    if(inp) inp.value = t.textContent;
+  }else if(t.dataset.meas){
+    state.sizes[+t.dataset.row].values[t.dataset.meas] = t.textContent;
+  }
+  save();
+});
+
+// 測量項目面板（事件代理）
+$('#measList').addEventListener('input', e=>{
+  const t = e.target;
+  if(t.dataset.measLabel){
+    const m = state.measures.find(m=>m.id===t.dataset.measLabel);
+    if(m){
+      m.label = t.value;
+      const lbl = linesEl.querySelector(`.meas[data-id="${m.id}"] .meas-label`);
+      if(lbl) lbl.textContent = m.label;
+      const head = tableEl.querySelector(`[data-head="${m.id}"]`);
+      if(head) head.textContent = m.label;
+      save();
+    }
+  }
+});
+$('#measList').addEventListener('change', e=>{
+  const t = e.target;
+  let m;
+  if(t.dataset.measOrient && (m = state.measures.find(x=>x.id===t.dataset.measOrient))){
+    m.orient = t.value;
+    m.lp = t.value === 'h' ? 'above' : 'right';
+    if(m.len > 60) m.len = 50;
+  }else if(t.dataset.measLp && (m = state.measures.find(x=>x.id===t.dataset.measLp))){
+    m.lp = t.value;
+  }else if(t.dataset.measVis && (m = state.measures.find(x=>x.id===t.dataset.measVis))){
+    m.visible = t.checked;
+  }else return;
+  renderLines(); renderTable(); renderMeasPanel(); save();
+});
+$('#measList').addEventListener('click', e=>{
+  const del = e.target.closest('[data-meas-del]');
+  if(!del) return;
+  const id = del.dataset.measDel;
+  state.measures = state.measures.filter(m=>m.id!==id);
+  state.sizes.forEach(s=> delete s.values[id]);
+  renderLines(); renderTable(); renderMeasPanel(); save();
+});
+document.querySelectorAll('[data-add-meas]').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const orient = btn.dataset.addMeas;
+    const m = {id:uid(), label:'NEW', orient, x:orient==='h'?30:50, y:orient==='h'?50:20, len:30, lp:orient==='h'?'above':'right', visible:true};
+    state.measures.push(m);
+    state.sizes.forEach(s=> s.values[m.id]='');
+    renderLines(); renderTable(); renderMeasPanel(); save();
+  });
+});
+
+// 尺寸列
+$('#sizeList').addEventListener('input', e=>{
+  if(e.target.dataset.sizeInput !== undefined){
+    const i = +e.target.dataset.sizeInput;
+    state.sizes[i].name = e.target.value;
+    const cell = tableEl.querySelector(`[data-size-name="${i}"]`);
+    if(cell) cell.textContent = e.target.value;
+    save();
+  }
+});
+$('#sizeList').addEventListener('click', e=>{
+  const del = e.target.closest('[data-size-del]');
+  if(!del) return;
+  state.sizes.splice(+del.dataset.sizeDel, 1);
+  renderTable(); renderSizePanel(); save();
+});
+$('#addSize').addEventListener('click', ()=>{
+  const values = Object.fromEntries(state.measures.map(m=>[m.id,'']));
+  state.sizes.push({name:'XL', values});
+  renderTable(); renderSizePanel(); save();
+});
+
+// 重設
+$('#resetBtn').addEventListener('click', ()=>{
+  if(!confirm('確定要清除所有內容，回到預設值嗎？')) return;
+  localStorage.removeItem(STORAGE_KEY);
+  state = defaultState();
+  renderAll();
+});
+
+/* ================= 匯出 ================= */
+async function exportPNG(returnDataUrl){
+  if(typeof html2canvas === 'undefined'){
+    alert('匯出元件載入失敗，請確認網路連線後重新整理頁面。');
+    return null;
+  }
+  const prevTransform = stageWrap.style.transform;
+  stageWrap.style.transform = 'none';
+  stage.classList.add('exporting');
+  if(document.activeElement) document.activeElement.blur();
+  try{
+    const canvas = await html2canvas(stage, {
+      scale: 1080 / stage.offsetWidth,
+      backgroundColor: state.bg,
+      useCORS: true,
+      logging: false,
+    });
+    const url = canvas.toDataURL('image/png');
+    if(returnDataUrl) return url;
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'size-chart-' + state.template + '.png';
+    a.click();
+    return url;
+  } finally {
+    stage.classList.remove('exporting');
+    stageWrap.style.transform = prevTransform;
+    fitStage();
+  }
+}
+$('#exportBtn').addEventListener('click', ()=> exportPNG(false));
+
+/* ================= 預覽縮放 ================= */
+function fitStage(){
+  const avail = window.innerWidth - (window.innerWidth > 860 ? 320 : 0) - 60;
+  const availH = window.innerHeight - 90;
+  const scale = Math.min(1, avail / 600, availH / 800);
+  stageWrap.style.transform = `scale(${scale})`;
+  stageWrap.style.height = (800 * scale) + 'px';
+}
+window.addEventListener('resize', fitStage);
+
+/* ================= 啟動 ================= */
+renderAll();
+fitStage();
+window._exportPNG = exportPNG; // 供測試用
+</script>
+</body>
+</html>
