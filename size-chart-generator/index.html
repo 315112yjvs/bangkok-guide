@@ -360,6 +360,28 @@
   [contenteditable]:focus{box-shadow:0 0 0 2px rgba(59,130,246,.55)}
   #stage.exporting [contenteditable]{box-shadow:none!important}
 
+  /* 互動回饋 */
+  .meas.selected{color:#2f6fe4}
+  #stage.exporting .meas{color:var(--line,#171310)!important}
+  #photoZone.has-photo{cursor:grab}
+  #photoZone.has-photo:active{cursor:grabbing}
+  #snapGuide{
+    position:absolute;left:50%;top:-2%;bottom:-2%;width:0;
+    border-left:1.5px dashed #2f6fe4;display:none;pointer-events:none;
+  }
+  #snapGuide.show{display:block}
+  #stage.exporting #snapGuide{display:none}
+  #toast{
+    position:fixed;bottom:26px;left:50%;transform:translate(-50%,10px);
+    background:#2b2822;color:#fff;padding:11px 18px;border-radius:12px;
+    font-size:13.5px;display:flex;gap:14px;align-items:center;
+    opacity:0;pointer-events:none;transition:.25s;z-index:99;
+    box-shadow:0 6px 24px rgba(0,0,0,.25);white-space:nowrap;
+  }
+  #toast.show{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+  #toast button{background:none;border:none;color:#ffc46b;font-weight:700;cursor:pointer;font-size:13.5px;padding:0}
+  ol.guide{margin:0;padding-left:18px;font-size:12.5px;line-height:1.9;color:#5c584e}
+
   @media (max-width:860px){
     body{flex-direction:column}
     #panel{width:100%;min-width:0;height:auto;max-height:45vh;border-right:none;border-bottom:1px solid var(--ui-border)}
@@ -370,15 +392,28 @@
 
 <aside id="panel">
   <h1>尺寸圖產生器</h1>
-  <p class="sub">輸出 3:4（1080 × 1440）尺寸圖，圖上文字可直接點擊修改，測量線可拖曳移動、拉端點改長度。</p>
+  <p class="sub">輸出 3:4（1080 × 1440）的商品尺寸圖。</p>
+
+  <details>
+    <summary>使用說明</summary>
+    <div class="box">
+      <ol class="guide">
+        <li>選模版，點中間虛線框上傳商品照</li>
+        <li>照片直接用滑鼠拖曳移動、滾輪縮放</li>
+        <li>測量線拖到對的位置，拉兩端圓點改長度；點選線後可用方向鍵微調、Delete 刪除</li>
+        <li>圖上的標題、表格數字、備註，點一下就能改字</li>
+        <li>完成後「匯出 PNG」或「複製圖片」直接貼到聊天</li>
+      </ol>
+    </div>
+  </details>
 
   <details open>
     <summary>模版</summary>
     <div class="box">
       <div class="tpl-btns" id="tplBtns">
-        <button data-tpl="top">上衣</button>
-        <button data-tpl="pants">褲子</button>
-        <button data-tpl="skirt">裙子</button>
+        <button data-tpl="top">👕 上衣</button>
+        <button data-tpl="pants">👖 褲子</button>
+        <button data-tpl="skirt">👗 裙子</button>
       </div>
       <p class="hint">切換模版會載入該類型的預設測量項目與尺寸表（照片與顏色會保留）。</p>
     </div>
@@ -389,9 +424,10 @@
     <div class="box">
       <input type="file" id="fileInput" accept="image/*" hidden>
       <button class="btn" id="uploadBtn">上傳照片</button>
-      <div class="row"><label>圖片大小</label><input type="range" id="photoW" min="20" max="120" value="62"><span class="val" id="photoWVal">62%</span></div>
-      <div class="row"><label>水平位置</label><input type="range" id="photoX" min="-40" max="40" value="0"><span class="val" id="photoXVal">0</span></div>
-      <div class="row"><label>垂直位置</label><input type="range" id="photoY" min="-40" max="40" value="0"><span class="val" id="photoYVal">0</span></div>
+      <div class="row"><label>圖片大小</label><input type="range" id="photoW" min="10" max="200" value="62"><span class="val" id="photoWVal">62%</span></div>
+      <div class="row"><label>水平位置</label><input type="range" id="photoX" min="-60" max="60" value="0"><span class="val" id="photoXVal">0</span></div>
+      <div class="row"><label>垂直位置</label><input type="range" id="photoY" min="-60" max="60" value="0"><span class="val" id="photoYVal">0</span></div>
+      <p class="hint">也可以直接在圖上拖曳照片移動、滾輪縮放。</p>
     </div>
   </details>
 
@@ -419,8 +455,22 @@
     <summary>測量項目（＝表格欄位）</summary>
     <div class="box">
       <div id="measList"></div>
-      <button class="btn small" data-add-meas="h">＋ 橫向測量線</button>
-      <button class="btn small" data-add-meas="v">＋ 直向測量線</button>
+      <div class="row" style="margin-top:10px">
+        <select id="presetSel" style="flex:1">
+          <option value="SHOULDER|h">肩寬 SHOULDER</option>
+          <option value="CHEST|h">胸圍 CHEST</option>
+          <option value="LENGTH|v">衣長／裙長 LENGTH</option>
+          <option value="UPPER ARM|v">袖圍 UPPER ARM</option>
+          <option value="SLEEVE|h">袖長 SLEEVE</option>
+          <option value="WAIST|h">腰圍 WAIST</option>
+          <option value="HIP|h">臀圍 HIP</option>
+          <option value="THIGH|h">大腿圍 THIGH</option>
+          <option value="LEG OPENING|h">褲口 LEG OPENING</option>
+          <option value="NEW|h">自訂（橫向線）</option>
+          <option value="NEW|v">自訂（直向線）</option>
+        </select>
+        <button class="btn small" id="addMeasBtn" style="margin-top:0">＋ 加入</button>
+      </div>
     </div>
   </details>
 
@@ -434,6 +484,7 @@
   </details>
 
   <button class="btn primary" id="exportBtn">⬇ 匯出 PNG（1080 × 1440）</button>
+  <button class="btn" id="copyBtn">📋 複製圖片（直接貼到聊天）</button>
   <button class="btn" id="resetBtn">重設為預設值</button>
 </aside>
 
@@ -449,6 +500,7 @@
         <div id="photoClip"><img id="photo" hidden alt=""></div>
         <div id="photoPlaceholder">點擊上傳商品照片<br><span style="font-size:12px">建議使用去背或淺色背景平拍照</span></div>
         <div id="lines"></div>
+        <div id="snapGuide"></div>
       </div>
       <div id="unitLabel" contenteditable spellcheck="false">單位：英吋 (inch)</div>
       <table id="sizeTable"></table>
@@ -558,6 +610,36 @@ const stage = $('#stage'), stageWrap = $('#stageWrap');
 const linesEl = $('#lines'), photoZone = $('#photoZone');
 const photoEl = $('#photo'), placeholderEl = $('#photoPlaceholder');
 const tableEl = $('#sizeTable');
+const snapGuideEl = $('#snapGuide');
+let selectedId = null;
+
+/* ================= Toast 與復原 ================= */
+const toastEl = document.createElement('div');
+toastEl.id = 'toast';
+document.body.appendChild(toastEl);
+let toastHideTimer = null;
+function toast(msg, actionLabel, actionFn, ms = 4000){
+  toastEl.innerHTML = '';
+  toastEl.appendChild(document.createTextNode(msg));
+  if(actionLabel){
+    const b = document.createElement('button');
+    b.textContent = actionLabel;
+    b.onclick = ()=>{ hideToast(); actionFn(); };
+    toastEl.appendChild(b);
+  }
+  toastEl.classList.add('show');
+  clearTimeout(toastHideTimer);
+  toastHideTimer = setTimeout(hideToast, ms);
+}
+function hideToast(){ toastEl.classList.remove('show'); }
+function snap(){ return JSON.parse(JSON.stringify(state)); }
+function undoToast(msg, snapshot){
+  toast(msg, '復原', ()=>{ state = snapshot; selectedId = null; renderAll(); save(); }, 6000);
+}
+function selectMeas(id){
+  selectedId = id;
+  linesEl.querySelectorAll('.meas').forEach(el=> el.classList.toggle('selected', el.dataset.id === id));
+}
 
 /* ================= 渲染 ================= */
 function applyTheme(){
@@ -597,6 +679,7 @@ function renderDots(){
 }
 
 function renderPhoto(){
+  photoZone.classList.toggle('has-photo', !!state.photo);
   if(state.photo){
     photoEl.src = state.photo;
     photoEl.hidden = false;
@@ -641,6 +724,7 @@ function renderLines(){
       <div class="handle" data-handle="a"></div>
       <div class="handle" data-handle="b"></div>
       <div class="meas-label" contenteditable spellcheck="false">${escapeHTML(m.label)}</div>`;
+    if(m.id === selectedId) el.classList.add('selected');
     linesEl.appendChild(el);
     positionLine(el, m);
     bindLine(el, m);
@@ -725,6 +809,7 @@ function bindLine(el, m){
   el.addEventListener('pointerdown', e=>{
     if(e.target.classList.contains('meas-label')) return; // 編輯文字不拖曳
     e.preventDefault();
+    selectMeas(m.id);
     const handle = e.target.dataset.handle || null;
     const rect = photoZone.getBoundingClientRect();
     const startX = e.clientX, startY = e.clientY;
@@ -738,6 +823,14 @@ function bindLine(el, m){
         if(m.orient==='h'){
           m.x = clamp(o.x + dx, -5, 105 - m.len);
           m.y = clamp(o.y + dy, 0, 100);
+          // 靠近水平置中時自動吸附
+          const cx = m.x + m.len / 2;
+          if(Math.abs(cx - 50) < 1.2){
+            m.x = 50 - m.len / 2;
+            snapGuideEl.classList.add('show');
+          }else{
+            snapGuideEl.classList.remove('show');
+          }
         }else{
           m.x = clamp(o.x + dx, 0, 100);
           m.y = clamp(o.y + dy, -2, 102 - m.len);
@@ -762,6 +855,7 @@ function bindLine(el, m){
     function onUp(){
       window.removeEventListener('pointermove', onMove);
       window.removeEventListener('pointerup', onUp);
+      snapGuideEl.classList.remove('show');
       save();
     }
     window.addEventListener('pointermove', onMove);
@@ -784,12 +878,14 @@ function bindLine(el, m){
 $('#tplBtns').addEventListener('click', e=>{
   const btn = e.target.closest('button[data-tpl]');
   if(!btn || btn.dataset.tpl === state.template) return;
-  if(!confirm('切換模版會重設測量項目與尺寸表（照片與顏色保留），確定嗎？')) return;
+  const snapshot = snap();
   const t = makeTemplates()[btn.dataset.tpl];
   state.template = btn.dataset.tpl;
   state.measures = t.measures;
   state.sizes = t.sizes.map(s=>({name:s.name, values:Object.fromEntries(t.measures.map((m,i)=>[m.id, s.values[i]]))}));
+  selectedId = null;
   renderAll(); save();
+  undoToast('已切換模版，照片與顏色有保留', snapshot);
 });
 
 // 照片
@@ -817,6 +913,35 @@ photoZone.addEventListener('drop', e=>{
     renderPhoto(); save();
   });
 });
+
+// 照片直接拖曳移動、滾輪縮放
+photoZone.addEventListener('pointerdown', e=>{
+  if(!state.photo) return;
+  if(e.target.closest('.meas')) return;
+  e.preventDefault();
+  const rect = photoZone.getBoundingClientRect();
+  const sx = e.clientX, sy = e.clientY;
+  const ox = state.photoX, oy = state.photoY;
+  const clamp = (v,lo,hi)=>Math.min(hi,Math.max(lo,v));
+  function onMove(ev){
+    state.photoX = Math.round(clamp(ox + (ev.clientX - sx)/rect.width*100, -60, 60));
+    state.photoY = Math.round(clamp(oy + (ev.clientY - sy)/rect.height*100, -60, 60));
+    renderPhoto();
+  }
+  function onUp(){
+    window.removeEventListener('pointermove', onMove);
+    window.removeEventListener('pointerup', onUp);
+    save();
+  }
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('pointerup', onUp);
+});
+photoZone.addEventListener('wheel', e=>{
+  if(!state.photo) return;
+  e.preventDefault();
+  state.photoW = Math.min(200, Math.max(10, Math.round(state.photoW - Math.sign(e.deltaY)*4)));
+  renderPhoto(); save();
+}, {passive:false});
 
 // 顏色圓點
 $('#colorList').addEventListener('input', e=>{
@@ -899,19 +1024,59 @@ $('#measList').addEventListener('change', e=>{
 $('#measList').addEventListener('click', e=>{
   const del = e.target.closest('[data-meas-del]');
   if(!del) return;
+  const snapshot = snap();
   const id = del.dataset.measDel;
   state.measures = state.measures.filter(m=>m.id!==id);
   state.sizes.forEach(s=> delete s.values[id]);
+  if(selectedId === id) selectedId = null;
   renderLines(); renderTable(); renderMeasPanel(); save();
+  undoToast('已刪除測量線', snapshot);
 });
-document.querySelectorAll('[data-add-meas]').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    const orient = btn.dataset.addMeas;
-    const m = {id:uid(), label:'NEW', orient, x:orient==='h'?30:50, y:orient==='h'?50:20, len:30, lp:orient==='h'?'above':'right', visible:true};
-    state.measures.push(m);
-    state.sizes.forEach(s=> s.values[m.id]='');
+$('#addMeasBtn').addEventListener('click', ()=>{
+  const [label, orient] = $('#presetSel').value.split('|');
+  const m = {id:uid(), label, orient, x:orient==='h'?30:50, y:orient==='h'?50:20, len:30, lp:orient==='h'?'above':'right', visible:true};
+  state.measures.push(m);
+  state.sizes.forEach(s=> s.values[m.id]='');
+  renderLines(); renderTable(); renderMeasPanel(); save();
+  selectMeas(m.id);
+  toast('已加入 ' + label + '，把線拖到照片上對的位置');
+});
+
+// 點選測量線後：方向鍵微調（Shift 加大步伐）、Delete 刪除
+document.addEventListener('keydown', e=>{
+  const a = document.activeElement;
+  if(a && (a.isContentEditable || a.tagName==='INPUT' || a.tagName==='SELECT' || a.tagName==='TEXTAREA')) return;
+  if(!selectedId) return;
+  const m = state.measures.find(x=>x.id===selectedId);
+  if(!m) return;
+  if(e.key==='Delete' || e.key==='Backspace'){
+    e.preventDefault();
+    const snapshot = snap();
+    state.measures = state.measures.filter(x=>x.id!==selectedId);
+    state.sizes.forEach(sz=> delete sz.values[selectedId]);
+    selectedId = null;
     renderLines(); renderTable(); renderMeasPanel(); save();
-  });
+    undoToast('已刪除測量線', snapshot);
+    return;
+  }
+  const step = e.shiftKey ? 2 : 0.5;
+  let handled = true;
+  if(e.key==='ArrowLeft') m.x -= step;
+  else if(e.key==='ArrowRight') m.x += step;
+  else if(e.key==='ArrowUp') m.y -= step;
+  else if(e.key==='ArrowDown') m.y += step;
+  else handled = false;
+  if(handled){
+    e.preventDefault();
+    const el = linesEl.querySelector(`.meas[data-id="${m.id}"]`);
+    if(el) positionLine(el, m);
+    save();
+  }
+});
+
+// 點空白處取消選取
+stage.addEventListener('pointerdown', e=>{
+  if(!e.target.closest('.meas')) selectMeas(null);
 });
 
 // 尺寸列
@@ -927,27 +1092,35 @@ $('#sizeList').addEventListener('input', e=>{
 $('#sizeList').addEventListener('click', e=>{
   const del = e.target.closest('[data-size-del]');
   if(!del) return;
+  const snapshot = snap();
   state.sizes.splice(+del.dataset.sizeDel, 1);
   renderTable(); renderSizePanel(); save();
+  undoToast('已刪除尺寸列', snapshot);
 });
 $('#addSize').addEventListener('click', ()=>{
+  const SEQ = ['XS','S','M','L','XL','2XL','3XL','4XL','5XL'];
+  const last = state.sizes[state.sizes.length - 1];
+  const idx = last ? SEQ.indexOf(String(last.name).trim().toUpperCase()) : -1;
+  const name = (idx >= 0 && idx < SEQ.length - 1) ? SEQ[idx + 1] : 'XL';
   const values = Object.fromEntries(state.measures.map(m=>[m.id,'']));
-  state.sizes.push({name:'XL', values});
+  state.sizes.push({name, values});
   renderTable(); renderSizePanel(); save();
 });
 
 // 重設
 $('#resetBtn').addEventListener('click', ()=>{
-  if(!confirm('確定要清除所有內容，回到預設值嗎？')) return;
+  const snapshot = snap();
   localStorage.removeItem(STORAGE_KEY);
   state = defaultState();
-  renderAll();
+  selectedId = null;
+  renderAll(); save();
+  undoToast('已重設為預設值', snapshot);
 });
 
 /* ================= 匯出 ================= */
 async function exportPNG(returnDataUrl){
   if(typeof html2canvas === 'undefined'){
-    alert('匯出元件載入失敗，請確認網路連線後重新整理頁面。');
+    toast('匯出元件載入失敗，請確認網路後重新整理頁面', null, null, 5000);
     return null;
   }
   const prevTransform = stageWrap.style.transform;
@@ -965,8 +1138,11 @@ async function exportPNG(returnDataUrl){
     if(returnDataUrl) return url;
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'size-chart-' + state.template + '.png';
+    const d = new Date();
+    a.download = 'size-chart-' + state.template + '-'
+      + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0') + '.png';
     a.click();
+    toast('已下載 ' + a.download);
     return url;
   } finally {
     stage.classList.remove('exporting');
@@ -975,6 +1151,17 @@ async function exportPNG(returnDataUrl){
   }
 }
 $('#exportBtn').addEventListener('click', ()=> exportPNG(false));
+$('#copyBtn').addEventListener('click', async ()=>{
+  try{
+    const url = await exportPNG(true);
+    if(!url) return;
+    const blob = await (await fetch(url)).blob();
+    await navigator.clipboard.write([new ClipboardItem({'image/png': blob})]);
+    toast('已複製圖片，直接貼到 LINE / IG 就可以了');
+  }catch(err){
+    toast('這個瀏覽器不支援複製圖片，請改用「匯出 PNG」');
+  }
+});
 
 /* ================= 預覽縮放 ================= */
 function fitStage(){
