@@ -9,10 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <style>
-  /* 中文：jf open 粉圓；泰文：Sarabun（檔案放在 index.html 同資料夾） */
+  /* 中文：jf open 粉圓（完整常用字子集）；泰文：Sarabun（檔案放在 index.html 同資料夾） */
   @font-face{
     font-family:'openhuninn';
-    src:url('og-openhuninn.woff') format('woff');
+    src:url('jf-openhuninn-subset.woff2') format('woff2');
     font-display:swap;
   }
   @font-face{
@@ -788,23 +788,52 @@ function loadState(){
     return s;
   }catch(e){ return null; }
 }
+/* IndexedDB 存完整內容（含照片），沒有 localStorage 的 5MB 限制；
+   localStorage 只留去掉大圖的輕量版當備援 */
+let idbReady = null;
+function idbOpen(){
+  idbReady = idbReady || new Promise((res, rej)=>{
+    const r = indexedDB.open('sizechart-db', 1);
+    r.onupgradeneeded = ()=> r.result.createObjectStore('kv');
+    r.onsuccess = ()=> res(r.result);
+    r.onerror = ()=> rej(r.error);
+  });
+  return idbReady;
+}
+async function idbSet(key, val){
+  const db = await idbOpen();
+  return new Promise((res, rej)=>{
+    const tx = db.transaction('kv', 'readwrite');
+    tx.objectStore('kv').put(val, key);
+    tx.oncomplete = res;
+    tx.onerror = ()=> rej(tx.error);
+  });
+}
+async function idbGet(key){
+  const db = await idbOpen();
+  return new Promise((res, rej)=>{
+    const q = db.transaction('kv').objectStore('kv').get(key);
+    q.onsuccess = ()=> res(q.result);
+    q.onerror = ()=> rej(q.error);
+  });
+}
+
 let saveTimer = null;
+let dirty = false;
 function save(){
   clearTimeout(saveTimer);
+  dirty = true;
   saveTimer = setTimeout(()=>{
+    state.savedAt = Date.now();
+    idbSet('state', state).catch(()=>{});
     try{
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    }catch(e){
-      try{
-        const copy = Object.assign({}, state, {photoOriginal:null});
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(copy));
-      }catch(e2){
-        try{
-          const copy2 = Object.assign({}, state, {photo:null, photoOriginal:null});
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(copy2));
-        }catch(e3){}
-      }
-    }
+      const light = Object.assign({}, state, {
+        photo: null,
+        photoOriginal: null,
+        texts: state.texts.filter(x=>x.mode !== 'image'),
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(light));
+    }catch(e){}
   }, 400);
 }
 
@@ -884,7 +913,7 @@ function renderDots(){
   state.dots.forEach((c,i)=>{
     const row = document.createElement('div');
     row.className = 'color-item';
-    row.innerHTML = `<input type="color" value="${c}" data-i="${i}"><span>${c}</span><button class="del" data-i="${i}" title="刪除">✕</button>`;
+    row.innerHTML = `<input type="color" value="${c}" data-i="${i}"><span>${c}</span><button class="del" data-i="${i}">✕</button>`;
     list.appendChild(row);
   });
 }
@@ -992,7 +1021,7 @@ function renderSizePanel(){
   state.sizes.forEach((s,i)=>{
     const row = document.createElement('div');
     row.className = 'color-item';
-    row.innerHTML = `<input type="text" value="${escapeHTML(s.name)}" data-size-input="${i}" style="flex:1;padding:6px 8px;border:1px solid var(--ui-border);border-radius:7px;font-size:13px"><button class="del" data-size-del="${i}" title="刪除">✕</button>`;
+    row.innerHTML = `<input type="text" value="${escapeHTML(s.name)}" data-size-input="${i}" style="flex:1;padding:6px 8px;border:1px solid var(--ui-border);border-radius:7px;font-size:13px"><button class="del" data-size-del="${i}">✕</button>`;
     list.appendChild(row);
   });
 }
@@ -1218,10 +1247,10 @@ $('#tplBtns').addEventListener('click', e=>{
   const btn = e.target.closest('button[data-tpl]');
   if(!btn || btn.dataset.tpl === state.template) return;
   const snapshot = snap();
-  const t = makeTemplates()[btn.dataset.tpl];
+  const tpl = makeTemplates()[btn.dataset.tpl];
   state.template = btn.dataset.tpl;
-  state.measures = t.measures;
-  state.sizes = t.sizes.map(s=>({name:s.name, values:Object.fromEntries(t.measures.map((m,i)=>[m.id, s.values[i]]))}));
+  state.measures = tpl.measures;
+  state.sizes = tpl.sizes.map(s=>({name:s.name, values:Object.fromEntries(tpl.measures.map((m,i)=>[m.id, s.values[i]]))}));
   selectedId = null;
   renderAll(); save();
   undoToast(t('tSwitched'), snapshot);
@@ -1782,6 +1811,18 @@ window.addEventListener('resize', fitStage);
 applyLang();
 renderAll();
 fitStage();
+// IndexedDB 裡有更完整的存檔（含照片）就換上，但使用者已開始編輯時不覆蓋
+(async ()=>{
+  try{
+    const saved = await idbGet('state');
+    if(dirty || !saved || !saved.measures || !saved.sizes) return;
+    if((saved.savedAt || 0) < (state.savedAt || 0)) return;
+    saved.texts = saved.texts || [];
+    saved.photoOriginal = saved.photoOriginal || null;
+    state = saved;
+    renderAll();
+  }catch(e){}
+})();
 window._exportPNG = exportPNG; // 供測試用
 </script>
 </body>
