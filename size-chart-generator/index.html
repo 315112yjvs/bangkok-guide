@@ -9,6 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 <style>
+  /* 中文：jf open 粉圓；泰文：Sarabun（檔案放在 index.html 同資料夾） */
+  @font-face{
+    font-family:'openhuninn';
+    src:url('og-openhuninn.woff') format('woff');
+    font-display:swap;
+  }
+  @font-face{
+    font-family:'Sarabun';
+    src:url('Sarabun-Regular.ttf') format('truetype');
+    font-display:swap;
+  }
   :root{
     --ui-bg:#f1efe9;
     --ui-panel:#ffffff;
@@ -19,7 +30,7 @@
   *{box-sizing:border-box}
   body{
     margin:0;
-    font-family:'Noto Sans TC',system-ui,sans-serif;
+    font-family:'openhuninn','Sarabun','Noto Sans TC',system-ui,sans-serif;
     background:var(--ui-bg);
     color:var(--ui-text);
     display:flex;
@@ -187,7 +198,7 @@
     flex-direction:column;
     padding:34px 36px 26px;
     position:relative;
-    font-family:'Playfair Display','Noto Sans TC',serif;
+    font-family:'Playfair Display','openhuninn','Sarabun',serif;
   }
   .chart-head{
     display:flex;
@@ -240,7 +251,7 @@
     align-items:center;
     justify-content:center;
     color:#a09a8c;
-    font-family:'Noto Sans TC',sans-serif;
+    font-family:'openhuninn','Sarabun',sans-serif;
     font-size:15px;
     cursor:pointer;
     text-align:center;
@@ -320,7 +331,7 @@
   #unitLabel{
     text-align:right;
     font-size:11.5px;
-    font-family:'Noto Sans TC',sans-serif;
+    font-family:'openhuninn','Sarabun',sans-serif;
     color:#7d786c;
     outline:none;
     margin-bottom:4px;
@@ -353,7 +364,7 @@
     font-weight:700;
     margin-top:14px;
     outline:none;
-    font-family:'Noto Sans TC',serif;
+    font-family:'openhuninn','Sarabun',serif;
   }
 
   [contenteditable]:hover{box-shadow:0 0 0 1px rgba(59,130,246,.35)}
@@ -373,7 +384,7 @@
     cursor:move;
     white-space:pre-wrap;
     outline:none;
-    font-family:'Playfair Display','Noto Sans TC',serif;
+    font-family:'Playfair Display','openhuninn','Sarabun',serif;
     user-select:none;
     touch-action:none;
     padding:2px 5px;
@@ -388,7 +399,8 @@
     align-content:space-around;justify-content:space-around;
     overflow:hidden;
   }
-  .txt-tile span{white-space:nowrap;padding:28px 36px;font-family:'Playfair Display','Noto Sans TC',serif}
+  .txt-tile span{white-space:nowrap;padding:28px 36px;font-family:'Playfair Display','openhuninn','Sarabun',serif}
+  .txt-img{padding:0;height:auto}
   #stage.exporting .txt-item{box-shadow:none!important}
 
   /* 互動回饋 */
@@ -422,121 +434,127 @@
 <body>
 
 <aside id="panel">
-  <h1>尺寸圖產生器</h1>
-  <p class="sub">輸出 3:4（1080 × 1440）的商品尺寸圖。</p>
+  <div class="tpl-btns" id="langBtns" style="margin-bottom:12px">
+    <button data-lang="zh">中文</button>
+    <button data-lang="th">ไทย</button>
+  </div>
+  <h1 data-i18n="appTitle">尺寸圖產生器</h1>
+  <p class="sub" data-i18n="appSub">輸出 3:4（1080 × 1440）的商品尺寸圖。</p>
 
   <details>
-    <summary>使用說明</summary>
+    <summary data-i18n="guide">使用說明</summary>
     <div class="box">
       <ol class="guide">
-        <li>選模版，點中間虛線框上傳商品照</li>
-        <li>照片直接用滑鼠拖曳移動、滾輪縮放</li>
-        <li>測量線拖到對的位置，拉兩端圓點改長度；點選線後可用方向鍵微調、Delete 刪除</li>
-        <li>圖上的標題、表格數字、備註，點一下就能改字</li>
-        <li>完成後「匯出 PNG」或「複製圖片」直接貼到聊天</li>
+        <li data-i18n="g1">選模版，點中間虛線框上傳商品照</li>
+        <li data-i18n="g2">照片直接用滑鼠拖曳移動、滾輪縮放</li>
+        <li data-i18n="g3">測量線拖到對的位置，拉兩端圓點改長度；點選線後可用方向鍵微調、Delete 刪除</li>
+        <li data-i18n="g4">圖上的標題、表格數字、備註，點一下就能改字</li>
+        <li data-i18n="g5">完成後「匯出 PNG」或「複製圖片」直接貼到聊天</li>
       </ol>
     </div>
   </details>
 
   <details open>
-    <summary>模版</summary>
+    <summary data-i18n="tpl">模版</summary>
     <div class="box">
       <div class="tpl-btns" id="tplBtns">
-        <button data-tpl="top">👕 上衣</button>
-        <button data-tpl="pants">👖 褲子</button>
-        <button data-tpl="skirt">👗 裙子</button>
+        <button data-tpl="top" data-i18n="tplTop">👕 上衣</button>
+        <button data-tpl="pants" data-i18n="tplPants">👖 褲子</button>
+        <button data-tpl="skirt" data-i18n="tplSkirt">👗 裙子</button>
       </div>
-      <p class="hint">切換模版會載入該類型的預設測量項目與尺寸表（照片與顏色會保留）。</p>
+      <p class="hint" data-i18n="tplHint">切換模版會載入該類型的預設測量項目與尺寸表（照片與顏色會保留）。</p>
     </div>
   </details>
 
   <details open>
-    <summary>商品照片</summary>
+    <summary data-i18n="photo">商品照片</summary>
     <div class="box">
       <input type="file" id="fileInput" accept="image/*" hidden>
-      <button class="btn" id="uploadBtn">上傳照片</button>
-      <div class="row"><label>圖片大小</label><input type="range" id="photoW" min="10" max="200" value="62"><span class="val" id="photoWVal">62%</span></div>
-      <div class="row"><label>水平位置</label><input type="range" id="photoX" min="-60" max="60" value="0"><span class="val" id="photoXVal">0</span></div>
-      <div class="row"><label>垂直位置</label><input type="range" id="photoY" min="-60" max="60" value="0"><span class="val" id="photoYVal">0</span></div>
-      <p class="hint">也可以直接在圖上拖曳照片移動、滾輪縮放。</p>
-      <div class="row" style="margin-top:12px"><label>去背容差</label><input type="range" id="bgTol" min="10" max="120" value="40"><span class="val" id="bgTolVal">40</span></div>
-      <button class="btn small" id="quickBgBtn">✂️ 快速去背（純色背景）</button>
-      <button class="btn small" id="aiBgBtn">🤖 AI 去背（高品質）</button>
-      <button class="btn small" id="trimBtn">📐 自動裁切置中</button>
-      <button class="btn small" id="restoreBtn">↩ 還原原圖</button>
-      <p class="hint">快速去背適合背景接近單色的照片，效果不夠乾淨就調高容差再按一次。AI 去背第一次使用需下載模型（約 40MB），要等一下。去背後建議按「自動裁切置中」，衣服會平整置中。</p>
+      <button class="btn" id="uploadBtn" data-i18n="upload">上傳照片</button>
+      <div class="row"><label data-i18n="imgSize">圖片大小</label><input type="range" id="photoW" min="10" max="200" value="62"><span class="val" id="photoWVal">62%</span></div>
+      <div class="row"><label data-i18n="imgX">水平位置</label><input type="range" id="photoX" min="-60" max="60" value="0"><span class="val" id="photoXVal">0</span></div>
+      <div class="row"><label data-i18n="imgY">垂直位置</label><input type="range" id="photoY" min="-60" max="60" value="0"><span class="val" id="photoYVal">0</span></div>
+      <p class="hint" data-i18n="dragHint">也可以直接在圖上拖曳照片移動、滾輪縮放。</p>
+      <div class="row" style="margin-top:12px"><label data-i18n="bgTol">去背容差</label><input type="range" id="bgTol" min="10" max="120" value="40"><span class="val" id="bgTolVal">40</span></div>
+      <button class="btn small" id="quickBgBtn" data-i18n="quickBg">✂️ 快速去背（純色背景）</button>
+      <button class="btn small" id="aiBgBtn" data-i18n="aiBg">🤖 AI 去背（高品質）</button>
+      <button class="btn small" id="trimBtn" data-i18n="trim">📐 自動裁切置中</button>
+      <button class="btn small" id="restoreBtn" data-i18n="restore">↩ 還原原圖</button>
+      <p class="hint" data-i18n="bgHint">快速去背適合背景接近單色的照片，效果不夠乾淨就調高容差再按一次。AI 去背第一次使用需下載模型（約 40MB），要等一下。去背後建議按「自動裁切置中」，衣服會平整置中。</p>
     </div>
   </details>
 
   <details open>
-    <summary>文字／浮水印</summary>
+    <summary data-i18n="textWm">文字／浮水印</summary>
     <div class="box">
       <div id="textList"></div>
-      <button class="btn small" id="addText">＋ 加一行文字</button>
-      <button class="btn small" id="addTile">＋ 滿版浮水印</button>
-      <p class="hint">單行文字可在圖上拖曳位置、雙擊直接改字；滿版浮水印會斜向鋪滿整張圖，適合防盜圖。</p>
+      <input type="file" id="wmFileInput" accept="image/*" hidden>
+      <button class="btn small" id="addText" data-i18n="addText">＋ 加一行文字</button>
+      <button class="btn small" id="addTile" data-i18n="addTile">＋ 滿版浮水印</button>
+      <button class="btn small" id="addImgWm" data-i18n="addImg">＋ 圖片浮水印（Logo）</button>
+      <p class="hint" data-i18n="textHint">單行文字可在圖上拖曳位置、雙擊直接改字；滿版浮水印會斜向鋪滿整張圖，適合防盜圖。</p>
     </div>
   </details>
 
   <details open>
-    <summary>顏色選項圓點</summary>
+    <summary data-i18n="dots">顏色選項圓點</summary>
     <div class="box">
       <div id="colorList"></div>
-      <button class="btn small" id="addColor">＋ 新增顏色</button>
-      <p class="hint">對應這件商品有的顏色，會顯示在標題下方。</p>
+      <button class="btn small" id="addColor" data-i18n="addColor">＋ 新增顏色</button>
+      <p class="hint" data-i18n="dotsHint">對應這件商品有的顏色，會顯示在標題下方。</p>
     </div>
   </details>
 
   <details>
-    <summary>版面顏色與文字</summary>
+    <summary data-i18n="theme">版面顏色與文字</summary>
     <div class="box">
-      <div class="row"><label>主色（標題/表格）</label><input type="color" id="accentColor"></div>
-      <div class="row"><label>背景色</label><input type="color" id="bgColor"></div>
-      <div class="row"><label>文字色</label><input type="color" id="textColor"></div>
-      <div class="row"><label>測量線色</label><input type="color" id="lineColor"></div>
-      <p class="hint">標題、單位、備註文字：直接在右邊圖上點一下就能改字。</p>
+      <div class="row"><label data-i18n="accentL">主色（標題/表格）</label><input type="color" id="accentColor"></div>
+      <div class="row"><label data-i18n="bgL">背景色</label><input type="color" id="bgColor"></div>
+      <div class="row"><label data-i18n="textL">文字色</label><input type="color" id="textColor"></div>
+      <div class="row"><label data-i18n="lineL">測量線色</label><input type="color" id="lineColor"></div>
+      <p class="hint" data-i18n="themeHint">標題、單位、備註文字：直接在右邊圖上點一下就能改字。</p>
     </div>
   </details>
 
   <details open>
-    <summary>測量項目（＝表格欄位）</summary>
+    <summary data-i18n="meas">測量項目（＝表格欄位）</summary>
     <div class="box">
       <div id="measList"></div>
       <div class="row" style="margin-top:10px">
         <select id="presetSel" style="flex:1">
-          <option value="SHOULDER|h">肩寬 SHOULDER</option>
-          <option value="CHEST|h">胸圍 CHEST</option>
-          <option value="LENGTH|v">衣長／裙長 LENGTH</option>
-          <option value="UPPER ARM|v">袖圍 UPPER ARM</option>
-          <option value="SLEEVE|h">袖長 SLEEVE</option>
-          <option value="WAIST|h">腰圍 WAIST</option>
-          <option value="HIP|h">臀圍 HIP</option>
-          <option value="THIGH|h">大腿圍 THIGH</option>
-          <option value="LEG OPENING|h">褲口 LEG OPENING</option>
-          <option value="NEW|h">自訂（橫向線）</option>
-          <option value="NEW|v">自訂（直向線）</option>
+          <option value="SHOULDER|h" data-i18n="pShoulder">肩寬 SHOULDER</option>
+          <option value="CHEST|h" data-i18n="pChest">胸圍 CHEST</option>
+          <option value="LENGTH|v" data-i18n="pLength">衣長／裙長 LENGTH</option>
+          <option value="UPPER ARM|v" data-i18n="pUpperArm">袖圍 UPPER ARM</option>
+          <option value="SLEEVE|h" data-i18n="pSleeve">袖長 SLEEVE</option>
+          <option value="WAIST|h" data-i18n="pWaist">腰圍 WAIST</option>
+          <option value="HIP|h" data-i18n="pHip">臀圍 HIP</option>
+          <option value="THIGH|h" data-i18n="pThigh">大腿圍 THIGH</option>
+          <option value="LEG OPENING|h" data-i18n="pLegOpen">褲口 LEG OPENING</option>
+          <option value="NEW|h" data-i18n="pCustomH">自訂（橫向線）</option>
+          <option value="NEW|v" data-i18n="pCustomV">自訂（直向線）</option>
         </select>
-        <button class="btn small" id="addMeasBtn" style="margin-top:0">＋ 加入</button>
+        <button class="btn small" id="addMeasBtn" style="margin-top:0" data-i18n="add">＋ 加入</button>
       </div>
     </div>
   </details>
 
   <details open>
-    <summary>尺寸列</summary>
+    <summary data-i18n="sizes">尺寸列</summary>
     <div class="box">
       <div id="sizeList"></div>
-      <button class="btn small" id="addSize">＋ 新增尺寸</button>
-      <p class="hint">表格裡的數字直接點擊修改。</p>
+      <button class="btn small" id="addSize" data-i18n="addSize">＋ 新增尺寸</button>
+      <p class="hint" data-i18n="sizesHint">表格裡的數字直接點擊修改。</p>
     </div>
   </details>
 
-  <button class="btn primary" id="exportBtn">⬇ 匯出 PNG（1080 × 1440）</button>
-  <button class="btn" id="copyBtn">📋 複製圖片（直接貼到聊天）</button>
-  <button class="btn" id="resetBtn">重設為預設值</button>
+  <button class="btn primary" id="exportBtn" data-i18n="export">⬇ 匯出 PNG（1080 × 1440）</button>
+  <button class="btn" id="copyBtn" data-i18n="copy">📋 複製圖片（直接貼到聊天）</button>
+  <button class="btn" id="resetBtn" data-i18n="reset">重設為預設值</button>
 </aside>
 
 <main id="main">
-  <div id="topbar">預覽（實際輸出為 1080 × 1440 px）</div>
+  <div id="topbar" data-i18n="preview">預覽（實際輸出為 1080 × 1440 px）</div>
   <div id="stageWrap">
     <div id="stage">
       <div class="chart-head">
@@ -545,7 +563,7 @@
       </div>
       <div id="photoZone">
         <div id="photoClip"><img id="photo" hidden alt=""></div>
-        <div id="photoPlaceholder">點擊上傳商品照片<br><span style="font-size:12px">建議使用去背或淺色背景平拍照</span></div>
+        <div id="photoPlaceholder" data-i18n="placeholder">點擊上傳商品照片<br><span style="font-size:12px">建議使用去背或淺色背景平拍照</span></div>
         <div id="lines"></div>
         <div id="snapGuide"></div>
       </div>
@@ -561,6 +579,135 @@
 /* ================= 預設模版 ================= */
 let uidCounter = 1;
 const uid = () => 'm' + (uidCounter++) + '_' + Math.random().toString(36).slice(2,6);
+
+/* ================= 中／泰雙語 ================= */
+let lang = localStorage.getItem('sizechart-lang') || 'zh';
+const I18N = {
+  zh: {
+    appTitle:'尺寸圖產生器',
+    appSub:'輸出 3:4（1080 × 1440）的商品尺寸圖。',
+    guide:'使用說明',
+    g1:'選模版，點中間虛線框上傳商品照',
+    g2:'照片直接用滑鼠拖曳移動、滾輪縮放',
+    g3:'測量線拖到對的位置，拉兩端圓點改長度；點選線後可用方向鍵微調、Delete 刪除',
+    g4:'圖上的標題、表格數字、備註，點一下就能改字',
+    g5:'完成後「匯出 PNG」或「複製圖片」直接貼到聊天',
+    tpl:'模版', tplTop:'👕 上衣', tplPants:'👖 褲子', tplSkirt:'👗 裙子',
+    tplHint:'切換模版會載入該類型的預設測量項目與尺寸表（照片與顏色會保留）。',
+    photo:'商品照片', upload:'上傳照片',
+    imgSize:'圖片大小', imgX:'水平位置', imgY:'垂直位置',
+    dragHint:'也可以直接在圖上拖曳照片移動、滾輪縮放。',
+    bgTol:'去背容差',
+    quickBg:'✂️ 快速去背（純色背景）', aiBg:'🤖 AI 去背（高品質）', aiBgBusy:'🤖 AI 處理中…',
+    trim:'📐 自動裁切置中', restore:'↩ 還原原圖',
+    bgHint:'快速去背適合背景接近單色的照片，效果不夠乾淨就調高容差再按一次。AI 去背第一次使用需下載模型（約 40MB），要等一下。去背後建議按「自動裁切置中」，衣服會平整置中。',
+    textWm:'文字／浮水印', addText:'＋ 加一行文字', addTile:'＋ 滿版浮水印', addImg:'＋ 圖片浮水印（Logo）',
+    textHint:'單行文字可在圖上拖曳位置、雙擊直接改字；滿版浮水印會斜向鋪滿整張圖，適合防盜圖。',
+    dots:'顏色選項圓點', addColor:'＋ 新增顏色', dotsHint:'對應這件商品有的顏色，會顯示在標題下方。',
+    theme:'版面顏色與文字', accentL:'主色（標題/表格）', bgL:'背景色', textL:'文字色', lineL:'測量線色',
+    themeHint:'標題、單位、備註文字：直接在右邊圖上點一下就能改字。',
+    meas:'測量項目（＝表格欄位）', add:'＋ 加入',
+    pShoulder:'肩寬 SHOULDER', pChest:'胸圍 CHEST', pLength:'衣長／裙長 LENGTH', pUpperArm:'袖圍 UPPER ARM',
+    pSleeve:'袖長 SLEEVE', pWaist:'腰圍 WAIST', pHip:'臀圍 HIP', pThigh:'大腿圍 THIGH',
+    pLegOpen:'褲口 LEG OPENING', pCustomH:'自訂（橫向線）', pCustomV:'自訂（直向線）',
+    dir:'方向', h:'橫向', v:'直向', above:'線上方', below:'線下方', left:'線左側', right:'線右側', show:'顯示',
+    sizes:'尺寸列', addSize:'＋ 新增尺寸', sizesHint:'表格裡的數字直接點擊修改。',
+    size:'大小', opacity:'透明度', rotate:'旋轉', bold:'粗體',
+    tileTag:'滿版浮水印', dragTag:'圖上可拖曳、雙擊改字', imgTag:'圖片浮水印',
+    export:'⬇ 匯出 PNG（1080 × 1440）', copy:'📋 複製圖片（直接貼到聊天）', reset:'重設為預設值',
+    preview:'預覽（實際輸出為 1080 × 1440 px）',
+    placeholder:'點擊上傳商品照片<br><span style="font-size:12px">建議使用去背或淺色背景平拍照</span>',
+    defaultUnit:'單位：英吋 (inch)',
+    defaultNote:'*** 商品皆為手工測量，尺寸可能有些微誤差 ***',
+    defaultBrand:'你的品牌',
+    tUndo:'復原', tRestoreBtn:'還原原圖',
+    tSwitched:'已切換模版，照片與顏色有保留',
+    tDelLine:'已刪除測量線', tDelSize:'已刪除尺寸列', tDelText:'已刪除', tReset:'已重設為預設值',
+    addedMeas:'已加入 {x}，把線拖到照片上對的位置',
+    tAddedText:'已加入文字，拖曳調整位置、雙擊改字',
+    tAddedTile:'已加入滿版浮水印，在左邊改字和透明度',
+    tAddedImg:'已加入圖片浮水印，拖曳調整位置',
+    tNoPhoto:'請先上傳照片',
+    tQuickDone:'快速去背完成，不夠乾淨可調高容差再按一次',
+    tTrimDone:'已裁掉多餘留白並置中', tTrimFail:'找不到內容，先確認照片或先去背',
+    tNoRestore:'沒有可還原的原圖', tRestored:'已還原原圖',
+    tAiWait:'AI 去背處理中，第一次要下載模型（約 40MB），請稍等…',
+    tAiDone:'AI 去背完成，建議接著按「自動裁切置中」',
+    tAiFail:'AI 去背失敗（需要網路連線），可先用快速去背',
+    tCopied:'已複製圖片，直接貼到 LINE / IG 就可以了',
+    tCopyFail:'這個瀏覽器不支援複製圖片，請改用「匯出 PNG」',
+    tDownloaded:'已下載',
+    tExportFail:'匯出元件載入失敗，請確認網路後重新整理頁面',
+  },
+  th: {
+    appTitle:'เครื่องมือทำตารางไซซ์',
+    appSub:'สร้างรูปตารางไซซ์สินค้า สัดส่วน 3:4 (1080 × 1440)',
+    guide:'วิธีใช้งาน',
+    g1:'เลือกเทมเพลต แล้วกดกรอบเส้นประตรงกลางเพื่ออัปโหลดรูปสินค้า',
+    g2:'ลากรูปด้วยเมาส์เพื่อย้าย หมุนลูกกลิ้งเพื่อย่อ/ขยาย',
+    g3:'ลากเส้นวัดไปยังจุดที่ต้องการ ดึงจุดปลายเพื่อปรับความยาว คลิกเลือกเส้นแล้วใช้ปุ่มลูกศรขยับ กด Delete เพื่อลบ',
+    g4:'หัวข้อ ตัวเลขในตาราง และหมายเหตุบนรูป กดแล้วแก้ได้เลย',
+    g5:'เสร็จแล้วกด "ดาวน์โหลด PNG" หรือ "คัดลอกรูป" ไปวางในแชทได้เลย',
+    tpl:'เทมเพลต', tplTop:'👕 เสื้อ', tplPants:'👖 กางเกง', tplSkirt:'👗 กระโปรง',
+    tplHint:'การสลับเทมเพลตจะโหลดเส้นวัดและตารางไซซ์เริ่มต้นของประเภทนั้น (รูปและสีจะยังอยู่)',
+    photo:'รูปสินค้า', upload:'อัปโหลดรูป',
+    imgSize:'ขนาดรูป', imgX:'ตำแหน่งแนวนอน', imgY:'ตำแหน่งแนวตั้ง',
+    dragHint:'ลากรูปบนภาพเพื่อย้าย หรือหมุนลูกกลิ้งเมาส์เพื่อย่อ/ขยายได้เลย',
+    bgTol:'ความไวลบพื้นหลัง',
+    quickBg:'✂️ ลบพื้นหลังด่วน (พื้นสีเดียว)', aiBg:'🤖 ลบพื้นหลังด้วย AI (คุณภาพสูง)', aiBgBusy:'🤖 AI กำลังประมวลผล…',
+    trim:'📐 ตัดขอบและจัดกึ่งกลาง', restore:'↩ คืนรูปต้นฉบับ',
+    bgHint:'ลบพื้นหลังด่วนเหมาะกับรูปที่พื้นหลังใกล้เคียงสีเดียว ถ้ายังไม่สะอาดให้เพิ่มค่าความไวแล้วกดอีกครั้ง ส่วน AI ครั้งแรกต้องดาวน์โหลดโมเดล (~40MB) ต้องรอสักหน่อย หลังลบพื้นหลังแนะนำกด "ตัดขอบและจัดกึ่งกลาง" เสื้อจะดูเรียบร้อยอยู่กึ่งกลาง',
+    textWm:'ข้อความ / ลายน้ำ', addText:'＋ เพิ่มข้อความ', addTile:'＋ ลายน้ำเต็มภาพ', addImg:'＋ ลายน้ำรูปภาพ (โลโก้)',
+    textHint:'ข้อความลากย้ายบนรูปได้ ดับเบิลคลิกเพื่อแก้คำ ลายน้ำเต็มภาพจะเรียงเฉียงเต็มทั้งรูป กันขโมยรูป',
+    dots:'จุดสีของสินค้า', addColor:'＋ เพิ่มสี', dotsHint:'สีที่มีของสินค้าตัวนี้ จะแสดงใต้หัวข้อ',
+    theme:'สีเลย์เอาต์และข้อความ', accentL:'สีหลัก (หัวข้อ/ตาราง)', bgL:'สีพื้นหลัง', textL:'สีตัวอักษร', lineL:'สีเส้นวัด',
+    themeHint:'หัวข้อ หน่วย หมายเหตุ: กดที่ข้อความบนรูปด้านขวาเพื่อแก้ได้เลย',
+    meas:'รายการวัด (=คอลัมน์ตาราง)', add:'＋ เพิ่ม',
+    pShoulder:'ไหล่ SHOULDER', pChest:'รอบอก CHEST', pLength:'ความยาว LENGTH', pUpperArm:'ต้นแขน UPPER ARM',
+    pSleeve:'ความยาวแขน SLEEVE', pWaist:'รอบเอว WAIST', pHip:'สะโพก HIP', pThigh:'ต้นขา THIGH',
+    pLegOpen:'ปลายขา LEG OPENING', pCustomH:'กำหนดเอง (เส้นแนวนอน)', pCustomV:'กำหนดเอง (เส้นแนวตั้ง)',
+    dir:'ทิศทาง', h:'แนวนอน', v:'แนวตั้ง', above:'เหนือเส้น', below:'ใต้เส้น', left:'ซ้ายของเส้น', right:'ขวาของเส้น', show:'แสดง',
+    sizes:'แถวไซซ์', addSize:'＋ เพิ่มไซซ์', sizesHint:'ตัวเลขในตาราง กดแล้วแก้ได้เลย',
+    size:'ขนาด', opacity:'ความโปร่งใส', rotate:'หมุน', bold:'ตัวหนา',
+    tileTag:'ลายน้ำเต็มภาพ', dragTag:'ลากบนรูปได้ ดับเบิลคลิกแก้คำ', imgTag:'ลายน้ำรูปภาพ',
+    export:'⬇ ดาวน์โหลด PNG (1080 × 1440)', copy:'📋 คัดลอกรูป (วางในแชทได้เลย)', reset:'รีเซ็ตเป็นค่าเริ่มต้น',
+    preview:'พรีวิว (ไฟล์จริง 1080 × 1440 px)',
+    placeholder:'กดเพื่ออัปโหลดรูปสินค้า<br><span style="font-size:12px">แนะนำรูปไดคัทหรือถ่ายบนพื้นหลังสีอ่อน</span>',
+    defaultUnit:'หน่วย: นิ้ว (inch)',
+    defaultNote:'*** เนื่องจากวัดด้วยมือ ขนาดอาจคลาดเคลื่อนเล็กน้อย ***',
+    defaultBrand:'แบรนด์ของคุณ',
+    tUndo:'ย้อนกลับ', tRestoreBtn:'คืนรูปต้นฉบับ',
+    tSwitched:'เปลี่ยนเทมเพลตแล้ว รูปและสียังอยู่',
+    tDelLine:'ลบเส้นวัดแล้ว', tDelSize:'ลบแถวไซซ์แล้ว', tDelText:'ลบแล้ว', tReset:'รีเซ็ตเรียบร้อยแล้ว',
+    addedMeas:'เพิ่ม {x} แล้ว ลากเส้นไปวางบนรูปได้เลย',
+    tAddedText:'เพิ่มข้อความแล้ว ลากย้ายตำแหน่ง ดับเบิลคลิกแก้คำ',
+    tAddedTile:'เพิ่มลายน้ำเต็มภาพแล้ว แก้คำและความโปร่งใสที่แผงซ้าย',
+    tAddedImg:'เพิ่มลายน้ำรูปภาพแล้ว ลากย้ายตำแหน่งได้เลย',
+    tNoPhoto:'กรุณาอัปโหลดรูปก่อน',
+    tQuickDone:'ลบพื้นหลังเสร็จแล้ว ถ้ายังไม่สะอาดให้เพิ่มค่าความไวแล้วกดอีกครั้ง',
+    tTrimDone:'ตัดขอบส่วนเกินและจัดกึ่งกลางแล้ว', tTrimFail:'ไม่พบเนื้อหาในรูป ลองตรวจรูปหรือลบพื้นหลังก่อน',
+    tNoRestore:'ไม่มีรูปต้นฉบับให้คืน', tRestored:'คืนรูปต้นฉบับแล้ว',
+    tAiWait:'AI กำลังลบพื้นหลัง ครั้งแรกต้องดาวน์โหลดโมเดล (~40MB) รอสักครู่นะ…',
+    tAiDone:'ลบพื้นหลังด้วย AI เสร็จแล้ว แนะนำกด "ตัดขอบและจัดกึ่งกลาง" ต่อ',
+    tAiFail:'AI ลบพื้นหลังไม่สำเร็จ (ต้องต่ออินเทอร์เน็ต) ลองใช้ลบพื้นหลังด่วนก่อน',
+    tCopied:'คัดลอกรูปแล้ว วางใน LINE / IG ได้เลย',
+    tCopyFail:'เบราว์เซอร์นี้ไม่รองรับการคัดลอกรูป ใช้ "ดาวน์โหลด PNG" แทน',
+    tDownloaded:'ดาวน์โหลดแล้ว',
+    tExportFail:'โหลดตัวส่งออกไม่สำเร็จ ตรวจอินเทอร์เน็ตแล้วรีเฟรชหน้า',
+  }
+};
+function t(k){
+  const d = I18N[lang] || I18N.zh;
+  return d[k] !== undefined ? d[k] : (I18N.zh[k] !== undefined ? I18N.zh[k] : k);
+}
+function applyLang(){
+  document.documentElement.lang = lang === 'th' ? 'th' : 'zh-Hant';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    el.innerHTML = t(el.dataset.i18n);
+  });
+  document.querySelectorAll('#langBtns button').forEach(b=>
+    b.classList.toggle('active', b.dataset.lang === lang));
+}
 
 function makeTemplates(){
   return {
@@ -615,8 +762,8 @@ function defaultState(){
     text:    '#171310',
     line:    '#171310',
     titleHTML: 'SIZE<br>CHART',
-    unitHTML:  '單位：英吋 (inch)',
-    noteHTML:  '*** 商品皆為手工測量，尺寸可能有些微誤差 ***',
+    unitHTML:  t('defaultUnit'),
+    noteHTML:  t('defaultNote'),
     dots: ['#1e3a6e','#4a3226','#b3a8dc','#eed6ae'],
     photo: null,
     photoOriginal: null,
@@ -692,7 +839,7 @@ function toast(msg, actionLabel, actionFn, ms = 4000){
 function hideToast(){ toastEl.classList.remove('show'); }
 function snap(){ return JSON.parse(JSON.stringify(state)); }
 function undoToast(msg, snapshot){
-  toast(msg, '復原', ()=>{ state = snapshot; selectedId = null; selectedTextId = null; renderAll(); save(); }, 6000);
+  toast(msg, t('tUndo'), ()=>{ state = snapshot; selectedId = null; selectedTextId = null; renderAll(); save(); }, 6000);
 }
 function selectMeas(id){
   selectedId = id;
@@ -817,23 +964,23 @@ function renderMeasPanel(){
     const card = document.createElement('div');
     card.className = 'item-card';
     const lpOptions = m.orient === 'h'
-      ? `<option value="above"${m.lp==='above'?' selected':''}>線上方</option><option value="below"${m.lp==='below'?' selected':''}>線下方</option>`
-      : `<option value="left"${m.lp==='left'?' selected':''}>線左側</option><option value="right"${m.lp==='right'?' selected':''}>線右側</option>`;
+      ? `<option value="above"${m.lp==='above'?' selected':''}>${t('above')}</option><option value="below"${m.lp==='below'?' selected':''}>${t('below')}</option>`
+      : `<option value="left"${m.lp==='left'?' selected':''}>${t('left')}</option><option value="right"${m.lp==='right'?' selected':''}>${t('right')}</option>`;
     card.innerHTML = `
       <div class="row">
         <input type="text" value="${escapeHTML(m.label)}" data-meas-label="${m.id}" style="flex:1">
-        <button class="del" data-meas-del="${m.id}" title="刪除">✕</button>
+        <button class="del" data-meas-del="${m.id}" title="✕">✕</button>
       </div>
       <div class="row">
-        <label>方向</label>
+        <label>${t('dir')}</label>
         <select data-meas-orient="${m.id}">
-          <option value="h"${m.orient==='h'?' selected':''}>橫向</option>
-          <option value="v"${m.orient==='v'?' selected':''}>直向</option>
+          <option value="h"${m.orient==='h'?' selected':''}>${t('h')}</option>
+          <option value="v"${m.orient==='v'?' selected':''}>${t('v')}</option>
         </select>
         <select data-meas-lp="${m.id}">${lpOptions}</select>
       </div>
       <div class="row">
-        <label style="width:auto"><input type="checkbox" data-meas-vis="${m.id}"${m.visible?' checked':''}> 顯示</label>
+        <label style="width:auto"><input type="checkbox" data-meas-vis="${m.id}"${m.visible?' checked':''}> ${t('show')}</label>
       </div>`;
     list.appendChild(card);
   });
@@ -868,6 +1015,20 @@ function renderTextLayer(){
         c.appendChild(s);
       }
       layer.appendChild(c);
+    }else if(t.mode === 'image'){
+      const el = document.createElement('img');
+      el.className = 'txt-item txt-img';
+      el.dataset.id = t.id;
+      el.src = t.src;
+      el.draggable = false;
+      el.style.left = t.x + '%';
+      el.style.top = t.y + '%';
+      el.style.width = t.w + '%';
+      el.style.opacity = t.opacity;
+      el.style.transform = `rotate(${t.rotate}deg)`;
+      if(t.id === selectedTextId) el.classList.add('selected');
+      layer.appendChild(el);
+      bindTextItem(el, t);
     }else{
       const el = document.createElement('div');
       el.className = 'txt-item';
@@ -890,18 +1051,30 @@ function renderTextLayer(){
 function renderTextPanel(){
   const list = $('#textList');
   list.innerHTML = '';
-  state.texts.forEach(t=>{
+  state.texts.forEach(it=>{
     const card = document.createElement('div');
     card.className = 'item-card';
-    card.innerHTML = `
-      <div class="row">
-        <input type="text" value="${escapeHTML(t.text)}" data-txt-text="${t.id}" style="flex:1">
-        <button class="del" data-txt-del="${t.id}" title="刪除">✕</button>
-      </div>
-      <div class="row"><label>大小</label><input type="range" min="10" max="90" value="${t.size}" data-txt-size="${t.id}"><input type="color" value="${t.color}" data-txt-color="${t.id}"></div>
-      <div class="row"><label>透明度</label><input type="range" min="5" max="100" value="${Math.round(t.opacity*100)}" data-txt-op="${t.id}"></div>
-      <div class="row"><label>旋轉</label><input type="range" min="-90" max="90" value="${t.rotate}" data-txt-rot="${t.id}"></div>
-      <div class="row"><label style="width:auto"><input type="checkbox" data-txt-bold="${t.id}"${t.bold?' checked':''}> 粗體</label><span class="hint" style="margin:0">${t.mode==='tile'?'滿版浮水印':'圖上可拖曳、雙擊改字'}</span></div>`;
+    if(it.mode === 'image'){
+      card.innerHTML = `
+        <div class="row">
+          <img src="${it.src}" style="height:34px;border:1px solid var(--ui-border);border-radius:6px" alt="">
+          <span class="hint" style="margin:0;flex:1">${t('imgTag')}</span>
+          <button class="del" data-txt-del="${it.id}" title="✕">✕</button>
+        </div>
+        <div class="row"><label>${t('size')}</label><input type="range" min="5" max="60" value="${it.w}" data-txt-size="${it.id}"></div>
+        <div class="row"><label>${t('opacity')}</label><input type="range" min="5" max="100" value="${Math.round(it.opacity*100)}" data-txt-op="${it.id}"></div>
+        <div class="row"><label>${t('rotate')}</label><input type="range" min="-90" max="90" value="${it.rotate}" data-txt-rot="${it.id}"></div>`;
+    }else{
+      card.innerHTML = `
+        <div class="row">
+          <input type="text" value="${escapeHTML(it.text)}" data-txt-text="${it.id}" style="flex:1">
+          <button class="del" data-txt-del="${it.id}" title="✕">✕</button>
+        </div>
+        <div class="row"><label>${t('size')}</label><input type="range" min="10" max="90" value="${it.size}" data-txt-size="${it.id}"><input type="color" value="${it.color}" data-txt-color="${it.id}"></div>
+        <div class="row"><label>${t('opacity')}</label><input type="range" min="5" max="100" value="${Math.round(it.opacity*100)}" data-txt-op="${it.id}"></div>
+        <div class="row"><label>${t('rotate')}</label><input type="range" min="-90" max="90" value="${it.rotate}" data-txt-rot="${it.id}"></div>
+        <div class="row"><label style="width:auto"><input type="checkbox" data-txt-bold="${it.id}"${it.bold?' checked':''}> ${t('bold')}</label><span class="hint" style="margin:0">${it.mode==='tile'?t('tileTag'):t('dragTag')}</span></div>`;
+    }
     list.appendChild(card);
   });
 }
@@ -931,6 +1104,7 @@ function bindTextItem(el, t){
     window.addEventListener('pointerup', onUp);
   });
   el.addEventListener('dblclick', ()=>{
+    if(t.mode === 'image') return;
     el.setAttribute('contenteditable', 'true');
     el.focus();
     const range = document.createRange();
@@ -1050,7 +1224,18 @@ $('#tplBtns').addEventListener('click', e=>{
   state.sizes = t.sizes.map(s=>({name:s.name, values:Object.fromEntries(t.measures.map((m,i)=>[m.id, s.values[i]]))}));
   selectedId = null;
   renderAll(); save();
-  undoToast('已切換模版，照片與顏色有保留', snapshot);
+  undoToast(t('tSwitched'), snapshot);
+});
+
+// 語言切換
+$('#langBtns').addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-lang]');
+  if(!btn || btn.dataset.lang === lang) return;
+  lang = btn.dataset.lang;
+  localStorage.setItem('sizechart-lang', lang);
+  applyLang();
+  renderMeasPanel();
+  renderTextPanel();
 });
 
 // 照片
@@ -1100,7 +1285,7 @@ function borderAvg(d, w, h){
 }
 
 function quickRemoveBg(){
-  if(!state.photo){ toast('請先上傳照片'); return; }
+  if(!state.photo){ toast(t('tNoPhoto')); return; }
   if(!state.photoOriginal) state.photoOriginal = state.photo;
   const tol = +$('#bgTol').value;
   loadPhotoCanvas((c, ctx)=>{
@@ -1143,12 +1328,12 @@ function quickRemoveBg(){
     ctx.putImageData(im, 0, 0);
     state.photo = c.toDataURL('image/png');
     renderPhoto(); save();
-    toast('快速去背完成，不夠乾淨可調高容差再按一次', '還原原圖', restorePhoto, 6000);
+    toast(t('tQuickDone'), t('tRestoreBtn'), restorePhoto, 6000);
   });
 }
 
 function trimPhoto(){
-  if(!state.photo){ toast('請先上傳照片'); return; }
+  if(!state.photo){ toast(t('tNoPhoto')); return; }
   if(!state.photoOriginal) state.photoOriginal = state.photo;
   loadPhotoCanvas((c, ctx)=>{
     const w = c.width, h = c.height;
@@ -1174,7 +1359,7 @@ function trimPhoto(){
         }
       }
     }
-    if(maxX < 0){ toast('找不到內容，先確認照片或先去背'); return; }
+    if(maxX < 0){ toast(t('tTrimFail')); return; }
     const mx = Math.round((maxX - minX) * 0.03), my = Math.round((maxY - minY) * 0.03);
     minX = Math.max(0, minX - mx); maxX = Math.min(w-1, maxX + mx);
     minY = Math.max(0, minY - my); maxY = Math.min(h-1, maxY + my);
@@ -1185,27 +1370,27 @@ function trimPhoto(){
     state.photo = c2.toDataURL('image/png');
     state.photoX = 0; state.photoY = 0;
     renderPhoto(); save();
-    toast('已裁掉多餘留白並置中');
+    toast(t('tTrimDone'));
   });
 }
 
 function restorePhoto(){
-  if(!state.photoOriginal){ toast('沒有可還原的原圖'); return; }
+  if(!state.photoOriginal){ toast(t('tNoRestore')); return; }
   state.photo = state.photoOriginal;
   state.photoOriginal = null;
   renderPhoto(); save();
-  toast('已還原原圖');
+  toast(t('tRestored'));
 }
 
 let imglyPromise = null;
 async function aiRemoveBg(){
-  if(!state.photo){ toast('請先上傳照片'); return; }
+  if(!state.photo){ toast(t('tNoPhoto')); return; }
   if(!state.photoOriginal) state.photoOriginal = state.photo;
   const btn = $('#aiBgBtn');
   btn.disabled = true;
-  btn.textContent = '🤖 AI 處理中…';
+  btn.textContent = t('aiBgBusy');
   try{
-    toast('AI 去背處理中，第一次要下載模型（約 40MB），請稍等…', null, null, 60000);
+    toast(t('tAiWait'), null, null, 60000);
     imglyPromise = imglyPromise || import('https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.5.5/+esm');
     const { removeBackground } = await imglyPromise;
     const blob = await (await fetch(state.photo)).blob();
@@ -1220,13 +1405,13 @@ async function aiRemoveBg(){
       fr.readAsDataURL(out);
     });
     renderPhoto(); save();
-    toast('AI 去背完成，建議接著按「自動裁切置中」', '還原原圖', restorePhoto, 6000);
+    toast(t('tAiDone'), t('tRestoreBtn'), restorePhoto, 6000);
   }catch(err){
     console.error(err);
-    toast('AI 去背失敗（需要網路連線），可先用快速去背', null, null, 5000);
+    toast(t('tAiFail'), null, null, 5000);
   }finally{
     btn.disabled = false;
-    btn.textContent = '🤖 AI 去背（高品質）';
+    btn.textContent = t('aiBg');
   }
 }
 
@@ -1357,7 +1542,7 @@ $('#measList').addEventListener('click', e=>{
   state.sizes.forEach(s=> delete s.values[id]);
   if(selectedId === id) selectedId = null;
   renderLines(); renderTable(); renderMeasPanel(); save();
-  undoToast('已刪除測量線', snapshot);
+  undoToast(t('tDelLine'), snapshot);
 });
 $('#addMeasBtn').addEventListener('click', ()=>{
   const [label, orient] = $('#presetSel').value.split('|');
@@ -1366,51 +1551,69 @@ $('#addMeasBtn').addEventListener('click', ()=>{
   state.sizes.forEach(s=> s.values[m.id]='');
   renderLines(); renderTable(); renderMeasPanel(); save();
   selectMeas(m.id);
-  toast('已加入 ' + label + '，把線拖到照片上對的位置');
+  toast(t('addedMeas').replace('{x}', label));
 });
 
 /* ================= 文字／浮水印 ================= */
 $('#addText').addEventListener('click', ()=>{
-  const t = {id:uid(), mode:'single', text:'你的品牌', x:36, y:75, size:26, color:'#171310', opacity:0.9, rotate:0, bold:true};
-  state.texts.push(t);
+  const it = {id:uid(), mode:'single', text:t('defaultBrand'), x:36, y:75, size:26, color:'#171310', opacity:0.9, rotate:0, bold:true};
+  state.texts.push(it);
   renderTextLayer(); renderTextPanel(); save();
-  selectText(t.id);
-  toast('已加入文字，拖曳調整位置、雙擊改字');
+  selectText(it.id);
+  toast(t('tAddedText'));
 });
 $('#addTile').addEventListener('click', ()=>{
-  const t = {id:uid(), mode:'tile', text:'@yourbrand', x:0, y:0, size:22, color:'#888888', opacity:0.18, rotate:-30, bold:true};
-  state.texts.push(t);
+  const it = {id:uid(), mode:'tile', text:'@yourbrand', x:0, y:0, size:22, color:'#888888', opacity:0.18, rotate:-30, bold:true};
+  state.texts.push(it);
   renderTextLayer(); renderTextPanel(); save();
-  toast('已加入滿版浮水印，在左邊改字和透明度');
+  toast(t('tAddedTile'));
+});
+$('#addImgWm').addEventListener('click', ()=> $('#wmFileInput').click());
+$('#wmFileInput').addEventListener('change', e=>{
+  const f = e.target.files[0];
+  if(!f) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    const it = {id:uid(), mode:'image', src:reader.result, x:64, y:3, w:22, opacity:0.95, rotate:0};
+    state.texts.push(it);
+    renderTextLayer(); renderTextPanel(); save();
+    selectText(it.id);
+    toast(t('tAddedImg'));
+  };
+  reader.readAsDataURL(f);
+  e.target.value = '';
 });
 $('#textList').addEventListener('input', e=>{
   const el = e.target, ds = el.dataset;
   const id = ds.txtText || ds.txtSize || ds.txtColor || ds.txtOp || ds.txtRot;
   if(!id) return;
-  const t = state.texts.find(x=>x.id===id);
-  if(!t) return;
-  if(ds.txtText !== undefined) t.text = el.value;
-  else if(ds.txtSize !== undefined) t.size = +el.value;
-  else if(ds.txtColor !== undefined) t.color = el.value;
-  else if(ds.txtOp !== undefined) t.opacity = +el.value/100;
-  else if(ds.txtRot !== undefined) t.rotate = +el.value;
+  const it = state.texts.find(x=>x.id===id);
+  if(!it) return;
+  if(ds.txtText !== undefined) it.text = el.value;
+  else if(ds.txtSize !== undefined){
+    if(it.mode === 'image') it.w = +el.value;
+    else it.size = +el.value;
+  }
+  else if(ds.txtColor !== undefined) it.color = el.value;
+  else if(ds.txtOp !== undefined) it.opacity = +el.value/100;
+  else if(ds.txtRot !== undefined) it.rotate = +el.value;
   renderTextLayer(); save();
 });
 $('#textList').addEventListener('change', e=>{
   if(e.target.dataset.txtBold === undefined) return;
-  const t = state.texts.find(x=>x.id===e.target.dataset.txtBold);
-  if(!t) return;
-  t.bold = e.target.checked;
+  const it = state.texts.find(x=>x.id===e.target.dataset.txtBold);
+  if(!it) return;
+  it.bold = e.target.checked;
   renderTextLayer(); save();
 });
 $('#textList').addEventListener('click', e=>{
   const del = e.target.closest('[data-txt-del]');
   if(!del) return;
   const snapshot = snap();
-  state.texts = state.texts.filter(t=>t.id !== del.dataset.txtDel);
+  state.texts = state.texts.filter(x=>x.id !== del.dataset.txtDel);
   if(selectedTextId === del.dataset.txtDel) selectedTextId = null;
   renderTextLayer(); renderTextPanel(); save();
-  undoToast('已刪除文字', snapshot);
+  undoToast(t('tDelText'), snapshot);
 });
 
 // 點選測量線或文字後：方向鍵微調（Shift 加大步伐）、Delete 刪除
@@ -1418,28 +1621,28 @@ document.addEventListener('keydown', e=>{
   const a = document.activeElement;
   if(a && (a.isContentEditable || a.tagName==='INPUT' || a.tagName==='SELECT' || a.tagName==='TEXTAREA')) return;
   if(selectedTextId){
-    const t = state.texts.find(x=>x.id===selectedTextId);
-    if(!t) return;
+    const it = state.texts.find(x=>x.id===selectedTextId);
+    if(!it) return;
     if(e.key==='Delete' || e.key==='Backspace'){
       e.preventDefault();
       const snapshot = snap();
       state.texts = state.texts.filter(x=>x.id!==selectedTextId);
       selectedTextId = null;
       renderTextLayer(); renderTextPanel(); save();
-      undoToast('已刪除文字', snapshot);
+      undoToast(t('tDelText'), snapshot);
       return;
     }
     const step = e.shiftKey ? 2 : 0.5;
     let handled = true;
-    if(e.key==='ArrowLeft') t.x -= step;
-    else if(e.key==='ArrowRight') t.x += step;
-    else if(e.key==='ArrowUp') t.y -= step;
-    else if(e.key==='ArrowDown') t.y += step;
+    if(e.key==='ArrowLeft') it.x -= step;
+    else if(e.key==='ArrowRight') it.x += step;
+    else if(e.key==='ArrowUp') it.y -= step;
+    else if(e.key==='ArrowDown') it.y += step;
     else handled = false;
     if(handled){
       e.preventDefault();
-      const el = document.querySelector(`.txt-item[data-id="${t.id}"]`);
-      if(el){ el.style.left = t.x + '%'; el.style.top = t.y + '%'; }
+      const el = document.querySelector(`.txt-item[data-id="${it.id}"]`);
+      if(el){ el.style.left = it.x + '%'; el.style.top = it.y + '%'; }
       save();
     }
     return;
@@ -1454,7 +1657,7 @@ document.addEventListener('keydown', e=>{
     state.sizes.forEach(sz=> delete sz.values[selectedId]);
     selectedId = null;
     renderLines(); renderTable(); renderMeasPanel(); save();
-    undoToast('已刪除測量線', snapshot);
+    undoToast(t('tDelLine'), snapshot);
     return;
   }
   const step = e.shiftKey ? 2 : 0.5;
@@ -1496,7 +1699,7 @@ $('#sizeList').addEventListener('click', e=>{
   const snapshot = snap();
   state.sizes.splice(+del.dataset.sizeDel, 1);
   renderTable(); renderSizePanel(); save();
-  undoToast('已刪除尺寸列', snapshot);
+  undoToast(t('tDelSize'), snapshot);
 });
 $('#addSize').addEventListener('click', ()=>{
   const SEQ = ['XS','S','M','L','XL','2XL','3XL','4XL','5XL'];
@@ -1515,15 +1718,16 @@ $('#resetBtn').addEventListener('click', ()=>{
   state = defaultState();
   selectedId = null;
   renderAll(); save();
-  undoToast('已重設為預設值', snapshot);
+  undoToast(t('tReset'), snapshot);
 });
 
 /* ================= 匯出 ================= */
 async function exportPNG(returnDataUrl){
   if(typeof html2canvas === 'undefined'){
-    toast('匯出元件載入失敗，請確認網路後重新整理頁面', null, null, 5000);
+    toast(t('tExportFail'), null, null, 5000);
     return null;
   }
+  await document.fonts.ready;
   const prevTransform = stageWrap.style.transform;
   stageWrap.style.transform = 'none';
   stage.classList.add('exporting');
@@ -1543,7 +1747,7 @@ async function exportPNG(returnDataUrl){
     a.download = 'size-chart-' + state.template + '-'
       + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0') + '.png';
     a.click();
-    toast('已下載 ' + a.download);
+    toast(t('tDownloaded') + ' ' + a.download);
     return url;
   } finally {
     stage.classList.remove('exporting');
@@ -1558,9 +1762,9 @@ $('#copyBtn').addEventListener('click', async ()=>{
     if(!url) return;
     const blob = await (await fetch(url)).blob();
     await navigator.clipboard.write([new ClipboardItem({'image/png': blob})]);
-    toast('已複製圖片，直接貼到 LINE / IG 就可以了');
+    toast(t('tCopied'));
   }catch(err){
-    toast('這個瀏覽器不支援複製圖片，請改用「匯出 PNG」');
+    toast(t('tCopyFail'));
   }
 });
 
@@ -1575,6 +1779,7 @@ function fitStage(){
 window.addEventListener('resize', fitStage);
 
 /* ================= 啟動 ================= */
+applyLang();
 renderAll();
 fitStage();
 window._exportPNG = exportPNG; // 供測試用
