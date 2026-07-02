@@ -15,9 +15,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Anything you want"
-    ],
     "local_ratio": 75,
     "id": "fe907d5e-3629-4d5f-8c03-b429937a9643",
     "source": "googlemaps",
@@ -39,7 +36,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "39cc4f9f-91bd-4023-b7a9-2c30fcb3b073",
     "source": "googlemaps",
@@ -61,7 +57,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "95983a8b-109b-4928-994f-d7f43012f9ec",
     "source": "googlemaps",
@@ -83,7 +78,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "3f9836a1-44e4-40c7-b42a-3ef949185d4f",
     "source": "googlemaps",
@@ -105,7 +99,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "ca168064-3e03-4353-809b-4e05b9748bad",
     "source": "googlemaps",
@@ -127,9 +120,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Coffee"
-    ],
     "local_ratio": 75,
     "id": "79ffff2d-4cd3-46c4-93d3-fa371b6a591e",
     "source": "googlemaps",
@@ -151,10 +141,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Som Tum",
-      "Tom Yum"
-    ],
     "local_ratio": 75,
     "id": "498c22bc-556e-4dd6-af3d-e8c7a1aa96a9",
     "source": "googlemaps",
@@ -176,10 +162,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Sushi",
-      "Live Music"
-    ],
     "local_ratio": 75,
     "id": "ad0836db-5a6d-468a-9088-0a0a929c5d2a",
     "source": "googlemaps",
@@ -201,10 +183,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tiramisu",
-      "Espresso"
-    ],
     "local_ratio": 75,
     "id": "778d5b04-2a56-442c-9322-6d7225736990",
     "source": "googlemaps",
@@ -226,9 +204,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak"
-    ],
     "local_ratio": 75,
     "id": "eb6c2616-bfb0-4e8c-b4a6-d0f54ea6ba5e",
     "source": "googlemaps",
@@ -250,10 +225,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Som Tum",
-      "Live Music"
-    ],
     "local_ratio": 75,
     "id": "2ac8a476-dcb0-44c9-bd9b-c35176c75f57",
     "source": "googlemaps",
@@ -275,7 +246,6 @@
     "rating": 4.4,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "33af156c-271a-4d60-90ff-2261f9b58426",
     "source": "googlemaps",
@@ -297,10 +267,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Papaya Salad",
-      "Larb"
-    ],
     "local_ratio": 75,
     "id": "42a220ad-4e7e-4cf7-abf4-00e027cbca90",
     "source": "googlemaps",
@@ -322,7 +288,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "04ceb7dd-5216-4f92-9178-7cf4d9c96823",
     "source": "googlemaps",
@@ -344,10 +309,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "A coffee"
-    ],
     "local_ratio": 75,
     "id": "34e30365-a3fd-4b6e-a232-d237731ccc3d",
     "source": "googlemaps",
@@ -369,10 +330,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Authentic thai recipe"
-    ],
     "local_ratio": 75,
     "id": "398247c5-ac29-4682-9600-a33558ef704b",
     "source": "googlemaps",
@@ -394,7 +351,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "36764812-7ce4-448b-86fa-663a976f4e51",
     "source": "googlemaps",
@@ -416,10 +372,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Lavender and rose tea",
-      "Busy"
-    ],
     "local_ratio": 75,
     "id": "a653dd38-424d-46ce-a486-a46767adaff7",
     "source": "googlemaps",
@@ -441,9 +393,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pasta"
-    ],
     "local_ratio": 75,
     "id": "17398e29-d908-4bbf-8b4f-e877faec43fa",
     "source": "googlemaps",
@@ -465,10 +414,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Croissant",
-      "Any here"
-    ],
     "local_ratio": 75,
     "id": "d28448eb-d802-4619-9eaa-a338754e5bb1",
     "source": "googlemaps",
@@ -490,9 +435,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Thai Tea"
-    ],
     "local_ratio": 75,
     "id": "4c6ea00e-9618-4708-ab48-3c835e65283c",
     "source": "googlemaps",
@@ -514,7 +456,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "907a6305-9e85-4744-b58a-337c9430695c",
     "source": "googlemaps",
@@ -536,7 +477,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a3156245-f8e2-40e4-8e9e-4bb11f4edf4f",
     "source": "googlemaps",
@@ -558,7 +498,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "1e67d877-d986-4305-ac78-39f932feaef8",
     "source": "googlemaps",
@@ -580,10 +519,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Them",
-      "Enough of"
-    ],
     "local_ratio": 75,
     "id": "bfbb25ca-01e8-44b6-b64c-289178640ef3",
     "source": "googlemaps",
@@ -605,10 +540,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Snack and food options",
-      "London cheesecake"
-    ],
     "local_ratio": 75,
     "id": "b8df1900-9950-49a3-a6c5-b4d769b51d62",
     "source": "googlemaps",
@@ -630,9 +561,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Coming here"
-    ],
     "local_ratio": 75,
     "id": "c2e49007-9469-4317-85ea-7ad7d469cd50",
     "source": "googlemaps",
@@ -654,7 +582,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "86536a94-ed46-4ca6-9ba9-10dcacfeba1a",
     "source": "googlemaps",
@@ -676,11 +603,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Espresso",
-      "Charming cafe",
-      "Same taste every time"
-    ],
     "local_ratio": 75,
     "id": "6b3b6938-b164-46ee-b8b8-819098d7a5fc",
     "source": "googlemaps",
@@ -702,10 +624,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Croissant",
-      "Thai Tea"
-    ],
     "local_ratio": 75,
     "id": "12cd2553-4d78-4a5f-a869-8a1a7f6a9763",
     "source": "googlemaps",
@@ -727,7 +645,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "fab54abe-51b0-4aaf-b86e-3d941d287777",
     "source": "googlemaps",
@@ -749,11 +666,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Espresso",
-      "Needed caffeine bad",
-      "Chance to try"
-    ],
     "local_ratio": 75,
     "id": "0d6f45eb-863a-4285-b9a4-76c1a7b7c5cc",
     "source": "googlemaps",
@@ -775,7 +687,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "b7fd503a-4983-4f75-a32e-1ae620fb0c8c",
     "source": "googlemaps",
@@ -797,9 +708,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View"
-    ],
     "local_ratio": 75,
     "id": "71108985-5681-4606-b6b0-f65a602792d9",
     "source": "googlemaps",
@@ -821,10 +729,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "E at the tables which",
-      "The music"
-    ],
     "local_ratio": 75,
     "id": "23a0a76f-5d36-4837-884a-ba2a193c9d66",
     "source": "googlemaps",
@@ -846,10 +750,6 @@
     "rating": 4.5,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Loud"
-    ],
     "local_ratio": 75,
     "id": "18f99946-bdb8-4b5f-9717-27f0b45339d7",
     "source": "googlemaps",
@@ -871,10 +771,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "The beer"
-    ],
     "local_ratio": 75,
     "id": "9e49f81c-fe0a-46db-a94a-cd6230c7c0b1",
     "source": "googlemaps",
@@ -896,9 +792,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Checking this place out"
-    ],
     "local_ratio": 75,
     "id": "ee75086b-9ff3-49fd-974a-505f3db5e0b9",
     "source": "googlemaps",
@@ -920,9 +813,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Them"
-    ],
     "local_ratio": 75,
     "id": "5478ab79-d185-4de1-9fcd-6e9dca5b9441",
     "source": "googlemaps",
@@ -944,10 +834,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "local_ratio": 75,
     "id": "59c7cf08-8a31-4eb1-b776-50633306c01f",
     "source": "googlemaps",
@@ -973,7 +859,6 @@
     "rating": 3.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Phahonyothin",
     "id": "48eeb9a9-8633-4cf6-953a-d78755a23241",
     "category": "food",
@@ -998,7 +883,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Old City",
     "id": "010b08c9-da1b-46a8-accf-c2f576a7e87f",
     "category": "food",
@@ -1025,9 +909,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Fragrant brown rice"
-    ],
     "area": "Bangkok",
     "id": "993f9708-4d2d-4e5f-a3b0-49f9833ca5e2",
     "category": "food",
@@ -1054,10 +935,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Som Tum",
-      "Papaya Salad"
-    ],
     "area": "Phaya Thai",
     "id": "3ea3b8d1-ceeb-4d69-8a0c-93c8de5d5600",
     "category": "food",
@@ -1084,10 +961,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak",
-      "Live Music"
-    ],
     "area": "Bangkok",
     "id": "7c691bce-9da6-4b52-8e42-e5809c54d7e6",
     "category": "food",
@@ -1114,9 +987,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "area": "Bangkok",
     "id": "828a3447-577c-4b8f-bced-270bebb8dde8",
     "category": "nightlife",
@@ -1143,9 +1013,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum"
-    ],
     "area": "Phaya Thai",
     "id": "3d19018d-a9e0-4875-9525-c6cc8427ad0e",
     "category": "hotel",
@@ -1165,7 +1032,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Phahonyothin",
     "id": "853973ec-38b2-4a97-b8ae-cd807d4411d5",
     "category": "food",
@@ -1185,7 +1051,6 @@
     "rating": 3.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Old City",
     "id": "b4c3ab1b-c3d7-4429-bbb8-a94a66453724",
     "category": "food",
@@ -1205,7 +1070,6 @@
     "rating": 3.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Old City",
     "id": "4fea8f02-8ec5-4f64-ba28-4216ac39ee58",
     "category": "food",
@@ -1232,9 +1096,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Quite busy at times"
-    ],
     "area": "Khlong San",
     "id": "cfba61d4-5df1-44dc-94cd-6004dd4471a7",
     "category": "hotel",
@@ -1261,7 +1122,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Old City",
     "id": "e7fa2e74-0c7a-4b93-9209-c53a67a5b034",
     "category": "nightlife",
@@ -1288,9 +1148,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "area": "Bangkok",
     "id": "2075552e-9510-4716-ad25-4ff3b2a7ab9a",
     "category": "nightlife",
@@ -1317,10 +1174,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Live Music"
-    ],
     "area": "Bang Rak",
     "id": "634a133c-7af5-40cf-a34a-749a6e69eabe",
     "category": "nightlife",
@@ -1343,7 +1196,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "cf825658-2fec-4747-9337-56c0337c8409",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:42:57.214Z"
@@ -1364,11 +1216,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Live Music",
-      "Out other drinks",
-      "More"
-    ],
     "id": "b5ce1342-b6db-4f48-80a7-b8437d01e79c",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:42:58.748Z"
@@ -1389,11 +1236,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Papaya Salad",
-      "More dishes",
-      "Somtum i ve ever had"
-    ],
     "id": "2e6b4eae-0100-439a-9eb9-a2c047e0b100",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:00.279Z"
@@ -1414,11 +1256,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pasta",
-      "Steak",
-      "Live Music"
-    ],
     "id": "58c5d38b-ef1f-4dcb-8131-b649ad625f80",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:01.216Z"
@@ -1439,10 +1276,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Som Tum"
-    ],
     "id": "06f3daa0-71a0-46b4-b93a-9168edfccddf",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:03.973Z"
@@ -1463,9 +1296,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Food section"
-    ],
     "id": "f33d5523-0201-405f-aa68-292d7174a91f",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:05.614Z"
@@ -1486,10 +1316,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Chinese style noodles"
-    ],
     "id": "650e0735-1aa7-403e-9b5e-fdf52ea235fb",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:07.043Z"
@@ -1510,9 +1336,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Crowded"
-    ],
     "id": "798fe899-cb33-48bc-a71d-ee88acf28c50",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:08.169Z"
@@ -1533,10 +1356,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Brab fried rice",
-      "Soup with the vegetables"
-    ],
     "id": "cd847cdc-1a24-4f7e-b9a5-595f2c0b5be3",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:09.399Z"
@@ -1557,10 +1376,6 @@
     "rating": 4.6,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Mango Sticky Rice"
-    ],
     "id": "bd5523ce-7108-4616-8cb7-1d88f11d3b8f",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:10.732Z"
@@ -1581,9 +1396,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "A small course instead"
-    ],
     "id": "12fb5c16-abdd-4c15-b007-79214f83cf98",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:12.267Z"
@@ -1604,10 +1416,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak",
-      "Cocktails"
-    ],
     "id": "a5931cd2-0799-4f39-b564-6ac0f817ed87",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:14.211Z"
@@ -1628,11 +1436,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View",
-      "View of the buddha",
-      "Seat in less crowded space"
-    ],
     "id": "36f7657c-4a09-4035-b201-511204bc03e4",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:15.230Z"
@@ -1653,9 +1456,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak"
-    ],
     "id": "da6fc22a-04dd-447c-abc3-f74e76fd9612",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:16.428Z"
@@ -1676,11 +1476,6 @@
     "rating": 4.6,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Spicy shrimp salad btw",
-      "Paw see ew"
-    ],
     "id": "5f5b9d9d-a30b-47f2-b45f-3ecedc686d99",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:18.103Z"
@@ -1701,7 +1496,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "d79e6fd7-138f-4d7b-879f-880e661772aa",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:19.741Z"
@@ -1722,9 +1516,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Sea food"
-    ],
     "id": "8700ae11-289b-4233-8f78-c322be7c1d9f",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:20.765Z"
@@ -1745,7 +1536,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "6ff3a6fe-9218-4cd3-a630-473845dcbcef",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:21.996Z"
@@ -1766,11 +1556,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Som Tum",
-      "Places to eat",
-      "A few bites and move on"
-    ],
     "id": "c2245e16-0ad2-4a21-be8a-75151ec8577b",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:23.734Z"
@@ -1791,9 +1576,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Sushi"
-    ],
     "id": "ce3ebced-2971-48a6-9320-2bed46c63dd7",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:24.731Z"
@@ -1814,7 +1596,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "0b51c28d-3785-4e94-8e22-7ef2296a796b",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:25.888Z"
@@ -1835,7 +1616,6 @@
     "rating": 4.5,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "6c1a25df-ba77-4b04-adba-c224a9df2d8a",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:26.806Z"
@@ -1856,10 +1636,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Dim Sum",
-      "Dumplings"
-    ],
     "id": "f2043d85-5c0f-4292-8315-a13e95441ba7",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:27.737Z"
@@ -1880,7 +1656,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "48211c47-ae26-45cc-81a6-7bc76e1dfdc0",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:28.855Z"
@@ -1901,10 +1676,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Green Curry"
-    ],
     "id": "887fb71b-f3f5-4536-9b14-e64e2cba2920",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:30.268Z"
@@ -1925,10 +1696,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "National dish"
-    ],
     "id": "6880f29e-47f6-4759-bbfa-829350007c78",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:31.512Z"
@@ -1949,10 +1716,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Espresso",
-      "Pour Over"
-    ],
     "id": "c03755a0-7945-495c-a60e-cb7bf6068df6",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:32.541Z"
@@ -1973,11 +1736,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Espresso",
-      "Coffee shop around here",
-      "The variety of beans"
-    ],
     "id": "8b99a039-53f0-45cb-82b4-73551f2e2980",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:34.080Z"
@@ -1998,10 +1756,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pour Over",
-      "Cold Brew"
-    ],
     "id": "6bcf0b13-8250-47ba-b9ae-903f0fa9d7ed",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:34.999Z"
@@ -2022,7 +1776,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "cdd115a1-2819-4e86-ad3c-e25a8f0ee33d",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:36.023Z"
@@ -2043,9 +1796,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Breakfasts around"
-    ],
     "id": "aecc1d63-9b89-401b-99f3-4ed55541ce3f",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:36.906Z"
@@ -2066,9 +1816,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Nd the coffee quality"
-    ],
     "id": "9ad08e72-2d33-4f09-bc4b-08eff7548128",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:37.968Z"
@@ -2089,10 +1836,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Seats",
-      "Coffee here"
-    ],
     "id": "8cdcb2fa-6ddb-4f65-b298-f123020340a2",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:39.214Z"
@@ -2113,7 +1856,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "6edf6fb3-1655-44c9-9699-af5ad6579069",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:40.222Z"
@@ -2134,9 +1876,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Ooked and the dessert"
-    ],
     "id": "2ac7d289-2c57-4078-affe-632ef7394b27",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:41.452Z"
@@ -2157,7 +1896,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "9a08485e-ecee-4f42-a737-6eb248465219",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:43.088Z"
@@ -2178,11 +1916,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Espresso",
-      "The coffee",
-      "Lost"
-    ],
     "id": "506a2870-9908-414d-97a7-c5e7731af4d0",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:44.178Z"
@@ -2203,7 +1936,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "0581fcb3-90e8-4883-b8f1-2876ca653730",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:45.055Z"
@@ -2224,9 +1956,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Place to buy handbags"
-    ],
     "id": "9725350e-16cb-425e-80f9-7b78228e1eff",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:46.161Z"
@@ -2247,10 +1976,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Thai Tea"
-    ],
     "id": "2db57cbb-8dc2-4b9d-aec8-4295ed8836ad",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:47.082Z"
@@ -2271,9 +1996,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Fashion and bargains"
-    ],
     "id": "07f72574-358b-4c2d-b83e-32fe05cd7d40",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:48.004Z"
@@ -2294,11 +2016,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Takeaway",
-      "Which i think",
-      "D here and everything"
-    ],
     "id": "bcb6b1d3-4a08-403c-8208-069c29e5fc42",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:48.849Z"
@@ -2319,9 +2036,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Mango Sticky Rice"
-    ],
     "id": "8f68425c-8406-4468-b322-8b01f216f865",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:49.748Z"
@@ -2342,11 +2056,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Pad Kra Pao",
-      "Massaman Curry"
-    ],
     "id": "42c84752-a225-456c-972e-e887c232f434",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:50.769Z"
@@ -2367,7 +2076,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "b9ad199f-04b1-4add-b282-f0f58489b45c",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:51.793Z"
@@ -2388,7 +2096,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "db229349-dfec-47ef-b6c2-6db54e9d8f8d",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:52.670Z"
@@ -2409,7 +2116,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "cd4af000-d622-4daf-bae3-9af1356971a2",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:53.740Z"
@@ -2430,9 +2136,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Crowded"
-    ],
     "id": "053c227e-41c4-4fe4-9895-9235613b7ffa",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:54.660Z"
@@ -2453,9 +2156,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Your walking shoes on"
-    ],
     "id": "302bcc60-a9ea-4ec0-a8c2-b4808f402e21",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:56.401Z"
@@ -2476,10 +2176,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Shoes",
-      "Bed sheets"
-    ],
     "id": "9033edb0-0fd7-4a52-84fe-31058916d1fa",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:57.322Z"
@@ -2500,10 +2196,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Time to visit",
-      "Mall i ever visited"
-    ],
     "id": "391cbceb-3aa1-4da9-b120-9e8671f205c2",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:58.450Z"
@@ -2524,10 +2216,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "a01f56a8-27d2-428f-b951-c38533b23eff",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:43:59.370Z"
@@ -2548,10 +2236,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Hiphop music"
-    ],
     "id": "e66a9863-e018-4c46-b3a1-52d02b998110",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:00.388Z"
@@ -2572,10 +2256,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Bars list"
-    ],
     "id": "21dc06b1-86f1-4f9f-b542-c130e2aaf1c6",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:01.260Z"
@@ -2596,11 +2276,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View",
-      "Live Music"
-    ],
     "id": "dde87f9b-3ea2-4253-aafa-684b911a2ffd",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:03.131Z"
@@ -2621,9 +2296,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "id": "b8f98a09-2e22-419d-9574-19430cbb0bb3",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:04.062Z"
@@ -2644,10 +2316,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Ramen",
-      "Cocktails"
-    ],
     "id": "1d272643-72f5-4095-af0a-03d92bc5c619",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:05.278Z"
@@ -2668,9 +2336,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Live Music"
-    ],
     "id": "69d390ea-0758-4744-899d-e231c2d66009",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:06.232Z"
@@ -2691,7 +2356,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "e588f4d4-64ce-4982-9a62-17de8c5f9869",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:07.152Z"
@@ -2712,9 +2376,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "id": "a66d24ac-f051-44f4-bbfb-43616e635571",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:08.076Z"
@@ -2735,10 +2396,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Live Music"
-    ],
     "id": "3b0ca134-09aa-4f3a-8226-bf96011b5c63",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:10.184Z"
@@ -2759,10 +2416,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Live Music"
-    ],
     "id": "7b6076f1-d92f-4c6a-9f28-4fc8bb7e47a2",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:11.148Z"
@@ -2783,9 +2436,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View"
-    ],
     "id": "532dd4de-c4cf-4d99-9aee-43691cd27d03",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:12.543Z"
@@ -2806,10 +2456,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Live Music",
-      "Choice"
-    ],
     "id": "1cf631b5-a6d1-4bef-8565-091a6a399ba6",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:13.405Z"
@@ -2830,9 +2476,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "id": "2cd9f74c-a396-4c17-8a86-a6793b35ba04",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:14.525Z"
@@ -2853,9 +2496,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "E quality of the food"
-    ],
     "id": "2809e56f-8b6f-4ed8-9440-02b79d596238",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:15.447Z"
@@ -2876,10 +2516,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View",
-      "The breakfast"
-    ],
     "id": "920ab38c-2b21-4689-aab3-a20473a7a75f",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:16.573Z"
@@ -2900,10 +2536,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "A full workout in there",
-      "The breakfast buffet"
-    ],
     "id": "baa6c49f-5cbd-4b97-8da0-eedb132d6fef",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:17.603Z"
@@ -2924,10 +2556,6 @@
     "rating": 4.5,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [
-      "Some rest",
-      "Around"
-    ],
     "id": "5e05c7cc-c2e0-464f-b63f-963cd6eb7fc6",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:18.724Z"
@@ -2948,9 +2576,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Place to stay in the world"
-    ],
     "id": "59d37256-7e8c-4ea1-8361-1ceb5d9c6b86",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:19.850Z"
@@ -2971,11 +2596,6 @@
     "rating": 4.7,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Trying",
-      "Hotels i stayed at"
-    ],
     "id": "aeda7673-e12e-4389-abaa-467eb7e1df21",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:21.184Z"
@@ -2996,9 +2616,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Basic items like lotion"
-    ],
     "id": "08e90664-e1f7-4777-a017-cefe695c76f8",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:22.104Z"
@@ -3019,9 +2636,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Out of here"
-    ],
     "id": "2cb73592-eb81-4c38-a908-2f92e4ed8f79",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:23.366Z"
@@ -3042,10 +2656,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Breakfast"
-    ],
     "id": "934a5935-e46a-45db-aa18-6e230e124b2d",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:24.268Z"
@@ -3066,10 +2676,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Sushi",
-      "Cocktails"
-    ],
     "id": "41366364-3448-434e-994a-125257fc15e5",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:25.175Z"
@@ -3090,7 +2696,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "2fb29380-6283-4f4c-8514-10a36369e4ed",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:26.542Z"
@@ -3111,10 +2716,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View",
-      "Live Music"
-    ],
     "id": "e37dc703-48cd-4c76-a384-4b6bf5974086",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:27.557Z"
@@ -3135,10 +2736,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View",
-      "Barista"
-    ],
     "id": "581f2e40-141a-40fa-bd30-7a05b03b2607",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:28.422Z"
@@ -3159,10 +2756,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View",
-      "The location"
-    ],
     "id": "0f719cc5-befe-4a96-a72e-263032b58e18",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:29.367Z"
@@ -3183,9 +2776,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View"
-    ],
     "id": "4becdea5-cd07-4cd1-9c5a-3c7fa624a02a",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:30.295Z"
@@ -3206,10 +2796,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "96027536-5264-4d44-8c89-1a24a4cf9c15",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:31.222Z"
@@ -3230,9 +2816,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View"
-    ],
     "id": "c77037d9-8877-46ed-a3db-e9438ccd4cf1",
     "source": "googlemaps",
     "scraped_at": "2026-07-01T11:44:32.202Z"
@@ -3253,7 +2836,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "19c0c87e-f915-48b7-bfac-d4311d88570f",
     "source": "googlemaps",
@@ -3275,7 +2857,6 @@
     "rating": 4.9,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "21a4d85f-0f1c-41f7-87cd-5ff6a03fe0ab",
     "source": "googlemaps",
@@ -3297,7 +2878,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "927b0e04-9c58-49ac-850a-6341a2874725",
     "source": "googlemaps",
@@ -3319,9 +2899,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View"
-    ],
     "local_ratio": 75,
     "id": "5156791a-2ac5-4e99-b7db-57234260aa7e",
     "source": "googlemaps",
@@ -3343,7 +2920,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "c0d5d10d-6c18-402d-8092-f712e89cb809",
     "source": "googlemaps",
@@ -3365,7 +2941,6 @@
     "rating": 4,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "9f005536-ca5f-4b14-920c-6067d72e68c8",
     "source": "googlemaps",
@@ -3387,7 +2962,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "17a42a13-b283-4d04-8984-e2e87c18ba24",
     "source": "googlemaps",
@@ -3409,7 +2983,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "4e868042-77a5-49d7-8893-8df1af380775",
     "source": "googlemaps",
@@ -3431,7 +3004,6 @@
     "rating": 4.4,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "be41f694-3726-40d5-94ec-9e4589e15292",
     "source": "googlemaps",
@@ -3453,7 +3025,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "551971fc-9cea-4a49-8ec6-b318fdb9ff1d",
     "source": "googlemaps",
@@ -3475,7 +3046,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "f7a95a96-46e2-4f72-b8c4-d35dda5de6fc",
     "source": "googlemaps",
@@ -3497,7 +3067,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "82e5bbca-ebdb-4174-90c1-8b0348fbea80",
     "source": "googlemaps",
@@ -3519,7 +3088,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "e4b9f2d1-3676-4833-8a70-964464eb4c56",
     "source": "googlemaps",
@@ -3541,7 +3109,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "2234c07b-a6b0-4156-aa08-7267c7a0e569",
     "source": "googlemaps",
@@ -3563,7 +3130,6 @@
     "rating": 4.4,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "2c506518-9f87-4a01-aa29-ca837ddf08c5",
     "source": "googlemaps",
@@ -3585,7 +3151,6 @@
     "rating": 4.4,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "90687795-e187-4e4f-a46e-1357efbfc89e",
     "source": "googlemaps",
@@ -3607,7 +3172,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "dd9cd8c1-25cd-41a5-b6eb-053162c57f01",
     "source": "googlemaps",
@@ -3629,7 +3193,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "8fa2d779-b336-4793-9bde-8248702efbb8",
     "source": "googlemaps",
@@ -3651,7 +3214,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "0d097ca8-d101-40b6-a007-1aaac04bf448",
     "source": "googlemaps",
@@ -3673,7 +3235,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "71a60b6e-b30a-4d83-b503-a405fad79a87",
     "source": "googlemaps",
@@ -3695,7 +3256,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "04967aa8-b708-45ce-8b27-9c68c60e3296",
     "source": "googlemaps",
@@ -3717,7 +3277,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "af7716ed-329f-4aac-949d-e38ea3cee8f2",
     "source": "googlemaps",
@@ -3739,7 +3298,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "f73760a6-6490-42b4-b428-a4e2e1ebaef5",
     "source": "googlemaps",
@@ -3761,11 +3319,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Papaya Salad",
-      "The papaya salad",
-      "Every dish"
-    ],
     "local_ratio": 75,
     "id": "e3aaea2c-adce-40d6-bb5f-e56794b3b1ee",
     "source": "googlemaps",
@@ -3787,7 +3340,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "ca94e136-9274-4a15-8561-666a2d05065c",
     "source": "googlemaps",
@@ -3809,7 +3361,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "f083dffb-4eb8-41da-b0f3-35951e1f0eb2",
     "source": "googlemaps",
@@ -3831,7 +3382,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "7df700cd-45c1-4a88-a0a8-458292edac9f",
     "source": "googlemaps",
@@ -3853,7 +3403,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "36d26636-2f02-4fe8-a13a-cf3b86674cb8",
     "source": "googlemaps",
@@ -3875,7 +3424,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "f6d43bf9-941c-487d-86bb-49e3108860d7",
     "source": "googlemaps",
@@ -3897,7 +3445,6 @@
     "rating": 4.3,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "491dd4d8-3d5d-4cfa-9897-3603e949eb16",
     "source": "googlemaps",
@@ -3919,7 +3466,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "6bee6732-d742-4285-9d0d-45a78eb96841",
     "source": "googlemaps",
@@ -3941,7 +3487,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a0b00943-0023-4e09-b3ea-8ab796bd9985",
     "source": "googlemaps",
@@ -3963,7 +3508,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "0c0e547b-5fa8-4e89-b18c-5b1a9269cde6",
     "source": "googlemaps",
@@ -3985,7 +3529,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "be40d8a2-f5ec-495d-aa65-7b3c01195931",
     "source": "googlemaps",
@@ -4007,7 +3550,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "0ec01c5e-d8d3-4e37-8303-9bbe5c909fcb",
     "source": "googlemaps",
@@ -4029,7 +3571,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "6a0d2870-1d93-4d80-abcc-5383d1b4cb82",
     "source": "googlemaps",
@@ -4051,7 +3592,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "9138c540-c939-40f6-862b-9beb22caca64",
     "source": "googlemaps",
@@ -4073,7 +3613,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "9a4b45fa-b470-4b8f-bb01-45541bb5a195",
     "source": "googlemaps",
@@ -4095,7 +3634,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "7252cc50-ea2c-4ce2-988b-3a333bd84494",
     "source": "googlemaps",
@@ -4117,7 +3655,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "ed153bd1-d320-4865-9bba-cc46c843ac4c",
     "source": "googlemaps",
@@ -4139,7 +3676,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "bd77d203-8cc1-42ca-897f-47f5d0cb1102",
     "source": "googlemaps",
@@ -4161,10 +3697,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Pad Kra Pao"
-    ],
     "local_ratio": 75,
     "id": "2bcacb5f-27f7-4c51-a125-5d54c7d02860",
     "source": "googlemaps",
@@ -4186,7 +3718,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "7f9b320a-aae5-409c-a9e9-1c1d8c94e2a1",
     "source": "googlemaps",
@@ -4208,9 +3739,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum"
-    ],
     "local_ratio": 75,
     "id": "0cab5d83-d483-42db-a40e-2bdcd1d3d4c5",
     "source": "googlemaps",
@@ -4232,7 +3760,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "2e1f8602-3f98-45d2-acbd-d305ace17b77",
     "source": "googlemaps",
@@ -4254,7 +3781,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "c1d6f346-b12d-4e55-a26e-1db1db2d4ee3",
     "source": "googlemaps",
@@ -4276,7 +3802,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "f4c9319a-1fcb-4fc7-ad41-9367d3caf954",
     "source": "googlemaps",
@@ -4298,7 +3823,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "9b596f21-191b-403c-aa13-1e1a591eb75a",
     "source": "googlemaps",
@@ -4320,7 +3844,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a1c64416-d952-4306-b349-4d9610ec7528",
     "source": "googlemaps",
@@ -4342,7 +3865,6 @@
     "rating": 4.3,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "f10468da-aa65-4eb8-874a-652c7cd68f23",
     "source": "googlemaps",
@@ -4364,7 +3886,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a9772906-489c-4fd7-ba8b-fd2ad9e23373",
     "source": "googlemaps",
@@ -4386,7 +3907,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "19e98224-be62-4e16-9517-b5ae68ec984e",
     "source": "googlemaps",
@@ -4408,7 +3928,6 @@
     "rating": 4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "0c2b10d8-e1e5-4a5a-b6cf-b66b2689bab2",
     "source": "googlemaps",
@@ -4430,7 +3949,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "20285eff-6a47-482e-8326-996ed56fc904",
     "source": "googlemaps",
@@ -4452,7 +3970,6 @@
     "rating": 4.2,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "b672dba3-db1c-4333-b402-d56c1d3492e5",
     "source": "googlemaps",
@@ -4474,7 +3991,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "9cef359c-77f8-4c03-b2e8-bf21552d42d8",
     "source": "googlemaps",
@@ -4496,7 +4012,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "7dbcede2-3369-47b7-835e-01c517b05cc3",
     "source": "googlemaps",
@@ -4518,7 +4033,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "907f2e1f-a5c2-4acb-b2a7-10a88e3e4b40",
     "source": "googlemaps",
@@ -4540,7 +4054,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "ca990723-23e3-413d-b50f-adb02e8dfa12",
     "source": "googlemaps",
@@ -4562,7 +4075,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "1f6ad8d8-2c16-4099-a325-e796428b0e58",
     "source": "googlemaps",
@@ -4584,9 +4096,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Papaya Salad"
-    ],
     "local_ratio": 75,
     "id": "e27985fa-dc27-4cdb-93ea-e8b182729671",
     "source": "googlemaps",
@@ -4608,7 +4117,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "f62b8e76-8ad7-49ce-bda2-9faa4dfd9d7f",
     "source": "googlemaps",
@@ -4630,7 +4138,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "4ae4fa25-fb6b-49d3-818f-de86cde1af5f",
     "source": "googlemaps",
@@ -4652,7 +4159,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "7856e64d-c730-49ed-9005-911dd81ac554",
     "source": "googlemaps",
@@ -4674,7 +4180,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "5deb61e7-2bb1-4471-a072-7a97063c1b4d",
     "source": "googlemaps",
@@ -4696,7 +4201,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "df611f0f-15d1-43dd-84f8-469de34f9ff2",
     "source": "googlemaps",
@@ -4718,7 +4222,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "84d41522-f834-4e5a-95e1-91c7eb5217bc",
     "source": "googlemaps",
@@ -4740,7 +4243,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "9e22b151-98cf-4a68-99de-aac0907e989d",
     "source": "googlemaps",
@@ -4762,7 +4264,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "8efe56bd-4acf-4379-a992-287f404996a2",
     "source": "googlemaps",
@@ -4784,9 +4285,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Espresso"
-    ],
     "local_ratio": 75,
     "id": "b93a7ce7-937e-434f-b153-59907794469f",
     "source": "googlemaps",
@@ -4808,10 +4306,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tiramisu",
-      "Cold Brew"
-    ],
     "local_ratio": 75,
     "id": "aa8cfc72-bdf1-4197-8740-ac4ef9d6a885",
     "source": "googlemaps",
@@ -4833,7 +4327,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "6a84aed8-dfaa-4ec0-b6d4-d111ae4a614f",
     "source": "googlemaps",
@@ -4855,7 +4348,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "1cab805d-4635-4e50-a975-665a71266505",
     "source": "googlemaps",
@@ -4877,7 +4369,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "29d372f5-e4f1-4b5c-8ec0-6ea25a1661f0",
     "source": "googlemaps",
@@ -4899,7 +4390,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "01f3d276-6d84-450f-ac46-5b39dfcaa2f6",
     "source": "googlemaps",
@@ -4921,7 +4411,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "3723832c-e527-4119-97ce-a9857d5bc449",
     "source": "googlemaps",
@@ -4943,7 +4432,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "5f897d4e-6376-4d93-8343-5a45d3adfb1c",
     "source": "googlemaps",
@@ -4965,7 +4453,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "91aaadf3-c4d6-4b2a-bc13-bc8ff62772c9",
     "source": "googlemaps",
@@ -4987,7 +4474,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "1d173bad-9861-458a-b63a-adca1cc6b099",
     "source": "googlemaps",
@@ -5009,7 +4495,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "e8c60358-291b-492b-ab5d-5baaa011f4ee",
     "source": "googlemaps",
@@ -5031,9 +4516,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View"
-    ],
     "local_ratio": 75,
     "id": "6f10669a-9696-42ca-8886-7a7d8b2bcf63",
     "source": "googlemaps",
@@ -5055,9 +4537,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View"
-    ],
     "local_ratio": 75,
     "id": "c18e9437-6c19-4284-a8ee-8e80e0cdc120",
     "source": "googlemaps",
@@ -5079,9 +4558,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "local_ratio": 75,
     "id": "2addfc34-7ff1-422c-8df5-c7f51c6d584c",
     "source": "googlemaps",
@@ -5103,7 +4579,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "62a31cf4-e74d-4b62-88df-c280000126d2",
     "source": "googlemaps",
@@ -5125,7 +4600,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "2b419425-09db-48b5-aa24-24f174a0d1f1",
     "source": "googlemaps",
@@ -5147,7 +4621,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "cb24c81a-3583-4f56-925b-17de5b178e39",
     "source": "googlemaps",
@@ -5169,7 +4642,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "d1eda708-4d8a-49a8-bae9-4d5c576fb406",
     "source": "googlemaps",
@@ -5191,7 +4663,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "6c06b8bd-5064-4666-a7bf-cc49654c11e2",
     "source": "googlemaps",
@@ -5213,7 +4684,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "010429e4-f4b0-4d01-b069-cdab08ac9258",
     "source": "googlemaps",
@@ -5235,7 +4705,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "12b4b3d3-7a80-44ec-9782-567604d357dd",
     "source": "googlemaps",
@@ -5257,7 +4726,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "998f6750-dd40-4b44-94ca-7f48d76b49d3",
     "source": "googlemaps",
@@ -5279,7 +4747,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "d414ddbc-f9f2-41cc-9139-7bdd2950ca11",
     "source": "googlemaps",
@@ -5301,7 +4768,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "edc49bdc-6c28-4803-9c61-a3ac0848b9cf",
     "source": "googlemaps",
@@ -5323,7 +4789,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "8a86cbbe-035c-4b50-9f52-a2a8190074b6",
     "source": "googlemaps",
@@ -5345,7 +4810,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "fc20b8cd-5981-46c7-8573-826e819d9d7b",
     "source": "googlemaps",
@@ -5367,9 +4831,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "local_ratio": 75,
     "id": "16b13ea4-dc08-4ea2-8398-356933ff88f3",
     "source": "googlemaps",
@@ -5391,9 +4852,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Papaya Salad"
-    ],
     "local_ratio": 75,
     "id": "33cdb5ec-14fd-404e-9b43-dd9fe84ba412",
     "source": "googlemaps",
@@ -5415,9 +4873,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Satay"
-    ],
     "local_ratio": 75,
     "id": "806a62aa-acd7-44af-b255-91e45484e90d",
     "source": "googlemaps",
@@ -5439,7 +4894,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "0b4c21e9-c150-4309-9df7-669c6ba128bb",
     "source": "googlemaps",
@@ -5461,7 +4915,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "d5f42a01-842f-4c3f-88d8-f2be0aba2d79",
     "source": "googlemaps",
@@ -5483,7 +4936,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "2055b102-f65c-4b91-9c09-4b3ce570dadf",
     "source": "googlemaps",
@@ -5505,7 +4957,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "ffaea998-3fe6-4bcd-b6db-2ce8b38aa9d0",
     "source": "googlemaps",
@@ -5527,7 +4978,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "fbead21f-6582-4441-bd0c-a1be5a0be4ea",
     "source": "googlemaps",
@@ -5549,7 +4999,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "e46b1c5a-b61a-4738-9522-42ccce4630c5",
     "source": "googlemaps",
@@ -5571,7 +5020,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "426e0eec-7be2-44da-b3d7-c096b33b4b54",
     "source": "googlemaps",
@@ -5593,7 +5041,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "39d5bda1-1b72-482f-b246-b2acb4b56ea8",
     "source": "googlemaps",
@@ -5615,7 +5062,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "8037778f-8d8e-460f-ab25-2b389de18e9b",
     "source": "googlemaps",
@@ -5637,7 +5083,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "1699d57f-1ff8-4453-be3e-ffa2e53e5661",
     "source": "googlemaps",
@@ -5659,7 +5104,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a906c813-790a-4ecd-a79d-849cd379a6d0",
     "source": "googlemaps",
@@ -5681,7 +5125,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "aafec6da-3390-452f-99dc-05bc82317337",
     "source": "googlemaps",
@@ -5703,7 +5146,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "844b8254-26d9-4be5-bf3d-9808e6d81c9b",
     "source": "googlemaps",
@@ -5725,7 +5167,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "16a5a311-f897-41e4-b9e0-f6a4da4db2e3",
     "source": "googlemaps",
@@ -5747,7 +5188,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "ea31fd8a-4966-4416-9ebc-a3ac5859de98",
     "source": "googlemaps",
@@ -5769,7 +5209,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "d5193caf-38b8-407a-8ed7-7da88712a76d",
     "source": "googlemaps",
@@ -5791,7 +5230,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "e4ca4508-f602-4d80-ae70-8d8e66727b95",
     "source": "googlemaps",
@@ -5813,7 +5251,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "b3788685-e327-4403-b8b5-601850a7ab52",
     "source": "googlemaps",
@@ -5835,7 +5272,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "86ed2964-036d-4ada-a191-573565963b17",
     "source": "googlemaps",
@@ -5857,7 +5293,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "19332822-89a6-4879-b764-283a76c97139",
     "source": "googlemaps",
@@ -5879,7 +5314,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "0928c0b9-bd12-4b0d-ae9a-ed91de33eee8",
     "source": "googlemaps",
@@ -5901,7 +5335,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a88ad352-779d-4487-985c-c09b868b632c",
     "source": "googlemaps",
@@ -5923,7 +5356,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a85a9479-9978-46ae-aa7c-d4ec12a9a822",
     "source": "googlemaps",
@@ -5945,7 +5377,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a92b55f2-493e-4ae3-aa5f-851977848790",
     "source": "googlemaps",
@@ -5967,7 +5398,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "47c762a3-1de6-4d67-87b0-80ac2d44e626",
     "source": "googlemaps",
@@ -5989,9 +5419,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Bbq ribs"
-    ],
     "local_ratio": 75,
     "id": "d48fd6d3-4ae2-45b8-8f5d-55328822a734",
     "source": "googlemaps",
@@ -6013,9 +5440,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak"
-    ],
     "local_ratio": 75,
     "id": "8a2e2fa7-46b3-484d-889d-10f7e55e2a3d",
     "source": "googlemaps",
@@ -6037,7 +5461,6 @@
     "rating": 4.1,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "f6eae45c-253a-4dcb-8232-16c54a3c9b25",
     "source": "googlemaps",
@@ -6059,7 +5482,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "e9ea1ea7-b933-4955-83d6-0a77150a788b",
     "source": "googlemaps",
@@ -6081,7 +5503,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "aaf8ecae-a778-4726-9529-76b71c6769e9",
     "source": "googlemaps",
@@ -6103,7 +5524,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "c4b3fa8d-3af7-442e-a9d1-7a17a0a2d09a",
     "source": "googlemaps",
@@ -6125,7 +5545,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "17158e7d-4104-4554-ba43-ca9d42753dbb",
     "source": "googlemaps",
@@ -6147,7 +5566,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "dd0c9937-3e47-4c05-977d-d4fe24caeddc",
     "source": "googlemaps",
@@ -6169,7 +5587,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "93d5aa1d-f046-43d8-89a2-ea56b0013ed3",
     "source": "googlemaps",
@@ -6191,7 +5608,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "0650efa0-35ec-44a3-b705-fdaeef4acbab",
     "source": "googlemaps",
@@ -6213,9 +5629,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pasta"
-    ],
     "local_ratio": 75,
     "id": "3d44ed17-2331-4fbf-8ef1-ba538a4be4b5",
     "source": "googlemaps",
@@ -6237,9 +5650,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak"
-    ],
     "local_ratio": 75,
     "id": "ac20f03a-4c38-4888-a055-53e1fc6a5dae",
     "source": "googlemaps",
@@ -6261,7 +5671,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "fa9796c3-1197-4791-9769-baf174fdca19",
     "source": "googlemaps",
@@ -6283,9 +5692,6 @@
     "rating": 4.3,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [
-      "More and more"
-    ],
     "local_ratio": 75,
     "id": "57812e20-2262-4312-9d57-c205ec11e04a",
     "source": "googlemaps",
@@ -6307,7 +5713,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "25d1764c-5ee2-4402-a9c2-e290282a6919",
     "source": "googlemaps",
@@ -6329,7 +5734,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "0b0967d7-8102-4ef9-bd19-ceb17d206ca5",
     "source": "googlemaps",
@@ -6351,7 +5755,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "99d301b6-7b63-44a9-9658-05e5ae87b80e",
     "source": "googlemaps",
@@ -6373,7 +5776,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "4b4e3ef1-f09b-4fa4-9e43-57deb3de91e7",
     "source": "googlemaps",
@@ -6395,7 +5797,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "2f87a426-7ac5-4cf8-ad9c-5a5b38219ab9",
     "source": "googlemaps",
@@ -6417,7 +5818,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "b2f99186-252e-4c19-a0fd-9e820d633fb7",
     "source": "googlemaps",
@@ -6439,7 +5839,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "ff1c09de-38df-4d83-b27b-f20c3e295201",
     "source": "googlemaps",
@@ -6461,7 +5860,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "1aab5ed2-414d-4028-b5f1-074b2936006f",
     "source": "googlemaps",
@@ -6483,7 +5881,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "50e84d80-e797-4d83-a215-0f1ae07053de",
     "source": "googlemaps",
@@ -6505,7 +5902,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "d82a0f14-2b25-4692-b38c-2502c2e9bcf8",
     "source": "googlemaps",
@@ -6527,7 +5923,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "090c14bd-a62b-44fd-a3d1-ecd5f1efc705",
     "source": "googlemaps",
@@ -6549,7 +5944,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "3744f13b-15ef-4b79-9a8a-fed167c3979b",
     "source": "googlemaps",
@@ -6571,7 +5965,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a75087b1-2e7d-4570-b6d0-e1cbd76ed726",
     "source": "googlemaps",
@@ -6593,7 +5986,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "11cc1a9f-b5cf-4618-9c7a-f9d60d1c5cd6",
     "source": "googlemaps",
@@ -6615,7 +6007,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "d39c728e-8d00-4dab-bc5c-6bb409714def",
     "source": "googlemaps",
@@ -6637,7 +6028,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "3ce11115-104d-41c4-be15-2f032a7a8cf7",
     "source": "googlemaps",
@@ -6659,7 +6049,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "21f91c42-c2e4-43c1-8df2-679ced2dcf02",
     "source": "googlemaps",
@@ -6681,7 +6070,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "dfb5a4bb-50cc-49ed-a3e4-6a9b06c7ee12",
     "source": "googlemaps",
@@ -6703,7 +6091,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "38082bab-1f22-4a9e-b5cc-d79982823d24",
     "source": "googlemaps",
@@ -6725,7 +6112,6 @@
     "rating": 4.5,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "4032edce-e32e-4eed-a018-5b9fb62e1c7a",
     "source": "googlemaps",
@@ -6747,7 +6133,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "4c1096c2-4c5f-472a-acf1-24bda5e00d72",
     "source": "googlemaps",
@@ -6769,7 +6154,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "5aaabeca-6522-4200-8986-a0f081c9029c",
     "source": "googlemaps",
@@ -6791,7 +6175,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "157f5787-1036-4618-9fb9-9058a50b8016",
     "source": "googlemaps",
@@ -6813,7 +6196,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "cadc52e2-268b-47f3-95fa-cb300faa9f52",
     "source": "googlemaps",
@@ -6835,9 +6217,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Sushi"
-    ],
     "local_ratio": 75,
     "id": "8f95550c-dad3-4738-b929-ad70701d5359",
     "source": "googlemaps",
@@ -6859,7 +6238,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "20904dda-a6ed-410c-88e7-630dc977b595",
     "source": "googlemaps",
@@ -6881,7 +6259,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "f04c435e-5f10-40e3-8e5e-ba0323a2e2ca",
     "source": "googlemaps",
@@ -6908,7 +6285,6 @@
     "rating": 3.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Siam",
     "id": "d553bbc0-0ea2-469b-a835-af812281ff78",
     "source": "tiktok",
@@ -6935,7 +6311,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Yaowarat",
     "id": "49caaa3a-9207-4f14-8513-11d94fc69b56",
     "source": "tiktok",
@@ -6962,10 +6337,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tiramisu",
-      "Cocktails"
-    ],
     "area": "Bangkok",
     "id": "854d2c28-c0f2-4688-a4cc-e76872472218",
     "source": "tiktok",
@@ -6992,10 +6363,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak",
-      "Using larger glasses"
-    ],
     "area": "Thonglor",
     "id": "76af67e7-772a-4dd2-a33b-ba73fed9dc33",
     "source": "tiktok",
@@ -7022,7 +6389,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Sukhumvit",
     "id": "cfa7fcc2-c26a-42e6-9542-6dd98abacb2b",
     "source": "tiktok",
@@ -7049,10 +6415,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Some work done",
-      "Many dishes like nem nuong"
-    ],
     "area": "Sukhumvit",
     "id": "609838cf-ce6c-4279-b933-645ddb40427a",
     "source": "tiktok",
@@ -7079,10 +6441,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Green Curry",
-      "Cocktails"
-    ],
     "area": "Sukhumvit",
     "id": "f88ad845-e5e3-4dd4-8079-65fc54bc4f1a",
     "source": "tiktok",
@@ -7109,9 +6467,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "area": "Bangkok",
     "id": "6a26b23c-4ecd-4086-9d6d-87d4e5f76e4c",
     "source": "tiktok",
@@ -7138,10 +6493,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "A table on the balcony",
-      "Busy"
-    ],
     "area": "Old City",
     "id": "6d841735-2914-4171-b958-a2289f03e63c",
     "source": "tiktok",
@@ -7168,7 +6519,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Bangkok",
     "id": "9985910c-45e2-4b7d-be30-a0cdc93e793b",
     "source": "tiktok",
@@ -7195,10 +6545,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Pasta"
-    ],
     "area": "Ratchathewi",
     "id": "e9bbf9ff-5a1f-41cd-969d-8cb3dfc5d6b5",
     "source": "tiktok",
@@ -7225,7 +6571,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Bangkok",
     "id": "23735180-7b67-4f71-9875-3927ff1fb68f",
     "source": "tiktok",
@@ -7252,10 +6597,6 @@
     "rating": 3.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "area": "Bang Rak",
     "id": "0eadf309-1379-4e94-b706-c60bd2c91454",
     "source": "tiktok",
@@ -7282,10 +6623,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "area": "Siam",
     "id": "878fa885-376d-422d-9b72-56db6d8a1742",
     "source": "tiktok",
@@ -7312,11 +6649,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak",
-      "Cocktails",
-      "Rooftop View"
-    ],
     "area": "Sukhumvit",
     "id": "c0aa72cf-83f6-4241-8bc8-eed4c779c4d9",
     "source": "tiktok",
@@ -7343,9 +6675,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "area": "Bangkok",
     "id": "fd5631fc-8057-4bbc-8f8c-98dacb67235a",
     "source": "tiktok",
@@ -7372,10 +6701,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "area": "Siam",
     "id": "78bce3c7-3d0d-444d-8ea2-7883fa92ced9",
     "source": "tiktok",
@@ -7402,7 +6727,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "area": "Bangkok",
     "id": "bc8ff168-f6a0-47ad-a3d8-9cab845195da",
     "source": "tiktok",
@@ -7429,10 +6753,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pasta",
-      "Croissant"
-    ],
     "area": "Bangkok",
     "id": "9fc25b82-63b5-4bcd-bc94-eb58ae84e77f",
     "source": "tiktok",

@@ -15,9 +15,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Experience from here"
-    ],
     "id": "4309ddb8-0c2e-452f-bde4-05a204ecfdd3",
     "source": "tiktok",
     "area": "",
@@ -43,9 +40,6 @@
     "rating": 4.4,
     "price_range": 1,
     "tag": "evergreen",
-    "highlights": [
-      "Braised beef soup"
-    ],
     "id": "555db732-4fce-4771-8958-91f22fb1b244",
     "source": "googlemaps",
     "area": "",
@@ -68,7 +62,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "fb5047cf-8082-4680-bd47-162f2c0bb92e",
     "source": "googlemaps",
     "area": "",
@@ -91,7 +84,6 @@
     "rating": 4.1,
     "price_range": 1,
     "tag": "trending",
-    "highlights": [],
     "id": "40f140df-1954-438e-b43b-3961b16fd866",
     "source": "instagram",
     "area": "",
@@ -117,9 +109,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Geisha Panama"
-    ],
     "id": "1268aaa1-bf31-4c4d-a228-3ae48eb92bcf",
     "source": "googlemaps",
     "area": "",
@@ -142,7 +131,6 @@
     "rating": 4.5,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "f37f3783-3c18-4faa-94e4-f8b5441d2564",
     "source": "googlemaps",
     "area": "",
@@ -165,10 +153,6 @@
     "rating": 4.7,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Croissant",
-      "Clean"
-    ],
     "id": "bea35baf-6948-4313-938c-4b1b203e7012",
     "source": "googlemaps",
     "area": "",
@@ -191,9 +175,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Live Music"
-    ],
     "id": "b535fe59-02bd-40d7-b0d5-0c2497f1f1fa",
     "source": "googlemaps",
     "area": "",
@@ -216,9 +197,6 @@
     "rating": 4.5,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum"
-    ],
     "id": "65efab73-3f6d-4964-bab4-fcff6b2a7c6c",
     "source": "googlemaps",
     "area": "",
@@ -241,10 +219,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Rooftop View",
-      "Booking in advance"
-    ],
     "id": "f24416bd-f12c-47de-97fb-abf889500d28",
     "source": "googlemaps",
     "area": "",
@@ -267,11 +241,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Croissant",
-      "Busy during weekends",
-      "Authentic bread"
-    ],
     "id": "6d9ecb72-4e47-4dbc-8ef6-82968789b77a",
     "source": "googlemaps",
     "area": "",
@@ -294,7 +263,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [],
     "id": "fcdbb901-e8ec-48ce-b084-9c428f121e58",
     "source": "googlemaps",
     "area": "",
@@ -317,10 +285,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Satay",
-      "Khao soi"
-    ],
     "id": "d3af8569-2691-4a7c-ac52-771b197e4bc5",
     "source": "googlemaps",
     "area": "",
@@ -343,10 +307,6 @@
     "rating": 4.5,
     "price_range": 1,
     "tag": "evergreen",
-    "highlights": [
-      "Another menu too",
-      "If you are there"
-    ],
     "id": "54434528-52d2-4829-8b4e-a03467a45b87",
     "source": "googlemaps",
     "area": "",
@@ -369,7 +329,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "09898b6d-93a0-41c7-ad38-adcf539a09b6",
     "source": "googlemaps",
     "area": "",
@@ -392,7 +351,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "4468b80f-77fe-4ecf-aa2c-c1282b49a2bd",
     "source": "googlemaps",
     "area": "",
@@ -415,7 +373,6 @@
     "rating": 4.8,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "a1a8d427-65fe-4a89-9629-a18b4de096e7",
     "source": "googlemaps",
     "area": "",
@@ -438,9 +395,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Dumplings"
-    ],
     "id": "2793e363-f092-4e8f-b339-b070ad1a5aae",
     "source": "googlemaps",
     "area": "",
@@ -463,10 +417,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Soulful",
-      "Fried pork and shrimp"
-    ],
     "id": "f8ec6531-da75-4f12-b931-6b73b27367aa",
     "source": "googlemaps",
     "area": "",
@@ -489,7 +439,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [],
     "id": "69860893-6e71-4664-89cb-12d3594bdb59",
     "source": "googlemaps",
     "area": "",
@@ -512,10 +461,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pasta",
-      "Espresso"
-    ],
     "id": "4cd065e7-d1ab-4cae-bd39-7ec7db978f9e",
     "source": "googlemaps",
     "area": "",
@@ -538,7 +483,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "7b21d1c0-300b-47a8-9406-3df8243f2adc",
     "source": "googlemaps",
     "area": "",
@@ -561,10 +505,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Live Music"
-    ],
     "id": "4f41e0b7-939c-426d-bf3e-7ccc6f852a22",
     "source": "googlemaps",
     "area": "",
@@ -587,10 +527,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Every bite",
-      "Delicates"
-    ],
     "id": "b4eb0710-3b9e-449d-97dd-21bdb13f6195",
     "source": "googlemaps",
     "area": "",
@@ -613,7 +549,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [],
     "id": "b6f36185-158f-40c0-8adf-a6ffc255151d",
     "source": "googlemaps",
     "area": "",
@@ -636,7 +571,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "cc73d19d-e3a8-4460-bc7f-d27ea2d1147b",
     "source": "googlemaps",
     "area": "",
@@ -659,9 +593,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "The coffee"
-    ],
     "id": "5f861848-a449-480e-9095-4e0d58c293fd",
     "source": "googlemaps",
     "area": "",
@@ -684,9 +615,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Soup here"
-    ],
     "id": "5138774e-9583-4bab-b06a-4ad5147b0c1c",
     "source": "googlemaps",
     "area": "",
@@ -709,9 +637,6 @@
     "rating": 4.5,
     "price_range": 3,
     "tag": "trending",
-    "highlights": [
-      "Pasta"
-    ],
     "id": "9aae4b5b-8f7f-4f17-8989-11b08642f180",
     "source": "googlemaps",
     "area": "",
@@ -734,10 +659,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Cocktails",
-      "Too packed"
-    ],
     "id": "37f398da-7863-4aae-a3bc-43c661d94eac",
     "source": "googlemaps",
     "area": "",
@@ -760,7 +681,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [],
     "id": "51197932-9ed0-4bfe-a5d0-66f6c136e73f",
     "source": "googlemaps",
     "area": "",
@@ -783,7 +703,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "e93287bd-f1ba-4372-bcb4-d193fbd4f64e",
     "source": "googlemaps",
     "area": "",
@@ -806,7 +725,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "8ce6fae7-d677-44bf-9995-a8c9f66f459f",
     "source": "googlemaps",
     "area": "",
@@ -829,10 +747,6 @@
     "rating": 4.5,
     "price_range": 1,
     "tag": "evergreen",
-    "highlights": [
-      "The crispy pork",
-      "The skin"
-    ],
     "id": "6bb2bf3c-dd69-49f0-8378-40d4fa4989f0",
     "source": "googlemaps",
     "area": "",
@@ -855,10 +769,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Easily from your phone",
-      "A bit noisy"
-    ],
     "id": "dd08c759-d34f-462e-b3f2-6aa194093845",
     "source": "googlemaps",
     "area": "",
@@ -893,7 +803,6 @@
     "hashtags": [],
     "id": "6a3f3bc4-6edd-483a-bfd9-c7ae463154ef",
     "approved_at": "2026-06-05T14:15:08.995Z",
-    "highlights": [],
     "slug": "aantarm-cafe"
   },
   {
@@ -912,10 +821,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Cocktails",
-      "Rock n roll music"
-    ],
     "local_ratio": 75,
     "id": "5f2d2931-c758-42ea-8382-d238e55d97e4",
     "source": "googlemaps",
@@ -941,7 +846,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "c02ce985-49f2-458f-88dd-568400933d50",
     "source": "googlemaps",
@@ -968,7 +872,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [],
     "id": "ebbf692b-388c-4b49-af5c-88ca5b6055c3",
     "source": "googlemaps",
     "approved_at": "2026-06-05T14:17:12.503Z",
@@ -993,10 +896,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Tom Yum",
-      "Steak"
-    ],
     "id": "8fc66940-4e54-4ae1-bb1a-e8c84c833195",
     "source": "googlemaps",
     "approved_at": "2026-06-05T14:17:38.588Z",
@@ -1021,10 +920,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Tom Yum",
-      "Dumplings"
-    ],
     "id": "371e28b8-9061-4dd6-ab73-a92f4d23db74",
     "source": "googlemaps",
     "approved_at": "2026-06-05T14:17:57.254Z",
@@ -1049,11 +944,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Satay",
-      "Some digestive drink too",
-      "Try it"
-    ],
     "id": "a9668ad9-833d-472e-b71a-bef07efe4e53",
     "source": "googlemaps",
     "approved_at": "2026-06-05T14:18:54.589Z",
@@ -1078,9 +968,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Thai Tea"
-    ],
     "id": "aa4721a6-d181-45bf-9855-dc73e13cc116",
     "source": "googlemaps",
     "approved_at": "2026-06-05T14:19:14.324Z",
@@ -1105,11 +992,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Tom Yum",
-      "Green Curry"
-    ],
     "id": "84b19815-5ba6-4b75-a9a0-8d7424eb64da",
     "source": "googlemaps",
     "approved_at": "2026-06-05T14:19:30.758Z",
@@ -1134,10 +1016,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Mango Sticky Rice",
-      "Papaya Salad"
-    ],
     "id": "9257f5dc-55c4-4ff8-b2d3-5f123d42b478",
     "source": "googlemaps",
     "approved_at": "2026-06-05T14:19:52.667Z",
@@ -1162,9 +1040,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Every flavor"
-    ],
     "id": "05ec4a84-3935-47af-a3a1-9610d35dc501",
     "source": "googlemaps",
     "area": "",
@@ -1190,7 +1065,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "e950c379-9235-40f0-93dc-e68386dffdca",
     "source": "googlemaps",
     "area": "",
@@ -1213,9 +1087,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "new_opening",
-    "highlights": [
-      "Bold flavors"
-    ],
     "id": "81709262-8a0c-413a-babf-78a77dfe46c7",
     "source": "googlemaps",
     "area": "",
@@ -1238,10 +1109,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Massaman Curry",
-      "Papaya Salad"
-    ],
     "id": "d2018ef0-23d6-4975-bfa4-5efd7caeb6fa",
     "source": "googlemaps",
     "area": "",
@@ -1264,11 +1131,6 @@
     "rating": 4.6,
     "price_range": 3,
     "tag": "evergreen",
-    "highlights": [
-      "Pasta",
-      "Steak",
-      "Rooftop View"
-    ],
     "id": "4c324d21-02a7-4104-8df4-20340259a618",
     "source": "googlemaps",
     "area": "",
@@ -1291,11 +1153,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Tom Yum",
-      "Satay"
-    ],
     "id": "103ba9ad-ae43-4c93-905a-4252d1bfe941",
     "source": "googlemaps",
     "area": "",
@@ -1318,11 +1175,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Pasta",
-      "Steak",
-      "Cocktails"
-    ],
     "id": "d9fd5d7e-f939-497f-9c43-2be3fed8211f",
     "source": "googlemaps",
     "area": "",
@@ -1345,11 +1197,6 @@
     "rating": 4.5,
     "price_range": 3,
     "tag": "evergreen",
-    "highlights": [
-      "Steak",
-      "Croissant",
-      "Cocktails"
-    ],
     "id": "c096e726-9030-4421-a972-9abcde934b79",
     "source": "googlemaps",
     "area": "",
@@ -1372,10 +1219,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Anything like it anywhere"
-    ],
     "id": "2f9d86f2-48ff-4312-9fd0-0019472c97fb",
     "source": "googlemaps",
     "area": "",
@@ -1398,9 +1241,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Suited ones"
-    ],
     "id": "f5fd401f-2228-4c1a-b8b2-407955b92147",
     "source": "googlemaps",
     "area": "",
@@ -1423,11 +1263,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Pad Thai",
-      "Massaman Curry",
-      "Papaya Salad"
-    ],
     "id": "e30982b2-dd0f-4b2a-a787-459d456cdaff",
     "source": "googlemaps",
     "area": "",
@@ -1450,10 +1285,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Pasta"
-    ],
     "id": "40f23c4d-262f-4a4f-acf2-199607948ffe",
     "source": "googlemaps",
     "area": "",
@@ -1476,9 +1307,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Larb"
-    ],
     "id": "a6784f0e-e98d-4474-a0f5-b2c59acaf02b",
     "source": "googlemaps",
     "area": "",
@@ -1501,9 +1329,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Mango Sticky Rice"
-    ],
     "id": "154c234d-90b6-46c4-b44c-ced99f454bc8",
     "source": "googlemaps",
     "area": "",
@@ -1526,10 +1351,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Vietnamese food here",
-      "Banh mi"
-    ],
     "id": "9ef6e7cd-5b26-4c56-9000-cbda9dfc73ad",
     "source": "googlemaps",
     "area": "",
@@ -1552,11 +1373,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Dim Sum",
-      "Dim sum",
-      "A seat"
-    ],
     "id": "36f74228-52be-4bfb-aa2c-9a37305832cc",
     "source": "googlemaps",
     "area": "",
@@ -1579,10 +1395,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Through grab",
-      "Did not include drinks"
-    ],
     "id": "a163e339-1a53-4b69-9cf8-2b6a21cfc152",
     "source": "googlemaps",
     "area": "",
@@ -1605,7 +1417,6 @@
     "rating": 4.4,
     "price_range": 1,
     "tag": "evergreen",
-    "highlights": [],
     "id": "8e357e4c-e7ab-43ca-be69-6c75bf1562a5",
     "source": "googlemaps",
     "area": "",
@@ -1628,9 +1439,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Pad Thai"
-    ],
     "id": "f3827f8d-da22-44c6-bc75-28e1c6f2fdc6",
     "source": "googlemaps",
     "area": "",
@@ -1653,9 +1461,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Wines"
-    ],
     "id": "8409bffe-31aa-4a40-9e33-f8865023859e",
     "source": "googlemaps",
     "area": "",
@@ -1678,9 +1483,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Course"
-    ],
     "id": "f794696c-cef8-48d1-9cbf-f6cadaf81ddd",
     "source": "googlemaps",
     "area": "",
@@ -1703,11 +1505,6 @@
     "rating": 4.6,
     "price_range": 3,
     "tag": "evergreen",
-    "highlights": [
-      "Mango Sticky Rice",
-      "Papaya Salad",
-      "Cocktails"
-    ],
     "id": "4686b26b-76d4-411e-bc88-0f5f90380b29",
     "source": "googlemaps",
     "area": "",
@@ -1730,10 +1527,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Massaman Curry",
-      "White wine from greece"
-    ],
     "id": "8d054dac-2e9e-4d59-b1be-f198b4905a82",
     "source": "googlemaps",
     "area": "",
@@ -1756,11 +1549,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "More than four dishes",
-      "A visit",
-      "Them"
-    ],
     "id": "a5b37eec-5538-423e-8e6c-bbe681b180f1",
     "source": "googlemaps",
     "area": "",
@@ -1783,11 +1571,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Pasta",
-      "Steak",
-      "Tiramisu"
-    ],
     "id": "44b37851-dfbc-468b-b59d-1daec13e93e0",
     "source": "googlemaps",
     "area": "",
@@ -1810,9 +1593,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Rooftop View"
-    ],
     "id": "992b883e-8a43-428b-82b4-d794959c5a68",
     "source": "googlemaps",
     "area": "",
@@ -1835,11 +1615,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Green Curry",
-      "Mango Sticky Rice"
-    ],
     "id": "f74f872d-f8a1-407d-88a3-26814c3d9a7e",
     "source": "googlemaps",
     "area": "",
@@ -1862,10 +1637,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Them this time"
-    ],
     "id": "9f1d3fba-74a0-45b7-a8bf-b240da903a27",
     "source": "googlemaps",
     "area": "",
@@ -1888,9 +1659,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "id": "12239ad3-c0b6-46a4-bb45-8cb5924fbe98",
     "source": "googlemaps",
     "area": "",
@@ -1913,10 +1681,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pasta",
-      "Cocktails"
-    ],
     "id": "dd5b70f9-6530-4636-b390-124ade2156b2",
     "source": "googlemaps",
     "area": "",
@@ -1939,10 +1703,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Tom Yum",
-      "Sushi"
-    ],
     "id": "eadc3481-7472-4202-8218-e2bb33d12e9c",
     "source": "googlemaps",
     "area": "",
@@ -1965,9 +1725,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Tom Yum"
-    ],
     "id": "100223a1-6ce8-468e-bcca-fc27e17083d9",
     "source": "googlemaps",
     "area": "",
@@ -1990,7 +1747,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [],
     "id": "b25c2bf9-76df-4e3c-8331-59e61f57cd77",
     "source": "googlemaps",
     "area": "",
@@ -2013,9 +1769,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Hell crab with garlic"
-    ],
     "id": "bc7cd799-a87b-4abe-958e-40defbca2998",
     "source": "googlemaps",
     "approved_at": "2026-06-09T14:13:31.301Z",
@@ -2040,7 +1793,6 @@
     "rating": 4.6,
     "price_range": 4,
     "tag": "evergreen",
-    "highlights": [],
     "id": "6d8cf025-d92c-41a6-8dab-fa1dc687a2ca",
     "source": "googlemaps",
     "area": "",
@@ -2063,7 +1815,6 @@
     "rating": 4.7,
     "price_range": 3,
     "tag": "evergreen",
-    "highlights": [],
     "id": "d7614add-3606-4b46-93ec-ae61eb22e01c",
     "source": "googlemaps",
     "area": "",
@@ -2086,9 +1837,6 @@
     "rating": 4.5,
     "price_range": 4,
     "tag": "evergreen",
-    "highlights": [
-      "Japanese tradition"
-    ],
     "id": "1527829d-f0ac-4c30-99f9-db41dde692a5",
     "source": "googlemaps",
     "area": "",
@@ -2111,9 +1859,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Sushi"
-    ],
     "id": "8535e9c2-a2b9-42d7-89bd-3162d489125b",
     "source": "googlemaps",
     "area": "",
@@ -2136,10 +1881,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Sushi",
-      "Omakase"
-    ],
     "id": "e6b9dd4a-8752-4662-9611-1347089f7328",
     "source": "googlemaps",
     "area": "",
@@ -2162,7 +1903,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [],
     "id": "eeed20a9-87f1-4dd6-9d3d-61a87ff0cde7",
     "source": "googlemaps",
     "area": "",
@@ -2185,10 +1925,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Sushi",
-      "Them all"
-    ],
     "id": "eb724f59-c355-4f58-9202-91e8d90ec876",
     "source": "googlemaps",
     "area": "",
@@ -2211,10 +1947,6 @@
     "rating": 4.6,
     "price_range": 3,
     "tag": "evergreen",
-    "highlights": [
-      "Sushi",
-      "Omakase"
-    ],
     "id": "84103905-3c56-4e2d-8ecd-995f2476e551",
     "source": "googlemaps",
     "area": "",
@@ -2237,9 +1969,6 @@
     "rating": 4.6,
     "price_range": 4,
     "tag": "hidden_gem",
-    "highlights": [
-      "Sushi"
-    ],
     "id": "7c1eeb64-45fe-4e9d-923a-2c9aacbf2d8f",
     "source": "googlemaps",
     "area": "",
@@ -2262,7 +1991,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "1b13770b-c776-4f08-892b-9c3619c10811",
     "source": "googlemaps",
     "area": "",
@@ -2285,9 +2013,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Pad Thai"
-    ],
     "id": "1650bd4b-2269-4e37-9b11-6613a05586b0",
     "source": "googlemaps",
     "area": "",
@@ -2310,10 +2035,6 @@
     "rating": 4.4,
     "price_range": 3,
     "tag": "evergreen",
-    "highlights": [
-      "Green Curry",
-      "Flavors from north"
-    ],
     "id": "e0e0bdb9-4ae2-429c-bac3-4086ae6d6e2d",
     "source": "googlemaps",
     "area": "",
@@ -2336,7 +2057,6 @@
     "rating": 4,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [],
     "id": "4f3c54f2-4159-46b3-b6e4-5e739517bae9",
     "source": "googlemaps",
     "area": "",
@@ -2359,7 +2079,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "new_opening",
-    "highlights": [],
     "id": "fc6c2ea5-74c9-40a4-94dc-f2a09b0ba0a5",
     "source": "googlemaps",
     "area": "",
@@ -2382,9 +2101,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Some spicy thai food"
-    ],
     "id": "b7fce2af-3cfe-4617-a901-e12147295cde",
     "source": "googlemaps",
     "area": "",
@@ -2407,10 +2123,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Cocktails",
-      "Bold"
-    ],
     "id": "315df415-9e42-40ba-8221-ec0f829b56ea",
     "source": "googlemaps",
     "area": "",
@@ -2433,9 +2145,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Tom Yum"
-    ],
     "id": "afa673e4-be94-4491-ac1a-1019455dc0c1",
     "source": "googlemaps",
     "area": "",
@@ -2458,10 +2167,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "new_opening",
-    "highlights": [
-      "Dim Sum",
-      "Omakase"
-    ],
     "id": "be0d195a-e2f1-4e32-b34c-2107ea6aad82",
     "source": "googlemaps",
     "area": "",
@@ -2484,9 +2189,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Dumplings"
-    ],
     "id": "8e56afca-2f71-4b1d-b36d-793a2b7f0b52",
     "source": "googlemaps",
     "area": "",
@@ -2509,9 +2211,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Dim Sum"
-    ],
     "id": "53a098fd-d89c-435c-82be-9ac07152fdc2",
     "source": "googlemaps",
     "area": "",
@@ -2534,10 +2233,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Dim Sum",
-      "Steak"
-    ],
     "id": "01ac74b4-d0d8-4022-9498-dadb460d21b1",
     "source": "googlemaps",
     "area": "",
@@ -2560,10 +2255,6 @@
     "rating": 4.5,
     "price_range": 4,
     "tag": "evergreen",
-    "highlights": [
-      "Dumplings",
-      "Cocktails"
-    ],
     "id": "b3bca6f0-fa56-47d0-8584-dc22ad8ee98c",
     "source": "googlemaps",
     "area": "",
@@ -2586,10 +2277,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Dim Sum",
-      "Dim sum place"
-    ],
     "id": "841e2569-f03d-4d63-a7f4-59ea67c6555d",
     "source": "googlemaps",
     "area": "",
@@ -2612,10 +2299,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Dim Sum",
-      "Peking duck"
-    ],
     "id": "83d07749-e7a4-4651-a406-55853879abc5",
     "source": "googlemaps",
     "area": "",
@@ -2638,10 +2321,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Pasta",
-      "Croissant"
-    ],
     "id": "85528930-224f-4efa-92d1-980f2c5fa507",
     "source": "googlemaps",
     "area": "",
@@ -2664,10 +2343,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Wisely",
-      "Too much"
-    ],
     "id": "a441a0be-8450-474d-8aea-6848dc631e12",
     "source": "googlemaps",
     "area": "",
@@ -2690,9 +2365,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Steak"
-    ],
     "id": "346f4839-90a1-4617-9a8d-6f6c5bafa1fd",
     "source": "googlemaps",
     "area": "",
@@ -2715,11 +2387,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Rooftop View",
-      "Enjoyed at an easy pace",
-      "More of their menu"
-    ],
     "id": "3eb24bed-6bb6-409a-988e-43a93e80a25d",
     "source": "googlemaps",
     "area": "",
@@ -2742,9 +2409,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tiramisu"
-    ],
     "id": "c998d9f4-f7e9-45e9-b6fb-ef0183f1b993",
     "source": "googlemaps",
     "area": "",
@@ -2767,10 +2431,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Pasta",
-      "All the menus"
-    ],
     "id": "c8212b6f-0efc-430e-9bcc-077c73318796",
     "source": "googlemaps",
     "area": "",
@@ -2793,10 +2453,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Pasta",
-      "Roast"
-    ],
     "id": "38e61cdd-c0f7-4d83-a097-6ac88ed20ea2",
     "source": "googlemaps",
     "area": "",
@@ -2819,10 +2475,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Rooftop View",
-      "View from a rooftop bar"
-    ],
     "id": "b79fc99f-1974-4fc4-a831-87fcdf0178b8",
     "source": "googlemaps",
     "area": "",
@@ -2845,10 +2497,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "bf0ed91a-800f-4e2a-ba9b-7568a2424812",
     "source": "googlemaps",
     "area": "",
@@ -2871,10 +2519,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "c31acfe3-71f7-4e7a-8663-054a341406f3",
     "source": "googlemaps",
     "area": "",
@@ -2897,10 +2541,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "27a38423-e8ba-4cde-a1b3-d1b2dea73c2b",
     "source": "googlemaps",
     "area": "",
@@ -2923,10 +2563,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Steak",
-      "Rooftop View"
-    ],
     "id": "26735f1d-c5f4-4d0a-bc71-7d1b9b101d50",
     "source": "googlemaps",
     "area": "",
@@ -2949,10 +2585,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "7f4716c7-4a22-46cb-afdc-f7e4cf3f41d8",
     "source": "googlemaps",
     "area": "",
@@ -2975,10 +2607,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "2bd32ce4-80f3-4f34-ad35-9b726c1a1a03",
     "source": "googlemaps",
     "area": "",
@@ -3001,7 +2629,6 @@
     "rating": 4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [],
     "id": "61221e7b-c74a-4a07-baa6-c473703ddf82",
     "source": "googlemaps",
     "area": "",
@@ -3024,9 +2651,6 @@
     "rating": 4.8,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum"
-    ],
     "id": "33847bcf-cbb6-4bb4-ab24-e7adb4f67a7f",
     "source": "googlemaps",
     "area": "",
@@ -3049,11 +2673,6 @@
     "rating": 4.8,
     "price_range": 1,
     "tag": "trending",
-    "highlights": [
-      "Pad Thai",
-      "Pad Kra Pao",
-      "Mango Sticky Rice"
-    ],
     "id": "b6658bf3-d2bb-453d-aa1d-f0a6082627ac",
     "source": "googlemaps",
     "area": "",
@@ -3076,9 +2695,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Mango Sticky Rice"
-    ],
     "id": "f4634bf6-e66d-4b19-9b90-bcf224d25bac",
     "source": "googlemaps",
     "area": "",
@@ -3101,10 +2717,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Som Tum",
-      "Larb"
-    ],
     "id": "a5daeec1-89d4-4630-aae0-e785bef4011c",
     "source": "googlemaps",
     "area": "",
@@ -3127,9 +2739,6 @@
     "rating": 4.9,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai"
-    ],
     "id": "34b161cc-d8b8-4a9c-97f8-a14d5f863fe4",
     "source": "googlemaps",
     "area": "",
@@ -3152,9 +2761,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Branding and packaging"
-    ],
     "id": "5f0eb263-d0b9-481c-8072-0a00978ad50b",
     "source": "googlemaps",
     "area": "",
@@ -3177,7 +2783,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "10e13646-7324-400b-aad7-0c59de82ec93",
     "source": "googlemaps",
     "area": "",
@@ -3200,10 +2805,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Croissant",
-      "Espresso"
-    ],
     "id": "403650a1-1178-4acd-a96a-bd0f5b1317c1",
     "source": "googlemaps",
     "area": "",
@@ -3226,7 +2827,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [],
     "id": "3820c787-bc7c-4abf-b446-0dac256d01c8",
     "source": "googlemaps",
     "area": "",
@@ -3249,10 +2849,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Espresso",
-      "Coffee originality in bkk"
-    ],
     "id": "dab9e888-2bbf-49ce-9739-0a5c830e6523",
     "source": "googlemaps",
     "area": "",
@@ -3275,7 +2871,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "39a23786-a1cd-40ec-ba44-1e0413d250be",
     "source": "googlemaps",
     "area": "",
@@ -3298,10 +2893,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Directly at the counter",
-      "Interiors"
-    ],
     "id": "1c87ed75-8cc6-4cd6-8985-3dd82c0106d0",
     "source": "googlemaps",
     "area": "",
@@ -3324,10 +2915,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Croissant",
-      "Every single time"
-    ],
     "id": "441bdbd3-8abe-4303-8357-b0ca6c0d5da7",
     "source": "googlemaps",
     "area": "",
@@ -3350,7 +2937,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "28881824-4a6d-4bf1-bbf8-72184197ce24",
     "source": "googlemaps",
     "area": "",
@@ -3373,11 +2959,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Tiramisu",
-      "Croissant",
-      "Espresso"
-    ],
     "id": "15ad3be7-0df6-49e0-ab02-f3e28699ef6f",
     "source": "googlemaps",
     "area": "",
@@ -3400,9 +2981,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "A bit humid during the day"
-    ],
     "id": "3168e935-7a4f-4998-8f71-bdb5e23636d7",
     "source": "googlemaps",
     "area": "",
@@ -3425,9 +3003,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Croissant"
-    ],
     "id": "d555dee0-15ea-40d6-bf72-fed51ad5557f",
     "source": "googlemaps",
     "area": "",
@@ -3450,9 +3025,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Way possible"
-    ],
     "id": "c1e8566b-a001-488e-90b8-3b67f2124f5b",
     "source": "googlemaps",
     "area": "",
@@ -3475,9 +3047,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Espresso"
-    ],
     "id": "59373c8d-aeaf-4a6e-a855-8bc0b5197120",
     "source": "googlemaps",
     "area": "",
@@ -3500,11 +3069,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Other dishes",
-      "Fried radish cake"
-    ],
     "id": "5a50cb9d-f005-4dde-8160-8a75785602fe",
     "source": "googlemaps",
     "area": "",
@@ -3527,11 +3091,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "More of the menu soon",
-      "Another flat white",
-      "Idea"
-    ],
     "id": "e5b6d834-3ad7-448a-bc07-873b3761799a",
     "source": "googlemaps",
     "area": "",
@@ -3554,7 +3113,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "9353b8ee-8c33-4652-abaa-156457d338aa",
     "source": "googlemaps",
     "area": "",
@@ -3577,9 +3135,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "A table"
-    ],
     "id": "32660131-c7d9-4e6b-aefc-7d2a7d83ef34",
     "source": "googlemaps",
     "area": "",
@@ -3602,9 +3157,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Croissant"
-    ],
     "id": "3b286464-3b95-473d-963d-e33768d5e092",
     "source": "googlemaps",
     "area": "",
@@ -3627,11 +3179,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Thai Tea",
-      "Her signature thai tea",
-      "Bored of"
-    ],
     "id": "70d7ae88-ff0a-47d9-9193-a90fcadc6501",
     "source": "googlemaps",
     "area": "",
@@ -3654,7 +3201,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "361ee46c-a9bc-4f1e-8e46-ae348d52f145",
     "source": "googlemaps",
     "area": "",
@@ -3677,11 +3223,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Croissant",
-      "Number",
-      "Sitting upstairs"
-    ],
     "id": "926223c8-0806-4ff6-a816-d23d6c184ebe",
     "source": "googlemaps",
     "area": "",
@@ -3704,9 +3245,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Espresso"
-    ],
     "id": "c024beeb-9cd4-4e7c-b471-52e767464390",
     "source": "googlemaps",
     "area": "",
@@ -3729,10 +3267,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Espresso",
-      "Heir matcha selection"
-    ],
     "id": "336996f9-c8a7-4fe8-b755-186cd04df9b8",
     "source": "googlemaps",
     "area": "",
@@ -3755,9 +3289,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Pour Over"
-    ],
     "id": "9dfe36d1-9e9d-4c80-8cdd-2bebf2d226d6",
     "source": "googlemaps",
     "area": "",
@@ -3780,9 +3311,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Espresso"
-    ],
     "id": "6b03c2f0-7888-47f5-bf1a-e85a572b8c8a",
     "source": "googlemaps",
     "area": "",
@@ -3805,7 +3333,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [],
     "id": "31c10945-0860-4af9-9bfa-d9f52b23ba82",
     "source": "googlemaps",
     "area": "",
@@ -3828,10 +3355,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Croissant",
-      "Espresso"
-    ],
     "id": "c57bf3cc-b861-4203-974c-2c42eaaf1951",
     "source": "googlemaps",
     "area": "",
@@ -3854,11 +3377,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Espresso",
-      "A caffeine boost",
-      "Way to describe it"
-    ],
     "id": "b1ce2d19-0fe3-4049-8931-0d5b326ba1f6",
     "source": "googlemaps",
     "area": "",
@@ -3881,7 +3399,6 @@
     "rating": 4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "ea17042a-748b-4803-b689-d038381962ba",
     "source": "googlemaps",
     "area": "",
@@ -3904,9 +3421,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Remedy to anyone"
-    ],
     "id": "3c66813e-c123-49a5-ae7d-c481190b9b84",
     "source": "googlemaps",
     "area": "",
@@ -3929,9 +3443,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "The avocado toast"
-    ],
     "id": "d7c3aae8-ea33-4323-9106-7e6188698931",
     "source": "googlemaps",
     "area": "",
@@ -3954,7 +3465,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [],
     "id": "bbdbd53c-ff2f-41fb-babf-df12a5285414",
     "source": "googlemaps",
     "area": "",
@@ -3977,10 +3487,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Tiramisu",
-      "Espresso"
-    ],
     "id": "bdd262a9-04ee-43b1-b373-a0d20b8a51a9",
     "source": "googlemaps",
     "area": "",
@@ -4003,10 +3509,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pasta",
-      "Thai Tea"
-    ],
     "id": "6155ec62-a855-44a8-a714-06afe4a70526",
     "source": "googlemaps",
     "area": "",
@@ -4029,10 +3531,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Espresso",
-      "A bit warm during the day"
-    ],
     "id": "0ee54019-813c-4420-b1fb-cddce3e6fdea",
     "source": "googlemaps",
     "area": "",
@@ -4055,7 +3553,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "eb066a46-1553-4bbf-bea1-96ac91f9794d",
     "source": "googlemaps",
     "area": "",
@@ -4078,9 +3575,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "The lighting"
-    ],
     "id": "aee7a4b0-9df3-4360-978d-c51fa837908b",
     "source": "googlemaps",
     "area": "",
@@ -4103,7 +3597,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [],
     "id": "db212abd-4b80-4e49-b4b4-4efe24217669",
     "source": "googlemaps",
     "area": "",
@@ -4126,9 +3619,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Pasta"
-    ],
     "id": "244cc363-4673-447d-aadd-ad415975bb61",
     "source": "googlemaps",
     "area": "",
@@ -4151,10 +3641,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Croissant",
-      "Health drinks"
-    ],
     "id": "4b11cfaa-d78f-4a2e-9336-b366778862b8",
     "source": "googlemaps",
     "area": "",
@@ -4177,9 +3663,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Croissant"
-    ],
     "id": "5a856d7d-e9da-4eff-8217-84a989891564",
     "source": "googlemaps",
     "area": "",
@@ -4202,7 +3685,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [],
     "id": "6747c4c8-1952-45e6-aa37-863e6110efb4",
     "source": "googlemaps",
     "area": "",
@@ -4225,11 +3707,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Pasta",
-      "Steak",
-      "Cocktails"
-    ],
     "id": "becc37f7-ba25-4ba5-9725-b2667ffe2894",
     "source": "googlemaps",
     "area": "",
@@ -4252,7 +3729,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "a06df101-4317-459f-9194-9ffdb3fedb07",
     "source": "googlemaps",
     "area": "",
@@ -4275,10 +3751,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Mango Sticky Rice",
-      "Thai Tea"
-    ],
     "id": "63371670-a630-4e4f-8d48-cb81324ee3f9",
     "source": "googlemaps",
     "area": "",
@@ -4301,10 +3773,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "d27bc2f8-ffc4-4617-8ae0-3551a0c1853b",
     "source": "googlemaps",
     "area": "",
@@ -4327,10 +3795,6 @@
     "rating": 4.4,
     "price_range": 3,
     "tag": "evergreen",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "c93d8779-cd2f-475e-b023-380bb165c9c3",
     "source": "googlemaps",
     "area": "",
@@ -4353,10 +3817,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "3de2050f-1280-47bd-a235-edc95445a643",
     "source": "googlemaps",
     "area": "",
@@ -4379,10 +3839,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Cocktails",
-      "Delicious cocktails"
-    ],
     "id": "aad336c4-c5cb-4782-8f34-5337c47b49dd",
     "source": "googlemaps",
     "area": "",
@@ -4409,9 +3865,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Espresso"
-    ],
     "area": "Khlong San",
     "id": "66e6f493-eb4c-493d-a6e0-61ef43dab07c",
     "category": "cafe",
@@ -4439,10 +3892,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Sushi",
-      "Steak"
-    ],
     "area": "Huai Khwang",
     "id": "d3b4997b-a6b7-4405-9400-12cac5371e64",
     "category": "food",
@@ -4470,9 +3919,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Fragrant brown rice"
-    ],
     "area": "Bangkok",
     "id": "502bb220-45aa-4e00-8906-8d10196a8d3a",
     "category": "food",
@@ -4500,7 +3946,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [],
     "area": "Bangkok",
     "id": "b5ef1b09-b168-4cfd-810f-ee0e05491037",
     "category": "food",
@@ -4528,9 +3973,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "area": "Bangkok",
     "id": "41609391-3bc0-4de6-8574-9d2e7c0db143",
     "category": "nightlife",
@@ -4558,11 +4000,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View",
-      "Live Music"
-    ],
     "area": "Khlong San",
     "id": "53eae43f-e3aa-4046-a459-f7838bf7bc28",
     "category": "nightlife",
@@ -4586,11 +4023,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Pad Thai",
-      "Mango Sticky Rice",
-      "Cocktails"
-    ],
     "id": "7413acc9-6039-4da0-8062-cc364bb3d460",
     "source": "googlemaps",
     "area": "",
@@ -4613,11 +4045,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Everything right",
-      "The yum"
-    ],
     "id": "faf1730a-7484-41cf-a060-15a5c0b00e77",
     "source": "googlemaps",
     "area": "",
@@ -4640,11 +4067,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [
-      "Massaman Curry",
-      "Steak",
-      "Cocktails"
-    ],
     "id": "fb6c7810-6c99-4a54-8b7b-c4f22a85aa49",
     "source": "googlemaps",
     "area": "",
@@ -4667,9 +4089,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Pasta"
-    ],
     "id": "e814f82d-4f97-4784-97a5-7838435bf6e5",
     "source": "googlemaps",
     "area": "",
@@ -4692,9 +4111,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Larb"
-    ],
     "id": "60ca17f6-50b4-467f-8ea0-5eceaf1dd41a",
     "source": "googlemaps",
     "area": "",
@@ -4717,9 +4133,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Dim Sum"
-    ],
     "id": "f1171626-3d41-4cf8-b660-7526a1b0737f",
     "source": "googlemaps",
     "area": "",
@@ -4742,7 +4155,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "786aabf2-223e-45a6-ab91-2bd98a5b1856",
     "source": "googlemaps",
     "area": "",
@@ -4765,7 +4177,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "6babf0e9-8764-4b17-8398-29ab23572515",
     "source": "googlemaps",
     "area": "",
@@ -4788,11 +4199,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "new_opening",
-    "highlights": [
-      "Steak",
-      "Espresso",
-      "Cocktails"
-    ],
     "id": "5efc4243-01a7-488f-a116-ed80a0bdb642",
     "source": "googlemaps",
     "area": "",
@@ -4815,11 +4221,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Som Tum",
-      "Tom Yum"
-    ],
     "id": "428cf5ac-4941-41c4-a3ac-df1e339fe8e2",
     "source": "googlemaps",
     "area": "",
@@ -4842,7 +4243,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "evergreen",
-    "highlights": [],
     "id": "17beafac-9a49-4acc-a2f8-a23abedad887",
     "source": "googlemaps",
     "area": "",
@@ -4865,10 +4265,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Omakase",
-      "Guests are from"
-    ],
     "id": "3ff173f2-b85d-43b3-8df2-cdca1807b4c2",
     "source": "googlemaps",
     "area": "",
@@ -4891,10 +4287,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Sushi",
-      "Omakase"
-    ],
     "id": "f6be869c-3fb2-48d3-a9b6-02da4d070247",
     "source": "googlemaps",
     "area": "",
@@ -4917,9 +4309,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "new_opening",
-    "highlights": [
-      "Rice i have ever had ever"
-    ],
     "id": "f291e556-a93c-4fc8-90ec-31701f83b55b",
     "source": "googlemaps",
     "area": "",
@@ -4942,11 +4331,6 @@
     "rating": 4.5,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Som Tum",
-      "Green Curry",
-      "Papaya Salad"
-    ],
     "id": "ed56cd54-f955-41a0-8f4a-09bb4ab2e73a",
     "source": "googlemaps",
     "area": "",
@@ -4969,10 +4353,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Dim Sum",
-      "Dumplings"
-    ],
     "id": "e1701ad0-84ad-4ba4-b90a-d9661c193a04",
     "source": "googlemaps",
     "area": "",
@@ -4995,10 +4375,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "new_opening",
-    "highlights": [
-      "Steak",
-      "Every dish we ordered"
-    ],
     "id": "c519dd76-6f0c-4558-8150-48d1a0195a3c",
     "source": "googlemaps",
     "area": "",
@@ -5021,10 +4397,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "5bee9259-1cb9-4a0d-ab40-dfd99e2619d8",
     "source": "googlemaps",
     "area": "",
@@ -5047,9 +4419,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Through grab"
-    ],
     "id": "deb4c135-7fc1-4a58-b30d-338e673e8322",
     "source": "googlemaps",
     "area": "",
@@ -5072,11 +4441,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View",
-      "Some work done",
-      "Them"
-    ],
     "id": "06605ac3-a058-44f4-b149-fe26e7435791",
     "source": "googlemaps",
     "area": "",
@@ -5099,10 +4463,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pasta",
-      "Pasta"
-    ],
     "id": "ad259682-a831-424c-a78a-4727fe91871f",
     "source": "googlemaps",
     "area": "",
@@ -5125,10 +4485,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Part is the honest prices",
-      "Some work done"
-    ],
     "id": "f5348ad5-6081-4028-901f-c8d66b720e9c",
     "source": "googlemaps",
     "area": "",
@@ -5151,10 +4507,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
-    "highlights": [
-      "Espresso",
-      "Other people to come here"
-    ],
     "id": "180440ea-36bb-46ba-ba77-f1c13dc3c917",
     "source": "googlemaps",
     "area": "",
@@ -5177,10 +4529,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "new_opening",
-    "highlights": [
-      "Espresso",
-      "Thai Tea"
-    ],
     "id": "1a1c1ae4-e2e8-477b-9325-c54bb5565829",
     "source": "googlemaps",
     "area": "",
@@ -5203,7 +4551,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "fb7f7340-399e-44c6-985c-5ec93ed13165",
     "source": "googlemaps",
     "area": "",
@@ -5226,10 +4573,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Broccoli bacon quiche",
-      "Other dishes and desserts"
-    ],
     "id": "832f60be-a487-4314-8aa3-df0c1276d8e5",
     "source": "googlemaps",
     "area": "",
@@ -5252,10 +4595,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "41b90afc-227e-4d60-a00b-b05bdb0b98f0",
     "source": "googlemaps",
     "area": "",
@@ -5278,10 +4617,6 @@
     "rating": 4.7,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "6facec4b-4e9d-4546-a884-2b9789e6ded0",
     "source": "googlemaps",
     "area": "",
@@ -5304,10 +4639,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "ff3c6ca0-999e-4830-98cd-8cd459495fed",
     "source": "googlemaps",
     "area": "",
@@ -5330,9 +4661,6 @@
     "rating": 4.5,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "id": "1072d883-c39b-4a44-b35c-5662b5534e2a",
     "source": "googlemaps",
     "area": "",
@@ -5355,9 +4683,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "id": "cac37b06-3c92-478a-947e-5d926e469973",
     "source": "googlemaps",
     "area": "",
@@ -5380,11 +4705,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View",
-      "Live Music"
-    ],
     "id": "14b88968-3d33-4c87-b407-66d1d3e8031d",
     "source": "googlemaps",
     "area": "",
@@ -5407,10 +4727,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "The dj lineup"
-    ],
     "id": "dd474a3e-e9c7-4c3f-a711-8f5f365ebd6a",
     "source": "googlemaps",
     "area": "",
@@ -5433,10 +4749,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View"
-    ],
     "id": "8626764d-ccaf-4f82-a2c8-64c65d62920f",
     "source": "googlemaps",
     "area": "",
@@ -5459,10 +4771,6 @@
     "rating": 4.8,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Live Music"
-    ],
     "id": "9110b76a-c066-43ac-a86e-1ccc166d18e2",
     "source": "googlemaps",
     "area": "",
@@ -5485,9 +4793,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Visiting this place"
-    ],
     "id": "6515b43b-0e11-49f1-96b3-4a11a146c80b",
     "source": "googlemaps",
     "area": "",
@@ -5510,10 +4815,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Coming here"
-    ],
     "id": "3cc3f09a-f003-4a15-b7fd-3ef74553e5c8",
     "source": "googlemaps",
     "area": "",
@@ -5536,10 +4837,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Live Music",
-      "Crowded"
-    ],
     "id": "55f8ac18-6b72-483b-898b-53eec52f0c27",
     "source": "googlemaps",
     "area": "",
@@ -5562,11 +4859,6 @@
     "rating": 4.4,
     "price_range": 3,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Rooftop View",
-      "Live Music"
-    ],
     "id": "5b810f17-a84a-4b92-be48-5bd81268fe60",
     "source": "googlemaps",
     "area": "",
@@ -5589,9 +4881,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "id": "5a8d7990-d0ac-4bfa-9d42-7884eb04c92d",
     "source": "googlemaps",
     "area": "",
@@ -5614,9 +4903,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Live band"
-    ],
     "id": "1f079f6c-ffcc-4aa5-962b-67a0b491fa67",
     "source": "googlemaps",
     "area": "",
@@ -5639,9 +4925,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Love the place"
-    ],
     "id": "05e88fe8-cf35-48b6-9680-3bf74b183104",
     "source": "googlemaps",
     "area": "",
@@ -5664,10 +4947,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Other drinks on the menu"
-    ],
     "id": "f46da73c-4d54-4889-88b7-db3ef2a66405",
     "source": "googlemaps",
     "area": "",
@@ -5690,10 +4969,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak",
-      "Discovery"
-    ],
     "id": "b7ecdcde-2e16-454a-93d1-c7fd65360320",
     "source": "googlemaps",
     "area": "",
@@ -5716,9 +4991,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails"
-    ],
     "id": "e44d72bc-d5e8-4e1f-9e17-0d3592cd8b96",
     "source": "googlemaps",
     "area": "",
@@ -5741,10 +5013,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Around",
-      "Staying here"
-    ],
     "id": "9c02d4dc-a1b8-49cd-b1d7-352be618cc2d",
     "source": "googlemaps",
     "area": "",
@@ -5767,10 +5035,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak",
-      "Travelers"
-    ],
     "id": "e92ec1c7-7550-4679-aa79-5b3403d3b62e",
     "source": "googlemaps",
     "area": "",
@@ -5793,10 +5057,6 @@
     "rating": 4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Rooftop View",
-      "The location"
-    ],
     "id": "1b5adcf2-2fb6-4c74-bc1d-c231313208c7",
     "source": "googlemaps",
     "area": "",
@@ -5819,7 +5079,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "5af25bbb-59ef-48fd-acb7-88794c4e9578",
     "source": "googlemaps",
     "approved_at": "2026-07-01T06:45:35.301Z",
@@ -5841,7 +5100,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "id": "7d5dc54f-49c1-4d2c-a4b8-5d2e8aa1f6cc",
     "source": "googlemaps",
     "area": "",
@@ -5864,11 +5122,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "A big locker with a shelf",
-      "Dressed sucks",
-      "S a huge window which"
-    ],
     "id": "ebec2d9c-766c-4b8c-978c-973a16b66977",
     "source": "googlemaps",
     "area": "",
@@ -5891,9 +5144,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Green Curry"
-    ],
     "local_ratio": 75,
     "id": "609c6b74-c204-41bc-85fe-712ee9c226a8",
     "source": "googlemaps",
@@ -5917,9 +5167,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "All the other menu items"
-    ],
     "local_ratio": 75,
     "id": "dcea936b-a881-47c5-9ce0-567a509f1a97",
     "source": "googlemaps",
@@ -5943,10 +5190,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Green Curry",
-      "Larb"
-    ],
     "local_ratio": 75,
     "id": "3af47db1-0ffd-45b6-a7ca-6a2e0b627b4f",
     "source": "googlemaps",
@@ -5970,10 +5213,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Sign"
-    ],
     "local_ratio": 75,
     "id": "a808bf9e-5483-4272-be62-a015b24d4909",
     "source": "googlemaps",
@@ -5997,11 +5236,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Steak",
-      "Craft Beer",
-      "Live Music"
-    ],
     "local_ratio": 75,
     "id": "3f54fe59-460c-4a0d-844e-a9b6170728a7",
     "source": "googlemaps",
@@ -6025,10 +5259,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Last seat",
-      "Sauce"
-    ],
     "local_ratio": 75,
     "id": "e491b3a1-0e3c-4f27-8090-f9a937bd17d8",
     "source": "googlemaps",
@@ -6052,10 +5282,6 @@
     "rating": 4,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Dim Sum",
-      "Dumplings"
-    ],
     "local_ratio": 75,
     "id": "ebf20edd-ff52-4f60-acdb-203070c9e32a",
     "source": "googlemaps",
@@ -6079,9 +5305,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Khao Man Gai"
-    ],
     "local_ratio": 75,
     "id": "4e7b98b9-8ce9-4578-8338-205dfdaf5cd6",
     "source": "googlemaps",
@@ -6105,10 +5328,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Khao Man Gai",
-      "Alongside fresh"
-    ],
     "local_ratio": 75,
     "id": "8231534d-518f-44bb-944c-41ae02898107",
     "source": "googlemaps",
@@ -6132,9 +5351,6 @@
     "rating": 4.4,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Wrong"
-    ],
     "local_ratio": 75,
     "id": "0e4e6718-6137-49c8-8961-abeedf08d6da",
     "source": "googlemaps",
@@ -6158,7 +5374,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "2ea566e9-94c8-4875-8eb7-aec2d8434d98",
     "source": "googlemaps",
@@ -6182,10 +5397,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Khao Man Gai",
-      "Combo"
-    ],
     "local_ratio": 75,
     "id": "466d1c6a-6a93-4c2b-87d4-2d2adb3ae0dd",
     "source": "googlemaps",
@@ -6209,7 +5420,6 @@
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "336a9c18-dd7e-4196-baa5-0738746db1e1",
     "source": "googlemaps",
@@ -6233,10 +5443,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Dumplings"
-    ],
     "local_ratio": 75,
     "id": "22f17ffa-53fe-40d8-9730-8f84d6911abe",
     "source": "googlemaps",
@@ -6260,7 +5466,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "a2b3bed8-b73e-4739-922d-602c5bf0b188",
     "source": "googlemaps",
@@ -6284,9 +5489,6 @@
     "rating": 4.4,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum"
-    ],
     "local_ratio": 75,
     "id": "f402c564-5936-475c-aaf7-9701d5ba2246",
     "source": "googlemaps",
@@ -6310,9 +5512,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Boat Noodles"
-    ],
     "local_ratio": 75,
     "id": "c728a4e4-db87-4e48-a50c-2f5178f20b1a",
     "source": "googlemaps",
@@ -6336,10 +5535,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Boat Noodles"
-    ],
     "local_ratio": 75,
     "id": "7aea0fe5-fc5b-4ff5-ac2f-7f3852e786c9",
     "source": "googlemaps",
@@ -6363,10 +5558,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Larb",
-      "Larb pla duk"
-    ],
     "local_ratio": 75,
     "id": "eb108b73-d8a0-4088-96ad-3d8af00710f4",
     "source": "googlemaps",
@@ -6390,10 +5581,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Som Tum",
-      "Papaya Salad"
-    ],
     "local_ratio": 75,
     "id": "61ae0ad7-24d0-4a6a-89fa-e65afae9899a",
     "source": "googlemaps",
@@ -6417,10 +5604,6 @@
     "rating": 4.2,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Mango Sticky Rice",
-      "Papaya Salad"
-    ],
     "local_ratio": 75,
     "id": "730d0e98-cd19-4200-8b83-b089f457cfd2",
     "source": "googlemaps",
@@ -6444,10 +5627,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Som Tum",
-      "Larb"
-    ],
     "local_ratio": 75,
     "id": "166f39f6-f03b-4041-913a-e6358d8bc832",
     "source": "googlemaps",
@@ -6471,10 +5650,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Som Tum"
-    ],
     "local_ratio": 75,
     "id": "f18525d3-523b-4eaf-a5d1-8f0c4f236527",
     "source": "googlemaps",
@@ -6498,9 +5673,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "His spicy shrimp salad"
-    ],
     "local_ratio": 75,
     "id": "ffb2c44e-5be7-4e96-ab2e-0a8dcf451a19",
     "source": "googlemaps",
@@ -6524,9 +5696,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Them"
-    ],
     "local_ratio": 75,
     "id": "8d285d18-46ed-47f4-8625-bfdffbcd86f1",
     "source": "googlemaps",
@@ -6550,9 +5719,6 @@
     "rating": 4.9,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Thai bbq"
-    ],
     "local_ratio": 75,
     "id": "281cbf2c-93bf-4bbd-b4c7-7000017da8de",
     "source": "googlemaps",
@@ -6576,9 +5742,6 @@
     "rating": 4.3,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Plates of meats by weight"
-    ],
     "local_ratio": 75,
     "id": "d629cefd-a955-473a-ba7c-cd8bc61cf2af",
     "source": "googlemaps",
@@ -6602,11 +5765,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Cocktails",
-      "Various things",
-      "Kimchi"
-    ],
     "local_ratio": 75,
     "id": "29314cc1-7eb4-4b50-9dfe-476784954b2e",
     "source": "googlemaps",
@@ -6630,11 +5788,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Mushroom",
-      "A delivery lol",
-      "Under control"
-    ],
     "local_ratio": 75,
     "id": "3b527e00-7864-4f1c-860a-d77ca229bb3c",
     "source": "googlemaps",
@@ -6658,10 +5811,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Papaya Salad",
-      "Some orders"
-    ],
     "local_ratio": 75,
     "id": "dbafe020-6c49-4453-9a32-41b1c34b0091",
     "source": "googlemaps",
@@ -6685,10 +5834,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Kra Pao",
-      "Som Tum"
-    ],
     "local_ratio": 75,
     "id": "7cedb621-4247-4dbe-8b64-689a4e3b10b4",
     "source": "googlemaps",
@@ -6712,11 +5857,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Som Tum",
-      "Papaya Salad",
-      "Larb"
-    ],
     "local_ratio": 75,
     "id": "45c21174-1a4a-4a07-b3a1-5ddfaf60ca09",
     "source": "googlemaps",
@@ -6740,11 +5880,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Green Curry",
-      "Papaya Salad"
-    ],
     "local_ratio": 75,
     "id": "d02c4bc4-dbba-4cc3-ae6f-9f688c6c8c39",
     "source": "googlemaps",
@@ -6768,9 +5903,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai"
-    ],
     "local_ratio": 75,
     "id": "e0a3347a-8054-405b-8fa2-c8ae1d82e088",
     "source": "googlemaps",
@@ -6794,9 +5926,6 @@
     "rating": 4.1,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai"
-    ],
     "local_ratio": 75,
     "id": "ea199817-a934-4501-adbb-45e5bf4a1365",
     "source": "googlemaps",
@@ -6820,10 +5949,6 @@
     "rating": 4.2,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Pad Thai",
-      "Every elements of it"
-    ],
     "local_ratio": 75,
     "id": "c64f7499-e8a7-436b-8324-826ef7fc8dcf",
     "source": "googlemaps",
@@ -6847,10 +5972,6 @@
     "rating": 4.7,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Green Curry",
-      "Thai Tea"
-    ],
     "local_ratio": 75,
     "id": "c248ca5e-bce0-41e9-9e09-08bbc1b19e45",
     "source": "googlemaps",
@@ -6874,7 +5995,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "1a8b2c4a-ed1c-47cb-a302-88b3b4c504df",
     "source": "googlemaps",
@@ -6898,9 +6018,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Yourself a seat"
-    ],
     "local_ratio": 75,
     "id": "29afe9f1-d42b-4a94-9f5a-9f3358741335",
     "source": "googlemaps",
@@ -6924,9 +6041,6 @@
     "rating": 4.5,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Once"
-    ],
     "local_ratio": 75,
     "id": "beb38541-85c6-4d04-bb6c-81310af50318",
     "source": "googlemaps",
@@ -6950,10 +6064,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Pasta"
-    ],
     "local_ratio": 75,
     "id": "6de5dcb5-7f96-46f9-9fa5-0605800839bd",
     "source": "googlemaps",
@@ -6977,9 +6087,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Way to start the morning"
-    ],
     "local_ratio": 75,
     "id": "667f8ca9-7a8c-4914-8d8f-7b211ef37874",
     "source": "googlemaps",
@@ -7003,7 +6110,6 @@
     "rating": 4.6,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [],
     "local_ratio": 75,
     "id": "6c1c3424-51a3-4365-8c0e-15f684094906",
     "source": "googlemaps",
@@ -7027,10 +6133,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Gaolao style"
-    ],
     "local_ratio": 75,
     "id": "8b1b63ac-c534-4806-a7fd-24387f6badd7",
     "source": "googlemaps",
@@ -7054,10 +6156,6 @@
     "rating": 4.8,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Wonton crisp for snack"
-    ],
     "local_ratio": 75,
     "id": "13b7de33-cc07-4589-aa4e-152e1f9b35a6",
     "source": "googlemaps",
@@ -7081,9 +6179,6 @@
     "rating": 4.9,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum"
-    ],
     "local_ratio": 75,
     "id": "555e7ecd-dced-4bde-b8e5-83829ae28c55",
     "source": "googlemaps",
@@ -7107,9 +6202,6 @@
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum"
-    ],
     "local_ratio": 75,
     "id": "7827e3c7-b51f-44f4-8347-070e08b8ebb2",
     "source": "googlemaps",
@@ -7133,11 +6225,6 @@
     "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Them dry",
-      "Soup on the side"
-    ],
     "local_ratio": 75,
     "id": "cbee8af6-3ea2-481c-82bd-643cea96526e",
     "source": "googlemaps",
@@ -7161,10 +6248,6 @@
     "rating": 4.3,
     "price_range": 1,
     "tag": "hidden_gem",
-    "highlights": [
-      "Tom Yum",
-      "Thai Tea"
-    ],
     "local_ratio": 75,
     "id": "c271eb54-c151-42f8-bc6a-ad24b8d09a5c",
     "source": "googlemaps",
@@ -7188,10 +6271,6 @@
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
-    "highlights": [
-      "Boat Noodles",
-      "Dumplings"
-    ],
     "local_ratio": 75,
     "id": "339ee700-3c9b-48e3-8a2b-556698221bd2",
     "source": "googlemaps",
