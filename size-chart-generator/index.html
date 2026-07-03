@@ -662,7 +662,7 @@ const I18N = {
     pShoulder:'肩寬 SHOULDER', pChest:'胸圍 CHEST', pLength:'衣長／裙長 LENGTH', pUpperArm:'袖圍 UPPER ARM',
     pSleeve:'袖長 SLEEVE', pWaist:'腰圍 WAIST', pHip:'臀圍 HIP', pThigh:'大腿圍 THIGH',
     pLegOpen:'褲口 LEG OPENING', pCustomH:'自訂（橫向線）', pCustomV:'自訂（直向線）',
-    dir:'方向', h:'橫向', v:'直向', above:'線上方', below:'線下方', left:'線左側', right:'線右側', show:'顯示',
+    dir:'方向', h:'橫向', v:'直向', above:'線上方', below:'線下方', left:'線左側', right:'線右側', show:'在圖片上顯示',
     sizes:'尺寸列', addSize:'＋ 新增尺寸', sizesHint:'表格裡的數字直接點擊修改。',
     size:'大小', opacity:'透明度', rotate:'旋轉', bold:'粗體',
     tileTag:'滿版浮水印', dragTag:'圖上可拖曳、雙擊改字', imgTag:'圖片浮水印',
@@ -732,7 +732,7 @@ const I18N = {
     pShoulder:'ไหล่ SHOULDER', pChest:'รอบอก CHEST', pLength:'ความยาว LENGTH', pUpperArm:'ต้นแขน UPPER ARM',
     pSleeve:'ความยาวแขน SLEEVE', pWaist:'รอบเอว WAIST', pHip:'สะโพก HIP', pThigh:'ต้นขา THIGH',
     pLegOpen:'ปลายขา LEG OPENING', pCustomH:'กำหนดเอง (เส้นแนวนอน)', pCustomV:'กำหนดเอง (เส้นแนวตั้ง)',
-    dir:'ทิศทาง', h:'แนวนอน', v:'แนวตั้ง', above:'เหนือเส้น', below:'ใต้เส้น', left:'ซ้ายของเส้น', right:'ขวาของเส้น', show:'แสดง',
+    dir:'ทิศทาง', h:'แนวนอน', v:'แนวตั้ง', above:'เหนือเส้น', below:'ใต้เส้น', left:'ซ้ายของเส้น', right:'ขวาของเส้น', show:'แสดงเส้นบนรูป',
     sizes:'แถวไซซ์', addSize:'＋ เพิ่มไซซ์', sizesHint:'ตัวเลขในตาราง กดแล้วแก้ได้เลย',
     size:'ขนาด', opacity:'ความโปร่งใส', rotate:'หมุน', bold:'ตัวหนา',
     tileTag:'ลายน้ำเต็มภาพ', dragTag:'ลากบนรูปได้ ดับเบิลคลิกแก้คำ', imgTag:'ลายน้ำรูปภาพ',
@@ -1136,7 +1136,8 @@ function escapeHTML(s){
 }
 
 function renderTable(){
-  const vis = state.measures.filter(m=>m.visible);
+  // 「在圖片上顯示」只影響測量線，表格欄位一律保留
+  const vis = state.measures;
   let html = '<tr><th>' + t('sizeCol') + '</th>' + vis.map(m=>`<th contenteditable spellcheck="false" data-head="${m.id}">${escapeHTML(m.label)}</th>`).join('') + '</tr>';
   state.sizes.forEach((s,ri)=>{
     html += `<tr><td contenteditable spellcheck="false" data-size-name="${ri}">${escapeHTML(s.name)}</td>`
