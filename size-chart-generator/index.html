@@ -150,6 +150,26 @@
     font-size:15px;line-height:1;padding:2px 4px;
   }
   .del:hover{color:#8c2d1f}
+  .proj-item{
+    display:flex;align-items:center;gap:8px;
+    border:1px solid var(--ui-border);border-radius:8px;
+    padding:6px 8px;margin:6px 0;background:#fff;
+  }
+  .proj-item.active{border-color:var(--ui-accent);box-shadow:0 0 0 1px var(--ui-accent)}
+  .proj-item img,.proj-thumb-ph{
+    width:40px;height:40px;border-radius:6px;object-fit:cover;flex:none;
+    background:#f1efe9;display:flex;align-items:center;justify-content:center;font-size:20px;
+  }
+  .proj-mid{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+  .proj-mid input{
+    border:none;background:none;font-size:13px;font-weight:700;
+    font-family:inherit;padding:0;width:100%;
+  }
+  .proj-mid input:focus{outline:1px solid #3b82f6;border-radius:3px}
+  .proj-mid span{font-size:10.5px;color:#a09a8c}
+  .proj-btns{display:flex;align-items:center;gap:4px}
+  .proj-btns .btn.small{margin-top:0;padding:4px 8px}
+  .proj-active-tag{font-size:11px;color:var(--ui-accent);font-weight:700;padding:0 4px;white-space:nowrap}
   .color-item{display:flex;align-items:center;gap:8px;margin:6px 0}
   .color-item input[type=color]{
     width:38px;height:30px;border:1px solid var(--ui-border);
@@ -455,6 +475,15 @@
   </details>
 
   <details open>
+    <summary data-i18n="projects">我的商品存檔</summary>
+    <div class="box">
+      <div id="projList"></div>
+      <button class="btn small" id="addProj" data-i18n="addProj">＋ 新增商品</button>
+      <p class="hint" data-i18n="projHint">內容會自動儲存到目前選中的商品，切換前不用手動存檔。</p>
+    </div>
+  </details>
+
+  <details open>
     <summary data-i18n="tpl">模版</summary>
     <div class="box">
       <div class="tpl-btns" id="tplBtns">
@@ -544,7 +573,21 @@
     <div class="box">
       <div id="sizeList"></div>
       <button class="btn small" id="addSize" data-i18n="addSize">＋ 新增尺寸</button>
+      <div class="row" style="margin-top:10px">
+        <button class="btn small" id="convToCm" style="flex:1;margin-top:0" data-i18n="convToCm">吋 → 公分</button>
+        <button class="btn small" id="convToIn" style="flex:1;margin-top:0" data-i18n="convToIn">公分 → 吋</button>
+      </div>
       <p class="hint" data-i18n="sizesHint">表格裡的數字直接點擊修改。</p>
+    </div>
+  </details>
+
+  <details>
+    <summary data-i18n="backup">備份與分享設定</summary>
+    <div class="box">
+      <input type="file" id="cfgFileInput" accept="application/json,.json" hidden>
+      <button class="btn small" id="exportCfg" data-i18n="exportCfg">⬆ 匯出設定檔（.json）</button>
+      <button class="btn small" id="importCfg" data-i18n="importCfg">⬇ 匯入設定檔</button>
+      <p class="hint" data-i18n="backupHint">設定檔包含整張圖的內容（含照片），可以備份，或傳給夥伴在他的電腦匯入。</p>
     </div>
   </details>
 
@@ -639,6 +682,19 @@ const I18N = {
     tCopyFail:'這個瀏覽器不支援複製圖片，請改用「匯出 PNG」',
     tDownloaded:'已下載',
     tExportFail:'匯出元件載入失敗，請確認網路後重新整理頁面',
+    projects:'我的商品存檔', addProj:'＋ 新增商品',
+    projHint:'內容會自動儲存到目前選中的商品，切換前不用手動存檔。',
+    open:'開啟', duplicate:'複製', activeTag:'使用中',
+    defaultProjName:'商品', copySuffix:'（複製）',
+    tProjAdded:'已建立新商品，開始編輯吧',
+    tProjCopied:'已複製一份存檔',
+    tProjDeleted:'已刪除存檔',
+    backup:'備份與分享設定',
+    exportCfg:'⬆ 匯出設定檔（.json）', importCfg:'⬇ 匯入設定檔',
+    backupHint:'設定檔包含整張圖的內容（含照片），可以備份，或傳給夥伴在他的電腦匯入。',
+    tCfgImported:'已匯入設定檔', tCfgBad:'這不是本工具的設定檔',
+    convToCm:'吋 → 公分', convToIn:'公分 → 吋', tConverted:'表格數字已換算',
+    defaultUnitCm:'單位：公分 (cm)',
   },
   th: {
     appTitle:'เครื่องมือทำตารางไซซ์',
@@ -696,6 +752,19 @@ const I18N = {
     tCopyFail:'เบราว์เซอร์นี้ไม่รองรับการคัดลอกรูป ใช้ "ดาวน์โหลด PNG" แทน',
     tDownloaded:'ดาวน์โหลดแล้ว',
     tExportFail:'โหลดตัวส่งออกไม่สำเร็จ ตรวจอินเทอร์เน็ตแล้วรีเฟรชหน้า',
+    projects:'สินค้าที่บันทึกไว้', addProj:'＋ เพิ่มสินค้าใหม่',
+    projHint:'เนื้อหาจะบันทึกอัตโนมัติในสินค้าที่เลือกอยู่ สลับได้โดยไม่ต้องกดบันทึก',
+    open:'เปิด', duplicate:'ทำสำเนา', activeTag:'กำลังใช้',
+    defaultProjName:'สินค้า', copySuffix:' (สำเนา)',
+    tProjAdded:'สร้างสินค้าใหม่แล้ว เริ่มแก้ไขได้เลย',
+    tProjCopied:'ทำสำเนาแล้ว',
+    tProjDeleted:'ลบรายการแล้ว',
+    backup:'สำรอง/แชร์การตั้งค่า',
+    exportCfg:'⬆ ส่งออกไฟล์ตั้งค่า (.json)', importCfg:'⬇ นำเข้าไฟล์ตั้งค่า',
+    backupHint:'ไฟล์ตั้งค่ารวมเนื้อหาทั้งภาพ (รวมรูป) ใช้สำรองหรือส่งให้ทีมนำเข้าในเครื่องของเขาได้',
+    tCfgImported:'นำเข้าไฟล์ตั้งค่าแล้ว', tCfgBad:'ไฟล์นี้ไม่ใช่ไฟล์ตั้งค่าของเครื่องมือนี้',
+    convToCm:'นิ้ว → ซม.', convToIn:'ซม. → นิ้ว', tConverted:'แปลงตัวเลขในตารางแล้ว',
+    defaultUnitCm:'หน่วย: ซม. (cm)',
   }
 };
 /* 測量項目名稱三語對照：切換語言時，沒被使用者改過的標籤會自動翻譯 */
@@ -844,23 +913,80 @@ async function idbGet(key){
   });
 }
 
+function normalizeState(s){
+  s.texts = s.texts || [];
+  s.photoOriginal = s.photoOriginal || null;
+  inferMeasKeys(s);
+}
+
+/* ===== 多商品存檔：每個商品一份完整狀態，meta 清單存名稱/縮圖/時間 ===== */
+let activeProjId = localStorage.getItem('sizechart-active') || null;
+let projMeta = [];
+let initDone = false;
+
+let thumbSrcCache = null, thumbUrlCache = null;
+function makeThumb(){
+  if(!state.photo) return Promise.resolve(null);
+  if(state.photo === thumbSrcCache) return Promise.resolve(thumbUrlCache);
+  const src = state.photo;
+  return new Promise(res=>{
+    const img = new Image();
+    img.onload = ()=>{
+      const s = 80 / Math.max(img.width, img.height);
+      const c = document.createElement('canvas');
+      c.width = Math.max(1, Math.round(img.width * s));
+      c.height = Math.max(1, Math.round(img.height * s));
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      thumbSrcCache = src;
+      thumbUrlCache = c.toDataURL('image/jpeg', 0.7);
+      res(thumbUrlCache);
+    };
+    img.onerror = ()=> res(null);
+    img.src = src;
+  });
+}
+
+function ensureActiveProj(){
+  if(!activeProjId) activeProjId = uid();
+  if(!projMeta.some(p=>p.id === activeProjId)){
+    projMeta.push({id:activeProjId, name:t('defaultProjName') + ' ' + (projMeta.length + 1), updatedAt:Date.now(), tpl:state.template, thumb:null});
+  }
+  localStorage.setItem('sizechart-active', activeProjId);
+}
+
 let saveTimer = null;
 let dirty = false;
+function doSave(){
+  if(!initDone){ saveTimer = setTimeout(doSave, 300); return; }
+  dirty = false;
+  state.savedAt = Date.now();
+  ensureActiveProj();
+  idbSet('proj:' + activeProjId, state).catch(()=>{});
+  makeThumb().then(th=>{
+    const m = projMeta.find(p=>p.id === activeProjId);
+    if(!m) return;
+    m.updatedAt = state.savedAt;
+    m.tpl = state.template;
+    if(th) m.thumb = th;
+    idbSet('projMeta', projMeta).catch(()=>{});
+  });
+  try{
+    const light = Object.assign({}, state, {
+      photo: null,
+      photoOriginal: null,
+      texts: state.texts.filter(x=>x.mode !== 'image'),
+    });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(light));
+  }catch(e){}
+}
 function save(){
   clearTimeout(saveTimer);
   dirty = true;
-  saveTimer = setTimeout(()=>{
-    state.savedAt = Date.now();
-    idbSet('state', state).catch(()=>{});
-    try{
-      const light = Object.assign({}, state, {
-        photo: null,
-        photoOriginal: null,
-        texts: state.texts.filter(x=>x.mode !== 'image'),
-      });
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(light));
-    }catch(e){}
-  }, 400);
+  saveTimer = setTimeout(doSave, 400);
+}
+function flushSave(){
+  clearTimeout(saveTimer);
+  if(dirty) doSave();
 }
 
 /* ================= DOM ================= */
@@ -1183,6 +1309,31 @@ function renderTplBtns(){
   });
 }
 
+function renderProjPanel(){
+  const list = $('#projList');
+  list.innerHTML = '';
+  const TPL_EMOJI = {top:'👕', pants:'👖', skirt:'👗'};
+  projMeta.slice().sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0)).forEach(p=>{
+    const row = document.createElement('div');
+    row.className = 'proj-item' + (p.id === activeProjId ? ' active' : '');
+    const time = new Date(p.updatedAt || Date.now()).toLocaleString(lang === 'th' ? 'th-TH' : 'zh-TW', {month:'numeric', day:'numeric', hour:'2-digit', minute:'2-digit'});
+    row.innerHTML = `
+      ${p.thumb ? `<img src="${p.thumb}" alt="">` : `<div class="proj-thumb-ph">${TPL_EMOJI[p.tpl] || '👕'}</div>`}
+      <div class="proj-mid">
+        <input type="text" value="${escapeHTML(p.name)}" data-proj-name="${p.id}">
+        <span>${time}</span>
+      </div>
+      <div class="proj-btns">
+        ${p.id === activeProjId
+          ? `<span class="proj-active-tag">${t('activeTag')}</span>`
+          : `<button class="btn small" data-proj-open="${p.id}">${t('open')}</button>`}
+        <button class="btn small" data-proj-dup="${p.id}">${t('duplicate')}</button>
+        <button class="del" data-proj-del="${p.id}">✕</button>
+      </div>`;
+    list.appendChild(row);
+  });
+}
+
 function renderAll(){
   applyTheme();
   renderTexts();
@@ -1290,8 +1441,8 @@ function switchChartLanguage(){
       if(Object.values(MEAS_I18N[m.key]).includes(m.label)) m.label = ML(m.key);
     }
   });
-  const unitDefaults = [I18N.zh.defaultUnit, I18N.th.defaultUnit];
-  if(unitDefaults.includes(state.unitHTML)) state.unitHTML = t('defaultUnit');
+  if([I18N.zh.defaultUnit, I18N.th.defaultUnit].includes(state.unitHTML)) state.unitHTML = t('defaultUnit');
+  else if([I18N.zh.defaultUnitCm, I18N.th.defaultUnitCm].includes(state.unitHTML)) state.unitHTML = t('defaultUnitCm');
   const noteDefaults = [I18N.zh.defaultNote, I18N.th.defaultNote];
   if(noteDefaults.includes(state.noteHTML)) state.noteHTML = t('defaultNote');
 }
@@ -1303,6 +1454,7 @@ $('#langBtns').addEventListener('click', e=>{
   switchChartLanguage();
   applyLang();
   renderAll();
+  renderProjPanel();
   save();
 });
 
@@ -1839,6 +1991,142 @@ $('#addSize').addEventListener('click', ()=>{
   renderTable(); renderSizePanel(); save();
 });
 
+// 單位換算：吋 ↔ 公分（只動看得懂的數字，空格與文字略過）
+function convertUnits(factor, unitKey){
+  const snapshot = snap();
+  let changed = false;
+  state.sizes.forEach(s=>{
+    Object.keys(s.values).forEach(k=>{
+      const v = parseFloat(String(s.values[k]).replace(',', '.'));
+      if(!isNaN(v)){ s.values[k] = String(Math.round(v * factor * 10) / 10); changed = true; }
+    });
+  });
+  if(!changed) return;
+  const unitDefaults = [I18N.zh.defaultUnit, I18N.th.defaultUnit, I18N.zh.defaultUnitCm, I18N.th.defaultUnitCm];
+  if(unitDefaults.includes(state.unitHTML)) state.unitHTML = t(unitKey);
+  renderTable(); renderTexts(); save();
+  undoToast(t('tConverted'), snapshot);
+}
+$('#convToCm').addEventListener('click', ()=> convertUnits(2.54, 'defaultUnitCm'));
+$('#convToIn').addEventListener('click', ()=> convertUnits(1/2.54, 'defaultUnit'));
+
+/* ================= 多商品存檔 ================= */
+$('#addProj').addEventListener('click', ()=>{
+  flushSave();
+  activeProjId = uid();
+  projMeta.push({id:activeProjId, name:t('defaultProjName') + ' ' + (projMeta.length + 1), updatedAt:Date.now(), tpl:'top', thumb:null});
+  localStorage.setItem('sizechart-active', activeProjId);
+  state = defaultState();
+  selectedId = null; selectedTextId = null;
+  renderAll(); renderProjPanel();
+  save();
+  toast(t('tProjAdded'));
+});
+
+$('#projList').addEventListener('click', async e=>{
+  const open = e.target.closest('[data-proj-open]');
+  const dup = e.target.closest('[data-proj-dup]');
+  const del = e.target.closest('[data-proj-del]');
+  if(open){
+    flushSave();
+    const id = open.dataset.projOpen;
+    const s = await idbGet('proj:' + id).catch(()=>null);
+    if(!s || !s.measures){ toast(t('tCfgBad')); return; }
+    normalizeState(s);
+    activeProjId = id;
+    localStorage.setItem('sizechart-active', id);
+    state = s;
+    selectedId = null; selectedTextId = null;
+    renderAll(); renderProjPanel();
+  }else if(dup){
+    flushSave();
+    const id = dup.dataset.projDup;
+    const src = id === activeProjId ? snap() : await idbGet('proj:' + id).catch(()=>null);
+    if(!src || !src.measures) return;
+    const m = projMeta.find(p=>p.id === id);
+    const nid = uid();
+    src.savedAt = Date.now();
+    await idbSet('proj:' + nid, src).catch(()=>{});
+    projMeta.push({id:nid, name:(m ? m.name : t('defaultProjName')) + t('copySuffix'), updatedAt:Date.now(), tpl:src.template, thumb:m ? m.thumb : null});
+    idbSet('projMeta', projMeta).catch(()=>{});
+    renderProjPanel();
+    toast(t('tProjCopied'));
+  }else if(del){
+    const id = del.dataset.projDel;
+    const snapshotMeta = JSON.parse(JSON.stringify(projMeta));
+    projMeta = projMeta.filter(p=>p.id !== id);
+    if(id === activeProjId){
+      const next = projMeta.slice().sort((a,b)=>(b.updatedAt||0)-(a.updatedAt||0))[0];
+      if(next){
+        const s = await idbGet('proj:' + next.id).catch(()=>null);
+        if(s && s.measures){ normalizeState(s); state = s; }
+        else state = defaultState();
+        activeProjId = next.id;
+      }else{
+        activeProjId = uid();
+        projMeta.push({id:activeProjId, name:t('defaultProjName') + ' 1', updatedAt:Date.now(), tpl:'top', thumb:null});
+        state = defaultState();
+      }
+      localStorage.setItem('sizechart-active', activeProjId);
+      selectedId = null; selectedTextId = null;
+      renderAll();
+    }
+    idbSet('projMeta', projMeta).catch(()=>{});
+    renderProjPanel();
+    // 只移除清單項目，資料仍在，按復原可完整找回
+    toast(t('tProjDeleted'), t('tUndo'), ()=>{
+      projMeta = snapshotMeta;
+      idbSet('projMeta', projMeta).catch(()=>{});
+      renderProjPanel();
+    }, 6000);
+  }
+});
+
+let projNameTimer = null;
+$('#projList').addEventListener('input', e=>{
+  if(e.target.dataset.projName === undefined) return;
+  const m = projMeta.find(p=>p.id === e.target.dataset.projName);
+  if(!m) return;
+  m.name = e.target.value;
+  clearTimeout(projNameTimer);
+  projNameTimer = setTimeout(()=> idbSet('projMeta', projMeta).catch(()=>{}), 400);
+});
+
+/* ================= 設定檔匯出／匯入 ================= */
+$('#exportCfg').addEventListener('click', ()=>{
+  const data = {app:'sizechart-config', version:1, savedAt:Date.now(), state};
+  const blob = new Blob([JSON.stringify(data)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  const d = new Date();
+  a.download = 'size-chart-' + String(d.getMonth()+1).padStart(2,'0') + String(d.getDate()).padStart(2,'0') + '.json';
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(a.href), 5000);
+});
+$('#importCfg').addEventListener('click', ()=> $('#cfgFileInput').click());
+$('#cfgFileInput').addEventListener('change', e=>{
+  const f = e.target.files[0];
+  e.target.value = '';
+  if(!f) return;
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    try{
+      const data = JSON.parse(reader.result);
+      const s = data && data.app === 'sizechart-config' && data.state;
+      if(!s || !s.measures || !s.sizes) throw new Error('bad config');
+      const snapshot = snap();
+      normalizeState(s);
+      state = s;
+      selectedId = null; selectedTextId = null;
+      renderAll(); save();
+      undoToast(t('tCfgImported'), snapshot);
+    }catch(err){
+      toast(t('tCfgBad'));
+    }
+  };
+  reader.readAsText(f);
+});
+
 // 重設
 $('#resetBtn').addEventListener('click', ()=>{
   const snapshot = snap();
@@ -1919,18 +2207,42 @@ window.addEventListener('resize', fitStage);
 applyLang();
 renderAll();
 fitStage();
-// IndexedDB 裡有更完整的存檔（含照片）就換上，但使用者已開始編輯時不覆蓋
+// 載入商品存檔清單與使用中的商品；舊版單一存檔自動遷移成「商品 1」
 (async ()=>{
   try{
-    const saved = await idbGet('state');
-    if(dirty || !saved || !saved.measures || !saved.sizes) return;
-    if((saved.savedAt || 0) < (state.savedAt || 0)) return;
-    saved.texts = saved.texts || [];
-    saved.photoOriginal = saved.photoOriginal || null;
-    inferMeasKeys(saved);
-    state = saved;
-    renderAll();
+    const loadedMeta = (await idbGet('projMeta').catch(()=>null)) || [];
+    projMeta.forEach(p=>{ if(!loadedMeta.some(x=>x.id === p.id)) loadedMeta.push(p); });
+    projMeta = loadedMeta;
+    let id = localStorage.getItem('sizechart-active');
+    let saved = null;
+    if(id && projMeta.some(p=>p.id === id)){
+      saved = await idbGet('proj:' + id).catch(()=>null);
+    }
+    if(!saved || !saved.measures){
+      const legacy = await idbGet('state').catch(()=>null);
+      if(legacy && legacy.measures && legacy.sizes){
+        id = uid();
+        projMeta.push({id, name:t('defaultProjName') + ' 1', updatedAt:legacy.savedAt || Date.now(), tpl:legacy.template, thumb:null});
+        await idbSet('proj:' + id, legacy).catch(()=>{});
+        saved = legacy;
+      }
+    }
+    if(id){
+      activeProjId = id;
+      localStorage.setItem('sizechart-active', id);
+    }
+    if(saved && saved.measures && !dirty && (saved.savedAt || 0) >= (state.savedAt || 0)){
+      normalizeState(saved);
+      state = saved;
+      renderAll();
+    }
+    ensureActiveProj();
+    idbSet('projMeta', projMeta).catch(()=>{});
+    renderProjPanel();
   }catch(e){}
+  finally{
+    initDone = true;
+  }
 })();
 window._exportPNG = exportPNG; // 供測試用
 </script>
