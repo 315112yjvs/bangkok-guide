@@ -406,7 +406,7 @@
   /* 互動回饋 */
   .meas.selected{color:#2f6fe4}
   #stage.exporting .meas{color:var(--line,#171310)!important}
-  #photoZone.has-photo{cursor:grab}
+  #photoZone.has-photo{cursor:grab;touch-action:none}
   #photoZone.has-photo:active{cursor:grabbing}
   #snapGuide{
     position:absolute;left:50%;top:-2%;bottom:-2%;width:0;
@@ -1306,24 +1306,41 @@ $('#langBtns').addEventListener('click', e=>{
   save();
 });
 
-// 照片
+// 照片（過大的自動縮到 2000px 內，避免存檔與拖曳變慢）
+function loadUserPhoto(file){
+  const reader = new FileReader();
+  reader.onload = ()=>{
+    const img = new Image();
+    img.onload = ()=>{
+      const MAX = 2000;
+      let url = reader.result;
+      if(img.naturalWidth > MAX || img.naturalHeight > MAX){
+        const sc = Math.min(MAX / img.naturalWidth, MAX / img.naturalHeight);
+        const c = document.createElement('canvas');
+        c.width = Math.round(img.naturalWidth * sc);
+        c.height = Math.round(img.naturalHeight * sc);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        url = c.toDataURL(file.type === 'image/png' ? 'image/png' : 'image/jpeg', 0.92);
+      }
+      state.photo = url;
+      state.photoOriginal = null;
+      renderPhoto(); save();
+    };
+    img.src = reader.result;
+  };
+  reader.readAsDataURL(file);
+}
 $('#uploadBtn').addEventListener('click', ()=> $('#fileInput').click());
 placeholderEl.addEventListener('click', ()=> $('#fileInput').click());
 $('#fileInput').addEventListener('change', e=>{
-  const f = e.target.files[0];
-  if(!f) return;
-  const reader = new FileReader();
-  reader.onload = ()=>{ state.photo = reader.result; state.photoOriginal = null; renderPhoto(); save(); };
-  reader.readAsDataURL(f);
+  if(e.target.files[0]) loadUserPhoto(e.target.files[0]);
+  e.target.value = '';
 });
 photoZone.addEventListener('dragover', e=> e.preventDefault());
 photoZone.addEventListener('drop', e=>{
   e.preventDefault();
   const f = e.dataTransfer.files[0];
-  if(!f || !f.type.startsWith('image/')) return;
-  const reader = new FileReader();
-  reader.onload = ()=>{ state.photo = reader.result; state.photoOriginal = null; renderPhoto(); save(); };
-  reader.readAsDataURL(f);
+  if(f && f.type.startsWith('image/')) loadUserPhoto(f);
 });
 
 /* ================= 去背與裁切 ================= */
@@ -1494,28 +1511,46 @@ $('#aiBgBtn').addEventListener('click', aiRemoveBg);
   });
 });
 
-// 照片直接拖曳移動、滾輪縮放
+// 照片直接拖曳移動、手機雙指縮放、滾輪縮放
+const photoPts = new Map();
+let pinchStart = null;
+const clampP = (v,lo,hi)=>Math.min(hi,Math.max(lo,v));
 photoZone.addEventListener('pointerdown', e=>{
   if(!state.photo) return;
   if(e.target.closest('.meas')) return;
   e.preventDefault();
+  try{ photoZone.setPointerCapture(e.pointerId); }catch(err){}
+  photoPts.set(e.pointerId, {x:e.clientX, y:e.clientY, cx:e.clientX, cy:e.clientY, ox:state.photoX, oy:state.photoY});
+  if(photoPts.size === 2){
+    const [a, b] = [...photoPts.values()];
+    pinchStart = {dist: Math.hypot(a.cx-b.cx, a.cy-b.cy), w: state.photoW};
+  }
+});
+photoZone.addEventListener('pointermove', e=>{
+  const p = photoPts.get(e.pointerId);
+  if(!p) return;
+  p.cx = e.clientX; p.cy = e.clientY;
   const rect = photoZone.getBoundingClientRect();
-  const sx = e.clientX, sy = e.clientY;
-  const ox = state.photoX, oy = state.photoY;
-  const clamp = (v,lo,hi)=>Math.min(hi,Math.max(lo,v));
-  function onMove(ev){
-    state.photoX = Math.round(clamp(ox + (ev.clientX - sx)/rect.width*100, -60, 60));
-    state.photoY = Math.round(clamp(oy + (ev.clientY - sy)/rect.height*100, -60, 60));
+  if(photoPts.size === 1){
+    state.photoX = Math.round(clampP(p.ox + (e.clientX - p.x)/rect.width*100, -60, 60));
+    state.photoY = Math.round(clampP(p.oy + (e.clientY - p.y)/rect.height*100, -60, 60));
+    renderPhoto();
+  }else if(photoPts.size === 2 && pinchStart && pinchStart.dist > 0){
+    const [a, b] = [...photoPts.values()];
+    const d = Math.hypot(a.cx-b.cx, a.cy-b.cy);
+    state.photoW = Math.round(clampP(pinchStart.w * d / pinchStart.dist, 10, 200));
     renderPhoto();
   }
-  function onUp(){
-    window.removeEventListener('pointermove', onMove);
-    window.removeEventListener('pointerup', onUp);
-    save();
-  }
-  window.addEventListener('pointermove', onMove);
-  window.addEventListener('pointerup', onUp);
 });
+function endPhotoPt(e){
+  if(!photoPts.delete(e.pointerId)) return;
+  pinchStart = null;
+  // 剩下的指標以目前位置重新當起點，避免跳動
+  photoPts.forEach(p=>{ p.x = p.cx; p.y = p.cy; p.ox = state.photoX; p.oy = state.photoY; });
+  save();
+}
+photoZone.addEventListener('pointerup', endPhotoPt);
+photoZone.addEventListener('pointercancel', endPhotoPt);
 photoZone.addEventListener('wheel', e=>{
   if(!state.photo) return;
   e.preventDefault();
@@ -1752,6 +1787,30 @@ stage.addEventListener('pointerdown', e=>{
   }
 });
 
+// 貼上一律轉純文字，避免外部格式弄亂版面
+document.addEventListener('paste', e=>{
+  const el = e.target.closest && e.target.closest('[contenteditable]');
+  if(!el) return;
+  e.preventDefault();
+  const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+  document.execCommand('insertText', false, text);
+});
+// 單行欄位按 Enter = 完成編輯（標題與備註仍可換行）
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Enter'){
+    const el = e.target.closest && e.target.closest('[contenteditable]');
+    if(el && el.id !== 'chartTitle' && el.id !== 'noteLine'){
+      e.preventDefault();
+      el.blur();
+    }
+  }else if(e.key === 'Escape'){
+    const a = document.activeElement;
+    if(a && (a.isContentEditable || a.tagName === 'INPUT')){ a.blur(); return; }
+    selectMeas(null);
+    selectText(null);
+  }
+});
+
 // 尺寸列
 $('#sizeList').addEventListener('input', e=>{
   if(e.target.dataset.sizeInput !== undefined){
@@ -1825,15 +1884,24 @@ async function exportPNG(returnDataUrl){
   }
 }
 $('#exportBtn').addEventListener('click', ()=> exportPNG(false));
-$('#copyBtn').addEventListener('click', async ()=>{
-  try{
+$('#copyBtn').addEventListener('click', ()=>{
+  // ClipboardItem 直接包 Promise：Safari 要求剪貼簿寫入與點擊同步發生
+  const blobPromise = (async ()=>{
     const url = await exportPNG(true);
-    if(!url) return;
-    const blob = await (await fetch(url)).blob();
-    await navigator.clipboard.write([new ClipboardItem({'image/png': blob})]);
-    toast(t('tCopied'));
+    if(!url) throw new Error('export failed');
+    return (await fetch(url)).blob();
+  })();
+  try{
+    navigator.clipboard.write([new ClipboardItem({'image/png': blobPromise})]).then(
+      ()=> toast(t('tCopied')),
+      ()=> toast(t('tCopyFail'))
+    );
   }catch(err){
-    toast(t('tCopyFail'));
+    // 舊瀏覽器不支援包 Promise，退回等 blob 再寫入
+    blobPromise.then(async blob=>{
+      await navigator.clipboard.write([new ClipboardItem({'image/png': blob})]);
+      toast(t('tCopied'));
+    }).catch(()=> toast(t('tCopyFail')));
   }
 });
 
