@@ -319,6 +319,10 @@
     outline:none;
     cursor:text;
     padding:1px 3px;
+    /* 細白描邊：疊八方向陰影，字壓在照片上也清楚（html2canvas 匯出也吃得到） */
+    text-shadow:
+      -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff,
+      -1px 0 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff;
   }
   .meas.h .meas-label{left:50%;transform:translateX(-50%)}
   .meas.h[data-lp="above"] .meas-label{bottom:100%}
@@ -409,7 +413,11 @@
     touch-action:none;
     padding:2px 5px;
     line-height:1.2;
+    text-shadow:
+      -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff,
+      -1px 0 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff;
   }
+  .txt-img{text-shadow:none}
   .txt-item.selected{box-shadow:0 0 0 1.5px #2f6fe4}
   .txt-item[contenteditable="true"]{cursor:text;user-select:text}
   .txt-tile{
