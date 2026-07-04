@@ -87,6 +87,7 @@ function start(cfg, initialDone = {}) {
   stepDone       = { ...initialDone };
   passportFilled = false;
   passportPhase  = 'type';
+  verifyClickTries = 0;
   refreshPending = false;
   captchaLogged  = false;
   queueNotified  = false;
@@ -273,8 +274,10 @@ function handleConcert() {
     setO('等待開賣...', '#ffcc44');
     if (settings.autoRefresh && !refreshPending) {
       refreshPending = true;
-      log('尚未開賣，1.5 秒後重整', 'warn');
-      setTimeout(() => { refreshPending = false; location.reload(); }, 1500);
+      // 1.5～3 秒隨機間隔，避免固定頻率重整被 rate-limit / Cloudflare 盯上
+      const wait = 1500 + Math.random() * 1500;
+      log(`尚未開賣，${(wait / 1000).toFixed(1)} 秒後重整`, 'warn');
+      setTimeout(() => { refreshPending = false; location.reload(); }, wait);
     }
     return;
   }
@@ -354,13 +357,21 @@ function parsePrice(text) {
 // ════════════════════════════════════════════════════════
 // STEP 2 — verify_condition.php
 // ════════════════════════════════════════════════════════
+let verifyClickTries = 0;
 function handleVerify() {
   if (stepDone.VERIFY) return;
   const cb  = document.querySelector('#rdagree');
   const btn = document.querySelector('button.btn-solid-round5-blue');
   if (!cb||!btn) { setO('等待條款頁...', '#88aaff'); return; }
   if (!cb.checked) {
+    verifyClickTries++;
     humanClick(cb);
+    // 備援：連點兩次都沒勾上（網站可能驗 isTrusted）→ 直接設值再補發事件
+    if (verifyClickTries >= 2 && !cb.checked) {
+      cb.checked = true;
+      cb.dispatchEvent(new Event('input',  { bubbles: true }));
+      cb.dispatchEvent(new Event('change', { bubbles: true }));
+    }
     return;
   }
   stepDone.VERIFY = true;
@@ -717,6 +728,7 @@ let seatClickFails      = 0;   // 點擊失敗累計（≥10 重整頁面）
 let noTableTicks        = 0;   // 座位表遲遲不出現的次數（≥5 視同無座位）
 let seatsSelected       = 0;
 let triedSeatIds        = new Set();
+let plannedGroup        = []; // 多張票的相鄰連座計畫（座位 id 陣列）
 let _triedZones         = [];
 let _currentZonePos     = 'CENTER'; // LEFT | CENTER | RIGHT（由 zones.php 計算並存入 storage）
 
@@ -727,6 +739,7 @@ function resetFixed() {
   noTableTicks   = 0;
   seatsSelected  = 0;
   triedSeatIds   = new Set();
+  plannedGroup   = [];
   _currentZonePos = 'CENTER';
 }
 
@@ -863,6 +876,61 @@ function sortSeats(seats, direction, priorityRows) {
   });
 }
 
+// 多張票時找「同排連續座號」的相鄰空位組（座號連續視為相鄰）。
+// 回傳最佳的 need 連座（前 priorityRows 排優先 → 靠該排中心優先），找不到回 null。
+function findAdjacentRun(seats, need, priorityRows) {
+  const table = document.getElementById('tableseats');
+  if (!table) return null;
+  const getNum = el => {
+    const m = (el.id || '').match(/(\d+)$/);
+    return m ? parseInt(m[1]) : 0;
+  };
+  const availIds = new Set(seats.map(el => el.id));
+  const pRows    = Number.isFinite(priorityRows) ? priorityRows : 5;
+  const runs     = [];
+
+  table.querySelectorAll('tbody tr').forEach((tr, rowIdx) => {
+    const rowSeats = [...tr.querySelectorAll('[id^="checkseat"]')];
+    if (!rowSeats.length) return;
+    // 該排真正中心用「所有座位含售出」計算，run 的置中程度以此為準
+    const nums   = rowSeats.map(getNum).filter(Boolean);
+    const center = nums.length ? (Math.min(...nums) + Math.max(...nums)) / 2 : 0;
+
+    const avail = rowSeats.filter(el => availIds.has(el.id))
+                          .sort((a, b) => getNum(a) - getNum(b));
+    let run = [];
+    const flush = () => {
+      if (run.length >= need) {
+        // 從這段連續空位中取「最靠排中心」的 need 連座
+        let best = null;
+        for (let i = 0; i + need <= run.length; i++) {
+          const slice = run.slice(i, i + need);
+          const mid   = (getNum(slice[0]) + getNum(slice[need - 1])) / 2;
+          const dist  = Math.abs(mid - center);
+          if (!best || dist < best.dist) best = { slice, dist };
+        }
+        runs.push({ seats: best.slice, dist: best.dist, row: rowIdx });
+      }
+      run = [];
+    };
+    avail.forEach(el => {
+      if (run.length && getNum(el) !== getNum(run[run.length - 1]) + 1) flush();
+      run.push(el);
+    });
+    flush();
+  });
+
+  if (!runs.length) return null;
+  runs.sort((a, b) => {
+    const fa = a.row < pRows ? 0 : 1;
+    const fb = b.row < pRows ? 0 : 1;
+    if (fa !== fb) return fa - fb;          // 前排區優先
+    if (a.dist !== b.dist) return a.dist - b.dist; // 靠中心優先
+    return a.row - b.row;                   // 最後比排數
+  });
+  return runs[0].seats;
+}
+
 // 所有 Zone 試完 → 返回 zones page
 async function goBackToZones() {
   const data = await chrome.storage.local.get(['zonesPageUrl','triedZones','currentZone']);
@@ -964,6 +1032,21 @@ function handleFixed() {
     }
     fixedRetry = 0; // 有偵測到座位則重置連續計數
 
+    // 多張票：優先鎖定同排相鄰連座，找不到才退回散座邏輯。
+    // 計畫中的座位若被搶走（不在 available）就剔除並重新規劃。
+    plannedGroup = plannedGroup.filter(id => available.some(el => el.id === id));
+    const need = seatCount - selected.length;
+    if (need >= 2 && plannedGroup.length < need) {
+      const group  = findAdjacentRun(available, need, settings.priorityRows);
+      plannedGroup = group ? group.map(el => el.id) : [];
+      if (plannedGroup.length)
+        log(`鎖定同排 ${need} 連座：${plannedGroup.join(', ')}`, 'info');
+    }
+    if (plannedGroup.length) {
+      const planned = available.filter(el => plannedGroup.includes(el.id));
+      if (planned.length) available = planned;
+    }
+
     // 依排數優先 + 方向排序（自動依 zone 位置決定最佳方向）
     available = sortSeats(available, bestSeatDir(_currentZonePos), settings.priorityRows??5);
 
@@ -977,12 +1060,21 @@ function handleFixed() {
     setO(`點擊座位 ${seatId}（${selected.length+1}/${seatCount}）...`, '#88aaff');
 
     fixedPhase='WAIT_RESULT';
-    setTimeout(()=>{
+    // 輪詢確認結果：每 150ms 檢查一次、最多 1.5 秒。
+    // 開賣時伺服器回應慢，固定短等待會把「其實已搶到」誤判成失敗
+    let resultChecks = 0;
+    const checkSeatResult = ()=>{
+      if (!isRunning) return;
       const seatEl = document.getElementById(seat.id);
       // 成功判斷：座位 class 變為 seatchecked（綠色勾勾）
       // 或對應的 hidden input 已建立
       const success = seatEl?.classList.contains('seatchecked') ||
                       !!document.getElementById(`hid-${seat.id}`);
+
+      if (!success && ++resultChecks < 10) {
+        setTimeout(checkSeatResult, 150);
+        return;
+      }
 
       if (!success) {
         seatClickFails++;
@@ -1010,7 +1102,8 @@ function handleFixed() {
         setO(`✓ ${seatId} 選定 (${seatsSelected}/${seatCount})`, '#4cff91');
       }
       fixedPhase='SELECT';
-    }, 300); // 縮短至 300ms（不需等待提示框出現）
+    };
+    setTimeout(checkSeatResult, 150);
     return;
   }
 
@@ -1039,7 +1132,39 @@ function handleFixed() {
     chrome.storage.local.set({isRunning:false});
     chrome.runtime.sendMessage({type:'STEP',step:'DONE'}).catch(()=>{});
     setTimeout(()=>rmO(), 6000);
+    confirmWatchdog(confirmBtn); // 8 秒後若仍停在座位頁，判斷確認是否失敗
   }
+}
+
+// 確認按鈕的看門狗：正常流程點下確認會跳轉去結帳（content script 隨之結束，
+// 這個 timer 自然消失）。8 秒後還停在 fixed.php 就代表有狀況：
+//   座位 hidden input 還在 → 點擊可能沒生效，補點一次（最多重試 2 次）
+//   座位被清空            → 確認時被別人搶走，透過 storage 自動重啟搶位
+function confirmWatchdog(confirmBtn, attempt = 0) {
+  setTimeout(() => {
+    if (getPage() !== 'FIXED') return; // 已跳轉，正常收工
+    chrome.storage.local.get('currentStep', d => {
+      if (d.currentStep !== 'DONE') return; // 使用者已手動停止或流程已重啟
+      const still = document.querySelectorAll('input[id^="hid-checkseat"]').length;
+      if (still > 0) {
+        if (attempt < 2) {
+          log(`確認後 8 秒仍在座位頁，補點確認按鈕（${attempt + 1}/2）`, 'warn');
+          closeModal();
+          humanClick(confirmBtn);
+          confirmWatchdog(confirmBtn, attempt + 1);
+        } else {
+          notify('⚠️ 確認可能未成功', '已點擊確認但頁面未跳轉，請手動檢查分頁', true);
+          alarm();
+        }
+        return;
+      }
+      // 座位被清空 → 確認失敗；設回 isRunning 讓 onChanged 監聽器重啟整個流程
+      log('確認失敗：座位在送出時被搶走，自動重新搶位', 'warn');
+      notify('⚠️ 確認失敗', '座位在確認時被搶走，已自動重新搶位', true);
+      alarm();
+      chrome.storage.local.set({ isRunning: true, currentStep: 'FIXED' });
+    });
+  }, 8000);
 }
 
 // ── 工具 ──────────────────────────────────────────────────
