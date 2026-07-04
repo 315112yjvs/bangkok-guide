@@ -1,5 +1,7 @@
 // popup.js
 const $ = id => document.getElementById(id);
+// parseInt 空字串會回 NaN，且 NaN ?? fallback 攔不住，統一用這個安全轉換
+const intOr = (v, fb) => { const n = parseInt(v, 10); return Number.isFinite(n) ? n : fb; };
 
 // ── 頁面偵測（根據 URL 判斷步驟）────────────────────────────
 function detectStep(url) {
@@ -50,10 +52,10 @@ async function save() {
     targetTicket:  $('targetTicket').value.trim(),
     targetZone:    $('targetZone').value.trim(),
     zoneKeywords,
-    seatCount:     parseInt($('seatCount').value)  || 1,
-    priorityRows:  parseInt($('priorityRows').value) ?? 5,
+    seatCount:     intOr($('seatCount').value, 1),
+    priorityRows:  intOr($('priorityRows').value, 5),
     autoRefresh:   $('autoRefresh').checked,
-    interval:      parseInt($('intervalInput').value) || 500,
+    interval:      intOr($('intervalInput').value, 500),
     passportId:      $('passportId').value.trim(),
     passportCountry: $('passportCountry').value.trim(),
   });
@@ -83,10 +85,10 @@ function getSettings() {
     targetDate:    $('targetDate').value.trim(),
     targetTicket:  $('targetTicket').value.trim(),
     zoneKeywords:  rawZone ? rawZone.split(/[,，\s]+/).map(s => s.trim()).filter(Boolean) : [],
-    seatCount:     parseInt($('seatCount').value)  || 1,
-    priorityRows:  parseInt($('priorityRows').value) ?? 5,
+    seatCount:     intOr($('seatCount').value, 1),
+    priorityRows:  intOr($('priorityRows').value, 5),
     autoRefresh:   $('autoRefresh').checked,
-    interval:      parseInt($('intervalInput').value) || 500,
+    interval:      intOr($('intervalInput').value, 500),
     passportId:      $('passportId').value.trim(),
     passportCountry: $('passportCountry').value.trim(),
   };

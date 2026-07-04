@@ -650,7 +650,6 @@ function handleZones() {
     } else {
       // 所有 zone 都試過 → 清空重頭輪詢
       activePool = pool;
-      chrome.storage.local.set({ triedZones: [] });
       log('所有 Zone 都嘗試過，重頭輪詢', 'warn');
       setO('所有 Zone 都試過，重頭輪詢...', '#ffcc44');
     }
@@ -673,10 +672,16 @@ function handleZones() {
       }
     }
 
+    // 點擊當下就記入 triedZones：即使網站把我們彈回 zones.php
+    // （區域全滿的常見行為），下一輪也會自動換下一個 Zone，不會卡在同一區
+    const baseTried = untriedPool.length ? (d.triedZones || []) : [];
+    const newTried  = [...baseTried, chosen.name];
+
     stepDone.ZONES = true;
     chrome.storage.local.set({
       zonesPageUrl: location.href,
       currentZone:  chosen.name,   // 儲存原始 name 供 triedZones 追蹤
+      triedZones:   newTried,
       zoneReloadCount: 0,
       zonePosition,
     });
@@ -690,6 +695,14 @@ function handleZones() {
         const dest = `${location.origin}/booking/3m/fixed.php?k=${k}&zone=${chosen.name}&round=${rdId}`;
         location.href = dest;
       }
+      // 保險：點擊後仍停在 zones.php（被 alert 擋下或點擊沒生效）
+      // → 解鎖重跑 handleZones；本區已在 triedZones，會自動改選下一區
+      setTimeout(() => {
+        if (isRunning && getPage() === 'ZONES' && stepDone.ZONES) {
+          log(`Zone ${chosen.display} 點擊後未跳轉，改試下一區`, 'warn');
+          stepDone.ZONES = false;
+        }
+      }, 5000);
     }, 150);
   });
 } // closes handleZones
@@ -701,6 +714,7 @@ function handleZones() {
 let fixedPhase          = 'INIT';
 let fixedRetry          = 0;   // 連續偵測不到座位的次數（≥2 換 zone）
 let seatClickFails      = 0;   // 點擊失敗累計（≥10 重整頁面）
+let noTableTicks        = 0;   // 座位表遲遲不出現的次數（≥5 視同無座位）
 let seatsSelected       = 0;
 let triedSeatIds        = new Set();
 let _triedZones         = [];
@@ -710,6 +724,7 @@ function resetFixed() {
   fixedPhase     = 'INIT';
   fixedRetry     = 0;
   seatClickFails = 0;
+  noTableTicks   = 0;
   seatsSelected  = 0;
   triedSeatIds   = new Set();
   _currentZonePos = 'CENTER';
@@ -806,7 +821,7 @@ function sortSeats(seats, direction, priorityRows) {
   }
 
   const getRow = el => rowOf.get(el.id) ?? 9999;
-  const pRows  = typeof priorityRows === 'number' ? priorityRows : 5;
+  const pRows  = Number.isFinite(priorityRows) ? priorityRows : 5; // 擋掉 NaN/null，避免前排判斷失效
 
   // 計算每個座位的優先分組 (0=最佳) 與精確距離
   const score = el => {
@@ -895,7 +910,18 @@ function handleFixed() {
     }
 
     const table = document.getElementById('tableseats');
-    if (!table) { setO('等待座位圖...', '#88aaff'); return; }
+    if (!table) {
+      // 座位表遲遲不出現多半是 Zone 全滿頁，不能無限等 → 視同無座位處理
+      noTableTicks++;
+      if (noTableTicks >= 5) {
+        noTableTicks = 0;
+        reloadOrSwitchZone('座位表未出現');
+      } else {
+        setO(`等待座位圖...(${noTableTicks}/5)`, '#88aaff');
+      }
+      return;
+    }
+    noTableTicks = 0;
 
     // 可用座位（未試過 + 確認可點擊）
     let available = Array.from(table.querySelectorAll('.seatuncheck'))
