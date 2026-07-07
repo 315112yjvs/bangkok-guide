@@ -25,9 +25,9 @@ async function init() {
   updatePageHint();
 }
 
-// 場次名可能含空格（如 CHIANG MAI），只用逗號切；Zone 名無空格，逗號或空白皆可切
-const splitShows = raw => raw ? raw.split(/[,，]+/).map(s => s.trim()).filter(Boolean) : [];
-const splitZones = raw => raw ? raw.split(/[,，\s]+/).map(s => s.trim()).filter(Boolean) : [];
+// 場次名可能含空格（如 CHIANG MAI），只用逗號/頓號切；Zone 名無空格，空白也可切
+const splitShows = raw => raw ? raw.split(/[,，、]+/).map(s => s.trim()).filter(Boolean) : [];
+const splitZones = raw => raw ? raw.split(/[,，、\s]+/).map(s => s.trim()).filter(Boolean) : [];
 
 async function save() {
   await chrome.storage.local.set({

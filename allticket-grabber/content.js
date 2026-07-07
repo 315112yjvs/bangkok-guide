@@ -156,9 +156,25 @@ function goCheck(el, label) {
   humanClick(el);
 }
 
+// 找 CHECK SEAT AVAILABLE 按鈕：先比對文字（最準），再退回 class
+function findCheckBtn() {
+  return [...document.querySelectorAll('button')].find(b => /CHECK\s*SEAT/i.test(b.textContent)) ||
+         document.querySelector('button.btn-outline-info');
+}
+
 function handleBuy() {
+  // 登入頁/排隊頁：只等待，絕不自動重整（會打斷輸入或掉排隊位置）
+  if (/login|signin|register/i.test(location.href)) {
+    setO('請先登入 AllTicket 帳號！（此頁不自動重整）', '#ff8844');
+    return;
+  }
+  if (/queue|waiting/i.test(location.href)) {
+    setO('排隊中，等待進入購票頁...（不自動重整）', '#ffcc44');
+    return;
+  }
+
   // Zone 面板已出現 → 直接進 CHECK（點過 BUY 導頁後重啟也走這裡）
-  if (document.querySelector('button.btn-outline-info, .seat-ava')) {
+  if (document.querySelector('.seat-ava') || findCheckBtn()) {
     setPhase('CHECK');
     return;
   }
@@ -178,17 +194,24 @@ function handleBuy() {
 
     if (kws.length) {
       // 依關鍵字順序找場次（比對整列文字：城市名/日期都可）
+      // 收集所有符合的場次，取第一個「可買」的；前面的售罄自動退到下一個關鍵字
+      const matched = [];
       for (const kw of kws) {
-        target = rows.find(r => r.text.includes(kw));
-        if (target) break;
+        const r = rows.find(r => r.text.includes(kw));
+        if (r && !matched.includes(r)) matched.push(r);
       }
-      if (!target) {
+      if (!matched.length) {
         setO(`找不到場次 [${kws.join('/')}]，等待...`, '#ffcc44');
         maybeRefresh();
         return;
       }
-      if (target.sold)  { setO('目標場次已售罄！', '#ff4444'); return; }
-      if (!target.open) { setO('目標場次尚未開賣，等待...', '#ffcc44'); maybeRefresh(); return; }
+      target = matched.find(r => r.open);
+      if (!target) {
+        if (matched.every(r => r.sold)) { setO('目標場次全部售罄！', '#ff4444'); return; }
+        setO('目標場次尚未開賣，等待...', '#ffcc44');
+        maybeRefresh();
+        return;
+      }
     } else {
       // 未指定場次：取第一個可買的，優先跳過 Live Streaming 列
       target = rows.find(r => r.open && !r.text.includes('STREAMING')) ||
@@ -241,8 +264,7 @@ function handleCheck() {
   const yesBtn = document.querySelector('button.btn-primary.popup-styled');
   if (yesBtn && isVisible(yesBtn)) { humanClick(yesBtn); return; }
 
-  const checkBtn = document.querySelector('button.btn-outline-info') ||
-    [...document.querySelectorAll('button')].find(b => b.textContent.includes('CHECK SEAT AVAILABLE'));
+  const checkBtn = findCheckBtn();
   if (!checkBtn) {
     // BUY 點擊可能沒生效（頁面沒切換），連續 10 次找不到面板就退回 BUY 重試
     checkStall++;
@@ -255,13 +277,21 @@ function handleCheck() {
     setO('等待 Zone 面板...', '#88aaff');
     return;
   }
-  checkStall = 0;
   if (!checkClicked) {
     checkClicked = true;
+    checkStall   = 0;
     setO('查詢各 Zone 座位數...', '#88aaff');
     log('點擊 CHECK SEAT AVAILABLE', 'info');
     humanClick(checkBtn);
   } else {
+    // 點過但座位資料一直沒出來 → 15 次後重點一次（自癒）
+    checkStall++;
+    if (checkStall >= 15) {
+      checkClicked = false;
+      checkStall   = 0;
+      log('座位資料逾時，重點 CHECK', 'warn');
+      return;
+    }
     setO('等待座位資料...', '#88aaff');
   }
 }
@@ -301,7 +331,7 @@ function handleZone() {
 
   const zoneName = chosen.textContent.trim();
   currentZone = zoneName;
-  setO(`點擊 Zone: ${zoneName}（票價最高可用）`, '#4cff91');
+  setO(`點擊 Zone: ${zoneName}`, '#4cff91');
   log(`選擇 Zone: ${zoneName}`, 'success');
   chrome.storage.local.set({ currentZone: zoneName });
   chrome.runtime.sendMessage({ type: 'STEP', step: 'ZONE', zone: zoneName }).catch(() => {});
