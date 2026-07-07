@@ -1,11 +1,12 @@
-// content.js — AllTicket 搶票核心 v1.4
-// 流程: BUY → CHECK → ZONE → SEAT（連座優先）→ BOOK（勾選+Booking）→ DONE
-// 優化: 連座搜尋 / 防重複點擊 / 隱藏 Tab 節能 / 開賣倒計時
+// content.js — AllTicket 搶票核心 v2.0（通用版）
+// 流程: BUY（含多場次列表）→ CHECK → ZONE → SEAT（連座優先）→ BOOK（勾選+Booking）→ DONE
+// 優化: 場次關鍵字 / 連座搜尋 / 防重複點擊 / 隱藏 Tab 節能 / 開賣倒計時
 
-// 場館視角配置（依活動座位圖調整）— 目前: Thunder Dome / ROOM NO. FREEN 2026-08-08
-// 右側區 → 取最左側座位（靠中央）；中央區 → 取正中；其餘視為左側區 → 取最右
-const RIGHT_ZONES  = new Set(['A3','B2','B4','B7','C3','F','G','H','I']);
-const CENTER_ZONES = new Set(['A2','B6','C2','E']);
+// 場館視角配置（可依活動座位圖調整）— 目前: Thunder Dome / ROOM NO. FREEN 2026-08-08
+// 右側區 → 取該排最左座位（靠中央）；左側區 → 取最右；
+// 中央區與「不在清單內的 Zone」（其他場館）→ 取該排正中，通用最佳視角
+const RIGHT_ZONES = new Set(['A3','B2','B4','B7','C3','F','G','H','I']);
+const LEFT_ZONES  = new Set(['A1','B1','B3','B5','C1','D']);
 
 let tickerTimeout = null;
 let isRunning     = false;
@@ -104,20 +105,23 @@ chrome.runtime.onMessage.addListener((msg, _, res) => {
   if (msg.action === 'STATUS') res({ phase, tickCount, seatsSelected });
 });
 
-chrome.storage.local.get(['isRunning','zoneKeywords','seatCount','interval','autoRefresh'], d => {
-  if (d.isRunning) start({
-    zoneKeywords: d.zoneKeywords || [],
-    seatCount:    d.seatCount    || 1,
-    interval:     d.interval     || 400,
-    autoRefresh:  d.autoRefresh  || false,
-  });
+const SETTING_KEYS = ['showKeywords','zoneKeywords','seatCount','interval','autoRefresh'];
+const toCfg = d => ({
+  showKeywords: d.showKeywords || [],
+  zoneKeywords: d.zoneKeywords || [],
+  seatCount:    d.seatCount    || 1,
+  interval:     d.interval     || 400,
+  autoRefresh:  d.autoRefresh  || false,
+});
+
+chrome.storage.local.get(['isRunning', ...SETTING_KEYS], d => {
+  if (d.isRunning) start(toCfg(d));
 });
 
 chrome.storage.onChanged.addListener((changes, area) => {
   if (area !== 'local') return;
   if (changes.isRunning?.newValue === true  && !isRunning)
-    chrome.storage.local.get(['zoneKeywords','seatCount','interval','autoRefresh'], d =>
-      start({ zoneKeywords: d.zoneKeywords||[], seatCount: d.seatCount||1, interval: d.interval||400, autoRefresh: d.autoRefresh||false }));
+    chrome.storage.local.get(SETTING_KEYS, d => start(toCfg(d)));
   if (changes.isRunning?.newValue === false && isRunning) stop();
 });
 
@@ -139,13 +143,73 @@ function tick() {
 // ════════════════════════════════════════════════════════
 // STEP 1 — 點擊 BUY NOW
 // ════════════════════════════════════════════════════════
+function maybeRefresh() {
+  if (settings?.autoRefresh && tickCount % 15 === 0) location.reload();
+}
+
+function goCheck(el, label) {
+  setO(`點擊 ${label}！`, '#4cff91');
+  log(`點擊 ${label}`, 'success');
+  setPhase('CHECK');
+  checkClicked = false;
+  checkStall   = 0;
+  humanClick(el);
+}
+
 function handleBuy() {
+  // Zone 面板已出現 → 直接進 CHECK（點過 BUY 導頁後重啟也走這裡）
+  if (document.querySelector('button.btn-outline-info, .seat-ava')) {
+    setPhase('CHECK');
+    return;
+  }
+
+  // ── 多場次列表（巡演/多天場）：每場一列，右側 img 狀態圖 ──
+  // rfPerform / evopen = 可購買，evclose = 未開賣，evsoldout = 售罄
+  const rows = [...document.querySelectorAll('img[id^="RF_"]')].map(img => ({
+    img,
+    open: img.classList.contains('rfPerform') || (img.src || '').includes('evopen'),
+    sold: (img.src || '').includes('soldout'),
+    text: ((img.closest('table') || img.closest('tr') || img.parentElement)?.innerText || '').toUpperCase(),
+  }));
+
+  if (rows.length) {
+    const kws = (settings?.showKeywords || []).map(k => k.toUpperCase().trim()).filter(Boolean);
+    let target = null;
+
+    if (kws.length) {
+      // 依關鍵字順序找場次（比對整列文字：城市名/日期都可）
+      for (const kw of kws) {
+        target = rows.find(r => r.text.includes(kw));
+        if (target) break;
+      }
+      if (!target) {
+        setO(`找不到場次 [${kws.join('/')}]，等待...`, '#ffcc44');
+        maybeRefresh();
+        return;
+      }
+      if (target.sold)  { setO('目標場次已售罄！', '#ff4444'); return; }
+      if (!target.open) { setO('目標場次尚未開賣，等待...', '#ffcc44'); maybeRefresh(); return; }
+    } else {
+      // 未指定場次：取第一個可買的，優先跳過 Live Streaming 列
+      target = rows.find(r => r.open && !r.text.includes('STREAMING')) ||
+               rows.find(r => r.open);
+      if (!target) {
+        if (rows.every(r => r.sold)) setO('所有場次已售罄！', '#ff4444');
+        else { setO('尚未開賣，等待...', '#ffcc44'); maybeRefresh(); }
+        return;
+      }
+    }
+    goCheck(target.img, `場次 BUY（${target.text.split('\n')[0].slice(0, 30)}）`);
+    return;
+  }
+
+  // ── 單一 BUY 按鈕頁（fallback）──
   const buyBtn = document.getElementById('butBuy') ||
                  document.querySelector('button.btn-atk-primary');
 
   if (!buyBtn) {
     setO('等待頁面載入...', '#88aaff');
-    if (settings?.autoRefresh && tickCount % 15 === 0) location.reload();
+    maybeRefresh();
     return;
   }
   if (!isVisible(buyBtn) || buyBtn.disabled) {
@@ -156,21 +220,11 @@ function handleBuy() {
     } else {
       setO('BUY NOW 尚未開放...', '#ffcc44');
     }
-    if (settings?.autoRefresh && tickCount % 15 === 0) location.reload();
-    return;
-  }
-  // Zone 面板已出現 → 直接進 CHECK
-  if (document.querySelector('button.btn-outline-info, .seat-ava')) {
-    setPhase('CHECK');
+    maybeRefresh();
     return;
   }
 
-  setO('點擊 BUY NOW！', '#4cff91');
-  log('點擊 BUY NOW', 'success');
-  setPhase('CHECK');
-  checkClicked = false;
-  checkStall   = 0;
-  humanClick(buyBtn);
+  goCheck(buyBtn, 'BUY NOW');
 }
 
 // ════════════════════════════════════════════════════════
@@ -436,16 +490,17 @@ function findConsecutiveGroup(seats, count, zone) {
 
     // 依視角選最佳連座組
     let best;
-    if (CENTER_ZONES.has(z)) {
+    if (RIGHT_ZONES.has(z)) {
+      best = groups.sort((a, b) => a[0].x - b[0].x)[0]; // 最靠左（靠舞台中心）
+    } else if (LEFT_ZONES.has(z)) {
+      best = groups.sort((a, b) => b[b.length - 1].x - a[a.length - 1].x)[0]; // 最靠右
+    } else {
+      // 中央區與未知場館 → 最接近該排正中
       best = groups.sort((a, b) => {
         const ac = (a[0].x + a[a.length - 1].x) / 2;
         const bc = (b[0].x + b[b.length - 1].x) / 2;
         return Math.abs(ac - midX) - Math.abs(bc - midX);
       })[0];
-    } else if (RIGHT_ZONES.has(z)) {
-      best = groups.sort((a, b) => a[0].x - b[0].x)[0]; // 最靠左（靠舞台中心）
-    } else {
-      best = groups.sort((a, b) => b[b.length - 1].x - a[a.length - 1].x)[0]; // 最靠右
     }
     return best.map(s => s.el);
   }
@@ -541,9 +596,9 @@ function sortSeats(seats, zone) {
   withPos.sort((a, b) => {
     const yDiff = a.y - b.y;
     if (Math.abs(yDiff) > 8) return yDiff;
-    if (CENTER_ZONES.has(z)) return Math.abs(a.x - midX) - Math.abs(b.x - midX);
-    else if (RIGHT_ZONES.has(z)) return a.x - b.x;
-    else return b.x - a.x;
+    if (RIGHT_ZONES.has(z)) return a.x - b.x;
+    if (LEFT_ZONES.has(z))  return b.x - a.x;
+    return Math.abs(a.x - midX) - Math.abs(b.x - midX); // 中央區與未知場館取正中
   });
 
   return withPos.map(s => s.el);

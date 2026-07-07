@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "AllTicket 搶票助手",
-  "version": "1.0.0",
-  "description": "allticket.com 專用自動搶票 — 自動選 Zone、選座、確認",
+  "version": "2.0.0",
+  "description": "allticket.com 通用自動搶票 — 多場次選擇、自動選 Zone、選座、確認",
   "permissions": [
     "activeTab",
     "storage",

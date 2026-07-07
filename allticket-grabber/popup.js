@@ -13,9 +13,10 @@ const STEP_LABEL = {
 
 async function init() {
   const d = await chrome.storage.local.get([
-    'zoneKeywords', 'seatCount', 'autoRefresh', 'interval',
+    'showKeywords', 'zoneKeywords', 'seatCount', 'autoRefresh', 'interval',
     'isRunning', 'seatsSelected', 'currentStep'
   ]);
+  if (d.showKeywords?.length) $('showKeywords').value = d.showKeywords.join(', ');
   if (d.zoneKeywords?.length) $('zoneKeywords').value = d.zoneKeywords.join(', ');
   if (d.seatCount)   $('seatCount').value    = d.seatCount;
   if (d.autoRefresh) $('autoRefresh').checked = d.autoRefresh;
@@ -24,18 +25,21 @@ async function init() {
   updatePageHint();
 }
 
+// 場次名可能含空格（如 CHIANG MAI），只用逗號切；Zone 名無空格，逗號或空白皆可切
+const splitShows = raw => raw ? raw.split(/[,，]+/).map(s => s.trim()).filter(Boolean) : [];
+const splitZones = raw => raw ? raw.split(/[,，\s]+/).map(s => s.trim()).filter(Boolean) : [];
+
 async function save() {
-  const raw = $('zoneKeywords').value.trim();
-  const kws = raw ? raw.split(/[,，\s]+/).map(s => s.trim()).filter(Boolean) : [];
   await chrome.storage.local.set({
-    zoneKeywords: kws,
+    showKeywords: splitShows($('showKeywords').value.trim()),
+    zoneKeywords: splitZones($('zoneKeywords').value.trim()),
     seatCount:    parseInt($('seatCount').value)   || 1,
     autoRefresh:  $('autoRefresh').checked,
     interval:     parseInt($('intervalInput').value) || 400,
   });
 }
 
-['zoneKeywords','seatCount','autoRefresh','intervalInput'].forEach(id => {
+['showKeywords','zoneKeywords','seatCount','autoRefresh','intervalInput'].forEach(id => {
   const el = $(id);
   if (!el) return;
   el.addEventListener('input',  () => save());
@@ -59,10 +63,11 @@ $('startBtn').addEventListener('click', async () => {
     return;
   }
 
-  const d = await chrome.storage.local.get(['zoneKeywords','seatCount','autoRefresh','interval']);
+  const d = await chrome.storage.local.get(['showKeywords','zoneKeywords','seatCount','autoRefresh','interval']);
   await chrome.storage.local.set({ isRunning: true, seatsSelected: 0, currentStep: 'BUY' });
 
   const settings = {
+    showKeywords: d.showKeywords || [],
     zoneKeywords: d.zoneKeywords || [],
     seatCount:    d.seatCount    || 1,
     autoRefresh:  d.autoRefresh  || false,

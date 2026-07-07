@@ -202,11 +202,19 @@
   <div class="card-title">搶票條件</div>
   <div class="field">
     <div class="field-label">
-      Zone 關鍵字
-      <span class="field-hint">逗號分隔，留空＝自動選票價最高</span>
+      場次關鍵字
+      <span class="field-hint">多場次巡演用，留空＝第一個可買場次</span>
     </div>
-    <input type="text" id="zoneKeywords" placeholder="如：A1, B1（留空自動選票價最高可用 Zone）">
-    <div class="zone-hint">FREEN 場票價：A1/A2/A3 7500 &gt; B1~B7 5500 &gt; C1~C3 4500 &gt; 側看台 A/B/C/G/H/I 3500~4500 &gt; D/E/F 2500</div>
+    <input type="text" id="showKeywords" placeholder="如：PHUKET 或 CHIANG MAI（比對場次列文字）">
+    <div class="zone-hint">單一場次活動可留空。留空時自動跳過 Live Streaming 列</div>
+  </div>
+  <div class="field">
+    <div class="field-label">
+      Zone 關鍵字
+      <span class="field-hint">依填寫順序優先，留空＝第一個有位 Zone</span>
+    </div>
+    <input type="text" id="zoneKeywords" placeholder="如：A2, A1, A3（依順序優先搶）">
+    <div class="zone-hint">填完整 Zone 名（如 A1 不要只填 A）。未知場館選座自動取每排正中</div>
   </div>
   <div class="field">
     <div class="field-label">
