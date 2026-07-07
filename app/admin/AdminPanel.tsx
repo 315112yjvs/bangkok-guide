@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
+import { photoUrl } from '@/lib/photo'
 import type { Location, PendingLocation, Category, Source, LocationTag } from '@/lib/types'
 
 type Tab = 'pending' | 'approved' | 'add'
@@ -468,6 +469,104 @@ function PendingCard({
   )
 }
 
+// ---- PHOTO MANAGER ----
+// 地點照片管理：拖拉縮圖排序（第一張 = 封面）、刪除、貼網址新增
+function PhotoManager({ photos, onChange }: { photos: string[]; onChange: (photos: string[]) => void }) {
+  const [dragIdx, setDragIdx] = useState<number | null>(null)
+  const [newUrl, setNewUrl] = useState('')
+
+  function move(from: number, to: number) {
+    if (to < 0 || to >= photos.length) return
+    const next = [...photos]
+    const [item] = next.splice(from, 1)
+    next.splice(to, 0, item)
+    onChange(next)
+  }
+
+  function addPhoto() {
+    const url = newUrl.trim()
+    if (!url) return
+    if (!/^https?:\/\//.test(url) && !url.startsWith('places/')) {
+      alert('請貼完整圖片網址（https://...）或 Google Places 照片 ref（places/...）')
+      return
+    }
+    onChange([...photos, url])
+    setNewUrl('')
+  }
+
+  return (
+    <div className="col-span-2">
+      <p className="text-[10px] font-semibold text-gray-500 mb-1">
+        照片（拖拉調整順序，第一張是封面）
+      </p>
+      <div className="flex flex-wrap gap-2 mb-2">
+        {photos.map((url, i) => (
+          <div
+            key={`${url}-${i}`}
+            draggable
+            onDragStart={(e) => { setDragIdx(i); e.dataTransfer.effectAllowed = 'move' }}
+            onDragOver={(e) => {
+              e.preventDefault()
+              if (dragIdx === null || dragIdx === i) return
+              move(dragIdx, i)
+              setDragIdx(i)
+            }}
+            onDragEnd={() => setDragIdx(null)}
+            className={`relative w-24 h-24 rounded-xl overflow-hidden border-2 cursor-grab active:cursor-grabbing group/photo ${
+              dragIdx === i ? 'opacity-40 border-indigo-400' : i === 0 ? 'border-amber-400' : 'border-transparent'
+            }`}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={photoUrl(url, 200)} alt="" className="w-full h-full object-cover pointer-events-none" />
+            {i === 0 && (
+              <span className="absolute bottom-0 inset-x-0 bg-amber-400/90 text-amber-900 text-[9px] font-black text-center py-0.5">封面</span>
+            )}
+            <button
+              type="button"
+              title="刪除這張"
+              onClick={() => { if (confirm('確定刪除這張照片？')) onChange(photos.filter((_, j) => j !== i)) }}
+              className="absolute top-1 right-1 w-5 h-5 rounded-full bg-black/60 text-white text-[10px] font-bold leading-none opacity-0 group-hover/photo:opacity-100 transition-opacity"
+            >
+              ✕
+            </button>
+            {/* 拖不動時的備援：左右移動鈕 */}
+            <div className="absolute top-1 left-1 flex gap-0.5 opacity-0 group-hover/photo:opacity-100 transition-opacity">
+              {i > 0 && (
+                <button type="button" title="往前移" onClick={() => move(i, i - 1)}
+                  className="w-5 h-5 rounded-full bg-black/60 text-white text-[10px] font-bold leading-none">◀</button>
+              )}
+              {i < photos.length - 1 && (
+                <button type="button" title="往後移" onClick={() => move(i, i + 1)}
+                  className="w-5 h-5 rounded-full bg-black/60 text-white text-[10px] font-bold leading-none">▶</button>
+              )}
+            </div>
+          </div>
+        ))}
+        {photos.length === 0 && (
+          <p className="text-[11px] text-gray-400 py-3">目前沒有照片，貼網址新增第一張</p>
+        )}
+      </div>
+      <div className="flex gap-2">
+        <input
+          className="flex-1 border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs outline-none focus:border-indigo-400"
+          placeholder="貼圖片網址（https://...）或 places/... ref，按「加入」"
+          value={newUrl}
+          onChange={(e) => setNewUrl(e.target.value)}
+          onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addPhoto() } }}
+        />
+        <button
+          type="button"
+          onClick={addPhoto}
+          disabled={!newUrl.trim()}
+          className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 disabled:opacity-40 transition-colors"
+        >
+          加入
+        </button>
+      </div>
+    </div>
+  )
+}
+
 // ---- APPROVED CARD ----
 function ApprovedCard({ item, onRemove, onUpdate }: {
   item: Location
@@ -491,10 +590,11 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
     source: item.source,
     source_url: item.source_url,
     social_embed_url: item.social_embed_url ?? '',
+    photos: item.photos ?? [],
   })
   const [saving, setSaving] = useState(false)
 
-  const raw = item.photos[0] ?? ''
+  const raw = form.photos[0] ?? ''
   const photo = raw.startsWith('places/')
     ? `https://places.googleapis.com/v1/${raw}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
     : raw || 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=220&h=120&fit=crop'
@@ -578,6 +678,7 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">Hashtags（逗號分隔）</p><input className={inp} value={form.hashtags} onChange={e => setForm(f => ({...f, hashtags: e.target.value}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">在地客 %</p><input type="number" min="0" max="100" className={inp} value={form.local_ratio} onChange={e => setForm(f => ({...f, local_ratio: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">社群貼文 URL（TikTok / Instagram）</p><input className={inp} value={form.social_embed_url} onChange={e => setForm(f => ({...f, social_embed_url: e.target.value}))} placeholder="https://www.tiktok.com/@.../video/... 或 https://www.instagram.com/p/..." /></div>
+            <PhotoManager photos={form.photos} onChange={(photos) => setForm(f => ({ ...f, photos }))} />
           </div>
           <div className="flex gap-2 pt-1">
             <button onClick={save} disabled={saving} className="flex-1 bg-[#0f172a] text-white text-xs font-bold rounded-xl py-2 disabled:opacity-50">
