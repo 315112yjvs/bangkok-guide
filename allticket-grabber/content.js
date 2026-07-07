@@ -2,6 +2,11 @@
 // 流程: BUY → CHECK → ZONE → SEAT（連座優先）→ BOOK（勾選+Booking）→ DONE
 // 優化: 連座搜尋 / 防重複點擊 / 隱藏 Tab 節能 / 開賣倒計時
 
+// 場館視角配置（依活動座位圖調整）— 目前: Thunder Dome / ROOM NO. FREEN 2026-08-08
+// 右側區 → 取最左側座位（靠中央）；中央區 → 取正中；其餘視為左側區 → 取最右
+const RIGHT_ZONES  = new Set(['A3','B2','B4','B7','C3','F','G','H','I']);
+const CENTER_ZONES = new Set(['A2','B6','C2','E']);
+
 let tickerTimeout = null;
 let isRunning     = false;
 let settings      = null;
@@ -401,8 +406,6 @@ function findConsecutiveGroup(seats, count, zone) {
   rows.sort((a, b) => a.y - b.y); // 前排優先
 
   const z = (zone || '').toUpperCase().trim();
-  const RIGHT_ZONES  = new Set(['A2','B2','G','H','I']);
-  const CENTER_ZONES = new Set(['D','E','F']);
   const allX = seats
     .map(s => { const r = s.getBoundingClientRect(); return r.left + r.width / 2; })
     .filter(x => x > 0);
@@ -524,8 +527,6 @@ function handleBook() {
 // ── 座位排序（前排 + 最佳視角）──────────────────────────
 function sortSeats(seats, zone) {
   const z = (zone || '').toUpperCase().trim();
-  const RIGHT_ZONES  = new Set(['A2','B2','G','H','I']);
-  const CENTER_ZONES = new Set(['D','E','F']);
 
   const withPos = seats.map(s => {
     const r = s.getBoundingClientRect();
