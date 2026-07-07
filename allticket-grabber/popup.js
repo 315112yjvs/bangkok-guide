@@ -13,7 +13,7 @@ const STEP_LABEL = {
 
 async function init() {
   const d = await chrome.storage.local.get([
-    'showKeywords', 'zoneKeywords', 'seatCount', 'autoRefresh', 'interval',
+    'showKeywords', 'zoneKeywords', 'seatCount', 'autoRefresh', 'interval', 'saleTime',
     'isRunning', 'seatsSelected', 'currentStep'
   ]);
   if (d.showKeywords?.length) $('showKeywords').value = d.showKeywords.join(', ');
@@ -21,6 +21,7 @@ async function init() {
   if (d.seatCount)   $('seatCount').value    = d.seatCount;
   if (d.autoRefresh) $('autoRefresh').checked = d.autoRefresh;
   if (d.interval)    $('intervalInput').value = d.interval;
+  if (d.saleTime)    $('saleTime').value      = d.saleTime;
   updateUI(d.isRunning || false, d.seatsSelected || 0, d.currentStep || '');
   updatePageHint();
 }
@@ -36,10 +37,11 @@ async function save() {
     seatCount:    parseInt($('seatCount').value)   || 1,
     autoRefresh:  $('autoRefresh').checked,
     interval:     parseInt($('intervalInput').value) || 400,
+    saleTime:     $('saleTime').value || '',
   });
 }
 
-['showKeywords','zoneKeywords','seatCount','autoRefresh','intervalInput'].forEach(id => {
+['showKeywords','zoneKeywords','seatCount','autoRefresh','intervalInput','saleTime'].forEach(id => {
   const el = $(id);
   if (!el) return;
   el.addEventListener('input',  () => save());
@@ -63,7 +65,7 @@ $('startBtn').addEventListener('click', async () => {
     return;
   }
 
-  const d = await chrome.storage.local.get(['showKeywords','zoneKeywords','seatCount','autoRefresh','interval']);
+  const d = await chrome.storage.local.get(['showKeywords','zoneKeywords','seatCount','autoRefresh','interval','saleTime']);
   await chrome.storage.local.set({ isRunning: true, seatsSelected: 0, currentStep: 'BUY' });
 
   const settings = {
@@ -72,6 +74,7 @@ $('startBtn').addEventListener('click', async () => {
     seatCount:    d.seatCount    || 1,
     autoRefresh:  d.autoRefresh  || false,
     interval:     d.interval     || 400,
+    saleTime:     d.saleTime     || '',
   };
 
   try {

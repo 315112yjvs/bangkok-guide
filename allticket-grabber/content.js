@@ -19,6 +19,9 @@ let seatsSelected = 0;
 let checkClicked  = false;
 let currentZone   = '';
 let seatQueue     = []; // 連座隊列：找到一組連座後依序點擊
+let zoneStall     = 0;  // ZONE 等待計數：逾時重新查詢座位數
+let triedZones    = new Set(); // 點過的 Zone 名，輪替避免卡同一區
+let loginAlerted  = false;
 
 // ── Overlay ──────────────────────────────────────────────
 function createOverlay() {
@@ -66,6 +69,9 @@ function start(cfg) {
   seatPhase     = 'PICKING';
   checkStall    = 0;
   bookAttempts  = 0;
+  zoneStall     = 0;
+  triedZones    = new Set();
+  loginAlerted  = false;
   setPhase('BUY');
   createOverlay();
   setO('啟動，尋找 BUY NOW...', '#88aaff');
@@ -105,13 +111,14 @@ chrome.runtime.onMessage.addListener((msg, _, res) => {
   if (msg.action === 'STATUS') res({ phase, tickCount, seatsSelected });
 });
 
-const SETTING_KEYS = ['showKeywords','zoneKeywords','seatCount','interval','autoRefresh'];
+const SETTING_KEYS = ['showKeywords','zoneKeywords','seatCount','interval','autoRefresh','saleTime'];
 const toCfg = d => ({
   showKeywords: d.showKeywords || [],
   zoneKeywords: d.zoneKeywords || [],
   seatCount:    d.seatCount    || 1,
   interval:     d.interval     || 400,
   autoRefresh:  d.autoRefresh  || false,
+  saleTime:     d.saleTime     || '',
 });
 
 chrome.storage.local.get(['isRunning', ...SETTING_KEYS], d => {
@@ -143,8 +150,53 @@ function tick() {
 // ════════════════════════════════════════════════════════
 // STEP 1 — 點擊 BUY NOW
 // ════════════════════════════════════════════════════════
+// 距開賣剩餘秒數；未設定或已過開賣超過 1 小時回傳 null
+function saleSecondsLeft() {
+  const st = settings?.saleTime;
+  if (!st) return null;
+  const [h, m] = st.split(':').map(Number);
+  if (isNaN(h) || isNaN(m)) return null;
+  const target = new Date();
+  target.setHours(h, m, 0, 0);
+  const diff = (target - Date.now()) / 1000;
+  return diff < -3600 ? null : diff;
+}
+
+function saleCountdownText() {
+  const t = saleSecondsLeft();
+  if (t === null || t <= 0) return '';
+  const mm = Math.floor(t / 60), ss = Math.floor(t % 60);
+  return `（開賣倒數 ${mm}:${String(ss).padStart(2, '0')}）`;
+}
+
+// 自適應重整：開賣前很久慢刷省流量，最後 90 秒加速，開賣後快刷
 function maybeRefresh() {
-  if (settings?.autoRefresh && tickCount % 15 === 0) location.reload();
+  if (!settings?.autoRefresh) return;
+  if (tickCount < 8) return; // 給頁面渲染時間，避免還沒載完就刷掉
+  const t = saleSecondsLeft();
+  let every;
+  if (t === null)     every = 15; // 未設開賣時間：~6s
+  else if (t > 90)    every = 50; // 開賣前 >90s：~20s
+  else if (t > 0)     every = 8;  // 最後 90s：~3s
+  else                every = 8;  // 已到開賣時間：~3s 快刷直到 BUY 出現
+  if (tickCount % every === 0) location.reload();
+}
+
+// 分頁標題閃爍：搶到票 / 需要人工處理時提醒（20 秒後自動停）
+let titleFlashTimer = null;
+function flashTitle(msg) {
+  if (titleFlashTimer) return;
+  const orig = document.title;
+  let on = false;
+  titleFlashTimer = setInterval(() => {
+    document.title = on ? orig : msg;
+    on = !on;
+  }, 800);
+  setTimeout(() => {
+    clearInterval(titleFlashTimer);
+    titleFlashTimer = null;
+    document.title = orig;
+  }, 20000);
 }
 
 function goCheck(el, label) {
@@ -166,6 +218,7 @@ function handleBuy() {
   // 登入頁/排隊頁：只等待，絕不自動重整（會打斷輸入或掉排隊位置）
   if (/login|signin|register/i.test(location.href)) {
     setO('請先登入 AllTicket 帳號！（此頁不自動重整）', '#ff8844');
+    if (!loginAlerted) { loginAlerted = true; flashTitle('⚠️ 需要登入！'); log('偵測到登入頁，請手動登入', 'warn'); }
     return;
   }
   if (/queue|waiting/i.test(location.href)) {
@@ -208,7 +261,7 @@ function handleBuy() {
       target = matched.find(r => r.open);
       if (!target) {
         if (matched.every(r => r.sold)) { setO('目標場次全部售罄！', '#ff4444'); return; }
-        setO('目標場次尚未開賣，等待...', '#ffcc44');
+        setO(`目標場次尚未開賣，等待...${saleCountdownText()}`, '#ffcc44');
         maybeRefresh();
         return;
       }
@@ -218,7 +271,7 @@ function handleBuy() {
                rows.find(r => r.open);
       if (!target) {
         if (rows.every(r => r.sold)) setO('所有場次已售罄！', '#ff4444');
-        else { setO('尚未開賣，等待...', '#ffcc44'); maybeRefresh(); }
+        else { setO(`尚未開賣，等待...${saleCountdownText()}`, '#ffcc44'); maybeRefresh(); }
         return;
       }
     }
@@ -311,25 +364,47 @@ function handleZone() {
     .filter(span => span && !span.classList.contains('not-ava') && span.style.cursor === 'pointer');
 
   const kws = (settings?.zoneKeywords || []).map(k => k.toUpperCase().trim());
-  let chosen = null;
 
+  // 候選 Zone（依關鍵字優先序；完全相符優先於部分包含）
+  let candidates;
   if (kws.length) {
-    // 依關鍵字順序找：填「A1, B1」時 A1 有位就先搶 A1（完全相符優先於部分包含）
+    candidates = [];
     for (const kw of kws) {
-      chosen = availZones.find(s => s.textContent.trim().toUpperCase() === kw) ||
-               availZones.find(s => s.textContent.trim().toUpperCase().includes(kw));
-      if (chosen) break;
+      candidates.push(...availZones.filter(s => s.textContent.trim().toUpperCase() === kw));
+      candidates.push(...availZones.filter(s => {
+        const n = s.textContent.trim().toUpperCase();
+        return n !== kw && n.includes(kw);
+      }));
     }
-    if (!chosen) {
-      setO(`Zone [${kws.join('/')}] 無空位或不存在，等待...`, '#ffcc44');
-      return;
-    }
+    candidates = [...new Set(candidates)];
   } else {
-    chosen = availZones[0];
-    if (!chosen) { setO('所有 Zone 已售罄！', '#ff4444'); return; }
+    candidates = availZones;
+  }
+
+  if (!candidates.length) {
+    // 沒有符合的 Zone 有位：座位數是快照，定期重點 CHECK 重新查詢（釋票會回來）
+    zoneStall++;
+    const msg = kws.length ? `Zone [${kws.join('/')}] 無空位，等待釋票...` : '所有 Zone 已售罄，等待釋票...';
+    setO(`${msg} (${zoneStall})`, kws.length ? '#ffcc44' : '#ff4444');
+    if (zoneStall >= 8) {
+      zoneStall = 0;
+      log('重新查詢各 Zone 座位數', 'info');
+      setPhase('CHECK');
+      checkClicked = false;
+    }
+    return;
+  }
+  zoneStall = 0;
+
+  // 避免卡同一 Zone：優先選沒點過的；全點過一輪就清空重來
+  let chosen = candidates.find(s => !triedZones.has(s.textContent.trim().toUpperCase()));
+  if (!chosen) {
+    triedZones.clear();
+    chosen = candidates[0];
   }
 
   const zoneName = chosen.textContent.trim();
+  triedZones.add(zoneName.toUpperCase());
   currentZone = zoneName;
   setO(`點擊 Zone: ${zoneName}`, '#4cff91');
   log(`選擇 Zone: ${zoneName}`, 'success');
@@ -353,6 +428,14 @@ let seatPhase     = 'PICKING'; // 'PICKING' | 'WAITING'
 function handleSeat() {
   const seatCount     = settings?.seatCount || 1;
   const selectedSeats = document.querySelectorAll('svg.seat.selected');
+
+  // ── 超選保護：點擊延遲確認造成多選會超過限購張數，點擊取消多餘的 ──
+  if (selectedSeats.length > seatCount) {
+    setO(`多選了 ${selectedSeats.length - seatCount} 張，取消中...`, '#ff8844');
+    log(`超選 ${selectedSeats.length}/${seatCount}，取消多餘座位`, 'warn');
+    humanClick(selectedSeats[selectedSeats.length - 1]);
+    return;
+  }
 
   // ── 已選滿，進 BOOK ──
   if (selectedSeats.length >= seatCount) {
@@ -545,6 +628,11 @@ let bookAttempts = 0;
 
 function handleBook() {
   const selectedSeats = document.querySelectorAll('svg.seat.selected');
+  // 超過限購張數不能按 Booking，退回 SEAT 取消多餘的
+  if (selectedSeats.length > (settings?.seatCount || 1)) {
+    setPhase('SEAT');
+    return;
+  }
   if (selectedSeats.length === 0) {
     setO('未偵測到選中座位，返回選座...', '#ff8844');
     log('未選到座位，退回 SEAT 步驟', 'warn');
@@ -606,6 +694,7 @@ function handleBook() {
   chrome.storage.local.set({ isRunning: false, currentStep: 'DONE' });
   chrome.runtime.sendMessage({ type: 'STEP', step: 'DONE' }).catch(() => {});
   humanClick(bookBtn);
+  flashTitle('🎫 搶到了！快去結帳');
   setTimeout(() => rmO(), 8000);
 }
 
