@@ -3,6 +3,7 @@ import { IconAll, IconFood, IconCafe, IconShopping, IconNightlife, IconHotel } f
 import type { Category } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
+import { DragScroll } from './DragScroll'
 
 type Tab = { id: Category | 'all'; labelKey: keyof typeof strings.zh; Icon: React.ComponentType<{ size?: number }> }
 
@@ -37,7 +38,7 @@ export function CategoryTabs({ active, onChange, lang, counts }: Props) {
     : TABS
 
   return (
-    <div className="flex gap-4 px-4 py-3 overflow-x-auto bg-white border-b border-gray-100 no-scrollbar lg:justify-center">
+    <DragScroll className="flex gap-4 px-4 py-3 overflow-x-auto bg-white border-b border-gray-100 no-scrollbar lg:justify-center">
       {visibleTabs.map(({ id, labelKey, Icon }) => (
         <button
           key={id}
@@ -54,6 +55,6 @@ export function CategoryTabs({ active, onChange, lang, counts }: Props) {
           </span>
         </button>
       ))}
-    </div>
+    </DragScroll>
   )
 }

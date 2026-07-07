@@ -10,6 +10,7 @@ import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { Reveal } from '@/components/Reveal'
+import { DragScroll } from '@/components/DragScroll'
 
 function extractThai(text: string): string | null {
   const thai = text.match(/[฀-๿][฀-๿\s]*/g)?.join(' ').trim()
@@ -174,7 +175,7 @@ export function LocationDetail({ location }: { location: Location }) {
 
       {/* Thumbnail strip */}
       {allPhotos.length > 1 && (
-        <div className="flex gap-2 px-4 py-2 overflow-x-auto no-scrollbar bg-gray-50">
+        <DragScroll className="flex gap-2 px-4 py-2 overflow-x-auto no-scrollbar bg-gray-50">
           {allPhotos.map((url, i) => (
             <button
               key={i}
@@ -184,7 +185,7 @@ export function LocationDetail({ location }: { location: Location }) {
               <Image src={srcOf(url)} alt="" width={64} height={64} className="object-cover w-full h-full" unoptimized onError={() => markBroken(url)} />
             </button>
           ))}
-        </div>
+        </DragScroll>
       )}
 
       <div className="px-4 pt-4 pb-24">

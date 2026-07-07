@@ -11,6 +11,7 @@ import { useShuffleSeed } from '@/hooks/useShuffleSeed'
 import { type Landmark } from '@/lib/landmarks'
 import { MIcon } from '@/components/icons/MaterialIcons'
 import { LocationCard } from '@/components/LocationCard'
+import { DragScroll } from '@/components/DragScroll'
 import { LocationMap } from '@/components/LocationMap'
 import { Reveal } from '@/components/Reveal'
 import { getArea } from '@/lib/area'
@@ -299,7 +300,7 @@ export function PublicHomepage({ locations }: Props) {
         {/* Filter row */}
         <div className="bg-white border-b border-gray-100 py-2 relative">
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
-          <div className="flex gap-2 overflow-x-auto no-scrollbar px-3 lg:justify-center">
+          <DragScroll className="flex gap-2 overflow-x-auto no-scrollbar px-3 lg:justify-center">
             {/* All */}
             <button
               onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all'); setLandmark(null) }}
@@ -365,14 +366,14 @@ export function PublicHomepage({ locations }: Props) {
                 </button>
               )
             })}
-          </div>
+          </DragScroll>
         </div>
 
         {/* Area chips */}
         {areas.length > 0 && (
           <div className="bg-white border-b border-gray-100 py-2 relative">
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
-            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
+            <DragScroll className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
               <svg className="w-3.5 h-3.5 text-gray-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z" strokeLinejoin="round"/><circle cx="12" cy="9" r="2.5"/>
               </svg>
@@ -395,7 +396,7 @@ export function PublicHomepage({ locations }: Props) {
                   {a}
                 </button>
               ))}
-            </div>
+            </DragScroll>
           </div>
         )}
 
@@ -428,7 +429,7 @@ export function PublicHomepage({ locations }: Props) {
                   </div>
                   </Reveal>
                   {/* Horizontal scroll cards — 每區隨機抽 SECTION_LIMIT 筆，其餘按「看全部」進完整清單 */}
-                  <div className="flex gap-3 overflow-x-auto no-scrollbar px-3 pb-1">
+                  <DragScroll className="flex gap-3 overflow-x-auto no-scrollbar px-3 pb-1 lg:cursor-grab">
                     {items.slice(0, SECTION_LIMIT).map((loc, i) => (
                       <Reveal key={loc.id} delay={i < 4 ? i * 60 : 0} className="shrink-0 w-44 lg:w-52 h-[260px] lg:h-[300px]">
                         <LocationCard
@@ -453,7 +454,7 @@ export function PublicHomepage({ locations }: Props) {
                         <span className="text-[11px] text-gray-400">{items.length} {lang === 'zh' ? '筆' : 'places'}</span>
                       </button>
                     )}
-                  </div>
+                  </DragScroll>
                 </section>
               )
             })}
