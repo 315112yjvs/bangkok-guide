@@ -56,7 +56,11 @@ function start(cfg) {
   checkClicked  = false;
   seatsTried    = new Set();
   seatQueue     = [];
-  phase         = 'BUY';
+  seatFailCount = 0;
+  seatPhase     = 'PICKING';
+  checkStall    = 0;
+  bookAttempts  = 0;
+  setPhase('BUY');
   createOverlay();
   setO('啟動，尋找 BUY NOW...', '#88aaff');
   log('啟動搶票', 'info');
@@ -70,6 +74,12 @@ function stop() {
   phase = 'IDLE';
   seatQueue = [];
   rmO();
+}
+
+// 統一切換步驟：同步寫入 storage，讓 popup 徽章即時反映
+function setPhase(p) {
+  phase = p;
+  chrome.storage.local.set({ currentStep: p });
 }
 
 function scheduleTick() {
@@ -133,7 +143,7 @@ function handleBuy() {
     if (settings?.autoRefresh && tickCount % 15 === 0) location.reload();
     return;
   }
-  if (buyBtn.style.display === 'none' || buyBtn.disabled) {
+  if (!isVisible(buyBtn) || buyBtn.disabled) {
     // 若頁面有倒計時元素，顯示剩餘時間
     const countdown = document.querySelector('.countdown, [class*="countdown"], [id*="countdown"]');
     if (countdown?.textContent?.trim()) {
@@ -146,23 +156,27 @@ function handleBuy() {
   }
   // Zone 面板已出現 → 直接進 CHECK
   if (document.querySelector('button.btn-outline-info, .seat-ava')) {
-    phase = 'CHECK';
+    setPhase('CHECK');
     return;
   }
 
   setO('點擊 BUY NOW！', '#4cff91');
   log('點擊 BUY NOW', 'success');
-  phase = 'CHECK';
+  setPhase('CHECK');
   checkClicked = false;
+  checkStall   = 0;
   humanClick(buyBtn);
 }
 
 // ════════════════════════════════════════════════════════
 // STEP 2 — 點擊 CHECK SEAT AVAILABLE
 // ════════════════════════════════════════════════════════
+let checkStall = 0;
+
 function handleCheck() {
   if (document.querySelectorAll('.seat-ava').length > 0) {
-    phase = 'ZONE';
+    setPhase('ZONE');
+    checkStall = 0;
     return;
   }
   const yesBtn = document.querySelector('button.btn-primary.popup-styled');
@@ -170,7 +184,19 @@ function handleCheck() {
 
   const checkBtn = document.querySelector('button.btn-outline-info') ||
     [...document.querySelectorAll('button')].find(b => b.textContent.includes('CHECK SEAT AVAILABLE'));
-  if (!checkBtn) { setO('等待 Zone 面板...', '#88aaff'); return; }
+  if (!checkBtn) {
+    // BUY 點擊可能沒生效（頁面沒切換），連續 10 次找不到面板就退回 BUY 重試
+    checkStall++;
+    if (checkStall >= 10) {
+      checkStall = 0;
+      log('CHECK 面板未出現，退回 BUY 重試', 'warn');
+      setPhase('BUY');
+      return;
+    }
+    setO('等待 Zone 面板...', '#88aaff');
+    return;
+  }
+  checkStall = 0;
   if (!checkClicked) {
     checkClicked = true;
     setO('查詢各 Zone 座位數...', '#88aaff');
@@ -189,7 +215,7 @@ function handleZone() {
   if (yesBtn && isVisible(yesBtn)) { humanClick(yesBtn); return; }
 
   const zoneRows = document.querySelectorAll('.seat-ava');
-  if (!zoneRows.length) { phase = 'CHECK'; checkClicked = false; return; }
+  if (!zoneRows.length) { setPhase('CHECK'); checkClicked = false; return; }
 
   const availZones = [...zoneRows]
     .map(row => row.querySelector('span.badge.badge-light'))
@@ -199,12 +225,12 @@ function handleZone() {
   let chosen = null;
 
   if (kws.length) {
-    chosen = availZones.find(s =>
-      kws.some(kw => {
-        const name = s.textContent.trim().toUpperCase();
-        return name === kw || name.includes(kw);
-      })
-    );
+    // 依關鍵字順序找：填「A1, B1」時 A1 有位就先搶 A1（完全相符優先於部分包含）
+    for (const kw of kws) {
+      chosen = availZones.find(s => s.textContent.trim().toUpperCase() === kw) ||
+               availZones.find(s => s.textContent.trim().toUpperCase().includes(kw));
+      if (chosen) break;
+    }
     if (!chosen) {
       setO(`Zone [${kws.join('/')}] 無空位或不存在，等待...`, '#ffcc44');
       return;
@@ -218,13 +244,15 @@ function handleZone() {
   currentZone = zoneName;
   setO(`點擊 Zone: ${zoneName}（票價最高可用）`, '#4cff91');
   log(`選擇 Zone: ${zoneName}`, 'success');
-  chrome.storage.local.set({ currentStep: 'ZONE', currentZone: zoneName });
+  chrome.storage.local.set({ currentZone: zoneName });
   chrome.runtime.sendMessage({ type: 'STEP', step: 'ZONE', zone: zoneName }).catch(() => {});
-  phase = 'SEAT';
+  setPhase('SEAT');
   seatsTried.clear();
   seatQueue = [];
   seatsSelected = 0;
-  chosen.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+  seatFailCount = 0;
+  seatPhase = 'PICKING';
+  humanClick(chosen);
 }
 
 // ════════════════════════════════════════════════════════
@@ -241,7 +269,7 @@ function handleSeat() {
   if (selectedSeats.length >= seatCount) {
     setO(`✓ 已選 ${selectedSeats.length} 張座位，前往 Booking...`, '#4cff91');
     log(`座位選取完成 (${selectedSeats.length}/${seatCount})`, 'success');
-    phase = 'BOOK';
+    setPhase('BOOK');
     seatFailCount = 0;
     seatPhase = 'PICKING';
     seatQueue = [];
@@ -269,7 +297,7 @@ function handleSeat() {
   if (!allAvail.length) {
     if (selectedSeats.length > 0) {
       setO(`無更多空位，已選 ${selectedSeats.length} 張，繼續...`, '#4cff91');
-      phase = 'BOOK';
+      setPhase('BOOK');
       seatPhase = 'PICKING';
       seatQueue = [];
     } else {
@@ -278,7 +306,7 @@ function handleSeat() {
       if (seatFailCount >= 5) {
         setO('此 Zone 無座位，返回重選...', '#ff8844');
         log('Zone 無座位，返回重選', 'warn');
-        phase = 'CHECK';
+        setPhase('CHECK');
         checkClicked = false;
         seatFailCount = 0;
         seatPhase = 'PICKING';
@@ -294,10 +322,10 @@ function handleSeat() {
   let seat = null;
   const remainingNeeded = seatCount - selectedSeats.length;
 
-  // 取連座隊列中下一個（確認仍可用）
+  // 取連座隊列中下一個（確認仍在 DOM 且可用，頁面重繪後的舊元素點了無效）
   while (seatQueue.length > 0) {
     const next = seatQueue.shift();
-    if (next && !seatsTried.has(next) && next.classList.contains('available')) {
+    if (next && document.contains(next) && !seatsTried.has(next) && next.classList.contains('available')) {
       seat = next;
       seatsTried.add(seat);
       break;
@@ -432,7 +460,7 @@ function handleBook() {
   if (selectedSeats.length === 0) {
     setO('未偵測到選中座位，返回選座...', '#ff8844');
     log('未選到座位，退回 SEAT 步驟', 'warn');
-    phase = 'SEAT';
+    setPhase('SEAT');
     seatsTried.clear();
     seatQueue = [];
     bookAttempts = 0;
@@ -468,9 +496,10 @@ function handleBook() {
   if (!bookBtn || !isVisible(bookBtn)) {
     setO('等待 Booking 按鈕...', '#88aaff');
     bookAttempts++;
+    // 只在「未勾選」時才補點，避免把已勾選的同意框反勾掉
     if (bookAttempts > 20) {
       bookAttempts = 0;
-      if (consentCb) consentCb.click();
+      if (consentCb && !consentCb.checked) consentCb.click();
     }
     return;
   }

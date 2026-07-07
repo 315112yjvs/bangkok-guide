@@ -53,19 +53,37 @@ async function updatePageHint() {
 
 $('startBtn').addEventListener('click', async () => {
   await save();
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (!tab?.url?.includes('allticket.com')) {
+    addLog('請先開啟 allticket.com 活動頁再啟動', 'error');
+    return;
+  }
+
   const d = await chrome.storage.local.get(['zoneKeywords','seatCount','autoRefresh','interval']);
   await chrome.storage.local.set({ isRunning: true, seatsSelected: 0, currentStep: 'BUY' });
 
-  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  chrome.tabs.sendMessage(tab.id, {
-    action: 'START',
-    settings: {
-      zoneKeywords: d.zoneKeywords || [],
-      seatCount:    d.seatCount    || 1,
-      autoRefresh:  d.autoRefresh  || false,
-      interval:     d.interval     || 400,
+  const settings = {
+    zoneKeywords: d.zoneKeywords || [],
+    seatCount:    d.seatCount    || 1,
+    autoRefresh:  d.autoRefresh  || false,
+    interval:     d.interval     || 400,
+  };
+
+  try {
+    await chrome.tabs.sendMessage(tab.id, { action: 'START', settings });
+  } catch {
+    // content script 未載入（安裝插件前就開著的頁面），手動注入
+    // 注入後 content.js 會讀到 isRunning=true 自動啟動
+    try {
+      await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ['content.js'] });
+      addLog('已注入腳本並啟動', 'info');
+    } catch {
+      addLog('無法注入腳本，請重新整理頁面後再試', 'error');
+      await chrome.storage.local.set({ isRunning: false });
+      updateUI(false);
+      return;
     }
-  }).catch(() => {});
+  }
 
   updateUI(true, 0, 'BUY');
   addLog('搶票啟動！', 'success');
