@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
     }
   }
 
-  for (let attempt = 0; attempt < 2; attempt++) {
+  for (let attempt = 0; attempt < 3; attempt++) {
     try {
       const res = await fetchOnce()
       if (res.ok) return imageResponse(res)
@@ -41,11 +41,15 @@ export async function GET(req: NextRequest) {
         if (healed) return imageResponse(healed)
         return new NextResponse('upstream error', { status: res.status })
       }
-      // 其他 4xx 不重試，直接回錯誤；5xx 才再試一次
-      if (res.status < 500) return new NextResponse('upstream error', { status: res.status })
+      // 429（Google 限流）跟 5xx 是暫時性錯誤 → 退避後重試；
+      // 一頁同時載幾十張圖時 Google 常回 429，立刻重打只會繼續被擋
+      if (res.status !== 429 && res.status < 500) {
+        return new NextResponse('upstream error', { status: res.status })
+      }
     } catch {
       // 逾時/網路錯誤 → 進入下一輪重試
     }
+    if (attempt < 2) await new Promise((r) => setTimeout(r, 400 * (attempt + 1) + Math.random() * 300))
   }
   return new NextResponse('fetch failed', { status: 502 })
 }
