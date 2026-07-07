@@ -11,6 +11,14 @@ export function DragScroll({ className, children }: Props) {
   const ref = useRef<HTMLDivElement>(null)
   const drag = useRef({ down: false, dragged: false, startX: 0, startScroll: 0 })
 
+  const endDrag = () => {
+    drag.current.down = false
+    if (ref.current) {
+      ref.current.style.userSelect = ''
+      ref.current.classList.remove('drag-scrolling')
+    }
+  }
+
   return (
     <div
       ref={ref}
@@ -23,30 +31,23 @@ export function DragScroll({ className, children }: Props) {
       onPointerMove={(e) => {
         const s = drag.current
         if (!s.down || !ref.current) return
+        // 左鍵已放開（例如移出容器後在外面放開，pointerup 沒送到這裡）就結束，
+        // 不然游標滑回來時會在沒按鍵的狀態下繼續捲動
+        if ((e.buttons & 1) === 0) { endDrag(); return }
         const dx = e.clientX - s.startX
         if (!s.dragged) {
           if (Math.abs(dx) < 5) return
           s.dragged = true
           ref.current.setPointerCapture(e.pointerId)
           ref.current.style.userSelect = 'none'
-          ref.current.style.cursor = 'grabbing'
+          ref.current.classList.add('drag-scrolling')
         }
         ref.current.scrollLeft = s.startScroll - dx
       }}
-      onPointerUp={() => {
-        drag.current.down = false
-        if (ref.current) {
-          ref.current.style.userSelect = ''
-          ref.current.style.cursor = ''
-        }
-      }}
+      onPointerUp={endDrag}
       onPointerCancel={() => {
-        drag.current.down = false
+        endDrag()
         drag.current.dragged = false
-        if (ref.current) {
-          ref.current.style.userSelect = ''
-          ref.current.style.cursor = ''
-        }
       }}
       onClickCapture={(e) => {
         // 剛拖拉完的那一下 click 吃掉，不讓它觸發卡片連結

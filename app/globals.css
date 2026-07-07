@@ -48,6 +48,9 @@ body {
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* DragScroll 拖拉中：連子元素（卡片 Link 等）的游標一起蓋成 grabbing */
+.drag-scrolling, .drag-scrolling * { cursor: grabbing !important; }
+
 /* 錨點/回頂端捲動平滑 */
 html { scroll-behavior: smooth; }
 
