@@ -266,11 +266,11 @@ function handleBuy() {
         return;
       }
     } else {
-      // 未指定場次：取第一個可買的，優先跳過 Live Streaming 列
-      target = rows.find(r => r.open && !r.text.includes('STREAMING')) ||
-               rows.find(r => r.open);
+      // 未指定場次：只點非 Live Streaming 的場次；就算只剩直播票可買也不點（要買直播請填關鍵字 STREAMING）
+      target = rows.find(r => r.open && !r.text.includes('STREAMING'));
       if (!target) {
-        if (rows.every(r => r.sold)) setO('所有場次已售罄！', '#ff4444');
+        const nonStream = rows.filter(r => !r.text.includes('STREAMING'));
+        if (nonStream.length && nonStream.every(r => r.sold)) setO('演唱會票已售罄！', '#ff4444');
         else { setO(`尚未開賣，等待...${saleCountdownText()}`, '#ffcc44'); maybeRefresh(); }
         return;
       }
