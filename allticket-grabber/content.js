@@ -132,6 +132,24 @@ chrome.storage.onChanged.addListener((changes, area) => {
   if (changes.isRunning?.newValue === false && isRunning) stop();
 });
 
+// ── 手動接管偵測 ──────────────────────────────────────────
+// 使用者親自點 Zone（isTrusted 真人點擊；插件的模擬點擊是 false 不會觸發）
+// → 插件跟進該區，直接接手選位
+document.addEventListener('click', e => {
+  if (!isRunning || !e.isTrusted) return;
+  const badge = e.target?.closest?.('span.badge.badge-light');
+  if (!badge || badge.classList.contains('not-ava')) return;
+  currentZone = badge.textContent.trim();
+  triedZones.add(currentZone.toUpperCase());
+  seatsTried.clear();
+  seatQueue     = [];
+  seatFailCount = 0;
+  seatPhase     = 'PICKING';
+  setPhase('SEAT');
+  log(`手動選 Zone: ${currentZone}，插件接手選位`, 'info');
+  setO(`手動選 Zone: ${currentZone}，接手選位...`, '#4cff91');
+}, true);
+
 // ── 主迴圈 ────────────────────────────────────────────────
 function tick() {
   if (!isRunning) return;
