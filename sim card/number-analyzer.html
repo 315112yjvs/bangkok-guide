@@ -547,7 +547,12 @@ function analyze(){
   }
   hits.forEach(h=>score += h.p);
 
-  // 塔克夏個人化加減分
+  // 書中規則：吉祥號不能含凶數配對（仇敵組等大凶配對 → 書中分數先封頂 59）
+  const hasFatal = pairs.some(p=>p.info.s<=-7);
+  if(hasFatal && score>59) score = 59;
+
+  // 塔克夏個人化加減分（在封頂之後套用：凶星扣分能把分數壓到 59 以下，
+  // 吉星加分則不能把含大凶配對的號碼救回 59 以上）
   let tkAdj = 0, tkInfo = null;
   if(selDay !== ""){
     const map = taksaMap(Number(selDay));
@@ -569,12 +574,10 @@ function analyze(){
     }
     tkAdj = Math.max(-12, Math.min(12, tkAdj));
     score += tkAdj;
+    if(hasFatal && score>59) score = 59;
     tkInfo = {tiles, counts, badDigits, goodDigits, map};
   }
 
-  // 書中規則：吉祥號不能含凶數配對（仇敵組等大凶配對 → 封頂 59）
-  const hasFatal = pairs.some(p=>p.info.s<=-7);
-  if(hasFatal && score>59) score = 59;
   score = Math.max(0, Math.min(100, score));
 
   // 評語
