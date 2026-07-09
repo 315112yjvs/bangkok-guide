@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เบอร์มงคล 手機號碼吉凶分析</title>
+<style>
+  :root{
+    --bg:#f5f3ef; --card:#ffffff; --ink:#2b2b2b; --sub:#8a8578;
+    --good:#3e7d5b; --good-bg:#e8f3ec;
+    --mid:#a3852f; --mid-bg:#f7f0dd;
+    --bad:#b1503f; --bad-bg:#f9e9e5;
+    --accent:#4a4a4a;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+    background:var(--bg); color:var(--ink);
+    min-height:100vh; padding:32px 16px 80px;
+  }
+  .wrap{max-width:760px; margin:0 auto;}
+  header{text-align:center; margin-bottom:28px;}
+  header .sim{
+    display:inline-block; background:#3d3d3d; color:#fff;
+    border-radius:10px 10px 10px 2px; padding:6px 14px;
+    font-size:13px; letter-spacing:2px; margin-bottom:10px;
+  }
+  h1{font-size:26px; font-weight:700; letter-spacing:1px;}
+  header p{color:var(--sub); font-size:13px; margin-top:8px; line-height:1.7;}
+  .panel{
+    background:var(--card); border-radius:18px; padding:24px;
+    box-shadow:0 2px 14px rgba(0,0,0,.06); margin-bottom:20px;
+  }
+  .input-row{display:flex; gap:10px;}
+  input#num{
+    flex:1; font-size:22px; letter-spacing:3px; padding:12px 16px;
+    border:2px solid #ddd6c9; border-radius:12px; outline:none;
+    font-family:inherit; text-align:center;
+  }
+  input#num:focus{border-color:#9b9483;}
+  button#go{
+    background:#3d3d3d; color:#fff; border:none; border-radius:12px;
+    padding:12px 26px; font-size:16px; cursor:pointer; font-family:inherit;
+    letter-spacing:2px;
+  }
+  button#go:active{transform:scale(.97);}
+  .hint{font-size:12px; color:var(--sub); margin-top:10px; text-align:center; line-height:1.7;}
+
+  /* score area */
+  .score-flex{display:flex; align-items:center; gap:24px; flex-wrap:wrap;}
+  .ring{
+    width:130px; height:130px; border-radius:50%;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    color:#fff; flex-shrink:0; margin:0 auto;
+  }
+  .ring .n{font-size:40px; font-weight:800; line-height:1;}
+  .ring .t{font-size:12px; opacity:.85; margin-top:4px; letter-spacing:1px;}
+  .verdict{flex:1; min-width:220px;}
+  .verdict h2{font-size:20px; margin-bottom:8px;}
+  .verdict p{font-size:14px; color:var(--sub); line-height:1.8;}
+  .digits{
+    display:flex; gap:6px; justify-content:center; margin:18px 0 4px; flex-wrap:wrap;
+  }
+  .digits span{
+    width:38px; height:46px; border-radius:9px; background:#3d3d3d; color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px; font-weight:700;
+  }
+  .digits span.prefix{background:#d8d2c4; color:#8a8578;}
+  .pair-strip{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:14px;}
+  .chip{
+    padding:6px 12px; border-radius:999px; font-size:13px; font-weight:700;
+    letter-spacing:1px;
+  }
+  .chip.g{background:var(--good-bg); color:var(--good);}
+  .chip.m{background:var(--mid-bg); color:var(--mid);}
+  .chip.b{background:var(--bad-bg); color:var(--bad);}
+
+  .sec-title{
+    font-size:16px; font-weight:800; margin:26px 0 12px; letter-spacing:1px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .pair-card{
+    border:1px solid #eee7d9; border-radius:14px; padding:14px 16px; margin-bottom:12px;
+    background:#fffdf9;
+  }
+  .pair-card .head{display:flex; align-items:center; gap:10px; margin-bottom:8px; flex-wrap:wrap;}
+  .pair-card .pnum{
+    font-size:20px; font-weight:800; background:#3d3d3d; color:#fff;
+    border-radius:8px; padding:2px 12px; letter-spacing:2px;
+  }
+  .pair-card .pname{font-weight:700; font-size:15px;}
+  .badge{font-size:12px; font-weight:700; padding:3px 10px; border-radius:999px;}
+  .badge.g{background:var(--good-bg); color:var(--good);}
+  .badge.m{background:var(--mid-bg); color:var(--mid);}
+  .badge.b{background:var(--bad-bg); color:var(--bad);}
+  .pl{font-size:13.5px; line-height:1.9; color:#444;}
+  .pl b{font-weight:700;}
+  .pl .lab-g{color:var(--good); font-weight:700;}
+  .pl .lab-b{color:var(--bad); font-weight:700;}
+
+  .warn-card{
+    border-radius:14px; padding:14px 16px; margin-bottom:12px;
+    background:var(--bad-bg); color:#7c3628; font-size:14px; line-height:1.8;
+  }
+  .warn-card b{letter-spacing:2px;}
+
+  ul.flat{list-style:none;}
+  ul.flat li{
+    font-size:14px; line-height:1.9; padding-left:20px; position:relative; color:#3c3c3c;
+  }
+  ul.flat li::before{content:""; position:absolute; left:4px; top:12px; width:7px; height:7px; border-radius:50%;}
+  ul.flat.good li::before{background:var(--good);}
+  ul.flat.bad li::before{background:var(--bad);}
+  ul.flat li .src{color:#b0a996; font-size:12px; margin-left:6px;}
+
+  .note{
+    font-size:12.5px; color:var(--sub); line-height:1.9; margin-top:26px;
+    border-top:1px dashed #ddd6c9; padding-top:16px;
+  }
+  #result{display:none;}
+  .empty-pros{color:var(--sub); font-size:13.5px;}
+  @media (max-width:520px){
+    .digits span{width:30px; height:40px; font-size:18px;}
+    .score-flex{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="sim">SIM SO SUCCESS</div>
+    <h1>手機號碼吉凶分析</h1>
+    <p>依《เปลี่ยนชีวิตด้วยพลังตัวเลข》（用數字的力量改變人生）書中邏輯<br>取號碼後 8 碼，逐組分析相鄰數字配對與三碼凶數組合</p>
+  </header>
+
+  <div class="panel">
+    <div class="input-row">
+      <input id="num" inputmode="numeric" placeholder="0812345678" maxlength="15">
+      <button id="go">分析</button>
+    </div>
+    <div class="hint">輸入完整手機號碼（例：0812345678）。書中規則：前兩碼不計，只看後 8 碼。<br>也可以直接輸入 8 碼分析。</div>
+  </div>
+
+  <div id="result">
+    <div class="panel">
+      <div class="score-flex">
+        <div class="ring" id="ring">
+          <div class="n" id="scoreN">0</div>
+          <div class="t">/ 100 分</div>
+        </div>
+        <div class="verdict">
+          <h2 id="verdictTitle"></h2>
+          <p id="verdictDesc"></p>
+        </div>
+      </div>
+      <div class="digits" id="digitBoxes"></div>
+      <div class="pair-strip" id="pairStrip"></div>
+    </div>
+
+    <div class="panel" id="warnPanel" style="display:none">
+      <div class="sec-title">⚠️ 書中特別警告的凶數組合</div>
+      <div id="warnList"></div>
+    </div>
+
+    <div class="panel">
+      <div class="sec-title">✅ 這組號碼帶給主人的優點</div>
+      <ul class="flat good" id="prosList"></ul>
+      <div class="sec-title">❌ 這組號碼帶給主人的缺點</div>
+      <ul class="flat bad" id="consList"></ul>
+    </div>
+
+    <div class="panel">
+      <div class="sec-title">🔍 逐組配對解析</div>
+      <div id="pairDetail"></div>
+      <div class="note">
+        計分方式：後 8 碼共 7 組相鄰配對，依書中每組配對的吉凶評級加總換算為 100 分制；若出現書中列為凶數的三碼組合另行扣分。書中定義「吉祥號（เบอร์มงคล）後 8 碼不能含任何凶數配對」，因此只要含有大凶配對，總分會被限制在普通以下。數字 9 會隨相鄰數字變化，數字 0 弊多於利。本工具僅整理書中觀點，供參考娛樂。
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============ 書中 55 組配對資料（吉凶分數 -10 ~ +10）============
+const PAIRS = {
+  "00":{s:-10,name:"孤寂之數",pros:[],cons:["孤僻封閉","活在自己的世界","鑽牛角尖","想法難以捉摸","孤單","感情不順","壓力大","做事出人意料","內心混亂"]},
+  "01":{s:-1,name:"自由領袖",pros:["愛自由","有領導力","上進","時髦","不受擺佈","重視尊嚴","想法獨特","不隨波逐流"],cons:["常遠離家鄉","易被騙","易被出賣","被扯後腿","做好事身邊人不領情","常遇突發事件","遭人嫉妒","被眼紅打壓"]},
+  "02":{s:-3,name:"異鄉安撫",pros:["在異鄉遇貴人","喜歡旅行","口才能安撫人心"],cons:["小心三角戀","感情糾紛不斷","多情不知足","拘謹憂慮","阻礙重重","人生易受挫","錢財易被侵占"]},
+  "03":{s:-2,name:"勤奮糾察",pros:["勤勞","緊咬不放","抓錯精準","識人","反應快","身手敏捷","愛自由","敢衝敢賭","不愛受人管"],cons:["性急火爆","魯莽","不怕危險","常與人衝突","小心親屬帶來的麻煩","身邊人常帶煩心事來","挑錯挑到身邊人累"]},
+  "04":{s:3,name:"談判智者",pros:["求生智慧強","頭腦聰明","談判功力一流","講話犀利","直覺神準","常有創新點子"],cons:["愛改變環境卻不改變自己","太容易相信人、越愛越信","愛背後議論他人"]},
+  "05":{s:6,name:"正直規劃",pros:["樂觀","言語公正","虔誠向善","生活有規劃","對社會有責任感","得長輩緣"],cons:["工作偶有變數與阻礙","易過度沉迷於感興趣的事"]},
+  "06":{s:2,name:"美感歡愉",pros:["愛美有品味","開朗歡樂","擅長社交","有設計藝術天分"],cons:["愛幻想","鋪張浪費","花錢無度恐生財務問題","桃花易招來錯的人","感情常失望","情緒難捉摸"]},
+  "07":{s:-6,name:"苦行忍耐",pros:["耐操","能忍","吃重任務也扛","下定決心目標高"],cons:["工作辛苦不順","阻礙卡關","痛苦憂鬱","志向高卻難如願","沉悶","壓力大","想太多","焦慮","常有突發驚嚇","行事神秘"]},
+  "08":{s:-4,name:"豪賭俠氣",pros:["敢賭敢衝","天不怕地不怕","豪爽講義氣","為人海派","不醉不歸"],cons:["常有煩心事","易被說閒話","身邊人帶來麻煩","財務拮据","成果易失敗","阻礙多","欠缺周全"]},
+  "09":{s:4,name:"靈感直覺",pros:["第六感強","與宗教信仰有緣","常有意外好運","解決問題迅速"],cons:["有他人進不去的私人世界","行為特立獨行被當怪咖","易被人抹黑"]},
+  "11":{s:-1,name:"超級領袖",pros:["超級領導者","自信十足","上進渴望被認同"],cons:["性急","自負","固執","情緒起伏大","說話衝","誰都不服","擺架子","對問題的耐受度低"]},
+  "12":{s:-3,name:"外柔內剛",pros:["適應環境力強","情緒隱藏得好","思想自由度高"],cons:["壓抑久了傷心理","時好時壞","對信任的人會情緒全面爆發","外柔內剛","與伴侶易衝突","書中提醒用這組要特別小心"]},
+  "13":{s:-8,name:"衝突開拓（凶）",pros:["解決問題強","是敢挑戰的開拓者","不成功不放棄","說寫都有謀略"],cons:["人生大起大落","想得快做得快別人跟不上","阻礙來自與人衝突","性急","衝動行事","情緒暴起暴落","用情緒做決定"]},
+  "14":{s:7,name:"機智好學",pros:["好學","機智","適應力強","有人相助","聰明伶俐","做事快","長輩提攜","有慈悲心","有意外之財"],cons:["偶爾賣弄聰明","話太多","固執己見"]},
+  "15":{s:9,name:"智慧貴人（คู่ปัญญา）",pros:["長輩貴人相助","莫名得上司疼愛","會規劃工作","致力打好人生基礎","堅強","積極","品味好","懂賺懂花","聰明智慧高","感情運很好","工作步步高升","好運不斷"],cons:[]},
+  "16":{s:8,name:"利益豐收（คู่ให้ผลประโยชน์）",pros:["專注於收益報酬","頂尖規劃者","有毅力","勤奮打造穩固根基","積極強健","與年齡有差距的對象感情深厚","用心經營家庭"],cons:["想太多恐成感情阻礙","有時細膩過頭讓身邊人累"]},
+  "17":{s:0,name:"商業奇才（雙面）",pros:["反應機智一流","適合經商","敢冒險","是築夢者","能靠實力衝向成功","想得大做得真"],cons:["容易沉迷著魔","有離婚喪偶風險","想太多","焦慮","常感壓力","內心燥熱","工作順、錢流動但存不住"]},
+  "18":{s:-8,name:"業債之數（凶）",pros:["說話直","敢表達意見","心胸寬","真誠"],cons:["行事神秘難懂","財務起落大易負債","與愛人分離","常處壓力之下","想做大事就遇阻礙","感情多問題","幫人反被嫌"]},
+  "19":{s:5,name:"名聲創意",pros:["有名聲","有創意","有抱負","樂善好施","愛上進","樂於助人","有威望","出眾有光彩","想出名用這組"],cons:["性急","財運起伏不定","女性易與伴侶鬥嘴"]},
+  "22":{s:6,name:"談判外交",pros:["談判高手","思路開闊","善於思辨","記憶力好","擅長交朋友","東西輕鬆到手","服務業興旺","金錢周轉靈活","能看透人心"],cons:["不會拒絕人","因客氣總是讓步","優柔寡斷不夠果決"]},
+  "23":{s:4,name:"甜言商才",pros:["勤勞","心胸寬","魅力吸引人","嘴甜","聰明智慧高","講道理","有過濾他人想法的特殊能力","有利經商"],cons:["小心桃色糾紛","可能欠缺自制","恐因異性犯道德錯誤","時時保持正念可化解"]},
+  "24":{s:10,name:"慈愛人緣（คู่เมตตา）",pros:["人見人愛","遇到的人帶來好運多於壞運","慈愛人緣旺","朋友相助","遇到的都是好朋友","個性甜美","被身邊人疼愛","樂觀","開朗","腦筋靈活會想會說","品味好愛美","工作強、收入源源不絕","能遇疼愛自己的好伴侶"],cons:[]},
+  "25":{s:-2,name:"父子衝突（雙面）",pros:["建立事業有耐性","有統御權力","有力量對抗阻礙","勤勞","有大格局","人生長跑漸入佳境"],cons:["長幼之間易起衝突","財務不穩","工作辛勞","男性用恐與父親或兒子衝突","女性用恐強勢壓過伴侶或一味屈就"]},
+  "26":{s:5,name:"言語生財",pros:["有魅力","溫暖","是可靠的商量對象","願意傾聽","因言語得財得愛","擅長社交","話語能開創未來","說話聰明","看得穿人的手腕","上進","適應力好"],cons:["為愛花錢多","感情上心軟","錢來得快花得快","欠缺謹慎"]},
+  "27":{s:-8,name:"離別病痛（凶）",pros:["心胸寬","預測精準"],cons:["常遇阻礙","突發病痛","常有離別","為愛所苦","想太多","長期負債","替人背債","常被借錢","與親近的人衝突","慢性病纏身"]},
+  "28":{s:3,name:"資金周轉（คู่หมุนเงิน）",pros:["心胸寬","有權勢","敢投資","資金周轉能力強","敢試錯","上進","日後根基穩固"],cons:["阻礙常來自利益糾葛","恐涉違法犯戒","情緒化","小心爛桃花與小三糾紛"]},
+  "29":{s:4,name:"敏捷創想",pros:["做事迅速","敏捷","腦筋轉得快","想像力創造力豐富","心地善良","任何事都能商量","第六感強","喜歡旅行"],cons:["猶豫、易被人牽著走","疑神疑鬼","外強內軟","想法恐與伴侶衝突"]},
+  "33":{s:-2,name:"戰將本色",pros:["愛交際","追求上進","工作勤奮","重朋友","自信強","敢正面迎戰","愛競爭","拚勁十足","認真投入"],cons:["衝動暴躁","火氣大","性急不讓人","固執硬頸","誰都不怕不求人","嘴硬說話狠","言語粗魯狂妄","感情用錯對象反成阻礙","做事太快別人跟不上"]},
+  "34":{s:-1,name:"敢言辯才（雙面）",pros:["敢說敢表現","辯才好","聰明、決策快","遇阻不退","有企圖心","說到做到"],cons:["思想與行動易與人衝突","說話不看場合","言詞激烈","話中帶刺","不輕易讓人","易焦慮","思想鑽牛角尖","就算是對的也可能因言樹敵"]},
+  "35":{s:4,name:"幕後靠山（คู่ช่วยอยู่เบื้องหลัง）",pros:["堅強","勤勞","金錢周轉好","決策聰明","有俠氣","敢衝敢拚","獲他人合作","有權勢威望受人敬畏","統御力強","敢開創新事物"],cons:["小心權力用錯地方","易與伴侶起摩擦","脾氣火爆","心狠果斷"]},
+  "36":{s:9,name:"錢財愛情（คู่เงินและความรัก）",pros:["外貌出眾又有財","追求利益與愛情的決心強","先苦後甘","能建立穩固家業","說話直率真誠","愛情甜蜜","積極熱情","勤奮賺錢有長輩後盾","心胸寬","生意能成不求人"],cons:[]},
+  "37":{s:-9,name:"官司意外（凶）",pros:["鬥志強","重尊嚴","外勤實地工作行"],cons:["常遇阻礙","阻礙拖延、痛苦累積","消極厭世","感覺被逼迫","官司糾紛","寧折不彎","易生急禍","要忍受艱辛","壓力大","易出意外","健康出問題"]},
+  "38":{s:-1,name:"豪膽投機（雙面）",pros:["敢衝敢賭","保持行動資金就湧入","謹慎的話能成功","心胸寬","重朋友義氣"],cons:["脾氣火爆","敢賭也敢輸","財務波動大","投資愛冒險","想法與人衝突","小心三角戀","事業起得快落得快","小心權力用錯方向"]},
+  "39":{s:3,name:"意外成功",pros:["有意想不到的成功","認真投入","成長進步快","增強買賣能量","愛鑽研","愛競爭且常獲勝","體能精力旺","跟得上科技","重視吉祥信仰"],cons:["阻礙源於性急","情緒強烈易怒","要小心桃色糾紛"]},
+  "44":{s:7,name:"策劃軍師",pros:["愛規劃","思考縝密","想法獨一無二","大家搶著向你問資訊","知道別人不知道的事","口才好","社交強","應變靈活","談判頂尖聰明","說出的話常對自己有利"],cons:["小心文件契約出問題","健忘迷糊"]},
+  "45":{s:10,name:"全能貴人",pros:["可信賴","講道理","多才多藝","熱愛知識","適應力好","帶來財運與事業運","有生意好運","能得大筆錢財","好學機智","口才好","有城府","後輩敬重","長輩支持","談學業易成","親近佛法","內心平靜"],cons:[]},
+  "46":{s:8,name:"順風順水",pros:["做事順暢無阻","溫柔甜美","品味好","時髦會打扮","讀心能力強","不太吃苦","身心舒暢","有地位基業","有藝術頭腦","有權勢","信用好","外柔內剛","賺錢能力強","錢財過手不斷","愛情清新"],cons:["不夠謹慎","耳根子軟","可能花不少錢打扮自己"]},
+  "47":{s:2,name:"群眾工作者",pros:["說話有威嚴","能說服他人跟隨","擅長與群眾工作","同伴給予合作","機智好","聰明犀利","勤奮賺錢"],cons:["有時說話得罪人","與愛人聚少離多、勞累","扛的責任多","工作辛苦但回報不成正比"]},
+  "48":{s:-7,name:"禍從口出（凶）",pros:["有手腕","有城府","聰明","敢冒險","能自保","唇槍舌戰很強"],cons:["魯莽","容易起爭執","以自我為中心","阻礙多","易被騙","被欺瞞","被說閒話","麻煩纏身","文件契約常出問題","恐因自己說的話受損"]},
+  "49":{s:8,name:"生財鬼才",pros:["機智反應好","賺錢方式靈活多變","想法說法與眾不同","認真投入","生意買賣旺","頭腦精明","異鄉工作運佳","擅長科技產品"],cons:[]},
+  "55":{s:9,name:"長輩護持",pros:["熱愛正義","獲身邊人相助","樂於教導","虔誠向善","樂觀","有條有理","沉穩周全","懂得感恩","說話有原則可信賴","獲長輩支持","常受年長者照顧"],cons:[]},
+  "56":{s:10,name:"富貴圓滿",pros:["能力強","懂理財規劃","意志堅定","穩健","樂善好施","慷慨","致力建立地位","解決問題強","長輩幫助","不怕窮","樣樣精通","聰明全面","錢財存得住","做什麼都容易成功","愛情如願","感情穩定"],cons:[]},
+  "57":{s:0,name:"苦幹築基（雙面）",pros:["勤奮打基礎","敢啟動大案子","工作拚","有耐心等待成功","敢想敢做"],cons:["與長輩相處憋屈甚至檯面上衝突","易有債務","官司糾紛","因想太多而生病"]},
+  "58":{s:-3,name:"權謀冒險",pros:["有手腕謀略","識破居心不良者","熱愛挑戰","模仿學習能力強"],cons:["勤勞三分鐘熱度","自戀","自我感覺良好","愛冒險","欠缺周全","來得容易去得快、易負債","太會編故事最後變成說謊"]},
+  "59":{s:8,name:"靈性智慧",pros:["有智慧","想法特別但正向","長輩罩","求知若渴","預測神準","與命理占星有緣","有意外好運","神明庇佑","內心平靜","與外國外語異文化有緣","健康變好"],cons:[]},
+  "66":{s:6,name:"萬人迷",pros:["人見人愛","有魅力","品味好","勤奮賺錢、致富不難","愛美","愛交際","因溫柔可愛被疼","愛情清新","有望成家結婚"],cons:["太有魅力、異性緣過旺反傷感情","貪戀美色美物讓定力變差"]},
+  "67":{s:-9,name:"全面阻礙（凶）",pros:[],cons:["有苦","焦慮","每況愈下","分裂破碎","被背叛","家庭問題","屋漏偏逢連夜雨","愛情離散","情緒不穩","煩躁","想太多","家內矛盾","恐工作金錢愛情全失"]},
+  "68":{s:-4,name:"沉迷破財",pros:["敢梭哈","敢冒險","有手腕有城府","魅力強","積極"],cons:["欠缺周全","心太軟","容易被騙","會賺錢但敗在娛樂嗜好","感情易被沖昏頭","為慾望興趣花大錢","健康不佳"]},
+  "69":{s:4,name:"財來財去",pros:["金錢與愛情不斷流入","會賺錢","能成功","有運氣","有人愛","時髦","好學","上進","有威望"],cons:["錢進得快但存不住","愛情送上門卻挑到最後一場空"]},
+  "77":{s:-2,name:"重擔苦撐",pros:["能耐著性子劈開阻礙","勤奮意志強","責任感重"],cons:["性急","感到壓迫","做大事相當累","感情與家人瑣事糾紛多","說話不留情面","嚴肅緊繃","對人生成敗焦慮不安"]},
+  "78":{s:0,name:"江湖義氣（คู่นักเลง）",pros:["有人相助","朋友眾多","講義氣","決策有理性","敢冒險而有領導地位"],cons:["容易因朋友被帶偏","容易負債","為愛所苦","用情緒做決定"]},
+  "79":{s:3,name:"古物福緣",pros:["與古老事物有緣","適合收藏古董聖物","受數字 9 的力量加持有好運"],cons:[]},
+  "88":{s:-8,name:"沉溺失速（凶）",pros:[],cons:["流氓性格","衝動放縱","沉迷成癮","成功來得快、苦也來得急","是非不分","詭計多端","太過油條","輕信他人恐受重傷","愛誰就聽不進勸"]},
+  "89":{s:2,name:"威望福報（雙面）",pros:["識人精準","腦筋動得快","心胸寬","有權勢威望福報","與神聖事物有緣"],cons:["事業易生亂","買賣不順","心浮氣躁","行事神秘","獨斷獨行","以自我為中心"]},
+  "99":{s:7,name:"通靈成就",pros:["獲得夢想不到的成功","有抱負","與宗教有緣","與國外外語異文化有緣","思想新潮","勇於嘗試","有神聖力量護佑"],cons:[]}
+};
+
+// ============ 書中三碼凶數組合（以數字集合比對，不分順序）============
+const TRIPLES = [
+  {set:"001", p:-8, label:"001 / 010 / 100", desc:"工作不進步、上司不疼、被扯後腿、朋友背叛"},
+  {set:"002", p:-8, label:"002 / 020 / 200", desc:"窮困、為錢所苦、常被借錢、招小三小王、感情不順"},
+  {set:"003", p:-6, label:"003 / 030 / 300", desc:"性急火爆、與人衝突、囉嗦愛唸、挑剔找碴"},
+  {set:"004", p:-5, label:"004 / 040 / 400", desc:"被議論是非、太輕信他人、愛管閒事"},
+  {set:"005", p:-4, label:"005 / 050 / 500", desc:"過度沉迷特定事物、鑽牛角尖"},
+  {set:"006", p:-8, label:"006 / 060 / 600", desc:"招外遇地下情、感情失望、財務漏洞、花錢超支"},
+  {set:"007", p:-8, label:"007 / 070 / 700", desc:"壓力、焦慮、有苦、重擔、阻礙一堆"},
+  {set:"008", p:-8, label:"008 / 080 / 800", desc:"沉迷墮落於不良嗜好"},
+  {set:"013", p:-8, label:"130 / 103 / 013", desc:"思想言語都與人衝突"},
+  {set:"018", p:-8, label:"180 / 108 / 018", desc:"被暗箭所傷、被抹黑、與愛人分離"},
+  {set:"037", p:-8, label:"370 / 307 / 037", desc:"扛重擔、阻礙多、勞累錢少"},
+  {set:"027", p:-8, label:"270 / 207 / 027", desc:"負債、財務卡關、替人背債、為愛所苦、離別"},
+  {set:"067", p:-9, label:"670 / 607 / 067", desc:"工作、金錢、愛情恐全盤盡失"},
+  {set:"068", p:-7, label:"680 / 608 / 068", desc:"錢財漏在鋪張浪費上"},
+  {set:"048", p:-8, label:"480 / 408 / 048 / 840", desc:"官司糾紛上法院、說話不算話失信於人"},
+  {set:"058", p:-5, label:"850 / 805 / 085", desc:"太會編故事、瞎掰、其實就是說謊"},
+  {set:"112", p:-8, label:"112 / 121 / 211", desc:"情緒兩極、暴怒失控、傷感情也傷身心"},
+  {set:"034", p:-6, label:"340 / 304 / 034", desc:"說話直衝傷人、因言語樹敵"},
+  {set:"123", p:-7, label:"321 / 123", desc:"感情易破裂、分手收場"},
+  {set:"023", p:-6, label:"023 / 320 / 230", desc:"爛桃花、感情糾葛多"},
+  {set:"235", p:-6, label:"523 / 325 / 235", desc:"桃花劫、因異性惹上大麻煩"}
+];
+
+const $ = id => document.getElementById(id);
+
+function pairInfo(a,b){
+  const k1 = a+b, k2 = b+a;
+  return PAIRS[k1] || PAIRS[k2];
+}
+function gradeOf(s){ return s>=5 ? "g" : (s>=0 ? "m" : "b"); }
+function gradeText(s){ return s>=8 ? "大吉" : s>=5 ? "吉" : s>=0 ? "平" : s>=-5 ? "凶" : "大凶"; }
+
+function analyze(){
+  let raw = $("num").value.replace(/\D/g,"");
+  if(raw.length < 4){ alert("請輸入至少 4 碼數字"); return; }
+  let prefix = "", core = raw;
+  if(raw.length >= 9 && raw[0] === "0"){
+    prefix = raw.slice(0,2);
+    core = raw.slice(2);
+  }
+  // 顯示數字
+  const boxes = $("digitBoxes"); boxes.innerHTML = "";
+  for(const c of prefix){ const s=document.createElement("span"); s.textContent=c; s.className="prefix"; boxes.appendChild(s); }
+  for(const c of core){ const s=document.createElement("span"); s.textContent=c; boxes.appendChild(s); }
+
+  // 配對分析
+  const pairs = [];
+  for(let i=0;i<core.length-1;i++){
+    const a=core[i], b=core[i+1];
+    const info = pairInfo(a,b);
+    pairs.push({key:a+b, info});
+  }
+  let sum = 0;
+  pairs.forEach(p=>sum+=p.info.s);
+  const maxAbs = pairs.length*10;
+  let score = Math.round((sum+maxAbs)/(2*maxAbs)*100);
+
+  // 三碼凶數
+  const hits = [];
+  const seen = new Set();
+  for(let i=0;i<core.length-2;i++){
+    const key = core.slice(i,i+3).split("").sort().join("");
+    for(const t of TRIPLES){
+      if(t.set===key && !seen.has(t.set+"@"+i)){
+        seen.add(t.set+"@"+i);
+        hits.push({...t, at:core.slice(i,i+3)});
+      }
+    }
+  }
+  hits.forEach(h=>score += h.p);
+
+  // 大凶配對限制（書中：吉祥號後8碼不能含凶數）
+  const hasFatal = pairs.some(p=>p.info.s<=-7);
+  if(hasFatal && score>59) score = 59;
+  score = Math.max(0, Math.min(100, score));
+
+  // 分數圈
+  const ring = $("ring");
+  let color, title, desc;
+  if(score>=85){ color="var(--good)"; title="มงคล 上吉之數"; desc="以書中標準來看，這組號碼配對全面加持，接近作者定義的吉祥號。工作、財運、人緣、感情皆有正向能量。"; }
+  else if(score>=70){ color="#5b8f4e"; title="吉多於凶"; desc="整體配對偏吉，多數面向有加分。但依書中定義，真正的吉祥號需完全避開凶數配對，可再對照下方細項。"; }
+  else if(score>=55){ color="var(--mid)"; title="吉凶參半"; desc="好壞配對互相抵消，號碼能量普通。書中建議依自己想加強的面向（財、工作、感情）挑選對應配對的號碼。"; }
+  else if(score>=40){ color="#c07a3a"; title="凶多於吉"; desc="這組號碼含有較多書中列為扣分的配對，缺點面向恐蓋過優點。若正逢不順，作者會建議考慮換號。"; }
+  else { color="var(--bad)"; title="建議換號"; desc="依書中邏輯，這組號碼凶數配對過多，對主人的負面影響顯著。作者的做法是：先換號、停用舊號，並配合行善與自我改變。"; }
+  if(hasFatal && score>=55){ desc += "（注意：因含大凶配對，總分已被限制，書中定義它無法算是吉祥號。）"; }
+  ring.style.background = color;
+  $("scoreN").textContent = score;
+  $("verdictTitle").textContent = title;
+  $("verdictDesc").textContent = desc;
+
+  // 配對條
+  const strip = $("pairStrip"); strip.innerHTML="";
+  pairs.forEach(p=>{
+    const c = document.createElement("div");
+    c.className = "chip "+gradeOf(p.info.s);
+    c.textContent = p.key+"・"+gradeText(p.info.s);
+    strip.appendChild(c);
+  });
+
+  // 三碼警告
+  const warnPanel = $("warnPanel"), warnList = $("warnList");
+  warnList.innerHTML="";
+  if(hits.length){
+    warnPanel.style.display="block";
+    hits.forEach(h=>{
+      const d=document.createElement("div");
+      d.className="warn-card";
+      d.innerHTML = `<b>${h.at}</b>（書中凶組 ${h.label}）<br>${h.desc}`;
+      warnList.appendChild(d);
+    });
+  } else warnPanel.style.display="none";
+
+  // 優缺點彙整（去重，標來源配對）
+  const prosMap = new Map(), consMap = new Map();
+  pairs.forEach(p=>{
+    p.info.pros.forEach(t=>{ if(!prosMap.has(t)) prosMap.set(t,new Set()); prosMap.get(t).add(p.key); });
+    p.info.cons.forEach(t=>{ if(!consMap.has(t)) consMap.set(t,new Set()); consMap.get(t).add(p.key); });
+  });
+  const prosList=$("prosList"), consList=$("consList");
+  prosList.innerHTML=""; consList.innerHTML="";
+  if(prosMap.size===0){ prosList.innerHTML='<li style="padding-left:0" class="empty-pros">此號碼的配對中沒有明顯優點。</li>'; }
+  prosMap.forEach((srcs,t)=>{
+    const li=document.createElement("li");
+    li.innerHTML = t + `<span class="src">${[...srcs].join(" ")}</span>`;
+    prosList.appendChild(li);
+  });
+  if(consMap.size===0){ consList.innerHTML='<li style="padding-left:0" class="empty-pros">此號碼的配對中沒有明顯缺點，恭喜。</li>'; }
+  consMap.forEach((srcs,t)=>{
+    const li=document.createElement("li");
+    li.innerHTML = t + `<span class="src">${[...srcs].join(" ")}</span>`;
+    consList.appendChild(li);
+  });
+
+  // 逐組解析
+  const detail=$("pairDetail"); detail.innerHTML="";
+  pairs.forEach(p=>{
+    const g=gradeOf(p.info.s);
+    const card=document.createElement("div");
+    card.className="pair-card";
+    let body="";
+    if(p.info.pros.length) body += `<div class="pl"><span class="lab-g">優：</span>${p.info.pros.join("、")}</div>`;
+    if(p.info.cons.length) body += `<div class="pl"><span class="lab-b">缺：</span>${p.info.cons.join("、")}</div>`;
+    card.innerHTML = `<div class="head"><span class="pnum">${p.key}</span><span class="pname">${p.info.name}</span><span class="badge ${g}">${gradeText(p.info.s)} ${p.info.s>0?"+":""}${p.info.s}</span></div>`+body;
+    detail.appendChild(card);
+  });
+
+  $("result").style.display="block";
+  window.scrollTo({top:$("result").offsetTop-20, behavior:"smooth"});
+}
+
+$("go").addEventListener("click", analyze);
+$("num").addEventListener("keydown", e=>{ if(e.key==="Enter") analyze(); });
+</script>
+</body>
+</html>
