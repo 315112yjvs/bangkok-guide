@@ -85,6 +85,60 @@
   button#go:active{transform:scale(.96);}
   .hint{font-size:12.5px; color:var(--sub); margin-top:12px; text-align:center; line-height:1.8;}
 
+  /* ---------- taksa day picker ---------- */
+  .day-block{margin-top:18px; border-top:1px dashed var(--line); padding-top:16px;}
+  .day-block .db-title{
+    font-size:13px; font-weight:800; text-align:center; letter-spacing:1px; margin-bottom:4px;
+  }
+  .day-block .db-sub{font-size:11.5px; color:var(--sub); text-align:center; margin-bottom:12px; line-height:1.7;}
+  .day-chips{display:flex; gap:8px; justify-content:center; flex-wrap:wrap;}
+  .day-chips button{
+    font-family:inherit; font-size:13px; font-weight:700; letter-spacing:1px;
+    padding:8px 14px; border-radius:999px; cursor:pointer;
+    border:1.5px solid var(--line); background:#fdfcf9; color:#6f695c;
+    transition:all .15s;
+  }
+  .day-chips button:hover{border-color:#b7ad97;}
+  .day-chips button.on{
+    background:linear-gradient(160deg,#3f3b33,#26241f); color:#f4efe2; border-color:#26241f;
+    box-shadow:0 4px 10px rgba(40,35,20,.22);
+  }
+
+  /* ---------- taksa result ---------- */
+  .tk-tiles{display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:6px 0 14px;}
+  .tk-tile{
+    width:64px; border-radius:13px; overflow:hidden; text-align:center;
+    border:1px solid var(--line); background:#fff;
+  }
+  .tk-tile .d{
+    font-size:22px; font-weight:800; padding:8px 0 6px; font-family:"SF Mono",Menlo,monospace;
+  }
+  .tk-tile .c{font-size:11px; font-weight:800; padding:4px 2px; letter-spacing:.5px;}
+  .tk-tile .t{font-size:9.5px; padding:0 2px 6px; opacity:.75;}
+  .tk-tile.tk-good{border-color:#bcd8c6;}
+  .tk-tile.tk-good .d{color:var(--good-deep);}
+  .tk-tile.tk-good .c,.tk-tile.tk-good .t{background:var(--good-soft); color:var(--good-deep);}
+  .tk-tile.tk-good .c{padding-top:6px;}
+  .tk-tile.tk-neu{border-color:#e4dcc8;}
+  .tk-tile.tk-neu .d{color:#7a725d;}
+  .tk-tile.tk-neu .c,.tk-tile.tk-neu .t{background:#f4efe1; color:#7a725d;}
+  .tk-tile.tk-neu .c{padding-top:6px;}
+  .tk-tile.tk-bad{border-color:#e6bdb0;}
+  .tk-tile.tk-bad .d{color:var(--bad-deep);}
+  .tk-tile.tk-bad .c,.tk-tile.tk-bad .t{background:var(--bad-soft); color:var(--bad-deep);}
+  .tk-tile.tk-bad .c{padding-top:6px;}
+  .tk-tile.tk-out{border-color:#e6e1d4; opacity:.75;}
+  .tk-tile.tk-out .d{color:#a29a86;}
+  .tk-tile.tk-out .c,.tk-tile.tk-out .t{background:#f1eee6; color:#a29a86;}
+  .tk-tile.tk-out .c{padding-top:6px;}
+  .tk-sum{
+    display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:6px;
+  }
+  .tk-sum span{
+    font-size:12.5px; font-weight:700; padding:6px 14px; border-radius:999px; letter-spacing:.5px;
+  }
+  .tk-note{font-size:12.5px; color:var(--sub); line-height:1.9; margin-top:14px; text-align:center;}
+
   /* ---------- result hero ---------- */
   #result{display:none;}
   .reveal{animation:up .5s ease both;}
@@ -249,6 +303,21 @@
       <button id="go">分析</button>
     </div>
     <div class="hint">輸入完整手機號碼，書中規則：前兩碼不計，只看後 8 碼；也可直接輸入 8 碼。</div>
+    <div class="day-block">
+      <div class="db-title">出生星期（選填）</div>
+      <div class="db-sub">啟用泰國傳統塔克夏（ทักษา）個人化分析：依出生星期輪轉八宮，找出你個人的吉星與凶星數字<br>週三出生要分白天（06:00-18:00 水曜）與夜晚（18:00-06:00 羅睺）</div>
+      <div class="day-chips" id="dayChips">
+        <button data-d="">不使用</button>
+        <button data-d="1">週日</button>
+        <button data-d="2">週一</button>
+        <button data-d="3">週二</button>
+        <button data-d="4">週三日</button>
+        <button data-d="8">週三夜</button>
+        <button data-d="5">週四</button>
+        <button data-d="6">週五</button>
+        <button data-d="7">週六</button>
+      </div>
+    </div>
   </div>
 
   <div id="result">
@@ -274,6 +343,13 @@
       <div class="digits" id="digitBoxes"></div>
       <div class="digits-cap" id="digitCap"></div>
       <div class="pair-strip" id="pairStrip"></div>
+    </div>
+
+    <div class="panel reveal" id="tkPanel" style="display:none">
+      <div class="sec-title"><span class="bar"></span>塔克夏個人化分析 <span style="font-size:11.5px;color:var(--sub);font-weight:400;letter-spacing:1px" id="tkDayLabel"></span></div>
+      <div class="tk-tiles" id="tkTiles"></div>
+      <div class="tk-sum" id="tkSum"></div>
+      <div class="tk-note" id="tkNote"></div>
     </div>
 
     <div class="panel reveal" id="warnPanel" style="display:none">
@@ -305,7 +381,7 @@
         <span style="background:var(--bad-soft);color:var(--bad-deep)">大凶 -7~-10</span>
       </div>
       <div class="note">
-        計分方式：後 8 碼共 7 組相鄰配對，依書中每組配對的吉凶評級（-10 ~ +10）加總換算為 100 分制；出現書中列名的三碼凶數組合另行扣分。書中定義「吉祥號（เบอร์มงคล）後 8 碼不能含任何凶數配對」，包含書中八組仇敵配對（เลขคู่ศัตรู：13/31、18/81、25/52、27/72、37/73、48/84、67/76、68/86），因此含大凶配對時總分會被限制在 59 分以下。數字 9 會隨相鄰數字變化，數字 0 弊多於利。本工具僅整理書中觀點，供參考娛樂。
+        計分方式：後 8 碼共 7 組相鄰配對，依書中每組配對的吉凶評級（-10 ~ +10）加總換算為 100 分制；出現書中列名的三碼凶數組合另行扣分。書中定義「吉祥號（เบอร์มงคล）後 8 碼不能含任何凶數配對」，包含書中八組仇敵配對（เลขคู่ศัตรู：13/31、18/81、25/52、27/72、37/73、48/84、67/76、68/86），因此含大凶配對時總分會被限制在 59 分以下。數字 9 會隨相鄰數字變化，數字 0 弊多於利。選填出生星期時，另依泰國傳統塔克夏（ทักษา）盤輪轉八宮做個人化加減分（上限 ±12）。本工具僅整理書中與傳統命理觀點，供參考娛樂。
       </div>
     </div>
   </div>
@@ -406,6 +482,31 @@ const TRIPLES = [
   {set:"555", p:-4, label:"555", cat:"感情有問題者常見", desc:"感情糾紛多、常與伴侶起爭執"}
 ];
 
+// ================================================================
+// 塔克夏 ทักษา：3x3 盤順時針 1→2→3→4→7→5→8→6，
+// 由出生星期的數字起算 บริวาร，依序輪轉八宮
+// ================================================================
+const TK_CLOCK = [1,2,3,4,7,5,8,6];
+const TK_CATS = [
+  {th:"บริวาร", zh:"眷屬",  grp:"neu", pt:0,  desc:"身邊的人"},
+  {th:"อายุ",   zh:"健康",  grp:"neu", pt:0,  desc:"健康壽數"},
+  {th:"เดช",    zh:"權勢",  grp:"good",pt:1,  desc:"權勢與競爭力"},
+  {th:"ศรี",    zh:"錢財",  grp:"good",pt:2,  desc:"金錢與吉祥"},
+  {th:"มูละ",   zh:"資產",  grp:"good",pt:1,  desc:"財產與根基"},
+  {th:"อุตสาหะ",zh:"勤勉",  grp:"neu", pt:0,  desc:"工作與努力"},
+  {th:"มนตรี",  zh:"貴人",  grp:"good",pt:2,  desc:"聲望與提攜"},
+  {th:"กาลี",   zh:"凶星",  grp:"bad", pt:-3, desc:"凶惡之事"}
+];
+const TK_DAYS = {1:"週日",2:"週一",3:"週二",4:"週三日",5:"週四",6:"週五",7:"週六",8:"週三夜（羅睺）"};
+
+function taksaMap(birthNum){
+  const start = TK_CLOCK.indexOf(birthNum);
+  const map = {}; // digit -> cat
+  for(let k=0;k<8;k++) map[TK_CLOCK[(start+k)%8]] = TK_CATS[k];
+  return map;
+}
+
+let selDay = ""; // "" = off
 const $ = id => document.getElementById(id);
 const pairInfo = (a,b) => PAIRS[a+b] || PAIRS[b+a];
 const gradeCls = s => s>=5 ? "G" : (s>=0 ? "M" : "B");
@@ -445,6 +546,31 @@ function analyze(){
     if(t) hits.push({...t, at:core.slice(i,i+3)});
   }
   hits.forEach(h=>score += h.p);
+
+  // 塔克夏個人化加減分
+  let tkAdj = 0, tkInfo = null;
+  if(selDay !== ""){
+    const map = taksaMap(Number(selDay));
+    const tiles = [], counts = {good:0, neu:0, bad:0, out:0};
+    let badDigits = new Set(), goodDigits = new Set();
+    for(const c of core){
+      const d = Number(c);
+      if(d >= 1 && d <= 8){
+        const cat = map[d];
+        tiles.push({c, cat});
+        counts[cat.grp]++;
+        tkAdj += cat.pt;
+        if(cat.grp === "bad") badDigits.add(c);
+        if(cat.grp === "good") goodDigits.add(c);
+      } else {
+        tiles.push({c, cat:null});
+        counts.out++;
+      }
+    }
+    tkAdj = Math.max(-12, Math.min(12, tkAdj));
+    score += tkAdj;
+    tkInfo = {tiles, counts, badDigits, goodDigits, map};
+  }
 
   // 書中規則：吉祥號不能含凶數配對（仇敵組等大凶配對 → 封頂 59）
   const hasFatal = pairs.some(p=>p.info.s<=-7);
@@ -491,6 +617,47 @@ function analyze(){
     d.innerHTML = `<div class="clock"><i>${p.key[0]}</i><i>${p.key[1]}</i></div><span class="gl ${g}">${gradeText(p.info.s)}</span>`;
     strip.appendChild(d);
   });
+
+  // 塔克夏面板
+  const tkPanel = $("tkPanel");
+  if(tkInfo){
+    tkPanel.style.display = "block";
+    $("tkDayLabel").textContent = `出生 ${TK_DAYS[Number(selDay)]}・กาลี 凶星數字為 ${
+      Object.keys(tkInfo.map).find(d=>tkInfo.map[d].grp==="bad")
+    }`;
+    const tt = $("tkTiles"); tt.innerHTML = "";
+    tkInfo.tiles.forEach(t=>{
+      const div = document.createElement("div");
+      if(t.cat){
+        div.className = "tk-tile tk-" + t.cat.grp;
+        div.innerHTML = `<div class="d">${t.c}</div><div class="c">${t.cat.zh}</div><div class="t">${t.cat.th}</div>`;
+      } else {
+        div.className = "tk-tile tk-out";
+        div.innerHTML = `<div class="d">${t.c}</div><div class="c">盤外</div><div class="t">${t.c==="9"?"เกตุ 偏吉":"書中列凶"}</div>`;
+      }
+      tt.appendChild(div);
+    });
+    const sum = $("tkSum"); sum.innerHTML = "";
+    const chips = [
+      {n:tkInfo.counts.good, txt:`吉星數字 ${tkInfo.counts.good} 個`, bg:"var(--good-soft)", fg:"var(--good-deep)"},
+      {n:tkInfo.counts.neu,  txt:`中性數字 ${tkInfo.counts.neu} 個`,  bg:"#f4efe1", fg:"#7a725d"},
+      {n:tkInfo.counts.bad,  txt:`凶星數字 ${tkInfo.counts.bad} 個`,  bg:"var(--bad-soft)", fg:"var(--bad-deep)"},
+      {n:tkInfo.counts.out,  txt:`盤外數字 ${tkInfo.counts.out} 個`,  bg:"#f1eee6", fg:"#a29a86"}
+    ];
+    chips.filter(c=>c.n>0).forEach(c=>{
+      const s = document.createElement("span");
+      s.textContent = c.txt; s.style.background = c.bg; s.style.color = c.fg;
+      sum.appendChild(s);
+    });
+    const adjTxt = tkAdj>0 ? `+${tkAdj}` : `${tkAdj}`;
+    let noteHtml = `個人化調整：<b style="color:${tkAdj>=0?'var(--good-deep)':'var(--bad-deep)'}">${adjTxt} 分</b>（ศรี 錢財、มนตรี 貴人每碼 +2，เดช 權勢、มูละ 資產每碼 +1，กาลี 凶星每碼 -3）`;
+    if(tkInfo.counts.bad >= 2){
+      noteHtml += `<br><b style="color:var(--bad-deep)">此號碼含 ${tkInfo.counts.bad} 個你個人的 กาลี 凶星數字，以塔克夏觀點屬於相沖，選號時建議避開。</b>`;
+    }
+    $("tkNote").innerHTML = noteHtml;
+  } else {
+    tkPanel.style.display = "none";
+  }
 
   // 三碼警告
   const warnPanel = $("warnPanel"), warnList = $("warnList");
@@ -550,6 +717,17 @@ function analyze(){
 
 $("go").addEventListener("click", analyze);
 $("num").addEventListener("keydown", e=>{ if(e.key==="Enter") analyze(); });
+
+// 出生星期選擇
+document.querySelectorAll("#dayChips button").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    document.querySelectorAll("#dayChips button").forEach(b=>b.classList.remove("on"));
+    btn.classList.add("on");
+    selDay = btn.dataset.d;
+    if($("result").style.display === "block") analyze();
+  });
+});
+document.querySelector('#dayChips button[data-d=""]').classList.add("on");
 </script>
 </body>
 </html>
