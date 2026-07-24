@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "留言小幫手（FB / IG 抽獎）",
+  "version": "1.4.0",
+  "description": "在 FB 或 IG 指定留言串自動回覆隨機食物英文 + 活動 hashtag，內建隨機延遲降低被判 spam 風險。",
+  "icons": {},
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.facebook.com/*",
+        "https://web.facebook.com/*",
+        "https://www.instagram.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
