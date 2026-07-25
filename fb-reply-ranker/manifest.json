@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "FB 留言統計",
+  "version": "1.1.0",
+  "description": "掃描 Facebook 貼文留言區：回覆數最多的留言排行，以及每個帳號留言／回覆的次數統計，可複製 / 匯出。",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": [
+    "https://www.facebook.com/*",
+    "https://m.facebook.com/*",
+    "https://web.facebook.com/*"
+  ],
+  "action": {
+    "default_title": "FB 留言統計",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.facebook.com/*",
+        "https://web.facebook.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

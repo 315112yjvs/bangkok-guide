@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    :root { --fb: #1877f2; }
+    * { box-sizing: border-box; }
+    body {
+      width: 360px;
+      margin: 0;
+      font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: #f0f2f5;
+      color: #1c1e21;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      background: #fff;
+      border-bottom: 1px solid #dadde1;
+    }
+    header h1 { font-size: 15px; margin: 0; flex: 1; }
+    .btn {
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--fb); color: #fff; }
+    .btn-primary:disabled { background: #9cbcf0; cursor: default; }
+    .btn-ghost { background: #e4e6eb; color: #1c1e21; }
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      padding: 10px 14px;
+      background: #fff;
+      border-bottom: 1px solid #dadde1;
+    }
+    .toolbar .btn { flex: 1; }
+    .urlbar { padding: 10px 14px 0; background: #fff; }
+    .urlbar input {
+      width: 100%;
+      border: 1px solid #ccd0d5;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+    #status { padding: 8px 14px; font-size: 12px; color: #65676b; }
+    #list { max-height: 380px; overflow-y: auto; padding: 6px 10px 12px; }
+    .row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid #e4e6eb;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .row:hover { border-color: var(--fb); }
+    .row.top { border: 1px solid #ffb700; background: #fffbeb; }
+    .rank {
+      flex: 0 0 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #e4e6eb;
+      color: #1c1e21;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .row.top .rank { background: #ffb700; color: #7a4b00; }
+    .info { flex: 1; min-width: 0; }
+    .author { font-weight: 600; font-size: 13px; }
+    .text {
+      font-size: 12px;
+      color: #65676b;
+      margin-top: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .count {
+      flex: 0 0 auto;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--fb);
+      white-space: nowrap;
+    }
+    .empty { text-align: center; color: #65676b; font-size: 13px; padding: 24px 12px; }
+    .tabs { display: flex; background: #fff; padding: 8px 14px 0; gap: 6px; }
+    .tab {
+      flex: 1;
+      border: 1px solid #ccd0d5;
+      background: #f0f2f5;
+      border-radius: 6px 6px 0 0;
+      padding: 8px 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #65676b;
+    }
+    .tab.active { background: #fff; color: var(--fb); border-bottom-color: #fff; }
+    .sub { font-size: 11px; color: #8a8d91; margin-top: 2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FB 留言統計</h1>
+  </header>
+  <div class="tabs">
+    <button id="tabReplies" class="tab active">回覆數排行</button>
+    <button id="tabAuthors" class="tab">帳號留言次數</button>
+  </div>
+  <div class="urlbar">
+    <input id="urlInput" type="text" placeholder="貼上貼文網址（留空＝掃目前分頁）" />
+  </div>
+  <div class="toolbar">
+    <button id="autoBtn" class="btn btn-primary">自動掃描（捲動載入）</button>
+    <button id="scanBtn" class="btn btn-ghost">快速掃描</button>
+  </div>
+  <div class="toolbar" id="exportbar" style="display:none;">
+    <button id="copyBtn" class="btn btn-ghost">複製</button>
+    <button id="exportBtn" class="btn btn-ghost">匯出 .txt</button>
+  </div>
+  <div id="status">「自動掃描」會自動往下載入留言再排名；「快速掃描」只讀目前畫面。</div>
+  <div id="list"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
