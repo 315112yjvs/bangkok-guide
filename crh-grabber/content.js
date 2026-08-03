@@ -213,7 +213,9 @@
     if ($('#MainPart_lbUsersInLineAheadOfYou, #buttonConfirmRedirect, .qit-waitingroom, [id^="MainPart_"]')) {
       return true;
     }
-    if (location.hostname === SITE) return false;   // 本站不做文字猜測
+    // 自家網域（售票站＋官網）一律不做文字猜測 —— 官網滿是行銷文案，
+    // 誤判成排隊室就會停掉整個流程
+    if (/cityrecitalhall\.com$/i.test(location.hostname)) return false;
     const t = document.body ? document.body.innerText.slice(0, 3000) : '';
     return /you are now in line|your place in (the )?queue|virtual waiting room/i.test(t);
   }
@@ -825,6 +827,16 @@
       return;
     }
     if (type === 'cart' || type === 'checkout') { runCart(); return; }
+
+    // 站在官網（www）而不是售票站：先過去再說，不要在這裡乾等開賣。
+    // 倒數要在售票站上做，開賣瞬間才不用多一次跨網域跳轉。
+    if (location.hostname !== SITE) {
+      const dest = cfg.targetUrls[0] || 'https://' + SITE + '/events/';
+      log('這裡是官網，先前往售票站');
+      setPanelStatus('前往售票站…');
+      location.href = dest;
+      return;
+    }
 
     // 只有「還沒開賣」才需要校時＋倒數。開賣後每次重載都校時＝每秒一個多餘請求。
     const onsale = cfg.onsaleTime ? new Date(cfg.onsaleTime).getTime() : 0;

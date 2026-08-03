@@ -11,6 +11,7 @@
   ],
   "host_permissions": [
     "*://tickets.cityrecitalhall.com/*",
+    "*://*.cityrecitalhall.com/*",
     "*://*.queue-it.net/*"
   ],
   "background": {
@@ -28,6 +29,7 @@
     {
       "matches": [
         "*://tickets.cityrecitalhall.com/*",
+        "*://www.cityrecitalhall.com/*",
         "*://*.queue-it.net/*"
       ],
       "js": ["content.js"],
