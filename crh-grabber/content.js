@@ -150,6 +150,18 @@
     el.dispatchEvent(new MouseEvent('click', opts));
   }
 
+  // 設了 location.href 之後若遲遲沒換頁（Queue-it 排隊、Incapsula 挑戰、
+  // 網路卡住都可能），要在面板講出來，不然使用者只看到分頁一直轉圈
+  function watchNavigation(dest, timeoutMs = 12000) {
+    const from = location.href;
+    setTimeout(() => {
+      if (location.href !== from) return;   // 已經換頁了
+      log(`等了 ${timeoutMs / 1000} 秒還沒進到售票站`, 'warn');
+      log(`可能卡在 Queue-it 排隊或機器人驗證。目標：${dest}`, 'warn');
+      setPanelStatus('導航逾時 — 請手動開啟售票站看看');
+    }, timeoutMs);
+  }
+
   async function waitFor(fn, timeoutMs = 8000, stepMs = 120) {
     const deadline = Date.now() + timeoutMs;
     while (Date.now() < deadline) {
@@ -535,30 +547,45 @@
   }
 
   // ── 開賣前等待 ────────────────────────────────────────────
-  async function waitForOnsale() {
-    const target = cfg.onsaleTime ? new Date(cfg.onsaleTime).getTime() : 0;
-    if (!target || isNaN(target)) {
-      if (cfg.onsaleTime) log(`開賣時間格式看不懂（${cfg.onsaleTime}），略過倒數`, 'warn');
-      return;
-    }
+  function onsaleTs() {
+    const t = cfg.onsaleTime ? new Date(cfg.onsaleTime).getTime() : 0;
+    return (!t || isNaN(t)) ? 0 : t;
+  }
+
+  // 倒數到指定時刻，期間持續更新面板。回傳 false = 中途被停止。
+  async function countdownTo(targetTs, label) {
     let finalSynced = false;
     while (!stopped && state.running) {
-      const left = target - now();
-      if (left <= 0) { log('開賣時間到！', 'good'); return; }
-      setPanelStatus(`距離開賣 ${fmtLeft(left)}`);
-      // 開賣前最後校時一次就好 — 每秒發請求會直接被 Incapsula 盯上
+      const left = targetTs - now();
+      if (left <= 0) return true;
+      setPanelStatus(`${label} ${fmtLeft(left)}`);
+      // 只在最後校時一次 — 每秒發請求會直接被 Incapsula 盯上
       if (!finalSynced && left < 90000) {
         finalSynced = true;
         await syncServerTime(true);
       }
       await sleep(left > 5000 ? 1000 : 200);
     }
+    return false;
+  }
+
+  async function waitForOnsale() {
+    const target = onsaleTs();
+    if (!target) {
+      if (cfg.onsaleTime) log(`開賣時間格式看不懂（${cfg.onsaleTime}），略過倒數`, 'warn');
+      return;
+    }
+    if (await countdownTo(target, '距離開賣')) log('開賣時間到！', 'good');
   }
 
   function fmtLeft(ms) {
     if (ms < 0) ms = 0;
     const s = Math.floor(ms / 1000);
-    const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), ss = s % 60;
+    const d = Math.floor(s / 86400);
+    const h = Math.floor((s % 86400) / 3600);
+    const m = Math.floor((s % 3600) / 60);
+    const ss = s % 60;
+    if (d) return `${d}天${h}時${m}分`;           // 還很久就不必秒了
     return (h ? `${h}時` : '') + (h || m ? `${m}分` : '') + `${ss}秒`;
   }
 
@@ -599,8 +626,21 @@
       return;
     }
 
-    log(`列表上還沒出現「${cfg.discoverKeyword}」，${(jitter() / 1000).toFixed(1)}s 後重新整理`);
-    setTimeout(() => { if (!stopped && state.running) location.reload(); }, Math.max(jitter(), 3000));
+    // 這個迴圈會整頁重整，每次都穿過 Queue-it + Incapsula，
+    // 沒有上限的話找不到活動就會無限重整下去，遲早被擋
+    const elapsedMin = (Date.now() - state.startedAt) / 60000;
+    if (elapsedMin > cfg.maxRetryMinutes) {
+      log(`找了 ${cfg.maxRetryMinutes} 分鐘都沒出現「${cfg.discoverKeyword}」，停止`, 'warn');
+      notify('搶票已停止', `活動列表上一直找不到「${cfg.discoverKeyword}」`, true);
+      stop();
+      return;
+    }
+    state.attempts++;
+    saveState();
+    const wait = Math.max(jitter(), 3000);
+    log(`列表上還沒出現「${cfg.discoverKeyword}」，${(wait / 1000).toFixed(1)}s 後重新整理`);
+    setPanelStatus(`搜尋中（第 ${state.attempts} 次）`);
+    setTimeout(() => { if (!stopped && state.running) location.reload(); }, wait);
   }
 
   // ── 確認站在正確的場次上 ──────────────────────────────────
@@ -828,12 +868,21 @@
     }
     if (type === 'cart' || type === 'checkout') { runCart(); return; }
 
-    // 站在官網（www）而不是售票站：先過去再說，不要在這裡乾等開賣。
-    // 倒數要在售票站上做，開賣瞬間才不用多一次跨網域跳轉。
+    // 站在官網（www）而不是售票站。
+    // 離開賣還早就留在原地倒數 —— 三天前把使用者正在看的頁面搶走沒有意義，
+    // 而且那時候活動根本還沒上架售票站。開賣前 LEAD 分鐘才過去卡位。
     if (location.hostname !== SITE) {
       const dest = cfg.targetUrls[0] || 'https://' + SITE + '/events/';
-      log('這裡是官網，先前往售票站');
+      const t = onsaleTs();
+      const LEAD = 180000;   // 提前 3 分鐘進站
+      if (t && t - now() > LEAD) {
+        log('離開賣還早，先留在這頁倒數，不會動你的頁面');
+        const ok = await countdownTo(t - LEAD, '距離進站還有');
+        if (!ok) return;
+      }
+      log('前往售票站', 'good');
       setPanelStatus('前往售票站…');
+      watchNavigation(dest);
       location.href = dest;
       return;
     }
