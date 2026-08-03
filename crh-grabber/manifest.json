@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "City Recital Hall 搶票助手",
-  "version": "1.0.0",
-  "description": "GMMTV FANDAY 34 in Sydney / City Recital Hall (Tessitura TNEW) 自動選區、選張數、加入購物車 — 內建 Queue-it 候位室安全模式",
+  "version": "1.1.0",
+  "description": "City Recital Hall (Tessitura TNEW) 通用自動搶票 — 任何活動皆可用：場次選擇、自動選區、加入購物車，內建 Queue-it 候位室安全模式",
   "permissions": [
     "storage",
     "notifications",

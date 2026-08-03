@@ -7,10 +7,10 @@ const DEFAULTS = {
   enabled: false,
   targetUrls: [],
   autoDiscover: true,
-  discoverKeyword: 'GMMTV',
+  discoverKeyword: '',
   perfKeyword: '',
-  onsaleTime: '2026-08-06T10:00:00+10:00',
-  tierPriority: ['S', 'A', 'B', 'General'],
+  onsaleTime: '',
+  tierPriority: [],
   allowLowerTier: true,
   priceTypeKeyword: '',
   quantity: 2,
@@ -51,11 +51,12 @@ function load() {
 }
 
 // 「按了沒反應」幾乎都是因為當前分頁沒有 content script，
-// 所以直接把這件事顯示出來，不要讓人猜
+// 所以直接把這件事顯示出來，不要讓人猜。
+// 同一個 status 回應也帶回頁面上偵測到的場次清單，順路畫成按鈕。
 function showTabDiagnostic() {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const el = $('tabinfo');
-    if (!el || !tabs[0]) return;
+    if (!el || !tabs[0]) { renderPerfChips([]); return; }
     let host;
     try { host = new URL(tabs[0].url).hostname; } catch (_) { host = '(不明)'; }
     chrome.tabs.sendMessage(tabs[0].id, { type: 'status' }, (res) => {
@@ -64,6 +65,7 @@ function showTabDiagnostic() {
         ? `目前分頁：${host} — 外掛已就緒 ✓`
         : `目前分頁：${host} — 外掛在這頁沒有作用`;
       el.className = res ? 'tabinfo ok' : 'tabinfo bad';
+      renderPerfChips((res && res.performances) || []);
     });
   });
 }
@@ -119,31 +121,67 @@ function updateOnsaleHint() {
 $('onsaleTime').addEventListener('input', updateOnsaleHint);
 
 // ── 場次選擇 chips ───────────────────────────────────────────
-// 只有兩場，用按的比用打的可靠；點了直接存檔，不怕忘記按儲存
+// 清單不是寫死的：開著售票頁時，content script 會回報頁面上實際列出的
+// 所有場次（listPerformances），這裡把它們畫成按鈕。任何活動都適用。
+// 點了直接寫入關鍵字＋目標網址並存檔，不怕忘記按儲存。
+let perfCount = 0;   // 目前頁面偵測到幾場，決定「未指定」要不要紅字警告
+
 function updatePerfUI() {
-  const v = $('perfKeyword').value.trim().toLowerCase().replace(/\s+/g, '');
-  ['chipAfternoon', 'chipEvening'].forEach((id) => {
-    const chip = $(id);
-    chip.classList.toggle('active', !!v && v.includes(chip.dataset.fill.toLowerCase()));
+  const norm = (s) => s.trim().toLowerCase().replace(/\s+/g, '');
+  const v = norm($('perfKeyword').value);
+  document.querySelectorAll('#perfChips .chip').forEach((chip) => {
+    chip.classList.toggle('active', !!v && norm(chip.dataset.fill).includes(v));
   });
   const hint = $('perfHint');
-  if (!v) {
-    hint.textContent = '⚠ 未指定 — 偵測到多場次時會直接停下來等你選';
+  if (!v && perfCount > 1) {
+    hint.textContent = `⚠ 偵測到 ${perfCount} 個場次但未指定 — 開跑後會停下來等你選`;
     hint.className = 'hint bad';
     $('perfKeyword').classList.add('field-warn');
+  } else if (!v) {
+    hint.textContent = '留空＝單一場次自動繼續；多場次活動會停下來等你選';
+    hint.className = 'hint';
+    $('perfKeyword').classList.remove('field-warn');
   } else {
     hint.textContent = '';
     hint.className = 'hint';
     $('perfKeyword').classList.remove('field-warn');
   }
 }
-['chipAfternoon', 'chipEvening'].forEach((id) => {
-  $(id).onclick = () => {
-    $('perfKeyword').value = $(id).dataset.fill;
+
+function renderPerfChips(perfs) {
+  perfCount = perfs.length;
+  const box = $('perfChips');
+  box.innerHTML = '';
+  if (!perfs.length) {
+    const d = document.createElement('div');
+    d.className = 'chips-empty';
+    d.textContent = '開啟活動的售票頁後，這裡會自動列出所有場次';
+    box.appendChild(d);
     updatePerfUI();
-    save(() => { $('status').textContent = `已選「${$(id).dataset.fill}」場次並儲存`; });
-  };
-});
+    return;
+  }
+  perfs.forEach((p) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chip';
+    b.textContent = p.label || p.url;
+    b.title = p.label + (p.url ? '\n' + p.url : '');
+    b.dataset.fill = p.label;
+    b.onclick = () => {
+      $('perfKeyword').value = p.label;
+      if (p.url) {
+        // 順手把這場的確切網址放到目標清單最前面，之後直達不用再找
+        const lines = $('targetUrls').value.split('\n').map((s) => s.trim()).filter(Boolean);
+        $('targetUrls').value = [p.url, ...lines.filter((u) => u !== p.url)].join('\n');
+      }
+      updatePerfUI();
+      save(() => { $('status').textContent = `已選「${p.label}」並儲存`; });
+    };
+    box.appendChild(b);
+  });
+  updatePerfUI();
+}
+
 $('perfKeyword').addEventListener('input', updatePerfUI);
 
 $('save').onclick = () => save();

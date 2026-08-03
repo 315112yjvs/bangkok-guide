@@ -56,16 +56,15 @@
     enabled: false,
     // 目標場次網址，一行一個。例：https://tickets.cityrecitalhall.com/7999/8001
     targetUrls: [],
-    // 還沒開賣、拿不到網址時，用關鍵字在 /events/ 自動找
+    // 還沒開賣、拿不到網址時，用關鍵字在 /events/ 自動找（例：GMMTV）
     autoDiscover: true,
-    discoverKeyword: 'GMMTV',
-    // 場次關鍵字：一個節目有多場時用來認人。
-    // 例如 '2:00pm'（First-Khaotung）或 '8:30pm'（Sea-Keen）
+    discoverKeyword: '',
+    // 場次關鍵字：一個節目有多場時用來認場（例：2:00pm、Aug 15）
     perfKeyword: '',
-    // 開賣時間（ISO 8601，含時區）。雪梨 9/19 這場是 2026-08-06 10:00 AEST
-    onsaleTime: '2026-08-06T10:00:00+10:00',
-    // 票區優先順序，逗號分隔，比對票區名稱
-    tierPriority: ['S', 'A', 'B', 'General'],
+    // 開賣時間（ISO 8601，含時區，例：2026-08-06T10:00:00+10:00）。留空＝立刻執行
+    onsaleTime: '',
+    // 票區優先順序，逗號分隔，比對票區名稱。留空＝照頁面順序全部嘗試
+    tierPriority: [],
     allowLowerTier: true,
     // 票種關鍵字（留空＝用第一個可選的票種，通常是 Standard）
     priceTypeKeyword: '',
@@ -254,6 +253,10 @@
       return { el: r, label, avail, zoneId: r.getAttribute('data-zone-id') };
     }).filter((z) => z.avail > 0);
 
+    // 沒設優先順序＝照頁面順序全部嘗試（不受 allowLowerTier 開關影響，
+    // 否則「留空＋關掉備胎」會變成一區都不試）
+    if (!cfg.tierPriority.length) return zones;
+
     const ranked = [];
     cfg.tierPriority.forEach((kw, i) => {
       zones.forEach((z) => {
@@ -406,6 +409,12 @@
     const screens = $$(SEL.syosScreenBtn).filter((b) => !b.classList.contains('disabled'));
     if (!screens.length) return { ok: false, reason: 'no-screen' };
 
+    // 同 pickZones：沒設優先順序＝照頁面順序全部嘗試
+    if (!cfg.tierPriority.length) {
+      for (const b of screens) b.__prio = 0;
+      return await syosTryScreens(screens);
+    }
+
     const ranked = [];
     cfg.tierPriority.forEach((kw, i) => {
       screens.forEach((b) => {
@@ -416,7 +425,10 @@
     });
     if (cfg.allowLowerTier) screens.forEach((b) => { if (!ranked.includes(b)) { b.__prio = 999; ranked.push(b); } });
     ranked.sort((a, b) => a.__prio - b.__prio);
+    return await syosTryScreens(ranked);
+  }
 
+  async function syosTryScreens(ranked) {
     for (const btn of ranked) {
       if (stopped) return { ok: false, reason: 'stopped' };
       log(`嘗試區域：${txt(btn).replace(/\s+/g, ' ')}`);
@@ -615,7 +627,13 @@
   // ── 事件列表：自動找場次 ──────────────────────────────────
   async function runEventsDiscovery() {
     const kw = (cfg.discoverKeyword || '').trim().toLowerCase();
-    if (!kw) { log('沒有設定關鍵字，無法自動搜尋', 'warn'); return; }
+    if (!kw) {
+      log('沒有目標網址也沒有搜尋關鍵字，無法自動找活動', 'bad');
+      notify('缺少設定', '請在設定填入活動的搜尋關鍵字，或直接貼上場次網址', true);
+      setPanelStatus('已停止 — 缺少搜尋關鍵字');
+      stop();
+      return;
+    }
 
     // 卡片容器只往上找有限層數。原本用 closest(...,'div') 會抓到包住整頁的
     // 祖先，結果頁面上隨便哪裡出現關鍵字都會誤判成命中。
@@ -666,37 +684,48 @@
     setTimeout(() => { if (!stopped && state.running) location.reload(); }, wait);
   }
 
-  // ── 確認站在正確的場次上 ──────────────────────────────────
+  // ── 場次清單 ──────────────────────────────────────────────
   // 換場次的 UI 是一排 button（不是 a），目標網址放在 value 屬性裡：
   //   <button class="tn-additional-events__button active"
   //           value="https://tickets.cityrecitalhall.com/7617/7638">August 12, 2026 7:00pm</button>
-  // 兩場卡司不同，挑錯場等於白搶，所以多場又沒指定關鍵字時寧可停下來問人。
-  // 回傳 false = 已經導頁或已停止，呼叫端要直接 return。
-  function ensurePerformance() {
-    // 桌機版和手機版各渲染一份同樣的按鈕清單，不去重的話
-    // 單一場次會被算成 2 個，誤觸下面的「請指定場次」而停掉
+  // 桌機版和手機版各渲染一份，要依 value 去重，
+  // 否則單一場次會被算成 2 個而誤觸「請指定場次」。
+  // popup 也透過 status 訊息拿這份清單來畫場次按鈕。
+  function listPerformances() {
     const seen = new Set();
-    const btns = $$(SEL.perfButton).filter((b) => {
+    return $$(SEL.perfButton).filter((b) => {
       const k = b.value || txt(b);
       if (seen.has(k)) return false;
       seen.add(k);
       return true;
-    });
-    if (btns.length <= 1) return true;
+    }).map((b) => ({
+      label: txt(b).replace(/\s+/g, ' ').trim(),
+      url: b.value || '',
+      active: b.classList.contains('active'),
+    }));
+  }
+
+  // ── 確認站在正確的場次上 ──────────────────────────────────
+  // 多場次的活動每場卡司/時間不同，挑錯場等於白搶，
+  // 所以多場又沒指定關鍵字時寧可停下來問人。
+  // 回傳 false = 已經導頁或已停止，呼叫端要直接 return。
+  function ensurePerformance() {
+    const perfs = listPerformances();
+    if (perfs.length <= 1) return true;
 
     const norm = (s) => s.toLowerCase().replace(/\s+/g, '');
     const kw = norm(cfg.perfKeyword || '');
     if (!kw) {
-      log(`這個節目有 ${btns.length} 個場次，請先在設定填「場次關鍵字」（如 2:00pm）`, 'bad');
-      notify('需要指定場次', `偵測到 ${btns.length} 個場次，請設定場次關鍵字後再開始`, true);
+      log(`這個節目有 ${perfs.length} 個場次，請先在設定選擇要搶哪一場`, 'bad');
+      notify('需要指定場次', `偵測到 ${perfs.length} 個場次，請在設定選擇場次後再開始`, true);
       stop();
       return false;
     }
 
-    const active = btns.find((b) => b.classList.contains('active'));
-    if (active && norm(txt(active)).includes(kw)) return true;   // 已經在對的場次
+    const active = perfs.find((p) => p.active);
+    if (active && norm(active.label).includes(kw)) return true;   // 已經在對的場次
 
-    const want = btns.find((b) => norm(txt(b)).includes(kw));
+    const want = perfs.find((p) => norm(p.label).includes(kw));
     if (!want) {
       log(`找不到符合「${cfg.perfKeyword}」的場次，停止以免搶錯場`, 'bad');
       notify('找不到指定場次', `場次關鍵字「${cfg.perfKeyword}」沒有對應的場次`, true);
@@ -704,12 +733,11 @@
       return false;
     }
 
-    const url = want.value || '';
     const bare = (u) => u.split('?')[0].replace(/\/+$/, '');
-    if (!url || bare(url) === bare(location.href)) return true;  // 已經在這頁，別再跳
+    if (!want.url || bare(want.url) === bare(location.href)) return true;  // 已經在這頁，別再跳
 
-    log(`切換到指定場次：${txt(want).replace(/\s+/g, ' ')}`, 'good');
-    location.href = url;
+    log(`切換到指定場次：${want.label}`, 'good');
+    location.href = want.url;
     return false;
   }
 
@@ -971,7 +999,14 @@
   chrome.runtime.onMessage.addListener((msg, _s, reply) => {
     if (msg.type === 'start') { start(); reply({ ok: true }); }
     if (msg.type === 'stop')  { stop();  reply({ ok: true }); }
-    if (msg.type === 'status') reply({ state, cfg, log: logLines.slice(0, 12) });
+    if (msg.type === 'status') {
+      reply({
+        state, cfg,
+        log: logLines.slice(0, 12),
+        page: pageType(),
+        performances: listPerformances(),   // popup 用這份清單畫場次按鈕
+      });
+    }
     if (msg.type === 'cfg-updated') {
       chrome.storage.local.get(CFG_KEY, (r) => { cfg = { ...DEFAULTS, ...(r[CFG_KEY] || {}) }; });
     }
