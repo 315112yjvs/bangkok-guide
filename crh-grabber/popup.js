@@ -8,6 +8,7 @@ const DEFAULTS = {
   targetUrls: [],
   autoDiscover: true,
   discoverKeyword: 'GMMTV',
+  perfKeyword: '',
   onsaleTime: '2026-08-06T10:00:00+10:00',
   tierPriority: ['S', 'A', 'B', 'General'],
   allowLowerTier: true,
@@ -26,7 +27,7 @@ const DEFAULTS = {
 const $ = (id) => document.getElementById(id);
 const CHECKS = ['autoDiscover', 'allowLowerTier', 'preferBestAvailable',
                 'autoAddToCart', 'autoGoCheckout', 'sound'];
-const TEXTS  = ['discoverKeyword', 'onsaleTime', 'priceTypeKeyword'];
+const TEXTS  = ['discoverKeyword', 'perfKeyword', 'onsaleTime', 'priceTypeKeyword'];
 const NUMS   = ['quantity', 'minQuantity', 'retryIntervalMs'];
 
 function load() {
@@ -53,7 +54,12 @@ function save(then) {
     c.tierPriority = $('tierPriority').value.split(',').map((s) => s.trim()).filter(Boolean);
     CHECKS.forEach((k) => { c[k] = $(k).checked; });
     TEXTS.forEach((k)  => { c[k] = $(k).value.trim(); });
-    NUMS.forEach((k)   => { c[k] = Number($(k).value) || DEFAULTS[k]; });
+    // 不能寫成 Number(v) || DEFAULTS[k]：minQuantity 填 0（＝一定要指定張數）
+    // 會被當成 falsy 而被預設值蓋掉，這個選項就永遠設不起來
+    NUMS.forEach((k) => {
+      const n = Number($(k).value);
+      c[k] = ($(k).value.trim() === '' || isNaN(n)) ? DEFAULTS[k] : n;
+    });
 
     chrome.storage.local.set({ [CFG_KEY]: c }, () => {
       sendToTab({ type: 'cfg-updated' });

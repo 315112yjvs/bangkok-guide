@@ -21,6 +21,8 @@
   const SITE = 'tickets.cityrecitalhall.com';
   const CFG_KEY = 'crhConfig';
   const STATE_KEY = 'crhState';
+  const CLOCK_KEY = 'crhClock';   // 校時結果，跨頁面沿用，避免每次重載都重打
+  const QUEUE_KEY = 'crhQueueSeen';
 
   const SEL = {
     // 最佳座位模式（?z=0）
@@ -34,6 +36,7 @@
     ptFixedInput:  'input.tn-ticket-selector__fixed-amount-input',
     purchaseBtn:   '#tn-add-to-cart-button',
     modeChange:    '.tn-ticketing-mode-change__anchor',
+    perfButton:    '.tn-additional-events__button',   // 換場次按鈕，value=目標網址
     // 畫布選位模式（SYOS，備援）
     syosRoot:      '.tn-syos',
     syosScreenBtn: '.tn-syos-screen-button',
@@ -56,6 +59,9 @@
     // 還沒開賣、拿不到網址時，用關鍵字在 /events/ 自動找
     autoDiscover: true,
     discoverKeyword: 'GMMTV',
+    // 場次關鍵字：一個節目有多場時用來認人。
+    // 例如 '2:00pm'（First-Khaotung）或 '8:30pm'（Sea-Keen）
+    perfKeyword: '',
     // 開賣時間（ISO 8601，含時區）。雪梨 9/19 這場是 2026-08-06 10:00 AEST
     onsaleTime: '2026-08-06T10:00:00+10:00',
     // 票區優先順序，逗號分隔，比對票區名稱
@@ -99,8 +105,12 @@
 
   function notify(title, body, urgent = false) {
     try {
-      chrome.runtime.sendMessage({ type: 'notify', title, body, urgent });
-    } catch (_) { /* service worker 可能剛好睡著，忽略 */ }
+      // 一定要給 callback 並讀 lastError，否則沒有接收端時
+      // MV3 會在 console 丟 unchecked runtime.lastError
+      chrome.runtime.sendMessage({ type: 'notify', title, body, urgent }, () => {
+        void chrome.runtime.lastError;
+      });
+    } catch (_) { /* extension context 失效，忽略 */ }
     if (urgent && cfg.sound) beep();
   }
 
@@ -109,6 +119,9 @@
     if (!cfg.sound) return;
     try {
       audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      // 從 popup 觸發時頁面沒有使用者手勢，context 會停在 suspended，
+      // 不 resume 的話之後每一聲提示音都是無聲的。
+      if (audioCtx.state === 'suspended') audioCtx.resume();
       for (let i = 0; i < times; i++) {
         const osc = audioCtx.createOscillator();
         const gain = audioCtx.createGain();
@@ -151,8 +164,12 @@
   // ── 伺服器時間校正 ────────────────────────────────────────
   // 本機時鐘差個幾秒就會早開或晚開，用同源 HEAD 的 Date header 校正。
   // 只在啟動時和每 5 分鐘做一次，請求量極低，不會踩到 Incapsula。
-  async function syncServerTime() {
+  let lastSyncAt = 0;
+  async function syncServerTime(force = false) {
     if (location.hostname !== SITE) return;
+    // 節流：Incapsula 會盯請求頻率，最快 60 秒才再校一次
+    if (!force && Date.now() - lastSyncAt < 60000) return;
+    lastSyncAt = Date.now();
     try {
       const t0 = Date.now();
       const res = await fetch(location.origin + '/', {
@@ -162,8 +179,10 @@
       const dateHdr = res.headers.get('date');
       if (!dateHdr) return;
       const serverMs = new Date(dateHdr).getTime();
+      if (isNaN(serverMs)) return;
       // Date header 只有秒精度，補半個 RTT 再加 500ms 期望值
       serverOffsetMs = serverMs + 500 + (t1 - t0) / 2 - t1;
+      chrome.storage.local.set({ [CLOCK_KEY]: { offset: serverOffsetMs, at: Date.now() } });
       log(`伺服器時間校正完成，本機誤差 ${Math.round(serverOffsetMs)}ms`);
     } catch (e) {
       log('時間校正失敗，改用本機時鐘', 'warn');
@@ -175,8 +194,9 @@
     if (/queue-it\.net$/i.test(location.hostname)) return 'queue';
     if (location.hostname !== SITE) return 'other';
     const p = location.pathname.replace(/\/+$/, '');
-    if (/^\/\d+\/\d+$/.test(p)) return 'performance';
-    if (/^\/\d+$/.test(p)) return 'production';
+    // /{節目} 和 /{節目}/{場次} 都是購票頁 —— 實測 /7617 本身就直接顯示
+    // 第一場的選票介面，並附一組「換場次」按鈕，不是單純的節目索引頁
+    if (/^\/\d+(\/\d+)?$/.test(p)) return 'performance';
     if (/^\/events/.test(p)) return 'events';
     if (/^\/cart/.test(p)) return 'cart';
     if (/^\/account\/login/.test(p)) return 'login';
@@ -184,12 +204,18 @@
     return 'other';
   }
 
-  // 有些頁面被 Queue-it 攔截後仍在原網域，只是內容換掉了
+  // 有些頁面被 Queue-it 攔截後仍在原網域，只是內容換掉了。
+  // 判斷要嚴：這個函式回 true 就會停掉整個搶票流程，誤判的代價很高。
+  // 所以在售票站網域只認 Queue-it 專屬的 DOM 標記，
+  // 模糊的文字比對只在非本站網域才啟用。
   function looksLikeQueuePage() {
-    if (/queue-it\.net$/i.test(location.hostname)) return true;
-    if ($('#MainPart_lbUsersInLineAheadOfYou, #buttonConfirmRedirect, .qit-waitingroom')) return true;
+    if (/(^|\.)queue-it\.net$/i.test(location.hostname)) return true;
+    if ($('#MainPart_lbUsersInLineAheadOfYou, #buttonConfirmRedirect, .qit-waitingroom, [id^="MainPart_"]')) {
+      return true;
+    }
+    if (location.hostname === SITE) return false;   // 本站不做文字猜測
     const t = document.body ? document.body.innerText.slice(0, 3000) : '';
-    return /you are now in line|waiting room|your place in|virtual queue|線上排隊/i.test(t);
+    return /you are now in line|your place in (the )?queue|virtual waiting room/i.test(t);
   }
 
   // ── 票區比對 ──────────────────────────────────────────────
@@ -424,6 +450,9 @@
         notify('請先登入', 'City Recital Hall 帳號尚未登入，搶票前請先登入', true);
       }
 
+      // 先確認站對場次，再開始選票 —— 搶錯場等於白搶
+      if (!ensurePerformance()) return;
+
       // 切到最佳座位模式（純 HTML 表單，比畫布快）
       // 注意：SYOS 頁的切換連結指向 ?z=0，而 ?z=0 頁的連結指回 SYOS。
       // 只在「目前不是 z=0」時才跳，否則兩頁會互相導來導去。
@@ -441,10 +470,12 @@
       const result = $(SEL.baForm) ? await tryBestAvailable() : await trySyos();
 
       if (result.ok && !result.manual) {
-        state.grabbed = true;
-        saveState();
+        // 這裡「只」標記已送出，不標記已搶到。
+        // 若票被搶走，TNEW 會重載本頁報錯、content script 被銷毀，
+        // 下面的 checkFormError 根本來不及跑。若此時已寫入 grabbed=true，
+        // 新頁面的 scheduleRetry 會因 grabbed 而直接 return，重試永久停擺。
+        // grabbed 只在購物車頁真的看到票時才設。
         log('已送出加入購物車，等待伺服器回應…', 'good');
-        // 頁面會導向購物車；沒導的話下面的錯誤檢查會接手
         await sleep(2500);
         checkFormError();
         return;
@@ -465,12 +496,15 @@
   }
 
   function checkFormError() {
-    const box = $(SEL.errorBox);
-    const msg = txt(box);
+    const msg = txt($(SEL.errorBox));
     if (msg) {
       log(`系統訊息：${msg}`, 'bad');
-      state.grabbed = false;
-      saveState();
+      scheduleRetry();
+      return;
+    }
+    // 沒錯誤訊息也沒導向購物車 = 卡住了，還是要繼續試
+    if (pageType() === 'performance') {
+      log('送出後沒有進到購物車，繼續重試', 'warn');
       scheduleRetry();
     }
   }
@@ -501,13 +535,20 @@
   // ── 開賣前等待 ────────────────────────────────────────────
   async function waitForOnsale() {
     const target = cfg.onsaleTime ? new Date(cfg.onsaleTime).getTime() : 0;
-    if (!target) return;
+    if (!target || isNaN(target)) {
+      if (cfg.onsaleTime) log(`開賣時間格式看不懂（${cfg.onsaleTime}），略過倒數`, 'warn');
+      return;
+    }
+    let finalSynced = false;
     while (!stopped && state.running) {
       const left = target - now();
       if (left <= 0) { log('開賣時間到！', 'good'); return; }
       setPanelStatus(`距離開賣 ${fmtLeft(left)}`);
-      // 剩 90 秒內轉為密集校時，避免時鐘飄移
-      if (left < 90000 && left > 60000) await syncServerTime();
+      // 開賣前最後校時一次就好 — 每秒發請求會直接被 Incapsula 盯上
+      if (!finalSynced && left < 90000) {
+        finalSynced = true;
+        await syncServerTime(true);
+      }
       await sleep(left > 5000 ? 1000 : 200);
     }
   }
@@ -524,12 +565,23 @@
     const kw = (cfg.discoverKeyword || '').trim().toLowerCase();
     if (!kw) { log('沒有設定關鍵字，無法自動搜尋', 'warn'); return; }
 
+    // 卡片容器只往上找有限層數。原本用 closest(...,'div') 會抓到包住整頁的
+    // 祖先，結果頁面上隨便哪裡出現關鍵字都會誤判成命中。
+    const cardText = (a) => {
+      let el = a;
+      for (let i = 0; i < 4 && el.parentElement; i++) {
+        el = el.parentElement;
+        if (el.matches('article, li, [class*="event"], [class*="prod"]')) break;
+      }
+      return txt(el).toLowerCase();
+    };
+
     const find = () => $$('a[href]')
       .map((a) => ({ a, href: a.getAttribute('href') || '' }))
       .filter((x) => /\/\d+(\/\d+)?(\?|$)/.test(x.href))
       .find((x) => {
-        const card = x.a.closest('article, li, .tn-events-list-view__event, div') || x.a;
-        return txt(card).toLowerCase().includes(kw);
+        const own = txt(x.a).toLowerCase();
+        return own.includes(kw) || cardText(x.a).includes(kw);
       });
 
     const hit = await waitFor(find, 6000, 400);
@@ -549,18 +601,51 @@
     setTimeout(() => { if (!stopped && state.running) location.reload(); }, Math.max(jitter(), 3000));
   }
 
-  // ── 節目頁：挑場次 ────────────────────────────────────────
-  async function runProduction() {
-    const prodId = location.pathname.replace(/\/+$/, '').slice(1);
-    const links = $$(`a[href*="/${prodId}/"]`);
-    if (!links.length) { log('這個節目頁還沒列出可購買場次'); scheduleRetry(); return; }
+  // ── 確認站在正確的場次上 ──────────────────────────────────
+  // 換場次的 UI 是一排 button（不是 a），目標網址放在 value 屬性裡：
+  //   <button class="tn-additional-events__button active"
+  //           value="https://tickets.cityrecitalhall.com/7617/7638">August 12, 2026 7:00pm</button>
+  // 兩場卡司不同，挑錯場等於白搶，所以多場又沒指定關鍵字時寧可停下來問人。
+  // 回傳 false = 已經導頁或已停止，呼叫端要直接 return。
+  function ensurePerformance() {
+    // 桌機版和手機版各渲染一份同樣的按鈕清單，不去重的話
+    // 單一場次會被算成 2 個，誤觸下面的「請指定場次」而停掉
+    const seen = new Set();
+    const btns = $$(SEL.perfButton).filter((b) => {
+      const k = b.value || txt(b);
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+    if (btns.length <= 1) return true;
 
-    // 用目標網址裡指定的場次 ID 對；對不到就取第一個
-    const wanted = cfg.targetUrls.map((u) => (u.match(/\/(\d+)\/(\d+)/) || [])[2]).filter(Boolean);
-    const hit = links.find((a) => wanted.some((id) => a.getAttribute('href').includes('/' + id)))
-             || links[0];
-    log(`前往場次：${txt(hit).replace(/\s+/g, ' ').slice(0, 40)}`);
-    location.href = new URL(hit.getAttribute('href'), location.origin).href;
+    const norm = (s) => s.toLowerCase().replace(/\s+/g, '');
+    const kw = norm(cfg.perfKeyword || '');
+    if (!kw) {
+      log(`這個節目有 ${btns.length} 個場次，請先在設定填「場次關鍵字」（如 2:00pm）`, 'bad');
+      notify('需要指定場次', `偵測到 ${btns.length} 個場次，請設定場次關鍵字後再開始`, true);
+      stop();
+      return false;
+    }
+
+    const active = btns.find((b) => b.classList.contains('active'));
+    if (active && norm(txt(active)).includes(kw)) return true;   // 已經在對的場次
+
+    const want = btns.find((b) => norm(txt(b)).includes(kw));
+    if (!want) {
+      log(`找不到符合「${cfg.perfKeyword}」的場次，停止以免搶錯場`, 'bad');
+      notify('找不到指定場次', `場次關鍵字「${cfg.perfKeyword}」沒有對應的場次`, true);
+      stop();
+      return false;
+    }
+
+    const url = want.value || '';
+    const bare = (u) => u.split('?')[0].replace(/\/+$/, '');
+    if (!url || bare(url) === bare(location.href)) return true;  // 已經在這頁，別再跳
+
+    log(`切換到指定場次：${txt(want).replace(/\s+/g, ' ')}`, 'good');
+    location.href = url;
+    return false;
   }
 
   // ── 購物車 ────────────────────────────────────────────────
@@ -592,9 +677,12 @@
       log('購物車是空的 — 加入失敗或已逾時', 'bad');
       state.grabbed = false;
       saveState();
-      if (state.running && cfg.targetUrls.length) {
-        setTimeout(() => { location.href = cfg.targetUrls[0]; }, jitter());
-      }
+      if (!state.running) return;
+      // 沒填目標網址（走自動搜尋的人）就退回活動列表，否則會卡在購物車頁回不去
+      const back = cfg.targetUrls[0]
+        || (cfg.autoDiscover ? 'https://' + SITE + '/events/' : null);
+      if (back) setTimeout(() => { location.href = back; }, jitter());
+      else log('沒有可回去的目標網址，請在設定填入場次網址', 'warn');
     }
   }
 
@@ -605,8 +693,12 @@
     setPanelStatus('排隊中 — 請勿重整');
     notify('已進入排隊室', '請保持分頁開著，不要重整。輪到你時會通知你', false);
 
+    // Queue-it 放行是整頁導航，這個 script 會直接被銷毀 —
+    // 所以「輪到了」的通知不能靠這裡的計時器，要留旗標給下一頁發。
+    chrome.storage.local.set({ [QUEUE_KEY]: true });
+
     let last = '';
-    const tick = setInterval(() => {
+    setInterval(() => {
       const ahead = txt($('#MainPart_lbUsersInLineAheadOfYou'));
       const wait  = txt($('#MainPart_lbWhichIsEquivalentTo'));
       const cur = [ahead, wait].filter(Boolean).join(' / ');
@@ -614,17 +706,17 @@
         last = cur;
         setPanelStatus(`排隊中：前面還有 ${ahead || '?'} 人 ${wait ? '（' + wait + '）' : ''}`);
       }
-      // 排隊完成時 Queue-it 會自己導回售票站，content script 會在那邊接手
-      if (!looksLikeQueuePage()) {
-        clearInterval(tick);
-        log('排隊結束，準備進場！', 'good');
-        notify('輪到你了！', '已離開排隊室，開始搶票', true);
-      }
     }, 1000);
+  }
 
-    // 分頁被切走也要提醒使用者輪到了
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) log('分頁回到前景，仍在排隊中');
+  // 從排隊室被放行進到售票站時，由這裡負責把人叫回來
+  function announceQueueExit() {
+    chrome.storage.local.get(QUEUE_KEY, (r) => {
+      if (!r[QUEUE_KEY]) return;
+      chrome.storage.local.remove(QUEUE_KEY);
+      log('已通過排隊室，開始搶票！', 'good');
+      notify('輪到你了！', '已離開 Queue-it 排隊室，開始搶票', true);
+      beep(6);
     });
   }
 
@@ -721,6 +813,7 @@
     const type = looksLikeQueuePage() ? 'queue' : pageType();
 
     if (type === 'queue') { runQueue(); return; }
+    if (location.hostname === SITE) announceQueueExit();
     if (!state.running && !manualStart) {
       setPanelStatus('待命中（按「開始」啟動）');
       return;
@@ -733,12 +826,15 @@
     }
     if (type === 'cart' || type === 'checkout') { runCart(); return; }
 
-    await syncServerTime();
-    await waitForOnsale();
+    // 只有「還沒開賣」才需要校時＋倒數。開賣後每次重載都校時＝每秒一個多餘請求。
+    const onsale = cfg.onsaleTime ? new Date(cfg.onsaleTime).getTime() : 0;
+    if (onsale && !isNaN(onsale) && onsale - now() > 0) {
+      await syncServerTime();
+      await waitForOnsale();
+    }
     if (stopped || !state.running) return;
 
     if (type === 'performance') { await runPerformance(); return; }
-    if (type === 'production')  { await runProduction();  return; }
     if (type === 'events')      { await runEventsDiscovery(); return; }
 
     // 不在票務頁：有目標網址就直接過去（若已在該網址就別再跳，會無限重整）
@@ -769,9 +865,15 @@
   });
 
   // ── 初始化 ────────────────────────────────────────────────
-  chrome.storage.local.get([CFG_KEY, STATE_KEY], (r) => {
+  chrome.storage.local.get([CFG_KEY, STATE_KEY, CLOCK_KEY], (r) => {
     cfg = { ...DEFAULTS, ...(r[CFG_KEY] || {}) };
     state = { ...state, ...(r[STATE_KEY] || {}) };
+    // 沿用前一頁的校時結果（10 分鐘內有效），省掉每次重載都重打一次
+    const clk = r[CLOCK_KEY];
+    if (clk && Date.now() - clk.at < 600000) {
+      serverOffsetMs = clk.offset;
+      lastSyncAt = clk.at;
+    }
     buildPanel();
     if (state.running) panel.classList.add('on');
     log(`載入完成 — ${location.hostname}${location.pathname}`);
