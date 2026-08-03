@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<style>
+  :root{color-scheme:dark}
+  body{width:340px;margin:0;padding:14px;background:#141a2b;color:#e8eaf0;
+       font:13px/1.6 -apple-system,"PingFang TC","Microsoft JhengHei",sans-serif}
+  h1{font-size:14px;margin:0 0 4px;display:flex;align-items:center;gap:7px}
+  h1 .dot{width:9px;height:9px;border-radius:50%;background:#5a6480}
+  h1.on .dot{background:#38d39f;box-shadow:0 0 8px #38d39f}
+  .sub{color:#7d88a8;font-size:11px;margin-bottom:12px}
+  label{display:block;margin:10px 0 3px;font-size:11px;color:#9aa5c4;font-weight:600}
+  input,textarea,select{width:100%;box-sizing:border-box;background:#1d2540;color:#e8eaf0;
+       border:1px solid #2f3a5e;border-radius:7px;padding:6px 8px;font:inherit;font-size:12px}
+  textarea{height:52px;resize:vertical}
+  .row{display:flex;gap:8px}
+  .row>div{flex:1}
+  .chk{display:flex;align-items:center;gap:7px;margin:7px 0;font-size:12px;color:#c6cee6}
+  .chk input{width:auto}
+  .btns{display:flex;gap:7px;margin-top:14px}
+  button{flex:1;padding:9px 0;border:0;border-radius:8px;font:inherit;font-weight:700;cursor:pointer}
+  .go{background:#38d39f;color:#0b1220}
+  .stop{background:#3a4260;color:#e8eaf0}
+  .save{background:#4a5aa8;color:#fff}
+  .note{margin-top:12px;padding:8px 10px;background:#26203a;border-left:3px solid #ffc861;
+        border-radius:5px;font-size:11px;color:#d6c9a8}
+  .status{margin-top:10px;padding:7px 9px;background:#1d2540;border-radius:7px;font-size:11px;
+          color:#9fd3ff;min-height:16px;word-break:break-all}
+</style>
+</head>
+<body>
+  <h1 id="title"><span class="dot"></span>City Recital Hall 搶票助手</h1>
+  <div class="sub">Tessitura TNEW ・ 內建 Queue-it 排隊安全模式</div>
+
+  <label>目標場次網址（一行一個，可先留空用關鍵字自動找）</label>
+  <textarea id="targetUrls" placeholder="https://tickets.cityrecitalhall.com/7999/8001"></textarea>
+
+  <div class="chk"><input type="checkbox" id="autoDiscover"><span>還沒開賣時，自動到活動列表找關鍵字</span></div>
+
+  <div class="row">
+    <div>
+      <label>搜尋關鍵字</label>
+      <input id="discoverKeyword" placeholder="GMMTV">
+    </div>
+    <div>
+      <label>開賣時間</label>
+      <input id="onsaleTime" placeholder="2026-08-06T10:00:00+10:00">
+    </div>
+  </div>
+
+  <label>票區優先順序（逗號分隔，依序嘗試）</label>
+  <input id="tierPriority" placeholder="S, A, B, General">
+
+  <div class="row">
+    <div>
+      <label>張數</label>
+      <input id="quantity" type="number" min="1" max="20">
+    </div>
+    <div>
+      <label>最少可接受</label>
+      <input id="minQuantity" type="number" min="0" max="20">
+    </div>
+    <div>
+      <label>重試間隔(ms)</label>
+      <input id="retryIntervalMs" type="number" min="300" step="100">
+    </div>
+  </div>
+
+  <label>票種關鍵字（留空＝第一個可選票種）</label>
+  <input id="priceTypeKeyword" placeholder="Standard">
+
+  <div class="chk"><input type="checkbox" id="allowLowerTier"><span>指定票區都沒了，就搶其他票區</span></div>
+  <div class="chk"><input type="checkbox" id="preferBestAvailable"><span>使用最佳座位模式（?z=0，速度快很多）</span></div>
+  <div class="chk"><input type="checkbox" id="autoAddToCart"><span>自動加入購物車</span></div>
+  <div class="chk"><input type="checkbox" id="autoGoCheckout"><span>加入成功後自動前往結帳頁</span></div>
+  <div class="chk"><input type="checkbox" id="sound"><span>成功／輪到你時發出提示音</span></div>
+
+  <div class="btns">
+    <button class="save" id="save">儲存</button>
+    <button class="go" id="start">開始</button>
+    <button class="stop" id="stop">停止</button>
+  </div>
+
+  <div class="status" id="status">—</div>
+
+  <div class="note">
+    付款頁面完全不會自動化，卡號請你自己填。<br>
+    排隊室出現時請勿重整分頁，會失去位置。
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
