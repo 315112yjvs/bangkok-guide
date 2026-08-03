@@ -589,6 +589,29 @@
     return (h ? `${h}時` : '') + (h || m ? `${m}分` : '') + `${ss}秒`;
   }
 
+  // ── 官網「Buy Tickets」按鈕 ───────────────────────────────
+  // 官網活動頁的 Buy Tickets 是一個 <a>，href 就是這場在 TNEW 上的確切網址：
+  //   <a href="https://tickets.cityrecitalhall.com/7505/7512">Buy Tickets</a>
+  // 直接讀它遠比跑去 /events/ 用關鍵字猜可靠，也少一次跳轉。
+  // 活動還沒開賣時這顆按鈕不存在，回傳 null。
+  function findTnewLink() {
+    for (const a of $$(`a[href*="${SITE}"]`)) {
+      let p;
+      try { p = new URL(a.href, location.origin).pathname.replace(/\/+$/, ''); } catch (_) { continue; }
+      if (/^\/\d+(\/\d+)?$/.test(p)) return a.href;   // 排除 /account/、/cart/ 等
+    }
+    return null;
+  }
+
+  function rememberTarget(url) {
+    chrome.storage.local.get(CFG_KEY, (r) => {
+      const c = { ...DEFAULTS, ...(r[CFG_KEY] || {}) };
+      if (c.targetUrls.includes(url)) return;
+      c.targetUrls = [url, ...c.targetUrls];
+      chrome.storage.local.set({ [CFG_KEY]: c });
+    });
+  }
+
   // ── 事件列表：自動找場次 ──────────────────────────────────
   async function runEventsDiscovery() {
     const kw = (cfg.discoverKeyword || '').trim().toLowerCase();
@@ -872,14 +895,44 @@
     // 離開賣還早就留在原地倒數 —— 三天前把使用者正在看的頁面搶走沒有意義，
     // 而且那時候活動根本還沒上架售票站。開賣前 LEAD 分鐘才過去卡位。
     if (location.hostname !== SITE) {
-      const dest = cfg.targetUrls[0] || 'https://' + SITE + '/events/';
       const t = onsaleTs();
       const LEAD = 180000;   // 提前 3 分鐘進站
       if (t && t - now() > LEAD) {
+        const buyNow = findTnewLink();
+        if (buyNow) log(`已在本頁找到售票連結：${buyNow}`, 'good');
         log('離開賣還早，先留在這頁倒數，不會動你的頁面');
         const ok = await countdownTo(t - LEAD, '距離進站還有');
         if (!ok) return;
       }
+
+      // 優先用官網這顆 Buy Tickets 的網址 —— 它直接指向這場在 TNEW 的位置，
+      // 比跑去 /events/ 用關鍵字猜可靠得多
+      const buy = findTnewLink();
+      if (buy) {
+        log(`使用官網 Buy Tickets 的網址：${buy}`, 'good');
+        rememberTarget(buy);
+      }
+      const dest = buy || cfg.targetUrls[0] || 'https://' + SITE + '/events/';
+
+      // 還沒開賣的活動頁不會有 Buy Tickets。與其跳去空的 /events/，
+      // 不如留在這頁重整等按鈕出現 —— 這才是這場活動的正規頁面
+      if (!buy && !cfg.targetUrls.length && /\/whats-on\/events\//.test(location.pathname)) {
+        const elapsedMin = (Date.now() - state.startedAt) / 60000;
+        if (elapsedMin > cfg.maxRetryMinutes) {
+          log(`等了 ${cfg.maxRetryMinutes} 分鐘，Buy Tickets 按鈕還沒出現，停止`, 'warn');
+          notify('搶票已停止', '官網活動頁遲遲沒有出現 Buy Tickets 按鈕', true);
+          stop();
+          return;
+        }
+        state.attempts++;
+        saveState();
+        const wait = Math.max(jitter(), 3000);
+        log(`Buy Tickets 還沒出現，${(wait / 1000).toFixed(1)}s 後重整本頁等它上架`);
+        setPanelStatus(`等待開賣（第 ${state.attempts} 次檢查）`);
+        setTimeout(() => { if (!stopped && state.running) location.reload(); }, wait);
+        return;
+      }
+
       log('前往售票站', 'good');
       setPanelStatus('前往售票站…');
       watchNavigation(dest);
