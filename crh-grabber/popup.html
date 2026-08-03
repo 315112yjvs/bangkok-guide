@@ -31,6 +31,18 @@
            background:#1a2036;color:#8b95b5}
   .tabinfo.ok{background:#16301f;color:#6fe0a8}
   .tabinfo.bad{background:#331c1c;color:#ff9a9a}
+  /* placeholder 一定要跟真正的值長得不一樣，否則「看起來填了其實是空的」 */
+  input::placeholder,textarea::placeholder{color:#4d5878;font-style:italic}
+  .chips{display:flex;gap:6px;margin:2px 0 6px}
+  .chip{flex:1;padding:8px 4px;border:1px solid #2f3a5e;border-radius:8px;cursor:pointer;
+        background:#1d2540;color:#c6cee6;font:inherit;font-size:11px;font-weight:600;line-height:1.35}
+  .chip small{display:block;font-weight:400;color:#7d88a8;font-size:10px}
+  .chip.active{background:#274a3a;border-color:#38d39f;color:#8ff0c2}
+  .chip.active small{color:#5cbf93}
+  .hint{margin:3px 0 0;font-size:11px;color:#7d88a8;min-height:14px}
+  .hint.ok{color:#6fe0a8}
+  .hint.bad{color:#ff9a9a}
+  input.field-warn{border-color:#c94f4f;background:#2b1c22}
 </style>
 </head>
 <body>
@@ -42,19 +54,24 @@
 
   <div class="chk"><input type="checkbox" id="autoDiscover"><span>還沒開賣時，自動到活動列表找關鍵字</span></div>
 
-  <div class="row">
-    <div>
-      <label>搜尋關鍵字</label>
-      <input id="discoverKeyword" placeholder="GMMTV">
-    </div>
-    <div>
-      <label>開賣時間</label>
-      <input id="onsaleTime" placeholder="2026-08-06T10:00:00+10:00">
-    </div>
-  </div>
+  <label>搜尋關鍵字</label>
+  <input id="discoverKeyword" placeholder="例：GMMTV">
 
-  <label>場次關鍵字（兩場卡司不同，務必指定）</label>
-  <input id="perfKeyword" placeholder="2:00pm（First-Khaotung）或 8:30pm（Sea-Keen）">
+  <label>開賣時間（ISO 格式含時區）</label>
+  <input id="onsaleTime" placeholder="例：2026-08-06T10:00:00+10:00">
+  <div class="hint" id="onsaleHint"></div>
+
+  <label>要搶哪一場？（兩場卡司不同，務必指定）</label>
+  <div class="chips">
+    <button type="button" class="chip" id="chipAfternoon" data-fill="2:00pm">
+      下午 2:00pm<small>First－Khaotung</small>
+    </button>
+    <button type="button" class="chip" id="chipEvening" data-fill="8:30pm">
+      晚上 8:30pm<small>Sea－Keen</small>
+    </button>
+  </div>
+  <input id="perfKeyword" placeholder="尚未選擇 — 點上面按鈕，或自行輸入場次時間">
+  <div class="hint" id="perfHint"></div>
 
   <label>票區優先順序（逗號分隔，依序嘗試）</label>
   <input id="tierPriority" placeholder="S, A, B, General">

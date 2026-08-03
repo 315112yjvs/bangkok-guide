@@ -38,6 +38,8 @@ function load() {
     CHECKS.forEach((k) => { $(k).checked = !!c[k]; });
     TEXTS.forEach((k)  => { $(k).value = c[k] ?? ''; });
     NUMS.forEach((k)   => { $(k).value = c[k] ?? ''; });
+    updateOnsaleHint();
+    updatePerfUI();
 
     const s = r[STATE_KEY] || {};
     if (s.running) $('title').classList.add('on');
@@ -98,6 +100,52 @@ function sendToTab(msg, cb) {
   });
 }
 
+// ── 開賣時間即時解析 ─────────────────────────────────────────
+// ISO 字串在窄欄位裡會被截斷，人眼沒法確認對不對；
+// 這裡即時翻成本地時間＋倒數，填錯馬上看得出來
+function updateOnsaleHint() {
+  const el = $('onsaleHint');
+  const v = $('onsaleTime').value.trim();
+  if (!v) { el.textContent = '未設定 — 按開始會立刻執行，不倒數'; el.className = 'hint'; return; }
+  const t = new Date(v).getTime();
+  if (isNaN(t)) { el.textContent = '⚠ 格式無法解析，倒數不會生效'; el.className = 'hint bad'; return; }
+  const local = new Date(t).toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false });
+  const left = t - Date.now();
+  if (left <= 0) { el.textContent = `＝ 你的時區 ${local}（已過，會立刻開搶）`; el.className = 'hint ok'; return; }
+  const d = Math.floor(left / 86400000), h = Math.floor(left % 86400000 / 3600000), m = Math.floor(left % 3600000 / 60000);
+  el.textContent = `＝ 你的時區 ${local}（剩 ${d ? d + '天' : ''}${h}時${m}分）`;
+  el.className = 'hint ok';
+}
+$('onsaleTime').addEventListener('input', updateOnsaleHint);
+
+// ── 場次選擇 chips ───────────────────────────────────────────
+// 只有兩場，用按的比用打的可靠；點了直接存檔，不怕忘記按儲存
+function updatePerfUI() {
+  const v = $('perfKeyword').value.trim().toLowerCase().replace(/\s+/g, '');
+  ['chipAfternoon', 'chipEvening'].forEach((id) => {
+    const chip = $(id);
+    chip.classList.toggle('active', !!v && v.includes(chip.dataset.fill.toLowerCase()));
+  });
+  const hint = $('perfHint');
+  if (!v) {
+    hint.textContent = '⚠ 未指定 — 偵測到多場次時會直接停下來等你選';
+    hint.className = 'hint bad';
+    $('perfKeyword').classList.add('field-warn');
+  } else {
+    hint.textContent = '';
+    hint.className = 'hint';
+    $('perfKeyword').classList.remove('field-warn');
+  }
+}
+['chipAfternoon', 'chipEvening'].forEach((id) => {
+  $(id).onclick = () => {
+    $('perfKeyword').value = $(id).dataset.fill;
+    updatePerfUI();
+    save(() => { $('status').textContent = `已選「${$(id).dataset.fill}」場次並儲存`; });
+  };
+});
+$('perfKeyword').addEventListener('input', updatePerfUI);
+
 $('save').onclick = () => save();
 
 $('start').onclick = () => save((c) => {
@@ -125,8 +173,9 @@ $('start').onclick = () => save((c) => {
     chrome.storage.local.set({ [STATE_KEY]: running }, () => {
       sendToTab({ type: 'start' }, (res) => {
         $('title').classList.add('on');
+        const perfMissing = !$('perfKeyword').value.trim();
         $('status').textContent = res
-          ? '已啟動 — 請看頁面右下角的面板'
+          ? (perfMissing ? '已啟動，但⚠未指定場次 — 進站遇到多場次會停下來' : '已啟動 — 請看頁面右下角的面板')
           : '頁面尚未載入完成，請重新整理該分頁後再按開始';
       });
     });
