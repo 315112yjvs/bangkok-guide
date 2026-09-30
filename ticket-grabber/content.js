@@ -318,11 +318,10 @@ function handleConcert() {
 
   let filtered = candidates;
   if (settings.targetDate) {
-    const kw = settings.targetDate.toLowerCase();
+    const kw = settings.targetDate;
     filtered = filtered.filter(c =>
-      c.dateText.toLowerCase().includes(kw) ||
-      c.timeText.toLowerCase().includes(kw) ||
-      c.txt.toLowerCase().includes(kw)
+      matchDate(kw, `${c.dateText} ${c.timeText}`) ||
+      c.txt.toLowerCase().includes(kw.toLowerCase())
     );
   }
   if (settings.targetTicket) {
@@ -359,6 +358,39 @@ function handleConcert() {
       humanClick(btn); // 備援：找不到 URL 時才用 click
     }
   }, 100);
+}
+
+// ── 日期關鍵字比對 ─────────────────────────────────────────
+// 演唱會頁日期是泰文（วันเสาร์ที่ 3 ตุลาคม 2569），Zone 頁下拉是英文（Sat 03 Oct 2026 19:30），
+// 直接 includes 的話「Oct 03」兩邊都對不上。先試直接包含，不行就把兩邊都解析成「月＋日」再比；
+// 關鍵字若帶時間（Oct 03 19:30）還要時間也相同，用來分同一天的兩場。
+const MONTHS_TH      = ['มกราคม','กุมภาพันธ์','มีนาคม','เมษายน','พฤษภาคม','มิถุนายน','กรกฎาคม','สิงหาคม','กันยายน','ตุลาคม','พฤศจิกายน','ธันวาคม'];
+const MONTHS_TH_ABBR = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+const MONTHS_EN      = ['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+
+function parseMonthDay(text) {
+  const t = text.toLowerCase();
+  let m = MONTHS_TH.findIndex(n => t.includes(n));
+  if (m < 0) m = MONTHS_TH_ABBR.findIndex(n => t.includes(n));
+  if (m < 0) {
+    const hit = t.match(/\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\b/);
+    if (hit) m = MONTHS_EN.indexOf(hit[1]);
+  }
+  if (m < 0) return null;
+  // 去掉時間與四位數年份後，第一個 1～2 位數就是日
+  const rest = t.replace(/\d{1,2}[:.]\d{2}/g, ' ').replace(/\d{4}/g, ' ');
+  const d = rest.match(/(?<!\d)(\d{1,2})(?!\d)/);
+  return d ? { m, d: parseInt(d[1], 10) } : null;
+}
+
+function matchDate(keyword, text) {
+  const kw = keyword.trim().toLowerCase();
+  if (!kw) return true;
+  if (text.toLowerCase().includes(kw)) return true;
+  const a = parseMonthDay(kw), b = parseMonthDay(text);
+  if (!a || !b || a.m !== b.m || a.d !== b.d) return false;
+  const time = kw.match(/\d{1,2}:\d{2}/);
+  return !time || text.includes(time[0].padStart(5, '0')) || text.includes(time[0]);
 }
 
 function parsePrice(text) {
@@ -537,8 +569,7 @@ function handleZones() {
 
     let chosen = opts[0]; // 預設第一個
     if (settings.targetDate) {
-      const kw = settings.targetDate.toLowerCase();
-      const hit = opts.find(o => o.text.toLowerCase().includes(kw));
+      const hit = opts.find(o => matchDate(settings.targetDate, o.text));
       if (hit) chosen = hit;
     }
     setO(`選擇場次：${chosen.text}...`, '#88aaff');
