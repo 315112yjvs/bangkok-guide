@@ -157,7 +157,7 @@ chrome.storage.onChanged.addListener((changes, area) => {
 // ── startFromStorage：從 storage 讀取設定並啟動 ─────────
 const STORAGE_KEYS = [
   'isRunning','targetDate','targetTicket','zoneKeywords','targetZone',
-  'seatCount','priorityRows','autoRefresh','interval',
+  'seatCount','priorityRows','autoRefresh','frontFirst','interval',
   'currentStep','triedZones','passportId','passportCountry',
 ];
 
@@ -175,6 +175,7 @@ function startFromStorage(data) {
     passportId:      data.passportId      || '',
     passportCountry: data.passportCountry || '',
     autoRefresh:     data.autoRefresh     || false,
+    frontFirst:      data.frontFirst      || false,
     interval:      data.interval      || 500,
   }, initialDone);
 }
@@ -864,9 +865,17 @@ function closeModal() {
   try { $.fancybox?.close?.(); } catch(e){}
 }
 
+// 座位表的「排」：只算真的有座位格（可選或已售）的 <tr>，
+// 跳過最上面的標題列，否則「前 5 排」實際只會涵蓋 4 排
+function seatRows(table) {
+  return [...table.querySelectorAll('tbody tr')]
+    .filter(tr => tr.querySelector('[id^="checkseat"], .seatnotavail'));
+}
+
 // 座位優先順序：前中 > 後中 > 前右靠中 > 前左靠中 > 其他
+// frontFirst 開啟時改成嚴格照排數：第一排挑完（排內靠中優先）才輪下一排
 // direction 控制「右靠中」與「左靠中」的優先順序（LEFT 時左優先）
-function sortSeats(seats, direction, priorityRows) {
+function sortSeats(seats, direction, priorityRows, frontFirst = false) {
   const getNum = el => {
     const m = (el.id||'').match(/(\d+)$/);
     return m ? parseInt(m[1]) : 0;
@@ -878,7 +887,7 @@ function sortSeats(seats, direction, priorityRows) {
   const hwOf   = new Map(); // rowIndex → 半排寬（用於算相對距離）
 
   if (table) {
-    table.querySelectorAll('tbody tr').forEach((tr, rowIdx) => {
+    seatRows(table).forEach((tr, rowIdx) => {
       const allNums = [];
       tr.querySelectorAll('[id^="checkseat"]').forEach(el => {
         rowOf.set(el.id, rowIdx);
@@ -929,6 +938,7 @@ function sortSeats(seats, direction, priorityRows) {
   return [...seats].sort((a, b) => {
     const [ga, dsa, da, ra] = score(a);
     const [gb, dsb, db, rb] = score(b);
+    if (frontFirst && ra !== rb) return ra - rb; // 排數優先模式：前排永遠先
     if (ga !== gb)   return ga - gb;     // 先依分組
     if (dsa !== dsb) return dsa - dsb;   // 再依方向偏好（側邊組有效）
     if (da !== db)   return da - db;     // 再依距中心遠近
@@ -938,7 +948,7 @@ function sortSeats(seats, direction, priorityRows) {
 
 // 多張票時找「同排連續座號」的相鄰空位組（座號連續視為相鄰）。
 // 回傳最佳的 need 連座（前 priorityRows 排優先 → 靠該排中心優先），找不到回 null。
-function findAdjacentRun(seats, need, priorityRows) {
+function findAdjacentRun(seats, need, priorityRows, frontFirst = false) {
   const table = document.getElementById('tableseats');
   if (!table) return null;
   const getNum = el => {
@@ -949,7 +959,7 @@ function findAdjacentRun(seats, need, priorityRows) {
   const pRows    = Number.isFinite(priorityRows) ? priorityRows : 5;
   const runs     = [];
 
-  table.querySelectorAll('tbody tr').forEach((tr, rowIdx) => {
+  seatRows(table).forEach((tr, rowIdx) => {
     const rowSeats = [...tr.querySelectorAll('[id^="checkseat"]')];
     if (!rowSeats.length) return;
     // 該排真正中心用「所有座位含售出」計算，run 的置中程度以此為準
@@ -982,6 +992,7 @@ function findAdjacentRun(seats, need, priorityRows) {
 
   if (!runs.length) return null;
   runs.sort((a, b) => {
+    if (frontFirst && a.row !== b.row) return a.row - b.row; // 排數優先模式
     const fa = a.row < pRows ? 0 : 1;
     const fb = b.row < pRows ? 0 : 1;
     if (fa !== fb) return fa - fb;          // 前排區優先
@@ -1117,7 +1128,7 @@ function handleFixed() {
     plannedGroup = plannedGroup.filter(id => available.some(el => el.id === id));
     const need = seatCount - selected.length;
     if (need >= 2 && plannedGroup.length < need) {
-      const group  = findAdjacentRun(available, need, settings.priorityRows);
+      const group  = findAdjacentRun(available, need, settings.priorityRows, settings.frontFirst);
       plannedGroup = group ? group.map(el => el.id) : [];
       if (plannedGroup.length)
         log(`鎖定同排 ${need} 連座：${plannedGroup.join(', ')}`, 'info');
@@ -1128,7 +1139,7 @@ function handleFixed() {
     }
 
     // 依排數優先 + 方向排序（自動依 zone 位置決定最佳方向）
-    available = sortSeats(available, bestSeatDir(_currentZonePos), settings.priorityRows??5);
+    available = sortSeats(available, bestSeatDir(_currentZonePos), settings.priorityRows??5, settings.frontFirst);
 
     const seat   = available[0];
     const seatId = seat.id || seat.dataset?.seat || '?';

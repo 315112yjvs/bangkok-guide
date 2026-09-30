@@ -24,7 +24,7 @@ async function init() {
   const data = await chrome.storage.local.get([
     'targetDate','targetTicket','targetZone',
     'seatCount','seatDirection','priorityRows',
-    'autoRefresh','interval','passportId','passportCountry',
+    'autoRefresh','frontFirst','interval','passportId','passportCountry',
     'isRunning','clickCount','currentStep'
   ]);
   if (data.targetDate)     $('targetDate').value     = data.targetDate;
@@ -33,6 +33,7 @@ async function init() {
   if (data.seatCount)      $('seatCount').value       = data.seatCount;
   if (data.priorityRows != null) $('priorityRows').value = data.priorityRows;
   if (data.autoRefresh)    $('autoRefresh').checked   = data.autoRefresh;
+  if (data.frontFirst)     $('frontFirst').checked    = data.frontFirst;
   if (data.interval)       $('intervalInput').value   = data.interval;
   if (data.passportId)      $('passportId').value       = data.passportId;
   if (data.passportCountry) $('passportCountry').value  = data.passportCountry;
@@ -55,6 +56,7 @@ async function save() {
     seatCount:     intOr($('seatCount').value, 1),
     priorityRows:  intOr($('priorityRows').value, 5),
     autoRefresh:   $('autoRefresh').checked,
+    frontFirst:    $('frontFirst').checked,
     interval:      intOr($('intervalInput').value, 500),
     passportId:      $('passportId').value.trim(),
     passportCountry: $('passportCountry').value.trim(),
@@ -63,7 +65,7 @@ async function save() {
 
 // 所有輸入欄位變更時自動儲存
 ['targetDate','targetTicket','targetZone','seatCount',
- 'priorityRows','intervalInput','autoRefresh','passportId','passportCountry'].forEach(id => {
+ 'priorityRows','intervalInput','autoRefresh','frontFirst','passportId','passportCountry'].forEach(id => {
   const el = $(id);
   if (!el) return;
   el.addEventListener('input',  () => save());
@@ -88,6 +90,7 @@ function getSettings() {
     seatCount:     intOr($('seatCount').value, 1),
     priorityRows:  intOr($('priorityRows').value, 5),
     autoRefresh:   $('autoRefresh').checked,
+    frontFirst:    $('frontFirst').checked,
     interval:      intOr($('intervalInput').value, 500),
     passportId:      $('passportId').value.trim(),
     passportCountry: $('passportCountry').value.trim(),
