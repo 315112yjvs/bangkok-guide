@@ -715,6 +715,9 @@ function handleZones() {
       currentZone:  chosen.name,   // 儲存原始 name 供 triedZones 追蹤
       triedZones:   newTried,
       zoneReloadCount: 0,
+      zoneSeatAttempts: 0,   // 本區已點過幾次座位（存 storage，網站重整也不會歸零）
+      zoneTriedSeats:   [],  // 本區點過的座位 id，重整後不再重點同一顆
+      zoneStartedAt:    Date.now(),
       zonePosition,
     });
     setO(`✓ Zone: ${chosen.display} → 點擊進入...`, '#4cff91');
@@ -746,7 +749,11 @@ function handleZones() {
 // ════════════════════════════════════════════════════════
 let fixedPhase          = 'INIT';
 let fixedRetry          = 0;   // 連續偵測不到座位的次數（≥2 換 zone）
-let seatClickFails      = 0;   // 點擊失敗累計（≥10 重整頁面）
+let seatAttempts        = 0;   // 本區座位點擊次數（跨重整累計，≥MAX_ZONE_ATTEMPTS 換區）
+let zoneStartedAt       = 0;   // 進入本區的時間（跨重整）
+let _leavingZone        = false; // goBackToZones 導頁中，擋掉重複觸發
+const MAX_ZONE_ATTEMPTS = 10;
+const ZONE_BUDGET_MS    = 60000; // 同一區最多耗 60 秒仍一張都沒選到就換區
 let noTableTicks        = 0;   // 座位表遲遲不出現的次數（≥5 視同無座位）
 let seatsSelected       = 0;
 let triedSeatIds        = new Set();
@@ -756,7 +763,8 @@ let _currentZonePos     = 'CENTER'; // LEFT | CENTER | RIGHT（由 zones.php 計
 function resetFixed() {
   fixedPhase     = 'INIT';
   fixedRetry     = 0;
-  seatClickFails = 0;
+  seatAttempts   = 0;
+  zoneStartedAt  = 0;
   noTableTicks   = 0;
   seatsSelected  = 0;
   triedSeatIds   = new Set();
@@ -954,6 +962,8 @@ function findAdjacentRun(seats, need, priorityRows) {
 
 // 所有 Zone 試完 → 返回 zones page
 async function goBackToZones() {
+  if (_leavingZone) return;
+  _leavingZone = true;
   const data = await chrome.storage.local.get(['zonesPageUrl','triedZones','currentZone']);
   const cur = (data.currentZone || new URLSearchParams(location.search).get('zone') || '').toUpperCase();
   const tried = [...(data.triedZones||[])];
@@ -961,6 +971,7 @@ async function goBackToZones() {
   await chrome.storage.local.set({ triedZones:tried, currentStep:'ZONES' });
   stepDone = { CONCERT:true, VERIFY:true };
   resetFixed();
+  fixedPhase = 'LEAVING'; // 導頁前別再跑 INIT/SELECT
   _zonesDetectedLogged = false;
   _zonesUrlSaved = false;
   const zonesUrl = data.zonesPageUrl || (location.origin+'/booking/3m/zones.php');
@@ -976,8 +987,11 @@ function handleFixed() {
   // ── INIT ──
   if (fixedPhase==='INIT') {
     fixedPhase='INIT_WAIT';
-    chrome.storage.local.get(['currentZone','zonePosition'], d=>{
+    chrome.storage.local.get(['currentZone','zonePosition','zoneSeatAttempts','zoneTriedSeats','zoneStartedAt'], d=>{
       _currentZonePos = d.zonePosition || 'CENTER';
+      seatAttempts    = d.zoneSeatAttempts || 0;
+      triedSeatIds    = new Set(d.zoneTriedSeats || []);
+      zoneStartedAt   = d.zoneStartedAt || Date.now();
       const zoneName  = d.currentZone || new URLSearchParams(location.search).get('zone') || '?';
       const dir       = bestSeatDir(_currentZonePos);
       setO(`進入 Zone: ${zoneName}（${_currentZonePos}），最佳方向：${dir}`, '#88aaff');
@@ -996,6 +1010,20 @@ function handleFixed() {
     // 已選夠：同一個 tick 直接進 CONFIRM 按確認，不等下一輪
     if (selected.length >= seatCount) {
       fixedPhase='CONFIRM'; return handleFixed();
+    }
+
+    // 本區額度用完且一張都沒選到 → 換區。
+    // 計數存在 storage，所以就算網站每次點失敗都把頁面重整，也會照樣累計到換區。
+    if (!selected.length &&
+        (seatAttempts >= MAX_ZONE_ATTEMPTS || Date.now() - zoneStartedAt > ZONE_BUDGET_MS)) {
+      const why = seatAttempts >= MAX_ZONE_ATTEMPTS
+        ? `本區已點 ${seatAttempts} 次座位都沒搶到`
+        : `本區已耗 ${Math.round((Date.now() - zoneStartedAt) / 1000)} 秒沒搶到`;
+      log(`${why}，換下一區`, 'warn');
+      setO(`${why}，換區...`, '#ff8844');
+      fixedPhase = 'LEAVING';
+      goBackToZones();
+      return;
     }
 
     const table = document.getElementById('tableseats');
@@ -1074,6 +1102,8 @@ function handleFixed() {
     const seat   = available[0];
     const seatId = seat.id || seat.dataset?.seat || '?';
     triedSeatIds.add(seat.id);
+    seatAttempts++;
+    chrome.storage.local.set({ zoneSeatAttempts: seatAttempts, zoneTriedSeats: [...triedSeatIds] });
 
     humanClick(seat);   // 模擬真人滑鼠點擊
     closeModal();       // 關閉可能出現的自訂 modal
@@ -1098,19 +1128,19 @@ function handleFixed() {
       }
 
       if (!success) {
-        seatClickFails++;
-        log(`座位 ${seatId} 搶佔失敗，嘗試下一個... (${seatClickFails}/10)`, 'warn');
-        setO(`✗ ${seatId} 失敗，換下一個... (${seatClickFails}/10)`, '#ffcc44');
+        log(`座位 ${seatId} 搶佔失敗，嘗試下一個... (${seatAttempts}/${MAX_ZONE_ATTEMPTS})`, 'warn');
+        setO(`✗ ${seatId} 失敗，換下一個... (${seatAttempts}/${MAX_ZONE_ATTEMPTS})`, '#ffcc44');
 
-        if (seatClickFails >= 10) {
-          seatClickFails = 0;
+        if (seatAttempts >= MAX_ZONE_ATTEMPTS) {
           const alreadySelected = document.querySelectorAll('input[id^="hid-checkseat"]').length;
           if (alreadySelected > 0) {
             fixedPhase = 'CONFIRM';
             log(`連續失敗，已選 ${alreadySelected} 張，直接結帳`, 'warn');
             setO(`已選 ${alreadySelected} 張，前往結帳...`, '#4cff91');
           } else {
-            reloadOrSwitchZone('點擊失敗 10 次');
+            log(`本區點了 ${seatAttempts} 次都沒搶到，換下一區`, 'warn');
+            fixedPhase = 'LEAVING';
+            goBackToZones();
           }
           return;
         }
