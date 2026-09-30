@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "TTM 搶票助手",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "ThaiTicketMajor 專用自動搶票 — 支援關鍵字選場次/票種/Zone，自動選座確認",
   "permissions": [
     "activeTab",
@@ -22,8 +22,22 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.thaiticketmajor.com/*"],
-      "js": ["content.js"],
+      "matches": [
+        "*://*.thaiticketmajor.com/*"
+      ],
+      "js": [
+        "alert-guard.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://*.thaiticketmajor.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_idle"
     }
   ],

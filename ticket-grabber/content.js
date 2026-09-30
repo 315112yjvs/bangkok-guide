@@ -100,7 +100,10 @@ function start(cfg, initialDone = {}) {
   setO(`啟動 [${page}]`, '#88aaff');
   log(`啟動，頁面：${page}`, 'info');
   setStep(page);
+  document.documentElement.setAttribute('data-ttm-run', ''); // 讓 alert-guard.js 攔截原生 alert
 
+  // 頁面一載入就先跑一次，不空等第一個 interval（每換一頁省約 0.5 秒）
+  tick();
   scheduleTick();
 }
 
@@ -119,6 +122,7 @@ function stop() {
   isRunning = false;
   clearTimeout(tickerInterval);
   tickerInterval = null;
+  document.documentElement.removeAttribute('data-ttm-run');
   rmO();
 }
 
@@ -126,6 +130,19 @@ function stop() {
 chrome.runtime.onMessage.addListener((msg,_,res)=>{
   if (msg.action==='START') { start(msg.settings, msg.initialDone||{}); res({ok:true}); }
   if (msg.action==='STOP')  { stop();                                   res({ok:true}); }
+});
+
+// ── 網站 alert（由 alert-guard.js 攔下轉送）─────────────
+// 原生 alert 會凍結分頁；攔下後記錄訊息，Zone 頁的話立刻改試下一區，不用等 5 秒保險。
+window.addEventListener('message', e => {
+  if (e.source !== window || typeof e.data?.__ttmAlert !== 'string') return;
+  if (!isRunning) return;
+  const text = e.data.__ttmAlert.trim();
+  log(`網站提示：${text || '(空白)'}`, 'warn');
+  if (getPage() === 'ZONES' && stepDone.ZONES) {
+    stepDone.ZONES = false;
+    zoneClickSeq++; // 作廢上一次點擊的 5 秒保險計時器
+  }
 });
 
 // ── Storage 變化監聽：sendMessage 失敗時的備援啟動 ────────
@@ -145,7 +162,6 @@ const STORAGE_KEYS = [
 ];
 
 function startFromStorage(data) {
-  _triedZones = (data.triedZones || []).map(z => z.toUpperCase());
   let zoneKeywords = data.zoneKeywords || [];
   if (!zoneKeywords.length && data.targetZone)
     zoneKeywords = data.targetZone.split(/[,，\s]+/).map(s => s.trim()).filter(Boolean);
@@ -480,6 +496,8 @@ function handlePassport() {
 // ════════════════════════════════════════════════════════
 let _zonesDetectedLogged = false;
 let _zonesUrlSaved = false;
+let _zonePicking = false; // 讀 triedZones 的非同步空檔中，擋掉下一個 tick 重複選區
+let zoneClickSeq = 0;     // 每次點 Zone +1，讓舊的保險計時器認得自己已過期
 
 // 計算 <area> 的幾何中心（從 coords 屬性解析）
 function getZoneCoords(area) {
@@ -494,7 +512,7 @@ function getZoneCoords(area) {
 }
 
 function handleZones() {
-  if (stepDone.ZONES) return;
+  if (stepDone.ZONES || _zonePicking) return;
 
   const frm  = document.forms['frm'] || document.querySelector('form[name="frm"]');
   const kEl  = frm?.elements['k']    || document.querySelector('[name="k"]');
@@ -651,7 +669,10 @@ function handleZones() {
   }
 
   // 直接從 storage 讀取已試過的 zone（不靠記憶體變數，避免跨頁重整後遺失）
+  _zonePicking = true;
   chrome.storage.local.get('triedZones', d => {
+    _zonePicking = false;
+    if (!isRunning || stepDone.ZONES) return;
     const triedUpper = (d.triedZones || []).map(z => z.toUpperCase());
 
     const untriedPool = pool.filter(z => !triedUpper.includes(z.name.toUpperCase()));
@@ -686,7 +707,7 @@ function handleZones() {
     // 點擊當下就記入 triedZones：即使網站把我們彈回 zones.php
     // （區域全滿的常見行為），下一輪也會自動換下一個 Zone，不會卡在同一區
     const baseTried = untriedPool.length ? (d.triedZones || []) : [];
-    const newTried  = [...baseTried, chosen.name];
+    const newTried  = [...baseTried, chosen.name.toUpperCase()];
 
     stepDone.ZONES = true;
     chrome.storage.local.set({
@@ -699,6 +720,7 @@ function handleZones() {
     setO(`✓ Zone: ${chosen.display} → 點擊進入...`, '#4cff91');
     log(`Zone ${chosen.display}`, 'success');
     setStep('FIXED');
+    const seq = ++zoneClickSeq;
     setTimeout(() => {
       if (chosen.area) {
         chosen.area.click();
@@ -709,7 +731,7 @@ function handleZones() {
       // 保險：點擊後仍停在 zones.php（被 alert 擋下或點擊沒生效）
       // → 解鎖重跑 handleZones；本區已在 triedZones，會自動改選下一區
       setTimeout(() => {
-        if (isRunning && getPage() === 'ZONES' && stepDone.ZONES) {
+        if (isRunning && getPage() === 'ZONES' && stepDone.ZONES && seq === zoneClickSeq) {
           log(`Zone ${chosen.display} 點擊後未跳轉，改試下一區`, 'warn');
           stepDone.ZONES = false;
         }
@@ -729,7 +751,6 @@ let noTableTicks        = 0;   // 座位表遲遲不出現的次數（≥5 視�
 let seatsSelected       = 0;
 let triedSeatIds        = new Set();
 let plannedGroup        = []; // 多張票的相鄰連座計畫（座位 id 陣列）
-let _triedZones         = [];
 let _currentZonePos     = 'CENTER'; // LEFT | CENTER | RIGHT（由 zones.php 計算並存入 storage）
 
 function resetFixed() {
@@ -937,7 +958,6 @@ async function goBackToZones() {
   const cur = (data.currentZone || new URLSearchParams(location.search).get('zone') || '').toUpperCase();
   const tried = [...(data.triedZones||[])];
   if (cur && !tried.includes(cur)) tried.push(cur);
-  _triedZones = tried;
   await chrome.storage.local.set({ triedZones:tried, currentStep:'ZONES' });
   stepDone = { CONCERT:true, VERIFY:true };
   resetFixed();
@@ -955,26 +975,27 @@ function handleFixed() {
 
   // ── INIT ──
   if (fixedPhase==='INIT') {
-    chrome.storage.local.get(['triedZones','currentZone','zonePosition'], d=>{
-      _triedZones     = (d.triedZones||[]).map(z=>z.toUpperCase());
+    fixedPhase='INIT_WAIT';
+    chrome.storage.local.get(['currentZone','zonePosition'], d=>{
       _currentZonePos = d.zonePosition || 'CENTER';
       const zoneName  = d.currentZone || new URLSearchParams(location.search).get('zone') || '?';
       const dir       = bestSeatDir(_currentZonePos);
       setO(`進入 Zone: ${zoneName}（${_currentZonePos}），最佳方向：${dir}`, '#88aaff');
       log(`進入 Zone: ${zoneName}，位置：${_currentZonePos}，座位方向：${dir}`, 'info');
+      if (fixedPhase==='INIT_WAIT') { fixedPhase='SELECT'; tick(); }
     });
-    fixedPhase='SELECT';
     return;
   }
+  if (fixedPhase==='INIT_WAIT') return;
 
   // ── SELECT ──
   if (fixedPhase==='SELECT') {
     const seatCount = settings.seatCount||1;
     const selected  = document.querySelectorAll('input[id^="hid-checkseat"]');
 
-    // 已選夠
+    // 已選夠：同一個 tick 直接進 CONFIRM 按確認，不等下一輪
     if (selected.length >= seatCount) {
-      fixedPhase='CONFIRM'; return;
+      fixedPhase='CONFIRM'; return handleFixed();
     }
 
     const table = document.getElementById('tableseats');
@@ -1102,6 +1123,7 @@ function handleFixed() {
         setO(`✓ ${seatId} 選定 (${seatsSelected}/${seatCount})`, '#4cff91');
       }
       fixedPhase='SELECT';
+      tick();
     };
     setTimeout(checkSeatResult, 150);
     return;
