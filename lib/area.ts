@@ -61,38 +61,3 @@ export function getArea(loc: Pick<Location, 'area' | 'address'>): string {
   if (loc.address) return extractArea(loc.address)
   return 'Bangkok'
 }
-
-// 區域的中文慣用名（台灣旅客常見的譯名）；沒有通用譯名的就維持英文
-const AREA_ZH: Record<string, string> = {
-  'Thonglor': '通羅',
-  'Ekkamai': '伊卡邁',
-  'Phrom Phong': '澎蓬',
-  'Asok': '阿索克',
-  'On Nut': '安努',
-  'Nana': '那那',
-  'Ploenchit': '奔集',
-  'Chidlom': '奇隆',
-  'Siam': '暹羅',
-  'Silom': '是隆',
-  'Sathorn': '沙吞',
-  'Charoen Krung': '石龍軍路',
-  'Ari': '阿里',
-  'Lat Phrao': '拉拋',
-  'Ratchada': '拉差達',
-  'Huai Khwang': '匯狂',
-  'Chatuchak': '恰圖恰',
-  'Yaowarat': '唐人街',
-  'Khao San': '考山路',
-  'Bang Rak': '挽叻',
-  'Pratunam': '水門',
-  'Thon Buri': '吞武里',
-  'Sukhumvit': '素坤逸',
-  'Old City': '舊城區',
-  'Phaya Thai': '帕亞泰',
-}
-
-// 顯示用的區域名稱：中文介面有譯名就顯示「譯名 英文」，方便對照地圖與 BTS 站名
-export function areaLabel(area: string, lang: 'zh' | 'en'): string {
-  const zh = AREA_ZH[area]
-  return lang === 'zh' && zh ? `${zh} ${area}` : area
-}

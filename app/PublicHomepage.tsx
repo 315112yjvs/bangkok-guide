@@ -19,7 +19,7 @@ import { DragScroll } from '@/components/DragScroll'
 import { LocationMap } from '@/components/LocationMap'
 import { Reveal } from '@/components/Reveal'
 import { SiteFooter } from '@/components/SiteFooter'
-import { getArea, areaLabel } from '@/lib/area'
+import { getArea } from '@/lib/area'
 import type { Location, Category, LocationTag } from '@/lib/types'
 
 type Props = { locations: Location[] }
@@ -406,7 +406,7 @@ export function PublicHomepage({ locations }: Props) {
                     activeArea === a ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
                   }`}
                 >
-                  {areaLabel(a, lang)}
+                  {a}
                 </button>
               ))}
             </DragScroll>
