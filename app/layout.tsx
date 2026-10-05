@@ -4,7 +4,7 @@ import { RegisterSW } from '@/components/RegisterSW'
 import './globals.css'
 
 export const viewport: Viewport = {
-  themeColor: '#1e1b4b',
+  themeColor: '#3d4aae',
 }
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
         />
       </head>
-      <body className="bg-gray-100 min-h-screen">{children}<Analytics /><RegisterSW /></body>
+      <body className="bg-paper min-h-screen">{children}<Analytics /><RegisterSW /></body>
     </html>
   )
 }

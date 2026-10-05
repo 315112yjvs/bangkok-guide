@@ -216,18 +216,18 @@ export function PublicHomepage({ locations }: Props) {
   }, [filtered, showSections, shuffleSeed])
 
   return (
-    <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen overflow-hidden relative shadow-xl lg:shadow-2xl">
+    <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen overflow-hidden relative lg:border-x lg:border-line">
 
       {/* HERO */}
-      <div className="sticky top-0 z-0 h-[72vw] max-h-96 min-h-60 lg:h-[440px] lg:max-h-[440px] overflow-hidden">
+      <div className="relative h-[72vw] max-h-96 min-h-60 lg:h-[420px] lg:max-h-[420px] overflow-hidden">
         <Image
           src="/hero-bangkok.jpg"
           alt="Bangkok"
-          fill className="object-cover object-center scale-105"
+          fill className="object-cover object-center"
           priority
         />
         {/* layered gradient: subtle top bar darkening + heavy title backdrop */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/35" />
 
         <div className="relative z-10 h-full flex flex-col">
           {/* Top bar */}
@@ -239,32 +239,30 @@ export function PublicHomepage({ locations }: Props) {
 
           {/* Bottom editorial block */}
           <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl lg:mx-auto lg:text-center">
-            {/* 副標膠囊 */}
-            <div className="hero-rise hero-rise-1 flex mb-3 lg:justify-center">
-              <span className="inline-flex items-center gap-2 bg-rose-600 text-white px-3 py-1.5 rounded-full shadow-lg">
-                <span className="text-[11px] tracking-wide text-white/95">{lang === 'zh' ? '泰國社群精選 · 在地人推薦' : 'Thai social picks · Chosen by locals'}</span>
-              </span>
-            </div>
+            {/* 副標 */}
+            <p className="hero-rise hero-rise-1 text-[12px] tracking-[0.12em] text-white/80 mb-2">
+              {lang === 'zh' ? '泰國社群精選 · 在地人推薦' : 'THAI SOCIAL PICKS · CHOSEN BY LOCALS'}
+            </p>
 
             {/* Title — 六分糖字型 */}
             <h1 className="hero-rise hero-rise-2 leading-[1.15] mb-4">
-              <span className="font-liufen text-[32px] lg:text-[52px] text-white drop-shadow-lg block">{strings[lang].heroTitle as string}</span>
-              <span className="font-liufen text-[32px] lg:text-[52px] text-amber-400 drop-shadow-lg block">{strings[lang].heroTitleAccent as string}</span>
+              <span className="font-liufen text-[30px] lg:text-[46px] text-white block">{strings[lang].heroTitle as string}</span>
+              <span className="font-liufen text-[30px] lg:text-[46px] text-white block">{strings[lang].heroTitleAccent as string}</span>
             </h1>
 
             {/* Search bar */}
-            <div className="hero-rise hero-rise-3 flex items-center gap-2.5 bg-white/15 backdrop-blur-xl border border-white/25 rounded-2xl px-4 py-3 shadow-lg">
-              <svg className="w-4 h-4 text-white/50 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <div className="hero-rise hero-rise-3 flex items-center gap-2.5 bg-white rounded-lg px-4 py-3">
+              <svg className="w-4 h-4 text-muted shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
               </svg>
               <input
-                className="flex-1 text-[14px] text-left outline-none text-white placeholder-white/45 bg-transparent"
+                className="flex-1 text-[15px] text-left outline-none text-ink placeholder:text-muted bg-transparent"
                 placeholder={strings[lang].searchPlaceholder as string}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
               {query && (
-                <button onClick={() => setQuery('')} aria-label={lang === 'zh' ? '清除搜尋' : 'Clear search'} className="text-white/60 hover:text-white text-sm leading-none transition-colors">✕</button>
+                <button onClick={() => setQuery('')} aria-label={lang === 'zh' ? '清除搜尋' : 'Clear search'} className="text-muted hover:text-ink text-sm leading-none transition-colors">✕</button>
               )}
             </div>
           </div>
@@ -283,50 +281,46 @@ export function PublicHomepage({ locations }: Props) {
         )}
       </div>
 
-      {/* BOTTOM SHEET */}
-      <div className="relative z-10 bg-gray-50 rounded-t-3xl -mt-5 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
-        <div className="flex justify-center items-center pt-3 pb-1 relative">
-          <div className="w-9 h-1 bg-gray-300 rounded-full" />
+      {/* 內容區 */}
+      <div className="relative bg-white">
+        {/* 分類頁籤 + 地圖開關 */}
+        <div ref={filterRef} className="flex items-stretch border-b border-line scroll-mt-2">
+          <div className="flex-1 min-w-0">
+            <CategoryTabs
+              active={activeCategory}
+              onChange={(cat) => { setActiveCategory(cat); setActiveTag('all') }}
+              lang={lang}
+              counts={categoryCounts}
+            />
+          </div>
           <button
             onClick={() => { setMapExpanded(v => !v); setMapEverOpened(true) }}
-            className="absolute right-3 flex items-center gap-1.5 text-[11px] font-bold text-gray-400 hover:text-[#1e1b4b] transition-colors active:scale-95"
+            aria-pressed={mapExpanded}
+            className={`shrink-0 flex items-center gap-1.5 px-3.5 border-l border-line text-[13px] transition-colors ${mapExpanded ? 'text-brand font-bold' : 'text-muted hover:text-ink'}`}
           >
-            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7M9 20l6-3M9 20V7m6 13l4.553 2.276A1 1 0 0021 21.382V10.618a1 1 0 00-.553-.894L15 7M15 20V7M9 7l6-3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            {lang === 'zh' ? (mapExpanded ? '收起地圖' : '查看地圖') : (mapExpanded ? 'Hide Map' : 'Map')}
-            <svg className={`w-2.5 h-2.5 transition-transform duration-200 ${mapExpanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            {lang === 'zh' ? (mapExpanded ? '收起' : '地圖') : (mapExpanded ? 'Hide' : 'Map')}
           </button>
         </div>
 
-        {/* Category tabs */}
-        <div ref={filterRef} className="bg-white border-b border-gray-100 scroll-mt-2">
-          <CategoryTabs
-            active={activeCategory}
-            onChange={(cat) => { setActiveCategory(cat); setActiveTag('all') }}
-            lang={lang}
-            counts={categoryCounts}
-          />
-        </div>
-
         {/* Filter row */}
-        <div className="bg-white border-b border-gray-100 py-2 relative">
+        <div className="bg-white border-b border-line py-2.5 relative">
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
           <DragScroll className="flex gap-2 overflow-x-auto no-scrollbar px-3 lg:justify-center">
             {/* All */}
             <button
               onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all'); setLandmark(null); setGeoError(false) }}
-              className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+              className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
                 specialFilter === 'all' && activeTag === 'all' && activeArea === 'all'
-                  ? 'bg-[#1e1b4b] text-white shadow-sm'
-                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  ? 'bg-ink text-white border-ink'
+                  : 'bg-white text-ink/70 border-line hover:border-ink/40'
               }`}
             >
               {lang === 'zh' ? '全部' : 'All'}
             </button>
-            <div className="w-px bg-gray-200 mx-0.5" />
+            <div className="w-px bg-line mx-0.5 my-1.5" />
             {/* Nearby */}
             <button
               onClick={() => {
@@ -334,10 +328,10 @@ export function PublicHomepage({ locations }: Props) {
                 requestLocation()
               }}
               disabled={locating}
-              className={`flex items-center gap-1 text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+              className={`flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
                 specialFilter === 'nearby' && !landmark
-                  ? 'bg-[#1e1b4b] text-white shadow-sm'
-                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  ? 'bg-ink text-white border-ink'
+                  : 'bg-white text-ink/70 border-line hover:border-ink/40'
               }`}
             >
               {locating
@@ -349,19 +343,19 @@ export function PublicHomepage({ locations }: Props) {
             {/* Saved */}
             <button
               onClick={() => setSpecialFilter(specialFilter === 'saved' ? 'all' : 'saved')}
-              className={`flex items-center gap-1 text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+              className={`flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
                 specialFilter === 'saved'
-                  ? 'bg-red-500 text-white shadow-sm'
-                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  ? 'bg-ink text-white border-ink'
+                  : 'bg-white text-ink/70 border-line hover:border-ink/40'
               }`}
             >
               <svg width="10" height="10" viewBox="0 0 24 24" fill={specialFilter === 'saved' ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.5}>
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
               {lang === 'zh' ? '我的收藏' : 'Saved'}
-              {savedIds.size > 0 && <span className={`text-[9px] font-black ${specialFilter === 'saved' ? 'text-white/80' : 'text-red-400'}`}>{savedIds.size}</span>}
+              {savedIds.size > 0 && <span className={`text-[9px] font-black ${specialFilter === 'saved' ? 'text-white/70' : 'text-muted'}`}>{savedIds.size}</span>}
             </button>
-            <div className="w-px bg-gray-200 mx-0.5" />
+            <div className="w-px bg-line mx-0.5 my-1.5" />
             {/* Tag filters */}
             {TAG_ORDER.map((tag) => {
               const m = TAG_META[tag]
@@ -370,10 +364,10 @@ export function PublicHomepage({ locations }: Props) {
                 <button
                   key={tag}
                   onClick={() => { setActiveTag(activeTag === tag ? 'all' : tag); setSpecialFilter('all') }}
-                  className={`inline-flex items-center gap-1 text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
+                  className={`inline-flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
                     activeTag === tag
-                      ? 'bg-[#1e1b4b] text-white shadow-sm'
-                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                      ? 'bg-ink text-white border-ink'
+                      : 'bg-white text-ink/70 border-line hover:border-ink/40'
                   }`}
                 >
                   <Icon size={13} className="shrink-0" /> {lang === 'zh' ? m.zh : m.en}
@@ -385,7 +379,7 @@ export function PublicHomepage({ locations }: Props) {
 
         {/* Area chips */}
         {areas.length > 0 && (
-          <div className="bg-white border-b border-gray-100 py-2 relative">
+          <div className="bg-white border-b border-line py-2.5 relative">
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
             <DragScroll className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
               <svg className="w-3.5 h-3.5 text-gray-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -393,8 +387,8 @@ export function PublicHomepage({ locations }: Props) {
               </svg>
               <button
                 onClick={() => { setActiveArea('all'); setSpecialFilter('all'); setLandmark(null) }}
-                className={`text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
-                  activeArea === 'all' ? 'bg-emerald-600 text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                  activeArea === 'all' ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
                 }`}
               >
                 {lang === 'zh' ? '所有區域' : 'All Areas'}
@@ -403,8 +397,8 @@ export function PublicHomepage({ locations }: Props) {
                 <button
                   key={a}
                   onClick={() => { setActiveArea(activeArea === a ? 'all' : a); setSpecialFilter('all'); setLandmark(null) }}
-                  className={`text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
-                    activeArea === a ? 'bg-emerald-600 text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                    activeArea === a ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
                   }`}
                 >
                   {areaLabel(a, lang)}
@@ -416,7 +410,7 @@ export function PublicHomepage({ locations }: Props) {
 
         {/* 地標列：按了「附近」或定位失敗時出現，選一個地標就以它為中心找 5 公里內的店 */}
         {(specialFilter === 'nearby' || geoError) && (
-          <div className="bg-white border-b border-gray-100 py-2 relative">
+          <div className="bg-white border-b border-line py-2.5 relative">
             {geoError && (
               <p className="px-3 pb-1.5 text-[12px] font-bold text-rose-600">
                 {lang === 'zh' ? '拿不到你的定位，可以改選一個地標：' : "Couldn't get your location. Pick a landmark instead:"}
@@ -431,8 +425,8 @@ export function PublicHomepage({ locations }: Props) {
                 <button
                   key={lm.id}
                   onClick={() => pickLandmark(lm)}
-                  className={`inline-flex items-center gap-1 text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
-                    landmark?.id === lm.id ? 'bg-[#1e1b4b] text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  className={`inline-flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                    landmark?.id === lm.id ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
                   }`}
                 >
                   <MIcon name={lm.icon} size={13} className="shrink-0" /> {lang === 'zh' ? lm.zh : lm.en}
@@ -447,14 +441,14 @@ export function PublicHomepage({ locations }: Props) {
           <div className="pb-10">
             {/* 主題玩法入口（原本只有搜尋引擎看得到連結） */}
             {activeCategory === 'all' && (
-              <DragScroll className="flex gap-2 overflow-x-auto no-scrollbar px-3 pt-4 lg:justify-center">
+              <DragScroll className="flex gap-2 overflow-x-auto no-scrollbar px-4 pt-4 lg:justify-center">
                 {THEMES.map((t) => (
                   <Link
                     key={t.slug}
                     href={`/theme/${t.slug}`}
-                    className="shrink-0 inline-flex items-center gap-1.5 text-[12px] font-bold px-3.5 py-2 rounded-2xl bg-white border border-gray-200 text-[#1e1b4b] shadow-sm hover:border-[#1e1b4b] transition-colors active:scale-95 whitespace-nowrap"
+                    className="shrink-0 inline-flex items-center gap-1.5 text-[13px] text-brand hover:text-brand-dark underline-offset-4 hover:underline whitespace-nowrap py-1 pr-3"
                   >
-                    <MIcon name={t.icon} size={15} className="shrink-0 text-amber-500" />
+                    <MIcon name={t.icon} size={15} className="shrink-0" />
                     {lang === 'zh' ? t.h1Zh.replace(/^曼谷\s*/, '') : t.h1En.replace(/^Bangkok('s)?\s*/, '')}
                   </Link>
                 ))}
@@ -466,29 +460,30 @@ export function PublicHomepage({ locations }: Props) {
               const meta = TAG_META[tag]
               const Icon = TAG_ICON[tag]
               return (
-                <section key={tag} className="mt-4">
+                <section key={tag} className="mt-8 pt-7 border-t border-line first:border-t-0">
                   {/* Section header */}
-                  <Reveal>
-                  <div className={`mx-3 rounded-2xl bg-gradient-to-r ${meta.color} px-4 py-3 flex items-center justify-between mb-2`}>
-                    <div>
-                      <p className="flex items-center gap-1.5 text-white font-black text-[15px] tracking-tight leading-tight">
-                        <Icon size={17} className="shrink-0" /> {lang === 'zh' ? meta.zh : meta.en}
-                      </p>
-                      <p className="text-white/50 text-[10px] mt-0.5">
+                  <div className="flex items-end justify-between gap-3 px-4 mb-3">
+                    <div className="min-w-0">
+                      <h2 className="flex items-center gap-2 font-liufen text-[20px] lg:text-[24px] text-ink leading-tight">
+                        <Icon size={18} className="shrink-0 text-brand" /> {lang === 'zh' ? meta.zh : meta.en}
+                      </h2>
+                      <p className="text-[12px] text-muted mt-1">
                         {lang === 'zh'
                           ? tag === 'trending' ? '曼谷社群話題精選' : tag === 'hidden_gem' ? '在地人才知道的地方' : tag === 'new_opening' ? '最新開幕，搶先體驗' : '經典不敗，值得回訪'
                           : tag === 'trending' ? 'What Bangkok is buzzing about' : tag === 'hidden_gem' ? "Locals' best-kept secrets" : tag === 'new_opening' ? 'Be the first to visit' : 'Timeless picks, always worth it'}
                       </p>
                     </div>
-                    <span className="text-[10px] font-black bg-white/20 text-white px-2.5 py-1 rounded-full shrink-0">
-                      {items.length} {lang === 'zh' ? '筆' : 'places'}
-                    </span>
+                    <button
+                      onClick={() => { setActiveTag(tag); setSpecialFilter('all'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
+                      className="shrink-0 text-[12px] text-brand hover:text-brand-dark hover:underline underline-offset-4 whitespace-nowrap"
+                    >
+                      {lang === 'zh' ? `看全部 ${items.length} 筆` : `See all ${items.length}`} →
+                    </button>
                   </div>
-                  </Reveal>
                   {/* Horizontal scroll cards — 每區隨機抽 SECTION_LIMIT 筆，其餘按「看全部」進完整清單 */}
-                  <DragScroll className="flex gap-3 overflow-x-auto no-scrollbar px-3 pb-1 lg:cursor-grab">
-                    {items.slice(0, SECTION_LIMIT).map((loc, i) => (
-                      <Reveal key={loc.id} delay={i < 4 ? i * 60 : 0} className="shrink-0 w-44 lg:w-52 h-[260px] lg:h-[300px]">
+                  <DragScroll className="flex gap-3 overflow-x-auto no-scrollbar px-4 pb-1 lg:cursor-grab">
+                    {items.slice(0, SECTION_LIMIT).map((loc) => (
+                      <Reveal key={loc.id} className="shrink-0 w-44 lg:w-52 h-[250px] lg:h-[290px]">
                         <LocationCard
                           location={loc}
                           lang={lang}
@@ -496,15 +491,16 @@ export function PublicHomepage({ locations }: Props) {
                           saved={savedIds.has(loc.id)}
                           onToggleSave={handleToggleSave}
                           compact
+                          hideTag
                         />
                       </Reveal>
                     ))}
                     {items.length > SECTION_LIMIT && (
                       <button
-                        onClick={() => { setActiveTag(tag); setSpecialFilter('all'); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
-                        className="shrink-0 w-32 lg:w-36 h-[260px] lg:h-[300px] rounded-2xl bg-gray-100 hover:bg-gray-200 transition-colors flex flex-col items-center justify-center gap-2 text-gray-500"
+                        onClick={() => { setActiveTag(tag); setSpecialFilter('all'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
+                        className="shrink-0 w-32 lg:w-36 h-[260px] lg:h-[300px] rounded-lg border border-line hover:border-ink/30 transition-colors flex flex-col items-center justify-center gap-2 text-muted"
                       >
-                        <span className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center">
+                        <span className="w-10 h-10 rounded-full border border-line flex items-center justify-center text-ink">
                           <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
                         </span>
                         <span className="text-[12px] font-bold">{lang === 'zh' ? '看全部' : 'See all'}</span>
@@ -533,12 +529,12 @@ export function PublicHomepage({ locations }: Props) {
 
         {/* Filtered / search view */}
         {!showSections && (
-          <section className="px-3 pt-3 pb-10">
+          <section className="px-4 pt-4 pb-10">
             {filtered.length > 0 ? (
               <>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                  {filtered.slice(0, gridLimit).map((loc, i) => (
-                    <Reveal key={loc.id} delay={(i % 2) * 60}>
+                  {filtered.slice(0, gridLimit).map((loc) => (
+                    <Reveal key={loc.id}>
                       <LocationCard
                         location={loc}
                         lang={lang}
@@ -546,6 +542,7 @@ export function PublicHomepage({ locations }: Props) {
                         saved={savedIds.has(loc.id)}
                         onToggleSave={handleToggleSave}
                         compact
+                        hideTag={activeTag !== 'all'}
                       />
                     </Reveal>
                   ))}
@@ -554,7 +551,7 @@ export function PublicHomepage({ locations }: Props) {
                   <div className="flex justify-center mt-6">
                     <button
                       onClick={() => setGridLimit((n) => n + GRID_PAGE)}
-                      className="flex items-center gap-1.5 text-[13px] font-bold text-[#1e1b4b] bg-white border border-gray-200 rounded-full px-6 py-2.5 shadow-sm hover:bg-gray-50 transition-colors active:scale-95"
+                      className="flex items-center gap-1.5 text-[13px] font-bold text-ink bg-white border border-line rounded-full px-6 py-2.5 hover:border-ink/40 transition-colors"
                     >
                       {lang === 'zh' ? '載入更多' : 'Load more'}
                       <span className="text-[11px] text-gray-400 font-semibold">
@@ -604,7 +601,7 @@ export function PublicHomepage({ locations }: Props) {
         onClick={() => filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
         aria-hidden={!pastFilters}
         tabIndex={pastFilters ? 0 : -1}
-        className={`fixed bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 text-[13px] font-bold text-white bg-[#1e1b4b] rounded-full px-5 py-2.5 shadow-lg transition-all duration-300 active:scale-95 ${
+        className={`fixed bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 text-[13px] font-bold text-white bg-ink rounded-full px-5 py-2.5 shadow-md transition-all duration-300 ${
           pastFilters ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
       >

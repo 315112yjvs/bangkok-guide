@@ -128,11 +128,11 @@ function MapContent({ locations, lang, userLoc, nearbyMode }: {
         >
           <div className="p-1 max-w-[180px]">
             <Link href={`/location/${selected.slug ?? selected.id}`} className="block group">
-              <p className="font-bold text-sm text-[#1a1a2e] mb-0.5 group-hover:underline">
+              <p className="font-bold text-sm text-ink mb-0.5 group-hover:underline">
                 {lang === 'zh' ? selected.name_zh : selected.name_en}
               </p>
               <p className="text-xs text-gray-500 mb-1.5">★ {selected.rating.toFixed(1)}</p>
-              <span className="inline-block text-xs font-bold text-white bg-[#1e1b4b] rounded-full px-3 py-1 mb-2">
+              <span className="inline-block text-xs font-bold text-white bg-ink rounded-full px-3 py-1 mb-2">
                 {strings[lang].viewDetail as string} →
               </span>
             </Link>

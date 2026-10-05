@@ -116,7 +116,7 @@ export function LocationDetail({ location, nearby = [] }: { location: Location; 
   const cleanDesc = desc?.replace(/^必點：[^。]*。\s*/, '') ?? ''
 
   return (
-    <div className="max-w-md mx-auto bg-white min-h-screen shadow-xl">
+    <div className="max-w-md mx-auto bg-white min-h-screen lg:border-x lg:border-line">
 
       {/* Hero photo */}
       <div className="relative w-full h-72 bg-gray-100">
@@ -177,8 +177,8 @@ export function LocationDetail({ location, nearby = [] }: { location: Location; 
           const TagIcon = TAG_ICON[tag]
           return (
             <div className="absolute bottom-4 left-4">
-              <span className={`inline-flex items-center gap-1 text-[10px] font-black ${meta.color} text-white px-2 py-1 rounded-full`}>
-                <TagIcon size={12} className="shrink-0" /> {lang === 'zh' ? meta.zh : meta.en}
+              <span className="inline-flex items-center gap-1 text-[11px] font-bold bg-white text-ink px-2 py-1 rounded-sm">
+                <TagIcon size={12} className="shrink-0 text-brand" /> {lang === 'zh' ? meta.zh : meta.en}
               </span>
             </div>
           )
@@ -187,12 +187,12 @@ export function LocationDetail({ location, nearby = [] }: { location: Location; 
 
       {/* Thumbnail strip */}
       {allPhotos.length > 1 && (
-        <DragScroll className="flex gap-2 px-4 py-2 overflow-x-auto no-scrollbar bg-gray-50">
+        <DragScroll className="flex gap-2 px-4 py-2.5 overflow-x-auto no-scrollbar border-b border-line">
           {allPhotos.map((url, i) => (
             <button
               key={i}
               onClick={() => setActivePhoto(i)}
-              className={`shrink-0 w-16 h-16 rounded-xl overflow-hidden border-2 transition-all ${i === activePhoto ? 'border-[#1e1b4b]' : 'border-transparent'}`}
+              className={`shrink-0 w-16 h-16 rounded-md overflow-hidden border-2 transition-colors ${i === activePhoto ? 'border-brand' : 'border-transparent'}`}
             >
               <Image src={srcOf(url)} alt="" width={64} height={64} className="object-cover w-full h-full" unoptimized onError={() => markBroken(url)} />
             </button>
@@ -207,18 +207,18 @@ export function LocationDetail({ location, nearby = [] }: { location: Location; 
           <div className="flex items-start justify-end gap-2 mb-1">
             <button
               onClick={copyThai}
-              className="shrink-0 flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#f0edff] text-[#5b4fcf] hover:bg-[#e0daff] transition-colors"
+              className="shrink-0 text-[11px] font-bold px-2 py-1 rounded-sm border border-line text-muted hover:text-ink hover:border-ink/40 transition-colors"
             >
               {copied ? (lang === 'zh' ? '已複製' : 'Copied!') : 'ภาษาไทย'}
             </button>
           </div>
         )}
 
-        <h1 className="text-[22px] font-black text-[#1a1a2e] leading-tight mt-1 mb-0.5">{name}</h1>
+        <h1 className="font-liufen text-[26px] text-ink leading-tight mt-1 mb-1.5">{name}</h1>
 
         {/* Quick stats */}
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-base font-bold text-amber-500">★ {location.rating.toFixed(1)}</span>
+        <div className="flex items-center gap-3 mb-5 pb-5 border-b border-line">
+          <span className="text-base font-bold text-ink"><span className="text-amber-500">★</span> {location.rating.toFixed(1)}</span>
           {location.price_range > 0 && (
             <span className="text-sm text-gray-400 font-semibold">{'฿'.repeat(location.price_range)}</span>
           )}
@@ -227,33 +227,33 @@ export function LocationDetail({ location, nearby = [] }: { location: Location; 
 
         {/* Curator note */}
         {location.curator_note && (
-          <Reveal className="mb-4 bg-indigo-50 border border-indigo-100 rounded-2xl px-4 py-3">
-            <p className="text-[11px] font-black text-indigo-400 uppercase tracking-wide mb-1">
+          <Reveal className="mb-5 border-l-2 border-brand pl-4 py-1">
+            <p className="text-[11px] font-bold text-brand tracking-wide mb-1">
               {lang === 'zh' ? '在地人怎麼說' : "Local's Take"}
             </p>
-            <p className="text-[14px] text-indigo-700 leading-relaxed font-medium">{location.curator_note}</p>
+            <p className="text-[15px] text-ink leading-relaxed">{location.curator_note}</p>
           </Reveal>
         )}
 
         {/* Description */}
         {cleanDesc && (
           <Reveal delay={60} className="mb-4">
-            <h2 className="text-[13px] font-black text-gray-700 mb-1.5 uppercase tracking-wide">
+            <h2 className="text-[12px] font-bold text-muted mb-1.5 tracking-[0.08em]">
               {lang === 'zh' ? '關於' : 'About'}
             </h2>
-            <p className="text-[14px] text-gray-600 leading-relaxed">{cleanDesc}</p>
+            <p className="text-[15px] text-ink/85 leading-[1.75]">{cleanDesc}</p>
           </Reveal>
         )}
 
         {/* Highlights */}
         {(location.highlights?.length ?? 0) > 0 && (
           <Reveal delay={120} className="mb-4">
-            <h2 className="text-[13px] font-black text-gray-700 mb-1.5 uppercase tracking-wide">
+            <h2 className="text-[12px] font-bold text-muted mb-1.5 tracking-[0.08em]">
               {lang === 'zh' ? '必點' : 'Must Try'}
             </h2>
             <div className="flex flex-wrap gap-2">
               {location.highlights!.map((h) => (
-                <span key={h} className="text-[12px] bg-amber-50 text-amber-700 border border-amber-200 px-3 py-1 rounded-full font-semibold">
+                <span key={h} className="text-[12px] text-ink border border-line px-2.5 py-1 rounded-sm">
                   {h}
                 </span>
               ))}
@@ -264,10 +264,10 @@ export function LocationDetail({ location, nearby = [] }: { location: Location; 
         {/* Address */}
         {location.address && (
           <Reveal delay={180} className="mb-4">
-            <h2 className="text-[13px] font-black text-gray-700 mb-1.5 uppercase tracking-wide">
+            <h2 className="text-[12px] font-bold text-muted mb-1.5 tracking-[0.08em]">
               {lang === 'zh' ? '地址' : 'Address'}
             </h2>
-            <p className="text-[12px] text-gray-500 leading-relaxed">{location.address}</p>
+            <p className="text-[13px] text-ink/75 leading-relaxed">{location.address}</p>
             {thaiAddress && (
               <p className="text-[12px] text-gray-400 mt-0.5">{thaiAddress}</p>
             )}
@@ -277,7 +277,7 @@ export function LocationDetail({ location, nearby = [] }: { location: Location; 
         {/* Social embed */}
         {location.social_embed_url && (
           <Reveal className="mb-4">
-            <h2 className="text-[13px] font-black text-gray-700 mb-2 uppercase tracking-wide">
+            <h2 className="text-[12px] font-bold text-muted mb-2.5 tracking-[0.08em]">
               {lang === 'zh' ? '社群影片' : 'Social Video'}
             </h2>
             <SocialEmbed url={location.social_embed_url} />
@@ -286,8 +286,8 @@ export function LocationDetail({ location, nearby = [] }: { location: Location; 
 
         {/* 附近還有：看完這家可以順路去的其他地點 */}
         {nearby.length > 0 && (
-          <Reveal className="mt-6">
-            <h2 className="text-[13px] font-black text-gray-700 mb-2 uppercase tracking-wide">
+          <Reveal className="mt-8 pt-6 border-t border-line">
+            <h2 className="text-[12px] font-bold text-muted mb-2.5 tracking-[0.08em]">
               {lang === 'zh' ? '附近還有' : 'Also nearby'}
             </h2>
             <div className="grid grid-cols-2 gap-3">
@@ -301,12 +301,12 @@ export function LocationDetail({ location, nearby = [] }: { location: Location; 
       </div>
 
       {/* Fixed bottom CTA */}
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 pb-6 pt-3 bg-white/95 backdrop-blur border-t border-gray-100">
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 pb-6 pt-3 bg-white border-t border-line">
         <a
           href={mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#1e1b4b] text-white font-bold text-[15px] rounded-2xl hover:bg-[#2d2a6e] transition-colors active:scale-95"
+          className="flex items-center justify-center gap-2 w-full py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark transition-colors"
         >
           <IconPin size={16} />
           {lang === 'zh' ? '在 Google Maps 導航' : 'Navigate with Google Maps'}

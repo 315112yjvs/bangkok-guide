@@ -22,16 +22,6 @@ const TABS: Tab[] = [
   { id: 'attraction', labelKey: 'categoryAttraction', Icon: IconAttraction },
 ]
 
-const TAB_COLORS: Record<string, string> = {
-  all:       'bg-[#1e1b4b]',
-  food:      'bg-gradient-to-br from-red-600 to-orange-500',
-  cafe:      'bg-gradient-to-br from-amber-900 to-amber-600',
-  shopping:  'bg-gradient-to-br from-emerald-800 to-emerald-500',
-  nightlife: 'bg-gradient-to-br from-indigo-900 to-violet-700',
-  hotel:     'bg-gradient-to-br from-sky-700 to-sky-400',
-  attraction: 'bg-gradient-to-br from-teal-700 to-teal-400',
-}
-
 type Props = {
   active: Category | 'all'
   onChange: (cat: Category | 'all') => void
@@ -45,21 +35,18 @@ export function CategoryTabs({ active, onChange, lang, counts }: Props) {
     : TABS
 
   return (
-    <DragScroll className="flex gap-4 px-4 py-3 overflow-x-auto bg-white border-b border-gray-100 no-scrollbar lg:justify-center">
+    <DragScroll className="flex gap-1 px-3 overflow-x-auto no-scrollbar lg:justify-center">
       {visibleTabs.map(({ id, labelKey, Icon }) => (
         <button
           key={id}
           onClick={() => onChange(id)}
-          className="flex flex-col items-center gap-1.5 min-w-[52px] group"
+          aria-pressed={active === id}
+          className={`shrink-0 flex items-center gap-1.5 px-3 pt-3.5 pb-3 text-[14px] whitespace-nowrap border-b-2 transition-colors ${
+            active === id ? 'border-brand text-ink font-bold' : 'border-transparent text-muted hover:text-ink'
+          }`}
         >
-          <div className={`w-12 h-12 rounded-2xl flex items-center justify-center text-white transition-transform group-hover:scale-105 ${
-            active === id ? TAB_COLORS[id] + ' scale-105 ring-2 ring-offset-1 ring-current' : TAB_COLORS[id] + ' opacity-70'
-          }`}>
-            <Icon size={22} />
-          </div>
-          <span className={`text-[10px] font-semibold ${active === id ? 'text-[#1a1a2e]' : 'text-gray-400'}`}>
-            {strings[lang][labelKey] as string}
-          </span>
+          <Icon size={17} />
+          {strings[lang][labelKey] as string}
         </button>
       ))}
     </DragScroll>

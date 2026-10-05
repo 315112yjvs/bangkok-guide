@@ -57,8 +57,8 @@ html { scroll-behavior: smooth; }
 /* 滑動進場（搭配 components/Reveal.tsx）：捲到哪、內容淡入上移到哪 */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(6px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   will-change: opacity, transform;
 }
 .reveal-in {
