@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { IconPin } from '@/components/icons/CategoryIcons'
 import type { Location, LocationTag } from '@/lib/types'
-import type { WeekHours } from '@/lib/placeInfo'
+import type { WeekHours, OpeningHours } from '@/lib/placeInfo'
 import type { NearestStation } from '@/lib/transit'
 import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
@@ -47,7 +47,7 @@ type Nearby = { location: Location; km: number }
 type Props = {
   location: Location
   nearby?: Nearby[]
-  hours?: WeekHours | 'always' | null
+  hours?: OpeningHours | null
   station?: NearestStation | null
 }
 
@@ -291,11 +291,11 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
           {hours && (
             <div className="mb-6">
               <h2 className={sectionTitle}>{lang === 'zh' ? '營業時間' : 'Hours'}</h2>
-              {hours === 'always' ? (
+              {hours.week === 'always' ? (
                 <p className="text-[14px] text-ink">{lang === 'zh' ? '24 小時營業' : 'Open 24 hours'}</p>
               ) : (
                 <dl className="text-[14px]">
-                  {groupHours(hours, lang).map((r) => {
+                  {groupHours(hours.week, lang).map((r) => {
                     const isToday = today !== null && today >= r.from && today <= r.to
                     return (
                       <div key={r.from} className={`flex gap-4 py-0.5 ${isToday ? 'text-ink font-bold' : 'text-ink/75'}`}>
@@ -307,7 +307,9 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 </dl>
               )}
               <p className="text-[11px] text-muted mt-1.5">
-                {lang === 'zh' ? '時間取自 Google 地圖，節日可能調整，出發前建議再確認。' : 'From Google Maps. Hours may change on holidays.'}
+                {lang === 'zh'
+                  ? `取自 Google 地圖，${new Date(hours.checkedAt).getMonth() + 1} 月更新。節日可能調整，出發前建議再確認。`
+                  : `From Google Maps, updated ${new Date(hours.checkedAt).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}. Hours may change on holidays.`}
               </p>
             </div>
           )}

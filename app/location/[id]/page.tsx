@@ -110,7 +110,7 @@ export default async function LocationPage({ params }: { params: Promise<{ id: s
   // 舊的 uuid 網址 → 永久轉到新的英文店名網址（308，讓 Google 轉移權重）
   if (byUuid && location.slug) permanentRedirect(`/location/${location.slug}`)
 
-  const hours = await getOpeningHours(location.source_url)
+  const hours = getOpeningHours(location.id)
   return (
     <>
       <script

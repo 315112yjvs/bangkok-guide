@@ -1,48 +1,25 @@
-import { extractPlaceId } from './maps'
+import { readFileSync, existsSync } from 'fs'
+import { join } from 'path'
 
-// 營業時間：向 Google Place Details 只要 regularOpeningHours，並放進 Next Data Cache 30 天
-// （跨部署保留）。每家店一個月最多查一次，全站三百家左右都在 Google 每月免費額度內。
-const CACHE_SECONDS = 60 * 60 * 24 * 30
-
-type Point = { day: number; hour: number; minute: number }
-type Period = { open: Point; close?: Point }
+// 營業時間存在 data/hours.json，由 scripts/refresh-hours.mjs 從 Google 抓下來（一個月跑一次即可）。
+// 網站只讀檔，不在執行或建置時呼叫 Google：之前即時抓的做法會讓每次部署都重查三百多家店，
+// 一天就把帳戶每日 500 次的上限用完。
 
 // 週一到週日各一個陣列，每個元素是一段營業時間（如 "11:00–22:00"）；空陣列 = 當天公休
 export type WeekHours = string[][]
+export type OpeningHours = { week: WeekHours | 'always'; checkedAt: string }
 
-const hhmm = (p: Point) => `${String(p.hour).padStart(2, '0')}:${String(p.minute).padStart(2, '0')}`
+let cache: Record<string, { week: WeekHours | 'always' | null; checked_at: string }> | null = null
 
-export function periodsToWeek(periods: Period[]): WeekHours | 'always' | null {
-  if (!periods.length) return null
-  // Google 表示 24 小時營業的方式：只有一筆、週日 00:00 開、沒有 close
-  if (periods.length === 1 && !periods[0].close && periods[0].open.hour === 0 && periods[0].open.minute === 0) return 'always'
-  const week: WeekHours = Array.from({ length: 7 }, () => [])
-  for (const p of [...periods].sort((a, b) => a.open.day - b.open.day || a.open.hour - b.open.hour || a.open.minute - b.open.minute)) {
-    // Google 的 day：0=週日；這裡轉成 0=週一
-    const idx = (p.open.day + 6) % 7
-    week[idx].push(p.close ? `${hhmm(p.open)}–${hhmm(p.close)}` : `${hhmm(p.open)}–`)
+export function getOpeningHours(locationId: string): OpeningHours | null {
+  if (!cache) {
+    try {
+      const path = join(process.env.DATA_DIR ?? join(process.cwd(), 'data'), 'hours.json')
+      cache = existsSync(path) ? JSON.parse(readFileSync(path, 'utf-8')) : {}
+    } catch {
+      cache = {}
+    }
   }
-  return week
-}
-
-export async function getOpeningHours(sourceUrl?: string): Promise<WeekHours | 'always' | null> {
-  const key = process.env.GOOGLE_MAPS_API_KEY
-  const placeId = extractPlaceId(sourceUrl)
-  if (!key || !placeId) return null
-  try {
-    const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
-      headers: {
-        'X-Goog-Api-Key': key,
-        'X-Goog-FieldMask': 'regularOpeningHours.periods',
-        'Referer': 'https://www.bkk-local.com/',
-      },
-      signal: AbortSignal.timeout(8000),
-      next: { revalidate: CACHE_SECONDS },
-    })
-    if (!res.ok) return null
-    const data = await res.json()
-    return periodsToWeek((data.regularOpeningHours?.periods ?? []) as Period[])
-  } catch {
-    return null
-  }
+  const h = cache![locationId]
+  return h?.week ? { week: h.week, checkedAt: h.checked_at } : null
 }

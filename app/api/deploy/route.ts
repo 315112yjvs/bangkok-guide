@@ -9,7 +9,7 @@ export async function POST() {
     const repoRoot = resolve(process.cwd())
     const date = new Date().toISOString().slice(0, 16).replace('T', ' ')
 
-    execSync('git add data/locations.json data/pending.json', { cwd: repoRoot, stdio: 'pipe' })
+    execSync('git add data/locations.json data/pending.json data/hours.json', { cwd: repoRoot, stdio: 'pipe' })
 
     try {
       execSync(`git commit -m "data: update locations ${date}"`, {
