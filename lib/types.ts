@@ -1,6 +1,9 @@
 export type Category = 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel' | 'attraction'
-export type Source = 'pantip' | 'wongnai' | 'googlemaps' | 'tiktok' | 'instagram' | 'manual'
+export type Source = 'pantip' | 'wongnai' | 'googlemaps' | 'tiktok' | 'instagram' | 'media' | 'manual'
 export type LocationTag = 'trending' | 'hidden_gem' | 'new_opening' | 'evergreen'
+
+// 爬蟲「找熱點」留下的出處：哪個網址、標題、以及它怎麼說這家店
+export type Evidence = { url: string; title: string; quote: string }
 
 export type Location = {
   id: string
@@ -27,6 +30,8 @@ export type Location = {
   local_ratio?: number   // 0–100 (% local customers)
   curator_note?: string      // short personal observation from the site owner
   social_embed_url?: string  // TikTok or Instagram post URL to embed
+  mentions?: number          // 找熱點時被幾個不同來源提到（待審排序用）
+  evidence?: Evidence[]      // 提到這家店的來源清單（待審時判斷為什麼紅）
   approved_at?: string
 }
 

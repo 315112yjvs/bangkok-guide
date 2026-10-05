@@ -18,6 +18,7 @@ const SOURCE_SVG: Record<Source, string> = {
   pantip:     '<path d="M4 4h16v12H4z M8 16l4 4 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
   wongnai:    '<path d="M12 2C8 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-4-8-8-8z" stroke="white" stroke-width="2" fill="none"/><circle cx="12" cy="10" r="2.5" fill="white"/>',
   googlemaps: '<path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z" fill="white"/><circle cx="12" cy="9" r="2.5" fill="currentColor"/>',
+  media:      '<path d="M4 5h13v14H6a2 2 0 0 1-2-2V5zM17 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
   manual:     '<path d="M11 4H4v14h14v-7M18 2l-8 8M15 2h5v5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>',
 }
 
@@ -27,6 +28,7 @@ const SOURCE_BADGE: Record<Source, { label: keyof typeof strings.zh; color: stri
   pantip:     { label: 'sourcePantip',    color: 'bg-orange-500' },
   wongnai:    { label: 'sourceWongnai',   color: 'bg-red-500' },
   googlemaps: { label: 'sourceGoogleMaps',color: 'bg-blue-500' },
+  media:      { label: 'sourceMedia',     color: 'bg-teal-500' },
   manual:     { label: 'sourceManual',    color: 'bg-amber-500' },
 }
 

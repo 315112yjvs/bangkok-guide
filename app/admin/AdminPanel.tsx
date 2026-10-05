@@ -8,7 +8,7 @@ type Tab = 'pending' | 'approved' | 'add'
 
 const SOURCE_LABEL: Record<Source, string> = {
   tiktok: 'TikTok', instagram: 'IG', pantip: 'Pantip',
-  wongnai: 'Wongnai', googlemaps: 'Google Maps', manual: '手動新增',
+  wongnai: 'Wongnai', googlemaps: 'Google Maps', media: '媒體報導', manual: '手動新增',
 }
 const SOURCE_STYLE: Record<Source, string> = {
   tiktok: 'bg-green-50 text-green-700 border-green-200',
@@ -16,6 +16,7 @@ const SOURCE_STYLE: Record<Source, string> = {
   pantip: 'bg-orange-50 text-orange-700 border-orange-200',
   wongnai: 'bg-red-50 text-red-700 border-red-200',
   googlemaps: 'bg-blue-50 text-blue-700 border-blue-200',
+  media: 'bg-teal-50 text-teal-700 border-teal-200',
   manual: 'bg-gray-50 text-gray-600 border-gray-200',
 }
 
@@ -260,6 +261,25 @@ function PendingCard({
             <span className="text-[10px] text-gray-400 truncate">{form.address}</span>
           </div>
           <p className="text-xs text-gray-500 line-clamp-2 mb-2">{form.description_zh || form.description_en}</p>
+
+          {/* 為什麼紅：找熱點爬蟲留下的出處 */}
+          {(item.evidence?.length ?? 0) > 0 && (
+            <div className="mb-2.5 rounded-lg bg-orange-50 border border-orange-100 px-2.5 py-2">
+              <p className="text-[10px] font-black text-orange-700 mb-1">
+                🔥 近一個月被 {item.mentions ?? item.evidence!.length} 個來源提到
+              </p>
+              <ul className="space-y-1">
+                {item.evidence!.map((e) => (
+                  <li key={e.url} className="text-[11px] leading-snug text-gray-600">
+                    <a href={e.url} target="_blank" rel="noopener noreferrer" className="font-bold text-indigo-600 hover:underline">
+                      {e.url.replace(/^https?:\/\/(www\.)?/, '').split('/')[0]}
+                    </a>
+                    {e.quote ? `：${e.quote}` : e.title ? `：${e.title}` : ''}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Inline tag picker */}
           <div className="flex gap-1 mb-2.5 flex-wrap">
@@ -1048,15 +1068,19 @@ export function AdminPanel() {
     loadData()
   }
 
-  async function runScraper() {
+  async function runScraper(mode: 'trending' | 'stock' = 'trending') {
     setScraperRunning(true)
     const keywords = customKeywords.split('\n').map(s => s.trim()).filter(Boolean)
-    setScraperStatus(keywords.length ? `搜尋「${keywords[0]}」等 ${keywords.length} 個關鍵字...` : '爬取中...')
+    setScraperStatus(
+      keywords.length ? `搜尋「${keywords[0]}」等 ${keywords.length} 個關鍵字...`
+        : mode === 'stock' ? 'Google 地圖補庫存中...'
+        : '找近一個月的熱點中（約 3–5 分鐘）...'
+    )
     try {
       const res = await fetch('/api/scraper', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ customKeywords: keywords.length ? keywords : [] }),
+        body: JSON.stringify({ customKeywords: keywords.length ? keywords : [], mode }),
       })
       const data = await res.json()
       setScraperStatus(`完成 — 新增 ${data.added ?? 0} 筆`)
@@ -1149,15 +1173,25 @@ export function AdminPanel() {
             className="w-full bg-white/5 border border-white/10 rounded-lg px-2.5 py-2 text-[11px] text-slate-300 placeholder-slate-600 resize-none outline-none focus:border-white/20 mb-2"
           />
           <button
-            onClick={runScraper}
+            onClick={() => runScraper('trending')}
             disabled={scraperRunning}
             className="w-full bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5 flex items-center justify-center gap-2"
           >
             <svg className={`w-3.5 h-3.5 ${scraperRunning ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-4.5"/>
             </svg>
-            {scraperRunning ? '執行中...' : '執行爬蟲'}
+            {scraperRunning ? '執行中...' : customKeywords.trim() ? '用關鍵字搜尋 Google' : '🔥 找近期熱點'}
           </button>
+          {!customKeywords.trim() && (
+            <button
+              onClick={() => runScraper('stock')}
+              disabled={scraperRunning}
+              title="用固定的 Google 地圖關鍵字找評價好的常青店（跟熱不熱門無關）"
+              className="mt-1.5 w-full bg-white/5 hover:bg-white/10 disabled:opacity-50 text-slate-300 text-[11px] font-bold rounded-xl py-2"
+            >
+              補庫存（Google 常青店）
+            </button>
+          )}
           <p className="text-slate-500 text-[10px] text-center mt-1.5">{scraperStatus}</p>
           {hasUnsaved && !deploying && (
             <p className="text-amber-400 text-[10px] text-center mt-3 font-bold flex items-center justify-center gap-1">
@@ -1235,10 +1269,11 @@ export function AdminPanel() {
             {/* Source + Area filters */}
             {pending.length > 0 && (() => {
               const areas = Array.from(new Set(pending.map(p => (p as PendingLocation & { area?: string }).area).filter(Boolean))).sort()
+              // 被越多來源提到的排越前面，先審最有把握的
               const filtered = pending.filter(p =>
                 (pendingSourceFilter === 'all' || p.source === pendingSourceFilter) &&
                 (pendingAreaFilter === 'all' || (p as PendingLocation & { area?: string }).area === pendingAreaFilter)
-              )
+              ).sort((a, b) => (b.mentions ?? 0) - (a.mentions ?? 0))
               return (
                 <>
                   <div className="flex gap-2 flex-wrap mb-1">

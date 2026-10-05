@@ -35,6 +35,8 @@ export function toCardLocation(loc: Location): Location {
     hashtags: undefined,
     social_embed_url: undefined,
     local_ratio: undefined,
+    mentions: undefined,
+    evidence: undefined,
     approved_at: undefined,
   }
 }

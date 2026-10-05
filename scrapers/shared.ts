@@ -52,18 +52,37 @@ export async function firecrawlScrape(url: string): Promise<string> {
 
 export type SearchResult = { url: string; title: string; description: string; markdown?: string }
 
-export async function firecrawlSearch(query: string, limit = 5): Promise<SearchResult[]> {
+// tbs：Google 的時間篩選（qdr:w 近一週、qdr:m 近一個月）；scrape：連同搜尋結果的頁面全文一起抓回來
+export async function firecrawlSearch(
+  query: string,
+  limit = 5,
+  opts: { tbs?: string; scrape?: boolean } = {}
+): Promise<SearchResult[]> {
   const apiKey = process.env.FIRECRAWL_API_KEY
   if (!apiKey) throw new Error('FIRECRAWL_API_KEY not set')
 
-  const res = await fetch('https://api.firecrawl.dev/v1/search', {
+  const request = () => fetch('https://api.firecrawl.dev/v1/search', {
     method: 'POST',
     headers: {
       'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ query, limit }),
+    body: JSON.stringify({
+      query,
+      limit,
+      country: 'th',
+      ...(opts.tbs ? { tbs: opts.tbs } : {}),
+      ...(opts.scrape ? { scrapeOptions: { formats: ['markdown'], onlyMainContent: true } } : {}),
+    }),
   })
+
+  // 429 = Firecrawl 每分鐘次數上限：等一下再試，不要直接放棄這組關鍵字
+  let res = await request()
+  for (const wait of [8000, 20000, 40000]) {
+    if (res.status !== 429) break
+    await sleep(wait)
+    res = await request()
+  }
 
   if (!res.ok) throw new Error(`Firecrawl search error: ${res.status}`)
   const data = await res.json()

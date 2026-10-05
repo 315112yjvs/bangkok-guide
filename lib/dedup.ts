@@ -15,7 +15,7 @@ function levenshtein(a: string, b: string): number {
   return dp[m][n]
 }
 
-function similarity(a: string, b: string): number {
+export function similarity(a: string, b: string): number {
   a = a.toLowerCase().trim()
   b = b.toLowerCase().trim()
   if (!a || !b) return 0

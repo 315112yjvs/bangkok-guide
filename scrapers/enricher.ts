@@ -5,6 +5,9 @@ import type { Category } from '@/lib/types'
 const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 
 type PlaceResult = {
+  id?: string
+  userRatingCount?: number
+  priceLevel?: string
   displayName?: { text: string }
   formattedAddress?: string
   primaryType?: string
@@ -24,9 +27,19 @@ async function findPlace(name: string, lat?: number, lng?: number): Promise<Plac
   const body: Record<string, unknown> = {
     textQuery: `${name} Bangkok`,
     maxResultCount: 1,
+    regionCode: 'TH',
+    languageCode: 'en',
   }
   if (lat && lng) {
     body.locationBias = { circle: { center: { latitude: lat, longitude: lng }, radius: 500 } }
+  } else {
+    // 只收大曼谷範圍（含暖武里、北欖），避免同名的外府店家或完全不相干的結果
+    body.locationRestriction = {
+      rectangle: {
+        low: { latitude: 13.45, longitude: 100.25 },
+        high: { latitude: 14.05, longitude: 100.95 },
+      },
+    }
   }
 
   try {
@@ -37,7 +50,10 @@ async function findPlace(name: string, lat?: number, lng?: number): Promise<Plac
         'X-Goog-Api-Key': apiKey,
         'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.bkk-local.com/',
         'X-Goog-FieldMask': [
+          'places.id',
           'places.displayName',
+          'places.userRatingCount',
+          'places.priceLevel',
           'places.formattedAddress',
           'places.primaryType',
           'places.primaryTypeDisplayName',
@@ -243,6 +259,17 @@ export type EnrichedItem = {
   area: string
   address: string
   category: string
+  place_id: string
+  rating_count: number
+  price_range: 1 | 2 | 3 | 4
+}
+
+const PRICE_MAP: Record<string, 1 | 2 | 3 | 4> = {
+  PRICE_LEVEL_FREE: 1,
+  PRICE_LEVEL_INEXPENSIVE: 1,
+  PRICE_LEVEL_MODERATE: 2,
+  PRICE_LEVEL_EXPENSIVE: 3,
+  PRICE_LEVEL_VERY_EXPENSIVE: 4,
 }
 
 // Returns null if the name can't be matched to a real Bangkok place on Google Maps.
@@ -324,9 +351,12 @@ export async function enrichItem(
     lat: place.location?.latitude ?? lat ?? 13.7563,
     lng: place.location?.longitude ?? lng ?? 100.5018,
     photos,
-    rating: place.rating ?? 4.0,
+    rating: place.rating ?? 0,
     area,
     address: formattedAddress || 'Bangkok, Thailand',
     category: resolvedCategory,
+    place_id: place.id ?? '',
+    rating_count: place.userRatingCount ?? 0,
+    price_range: PRICE_MAP[place.priceLevel ?? ''] ?? 2,
   }
 }
