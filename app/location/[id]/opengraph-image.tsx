@@ -83,10 +83,16 @@ export default async function Image({ params }: { params: Promise<{ id: string }
         )}
 
         <div
+          // satori 對空 div 的 inset 不會撐開尺寸，漸層整片沒畫出來，白字壓在亮色照片上看不清楚；
+          // 這裡明確給寬高
           style={{
             position: 'absolute',
-            inset: 0,
-            background:
+            left: 0,
+            top: 0,
+            width: 1200,
+            height: 630,
+            display: 'flex',
+            backgroundImage:
               'linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0.45) 100%)',
           }}
         />
@@ -98,11 +104,11 @@ export default async function Image({ params }: { params: Promise<{ id: string }
               top: 48,
               left: 56,
               display: 'flex',
-              background: tag.color,
-              color: 'white',
-              fontSize: 30,
-              padding: '8px 24px',
-              borderRadius: 999,
+              background: '#ffffff',
+              color: '#17181c',
+              fontSize: 28,
+              padding: '8px 20px',
+              borderRadius: 6,
             }}
           >
             {tag.zh}
