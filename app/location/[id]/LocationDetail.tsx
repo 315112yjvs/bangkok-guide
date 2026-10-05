@@ -324,6 +324,11 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 </p>
               )}
               {location.address && <p className="text-[13px] text-ink/75 leading-relaxed">{location.address}</p>}
+              {station && (
+                <p className="text-[11px] text-muted mt-1.5">
+                  {lang === 'zh' ? '步行時間依直線距離估算。車站位置 © OpenStreetMap 貢獻者。' : 'Walking time estimated from straight-line distance. Station data © OpenStreetMap contributors.'}
+                </p>
+              )}
               {thaiAddress && <p className="text-[13px] text-muted mt-0.5">{thaiAddress}</p>}
             </div>
           )}

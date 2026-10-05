@@ -8,7 +8,6 @@ import { CATEGORY_META } from '@/lib/collections'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
 import { MIcon } from '@/components/icons/MaterialIcons'
-import { SiteFooter } from '@/components/SiteFooter'
 import type { Location } from '@/lib/types'
 
 type Props = {
@@ -104,7 +103,6 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
           ))}
         </div>
       </div>
-      <SiteFooter lang={lang} />
     </div>
   )
 }
