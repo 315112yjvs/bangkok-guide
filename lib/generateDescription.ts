@@ -80,6 +80,12 @@ export async function generateDescription(input: GenerateInput): Promise<Generat
     .map((e) => `- ${e.facts || e.quote || e.title}（${e.url}）`)
     .join('\n')
 
+  // 不上網查證時，手上沒有任何依據（Google 資料抓不到、也沒有爬蟲出處）就不要硬寫，
+  // 否則會產出「公開資料有限」這種沒用的介紹。常見原因是 Google 當日查詢額度用完。
+  if (!web && !placeFacts && !evidenceText) {
+    throw new Error('沒有可用的資料來源（Google 店家資料抓不到，可能是當日查詢額度已用完），請稍後再試')
+  }
+
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 
   const prompt = `你是曼谷在地旅遊指南的編輯。請針對「同一家、千真萬確的這家店」${web ? '上網查證後，' : '根據下方提供的資料，'}寫出精準且符合現實的中英文介紹。

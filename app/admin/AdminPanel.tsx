@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { photoUrl } from '@/lib/photo'
 import type { Location, PendingLocation, Category, Source, LocationTag } from '@/lib/types'
 
-type Tab = 'pending' | 'approved' | 'add'
+type Tab = 'pending' | 'approved' | 'add' | 'settings'
 
 const SOURCE_LABEL: Record<Source, string> = {
   tiktok: 'TikTok', instagram: 'IG', pantip: 'Pantip',
@@ -127,6 +127,67 @@ function AuthOverlay({ onAuth }: { onAuth: () => void }) {
           登入
         </button>
       </form>
+    </div>
+  )
+}
+
+// ---- 聯絡方式（顯示在前台「關於」頁） ----
+const CONTACT_FIELDS: { key: string; label: string; placeholder: string }[] = [
+  { key: 'instagram', label: 'Instagram', placeholder: '帳號（例：bkk.local）或完整網址' },
+  { key: 'threads',   label: 'Threads',   placeholder: '帳號或完整網址' },
+  { key: 'facebook',  label: 'Facebook',  placeholder: '粉專名稱或完整網址' },
+  { key: 'line',      label: 'LINE',      placeholder: 'LINE ID，或官方帳號連結（https://lin.ee/...）' },
+  { key: 'email',     label: 'Email',     placeholder: 'name@example.com' },
+]
+
+function ContactSettings({ onSaved }: { onSaved: () => void }) {
+  const [form, setForm] = useState<Record<string, string>>({})
+  const [loaded, setLoaded] = useState(false)
+  const [status, setStatus] = useState('')
+
+  useEffect(() => {
+    fetch('/api/site').then(r => r.json()).then(d => { setForm(d.contact ?? {}); setLoaded(true) }).catch(() => setLoaded(true))
+  }, [])
+
+  async function save() {
+    setStatus('儲存中...')
+    try {
+      const res = await fetch('/api/site', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ contact: form }) })
+      const d = await res.json()
+      if (!d.ok) throw new Error(d.error ?? '未知錯誤')
+      setForm(d.contact)
+      setStatus('已儲存。按左下角「存檔並上傳」後才會出現在網站上。')
+      onSaved()
+    } catch (e) {
+      setStatus('儲存失敗：' + (e instanceof Error ? e.message : String(e)))
+    }
+  }
+
+  const inp = 'w-full border border-gray-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-indigo-400'
+  return (
+    <div className="bg-white rounded-2xl p-6 max-w-xl">
+      <h1 className="text-xl font-black text-[#0f172a] mb-1">聯絡方式</h1>
+      <p className="text-xs text-gray-500 mb-5">填了的項目會顯示在網站「關於」頁的聯絡區塊；留空的不顯示。全部留空就整段不出現。</p>
+      {!loaded ? <p className="text-sm text-gray-400">載入中...</p> : (
+        <div className="space-y-3.5">
+          {CONTACT_FIELDS.map((f) => (
+            <div key={f.key}>
+              <label className="block text-[11px] font-semibold text-gray-500 mb-1">{f.label}</label>
+              <input className={inp} value={form[f.key] ?? ''} placeholder={f.placeholder}
+                onChange={(e) => setForm((p) => ({ ...p, [f.key]: e.target.value }))} />
+            </div>
+          ))}
+          <div>
+            <label className="block text-[11px] font-semibold text-gray-500 mb-1">補充說明（選填）</label>
+            <textarea className={inp} rows={3} value={form.note ?? ''} placeholder="例：店家資訊有誤或想合作，歡迎私訊 IG。"
+              onChange={(e) => setForm((p) => ({ ...p, note: e.target.value }))} />
+          </div>
+          <div className="flex items-center gap-3 pt-1">
+            <button onClick={save} className="text-sm font-bold px-5 py-2 rounded-xl bg-[#0f172a] text-white hover:bg-slate-700">儲存</button>
+            {status && <span className="text-xs text-gray-500">{status}</span>}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -1166,6 +1227,7 @@ export function AdminPanel() {
           {navLink('pending', '待審核地點', pending.length)}
           {navLink('approved', '已上架地點')}
           {navLink('add', '手動新增')}
+          {navLink('settings', '聯絡方式')}
         </nav>
         <div className="p-4 border-t border-white/10">
           <p className="text-slate-400 text-[10px] font-semibold mb-1.5 uppercase tracking-wide">自訂關鍵字（每行一個）</p>
@@ -1349,6 +1411,8 @@ export function AdminPanel() {
         )}
 
         {tab === 'add' && <AddForm onAdded={() => { setHasUnsaved(true); loadData(); setTab('approved') }} />}
+
+        {tab === 'settings' && <ContactSettings onSaved={() => setHasUnsaved(true)} />}
       </div>
       </div>
     </div>

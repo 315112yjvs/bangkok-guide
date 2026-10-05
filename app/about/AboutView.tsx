@@ -80,7 +80,9 @@ const COPY = {
   },
 }
 
-export function AboutView() {
+type ContactLink = { label: string; text: string; href?: string }
+
+export function AboutView({ links = [], note = '' }: { links?: ContactLink[]; note?: string }) {
   const { lang, setLang } = useLanguage()
   const c = COPY[lang]
   return (
@@ -107,6 +109,24 @@ export function AboutView() {
             </ul>
           </section>
         ))}
+        {(links.length > 0 || note) && (
+          <section className="border-t border-line pt-5 mb-6">
+            <h2 className="text-[16px] font-bold text-ink mb-2.5">{lang === 'zh' ? '聯絡' : 'Contact'}</h2>
+            {note && <p className="text-[14px] text-ink/80 leading-[1.7] mb-3 whitespace-pre-line">{note}</p>}
+            <dl className="text-[14px]">
+              {links.map((l) => (
+                <div key={l.label} className="flex gap-4 py-1">
+                  <dt className="w-24 shrink-0 text-muted">{l.label}</dt>
+                  <dd className="min-w-0 break-all">
+                    {l.href
+                      ? <a href={l.href} target={l.href.startsWith('mailto:') ? undefined : '_blank'} rel="noopener noreferrer" className="text-brand hover:text-brand-dark hover:underline underline-offset-4">{l.text}</a>
+                      : <span className="text-ink">{l.text}</span>}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
       </div>
     </div>
   )
