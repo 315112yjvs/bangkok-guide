@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { IconPin } from '@/components/icons/CategoryIcons'
@@ -151,6 +151,18 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
     setToday(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(wd))
   }, [])
 
+  // 手機上左右滑動切換照片（只認明顯的水平滑動，避免跟上下捲動打架）
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
+  function onPhotoTouchEnd(e: React.TouchEvent) {
+    const s = touchStart.current
+    touchStart.current = null
+    if (!s || allPhotos.length < 2) return
+    const dx = e.changedTouches[0].clientX - s.x
+    const dy = e.changedTouches[0].clientY - s.y
+    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return
+    setActivePhoto((i) => (i + (dx < 0 ? 1 : -1) + allPhotos.length) % allPhotos.length)
+  }
+
   const listedAt = location.approved_at ? new Date(location.approved_at) : null
   const sectionTitle = 'text-[12px] font-bold text-muted mb-1.5 tracking-[0.08em]'
 
@@ -160,7 +172,11 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
 
         {/* 照片欄（桌機固定在左側） */}
         <div className="lg:sticky lg:top-8">
-          <div className="relative w-full h-72 lg:h-[460px] bg-gray-100 lg:rounded-lg lg:overflow-hidden">
+          <div
+            className="relative w-full h-72 lg:h-[460px] bg-gray-100 lg:rounded-lg lg:overflow-hidden"
+            onTouchStart={(e) => { touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY } }}
+            onTouchEnd={onPhotoTouchEnd}
+          >
             {allPhotos.length > 0 ? (
               <Image
                 src={srcOf(allPhotos[activePhoto] ?? allPhotos[0])}
@@ -208,6 +224,12 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               </svg>
             </button>
 
+            {allPhotos.length > 1 && (
+              <span className="absolute bottom-4 right-4 text-[11px] font-bold bg-black/55 text-white px-2 py-1 rounded-sm">
+                {activePhoto + 1} / {allPhotos.length}
+              </span>
+            )}
+
             {(() => {
               const tag = resolveTag(location)
               const meta = TAG_META[tag]
@@ -245,7 +267,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 onClick={copyThai}
                 className="shrink-0 text-[11px] font-bold px-2 py-1 rounded-sm border border-line text-muted hover:text-ink hover:border-ink/40 transition-colors"
               >
-                {copied ? (lang === 'zh' ? '已複製' : 'Copied!') : 'ภาษาไทย'}
+                {copied ? (lang === 'zh' ? '已複製' : 'Copied!') : (lang === 'zh' ? '複製泰文店名（給司機看）' : 'Copy Thai name (for drivers)')}
               </button>
             </div>
           )}
@@ -326,9 +348,26 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 </p>
               )}
               {location.address && <p className="text-[13px] text-ink/75 leading-relaxed">{location.address}</p>}
+              {/* 位置地圖（OpenStreetMap 內嵌，免費）。整塊是一個連結，點了開 Google Maps；
+                  地圖本身不接收觸控，避免在手機上滑頁面時被地圖攔住 */}
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={lang === 'zh' ? '在 Google Maps 開啟這個位置' : 'Open this location in Google Maps'}
+                className="block relative mt-3 h-44 rounded-lg overflow-hidden border border-line bg-paper"
+              >
+                <iframe
+                  title={lang === 'zh' ? '位置地圖' : 'Location map'}
+                  loading="lazy"
+                  tabIndex={-1}
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  src={`https://www.openstreetmap.org/export/embed.html?bbox=${location.lng - 0.006}%2C${location.lat - 0.0035}%2C${location.lng + 0.006}%2C${location.lat + 0.0035}&layer=mapnik&marker=${location.lat}%2C${location.lng}`}
+                />
+              </a>
               {station && (
                 <p className="text-[11px] text-muted mt-1.5">
-                  {lang === 'zh' ? '步行時間依直線距離估算。車站位置 © OpenStreetMap 貢獻者。' : 'Walking time estimated from straight-line distance. Station data © OpenStreetMap contributors.'}
+                  {lang === 'zh' ? '步行時間依直線距離估算。地圖與車站位置 © OpenStreetMap 貢獻者。' : 'Walking time estimated from straight-line distance. Map and station data © OpenStreetMap contributors.'}
                 </p>
               )}
               {thaiAddress && <p className="text-[13px] text-muted mt-0.5">{thaiAddress}</p>}

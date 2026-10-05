@@ -79,6 +79,11 @@ export function PublicHomepage({ locations }: Props) {
   const [mapEverOpened, setMapEverOpened] = useState(false)
   // 網格視圖目前顯示的筆數（篩選/搜尋條件一變就重置回第一頁）
   const [gridLimit, setGridLimit] = useState(GRID_PAGE)
+  // 區域列預設收起（手機第一個畫面要先看到店家），按「區域」才展開；已選了區域就保持展開
+  const [areaOpen, setAreaOpen] = useState(false)
+  // 篩選結果的排序
+  const [sortBy, setSortBy] = useState<'default' | 'rating' | 'distance'>('default')
+  const searchRef = useRef<HTMLDivElement>(null)
   // 每分頁一個洗牌種子：一進站隨機，之後同分頁返回維持同樣順序（不會重洗）
   const shuffleSeed = useShuffleSeed()
 
@@ -208,6 +213,17 @@ export function PublicHomepage({ locations }: Props) {
 
   const showSections = specialFilter === 'all' && activeTag === 'all' && activeArea === 'all' && !query
 
+  // 篩選結果的排序：預設順序（附近模式已由近到遠）、評分高到低、距離近到遠（要有定位或地標才有）
+  const gridItems = useMemo(() => {
+    if (sortBy === 'rating') return [...filtered].sort((a, b) => b.rating - a.rating)
+    if (sortBy === 'distance' && nearbyAnchor) {
+      return [...filtered].sort((a, b) =>
+        haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, a.lat, a.lng) - haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, b.lat, b.lng))
+    }
+    return filtered
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filtered, sortBy, userLocation, landmark])
+
   const sectionsByTag = useMemo(() => {
     if (!showSections) return null
     const map: Partial<Record<LocationTag, Location[]>> = {}
@@ -223,7 +239,7 @@ export function PublicHomepage({ locations }: Props) {
     <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen overflow-hidden relative lg:border-x lg:border-line">
 
       {/* HERO */}
-      <div className="relative h-[72vw] max-h-96 min-h-60 lg:h-[420px] lg:max-h-[420px] overflow-hidden">
+      <div className="relative h-[60vw] max-h-80 min-h-[232px] lg:h-[400px] lg:max-h-[400px] overflow-hidden">
         <Image
           src="/hero-bangkok.jpg"
           alt="Bangkok"
@@ -249,13 +265,13 @@ export function PublicHomepage({ locations }: Props) {
             </p>
 
             {/* Title — 六分糖字型 */}
-            <h1 className="hero-rise hero-rise-2 leading-[1.15] mb-4">
+            <h1 className="hero-rise hero-rise-2 leading-[1.15] mb-3.5">
               <span className="font-liufen text-[30px] lg:text-[46px] text-white block">{strings[lang].heroTitle as string}</span>
               <span className="font-liufen text-[30px] lg:text-[46px] text-white block">{strings[lang].heroTitleAccent as string}</span>
             </h1>
 
             {/* Search bar */}
-            <div className="hero-rise hero-rise-3 flex items-center gap-2.5 bg-white rounded-lg px-4 py-3">
+            <div ref={searchRef} className="hero-rise hero-rise-3 flex items-center gap-2.5 bg-white rounded-lg px-4 py-3">
               <svg className="w-4 h-4 text-muted shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
               </svg>
@@ -263,7 +279,15 @@ export function PublicHomepage({ locations }: Props) {
                 className="flex-1 text-[15px] text-left outline-none text-ink placeholder:text-muted bg-transparent"
                 placeholder={strings[lang].searchPlaceholder as string}
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={(e) => {
+                  const v = e.target.value
+                  // 開始輸入時把搜尋框捲到畫面最上方，結果才會出現在鍵盤上方看得到的地方
+                  if (!query && v && searchRef.current) {
+                    window.scrollTo({ top: searchRef.current.getBoundingClientRect().top + window.scrollY - 8, behavior: 'smooth' })
+                  }
+                  setQuery(v)
+                }}
+                enterKeyHint="search"
               />
               {query && (
                 <button onClick={() => setQuery('')} aria-label={lang === 'zh' ? '清除搜尋' : 'Clear search'} className="text-muted hover:text-ink text-sm leading-none transition-colors">✕</button>
@@ -359,6 +383,19 @@ export function PublicHomepage({ locations }: Props) {
               {lang === 'zh' ? '我的收藏' : 'Saved'}
               {savedIds.size > 0 && <span className={`text-[9px] font-black ${specialFilter === 'saved' ? 'text-white/70' : 'text-muted'}`}>{savedIds.size}</span>}
             </button>
+            {/* 區域：預設收起，點了才展開下面那一列 */}
+            {areas.length > 0 && (
+              <button
+                onClick={() => setAreaOpen((v) => !v)}
+                aria-expanded={areaOpen || activeArea !== 'all'}
+                className={`lg:hidden flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                  activeArea !== 'all' ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
+                }`}
+              >
+                {activeArea !== 'all' ? activeArea : (lang === 'zh' ? '區域' : 'Area')}
+                <svg className={`w-2.5 h-2.5 transition-transform ${areaOpen || activeArea !== 'all' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+            )}
             <div className="w-px bg-line mx-0.5 my-1.5" />
             {/* Tag filters */}
             {TAG_ORDER.map((tag) => {
@@ -381,9 +418,9 @@ export function PublicHomepage({ locations }: Props) {
           </DragScroll>
         </div>
 
-        {/* Area chips */}
+        {/* Area chips（手機預設收起，桌機常駐） */}
         {areas.length > 0 && (
-          <div className="bg-white border-b border-line py-2.5 relative">
+          <div className={`bg-white border-b border-line py-2.5 relative ${areaOpen || activeArea !== 'all' ? '' : 'hidden lg:block'}`}>
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
             <DragScroll className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
               <svg className="w-3.5 h-3.5 text-gray-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -443,28 +480,13 @@ export function PublicHomepage({ locations }: Props) {
         {/* 4-section view (default) */}
         {showSections && sectionsByTag && (
           <div className="pb-10">
-            {/* 主題玩法入口（原本只有搜尋引擎看得到連結） */}
-            {activeCategory === 'all' && (
-              <DragScroll className="flex gap-2 overflow-x-auto no-scrollbar px-4 pt-4 lg:justify-center">
-                {THEMES.map((t) => (
-                  <Link
-                    key={t.slug}
-                    href={`/theme/${t.slug}`}
-                    className="shrink-0 inline-flex items-center gap-1.5 text-[13px] text-brand hover:text-brand-dark underline-offset-4 hover:underline whitespace-nowrap py-1 pr-3"
-                  >
-                    <MIcon name={t.icon} size={15} className="shrink-0" />
-                    {lang === 'zh' ? t.h1Zh.replace(/^曼谷\s*/, '') : t.h1En.replace(/^Bangkok('s)?\s*/, '')}
-                  </Link>
-                ))}
-              </DragScroll>
-            )}
             {TAG_ORDER.map((tag) => {
               const items = sectionsByTag[tag]
               if (!items || items.length === 0) return null
               const meta = TAG_META[tag]
               const Icon = TAG_ICON[tag]
               return (
-                <section key={tag} className="mt-8 pt-7 border-t border-line first:border-t-0">
+                <section key={tag} className="mt-8 pt-7 border-t border-line first:border-t-0 first:mt-0 first:pt-5">
                   {/* Section header */}
                   <div className="flex items-end justify-between gap-3 px-4 mb-3">
                     <div className="min-w-0">
@@ -502,7 +524,7 @@ export function PublicHomepage({ locations }: Props) {
                     {items.length > SECTION_LIMIT && (
                       <button
                         onClick={() => { setActiveTag(tag); setSpecialFilter('all'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
-                        className="shrink-0 w-32 lg:w-36 h-[260px] lg:h-[300px] rounded-lg border border-line hover:border-ink/30 transition-colors flex flex-col items-center justify-center gap-2 text-muted"
+                        className="shrink-0 w-32 lg:w-36 h-[250px] lg:h-[290px] rounded-lg border border-line hover:border-ink/30 transition-colors flex flex-col items-center justify-center gap-2 text-muted"
                       >
                         <span className="w-10 h-10 rounded-full border border-line flex items-center justify-center text-ink">
                           <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -515,6 +537,24 @@ export function PublicHomepage({ locations }: Props) {
                 </section>
               )
             })}
+            {/* 主題玩法：放在分區之後，不擠掉第一個畫面的店家 */}
+            {activeCategory === 'all' && filtered.length > 0 && (
+              <section className="mt-8 pt-7 border-t border-line px-4">
+                <h2 className="font-liufen text-[20px] lg:text-[24px] text-ink leading-tight mb-3">{lang === 'zh' ? '主題玩法' : 'Browse by theme'}</h2>
+                <div className="flex flex-wrap gap-2">
+                  {THEMES.map((t) => (
+                    <Link
+                      key={t.slug}
+                      href={`/theme/${t.slug}`}
+                      className="inline-flex items-center gap-1.5 text-[13px] text-ink border border-line rounded-full px-3.5 py-2 hover:border-ink/40 transition-colors"
+                    >
+                      <MIcon name={t.icon} size={15} className="shrink-0 text-brand" />
+                      {lang === 'zh' ? t.h1Zh.replace(/^曼谷\s*/, '') : t.h1En.replace(/^Bangkok('s)?\s*/, '')}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            )}
             {filtered.length === 0 && (
               <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
                 <span className="mb-4 text-gray-300">
@@ -536,8 +576,25 @@ export function PublicHomepage({ locations }: Props) {
           <section className="px-4 pt-4 pb-10">
             {filtered.length > 0 ? (
               <>
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-[13px] text-muted" aria-live="polite">
+                    {lang === 'zh' ? `找到 ${filtered.length} 家` : `${filtered.length} places`}
+                  </p>
+                  <label className="flex items-center gap-1.5 text-[13px] text-muted">
+                    <span className="sr-only">{lang === 'zh' ? '排序' : 'Sort'}</span>
+                    <select
+                      value={sortBy === 'distance' && !nearbyAnchor ? 'default' : sortBy}
+                      onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
+                      className="bg-white border border-line rounded-md px-2 py-1.5 text-[13px] text-ink outline-none focus:border-ink/40"
+                    >
+                      <option value="default">{lang === 'zh' ? '預設排序' : 'Default'}</option>
+                      <option value="rating">{lang === 'zh' ? '評分高到低' : 'Top rated'}</option>
+                      {nearbyAnchor && <option value="distance">{lang === 'zh' ? '距離近到遠' : 'Nearest'}</option>}
+                    </select>
+                  </label>
+                </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                  {filtered.slice(0, gridLimit).map((loc) => (
+                  {gridItems.slice(0, gridLimit).map((loc) => (
                     <Reveal key={loc.id}>
                       <LocationCard
                         location={loc}

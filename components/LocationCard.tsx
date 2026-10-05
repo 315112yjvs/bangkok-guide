@@ -171,7 +171,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
               title={strings[lang].copyThai as string}
               className="relative z-20 shrink-0 text-[10px] font-bold px-1.5 py-0.5 rounded-sm border border-line text-muted hover:text-ink hover:border-ink/40 transition-colors"
             >
-              {copied ? (strings[lang].copied as string) : 'ภาษาไทย'}
+              {copied ? (strings[lang].copied as string) : (strings[lang].copyThai as string)}
             </button>
           )}
         </div>
@@ -216,14 +216,14 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
               <span className="min-w-0 text-[10px] text-muted truncate">{location.area}</span>
             )}
           </div>
-          <div className="flex items-center gap-1 shrink-0">
+          <div className="flex items-center shrink-0">
             <button
               onClick={toggleSave}
               aria-label={saved ? (lang === 'zh' ? '取消收藏' : 'Unsave') : (lang === 'zh' ? '收藏' : 'Save')}
               aria-pressed={saved}
-              className={`relative z-20 shrink-0 w-8 h-8 flex items-center justify-center rounded-md transition-colors ${saved ? 'text-red-500' : 'text-gray-400 hover:text-ink'}`}
+              className={`relative z-20 shrink-0 w-10 h-10 flex items-center justify-center rounded-md transition-colors ${saved ? 'text-red-500' : 'text-gray-400 hover:text-ink'}`}
             >
-              <svg width="15" height="15" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.5}>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.2}>
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
             </button>
@@ -232,9 +232,9 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${strings[lang].navigate as string} — ${name}`}
-              className="relative z-20 shrink-0 flex items-center justify-center gap-1 h-8 min-w-8 border border-line text-ink text-[10px] font-bold rounded-md px-2 whitespace-nowrap hover:border-ink/40 transition-colors"
+              className="relative z-20 shrink-0 flex items-center justify-center gap-1 h-10 min-w-10 border border-line text-ink text-[10px] font-bold rounded-md px-2 whitespace-nowrap hover:border-ink/40 transition-colors"
             >
-              <IconPin size={13} className="shrink-0" />
+              <IconPin size={15} className="shrink-0" />
               {!compact && (strings[lang].navigate as string)}
             </a>
           </div>
