@@ -417,7 +417,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
 
       {/* 手機：底部固定導航按鈕（上面留一段空白，內容才不會被按鈕蓋住） */}
       <div className="h-24 lg:hidden" />
-      <div className="lg:hidden fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md px-4 pb-6 pt-3 bg-white border-t border-line">
+      <div className="lg:hidden fixed bottom-0 left-1/2 -translate-x-1/2 z-30 w-full max-w-md px-4 pb-6 pt-3 bg-white border-t border-line">
         <a
           href={mapsUrl}
           target="_blank"

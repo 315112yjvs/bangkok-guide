@@ -202,15 +202,16 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
 
         {/* Footer */}
         <div className="flex items-center justify-between gap-1 mt-auto">
-          <div className="flex items-center gap-1.5 min-w-0 flex-1">
+          {/* 左側資訊放不下時從尾端裁掉（順序＝重要性：評分、距離、價位、區域），不要壓到右邊的按鈕 */}
+          <div className="flex items-center gap-1.5 min-w-0 flex-1 overflow-hidden whitespace-nowrap">
             <span className="shrink-0 text-[11px] font-bold text-ink"><span className="text-amber-500">★</span> {location.rating.toFixed(1)}</span>
-            {location.price_range > 0 && (
-              <span className="shrink-0 text-[10px] text-muted">{'฿'.repeat(location.price_range)}</span>
-            )}
             {distanceKm !== undefined && (
               <span className="shrink-0 text-[10px] font-bold text-brand">
                 {distanceKm < 1 ? `${Math.round(distanceKm * 1000)}m` : `${distanceKm.toFixed(1)}km`}
               </span>
+            )}
+            {location.price_range > 0 && (
+              <span className="shrink-0 text-[10px] text-muted">{'฿'.repeat(location.price_range)}</span>
             )}
             {location.area && location.area !== 'Bangkok' && (
               <span className="min-w-0 text-[10px] text-muted truncate">{location.area}</span>
