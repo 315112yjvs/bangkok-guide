@@ -61,18 +61,8 @@ export function PublicHomepage({ locations }: Props) {
   const [locating, setLocating] = useState(false)
   // 定位失敗（拒絕權限/逾時/不支援）：提示改選地標，不要讓「附近」按了沒反應
   const [geoError, setGeoError] = useState(false)
-  // 往下滑過篩選列後顯示「篩選」浮動鈕，一鍵回到分類/篩選列
+  // 分類/篩選列的位置：按「看全部」時捲回這裡
   const filterRef = useRef<HTMLDivElement>(null)
-  const [pastFilters, setPastFilters] = useState(false)
-  useEffect(() => {
-    const onScroll = () => {
-      const el = filterRef.current
-      if (el) setPastFilters(el.getBoundingClientRect().bottom < -200)
-    }
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set())
   const [mapExpanded, setMapExpanded] = useState(false)
   // 地圖只在使用者開過後才掛載，避免每次進首頁就載入 Google 地圖（省 Dynamic Maps 用量）
@@ -656,19 +646,6 @@ export function PublicHomepage({ locations }: Props) {
         )}
 
       </div>
-
-      {/* 浮動「篩選」鈕：滑過篩選列後出現，點了回到分類/篩選列 */}
-      <button
-        onClick={() => filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-        aria-hidden={!pastFilters}
-        tabIndex={pastFilters ? 0 : -1}
-        className={`fixed bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 text-[13px] font-bold text-white bg-ink rounded-full px-5 py-2.5 shadow-md transition-all duration-300 ${
-          pastFilters ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
-        }`}
-      >
-        <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4" strokeLinecap="round"/></svg>
-        {lang === 'zh' ? '篩選' : 'Filters'}
-      </button>
     </div>
   )
 }
