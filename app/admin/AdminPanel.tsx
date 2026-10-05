@@ -1139,7 +1139,7 @@ export function AdminPanel() {
     setScraperStatus(
       keywords.length ? `搜尋「${keywords[0]}」等 ${keywords.length} 個關鍵字...`
         : mode === 'stock' ? 'Google 地圖補庫存中...'
-        : '找近一個月的熱點並撰寫介紹中（約 3–5 分鐘）...'
+        : '找近一個月的熱點中（約 2–3 分鐘）...'
     )
     try {
       const res = await fetch('/api/scraper', {

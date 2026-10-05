@@ -8,7 +8,6 @@ import { enrichItem } from './enricher'
 import { classifyCategory } from './extract'
 import { categoryLabel } from './shared'
 import { findTrendingCandidates, type TrendingCandidate } from './trending'
-import { generateDescription } from '@/lib/generateDescription'
 
 // trending：找近一個月被社群/媒體提到的店（預設）
 // stock：用 Google 地圖固定關鍵字補庫存（評價好的常青店，跟熱不熱門無關）
@@ -85,7 +84,8 @@ async function runTrending(existing: PendingLocation[], newItems: PendingLocatio
       id: uuidv4(),
       name_en: place.name_en,
       name_zh: place.name_zh,
-      // 先放分類字樣；通過驗證後會在下方統一生成中英文介紹
+      // 爬蟲只負責找店，介紹先放分類字樣。介紹改在 Claude Code 裡用 write-descriptions 技能撰寫
+      // （走訂閱、不花 API 費用）；後台的生成按鈕仍可單筆使用。
       description_zh: label.zh,
       description_en: label.en,
       category,
@@ -109,31 +109,6 @@ async function runTrending(existing: PendingLocation[], newItems: PendingLocatio
   }
 
   console.log(`[trending] verified ${newItems.length}/${candidates.length}; skipped: ${JSON.stringify(skipped)}`)
-
-  // 幫通過驗證的店寫中英文介紹（Google 官方資料＋評論＋爬到的出處，再上網查證）。
-  // 一次 3 家並行；個別失敗就保留分類字樣，後台仍可手動重新生成。
-  let next = 0, written = 0
-  await Promise.all(Array.from({ length: 3 }, async () => {
-    while (next < newItems.length) {
-      const item = newItems[next++]
-      try {
-        const d = await generateDescription({
-          name_en: item.name_en,
-          address: item.address,
-          source_url: item.source_url,
-          category: item.category,
-          evidence: item.evidence,
-        })
-        item.description_zh = d.description_zh
-        item.description_en = d.description_en
-        if (d.highlights) item.highlights = d.highlights
-        written++
-      } catch (err) {
-        console.error(`[trending] description failed for "${item.name_en}":`, err instanceof Error ? err.message : err)
-      }
-    }
-  }))
-  console.log(`[trending] wrote descriptions for ${written}/${newItems.length}`)
 }
 
 async function processGoogleItems(
