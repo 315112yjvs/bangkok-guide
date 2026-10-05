@@ -79,8 +79,8 @@
     "id": "fd52f141-f98d-4848-80bf-e481f953bec3",
     "name_en": "Elpaso restaurant",
     "name_zh": "Elpaso restaurant",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🌊 藏在 Soi Charoen Krung 72/1、The Salil Hotel Riverside 園區內，Elpaso 以現代伊比利半島塔帕斯結合泰國在地食材為核心，俯瞰昭披耶河。分享式小盤依西班牙手法重新詮釋，搭配手工調酒，入夜後有 DJ 駐場，從河畔晚餐到深夜派對一氣呵成。",
+    "description_en": "🌊 Tucked inside The Salil Hotel Riverside complex on Soi Charoen Krung 72/1, Elpaso pairs modernist Iberian-inspired tapas with premium Thai local ingredients, all overlooking the Chao Phraya River. Sharing plates reimagined through a Spanish lens, handcrafted cocktails, and a DJ spinning into the early hours make this the spot for riverside dinner and late-night parties in one.",
     "category": "food",
     "address": "2052/7-9 Soi Charoen Krung 72/1, Khwaeng Wat Phraya Krai, Khet Bang Kho Laem, Krung Thep Maha Nakhon 10120",
     "lat": 13.707902299999999,
@@ -107,7 +107,11 @@
         "quote": "西班牙塔帕斯餐廳於沙利飯店河濱開幕，提供河畔用餐體驗。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:14.786Z"
+    "scraped_at": "2026-10-05T06:32:14.786Z",
+    "highlights": [
+      "Modernist Tapas",
+      "Riverside"
+    ]
   },
   {
     "id": "e0e9392c-d4ce-4078-9914-45ca462cd8eb",
@@ -378,8 +382,8 @@
     "id": "d06be296-1eed-42f5-9b82-eb59f43a74d4",
     "name_en": "MITR STREET มิตรสตรีท",
     "name_zh": "MITR STREET มิตรสตรีท",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🔥 由米其林餐飲集團 Supanniga Group 打造，在老城 Tha Tien 巷弄裡豎起六層樓泰中街頭料理地標。以火焰鑊氣為靈魂，招牌有朋友炒牛肉、烏拉勞伊蝦刺身、紅炭烤雞與蟹肉炒蛋。頂樓「ThaiKi Rooftop Bar」融合 Tiki 酒吧與泰中風情，俯瞰臥佛寺全景，是曼谷目前最話題的新景點。",
+    "description_en": "🔥 A six-storey Thai-Chinese street food landmark tucked into Tha Tien's historic lanes, from Supanniga Group—the Michelin-recognized force behind Ruay Mitr and Supanniga Eating Room. Everything is built around fire and wok energy: signature pengyou fried beef, urak lawoi prawn sashimi, red charcoal-grilled chicken, and creamy crab omelet. Climb to the top floor for ThaiKi Rooftop Bar, where Tiki-meets-Thai cocktails pair with a jaw-dropping unobstructed view of Wat Pho.",
     "category": "food",
     "address": "119 Soi Tha Suphan, Khwaeng Phra Borom Maha Ratchawang, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
     "lat": 13.745205299999999,
@@ -406,7 +410,11 @@
         "quote": "六層樓泰式中華街邊美食餐廳，強調火焰與鑊氣烹飪"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:18.684Z"
+    "scraped_at": "2026-10-05T06:32:18.684Z",
+    "highlights": [
+      "Pengyou Fried Beef",
+      "ThaiKi Rooftop Bar"
+    ]
   },
   {
     "id": "e51d3daa-cd0c-427d-b5c0-4f4770cdf782",
@@ -564,8 +572,8 @@
     "id": "3ee855c3-e1c7-4b55-97b1-d669df12ffee",
     "name_en": "Carnival One Bangkok",
     "name_zh": "Carnival One Bangkok",
-    "description_zh": "購物",
-    "description_en": "Shopping",
+    "description_zh": "🏪 泰國街頭文化霸主 CARNIVAL 於 2026 年在 One Bangkok 開設迄今最大旗艦店，橫跨兩層逾 1,300 平方公尺。由創辦人 Pint Anupong 自 2010 年從一間小球鞋店起家，店內劃分運動鞋專區、CARNIVAL RUNNING 跑步裝備區、SECTOR-01 藝術展覽廊、透明玻璃 POPUP HAUS 聯名展間，以及 CARNIVAL COFFEE 咖啡吧，緊鄰倫披尼公園，跑步後順道補貨喝咖啡一條龍。",
+    "description_en": "🏪 CARNIVAL ONE BANGKOK is the Thai streetwear icon's biggest flagship yet, spanning over 1,300 sqm across two floors inside One Bangkok. Founded in 2010 by Pint Anupong from a single sneaker shop, the space is divided into dedicated zones: a performance running corner (CARNIVAL RUNNING), a rotating art gallery (SECTOR-01), a transparent glass POPUP HAUS for collabs and limited drops, and CARNIVAL COFFEE downstairs. Right next to Lumpini Park — finish your run, grab a coffee, cop some kicks.",
     "category": "shopping",
     "address": "Room 2G29, G Floor & Room 2119, 1st Floor The Storeys 199 Thanon Witthayu, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "lat": 13.7272445,
@@ -592,7 +600,11 @@
         "quote": "街頭風格旗艦店，提供限量運動鞋、服飾、聯名線和藝術玩具。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:21.490Z"
+    "scraped_at": "2026-10-05T06:32:21.490Z",
+    "highlights": [
+      "Sneakers",
+      "Carnival Coffee"
+    ]
   },
   {
     "id": "12e52a0e-1c20-483b-ad5c-6ab599ad8334",
@@ -869,8 +881,8 @@
     "id": "f0df42a1-d915-4e73-923a-fc3a12575e74",
     "name_en": "Salaa.bkk",
     "name_zh": "Salaa.bkk",
-    "description_zh": "購物",
-    "description_en": "Shopping",
+    "description_zh": "🍵 藏身 Soi Pridi Banomyong 15 三巷深處，Salaa.bkk 以落地大玻璃窗與手工陶瓷角落打造出讓人想放慢腳步的空間。招牌抹茶、咖啡皆有好評，麵包區的酸種麵包更讓人忍不住帶回家，不少常客就是專程為此再訪。",
+    "description_en": "🍵 Tucked into Lane 3 off Soi Pridi Banomyong 15, Salaa.bkk draws you in with its huge glass windows and a carefully curated ceramics corner. The matcha and coffee are crowd favorites, but the real danger zone is the sourdough bread section — regulars keep coming back just for that.",
     "category": "shopping",
     "address": "259 179 Soi Pridi Banomyong 15, Lane 3, Khwaeng Phra Khanong Nuea, Watthana, Krung Thep Maha Nakhon 10110",
     "lat": 13.721567199999999,
@@ -897,7 +909,11 @@
         "quote": "Pridi 一帶新開的人氣咖啡廳，酸種麵包是招牌。"
       }
     ],
-    "scraped_at": "2026-10-05T06:35:26.933Z"
+    "scraped_at": "2026-10-05T06:35:26.933Z",
+    "highlights": [
+      "Sourdough",
+      "Matcha"
+    ]
   },
   {
     "id": "654e929c-430b-4190-893d-62df298dea19",
@@ -941,8 +957,8 @@
     "id": "c3e04684-cd7b-455c-b1ad-527ebffa3a7e",
     "name_en": "LAST.BKK",
     "name_zh": "LAST.BKK",
-    "description_zh": "咖啡廳",
-    "description_en": "Cafe",
+    "description_zh": "🐾 藏在 Samsen Nai 社區巷弄的在地咖啡館，由兩位熱情店主經營，店狗 Sally 親自迎賓。招牌是鹹甜交織的 Miso 奶油藍莓培根 Sourdough Sanga，咖啡豆與 matcha 食材講究，季節蘇打（น้ำมะปี๊ด）清爽解膩。空間溫馨寵物友善，是觀光客鮮少踏足的社區私藏。",
+    "description_en": "🐾 Tucked into the residential lanes of Samsen Nai, this community café is run by two passionate owners — with resident dog Sally ready to greet you. The star dish is the Miso-Buttered Blueberry Compote & Bacon Sourdough Sanga, a rich sweet-savory combo that keeps regulars coming back. Coffee and matcha are carefully sourced, and the Seasonal Soda (น้ำมะปี๊ด) pairs perfectly with the food. Cozy, pet-friendly, and well off the tourist radar.",
     "category": "cafe",
     "address": "114, 8 Soi Ronnachai 2, Samsen Nai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400",
     "lat": 13.780035499999999,
@@ -969,14 +985,18 @@
         "quote": "Samsen 到 Phaya Thai 一帶新開的咖啡廳，氣氛溫暖像在家。"
       }
     ],
-    "scraped_at": "2026-10-05T06:35:27.473Z"
+    "scraped_at": "2026-10-05T06:35:27.473Z",
+    "highlights": [
+      "Sourdough Sanga",
+      "Seasonal Soda"
+    ]
   },
   {
     "id": "6d5dccc5-f251-4661-8030-7c6f07f41d07",
     "name_en": "Citycup BKK",
     "name_zh": "Citycup BKK",
-    "description_zh": "咖啡廳",
-    "description_en": "Cafe",
+    "description_zh": "🏙️ 藏在 Khlong Toei SSP Tower 2 第 11 層，大窗直對 Port FC 主場 PAT Stadium 與曼谷天際線。裸混凝土牆、外露天花板、老式音響加上一台巨型 Game Boy，工業 loft 格調中帶點玩味。招牌有 Matcha Latte、Cappuccino 與 Bacon Twist 培根酥，店內設有攝影亭，鄰近 MRT Queen Sirikit 1 號出口。",
+    "description_en": "🏙️ Tucked on the 11th floor of SSP Tower 2 in Khlong Toei, Citycup BKK frames a sweeping view of PAT Stadium — home of Port FC — and Bangkok's skyline through floor-to-ceiling windows. Raw concrete walls, exposed ceilings, vintage speakers, and a giant Game Boy beside the photo booth give the loft-style space an industrial-meets-playful edge. Go-to orders include the Matcha Latte, Cappuccino, and Bacon Twist pastry. MRT Queen Sirikit Exit 1 drops you right at the door.",
     "category": "cafe",
     "address": "116, SSP Tower2, 36 ชั้นที่ 11 Na Ranong Rd, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110",
     "lat": 13.714711699999999,
@@ -1003,7 +1023,11 @@
         "quote": "曼谷新開的咖啡廳。"
       }
     ],
-    "scraped_at": "2026-10-05T06:35:28.275Z"
+    "scraped_at": "2026-10-05T06:35:28.275Z",
+    "highlights": [
+      "Bacon Twist",
+      "Matcha Latte"
+    ]
   },
   {
     "id": "0c4526a3-584f-4910-9bd5-693f1eed9b13",
@@ -1043,8 +1067,8 @@
     "id": "74a7b9da-31bc-45a1-b6da-931ebccaa48b",
     "name_en": "Cante",
     "name_zh": "Cante",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🔥 藏在 Sukhumvit Soi 12 的 Canopy Bangkok Sukhumvit 飯店內，Cante 是希爾頓在東南亞首家旗艦西班牙火烤餐廳。以巴塞隆納、瓦倫西亞與安達盧西亞為靈感，以木柴明火料理出烤乳豬、千克分享牛排等重量級 sharing plates，空間由 AvroKO 設計，色彩濃烈、花紋鮮明卻絲毫不壓迫，搭配精選西班牙葡萄酒，是近期曼谷最亮眼的西班牙新開幕。",
+    "description_en": "🔥 Tucked inside Canopy Bangkok Sukhumvit on Soi 12, Cante is Hilton's flagship Spanish fire grill and taberna in Southeast Asia. Drawing from Barcelona, Valencia, and Andalusia, the kitchen fires up wood-fired sharing plates like roasted suckling pig and a 1kg steak made for the table. AvroKO's bold, print-filled interior brings serious energy without overwhelming — pair that with a well-curated Spanish wine list and warm service, and this is easily one of Bangkok's most exciting Spanish newcomers.",
     "category": "food",
     "address": "98, Building B, Level LG, 98/1 ซ. สุขุมวิท 12 แขวงคลองเตย เขตคลองเตย กรุงเทพมหานคร 10110",
     "lat": 13.737568999999999,
@@ -1071,6 +1095,10 @@
         "quote": "曼谷新增餐廳，值得列入必試清單。"
       }
     ],
-    "scraped_at": "2026-10-05T06:35:31.235Z"
+    "scraped_at": "2026-10-05T06:35:31.235Z",
+    "highlights": [
+      "Roasted Suckling Pig",
+      "1kg Steak"
+    ]
   }
 ]
