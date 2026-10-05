@@ -356,13 +356,13 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={lang === 'zh' ? '在 Google Maps 開啟這個位置' : 'Open this location in Google Maps'}
-                className="block relative mt-3 h-44 rounded-lg overflow-hidden border border-line bg-paper"
+                className="block relative mt-3 h-44 rounded-lg overflow-hidden border border-line bg-paper isolate [transform:translateZ(0)]"
               >
                 <iframe
                   title={lang === 'zh' ? '位置地圖' : 'Location map'}
                   loading="lazy"
                   tabIndex={-1}
-                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  className="absolute -inset-px w-[calc(100%+2px)] h-[calc(100%+2px)] border-0 pointer-events-none"
                   src={`https://www.openstreetmap.org/export/embed.html?bbox=${location.lng - 0.006}%2C${location.lat - 0.0035}%2C${location.lng + 0.006}%2C${location.lat + 0.0035}&layer=mapnik&marker=${location.lat}%2C${location.lng}`}
                 />
               </a>
