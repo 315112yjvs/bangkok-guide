@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: '曼谷人' },
   description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 夜生活',
   icons: {
-    icon: [{ url: '/logo-circle.png', type: 'image/png', sizes: '512x512' }],
-    apple: '/apple-icon.png',
+    icon: [{ url: '/logo-circle.png?v=2', type: 'image/png', sizes: '512x512' }],
+    apple: '/apple-icon.png?v=2',
   },
   openGraph: {
     title: '曼谷人 | BKK LOCAL',
