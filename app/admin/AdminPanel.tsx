@@ -375,6 +375,7 @@ function PendingCard({
                             address: form.address,
                             source_url: item.source_url,
                             category: form.category,
+                            evidence: item.evidence,
                           }),
                         })
                         const data = await res.json()
@@ -969,12 +970,13 @@ export function AdminPanel() {
           const res = await fetch('/api/generate-description', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name_en: item.name_en, address: item.address, source_url: item.source_url, category: item.category }),
+            body: JSON.stringify({ name_en: item.name_en, address: item.address, source_url: item.source_url, category: item.category, evidence: item.evidence }),
           })
           const data = await res.json()
           if (res.ok && data.description_zh) {
             const updates: Partial<PendingLocation> = { description_zh: data.description_zh, description_en: data.description_en }
-            if (data.tag) updates.tag = data.tag
+            // 找熱點抓到的店，標籤已依出處判定（新開幕/話題爆紅），不要被 AI 的猜測蓋掉
+            if (data.tag && !item.evidence?.length) updates.tag = data.tag
             if (Array.isArray(data.highlights)) updates.highlights = data.highlights
             saveChain = saveChain.then(() => fetch('/api/pending', {
               method: 'PATCH',
@@ -1074,7 +1076,7 @@ export function AdminPanel() {
     setScraperStatus(
       keywords.length ? `搜尋「${keywords[0]}」等 ${keywords.length} 個關鍵字...`
         : mode === 'stock' ? 'Google 地圖補庫存中...'
-        : '找近一個月的熱點中（約 3–5 分鐘）...'
+        : '找近一個月的熱點並撰寫介紹中（約 10 分鐘）...'
     )
     try {
       const res = await fetch('/api/scraper', {

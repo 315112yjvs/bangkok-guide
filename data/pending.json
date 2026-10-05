@@ -3,8 +3,8 @@
     "id": "adf21700-4c34-4418-9040-9795983b616d",
     "name_en": "Sra Bua by Num Weerawat",
     "name_zh": "Sra Bua by Num Weerawat",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🪷 位於暹羅凱賓斯基飯店大廳，連奪六年米其林一星的 Sra Bua 於 2026 年 7 月以全新面貌重啟。泰國東北出身的主廚 Num Weerawat Triyasenawat（前 Samuay & Sons 主理人）接手後，以「泰國生物多樣性」為主軸，推出 11 道菜嘗味菜單：Signature Biodiversity Journey（海陸時令食材）與 Plants & Roots Forward Journey（植物導向），食材來自全國農漁戶，並結合自設 Mah Noi Food Lab 的發酵工藝。",
+    "description_en": "🪷 Located on the lobby floor of the Siam Kempinski Hotel, Sra Bua reopened in July 2026 under a bold new identity. Chef Num Weerawat Triyasenawat — the Udon Thani-born talent behind the Michelin-recommended Samuay & Sons — now helms this six-time Michelin-starred icon, anchoring its 11-course tasting menus in Thailand's biodiversity. Choose between the Signature Biodiversity Journey (land-and-sea seasonal ingredients) or the Plants & Roots Forward Journey (plant-led, no meat), with produce sourced from farmers and foragers nationwide and ferments from his own Mah Noi Food Lab.",
     "category": "food",
     "address": "991/9, Siam Kempinski Hotel, Rama I Rd, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "lat": 13.748521799999999,
@@ -31,14 +31,18 @@
         "quote": "米其林餐廳於暹羅凱賓斯基飯店重新開幕，強調泰國生物多樣性主題。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:13.463Z"
+    "scraped_at": "2026-10-05T06:32:13.463Z",
+    "highlights": [
+      "Biodiversity Journey",
+      "Plants & Roots"
+    ]
   },
   {
     "id": "fd6b6630-9971-4132-a328-6283d7bdd935",
     "name_en": "หงส์ ทรงวาด / HONG Songwat",
     "name_zh": "หงส์ ทรงวาด / HONG Songwat",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🦢 坐落於曼谷唐人街旁的 Song Wat Road，HONG Songwat 以套餐形式端出正在消失的泰式古早家常料理，融合各地區傳承食譜，每道菜皆有故事。共桌用餐、精緻擺盤，搭配結合烹飪學校的理念，致力讓失傳古菜重回餐桌。",
+    "description_en": "🦢 Tucked along the revived Song Wat Road near Chinatown, HONG Songwat champions vanishing Thai home-cooking traditions through a set menu of regional, time-honored recipes that are increasingly rare on Bangkok menus. Beautifully plated dishes come with stories behind each course — a dining concept tied to a Thai cooking school mission to bring ancient recipes back to life. Shared-table seating adds to the communal feel.",
     "category": "food",
     "address": "995 Song Wat Rd, Khwaeng Samphanthawong, Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
     "lat": 13.737677699999999,
@@ -65,7 +69,11 @@
         "quote": "結合泰式烹飪學校與餐廳，致力復興失傳的古代泰菜食譜。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:13.859Z"
+    "scraped_at": "2026-10-05T06:32:13.859Z",
+    "highlights": [
+      "Ancient Thai Recipes",
+      "Set Menu"
+    ]
   },
   {
     "id": "fd52f141-f98d-4848-80bf-e481f953bec3",
@@ -105,8 +113,8 @@
     "id": "e0e9392c-d4ce-4078-9914-45ca462cd8eb",
     "name_en": "PAULETTE BKK",
     "name_zh": "PAULETTE BKK",
-    "description_zh": "咖啡廳",
-    "description_en": "Cafe",
+    "description_zh": "🥐 藏身曼谷老城區 Fueang Nakhon Road 轉角，一棟奶油色四層舊街屋，對面正是 Wat Ratchabophit 的白色佛塔。自詡「把艾菲爾鐵塔換成泰式佛塔的巴黎咖啡館」，內部以白、粉色調裝潢，二、三樓露台可直面寺廟佛塔，是全店最搶鏡打卡位。菜單主打咖啡、自製 Gelato 及法式糕點，招牌為 Thai Tea Float 與 Affogato，另有馬卡龍、閃電泡芙與泡芙。MRT Sam Yot 三號出口步行約 500 公尺。",
+    "description_en": "🥐 On the corner of Fueang Nakhon Road in Bangkok's historic Phra Nakhon district, this four-story cream shophouse sits directly opposite Wat Ratchabophit — swapping the Eiffel Tower for a white Thai pagoda. The pastel pink-and-white interior spans multiple floors, with the 2nd and 3rd floor balconies framing the temple's iconic chedi — the café's most viral photo spot. The menu features coffee, house-made gelato, and French patisserie including macarons, éclairs, and choux cream, with the Thai Tea Float and Affogato as signature orders. About a 500m walk from MRT Sam Yot Exit 3.",
     "category": "cafe",
     "address": "65 Thanon Fueang Nakhon, Khwaeng Wat Ratchabophit, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
     "lat": 13.7495233,
@@ -133,14 +141,18 @@
         "quote": "新開幕咖啡廳，三層樓設計，可眺望วัดราชบพิธ，裝潢精美，甜點飲品完備。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:14.993Z"
+    "scraped_at": "2026-10-05T06:32:14.993Z",
+    "highlights": [
+      "Thai Tea Float",
+      "Affogato"
+    ]
   },
   {
     "id": "6ca84f8a-a0b0-408c-88ba-6558296b8215",
     "name_en": "JUXTABAR (just a bar) by CHOLOS",
     "name_zh": "JUXTABAR (just a bar) by CHOLOS",
-    "description_zh": "酒吧",
-    "description_en": "Bar",
+    "description_zh": "🍹 佔據前 Tropic City 舊址，由 Cholos 與 Birdies Bangkok 同一班底 Ratish Sachathamakul 和 Jennifer Evans 打造。一樓牆上有手繪壁畫，抽雪茄女士那幅最是搶眼；飲單涵蓋蘭姆酒、龍舌蘭精選與招牌 Bangkok Sling，樓上 Cholos 的 burrito 和 nachos 可直接點餐送桌，懶散又過癮。",
+    "description_en": "🍹 Taking over the former Tropic City space on Soi Charoen Krung 28, this no-frills bar is from the same crew behind Cholos and Birdies Bangkok — Ratish Sachathamakul and Jennifer Evans. Inside, hand-painted murals set the mood, with the lady-with-a-cigar piece stealing the show. The drinks list spans rum, agave spirits, and classics, with the Bangkok Sling as the crowd favourite. Hungry? Order burritos and nachos directly from Cholos upstairs — they'll bring it right to your table.",
     "category": "nightlife",
     "address": "672, 65 Soi Charoen Krung 28, Khwaeng Bang Rak, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
     "lat": 13.7306785,
@@ -167,14 +179,18 @@
         "quote": "新開幕酒吧，由Cholos和Birdies Bangkok創辦人開設，提供經典和特色調酒。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:15.487Z"
+    "scraped_at": "2026-10-05T06:32:15.487Z",
+    "highlights": [
+      "Bangkok Sling",
+      "Rum & Agave"
+    ]
   },
   {
     "id": "9fb58b96-81f2-4b10-8a43-2570e11f4f7c",
     "name_en": "Sontaya Society (สนธยา สมาคม)",
     "name_zh": "Sontaya Society (สนธยา สมาคม)",
-    "description_zh": "酒吧",
-    "description_en": "Bar",
+    "description_zh": "🥥 藏在曼谷 Bang Rak 區馬哈帕魯塔拉姆路上的老泰式街屋，raw & rustic 風格裝潢保留斑駁牆面與木質傢俱，由店主親自招呼。招牌是碧武里新鮮椰子水咖啡與泰式食材調酒，也供應 Lao Beer 老撾啤酒。曾舉辦舒恩布詩人日等文化活動，咖啡因與酒精全天候共存，是低調又有個性的在地新據點。",
+    "description_en": "🥥 Tucked into a weathered Thai shophouse on Mahaphruttharam Road in Bang Rak, Sontaya Society keeps things raw and rustic — rough walls, wood furnishings, and an owner who looks after guests personally. Signature sips include fresh Phetchaburi coconut coffee and Thai-ingredient cocktails, alongside Lao Beer on the menu. The bar doubles as a cultural hang, having hosted Sunthorn Phu poetry nights, and welcomes caffeine and alcohol fans alike from daytime onward.",
     "category": "nightlife",
     "address": "104 Thanon Mahaphruttharam, Khwaeng Maha Phruttharam, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
     "lat": 13.7327297,
@@ -201,14 +217,18 @@
         "quote": "新開幕咖啡酒吧，支持白天飲酒，提供咖啡因和酒精飲品。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:15.735Z"
+    "scraped_at": "2026-10-05T06:32:15.735Z",
+    "highlights": [
+      "Coconut Coffee",
+      "Thai Cocktails"
+    ]
   },
   {
     "id": "89c07676-d7a6-4240-9b6f-a15ec2958084",
     "name_en": "OBi Record Bar",
     "name_zh": "OBi Record Bar",
-    "description_zh": "酒吧",
-    "description_en": "Bar",
+    "description_zh": "💿 藏身 Naradhiwas Rajanagarindra 路 150 號大藍門後，由 Yayyyyy Record Bar 同一批主理人 DJ Rom 與 DJ Ice 打造。以日本 Jazz Kissa 為靈感，深色木質吧台正對整面黑膠牆，負責選曲的「Bar Viber」同時兼顧飲品與全場氣氛。招牌調酒有 Melon Melon Sawa、Smoky Aomori，還附免費小零食。",
+    "description_en": "💿 Tucked behind a large blue door at 150 Naradhiwas Rajanagarindra Rd, OBi is the Silom sibling of the beloved Yayyyyy Record Bar, founded by the same DJ duo—DJ Rom and DJ Ice of City Boy. The name nods to the obi strip on prized Japanese vinyl pressings, and the vibe delivers: dark wooden counters face floor-to-ceiling record shelves, while a 'Bar Viber' curates both the soundtrack and the cocktails. Try the Melon Melon Sawa or Smoky Aomori, and don't skip the complimentary snacks.",
     "category": "nightlife",
     "address": "Thanon Naradhiwat Rajanagarindra, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
     "lat": 13.726502,
@@ -235,14 +255,18 @@
         "quote": "新開幕黑膠唱片酒吧，提供City Pop、J-Pop、R&B等音樂風格。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:16.221Z"
+    "scraped_at": "2026-10-05T06:32:16.221Z",
+    "highlights": [
+      "Melon Melon Sawa",
+      "Vinyl Only"
+    ]
   },
   {
     "id": "84ee1213-82fe-4d03-83a8-329d99d82c1d",
     "name_en": "Noisette",
     "name_zh": "Noisette",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🌰 藏身 Soi Yen Akat 3 的法式秘境。由摯友主廚 Dominique Salles 與餐飲人 Mathieu Campion 聯手打造，兩人合計逾 15 年餐飲經歷，餐廳名稱呼應童年榛樹與法式焦香奶油。Salles 以古典法式技法掌廚，Campion 帶來在 Sühring 近十年外場功力。菜單涵蓋五道式套餐、單點與三道式午餐，介於街坊小酒館與精緻餐廳之間。",
+    "description_en": "🌰 Tucked into Soi Yen Akat 3, Noisette is the creation of childhood friends chef Dominique Salles and restaurateur Mathieu Campion, who bring over 15 years of hospitality experience between them. The name nods to the hazelnut trees they grew up beneath and French cooking's beloved beurre noisette. Salles anchors the kitchen in classical French technique, while Campion brings nearly a decade of front-of-house mastery from Sühring. The menu spans a five-course tasting menu, à la carte, and a three-course lunch — somewhere between a neighbourhood bistro and fine dining.",
     "category": "food",
     "address": "No. 1, Thanon Yen Akat, Khwaeng Chong Nonsi, Khet Yan Nawa, Krung Thep Maha Nakhon 10120",
     "lat": 13.712601699999999,
@@ -269,14 +293,18 @@
         "quote": "法式古典烹飪，由巴黎四季飯店主廚與餐飲業者聯手開設"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:16.455Z"
+    "scraped_at": "2026-10-05T06:32:16.455Z",
+    "highlights": [
+      "Tasting Menu",
+      "Seasonal French"
+    ]
   },
   {
     "id": "17fab3ce-6163-42ef-aed1-3f1202254239",
     "name_en": "Aunglo by Yangrak",
     "name_zh": "Aunglo by Yangrak",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🔥 位在 Decho Rd、Bang Rak 巷弄裡的 Michelin Bib Gourmand 泰式居酒屋，「Aunglo」即泰式傳統炭爐，幾乎每道菜都以炭火完成。吧台座位正對開放廚房，主廚近在咫尺現場烤製。招牌必點：椰子煎餅佐炭烤蝦、泰式柚子沙拉、自家版烤豬肉串（Moo-Ping），座位搶手，建議預約。",
+    "description_en": "🔥 A Michelin Bib Gourmand Thai izakaya tucked along Decho Rd in Bang Rak — the name \"Aunglo\" literally means traditional Thai charcoal stove, and nearly every dish is fired over one. Grab a counter seat for a front-row view of the chefs grilling right in front of you. Must-orders: the coconut pancake with grilled shrimp, pomelo salad, and their signature moo-ping skewers. Seats are limited, so book ahead.",
     "category": "food",
     "address": "174/4-6 Decho Rd, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
     "lat": 13.725647299999999,
@@ -303,14 +331,17 @@
         "quote": "Aunglo姐妹餐廳，專門油炸泰菜，強調酥脆外皮"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:16.778Z"
+    "scraped_at": "2026-10-05T06:32:16.778Z",
+    "highlights": [
+      "Moo-Ping"
+    ]
   },
   {
     "id": "1d277ef5-fc01-4b34-9697-daf61828ba8c",
     "name_en": "Age.3 Bangkok - Central Park",
     "name_zh": "Age.3 Bangkok - Central Park",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🥪 東京銀座炸三明治名牌 Age.3（アゲサン），由 MAGURO GROUP 引進，在 Dusit Central Park 一樓開設泰國首店。麵包現炸後夾入輕盈鮮奶油，外酥內軟卻完全不油膩；甜口有 Whipped Cream、Banana Brulée，鹹口有 Egg Salad、Potato Salad，還有曼谷限定的打拋口味炸三明治，僅此一處。",
+    "description_en": "🥪 Age.3 (Agesan), the viral fried sandwich brand from Tokyo's Ginza district, opens its first Thailand flagship at Dusit Central Park G Floor, brought in by MAGURO GROUP. Each sandwich is freshly fried to order — crispy outside, light and fluffy inside, never greasy. The 30+ item menu covers sweet picks like Whipped Cream and Banana Brulée, savory options like Egg Salad and Potato Salad, plus a Bangkok Exclusive Pad Kra Pao sando you won't find at any other branch in the world.",
     "category": "food",
     "address": "G Floor 946 Thanon Rama IV, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
     "lat": 13.7285113,
@@ -337,7 +368,11 @@
         "quote": "東京銀座炸三明治專賣店泰國首間，鮮奶油與麵包組合"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:17.779Z"
+    "scraped_at": "2026-10-05T06:32:17.779Z",
+    "highlights": [
+      "Fried Sando",
+      "Bangkok Exclusive"
+    ]
   },
   {
     "id": "d06be296-1eed-42f5-9b82-eb59f43a74d4",
@@ -377,8 +412,8 @@
     "id": "e51d3daa-cd0c-427d-b5c0-4f4770cdf782",
     "name_en": "Tichuca Rooftop Bar",
     "name_zh": "Tichuca Rooftop Bar",
-    "description_zh": "酒吧",
-    "description_en": "Bar",
+    "description_zh": "🌴 位於 Sukhumvit 40 的 T-One 大廈 46 至 50 樓，Tichuca 是曼谷最具話題性的高空叢林酒吧。2020 年底開幕後迅速爆紅，核心亮點是酒吧正中央那棵隨夜色變換色彩的巨型 LED「水母樹」，設計靈感宛如《阿凡達》場景。木質家具、熱帶綠植多層露台環繞，搭配 360° 全曼谷天際線；招牌調酒 Yuzu Colada 整顆鳳梨盛裝上桌，La Fresa 以自家蘭姆酒、草莓柑橘和黑薄荷調製，DJ 現場播放 Organic Tech-House 電音。入場須年滿 20 歲並出示護照正本。",
+    "description_en": "🌴 Perched on the 46th–50th floors of the T-One Building on Sukhumvit 40, Tichuca has been one of Bangkok's most talked-about rooftop bars since opening in late 2020. The centerpiece is a massive color-shifting LED 'Avatar Tree' that pulses to live DJs spinning Organic Tech-House. Multi-level terraces wrapped in tropical greenery and wood furniture frame a 360° Bangkok skyline. Signature cocktails are the real draw: the Yuzu Colada arrives inside a whole pineapple, while La Fresa blends house rum with strawberry cordial, black mint, and absinthe. Bring your original passport — strict 20+ age check at the lobby.",
     "category": "nightlife",
     "address": "Building 46 fl, T-one, Soi Sukhumvit 40, Khwaeng Phra Khanong, Khet Khlong Toei, Krung Thep Maha Nakhon 10110",
     "lat": 13.722396799999999,
@@ -405,14 +440,18 @@
         "quote": "Mitr Street樓上泰中創意調酒吧，俯瞰臥佛寺與昭披耶河"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:19.296Z"
+    "scraped_at": "2026-10-05T06:32:19.296Z",
+    "highlights": [
+      "Yuzu Colada",
+      "Avatar Tree"
+    ]
   },
   {
     "id": "1a78f690-96a1-4430-8958-e363bf27e6f2",
     "name_en": "KIZARU",
     "name_zh": "KIZARU",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🍶 位於蘇潤翁 Montien Mall，由香港餐飲雙人組 Christopher Mark、Vidur Yadav 攜手仙台出身、歷練東京／雪梨／倫敦／香港的名廚 Shun Sato（前 Censu 主廚）共同打造。開放式廚房飄出炭火香，必點 Fire Scallop 藍焰上桌、軟殼蟹塞入魷魚起司慕斯佐漬蛋黃、Hamachi Ponzu，酒單更有罕見未過濾生酒。喧鬧熱烈，正是居酒屋本色。",
+    "description_en": "🍶 Tucked inside Montien Mall on Surawong, KIZARU is the Bangkok debut from Hong Kong hospitality duo Christopher Mark and Vidur Yadav alongside chef Shun Sato — born into the izakaya trade in Sendai, seasoned across Tokyo, Sydney, London, and Hong Kong (ex-Censu). The open kitchen hums with charcoal energy; standouts include the Fire Scallop served in blue flames tableside, soft shell crab stuffed with squid-cheese mousse and cured egg yolk, Hamachi with Ponzu, and a sake list featuring rare unpasteurized bottles. Loud, lively, and utterly izakaya.",
     "category": "food",
     "address": "50Montien Mall, Room G3, 1st Floor, แขวงสี่พระยา เขตบางรัก กรุงเทพมหานคร 10500",
     "lat": 13.730116599999999,
@@ -439,14 +478,18 @@
         "quote": "蘇潤翁新開居酒屋，營業至深夜"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:19.544Z"
+    "scraped_at": "2026-10-05T06:32:19.544Z",
+    "highlights": [
+      "Fire Scallop",
+      "Hamachi Ponzu"
+    ]
   },
   {
     "id": "88d49cb1-74dc-4e6e-bc23-e619f341046f",
     "name_en": "Cova Montenapoleone 1817",
     "name_zh": "Cova Montenapoleone 1817",
-    "description_zh": "咖啡廳",
-    "description_en": "Cafe",
+    "description_zh": "☕ 米蘭老牌糕點名店，創立於 1817 年、隸屬 LVMH 集團，東南亞首家完整分店落腳 One Bangkok。必點 Tiramisu 與 Chocolate Cornetti，Covachino 咖啡搭配現烤可頌是標準組合；樓上正宗義式餐廳與酒吧亦在籌備中。",
+    "description_en": "☕ Milan's legendary patisserie founded in 1817 and part of the LVMH group — One Bangkok is home to its first full-fledged branch in Southeast Asia. Don't miss the tiramisu and chocolate cornetti; pair a Covachino with a fresh-baked croissant for the classic Cova combo. A full Italian restaurant and bar upstairs is also in the works.",
     "category": "cafe",
     "address": "One Bangkok, The Storeys Building, Units 2G33, 2G34, 2120, 2121, 199 ถ. วิทยุ แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
     "lat": 13.7276171,
@@ -473,14 +516,18 @@
         "quote": "米蘭經典咖啡館，提供義式咖啡、新鮮烘焙糕點和高級巧克力。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:20.304Z"
+    "scraped_at": "2026-10-05T06:32:20.304Z",
+    "highlights": [
+      "Tiramisu",
+      "Chocolate Cornetti"
+    ]
   },
   {
     "id": "b2db2669-34de-41c1-8590-5fc36e187065",
     "name_en": "Adam n Eve - One Bangkok",
     "name_zh": "Adam n Eve - One Bangkok",
-    "description_zh": "咖啡廳",
-    "description_en": "Cafe",
+    "description_zh": "🍦 Guss Damn Good 旗下冷凍優格品牌，以 0% added sugar 的 Greek Yogurt soft serve 為核心。招牌 Adam's Pistachio 以義大利進口開心果為配料，香氣濃郁；經典款 Adam n Eve 淋上橄欖油與蜂蜜；Theo's Pistachio Choc Crunch 則將開心果與自製巧克力醬結合，酸甜綿密口感叫好又叫座。藏在 The Storeys B1，近 7-Eleven 與 MUJI。",
+    "description_en": "🍦 A sub-brand of Guss Damn Good, Adam n Eve serves Greek yogurt soft serve with 0% added sugar — guilt-free and surprisingly creamy. The star is Adam's Pistachio, loaded with imported Italian pistachios, while the classic Adam n Eve drizzled with olive oil and honey is pure indulgence. Theo's Pistachio Choc Crunch layers pistachio with house-made chocolate sauce for a crunchy finish. Find it on B1 of The Storeys, near 7-Eleven and MUJI.",
     "category": "cafe",
     "address": "The Storeys ชั้น B1, One Bangkok Entrance 3, Thanon Witthayu, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "lat": 13.7266719,
@@ -507,7 +554,11 @@
         "quote": "Guss Damn Good旗下冷凍優格品牌，提供平衡甜酸味和多種配料。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:21.143Z"
+    "scraped_at": "2026-10-05T06:32:21.143Z",
+    "highlights": [
+      "Adam's Pistachio",
+      "Greek Froyo"
+    ]
   },
   {
     "id": "3ee855c3-e1c7-4b55-97b1-d669df12ffee",
@@ -547,8 +598,8 @@
     "id": "12e52a0e-1c20-483b-ad5c-6ab599ad8334",
     "name_en": "wasteland",
     "name_zh": "wasteland",
-    "description_zh": "酒吧",
-    "description_en": "Bar",
+    "description_zh": "🌿 藏身 Pridi Banomyong 1（Edison Alley）小巷，由曼谷永續調酒先鋒 Gov 與 Tot 主理。菜單「World Wild Waste」分三章：重詮經典、野生食材、廚餘再生，Fossil Fuel（蟹殼魚骨）與 Morning After Espresso（咖啡糠）是代表作。舊冰箱、廢棄燈具構成空間骨架，並提供試飲份量。榮獲 2025 Bangkok Bar Show 最佳新酒吧。",
+    "description_en": "🌿 Tucked down Edison Alley off Pridi Banomyong 1, this sustainability-driven cocktail bar is led by founders Gov (Kitibordee Chortubtim) and Tot (Dharath Hoonchamlong). Their 'World Wild Waste' menu unfolds in three acts: classic riffs, foraged wild flavours, and upcycled kitchen by-products — think Fossil Fuel (crab shells, fish bones) and Morning After Espresso (coffee chaff). The raw interior is built from old fridges, reclaimed lamps, and repurposed sofas. Tasting-size pours let you work through the menu without commitment. Winner of Best New Bar at the 2025 Bangkok Bar Show Awards.",
     "category": "nightlife",
     "address": "3/19, Pridi Banomyong 1, ซอย ปรีดี พนมยงค์ 1 แขวงพระโขนงเหนือ เขตวัฒนา กรุงเทพมหานคร 10110",
     "lat": 13.7142793,
@@ -575,14 +626,18 @@
         "quote": "2025年6月重新開幕，獲2025曼谷酒吧秀獎最佳新酒吧，以永續概念和廚餘雞尾酒聞名。"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:22.597Z"
+    "scraped_at": "2026-10-05T06:32:22.597Z",
+    "highlights": [
+      "Fossil Fuel",
+      "Tasting Portions"
+    ]
   },
   {
     "id": "e1eaf870-3b10-49fc-aaf8-cfcfc3042517",
     "name_en": "Synth Restaurant BKK สินธุ์ กรุงเทพ",
     "name_zh": "Synth Restaurant BKK สินธุ์ กรุงเทพ",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🦀 藏在沙吞 Soi Naradhiwas 17 巷弄的曼谷新店，是蘇叻他尼人氣名店 Synth สินธุ์ 的姊妹店。Le Cordon Bleu 畢業的 Chef Boss 以南泰傳統食譜為根，加入歐式技法重新演繹，招牌有甲蒐那碟生蠔配三款醬汁、法式脆皮鴨胸紅咖哩與螃蟹蒟醬葉咖哩，菜單定期更換。",
+    "description_en": "🦀 Tucked into a lane off Soi Naradhiwas 17 in Sathorn, this is the Bangkok outpost of celebrated Surat Thani restaurant Synth สินธุ์. Le Cordon Bleu-trained Chef Boss reimagines Southern Thai tradition through European technique — highlights include Kanchanadit oysters with three house sauces, a French-style crispy duck breast in red curry, and a crab betel-leaf curry. The menu rotates seasonally.",
     "category": "food",
     "address": "984 Soi Naradhiwas Rajanagarindra 17, Lane 7, Khwaeng Thung Maha Mek, Khet Sathon, Krung Thep Maha Nakhon 10120",
     "lat": 13.716458399999999,
@@ -609,14 +664,18 @@
         "quote": "曼谷新開幕的南方當代美食餐廳"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:22.849Z"
+    "scraped_at": "2026-10-05T06:32:22.849Z",
+    "highlights": [
+      "Dry-aged Duck Breast",
+      "Kanchanadit Oyster"
+    ]
   },
   {
     "id": "8062f9a0-2137-4533-83f2-b8c33f6216ce",
     "name_en": "Harper's",
     "name_zh": "Harper's",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🥩 藏身 Soi Sukhumvit 20 的 Fairmont 酒店 2 樓，Harper's 是一間法美融合 Brasserie，以開放式廚房、海鮮展示台與劇場式服務為亮點。招牌 Flank Steak、Steak Tartare、Tuna Tataki 各具風格；Hamburger 和法式烘焙同樣令人驚艷。空間分隔多區，商務午餐或家庭聚餐皆宜。",
+    "description_en": "🥩 Tucked on the 2nd floor of Fairmont Bangkok Sukhumvit on Soi Sukhumvit 20, Harper's is a French-American brasserie built around an open kitchen, a seafood display counter, and theatrical tableside service. The flank steak, steak tartare, and tuna tataki are standout dishes, while the burgers and French-style bakery hold their own. The space splits into distinct zones — equally suited for a business lunch or a relaxed family dinner.",
     "category": "food",
     "address": "10, 1 Soi Sukhumvit 20, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110",
     "lat": 13.7332597,
@@ -643,14 +702,18 @@
         "quote": "曼谷新開幕餐廳，食物美味、氛圍優美"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:23.283Z"
+    "scraped_at": "2026-10-05T06:32:23.283Z",
+    "highlights": [
+      "Flank Steak",
+      "Steak Tartare"
+    ]
   },
   {
     "id": "fe6ba99d-ed03-4079-8be5-429c3ffa0b0f",
     "name_en": "KEEP KOOL cafe",
     "name_zh": "KEEP KOOL cafe",
-    "description_zh": "咖啡廳",
-    "description_en": "Cafe",
+    "description_zh": "🚂 藏在邦頌南部鐵路線旁，綠蔭環繞，鐵道景觀是一大亮點。店內裝潢可愛、採光好、多個拍照角，咖啡評價好、蛋糕受好評，整體呈現溫暖家居感，店主親切，是周邊居民的低調私房去處。",
+    "description_en": "☕ Tucked along the Southern Railway track in Bang Sue, KEEP KOOL cafe sits under shady greenery with a relaxed railway-view setting. Cute decor, well-lit photo nooks, solid coffee, and praised-by-locals cake — all wrapped in a warm, homey atmosphere with a genuinely welcoming owner.",
     "category": "cafe",
     "address": "254/7 ถนนริมทางรถไฟสายใต้ บางซื่อ Krung Thep Maha Nakhon 10800",
     "lat": 13.8217798,
@@ -677,14 +740,18 @@
         "quote": "邦頌區新開幕小咖啡廳，溫暖舒適家居感"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:25.223Z"
+    "scraped_at": "2026-10-05T06:32:25.223Z",
+    "highlights": [
+      "Railway View",
+      "Coffee & Cake"
+    ]
   },
   {
     "id": "c5d05905-2fba-4f81-b76e-7e851e2e4074",
     "name_en": "maja.",
     "name_zh": "maja.",
-    "description_zh": "咖啡廳",
-    "description_en": "Cafe",
+    "description_zh": "🍵 藏身 Soi Ramkhamhaeng 21 的二樓，位於咖啡廳 Openface 上層。以日本茶屋為主題，設有榻榻米座位、原木低桌與清水模牆面，走進即有置身東京的靜謐感。茶單涵蓋五款 House Blend 抹茶及每季更換的 Seasonal Matcha（曾推 Marukyu Koyamaen 系列），招牌甜點為 Mitarashi Dango 與 Warabi Mochi。Google 評分 4.8，慢活派茶饕必訪。",
+    "description_en": "🍵 Tucked on the 2nd floor above Openface café in Soi Ramkhamhaeng 21, maja. is a Japanese-style tea house fitted with tatami seating, low wooden tables, and bare concrete walls. The matcha menu spans five House Blend options plus a rotating Seasonal Matcha (previously featuring Marukyu Koyamaen). Pair your bowl with Mitarashi Dango or Warabi Mochi for the full experience. Google-rated 4.8 — a slow-life sanctuary for serious matcha lovers.",
     "category": "cafe",
     "address": "2nd Floor 86/2 Phlabphla Soi Ramkhamhaeng 21, Khwaeng Phlabphla, Khet Wang Thonglang, Krung Thep Maha Nakhon 10310",
     "lat": 13.7633891,
@@ -711,14 +778,18 @@
         "quote": "拉瑪9街新開幕抹茶咖啡廳，有日本風格"
       }
     ],
-    "scraped_at": "2026-10-05T06:32:25.503Z"
+    "scraped_at": "2026-10-05T06:32:25.503Z",
+    "highlights": [
+      "Mitarashi Dango",
+      "Warabi Mochi"
+    ]
   },
   {
     "id": "3204151a-4578-418c-957b-9f5717e08cfc",
     "name_en": "The Old School Specialty Coffee - เจริญนคร",
     "name_zh": "The Old School Specialty Coffee - เจริญนคร",
-    "description_zh": "咖啡廳",
-    "description_en": "Cafe",
+    "description_zh": "☕ 藏在詹隆區 Soi Charoen Nakhon 18 小巷的 Specialty Coffee 分店，母品牌在 Nonthaburi 榮獲 Wongnai 最佳咖啡廳及 World ESYEN 亞軍殊榮。兩層復古木桌搭配盆栽、中庭小瀑布水聲，必點招牌 Esyyenn 及肉桂八角冰咖啡，Bagel 火腿起司與松露 Shio Pan 也不容錯過。二樓安靜有 Wi-Fi 是數位遊牧族最愛，店後附停車場，BTS กรุงธนบุรี 4 號出口步行可達。",
+    "description_en": "☕ Tucked down Soi Charoen Nakhon 18 in Khlong San, this Thonburi branch of the award-winning Old School Specialty Coffee & Roastery — Wongnai's #1 café in Nonthaburi and a World ESYEN runner-up — brings serious coffee credentials to the neighbourhood. The two-floor rustic space pairs old wooden desks and lush potted plants with a calming central waterfall feature. Must-orders: the signature Esyyenn and the cinnamon-star anise iced coffee; add a bagel with ham and cheese or truffle Shio Pan on the side. The quiet second floor has Wi-Fi and is a go-to for digital nomads. Parking behind the shop; short walk from BTS Krung Thon Buri Exit 4.",
     "category": "cafe",
     "address": "306 Soi Charoen Nakhon 18, Khwaeng Bang Lamphu Lang, Khet Khlong San, Krung Thep Maha Nakhon 10600",
     "lat": 13.719227799999999,
@@ -750,14 +821,18 @@
         "quote": "詹隆區分店，提供優質咖啡適合長時間工作。"
       }
     ],
-    "scraped_at": "2026-10-05T06:35:21.055Z"
+    "scraped_at": "2026-10-05T06:35:21.055Z",
+    "highlights": [
+      "Esyyenn",
+      "Shio Pan"
+    ]
   },
   {
     "id": "4fa12dcc-fefd-4799-832e-3b2f98b40e79",
     "name_en": "AMAM Lonbakery Town",
     "name_zh": "AMAM Lonbakery Town",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🐶 上海爆紅烘焙品牌首度登台，進駐 Siam Paragon G 樓 Gourmet Garden。英倫復古石牆裝潢搭配「Bagel the Dog」招牌吉祥物，逾 250 款品項中以巧克力可頌、蛋撻、司康、現烤貝果及限定狗狗造型麵包最受歡迎。目前泰國是全球唯一海外據點，開幕即引發大排長龍。",
+    "description_en": "🐶 Shanghai's viral bakery sensation makes its one and only overseas debut at Gourmet Garden, G Floor, Siam Paragon. The British vintage interior — stone walls, hanging pots, rustic décor — is anchored by the iconic 'Bagel the Dog' mascot throughout. With over 250 items to choose from, top picks include the chocolate croissant, egg tart, scone, freshly baked bagel, and limited-edition dog-shaped bread. As Thailand's sole global outpost, expect queues from the moment you arrive.",
     "category": "food",
     "address": "ชั้น G, สยามพารากอน Unit G27 991/1 Rama I Rd, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "lat": 13.747387999999999,
@@ -784,7 +859,11 @@
         "quote": "暹羅廣場新開幕蛋撻店"
       }
     ],
-    "scraped_at": "2026-10-05T06:35:25.914Z"
+    "scraped_at": "2026-10-05T06:35:25.914Z",
+    "highlights": [
+      "Chocolate Croissant",
+      "Egg Tart"
+    ]
   },
   {
     "id": "f0df42a1-d915-4e73-923a-fc3a12575e74",
@@ -824,8 +903,8 @@
     "id": "654e929c-430b-4190-893d-62df298dea19",
     "name_en": "Openface",
     "name_zh": "Openface",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🏠 藏在拉瑪坎恆 21 巷的韓式木屋建築，讓人瞬間以為飛到首爾城水（Seongsu）。Openface 主打 All-Day Brunch 與烘焙，菜單融入韓式與亞洲元素：Eggs Benedict 搭配鮮榨萊姆荷蘭醬、酥脆海苔配自家醃燻鮭魚、炸雞鬆餅，柚子可頌與杏仁可頌同樣叫座。開幕不久即迅速爆滿，Google 4.7 分實至名歸。",
+    "description_en": "🏠 Tucked into Soi Ramkhamhaeng 21, Openface is housed in a Korean-style timber building that feels straight out of Seoul's Seongsu district. The all-day brunch and bakery menu brings a Korean-Asian twist to Western classics: Eggs Benedict with a lime-brightened hollandaise, crispy nori with house-cured salmon, chicken and waffles, plus standout pastries including a yuzu croissant and almond croissant. Packed since its first week and a well-earned Google 4.7 rating.",
     "category": "food",
     "address": "86/2 พลับพลา Soi Ramkhamhaeng 21, Khwaeng Phlabphla, Khet Wang Thonglang, Krung Thep Maha Nakhon 10310",
     "lat": 13.76333,
@@ -852,7 +931,11 @@
         "quote": "暹羅廣場附近新開的烘焙咖啡廳，主打酥皮點心和咖啡。"
       }
     ],
-    "scraped_at": "2026-10-05T06:35:27.166Z"
+    "scraped_at": "2026-10-05T06:35:27.166Z",
+    "highlights": [
+      "Eggs Benedict",
+      "Yuzu Croissant"
+    ]
   },
   {
     "id": "c3e04684-cd7b-455c-b1ad-527ebffa3a7e",
