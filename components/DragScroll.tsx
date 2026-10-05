@@ -22,7 +22,8 @@ export function DragScroll({ className, children }: Props) {
   return (
     <div
       ref={ref}
-      className={className}
+      // 橫向捲動列只能左右動：overflow-x-auto 會連帶讓直向也變成可捲動，內容稍微超出就能上下晃
+      className={`${className ?? ''} overflow-y-hidden overscroll-x-contain`}
       onPointerDown={(e) => {
         // 只處理滑鼠左鍵；觸控交給瀏覽器原生捲動
         if (e.pointerType !== 'mouse' || e.button !== 0) return

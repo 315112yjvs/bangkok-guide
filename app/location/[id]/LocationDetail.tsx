@@ -173,7 +173,8 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
         {/* 照片欄（桌機固定在左側） */}
         <div className="lg:sticky lg:top-8">
           <div
-            className="relative w-full h-72 lg:h-[460px] bg-gray-100 lg:rounded-lg lg:overflow-hidden"
+            // touch-pan-y：手指在照片上橫向滑時只換照片，頁面不會跟著上下晃；直向滑仍可捲動頁面
+            className="relative w-full h-72 lg:h-[460px] bg-gray-100 lg:rounded-lg lg:overflow-hidden touch-pan-y"
             onTouchStart={(e) => { touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY } }}
             onTouchEnd={onPhotoTouchEnd}
           >
