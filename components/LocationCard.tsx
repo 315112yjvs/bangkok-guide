@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { IconPin } from './icons/CategoryIcons'
 import type { Location, Source, LocationTag } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
@@ -52,13 +52,30 @@ const TAG_BADGE: Record<LocationTag, { emoji: string; zh: string; en: string; co
 
 type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void; compact?: boolean }
 
-export function LocationCard({ location, lang, distanceKm, saved = false, onToggleSave, compact = false }: Props) {
+export function LocationCard({ location, lang, distanceKm, saved: savedProp = false, onToggleSave, compact = false }: Props) {
   const [copied, setCopied] = useState(false)
+
+  // 沒有外部 onToggleSave（分類/主題/區域頁、地點頁的附近推薦）時，卡片自己讀寫 localStorage 收藏
+  const [localSaved, setLocalSaved] = useState(false)
+  useEffect(() => {
+    if (onToggleSave) return
+    try {
+      const ids = JSON.parse(localStorage.getItem('saved_locations') ?? '[]') as string[]
+      setLocalSaved(ids.includes(location.id))
+    } catch { /* ignore */ }
+  }, [onToggleSave, location.id])
+  const saved = onToggleSave ? savedProp : localSaved
 
   function toggleSave(e: React.MouseEvent) {
     e.preventDefault()
     e.stopPropagation()
-    onToggleSave?.(location.id)
+    if (onToggleSave) { onToggleSave(location.id); return }
+    try {
+      const ids = JSON.parse(localStorage.getItem('saved_locations') ?? '[]') as string[]
+      const next = localSaved ? ids.filter((x) => x !== location.id) : [...ids, location.id]
+      localStorage.setItem('saved_locations', JSON.stringify(next))
+      setLocalSaved(!localSaved)
+    } catch { /* ignore */ }
   }
 
   const badge = SOURCE_BADGE[location.source]
@@ -77,7 +94,8 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
   const mapsUrl = buildMapsUrl(location)
 
   // 照片走 /api/photo 代理（CDN 快取、不外露 key）；載入失敗時換預設圖避免破圖
-  const photo = photoUrl(location.photos[0], 800)
+  // 卡片最寬約 330px，抓 480 就夠（原本抓 800，流量多一倍以上）
+  const photo = photoUrl(location.photos[0], 480)
   const [imgSrc, setImgSrc] = useState(photo)
   // 圖片載入失敗時先重試一次（冷快取/暫時性錯誤常一試就過），第二次才換預設圖
   const retried = useRef(false)
@@ -145,7 +163,7 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
         </div>
 
         {/* Description */}
-        <p className="text-[10px] text-gray-500 mb-1 line-clamp-1">{desc}</p>
+        <p className="text-[11px] text-gray-500 mb-1 line-clamp-1">{desc}</p>
 
         {/* Curator note */}
         {location.curator_note && (
@@ -189,9 +207,9 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
               onClick={toggleSave}
               aria-label={saved ? (lang === 'zh' ? '取消收藏' : 'Unsave') : (lang === 'zh' ? '收藏' : 'Save')}
               aria-pressed={saved}
-              className={`relative z-20 shrink-0 p-1.5 rounded-xl transition-colors ${saved ? 'text-red-500 bg-red-50' : 'text-gray-300 bg-gray-50 hover:text-red-400 hover:bg-red-50'}`}
+              className={`relative z-20 shrink-0 w-8 h-8 flex items-center justify-center rounded-xl transition-colors ${saved ? 'text-red-500 bg-red-50' : 'text-gray-300 bg-gray-50 hover:text-red-400 hover:bg-red-50'}`}
             >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.5}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.5}>
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
             </button>
@@ -200,9 +218,9 @@ export function LocationCard({ location, lang, distanceKm, saved = false, onTogg
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${strings[lang].navigate as string} — ${name}`}
-              className="relative z-20 shrink-0 flex items-center gap-1 h-7 bg-[#1e1b4b] text-white text-[10px] font-bold rounded-xl px-2.5 whitespace-nowrap hover:bg-[#2d2a6e] transition-colors active:scale-95"
+              className="relative z-20 shrink-0 flex items-center justify-center gap-1 h-8 min-w-8 bg-[#1e1b4b] text-white text-[10px] font-bold rounded-xl px-2.5 whitespace-nowrap hover:bg-[#2d2a6e] transition-colors active:scale-95"
             >
-              <IconPin size={11} className="shrink-0" />
+              <IconPin size={13} className="shrink-0" />
               {!compact && (strings[lang].navigate as string)}
             </a>
           </div>

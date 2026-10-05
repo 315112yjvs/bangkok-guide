@@ -4,6 +4,11 @@ import type { Category } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
 import { DragScroll } from './DragScroll'
+import { MIcon } from './icons/MaterialIcons'
+
+function IconAttraction({ size = 24 }: { size?: number }) {
+  return <MIcon name="attractions" size={size} />
+}
 
 type Tab = { id: Category | 'all'; labelKey: keyof typeof strings.zh; Icon: React.ComponentType<{ size?: number }> }
 
@@ -14,6 +19,7 @@ const TABS: Tab[] = [
   { id: 'shopping',  labelKey: 'categoryShopping',  Icon: IconShopping },
   { id: 'nightlife', labelKey: 'categoryNightlife', Icon: IconNightlife },
   { id: 'hotel',     labelKey: 'categoryHotel',     Icon: IconHotel },
+  { id: 'attraction', labelKey: 'categoryAttraction', Icon: IconAttraction },
 ]
 
 const TAB_COLORS: Record<string, string> = {
@@ -23,6 +29,7 @@ const TAB_COLORS: Record<string, string> = {
   shopping:  'bg-gradient-to-br from-emerald-800 to-emerald-500',
   nightlife: 'bg-gradient-to-br from-indigo-900 to-violet-700',
   hotel:     'bg-gradient-to-br from-sky-700 to-sky-400',
+  attraction: 'bg-gradient-to-br from-teal-700 to-teal-400',
 }
 
 type Props = {

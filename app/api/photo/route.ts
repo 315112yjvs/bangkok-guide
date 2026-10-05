@@ -34,9 +34,10 @@ export async function GET(req: NextRequest) {
     try {
       const res = await fetchOnce()
       if (res.ok) return imageResponse(res)
-      // 403/404：照片 ref 過期（Google 會定期換掉 ref）→ 用 ref 內含的 place id
-      // 換一個現行 ref 再抓一次，成功的話 CDN 照樣以原網址快取，前端不用改
-      if (res.status === 403 || res.status === 404) {
+      // 400/403/404：照片 ref 過期（Google 會定期換掉 ref，過期後回 400 INVALID_ARGUMENT，
+      // 早期是回 403）→ 用 ref 內含的 place id 換一個現行 ref 再抓一次，
+      // 成功的話 CDN 照樣以原網址快取，前端不用改
+      if (res.status === 400 || res.status === 403 || res.status === 404) {
         const healed = await fetchWithFreshRef(ref, w, key)
         if (healed) return imageResponse(healed)
         return new NextResponse('upstream error', { status: res.status })

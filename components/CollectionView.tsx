@@ -30,9 +30,9 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
   const items = useMemo(() => (seed != null ? seededShuffle(locations, seed) : locations), [locations, seed])
 
   return (
-    <div className="max-w-md mx-auto bg-white min-h-screen shadow-xl">
+    <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen shadow-xl">
       {/* Header */}
-      <div className="bg-gradient-to-br from-[#1e1b4b] to-[#4c1d95] px-5 pt-5 pb-6">
+      <div className="bg-gradient-to-br from-[#1e1b4b] to-[#4c1d95] px-5 pt-5 pb-6 lg:px-10 lg:pt-8 lg:pb-10">
         <div className="flex items-center justify-between mb-5">
           <Link href="/" className="flex items-center gap-1.5 text-white/80 hover:text-white text-sm font-bold transition-colors">
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -54,7 +54,7 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
       {/* Grid */}
       <div className="bg-gray-50 px-3 pt-3 pb-6">
         {locations.length > 0 ? (
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3">
             {items.map((loc) => (
               <LocationCard key={loc.id} location={loc} lang={lang} compact />
             ))}

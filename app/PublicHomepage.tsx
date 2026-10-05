@@ -1,6 +1,7 @@
 'use client'
 import { useState, useMemo, useEffect, useRef } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useLanguage } from '@/hooks/useLanguage'
 import { strings } from '@/lib/i18n'
 import { LanguageToggle } from '@/components/LanguageToggle'
@@ -8,13 +9,15 @@ import { CategoryTabs } from '@/components/CategoryTabs'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
-import { type Landmark } from '@/lib/landmarks'
+import { LANDMARKS, type Landmark } from '@/lib/landmarks'
+import { THEMES } from '@/lib/themes'
+import { haversineKm } from '@/lib/geo'
 import { MIcon } from '@/components/icons/MaterialIcons'
 import { LocationCard } from '@/components/LocationCard'
 import { DragScroll } from '@/components/DragScroll'
 import { LocationMap } from '@/components/LocationMap'
 import { Reveal } from '@/components/Reveal'
-import { getArea } from '@/lib/area'
+import { getArea, areaLabel } from '@/lib/area'
 import type { Location, Category, LocationTag } from '@/lib/types'
 
 type Props = { locations: Location[] }
@@ -41,14 +44,6 @@ function resolveTag(loc: Location): LocationTag {
   return 'evergreen'
 }
 
-function haversineKm(lat1: number, lng1: number, lat2: number, lng2: number) {
-  const R = 6371
-  const dLat = (lat2 - lat1) * Math.PI / 180
-  const dLng = (lng2 - lng1) * Math.PI / 180
-  const a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLng / 2) ** 2
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-}
-
 type SpecialFilter = 'all' | 'nearby' | 'saved'
 
 export function PublicHomepage({ locations }: Props) {
@@ -63,6 +58,20 @@ export function PublicHomepage({ locations }: Props) {
   // 附近的中心點：選了地標就用地標座標，否則用 GPS
   const nearbyAnchor = landmark ? { lat: landmark.lat, lng: landmark.lng } : userLocation
   const [locating, setLocating] = useState(false)
+  // 定位失敗（拒絕權限/逾時/不支援）：提示改選地標，不要讓「附近」按了沒反應
+  const [geoError, setGeoError] = useState(false)
+  // 往下滑過篩選列後顯示「篩選」浮動鈕，一鍵回到分類/篩選列
+  const filterRef = useRef<HTMLDivElement>(null)
+  const [pastFilters, setPastFilters] = useState(false)
+  useEffect(() => {
+    const onScroll = () => {
+      const el = filterRef.current
+      if (el) setPastFilters(el.getBoundingClientRect().bottom < -200)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
   const [savedIds, setSavedIds] = useState<Set<string>>(new Set())
   const [mapExpanded, setMapExpanded] = useState(false)
   // 地圖只在使用者開過後才掛載，避免每次進首頁就載入 Google 地圖（省 Dynamic Maps 用量）
@@ -129,7 +138,9 @@ export function PublicHomepage({ locations }: Props) {
 
   function requestLocation() {
     setLandmark(null) // GPS 附近：清掉地標
+    setGeoError(false)
     if (userLocation) { setSpecialFilter('nearby'); return }
+    if (!navigator.geolocation) { setGeoError(true); return }
     setLocating(true)
     navigator.geolocation.getCurrentPosition(
       (pos) => {
@@ -137,9 +148,16 @@ export function PublicHomepage({ locations }: Props) {
         setLocating(false)
         setSpecialFilter('nearby')
       },
-      () => setLocating(false),
+      () => { setLocating(false); setGeoError(true) },
       { timeout: 10000 }
     )
+  }
+
+  function pickLandmark(lm: Landmark) {
+    setGeoError(false)
+    if (landmark?.id === lm.id) { setLandmark(null); setSpecialFilter('all'); return }
+    setLandmark(lm)
+    setSpecialFilter('nearby')
   }
 
   const filtered = useMemo(() => {
@@ -221,14 +239,10 @@ export function PublicHomepage({ locations }: Props) {
 
           {/* Bottom editorial block */}
           <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl lg:mx-auto lg:text-center">
-            {/* Live badge + subtitle — 共用同一顆紅色膠囊 */}
+            {/* 副標膠囊 */}
             <div className="hero-rise hero-rise-1 flex mb-3 lg:justify-center">
               <span className="inline-flex items-center gap-2 bg-rose-600 text-white px-3 py-1.5 rounded-full shadow-lg">
-                <span className="inline-flex items-center gap-1.5 text-[9px] font-black tracking-widest uppercase">
-                  <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
-                  LIVE
-                </span>
-                <span className="text-[11px] tracking-wide text-white/95">{lang === 'zh' ? '每週更新 · 泰國社群精選' : 'Weekly updates · Thai social picks'}</span>
+                <span className="text-[11px] tracking-wide text-white/95">{lang === 'zh' ? '泰國社群精選 · 在地人推薦' : 'Thai social picks · Chosen by locals'}</span>
               </span>
             </div>
 
@@ -288,7 +302,7 @@ export function PublicHomepage({ locations }: Props) {
         </div>
 
         {/* Category tabs */}
-        <div className="bg-white border-b border-gray-100">
+        <div ref={filterRef} className="bg-white border-b border-gray-100 scroll-mt-2">
           <CategoryTabs
             active={activeCategory}
             onChange={(cat) => { setActiveCategory(cat); setActiveTag('all') }}
@@ -303,7 +317,7 @@ export function PublicHomepage({ locations }: Props) {
           <DragScroll className="flex gap-2 overflow-x-auto no-scrollbar px-3 lg:justify-center">
             {/* All */}
             <button
-              onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all'); setLandmark(null) }}
+              onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all'); setLandmark(null); setGeoError(false) }}
               className={`text-[11px] font-bold px-3 py-1.5 rounded-full whitespace-nowrap transition-all ${
                 specialFilter === 'all' && activeTag === 'all' && activeArea === 'all'
                   ? 'bg-[#1e1b4b] text-white shadow-sm'
@@ -393,7 +407,35 @@ export function PublicHomepage({ locations }: Props) {
                     activeArea === a ? 'bg-emerald-600 text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                   }`}
                 >
-                  {a}
+                  {areaLabel(a, lang)}
+                </button>
+              ))}
+            </DragScroll>
+          </div>
+        )}
+
+        {/* 地標列：按了「附近」或定位失敗時出現，選一個地標就以它為中心找 5 公里內的店 */}
+        {(specialFilter === 'nearby' || geoError) && (
+          <div className="bg-white border-b border-gray-100 py-2 relative">
+            {geoError && (
+              <p className="px-3 pb-1.5 text-[12px] font-bold text-rose-600">
+                {lang === 'zh' ? '拿不到你的定位，可以改選一個地標：' : "Couldn't get your location. Pick a landmark instead:"}
+              </p>
+            )}
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
+            <DragScroll className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
+              <span className="shrink-0 text-[11px] font-bold text-gray-400 whitespace-nowrap">
+                {lang === 'zh' ? '或選地標' : 'Or near'}
+              </span>
+              {LANDMARKS.map((lm) => (
+                <button
+                  key={lm.id}
+                  onClick={() => pickLandmark(lm)}
+                  className={`inline-flex items-center gap-1 text-[11px] font-bold px-3 py-1 rounded-full whitespace-nowrap transition-all ${
+                    landmark?.id === lm.id ? 'bg-[#1e1b4b] text-white shadow-sm' : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  }`}
+                >
+                  <MIcon name={lm.icon} size={13} className="shrink-0" /> {lang === 'zh' ? lm.zh : lm.en}
                 </button>
               ))}
             </DragScroll>
@@ -403,6 +445,21 @@ export function PublicHomepage({ locations }: Props) {
         {/* 4-section view (default) */}
         {showSections && sectionsByTag && (
           <div className="pb-10">
+            {/* 主題玩法入口（原本只有搜尋引擎看得到連結） */}
+            {activeCategory === 'all' && (
+              <DragScroll className="flex gap-2 overflow-x-auto no-scrollbar px-3 pt-4 lg:justify-center">
+                {THEMES.map((t) => (
+                  <Link
+                    key={t.slug}
+                    href={`/theme/${t.slug}`}
+                    className="shrink-0 inline-flex items-center gap-1.5 text-[12px] font-bold px-3.5 py-2 rounded-2xl bg-white border border-gray-200 text-[#1e1b4b] shadow-sm hover:border-[#1e1b4b] transition-colors active:scale-95 whitespace-nowrap"
+                  >
+                    <MIcon name={t.icon} size={15} className="shrink-0 text-amber-500" />
+                    {lang === 'zh' ? t.h1Zh.replace(/^曼谷\s*/, '') : t.h1En.replace(/^Bangkok('s)?\s*/, '')}
+                  </Link>
+                ))}
+              </DragScroll>
+            )}
             {TAG_ORDER.map((tag) => {
               const items = sectionsByTag[tag]
               if (!items || items.length === 0) return null
@@ -419,8 +476,8 @@ export function PublicHomepage({ locations }: Props) {
                       </p>
                       <p className="text-white/50 text-[10px] mt-0.5">
                         {lang === 'zh'
-                          ? tag === 'trending' ? '本週曼谷話題精選' : tag === 'hidden_gem' ? '在地人才知道的地方' : tag === 'new_opening' ? '最新開幕，搶先體驗' : '經典不敗，值得回訪'
-                          : tag === 'trending' ? 'Bangkok buzz this week' : tag === 'hidden_gem' ? "Locals' best-kept secrets" : tag === 'new_opening' ? 'Be the first to visit' : 'Timeless picks, always worth it'}
+                          ? tag === 'trending' ? '曼谷社群話題精選' : tag === 'hidden_gem' ? '在地人才知道的地方' : tag === 'new_opening' ? '最新開幕，搶先體驗' : '經典不敗，值得回訪'
+                          : tag === 'trending' ? 'What Bangkok is buzzing about' : tag === 'hidden_gem' ? "Locals' best-kept secrets" : tag === 'new_opening' ? 'Be the first to visit' : 'Timeless picks, always worth it'}
                       </p>
                     </div>
                     <span className="text-[10px] font-black bg-white/20 text-white px-2.5 py-1 rounded-full shrink-0">
@@ -515,6 +572,20 @@ export function PublicHomepage({ locations }: Props) {
                 <p className="text-sm font-bold text-gray-400 mb-1">{lang === 'zh' ? '還沒有收藏任何地點' : 'No saved places yet'}</p>
                 <p className="text-xs text-gray-300 text-center">{lang === 'zh' ? '點擊卡片上的 ♡ 加入收藏清單' : 'Tap ♡ on any card to save it here'}</p>
               </div>
+            ) : specialFilter === 'nearby' ? (
+              <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
+                <span className="mb-4 text-gray-200"><MIcon name="near_me" size={48} /></span>
+                <p className="text-sm font-bold text-gray-400 mb-1">
+                  {!nearbyAnchor
+                    ? (lang === 'zh' ? '選一個地標看看附近有什麼' : 'Pick a landmark to see what is nearby')
+                    : (lang === 'zh' ? '5 公里內沒有符合的地點' : 'Nothing matches within 5 km')}
+                </p>
+                {nearbyAnchor && (
+                  <p className="text-xs text-gray-300 text-center">
+                    {lang === 'zh' ? '換個地標，或清掉分類篩選試試' : 'Try another landmark or clear the category filter'}
+                  </p>
+                )}
+              </div>
             ) : (
               <div className="flex flex-col items-center justify-center py-20 text-gray-400">
                 <svg className="w-12 h-12 mb-4 text-gray-200" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -527,6 +598,19 @@ export function PublicHomepage({ locations }: Props) {
         )}
 
       </div>
+
+      {/* 浮動「篩選」鈕：滑過篩選列後出現，點了回到分類/篩選列 */}
+      <button
+        onClick={() => filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+        aria-hidden={!pastFilters}
+        tabIndex={pastFilters ? 0 : -1}
+        className={`fixed bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-1.5 text-[13px] font-bold text-white bg-[#1e1b4b] rounded-full px-5 py-2.5 shadow-lg transition-all duration-300 active:scale-95 ${
+          pastFilters ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+      >
+        <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M4 6h16M7 12h10M10 18h4" strokeLinecap="round"/></svg>
+        {lang === 'zh' ? '篩選' : 'Filters'}
+      </button>
     </div>
   )
 }

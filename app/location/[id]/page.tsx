@@ -1,6 +1,7 @@
 import { notFound, permanentRedirect } from 'next/navigation'
 import type { Metadata } from 'next'
-import { readLocations } from '@/lib/data'
+import { readLocations, toCardLocation } from '@/lib/data'
+import { haversineKm } from '@/lib/geo'
 import type { Location } from '@/lib/types'
 import { LocationDetail } from './LocationDetail'
 
@@ -65,6 +66,16 @@ function safeJsonLd(obj: unknown): string {
     .replace(/&/g, '\\u0026')
 }
 
+// 附近的其他地點：2 公里內由近到遠取 6 筆（用自家座標計算，不打任何 API）
+function nearbyOf(loc: Location, all: Location[]) {
+  return all
+    .filter((l) => l.id !== loc.id)
+    .map((l) => ({ location: toCardLocation(l), km: haversineKm(loc.lat, loc.lng, l.lat, l.lng) }))
+    .filter((x) => x.km <= 2)
+    .sort((a, b) => a.km - b.km)
+    .slice(0, 6)
+}
+
 export async function generateStaticParams() {
   const locations = readLocations()
   return locations.map((l) => ({ id: l.slug ?? l.id }))
@@ -102,7 +113,7 @@ export default async function LocationPage({ params }: { params: Promise<{ id: s
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(buildJsonLd(location)) }}
       />
-      <LocationDetail location={location} />
+      <LocationDetail location={location} nearby={nearbyOf(location, locations)} />
     </>
   )
 }

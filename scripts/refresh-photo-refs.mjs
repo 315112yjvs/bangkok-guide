@@ -1,6 +1,6 @@
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, existsSync } from 'fs'
 
-// Google Places 照片 ref 會過期（過期後抓圖回 403 變預設圖）。
+// Google Places 照片 ref 會過期（過期後抓圖回 400/403 變預設圖）。
 // 這支用 ref 內含的 place id 重打 Place Details（只要 photos 欄位，最便宜的計費層），
 // 把每個地點的照片 ref 換成新的。ref 又過期時可隨時重跑。
 const env = readFileSync('.env.local', 'utf-8')
@@ -9,6 +9,11 @@ if (!key) { console.error('找不到 GOOGLE_MAPS_API_KEY'); process.exit(1) }
 
 const PATH = 'data/locations.json'
 const MAX_PHOTOS = 6
+// 人工挑過首圖的地點：{ 地點 id: 選定照片在 Google 原始順序中的位置 }。
+// ref 每次刷新都會整串換新，沒辦法用 ref 比對，只能靠位置把選定的那張再移回開頭。
+// 之後手動換首圖時記得同步更新這個檔。
+const COVERS_PATH = 'data/photo-covers.json'
+const covers = existsSync(COVERS_PATH) ? JSON.parse(readFileSync(COVERS_PATH, 'utf-8')) : {}
 const locations = JSON.parse(readFileSync(PATH, 'utf-8'))
 
 function placeIdOf(loc) {
@@ -30,6 +35,8 @@ async function refresh(loc) {
   const data = await res.json()
   const photos = (data.photos ?? []).slice(0, MAX_PHOTOS).map((p) => p.name)
   if (photos.length === 0) return { loc, status: 'no-photos' }
+  const cover = covers[loc.id]
+  if (cover > 0 && cover < photos.length) photos.unshift(...photos.splice(cover, 1))
   loc.photos = photos
   return { loc, status: 'ok', count: photos.length }
 }

@@ -11,17 +11,27 @@ import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { Reveal } from '@/components/Reveal'
 import { DragScroll } from '@/components/DragScroll'
+import { LocationCard } from '@/components/LocationCard'
 
 function extractThai(text: string): string | null {
   const thai = text.match(/[฀-๿][฀-๿\s]*/g)?.join(' ').trim()
   return thai && thai.length >= 3 ? thai : null
 }
 
-const TAG_META: Record<LocationTag, { emoji: string; zh: string; color: string }> = {
-  trending:    { emoji: '🔥', zh: '話題爆紅', color: 'bg-orange-500' },
-  hidden_gem:  { emoji: '🗺', zh: '在地私藏', color: 'bg-emerald-600' },
-  new_opening: { emoji: '✨', zh: '新開幕',   color: 'bg-violet-500' },
-  evergreen:   { emoji: '📌', zh: '經典必訪', color: 'bg-sky-500' },
+const TAG_META: Record<LocationTag, { emoji: string; zh: string; en: string; color: string }> = {
+  trending:    { emoji: '🔥', zh: '話題爆紅', en: 'Trending',   color: 'bg-orange-500' },
+  hidden_gem:  { emoji: '🗺', zh: '在地私藏', en: 'Hidden Gem', color: 'bg-emerald-600' },
+  new_opening: { emoji: '✨', zh: '新開幕',   en: 'New',        color: 'bg-violet-500' },
+  evergreen:   { emoji: '📌', zh: '經典必訪', en: 'Must Visit', color: 'bg-sky-500' },
+}
+
+const CATEGORY_LABEL: Record<string, { zh: string; en: string }> = {
+  food:       { zh: '餐廳',   en: 'Restaurant' },
+  cafe:       { zh: '咖啡廳', en: 'Cafe' },
+  shopping:   { zh: '購物',   en: 'Shopping' },
+  nightlife:  { zh: '夜生活', en: 'Nightlife' },
+  hotel:      { zh: '飯店',   en: 'Hotel' },
+  attraction: { zh: '景點',   en: 'Attraction' },
 }
 
 function resolveTag(loc: Location): LocationTag {
@@ -31,7 +41,9 @@ function resolveTag(loc: Location): LocationTag {
   return 'evergreen'
 }
 
-export function LocationDetail({ location }: { location: Location }) {
+type Nearby = { location: Location; km: number }
+
+export function LocationDetail({ location, nearby = [] }: { location: Location; nearby?: Nearby[] }) {
   const router = useRouter()
   const { lang } = useLanguage()
   const [activePhoto, setActivePhoto] = useState(0)
@@ -166,7 +178,7 @@ export function LocationDetail({ location }: { location: Location }) {
           return (
             <div className="absolute bottom-4 left-4">
               <span className={`inline-flex items-center gap-1 text-[10px] font-black ${meta.color} text-white px-2 py-1 rounded-full`}>
-                <TagIcon size={12} className="shrink-0" /> {meta.zh}
+                <TagIcon size={12} className="shrink-0" /> {lang === 'zh' ? meta.zh : meta.en}
               </span>
             </div>
           )
@@ -197,7 +209,7 @@ export function LocationDetail({ location }: { location: Location }) {
               onClick={copyThai}
               className="shrink-0 flex items-center gap-1 text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#f0edff] text-[#5b4fcf] hover:bg-[#e0daff] transition-colors"
             >
-              {copied ? '複製了！' : 'ภาษาไทย'}
+              {copied ? (lang === 'zh' ? '已複製' : 'Copied!') : 'ภาษาไทย'}
             </button>
           </div>
         )}
@@ -210,7 +222,7 @@ export function LocationDetail({ location }: { location: Location }) {
           {location.price_range > 0 && (
             <span className="text-sm text-gray-400 font-semibold">{'฿'.repeat(location.price_range)}</span>
           )}
-          <span className="text-xs text-gray-400">{{ food: '餐廳', cafe: '咖啡廳', shopping: '購物', nightlife: '夜生活', hotel: '飯店', attraction: '景點' }[location.category as string] ?? location.category}</span>
+          <span className="text-xs text-gray-400">{CATEGORY_LABEL[location.category]?.[lang] ?? location.category}</span>
         </div>
 
         {/* Curator note */}
@@ -269,6 +281,20 @@ export function LocationDetail({ location }: { location: Location }) {
               {lang === 'zh' ? '社群影片' : 'Social Video'}
             </h2>
             <SocialEmbed url={location.social_embed_url} />
+          </Reveal>
+        )}
+
+        {/* 附近還有：看完這家可以順路去的其他地點 */}
+        {nearby.length > 0 && (
+          <Reveal className="mt-6">
+            <h2 className="text-[13px] font-black text-gray-700 mb-2 uppercase tracking-wide">
+              {lang === 'zh' ? '附近還有' : 'Also nearby'}
+            </h2>
+            <div className="grid grid-cols-2 gap-3">
+              {nearby.map((n) => (
+                <LocationCard key={n.location.id} location={n.location} lang={lang} distanceKm={n.km} compact />
+              ))}
+            </div>
           </Reveal>
         )}
 
