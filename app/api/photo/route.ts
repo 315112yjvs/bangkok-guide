@@ -76,8 +76,10 @@ export async function GET(req: NextRequest) {
 
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
+      const started = Date.now()
       const res = await fetchOnce()
-      if (res.ok) return imageResponse(res)
+      // 回報這次取圖花了多久：幾毫秒 = 命中 Data Cache（沒向 Google 計費），幾百毫秒 = 真的去抓 Google
+      if (res.ok) return imageResponse(res, Date.now() - started)
       // 400/403/404：照片 ref 過期（Google 會定期換掉 ref，過期後回 400 INVALID_ARGUMENT，
       // 早期是回 403）→ 用 ref 內含的 place id 換一個現行 ref 再抓一次，
       // 成功的話 CDN 照樣以原網址快取，前端不用改
@@ -99,10 +101,11 @@ export async function GET(req: NextRequest) {
   return new NextResponse('fetch failed', { status: 502 })
 }
 
-async function imageResponse(res: Response) {
+async function imageResponse(res: Response, fetchMs?: number) {
   const buf = await res.arrayBuffer()
   return new NextResponse(buf, {
     headers: {
+      ...(fetchMs !== undefined ? { 'Server-Timing': `upstream;dur=${fetchMs}` } : {}),
       'Content-Type': res.headers.get('content-type') ?? 'image/jpeg',
       // 瀏覽器 + Vercel CDN 都長快取；照片內容不變所以 immutable
       'Cache-Control': 'public, max-age=31536000, s-maxage=31536000, immutable',

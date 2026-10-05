@@ -68,7 +68,7 @@ export default async function Image({ params }: { params: Promise<{ id: string }
           display: 'flex',
           position: 'relative',
           fontFamily: 'OpenHuninn',
-          background: 'linear-gradient(135deg, #1e1b4b 0%, #4c1d95 100%)',
+          background: '#3d4aae',
         }}
       >
         {photo && (
