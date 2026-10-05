@@ -110,6 +110,20 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
     }
   }
 
+  // 只在卡片接近可視範圍時才掛上圖片。瀏覽器原生的 lazy loading 對「橫向滑動、但垂直位置在畫面內」
+  // 的卡片無效，首頁四個分區會一次抓 60 張圖（實測首次載入 5.4MB）。
+  const photoBox = useRef<HTMLDivElement>(null)
+  const [nearView, setNearView] = useState(false)
+  useEffect(() => {
+    const el = photoBox.current
+    if (!el || typeof IntersectionObserver === 'undefined') { setNearView(true); return }
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { setNearView(true); io.disconnect() }
+    }, { rootMargin: '300px 200px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
   const visibleHighlights = (location.highlights ?? []).slice(0, 2)
   const extraHighlights = (location.highlights?.length ?? 0) - 2
 
@@ -127,8 +141,8 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
           避免 <a> 巢套 <a>（無效 HTML，會導致 hydration 失敗、整頁 client 重渲染） */}
       <Link href={`/location/${location.slug ?? location.id}`} aria-label={name} className="absolute inset-0 z-10 rounded-lg" />
       {/* Photo */}
-      <div className="relative h-36 w-full overflow-hidden">
-        <Image
+      <div ref={photoBox} className="relative h-36 w-full overflow-hidden bg-paper">
+        {nearView && <Image
           src={imgSrc}
           alt={name}
           fill
@@ -136,7 +150,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
           sizes="(max-width: 768px) 50vw, 33vw"
           unoptimized
           onError={handleImgError}
-        />
+        />}
         {/* Tag label — skip evergreen */}
         {tag !== 'evergreen' && !hideTag && (
           <span className="absolute top-2 left-2 inline-flex items-center gap-1 text-[10px] font-bold bg-white text-ink px-1.5 py-0.5 rounded-sm">
@@ -174,9 +188,9 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
 
         {/* Highlights */}
         {visibleHighlights.length > 0 && (
-          <div className="flex items-center gap-1 mb-1.5 flex-wrap">
+          <div className="flex items-center gap-1 mb-1.5 overflow-hidden whitespace-nowrap">
             {visibleHighlights.map((h) => (
-              <span key={h} className="text-[10px] text-muted border border-line px-1.5 py-0.5 rounded-sm">
+              <span key={h} className="shrink-0 text-[10px] text-muted border border-line px-1.5 py-0.5 rounded-sm">
                 {h}
               </span>
             ))}
@@ -199,7 +213,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
               </span>
             )}
             {location.area && location.area !== 'Bangkok' && (
-              <span className="shrink-0 text-[10px] text-gray-400 font-medium truncate">{location.area}</span>
+              <span className="min-w-0 text-[10px] text-muted truncate">{location.area}</span>
             )}
           </div>
           <div className="flex items-center gap-1 shrink-0">

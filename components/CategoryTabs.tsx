@@ -22,6 +22,9 @@ const TABS: Tab[] = [
   { id: 'attraction', labelKey: 'categoryAttraction', Icon: IconAttraction },
 ]
 
+// 筆數不到這個數字的分類不放頁籤：點進去只有一兩家會讓人覺得網站是空的（地點仍會出現在「全部」）
+const MIN_TAB_ITEMS = 5
+
 type Props = {
   active: Category | 'all'
   onChange: (cat: Category | 'all') => void
@@ -31,7 +34,7 @@ type Props = {
 
 export function CategoryTabs({ active, onChange, lang, counts }: Props) {
   const visibleTabs = counts
-    ? TABS.filter(({ id }) => id === 'all' || (counts[id] ?? 0) > 0)
+    ? TABS.filter(({ id }) => id === 'all' || (counts[id] ?? 0) >= MIN_TAB_ITEMS)
     : TABS
 
   return (

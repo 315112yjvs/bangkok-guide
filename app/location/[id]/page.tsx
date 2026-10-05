@@ -2,6 +2,8 @@ import { notFound, permanentRedirect } from 'next/navigation'
 import type { Metadata } from 'next'
 import { readLocations, toCardLocation } from '@/lib/data'
 import { haversineKm } from '@/lib/geo'
+import { getOpeningHours } from '@/lib/placeInfo'
+import { nearestStation } from '@/lib/transit'
 import type { Location } from '@/lib/types'
 import { LocationDetail } from './LocationDetail'
 
@@ -107,13 +109,20 @@ export default async function LocationPage({ params }: { params: Promise<{ id: s
   if (!location) notFound()
   // 舊的 uuid 網址 → 永久轉到新的英文店名網址（308，讓 Google 轉移權重）
   if (byUuid && location.slug) permanentRedirect(`/location/${location.slug}`)
+
+  const hours = await getOpeningHours(location.source_url)
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(buildJsonLd(location)) }}
       />
-      <LocationDetail location={location} nearby={nearbyOf(location, locations)} />
+      <LocationDetail
+        location={location}
+        nearby={nearbyOf(location, locations)}
+        hours={hours}
+        station={nearestStation(location.lat, location.lng)}
+      />
     </>
   )
 }

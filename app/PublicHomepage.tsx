@@ -12,11 +12,13 @@ import { useShuffleSeed } from '@/hooks/useShuffleSeed'
 import { LANDMARKS, type Landmark } from '@/lib/landmarks'
 import { THEMES } from '@/lib/themes'
 import { haversineKm } from '@/lib/geo'
+import { expandQuery } from '@/lib/searchTerms'
 import { MIcon } from '@/components/icons/MaterialIcons'
 import { LocationCard } from '@/components/LocationCard'
 import { DragScroll } from '@/components/DragScroll'
 import { LocationMap } from '@/components/LocationMap'
 import { Reveal } from '@/components/Reveal'
+import { SiteFooter } from '@/components/SiteFooter'
 import { getArea, areaLabel } from '@/lib/area'
 import type { Location, Category, LocationTag } from '@/lib/types'
 
@@ -161,6 +163,8 @@ export function PublicHomepage({ locations }: Props) {
   }
 
   const filtered = useMemo(() => {
+    // 中文搜尋詞展開成英文/泰文寫法（搜「燒肉」也找得到 Mookata）
+    const terms = expandQuery(query)
     const base = locations.filter((loc) => {
       const matchCat = activeCategory === 'all' || loc.category === activeCategory
       const matchTag = activeTag === 'all' || resolveTag(loc) === activeTag
@@ -169,9 +173,10 @@ export function PublicHomepage({ locations }: Props) {
         specialFilter === 'all' ||
         specialFilter === 'nearby' ||
         (specialFilter === 'saved' && savedIds.has(loc.id))
-      const q = query.toLowerCase()
-      const matchSearch = !q || [loc.name_zh, loc.name_en, loc.description_zh, loc.description_en, loc.address, ...(loc.highlights ?? [])]
-        .some((s) => s?.toLowerCase().includes(q))
+      const haystack = terms.length
+        ? [loc.name_zh, loc.name_en, loc.description_zh, loc.description_en, loc.address, getArea(loc), ...(loc.highlights ?? [])].join('\n').toLowerCase()
+        : ''
+      const matchSearch = terms.length === 0 || terms.some((t) => haystack.includes(t))
       return matchCat && matchTag && matchArea && matchSpecial && matchSearch
     })
     if (specialFilter === 'nearby' && nearbyAnchor) {
@@ -594,6 +599,7 @@ export function PublicHomepage({ locations }: Props) {
           </section>
         )}
 
+        <SiteFooter lang={lang} />
       </div>
 
       {/* 浮動「篩選」鈕：滑過篩選列後出現，點了回到分類/篩選列 */}
