@@ -1,16 +1,56 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { readLocations, readPending } from '@/lib/data'
 
 export const runtime = 'nodejs'
-// 代理 Google Places 照片：server 端用 server key 抓一次，加長快取走 CDN，
-// 之後同一張圖全部命中快取、不再打 Google（大幅降低 Place Photo 用量），
-// 且 API key 不再外露在前端網頁。
+
+// 代理 Google Places 照片（每張 Google 收費約 US$0.007，是全站最主要的 Google 花費）。
+// 兩層快取：
+// 1) Vercel CDN（回應的 Cache-Control）：最快，但「每次部署就清空」而且分地區。
+// 2) Next Data Cache（下面 fetch 的 next.revalidate）：跨部署保留。CDN 沒命中時先看這層，
+//    所以同一張圖 30 天內只會向 Google 抓一次，不會因為部署或訪客地區不同而重複計費。
+const GOOGLE_CACHE_SECONDS = 60 * 60 * 24 * 30
+
+// 只提供這幾種寬度（卡片 480、地點頁 800、分享圖 1200），其餘就近取整。
+// 不然任何人都能用不同的 w 讓同一張圖被重複計費。
+const WIDTHS = [480, 800, 1200]
+function snapWidth(raw: number): number {
+  const w = Number.isFinite(raw) && raw > 0 ? raw : 800
+  return WIDTHS.reduce((best, x) => (Math.abs(x - w) < Math.abs(best - w) ? x : best), WIDTHS[0])
+}
+
+// 只代理站上（已上架＋待審）實際用到的照片，避免被拿來抓任意 Google 照片燒額度。
+// 讀不到資料檔時回 null，退回只檢查格式，不讓照片整個壞掉。
+let refsMemo: { at: number; refs: Set<string> | null } | null = null
+function knownRefs(): Set<string> | null {
+  // 同一個函式實例 5 分鐘內重用，不必每張圖都重讀資料檔
+  if (refsMemo && Date.now() - refsMemo.at < 5 * 60 * 1000) return refsMemo.refs
+  const refs = loadKnownRefs()
+  refsMemo = { at: Date.now(), refs }
+  return refs
+}
+function loadKnownRefs(): Set<string> | null {
+  try {
+    const refs = new Set<string>()
+    for (const loc of [...readLocations(), ...readPending()]) {
+      for (const p of loc.photos ?? []) if (p) refs.add(p)
+    }
+    return refs.size > 0 ? refs : null
+  } catch {
+    return null
+  }
+}
+
 export async function GET(req: NextRequest) {
   const ref = req.nextUrl.searchParams.get('ref') ?? ''
-  const w = Math.min(Math.max(Number(req.nextUrl.searchParams.get('w')) || 800, 100), 1600)
+  const w = snapWidth(Number(req.nextUrl.searchParams.get('w')))
 
   // 只允許 Google Places 照片 ref，避免被當成任意網址代理（SSRF）
   if (!/^places\/[\w-]+\/photos\/[\w-]+$/.test(ref)) {
     return new NextResponse('bad ref', { status: 400 })
+  }
+  const known = knownRefs()
+  if (known && !known.has(ref)) {
+    return new NextResponse('unknown ref', { status: 404 })
   }
 
   const key = process.env.GOOGLE_MAPS_API_KEY
@@ -24,7 +64,11 @@ export async function GET(req: NextRequest) {
     const ctrl = new AbortController()
     const timer = setTimeout(() => ctrl.abort(), 10000)
     try {
-      return await fetch(url, { headers: { Referer: 'https://www.bkk-local.com/' }, signal: ctrl.signal })
+      return await fetch(url, {
+        headers: { Referer: 'https://www.bkk-local.com/' },
+        signal: ctrl.signal,
+        next: { revalidate: GOOGLE_CACHE_SECONDS },
+      })
     } finally {
       clearTimeout(timer)
     }
@@ -77,6 +121,8 @@ async function fetchWithFreshRef(staleRef: string, w: number, key: string): Prom
         'X-Goog-FieldMask': 'photos',
         'Referer': 'https://www.bkk-local.com/',
       },
+      // 同一家店的現行照片清單一天查一次就好（同店多張過期 ref 不用各查一次）
+      next: { revalidate: 60 * 60 * 24 },
     })
     if (!detail.ok) return null
     const data = await detail.json()
@@ -84,6 +130,7 @@ async function fetchWithFreshRef(staleRef: string, w: number, key: string): Prom
     if (!fresh || fresh === staleRef) return null
     const res = await fetch(`https://places.googleapis.com/v1/${fresh}/media?maxWidthPx=${w}&key=${key}`, {
       headers: { Referer: 'https://www.bkk-local.com/' },
+      next: { revalidate: GOOGLE_CACHE_SECONDS },
     })
     return res.ok ? res : null
   } catch {

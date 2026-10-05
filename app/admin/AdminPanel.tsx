@@ -170,8 +170,9 @@ function PendingCard({
   })
 
   const raw = item.photos[0] ?? ''
+  // 走自家照片代理（與前台卡片同一個網址、共用快取），不要每次開後台都直接向 Google 計費
   const photo = raw.startsWith('places/')
-    ? `https://places.googleapis.com/v1/${raw}/media?maxWidthPx=800&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+    ? photoUrl(raw, 480)
     : raw || 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?w=220&h=120&fit=crop'
 
   async function save() {
@@ -239,7 +240,7 @@ function PendingCard({
     <div className="bg-white rounded-2xl overflow-hidden border border-transparent hover:border-indigo-200 transition-colors">
       <div className="flex">
         <div className="relative w-28 shrink-0">
-          <Image src={photo} alt={item.name_en} fill className="object-cover" sizes="112px" />
+          <Image src={photo} alt={item.name_en} fill className="object-cover" sizes="112px" unoptimized={raw.startsWith('places/')} />
         </div>
         <div className="flex-1 p-4">
           <div className="flex items-start justify-between gap-2 mb-1">

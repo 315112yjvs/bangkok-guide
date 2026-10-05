@@ -29,7 +29,7 @@ const SCHEMA_TYPE: Record<string, string> = {
 function buildJsonLd(loc: Location) {
   const photo = loc.photos[0]
     ? loc.photos[0].startsWith('places/')
-      ? `https://places.googleapis.com/v1/${loc.photos[0]}/media?maxWidthPx=1200&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}`
+      ? `https://www.bkk-local.com/api/photo?ref=${encodeURIComponent(loc.photos[0])}&w=1200`
       : loc.photos[0]
     : undefined
 
