@@ -142,7 +142,7 @@ export function aggregateMentions(mentions: TrendingMention[]): TrendingCandidat
     if (m.isNew) g.isNew = true
     // 同一個網址只算一次
     if (!g.evidence.some((e) => e.url === m.url)) {
-      g.evidence.push({ url: m.url, title: m.title.slice(0, 120), quote: m.why })
+      g.evidence.push({ url: m.url, title: m.title.slice(0, 120), quote: m.why, ...(m.facts ? { facts: m.facts } : {}) })
     }
   }
 

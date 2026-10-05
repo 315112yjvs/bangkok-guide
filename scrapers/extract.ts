@@ -51,6 +51,7 @@ export type TrendingMention = {
   category: Category
   isNew: boolean   // 來源是否明確說它是新開幕
   why: string      // 來源怎麼形容這家店（繁中一句話）
+  facts: string    // 來源原文裡關於這家店的具體事實（繁中，寫介紹用）
   url: string
   title: string
 }
@@ -75,7 +76,7 @@ export async function extractTrendingVenues(
         content: `以下是近一個月內關於曼谷新開幕、正在爆紅的餐廳／咖啡廳／酒吧／景點的文章或社群貼文。請抽出文中「具體提到的店家或景點」。
 
 只回傳一個 JSON 陣列，不要其他文字：
-[{"src": 1, "name": "...", "category": "...", "is_new": true, "why": "..."}]
+[{"src": 1, "name": "...", "category": "...", "is_new": true, "why": "...", "facts": "..."}]
 
 欄位：
 - src：這家店出現在哪個來源（上面的編號）。
@@ -83,6 +84,7 @@ export async function extractTrendingVenues(
 - category：food / cafe / nightlife / shopping / hotel / attraction 其中之一。
 - is_new：來源明確說是新開幕、剛開、新店才填 true，否則 false。
 - why：一句話（30 字內）寫出來源怎麼形容它、為什麼值得去。不論原文是泰文、英文或日文，一律翻成繁體中文。只能根據原文，原文沒寫就留空字串。
+- facts：把原文裡關於這家店的具體事實整理成繁體中文（120 字內）：所在位置或巷弄、招牌餐點/飲品的名稱、空間特色、主廚或品牌背景、開幕時間。只列原文有寫的，不要加自己的評語；原文只提到店名就留空字串。
 
 規則：
 - 只收位於曼谷（含近郊暖武里、北欖）的實體店家或景點。清邁、普吉、芭達雅、考艾等外府的一律不要。
@@ -112,6 +114,7 @@ ${body}`,
         category: v.category as Category,
         isNew: v.is_new === true,
         why: typeof v.why === 'string' ? v.why.trim().slice(0, 80) : '',
+        facts: typeof v.facts === 'string' ? v.facts.trim().slice(0, 300) : '',
         url: doc.url,
         title: doc.title,
       })

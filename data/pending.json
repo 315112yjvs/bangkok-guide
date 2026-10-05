@@ -1033,8 +1033,8 @@
     "id": "0c4526a3-584f-4910-9bd5-693f1eed9b13",
     "name_en": "MACHRI",
     "name_zh": "MACHRI",
-    "description_zh": "餐廳",
-    "description_en": "Restaurant",
+    "description_zh": "🍽️ 位於帕亞泰區普爾曼國王電力飯店內的新開幕泰式精緻餐廳。主廚深入研究每道菜背後的歷史與故事，以創意詮釋正宗泰國料理。招牌乳鴿與鴨肉粥皆是饕客力推，前菜擺盤精緻細膩，令人驚豔。",
+    "description_en": "🍽️ A newly opened fine Thai restaurant inside Pullman Bangkok King Power, where the chef digs deep into the history behind each dish. The pigeon is a standout, and the duck porridge is not to be missed — starters arrive beautifully plated with real wow factor.",
     "category": "food",
     "address": "8, 2 Thanon Rang Nam, Khwaeng Thanon Phaya Thai, Khet Ratchathewi, Krung Thep Maha Nakhon 10400",
     "lat": 13.759134999999999,
@@ -1061,7 +1061,11 @@
         "quote": "普爾曼國王電力飯店新開幕泰式精緻餐廳。"
       }
     ],
-    "scraped_at": "2026-10-05T06:35:30.992Z"
+    "scraped_at": "2026-10-05T06:35:30.992Z",
+    "highlights": [
+      "Pigeon",
+      "Duck Porridge"
+    ]
   },
   {
     "id": "74a7b9da-31bc-45a1-b6da-931ebccaa48b",

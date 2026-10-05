@@ -2,7 +2,9 @@ import Anthropic from '@anthropic-ai/sdk'
 import { extractPlaceId } from './maps'
 import type { Evidence, LocationTag } from './types'
 
-// 中英文店家介紹的生成邏輯：抓 Google 官方簡介＋真實評論，再讓 Claude 上網查證後撰寫。
+// 中英文店家介紹的生成邏輯：抓 Google 官方簡介＋真實評論＋爬蟲出處，讓 Claude 撰寫。
+// 預設「不上網查證」（一筆約 0.02 美元）；web: true 才會用 web_search 查證（實測一筆約 1 美元，
+// 費用主要來自搜尋結果的大量輸入 token），只留給後台單筆的「上網查證生成」按鈕。
 // 後台的「生成描述」按鈕（/api/generate-description）與爬蟲（找熱點模式）共用這一份。
 
 const CAT_ZH: Record<string, string> = {
@@ -51,6 +53,8 @@ export type GenerateInput = {
   category?: string
   // 爬蟲找到這家店時的出處（媒體文章/社群貼文怎麼形容它），給 AI 當線索
   evidence?: Evidence[]
+  // true = 上網查證（貴很多，見檔頭說明）
+  web?: boolean
 }
 
 export type GeneratedDescription = {
@@ -63,7 +67,7 @@ export type GeneratedDescription = {
 
 // 失敗時 throw（沒有 API key、模型輸出無法解析、API 錯誤）
 export async function generateDescription(input: GenerateInput): Promise<GeneratedDescription> {
-  const { name_en, address, source_url, category, evidence } = input
+  const { name_en, address, source_url, category, evidence, web = false } = input
   if (!process.env.ANTHROPIC_API_KEY) throw new Error('no anthropic key')
 
   const catZh = CAT_ZH[category ?? ''] ?? '地點'
@@ -71,14 +75,14 @@ export async function generateDescription(input: GenerateInput): Promise<Generat
   const placeFacts = placeId ? await fetchPlaceFacts(placeId) : ''
 
   const evidenceText = (evidence ?? [])
-    .filter((e) => e.quote || e.title)
+    .filter((e) => e.facts || e.quote || e.title)
     .slice(0, 5)
-    .map((e) => `- ${e.quote || e.title}（${e.url}）`)
+    .map((e) => `- ${e.facts || e.quote || e.title}（${e.url}）`)
     .join('\n')
 
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
 
-  const prompt = `你是曼谷在地旅遊指南的編輯。請針對「同一家、千真萬確的這家店」上網查證後，寫出精準且符合現實的中英文介紹。
+  const prompt = `你是曼谷在地旅遊指南的編輯。請針對「同一家、千真萬確的這家店」${web ? '上網查證後，' : '根據下方提供的資料，'}寫出精準且符合現實的中英文介紹。
 
 【目標店家】
 名稱：${name_en}
@@ -87,11 +91,12 @@ ${source_url ? `Google Maps 連結：${source_url}` : ''}
 分類：${catZh}
 
 ${placeFacts ? `【Google 官方資料與真實評論（最可靠，請優先採用）】\n${placeFacts}\n` : ''}
-${evidenceText ? `【近期媒體/社群怎麼介紹這家店（爬蟲抓到的出處，可當作線索，仍需查證）】\n${evidenceText}\n` : ''}
+${evidenceText ? `【近期媒體/社群怎麼介紹這家店（爬蟲抓到的出處）】\n${evidenceText}\n` : ''}
 
 【務必遵守】
-- 先用 web_search 查證這家店的真實資訊（招牌餐點/飲品、特色、所在巷弄、店主背景）。搜尋時帶上店名與地址，確認是曼谷同一家店，不要寫成同名的別家。
-- 只寫查得到的具體事實，絕對不要憑空想像或用空泛氛圍詞填充。
+${web
+  ? '- 先用 web_search 查證這家店的真實資訊（招牌餐點/飲品、特色、所在巷弄、店主背景）。搜尋時帶上店名與地址，確認是曼谷同一家店，不要寫成同名的別家。\n- 只寫查得到的具體事實，絕對不要憑空想像或用空泛氛圍詞填充。'
+  : '- 只能使用上方【Google 官方資料與真實評論】與【近期媒體/社群】裡出現的事實（招牌餐點/飲品、特色、所在位置）。資料沒提到的事一律不要寫，不要用你自己的印象補充，也絕對不要用空泛氛圍詞填充。\n- 資料很少時就寫短一點，寧可只有一兩句具體的話。'}
 - **絕對不要寫營業時間（幾點到幾點、星期幾營業），也不要寫價格、價位、人均消費或任何金額。** 這些資訊會單獨呈現，描述裡出現就是錯。
 - 中文 50–100 字；英文是中文的自然翻譯，保留所有具體事實，語氣像熟門熟路的朋友推薦。
 - 開頭可用一個貼切的 emoji。
@@ -105,7 +110,7 @@ ${evidenceText ? `【近期媒體/社群怎麼介紹這家店（爬蟲抓到的�
 【再判斷一個標籤 tag（依這家店的本質與知名度）】
 - trending（話題爆紅）：社群正在瘋傳、TikTok/IG 爆紅、排隊名店、近期話題度高、網美打卡熱點。
 - hidden_gem（在地私藏）：在地人才知道、藏在巷弄、觀光客少、低調私房店。
-- new_opening（新開幕）：查證到近期才新開幕（近一年內）。沒明確證據就不要選這個。
+- new_opening（新開幕）：資料明確顯示近期才新開幕（近一年內）。沒明確證據就不要選這個。
 - evergreen（經典必訪）：老字號、經典不敗、知名地標、來曼谷必訪的代表店、評價成熟穩定的名店。
 
 【再挑 1–2 個 highlight（卡片小標籤）】
@@ -114,7 +119,7 @@ ${evidenceText ? `【近期媒體/社群怎麼介紹這家店（爬蟲抓到的�
 - 嚴禁評論碎句、形容詞或空泛詞，例如 Clean、Soulful、Try it、Experience from here、A bit noisy、Booking in advance、If you are there 這類一律不要。
 - 查不到具體招牌或特色就回空陣列 []。
 
-查證完成後，你的回覆「最後一行」只輸出一個 JSON（不要加任何說明文字或 markdown 標記）：
+${web ? '查證完成後，' : ''}你的回覆「最後一行」只輸出一個 JSON（不要加任何說明文字或 markdown 標記）：
 {"zh":"中文介紹","en":"English description","tag":"trending 或 hidden_gem 或 new_opening 或 evergreen","highlights":["招牌1","招牌2"]}`
 
   let messages: Anthropic.MessageParam[] = [{ role: 'user', content: prompt }]
@@ -125,7 +130,7 @@ ${evidenceText ? `【近期媒體/社群怎麼介紹這家店（爬蟲抓到的�
     const msg = await client.messages.create({
       model: 'claude-sonnet-4-6',
       max_tokens: 2500,
-      tools: [{ type: 'web_search_20260209', name: 'web_search', max_uses: 5 }],
+      ...(web ? { tools: [{ type: 'web_search_20260209' as const, name: 'web_search' as const, max_uses: 5 }] } : {}),
       messages,
     })
 

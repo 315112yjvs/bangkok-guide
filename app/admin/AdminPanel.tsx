@@ -376,6 +376,7 @@ function PendingCard({
                             source_url: item.source_url,
                             category: form.category,
                             evidence: item.evidence,
+                            web: true,
                           }),
                         })
                         const data = await res.json()
@@ -396,7 +397,7 @@ function PendingCard({
                     }}
                     className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 disabled:opacity-50 transition-colors"
                   >
-                    {webGenerating ? '查證中...' : '🌐 上網查證生成'}
+                    {webGenerating ? '查證中...' : '🌐 上網查證生成（約 US$1）'}
                   </button>
                   <button
                     type="button"
@@ -1076,7 +1077,7 @@ export function AdminPanel() {
     setScraperStatus(
       keywords.length ? `搜尋「${keywords[0]}」等 ${keywords.length} 個關鍵字...`
         : mode === 'stock' ? 'Google 地圖補庫存中...'
-        : '找近一個月的熱點並撰寫介紹中（約 10 分鐘）...'
+        : '找近一個月的熱點並撰寫介紹中（約 3–5 分鐘）...'
     )
     try {
       const res = await fetch('/api/scraper', {

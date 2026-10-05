@@ -3,7 +3,8 @@ export type Source = 'pantip' | 'wongnai' | 'googlemaps' | 'tiktok' | 'instagram
 export type LocationTag = 'trending' | 'hidden_gem' | 'new_opening' | 'evergreen'
 
 // 爬蟲「找熱點」留下的出處：哪個網址、標題、以及它怎麼說這家店
-export type Evidence = { url: string; title: string; quote: string }
+// facts：來源原文裡關於這家店的具體事實摘要（位置、招牌、特色），寫介紹時當依據
+export type Evidence = { url: string; title: string; quote: string; facts?: string }
 
 export type Location = {
   id: string
