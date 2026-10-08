@@ -6,80 +6,64 @@ const PLACES_URL = 'https://places.googleapis.com/v1/places:searchText'
 const BANGKOK_LAT = 13.7563
 const BANGKOK_LNG = 100.5018
 
-const SEARCH_QUERIES = [
-  // Food — varied areas, cuisines, styles
-  { query: 'best Thai restaurant Sukhumvit Bangkok', category: 'food' as const },
-  { query: 'best restaurant Silom Bangkok', category: 'food' as const },
-  { query: 'best Thai food Ari Phahonyothin Bangkok', category: 'food' as const },
-  { query: 'street food Bangkok Yaowarat Chinatown', category: 'food' as const },
-  { query: 'fine dining restaurant Bangkok Sathorn', category: 'food' as const },
-  { query: 'hidden gem local food Bangkok', category: 'food' as const },
-  { query: 'seafood restaurant Bangkok', category: 'food' as const },
-  { query: 'Japanese restaurant Bangkok Thonglor', category: 'food' as const },
-  { query: 'Thai street food Ekkamai Bangkok', category: 'food' as const },
-  { query: 'dim sum restaurant Bangkok', category: 'food' as const },
-  { query: 'brunch restaurant Bangkok Thonglor', category: 'food' as const },
-  { query: 'rooftop restaurant Bangkok dinner', category: 'food' as const },
-  { query: 'authentic Thai food Bangkok local favourite', category: 'food' as const },
-  // Cafe
-  { query: 'specialty coffee cafe Thonglor Bangkok', category: 'cafe' as const },
-  { query: 'aesthetic cafe Bangkok Ari', category: 'cafe' as const },
-  { query: 'best cafe Sukhumvit Bangkok', category: 'cafe' as const },
-  { query: 'coffee roastery Bangkok', category: 'cafe' as const },
-  { query: 'brunch cafe Bangkok Ekkamai aesthetic', category: 'cafe' as const },
-  { query: 'cafe Bangkok Siam Chidlom hidden gem', category: 'cafe' as const },
-  // Shopping
-  { query: 'night market Bangkok shopping', category: 'shopping' as const },
-  { query: 'Chatuchak weekend market Bangkok', category: 'shopping' as const },
-  { query: 'mall Bangkok MBK Siam Paragon', category: 'shopping' as const },
-  { query: 'ICONSIAM Bangkok shopping', category: 'shopping' as const },
-  { query: 'Or Tor Kor market Bangkok fresh food', category: 'shopping' as const },
-  // Nightlife
-  { query: 'rooftop bar Bangkok night view', category: 'nightlife' as const },
-  { query: 'cocktail bar Bangkok Ekkamai Thonglor', category: 'nightlife' as const },
-  { query: 'jazz bar live music Bangkok', category: 'nightlife' as const },
-  { query: 'sky bar Bangkok best rooftop panoramic', category: 'nightlife' as const },
-  { query: 'wine bar craft cocktail Bangkok Silom', category: 'nightlife' as const },
-  // Hotel
-  { query: 'boutique hotel Bangkok Silom', category: 'hotel' as const },
-  { query: 'luxury hotel Bangkok Sukhumvit', category: 'hotel' as const },
-  { query: 'design hotel Bangkok riverside', category: 'hotel' as const },
+export type QueryConfig = { query: string; category: 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel'; local?: boolean }
 
-  // ── Thai-language queries — surfaces local favourites not found via English ──
-  // Food
-  { query: 'ร้านอาหารไทย กรุงเทพ อร่อย คนไทยชอบ', category: 'food' as const, local: true },
-  { query: 'ข้าวมันไก่ กรุงเทพ เด็ด', category: 'food' as const, local: true },
-  { query: 'ก๋วยเตี๋ยว ร้านดัง กรุงเทพ', category: 'food' as const, local: true },
-  { query: 'ส้มตำ ร้านดัง กรุงเทพ', category: 'food' as const, local: true },
-  { query: 'หมูกระทะ กรุงเทพ อร่อย', category: 'food' as const, local: true },
-  { query: 'อาหารอีสาน กรุงเทพ เด็ด', category: 'food' as const, local: true },
-  { query: 'ผัดไทย ร้านดัง กรุงเทพ', category: 'food' as const, local: true },
-  { query: 'ร้านอาหารเช้า กรุงเทพ คนไทย', category: 'food' as const, local: true },
-  { query: 'ต้มยำ ร้านดัง กรุงเทพ', category: 'food' as const, local: true },
-  { query: 'ร้านอาหาร ย่านลาดพร้าว ยอดนิยม', category: 'food' as const, local: true },
-  { query: 'ร้านอาหาร ย่านรัชดา พระราม 9', category: 'food' as const, local: true },
-  // Cafe
-  { query: 'คาเฟ่ กรุงเทพ คนไทยชอบ สวย', category: 'cafe' as const, local: true },
-  { query: 'ร้านกาแฟ สด กรุงเทพ อร่อย', category: 'cafe' as const, local: true },
-  { query: 'คาเฟ่เปิดใหม่ กรุงเทพ 2025', category: 'cafe' as const, local: true },
-  // Nightlife
-  { query: 'บาร์คนไทย กรุงเทพ สนุก', category: 'nightlife' as const, local: true },
+// 補庫存用的關鍵字：全部用泰文，照泰國人自己找店的講法下，目的是找到在地人常去的店。
+// 刻意不放英文關鍵字、大商場、觀光夜市和飯店：那些會撈到觀光客取向的地方，站主不需要。
+// 不寫年份，避免過時。
+const SEARCH_QUERIES: QueryConfig[] = [
+  // ── 泰國人常吃的料理 ──
+  { query: 'ร้านอาหารไทย กรุงเทพ อร่อย คนไทยชอบ', category: 'food', local: true },
+  { query: 'ข้าวมันไก่ กรุงเทพ เด็ด', category: 'food', local: true },
+  { query: 'ก๋วยเตี๋ยว ร้านดัง กรุงเทพ', category: 'food', local: true },
+  { query: 'ก๋วยเตี๋ยวเรือ กรุงเทพ ร้านดัง', category: 'food', local: true },
+  { query: 'ส้มตำ ร้านดัง กรุงเทพ', category: 'food', local: true },
+  { query: 'อาหารอีสาน กรุงเทพ เด็ด', category: 'food', local: true },
+  { query: 'อาหารใต้ กรุงเทพ อร่อย', category: 'food', local: true },
+  { query: 'อาหารเหนือ ข้าวซอย กรุงเทพ', category: 'food', local: true },
+  { query: 'หมูกระทะ กรุงเทพ อร่อย', category: 'food', local: true },
+  { query: 'ผัดไทย ร้านดัง กรุงเทพ', category: 'food', local: true },
+  { query: 'ต้มยำ ร้านดัง กรุงเทพ', category: 'food', local: true },
+  { query: 'ร้านข้าวแกง เจ้าดัง กรุงเทพ', category: 'food', local: true },
+  { query: 'ข้าวต้มโต้รุ่ง กรุงเทพ', category: 'food', local: true },
+  { query: 'โจ๊ก ข้าวต้ม ร้านอาหารเช้า กรุงเทพ คนไทย', category: 'food', local: true },
+  { query: 'ร้านอาหารทะเล กรุงเทพ คนไทยไป', category: 'food', local: true },
+  { query: 'ร้านอาหารจีน เยาวราช คนไทยไป', category: 'food', local: true },
+  { query: 'ร้านอาหารริมน้ำ กรุงเทพ คนไทย', category: 'food', local: true },
 
-  // ── 在地老店 / 傳說級 / 隱藏店（泰國人找店的講法，最能避開觀光客店）──
-  { query: 'ร้านเจ้าเก่า กรุงเทพ ในตำนาน อร่อย', category: 'food' as const, local: true },
-  { query: 'ร้านลับ กรุงเทพ คนท้องถิ่น เด็ด', category: 'food' as const, local: true },
-  { query: 'ร้านเด็ด บิบกูร์มองด์ มิชลิน กรุงเทพ', category: 'food' as const, local: true },
-  { query: 'ร้านอาหาร คนไทยรีวิว Wongnai กรุงเทพ', category: 'food' as const, local: true },
+  // ── 老店、私房店（泰國人找店的講法，最能避開觀光客店）──
+  { query: 'ร้านเจ้าเก่า กรุงเทพ ในตำนาน อร่อย', category: 'food', local: true },
+  { query: 'ร้านลับ กรุงเทพ คนท้องถิ่น เด็ด', category: 'food', local: true },
+  { query: 'ร้านเด็ด บิบกูร์มองด์ มิชลิน กรุงเทพ', category: 'food', local: true },
+  { query: 'ร้านอาหาร คนไทยรีวิว Wongnai กรุงเทพ', category: 'food', local: true },
 
-  // ── 觀光客較少去的住宅/在地生活圈 ──
-  { query: 'ร้านอาหารเด็ด ย่านลาดพร้าว เกษตร นวมินทร์', category: 'food' as const, local: true },
-  { query: 'ร้านอร่อย ย่านรามคำแหง บางกะปิ', category: 'food' as const, local: true },
-  { query: 'ร้านอาหาร ย่านอ่อนนุช อุดมสุข เด็ด', category: 'food' as const, local: true },
-  { query: 'ร้านเด็ด ฝั่งธน ปิ่นเกล้า จรัญ', category: 'food' as const, local: true },
-  { query: 'ร้านอาหาร ย่านประชาชื่น งามวงศ์วาน', category: 'food' as const, local: true },
-  { query: 'ร้านอาหาร ย่านบางนา ศรีนครินทร์', category: 'food' as const, local: true },
-  { query: 'คาเฟ่ ย่านลาดพร้าว เกษตร คนไทยชอบ', category: 'cafe' as const, local: true },
-  { query: 'ร้านกาแฟลับ ฝั่งธน คนท้องถิ่น', category: 'cafe' as const, local: true },
+  // ── 觀光客較少去的住宅區、在地生活圈 ──
+  { query: 'ร้านอาหารเด็ด ย่านลาดพร้าว เกษตร นวมินทร์', category: 'food', local: true },
+  { query: 'ร้านอาหาร ย่านรัชดา พระราม 9', category: 'food', local: true },
+  { query: 'ร้านอร่อย ย่านรามคำแหง บางกะปิ', category: 'food', local: true },
+  { query: 'ร้านอาหาร ย่านอ่อนนุช อุดมสุข เด็ด', category: 'food', local: true },
+  { query: 'ร้านเด็ด ฝั่งธน ปิ่นเกล้า จรัญ', category: 'food', local: true },
+  { query: 'ร้านอาหาร ย่านประชาชื่น งามวงศ์วาน', category: 'food', local: true },
+  { query: 'ร้านอาหาร ย่านบางนา ศรีนครินทร์', category: 'food', local: true },
+  { query: 'ร้านอาหาร ย่านอารีย์ สะพานควาย คนไทย', category: 'food', local: true },
+
+  // ── 咖啡廳、甜點 ──
+  { query: 'คาเฟ่ กรุงเทพ คนไทยชอบ สวย', category: 'cafe', local: true },
+  { query: 'ร้านกาแฟ สด กรุงเทพ อร่อย', category: 'cafe', local: true },
+  { query: 'คาเฟ่เปิดใหม่ กรุงเทพ', category: 'cafe', local: true },
+  { query: 'คาเฟ่ลับ กรุงเทพ คนไม่เยอะ', category: 'cafe', local: true },
+  { query: 'ร้านกาแฟ specialty กรุงเทพ คั่วเอง', category: 'cafe', local: true },
+  { query: 'ร้านขนมหวาน เบเกอรี่ กรุงเทพ คนไทยชอบ', category: 'cafe', local: true },
+  { query: 'คาเฟ่ ย่านลาดพร้าว เกษตร คนไทยชอบ', category: 'cafe', local: true },
+  { query: 'ร้านกาแฟลับ ฝั่งธน คนท้องถิ่น', category: 'cafe', local: true },
+  { query: 'คาเฟ่ ย่านอ่อนนุช พระโขนง บางนา', category: 'cafe', local: true },
+
+  // ── 泰國人自己去的酒吧 ──
+  { query: 'บาร์คนไทย กรุงเทพ สนุก', category: 'nightlife', local: true },
+  { query: 'บาร์ลับ กรุงเทพ', category: 'nightlife', local: true },
+  { query: 'ร้านนั่งชิล ดนตรีสด กรุงเทพ', category: 'nightlife', local: true },
+  { query: 'คราฟต์เบียร์ กรุงเทพ ร้านดัง', category: 'nightlife', local: true },
+  { query: 'ร้านเหล้า นั่งชิล ย่านลาดพร้าว รัชดา', category: 'nightlife', local: true },
 ]
 
 const PRICE_MAP: Record<string, 1 | 2 | 3 | 4> = {
@@ -104,7 +88,6 @@ type GMPlace = {
   reviews?: Array<{ text?: { text: string }; originalText?: { text: string } }>
 }
 
-export type QueryConfig = { query: string; category: 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel'; local?: boolean }
 
 async function fetchPlacesQuery(query: string, category: QueryConfig['category'], apiKey: string, local = false): Promise<ScrapedItem[]> {
   const res = await fetch(PLACES_URL, {
@@ -122,9 +105,11 @@ async function fetchPlacesQuery(query: string, category: QueryConfig['category']
     body: JSON.stringify({
       textQuery: query,
       maxResultCount: 10,
-      // 用泰國在地視角排序：regionCode 一律 TH；在地查詢再切成泰文，讓 Google 回傳當地人常去的店
+      // 用泰國在地視角排序（regionCode TH）。關鍵字是泰文，但店名一律要英文版：
+      // 之前用 languageCode 'th' 會拿到純泰文店名，台灣讀者看不懂，事後還得一家家補拼音。
+      // 店家本身沒有英文名的，Google 仍會回泰文。
       regionCode: 'TH',
-      languageCode: local ? 'th' : 'en',
+      languageCode: 'en',
       locationBias: { circle: { center: { latitude: BANGKOK_LAT, longitude: BANGKOK_LNG }, radius: 10000 } },
     }),
   })

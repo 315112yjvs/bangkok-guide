@@ -1197,10 +1197,10 @@ export function AdminPanel() {
             <button
               onClick={() => runScraper('stock')}
               disabled={scraperRunning}
-              title="用固定的 Google 地圖關鍵字找評價好的常青店（跟熱不熱門無關）"
+              title="用泰文關鍵字在 Google 地圖找泰國人常去的店（美食、咖啡廳、酒吧），不含觀光客取向的地方"
               className="mt-1.5 w-full bg-white/5 hover:bg-white/10 disabled:opacity-50 text-slate-300 text-[11px] font-bold rounded-xl py-2"
             >
-              補庫存（Google 常青店）
+              補庫存（泰文關鍵字找在地店）
             </button>
           )}
           <p className="text-slate-500 text-[10px] text-center mt-1.5">{scraperStatus}</p>
