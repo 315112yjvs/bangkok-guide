@@ -4922,7 +4922,7 @@
     "name_zh": "BAY Aree",
     "description_en": "Ari's most raw and characterful café ☕ BAY stands out immediately — weathered rust-metal exterior panels, leather scraps hanging from the windows, and metal chairs spilling out onto the Ari sidewalk in the most Bangkok way possible. Inside: a warm loft aesthetic, a rotating menu of specialty beans with barista guidance, excellent matcha cake, and a smooth transition to cocktails and DJ sets come evening. The kind of café that makes Ari feel like no other neighbourhood in the city.",
     "description_zh": "Ari 最有個性的鏽鐵街頭咖啡廳 ☕ BAY 用廢棄工廠鏽蝕金屬板打造外牆，路邊金屬椅直接架在人行道上，多款單品豆任你選、抹茶蛋糕質感細膩，白天是咖啡空間、傍晚 DJ 入場變身小酒吧，周末偶有市集，是 Ari 最不一樣的那個角落。",
-    "category": "nightlife",
+    "category": "cafe",
     "address": "111 ถนน Phahonyothin Soi 7, Phaya Thai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
     "lat": 13.782343299999999,
     "lng": 100.54309219999999,
@@ -4952,7 +4952,10 @@
     "highlights": [
       "Single Origin Coffee",
       "Matcha Cake"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "TAIBAN (ใต้บ้าน)",
@@ -11480,7 +11483,7 @@
     "name_zh": "Salaa.bkk",
     "description_zh": "🍵 藏身 Soi Pridi Banomyong 15 三巷深處，Salaa.bkk 以落地大玻璃窗與手工陶瓷角落打造出讓人想放慢腳步的空間。招牌抹茶、咖啡皆有好評，麵包區的酸種麵包更讓人忍不住帶回家，不少常客就是專程為此再訪。",
     "description_en": "🍵 Tucked into Lane 3 off Soi Pridi Banomyong 15, Salaa.bkk draws you in with its huge glass windows and a carefully curated ceramics corner. The matcha and coffee are crowd favorites, but the real danger zone is the sourdough bread section — regulars keep coming back just for that.",
-    "category": "shopping",
+    "category": "cafe",
     "address": "259 179 Soi Pridi Banomyong 15, Lane 3, Khwaeng Phra Khanong Nuea, Watthana, Krung Thep Maha Nakhon 10110",
     "lat": 13.721567199999999,
     "lng": 100.59249469999999,
@@ -11517,7 +11520,10 @@
       "places/ChIJM3hZOgCf4jAReu_9SzUjB78/photos/Aa-ngMYnE93PGhefWSjG7MSPausv5MltWKU5LC584-8KXvu-nblg6L7vfjsjtapAs77OmK4zRYxaWFUoaSS75DrYj8dBwCDdfLfMjlw1qGyx8pjEJUxnA_vV6Tx1RrAnA41SzL1FXrpcaoi7kzJJTHDyGXxsshJgkUKtzAaUWOHSpNQ4YMiATJV5zyUDALvhR5pOmeHvDWExcc4X2gpfjgsBSGCMj2Oc7JIPbtIARzaFk6EQHMzjK1hND-rcf6nC7wJp67OqNEBgbp3TnkwucocCMhqicle7cb27Gd78fnIbL_63tYrF77tET28ASg1djhLDHjMbts3hBdU0PuVteqAJ0jD4red9f8NOU1UffJQDL9GHA5IORYGPObkjLz0N2VdAnCZGrtXRnainLxBjPB99U_s66ff4hva_JGsxtIIB2SoRm2LdYoTtjIedssYO6w",
       "places/ChIJM3hZOgCf4jAReu_9SzUjB78/photos/Aa-ngMbL9fZUaIOP1btu5vrVtS_TSN4U0MQS8OXJIem-qEQbWZjuRoUnWKXrnGueOFzkDwQBimyvBy772QWIKgYZvI4R7Dal_WQJ5-UqAmkeQwxZFjKPC5z0WvEnNu3wfbq7YVFlsnzc-VvfDF3dSkP6f9n89riDmo7DskqIa_6pPDShusbVWr7MRK8hiEKvf0f9l3HfTDG-N6rd46wj-ufxQ_OezgtyF1lPzrP_GYKs9GQP32ZWJXtZPBCKhjPF7MiSt544MaCL2D7ZDI4pbGJYxVo7Qk9kNFa69IpPx7ChDYwkbhLeydly8L2DGdOO44KDnRHNaGFjE5ffLY5sAa8-KKBllN9wDJQuPFgdkZRAqH0l6RXD-jFUvGMF9lCbd9hORCJlJuGatkyZKS_ntmV4d_NIAa0NUcX2RJ5SKZN129Qudm5SmNpTIegb_4fDdQ2S",
       "places/ChIJM3hZOgCf4jAReu_9SzUjB78/photos/Aa-ngMaHoel2x-UB01YbbMtLH5pKuBIWRHGuJbDVQcAH_hqP5cA3Ta520b1XWLGpkkFkzK28tPFhd8J3osMv04BtWH5XPt-J7OScRYHyqz0LA7Pr6e3MbAyh2DiqEC6z8Eb3ghlPhO_GjvJsOuZmEotEZHLKlcRvBARhQ3twObN-cLrE9dmlOzHfsQ66V_ARy87bjrX5KEnsJ0aTGIjUG2DNQun5wlxjBBCOCeuGvLWBijp31wKx7SlWGmNw0Xh9H3puTvMRS1D2sSYIwrUrm368PP0p4auoZC_kVJClxnCCLvkKmSWmbZJBZoOyiROonNC-jMCn-XzAoxaIIqLIQaGIHQ5XVVjdNe7vwHhy_qhAqC0le6JoLMnY21i5tqo1O8yaT77aD7YMDdmS1mxQhse89o2WZ46ypYGiaJFDwDb5Hcx-d2B7nwBxprG882fpPQ"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "id": "654e929c-430b-4190-893d-62df298dea19",
@@ -11525,7 +11531,7 @@
     "name_zh": "Openface",
     "description_zh": "🏠 藏在拉瑪坎恆 21 巷的韓式木屋建築，讓人瞬間以為飛到首爾城水（Seongsu）。Openface 主打 All-Day Brunch 與烘焙，菜單融入韓式與亞洲元素：Eggs Benedict 搭配鮮榨萊姆荷蘭醬、酥脆海苔配自家醃燻鮭魚、炸雞鬆餅，柚子可頌與杏仁可頌同樣叫座。開幕不久即迅速爆滿，Google 4.7 分實至名歸。",
     "description_en": "🏠 Tucked into Soi Ramkhamhaeng 21, Openface is housed in a Korean-style timber building that feels straight out of Seoul's Seongsu district. The all-day brunch and bakery menu brings a Korean-Asian twist to Western classics: Eggs Benedict with a lime-brightened hollandaise, crispy nori with house-cured salmon, chicken and waffles, plus standout pastries including a yuzu croissant and almond croissant. Packed since its first week and a well-earned Google 4.7 rating.",
-    "category": "food",
+    "category": "cafe",
     "address": "86/2 พลับพลา Soi Ramkhamhaeng 21, Khwaeng Phlabphla, Khet Wang Thonglang, Krung Thep Maha Nakhon 10310",
     "lat": 13.76333,
     "lng": 100.60211780000002,
@@ -11562,7 +11568,10 @@
       "places/ChIJ80KVAguf4jARkckB6zzr3ss/photos/Aa-ngMYd7dhr5BmBq10dUWdlN97UGRvcmw3p8bt0wb_E8i3bw7Qj_QOtIsUbmTbmcWYnalLN5vYf3Akudpp4dnQUOVXk27oy9JG8MIKgfM-JuF6b87datcvMEq7EH8pDdVdV_vef8zG8CoYN7LQIOK878nj5Ob1emWFoVIxXB1nZYgtU6ZGeE1_BaU5JM75TbrYvGqp6LxV4ccfpCsPT70_ApLJovv9J8feMM_a_tUIMgFuv_Mwfrs7P1qroHRQwVawdoZPHOk6_TkZ5tTZxGrsuU6JX4uagsegyiHC_ERuwedSVRdmZDu11GX9-QplUbuJin-Ox204cZvLu4loLrm3Y5utm8e533C1yDsOxH6jHAlxj17bEnCyyWN69QPvo4_NukuyE17_SFC-SVG0E-LKstlybtCnXbffM89Sv96LOKoYg",
       "places/ChIJ80KVAguf4jARkckB6zzr3ss/photos/Aa-ngMaQHTV-M255cOhP7XM9OG4qs7NwE8viwVUqy03w3zkTfS_5VDMUC_bFgGPG30szZxTjZfuaj0VGgN1RotxKqVMjTj8ja_8YVr77cmeonkRWleH1BfHcQxHSiC-AOhzWKdk4m673WBZN-wrUmX2In62pyoo5gL1WQ-mRcCpBxuvxWauECTz94dsrzUCZ9Xzpz__-YYbTswdJ31e8dVnQJw6z4JNjGoCj_nunkxtQGhVQZNvdRyZTmmPXUt5Rv7wcyxgjRD6098Uq7u0g3QkNh_gr4xPbdt8eRdXLiEalh0krGzNZelsPbCROTv4_DvYCNg-zrd4FroK45Q7jTvRfr4xWexK3_rK5gwk4SKnO-rnpswMVIJ6NKNAeBurXHaB_8T1AfVQgdGLokFaJT1H8ojpmu4VkEv7Kr9OyfyD_PVXe2A",
       "places/ChIJ80KVAguf4jARkckB6zzr3ss/photos/Aa-ngMY13rpY7CfzgboVJ7JdxTmHl_vc4G_I71sKo5XT3pJ0D2JmBTBYHVOx9kgV8L5oyu_8XJZVnnOsMC9rWTxLlRjlDmo7KTxvsaPxyD6E7udpUbZBsTD8ByHA0GET2EmTI0saEjZNHhg5XMLEtRG34KZA1BUWW5ndnZxuIvF6_iXpl4kA7vjOssRox35Ous0EQZVQ69s5uBTquqY95eYTavr_twMrjFDjfOCC8XLHHUjt8zz3Mu6TTzJ92ypy9S-Lsj1lBfNQnu95LCB_vtGfY18KlmYCNJjpqoeecx0viSiSkKiDqR27fLHNHSLQnlU5GWQVZzYFLDtwW6mCNZ9Rtoevgy3K9vwkicuW_duVXhBnpWitfVQm4_bx-tcZbxI56dipHvniJQ--ZzKsR4CxzbyQ6bDxaPqIrVFb435j7EGTbw"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "id": "c3e04684-cd7b-455c-b1ad-527ebffa3a7e",
