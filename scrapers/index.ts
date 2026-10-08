@@ -8,6 +8,7 @@ import { enrichItem } from './enricher'
 import { classifyCategory } from './extract'
 import { categoryLabel } from './shared'
 import { findTrendingCandidates, type TrendingCandidate } from './trending'
+import { downloadPhotos } from '@/lib/downloadPhotos'
 
 // trending：找近一個月被社群/媒體提到的店（預設）
 // stock：用 Google 地圖固定關鍵字補庫存（評價好的常青店，跟熱不熱門無關）
@@ -179,6 +180,8 @@ export async function runAllScrapers(customKeywords?: string[], mode: ScrapeMode
   if (newItems.length > 0) {
     const current = readPending()
     writePending([...current, ...newItems])
+    // 先把新店的封面下載成本機檔：後台審核時直接看本機圖，不用每次預覽都向 Google 付照片費
+    downloadPhotos()
   }
 
   console.log(`Scrapers done — added ${newItems.length} new items`)
