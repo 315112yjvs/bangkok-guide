@@ -17,7 +17,7 @@ const covers = existsSync(COVERS_PATH) ? JSON.parse(readFileSync(COVERS_PATH, 'u
 const locations = JSON.parse(readFileSync(PATH, 'utf-8'))
 
 function placeIdOf(loc) {
-  const ref = (loc.photos ?? []).find((p) => p?.startsWith('places/'))
+  const ref = [...(loc.photo_refs ?? []), ...(loc.photos ?? [])].find((p) => p?.startsWith('places/'))
   return ref?.split('/')[1] ?? null
 }
 
@@ -37,7 +37,9 @@ async function refresh(loc) {
   if (photos.length === 0) return { loc, status: 'no-photos' }
   const cover = covers[loc.id]
   if (cover > 0 && cover < photos.length) photos.unshift(...photos.splice(cover, 1))
-  loc.photos = photos
+  // 已改用本機照片檔的店：只更新備存的 ref，網站顯示的仍是本機檔
+  if (loc.photos?.[0]?.startsWith('/photos/')) loc.photo_refs = photos
+  else loc.photos = photos
   return { loc, status: 'ok', count: photos.length }
 }
 

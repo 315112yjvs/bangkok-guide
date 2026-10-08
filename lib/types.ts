@@ -19,7 +19,8 @@ export type Location = {
   address_th?: string    // Thai address for copy-to-taxi
   lat: number
   lng: number
-  photos: string[]
+  photos: string[]           // 本機檔路徑（/photos/...）或 Google 照片 ref（places/...）
+  photo_refs?: string[]      // 已改用本機檔的店：原本的 Google 照片 ref（日後重抓時用）
   source: Source
   source_url: string
   rating: number
