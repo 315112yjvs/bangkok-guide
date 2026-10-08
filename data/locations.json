@@ -302,8 +302,8 @@
     ]
   },
   {
-    "name_en": "ครัวพิศมัย",
-    "name_zh": "ครัวพิศมัย",
+    "name_en": "Krua Phitsamai",
+    "name_zh": "Krua Phitsamai 東北菜小館",
     "description_en": "Hidden in the Ratchathewi alleyways is this homestyle Isaan spot 🌶️ ครัวพิศมัย The food is unpretentious and honest—every bite tastes authentically Northeast Thai, with heat that hits just right and salt that's perfectly balanced. It feels like eating at a Thai friend's house.",
     "description_zh": "藏在拉差貼威巷弄裡的家常東北菜 🌶️ ครัวพิศมัย 料理樸實不花俏，每一口都是道地的อีสาน味，辣得過癮、鹹得剛好，像在泰國朋友家裡吃飯。",
     "category": "food",
@@ -336,11 +336,12 @@
     "highlights": [
       "Isaan Cuisine",
       "Spicy"
-    ]
+    ],
+    "name_th": "ครัวพิศมัย"
   },
   {
-    "name_en": "ปิ้งเนย สาขาอนุสาวรีย์ชัยฯ",
-    "name_zh": "ปิ้งเนย สาขาอนุสาวรีย์ชัยฯ",
+    "name_en": "Ping Noei (Victory Monument)",
+    "name_zh": "Ping Noei 奶油燒烤吃到飽（勝利紀念碑）",
     "description_en": "Just 339 baht for all-you-can-eat AND a Bangkok skyline view 🔥 ปิ้งเนย takes over the rooftop of Victory Hub with open-air grilling that overlooks the BTS Skytrain zipping past below. Grab from over 60 different cuts of beef, seafood, and pork, mix and match between three different types of grills, and eat for as long as you want. This is honestly how every Bangkok night should go.",
     "description_zh": "339 銖吃到飽，還附贈曼谷天際線 🔥 ปิ้งเนย 在 Victory Hub 頂樓露天烤肉，俯瞰 BTS 輕軌穿梭而過，牛肉、海鮮、豬肉超過 60 種食材隨你夾，三種爐具自由搭配，不限時間，夜晚就該這樣過。",
     "category": "food",
@@ -373,7 +374,8 @@
     "highlights": [
       "All-you-can-eat",
       "Rooftop View"
-    ]
+    ],
+    "name_th": "ปิ้งเนย สาขาอนุสาวรีย์ชัยฯ"
   },
   {
     "name_en": "Landhaus Bakery",
@@ -974,8 +976,8 @@
     ]
   },
   {
-    "name_en": "ร้านฮ๊อทพ๊อทหอยย๊า",
-    "name_zh": "ร้านฮ๊อทพ๊อทหอยย๊า",
+    "name_en": "Hot Pot Hoi Ya",
+    "name_zh": "Hot Pot Hoi Ya 貝類火鍋",
     "description_en": "Thailand's first-ever! Shellfish hot pot with a fire show at every table 🔥🦪 ฮ๊อทพ๊อทหอยย๊า Hidden away in Ratchada for ages, this place serves up fresh clams and seafood with their signature seafood sauce—and every dish arrives with a dramatic burst of flames. It's seriously delicious AND totally Instagram-worthy. There's only one location, so if you want it, you've gotta make the trip.",
     "description_zh": "泰國首創！每桌都有火焰秀的貝類火鍋 🔥🦪 ฮ๊อทพ๊อทหอยย๊า 在拉差達藏了好久，新鮮蛤蜊、海鮮配上獨門海鮮醬，每道上桌都伴隨火焰噴發，好吃又好拍，只有這一家分店，想吃就得特地來。",
     "category": "food",
@@ -1008,7 +1010,8 @@
     "highlights": [
       "Clam Hotpot",
       "Flaming Show"
-    ]
+    ],
+    "name_th": "ร้านฮ๊อทพ๊อทหอยย๊า"
   },
   {
     "name_en": "Peppina (Sukhumvit Flagship Branch)",
@@ -1244,7 +1247,7 @@
     "lat": 13.7205921,
     "lng": 100.4764144,
     "source": "googlemaps",
-    "source_url": "https://maps.app.goo.gl/XJsTkxKUS5SV2Lcz8",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=AantArm%20Cafe%201231%2F6%20%E0%B8%96.%20%E0%B9%80%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B9%84%E0%B8%97%20Khwaeng%20Talat%20Phlu%2C%20Khet%20Thon%20Buri%2C%20Krung%20Thep%20Maha%20Nakhon%2010600%2C%20Thailand&query_place_id=ChIJTVQxg1uY4jARGtQTwopM_uI",
     "rating": 4.7,
     "price_range": 2,
     "tag": "trending",
@@ -3334,8 +3337,8 @@
     ]
   },
   {
-    "name_en": "เฮงหอยทอด - เอกมัย",
-    "name_zh": "เฮงหอยทอด - เอกมัย",
+    "name_en": "Heng Hoi Tod (Ekkamai)",
+    "name_zh": "Heng Hoi Tod 蚵仔煎（Ekkamai）",
     "description_en": "One of CNN's top 5 street foods in the world 🦪 Heng Hoi Tod Chaw Lae has been frying oyster omelettes the right way for decades — crispy batter that stays crispy, plump fresh oysters, and a dipping sauce that ties it all together. The Ekkamai branch sits right at Soi 14, with Pad Thai Tom Yum and mussel omelette rounding out a menu that Bangkok locals grew up eating. All for under 200 baht.",
     "description_zh": "CNN 評選全球五大街頭小吃就是這個 🦪 เฮงหอยทอดชาวเล 蚵仔煎酥脆不吸油、海瓜子鮮甜飽滿、Pad Thai Tom Yum 酸辣夠勁，在 Ekkamai 14 巷口吃一盤才百來銖，是曼谷人從小吃到大的那種味道。",
     "category": "food",
@@ -3369,7 +3372,7 @@
       "Oyster Omelette",
       "Pad Thai"
     ],
-    "name_th": "",
+    "name_th": "เฮงหอยทอด - เอกมัย",
     "address_th": "",
     "hashtags": []
   },
@@ -6354,7 +6357,7 @@
       "/photos/66e6f493-eb4c-493d-a6e0-61ef43dab07c/2.jpg",
       "/photos/66e6f493-eb4c-493d-a6e0-61ef43dab07c/3.jpg"
     ],
-    "source_url": "https://pantip.com/topic/36937705",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=My%20Grandparent's%20House%20253%20Soi%20Somdet%20Chao%20Phraya%203%2C%20Khwaeng%20Somdet%20Chao%20Phraya%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600%2C%20Thailand&query_place_id=ChIJbXlIIl6Z4jARzxHC_F9ml9E",
     "rating": 4.3,
     "price_range": 2,
     "tag": "hidden_gem",
@@ -6391,7 +6394,7 @@
       "/photos/d3b4997b-a6b7-4405-9400-12cac5371e64/2.jpg",
       "/photos/d3b4997b-a6b7-4405-9400-12cac5371e64/3.jpg"
     ],
-    "source_url": "https://pantip.com/topic/36937705",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Aroi%20Sushi%2040%20Soi%20New%20Phetchaburi%2C%20%E0%B9%80%E0%B9%80%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B0%E0%B8%9B%E0%B8%B4%20Khet%20Huai%20Khwang%2C%20Krung%20Thep%20Maha%20Nakhon%2010310%2C%20Thailand&query_place_id=ChIJS3jasVqe4jARB3lcX4YGz78",
     "rating": 4.4,
     "price_range": 2,
     "tag": "hidden_gem",
@@ -6428,7 +6431,7 @@
       "/photos/502bb220-45aa-4e00-8906-8d10196a8d3a/2.jpg",
       "/photos/502bb220-45aa-4e00-8906-8d10196a8d3a/3.jpg"
     ],
-    "source_url": "https://pantip.com/topic/42225798",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Yoong%20Khao%20Hom%20355%20%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%20%E0%B9%81%E0%B8%AD%E0%B8%A1%E0%B8%9E%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%84%20%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%20%E0%B8%9A%E0%B8%B5%20101%20%E0%B8%96%E0%B8%99%E0%B8%99%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87%2C%20%E0%B8%A7%E0%B8%B1%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%2C%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9B%E0%B8%97%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B1%E0%B8%99%20Bangkok%2010330%2C%20Thailand&query_place_id=ChIJt3mZ_SuZ4jARWTtL0mc9C6k",
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
@@ -6465,7 +6468,7 @@
       "/photos/b5ef1b09-b168-4cfd-810f-ee0e05491037/2.jpg",
       "/photos/b5ef1b09-b168-4cfd-810f-ee0e05491037/3.jpg"
     ],
-    "source_url": "https://pantip.com/topic/42225798",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Penlaos%20Rama%203%20-%20%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%A5%E0%B8%B2%E0%B8%A7%20%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%A1%203%20662%2069-70%20Thanon%20Rama%20III%2C%20Khwaeng%20Bang%20Phong%20Phang%2C%20Khet%20Yan%20Nawa%2C%20Krung%20Thep%20Maha%20Nakhon%2010120%2C%20Thailand&query_place_id=ChIJS9eFKaej4jARv655k8NwS-Q",
     "rating": 4.3,
     "price_range": 2,
     "tag": "evergreen",
@@ -6502,7 +6505,7 @@
       "/photos/41609391-3bc0-4de6-8574-9d2e7c0db143/2.jpg",
       "/photos/41609391-3bc0-4de6-8574-9d2e7c0db143/3.jpg"
     ],
-    "source_url": "https://pantip.com/topic/42225798",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=BlueMoon.bkk%204th%20floor%20Eatelier%20zone%2C%20Siam%20Paragon%2C%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9B%E0%B8%97%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B1%E0%B8%99%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9B%E0%B8%97%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B1%E0%B8%99%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010330%2C%20Thailand&query_place_id=ChIJqx29HwCf4jARtUOvTyrvdJo",
     "rating": 5,
     "price_range": 2,
     "tag": "hidden_gem",
@@ -6539,7 +6542,7 @@
       "/photos/53eae43f-e3aa-4046-a459-f7838bf7bc28/2.jpg",
       "/photos/53eae43f-e3aa-4046-a459-f7838bf7bc28/3.jpg"
     ],
-    "source_url": "https://pantip.com/topic/33401871",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Three%20Sixty%20Lounge%20123%20Charoen%20Nakhon%20Rd%2C%20Khwaeng%20Khlong%20Ton%20Sai%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600%2C%20Thailand&query_place_id=ChIJbSLDx92Y4jARM9xY2YMxPN8",
     "rating": 4.5,
     "price_range": 2,
     "tag": "evergreen",
@@ -8871,8 +8874,8 @@
     ]
   },
   {
-    "name_en": "ก๋วยเตี๋ยวรสเด็ด กังเลี่ยงเฮง",
-    "name_zh": "ก๋วยเตี๋ยวรสเด็ด กังเลี่ยงเฮง",
+    "name_en": "Kang Liang Heng Noodles",
+    "name_zh": "Kang Liang Heng 燉豬肉麵",
     "description_en": "A melt-in-your-mouth braised pork noodle hiding near the Golden Mount 🍜 กังเลี่ยงเฮง is tucked in a tiny shopfront on Boriphat Road, opposite the fire station near Wat Saket. The signature braised pork noodle soup is what regulars come for — black pepper-fragrant broth, pork so tender it dissolves on the tongue without chewing, and thin noodles that soak up every drop. Under 100 baht, cramped but worth it, and the kind of hidden local gem that food hunters quietly keep to themselves.",
     "description_zh": "金山寺旁小巷藏著一碗讓人入口即化的燉豬肉麵 🍜 กังเลี่ยงเฮง 在 Boriphat 路消防站對面的小店面裡，招牌燉豬肉麵湯底以黑胡椒提香、豬肉燉到不用咬直接化開，細麵條吸飽湯汁，一碗百銖以下、空間雖小卻讓人一吃難忘，是逛金山寺附近最值得繞進去找的那碗麵。",
     "category": "food",
@@ -8906,7 +8909,8 @@
     "highlights": [
       "Stewed Pork Noodle",
       "Black Pepper Broth"
-    ]
+    ],
+    "name_th": "ก๋วยเตี๋ยวรสเด็ด กังเลี่ยงเฮง"
   },
   {
     "name_en": "Je Ju Noodle",
@@ -9023,8 +9027,8 @@
     ]
   },
   {
-    "name_en": "สมยงตำซั่ว สีลม",
-    "name_zh": "สมยงตำซั่ว สีลม",
+    "name_en": "Somyong Tam Sua (Silom)",
+    "name_zh": "Somyong Tam Sua 伊善菜（Silom）",
     "description_en": "Silom's most beloved Isaan canteen — 20+ years and still packed 🌶️ สมยงตำซั่ว is tucked on Soi Convent 18/1, serving punchy northeastern Thai classics to a loyal crowd of office workers who keep coming back daily. Green papaya salad in every style (Thai, fermented fish, Lao, mango), smoky grilled pork neck, crispy chicken wings, and laab that hits every note — spicy, sour, herbaceous. Dishes from 40–200 baht, open Monday to Saturday 9am–9:30pm. Closed Sundays.",
     "description_zh": "矽隆上班族的秘密伊善食堂，超過 20 年不敗傳奇 🌶️ สมยง 藏在 Soi Convent 18/1，烤豬頸肉焦香嫩滑、各式青木瓜沙拉任你點（ตำไทย、ตำซั่ว、ตำลาว），烤雞翅酥脆多汁、拉布豬肉香辛鮮爽，一份 40-200 銖，週一至週六早九點到晚九點半，是 Sala Daeng 一帶最讓人流連的東北泰菜飯堂。",
     "category": "food",
@@ -9058,11 +9062,12 @@
     "highlights": [
       "Grilled Pork Neck",
       "Papaya Salad"
-    ]
+    ],
+    "name_th": "สมยงตำซั่ว สีลม"
   },
   {
-    "name_en": "ส้มตำอิหยังวะ",
-    "name_zh": "ส้มตำอิหยังวะ",
+    "name_en": "Somtam I Yang Wa",
+    "name_zh": "Somtam I Yang Wa 青木瓜沙拉",
     "description_en": "The Isaan restaurant with a name that means \"What the heck is this?!\" 🌶️ ส้มตำอิหยังวะ lives up to its cheeky name — a bold, high-energy Isaan restaurant in the Ngam Wong Wan area with a papaya salad menu that goes way beyond the basics. The grilled beef shank is the standout (order it as larb or with dipping sauce), the crispy pork belly is generous and satisfying, and the squid with salted egg earns its own fan club. Clean space, friendly service, affordable prices, open until midnight. The kind of local Isaan joint you come back to every week.",
     "description_zh": "「到底是什麼鬼好吃」的伊善料理連鎖店 🌶️ ส้มตำอิหยังวะ 以「แซ่บถึงใจ」（辣到心坎裡）為招牌，青木瓜沙拉選擇多到讓你選不完，烤牛腱肉嫩香入味堪稱招牌，炸豬三層肉外酥內嫩、鹹蛋烤花枝彈牙鮮美，空間乾淨明亮、服務親切有活力，是งามวงศ์วาน 一帶最讓人一吃再來的伊善食堂。",
     "category": "food",
@@ -9096,7 +9101,8 @@
     "highlights": [
       "Papaya Salad",
       "Grilled Beef"
-    ]
+    ],
+    "name_th": "ส้มตำอิหยังวะ"
   },
   {
     "name_en": "Jaekoy เจ๊ก้อย ส้มตำอาหารอีสาน เพชรบุรี12 (สาขา1)",
@@ -9137,8 +9143,8 @@
     ]
   },
   {
-    "name_en": "ตำตำ ต้นตำรับ | สามย่านมิตรทาวน์",
-    "name_zh": "ตำตำ ต้นตำรับ | สามย่านมิตรทาวน์",
+    "name_en": "Tam Tam Ton Tamrap (Samyan Mitrtown)",
+    "name_zh": "Tam Tam 伊善菜（Samyan Mitrtown）",
     "description_en": "Authentic Isaan comfort food, one minute from MRT Sam Yan 🌶️ ตำตำ ต้นตำรับ is tucked in the B1 level of Samyan Mitrtown — making it one of the most accessible Isaan food stops in central Bangkok. Crisp, punchy papaya salad, satisfying larb moo, and a tom saeb with tender pork ribs that's the perfect antidote to Bangkok's heat. Generous portions, fast service, student-friendly prices, and open from 10am. A reliable everyday favourite in the Chulalongkorn area.",
     "description_zh": "MRT Samyan 站直通地下一樓的伊善快食好選擇 🌶️ ตำตำ ต้นตำรับ 藏在 Samyan Mitrtown B1 層，下地鐵走一分鐘就到，青木瓜沙拉酥脆爽辣、拉布豬肉香辛下飯、ต้มแซ่บ豬軟骨湯清爽解膩，菜單豐富份量實在，是朱拉大學一帶學生和上班族最愛的平日午餐首選。",
     "category": "food",
@@ -9172,7 +9178,8 @@
     "highlights": [
       "Green Papaya Salad",
       "Tom Saeb Pork"
-    ]
+    ],
+    "name_th": "ตำตำ ต้นตำรับ | สามย่านมิตรทาวน์"
   },
   {
     "name_en": "HEY Mookrata",
@@ -9213,8 +9220,8 @@
     ]
   },
   {
-    "name_en": "ติดใจหมูกระทะ เทเวศร์",
-    "name_zh": "ติดใจหมูกระทะ เทเวศร์",
+    "name_en": "Tid Jai Mookata (Thewet)",
+    "name_zh": "Tid Jai 泰式烤肉鍋（Thewet）",
     "description_en": "Old Bangkok's most unpretentious neighbourhood mookata 🐷 ติดใจหมูกระทะ on Samsen Road near the Thewet area is the kind of place locals keep to themselves — affordable Thai BBQ hotpot with quality pork, seafood sets starting at just 189 baht per person, unlimited refills for 35 baht, and a friendly owner who treats every table like a regular. Simple outdoor seating, fan-cooled, with dessert included. Open until midnight — the perfect lazy weeknight dinner near the old city.",
     "description_zh": "大皇宮附近最親民的在地泰式烤肉鍋 🐷 ติดใจหมูกระทะ 就在三森路的德威寺一帶，設備簡單卻乾淨，豬肉新鮮品質好，套餐含海鮮每人 189 銖、飲料 35 銖無限續，老闆娘招待親切、還附甜點，是老城區居民下班後最喜歡叫一鍋的那種地方。",
     "category": "food",
@@ -9248,11 +9255,12 @@
     "highlights": [
       "Moo Kratha",
       "Unlimited Drinks"
-    ]
+    ],
+    "name_th": "ติดใจหมูกระทะ เทเวศร์"
   },
   {
-    "name_en": "หมูกระทะ ไทยเลอ บาร์กริล",
-    "name_zh": "หมูกระทะ ไทยเลอ บาร์กริล",
+    "name_en": "Thai Loe Bar Grill Mookata",
+    "name_zh": "Thai Loe 泰式烤肉鍋",
     "description_en": "A 90s café-style mookata that actually makes you want to linger 🐷🎵 ThailaoS Bar Grill on Chan Road Soi 22 is the laid-back mookata you didn't know you needed — bright vintage decor, 90s Thai music playing softly, and a proper sit-down atmosphere worlds away from the typical loud BBQ spot. Nine dipping sauces including a legendary grandma recipe that's been passed down since 1997, fresh pork, seafood, and sukiyaki options, cold draft beer, and open until midnight. The kind of place you go for one round and end up ordering another beer.",
     "description_zh": "90 年代復古咖啡廳風格的泰式烤肉鍋 🐷🎵 ไทยเลอ บาร์กริล 藏在 Chan Road 22 巷，由 2540 年（1997）阿嬤的傳奇秘方延伸而來，空間明亮復古、播著 90 年代懷舊音樂，9 種沾醬任你選、推薦「阿嬤沾醬」與「鳳梨海鮮醬」，新鮮豬肉、海鮮、蔬菜一應俱全，比起一般嘈雜的烤肉店更有約會或朋友小聚的氣氛，開到深夜、有停車場。",
     "category": "food",
@@ -9286,7 +9294,8 @@
     "highlights": [
       "Grilled Pork",
       "Retro Vibe"
-    ]
+    ],
+    "name_th": "หมูกระทะ ไทยเลอ บาร์กริล"
   },
   {
     "name_en": "Khun Ple Mookata",
@@ -9859,8 +9868,8 @@
     ]
   },
   {
-    "name_en": "โกปี๊เฮี้ยะไถ่กี่ ณ ประชาธิปไตย ข้างวัดมกุฏฯ",
-    "name_zh": "โกปี๊เฮี้ยะไถ่กี่ ณ ประชาธิปไตย ข้างวัดมกุฏฯ",
+    "name_en": "Kope Hya Tai Kee (Prachathipatai)",
+    "name_zh": "Kope Hya Tai Kee 老派咖啡早餐店（Prachathipatai）",
     "description_en": "The quietest Kope Hya Tai Kee, by the Democracy Monument ☕ This branch of the beloved 1952 café sits on Prachathipatai Road beside Wat Makut — a less-known outpost that locals prefer precisely because there's no queue. Same marble round tables, same ceiling fans, same iron-pan Kai Kra Ta with crispy baguette, and the same sugarcane Cafe-Té coffee that made the brand famous. The perfect breakfast stop after visiting Wat Saket or the Democracy Monument, without the tourist rush of the Giant Swing original.",
     "description_zh": "民主紀念碑旁最不擁擠的泰中早餐 ☕ โกปี๊เฮี้ยะไถ่กี่ 這個分店藏在 Prachathipatai 路上、Wat Makut 旁安靜角落，比大鐘樓原店更清幽、不用排隊，大理石圓桌、老椅子原汁原味保留，招牌鐵鍋煎蛋配法棍、甘蔗汁咖啡道地滋味，逛完黃金山寺或民主紀念碑後最值得轉進來坐一坐的地方。",
     "category": "food",
@@ -9894,7 +9903,8 @@
     "highlights": [
       "Iron Pan Eggs",
       "Sugarcane Coffee"
-    ]
+    ],
+    "name_th": "โกปี๊เฮี้ยะไถ่กี่ ณ ประชาธิปไตย ข้างวัดมกุฏฯ"
   },
   {
     "name_en": "Breakfast Story Phloen Chit",
