@@ -151,8 +151,8 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
           unoptimized
           onError={handleImgError}
         />}
-        {/* Tag label — skip evergreen */}
-        {tag !== 'evergreen' && !hideTag && (
+        {/* Tag label：四種標籤都顯示。以前「經典必訪」不顯示，同一排卡片有的有標籤有的沒有，看起來像漏了 */}
+        {!hideTag && (
           <span className="absolute top-2 left-2 inline-flex items-center gap-1 text-[10px] font-bold bg-white text-ink px-1.5 py-0.5 rounded-sm">
             <TagIcon size={11} className="shrink-0 text-brand" /> {lang === 'zh' ? tagMeta.zh : tagMeta.en}
           </span>
