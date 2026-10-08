@@ -447,7 +447,10 @@
     "highlights": [
       "Husky Cafe",
       "Ari Location"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Ongtong Khaosoi Ari Branch",
@@ -524,43 +527,6 @@
     ]
   },
   {
-    "name_en": "เจียงฮวา 江花 Charm ｜เสี่ยวหลงเปา ข้าวหมูพะโล้ และอาหารไต้หวันแท้",
-    "name_zh": "เจียงฮวา 江花 Charm ｜เสี่ยวหลงเปา ข้าวหมูพะโล้ และอาหารไต้หวันแท้",
-    "description_en": "In Bangkok, but your heart returns to Taiwan 🍚 Jianghua Taiwan Cuisine is the secret hideout for homesick travelers abroad. When a bowl of braised pork rice hits the table, the rich, glistening meat sauce releases that unmistakable aroma—no words needed, it just tastes like home.",
-    "description_zh": "身在曼谷，心回台灣 🍚 江花台灣料理是異鄉遊子的秘密基地，一碗滷肉飯端上桌，油亮的肉燥香氣四溢，那個味道不用多說，就是家的感覺。",
-    "category": "food",
-    "address": "Chok Chai 4 Soi 28, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
-    "lat": 13.808210299999999,
-    "lng": 100.5966129,
-    "photos": [
-      "/photos/09898b6d-93a0-41c7-ad38-adcf539a09b6/0.jpg",
-      "/photos/09898b6d-93a0-41c7-ad38-adcf539a09b6/1.jpg",
-      "/photos/09898b6d-93a0-41c7-ad38-adcf539a09b6/2.jpg",
-      "/photos/09898b6d-93a0-41c7-ad38-adcf539a09b6/3.jpg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B9%80%E0%B8%88%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%AE%E0%B8%A7%E0%B8%B2%20%E6%B1%9F%E8%8A%B1%20Charm%20%EF%BD%9C%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B8%AB%E0%B8%A5%E0%B8%87%E0%B9%80%E0%B8%9B%E0%B8%B2%20%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%9E%E0%B8%B0%E0%B9%82%E0%B8%A5%E0%B9%89%20%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B9%84%E0%B8%95%E0%B9%89%E0%B8%AB%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B9%81%E0%B8%97%E0%B9%89%20Chok%20Chai%204%20Soi%2028%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230%2C%20Thailand&query_place_id=ChIJoV2yMwCd4jARg7_k2d5F6GM",
-    "rating": 4.4,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "id": "09898b6d-93a0-41c7-ad38-adcf539a09b6",
-    "source": "googlemaps",
-    "area": "",
-    "approved_at": "2026-06-05T09:30:41.053Z",
-    "slug": "charm",
-    "photo_refs": [
-      "places/ChIJoV2yMwCd4jARg7_k2d5F6GM/photos/Aa-ngMaoG7zmtflP7Bl-IoxH8ToxChSHOI5gjRC2Tcg-iR679EG4ImHVXeVb-SNAbef0eJecUtPFfwbaZXlr0zRDs72ZiWOMSF8R7EWdzwHEAiL9l8xHTlq4r7B0TthMMaNF48EtTzD7f-4oaDhzJXbWbrMye-61YTY9rOzGXxIqRkZH7zyOaDsVVjV7OIQRkyPTp1qKZJr55M0zsIGbuDjyKUNyZhyBaInEakRqAyeba4hvlmujDYOmnUEUr1G-AkHxC2aRYYHpibo1rzPs77o-eLaS6yoqMjc0ZlzSkJXOTfENpzVmggqsnmhm3CSS6zCUVKZfFyKCEtu8K4KgbSvSY-i8bYSm6hTxHbjXf1eA-K383r669DMk28jfLiPnRE4IyVjLGBx2N7PgmwNjgFVfcBL9cjeyYbHOQ8xTF3Ckv3jj",
-      "places/ChIJoV2yMwCd4jARg7_k2d5F6GM/photos/Aa-ngMYxje8etZDgCBXY1hGa9huHAT6m-jf0kjvJRICNIi6yXZzPX5Nx7EH0a4DCyb9tj-DnCUC5e6N_iPRsnhddLBU2dHNR-tO9XKuTefxkTC93Quzd8lwAOEXavec2ph-Y-49DRkSgodSNv3sOnN1yFYdNfQS_skZUjFqc-UwVB6sAJDb3t0BqZpvvlxK88Znettm4YYy0LaX56ObbRN8nr4qhSlOB6ZFXXRucF1iC5zGGzZyrDu5dEl4p60bFjWAqqQF6OzPqDre8pRxA-wvjmWFl99yflmVWUWoNRs9e3ijq1_CR4PsUKGnAFlQVreXhC03gcrkUIv0RDmB_FMBWsVt1LI_YjvUB68vQMeHmriZH9jyV_1SCvpbEYrCb0iKkFYdWyX3O-F-ByK4RGxDitW92LaEab8M",
-      "places/ChIJoV2yMwCd4jARg7_k2d5F6GM/photos/Aa-ngMbMfeYMS7PhoRoV0_eRv_r3vmSUL2oFbOiEg0UAE-yXL3aX_dCuPNnzMbfa9HSiZca_5ePB8OYB0VtclZlloWbTA8spbiMjhj-3NB2dRRKHvVTUVYlx5pUWviPc_MXGBYDaIy_5vIDg10pPaVwNUpGMQ5sBMco-y8hsa3WD5GRWwHdbQWCif_uH-evhwJ5kxCN1Nx5Esr4F0WIuIRvqXo8XdstaGH2Rvt83uMcPeHBpVV3sAl_QYdXQnUrnNLhDbqmnG7QHE-8ohL4qDL-QzPyJJ2y69qTPQgnFOZKUX8S3PE4JJCTWROUea3Guc_rk-G4eSWJM3ik0_N3ADgfLGHTJP_8N3An3EchAE4CClUAaXsr_MLrVjxi0lImtuG_Jn7h1H_Nwfa6o1hzr5XM9V8WhlRzQCXzTSJKUbAeQaPJQwA",
-      "places/ChIJoV2yMwCd4jARg7_k2d5F6GM/photos/Aa-ngMYRT1lJ0LGYgpLT_rr2ZsYsm3cWHbOBCMZhmd_MuohxhtVpTIDeo8GaTQ8iXUFbilnbuxd3bRTzDMrGOb23KYnKEN1sqKefcKij2xvCRcfe9A-9JpI2Je7D5TcafNgozvaZAvCTDlk1V6GfbrSbU0tTwvi75vvSilfyUbNPsFw71qr0c4eqqMEf5BZgsd8rvRIrd7wHCYQfN-CW540s2XWXWTdYZQqTuAKxXseARsAHvo-RvqFAVPhKyK4vB1sr7SKC5DJ_ILjkaKW1bxypI1dvcvAal8TiIdTsGZWdm1TK1FG3P1DCMHRbn-rXgH1VRRg4mFai-C8zOTluHq_lYqLjt2F6qAMJcF_GJJ4ZabA6TS-syd--wk4cJ4sPN6c9-5sPAol-zQZJcSfNNHaSWGtZpUue-V-ndrur14t3HBdvKg",
-      "places/ChIJoV2yMwCd4jARg7_k2d5F6GM/photos/Aa-ngMYUUjKEyoi9nVTuiXWx79BNgMTY0yZM9zardq-9hzI6qV5IolRqmLEFW2tGhD4hF-Dt5bjfwUXzuWc9gOiIr0L7v8xejDy0AsKbltkmmHv-GXD6GyDhpn__sO9XNN-cAQANlIOPH6dvhrqNRD72rJMm66vcYHSSh6dQQH-I0hFyuIQATP-A8omjWsAP7wnxNiLABkXDnbymzR1sOhwpfrZPVnB2nZle7TNj2yQrvRGej2Hn7F2Cj46-zLTOCFNjj7KYDkX3D7ykSgNxqDTaL1Gl11QfIGFwrlcMR1i04B6N3DTJ7JidvxkLopkZS1f3dVGKGADye7T0mfSaiS2I3McGcvAEnNuloA22-fLv4F4oLoLGZCouYnTtnSSk8kaoWhjH0s2f_DzLRRGseyZ6VpBpk3jY_YpjsLpR1NsncqZhTQ",
-      "places/ChIJoV2yMwCd4jARg7_k2d5F6GM/photos/Aa-ngMZlTFHwEkI3Yv0InV37Y2kyb02eXsim8oWjYnQ7cwgcco6kh8mrY0XZMqB6Tc8dPbZXlsutWRfO1QiyV2FZgNFxN-eyDQdc-StUw21mS2Mu5ollwYsTnmxv0UPnlOsjTSIztr5HBOnqUdQCbzLHJp23luZPssjvjsfJ9Al7ZNLvKI_yQkTczYzxoLQ_FdMeo_bTzaZWRE7uwgmRDAOHbn22klFBT70secxQnvJEJpKWbTEWi9AE8HKPsfrVVUCOAhAiym229ykR65eBHNEND8Hq7fRmiasaBJL-oQ5OW4wPlCf58EZZWr8BtkKYzfzSxFmBqeuuHG_IBV5MnyiKwPOsdPiFQqO7kFevaXE4vQH-YpxRaFgeBXInlF-p7n9Jy02H619X5GPGS3TuwWaB7G9QFksoLToVnXCoSLLUeZ6enA"
-    ],
-    "highlights": [
-      "Braised Pork Rice",
-      "Taiwanese Cuisine"
-    ]
-  },
-  {
     "name_en": "VIBE Coffee & Plant-Based Food",
     "name_zh": "VIBE Coffee & Plant-Based Food",
     "description_en": "No compromise on vegetarian vibes 🌱 VIBE Coffee is tucked away in a Thonglor alleyway with floor-to-ceiling windows flooding the space with light and keeping everything cozy. Plant-based satay, grilled skewers — you name it, they've got a vegan version, and even the die-hard meat lovers are blown away. Pair it with a smooth Arabica coffee and you're basically floating on cloud nine.",
@@ -632,7 +598,10 @@
     "highlights": [
       "Pure Essential Oils",
       "Natural Fragrance"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Tong Lai Sun",
@@ -1187,43 +1156,6 @@
     "highlights": [
       "Bagel",
       "Smoked Salmon"
-    ]
-  },
-  {
-    "name_en": "Chan Charoen",
-    "name_zh": "Chan Charoen",
-    "description_en": "Step into a verdant little eatery straight out of 1970s China 🍜 Chan Charoen sits right on Chan Road, and their signature Southern-style braised pork knuckle rice is absolutely killer — the broth is rich and deeply flavored, the meat falls-off-the-bone tender, and paired with those Cantonese noodles? *Chef's kiss.* The retro ceramic tile walls are so photogenic, everything's wonderfully unpretentious and authentic. It's the kind of hidden gem that Bangkok's true food devotees keep tucked away in their back pocket.",
-    "description_zh": "仿若走進 70 年代中國的翠綠小館 🍜 Chan Charoen 就在 Chan Road 上，招牌南派豬腳飯湯頭濃郁、肉質軟嫩，搭上廣東麵條更是一絕，復古磁磚牆面超上鏡，樸實又道地，是曼谷老饕的私藏口袋名單。",
-    "category": "food",
-    "address": "264 22-23 Thanon Chan, Khwaeng Wat Phraya Krai, Khet Bang Kho Laem, Krung Thep Maha Nakhon 10120, Thailand",
-    "lat": 13.7086189,
-    "lng": 100.51509589999999,
-    "photos": [
-      "/photos/8ce6fae7-d677-44bf-9995-a8c9f66f459f/0.jpg",
-      "/photos/8ce6fae7-d677-44bf-9995-a8c9f66f459f/1.jpg",
-      "/photos/8ce6fae7-d677-44bf-9995-a8c9f66f459f/2.jpg",
-      "/photos/8ce6fae7-d677-44bf-9995-a8c9f66f459f/3.jpg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=Chan%20Charoen%20264%2022-23%20Thanon%20Chan%2C%20Khwaeng%20Wat%20Phraya%20Krai%2C%20Khet%20Bang%20Kho%20Laem%2C%20Krung%20Thep%20Maha%20Nakhon%2010120%2C%20Thailand&query_place_id=ChIJSaQdG8mZ4jARIDgibS69VcE",
-    "rating": 4.4,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "id": "8ce6fae7-d677-44bf-9995-a8c9f66f459f",
-    "source": "googlemaps",
-    "area": "",
-    "approved_at": "2026-06-05T11:32:13.802Z",
-    "slug": "chan-charoen",
-    "photo_refs": [
-      "places/ChIJSaQdG8mZ4jARIDgibS69VcE/photos/Aa-ngMbawCXMgxqzhvhntOeLLAawcyqFWjVsJeY_B-SU2bS6e4dH28RDJSOGV7MP2ZO5yWKsLsO-7Xr421ah1DUlWrd-Cave9copzGAC_aHn-peguL_rwD-IPNnqNOdRIGNlQOVVWzgzJ3rociNOn0hCP1oheDU7RVtZ1wjVXvRQdfycEleTZK3Ih1WNOGjbVfIXwCyjdIJ4TPn2mfkwceJTGk0UoiPAT3_62OgKn1_4rqw48howoNCmbA8EMO19VrueMD1X8YB2s5H2FtjGB-HzY-Rp8cSGsAS9n6Y77tRFJjm3RWuLaVyqfsVV3eOyLuSaVq2ijNDZ_SO6_Iz18hfzqtFh39LkdRZmXpys03tWGg5AHZy84L-piUj4aSFTGps9--dSCzpaZT9wnwacNDqPEVLTjb7_NQJ6Lah8iq0vMdAnMq3w",
-      "places/ChIJSaQdG8mZ4jARIDgibS69VcE/photos/Aa-ngMb2Tieh4LRe6WWQLSUQCYUdc0SJrYPp2AGJoiabbzVwbdTRPVxkWw4zuoAxB7RmQjyMXAn5lL40laLW1-8IFmEuhVb_IpA5tlYOS4R-mX4Q5hzKlA2J64uHHijFDdTVR4-lEpAlZlzRgoxrL-x6LRC9ZZhyPTAnwVal4sjnMLS6WjbZ86ILJ4qtEBMahFQgPWJ900ApG3l-4tzQYUIA5AU6EFwkZ1vEZkRa2LaAh7yBtMFaoyYCtqP2S-qfyOGI9UhADa0LobD8hsNpT4dPOcb6Uaus5Jd24rITX-ExkABo34nimIp-FuTfehzYAP1b9GSLBxBJHlij0eeBcS1jf4WQVERj-M3kp8r6FdDUSsNu0hM3w99OZWhxb5QuherxeedTsTPHkJwy9hPdfqoOEy5Tm0LS0Zct5U4a0cMlpezAVg",
-      "places/ChIJSaQdG8mZ4jARIDgibS69VcE/photos/Aa-ngMbjBQRZeUA0u-d6GlL_HAOUhFacxt9-VO9Sg5a8MQ0IA8JtUUftPVv39hIu-npprsDyVDTJj6nS3eONPWXrTVpNHOYwbaraGGN_1Dyqi-MHulJ1UiAhgAeKMM6IPtKuQ-7vS6up46CG9ZmquBwSCHDSV7h3gQmnS3qqL8bHEq8KTPBqtrK5BuFok0ADc0io5DacPoh5U1yp7ZyUOVXiAkPBGpwqUX7OXlou5cjMwo8vbcFqBTEagYliZHKO28XzBE4R087sRWRGq-gjnbWFoozFyu3K9ughHioIDvNoVhEeJGcRWnsqQCfl5MWEg16XRhFLuu_-RQ_JmkNmEO6LPIWYn0Q8tWARn45hQ2SAvGpJPvZYLsxGgEOCUigaq794KIpjZsZWT0NU3SYS445CP2GcVZ0FExv2-hXrIAh5m3xExPQX01H9xFC6t2mnXh-2",
-      "places/ChIJSaQdG8mZ4jARIDgibS69VcE/photos/Aa-ngMaNzrAutPnVxi4WkXpkFePlCmV9aiBuqsnlKGAyFw6PcrTP6OYqwAXstBeg7913JtSreGS2VNvIU7VFusaftLXGDBcnVyF3rrPTm5ZQC0JhXI3P56t_wljXS6QS0HR7YGSl2hOUCH757OkNuditWyMSRE2mcDVHszfPdckfZd0_i25K8ioVHHDmjSoXzb5jBhuA-os543ySzhBjXAHokrRA6ngJ7_BxwEJrcLT5jazob6zMEGR1aBiKdkEzGCIpkVHqw3JRQyJy74dd9yHrMZZxl3wKHTZCkNA7fOyGFlWWxSS7Gk8HIKNLToNQULN_efbiwa20v7VpMIvHYYRCeev4hTfDnAYrcECMfXa5n328m9deLzC0YYgh1HwWOSyP9rahf_esDjAI5koP7o6P7mxLoItcrkfjY24aIe74VVDMGze4cwELGum1pddijTdn",
-      "places/ChIJSaQdG8mZ4jARIDgibS69VcE/photos/Aa-ngMakA8s0rvbK2QAd9fCgH5FXNkyxpwgepoO2ys032l5MTz_9X2yk4AOfKbw72NXema6EjQOx1syGUXwNlPjEbt92Cbllgi--I8xKh7VNw7yruH_ziI1QtAVyNU2s1-O9XYTHVChsl0fA12idV7hShH6_MpcqLVQTByDKo7jRXla_SQmcs9yMgXP-SGBRAEQRL-9gftGMjLePcUGzxLEY5BYjZrIDxJEVM_91_azMb50sBLi-KW2BTDMTEMVk3zjVG1xVkmCZ4o0_0PuiVaqMnaSTMHNazoM_aS3Y1Q3bsKAqKhIpJ0aeeuwXXD10Wj9MobEf5SszH1Xy4j2A9PU4Hrp1jOKl9A2_aBiGV44SGZ-SdJIV9RBoJGdGGIXLUrF1annYQENoFerVn_li9fE8aWDDtpybN9CPWei2GJWiGiM2ul1-HBjF9qqqAvki5Q",
-      "places/ChIJSaQdG8mZ4jARIDgibS69VcE/photos/Aa-ngMa0zzCj6_02MECZdqNBbFgYdnZxxZtxrhWe9gKHs5o4dNah-IFOj5xEXkDoGcrsq_1fEkY6Hd3yvuHAIU4TRN5_yeDaVpXAmQ7m3T3SgbdntMteBwo1hmv3U4Hlk2L5C_u1Sie8KA3AQFHRvgu9Rzk8dDaEorYIK7hSQMn1R8bBgOYFaa6PGsURcTDFCLthMq28fY6dvOCLKL8O2OCwixYrufqyztGI-N0xkWr8FVVPpCNxTbsl93U-JYt5u_gDq2IOFxmjWz9MgtmlCJTeoMDWaVHQBkC4tOxGEi8TG2yCxoRf42uinap5BpMuj80bQAmHEW5FtvyHuTqIwm149rL52T3tGEX7YU7QeiSLcUFrNsPrM2XTUFUPLuYfQqm97kFzxs4jfQ0WuegPd2gxWLBZ6usNsWwOU1-1fuQ-XT-0PmBF"
-    ],
-    "highlights": [
-      "Pork Knuckle Rice",
-      "Vintage Tiles"
     ]
   },
   {
@@ -3417,7 +3349,7 @@
       "/photos/4f3c54f2-4159-46b3-b6e4-5e739517bae9/3.jpg"
     ],
     "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B9%80%E0%B8%AE%E0%B8%87%E0%B8%AB%E0%B8%AD%E0%B8%A2%E0%B8%97%E0%B8%AD%E0%B8%94%20-%20%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%A1%E0%B8%B1%E0%B8%A2%20128%203%20Soi%20Lukson%20Daeng%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJsV4dIAif4jARO5AfplTr-GY",
-    "rating": 4,
+    "rating": 4.8,
     "price_range": 2,
     "tag": "evergreen",
     "id": "4f3c54f2-4159-46b3-b6e4-5e739517bae9",
@@ -3436,7 +3368,10 @@
     "highlights": [
       "Oyster Omelette",
       "Pad Thai"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Johnny Market Ekkamai",
@@ -4379,7 +4314,7 @@
       "/photos/61221e7b-c74a-4a07-baa6-c473703ddf82/3.jpg"
     ],
     "source_url": "https://www.google.com/maps/search/?api=1&query=Pastel%20Rooftop%20Bar%20%26%20Mediterranean%20Dining%2022nd%20floor%2C%20Aira%20Hotel%2C%2014%20Soi%20Sukhumvit%2011%2C%20Khwaeng%20Khlong%20Toei%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJbY9lxyKf4jARNf9VogDC-jA",
-    "rating": 4,
+    "rating": 4.8,
     "price_range": 2,
     "tag": "trending",
     "id": "61221e7b-c74a-4a07-baa6-c473703ddf82",
@@ -4398,7 +4333,10 @@
     "highlights": [
       "Truffle Pasta",
       "Live Music"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "The Family",
@@ -4992,43 +4930,6 @@
     "highlights": [
       "Latte",
       "Painting Art"
-    ]
-  },
-  {
-    "name_en": "qraft. (Ari soi1)",
-    "name_zh": "qraft. (Ari soi1)",
-    "description_en": "Step inside and forget you're in Bangkok 🍵  qraft. is the sister café of Peace Oriental Teahouse — a dark, zen three-storey space on Ari Soi 1 that feels transplanted straight from Kyoto. Japanese flour and butter croissants with fillings like miso caramel, honey-butter yuzu, and koicha cream sit behind a glass case, paired with some of the best matcha drinks in the neighbourhood. Calm, precise, and quietly exceptional.",
-    "description_zh": "踏進去就像瞬間移動到京都 🍵  qraft. 是 Peace Oriental Teahouse 的姊妹店，黑牆深木的禪意空間裡，用日本麵粉和奶油現烤可頌，味噌焦糖、蜂蜜柚子、抹茶奶霜各具個性，搭配一杯清澈抹茶，Ari 1 巷最讓人放慢腳步的地方。",
-    "category": "cafe",
-    "address": "5, 7 Soi Ari 1, Phaya Thai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400, Thailand",
-    "lat": 13.780661199999999,
-    "lng": 100.54439269999999,
-    "photos": [
-      "/photos/d555dee0-15ea-40d6-bf72-fed51ad5557f/0.jpg",
-      "/photos/d555dee0-15ea-40d6-bf72-fed51ad5557f/1.jpg",
-      "/photos/d555dee0-15ea-40d6-bf72-fed51ad5557f/2.jpg",
-      "/photos/d555dee0-15ea-40d6-bf72-fed51ad5557f/3.jpg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=qraft.%20(Ari%20soi1)%205%2C%207%20Soi%20Ari%201%2C%20Phaya%20Thai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400%2C%20Thailand&query_place_id=ChIJCSWKC1qd4jARgQtCnJiFZbM",
-    "rating": 4.4,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "id": "d555dee0-15ea-40d6-bf72-fed51ad5557f",
-    "source": "googlemaps",
-    "area": "",
-    "approved_at": "2026-06-11T10:54:54.432Z",
-    "slug": "qraft-ari-soi1",
-    "photo_refs": [
-      "places/ChIJCSWKC1qd4jARgQtCnJiFZbM/photos/Aa-ngMZIb8BxH3EUcq5xkad8jGo7OX2PUq1po8WY6JSEYikf7QSgv2BT45G-A5BjoGdv-sVvBWwCtLzhIY04vbjHK5WspKI-AhxVG9qr_M2biTbTE6vVtX1VTOBJrwKOoTJ4o0p1kRTRjeB4fkjitADrkMxCB2-b8hkf9PSDpk7DqNF9TtBfcChv9fFZfED8yzzGFOvI8HZe8mIAiSvho9hAF56-Pdlqw8U6N6AKCqym86T-Ahzy9m6Kv0tcR3iJRAshihwz9bygmPjOgxlfnDjuQ_1XZ-Pc-djFl4ieWDEBtelUbx82EXHnnp-F2KdmiiL4iOxa6sdyDPbKlD1Ykwbyx3kW95WobdGsXBAwHOepZBKhue2WqzuMBD0wQSY9is6mpzAMm5Q9eTd9HfgMBDT0yiviMnxVNjujhTbhg5cAki6Yog",
-      "places/ChIJCSWKC1qd4jARgQtCnJiFZbM/photos/Aa-ngMb2Sg9gJOkCtVFghUs85NqTiEDmndW4NGaFPn_0pTfSOtvS0XchQOOHdPj0uM23w2MoTW95hPr6SgEwqJVvkhwS-fOXd4aXMpusiDcJtlxeCSHxARaY24kCDMdcaTpLYgmU8_guAoWqaloTqt8m8JxctQnD82MD2nGuBtFPCfbVtMc1uHt9a1MvnApgqFSarocnpnjtknHNZjVLR7GVZWzDGDboxWQWtWk4H_zLcZcl6P6_NRDl7jxLxpN1SyEB3z8HxF7zbusMt4dpuO50jOApE6g7JSGE3pqsqBj1jR6BChTWjl-FdUUqtIhed06do7_I0PTpBSAlkA0ddJaHjuxRuEVjxrpfP-5C9XCIVlIFkujWQhdKUj-vqtNNFNL6LPBPvPglm7Zy8pLEJmLqfLZ3w7W9-rjATg7wjOaXAm0",
-      "places/ChIJCSWKC1qd4jARgQtCnJiFZbM/photos/Aa-ngMaMduVsvf8WMXklGjkhMbjtlLeTMpV4E2WwGqKafSGt-nh3y0W0AkMeLW1BxilhXXNa0GsG_tZN8Cv45zF1YkJNj2ZfUbTiXAT8zr0x6jK9xy_X0QM486wTbuNhhjki7A8-pJayxAXscfZ2tJMQep65R-ijgrZqmzr4HxTFOs3MPl71I3lARK2v-_wNg_1ph8Hu_zqCUFKyiLQmQYGy-vjragsStvE9ajmU2o7v5pvLBkblh2oE6j8Tuy9_Op_lB4HCGtQBdcPT5IqIwyI9ed579MyeRtcG0yBKyQAFhATuiahr7USSiDnOrOplTwEUyBiBJ0dCjt25AB6Ysb55s3Sn8yo0o3i90aPuGnJQxe-Qm18eak3uef8HyMR92H9eYlx1J5kVBy09UO9zHtxpzcphkiMrb8lNO3zkfIkpHd_KGRJqoNCqXpiPQE2B0Q",
-      "places/ChIJCSWKC1qd4jARgQtCnJiFZbM/photos/Aa-ngMbf1Y6hBiMHWYRGZaO3v8OdswsXZMA8XuT0xYB3WXB9GH8At8oQvoL5jwXgEK8VpvSzGsixNd01h_aJ4rVFVHmnhVzGw6EclYBwHDZb0tBnkDYWJupr_q45CTBoKsZuEq1ARxcTSBzLpREVNnGuVtkGCHS1pAGCzz0eG1d9jMGQW0QnKZlzTiDrk3aD9DDRYn96IR1fOJlrSSqN72P0mYguO0R5KmEg0iba3uF7VwXbau7SaH4XSK0KLfIkA5uQDX5pZz3LoGL7Ug_ZWCt4uK_nzUCQEQBdqeueo8bg9g8V1ySVhWVpM-YJIz3aO-FxDVDAfc56UCL8H89jfLYA-Xq7RlUfGbC9fVY77-PcYIom7vqAMJgZPnVI_U6BTboQmxz-sprTE4QEH7Gkz8ViCvxK6U_i4lYVWNkWNkEB-TO18FtnLmgFRWM8dQeUx0Tt",
-      "places/ChIJCSWKC1qd4jARgQtCnJiFZbM/photos/Aa-ngMZCN0jPVoR8JmVCF-TCExHzrlBSih8Qi8NXuRr0DpjafpnnYQm1y--fbLBz0rOUYjbXhGh_Al8nSsx3CBOzKtzJ8wsaXNkC4H25m17nM_16HwgutkJO6Dl4QMYFVSWRt5Mg3pHMLD4SrS4SrV2WLSS5G8VcuQtdSY8PWehHxRom5rY5lWqRbDa3GwyVCcLnEfDHpW12Tr2tvdy4zpGFwti0QIldBwuLUf1ZiSzDnMHOmW1fdAvl6gE-LtcHntZ84SOK8gjD1PQcqN2MOYu9YFUm0lmQGYZFsDROKpmXYfyeV8UiDG0Cvlrnj4A1qOTkXdDhZVGLKk_nNzbReY2-YoYslHryB0vV1qCvUL_7LjgX2d7zEktsCdiqCfN8BX4PRGoezWsAYxIivqEmjP0HbrYGFYuFJjsSS9irYPyfy5Yu8NVGwUOTEs_sGe4GSZqi",
-      "places/ChIJCSWKC1qd4jARgQtCnJiFZbM/photos/Aa-ngMaHnizHvr1hu7Z6jRNfyDqlTXX94qOpPOQMRFdSLJWB_b4yro8BCb2k-yxEC-hxTfiZ6awsvVT9d0FEABY3ViiBexWf-D3t65wR_CrhpGv-R6MiQXmBtU5N3ZJ_eiBPdDfRFPqY9y3ExI3NTrGqXOo6ld7dNH-6k1Z_EQmPPcHdsqt59rS3czH7IgQf--4NXML_CZ0b4CHnOBY9sTx1cC7WYyuaDWII9I9yg6GmzaN_YNESbrO-z1YQf2SzKRw0cX_QdCmRjx_jslNVDBP4cIGSd5fZAGwLPCXlf92IEX6Nsd_uH6-1NejR9O4W6gmYkRsq0cpl3S6tVd4JbwDwyX9h7YP6e9P_g9Cwu94gU4bl1X5NReo8SoVmGEX18NfqlFtDRHQBDoN1cQNRzQmZYSiG7gn8piwynCY4lZOthR40LR-JgwxEWerKnm6dHEAs"
-    ],
-    "highlights": [
-      "Matcha",
-      "Croissant"
     ]
   },
   {
@@ -5675,7 +5576,7 @@
       "/photos/ea17042a-748b-4803-b689-d038381962ba/3.jpg"
     ],
     "source_url": "https://www.google.com/maps/search/?api=1&query=a%20Coffee%20Roaster%20by%20li-bra-ry%2030%2C%20a%20COFFEE%20ROASTER%20by%20li-bra-ry%20at%20Warehouse%2C%20%E0%B9%82%E0%B8%81%E0%B8%94%E0%B8%B1%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B9%88%206%20Charoen%20Krung%2030%2C%20Khwaeng%20Bang%20Rak%2C%20%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%81%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJ6SnKkTeZ4jARXIGjcY7orTw",
-    "rating": 4,
+    "rating": 4.5,
     "price_range": 2,
     "tag": "hidden_gem",
     "id": "ea17042a-748b-4803-b689-d038381962ba",
@@ -5694,7 +5595,10 @@
     "highlights": [
       "Pandan Pancake",
       "Coffee Roasting"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Remedy Coffee Roastery",
@@ -7066,43 +6970,6 @@
     ]
   },
   {
-    "name_en": "Sushi Juban Takumi Thonglor 寿司十番匠トンロー",
-    "name_zh": "Sushi Juban Takumi Thonglor 寿司十番匠トンロー",
-    "description_en": "Thonglor's most surprising and personal omakase 🍣 Sushi Juban Takumi is helmed by Japanese Chef Okamura, who crafts 12–14 course seasonal menus with a genuine element of showmanship — guests never quite know what's coming next, and the chef explains every course with warmth and care. Otoro, uni wagyu, and thick-cut sashimi are recurring highlights, all served in an intimate counter setting with a striking wall of wines as backdrop. Lunch omakase from 980 baht, evening courses from 1,800 to 6,500 baht, Google 4.9, and a dining experience that regulars describe as their most fun omakase in Bangkok.",
-    "description_zh": "通羅最讓人驚喜連連的 Omakase 🍣 Sushi Juban Takumi 由日本主廚岡村操刀，12 至 14 道季節性套餐每道都藏有驚喜元素，大鮪魚腹、海膽、A5 和牛壽司道道精緻，主廚還會親自提示最佳拍攝時機，整面酒牆氛圍獨特，午間套餐最低 980 銖起，Google 4.9 分，是通羅最值得訂位的日本料理體驗。",
-    "category": "food",
-    "address": "36, 1Fl, 1 Soi Phrom Phak, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110, Thailand",
-    "lat": 13.738292,
-    "lng": 100.579515,
-    "photos": [
-      "/photos/3ff173f2-b85d-43b3-8df2-cdca1807b4c2/0.jpg",
-      "/photos/3ff173f2-b85d-43b3-8df2-cdca1807b4c2/1.jpg",
-      "/photos/3ff173f2-b85d-43b3-8df2-cdca1807b4c2/2.jpg",
-      "/photos/3ff173f2-b85d-43b3-8df2-cdca1807b4c2/3.jpg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=Sushi%20Juban%20Takumi%20Thonglor%20%E5%AF%BF%E5%8F%B8%E5%8D%81%E7%95%AA%E5%8C%A0%E3%83%88%E3%83%B3%E3%83%AD%E3%83%BC%2036%2C%201Fl%2C%201%20Soi%20Phrom%20Phak%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJhQpOHFSe4jAR-rDq_LXsjrk",
-    "rating": 4.9,
-    "price_range": 2,
-    "tag": "trending",
-    "id": "3ff173f2-b85d-43b3-8df2-cdca1807b4c2",
-    "source": "googlemaps",
-    "area": "",
-    "approved_at": "2026-06-15T09:59:49.603Z",
-    "slug": "sushi-juban-takumi-thonglor",
-    "photo_refs": [
-      "places/ChIJhQpOHFSe4jAR-rDq_LXsjrk/photos/Aa-ngMZ5kuf4qbQAJaauUkwjyYRfxovrw4a-bBVs-v8gO41OVlFLyRF5Ist0dmoMDzTGv5o4E8i74EcPtUff0Gv4P5CIpZiKhIvSjcPuo0rrRJIEooYNXlqbkhhyERa0VwEwpLy4EcThotoiTkwlmyHF6C2_31qBYca73LCKSl62DgL4gxnky7vPHvucqYsRdRx4qt67JLc8ScrbFD4dO697j_YjtUWVxA-FygPV5AtTs8ycZcQFvY26v_YruNTj5cVwC93KRcRBHLvQWX2oYc9Ub1oUmbpX_HntaU9BYpweodnQ02yScv8ULwV18riKFnmxXxHy8VLM4dQceWZJiCeriNYzSJYmoDs9wdmP7j3mYMLiQElu7vf0KOMs2MsvGHySQ7h6necdtq7vfKM3UlBUmCi9d1g3bMGM4Qw2ErYiNJg",
-      "places/ChIJhQpOHFSe4jAR-rDq_LXsjrk/photos/Aa-ngMbX0q80oiUJ6iZaoV8NUPztOf83epnbvJKnp6wyDr3vKIIDUwFaaX-ZGTb7bB4hd-rEoGoxXyIrE1QedRxE8u9Fru6znMEILOVolF4Ib0w3JpW2kCcRxBkH_uz24btNdjWRsYuR1jr3cfJAzvBAiN09pDHXNCssXmoqH0TEIql1QDplnQXVkoYjwG1oGbciwu_4sNLp8g4-stlN3QW7OIIhZjGxCPmGd4NQbd_JaRjAwHCFHD414QxT0YtsHdA-EvuO2XQBd0bnLdbWL3X6nWmiKpItu4XphHkcR3ylW6h6DW8EaaduA6NX4sse_ZXwqQl1EWrXiFIellK0C6iiXAd6SF0ILpmL60wHCgwaAGVMhsCjU9KS1nd6YjWPbTqiRFw0lSaSM8jhCaz_cWwRupuS3HGO4XdWGq3H-zj9NuwwJOUeli2KMs7yPZhBXRUk",
-      "places/ChIJhQpOHFSe4jAR-rDq_LXsjrk/photos/Aa-ngMaDs2urF9glGOdvS7J8hXGSI9AtD5VYf8qklTT-D_xR5WJCVZsQLxCUVyfRofAi5kPuevJsiZ9Dfupb1X7nGtBPwvzpfpT2A7jNWuD0WSSEWjM_fGli9qHH4ViBQ7e9Wy27cGT_FesXhBVm12XAQJzGZPAAjBWLPJCyGPpGCwdOyia9GtucSB6MgtfivVgIkUFhh-j1muuxYQgC4nuKFwvsQ3hQPsEj6NepqYEjCoL7T4Cdsf0o9VflSqxFIhbsZKL90uiWc1-j12D2G71zp73eChgTeDBi6f5yN8Gk53OH9QH9IsoQDgNLtraNTdt-W0u0LBpKHCMMqYU6XDzJmasRID7-uc3j2U_6Ye3QT_44UYt1QuJZJKKL8TORLQ5lLZ9ibRxnqOPDhePJUWDf5jPCDvs0U9XeIidMBgTqSSbp-IkzZUIkaI1fiYB38g",
-      "places/ChIJhQpOHFSe4jAR-rDq_LXsjrk/photos/Aa-ngMZHZDWeKWJCOYjENnNDgp_NUqp0LMNFBqeL7t5EMmjG5smOXqy_f3RvZt9RaouGzrVRUdf7D8ygCCbGVVM_SjgXTCD_Jp7uvf_aggnatsJ4LMsrnVjZ7XjK7gidSEWbK8z82tfAR0b9gBS7f_BO8RH2on0wdSG_w1rgv2GnNn75DFcjBcudonKbtevXyKyM1gnva_KqO3GlLBHRVP8IcjtCc5wRs06dNh52MFKsknY40feaUiuTbuUI_2-xl2NkpUdsXLa-SiSb-D0wH9GGMo-NwMLGWuMBXu-pUDGLwnbADedFU-_piR2t-MM_LuX_zXXx9dml6H_pSpoYRCmG8LL5UPnG5J2g4E17ZMaTDs66wKasZNidm3i3mI8ekW6bOMkQZM69R9lO8FZoKRmfZA_RmmqDKHFpLSu4TNaE44jSt6ZIXAmgezikPj_Mhxpz",
-      "places/ChIJhQpOHFSe4jAR-rDq_LXsjrk/photos/Aa-ngMb9ut-tGJqgqp0tH9ijjzZNWUNg8yTjmUN-64wjTQeg8u1kS34kanjvHz0I5YWNDRo5BBj2Z51EbUNpWJ-kUWgSE3ulI9iSLKiuRAq1K5722DYUs2IRrBUObEgcZjgI5mdKQorElVxIuZxMTw3MfZkF6yVs0feXP9O03D7TzjSPODAAEQuE-GMFF6n3j-bwYWyd6OQBPR06RJaDoHNFmt62AgenqSpRhedC4pS6t8mTiwlP9wv8G_dFXdyU6c5kJNKgj9aeL54rjzT77B_4KuUFo0tk5SNyEQvHeP4h2eC16ik53tyLSn82I18gmkP6lkJ6smIsuEVRJCViAvIkzAPgYc-kZimWPNjqEJgV23rSC1ymMPmHwvnxnklCkOsjlKnGvR6OtLSPtFvUq0LwmZffNFwPIB5praUp4DAYYTfQIye0U9imMqEhkl8B68va",
-      "places/ChIJhQpOHFSe4jAR-rDq_LXsjrk/photos/Aa-ngMa7aBgkzN5GgbTaOEKcXV1U5FvYVx1KMHYJhEFwKc58wsJR2mWHdVD-lhs48vxXLBY8zuiNsU4gAYcX0-Fe7cMmtl_RYrLohFVlm7q9TOMe0Hd_bbbIwXgUo-LgkljIprjUrM-BqCEnlhUNVZMPp-ZLeLyXONNIcEtoELK1Mijt_yXHLmUWNlkKHPH9KuGfZMw6TOpSq1hANflpR6PDJT36lTuxD2lnr33t5XXZ0MuewKVodfv-CQVNDlCOxRKb0zjJmdEu7wYxhVgukyfFsxLfv_bxuX5TVBbuYGHLDg81fX8jLmvlOel_n8Htj4383taE2GQpyqUhkCE8fQujG5cAUcuZ534qv5zzhXsqWn1bsXZZW2L9gYriby3DoRfBWKFrfX8IUaWzFR10dSaLgUJjwai-K2Nd0buRa26Ik_232wGhHQlerWbYy5ScQMdN"
-    ],
-    "highlights": [
-      "Omakase",
-      "Toro"
-    ]
-  },
-  {
     "name_en": "Ryuzu Omakase",
     "name_zh": "Ryuzu Omakase",
     "description_en": "TripAdvisor Bangkok top 65, perfect 5.0 rating — the omakase that lives up to every word 🍣 Ryuzu Omakase on the 2nd floor of Marché Thonglor delivers a flawless Edomae-style experience — 16 to 18 seasonal courses with Japanese ingredients flown in weekly, up to five courses of generous uni, melt-in-your-mouth A5 wagyu, and precision sushi-making you watch up close at the counter. Beautiful, calm dining room, perfectly paced service, and chefs who make every guest feel genuinely welcomed. One of Bangkok's finest omakase counters, full stop.",
@@ -7155,7 +7022,7 @@
       "/photos/f291e556-a93c-4fc8-90ec-31701f83b55b/3.jpg"
     ],
     "source_url": "https://www.google.com/maps/search/?api=1&query=Kimukatsu%20Thonglor%20%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%992%2C%20%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%20%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%95%20%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%AA%2C%20Soi%20Thong%20Lo%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJaTNLDA-f4jARyMBVUsjaXkc",
-    "rating": 4.8,
+    "rating": 4.5,
     "price_range": 2,
     "tag": "new_opening",
     "id": "f291e556-a93c-4fc8-90ec-31701f83b55b",
@@ -7174,7 +7041,10 @@
     "highlights": [
       "Layered Pork Cutlet",
       "Multiple Flavors"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Tamnak Isan Ekamai",
@@ -8210,43 +8080,6 @@
     ]
   },
   {
-    "name_en": "The Drunken room - Cocktail Bar",
-    "name_zh": "The Drunken room - Cocktail Bar",
-    "description_en": "A New York subway tunnel, tucked into Silom 🚇 Pili Pala Drunken Room channels American subway design into a narrow space with curved ceilings and stylized walls — just 30 seats, shoulder-to-shoulder, like chatting with strangers on the train ride home. The Cacao Old Fashioned blends coffee beans and cacao for a fragrant caffeinated twist, and the Grape Manhattan comes finished with a frozen grape. Natural wines, craft beers, and live DJs Thursday through Saturday spinning disco, house, and hip-hop. Unpretentious and easy to love.",
-    "description_zh": "紐約地鐵搬進矽隆巷弄裡 🚇 Pili Pala Drunken Room 以美式地鐵為靈感打造彎曲天花板與隧道造型內裝，僅 30 個座位卻擠出親密氛圍，像跟陌生人肩並肩搭車回家一樣自在，招牌可可古典雞尾酒咖啡香氣十足、葡萄曼哈頓加了一顆冰凍葡萄，週四至週六現場 DJ 接力，是矽隆最不拘謹的小酒館。",
-    "category": "nightlife",
-    "address": "Si Lom Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
-    "lat": 13.726795099999999,
-    "lng": 100.53088609999999,
-    "photos": [
-      "/photos/f46da73c-4d54-4889-88b7-db3ef2a66405/0.jpg",
-      "/photos/f46da73c-4d54-4889-88b7-db3ef2a66405/1.jpg",
-      "/photos/f46da73c-4d54-4889-88b7-db3ef2a66405/2.jpg",
-      "/photos/f46da73c-4d54-4889-88b7-db3ef2a66405/3.jpg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Drunken%20room%20-%20Cocktail%20Bar%20Si%20Lom%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJfekTsYKf4jARtPKZ06ZaSoA",
-    "rating": 4.9,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "id": "f46da73c-4d54-4889-88b7-db3ef2a66405",
-    "source": "googlemaps",
-    "area": "",
-    "approved_at": "2026-06-21T06:47:17.246Z",
-    "slug": "the-drunken-room-cocktail-bar",
-    "photo_refs": [
-      "places/ChIJfekTsYKf4jARtPKZ06ZaSoA/photos/Aa-ngMYAFCXNsk47If0Q9IpEck9aOjTnH_Ob8ZshXeQT5UmJIYWA3Sh7_J1z-g78U5DLqH-k50cvbTvd2Q5UifSCJ36pBYul8thdhrhe6cmASGenM1f2T0HqZrrjhWlHfp_cIC5H-jUbFRyG1Um1TopnzXtnHLkYTNT30SAACoAcKt2b5kSdakatsDjkBWbMBf6YyD2pHZNscoyegEFHKIZcO4izTflZvwj0zRnO8VixDuj2bBGGWsbRwf35PNb_TQYcnDHAyg04nwxFlecKWd-l_zFo6cF52y6Kwbs_U5D_KYRBO02B2-n4CHMK5CUwgZX4L0lTt-4cU5PVZ4B_XxqZq7FoasDJdGHRMNjVjCwn9MMG7zoooBaPDpNwBeWZAkeCXMb85SUtUmw8eChhaMOwTjVRrK8I0coQGFjXJpxn-RDBHg",
-      "places/ChIJfekTsYKf4jARtPKZ06ZaSoA/photos/Aa-ngMZEhLvnPtgNcFzwSZvRdNUwvoUujO12yXNw7wjwbuvx0lL09inexxNQWWxxE2i_G00uxBiPt0sn_U8Bra0O19I1kRtobojFTkhQruhTXOpb0-Ju_E3Gj4AAc7ob1MKvKde0g341iAyS91kTwjavni2f3Btx-RSSnkzKe36Igmy1r8ZQVJf2PQSKs7CF1kwId24myU6ZLL8NXoz47dYbc4r20Q-64IHXuAayyLIKIYL3MY4lzzjswMczcSPZwhZHlHF5UpxGoLWBn4_rTVF7WYN8mv-hGHb58gREL0tc6yDiDkmr4_z7yn0j1jM2Eq9nhgE03BIQs2lTcwJ5I2HOx_XESN8ZKrSrMOysnrcFgJKc_7dr0EtWDtMr3JpM7q-DKRWzkBGQt3dL2bTQtMV87vTPm56XYFx06yUJbFek6I4AYw",
-      "places/ChIJfekTsYKf4jARtPKZ06ZaSoA/photos/Aa-ngMbOTf0KodN7j8bnUhnkynDcbPBq6ciFJfcnlsnRBfz5Jd9P1ff5KPAVMQtwaAYCnZvruVVxAKhEB3HXwUHdeP7tuH_NvffSDlRMw9oBk31JmGb6XrN0_StM7LuFhceV48aMPV2V9VG8U_PArJQkI2Hiojz1RLA0zSKl6NjRCFp2oY_M8Cxwte4xepY1IK8I6rnw3D5WcODAWWM-qsdOaElSd0F-rMrlB6n5HBeqMFDBadHDx51QEYiTWd_stm7a8-CYBWLP2k_XfNSVGr74S-9drxxDZ8zQdJhveSAsBp2uyzL6eAjKcaRbM7U3CKxbGrcB2cx3GkMqKgMjFvzseaB0m5a1PXgYtqNGz6QsczJoCb3Ne50OPoRvC_bvW53nNWjb7xLicn7fkyb360FzG57TEDDfNgO261YzprHmw4W_gw",
-      "places/ChIJfekTsYKf4jARtPKZ06ZaSoA/photos/Aa-ngMZ57n5wWzvlwcb4PX480Pz5XzCjTQjmzJEqZ-HZHk4BJ5V7WVSt_pNeyuWhY6gMV7tF2DJGHE-CVMu3_lvtyT7Zk15JBjiOOB-Zv8wf819pwWmU05DTvDeuFBXQ-ePWAAVkSyDa68GVgPegr0eg9U_a_2vsta913xbYViZepyiBOedqcMi-TJEOnHJQ4ofP5sbxxx9M_-GRelU3TxNHOwJk4OaQEhcfTjX3LpSx_nEa4I8QW9QzWniuuF6J5ZdfBh4HdpCN9P3YDYx6oKuDC7pFg3nU0ftiDxBjOQ1joQyrqA6uTHxL3FJYtZnF_0erXyi12cFeRVi9ReQCL4SDPWD__60g0neBoY-lm1r0-0iLNedm1x3NWG0Jp7exD0NNrCbnQBQ3FLOHrTyOl7gRXdwKJRia3U1fwplzo_cW9Nftm0tCl6ioidG9Wksz6MPI",
-      "places/ChIJfekTsYKf4jARtPKZ06ZaSoA/photos/Aa-ngMacrWN_U4dJsg5d9wKFWJ227DGCnqqgtKpKotKy5q7RVOQ45R-Ve_5MGd-sO899skXvzanjQNmjtqZlastVKcxpDIfeHhSt8IoqtPr4wSK4-YcRtWVYtcaPvjtPyzMscEGUmiRRFsiIXnZTR5Z2qo-XXC0xSDpF1NcIGw--Z4VEFXKy6D92VJUMb8Xn43oVol0whXdVb5Mf915kzfcAn0YJO5qHdy3amRA5dAQtd1P59zjmARE_6wdmTne7eqKhUH1Yues_AtgZJFumYK_rC1GWgjZePBb0-kVfUg0F6PFcJHTuCOO4LvZZetmvi05yOqyPxirBD3KZsltyxjaiun6yERWY9tFFGpfxkUKKD0LgXiO-weUVaOO9T1PlIDTX9Xwnpi0RH5rNobjgjDr730hsoEyxeAr9OXDdfwh1wtbvFu0oucBWMGd5YhWXbhRT",
-      "places/ChIJfekTsYKf4jARtPKZ06ZaSoA/photos/Aa-ngMbDILaT86kRE9-FVcdSXTGGAZk4BpSM2ha-siC_Tychid4gGDMaNrRxD5EvNoUQm9Pnj7cDFj_TmBy6j5Seyte2bDFkeITmKuKe2_yhlz--Sd9qU9tTOzhmN7UOspwC8P0dtk8udBaoIr9gDFP6yFVB1X5DNmcxs71INPXF40IsqxHGj4MnNe4OikGEuJseOBkgAxSRdniiXosxl2QzO7abC_cnPw8Qw8qsGjwlqROSS3oflpbWZlJkMreiT3tH61iyzY5d-pqSl-LUkS7nT-K_5sloZgl2Fenyf3Kz_q2YjwjVMPqxU61_FDJOYAbwuScGbKtIP7leF_1qeaNowSEo_2Mx8dZkYUETAwNH8E-E0sMNj9fCwVejCiC4U_Qn26S8lPmVRAkgx-ws9Ak-m4ybYiFzkndr6hWdssCwV1Yle7sGDMR-1kz2aiR1qQ"
-    ],
-    "highlights": [
-      "Cocoa Cocktail",
-      "Live DJ"
-    ]
-  },
-  {
     "name_en": "Mod Kaew Wine Bar",
     "name_zh": "Mod Kaew Wine Bar",
     "description_en": "BK Magazine's Best Wine Bar three years running — and Star Wine List certified 2025 & 2026 🍷 Mod Kaew moved from its original Phloen Chit home to a bigger, more polished space in Sathorn Soi 12, but kept everything that made it great: walls lined with bottles, low-intervention Spanish and French wines at refreshingly fair markups, and staff who talk about wine like they love it rather than sell it. Ask to see the upstairs cellar — it's a treasure trove. Outdoor terrace, parking available, open Tuesday to Sunday until 1am. The wine bar that quietly started Bangkok's natural wine revolution.",
@@ -8430,39 +8263,6 @@
       "Rooftop Bar",
       "Live Music"
     ]
-  },
-  {
-    "name_en": "LUXX Silom (Bangkok)",
-    "name_zh": "LUXX Silom (Bangkok)",
-    "description_en": "Elegant boutique hotel offering chic accommodations with Japanese wood tubs, plus a library/lounge.",
-    "description_zh": "曼谷熱門飯店。",
-    "category": "hotel",
-    "address": "6, 11 Decho Rd, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
-    "lat": 13.7261587,
-    "lng": 100.5251962,
-    "photos": [
-      "/photos/5af25bbb-59ef-48fd-acb7-88794c4e9578/0.jpg",
-      "/photos/5af25bbb-59ef-48fd-acb7-88794c4e9578/1.jpg",
-      "/photos/5af25bbb-59ef-48fd-acb7-88794c4e9578/2.jpg",
-      "/photos/5af25bbb-59ef-48fd-acb7-88794c4e9578/3.jpg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=LUXX%20Silom%20(Bangkok)%206%2C%2011%20Decho%20Rd%2C%20Khwaeng%20Suriya%20Wong%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJob-TyNOY4jAR_gJbpHajDaU",
-    "rating": 4.1,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "id": "5af25bbb-59ef-48fd-acb7-88794c4e9578",
-    "source": "googlemaps",
-    "approved_at": "2026-07-01T06:45:35.301Z",
-    "slug": "luxx-silom-bangkok",
-    "photo_refs": [
-      "places/ChIJob-TyNOY4jAR_gJbpHajDaU/photos/Aa-ngMa4AFv4TcT_951Z1k0tET0MZakIONJFiS7wapOZfMQC7B_OBjZ5-rvHL-h_QU1OZaBk531d428O3m_ZnKO6lVR9yoKOQpbJ-WdFY8WMrWbZIk0UOvcCWryf-GrCclZ4D5ttrIoLRQ0rUy6RT55y4zmuil1C13_Rno6Rw-Ns9SvZasHFZfZIQgm1ItSsFhZD0bud9DeDxH3WVQwGeMdhNzAMD1v_jA2Smx_uVXOEbr9gDVG2eeSQW9n5X-pEGhhudWB5Ipa3gKnBvPteGfEoSRoBx-_9WVOe5t3OKBo89joFRG7FLiPTE0zqfVX5OlraOdVweyhWpfMPYyO7RsoZJkXoveR5ND-34ui9nAEgYEHAvlf997nuNNir_nfEUKktDl4z4Fn1bpxHKpFsw00jswFYj131r-HBdpBta46Q9o2zMyU",
-      "places/ChIJob-TyNOY4jAR_gJbpHajDaU/photos/Aa-ngMYkWDcuuGYYkJSGyREWckvw7L-ixttXAdvc8UN-U7oBksFpwFacvyG9X0vUOFLgFYVGZbELyMybRxOxb_wmXJO7ihi6DEIJyajUUwwn3hQzWJl5IFRy_YJwsq1lVpC0trqUk6c_2aYF_8DXspK5HBoHTzutro-kOSNWSHlXvq8gSSMVguXkTUuWAQvFrT1A6CF4qaWO1fs2c3MlaNSlbeT19MjXBuW7meLWav579NKxnPk0Q-kpL0bUyCUR2BmTn8h3Wx3YbEdtbrNPtXsMLWdZrsUjkgAdyEZ4D28flTZZEJPmK6doijQH7mvxQTrApAVkjo-Omjv_PUva_lTlZD9MuBi_qucjZQfmqrlfSUMEM8qcsUNnosGgsIVGC8dxNr3FRrfRz3mRJrclgcNxSy9G5EkXQ2TLoceZ9xsIx7YJXsXE",
-      "places/ChIJob-TyNOY4jAR_gJbpHajDaU/photos/Aa-ngMYXQMs8373p4VvjKqEq_gfVWs7jMOm_iqw3GNr7dONPks2Sk15mzVQQWtHUdhWqyRlW-uDWUXw8TVDmCGqY9F4EE1kZv3LqIQTSXxFHNG_yd9-8xcHgPgBrONQUkHbEItMBUSI9gb0wvvuEO0STpoqKIu5EpdI6e7MDd6LcqB6SONCjHQ0tGeDSWJh3v8wW8k1kDOsQSpymYhF-38bFxGJishJ9yOf-dmdb1OHTkpJdJar6r3d42sGqYQfy9SPfvArh--7oa5tqrMQozGNLBpiP18k9-vtJ31KskICd9cFtDwOI26Qbt35ofgoUH8nscbJ0jI3Ev3HSn7ssfUYgYzLyrdU_91kAbRt4_pYCiQWQKvyiXhhPbWhaUlPuW_Lj7qNzt0ObwNLJQ4ZNCFiRpH-fjpDy1NoxdApo4tRaCKG0rA",
-      "places/ChIJob-TyNOY4jAR_gJbpHajDaU/photos/Aa-ngMZeXqo6sQBgMNjjZpHRmYj_WdqwdAMR4tAZQ0nwoVjeHYy4khPVKK6CFrpY8s5RyYPvdwnnhfAmBTJIemTuMkUqmZ8-xxmYkuj0YR1GYx3tNIr5PeqIiHSwgJNEX54xumKokxpYlf8ZKo8_q1k0WSaIdquJykNyGS41Qxyf4vY0vANOPVRmaoSs6CKaiDw4AEfqfo6w5XyAMVFOrleXFYMJ5HQ4_xY29LazZKE5U32SxLYHyUazM57oxPBfXnWw0GcYdaRMADihnGvs4tQPJbscknKuDUw7G8CP-v8F0v8Oez1Y6l0NpV-icw8A1QsLrTb0896d5ExJfE1Mq6VOaZSPJwbQHnswnMb95Sls9fsnKFIc0A0Wf0zNgLO01sKH24g-zoZ4qpJ2p-HeKL0DE0GzgduUesKx61iU7q4tVF_Cf-JD",
-      "places/ChIJob-TyNOY4jAR_gJbpHajDaU/photos/Aa-ngMaoT7FcxgOnbGzfOpZhE9XhlIdLLVfMYhDD315A_QMszVWFX4NXMdefHSZUQD3J3rfcQ6jpShYzM8ebJG49jHXWA6iDQdRn3pshffeU1mcpxeWVyGaUWyVXuPg1XYH-vQoxH9U_qGvteU7rA3gy6zD0qqKrL_zdPhWyILDvIdGPj4-B43Bj9c8uJXyW4N-taTI3T4NfmZnkVx6YT_nosHNyrOPsrLCEBzAthaegSSDl0qww8-wAdf0RG3bXMe6hY4ARAolc0Z0LZ_e6kVXxbL6AoE8I8x4gbzMZNZhD5bJv8vKWpFClr04SHINZfRnwMDNL6jrW97OsyovPt1oCvg5A2TIS5c-Uwh4pm9cAuVunVTnH3qlPyunZBcAcvT0N9vjvtttbjQv_33Jl6gR_KXKP_t4YrPFmGlZi0wqciRo",
-      "places/ChIJob-TyNOY4jAR_gJbpHajDaU/photos/Aa-ngMYSCJoDyUdsQoXq8mhV9kKBINyvlXyXIAUvIpZNjXkIpipNYTgXjm9SQpc33E1mFlp6SY8FFyQWTxTkSwyNtb73L1zkuOkkXuQfkzgq5AGaDKsz_7UUQr94bMg_VaDAmTZX-_QbTgmWeMHbID7OFdHarbp3aYLcLWv0_yQJaTo2ph0x3lM3kQE4AnFGBG2Y-zwAzBOaaPU0jxsuq6ZguO_63LnYyuyohm3rmWVQlId8ZaFhYvIUbvdb4b6aaxJyheZzDqjNoXrbnMxEZgAzLRPamJZTID7zR_qIPT9IgSuPK1Lh996730FaKmh6zk-jgFbltFrdYm4Xkq2gr_iNkyX1lYT2tgw9qEQpKKtgSILxo6zHaCy3BCzV0DztSuzP-u_wJC-UrlsvKNfBNrL-ZO-bZG7PuK4G8tyNYpFf47lDm5mp"
-    ],
-    "highlights": []
   },
   {
     "name_en": "SO Zen Hotel Silom Bangkok",
@@ -9334,44 +9134,6 @@
     "highlights": [
       "Papaya Salad",
       "Larb"
-    ]
-  },
-  {
-    "name_en": "Baan Somtum",
-    "name_zh": "Baan Somtum",
-    "description_en": "Michelin-recognised Isaan dining inside a century-old wooden house in Charoen Krung 🌶️ Baan Somtum has been Bangkok's go-to for authentic northeastern Thai cuisine since 2005, and the Bang Rak branch in OP Gardens is the brand's most atmospheric yet — a two-storey renovated wooden house with an outdoor garden dining area surrounded by ferns and a fountain. Twenty-nine varieties of som tam, including the signature Luang Prabang-style with wide papaya strips and fermented fish, grilled pork shoulder, banana blossom salad, and rare hed pawk mushroom soup. Bib Gourmand, open daily 11am–10pm, ten minutes from BTS Saphan Taksin.",
-    "description_zh": "Charoen Krung 百年老宅裡的米其林伊善料理 🌶️ Baan Somtum 自 2005 年深耕曼谷，Bangrak 分店落腳 OP Gardens 的兩層樓老木屋，29 種青木瓜沙拉任你點，招牌 Tum Luang Prabang 琅勃拉邦風格寬版木瓜絲是必點，烤豬頸肉、香炸炸雞翼、珍稀菇湯道道用料誠實，花園座位芬芳靜謐，距 BTS Saphan Taksin 步行十分鐘。",
-    "category": "food",
-    "address": "4, ร้านบ้านส้มตำ ศูนย์การค้า โอ พี การ์เด้นท์, 6 Soi Rong Phasi, แขวงเจริญกรุง, Khet Bang Rak, Krung Thep Maha Nakhon 10500, Thailand",
-    "lat": 13.725147699999999,
-    "lng": 100.51598349999999,
-    "photos": [
-      "/photos/166f39f6-f03b-4041-913a-e6358d8bc832/0.jpg",
-      "/photos/166f39f6-f03b-4041-913a-e6358d8bc832/1.jpg",
-      "/photos/166f39f6-f03b-4041-913a-e6358d8bc832/2.jpg",
-      "/photos/166f39f6-f03b-4041-913a-e6358d8bc832/3.jpg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=Baan%20Somtum%204%2C%20%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%20%E0%B8%A8%E0%B8%B9%E0%B8%99%E0%B8%A2%E0%B9%8C%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%84%E0%B9%89%E0%B8%B2%20%E0%B9%82%E0%B8%AD%20%E0%B8%9E%E0%B8%B5%20%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%94%E0%B9%89%E0%B8%99%E0%B8%97%E0%B9%8C%2C%206%20Soi%20Rong%20Phasi%2C%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500%2C%20Thailand&query_place_id=ChIJm-3wI42Z4jARNylNKEMrMh4",
-    "rating": 4.5,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "local_ratio": 75,
-    "id": "166f39f6-f03b-4041-913a-e6358d8bc832",
-    "source": "googlemaps",
-    "area": "",
-    "approved_at": "2026-07-01T11:30:39.831Z",
-    "slug": "baan-somtum",
-    "photo_refs": [
-      "places/ChIJm-3wI42Z4jARNylNKEMrMh4/photos/Aa-ngMYlfLoYBjrhUAmyfvP1gDkH7aqb9qUogRbXWuawBtaSUqKKIsJ-RZXuMwjn4n37ZQF-xP5yC5upC1J81zkCX4JMbGD2eqN8rybKhdFBM5BKc_c5M_sVSP0oTNsJWgWrQAdaiHSMBheZ6UrFbOjkE1rs4gdqXwOKAC1MKLQ4qVD3Z7wwd5dWwsnpzE1Vdnyh9sNL1tPiHkOjC7OidvSTvnnpw8PGGhqxjjtrqdBjtAVsWyha-lIBzHvn2XeYlCrw2atBTQ7LmovM16mbOh0p3swyS4ebBvjfvKt9cG_W5h6K51vsATciqUMohQ-UXCW3AibMirfPX73ZD4xxO5QrBby5NumkW4HdCghpdHt6igq4t_gGVFew_Y3RrXN8wMqMvwC4ZQTERhjc98jjfYgFL-MargwFjVfAeJmhkyoHgB260g",
-      "places/ChIJm-3wI42Z4jARNylNKEMrMh4/photos/Aa-ngMYVR1mEZbAB7ag6jRLmj9pDZVVa1lWBhMtIhqki9-owxZ-bJJOSEWq1NuFIfoT5eTXUW0E1fsgZH-KgYG8I1CnmAwA1VplmccJPeAXnddhnmHJT7zykMqjbOHQ6kGHlXxlY8sdqsHqhFqqy-o574VDZ6WbRmnX5PQ2Pd2MoXv0Jk4M6JDGBMt6TsyAi1YFCeFPlZuKK3ClQ4mDKMV5W_NZEOKUGzwAUGzjXtDagTC8HPaiNVPgJwmEQH1U9RRsG1EMp0ElWzUlqI2tTFJRjsuIr4rQ8aKL1ucdIWVBBlikWz2hGX37N7ozhPCOPpU3DBkvbecBKUfEMXi6Dl9tO3b7b1JLDDhW0T_l80TXnJGVUSkmoZv3JOT__gpDoY8hUxhCClHzamTTZCW8S2_VbuTWuRBFxRQZxt-r8mAzPOq72jrM",
-      "places/ChIJm-3wI42Z4jARNylNKEMrMh4/photos/Aa-ngMZ81rvcuHl0H3DbswcDQfSShmITDJ3pzi_VqYOL8njE1hgCckku_dytzyz397bqdxLoA47c97B5llSFQjVclqB8ccufPDR5wCncnoowqV6_-yd58vlcvdAeFNm2uI-Fs5TW41QVVyq2VoSf2Gb2aW70BYucHRbqBbLkLs88ZCSFrG3skgjDp5RZBK7oJcVOfHeR9YfCawO5_EvjIteby3yWsdG16WLhNiWEikL7GTLhGGlVwINa7MeXeI2Xl2oneLz6z96Zi_ZITVp6WCJ9Nhax0B5aOf1DSuGsrtMo6Rh7wj4vlZIp0wDNF6luUzjeeDzDpUNkPrSGpDT1Rgcl9NZkOv6lpq2SfIIfXobc3TwjyQv7slBR_-W6T2Cm1Oeuh2BYziCD5cB8ssENM7JcXmt1B2bsqREryPd6VXcMvnPMCA",
-      "places/ChIJm-3wI42Z4jARNylNKEMrMh4/photos/Aa-ngMZPpEqOoQlDtBbMNYR9Ts9bKj6awYf-V8ihBlt0B8lrvoO42qwoTl1YokYy-UrwnzqgSZUaQcJahzSURDp1EfYS8mal388iXxLLLsAvGnMQ8XGqEATDL4cs9X9Z1bw4WT5gZBc02Z6cyCa3p7Ukn7PQDv_zF1GSCjEyasbpGXmUXhxTbl3S9L_2Hp-RZ3a_xLYG7JTtMlPkn6NAnZndFUU0CxSpJNS30Fu6a5BrUhyHcTZ2D6RXcq0wgt34Q6JexXf8yQUQ0VlKA6zcHgDs5ZrTnzKVzzp62GVw7uZlAqgNUJx1KaV0qp4ZxCSKWREFChcl4AedzeCCcEOldzESUtkRxw2QMrz5Wh0B8ORNtKsoMpmOY_wmcK0B0ZDhqs0WPPiFAUnHDoS1kkYKG3dQqJGJDAxp_182gJdcVEaWMqBZnrtTvwYkBc-PJC-exQTt",
-      "places/ChIJm-3wI42Z4jARNylNKEMrMh4/photos/Aa-ngMYPuFbMX1V1NbK3oUe4w2tjJWAGNGuqtEGkqHWFQclnU_VIItqOPuQzXi75vRowSqj0aYgKFrylPSW87PnjRiQyzkVtNgJtY9T-_RaNDRQMih_gWdW25ZmtVJHIW1V4eFfwA7Xy0WXq0IZr4zfnj5BTBAKNy-cFrNBB1IYLTMJSgaRGEn_zt9OvGbx4K5oXW5CsoE1SmqMbsYBN0EMVJRBbUjRE_Ez45P3cqa_za0U69m2zpJk4m1Z9vrBtGIyorRkKKtkUZDmbpYjj8V8kJGVDG0jG_evFeZuhw0j2UxNLjZRp0mCbh-f4QkMWccK5JgB2eeVLG6NyTxRPOaXBNoo6YhQ1gh18-tIWLQSMxfdont8czxAAusH_VcX1O8SnWwKxN1lJBiFAna9rgkoaAGgt_trv_bsjz29YL03noM2MwWYYKdve3wKi1AxFBQ",
-      "places/ChIJm-3wI42Z4jARNylNKEMrMh4/photos/Aa-ngMZum8bcnHyggpT00SRuIXmRdnY6VZwFiyiXIfYZx6ROWUV-MniMZr-lBHvXaekkRwwgG2JTSydxgqlSRMJ6h2aw_BJkVzSFz7yWFBr8PaRP8KJie86fEdV7t4zhZR_zcGCd4UpsEk6hG9rtB2hEaKpst1N-HbVXuAaYMn7NAh8obBoAW_pfF4UXuFFP7EgLG6X_IMRLMLisF7MnnqqohuIU0a6HE2WZ1HrOBaKdflhlqScyXktjx1kONLMRYHuHN3Aid9hzXEBxDJpvWZHj8CxGgoCpZDprhKIDmf61p-D8c_1AZw1z_amy71UpDMfgmHjyYra1uiwx2gKueln1Pon9WaarW4B-DzwcDPO2fYYV_um9W90l-WP_v7prfmETcyu--_P-lr45mpTNwa9gIEHbyex05V4idXTwGkpiXvJYOCHoMvdDcZ3diGiqMQ"
-    ],
-    "highlights": [
-      "Tum Luang Prabang",
-      "Garden Seating"
     ]
   },
   {
@@ -11438,7 +11200,7 @@
     "name_zh": "AMAM Lonbakery Town",
     "description_zh": "🐶 上海爆紅烘焙品牌首度登台，進駐 Siam Paragon G 樓 Gourmet Garden。英倫復古石牆裝潢搭配「Bagel the Dog」招牌吉祥物，逾 250 款品項中以巧克力可頌、蛋撻、司康、現烤貝果及限定狗狗造型麵包最受歡迎。目前泰國是全球唯一海外據點，開幕即引發大排長龍。",
     "description_en": "🐶 Shanghai's viral bakery sensation makes its one and only overseas debut at Gourmet Garden, G Floor, Siam Paragon. The British vintage interior — stone walls, hanging pots, rustic décor — is anchored by the iconic 'Bagel the Dog' mascot throughout. With over 250 items to choose from, top picks include the chocolate croissant, egg tart, scone, freshly baked bagel, and limited-edition dog-shaped bread. As Thailand's sole global outpost, expect queues from the moment you arrive.",
-    "category": "food",
+    "category": "cafe",
     "address": "ชั้น G, สยามพารากอน Unit G27 991/1 Rama I Rd, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "lat": 13.747387999999999,
     "lng": 100.5343087,
@@ -11475,7 +11237,10 @@
       "places/ChIJH1vfLC-f4jARqhQ-kyduSSI/photos/Aa-ngMZfcgGV6f34q0dgmNcyC8LurlaZxV2YdU7eLyppEOfpa0_nldv5P9NIzavvdxDUlQ9l62IgMnM5xTJyKEhXZj436gIIK4cDoLHqzWqqFNpZ836-3KYE0G4HO7EciZjXpbLLAch0veOHA6JRuR0N3JIiTAn5ed2I6k6Is3pPZqhf-8pqyKQ9iTUjF9Ha86s57V4TX4iac2Uyr_3Kq0VJ3PzE-LcXeZIioKs0uM4LLhE-00NYpJ4b0ariVlGhDqCXgEPfhJI7DGU434ptoYu7bVlBUuKkOlHkybu8OreVL_cZ8zr0K_JPoULV1uthqzZ_ODnd0QaojNcSbNMuU6qqXTudjxu-dSWYrCUgXF6gQcdunWzqEwq6udQS7b2mw9j6Ua0AiPDh0ZK6I2hzmKb7g-peHFxX6Bzd6dUL3SbSMjcAojCNl6pHXg6BUdx_IRO1",
       "places/ChIJH1vfLC-f4jARqhQ-kyduSSI/photos/Aa-ngMbD1c0rlFIHZp4apjx8ea7jjGDPQygLKS7VeTiM1e94jGup6aYStmpsaCggaF1PKwlEbYy8rjiCKuoYjgWicTCoUXuS4-YqpWR1AlMofHKoz2Wocz5d9D_DwWb7jIUz4Xc7zsiCNW9xDnu73SA4z19ZwrXlqKHINRYrXWKGmN0ne6ezQjuZyN-i2EiuKyHbxcGER5yUKmtoUbFp2P5rhGGMZjfXuABIvix5t8NuVKAANZy3xC4PT26T_rvYvYo5NakhxL8dhxSHNh-zixfkTx-SlePlc8gwSlevLCFpvn7b3Vj_wcfk1hCJAk5v6u1OYhkz1L95_Z7f5TEyhvsbTt7YeMKRi3Syb3-1cHcKww_G0h7FGyOEmASXm9TIFJ-nPx9TOj2nP9Xo4V5VfYTMOYyOorgxcGoqpJIiXxtLvMqzu7JUvzS7N5C2Odhjbuq6",
       "places/ChIJH1vfLC-f4jARqhQ-kyduSSI/photos/Aa-ngMZBYqA43X3YXz-G5CRzORbOW_QcLXHTnKUAA88qIlL8R9l-845gmOtap4iSj-g9T9QIZHqERDzjZDjwr2k0FTNd3SduRNF9X2Gj2qn2c3tvKrxXABgkKMoARHBOdFVRZ03BBAj1nL4JOiO8iizu2QqMremddFqwMIZhQYtKVezjjmWgJ7rRZ0VkcVihx7GEWYcn08bZz3YGPe5iJeCcE0EP2NTBRHrnc2EkzVVamUUKK8F-kuvd37k-cwl4YNVHg4FxNlquoaxU7I7g-pbrsf_f5ljAEnKroL4HyZ4l7hckBQRw-haYHkI7xCT462EXyA88QXNa0sNcXhgTDE1YNFGHGxrTfxFWFhsq_xcfWG-DBtp7cJc5_qnzdHmbC9yNa-qfK7qqlmjvXIwmkFgU03bCkSyQTlUhRxjSE1sDjIdJ4vuAXNt5d1CQIVQdTtog"
-    ]
+    ],
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "id": "f0df42a1-d915-4e73-923a-fc3a12575e74",
