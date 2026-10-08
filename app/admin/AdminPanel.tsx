@@ -603,6 +603,7 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
     name_th: item.name_th ?? '',
     description_zh: item.description_zh,
     description_en: item.description_en,
+    category: item.category,
     address: item.address,
     address_th: item.address_th ?? '',
     rating: item.rating,
@@ -689,10 +690,16 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">English Description</p><textarea className={inp} rows={2} value={form.description_en} onChange={e => setForm(f => ({...f, description_en: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">地址</p><input className={inp} value={form.address} onChange={e => setForm(f => ({...f, address: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">泰文地址</p><input className={inp} value={form.address_th} onChange={e => setForm(f => ({...f, address_th: e.target.value}))} /></div>
+            <div className="col-span-2">
+              <p className="text-[10px] font-semibold text-gray-500 mb-1">分類</p>
+              <select className={inp} value={form.category} onChange={e => setForm(f => ({...f, category: e.target.value as Category}))}>
+                {([['food','美食'],['cafe','咖啡廳'],['nightlife','夜生活'],['shopping','購物'],['hotel','飯店'],['attraction','景點']] as [Category, string][]).map(([v, label]) => <option key={v} value={v}>{label}</option>)}
+              </select>
+            </div>
             <div>
               <p className="text-[10px] font-semibold text-gray-500 mb-1">來源</p>
               <select className={inp} value={form.source} onChange={e => setForm(f => ({...f, source: e.target.value as Source}))}>
-                {(['googlemaps','tiktok','instagram','pantip','wongnai','manual'] as Source[]).map(s => <option key={s} value={s}>{SOURCE_LABEL[s]}</option>)}
+                {(['googlemaps','tiktok','instagram','pantip','wongnai','media','manual'] as Source[]).map(s => <option key={s} value={s}>{SOURCE_LABEL[s]}</option>)}
               </select>
             </div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">評分</p><input type="number" min="0" max="5" step="0.1" className={inp} value={form.rating} onChange={e => setForm(f => ({...f, rating: Number(e.target.value)}))} /></div>
