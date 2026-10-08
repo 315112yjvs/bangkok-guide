@@ -7,7 +7,7 @@
 //   node scripts/refresh-hours.mjs          只查「沒有資料」或「超過 30 天沒更新」的店
 //   node scripts/refresh-hours.mjs --all    全部重查
 //
-// 用到 Google Place Details（只要 regularOpeningHours 欄位），一家店一次查詢。
+// 用到 Google Place Details（營業時間、營業狀態、評分），一家店一次查詢。
 import { readFileSync, writeFileSync, existsSync } from 'fs'
 
 const env = readFileSync('.env.local', 'utf-8')
@@ -50,12 +50,20 @@ await Promise.all(Array.from({ length: 4 }, async () => {
     const loc = todo[next++]
     try {
       const res = await fetch(`https://places.googleapis.com/v1/places/${placeIdOf(loc.source_url)}`, {
-        headers: { 'X-Goog-Api-Key': key, 'X-Goog-FieldMask': 'regularOpeningHours.periods', 'Referer': 'https://www.bkk-local.com/' },
+        headers: { 'X-Goog-Api-Key': key, 'X-Goog-FieldMask': 'regularOpeningHours.periods,businessStatus,rating,userRatingCount', 'Referer': 'https://www.bkk-local.com/' },
       })
       if (res.status === 429) { quotaHit = true; break }
       if (!res.ok) { stats.failed++; continue }
-      const week = toWeek((await res.json()).regularOpeningHours?.periods)
-      hours[loc.id] = { week, checked_at: new Date().toISOString() }
+      const data = await res.json()
+      const week = toWeek(data.regularOpeningHours?.periods)
+      // 順便記下營業狀態與目前評分，用來找出已歇業或評分大幅變動的店（同一次查詢，不另外計費）
+      hours[loc.id] = {
+        week,
+        status: data.businessStatus ?? null,
+        rating: data.rating ?? null,
+        reviews: data.userRatingCount ?? null,
+        checked_at: new Date().toISOString(),
+      }
       if (week) stats.ok++
       else stats.noHours++
     } catch {
