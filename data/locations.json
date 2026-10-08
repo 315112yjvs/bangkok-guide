@@ -10949,7 +10949,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Tichuca%20Rooftop%20Bar%20Building%2046%20fl%2C%20T-one%2C%20Soi%20Sukhumvit%2040%2C%20Khwaeng%20Phra%20Khanong%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJPXYszxSf4jARvqTluQfT_is",
     "rating": 4.2,
     "price_range": 2,
-    "tag": "new_opening",
+    "tag": "evergreen",
     "area": "Phra Khanong",
     "mentions": 1,
     "evidence": [
@@ -11174,7 +11174,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=wasteland%203%2F19%2C%20Pridi%20Banomyong%201%2C%20%E0%B8%8B%E0%B8%AD%E0%B8%A2%20%E0%B8%9B%E0%B8%A3%E0%B8%B5%E0%B8%94%E0%B8%B5%20%E0%B8%9E%E0%B8%99%E0%B8%A1%E0%B8%A2%E0%B8%87%E0%B8%84%E0%B9%8C%201%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%82%E0%B8%99%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJCSlJJRSf4jARBFGVsVbdqfw",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "new_opening",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -11815,7 +11815,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Light%20Minute%20Home%20Cafe%20303%209%20Chaloem%20Phrakiat%20Ratchakan%20Thi%209%20Rd%2C%20Khwaeng%20Nong%20Bon%2C%20Khet%20Prawet%2C%20Krung%20Thep%20Maha%20Nakhon%2010250&query_place_id=ChIJX03Sx-xhHTER5DlF-QfC2Hc",
     "rating": 4.6,
     "price_range": 2,
-    "tag": "new_opening",
+    "tag": "hidden_gem",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -11952,7 +11952,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Booms%203rd%20Fl%2C%20939%20%E0%B8%96.%20%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%201%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%A7%E0%B8%B1%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9B%E0%B8%97%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B1%E0%B8%99%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010330&query_place_id=ChIJvVfRke6Z4jARtfVQBDEcrGs",
     "rating": 4.9,
     "price_range": 1,
-    "tag": "new_opening",
+    "tag": "hidden_gem",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -11998,7 +11998,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Brass%20House%20Bangkok%2045th%20Floor%2C%20Grande%20Centre%20Point%20Prestige%2C%20Thanon%20Ratchadamri%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJRYrlMxKf4jARsHx2zTGVrYg",
     "rating": 4.8,
     "price_range": 2,
-    "tag": "new_opening",
+    "tag": "trending",
     "area": "Ratchadamri",
     "mentions": 1,
     "evidence": [
@@ -12068,49 +12068,5 @@
     ],
     "approved_at": "2026-10-08T10:08:21.962Z",
     "slug": "segreto-exclusive-italian-by-ermanno-lelli"
-  },
-  {
-    "id": "df49a04a-40ec-46aa-94fd-40f2f21524d9",
-    "name_en": "The Langham, Custom House, Bangkok",
-    "name_zh": "The Langham, Custom House, Bangkok",
-    "description_zh": "在挽叻的昭披耶河畔，由 1888 年落成的舊海關大樓修復改建，是朗廷集團在泰國的第一家飯店，預計 2026 年 12 月 20 日開始接待住客。共 75 間客房與套房，新建的玻璃帷幕客房棟由泰國建築師 Smith Obayawat 設計。館內會有香港粵菜餐廳唐閣（T'ang Court）的分店、酒吧、戶外泳池和川水療。",
-    "description_en": "On the Chao Phraya riverfront in Bang Rak, restored from the old Custom House completed in 1888. It is the Langham group's first hotel in Thailand and is due to welcome guests from 20 December 2026. There are 75 rooms and suites, and the new glass-walled guest wing was designed by Thai architect Smith Obayawat. The hotel will house an outpost of Hong Kong's Cantonese restaurant T'ang Court, a bar, an outdoor pool and Chuan Spa.",
-    "category": "hotel",
-    "address": "300 Soi Rong Phasi, Khwaeng Bang Rak, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
-    "lat": 13.7251661,
-    "lng": 100.513948,
-    "photos": [
-      "/photos/df49a04a-40ec-46aa-94fd-40f2f21524d9/0.jpg",
-      "/photos/df49a04a-40ec-46aa-94fd-40f2f21524d9/1.jpg",
-      "/photos/df49a04a-40ec-46aa-94fd-40f2f21524d9/2.jpg",
-      "/photos/df49a04a-40ec-46aa-94fd-40f2f21524d9/3.jpg"
-    ],
-    "source": "instagram",
-    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Langham%2C%20Custom%20House%2C%20Bangkok%20300%20Soi%20Rong%20Phasi%2C%20Khwaeng%20Bang%20Rak%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJCz_SuYeZ4jARPVv0DcV7Swo",
-    "rating": 4.4,
-    "price_range": 2,
-    "tag": "new_opening",
-    "area": "Bang Rak",
-    "mentions": 1,
-    "evidence": [
-      {
-        "url": "https://www.instagram.com/p/DdWNptlybfE/",
-        "title": "Roi Chak Sam | Contemporary Thai led by Chef Thitid “Ton ... - Instagram",
-        "quote": "12月開幕於曼谷昭披耶河畔，匯聚一流廚藝團隊"
-      }
-    ],
-    "photo_refs": [
-      "places/ChIJCz_SuYeZ4jARPVv0DcV7Swo/photos/Aa-ngMYWsocndEhPCMeKoLfZCZP8fotIpY1ibDATZCrA3S0SvwMpv7y-w46vjKqdfzFudgAKoEIj59DkRZD3cFdpABTkKGwFD-A7Cc1v3vCDgOi0ODu6ibDD1-MOw8fks9pcdtfjMUUrk3J8zEgDFj_G66H-pqd1LjHJPeRt5tDgXmog9o211hpHlTEpnRmhVHOOBfyWh8f3Myam5E-kqShy8WycBHGH4_5_PvupBDiRQ_34mAHat7EI2V2VCaErPKA9c-UjLNzo0Yeft8mWuleHAX2KYMdDrFivDUpud0VMQyT6EYjLfL0J26oP09OvVeDk2oBNYZ1Rtweg29fGi33-792AW5NfvzDkQGKdVfbElRd01dquS1eT6SjwD3ZUTbI9TP0COORmkbibCWJi7JmHD2OxljL1mKU",
-      "places/ChIJCz_SuYeZ4jARPVv0DcV7Swo/photos/Aa-ngMaRsV8Y3HUt3zgjR0p9JLSXRnq9OhWMtBb9kS25gdQOx8I89wBnHs_ebLHDTzmajBU_eLSfGcLYM4PUib4-iCrJGW9aOcQR9qyevzTImudfz3pCwEhoPbHktpFNi0jDnQ6nK84qyUDb1NLkLmO8wvDmzavxtys9a_X2Gh5G8g6FOoP9LD84lUdD73GDZdVZQjGXU2kd9jwBayBSxHM9QFkBwsrcUwADFjV63OM7r_M5IC7HI_aj2kVFkpWDIMVnx_bpB-mH9b4owE4yiLYVP9DZmNYrWVvHkiOb9mK-CTRpEfyvHwISPS9uDruU-DBIbn8O0lgFypodctCv3VfZvB8Msy6MoLEa7xKM8CPet34KSIYF-ABUK61V3qkVmUGzVCCBkslexKwV9koa3TE4COptkRZI",
-      "places/ChIJCz_SuYeZ4jARPVv0DcV7Swo/photos/Aa-ngMahgaim8KiZ7eEeddraSeuKgOlPiuYA2DIHsNF9iECHuHihGQbTPFMK03gmRq-9gusBIkaxLD7OQy8rKrS7VcI19gvRF51mDQr55KKA8S5R8bdoIUjMhcgp0b2WINqazgptvxHvvG-SraQ6a3qq78xmpNUYOExckiFXfzbSrZPJFYr_l_CA5KC2psm_gF82FFwHhoMj8n4boqu2SfIg19K9zK2oFgdH4JyPwk9r7gXksfJbNqGcvwZ19FeJYsaNjzBnHW8g6dNfC4AwtLrGO6J_QES8kbqGl4YhTglOmXNYY1HZvZQ0msJ0JNlsHIGS2gdGA15y8DDqkfIuD3FSDmM1U0xEFaF4FLmnajwdRk6c6SNo8RlwKx9HoFR4wfUXBhB9aLlKro4aPWWOxn6F9sijg4X_HYZNEQ0Zan8-_ntWYQ",
-      "places/ChIJCz_SuYeZ4jARPVv0DcV7Swo/photos/Aa-ngMarRxDVM8yollSo_Ig4OdurycyXqaatHlY8rjdmQjNxuniHlooUnfkIuI1uhU2VOnopzQk6lLJbzpMQt6LQFNelLv8eKbHAAlq8IpD6R5TXvlE28Chz-wTY9l603PZ9lhSlcAXq9lqyatSw95A1MQ5HQ2K8wvJK4G1wN3vAOQ57hqzgKbK_Oh572KpLxuL90V23Wta8fYhkrNxRuRFTbNZHlrImiYKaiA53IDdIIhtlgfBZvxa33RNMQn8j9RMBGhx4sanHvxsFgUYrP97YgP7mWz7qrUqBUn36JgXS5Tq2xZc36ymvTK_q0b3qFichWw6VEVYdgdpV3czheewwrSvBuibKqf4xkH_3PYkJve9hnR9sLIbRr6qD_7rQR55SIE6zPNqEbRzV7_0R1zTswHWhdA",
-      "places/ChIJCz_SuYeZ4jARPVv0DcV7Swo/photos/Aa-ngMZ6CmAvy1SsRMpsD3jdBWwL70okvn8fJKxm3_BjqMuVYqDsP-zonfoJ4feUE-2aDbR_IiOPp651UYHtRQegruY_5ZD03QSyeoXc8IMy9Zdc4MAWOJxDb2hNo7yUnF3BIWNI_Bxhntxrd4uj25HBj7oUHIiEwV93JzL77GRzQG9c7jZJ_YBDTVAa20ZFOA1xnSjg_cEms_IMiWqONQY93Vc6Bp6jPqSGr_JoQxej_DKFmLHAGv8GRdURQQLf57Wz-A-6G50LUH1R0Vrp6sjqCtB6bcG7qhV9rbaAQKDvsdm2VYxbGHPQ2eBRRXrw76ZFBOWy2ywxFxVJ3UATf5K0goTIwvWNGGyA_H1_jF8EaBf65pBT7AUckUd04fwjB11bGDRowk5mrSyaYZtF4ODrOYU5ZHrS",
-      "places/ChIJCz_SuYeZ4jARPVv0DcV7Swo/photos/Aa-ngMbzDl_hKbiOc1qX9GpIOmNuDD43azTS1_yZ8BsROzxumz1UT79-B8Bpfibw2GD8-U6KOYZa4nzvfN9wKBH9Ydw-kYNvloCwreQv34Uo-Hjsk7awzCzDfWklgqIEbgxNCN7HB9hf-jwpGh_hZ92-jrdIIx4A_DrN3dL6Z02JQgcuYqRD7b9qCmHOoCXFDTLZACMgowYy_-ojO0KYqEnajtF_iYNDRNQNFJzVwy1Znb5saJR4suVP-gimPlqKatR_devzCwZEtrQVkCPDWTPs5X-VV2sKFJUfg6xioV8W_vBBe3jWdipWFyFDdfEf3D1oM7S7-WNthgPcyNtcadHnT6wGRNg96g-Iop3D-Xl_r3xfy7D23xPW2vnsBUzfhxtZqbOpxJcwgAF4QmApbtdhyz4UC8lXJ-xkHkY3TX12TBmSxw"
-    ],
-    "highlights": [
-      "Riverside",
-      "T'ang Court"
-    ],
-    "approved_at": "2026-10-08T10:08:26.462Z"
   }
 ]
