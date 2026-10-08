@@ -10,6 +10,8 @@ export const runtime = 'nodejs'
 //    所以同一張圖 30 天內只會向 Google 抓一次，不會因為部署或訪客地區不同而重複計費。
 const GOOGLE_CACHE_SECONDS = 60 * 60 * 24 * 30
 
+const BOT_UA = /bot\b|bot\/|crawl|spider|slurp|preview|headless|scrapy|python|curl|wget|httpclient|go-http|ahrefs|semrush|petal|yandex|bytespider|gptbot|ccbot|facebookexternalhit|lighthouse/i
+
 // 只提供這幾種寬度（卡片 480、地點頁 800、分享圖 1200），其餘就近取整。
 // 不然任何人都能用不同的 w 讓同一張圖被重複計費。
 const WIDTHS = [480, 800, 1200]
@@ -41,6 +43,13 @@ function loadKnownRefs(): Set<string> | null {
 }
 
 export async function GET(req: NextRequest) {
+  // 爬蟲與自動化工具一律不給照片：它們會把全站每張照片都抓一遍，而每張都要向 Google 付費。
+  // robots.txt 已禁止 /api/，這裡再擋一次不守規矩的。
+  const ua = req.headers.get('user-agent') ?? ''
+  if (!ua || BOT_UA.test(ua)) {
+    return new NextResponse('not for crawlers', { status: 403 })
+  }
+
   const ref = req.nextUrl.searchParams.get('ref') ?? ''
   const w = snapWidth(Number(req.nextUrl.searchParams.get('w')))
 

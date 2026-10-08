@@ -29,12 +29,8 @@ const SCHEMA_TYPE: Record<string, string> = {
 }
 
 function buildJsonLd(loc: Location) {
-  const photo = loc.photos[0]
-    ? loc.photos[0].startsWith('places/')
-      ? `https://www.bkk-local.com/api/photo?ref=${encodeURIComponent(loc.photos[0])}&w=1200`
-      : loc.photos[0]
-    : undefined
-
+  // 圖片指向這家店的分享圖：照片代理已禁止爬蟲抓取（每抓一張都要付 Google 照片費）
+  const photo = loc.photos[0] ? `https://www.bkk-local.com/location/${loc.slug ?? loc.id}/opengraph-image` : undefined
   // 注意：刻意不放 aggregateRating，因為缺少評論數量，放了會被 Google 判為無效結構化資料
   const data: Record<string, unknown> = {
     '@context': 'https://schema.org',

@@ -11,7 +11,6 @@ import { SocialEmbed } from '@/components/SocialEmbed'
 import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
-import { DragScroll } from '@/components/DragScroll'
 import { LocationCard } from '@/components/LocationCard'
 
 function extractThai(text: string): string | null {
@@ -225,10 +224,28 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               </svg>
             </button>
 
+            {/* 只載入目前這一張；其他照片要滑到或按箭頭才會載入。
+                以前有一排縮圖，等於每開一次地點頁就向 Google 抓 6 張照片 */}
             {allPhotos.length > 1 && (
-              <span className="absolute bottom-4 right-4 text-[11px] font-bold bg-black/55 text-white px-2 py-1 rounded-sm">
-                {activePhoto + 1} / {allPhotos.length}
-              </span>
+              <>
+                <button
+                  onClick={() => setActivePhoto((i) => (i - 1 + allPhotos.length) % allPhotos.length)}
+                  aria-label={lang === 'zh' ? '上一張照片' : 'Previous photo'}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
+                >
+                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </button>
+                <button
+                  onClick={() => setActivePhoto((i) => (i + 1) % allPhotos.length)}
+                  aria-label={lang === 'zh' ? '下一張照片' : 'Next photo'}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
+                >
+                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </button>
+                <span className="absolute bottom-4 right-4 text-[11px] font-bold bg-black/55 text-white px-2 py-1 rounded-sm">
+                  {activePhoto + 1} / {allPhotos.length}
+                </span>
+              </>
             )}
 
             {(() => {
@@ -242,21 +259,6 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               )
             })()}
           </div>
-
-          {allPhotos.length > 1 && (
-            <DragScroll className="flex gap-2 px-4 lg:px-0 py-2.5 overflow-x-auto no-scrollbar border-b border-line lg:border-b-0">
-              {allPhotos.map((url, i) => (
-                <button
-                  key={i}
-                  onClick={() => setActivePhoto(i)}
-                  aria-label={lang === 'zh' ? `第 ${i + 1} 張照片` : `Photo ${i + 1}`}
-                  className={`shrink-0 w-16 h-16 rounded-md overflow-hidden border-2 transition-colors ${i === activePhoto ? 'border-brand' : 'border-transparent'}`}
-                >
-                  <Image src={srcOf(url)} alt="" width={64} height={64} className="object-cover w-full h-full" unoptimized onError={() => markBroken(url)} />
-                </button>
-              ))}
-            </DragScroll>
-          )}
         </div>
 
         {/* 內容欄 */}

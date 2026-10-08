@@ -33,7 +33,7 @@ async function loadPhoto(loc: Location): Promise<string | null> {
   try {
     // 透過自家 /api/photo 代理抓圖，與全站共用 CDN 快取（同一張圖 Google 只打一次）
     const url = first.startsWith('places/')
-      ? `https://www.bkk-local.com/api/photo?ref=${encodeURIComponent(first)}&w=1200`
+      ? `https://www.bkk-local.com/api/photo?ref=${encodeURIComponent(first)}&w=800`
       : first
     const res = await fetch(url, { headers: { Referer: 'https://www.bkk-local.com/' } })
     if (!res.ok) return null
