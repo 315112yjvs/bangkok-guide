@@ -17301,6 +17301,2122 @@
     "photo_refs": [
       "places/ChIJN2VoTo6Z4jARGJKu76SI8dE/photos/Aa-ngMYkjXIjFZOfO3xtdeCQ8cBV5fEwj7WEDzHEWkWBIXUHR1q6CqMHYIjxwxsh_GWW1LufqgWKj1s6q1nF7VlmlXb7x0vnIqYDUOsxtoiF9uHp-4zz-eDX6LgwII4pXWa8NRr1uejU7Kw8CSs-CvVaOCDH9-EoLDeukfLeFqQC0AkQwVgV3cQXXz-Ml3zQeP_SRkswxFyTq7GOQxDidMpXgrWHfWW99-KmqtHVD8oTO0JHYIKUx2Et67ZdqKlghHPlMDWyt_vkMwrF_J_eenrhM7OCtyyp-E23moSpcIiDW2ShpVspO-1IH0YxdMufh-Ma3bWYP5M5BFwBFj-COxeKpBqgJnNYrK4vAMmM2Pwg42RPPFQmWyhgGJjAwfcQG00bUycL6NhGj6-l4cdkH4mvXN9PEqZNq5_sZeBo9V-XHU42"
     ],
-    "approved_at": "2026-10-09T15:31:05.013Z"
+    "approved_at": "2026-10-09T15:31:05.013Z",
+    "slug": "5-a-m"
+  },
+  {
+    "name_en": "Grandma's Garden.BKK",
+    "name_zh": "Grandma's Garden.BKK",
+    "description_en": "A canal-side café tucked in a back street of Bang Khae — use Google Maps or you won't find it. The yard is spacious and popular with dog owners, and the second floor overlooks the garden and canal. Coffee is solid; there's also an extensive burger menu. Paid activities like painting and bracelet-making are available on-site. Quiet on weekdays, busier on weekends and holidays.",
+    "description_zh": "藏在 Bang Khae 小巷裡的運河邊咖啡廳，地址偏，強烈建議用 Google Maps 導航。院子空間大，很多人帶狗來這裡聚，二樓可以俯瞰花園和運河。咖啡評價不錯，漢堡也在菜單上，另有彩繪和手環製作等付費體驗活動。平日人少，假日才會比較熱鬧。",
+    "category": "cafe",
+    "address": "Bang Khae, Bangkok 10160",
+    "lat": 13.702917099999999,
+    "lng": 100.4123266,
+    "photos": [
+      "/photos/4d844bcb-ffb0-43a7-a097-c17afb5fa969/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Grandma's%20Garden.BKK%20Bang%20Khae%2C%20Bangkok%2010160&query_place_id=ChIJNetAPuCX4jARJwFIqDe99g8",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Dog-Friendly Yard",
+      "Canal View"
+    ],
+    "local_ratio": 75,
+    "id": "4d844bcb-ffb0-43a7-a097-c17afb5fa969",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJNetAPuCX4jARJwFIqDe99g8/photos/Aa-ngMbIWk_8faNMmq3Ltp14CwaFNrH2emRI09xQ_a0W0DOPGUUhuMiQlV4VO3RvW8ybuG2tPP-DHX2tuDu7MS9qHnj7IEKGzWAUYFK0FEsRS9lcc2yU56ouQjROg-IKvtBPMHGXbp4Zmwz_hTaCsB9O9EaRj7zwe1Smh0r5Kr2ar2eWVQBjokEK_4xwJsvrlClKuoL2xgk8eFi9mKyBaM7MVv8q8MX0S6a9M8_BSgmRmWV1XEsnh3E6WpA_1fnkXVh2b2pmpACJcsbQYXyMwKtpGKDdlCKN82z9D2A3OTpJf_FDJL_OhiYxQGwZBNjiCDRRvOmzHmpMOmL-0zM4ywDnbsRClJNLtmOFvDIrzIbTa6XyVvcv3SYIJqwjgBoBC0d1-1iSxSG5wbBg-nc3oNCu25v1otC42-w"
+    ],
+    "approved_at": "2026-10-09T15:40:08.276Z",
+    "slug": "grandmas-garden-bkk"
+  },
+  {
+    "name_en": "128 CRAFT & SOUL",
+    "name_zh": "128 CRAFT & SOUL",
+    "description_en": "A cafe in Taling Chan done up in Mediterranean and European estate style, with open lawns and both indoor and outdoor seating. The menu covers coffee, drinks, and full meals — coconut cake, fish and chips, and pasta are among the options people order. Pets are welcome, though larger animals are limited to the outdoor terrace. Parking is easy to find. Weekends get crowded and seats tend to get claimed early for photo sessions, so a weekday visit makes for a more relaxed experience.",
+    "description_zh": "位於 Taliang Chan 區的咖啡館，走地中海與歐式莊園風格，大片草坪配上室內外座位區。菜單涵蓋咖啡、飲品與正餐，椰子蛋糕、魚薯條、義大利麵都有人點。店內外均歡迎帶寵物，室內限小型寵物進入。停車方便，週末人多、佔位情況明顯，平日來比較能悠哉坐定。",
+    "category": "cafe",
+    "address": "88/1 Soi 20 Paknam Krajomthong Road, แขวงบางพรม เขตตลิ่งชัน กรุงเทพมหานคร 10170",
+    "lat": 13.7471075,
+    "lng": 100.4518792,
+    "photos": [
+      "/photos/fe354646-d9a0-4a5c-a8ba-f87572441e35/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=128%20CRAFT%20%26%20SOUL%2088%2F1%20Soi%2020%20Paknam%20Krajomthong%20Road%2C%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%9E%E0%B8%A3%E0%B8%A1%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%95%E0%B8%A5%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B8%8A%E0%B8%B1%E0%B8%99%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010170&query_place_id=ChIJhb09OZqZ4jARt8SQZJ6tOa8",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "trending",
+    "highlights": [
+      "Coconut Cake",
+      "Pet-Friendly"
+    ],
+    "local_ratio": 75,
+    "id": "fe354646-d9a0-4a5c-a8ba-f87572441e35",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJhb09OZqZ4jARt8SQZJ6tOa8/photos/Aa-ngMawsDP9sYE8sdgsiHY1mPqctegtv4OgRhxWcdzV2s-hzNr1RGzfk5gzgLmSot7GcmjKNcB8GkBB_O0zrlK5auhikYjmUdxo9O4ppcndA9C9GUB9ffPM-jyNcRxqFeO6E3aEWCFuwzMlbxHQhO3bDOYN3ed5lYwjqi4zZxE3Y-HaYWSghcUV6UwiLv4CxgGSSETHos2ol6s0o4M27d1PHPEqXZfVuDSicuL7jWf8CbDq1BMTZTVtHWktEyCbGD9zkL_zvIXZ5pUpOeDZAdgGNjUCLvXmBOZu8NmUFl-oKarFA-XtHrEwjNAqNw2FSLE3Z0Fu7vgWDFVfeiKiTu4tH6UvR432vbDKKNX319JXw5yqMFvZ3MRzUO0XsJvr4Fs9-EXTAyn8TpwxGM8JXpGcIlaxREc"
+    ],
+    "approved_at": "2026-10-09T15:40:08.303Z",
+    "slug": "128-craft-and-soul"
+  },
+  {
+    "name_en": "Rainforest Cafe Bangkok",
+    "name_zh": "Rainforest Cafe Bangkok",
+    "description_en": "A rainforest-themed café on the second floor of a building on Charoen Nakhon Road, reachable by lift or stairs. The interior is decorated with heavy greenery, and the outdoor balcony faces away from the street so it stays relatively quiet. The menu covers coffee, drinks, desserts, and light meals — the Matcha Cloud stands out among the drink options. Some visitors have found certain menu items unavailable on the day, so it's worth checking availability when you order.",
+    "description_zh": "位於 Charoen Nakhon 路上二樓的咖啡館，走樓梯或電梯都能抵達。室內以熱帶雨林為主題，大量綠意佈置，附設戶外陽台，面向建築後側，沒有車流噪音。菜單涵蓋咖啡、飲品、甜點與輕食，Matcha Cloud 是值得一試的品項。部分評客反映開架食物備料有時不足，點餐前可先確認當日供應情況。",
+    "category": "food",
+    "address": "1351/1-5 Charoen Nakhon Rd, Khwaeng Bang Lamphu Lang, Khet Khlong San, Krung Thep Maha Nakhon 10600",
+    "lat": 13.7160388,
+    "lng": 100.5067799,
+    "photos": [
+      "/photos/4bc044a1-a718-44aa-b0a1-09e8c9e488f1/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Rainforest%20Cafe%20Bangkok%201351%2F1-5%20Charoen%20Nakhon%20Rd%2C%20Khwaeng%20Bang%20Lamphu%20Lang%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJ_UJfKf6Z4jARyQQ8Gl2e4z0",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Matcha Cloud",
+      "Rainforest Décor"
+    ],
+    "local_ratio": 75,
+    "id": "4bc044a1-a718-44aa-b0a1-09e8c9e488f1",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ_UJfKf6Z4jARyQQ8Gl2e4z0/photos/Aa-ngMaHPYXaL2_N3BaLG0Uz86vLVz9XNj_lVig0mS4vQP7nXadhSFnUKpqN9F0dPeDEvdaOYCzTqgNnSX88etTFHl2oK7-z2NEv-N2ZY_XW7ImCESDgV8G3_jIVrqfJQZUVl5p4TuJFov7U9gcVnXbpJk6dhELG55LYbhSnrxEl6AhYx02AjLvqLlEQ8tIwrZIWExe7uiRrbku0QRhXMbVA7e4b5MPjXKOGGwoPWFauFmgvcIAXFpVcsgR-gJkmo_ru3xvMjkdDI6VF7V96flEhbY6SEIO1IUPK55ymsh2FuvHvlLapJllUdZpUAJhA8vh9d9REA0r7dogUI2zQeGg1DhZLQjxBqT8Cgd9Zzfk2fiMLgxho25AxEy1Jh-rJpnGeIKLFxrobN5a90zBL8mAy4lHNV1h-1j4"
+    ],
+    "approved_at": "2026-10-09T15:40:08.320Z",
+    "slug": "rainforest-cafe-bangkok"
+  },
+  {
+    "name_en": "FARM to TABLE, Hideout",
+    "name_zh": "FARM to TABLE, Hideout",
+    "description_en": "Tucked behind the flower market, this cafe takes a bit of finding but rewards you once you do. The menu focuses on light meals — roasted chicken salad, roasted chicken with passion fruit sauce, and pork curry rice, all made with fresh ingredients. The drip coffee runs on a Sweet Blossom blend, and the handmade gelato comes in flavors like charcoal with burnt caramel. A cat tends to roam the space. Note that the kitchen stops taking orders before closing time.",
+    "description_zh": "藏在花卉市場深處的咖啡館，入口不顯眼，找到了會覺得值得。菜單以輕食為主，烤雞沙拉、烤雞佐百香果醬汁和豬肉咖哩飯都用新鮮食材現做。滴濾咖啡用 Sweet Blossom 配方豆，炭燒焦糖等口味的手工冰淇淋也是這裡的亮點。偶爾有貓在店裡晃。快打烊前會停止出餐，建議留意時間。",
+    "category": "cafe",
+    "address": "15 Soi Tha Klang, Khwaeng Wang Burapha Phirom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.7437007,
+    "lng": 100.49690210000001,
+    "photos": [
+      "/photos/8ae5c472-fe62-41d9-9ce4-e8ca2a4e6b42/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=FARM%20to%20TABLE%2C%20Hideout%2015%20Soi%20Tha%20Klang%2C%20Khwaeng%20Wang%20Burapha%20Phirom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJHS2FAO6Z4jARqhV0fzk_yhI",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Drip Coffee",
+      "Handmade Gelato"
+    ],
+    "local_ratio": 75,
+    "id": "8ae5c472-fe62-41d9-9ce4-e8ca2a4e6b42",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJHS2FAO6Z4jARqhV0fzk_yhI/photos/Aa-ngMa14zBLUFFNQr46BpwWrK_YRWcXwTh0Ko6uEWIoPnEsV2M84isReGdT5sidZ9VuGge4iTLCEVebPrs1T1NGIFNVLfER_f8Nji3I4tB4gat61LhrFFdZr9aDWOasImrfc4b3NTHwRNxW8pEETuMgcxKmZCLnjfDlKJEMpD3w0iv8ap00JvFdHnaBM1W-tzhgtgEhEHdRXnrzhu6R4y9MUZF8T0LZmfZK6dCf_5HluSptvqsDsOXDXe_dJnoHYY-ZcfObqJfxoBWXopKO16xVm8qz1Ilv3Xocz84p5S9WkSY6BScjkLAVJc9R3l5mKhdaJZesP1xf19t25vVWzTcKINZERMZZjwfyKEPIvBwswqRUzPz9QhBFs_CHMKqrGTcLhzRtlCjiRWW5vumknsYxeSiIum0"
+    ],
+    "approved_at": "2026-10-09T15:40:08.336Z",
+    "slug": "farm-to-table-hideout"
+  },
+  {
+    "name_en": "Schizzi Cafe",
+    "name_zh": "Schizzi Cafe",
+    "description_en": "About a six-minute walk from Wat Saket, the cafe serves signature drinks that blend espresso with Thai flavors, alongside a yuzu sparkling option worth ordering. Plenty of plants, comfortable seating, and a quiet atmosphere make it a solid spot to slow down in central Bangkok. The cheese and ham sandwich works well for breakfast. The owner's dog occasionally hangs around.",
+    "description_zh": "位在金山寺步行約六分鐘的街道上，招牌是將義式咖啡與泰式風味結合的特色飲品，柚子氣泡飲也值得一試。店內植栽多、座位舒適，氛圍安靜，適合在曼谷市區鬧中取靜坐上一段時間。起司火腿三明治是常見的早餐選擇。老闆的狗偶爾也在場。",
+    "category": "cafe",
+    "address": "257 Thanon Chakkraphatdi Phong, Khwaeng Khlong Maha Nak, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+    "lat": 13.7558024,
+    "lng": 100.50966969999999,
+    "photos": [
+      "/photos/eaba87d5-38ea-4509-8103-2e9d6a6c0640/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Schizzi%20Cafe%20257%20Thanon%20Chakkraphatdi%20Phong%2C%20Khwaeng%20Khlong%20Maha%20Nak%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJTeLYMieZ4jARRgHuHNUIB4M",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "trending",
+    "highlights": [
+      "Yuzu Sparkling",
+      "Thai-Style Coffee"
+    ],
+    "local_ratio": 75,
+    "id": "eaba87d5-38ea-4509-8103-2e9d6a6c0640",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJTeLYMieZ4jARRgHuHNUIB4M/photos/Aa-ngMaARzcOOjwkZKi1VK1Ya-J04qld8uIkcEPyFMNtLLU4kmEFlWpr3-w9wwSiPcUv44cXk-rdEfwNGAEkVcgOcy_IWLuNnMeydW5hWneVsrKXaPF9UFKK7pPjq08YG-qovjIHDr-4npQxOSeHEENe-SIQZ1A9nB6C4CN8JAWvgS1k6pMjFRqgSDSM2kmyqT517foQ3Fm3Vyq-zgCcx7ufX5cQ9PI8-Wblkpuv7RUkMjkLDfIHmHnZhYUpeRZR6MG2siRKiAZ9n3CixDLjCW1e45bqSZCeUKxk0cuvltN39M5hgkuOgYdHHc0dX0VBTO91UlybDFWd1dMYC6lD41fFUT-HjoGxEHBfZhiP233ADOToMid7bsBEsm9ch75o5ddOkX13iuFfrJPC1wARiWjqTTR7Ie0"
+    ],
+    "approved_at": "2026-10-09T15:40:08.351Z",
+    "slug": "schizzi-cafe"
+  },
+  {
+    "name_en": "Tokizen cafe",
+    "name_zh": "Tokizen cafe",
+    "description_en": "Tucked into a leafy corner of Bang Kok Noi, the café sits under a natural canopy of tall trees with fans spread throughout to keep things cool. Their matcha and green tea drinks are the go-to order, and the sweets are worth trying too — though coffee isn't really what they do best here. Pets are welcome.",
+    "description_zh": "藏在 Bang Kok Noi 區綠樹之中，進去像走進一片樹林，頭頂有自然樹冠遮蓋，角落都有風扇。招牌是抹茶與綠茶類飲品，甜點也有人特別提起；咖啡類則不是這裡的強項。開放攜帶寵物入場。",
+    "category": "cafe",
+    "address": "57, แขวงบางขุนนนท์ เขตบางกอกน้อย กรุงเทพมหานคร 10700",
+    "lat": 13.7745628,
+    "lng": 100.4636077,
+    "photos": [
+      "/photos/45333e93-78ea-4dfe-9618-70aa4d87ed61/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Tokizen%20cafe%2057%2C%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%82%E0%B8%B8%E0%B8%99%E0%B8%99%E0%B8%99%E0%B8%97%E0%B9%8C%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%AD%E0%B8%81%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%A2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010700&query_place_id=ChIJ98Gc1oaZ4jARQU8HIm1lhV8",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Matcha",
+      "Green Tea"
+    ],
+    "local_ratio": 75,
+    "id": "45333e93-78ea-4dfe-9618-70aa4d87ed61",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ98Gc1oaZ4jARQU8HIm1lhV8/photos/Aa-ngMaKiEvt07qUbTi25XD5Y5GhwmBxlutkrYqPotpwwh4AbfVVaeQY6encnUJyLAGKIfwyV1e6Clpet6R2te__v9wcr3Ig5Ed-hwpeXNBmbGZqaep3DkXZemy3xb_fo8_SCnQcyO9smiWwGaf35wWYhwnW0OGMU18azuIB8hiNuyOhMoJ6k76DuEAQwozvLGfwG15FHPFOGxv0TZBJ634lxuHGbYboeMG1HIndkHUWctsQXE2dWf-XpmCxldr95sFgBvBu11PllbhUWc2F-vrPoHNyHIL5w8IjpUYmtuUZCytNRQaTGYBaG50LqrswX9KtSNgYPFzV7hQwYrrf97tsK3_j-2-j957QQKStkPtylY852_mbqwO7AwkT4hplFhHFC0rb19M5YOCzABLMbnhzgSPdusgU024"
+    ],
+    "approved_at": "2026-10-09T15:40:08.364Z",
+    "slug": "tokizen-cafe"
+  },
+  {
+    "name_en": "Beaker and Bitter",
+    "name_zh": "Beaker and Bitter",
+    "description_en": "The building used to be a pharmaceutical factory, and the owners have kept the industrial bones intact — lab equipment, beakers, and vintage decor throughout. Drinks are served in actual lab-grade beakers, and some come with dry-ice smoke. The space is large, well-lit, and rarely crowded, with room to work. Located on Soi Sai Lom 1 in the Ari area, with parking out front.",
+    "description_zh": "前身是製藥工廠，改建後保留了大量原始工業設備與擺設，飲料直接用實驗室規格的燒杯盛裝上桌，部分飲品還有乾冰煙霧效果。空間寬敞、採光好，不擁擠，也適合帶電腦來坐。位在 Ari 區 Soi Sai Lom 1 巷內，門前有停車位。",
+    "category": "cafe",
+    "address": "4 Soi Sai Lom 1, Khwaeng Samsen Nai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400",
+    "lat": 13.780969599999999,
+    "lng": 100.5495164,
+    "photos": [
+      "/photos/8b70aa2c-0106-4a40-8f48-852c5984b154/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Beaker%20and%20Bitter%204%20Soi%20Sai%20Lom%201%2C%20Khwaeng%20Samsen%20Nai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400&query_place_id=ChIJadycM3ed4jARz_ZmcGKCLeA",
+    "rating": 4.4,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Lab Beakers",
+      "Dry Ice Drinks"
+    ],
+    "local_ratio": 75,
+    "id": "8b70aa2c-0106-4a40-8f48-852c5984b154",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJadycM3ed4jARz_ZmcGKCLeA/photos/Aa-ngMZlEq4csgwcTuJoWiIRmE0yox0bfEQp7SGwlUr5ICWJ7ixnTiosCckY-SkdsGXDtLBrjucx0qKugNMU9KFMeWwZ-04qhoc2oHUm3_oorZMuS34qBD4qjlfJ58LYk-NGEUSPFOaJRNs03bySVwVBo1A2T9H3XYJe-MZjG-SszZ4yRo4fiza2s5Qt5Eiv_aP1Wf0Ntb7JSpC-Kxo6lwfz8gs8Ts7KTHXBclXh_eU187NenSd-6tNBg6NeoMcs2KGrog5yBaw4B0Z9vbaP_ExD0pEAkFyu1tt0MqsQg8nCkmQHWcOs_ODFvfBwomjvW8VZWRAWxiLT96JvFB_a7tR2sAsdFH6stJzfSNCOlE621xe-vkwthmh1bsAPRr0GSKyaoTPjBNNcNqFDlmESPxYrFtqy4xM"
+    ],
+    "approved_at": "2026-10-09T15:40:08.377Z",
+    "slug": "beaker-and-bitter"
+  },
+  {
+    "name_en": "Treasure specialty coffee",
+    "name_zh": "Treasure specialty coffee",
+    "description_en": "Tucked inside Mint Tower on Bantadthong Road, the café takes a little effort to find but rewards the hunt. The menu focuses on specialty beans with multiple single-origin and blend options — the Dirty and Americano with the Special Blend Beans are both worth ordering. The space is minimalist with bookshelves and games on hand, and the baristas know their coffee well.",
+    "description_zh": "藏在 Bantadthong 路段 Mint Tower 大樓內，找起來要花一點功夫，但找到之後就覺得值得。主打精品咖啡，豆單有多種特選豆可選，Dirty 和 Americano 都有人推薦，Special Blend Beans 尤其受好評。店內陳設走簡約路線，附有書架和桌遊，咖啡師對咖啡知識熟悉，態度親切。",
+    "category": "cafe",
+    "address": "MINT TOWER Bantadthong Thanon Phetchaburi, Khwaeng Wang Mai, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "lat": 13.745025499999999,
+    "lng": 100.5235735,
+    "photos": [
+      "/photos/485977d5-5673-4046-b5fb-e1963fbb8cd9/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Treasure%20specialty%20coffee%20MINT%20TOWER%20Bantadthong%20Thanon%20Phetchaburi%2C%20Khwaeng%20Wang%20Mai%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJ689bj8GZ4jARc6FVUTtV1sk",
+    "rating": 4.9,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Dirty",
+      "Specialty Beans"
+    ],
+    "local_ratio": 75,
+    "id": "485977d5-5673-4046-b5fb-e1963fbb8cd9",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ689bj8GZ4jARc6FVUTtV1sk/photos/Aa-ngMY-Z4_K-EUK8T3YGFHtoJ5bCeEMnKbONje9T0efVWnCFyzm121qRfcRf_gKgGpH48TGn3Wz_ndRRGa4aHVPcDsY-AOUnCVHvdWlbXgbDmpQQTDPEdKb_JKPpOkoCb1ccohoZ0Y6kvgciBweHj-bgEFohgoyfTEkps0xlx_WTdHeZAOBZF2cAZ3GFi-4vY6We9XWMDKBGvErHwSIrAx6MxT2iKim1dT8V7GFMhWqpx4D3T5NJEUAqctjFCbMCcgzv915ArFKXkLW2l8AtEooRIwAUEnPDp5XQA-IRJHAFxn4HzZf-aiGuP7dODvGUKhTiX_KaL0DDKedzktA1QXoZiAZ8sJpbr2Y8_1zFBqNfgjPv0ygbERDyR_4lTNNKKXjfBrnPIO5-kkvF6dbOZHxNz4i0ny3_aDh-amjsoL0UHYX6w"
+    ],
+    "approved_at": "2026-10-09T15:40:08.392Z",
+    "slug": "treasure-specialty-coffee"
+  },
+  {
+    "name_en": "BEANS Coffee Roaster Paragon",
+    "name_zh": "BEANS Coffee Roaster Paragon",
+    "description_en": "A small coffee kiosk on the fourth floor of Siam Paragon, part of the BEANS Coffee Roaster chain which has over ten branches across Bangkok. They roast their own beans in-house — you can buy bags to take home or order on the spot. Signature drinks include yuzu soda coffee and orange coffee; the hot latte is often made with a Colombia Honduras roast. Seating is minimal, around six chairs, so expect to grab and go during busy hours.",
+    "description_zh": "位在 Siam Paragon 四樓的小型咖啡攤位，是曼谷連鎖精品咖啡品牌 BEANS 旗下的其中一間。主打自家烘焙豆，可以購買熟豆帶回，也能現點飲品。招牌選項包含柚子蘇打咖啡和橙香咖啡等特調，熱拿鐵常用哥倫比亞洪都拉斯豆製作。座位極少，約六個，尖峰時段多半要帶走。",
+    "category": "cafe",
+    "address": "991/1 Rama I Rd, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "lat": 13.746269799999999,
+    "lng": 100.53413499999999,
+    "photos": [
+      "/photos/1953eaf5-f7d4-4c13-8626-f9ebad46d8e8/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=BEANS%20Coffee%20Roaster%20Paragon%20991%2F1%20Rama%20I%20Rd%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJOaE0eACf4jARM1SM0hkaGT4",
+    "rating": 4.9,
+    "price_range": 1,
+    "tag": "evergreen",
+    "highlights": [
+      "Yuzu Soda Coffee",
+      "Single Origin Beans"
+    ],
+    "local_ratio": 75,
+    "id": "1953eaf5-f7d4-4c13-8626-f9ebad46d8e8",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJOaE0eACf4jARM1SM0hkaGT4/photos/Aa-ngMZAM9y2QRH6kGbwmXeHttT8AmjEw70kmTRVdAPunmTtP5hdSkOEBEswDlGGhMb3OdhHH55_NRoR7Izk1vTV3u_QtSPwKFpE3mVcttXqnAVmVPctw1nf72bNwdKmfRNlq_ADIpHm22Od534Of8ttprBGnWpheqTy-m9579EE7DKR8Lpf3_06OzR5trG8mJ4s3NQ2qEMD9Irspi4Hubxd62q-5E1ZMw6-qtzC5VjuwdMO4GYavWGOyeK-hrEP0mct2OlHuxCV9Ir36d4hX2d74BP4Zt-2UBuiccX1WmoJ9A-0CuukUUgB2qIlX6FEXFLRvPqfOjfKE-c0ppVj3UQh1PIWYYKrk0SaylOA0HfYlQ6n62yAXewaVIO9Gx9aQLqGerKPLV7pTyeMyHVVlGSHzkVUKg"
+    ],
+    "approved_at": "2026-10-09T15:40:08.405Z",
+    "slug": "beans-coffee-roaster-paragon"
+  },
+  {
+    "name_en": "Calico Roastery",
+    "name_zh": "Calico Roastery",
+    "description_en": "A small-batch roastery tucked into a side street off Thanon Itsaraphap, not far from Wat Arun. The bean selection is concise but well-curated—the baristas and owner know each variety well and will walk you through the aromas and flavors before you choose. The owner is a car enthusiast, so if that's your thing, expect the visit to run long. Street parking is available nearby.",
+    "description_zh": "藏在 Itsaraphap 路小街裡的自家烘焙咖啡館，離臥佛寺和鄭王廟步行可達。店內豆款選擇精煉但有特色，咖啡師和老闆都熟悉每支豆子的風味，點單時會引導你了解香氣與口感差異。老闆本人是車迷，聊得來的話很容易在這耗上一個下午。路邊有停車位。",
+    "category": "cafe",
+    "address": "Thanon Itsaraphap, Wat Auan, Khet Bangkok Yai, Krung Thep Maha Nakhon 10600",
+    "lat": 13.7443894,
+    "lng": 100.4781213,
+    "photos": [
+      "/photos/370b0855-adfb-4cf4-a636-e8feab6e6d9f/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Calico%20Roastery%20Thanon%20Itsaraphap%2C%20Wat%20Auan%2C%20Khet%20Bangkok%20Yai%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJFZbTG32Z4jARQ2vL3qEfdMY",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Specialty Drip",
+      "Latte"
+    ],
+    "local_ratio": 75,
+    "id": "370b0855-adfb-4cf4-a636-e8feab6e6d9f",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJFZbTG32Z4jARQ2vL3qEfdMY/photos/Aa-ngMbAljnbW-NYeKVakS8pMD4JSkxiSfW_lj-NdX9VkwnTOle8J-dGcnxACvEvbpmh72nnCe6XulVW-NC8_mDR2FYzkpCTZJLeMtPJozFqOeKS4H2yJ77k-lDS_M-gGiKTh0J3G4lcMy7T0b-pY7Sk-GdIaTu4LVlmG7cxuK8IXTThD3tuzgmgtq46siD4YMVIEjhbZKgabDHLTZZB3p8mA_F5DPGejA2LsAstJeYu3cHxzwCt6oRlISzl5QwrMjymW1CbR827B3PM-XCvoPatze_40f0gTQdipCl8y1wUDVEsPBa3PGOVfJGl3JKEMjhxySroAfogRxgxBAF6nq5NpxmPWd1QJKE0a_SZDinq0W_emnibH5lG1JymC_zYF4zBssSiHXnyGjXjUQSnxVQU4401AA"
+    ],
+    "approved_at": "2026-10-09T15:40:08.421Z",
+    "slug": "calico-roastery"
+  },
+  {
+    "name_en": "Coffee Room Yaowarat",
+    "name_zh": "Coffee Room Yaowarat",
+    "description_en": "The shop roasts its own beans on-site using a small roasting machine, and you can also buy green or freshly roasted beans to take home. Coffee is served to your table; the espresso made with Lao medium-roast beans is creamy and naturally sweet. Avocado toast with scrambled eggs is available on the food menu. The cafe is a short walk from MRT Wat Mangkon, just around the corner from the heart of Chinatown. Note that drinks are served in plastic cups, even for dine-in.",
+    "description_zh": "自家烘焙豆是這家店的核心，店內擺著小型烘豆機，從生豆到成品都在現場完成。點單後咖啡直接送到桌上，用來自寮國的中焙豆做的 Espresso，口感偏奶油感、帶自然甜味。食物選項也有，酪梨吐司搭水炒蛋是其中一道。鄰近 MRT Wat Mangkon 站，走路就能到唐人街核心區。在店內消費目前是以紙杯盛裝。",
+    "category": "cafe",
+    "address": "206 208 Yaowarat Rd, Khwaeng Chakkrawat, Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
+    "lat": 13.743595599999999,
+    "lng": 100.505371,
+    "photos": [
+      "/photos/6f1b880a-4b7b-42bc-8bce-8b01a4f1c814/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Coffee%20Room%20Yaowarat%20206%20208%20Yaowarat%20Rd%2C%20Khwaeng%20Chakkrawat%2C%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJa_mAXNaZ4jAR_IhchxVGzZQ",
+    "rating": 4.9,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "House Roast Espresso",
+      "Avocado Toast"
+    ],
+    "local_ratio": 75,
+    "id": "6f1b880a-4b7b-42bc-8bce-8b01a4f1c814",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJa_mAXNaZ4jAR_IhchxVGzZQ/photos/Aa-ngMaj52nuJWNTcnJ8Fl_FSBY_wfEzInOCCD9H6iXuxSd65-EAle_pJJVv0ap3UIzwI3GJgKXn_-Pnn5aIPUS1oQa_jLizC0C2MA9TgxV0q21abqnLTwoK_Ka1NGLo50aUCWBrN0s10tfj-cu3s7-QjVFZc2jiPc9CF7IfSyfqrm6RbJo7Hy6fagtlJjwITP-1teoVUTZI7-vl9NsGIwGesQzA4224-CnXMVxCw_aGiTpXPZQFrq0yeqn7UIiqu9F5Z9MKzaPmEtxLWKxJHcNSR7tHaM31Rjnw6dtcPXSjY61ERGtTUFMv6QnMdWMKPZxsqmTSmGyzLznPL0RlbC37xD9XfeuiLnKyPJlMAoFQflYzMoQdSfy7rWigVkHU1CjrWWrNUzMaeCot1VhZft9EyG3XNZZpuFU"
+    ],
+    "approved_at": "2026-10-09T15:40:08.445Z",
+    "slug": "coffee-room-yaowarat"
+  },
+  {
+    "name_en": "The Gingerbread House",
+    "name_zh": "The Gingerbread House",
+    "description_en": "A century-old Thai wooden house near the Giant Swing, with antique décor intact throughout. The menu focuses on Thai traditional desserts with strong visual presentation. Traditional Thai costume rental is available on-site for photos. Note that each person is required to order individually.",
+    "description_zh": "緊鄰鞦韆廣場（Giant Swing）的百年老宅，建築本身已超過百年歷史，室內保留了大量古董擺件與傳統泰式木屋格局。主打泰式傳統甜點，擺盤講究、視覺效果突出，店內也有泰式傳統服裝可供租借拍照。每人須各自點餐，用餐前留意一下。",
+    "category": "cafe",
+    "address": "47 Soi Lang Bot Phram, Khwaeng Sao Chingcha, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.7528689,
+    "lng": 100.5006597,
+    "photos": [
+      "/photos/5095d048-7a08-47b9-89d4-e9abe17cd59e/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Gingerbread%20House%2047%20Soi%20Lang%20Bot%20Phram%2C%20Khwaeng%20Sao%20Chingcha%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJMf5R3fKZ4jAR2u3T8ESth9k",
+    "rating": 4.2,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Thai Desserts",
+      "Costume Rental"
+    ],
+    "local_ratio": 75,
+    "id": "5095d048-7a08-47b9-89d4-e9abe17cd59e",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJMf5R3fKZ4jAR2u3T8ESth9k/photos/Aa-ngMZqoah-dcnHhjuAbuksAZqbpJ8SJso89qxgxLGaSGVBYBNxbOq6LuC_hwfGDntFcuBNANgA-u1v7l57Ib_Or5h04jc9SNvylv4hApQptgLPWjin2WQwt2n4e4tTFndxX_ivWBaumLpi5t5btSn1uK-NhkmhX-lW5-k-b8HXWJrx4vfOVBV8CLERRbz2Ow0bLWjlAc4Xqwkq2spuxoPakiCAtxa79R6ZFmpLTx0iOO55hOrbDUdKuYRrJuyhtJD_zzS5Sn_i_wKI7xEWFsfJ3gBW1S7NWPhGZGwHyaUM-dbos0TdKjVQWfxBEJOQBJLrPdtFMWcVlhiLpxsiuu5VctKf_PIlt5BskAtf80hPZz1VxnA2QRQbzNFlxsJKCbn5Oya-9nU62DkVLiNt3kEohTgDsaQn98s"
+    ],
+    "approved_at": "2026-10-09T15:40:08.457Z",
+    "slug": "the-gingerbread-house"
+  },
+  {
+    "name_en": "Tip Bakery",
+    "name_zh": "Tip Bakery",
+    "description_en": "A bakery on Dinso Road known for fresh-baked breads and biscuits. Standout items include the purple sweet potato buns, pandan lava buns, and durian mooncakes — the durian filling is milder than expected. Both vegetarian and meat-filled buns are available. The shop is clean and well-kept, with friendly staff.",
+    "description_zh": "位於 Dinso Road 上的烘焙小店，以現烤麵包和餅乾著稱。紫薯餡包、班蘭熔岩包和榴蓮月餅都是值得點的品項，榴蓮月餅不像想像中味道重。同時提供素食與葷食兩種口味的餡包，食材用料紮實，麵包體柔軟。店面整潔，店員服務親切。",
+    "category": "cafe",
+    "address": "เลขที่ 150 Dinso Rd, เสาชิงช้า Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.7545617,
+    "lng": 100.5012222,
+    "photos": [
+      "/photos/2793ca03-f0de-411e-8620-bee34ca0e6d3/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Tip%20Bakery%20%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%20150%20Dinso%20Rd%2C%20%E0%B9%80%E0%B8%AA%E0%B8%B2%E0%B8%8A%E0%B8%B4%E0%B8%87%E0%B8%8A%E0%B9%89%E0%B8%B2%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJle9HhjuZ4jARuwIILkhlsQ8",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Pandan Lava Bun",
+      "Durian Mooncake"
+    ],
+    "local_ratio": 75,
+    "id": "2793ca03-f0de-411e-8620-bee34ca0e6d3",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJle9HhjuZ4jARuwIILkhlsQ8/photos/Aa-ngMan1WoVUHqwhyeWW7fycXs2drzQZ4X5wpKaXzr6HUIpL4R5jH-2zOiFoyGgMmiyY2yRUwbLhsuDz1Lz1yh6xPH6fbI-tw-CVopvCbaZD3t7jqKJvFD0PCANo8qxV71oToM9Uqxh8NYvfHu4K5BC-kscBQE7t2OCJjL4EDhXoo2A-GFqRdNGDvhEwsd58B3KSAhJC6MCR7BD3oGKasoxl8kEacY63RoA9FFSPlWWO5JXHYp7CX7JirWELMryO6L6ZM0l4ygAMsl_96_UPT5uPtvfEFTbgSubhduZ-LOy9SvcLNAvcF7JmwqiVTcIvHiR25mCZoEnb7a_SFYfJrogzxRdsdJaAywHbXGXRO62cp4WFBllRAPDrrhIhVeWdWuS_v-nozMYDzs7wlrRbcA9rLH8MchCm9A"
+    ],
+    "approved_at": "2026-10-09T15:40:08.470Z",
+    "slug": "tip-bakery"
+  },
+  {
+    "name_en": "Mae Udom",
+    "name_zh": "Mae Udom",
+    "description_en": "A long-standing traditional Thai dessert shop on Dinso Road, carrying varieties that are genuinely hard to find elsewhere, including Khao Fang and Khao Neuh Kaew. The ขนมใส่ไส้ stands out for its creamy coconut milk custard wrapped around the filling, and ขนมมัน is another one worth picking up. Desserts are made fresh daily and spoil quickly in the heat, so eat them soon after buying. Portions are small, which works well if you want to try a bit of everything.",
+    "description_zh": "在 Dinso 路上賣傳統泰式甜點的老店，有一些在其他地方很難找到的品項，像是 Khao Fang、Khao Neuh Kaew。招牌之一是 ขนมใส่ไส้，椰奶卡士達包裹內餡，口感綿密；另一款 ขนมมัน 也值得試試。甜點是當天現做，熱天容易壞，買了盡快吃完。份量偏小，適合多樣嚐鮮。",
+    "category": "cafe",
+    "address": "66 Dinso Rd, Khwaeng Wat Bowon Niwet, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.7581198,
+    "lng": 100.50210919999999,
+    "photos": [
+      "/photos/ffde90be-1cb5-45b6-bc6b-56f2c1a11c02/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Mae%20Udom%2066%20Dinso%20Rd%2C%20Khwaeng%20Wat%20Bowon%20Niwet%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJJ4ekrxSZ4jARTbFqdZdkOds",
+    "rating": 4.3,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Khanom Sai Sai",
+      "Khao Fang"
+    ],
+    "local_ratio": 75,
+    "id": "ffde90be-1cb5-45b6-bc6b-56f2c1a11c02",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJJ4ekrxSZ4jARTbFqdZdkOds/photos/Aa-ngMZsdoUUXRNYC4KSlfoPZ8RBO_FOKjFmHeqnkcYzQIG-mCEI_gdpyx5uE_rhGn48dXmsWDOc3emJA-884NEFRp0bYKMnko2b_1Kc7ES107rsXakAokNPA6u_fbMCkGGS6hiFRzrEOhzk3l682ZTN_ZkijgFE8SmiKUKA6471wDkyYTqF02E9dIkbd4EoAFd1B2_yuHCbPv9ts1c8QUjihhguhh3qpE3x7hohz0Q4v18wXTjQbSj3DpUl4wK7Sq2MgTp-9-lUJhtiVcqo6y6BVHTBhhehgbKrI5Ww1Lukca6XRaDFwfL-S-wg9p3DnbdTyeNNcipotKlW7rMTbIxLmqCPbxo1nocmLrx_FJi00h2Dtg4ozVpuUHfo-vx8gSpcsau19FLhNUAkcYkbezMI-6kidv44"
+    ],
+    "approved_at": "2026-10-09T15:40:08.483Z",
+    "slug": "mae-udom"
+  },
+  {
+    "name_en": "House of Beautiful Desserts",
+    "name_zh": "House of Beautiful Desserts",
+    "description_en": "Tucked in a side soi in Prawet, this shop specializes in traditional Thai desserts including Luk Chup, Foi Thong, Alua candy, and a green layered jelly that gets consistent praise. Sweetness levels are restrained across the board, and the packaging is gift-ready. The shop can be tricky to find once you're in the alley — calling ahead for directions helps. For full gift sets, ordering at least a day in advance is recommended.",
+    "description_zh": "位於 Prawet 區巷弄內，專門做泰式傳統甜點，招牌包括 Luk Chup（彩色仿水果糖）、Foi Thong（金絲糖漿）、Alua（泰式糖果）和層次分明的綠色果凍。甜度普遍不過重，包裝精緻，是送禮或帶伴手禮的熱門選擇。店址有點難找，進巷子後建議直接打電話請店員指引；若要整套禮盒，最好提前一天預訂。",
+    "category": "cafe",
+    "address": "57 ซอย พัฒนาการ 65 Khwaeng Prawet, Khet Prawet, Krung Thep Maha Nakhon 10250",
+    "lat": 13.7270621,
+    "lng": 100.6584602,
+    "photos": [
+      "/photos/34a194e6-c31c-443b-b55c-ddf46a76f2e7/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=House%20of%20Beautiful%20Desserts%2057%20%E0%B8%8B%E0%B8%AD%E0%B8%A2%20%E0%B8%9E%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%E0%B8%81%E0%B8%B2%E0%B8%A3%2065%20Khwaeng%20Prawet%2C%20Khet%20Prawet%2C%20Krung%20Thep%20Maha%20Nakhon%2010250&query_place_id=ChIJr9mnD85hHTERSnsgSzXwCuQ",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Luk Chup",
+      "Foi Thong"
+    ],
+    "local_ratio": 75,
+    "id": "34a194e6-c31c-443b-b55c-ddf46a76f2e7",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJr9mnD85hHTERSnsgSzXwCuQ/photos/Aa-ngMbHx1ygMrk4iHVmgEmeq28gFTfrbCU2oU_e87hy16bC1Nh_UiZwjYyF_dXGwu2bn989rilnvqqaGQk2zjrpDOqs-s2yJqhj-jy5AyFYjET6n-i2DHDHv1sU47cs-3akAqjnDw8Zq1bHJpRhJmnUWYzB20SkdglpL4uSTv_gXfKz5ZH47hKihv0yOAXCBUHlEqcoNfEpVb_NTdoZT9NDZqdvZ0zmuw-uLzixKM5L5GnwOWcvwfmQ00gEkoNer5DkdSJHloZFf_wvfSwHFmLpt40ISOLHr-g1XJJeUr_soiuhto4pXmV8DQHjaVnlOR2j4tB42HE-gUtbheSt3x1-oYsXhlQSpESeR3zZMBT7HEdcE6pp6pPrJi3et8oOBklMz_MIZfzSQGZl5_LAMP8is-vcXoE"
+    ],
+    "approved_at": "2026-10-09T15:40:08.495Z",
+    "slug": "house-of-beautiful-desserts"
+  },
+  {
+    "name_en": "Chan Khanom Wan",
+    "name_zh": "Chan Khanom Wan",
+    "description_en": "A small dessert café tucked in a quiet corner of Chinatown, right next to Wat Traimit (Golden Buddha Temple). The coconut croffle is the standout item, and the cakes are made fresh daily. The croque monsieur has a fluffy, French toast-like texture, and the cappuccino holds up well. The décor blends vintage and heritage elements, and the owner Mr. Chan is notably friendly and welcoming.",
+    "description_zh": "藏在唐人街邊角的小咖啡甜點店，緊鄰金佛寺（Wat Traimit），不太容易被路過的觀光人潮注意到。招牌是椰子口味的可頌鬆餅（coconut croffle）和泰式風格鬆餅，蛋糕每日現做。Croque Monsieur 吐司口感接近法式吐司，卡布奇諾評價也不錯。店內裝潢走復古混搭風格，老闆 Mr. Chan 熱情好聊。",
+    "category": "cafe",
+    "address": "ถ. เจริญกรุง Khwaeng Talat Noi, Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
+    "lat": 13.737599399999999,
+    "lng": 100.51317809999999,
+    "photos": [
+      "/photos/931f5e44-2f52-4228-b37e-e2afde356e51/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Chan%20Khanom%20Wan%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Talat%20Noi%2C%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJZ090dy6Z4jARxDBYHCg2X4c",
+    "rating": 4.3,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Coconut Croffle",
+      "Thai Waffles"
+    ],
+    "local_ratio": 75,
+    "id": "931f5e44-2f52-4228-b37e-e2afde356e51",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJZ090dy6Z4jARxDBYHCg2X4c/photos/Aa-ngMZmlqU7Mnufw6WdAgMGAndlEaRFd__Hujm7rHvgg5BYXCyax5xbWJqN_NyFIr5X5wMPzR6ingtcjgIJsT9Od-98S0Vx8rO1WIbz-yD_vDLa3tDVmPRbhQVEVXv0rX3ymVfBOVtyQHlIVdY7BkJ0RThyZCwr2t1gSAVgepnYVbuoJDkbvOEbsRwofORZVNupOhMDNbT8CM3AB6-V8E8-7XmK_LrSZ0GgxI1bNnXeeQ5NCQoQaR4OvmW2PiNDcpSA_hXsmpe4r8_cj5A0MSbMvhcA6s2bcWSw8M_GBeiYOzzJ2heneobYNDslePaWpBAygBvB3bZidjsj9-42PG2l-NA4hEpTMp7YksXEtaP3YZ5zfZYOvZ1ujDmWJ0vX3CJXgf5015B0h2K-SKM6T-QAaU-6Y2Ln8hOL-TfTMRwU6Ory"
+    ],
+    "approved_at": "2026-10-09T15:40:08.507Z",
+    "slug": "chan-khanom-wan"
+  },
+  {
+    "name_en": "A Pink Rabbit + Bob",
+    "name_zh": "A Pink Rabbit + Bob",
+    "description_en": "Tucked near Tha Tien, a short walk from the Grand Palace, this small bakery feels more like a cozy bar inside. A large cake shelf greets you at the entrance, packed with all kinds of cakes and desserts. Notable options include the chocolate layer cake, palm seed tart, and Forest Berry Cheese Tart. Seating is limited, and simple savory meals are also available.",
+    "description_zh": "位在大皇宮附近的 Tha Tien 一帶，店面不大，走進去卻像闖進一家小酒吧。蛋糕展示架從門口就看得到，排滿各式造型蛋糕與甜點。招牌包括巧克力層蛋糕和棕櫚籽塔，另有 Forest Berry Cheese Tart。座位有限，店內也提供簡單正餐。",
+    "category": "cafe",
+    "address": "เลขที่ 378 Thanon Maha Rat, พระบรมมหาราชวัง Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.7449359,
+    "lng": 100.492024,
+    "photos": [
+      "/photos/89f4081b-dae7-46f6-a9c5-ac62a852fffd/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=A%20Pink%20Rabbit%20%2B%20Bob%20%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%20378%20Thanon%20Maha%20Rat%2C%20%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%A3%E0%B8%A1%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%A7%E0%B8%B1%E0%B8%87%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJv9Qyc9uZ4jAR7LyLQfsLySI",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Chocolate Layer Cake",
+      "Palm Seed Tart"
+    ],
+    "local_ratio": 75,
+    "id": "89f4081b-dae7-46f6-a9c5-ac62a852fffd",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJv9Qyc9uZ4jAR7LyLQfsLySI/photos/Aa-ngMbjdZ3e5vcw2Lx1uxaA96PFMIOagfqiN35m_phnwPuZWZFnXe6lPMPuizzSuGSRRE9hcAZEMKrLDpMIu-2w6D0e19oY2rDKFkq1ZaEFJhg_AzPfCEP18iNr4O4gdqFftcyWA3kHXuQpuMHJDuym2aEWCGpTG7pc4NWBeKqkAdvufyjTkxwultocDkArCQ7y0gbWeA3-pr9XYVZ2-WTNvz_DuAe-XfVSQBoVyt-SbWbOft0mOeuHiZcWoxgGGlgPeIPvMrxivZTRM4pQj2vC77JH-LhKCaSEsAIZV6KdaWdTKWwNOX5aN7ukvui8em6GUcehUc-7wLUckXXDAdhkVALEiQ0NsM0FeZce3hB97K4F6NmRJtteQc1_NkW34T_st5vvtZqWfVp2_2fHb3duP_QBbpx6"
+    ],
+    "approved_at": "2026-10-09T15:40:08.519Z",
+    "slug": "a-pink-rabbit-bob"
+  },
+  {
+    "name_en": "Heychom Thai Dessert Bar",
+    "name_zh": "Heychom Thai Dessert Bar",
+    "description_en": "Sitting at 320 Thanon Maha Rat, directly across from Wat Pho. The standout is the jasmine tea: ice cubes are brewed from jasmine tea and frozen with edible flower petals, so the drink gets more fragrant as it melts rather than watered down, and you control the sweetness yourself. Mango sticky rice and Thai tea frappe are popular orders too. Credit cards accepted.",
+    "description_zh": "位在瑪哈拉路320號，對面就是臥佛寺。招牌是茉莉花茶——冰塊本身用茉莉花茶凍成，加了花瓣，越融化香氣越濃；甜度可以自己控制。芒果糯米飯和泰式奶茶冰沙也是常點的品項。接受信用卡。",
+    "category": "cafe",
+    "address": "320 Thanon Maha Rat, Khwaeng Phra Borom Maha Ratchawang, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.7459201,
+    "lng": 100.49126869999999,
+    "photos": [
+      "/photos/e79abbeb-04e3-455e-b875-5a861b5d23bf/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Heychom%20Thai%20Dessert%20Bar%20320%20Thanon%20Maha%20Rat%2C%20Khwaeng%20Phra%20Borom%20Maha%20Ratchawang%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJf676IJeZ4jARHVCHVT4OJko",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "trending",
+    "highlights": [
+      "Jasmine Tea",
+      "Mango Sticky Rice"
+    ],
+    "local_ratio": 75,
+    "id": "e79abbeb-04e3-455e-b875-5a861b5d23bf",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJf676IJeZ4jARHVCHVT4OJko/photos/Aa-ngMZZReLyLCZC0TnKSobB0XBQKVaYgRXK6MHQCpyMrQ4QBwT_6x17LQCG-ujB8iMqa2Cgf65BBDmNrqQyF6gXYRaHG3HmRdOEyILnQSwdC2aExoJqRcLWcrGDn2vuRBQoHV7J3mzGvWAqtc1nzMGrCcu4MwWvVkfE-eKEhHeSbAH8I1bekvhOl1n8xIB6_0SNOcJJKX_lZOlNPMaMT-P8RbcZOZkb2j4nb1qbu3SSLCBTZOfRrl3LnDoFV_Frbzd8k6186sYlYNt33H7Y51gtf5Odn6X1X45pmmfXSRNAOMNBrP82j7G2gHE4AoFMYgfb0gTTIdfo2W7ffbK9JNKGj1S2YCYI8zWh8DK1rDpn_60-BV8hgqps4dxSEXAgVOWV-OlzcN8Cv3IlZAN-fVdTDIkvJA0"
+    ],
+    "approved_at": "2026-10-09T15:40:08.532Z",
+    "slug": "heychom-thai-dessert-bar"
+  },
+  {
+    "name_en": "B-Story Garden Café & Restaurants",
+    "name_zh": "B-Story Garden Café & Restaurants",
+    "description_en": "B-Story Garden Café sits in Lat Phrao and is designed with a vintage European conservatory feel, with photo spots both inside and out. The décor changes each season — the Christmas theme draws the most attention. The menu covers coffee, cakes, and proper mains like curry; the coconut cake gets ordered often. Parking is easy out front, but it gets busy on weekends, so a reservation is a good idea.",
+    "description_zh": "位於 Lat Phrao 區的 B-Story Garden Café，整體走英式溫室風格，室內外都有不少拍照角度。每個季節會換佈置，聖誕主題尤其受歡迎。餐點涵蓋咖啡、蛋糕和咖哩等正餐，椰子蛋糕是點名率較高的選項。空間寬敞，停車方便，假日人多，建議提前訂位。",
+    "category": "cafe",
+    "address": "33, 25 Pradit Manutham Rd, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230",
+    "lat": 13.819538999999999,
+    "lng": 100.6246333,
+    "photos": [
+      "/photos/74eb0b86-9518-4810-9fe0-92cccde5cb6c/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=B-Story%20Garden%20Caf%C3%A9%20%26%20Restaurants%2033%2C%2025%20Pradit%20Manutham%20Rd%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJh_hqMxBjHTERO7_u9vxrFG8",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "trending",
+    "highlights": [
+      "Coconut Cake",
+      "Seasonal Decor"
+    ],
+    "local_ratio": 75,
+    "id": "74eb0b86-9518-4810-9fe0-92cccde5cb6c",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJh_hqMxBjHTERO7_u9vxrFG8/photos/Aa-ngMZkfw3WDGIvsm9tth3TIkf8w5wlXq7j8CXIkUWzlmZt_oc4OMzZqeC2shM4jmLTeqqTMVw5t-jXJjTARGxVoSvn2pxbDzqp8hTX51vKJiXsXbDLFUY5RTQlUUOH3awHYJolqI-2D0SzYiUHoTN4jZ8l4DMSP1bKA3M6J1YnyyjTlhRH6DN9WbfBpNfmA6ZbdMo8nsOBUv4EhUYu2fFSBLgSg8TUs7Y8MApqWj7WRsisV60Ul8LqrFJcoocLpXAe6SvuFP5eirMhlc6y5wffy97-YcXJo9xLqGtWXLgDRN63bg-AVPyR3eqF_vohzerJoIJ_6WwNOB7R-a3rad8aPdVl218Tdwoe5_tzor4R2dRCkzKINgJtSoHM13i08xzTr1FidZwHcja2uW1iYqtalKqpqxY"
+    ],
+    "approved_at": "2026-10-09T15:40:08.544Z",
+    "slug": "b-story-garden-caf-and-restaurants"
+  },
+  {
+    "name_en": "LIEBE Coffee & Roastery",
+    "name_zh": "LIEBE Coffee & Roastery",
+    "description_en": "A small roastery café tucked inside Chok Chai 4 Soi 54. Americano and dark cocoa are the go-to drinks; matcha frappe and a rotating selection of cakes round out the menu. You can choose your roast level and sweetness. Seating is limited, fully air-conditioned. There's a resident cat that hangs around the shop.",
+    "description_zh": "自家烘焙的小咖啡館，藏在 Chok Chai 4 巷 54 巷內。美式咖啡和黑可可是常被點的品項，抹茶冰沙和多款蛋糕也有供應。可以選豆子烘焙度和甜度。座位有限，全室冷氣。店裡有一隻店貓，算是這裡的固定成員。",
+    "category": "cafe",
+    "address": "73/2 Chok Chai 4 Soi 54, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230",
+    "lat": 13.8158126,
+    "lng": 100.5983155,
+    "photos": [
+      "/photos/f89310b2-50f6-4ca9-8905-b72f3cec0be4/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=LIEBE%20Coffee%20%26%20Roastery%2073%2F2%20Chok%20Chai%204%20Soi%2054%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJyayJRZ2d4jAR9Ov59W9hewQ",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Americano",
+      "Dark Cocoa"
+    ],
+    "local_ratio": 75,
+    "id": "f89310b2-50f6-4ca9-8905-b72f3cec0be4",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJyayJRZ2d4jAR9Ov59W9hewQ/photos/Aa-ngMbbMTR5A50G9c7UI6I1xAjpC4C-Uxb8tv3TJs22E6h3DAROPQqiDCYmI3gNdASYso8FU5tMKWugUjuB4rfThUeGyXyn5BuVYtYv6uNlM10bdDdpieeVm7RNPl9NdfP4tB6sfTkydhXc-bMIWyEy4AYCiSM8_iiASKgFHVT6u4vAANewIOBUsCa_SSe46n8j9Gg3u7Dsju_yNr3q0fsTjEY38wLRFx4rmxnb0i8KdPtl7jBA8z70u2Rksx--U0EGyXUov_om9Zt08ualFnicxa0nRlOePxZYCEEzRLo1gF90ndrjRmlDURAZF9IB0-nkP_XbeSJApMfy36xebpGOHYyRiD-yTDuaCdsZ-DSc1OIiZ3Sv-ZEnThEvdopK_F8p2Dzte076INHmgLfmR1h48wOpTX8"
+    ],
+    "approved_at": "2026-10-09T15:40:08.556Z",
+    "slug": "liebe-coffee-and-roastery"
+  },
+  {
+    "name_en": "ทองไธม์ คาเฟ่",
+    "name_zh": "ทองไธม์ คาเฟ่",
+    "description_en": "Located on Thanon Prasert-Manukitch in the Ram Inthra area, this café shares its space with a pet sport center. Coffee and food are on a similar level, with semi-self-service. The layout is notably private, making it a solid spot for solo visitors who want to read or work without being disturbed.",
+    "description_zh": "位於 Ram Inthra 區的 Thanon Prasert-Manukitch 路上，這間咖啡廳同時附設寵物運動場地，兩者共存於同一空間。咖啡與餐點水準相近，採半自助服務模式。座位規劃相當私密，適合一個人來讀書或做創作。",
+    "category": "cafe",
+    "address": "55 Thanon Prasert-Manukitch, Khwaeng Ram Inthra, Khet Khan Na Yao, Krung Thep Maha Nakhon 10230",
+    "lat": 13.8121628,
+    "lng": 100.67191040000002,
+    "photos": [
+      "/photos/428c898a-aee5-4047-a092-378a17500310/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B9%84%E0%B8%98%E0%B8%A1%E0%B9%8C%20%E0%B8%84%E0%B8%B2%E0%B9%80%E0%B8%9F%E0%B9%88%2055%20Thanon%20Prasert-Manukitch%2C%20Khwaeng%20Ram%20Inthra%2C%20Khet%20Khan%20Na%20Yao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJCeU7RABjHTERElbG6T4um7k",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Pet Sport Center",
+      "Private Seating"
+    ],
+    "local_ratio": 75,
+    "id": "428c898a-aee5-4047-a092-378a17500310",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJCeU7RABjHTERElbG6T4um7k/photos/Aa-ngMbU0fHKcgpchwTQ-OLpuB1r1Io5bjHbRSXqm3dyOgD1cK_hJ9taHKsoeNtWfX01z9YvpTDFRHO8VDulAMhPREXWqF7--C5GQN5B2Nw2zN8uXJBAUmFsb072zeCxYwbocJJryBr5_RvNRw-hBdNWYkKdKTWWO7UG0S2buou-CfenkVNKMlLgK_DA6ziGfHfsXYs4-IXDuTMdlSmlKS6fPFsvamtFCm1v43f99ESxOrL17gRUeF3TFzh_SAtBDbBZhhrHFSWG1j2WqjAFwxo1PXXuojqz753PGmRJK9Hvesk2JflSrA6uP5xTRuOeoGa2eDkMxb3CDzenUpShwtSN0DXiQYwe3u14cv85u9peyJ3tcq2ol26TofczozlTUmYvypVD4CNhr16HcQ7K7oi6F98ZZH1FJz6E2m8cPinkbkxXYQ"
+    ],
+    "approved_at": "2026-10-09T15:40:08.569Z",
+    "slug": "place-428c898a"
+  },
+  {
+    "name_en": "Forestpresso Cafe, Bistro and Co-working Space",
+    "name_zh": "Forestpresso Cafe, Bistro and Co-working Space",
+    "description_en": "A cafe and co-working space tucked inside a residential soi in Wang Thonglang, with Wi-Fi, power outlets, and free parking. Large windows look out onto greenery, keeping the vibe quiet and removed from the city bustle. The Vanilla Latte leans strong and not too sweet; the Dirty Coffee is also well-regarded. Staff are attentive and quick to clear the table once you're done eating so you can get back to work.",
+    "description_zh": "藏在 Wang Thonglang 住宅區巷弄裡的咖啡館，同時提供共同工作空間，店內有 Wi-Fi、插座和免費停車。室內有大片玻璃窗，園藝造景讓整體氛圍偏靜，不太像身處曼谷市區。招牌 Vanilla Latte 咖啡味明顯、甜度偏低；Dirty Coffee 評價同樣不錯。服務態度主動，用餐後桌面整理迅速，方便接著開展工作。",
+    "category": "cafe",
+    "address": "439/1 ซอย สังคมสงเคราะห์ 11 Saphan Song, Khet Wang Thonglang, Krung Thep Maha Nakhon 10310",
+    "lat": 13.7935029,
+    "lng": 100.6056131,
+    "photos": [
+      "/photos/4f6b8e80-8777-4b43-ba4c-1345a4fb3aa8/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Forestpresso%20Cafe%2C%20Bistro%20and%20Co-working%20Space%20439%2F1%20%E0%B8%8B%E0%B8%AD%E0%B8%A2%20%E0%B8%AA%E0%B8%B1%E0%B8%87%E0%B8%84%E0%B8%A1%E0%B8%AA%E0%B8%87%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%B0%E0%B8%AB%E0%B9%8C%2011%20Saphan%20Song%2C%20Khet%20Wang%20Thonglang%2C%20Krung%20Thep%20Maha%20Nakhon%2010310&query_place_id=ChIJWcdXtOqd4jARiJT6hTa-cRg",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Vanilla Latte",
+      "Dirty Coffee"
+    ],
+    "local_ratio": 75,
+    "id": "4f6b8e80-8777-4b43-ba4c-1345a4fb3aa8",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJWcdXtOqd4jARiJT6hTa-cRg/photos/Aa-ngMaqsfM-y8G0TBKQJgot3KvHmNfVo69Xn6aFaEV_pw0sEmesisVwt798LECg3wQlE1GIMy7O_EcY1X6gMFqH0_MvXjVLYKTB8hkCc1_S0f9yLmoRmaBiO4WKTfygWDVzaB7chGbAB5B2R6BBHExLYe8fKOQng4uAx42_ygmMeeclxm6sClET8KYBljlQEZJ7i6dlbnrHsGOYYmHg1Qc2kenQU2refpEbqE7w3nTNuJflXbT7LSCKLHNY-jdGmtjkEl_vK7n43IQ7Ewss0b3cSIn-tYjE4B890qdATPNA-BWONN_jNlvpLzX2V9EdTZn8q-r_7KZdrx3AxOH8_mETV0V0edol349vhsulS39xwwSAZWk77NyUq7rzhQvzkf8AaVqN5eFZLV1o5GK4AxutYrAIdVzQEGnQ67_TJU66aFCG"
+    ],
+    "approved_at": "2026-10-09T15:40:08.587Z",
+    "slug": "forestpresso-cafe-bistro-and-co-working-space"
+  },
+  {
+    "name_en": "Maysa.bkk",
+    "name_zh": "Maysa.bkk",
+    "description_en": "A cafe tucked in a residential soi in Lat Phrao, with spacious seating that looks out onto a pretty garden. The morning sourdough and ham and cheese bagel are solid breakfast picks, and the Moc toffee cake is worth ordering alongside a coffee. Cash only, so come prepared.",
+    "description_zh": "藏在 Lat Phrao 住宅區巷子裡的咖啡廳，座位寬敞，面向小花園。早餐選項有酸麵包（morning sourdough）和外脆內軟的火腿起司貝果，甜點推 Moc toffee cake，咖啡評價也不錯。只收現金，去之前記得備好。",
+    "category": "cafe",
+    "address": "55/9 Sena Niwet Soi 112, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230",
+    "lat": 13.827136,
+    "lng": 100.6097181,
+    "photos": [
+      "/photos/e9d783dd-a099-4f5d-91fd-900ddfb7aa25/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Maysa.bkk%2055%2F9%20Sena%20Niwet%20Soi%20112%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJPzRS78Gd4jARyB4lDTq3Sss",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Sourdough",
+      "Moc Toffee Cake"
+    ],
+    "local_ratio": 75,
+    "id": "e9d783dd-a099-4f5d-91fd-900ddfb7aa25",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJPzRS78Gd4jARyB4lDTq3Sss/photos/Aa-ngMb-7CYffxuZQLKr1dewTGUeU142e6cJawZfTJ4Ikc2KL7AVGmCDTSgdZvm2SEcen3GpWsALnX98w-TP-20c3nLB0wvzXNVyHaHkbSPUbnLwLFnuFSZ9NrNJ-_WvJKuspacJUkQTP4fS0oi64ADKs1ccY1Ivn4KRtyKZJwZUS0WAgVURw3IeLH_DfWNzJsby6Zvpa6jmObA5o_IzGAwLN5uVJxKxPrOlf7J4V5Q2w0SRHXEBZ_8cuoVrUULjyXum9_PusurUL232cQ1B720hatP-iXhEHLyevZiWFqf07remkYRuPa8wAdvdu2_IOBQrT96zvOznq3t-bGdDs1SSHPBCA3JGAhcQVPF0OQOKz17Atx58ahTFoncnIC_W3wwB72Me_B0nf_o6xRl8_TnbrJvh17QXeh2AIJH2kbcJXtYa"
+    ],
+    "approved_at": "2026-10-09T15:40:08.605Z",
+    "slug": "maysa-bkk"
+  },
+  {
+    "name_en": "Kraft Kaffe",
+    "name_zh": "Kraft Kaffe",
+    "description_en": "A cafe on Nakniwat Road with both indoor and outdoor seating, plus a backyard area along a small canal. Americano comes in light or medium roast. The menu covers coffee, baked goods, and proper meals. On Wednesday, Friday, and Saturday evenings, there's live music, and alcoholic drinks are served after a certain hour. Charging points are available at some seats, making it a decent daytime work spot that shifts into a bistro vibe at night.",
+    "description_zh": "Nakniwat 路上的咖啡館，室內外座位都不少，後院靠運河的位置很適合放空。咖啡豆分淺焙和中焙兩種，美式咖啡可以選。除了咖啡和烘焙點心，也有正餐選項。週三、週五、週六晚上有現場音樂，傍晚後也提供酒精飲料，白天適合插電工作，晚上氣氛完全不同。",
+    "category": "cafe",
+    "address": "272 Thanon Nak Niwat, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230",
+    "lat": 13.8102365,
+    "lng": 100.60943139999999,
+    "photos": [
+      "/photos/edee00a3-6d07-47a8-b0f2-88b2b3ed051f/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Kraft%20Kaffe%20272%20Thanon%20Nak%20Niwat%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJRW0FE86d4jARnuvomIZE7v0",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music",
+      "Canal Seating"
+    ],
+    "local_ratio": 75,
+    "id": "edee00a3-6d07-47a8-b0f2-88b2b3ed051f",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJRW0FE86d4jARnuvomIZE7v0/photos/Aa-ngMbMiTWPg3pPTdzlsS7QTUj9iY_OvGedly99rTaxY1bZXuA2z3KyZwI45BhI3XeFy_dRAxBweaL54rsDbCRLv67lYuW3ubgC_7cFV87bMMhM2_njdBDreK5vuLCnULaITkz3Uv9PR7-Z4o2m_7X4ToqsVaVt7JvUJZovnxnZWyT48fQpbF43FhSmA79avQ0-sZyknhvZDDxAMLWv38ZBNUdoEkeFqKBLCQgAjEyPqnC-2lVOkc-_cKX536psn8NhNOC3VLu90kxZ0tWA1dsIsXySPk8HTXyPM9iPor-0-X_Uw06I2LxcdYGGxIIfXA4QrIDok9gNh6rJnJyi0llxk_a-topLde_XWuqmAAkJ2d7NOCPjrG-X2QWNTBWyYhJebkf9uurGRrDa2Y_2VCBptmF1bXM"
+    ],
+    "approved_at": "2026-10-09T15:40:08.618Z",
+    "slug": "kraft-kaffe"
+  },
+  {
+    "name_en": "TiTiCaCa Brunch Club",
+    "name_zh": "TiTiCaCa Brunch Club",
+    "description_en": "Located on the ground floor of The Crystal Park mall, the café has a beach-bar look with natural light and greenery. Beyond coffee, the menu covers full meals—Grilled Ribeye, Carbonara Udon, and waffles are among the options, while drinks include the Sunset Orange Americano and Beach Soul Mocktail. House-roasted beans are available to buy. Seating is limited and service can be slow. Pets welcome; parking is available at the mall.",
+    "description_zh": "位於 The Crystal Park 社區商場一樓，走進去像是突然換了個場景——整體裝潢走海灘風，有自然採光和綠植點綴。咖啡之外也供應餐點，招牌有 Grilled Ribeye、Carbonara Udon 和鬆餅，飲品則有 Sunset Orange Americano 和 Beach Soul Mocktail。店家有販售自家咖啡豆。座位不多，服務步調偏慢。店內寵物友善，停車可用商場停車場。",
+    "category": "cafe",
+    "address": "1Floor(D105 The Crystal Park Ekamai-Ramindra 215 Pradit Manutham Rd, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230",
+    "lat": 13.810767799999999,
+    "lng": 100.61833659999999,
+    "photos": [
+      "/photos/b577c535-e8c5-4e91-a52f-e455337f9958/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=TiTiCaCa%20Brunch%20Club%201Floor(D105%20The%20Crystal%20Park%20Ekamai-Ramindra%20215%20Pradit%20Manutham%20Rd%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJg4v_N3ad4jARk6MbfBIqJx4",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Sunset Orange Americano",
+      "Beach Soul Mocktail"
+    ],
+    "local_ratio": 75,
+    "id": "b577c535-e8c5-4e91-a52f-e455337f9958",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJg4v_N3ad4jARk6MbfBIqJx4/photos/Aa-ngMY-1aUGDjGrVY_7wX91ikQ5UzbCaECqRGbPg9V2JWaksTcig6doABK61YjN7-5v4x2va7lrV2672QvDK6s6zP3wwV7Brx9uC-OSLR8GYC2wl1B4mXGOpdTL7-3qSEfRn15nqDKE8RaGjdlBqDPvWiQz4kZaNr2kdHrtMXcPQCopcmt8le6dFZc_Z26DxtRuEtEeSOz1Du0BQuBpCcM8Zkb2pkLhwDMZvNjzVir1RX4TeQhLTBd5pybcp1momARMtB7NwhqiBaeSJI6YJOaPSnbO6bSzOxPvzdBNgwK8OJn0KSpEN3gF8YnC82wA2_wRrp-0wzEbwuUkSKcdD5wohiwjNPEzUl-uhj55bm1EbgmoiOG0ptup75WXJsfBNqnRCcA0wQmyuiqFhTkn8lNvdI4KbhVDliUBs3jzmW23_BZanA"
+    ],
+    "approved_at": "2026-10-09T15:40:08.629Z",
+    "slug": "titicaca-brunch-club"
+  },
+  {
+    "name_en": "Beachboy Coffee",
+    "name_zh": "Beachboy Coffee",
+    "description_en": "A small café tucked in a lane off Lat Phrao 71, with shaded outdoor seating under trees and a vintage mini van parked in the garden. The coffee focus is on drip, brewed with Colombian beans — the owner will help you pick the right one. Coco Latte, the signature matcha passion, and peach tea are all worth ordering. Drip coffee is typically only served when the place isn't too busy.",
+    "description_zh": "藏在 Lat Phrao 71 巷弄裡的小咖啡店，戶外座位區種著樹，園子裡停著一輛迷你廂型車和小車，自成一格。咖啡以手沖為主，用哥倫比亞豆，店主會協助選豆；Coco Latte、招牌抹茶百香果和水蜜桃茶也值得一點。手沖通常在不太忙的時段才供應。",
+    "category": "cafe",
+    "address": "18 Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230",
+    "lat": 13.823068099999999,
+    "lng": 100.61451369999999,
+    "photos": [
+      "/photos/548565dd-38fc-4e2e-838e-5d88ed4ef405/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Beachboy%20Coffee%2018%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJK2FTLdad4jARAlEx0czL48g",
+    "rating": 4.9,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Coco Latte",
+      "Drip Coffee"
+    ],
+    "local_ratio": 75,
+    "id": "548565dd-38fc-4e2e-838e-5d88ed4ef405",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJK2FTLdad4jARAlEx0czL48g/photos/Aa-ngMaqEW8Wxb_ajPugHS14K3DwxSi4kGsX08AaKyGhaydqvI7FRA7FJ9k4VDdAY7Uu10c1nIunipFCgByE1kmgIGhTDFRuucRtYA_4P0ymQ1HMXQOSiI0XBNwZHniTnex4MQ4ipzmzuMFeVt0OAO20Iljw8evWI-PAG_bDk7SdsWDqzdmejCRznVFFnmJGxaCM7kSkPU5g1-bXniX3VQGkTH1rfzT0NnQOyEYOuDm8oaFNw-lalgNJPfK6RWxI0IwV8h0hvAeFmWAFOJZIlbB10--sZhQ8hZ0qosfnS18iWREBa3uGoJDWvKPwXw1ZKTv_Nvi9eDwLfhxXcpYwukLy6wEgKrKqJ6rtuVH3DR_9Hq2Mv6kMyLA0X9wTq-C3opTRsKObI1FeYLU397j9aHKW9m7sZBkw"
+    ],
+    "approved_at": "2026-10-09T15:40:08.641Z",
+    "slug": "beachboy-coffee"
+  },
+  {
+    "name_en": "Just Space - จัสต์ สเปซ",
+    "name_zh": "Just Space - จัสต์ สเปซ",
+    "description_en": "Tucked at the end of a walk-only alley off Soi Panichayakan Thonburi 6, this converted old wooden house runs its own micro-roastery. The slow bar offers six to seven single-origin beans—local Thai and international—for drip coffee, with espresso-based drinks and coffee cocktails also available. House-made baked goods round out the menu. The nearest parking lot is about 200 metres away and charges a flat daily fee.",
+    "description_zh": "藏在 Soi Panichayakan Thonburi 6 小巷底的老木屋咖啡館，巷子窄到只能步行進入。主打單品手沖，備有六到七款來自泰國本地與世界各地的精選豆，店內自行微型烘焙。除了慢吧手沖，也提供義式奶咖與咖啡調酒。自製烘焙甜點也值得試試。附近約兩百公尺外有付費停車場可用。",
+    "category": "cafe",
+    "address": "3 Soi Panichayakan Thonburi 6, Khwaeng Wat Tha Phra, Khet Bangkok Yai, Krung Thep Maha Nakhon 10600",
+    "lat": 13.741325,
+    "lng": 100.4694633,
+    "photos": [
+      "/photos/ef85de9b-1239-47e3-b879-b164bf5cd37b/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Just%20Space%20-%20%E0%B8%88%E0%B8%B1%E0%B8%AA%E0%B8%95%E0%B9%8C%20%E0%B8%AA%E0%B9%80%E0%B8%9B%E0%B8%8B%203%20Soi%20Panichayakan%20Thonburi%206%2C%20Khwaeng%20Wat%20Tha%20Phra%2C%20Khet%20Bangkok%20Yai%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJf78NRgCZ4jARINtbo4fdE7c",
+    "rating": 5,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Drip Coffee",
+      "Micro-Roastery"
+    ],
+    "local_ratio": 75,
+    "id": "ef85de9b-1239-47e3-b879-b164bf5cd37b",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJf78NRgCZ4jARINtbo4fdE7c/photos/Aa-ngMajt28Tb8gB6mjpXf48XmkndbTkz1nLcso26Mkj27M2LawJgyA__gXiDiHJc5OaAcNhTfXYwQNjCDyBhtkCv9MNWG8nJpZAx5Nqizm24e9Cw_h4qCfh58IanGSDl80wMTOiFg4wzMVaTzHD59eGnQkNWNYysYUo3momtw55kzyniSiXfqBKFQY_vUuWcvV4qRbIWSvwJMmFKYw7O_boYBrS2pw1ruk2nJ7AeIi-OXnSqxVaHs1134va6WcmefidWDQ-d6QrgImguW3Zre50aDQUKH59fxRc3vCuoPdCGNTG4dTBTnTTsxKGH162sZnz4k5xTX9FhGhu6i3oiBP-qkcHegO3xuOAWttWBiXwlUZDe5hRT74HEXiB-H0LXtfol--Hmd4r9lXk689XTNq4fejKf1BNhF8Gs-gC3OwnhQrQ"
+    ],
+    "approved_at": "2026-10-09T15:40:08.653Z",
+    "slug": "just-space"
+  },
+  {
+    "name_en": "Masonia Tree & Coffee Cafe",
+    "name_zh": "Masonia Tree & Coffee Cafe",
+    "description_en": "A small cafe in Talat Phlu where the proprietress is known for being genuinely warm and welcoming. Coffee is brewed from three distinct blends and roast profiles, and the latte is consistently well-executed. The banana cake and carrot cake are both worth ordering. Air-conditioned, clean, and stylishly put together.",
+    "description_zh": "位在 Talat Phlu 的小咖啡館，老闆娘親切待客是這裡的一大特色。咖啡使用三種不同配方與烘焙曲線調製，拿鐵表現細緻；甜點方面有香蕉蛋糕和紅蘿蔔蛋糕，評價都很高。店內有冷氣、空間整潔，風格有設計感，是個安靜坐下來喝一杯的好地方。",
+    "category": "cafe",
+    "address": "1114 26 ถ. เทอดไท Khwaeng Talat Phlu, Khet Thon Buri, Krung Thep Maha Nakhon 10140",
+    "lat": 13.7196047,
+    "lng": 100.47245649999999,
+    "photos": [
+      "/photos/3412a6fa-62f9-477f-b8f6-a260b53a6a26/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Masonia%20Tree%20%26%20Coffee%20Cafe%201114%2026%20%E0%B8%96.%20%E0%B9%80%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B9%84%E0%B8%97%20Khwaeng%20Talat%20Phlu%2C%20Khet%20Thon%20Buri%2C%20Krung%20Thep%20Maha%20Nakhon%2010140&query_place_id=ChIJnyVV7tmZ4jARjZ9qVoH6cwI",
+    "rating": 4.9,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Banana Cake",
+      "Carrot Cake"
+    ],
+    "local_ratio": 75,
+    "id": "3412a6fa-62f9-477f-b8f6-a260b53a6a26",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJnyVV7tmZ4jARjZ9qVoH6cwI/photos/Aa-ngMbO0uRMQUajpX_JBIFBKxLvTPML1RXFDaDYkcz3tf99J1PYsf4-ks3zbXs0GUrtkK0COc7STsLqlUn_NM4ZZX1coYcGO-ocnO3Jz0Wg4nHsgdoPSz76nm0y53Ep_SgwCbZjoECTfgoiE6llAK6HvZLmfIXk8k8nqzbjgTbSWj9dqaFVfuejPiJP1S5lvG6OUXE2oXY6EnOzBEitdASpNoZNw3JZupgD7Y98rBnxYXWpirLB4THRzILjyqDl05x6V0gfP2RF3NDbnTy1yegkRhsiJnBiKXKchkqWp87OLy1vZ6jRL4Z5LIQ1_wMT7wIh6R9S2pjx7JfA2ElvxWvFKESl8ti1besMK3h6P4oSVW0BegShXSoaPYQFov74wyZeaZWqN8c2E780pXN4hH-0IDHu1wG9_AI"
+    ],
+    "approved_at": "2026-10-09T15:40:08.665Z",
+    "slug": "masonia-tree-and-coffee-cafe"
+  },
+  {
+    "name_en": "BURR Bar Toast and Coffee",
+    "name_zh": "BURR Bar Toast and Coffee",
+    "description_en": "A coffee shop in Khlong San run by a couple who are also jewelry designers, with floor-to-ceiling windows as the main visual feature. The Dirty coffee, Signature Brûlée Toast, and croissants have their regulars, and the café has collaborated with Iron Chef Thailand's Chef Gee on cake items. Grab delivery orders are heavy here, so expect a noticeable wait for drinks when the café is busy—sometimes over 30 minutes.",
+    "description_zh": "位在 Khlong San 區的咖啡館，由珠寶設計師夫妻轉型經營，店內以大片落地窗為主要視覺。招牌 Dirty 咖啡、Signature Brûlée Toast 和可頌都有不少回頭客，也曾與鐵人主廚 Chef Gee 合作推出蛋糕品項。Grab 外送單量大，內用等待時間偏長，點餐後飲料可能需要等超過 30 分鐘。",
+    "category": "cafe",
+    "address": "155 Krung Thon Buri Road, Khwaeng Khlong Ton Sai, Khet Khlong San, Krung Thep Maha Nakhon 10600",
+    "lat": 13.7220746,
+    "lng": 100.5063405,
+    "photos": [
+      "/photos/78f1be01-4403-42e1-9c0a-682baefebc79/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=BURR%20Bar%20Toast%20and%20Coffee%20155%20Krung%20Thon%20Buri%20Road%2C%20Khwaeng%20Khlong%20Ton%20Sai%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJa6QqlvKZ4jARfLoF1_oRBtQ",
+    "rating": 4.6,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Brûlée Toast",
+      "Croissant"
+    ],
+    "local_ratio": 75,
+    "id": "78f1be01-4403-42e1-9c0a-682baefebc79",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJa6QqlvKZ4jARfLoF1_oRBtQ/photos/Aa-ngMYt-eqzuaq2wfMvX8FQsV1XctFSxVTk46V-TrbXr91WTWianb4UR6rPLSDZQ3VbUgN89cUFMFPB7SDNXGjwpmQvbxHBaXwJKSjtLLFsBTvXjT5N1ZAuy-0wwTTb7t1fN80EILJ1bSqnQIUQW0BxiFylBP630oiZVxGO8KfNEknhq3kCjV11lvmXt3dDoRMHabWef2j1oPoGD0C5nmI4APIrPHKoPGvPiHuham-N9DiQS_mIKrulNQeLig_C9ftswlVNzL-cnj_b5SFh_Cdf-nQb-HJLybqApiLKBSXcMv3Aq96wfugbd8E5DPm4lJ4W0KDsOUrHGlEPh2dqlCS2gqNieLM65tFuNyDMArkZXKWtKGnv3xKgqSQDwFGR4vqjN7tJIHhQbUSvKIiIwY9oVCGsX7o"
+    ],
+    "approved_at": "2026-10-09T15:40:08.677Z",
+    "slug": "burr-bar-toast-and-coffee"
+  },
+  {
+    "name_en": "The Green Craft House",
+    "name_zh": "The Green Craft House",
+    "description_en": "Tucked inside an alley off Krung Thon Buri Road, walkable from Wongwian Yai BTS. The shop stocks art supplies for customers to draw and craft on the spot — the walls are covered in small pieces left by visitors. Board games and a TV game station are available, and there are cats roaming around. The iced latte and food have both drawn repeat visitors. The entrance signage is easy to miss, so check the map before you head in.",
+    "description_zh": "藏在空叻拋路巷子深處，從Wongwian Yai BTS步行可達。店裡提供美術用品讓客人現場創作，牆上貼滿顧客留下的小畫。有桌遊和電視遊戲機，幾隻貓在店內四處閒逛。招牌是冰拿鐵，食物評價也不錯。巷口招牌不明顯，第一次來要留意路線。",
+    "category": "cafe",
+    "address": "58 Krung Thon Buri Road, Khwaeng Khlong Ton Sai, Khet Khlong San, Krung Thep Maha Nakhon 10600",
+    "lat": 13.722018300000002,
+    "lng": 100.49860369999999,
+    "photos": [
+      "/photos/d67f045d-0f5e-4990-ab83-27d918fcc539/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Green%20Craft%20House%2058%20Krung%20Thon%20Buri%20Road%2C%20Khwaeng%20Khlong%20Ton%20Sai%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJF1k2pjyZ4jARupfvDFa2p0o",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Iced Latte",
+      "DIY Craft"
+    ],
+    "local_ratio": 75,
+    "id": "d67f045d-0f5e-4990-ab83-27d918fcc539",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJF1k2pjyZ4jARupfvDFa2p0o/photos/Aa-ngMbylTu1Va0nLhuQVxF9NoD3JX_j1RwIZaaJMT8YfgBpV699YIlxmN-m7H4qV13unlk0UNGWdhYAdJA6Ky3qQblNK_dPMrUrw4jE4UuQ5H078t6Fr9T2EPe-oYNKzo0BAPxjwl4XRuhVs1C6JwSinZyJcVBY0bs84N63p9ifhYYX0FIb7RUQJQrfJQtmMTfwokegU2Cul_IQUlmcH6HTmaJbESO-uF-64LS1A2ipiDu5t752u5yRUzDwiR91Cte7-I7mTNoR7FhcYkzUs74OlI7pmq7D0dCXrUzk4bhif-lD5oLvQkqPWxNdLy9h66DKwNqrQYC6yn7Kf-yQswouNXZBMcvvnMuCAiroEwZwh-bAGpxF3iekd7js1t1TNw6ya8WCbAARx17d5kb3pVGCYKKp6yaBzj7av3JfFEpK7hU50w"
+    ],
+    "approved_at": "2026-10-09T15:40:08.689Z",
+    "slug": "the-green-craft-house"
+  },
+  {
+    "name_en": "Ourlog.bkk",
+    "name_zh": "Ourlog.bkk",
+    "description_en": "A cat café in Thon Buri with a resident cat that draws cat lovers in. The menu covers matcha drinks, egg burritos, and desserts, with WiFi and power sockets available for those who want to stay a while. The space is kept clean and gets dressed up with seasonal decorations. It sits right on the main road, so parking nearby is tricky — plan accordingly.",
+    "description_zh": "位於 Thon Buri 的咖啡廳，店內養了一隻貓，是貓咪愛好者的加分點。有抹茶飲品、蛋捲、甜點等選項，也提供 WiFi 和插座。空間整潔，會隨節慶佈置主題裝飾，地下室另有座位和洗手間。店面緊鄰馬路，附近停車位不好找，建議搭乘大眾交通或做好準備。",
+    "category": "cafe",
+    "address": "65 Thanon Ratchaphruek Frontage, Khwaeng Bukkhalo, Khet Thon Buri, Krung Thep Maha Nakhon 10600",
+    "lat": 13.718674799999999,
+    "lng": 100.4847303,
+    "photos": [
+      "/photos/b3be22d6-d2fe-4bf7-8aa4-bb453c45860d/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Ourlog.bkk%2065%20Thanon%20Ratchaphruek%20Frontage%2C%20Khwaeng%20Bukkhalo%2C%20Khet%20Thon%20Buri%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJVzk3HvGZ4jARAuqcqsDegNs",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Matcha",
+      "Cat Café"
+    ],
+    "local_ratio": 75,
+    "id": "b3be22d6-d2fe-4bf7-8aa4-bb453c45860d",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJVzk3HvGZ4jARAuqcqsDegNs/photos/Aa-ngMYuaTvo00w0dg9JFt763wgXCuSKdNqElyrPo4YQ6ZXRC74SmawAWpdN20WyNNYegKEjpmy_iwH_aJvqXUWajC5KRcBytGcjfwNLgjBtBp85EujmFw8GO2AGDohVbacagtI2mCAB5qe2bvxdIonr3-XpaTw4jEhvSEyCeIsGINksv4yoGguGVNpVZ7qL1DPoKl4ctDpkKcquACPoNCtZ_dWMCsz3SqTZkP6Y6osSTBzYfQIjlIr6HtK-xyWlmF6TaotlJ12N9IHCl72n4I98rymTp0459Hf3PGOzWtLYt8oQ6byWDns-xn0jo-WEMtmuAy6CF3nGp7yqyXDXtlX5sHCnZinr1WrwHg1Y87HGymMFfcYVez5KeU-bWlGp6p7oQdv7bKQuU8ROS2lLwo1VuZ-7XkVVDrXakHcHP1ap3g4v"
+    ],
+    "approved_at": "2026-10-09T15:40:08.701Z",
+    "slug": "ourlog-bkk"
+  },
+  {
+    "name_en": "CAF KUDEEJEEN (River Walk View)",
+    "name_zh": "CAF KUDEEJEEN (River Walk View)",
+    "description_en": "Tucked along Soi Kudeejeen by the Chao Phraya River, with open-air seating cooled by river breeze and an air-conditioned indoor option. The standout dish is Khanom Jeen Kaeng Kua Gai, a spiced coconut curry chicken noodle. Shrimp dishes feature notably large, fresh prawns, and the Pad Thai leans slightly sweet. Slow-bar coffee and desserts are also on the menu. Open on weekends, and pets in carriers are welcome.",
+    "description_zh": "位在昭披耶河畔的 Kudeejeen 巷弄裡，戶外座位區有河風吹來，也提供冷氣室內區。招牌是 Khanom Jeen Kaeng Kua Gai（椰汁咖哩雞米線），蝦子個頭大、新鮮度高，Pad Thai 帶輕微甜味。有 Slow Bar 手沖咖啡與甜點，週末營業，開放攜帶寵物入內（需裝提籠）。",
+    "category": "cafe",
+    "address": "56 Soi Kudeejeen, Khwaeng Wat Kanlaya, Khet Thon Buri, Krung Thep Maha Nakhon 10600",
+    "lat": 13.7399534,
+    "lng": 100.4933968,
+    "photos": [
+      "/photos/d35c31f5-74c2-44fe-b47e-b8e0f64a0957/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=CAF%20KUDEEJEEN%20(River%20Walk%20View)%2056%20Soi%20Kudeejeen%2C%20Khwaeng%20Wat%20Kanlaya%2C%20Khet%20Thon%20Buri%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJTxeufwCZ4jARi_ST0HLWcSM",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Khanom Jeen",
+      "Riverside"
+    ],
+    "local_ratio": 75,
+    "id": "d35c31f5-74c2-44fe-b47e-b8e0f64a0957",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJTxeufwCZ4jARi_ST0HLWcSM/photos/Aa-ngMZTInw0_cB7pgUYGN4T-CGlVJJ3GlCjYvGUxLsVfdmWBFdM4U-dhzPai1N2wVcqP3NpieRUgti11PS09ZDiDyvlBOgFFxlJFUbzNhqbi2HXpSlfcGJph8yWLrx6RmmfJKQCvbqQr7CEK3DQRsoFikleeuGYmYWPgS3pgDxV4DdVW4b-EVZbh_NX6tGDOYcfnO0YrVtNwbPlpfwUg5ve5x2NAK_fTZg4kUEg14_DmIFVKAJlmrjmpXQsc_aj82s8Nd1mVeiYGS6KjYZquT2VdBTmev0c7r3CEC50EdnPBdI77KaybEh3ORSKZhCY3W9-o_OxT6_CZ9ddiPFHr8YMMHfUQV2NhMcfDbt2Qih-Dpyt43308zTM3pH51oglaGidua1iv5HUjANBbbR8tAl0o2XCJzq2rJInb0Cqhx0o5att"
+    ],
+    "approved_at": "2026-10-09T15:40:08.713Z",
+    "slug": "caf-kudeejeen-river-walk-view"
+  },
+  {
+    "name_en": "🥑Something GOOD HOMEY CAFE~",
+    "name_zh": "🥑Something GOOD HOMEY CAFE~",
+    "description_en": "A small home-style cafe tucked into a quiet side street off Itsaraphap. The blueberry cheesecake paired with coffee or drinks is what people come back for, and there are other cakes and beverages worth trying too. Board games are available, making it easy to settle in for a while. The owner is genuinely friendly and happy to make recommendations.",
+    "description_zh": "藏在 Itsaraphap 巷弄裡的小型家居風咖啡館，招牌是藍莓起司蛋糕配咖啡或飲品，蛋糕種類豐富，飲料選項也多。店內有桌遊可以玩，氣氛輕鬆，適合獨自來坐或和朋友聚。老闆熱情，會主動給建議，整體有種去朋友家串門子的感覺。",
+    "category": "cafe",
+    "address": "39 1 S. Itsaraphap 17/1 Khwaeng Hiranruchi, Khet Thon Buri, Krung Thep Maha Nakhon 10600",
+    "lat": 13.7337198,
+    "lng": 100.4883542,
+    "photos": [
+      "/photos/46cedb66-89f3-4783-a9b3-2681fcd49193/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%F0%9F%A5%91Something%20GOOD%20HOMEY%20CAFE~%2039%201%20S.%20Itsaraphap%2017%2F1%20Khwaeng%20Hiranruchi%2C%20Khet%20Thon%20Buri%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJ7UqeYQCZ4jARuaHB89w03XI",
+    "rating": 5,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Blueberry Cheesecake",
+      "Board Games"
+    ],
+    "local_ratio": 75,
+    "id": "46cedb66-89f3-4783-a9b3-2681fcd49193",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ7UqeYQCZ4jARuaHB89w03XI/photos/Aa-ngMbuCn1LFH_doPc-vhG032THZmvey7wv2ftWuk8uLyjeyCUmTPbTGN6q978cmNQFFIqcJryD3IJNYvqGHrtn7ydHdhYHeuNi21pN26KAggAxMUSJ8PWk-SUQhE-JtICdzklxohdX7uOhyDs1yBwuuX_VBNloeB0IY9i2AmI9iSc_1OjL18nMFl3TKQPwmFzFyR9Pis2XzwNcwZtZqw3X6eJ9iObI6T0Q9DdGG1RqeULfJbxEUcGqbPCh4IZA5RCduFaw9NwicCISsryHmZ_Zw8D2CnxTs-qei9P6X2uOyDxaerpic0u7CfJfyilI0Qra49m9YRndY4Iun6eFH3trO4wm2S2Tt5HSGLzp3nQ6TZUaTyksa5aQ6mvYMpv1rSt0O5xHMJha1Xl2d3eYiMrnFUk_nQ"
+    ],
+    "approved_at": "2026-10-09T15:40:08.725Z",
+    "slug": "something-good-homey-cafe"
+  },
+  {
+    "name_en": "Passionrista Coffee & Crêpes",
+    "name_zh": "Passionrista Coffee & Crêpes",
+    "description_en": "A café tucked into Soi On Nut 10, known for coconut coffee, crêpes, and a solid breakfast bagel with egg, bacon, and cheese. There's reliable WiFi and charging points, making it a decent spot to work. Owner Tip is friendly and happy to chat about getting around Thailand. The place is a bit hard to spot from the street, but calm once you're inside.",
+    "description_zh": "藏在 On Nut 10 巷子裡的咖啡廳，招牌是椰子咖啡和可麗餅，早餐的貝果也值得點——加蛋、培根、起司，料實在。提供 WiFi 和充電插座，適合帶電腦來坐。老闆 Tip 很好聊，也會給旅遊建議。店在巷弄裡不算好找，進門後氛圍安靜。",
+    "category": "cafe",
+    "address": "On Nut 10, On Nut, Khet Suan Luang, Krung Thep Maha Nakhon 10250",
+    "lat": 13.7100841,
+    "lng": 100.610016,
+    "photos": [
+      "/photos/cd3c0ba3-df6f-4364-9e56-1062ba4e9246/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Passionrista%20Coffee%20%26%20Cr%C3%AApes%20On%20Nut%2010%2C%20On%20Nut%2C%20Khet%20Suan%20Luang%2C%20Krung%20Thep%20Maha%20Nakhon%2010250&query_place_id=ChIJ5Uuyx4qf4jAR_TV0D8up10M",
+    "rating": 4.9,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Coconut Coffee",
+      "Crêpes"
+    ],
+    "local_ratio": 75,
+    "id": "cd3c0ba3-df6f-4364-9e56-1062ba4e9246",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ5Uuyx4qf4jAR_TV0D8up10M/photos/Aa-ngMbNhc8ej9Ody3zZajVgOQSX__rb5GHS_H9MYtEu3ungR435BkuzBbux7A31tZZ-qEbxpAVZd_9NGMpk35C-pAf5Mi0Jxo-Cucc-OH9uj-qA-U2Eg1_cHpTSVRAcI8e4-mkkVzgyitXzCGyJgZ_fbjUqM7WAyH5bLZ74-FDGPwPwdq58er7cRU7ruO6cjKNzO2HWuDrcucxFmCJ0QfYC-znwiHhSwDUdakar9LfWo7SRhGcC0LZ6eOVz3LMLiyJhS5rwKFfJEDdPTTKrFOzhySt6TnbCeNi8flMFHEw4k8h5WGFpmmq9aE_ZH4MoSSUSbSJRF8jTigsH23fbkmjdRtZE69kgnIJCU5AGbgMdZKIDZCUF1RfICm-hOZtr9_Q_DFDz3csMn_k_ZobMuJInIUN0eKnZRi6AOAayzlKFDQOd"
+    ],
+    "approved_at": "2026-10-09T15:40:08.737Z",
+    "slug": "passionrista-coffee-and-cr-pes"
+  },
+  {
+    "name_en": "Coffee Effect",
+    "name_zh": "Coffee Effect",
+    "description_en": "Inside The Master building near BTS On Nut, this four-floor cafe is done up in a Modern Mediterranean style with red and green tones, and there's an elevator to reach the upper floors. The signature drink is 'Krissana', a cold brew coffee mixed with Falemum — a genuinely distinctive combination. The macadamia croissant is crispy outside and soft inside. Seats are limited, so it's worth checking availability before you go.",
+    "description_zh": "位於 On Nut BTS 站旁 The Master 大樓內，四層樓的空間走地中海風格裝潢，紅綠色調，設有電梯。招牌飲品「Krissana」是以 Falemum 調配的冷萃咖啡雞尾酒，另有澳門尼亞夏威夷豆可頌，外脆內軟。店內座位不多，熱門時段可能需要等位。",
+    "category": "cafe",
+    "address": "ร้าน Coffee Effect 2089/3 The Master @BTS Onnut 2 On Nut Rd, Khwaeng Suan Luang, Khet Suan Luang, Krung Thep Maha Nakhon 10250",
+    "lat": 13.7119839,
+    "lng": 100.6400896,
+    "photos": [
+      "/photos/cceb0db2-e331-46b2-b3d1-9b784c5b9caf/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Coffee%20Effect%20%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%20Coffee%20Effect%202089%2F3%20The%20Master%20%40BTS%20Onnut%202%20On%20Nut%20Rd%2C%20Khwaeng%20Suan%20Luang%2C%20Khet%20Suan%20Luang%2C%20Krung%20Thep%20Maha%20Nakhon%2010250&query_place_id=ChIJZ27KXvFhHTERKHA_taDxivA",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Krissana",
+      "Macadamia Croissant"
+    ],
+    "local_ratio": 75,
+    "id": "cceb0db2-e331-46b2-b3d1-9b784c5b9caf",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJZ27KXvFhHTERKHA_taDxivA/photos/Aa-ngMZSdzQ3832xRiUBvw2yfvnGkdseiRJL9Gu5B6yFFCy8KK3FQwMuzi0DuKKgDvh7dBkEdZ99jJYtP2nB6ZOLI0KiY1kB1dYLgdliiyFt60aZ66u10NPGe_nnOXp9Gy6BinxfXGIC4BSwwJ26VsqH87dP7F57lpGK2ijV54s4k3LRHN80FM95wDtvvr8Xp30jFuTlAgEMJsH1RkQ6AL5HeUdYyu67EqDSrvUDUZ-Nw-2BPIWfYnde4fWWsNjg4rUp-oywAcwH-WyZT31U6rm8hz_hZgduRf-M4HPvfqnARVOBE-oD9WLFz_pZhOeljrfuh-s2bMsK4Zvd64ZlyWjp94XWmU2GkQEja9-PEkxT9Ux3AC-N3670vk58qEmLoKWmzkF-7rAW_CbEb9mNxPbfWlo8JwoupSA"
+    ],
+    "approved_at": "2026-10-09T15:40:08.748Z",
+    "slug": "coffee-effect"
+  },
+  {
+    "name_en": "THE WOOD LAND",
+    "name_zh": "THE WOOD LAND",
+    "description_en": "Hidden behind a Tesco Lotus near BTS Onnut—about a 150-meter walk from the station. Built around a treehouse concept with wooden structures and greenery, it draws a steady crowd of photo-takers. On the food side, the krapao and chicken wings have held up reasonably well; desserts are a gamble (burnt croffles and fridge-cold boiled eggs have been reported). Drinks lean pricier, and wait times run long. Dog-friendly and kept clean despite the foot traffic.",
+    "description_zh": "藏在 Onnut BTS 站後方、Tesco Lotus 旁邊，步行約 150 公尺就到。店如其名，整體以木構與綠植打造，有樹屋的概念，拍照打卡的人不少。餐點方面，打拋飯和雞翅評價還算正面，甜點則有翻車紀錄（有人收到焦掉的可頌鬆餅與冷硬的水煮蛋）。飲品價格偏高，出餐等待時間較長，帶毛小孩來沒問題，環境維持得算乾淨。",
+    "category": "cafe",
+    "address": "17 Sukhumvit 52, Khwaeng Bang Chak, Khet Phra Khanong, Krung Thep Maha Nakhon 10260",
+    "lat": 13.7042573,
+    "lng": 100.60078,
+    "photos": [
+      "/photos/dfe1b69a-8a0c-4a8d-aa53-3c07c5ea9ca0/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=THE%20WOOD%20LAND%2017%20Sukhumvit%2052%2C%20Khwaeng%20Bang%20Chak%2C%20Khet%20Phra%20Khanong%2C%20Krung%20Thep%20Maha%20Nakhon%2010260&query_place_id=ChIJbfHOxoGf4jARmbNB0bTHN_0",
+    "rating": 4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Krapao",
+      "Chicken Wings"
+    ],
+    "local_ratio": 75,
+    "id": "dfe1b69a-8a0c-4a8d-aa53-3c07c5ea9ca0",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJbfHOxoGf4jARmbNB0bTHN_0/photos/Aa-ngMZ1vS4OsusgsrFarLmbORHAEOMrw0KDZfO91dapFgJ-NwP9v7CElfbyeEyp1vspmHKolfElgrvQI8GwLARNmMB8siotNXNrlaPnBqpUeoMxbJtDmMZ0qFz_6gRRMoz0Nkg3v0l_NxD_MK4h_afFNRpKvWkdR8fljQTgSFezfuzeT1QNxJkMEqpRnQQdr1cR1r4yOhR5Ex5gH-O65iU6zd1nPa-LwDA-merlBEWJwxGt61PgyPvWHtZa5ckW-3MgSta1QULDM2DzuNNHnXtkZcIgQUE-aTPwEFkcLHe6NVvYnd6f8ZWYz9HSbj8EUVUIH2VH9O6rb6z9_6ID_yI3yegWB9VT9bZMoRGDit09-35c2d6zCSWTuIdgl-clE_wmRkTMPTvyC_6rqbRka4ZU6j2piHc"
+    ],
+    "approved_at": "2026-10-09T15:40:08.761Z",
+    "slug": "the-wood-land"
+  },
+  {
+    "name_en": "Atlas Specialty Coffee",
+    "name_zh": "Atlas Specialty Coffee",
+    "description_en": "A two-floor café tucked in On Nut Soi 55-2, done up in dark tones with warm wood accents. You can pick your coffee beans by origin and roast level — light or dark. The Ferrero Presso is rich and smooth, the cinnamon butterfly roll is worth ordering, and the Thai tea holds its own. Wi-Fi available, good spot to bring a laptop.",
+    "description_zh": "On Nut 55-2 巷內的深色系咖啡廳，兩層樓空間以木質調搭配暗色裝潢，提供多種產區豆子可選，分輕烘與深烘。招牌 Ferrero Presso 以濃醇口感著稱，肉桂蝴蝶捲是甜點選項之一，泰式奶茶也有一定水準。有 Wi-Fi，適合帶電腦工作。",
+    "category": "cafe",
+    "address": "On Nut 55-2 Alley Khwaeng Prawet, Khet Prawet, Krung Thep Maha Nakhon 10250",
+    "lat": 13.7167914,
+    "lng": 100.6554366,
+    "photos": [
+      "/photos/153befb9-b802-467d-a6d3-83d7f0ff2a72/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Atlas%20Specialty%20Coffee%20On%20Nut%2055-2%20Alley%20Khwaeng%20Prawet%2C%20Khet%20Prawet%2C%20Krung%20Thep%20Maha%20Nakhon%2010250&query_place_id=ChIJv9F22hthHTERKXXpz26fFss",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Ferrero Presso",
+      "Specialty Beans"
+    ],
+    "local_ratio": 75,
+    "id": "153befb9-b802-467d-a6d3-83d7f0ff2a72",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJv9F22hthHTERKXXpz26fFss/photos/Aa-ngMYfMFWhqyNgvbUAUoZmA6JDIP0eOExmtGJa7WBDXLGT-JrrJ2D7t4TlGyOK2YQkmuntWCc4tj725cEg6RmM76_Zobs47OLNs_yOQeWzF0MDq_s1hVFSTI8PIGvrRwTB-_yInuDKQjN4eIB1i39xcxRuIlso7ZKFOHFU80ksOvekRd8_aUupItF45oCu2Dhh-eC85qYEDkb4eddV9RR8jRfN5dbZjaQ-jIvXgAIq2_ogAkRKsklSdrHmf9G_kGxJhkavb2bv0tOMOK9Yr38T-iHhNC-GvUkX25YXcR2cLO8LgJAkWXa71IXOwCHGgspOYK8U2IWjZFktEqoadffwnTa-z_ekVESrcwNS-vtk7Wal1qnFPoFalZ1CmNb0p5XZkGhQxcgruQmJ157NSRMcPLmHPWAa"
+    ],
+    "approved_at": "2026-10-09T15:40:08.772Z",
+    "slug": "atlas-specialty-coffee"
+  },
+  {
+    "name_en": "Bake Urban",
+    "name_zh": "Bake Urban",
+    "description_en": "Located at the entrance of Soi On Nut 7, the café has high ceilings and an open kitchen where you can watch bakers work through a glass window. Signature items include the Original Shio Pan, Nutella cheesecake, Hokkaido Cotton Hug soft serve topped with cotton candy and a penguin cookie, and penguin-themed cakes and puddings. Popular items sell out, so arriving early is a good idea. For parking, On Nut Plaza across the road is the recommended option—walk over via the pedestrian bridge.",
+    "description_zh": "位在 On Nut 7 巷口，空間挑高，設有開放式廚房，顧客可透過玻璃看到師傅現場製作。招牌包括原味鹽麵包（Shio Pan）、Nutella 起司蛋糕、北海道棉花糖軟冰淇淋，以及以企鵝造型著稱的蛋糕與布丁。熱門品項常賣完，建議早點到。停車建議利用馬路對面的 On Nut Plaza，走行人天橋過來。",
+    "category": "cafe",
+    "address": "709/1-3 On Nut 7, Khwaeng Suan Luang, Khet Suan Luang, Krung Thep Maha Nakhon 10250",
+    "lat": 13.712792799999999,
+    "lng": 100.60727039999999,
+    "photos": [
+      "/photos/b27421b0-d5a9-4a8d-82c2-2757cf04448a/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Bake%20Urban%20709%2F1-3%20On%20Nut%207%2C%20Khwaeng%20Suan%20Luang%2C%20Khet%20Suan%20Luang%2C%20Krung%20Thep%20Maha%20Nakhon%2010250&query_place_id=ChIJ_ZCOFgCf4jARlykHSPMBo6k",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "trending",
+    "highlights": [
+      "Shio Pan",
+      "Soft Serve"
+    ],
+    "local_ratio": 75,
+    "id": "b27421b0-d5a9-4a8d-82c2-2757cf04448a",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ_ZCOFgCf4jARlykHSPMBo6k/photos/Aa-ngMatyO6QXnR-LbAr2Usmhn-l65BZOq3mh1edk6gdYcooGqGlO-oT0_VVVE9t2f7GCVq-9XTcXQ3sspxm5aHUDsDWyKd7UPkvhRK0K0aPPYsdXlozMkPoPmsyYCjOPE_lRqWfKrzciJFPk-mhoYexjeV3eOZyT6sHt1tKn4nZWSIAhRsMcDIJ8FR3HM4vIoYyTbTMZPrWasofRdXEmiywwYZdj9OyRMQYpXvglSVvPZ2qYf7FY2we-yvMk0v1sLr3NVmAIsz6QUa0dhjUIL5mHmR5xA5UW0czrCZ10sFJ7N-_wPswX0ak9dmlEp8UFIxwZyigm6CzJZCW_D146apXumYjCd7AMtJx7YOpQqb0Qsts_YwmJF54F9EjZ13ZcjXeoa0t6icXakGdq418eOLFpUAQXQB6rfP0f5t5AOWMPRPEBA"
+    ],
+    "approved_at": "2026-10-09T15:40:08.784Z",
+    "slug": "bake-urban"
+  },
+  {
+    "name_en": "Somewhere Home Cafe",
+    "name_zh": "Somewhere Home Cafe",
+    "description_en": "Tucked in a lane off On Nut 17, this small industrial-style café is easy to miss but worth finding. The barista takes time to recommend drinks based on your mood — the White Coffee is smooth and well-textured, and the iced Thai Tea hits the spot. Food-wise, the Toffee Cake isn't overly sweet, and the warm Ham & Cheese Croissant has something that makes it stand out. Good spot to set up with a laptop. Parking available.",
+    "description_zh": "藏在 On Nut 17 巷弄裡的小咖啡館，工業風裝潢，實際坐進去氛圍相當放鬆。咖啡師會根據你的心情推薦飲品，White Coffee 質地細滑，iced Thai Tea 也值得一試。餐點方面，Toffee Cake 甜度剛好，暖熱的 Ham & Cheese Croissant 有自己的記憶點。店內適合帶電腦來坐，有停車位。",
+    "category": "cafe",
+    "address": "50 On Nut 17 Alley, Lane 9, Suanluang, Khet Suan Luang, Krung Thep Maha Nakhon 10250",
+    "lat": 13.722574,
+    "lng": 100.61311699999999,
+    "photos": [
+      "/photos/50ba1b4a-0f2a-457f-8117-947599ba1c18/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Somewhere%20Home%20Cafe%2050%20On%20Nut%2017%20Alley%2C%20Lane%209%2C%20Suanluang%2C%20Khet%20Suan%20Luang%2C%20Krung%20Thep%20Maha%20Nakhon%2010250&query_place_id=ChIJB1_Attaf4jARvmqyZ52zkpU",
+    "rating": 4.9,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "White Coffee",
+      "Toffee Cake"
+    ],
+    "local_ratio": 75,
+    "id": "50ba1b4a-0f2a-457f-8117-947599ba1c18",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJB1_Attaf4jARvmqyZ52zkpU/photos/Aa-ngMb0ogzlf8JNMpyKflxvDgu0eIXcbHGI9lgIrfaKmyubwPcx-Y1J5YwcpeHzvs9nk54Akon0ac8I3y4RrjBqNKP8QsmnLDjgGPN5CnZFt9Spq_PGCtHHu6BdmY8oIIMvWwrjGkxpuEL5_RZlj5GhB8t0Zu4nMo-QwW-sDimwarTbZQIilfZzcpYlEccovFR9kiPb-2yeRy6s8z4YS09dG6WIg2b7XUftVZAgp3Sr1R1wUfcEosjOMUnw9uYbo1-3I5BzZxg3YnNN3pUo_yg-mAOCmMt-RTntE44zz3fGuN8WwnDEb3GSfYL2iSCfbqhYLZB0GrWuDD-BpdVBimthmXop8sbIIOIA_tvfNBBhqVRH8XVJw8f_cOmGWbm-Y-S4qcScOmhz-oMNcJfzvmGLhhAflS_x"
+    ],
+    "approved_at": "2026-10-09T15:40:08.795Z",
+    "slug": "somewhere-home-cafe"
+  },
+  {
+    "name_en": "Lush House cafe & dining",
+    "name_zh": "Lush House cafe & dining",
+    "description_en": "A cat cafe tucked in a small soi off Sukhumvit 93 in the On Nut area. The cats roaming around are calm and friendly with customers. Matcha coconut drink and cheesecake are the standout orders, alongside homemade baked goods. The cafe also runs occasional workshops. Rated very highly on Google.",
+    "description_zh": "藏在 Sukhumvit 93（On Nut 一帶）小巷裡的貓咪咖啡廳，店內有多隻溫馴的貓咪，對客人友善不具攻擊性。招牌抹茶椰奶和起司蛋糕口碑不錯，也有手作烘焙點心。店內不定期舉辦工作坊活動，評分相當高。",
+    "category": "cafe",
+    "address": "404 Soi Phueng Mi 16, Khwaeng Bang Chak, Khet Phra Khanong, Krung Thep Maha Nakhon 10260",
+    "lat": 13.701289899999999,
+    "lng": 100.6116126,
+    "photos": [
+      "/photos/0578ebff-7d2a-4cb3-bad6-c8ef0eee7b8c/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Lush%20House%20cafe%20%26%20dining%20404%20Soi%20Phueng%20Mi%2016%2C%20Khwaeng%20Bang%20Chak%2C%20Khet%20Phra%20Khanong%2C%20Krung%20Thep%20Maha%20Nakhon%2010260&query_place_id=ChIJL3bobCmf4jARnXdAAwRU5w0",
+    "rating": 4.9,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Matcha Coconut",
+      "Cheesecake"
+    ],
+    "local_ratio": 75,
+    "id": "0578ebff-7d2a-4cb3-bad6-c8ef0eee7b8c",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJL3bobCmf4jARnXdAAwRU5w0/photos/Aa-ngMZegG1Ee2moa3BGNPEtqJ9Yurm_ODF5lyzkKoqsu1mAOPnt5wGnaievVjf-nomh2FXJiQfqVONCTwOhdiklMuFa-Y7rrAMyy6YJgoZnSrB_dht6UhjeJAFbdYn2VTMslLyCvim-RBX3hCH5AGmGz0l0eAzlKrJt08B4RuFpz_AOGnyqYHkAr8NfA50gKo1VqsbnlFrpxQ9P5zUyep_0DtoNpiN6Ie9gBJ2T8_qniw13wUW20w0BsAdxpbpi3pZuvhpK3wECPWvg5QR6TVqfBEtgwaWoukyUgVZ1BpHm3BI-2QdKyhPqxUD1EFDqK_Yti6MwPG4G75c9cgxNwgC33SbXAUaaIDgozHD2KoxlI6cHIAUXD8hLj7jj6_xkXCyIsoOMHWhb4a0dIWeYn112xsWV2-6458ioS_xwhum-ZHxa8A"
+    ],
+    "approved_at": "2026-10-09T15:40:08.807Z",
+    "slug": "lush-house-cafe-and-dining"
+  },
+  {
+    "name_en": "Leelabar",
+    "name_zh": "Leelabar",
+    "description_en": "A rooftop bar on Boriphat Rd, about a five-minute walk from Sam Yot station. The building has four floors, each with its own vibe — the top terrace catches a breeze and hosts live music on weekends, while the ground floor bar is air-conditioned. It gets busy after dark, so arriving early helps; queues tend to form around 8 pm. Card payment accepted.",
+    "description_zh": "藏在 Boriphat 路上的天台酒吧，從 Sam Yot 站走過來約五分鐘。四層樓各有不同風格，頂層露台有自然風和週末現場音樂演出，一樓室內有冷氣。入夜後人潮明顯，建議早點到，晚上八點後門口常有人在排隊等候。接受刷卡。",
+    "category": "nightlife",
+    "address": "274 276 Boriphat Rd, Khwaeng Ban Bat, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+    "lat": 13.7490416,
+    "lng": 100.5045911,
+    "photos": [
+      "/photos/fdb604a4-095c-46c4-8676-e7ae08a0a129/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Leelabar%20274%20276%20Boriphat%20Rd%2C%20Khwaeng%20Ban%20Bat%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJlb8hgcCZ4jARuePQi0g9oN4",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Rooftop Terrace",
+      "Live Music"
+    ],
+    "local_ratio": 75,
+    "id": "fdb604a4-095c-46c4-8676-e7ae08a0a129",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJlb8hgcCZ4jARuePQi0g9oN4/photos/Aa-ngMa1hI9b571G_XUwzG9rN9fk3UAZ2C8D3Qn2EF6JiybN8pF1skzvA3klT25c26vR6Vc6BycHEVZSQELgIQtbRfmJ5us_nIWPrPLHIMwP_ples7TuV1PIawE-qDO4Dcmr8YGmfuWi_FxThhnsUfEoQ8zPko4ACg9G5ZCRSn4SBRpeTM30ZSbonRtXFPrFM9oEcRShG61JKSXgIGy7kaqNDeLkbWTA70vvAoVmlzq9O_3CZscJUAmo9GYMck6GjFK2ZliJx5Maia3odjqn1KNtRqwwnK9zxd9Gx0DX8uOf0AA8QoM2ai-EGexayGsqRRw_klSWLhNzssoQM_MJP8vWuqLTeOXKN_yS43w1ay36gHBI0hdTVzcbYZM4sUAN_oyfdEr2GDGkDyBcyHHff-raYeM-4XVaweI"
+    ],
+    "approved_at": "2026-10-09T15:40:08.819Z",
+    "slug": "leelabar"
+  },
+  {
+    "name_en": "Happy bar",
+    "name_zh": "Happy bar",
+    "description_en": "Tucked in Soi Rambuttri just off Khao San Road, Happy Bar has been run by husband-and-wife team May and Tong for over two decades — regulars say the vibe hasn't changed a bit. Live bands play most nights; when there's no band, the curated playlist holds its own. The walls are hung with original artwork painted by May. Staff dress beach-casual, and a Singha is the standard opening move.",
+    "description_zh": "藏在考山路旁 Soi Rambuttri 巷內，老闆 May 和 Tong 夫妻倆經營這間店已超過二十年，有老顧客說氛圍跟當初來時一模一樣。主打現場樂團演出，沒有樂隊的時段也會放精選歌單。牆上掛著 May 親手創作的畫作。服務員的穿著風格偏海灘休閒，點 Singha 生啤入場是常態。",
+    "category": "nightlife",
+    "address": "90, 12 Soi Rambuttri, Khwaeng Chana Songkhram, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.759422299999999,
+    "lng": 100.4970762,
+    "photos": [
+      "/photos/5f121352-4e73-4301-8087-634bfe3eb733/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Happy%20bar%2090%2C%2012%20Soi%20Rambuttri%2C%20Khwaeng%20Chana%20Songkhram%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJ_3JFSg2Z4jARiGETBhcy990",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Live Music",
+      "Original Artwork"
+    ],
+    "local_ratio": 75,
+    "id": "5f121352-4e73-4301-8087-634bfe3eb733",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ_3JFSg2Z4jARiGETBhcy990/photos/Aa-ngMb8_s2xUdNMwlH-KAzFKYWGkMkmND5SU4kF_aMQujH8Iku3aYQGsmOfZmU9LwmgT1gBgo3Z4yzmolJD5ZPFYp7wZEcOou-hPO5lotxf0w10cUW4oU8H_2-mhPyKE5wfvSKAIsZ2V2_E5hrqp_J8Rg7AHnvpXp2QLOSon5eOapUNnwbLdman_k2b714jfL0OVQrIY4H2aaUzZgRKYUH5eVGPlqGIddG0fwnTexrPgdT36MzKApuuYgndBEy768q8V6wbVNAMlXRYswrbl5OQIl8XqCbCjBPmlr7ZP5lP-LvTC21_y4IebR5W8K8H5Ecx2MZOW4vntGLOisjDQqTDBvSyWxWBpvrNb17RmP3-morAXp-wbCTA8yw3kcDJ0Rgmxcl8XU_OzYTuQfctzCdGHP-nkxUDt4nl_U4XWNBBG-4LUg"
+    ],
+    "approved_at": "2026-10-09T15:40:08.831Z",
+    "slug": "happy-bar"
+  },
+  {
+    "name_en": "Motu Bangkok",
+    "name_zh": "Motu Bangkok",
+    "description_en": "Right by the canal near the Grand Palace, this bar runs from morning coffee and croissants through to evening cocktails — bartenders have been known to invent drinks on the spot, including a gin infused and filtered with orange peel. The food menu covers casual bites, green curry with shrimp, and fried crickets if you're game. Luggage storage is available, making it a practical stop for those staying in the area.",
+    "description_zh": "緊鄰運河、大皇宮一帶，這家酒吧白天供應咖啡和餐點，晚上才是正場——調酒現場即興發揮，試過橙皮浸泡琴酒的自創配方。菜單涵蓋輕食到綠咖哩，還有炸蟋蟀可以點。另外提供行李寄存服務，附近住旅館的人常把這裡當中繼站。",
+    "category": "nightlife",
+    "address": "95 Thanon Atsadang, Khwaeng Wang Burapha Phirom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.748143400000002,
+    "lng": 100.49663489999999,
+    "photos": [
+      "/photos/1cc7b56a-9b6d-4b82-81fd-ec578b255c63/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Motu%20Bangkok%2095%20Thanon%20Atsadang%2C%20Khwaeng%20Wang%20Burapha%20Phirom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJ1XcdNoSZ4jARdu7U8gTsmBY",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Craft Cocktails",
+      "Green Curry"
+    ],
+    "local_ratio": 75,
+    "id": "1cc7b56a-9b6d-4b82-81fd-ec578b255c63",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ1XcdNoSZ4jARdu7U8gTsmBY/photos/Aa-ngMaFPIou_Q98l9NRyyZVdufiz7NHIqxusvMoVctYJBqHZozLNFkGwmwLJdrBuGLbiLhm4ntVB9Wy2hk8DSQ-2yzTrIDsCKVjzZwo494hqDOjCGHymESgYiJZtn7bOTk_NISwSdb_X5qIcKLtPw87AN870F9PvTHIXrl8BeekKkG3UktMKyCm1v8o-0yLhxAdKDGUTTryahJjxWkdhc6tYcxelrj8innn_9TKvOrOtTjtDlRWkOgadkudku4O71Q_CwroBVUqRzhXEjWMTdfjXZ40josBpvpMKPPuKjTTQ2Fpua7M6zb0f8aY2ScvFKpz6bLUpaKxsoUVXvxbnbqirZwVLJMZdwBCVs7IOA47f2QiKrplrtfe6cwyDljcmCKOdFm3ODkPNjA6N830LVB0ws0Sbg"
+    ],
+    "approved_at": "2026-10-09T15:40:08.843Z",
+    "slug": "motu-bangkok"
+  },
+  {
+    "name_en": "YABAR Secret Bar & Rooftop",
+    "name_zh": "YABAR Secret Bar & Rooftop",
+    "description_en": "A rooftop bar tucked in Trok Bowonrangsi alley, with little surprises planted along the staircase on the way up. Cocktails come in generous portions — the bucket drinks are a highlight, and you get to keep the rubber ducks inside. The space has foosball, giant Jenga, a slide into a ball pit, and karaoke. Staff are genuinely hands-on, known to sing and dance along with guests through the night.",
+    "description_zh": "藏在 Trok Bowonrangsi 巷弄裡的頂樓酒吧，進門前的樓梯上就有小驚喜等著你。調酒份量扎實，有整桶的大杯飲品，桶裡附的小鴨可以帶走。室內有撞球機、巨型疊疊樂和滑梯加球池，還有卡拉 OK。天台可以看曼谷夜景，酒保和員工互動熱情，喜歡一起唱歌跳舞炒氣氛。",
+    "category": "nightlife",
+    "address": "28, 10 Trok Bowonrangsi, Khwaeng Chana Songkhram, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.7612116,
+    "lng": 100.49370979999999,
+    "photos": [
+      "/photos/12ad0a65-3370-46cc-bf04-edfbbf543d61/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=YABAR%20Secret%20Bar%20%26%20Rooftop%2028%2C%2010%20Trok%20Bowonrangsi%2C%20Khwaeng%20Chana%20Songkhram%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJEZXxzp6Z4jAR119D3wQhnAE",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Rooftop View",
+      "Karaoke"
+    ],
+    "local_ratio": 75,
+    "id": "12ad0a65-3370-46cc-bf04-edfbbf543d61",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJEZXxzp6Z4jAR119D3wQhnAE/photos/Aa-ngMZxOOwlVHm1SShcRpV1V2yJg100T6rrfOzwmIIGse0-MzkjmwiS54gjoqQJLGmfzMsW-bXvidrKagldpOMh3VxROZIiv0O6vU6XCeFoFv02tT8sTmimqm-YsCWya6a96Cd5Okhkr_5mmoDf4sWEUbAdXB0cJEpZIyDqIu8FvJEiRKqJQeNhawpF6cru6TANje52IXPRVgH0v-ctVpncWb9ltdCWJ7SR0WD6m33v2SEj4Q_aO0sb9ba4Bi98OYyFdsmp3ycRMmmtsQfHVOcFIuYs5bkbdUBdjTuwoxHIHFb84NE9a-DSgR7P7yjCTDmNIs258HW6cq3dUPoDWAZcQfK3y7QpmURKXQaj9I6JE-i5wDXNHGbxX8vWJ9M1Bpggam_H_0GikxOzM1A6Pl9MKwBqjA"
+    ],
+    "approved_at": "2026-10-09T15:40:08.855Z",
+    "slug": "yabar-secret-bar-and-rooftop"
+  },
+  {
+    "name_en": "The One Khaosan",
+    "name_zh": "The One Khaosan",
+    "description_en": "Sitting right on Khao San Road, The One keeps the energy going all night with a DJ, live singers, and dancers performing in rotation. The toilets are clean, the security and staff are attentive, and there's no cover charge to get in — a solid option among the bars along Khao San.",
+    "description_zh": "位在考山路上，有 DJ、現場歌手和舞者輪番演出，整晚能量持續不斷。廁所保持乾淨，服務人員和保全都很到位。入場免費，是考山路夜生活裡少數口碑穩定的選擇。",
+    "category": "nightlife",
+    "address": "131 Thanon Khao San, Taladyod Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.759209499999999,
+    "lng": 100.4968991,
+    "photos": [
+      "/photos/22ab2d4e-3423-43be-a9a4-de23c48ba077/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20One%20Khaosan%20131%20Thanon%20Khao%20San%2C%20Taladyod%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJqUczUW2Z4jARDp-Hi36LAFk",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Live Music",
+      "DJ Night"
+    ],
+    "local_ratio": 75,
+    "id": "22ab2d4e-3423-43be-a9a4-de23c48ba077",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJqUczUW2Z4jARDp-Hi36LAFk/photos/Aa-ngMaUS0b1QVRMiUCpCdkz0GjyVU6miiMDi1AHLOxacDCNYI5Zbg4k_YfL2YxueX1x9uEX7UZiSDmrbuLaEZGJ8w6kVL4N7dMrPtz3AgGRHKnys5slmaLUyopYgmr7n7Fi8G-Diy8V46wDB5LDVnyQ2OS9wTZ5ATKN8Nj1OkAAoEUP7QQQmjBQC3WXWhDMpJ7A-Vm0aPNg9fdAglt6_TWXzmr5hXwvITUMEFSNOiE4abAwmZEE7hCSnp3CODtW2hBf2GxrWo3tOg6U22xgLL5cajltyqkxKgav37gXw1B_Wtm3lV0gO0eCMKqgYN5nEl8lLEeGZk7fNk89xQWpR6k0r7zXAX5ObOADOBT00BG7431dMC_PqUw24SfmSukDR9WNNeOeqPKlMchLMWwkdGxzr8T2Nwt4"
+    ],
+    "approved_at": "2026-10-09T15:40:08.867Z",
+    "slug": "the-one-khaosan"
+  },
+  {
+    "name_en": "Charoen Krung Bar & Bistro",
+    "name_zh": "Charoen Krung Bar & Bistro",
+    "description_en": "A Chinese-Thai bar and bistro on Charoen Krung Road, decorated in red with a cozy, intimate setup. The menu covers traditional Chinese-Thai dishes — crispy pork dumplings, shrimp with fried pineapple rice, shrimp with glass noodles — plus a separate vegetarian section. The Tom Yum soup is well-spiced and worth ordering on its own. Cocktails include Tom Collins, Martini, Pina Colada, and a signature cocktail. Live music runs on weeknights as well.",
+    "description_zh": "石龍軍路上的中泰風格酒吧餐廳，紅色裝潢，空間小而舒適。菜單走中泰傳統口味，有蝦配炒鳳梨飯、蝦仁冬粉、酥脆豬肉餃等，也有獨立素食菜單。Tom Yam 湯下手很準，香草比例到位。雞尾酒選擇涵蓋 Tom Collins、Martini、Pina Colada，另有招牌特調。週間也有現場音樂演出。",
+    "category": "nightlife",
+    "address": "607, 609 ถ. เจริญกรุง Khwaeng Talat Noi, Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
+    "lat": 13.7394532,
+    "lng": 100.51264259999999,
+    "photos": [
+      "/photos/4448b707-bac5-4d9e-a45e-463467ef9879/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Charoen%20Krung%20Bar%20%26%20Bistro%20607%2C%20609%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Talat%20Noi%2C%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJu2fU6d-Z4jARF7_PhDz54kI",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Tom Yum",
+      "Live Music"
+    ],
+    "local_ratio": 75,
+    "id": "4448b707-bac5-4d9e-a45e-463467ef9879",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJu2fU6d-Z4jARF7_PhDz54kI/photos/Aa-ngMYhXLkAfVTXH_XQ_iZKshRE4ykMNLC5ELo_C5X2Sevl4bJK61sRj6C22bQBqR9-dAMNc5FXNofV40nsBNT5n66TKXEE3jp-RDBooqfTbtBPhL1jcxrmclJVE3tL5F2QqsyoSE88LMcFBs7yUQJiM5VU0oox91BWANLDqJxyG2wgqVOklTdxrBaw1cAOeR3TqheX2RSIBXEo8qgBeJhvv8SSApqOe5z-RU4Db9ut-Ta7-iikQ9sNJgktkCm5W0xDKhIRajQzjeKg9f_ERp6MLCckwNZpPDUxSreIymnMEGX34cDpyPiDWQiWoU8hYlaz34_jHV5hhaD0_ZhqiATKSqGTQ7xlJCalcvVSbHgt7Ek24YUmgOabIkKwXOfqt7WfVDh1nyuR42LLEDwKvAtPp8qorhM"
+    ],
+    "approved_at": "2026-10-09T15:40:08.879Z",
+    "slug": "charoen-krung-bar-and-bistro"
+  },
+  {
+    "name_en": "mL BKK",
+    "name_zh": "mL BKK",
+    "description_en": "Located on the LG floor of Supalai Icon Sathorn, mL BKK is a cocktail bar focused on precision and craft. The spacious interior features warm lighting and a modern design that feels relaxed but polished. Standout drinks include the 13 Sinager Cocktail—served with a perfectly clear ice cube—and the 101 Martini. The savoury cocktail options are a particular strength, and complimentary snacks come with your drinks. The generous space means it rarely feels crowded, which adds to the unhurried atmosphere.",
+    "description_zh": "位於 Supalai Icon Sathorn 商場 LG 樓層，mL BKK 是一間以精工調酒為核心的 Cocktail Bar。空間寬敞，暖色燈光搭配現代設計，氛圍沉穩帶點奢華。招牌有 13 Sinager Cocktail 和 101 Martini，用料與細節講究，連冰塊都是透明特製。鹹味調酒系列也是一大亮點，另附贈下酒小食。酒吧空間偏大，人少時反而多了一份放鬆的餘裕。",
+    "category": "nightlife",
+    "address": "63/737, Retail 09, LG Floor, Supalai Icon Sathorn, แขวงทุ่งมหาเมฆ เขตสาทร กรุงเทพมหานคร 10120",
+    "lat": 13.7236494,
+    "lng": 100.5377493,
+    "photos": [
+      "/photos/35799db9-0341-4c4f-b65e-d4ced0ad7f72/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=mL%20BKK%2063%2F737%2C%20Retail%2009%2C%20LG%20Floor%2C%20Supalai%20Icon%20Sathorn%2C%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%97%E0%B8%B8%E0%B9%88%E0%B8%87%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B9%80%E0%B8%A1%E0%B8%86%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%AA%E0%B8%B2%E0%B8%97%E0%B8%A3%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010120&query_place_id=ChIJefNpREWf4jARG1av1m6OKLw",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "trending",
+    "highlights": [
+      "13 Sinager",
+      "101 Martini"
+    ],
+    "local_ratio": 75,
+    "id": "35799db9-0341-4c4f-b65e-d4ced0ad7f72",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJefNpREWf4jARG1av1m6OKLw/photos/Aa-ngMbWPX7F4Tr6P9O5gy5tpv_mXD0tIfVfMDGksPJnjN0Srd8A8IHY2psMKuqY___tlwkMhG88RQmBCQwTEB9eYu52C1EYe1hqszbQF353joiaXFZov9w5vuIFbLcMQAa2P06KwOSj4320MVgS_oguPHHAMMXUHb_giaJHIHp6-cmjC94E8t7IkJCYxo0CKnnBgEEvwg12AVONDhcZxkatTrvQguhqyYRW9NShYfTYRbaygos-EspeiVZOhpSlwUN-t2EIqilooa8h2okCFUVQ5HqqfWEif2QRRrgjbD_EXBUkGj4xKG4p8-Ns2LQU_SazpSzOlEASuW6FqeitsAWUI1i5XVuwUZuXaKO11ISD2aj06rhS1yu-GV3HHIqyp1wzOy2Tp46ZRNbm2aK_vGYkVPVXfjIl_eCtMZeC6BP9zMI8"
+    ],
+    "approved_at": "2026-10-09T15:40:08.890Z",
+    "slug": "ml-bkk"
+  },
+  {
+    "name_en": "1990 Bar - Bangkok",
+    "name_zh": "1990 Bar - Bangkok",
+    "description_en": "A second-floor bar in Khlong San with a live band that plays throughout the night — the keyboard player in particular gets consistent praise for keeping the energy up. Drinks are solid, the vibe is relaxed, and it works well as a spot to hang out with friends. Service staff are generally friendly, though at least one visitor reported an issue with management's attitude.",
+    "description_zh": "位於空沙區二樓的酒吧，主打現場樂隊演出，鍵盤手的表演尤其受好評，整晚維持現場能量。飲品選擇不錯，氣氛輕鬆，適合和朋友一起消磨夜晚。服務人員整體親切，但曾有客人反映管理層態度有欠專業，值得留意。",
+    "category": "nightlife",
+    "address": "No 46, 2nd Floor, 48 Thanon Tha Din Daeng, Khwaeng Khlong San, Khet Khlong San, Krung Thep Maha Nakhon 10600",
+    "lat": 13.729589899999999,
+    "lng": 100.5014978,
+    "photos": [
+      "/photos/ecee7bec-99d2-4bb6-9e7e-48ba12a439d7/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=1990%20Bar%20-%20Bangkok%20No%2046%2C%202nd%20Floor%2C%2048%20Thanon%20Tha%20Din%20Daeng%2C%20Khwaeng%20Khlong%20San%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJnaycU72Z4jAR-6J5QAuS4B4",
+    "rating": 4.3,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music",
+      "Live Band"
+    ],
+    "local_ratio": 75,
+    "id": "ecee7bec-99d2-4bb6-9e7e-48ba12a439d7",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJnaycU72Z4jAR-6J5QAuS4B4/photos/Aa-ngMY90WhS_vQUoZWMmdXrHC282nbJwELYoIGsJ4QKJDOSgZyOq6KhzV3MpeY8S1C-Ju59q30hte1hAZ3_hBinP6SiYbv97nh8O-p5M7gtH62ihBbxaTK7JA9glhpbYjuXK9vR7UFofcSWT-cI1Nh1k_VQusDnvqR1lIcj6EfRnyAdufiQvrwc-xiWJohhAyuUlCs8KPWhqV0YqaVYAz6Kpwnk2nr7-86E-OwYQ8sjlgsJSCkij8Jgt38eFWmj62Z6dxFt7K05lfdSK3mlRZsY7XALNvPB-ggTTR4fJQ3lAe2Y07h7ThR3ejX6omJIUugMGT6rDr3tIsV_7_q1ji-yNXKIPMBV40Lo1fznWdvZitg1tWKYu4eE93vXLNuPDmQk-bAM41KxS6l3MeJJV_M0A39wg2GW4moSoUnRgHSFJgU2Qg"
+    ],
+    "approved_at": "2026-10-09T15:40:08.903Z",
+    "slug": "1990-bar-bangkok"
+  },
+  {
+    "name_en": "Vol de Nuit, The Hidden Bar",
+    "name_zh": "Vol de Nuit, The Hidden Bar",
+    "description_en": "A cocktail bar on Suanplu Road built around The Little Prince theme, with sculptural art installations throughout the space. Besides cocktails, they serve coffee and canelés. French owner Arnaud is often around, and if you're in the mood, he's happy to talk about Le Petit Prince, art, and philosophy. A good spot if you're looking somewhere to sit late into the night.",
+    "description_zh": "位在 Suanplu Road 的調酒吧，整間店以《小王子》為主題，牆上有雕塑裝置，氣氛沉靜。酒單之外也有咖啡和可麗露。法國籍老闆 Arnaud 本人常在場，聊得來的話可以跟他聊聊小王子、藝術和哲學。適合找一個可以待到深夜的地方時順道來。",
+    "category": "nightlife",
+    "address": "178, 1 Suanplu Road, Khwaeng Thung Maha Mek, Khet Sathon, Krung Thep Maha Nakhon 10240",
+    "lat": 13.7206175,
+    "lng": 100.5376201,
+    "photos": [
+      "/photos/442cd60c-03a6-48fb-ba2c-72d5cffed431/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Vol%20de%20Nuit%2C%20The%20Hidden%20Bar%20178%2C%201%20Suanplu%20Road%2C%20Khwaeng%20Thung%20Maha%20Mek%2C%20Khet%20Sathon%2C%20Krung%20Thep%20Maha%20Nakhon%2010240&query_place_id=ChIJxwxeU5Cf4jARR2EqtuYxqd0",
+    "rating": 5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Canelés",
+      "Cocktails"
+    ],
+    "local_ratio": 75,
+    "id": "442cd60c-03a6-48fb-ba2c-72d5cffed431",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJxwxeU5Cf4jARR2EqtuYxqd0/photos/Aa-ngMarxfePWWA_6Ej03bUEv6t6K21XG7jx_EgWfXrTfsJ8qw7GhYewr9IUq2t6VOaA95Px8G48NyElfKob0iVHlQ1bKM0YV7SIuzNiGYvBQzjaZbp_ewy1AY1A9o7pimiqGRDgT-0n1V3gFJ_9QoTn08A80kwwYhJdRI-l8d_uGW2INGxgwfn2sAo0wmyDIsdWWkZZyDLeyvnMEamNxP6IRlIMNG_D6GFZ_RSS_XiH58SEUnKQ6HIWY_xRzK-KVPpaO1hiM7L9ZonBPdcl7hFNfZorb9E_ydoy0vkqVK-0Bz6nyC-KN8aBx6Vgf8wXJivj85rnefsicFzuQBtHi2wcFZMQQR7k8QkcxBmcs-pLkUzOx7YIO9IwDRV8JhsxJr8qeuNmfDO2SpDMk_gYNG4jO9KLjjLQfHYM--sN5GfEhwhNwg"
+    ],
+    "approved_at": "2026-10-09T15:40:08.914Z",
+    "slug": "vol-de-nuit-the-hidden-bar"
+  },
+  {
+    "name_en": "LON Bar ลอน บาร์",
+    "name_zh": "LON Bar ลอน บาร์",
+    "description_en": "LON Bar sits on Siri Phong Road in Bangkok's old town, serving Spanish tapas alongside imported Spanish gins that are hard to find elsewhere. Dishes that keep getting ordered: ribeye steak, tortilla española with sesame mayo, razor clams, and sea bass with saffron honey glaze. The Basque cheesecake is the must-order dessert — rich and dense. \"Lon\" means ripcurl in Thai.",
+    "description_zh": "開在舊城區 Siri Phong 路上，LON Bar 主打西班牙 Tapas 風格料理，搭配從西班牙進口、外面不容易找到的精釀琴酒。幾道反覆被點名的菜：肋眼牛排、Tortilla Española 配芝麻醬、剃刀蛤蜊，以及用番紅花蜂蜜釉燒的海鱸魚。甜點的 Basque 乳酪蛋糕是招牌，分量紮實，不甜膩。「Lon」在泰文裡是浪捲的意思。",
+    "category": "nightlife",
+    "address": "31/1-2 Thanon Siri Phong, Khwaeng Samran Rat, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.753003399999999,
+    "lng": 100.5029619,
+    "photos": [
+      "/photos/681e931a-b97a-4679-aa4c-521fca5339ec/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=LON%20Bar%20%E0%B8%A5%E0%B8%AD%E0%B8%99%20%E0%B8%9A%E0%B8%B2%E0%B8%A3%E0%B9%8C%2031%2F1-2%20Thanon%20Siri%20Phong%2C%20Khwaeng%20Samran%20Rat%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJIcdAbXSZ4jAR7LL7h2eZ2Pc",
+    "rating": 5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Ribeye Steak",
+      "Basque Cheesecake"
+    ],
+    "local_ratio": 75,
+    "id": "681e931a-b97a-4679-aa4c-521fca5339ec",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJIcdAbXSZ4jAR7LL7h2eZ2Pc/photos/Aa-ngMZ6SNclLTwQ1XfqP-6lOSrJ4adkJ4J3yrjlxze6h5DUvaTWM8UsioMQemSNbXedotEtBahnFhZUr9SD4M1cnBwmhZz-jPZ224cH-vCdiub3SAGDHJ_55omr8lvcXcPKESPiSqQtl39QUtLc-FzGsE3AZTuy2Q9exkDtDL4peykU5e_Tqqtu7_GnvRYphlPOqHi1nM2uPwshnmYIKt-Ln5iUVLmx46tgziPvtJ1UVu9FkYMGf8IIqKUFH51VOY0X1Jq6IEXdjF7t0N7ZPu1HkWixZpTPZhsQqt8pAaMPtk9T8ys3Vvwo1DbtKq8Hu31YgT6K7u9fTspgoXawe7aWthRKiZEbtlQZXEt9y2Du_U8eVFteZDXKPgM0b7AfJIITOkRZk8JvookMZIGWam5S9OvEQVLOBZQNTSGtFHezmG2sTA"
+    ],
+    "approved_at": "2026-10-09T15:40:08.927Z",
+    "slug": "lon-bar"
+  },
+  {
+    "name_en": "Sugar Ray, You've Just Been Poisoned",
+    "name_zh": "Sugar Ray, You've Just Been Poisoned",
+    "description_en": "Tucked into Soi Sukhumvit 24, this cocktail bar has a deep forest green interior that feels moody but welcoming. The menu is split into \"poison\" and \"antidote\" sections — Born & Raised, built on Thai iced tea, is worth ordering on its own. The bar has moved locations twice since its Soi Chamchan days, and regulars have followed it each time.",
+    "description_zh": "藏在 Sukhumvit 24 巷內的調酒吧，深森林綠的內裝帶著幾分神秘感，空間不大但不壓迫。調酒走創意路線，分成「毒藥」與「解藥」兩個系列，招牌 Born & Raised 用泰式奶茶為基底調製。這家店從 Soi Chamchan 發跡，搬過兩次場地，老顧客仍一路跟著走。",
+    "category": "nightlife",
+    "address": "2 Soi Sukhumvit 24, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110",
+    "lat": 13.726722899999999,
+    "lng": 100.5676651,
+    "photos": [
+      "/photos/f38ed958-4471-486f-9443-f1a334130cb2/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Sugar%20Ray%2C%20You've%20Just%20Been%20Poisoned%202%20Soi%20Sukhumvit%2024%2C%20Khwaeng%20Khlong%20Tan%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJybdzZU-e4jAR5Nn-_lnDm5Q",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Born & Raised",
+      "Thai Iced Tea"
+    ],
+    "local_ratio": 75,
+    "id": "f38ed958-4471-486f-9443-f1a334130cb2",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJybdzZU-e4jAR5Nn-_lnDm5Q/photos/Aa-ngMYfftIpRWIgCc197-Cljn-iUiAWYcpa4wAI5uyQf0pU7noTgXhDBI-8GjcKTEEoo3ayDwkgBC507TSrVnS6uP5lL1pt7CKQi1YDhaiDrNXbTzfpTXkL8sHzm3v4Y-kZPE41vdiGVDfty4JY6jetB94fq2LOdM3RXtkIQS53EYkCqiFMSs2Uc3MtrIxo9B7n4gr3Sj-0sOPJNa46wDEKAa44yfpvTYmxFAAXc-9W5qSCG0B_vhVmT0cIgFOfpMia1TgsuTgZ9w8ZFuC7P6g3eKt0WkuNxz9mJXQSKo7_qhsx01mqo9YR3xqUAaR-MDOYiNZsKOsm-7bk1WapPagOdaZvbGcWFmOUBqg8W8cx0zzCKBYXkgKO8L-MxDJNNjw2dVA2zDFnWmNzv7zwoQp17TZtkuoRFNsUzC_VfQZuslaC"
+    ],
+    "approved_at": "2026-10-09T15:40:08.938Z",
+    "slug": "sugar-ray-youve-just-been-poisoned"
+  },
+  {
+    "name_en": "LEB_BAR_BKK",
+    "name_zh": "LEB_BAR_BKK",
+    "description_en": "A cocktail bar run by a husband-and-wife team, tucked on the second floor above a nail spa on Soi Luean Rit in the Samphanthawong area. The entire place has just one long table seating up to twelve, giving it the feel of dining in someone's home. The pork chops with grilled zucchini, squid ink pasta, clam spaghetti, and mussel rigatoni are among the dishes regulars return for. Wine selection leans toward bottles like Australian Chardonnay. Seating is extremely limited—call ahead before showing up.",
+    "description_zh": "藏在三聘區 Soi Luean Rit 巷內、位於美甲店二樓的雞尾酒吧，由一對夫妻主理，丈夫掌廚、妻子負責招待與選酒。全場只有一張長桌，最多容納十二人，像在朋友家客廳用餐。豬排佐烤節瓜、義式墨魚麵、蛤蠣義大利麵都是點單率高的料理，酒單以葡萄酒為主。座位極少，建議事先來電確認。",
+    "category": "nightlife",
+    "address": "153 Soi Luean Rit, Khwaeng Chakkrawat, Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
+    "lat": 13.743298099999999,
+    "lng": 100.5049957,
+    "photos": [
+      "/photos/bbd8436a-23e1-49d3-9d96-6b9544f8947f/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=LEB_BAR_BKK%20153%20Soi%20Luean%20Rit%2C%20Khwaeng%20Chakkrawat%2C%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJAUy-NYOZ4jARZ6E3waLIF3g",
+    "rating": 5,
+    "price_range": 3,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Pork Chops",
+      "Pasta"
+    ],
+    "local_ratio": 75,
+    "id": "bbd8436a-23e1-49d3-9d96-6b9544f8947f",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJAUy-NYOZ4jARZ6E3waLIF3g/photos/Aa-ngMbB6AmzTr2_CGIoMd6R3HwM3AqLCIapsTZ48LAbPNs-yjLGgeq1FvKmFGDWlBUrVJFKsjD4Zw0ldiYyp_jni8viryVpCZAj9lqMuNbZkJFxe3bBcLgrQn8RSbtBmW7fazlXhZlZ3DcpBsUMgShVeHJNZnwNzwxmvTgShOn-NuK48nB7gJygcDuuVujEwu8aF9e3a_HZMqjNCMMqCUVjEVAHYs9UXzRhJgMesqOlJwXQbFfVvu6p2Aspfi0a8IC9thkuhqKBf201aw5xQDuSB5tpDBsgnl-cNN4yr_cX3iY7nH2occzcKLNf_V0RSNz2cVwDhjmltY13dYUjwLPpW772EZgkj2nivBtehLSPyg7Mj-e9SRE2VMERDEtTzEIXTijdpcl0Iv15Ckh-fqgpLSslF2I"
+    ],
+    "approved_at": "2026-10-09T15:40:08.951Z",
+    "slug": "leb-bar-bkk"
+  },
+  {
+    "name_en": "Old Dirty",
+    "name_zh": "Old Dirty",
+    "description_en": "A bar on Phahon Yothin Road with a covered outdoor seating area away from the loud interior music, good for conversation. There's a pool table and live band performances, with a smoking area outside the bar. Whiskey is sold by the bottle only — no shots or small pours. Service charge and tax are added to the bill but not listed on the menu or posted anywhere inside, so it's worth checking before you pay.",
+    "description_zh": "位於 Phahon Yothin 路上的酒吧，設有戶外但有遮蔽的座位區，適合不想被室內音樂轟炸又想聊天的人。有現場樂團演出、撞球桌，吸菸區在吧台外側。威士忌只賣整瓶，不提供單杯或小份。服務費與稅金會另外加在帳單上，但菜單和店內標示都沒有明確說明，結帳前可先確認。",
+    "category": "nightlife",
+    "address": "490/21 Phahon Yothin Road, Khwaeng Samsen Nai, Khet Phaya Thai, Krung Thep Maha Nakhon 10400",
+    "lat": 13.7884903,
+    "lng": 100.54839849999999,
+    "photos": [
+      "/photos/64f7d935-92b3-4694-a77a-a6b10a7f138a/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Old%20Dirty%20490%2F21%20Phahon%20Yothin%20Road%2C%20Khwaeng%20Samsen%20Nai%2C%20Khet%20Phaya%20Thai%2C%20Krung%20Thep%20Maha%20Nakhon%2010400&query_place_id=ChIJjT5Iphmc4jARtD_60btw3CQ",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Band",
+      "Pool Table"
+    ],
+    "local_ratio": 75,
+    "id": "64f7d935-92b3-4694-a77a-a6b10a7f138a",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJjT5Iphmc4jARtD_60btw3CQ/photos/Aa-ngMa90I8iEnelXq_Mapk8zKI7rLZYDEVfLwmexukjUWYxYE9JhTscmMe6CeT1p3tHwkFKqAg4EDIU2P9_cf4J4eu4iwhHuAAzjP47yIcH5rjnF7Fm4b3Z_yNJ8FkLhg3aVfg6jasJz-zv1vCTWwx2RP5-u_16UIF_Q7_VX9S3mdjijGp9fq6ms1rujNse7ycmQD8OViA1IlFQ8PUG7Tw-dTFhCB1QwzAKINMkw-h0pyKTI8B6XTRJfDKhTn8CyqWZBDTZJbCD9d0BPr0aCK6sWmu5EJMtQoa9g3qIJ4JejpqQBvKhOvMvNpgMVpy6q6InmR70VuZbOD725IBgfgDVhKi-7ngst6K-aibad13nDG1IWbd8RPZXOEMffmmULyKD4eZJExpHo0BEAjcJkWeY603dCtFwSto"
+    ],
+    "approved_at": "2026-10-09T15:40:08.963Z",
+    "slug": "old-dirty"
+  },
+  {
+    "name_en": "Chilling House Café",
+    "name_zh": "Chilling House Café",
+    "description_en": "A two-storey bar and restaurant on Phaya Thai Road, decorated with a Godzilla and Tokyo theme. The menu focuses on Japanese food with some Korean-style options; beer towers are available. From Thursday to Saturday, multiple live bands take turns performing from around 8:30 pm, and you can request songs. The place gets progressively louder and livelier as the night goes on — not the spot for quiet conversation. Parking is available behind the restaurant.",
+    "description_zh": "位於 Phaya Thai 路上的兩層樓酒吧餐廳，走哥吉拉與東京主題裝潢風格。以日式料理為主，也有韓式風味選項，啤酒可點桶裝 tower。每週四至六晚間有多組樂隊輪番現場演出，從 8:30 起點，樂手接受點歌。愈晚人氣愈旺，音量也愈大，不太適合安靜談事。店後方有停車場。",
+    "category": "nightlife",
+    "address": "89/70 Phaya Thai Rd, Khwaeng Thanon Phetchaburi, Khet Ratchathewi, Krung Thep Maha Nakhon 10400",
+    "lat": 13.751501000000001,
+    "lng": 100.5321642,
+    "photos": [
+      "/photos/1aef0f39-705c-4715-ad19-333b85d08069/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Chilling%20House%20Caf%C3%A9%2089%2F70%20Phaya%20Thai%20Rd%2C%20Khwaeng%20Thanon%20Phetchaburi%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400&query_place_id=ChIJQSF7j7ae4jARE3-94qCfGFc",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Live Music",
+      "Beer Tower"
+    ],
+    "local_ratio": 75,
+    "id": "1aef0f39-705c-4715-ad19-333b85d08069",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJQSF7j7ae4jARE3-94qCfGFc/photos/Aa-ngMaVrFsuIAph91_qvlGrpXwDGmLKZiV8K2jRUoQYI7jS-jYqEwO7FQAEJswaF_edFrzyJpt_aS_EIaYuFYuvVHl8SL-OwEJNyVKcmDJTLAcmBori09bBseslS3fKHNMWFTHWwTtbv0rdgeOlhw9cK0mTasEYF17HGXblvU_DAmcmoJ_y1Kp-nHEaSOew6mCXhq9hRPmHSXeH4Xx1M3U7__r-c-nzDmdnz6bkyzm_yXgFA76lkEb2EDjYP2y4WePHGtVAzpuGx0Lu4gg2oGbSsSK-IpcO3si_Ft5SopZToyDyq2N9LM4IIUKkhIPoEgFfotf1UuFCMCI9J887TIxZtVLGXhjC6QSqsGyaFM2T302LaxP3vXl8ZIydAXA5USKA20M5NZbX7FNEonmXZlECrvRvnJDChhMrL9Euspo65meeAQ"
+    ],
+    "approved_at": "2026-10-09T15:40:08.975Z",
+    "slug": "chilling-house-caf"
+  },
+  {
+    "name_en": "Bravo Rooftop Bar & Artistic",
+    "name_zh": "Bravo Rooftop Bar & Artistic",
+    "description_en": "A rooftop bar tucked beside a canal in Bangkok's old Phra Nakhon district, with a ground-floor pub and multiple open-air levels above. Draught beers come with a buy-3-get-1-free deal, alongside craft beers, wine, and cocktails. The kitchen serves Thai dishes including deep-fried mixed vegetables, chicken Panang curry, and fish pad thai. The venue occasionally hosts live music and hands-on workshops like candle-making, crochet, and painting. Cash only, and the last stretch of the walk is on foot.",
+    "description_zh": "藏在曼谷舊城區運河旁的屋頂酒吧，分地面層酒吧與多層露台。生啤酒種類豐富，有買三送一優惠；啤酒外也有精釀、紅酒與調酒。廚房出炸時蔬、雞肉咖喱、海鮮炒河粉等泰式料理，份量實在。偶爾會舉辦現場演奏或工作坊（芭蕾表演、蠟燭製作、鉤針、繪畫等）。只收現金，且最後一段路需要步行前往。",
+    "category": "nightlife",
+    "address": "129 2 ชั้น 3 Khwaeng Ban Phan Thom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.7607138,
+    "lng": 100.5019641,
+    "photos": [
+      "/photos/171ebba8-a34d-4d22-9794-e1ee2fec692a/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Bravo%20Rooftop%20Bar%20%26%20Artistic%20129%202%20%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%203%20Khwaeng%20Ban%20Phan%20Thom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJsULv9aeZ4jARzgJzJLuxxDY",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music",
+      "Draught Beer"
+    ],
+    "local_ratio": 75,
+    "id": "171ebba8-a34d-4d22-9794-e1ee2fec692a",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJsULv9aeZ4jARzgJzJLuxxDY/photos/Aa-ngMazj_AHdH4RfHNh_iVGAUvq3gRnnXd3Yltw50PUaOm7mRFWJFdjctCV0LZyaMJiTD9hGZrTTpaLsmfoxQZSKcScfslNNV16782_ycWBpNgJZ9lx1LnV0-pBwbLnui_oxd9-N_smet6OYjSC8jDFNSw9bSdn_VcgnOrrKNFNXIG5qLmjZv_cUtdIY7ZNUpkahcaI4AvJMcS_LRnXu65IbnzqFTu0sLPYT3f0r3BeuS8fqabZkgjoQgRiL4y_DW7b8kpEvdCiiSNqkQBiIs2OaSSUJk3goWUT9XF0NenLGWrwBDP3ahAdC5Yh__En7U3b_iUsnV5akr-ZUVGzDXb_94E6YIGuhnV7n-6DcmKuzVRGM2gMXrmhgi1B_tk2UsG56aUPryhqR4eLaC7i3xRXkr7esDxi0dw"
+    ],
+    "approved_at": "2026-10-09T15:40:08.987Z",
+    "slug": "bravo-rooftop-bar-and-artistic"
+  },
+  {
+    "name_en": "AuFuBar",
+    "name_zh": "AuFuBar",
+    "description_en": "Located at 599 Charoen Krung Road, about a 5-minute walk from MRT Wat Mangkorn, right near Chinatown. Inside, the decor leans into old Chinese tavern territory — moody, traditional, with red lanterns throughout. Live music is part of the setup, but the volume stays low enough that conversation doesn't take effort. Both cocktails and mocktails are on the menu; the Charoen Krung mocktail is one to try. Crispy chicken wings are a solid food order.",
+    "description_zh": "位在石龍軍路599號，靠近中國城，從MRT Wat Mangkorn站步行約5分鐘。店內以舊式中式酒館風格布置，紅燈籠掛滿四周，氣氛沉靜但不悶。有現場演奏，音量不大，坐著聊天不需要扯著嗓子。調酒和無酒精飲品都有，Charoen Krung mocktail是其中一款。雞翅是點得到的餐點，炸得酥脆。",
+    "category": "nightlife",
+    "address": "599 ถ. เจริญกรุง Khwaeng Pom Prap, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+    "lat": 13.7405213,
+    "lng": 100.51225579999999,
+    "photos": [
+      "/photos/7a200987-0aad-46fa-8547-4b8c70d9b55c/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=AuFuBar%20599%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Pom%20Prap%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJHwoa9SSZ4jARJexVkz1xJGs",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music",
+      "Charoen Krung Mocktail"
+    ],
+    "local_ratio": 75,
+    "id": "7a200987-0aad-46fa-8547-4b8c70d9b55c",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJHwoa9SSZ4jARJexVkz1xJGs/photos/Aa-ngMa1EtjHB7ElcmpVMk4W6JQYcBu-QlXf0ZIZrBYQuizmJ09Dj-KOJ502kBdtj8WPJKTTeOldEQ_tvnJm-y1W-gnBHFb19_2_4OYmOw769yBZIAf52TYyF2GDPYXAH07RpsrIoq82CB4bgECqYPnN0q41DFswsP1ygUVGatHEUW0M15aQWBQPEuJR35mb275PUCrMe6OFdxP-AVaxNoRkFyIVXOUGH4b0PNhayxDQGr2mly4NURSzhPvlEmaloEWjwrjPxKs9e_tHJdNKLGkdWJlz13nZDvjLNVvQP-sadgGVdTurTNVK8SUmJzFNKobf72NX4uYdndyQhLof-0yWaVhM0_OTQTFB3kGHP9k53Oh6kL__ndRb9aySbUeTXJu9D8i-t8RcSw1vUD9AZYfC-zjOgBk"
+    ],
+    "approved_at": "2026-10-09T15:40:09.000Z",
+    "slug": "aufubar"
+  },
+  {
+    "name_en": "ฟังpls-พหลโยธิน17 (Bar&Restaurant)",
+    "name_zh": "ฟังpls-พหลโยธิน17 (Bar&Restaurant)",
+    "description_en": "A bar and restaurant tucked into a soi off Phahon Yothin 17 in Chatuchak, with live bands performing most nights and a DJ set on Fridays. The sound system is well-balanced—loud enough for the music, quiet enough for conversation. The Thai food is genuinely good, well above typical bar fare, and there's a solid lineup of cocktails and draft beer. There's a snooker table inside and an open-air seating area with fans outside. The menu comes in both Thai and English with photos, so ordering is straightforward.",
+    "description_zh": "藏在 Chatuchak 區 Phahon Yothin 17 巷弄裡的一家音樂酒吧餐廳，現場樂團幾乎每晚輪番演出，週五另有 DJ 夜，音響調得適中，坐著喝酒聊天不費力。食物比一般酒吧水準高，Thai 料理份量紮實，調酒與生啤選擇也夠。店內有撞球台，室外區備有風扇。菜單附英文與圖片，語言不是問題。",
+    "category": "nightlife",
+    "address": "1677 Soi Phi Mon, Khwaeng Chatuchak, Khet Chatuchak, Krung Thep Maha Nakhon 10900",
+    "lat": 13.819129900000002,
+    "lng": 100.5633383,
+    "photos": [
+      "/photos/405e2793-0262-43ab-8a4d-ac506fcc71c5/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%9F%E0%B8%B1%E0%B8%87pls-%E0%B8%9E%E0%B8%AB%E0%B8%A5%E0%B9%82%E0%B8%A2%E0%B8%98%E0%B8%B4%E0%B8%9917%20(Bar%26Restaurant)%201677%20Soi%20Phi%20Mon%2C%20Khwaeng%20Chatuchak%2C%20Khet%20Chatuchak%2C%20Krung%20Thep%20Maha%20Nakhon%2010900&query_place_id=ChIJnwZKAFqc4jARX5_mGCrBmAI",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music",
+      "Live DJ"
+    ],
+    "local_ratio": 75,
+    "id": "405e2793-0262-43ab-8a4d-ac506fcc71c5",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJnwZKAFqc4jARX5_mGCrBmAI/photos/Aa-ngMZgVmYM8YW9jzs9jUjPaST2eZAzwHOTC5eG0vqW7__Ram7eTSKWX1FvvHlQKNgQFoAyLW2SjjZOr3uk0y7TjrwDxylndMWjMJVfpIdSRoj6uhARo9X7tf8T0y8SffpdjU_G7d5iVlzAnqFAzpOfCOsG2EpcZ2G0wtyNU7kgkupSnpm9aqBbpKq7NcCj1YHo9Etabol2-YOQ4fUm6gjVQw3w7NdPmp6RQyiGklduwP6Sb22fsEbEp1hmS0ka_VL2-o00cpbZB4lpTayEa5k0axYyrWz09zbiASHC_fK-VRCbspTH9u8-LoK30a0dUot6B5wyfAPNC5OhdVkZ6kcv4ccLSBd9OfY7UlDjccjasiVZNXWugiBYxz0AROLD-f1YdNX-GG5FrhZrzfKy-Dn3y-icEo9DkKU"
+    ],
+    "approved_at": "2026-10-09T15:40:09.012Z",
+    "slug": "pls-17-barandrestaurant"
+  },
+  {
+    "name_en": "SOS CAFE & CRAFT BEER",
+    "name_zh": "SOS CAFE & CRAFT BEER",
+    "description_en": "Tucked behind IconSiam—walk across the Gold Line BTS bridge from the mall's second floor and you're there. The tap list rotates around 10 craft beers served in 250ml or pint pours, and the fridge is stocked with hard-to-find imports. The food menu covers Thai staples, burgers, tacos, ribs, and beef stew; if you order the beef stew, go with bread instead of rice. The Yod dried banana beer is a genuinely unusual find worth trying.",
+    "description_zh": "藏在 IconSiam 後方巷弄裡，從商場二樓走過金線 BTS 天橋就能到。精釀啤酒是重頭戲，生啤約 10 款輪替，另有一冰箱難買到的進口瓶裝與罐裝。食物也認真做：牛肉燉菜配麵包、漢堡、塔可、肋排都有人點，也接大量外送訂單。Yod 啤酒的乾香蕉口味值得一試。",
+    "category": "nightlife",
+    "address": "250 Soi Pho Suwan, Khwaeng Khlong Ton Sai, Khet Khlong San, Krung Thep Maha Nakhon 10600",
+    "lat": 13.724658999999999,
+    "lng": 100.5089795,
+    "photos": [
+      "/photos/d065d27e-b822-4ad6-b3d9-5e626b98f32c/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=SOS%20CAFE%20%26%20CRAFT%20BEER%20250%20Soi%20Pho%20Suwan%2C%20Khwaeng%20Khlong%20Ton%20Sai%2C%20Khet%20Khlong%20San%2C%20Krung%20Thep%20Maha%20Nakhon%2010600&query_place_id=ChIJF9D9MN2Y4jAR0u8CYBxvhYE",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Craft Beer",
+      "Beef Stew"
+    ],
+    "local_ratio": 75,
+    "id": "d065d27e-b822-4ad6-b3d9-5e626b98f32c",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJF9D9MN2Y4jAR0u8CYBxvhYE/photos/Aa-ngMZVnW7OLF64xzkHt9rrVImlIWo9rTxxSlGVtPtgOoRTFR3RM1ZBc1kTEG84Rrpy-Crb4P9FBXDcJFe4qgJ4fkszwLtAiyj_OnTBGTGh9pQvB6QDXJZ3ku-hY_yQmIuxphnioImcOSoFyDV9Mb4tLpmSkjWbX7rairRvFIHbjY0HuqPlqjmwupOl86ggD0oR6cD4un7Vey2EhPk7aq7FDO-4jgUNgzqB1PRmkkGyawduyLa0F693uXHDPEjbLohFAqq-NJ78d1izgdNNjVOder0rAKDkFuogoPoL6iHnndN9yBNmoGzJ12Gk0yQ-x9ozjfO9pQhLiKm01XNgmaVFZSXJR3w404LkcjLULkPuu6uCLbYgoFr_DWjn5idh-7jlLjlpfsi8cGL4zXbcjHg8qNho4jq2lt0"
+    ],
+    "approved_at": "2026-10-09T15:40:09.023Z",
+    "slug": "sos-cafe-and-craft-beer"
+  },
+  {
+    "name_en": "OpenCraft Craft Beer Bar โอเพ่นคราฟต์ เบียร์คราฟต์ ไวน์ และอาหาร",
+    "name_zh": "OpenCraft Craft Beer Bar โอเพ่นคราฟต์ เบียร์คราฟต์ ไวน์ และอาหาร",
+    "description_en": "A craft beer bar in Bang Sue with a solid selection of craft beers on tap. Easy to get to, relaxed atmosphere, and consistently well-rated among locals.",
+    "description_zh": "位於 Bang Sue 的精釀啤酒吧，提供多款精釀啤酒選擇，氣氛輕鬆自在，交通方便。評分高達 4.9，是這一帶難得的精釀酒吧選項。",
+    "category": "nightlife",
+    "address": "17/8 Thanon Pracha Rat Sai 2, Khwaeng Bang Sue, Khet Bang Sue, Krung Thep Maha Nakhon 10800",
+    "lat": 13.806561499999999,
+    "lng": 100.52238539999999,
+    "photos": [
+      "/photos/f0e275c0-bd31-4551-92f1-8440eb409cfc/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=OpenCraft%20Craft%20Beer%20Bar%20%E0%B9%82%E0%B8%AD%E0%B9%80%E0%B8%9E%E0%B9%88%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%95%E0%B9%8C%20%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B8%84%E0%B8%A3%E0%B8%B2%E0%B8%9F%E0%B8%95%E0%B9%8C%20%E0%B9%84%E0%B8%A7%E0%B8%99%E0%B9%8C%20%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%2017%2F8%20Thanon%20Pracha%20Rat%20Sai%202%2C%20Khwaeng%20Bang%20Sue%2C%20Khet%20Bang%20Sue%2C%20Krung%20Thep%20Maha%20Nakhon%2010800&query_place_id=ChIJjwEx6OWb4jARy96cv694wDc",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Craft Beer"
+    ],
+    "local_ratio": 75,
+    "id": "f0e275c0-bd31-4551-92f1-8440eb409cfc",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJjwEx6OWb4jARy96cv694wDc/photos/Aa-ngMbdFx80zar_IQgLhtVcIFEvEOgigJNel-YbM-l1qdjTHnAYntkrLQImn0ykY28Fls-kqJAc_uZEucVKmf5N1_l9-yJSf9KgMIVndsYP_zjsY418MoP5GctfJ5hVXLBK4w7NOmLauwjEo8E9LbJg_ILieq3OJeZLl28jf5Pfm6JBrT1Z63dXyaayMJfS6QbEyGWCM-wwnz5mCxHkunpTMmfVEdcndYQRM_SlHmT8hV8GAAVSpscs9tMaTvngp9amzxZ52_wMAppyJgmLpDWje3aDdnOmJ0H8igAkPsDjhIoESbDED1HZMNdf5Ablhy45ty0-ba7ZKKnCVhv0bnhkZ6lqf-RwBYQjkGfLAiOX13ZZYcVI-vQJ2_g-amMSz4OyicAAlsXFDAFwwstBcNqu9dsolrQzWCkiSD5mcO5_Gqdlhw"
+    ],
+    "approved_at": "2026-10-09T15:40:09.035Z",
+    "slug": "opencraft-craft-beer-bar"
+  },
+  {
+    "name_en": "Apron Bar Bangkok",
+    "name_zh": "Apron Bar Bangkok",
+    "description_en": "A craft beer bar tucked into Samsen 4 alley with a self-pour system: you get a tap card, walk up to the taps, pick your beer, and pour it yourself. Over 12 craft beers on rotation. Food is ordered via QR code at the table. The space has board games, a note-leaving corner, and even sells film cameras with on-site film developing.",
+    "description_zh": "藏在 Samsen 4 巷弄裡的精釀酒吧，最大特色是自助倒酒：拿到一張感應卡，走到出酒機前選款、刷卡，自己動手拉桿倒杯。現有超過 12 款精釀可選。食物用桌上 QR code 點餐，店裡備有桌遊，還有留言角落，另售底片相機並提供沖印服務。",
+    "category": "nightlife",
+    "address": "2/1, Samsen 4 Road (Trok Wat Tri Thotsathep, Baanpanthom Sub-district, เขตพระนคร กรุงเทพมหานคร 10200",
+    "lat": 13.763742599999999,
+    "lng": 100.49971239999999,
+    "photos": [
+      "/photos/278e6eb7-14e1-4436-a62c-3ce6beb16fed/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Apron%20Bar%20Bangkok%202%2F1%2C%20Samsen%204%20Road%20(Trok%20Wat%20Tri%20Thotsathep%2C%20Baanpanthom%20Sub-district%2C%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%99%E0%B8%84%E0%B8%A3%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010200&query_place_id=ChIJm0w2pvGZ4jARrnuKcY5uvXY",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Self-Pour Beer",
+      "Live Music"
+    ],
+    "local_ratio": 75,
+    "id": "278e6eb7-14e1-4436-a62c-3ce6beb16fed",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJm0w2pvGZ4jARrnuKcY5uvXY/photos/Aa-ngMZ2HDGQ0Goa0H_0KzBHAPKwaXSHbhiWRVqlCakieYGeeAy9bHNHWEVlAat6VOmUYr4RHf2dwl6B7IP94TeKnSPWeIs2FH-sybl6xZUkX31QeUnDXCT8Gr89wRj4B9Xu50_dH4tNPojBon-SYcqdMKKcRzWpqWvkBD-vsanKeCR91R99zTnH9DbBu7uzC3yeeRpEKWl4AOfxdMPG12ndt77IdLvAkCzUT0VfchxxCxjsRMmEwFsLJJ8-fZ9jtsC5qyrlN_GZLY4bjnN4KEKELzC0Uftr5JxX9RrxVJrseq5k0Vphowtrz10_YbNNiYjLCwxjDNw6wa_UC3NQOn916fgG8GHKePU4e_-B8i0HDT0Op70S6iVnfc5_kLEyp4zYcCzbBtpNNdJT2iqV667xCPKGbh4"
+    ],
+    "approved_at": "2026-10-09T15:40:09.048Z",
+    "slug": "apron-bar-bangkok"
+  },
+  {
+    "name_en": "Gaginang 家己人",
+    "name_zh": "Gaginang 家己人",
+    "description_en": "Tucked on Thanon Phra Sumen near the canal, Gaginang takes its name from a Hokkien word meaning 'our people' and runs as a rooftop bar with Chinese-inspired hospitality. Come before sunset for canal views from the open-air balcony, and stay for the live music performed by local musicians. The bar serves craft fruit beers alongside food, and the whole thing sits in a characterful old building away from the Khao San crowd.",
+    "description_zh": "在 Phra Sumen 路上、靠近運河的老建築裡，Gaginang 是一間有頂樓露台的酒吧，店名在閩南方言裡意思是「自己人」，走的是中式待客風格。傍晚來能看到日落，夜裡有當地樂手駐場演出。提供生啤酒和手工水果啤酒，也有餐點可點。露台開放空間可以看到運河景色，氣氛輕鬆。",
+    "category": "nightlife",
+    "address": "71/4 Thanon Phra Sumen, Khwaeng Ban Phan Thom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.7612656,
+    "lng": 100.501091,
+    "photos": [
+      "/photos/b2e5ec25-f83b-44de-88d5-18d78273b2d4/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Gaginang%20%E5%AE%B6%E5%B7%B1%E4%BA%BA%2071%2F4%20Thanon%20Phra%20Sumen%2C%20Khwaeng%20Ban%20Phan%20Thom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJ74iHM4mZ4jAR_D0-foHFUAY",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Rooftop View",
+      "Live Music"
+    ],
+    "local_ratio": 75,
+    "id": "b2e5ec25-f83b-44de-88d5-18d78273b2d4",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ74iHM4mZ4jAR_D0-foHFUAY/photos/Aa-ngMaJBY8aImJ6IckFRsgOvctMZbXFoDthHpzFhOnhcRMAA0W9O7-i_ls1AQkxRlJ2nz8EMB0PLdoPT6QWG9K_T7Rc8Ri33uXaqHJTNdbojGVgdKld2AmFA4f2OYcOJKzdjeltEo-Pb5UZIVF7h5u4UZrBdJFHDQIXBdhY66QnNWSdvM7bpVuugpasGdG7QjSQ51Ty2QHR99Nlqo7PyiGK_8fzVMGIbKnLHOZKwMRus5MuQIY-fl2oPHqilHBPwNLvSWRHfvo7KcC_cXDFNkz2n953cccIyhZDIWREarTulzNZc3oTyOViIlE1Lsqu1v2WRxUqd9R4vwmQEX4wa7ZWJgyI9odBVvsgxWaEOr6s6M-5szw5PB575X3AlrBwb8mAGSMCwA8gJOHSJgCwhyVaOwFH6Xht"
+    ],
+    "approved_at": "2026-10-09T15:40:09.060Z",
+    "slug": "gaginang"
+  },
+  {
+    "name_en": "HAZE bkk",
+    "name_zh": "HAZE bkk",
+    "description_en": "A craft beer bar in Chinatown with taps ranging from local Thai breweries to small-batch spots out of New York. You can taste before you commit. It doubles as a football screening venue with a strong Arsenal crowd on match nights. Live music adds to the vibe. Cash only — and if you're coming on a game night, book ahead on Facebook, as walk-ins often find it full.",
+    "description_zh": "唐人街區一間專注精釀啤酒的酒吧，生啤選項涵蓋泰國在地酒廠到紐約小眾品牌，點單前可以試喝。這裡也是曼谷知名的足球轉播場地，Arsenal 球迷尤其熱衷，比賽夜氣氛熱鬧。有現場音樂演出。只收現金，比賽日建議提前在 Facebook 訂位，否則現場入座不一定有位子。",
+    "category": "nightlife",
+    "address": "425 ถ. หลวง Khwaeng Wat Thepsirin, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+    "lat": 13.746702100000002,
+    "lng": 100.51133139999999,
+    "photos": [
+      "/photos/c447e876-9dd3-4fae-ad0d-5c25145da6cb/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=HAZE%20bkk%20425%20%E0%B8%96.%20%E0%B8%AB%E0%B8%A5%E0%B8%A7%E0%B8%87%20Khwaeng%20Wat%20Thepsirin%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJCfw_-fKZ4jARRWPAqazSfN4",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Craft Beer",
+      "Live Music"
+    ],
+    "local_ratio": 75,
+    "id": "c447e876-9dd3-4fae-ad0d-5c25145da6cb",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJCfw_-fKZ4jARRWPAqazSfN4/photos/Aa-ngMZ7pcFOWC9NwDltTZpjFRLhEF_Q3_h55CHxpowbHVR81jAqmxssWRDxqdrMcspuAVtXSIqN20mCv7Q6JAMV5yqVdGdesQ4g2Cx5r8v7gic3jObpAQXZVbUVTSF9RJ38yzu0hRUiAHHbXIeB7QWoN0HEFKa92Y6tzbsjN1VM_y0w4rt_b_O2VzYO1YCMG_p9S7boMaIp6FZ0xens6hWUW9PV7scGU0tQwvUiZE7TFSXFRblDPgJ9Reidapq_IVqLYiUJHinsK0VLPjd07crHQY-i6GCr8gKYvMEK7gr3kAHkOcNbCaF_cvm3W8zl4dj-79Um0wN5oWhCPvACMxjaXbVTbw1FshUUjAg1dsMaJv41cQ0tC_F-Bt57-YDXMpW-rgTMIlClL28ltWCJJlAZMFoOtebWZVIwpYItTpIZRfnf"
+    ],
+    "approved_at": "2026-10-09T15:40:09.071Z",
+    "slug": "haze-bkk"
+  },
+  {
+    "name_en": "Bottle Rockets",
+    "name_zh": "Bottle Rockets",
+    "description_en": "Bottle Rockets has moved from its original Ari location to a renovated alley off Rama IV, and the new space has a strong design identity — think Wes Anderson-style interiors. There are 30 taps of craft beer, both local and imported, plus food on the menu. Staff are attentive and happy to guide you through the beer selection. A good spot for a relaxed evening with friends.",
+    "description_zh": "Bottle Rockets 的前身在 Ari 一帶頗有口碑，新址落腳 Rama IV 的舊 Silom 小巷，整個空間重新改造，裝潢設計感很強，有人形容像 Wes Anderson 電影裡的場景，視覺上頗值得一看。主打精釀啤酒，現場設有 30 個 tap，涵蓋本地與進口品牌，也提供餐點。staff 會主動提供建議，適合想邊喝邊聊的夜晚。",
+    "category": "nightlife",
+    "address": "942, 26 Thanon Rama IV, Khwaeng Suriya Wong, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
+    "lat": 13.730218500000001,
+    "lng": 100.5340722,
+    "photos": [
+      "/photos/81f1e15b-c583-424e-a7f8-12b9a9687a92/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Bottle%20Rockets%20942%2C%2026%20Thanon%20Rama%20IV%2C%20Khwaeng%20Suriya%20Wong%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJ_7IqAVSf4jARVPo1Ziuo_00",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "trending",
+    "highlights": [
+      "30 Craft Taps",
+      "Craft Beer"
+    ],
+    "local_ratio": 75,
+    "id": "81f1e15b-c583-424e-a7f8-12b9a9687a92",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ_7IqAVSf4jARVPo1Ziuo_00/photos/Aa-ngMb3UbHMFE__h_mLSCIS1dsTTRPidEhZTK-Pepd1EfKxUoZfvpizF3i334A23TFIM5tXRE7Ac6-6Leu5X8Cd449FWGiVa2DgQU72akXZ69RMNk4PIxKnjcU_3jrdHUbbcm8j00yvWms-cvABX64OWa4eZV3OBMUe7ZkskJVm7I02m-NkdMJtnWTfdTyibtChSagv2BWupqAroORRuNK0R3Kll-VYh0pHesURWK8UrBo8DjDvJHz_yvJHGjQ4BRZfaL5ZXkQpA5Yf1Rt1kBwZP3Gm5ia72i9h4Frmdljmn5Xfm6E_YscPbgN_xHUmFE5Li5eUdSENzcpPdl51QJ_qUq5FNnOSE3OrOuSxrbppZRAHyIVtnNe2osdz9VaiA9ny909054hfoHhFAodCDAwcwsaThOzbE-c"
+    ],
+    "approved_at": "2026-10-09T15:40:09.083Z",
+    "slug": "bottle-rockets"
+  },
+  {
+    "name_en": "Beer Pradith เบียร์ประดิษฐ์ บรรทัดทอง",
+    "name_zh": "Beer Pradith เบียร์ประดิษฐ์ บรรทัดทอง",
+    "description_en": "A craft beer bar on Banthat Thong Road dedicated entirely to locally brewed Thai beers. There are 24 taps covering lager, weizen, pale ale, and more — all from domestic breweries. Free samples are available before you commit to a pint, and the tasting tray is a good way to work through several styles in one sitting. Live music happens on some nights. Free popcorn is provided. Note that the restrooms are in a separate building nearby.",
+    "description_zh": "位在 Banthat Thong 路上，專攻泰國在地精釀啤酒，24 個生啤酒桶全數來自本土酒廠，涵蓋 Lager、Weizen、Pale Ale 等多種風格。點酒前可以免費試喝，不確定喜歡哪款就多試幾杯再決定。推薦點試飲拼盤，一次喝過幾種口味。有時有現場音樂演出，店內附贈爆米花，廁所在另一棟建築，要走一小段路。",
+    "category": "nightlife",
+    "address": "2030 Banthat Thong Rd, Khwaeng Wang Mai, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "lat": 13.736503599999999,
+    "lng": 100.52164549999999,
+    "photos": [
+      "/photos/2c3360b4-aea3-4250-a6c0-05c0662c5536/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Beer%20Pradith%20%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%A3%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B4%E0%B8%A9%E0%B8%90%E0%B9%8C%20%E0%B8%9A%E0%B8%A3%E0%B8%A3%E0%B8%97%E0%B8%B1%E0%B8%94%E0%B8%97%E0%B8%AD%E0%B8%87%202030%20Banthat%20Thong%20Rd%2C%20Khwaeng%20Wang%20Mai%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJA2nOYACZ4jARcIF0ayM50RE",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "24 Craft Taps",
+      "Tasting Tray"
+    ],
+    "local_ratio": 75,
+    "id": "2c3360b4-aea3-4250-a6c0-05c0662c5536",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJA2nOYACZ4jARcIF0ayM50RE/photos/Aa-ngMYfxVjMS-r0BLj93IRK-hlgjXObeXR4VtUhN2lngI2cz554tioN1lc9mkr6X2tkr2Yt7d0lu4_2Yf60kdUbX8rRaCFHXObWgTQbiG5BgglzgX2E5gUYMZ5Yi5r_N5Sp7eMZr3AP8f9zNpgBTHLU4BOXVY7EyDkOtU-FjLuxi2G3l5lCYAVvy5oSxNR9MQkAHfabL4JQALBq_rxUcCzwAt2sauurHIjGCS81L0v9OLgutxdKZuGudEu9bSlYQ7EMBelLkNsvyekOxmxGsz4yAa8dc01tfp-PPSSrkdgP8FCTsrTrXvMCikeTFhJfxvIs9zly1VA3A3v1fFCzqnoqI00RPqc2HY-5XdIYykF9KD1e8fb1C4arQ0ddryjAohsmSM7TldcAfKx572dUHPeTdKNtLaPBHdEFtoUAGHnlsWfSYA"
+    ],
+    "approved_at": "2026-10-09T15:40:09.095Z",
+    "slug": "beer-pradith"
+  },
+  {
+    "name_en": "CRAFT (Sukhumvit 23)",
+    "name_zh": "CRAFT (Sukhumvit 23)",
+    "description_en": "A beer garden on Soi Sukhumvit 23 that's been drawing a steady crowd for over a decade, with both open-air and indoor seating. The tap list includes Singha and a solid rotation of craft beers — the Hefeweizen and stout are regulars' go-to picks. Food goes beyond bar snacks: fish tacos, the craft burger, chicken nachos, and pizzas all hold their own. Monday brings half-price pizzas. Cigar-friendly.",
+    "description_zh": "在 Sukhumvit 23 巷內經營超過十年的啤酒花園，戶外與室內座位皆有，空間開放通風。生啤選項豐富，包含 Singha 生啤與多款精釀，Hefeweizen 和 Stout 都是常客回點的選擇。食物比一般戶外酒吧紮實，魚塔可、精釀漢堡、雞肉 Nachos 和披薩都有人專程來吃。週一披薩半價是固定活動。場內友善雪茄客。",
+    "category": "nightlife",
+    "address": "16 Soi Sukhumvit 23, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.738248899999999,
+    "lng": 100.56312439999999,
+    "photos": [
+      "/photos/89531640-0675-42c3-8a02-31efeefeae76/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=CRAFT%20(Sukhumvit%2023)%2016%20Soi%20Sukhumvit%2023%2C%20Khwaeng%20Khlong%20Toei%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJOX58TeOe4jARjRv2PZkv3jo",
+    "rating": 4.1,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Craft Burger",
+      "Fish Tacos"
+    ],
+    "local_ratio": 75,
+    "id": "89531640-0675-42c3-8a02-31efeefeae76",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJOX58TeOe4jARjRv2PZkv3jo/photos/Aa-ngMayxq8X_wVd0iLY0c6WjbGY1-E7jkcKgthQfmD8hyzkgBr19zIskj5oWODjLpfs2A9mPi8k4Lm2Oi2rviyf3hvq_kLUWuPaAWJSVcAjql1eGL2jOqWbrX3sKYP43r9RQRrnQgFq6sz4H4IxafYO1aruW5BBuezfsX3UO9lDBTexHoCgyirmhBAS5XG7mS1iZTYa9Xl19-H1zovmAukre-bCNdWSsl25QDBQSSsTRndDkfLxYrTO2fKBt3sUvlGgEY0FcwO_pCnG_SsTtktERDdDyUy4AbWmzzYKyrgG4bm4D1xLqK1wM594IU1Wvm4OIdk_KqnF6_mcABaJGoacC5G9hKXBX0uRe4D2TBBIkIHkqoEpg9VgMJ6oFmEb9yddj0za8qDWGiqc3ByHdcj3FVhD6bIo6zAsOBzd3YeGe1OEnw"
+    ],
+    "approved_at": "2026-10-09T15:40:09.107Z",
+    "slug": "craft-sukhumvit-23"
+  },
+  {
+    "name_en": "STEVLER HOUSE",
+    "name_zh": "STEVLER HOUSE",
+    "description_en": "A bar tucked inside Soi Ratchadaphisek 36 in Chatuchak. Focuses on beer, with a relaxed vibe, friendly staff, and occasional drink promotions. Regulars keep coming back, and the overall reception has been consistently solid.",
+    "description_zh": "位在 Chatuchak 區拉差達碧色路36巷內的小酒吧，主打啤酒，氣氛輕鬆，員工態度親切。有不定期促銷活動，回頭客不少，評價相當穩定。",
+    "category": "nightlife",
+    "address": "19 9 Soi Ratchadaphisek 36, Lane 9-1, Khwaeng Chan Kasem, Khet Chatuchak, Krung Thep Maha Nakhon 10900",
+    "lat": 13.821508,
+    "lng": 100.584036,
+    "photos": [
+      "/photos/b5533140-b892-48b4-b8b7-1fa26425a265/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=STEVLER%20HOUSE%2019%209%20Soi%20Ratchadaphisek%2036%2C%20Lane%209-1%2C%20Khwaeng%20Chan%20Kasem%2C%20Khet%20Chatuchak%2C%20Krung%20Thep%20Maha%20Nakhon%2010900&query_place_id=ChIJS0yxW6id4jARDVkq9tK3mLQ",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Beer",
+      "Chill Bar"
+    ],
+    "local_ratio": 75,
+    "id": "b5533140-b892-48b4-b8b7-1fa26425a265",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJS0yxW6id4jARDVkq9tK3mLQ/photos/Aa-ngMaDJwYc_2oqaoq7gURjwdEEot9wfvpC3BJOZnay3RuZNCrcqOJvMzW6ok4ZVZeZOT3kRa-LSznSoo26esrz3AdreiPiGXNMVWtBQtnNa7vRCyxmGOhtLM14aqkilC9DtuH9tfGsJf-N1veRfCVbxCpxNO2uA0sJZoiexPXLzaNTHM4B2Z-hSKyfQyfamNXtYyfvWUPBcvSoc5ux0xkjDi3T60uRELjchGwZGea8oxptCrB2rV4_4tHRGTq8Cqyaycd-lZ01e1JG4WW8N1CyDzV2wLFAoi0Uzvs_lt1opKA9S9LRMdAlgniTfX1RhbGGGVGFyjXiqp5TkuIUd4zWi3FrgaF6QZ2BNS4Gmj_vyxLHdao-Y8n14efwfwH6hsdKlcwzLz8wAEoan49ck56DpBNM9g"
+    ],
+    "approved_at": "2026-10-09T15:40:09.119Z",
+    "slug": "stevler-house"
+  },
+  {
+    "name_en": "Fullmoon Terrace & Bar",
+    "name_zh": "Fullmoon Terrace & Bar",
+    "description_en": "A large open-air bar in the Lat Phrao area with a sprawling terrace and live music running all night until 4 a.m. The menu is Thai-focused—glass noodle seafood salad, raw shrimp in fish sauce, and basil minced pork with fried egg are solid picks. The menu is in Thai only, so bring a translation app. Cigarette smoke is heavy throughout, which is worth knowing before you go.",
+    "description_zh": "拉差達地區的大型露天酒吧，以戶外座位區和整晚現場樂團演出為主要賣點，可點餐至深夜四點。菜單以泰式料理為主，玻璃麵海鮮沙拉、生鮮魚露蝦和打拋豬肉飯都是值得點的選項。菸味偏重，不吸菸者要有心理準備，菜單全泰文，建議備妥翻譯工具。",
+    "category": "nightlife",
+    "address": "RH9V+Q5G, 614 Thanon Lat Phrao Wanghin, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230",
+    "lat": 13.8191507,
+    "lng": 100.59302269999999,
+    "photos": [
+      "/photos/47dbbf00-8545-4b9c-9cf2-e771bad97d32/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Fullmoon%20Terrace%20%26%20Bar%20RH9V%2BQ5G%2C%20614%20Thanon%20Lat%20Phrao%20Wanghin%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJ1ZWxtKad4jAR7hwrsExDOyc",
+    "rating": 4.1,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music",
+      "Seafood"
+    ],
+    "local_ratio": 75,
+    "id": "47dbbf00-8545-4b9c-9cf2-e771bad97d32",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ1ZWxtKad4jAR7hwrsExDOyc/photos/Aa-ngMbIBYepqt-VAHspQd2zx0AIQbHrp6B2BK6_Ob6o0powDTcWsxUAwaZ1Thp8JlUcrLPTDTTEZClGv6hxXag3Wl6yVw1cxA3jC1_NeYV4xUaXBjwJae73oEZMI4zqBWoZ2s6xFdm3Z7doiFkrTx7u6LfFKJ9nmNmSu86VifZz6rOfQ4zVdJBPlmC-F96F5SJFrAYmflVwkhU-Isu235LdB5hE8rBQaQmwvcUSKD39OeiegKdqAOMuT-K9I1ngu_mideuJTcvULjCv0zDJCnBVshR2u08fmrN9yBjq7MszOuNIjJck2Jlzag4Ne46gF37_iAXt6yZWwTpycOLz31fMSvMgbc3_wgNDf9u5kDdUEK7NRK-7DjW3rbkvbuxgX-8qcicTYyeVc2rAHsUe2CZohVpEuD0"
+    ],
+    "approved_at": "2026-10-09T15:40:09.131Z",
+    "slug": "fullmoon-terrace-and-bar"
+  },
+  {
+    "name_en": "Brewave Ratchada",
+    "name_zh": "Brewave Ratchada",
+    "description_en": "A craft beer bar on the 2nd floor of Design Village with a 4.9 Google rating. Focused on craft beers with occasional well-organised tasting events. The ox tongue is notably soft and tender. Hungry Hub all-you-can-eat deals are available, and there are friend-add and spend-based perks like free fries and spicy holy basil with fried knuckle. A solid spot to hang out with friends after work.",
+    "description_zh": "位在 Design Village 二樓的精釀啤酒吧，Google 評分達 4.9。主打 craft beer，偶爾舉辦啤酒品飲活動，有組織且受好評。食物方面，牛舌軟嫩是值得點的品項，另有 Hungry Hub 吃到飽方案可選。加好友可免費獲得薯條，消費滿一定金額另有打拋豬腳作為回饋。適合下班後約朋友聚。",
+    "category": "nightlife",
+    "address": "A201-A202, 2nd floor, Design village, แขวงรัชดาภิเษก เขตดินแดง กรุงเทพมหานคร 10400",
+    "lat": 13.7931429,
+    "lng": 100.573788,
+    "photos": [
+      "/photos/6fc39769-cf13-4353-9652-3754dfef9c92/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Brewave%20Ratchada%20A201-A202%2C%202nd%20floor%2C%20Design%20village%2C%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%A3%E0%B8%B1%E0%B8%8A%E0%B8%94%E0%B8%B2%E0%B8%A0%E0%B8%B4%E0%B9%80%E0%B8%A9%E0%B8%81%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%94%E0%B8%B4%E0%B8%99%E0%B9%81%E0%B8%94%E0%B8%87%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010400&query_place_id=ChIJ61QkPQCd4jARiMPVrB-C57c",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Craft Beer",
+      "Ox Tongue"
+    ],
+    "local_ratio": 75,
+    "id": "6fc39769-cf13-4353-9652-3754dfef9c92",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJ61QkPQCd4jARiMPVrB-C57c/photos/Aa-ngMZpXrTR_-jJOM_SmfQvQdm0Oyqzuo_IY0f2xFUDbxXpgMKKjQ1LSU-Iidw8bcUKyyEr9Bz-b4rP5bXLkrYpsD24v7UCyLO82NTo_50Plbf0ZwV9bVrBys68q0Npk7-xuXxAkc0R89Uk4B_fdZD7sf8zfN3i8zTJy2xR2qDsCwCWzOvdjP97xYW4cKl9yXWSbum6SmCPjQKULjnDF2JwQU-CPNoCVSx4Hu3lIgHUOn6-052OWmsGzmai4RoqUmmAowNptbt9L0HNeMVDAKFUPaFk4atntIwLXEZsA0rwtzlRFgbmIhpP1L5t5Q8wNdPkGyFwLyR2Ai9pludqPx5o1R5XcGqyhcjWvA0vu81Fpy_iFZXsHIsjq4uWu3RI-mKCm8Aq8ginQvYgu2FhtW7oE3_wrYI-zmuGJARBO01xq00_zw"
+    ],
+    "approved_at": "2026-10-09T15:40:09.143Z",
+    "slug": "brewave-ratchada"
+  },
+  {
+    "name_en": "Method To My Maddness",
+    "name_zh": "Method To My Maddness",
+    "description_en": "A bar in Chatuchak serving local beers only — no food, no other drinks. Different DJs take the stage from 9pm every night, and music is the main draw. A recent renovation added sofas inside, but it fills up fast after 9:30pm, so arriving early helps. There's also a small vintage shop upstairs worth a look.",
+    "description_zh": "聚集在察圖節區的酒吧，只賣本地啤酒，不供應食物或其他飲品。每晚九點起有不同 DJ 輪番上陣，音樂是這裡的核心。近期翻新後店內新增沙發座位，但九點半後往往客滿，想坐穩當最好早點到。樓上還有一區賣古著小物，進去逛逛也無妨。",
+    "category": "nightlife",
+    "address": "12/15 Lat Phrao Rd, Khwaeng Chom Phon, Khet Chatuchak, Krung Thep Maha Nakhon 10900",
+    "lat": 13.8128762,
+    "lng": 100.5607702,
+    "photos": [
+      "/photos/9b409114-79d4-4a2a-a71d-b981bfc34003/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Method%20To%20My%20Maddness%2012%2F15%20Lat%20Phrao%20Rd%2C%20Khwaeng%20Chom%20Phon%2C%20Khet%20Chatuchak%2C%20Krung%20Thep%20Maha%20Nakhon%2010900&query_place_id=ChIJm2LWKUWc4jARlylR_KfCSMw",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Local Beer",
+      "Live DJ"
+    ],
+    "local_ratio": 75,
+    "id": "9b409114-79d4-4a2a-a71d-b981bfc34003",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJm2LWKUWc4jARlylR_KfCSMw/photos/Aa-ngMZ16udBbz0xkv_fLE5geenhjIq3_Ll6-wxDH73mE9TgOzUws-_c0B2S_K6gM6XymXrI6qG_Kg7EPB_K1t0TfSVhfRjCpa3ahwZxDkqLS5jGz2foXvLcYVaZ_pOl8HVUHTBN9i7-waV2X3-LxVcHtkeBluJVSORZZoGr7I3nNCgeNv98bgYIX3se_OP0Y3jYACD58yBLV7hawoOF4E_Q80DnZzyCbyharU8AUevPdgdzzq2Ez187u-Em99m6rTuuniYtGtZdcKAFRuhr-EI2o-5jETnWQvJ0ueDsGQCFClp0nC4rVomcmNIuVwLuDX1T840HaLJ6WuCvSp4_4GrOZrQUOfLHNFYq6AoP0vGPaph0z6Si-jgnWAnoJPyHfxEk6pWfN3tELETK-V9xuk_ZNS4XCR0"
+    ],
+    "approved_at": "2026-10-09T15:40:09.155Z",
+    "slug": "method-to-my-maddness"
+  },
+  {
+    "name_en": "Peak-A-Boo Bar Ratchayothin",
+    "name_zh": "Peak-A-Boo Bar Ratchayothin",
+    "description_en": "A bar in the Ratchayothin area with a relaxed vibe that draws younger crowds. The music hits the right notes, making it a solid spot to hang out late into the night with friends. Drinks are affordable, and regulars tend to keep coming back.",
+    "description_zh": "位於 Ratchayothin 一帶的酒吧，氛圍輕鬆，吸引不少年輕人來此和朋友聚聚。音樂選曲對味，適合深夜消磨時光。飲料價格親切，是附近居民常回頭的聚會選擇。",
+    "category": "nightlife",
+    "address": "ลาดยาว Phahon Yothin Road, Khwaeng Lat Yao, Khet Chatuchak, Krung Thep Maha Nakhon 10900",
+    "lat": 13.827866499999999,
+    "lng": 100.5676136,
+    "photos": [
+      "/photos/5f138d96-e6b4-4a74-8a53-1504c90467c4/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Peak-A-Boo%20Bar%20Ratchayothin%20%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%A2%E0%B8%B2%E0%B8%A7%20Phahon%20Yothin%20Road%2C%20Khwaeng%20Lat%20Yao%2C%20Khet%20Chatuchak%2C%20Krung%20Thep%20Maha%20Nakhon%2010900&query_place_id=ChIJXX6kMped4jARB_RzcMM3u5o",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Late Night Hangout",
+      "Affordable Drinks"
+    ],
+    "local_ratio": 75,
+    "id": "5f138d96-e6b4-4a74-8a53-1504c90467c4",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJXX6kMped4jARB_RzcMM3u5o/photos/Aa-ngMZnRy1TPzKSqvDDe8fjVa1TSzCrz97249_p_BJ7ULnMxxg0P2bz3NjCCwZfo9HaYTFSogmmP3vawso9oN0gcxMOSvbjZh-P4Qg_bQV0Xvnk-OXSlMuSDXP8vgbh6EQExBBOYYaxQnDLuc0qqaJCTNk4DxXKRf-33v1TsitR5sZcxwzaj7ki2fMhdYqx9HYltHkB5qldaU0w6jjq8XTf9BM7G5LGuLOkRdqgy7l9YLKgcoXaZ7mwh65Bc66SAV0nqIb-DY5vXOUaFPvpQ87l0e_HiGxsg7ILH3TAK9YzU5gyn_YZFg6jAeiv2-Fs2CqbwIQ40ImkjjEVnBEdt9nQfagO3PBerBIsdCWE4loU_5leujAw9ppOeMoD5c1c5LNK2kj2amKr1Ep-vKmDiCcrIaSDiAU"
+    ],
+    "approved_at": "2026-10-09T15:40:09.167Z",
+    "slug": "peak-a-boo-bar-ratchayothin"
+  },
+  {
+    "name_en": "Belong Bar & Bistro",
+    "name_zh": "Belong Bar & Bistro",
+    "description_en": "A bar and bistro about 200 meters from Huai Khwang MRT, with live band performances on select nights. The band interacts with customers, and the background music leans toward Thai songs, keeping the vibe laid-back. Private karaoke rooms are available inside—spend enough on food and the room is free. The truffle shrimp pasta is a popular order, and there's a solid cocktail menu to work through. Service gets consistent praise. No Wi-Fi.",
+    "description_zh": "位於惠恭王站步行約 200 公尺處，是間有現場樂團演出的 Bar & Bistro。樂手與客人互動性高，背景音樂以泰文歌曲為主，氛圍輕鬆。店內設有私人卡拉 OK 包廂，消費指定金額餐點可免費使用。松露鮮蝦義大利麵是不少人點的菜，調酒選項也多。服務評價普遍不錯，無 Wi-Fi。",
+    "category": "nightlife",
+    "address": "246/1, 246/1 Thanon Ratchadaphisek, Khwaeng Huai Khwang, Khet Huai Khwang, Krung Thep Maha Nakhon 10310",
+    "lat": 13.7808473,
+    "lng": 100.57404969999999,
+    "photos": [
+      "/photos/6a85d8e7-3a15-4937-8ec1-f305b3ff5544/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Belong%20Bar%20%26%20Bistro%20246%2F1%2C%20246%2F1%20Thanon%20Ratchadaphisek%2C%20Khwaeng%20Huai%20Khwang%2C%20Khet%20Huai%20Khwang%2C%20Krung%20Thep%20Maha%20Nakhon%2010310&query_place_id=ChIJd17t0Cqc4jARAkbxDjq5PQI",
+    "rating": 4.3,
+    "price_range": 2,
+    "tag": "evergreen",
+    "highlights": [
+      "Live Music",
+      "Karaoke Room"
+    ],
+    "local_ratio": 75,
+    "id": "6a85d8e7-3a15-4937-8ec1-f305b3ff5544",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJd17t0Cqc4jARAkbxDjq5PQI/photos/Aa-ngMZZQMzgAUJhJCCKsXdj8UQ7KX05QeiNtqIIYqNsuS713O7RzBuJSl5rXfxyuwUKgrMgfLGAszS6o8T4MJpn933xsFHqBNcE5weUKpS4_VhWnhRzFO35u0AcaAHQXs81GsrPYkvPMGDBxkSvN2gOM1PQC6yTHUJXxwLhd5PEQCg_5598PCBRotlArq8yvXTE1FTFb22rzq-pE88XOzKz7FzXbd_Kxs1y2R3kryr9obC_KeHnMPLxXOa2jhOcenGI8KFSKJwGEX0szP23SXmBGaoW0Rm-FKTvMnKPk7ZMvkkymKC37UHi3gTE-osDDjGSw0l2yopZO0VgwYvvlxcLuKykEpQLFXjjBFb7htltunUp2gYywa_qAc5lxdwVRVRfrCjYFIx7wW5oHoCeHmRlVi0IgBXe"
+    ],
+    "approved_at": "2026-10-09T15:40:09.179Z",
+    "slug": "belong-bar-and-bistro"
+  },
+  {
+    "name_en": "Ralph House",
+    "name_zh": "Ralph House",
+    "description_en": "A two-floor live music bar near Lat Phrao. The second floor hosts Thai indie bands while the first floor plays international hits. Lighting inside is decent but it gets loud. The fried crab stick is a standout snack to order with drinks. The venue also screens football matches. Parking out front is limited, so arriving by motorbike or via MRT Phahon Yothin / BTS Ha Yaek Lat Phrao is the practical choice. Reservation recommended on busy nights.",
+    "description_zh": "拉差達一帶的現場音樂酒吧，兩層樓各有不同風格：二樓主打泰國獨立樂團演出，一樓播放國際流行音樂。燈光不算昏暗，但現場會有些吵。招牌小食是炸蟹柳，適合配酒。也可以在這裡看足球轉播。店門口停車位少，建議騎摩托車前來，或搭捷運到 MRT Phahon Yothin 或 BTS Ha Yaek Lat Phrao 步行過去。熱門場次建議提前訂位。",
+    "category": "nightlife",
+    "address": "158 2 ตรอก/ซอย ริม แขวงลาดยาว Khet Chatuchak, Krung Thep Maha Nakhon 10900",
+    "lat": 13.812062599999999,
+    "lng": 100.56261789999999,
+    "photos": [
+      "/photos/fde1c8ce-daa6-4260-a964-c3f7e224faf5/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Ralph%20House%20158%202%20%E0%B8%95%E0%B8%A3%E0%B8%AD%E0%B8%81%2F%E0%B8%8B%E0%B8%AD%E0%B8%A2%20%E0%B8%A3%E0%B8%B4%E0%B8%A1%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%A2%E0%B8%B2%E0%B8%A7%20Khet%20Chatuchak%2C%20Krung%20Thep%20Maha%20Nakhon%2010900&query_place_id=ChIJkxKKFwCd4jARiXe9CamdGk8",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music",
+      "Fried Crab Stick"
+    ],
+    "local_ratio": 75,
+    "id": "fde1c8ce-daa6-4260-a964-c3f7e224faf5",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJkxKKFwCd4jARiXe9CamdGk8/photos/Aa-ngMbJXSodpOZbT94C06HvTE5TE4wEO4E4p3uFuMHoSsj0M-_bfmi7DS86pN8SdDuzgv4BMllqKQTPpYz3i0VbR7Oxh6KiUZWTOG4A3EQWSnSooFYjt2lArY6pH-DPZ6ORfLPQQBiy014Uxx9YyXkYrNGjSAs-lAX76OS1MHoU3YcwBMx30YZ9WxE2Rp0F2B2tp2B_bpcfZBcKxSA1FhVwLTS1JysL1iPbs8pFhE0NfOr9pF428OP_Sv6eETeHdK6fET2uOVJwrNt9Zakpk6nv8zKooDXziTlnRWsJjsZkTfsbOPdInNQ1mxMjFfDeKV6uYEwCAOHEAD5aO1uAI7pYFGmm5gJno1SsSj-OuKJ825e4lgepOybqWR1IxlMLMKmfg1PzhezJUA8T31ImVlx9k_aQAcmI"
+    ],
+    "approved_at": "2026-10-09T15:40:09.191Z",
+    "slug": "ralph-house"
+  },
+  {
+    "name_en": "Lazy Bar",
+    "name_zh": "Lazy Bar",
+    "description_en": "A small bar tucked in Din Daeng with live amateur bands playing regularly. The food menu has decent variety — chicken with cashew nuts has been called out as a standout. Cocktails are solid, and Bob Marley tends to be on the playlist. Find them on IG at @lazybar.ratchada.",
+    "description_zh": "藏在 Din Daeng 巷子裡的小酒吧，有現場樂團演出，菜單選擇不少，腰果雞是被點名的餐點。裝潢有特色，常飄著 Bob Marley 的音樂，調酒也做得不錯。IG 帳號是 @lazybar.ratchada。",
+    "category": "nightlife",
+    "address": "56 Soi Pracha Songkhro 14, Khwaeng Din Daeng, Khet Din Daeng, Krung Thep Maha Nakhon 10400",
+    "lat": 13.769886099999999,
+    "lng": 100.5723483,
+    "photos": [
+      "/photos/7ffb5481-e14c-4971-a9b5-623bd05ab00e/0.jpg"
+    ],
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Lazy%20Bar%2056%20Soi%20Pracha%20Songkhro%2014%2C%20Khwaeng%20Din%20Daeng%2C%20Khet%20Din%20Daeng%2C%20Krung%20Thep%20Maha%20Nakhon%2010400&query_place_id=ChIJq6pqBIee4jARtJnwLz0dwvM",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "highlights": [
+      "Live Music",
+      "Chicken Cashew Nut"
+    ],
+    "local_ratio": 75,
+    "id": "7ffb5481-e14c-4971-a9b5-623bd05ab00e",
+    "source": "googlemaps",
+    "photo_refs": [
+      "places/ChIJq6pqBIee4jARtJnwLz0dwvM/photos/Aa-ngMbSREnzfgj5rgkUf7-ReErrjghfPLDskpXh8QOGIrD-1NWx7M-2AdewLA7QpNeyufq1S7KG19lM2wc2bnWu6ombEredALF1QSRGnbxZhx9j3jPk5c41untw-7VsxmF3l3luPQLXdWmc_RlFj_ZwbJmaE0NmaoqoiI81Oz5_7G0XfjM99x2n4gwtp57C1w001opbvyhK9ml-DsHrt3i1tG3RIgjtm35X_ro1b8NRpSBakcGtd1yOHw4SH8A_VwbnKy8OsrwrSoUTY6YUWY16phiklO0v3mPR3TMhKXWLZ2uL-xTH7Z1vnRSq_fBHqxiEY0DAl9bF5rxO-rBDt3hDfuYM4E8LrusiRy8tVIZki2VYPva0JP5MBMuFsRpw27ZyAMOoQy2MRt0_m1v1-yhDORX8Fvw"
+    ],
+    "approved_at": "2026-10-09T15:40:09.203Z"
   }
 ]
