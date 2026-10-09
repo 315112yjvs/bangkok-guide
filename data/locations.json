@@ -19417,6 +19417,282 @@
     "photo_refs": [
       "places/ChIJq6pqBIee4jARtJnwLz0dwvM/photos/Aa-ngMbSREnzfgj5rgkUf7-ReErrjghfPLDskpXh8QOGIrD-1NWx7M-2AdewLA7QpNeyufq1S7KG19lM2wc2bnWu6ombEredALF1QSRGnbxZhx9j3jPk5c41untw-7VsxmF3l3luPQLXdWmc_RlFj_ZwbJmaE0NmaoqoiI81Oz5_7G0XfjM99x2n4gwtp57C1w001opbvyhK9ml-DsHrt3i1tG3RIgjtm35X_ro1b8NRpSBakcGtd1yOHw4SH8A_VwbnKy8OsrwrSoUTY6YUWY16phiklO0v3mPR3TMhKXWLZ2uL-xTH7Z1vnRSq_fBHqxiEY0DAl9bF5rxO-rBDt3hDfuYM4E8LrusiRy8tVIZki2VYPva0JP5MBMuFsRpw27ZyAMOoQy2MRt0_m1v1-yhDORX8Fvw"
     ],
-    "approved_at": "2026-10-09T15:40:09.203Z"
+    "approved_at": "2026-10-09T15:40:09.203Z",
+    "slug": "lazy-bar"
+  },
+  {
+    "id": "ccd61548-6dda-4189-a1bb-3cac6bf08818",
+    "name_en": "heytea lab (centralwOrld store)",
+    "name_zh": "heytea lab (centralwOrld store)",
+    "description_zh": "喜茶在泰國只有 CentralWorld 這一間，位於商場 1 樓。除了招牌起司奶茶，這個 lab 版本還有雪糕和蛋撻，黑芝麻口味的雪糕評價不錯。人氣很旺，排隊時工作人員會先來記單，即便如此等飲料仍需約 40 分鐘，來之前要有心理準備。",
+    "description_en": "This is the only Heytea location in Thailand, tucked inside CentralWorld on the 1st floor. The lab format means you get more than drinks — they also serve gelato and egg tarts, with the black sesame gelato standing out. Staff take your order while you're still in line, but expect around a 40-minute wait for your drink.",
+    "category": "cafe",
+    "address": "Unit B131, Floor 1 Centara Grand and Bangkok Convention Centre, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "lat": 13.7471932,
+    "lng": 100.53996730000001,
+    "photos": [
+      "/photos/ccd61548-6dda-4189-a1bb-3cac6bf08818/0.jpg",
+      "/photos/ccd61548-6dda-4189-a1bb-3cac6bf08818/1.jpg",
+      "/photos/ccd61548-6dda-4189-a1bb-3cac6bf08818/2.jpg",
+      "/photos/ccd61548-6dda-4189-a1bb-3cac6bf08818/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=heytea%20lab%20(centralwOrld%20store)%20Unit%20B131%2C%20Floor%201%20Centara%20Grand%20and%20Bangkok%20Convention%20Centre%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJu6ndQgCf4jARAGecHC_J-lM",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "new_opening",
+    "area": "Siam",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/best-new-cafes-in-bangkok-2026/",
+        "title": "The best new cafes in Bangkok right now - Lifestyle Asia",
+        "quote": "受歡迎的中國茶飲品牌首次進入曼谷，使用天然食材、真茶和真奶。",
+        "facts": "位於CentralWorld 1樓，Rama I Rd, Pathum Wan。招牌飲品為起司奶茶。最近剛開幕，排隊人潮很長。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJu6ndQgCf4jARAGecHC_J-lM/photos/Aa-ngMYQGTyTWC-WwK34_COjYZJ5_9EAAKo-qMM77qlpPjL_Q-5MqaZ97YWbXHKDnRISJM1mS3UxMjLuvhoe1icUeVwiv_JhFT8ZI5Mv8EXX7Fq95VKRyJiKErpJwQtxM60texU59Kj5BEs1s6LTwz8PjUi2W2EvzqqomzT4qlG_kuZAr91VKWRyhBNCntwsspaDiFVRI9BEAroY_VMXc7r0XIZshHEqDu5EIU93GPxNGEmZ6urtDRXESw1RlvCv8hD2X83mUyrHpy96tet15YfUHw8cMua5GopvveDn8Wz4UmQuqC_LyvYUR01vUZOHJq1Ga0020I_K2NPBp1JgZltJo8Tq09ivBHbZEUWrKhXUkALtRXnAWorLk6B2qEC101St8o6Wnj-yGZ2dAeBjFukAfUebKM0xrNDdntyJb8Saqk98Ig",
+      "places/ChIJu6ndQgCf4jARAGecHC_J-lM/photos/Aa-ngMbZMF2U-9eq0xpqsOEaP702ikjWY4ZCmar7KxhHvEZ63ODYww7TJZqK-mIfx5Zv2PrzoKjdRwOGN2PkJbbe8yW4N0MlIa5DgDw3q4XN0vrSRF7nCCT3iJupnHzU67PyGrCTzStHLQdHWTkNIX8YTMJBLCu4fZ2MQh0b22Dd1OdIJfGQp-RAqREul6VrQF9jfD-PIjwNdtMlm7yNQzhyXKbjuWVrjqOOK_4hxhXuZK7optG_0xkboyHG0gHmIhakNlbIhSa5aQB7dZBoc9PpSR9fHil1RyjpG9Gq6bIt4oKAVNG2PsnJLywWR0adU_uKV-Jbd_u3Osq6Oiljmiuf3akDLQCNA6UtQ5z5XevlVGaL8nNeqGlyrF5BGN3OCmcxF3jtWPm4XdliBT1jeh3scxRzjBOb5oMeOVLVHDHcda4_Ww",
+      "places/ChIJu6ndQgCf4jARAGecHC_J-lM/photos/Aa-ngMYpggIyuvAmYWVbyQfqgRvT2cFjdZkk2rfvEp1tvHldTLfRCz_0vJ5QktCI7cWUu658bySXDpsAfhA0zrW3y2fODQYnbqLE8Jdyo5kKQnDvZ-zyONLdywRZsvvyHT3tFPyipF2sQ2nsIQzKRmQ5gUq9kcoFKQjMHEmwMAnBD_c4BcGRHRyq_RuFs6OxYkvb57mfOxyf8LSkMMCHWJdTIRA-byUXXSCFrnDelL8Xs-0rv7iZjiRMpPbO-5kaLK2GYcOcSBDw5Zm47XouyP-aTfDa8mx5CJdnWxO2I2H6rN47AjkT5b3PRS8IRMOO1A6Bbv_w708Pb7BKBbGzeIDpVzddRQ3UTCJ3t2PzJP_gJmoaXEEOa5e6AwkWVXFtXEIp5DOujXVRgAG-S3w0rBilByV4wd_D8k49ozTV21HjkOxAeA",
+      "places/ChIJu6ndQgCf4jARAGecHC_J-lM/photos/Aa-ngMa3mEauN7Njx0kn4rbK1ninBeU_y4r9HJ0pyD6v2HjWnOTgRBUY683-_JkdYGUilAVuvUzgwtuxdCXZrHJPBaAIg91ug410dZBD6gezmKs8nP3gS6-JdzpG0vLNeGxNlXQJuy1736B5gtfKrMcKoahuarVsWqBVJ0nWy3NnaTnMYFkbyk8iTJpehL3XIO3Iob35I75hGEUd6BEV6gBhcqj_-95kFQ0nx2h8unizhO35u7ia9GC0GL3KHq92ZmJUL_mpOtYr3Qv_8MHF1s-vBRYdcRyVdoQ117oyoX4dBA8-nkCjxD1eMebczm5LtoaStCGG3qiA_Svjjfc7JMKgWM86qTDVz94Sp9NQpqmV7BOPI8hKTFehSI_oBIFvCvhr223XDfFgXEbsxE12zBwwTdVu7Atv_eBVMcaqx8XizslP0g",
+      "places/ChIJu6ndQgCf4jARAGecHC_J-lM/photos/Aa-ngMbV2TgOZTYPL_DM7ZOECaKRZvDAnEF_V8_iElDBg1LYiOq0bANMu6hBPKGWwpkyqurY-cl8aGj6NMEqqKztdszT58BkkzscBLlOiTojZTLuvTVkKi0jZvFDHbMwzCaLFwIz_Vo2-u1aIUcDRq9V89mncb0gWuUQoQ9XULSl3MNksCcJAYSo3U3KRlWtIBdrsFuVTSY9g0Bi2nsJXGp6FvxHp2wxGvPIJMLASWU5Bb3SfGZPwx0VPpx2ojdlrgbiGIjRYQBDNCQXy8e--_AjqiITdQSijbgNwBAIj7Zc54AVCeglnZG-4kXItppPWuXNpCUyiJDkQ8AkcycMnVQug97is2AAsYgxUfPEp4aPd4ZDTP6pq-SfDMHaDUDYZ_leniHqJsCZrluLVD2Uv391TdTdN32Bv6pXd6N2UjPNrPFT-w",
+      "places/ChIJu6ndQgCf4jARAGecHC_J-lM/photos/Aa-ngMaXe82t0Tv81MGonGgm4ln-EGZtO9dhBBkE2-Tff2KHzxdtzizUnUHxwvsxpJNyV9g99amLLR0t9RfEtTn3GSSn6S5sdb3-Rfcdc-upsiei4r4A70OvACwOMXPtXZoc6yieaQYgjucNOF9-_7kjXNyBN4FWZ_zRAEiMVPvVw4nXIcoAJGiTRoLqI9AgL7MmPtt-67uMeslWR9kDEP5cgu3bYmluPWcliW6jSis60yTjtjS_VQV-ZSi6KpoOXy8m6HBM2nOw09TYE9_8La3ixSbDx-bsby3NSiUH-yCt5Fcpyp8wm0iEfockNrOPNLAKcL9Un8pqm6m5RIh7k43NXbLHkxxmo2d8RLz3rQMlZ2U6GvVYomczEFdKnrAzlkZFiP0qqt2xzFJocqI3F7rxDCT39IUjKFY_vqYNAkTkWhZNsQ"
+    ],
+    "highlights": [
+      "Cheese Tea",
+      "Black Sesame Gelato"
+    ],
+    "approved_at": "2026-10-09T15:44:05.802Z",
+    "slug": "heytea-lab-centralworld-store"
+  },
+  {
+    "id": "63813e3e-63ab-4cd9-9620-dbde817e7a85",
+    "name_en": "Harudot by Nana @Sukhumvit 71 ฮารุดอท บาย นานา แอท สุขุมวิท 71",
+    "name_zh": "Harudot by Nana @Sukhumvit 71 ฮารุดอท บาย นานา แอท สุขุมวิท 71",
+    "description_zh": "位於 Sukhumvit 71，咖啡師會根據你的口味偏好推薦豆款，點 Dirty 或柑橘拿鐵都有一定水準。另有柚子氣泡飲 Shiro 可選。咖啡可搭配甜點享有套餐折扣。座位不多，尖峰時段要有心理準備。抹茶飲品預設有加糖，如果偏好無糖記得點單時告知。",
+    "description_en": "On Sukhumvit 71, the baristas here know their beans and will tailor recommendations to your taste — the Dirty and citrus latte both hold up well. There's also Shiro, a yuzu sparkling drink. Ordering coffee with a sweet item gets you a bundle discount. Seating is limited, so expect it to fill up. The premium matcha comes sweetened by default, so specify if you want it unsweetened.",
+    "category": "cafe",
+    "address": "181 185 Sukhumvit 71 Rd, Khwaeng Phra Khanong Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.7187939,
+    "lng": 100.59547119999999,
+    "photos": [
+      "/photos/63813e3e-63ab-4cd9-9620-dbde817e7a85/0.jpg",
+      "/photos/63813e3e-63ab-4cd9-9620-dbde817e7a85/1.jpg",
+      "/photos/63813e3e-63ab-4cd9-9620-dbde817e7a85/2.jpg",
+      "/photos/63813e3e-63ab-4cd9-9620-dbde817e7a85/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Harudot%20by%20Nana%20%40Sukhumvit%2071%20%E0%B8%AE%E0%B8%B2%E0%B8%A3%E0%B8%B8%E0%B8%94%E0%B8%AD%E0%B8%97%20%E0%B8%9A%E0%B8%B2%E0%B8%A2%20%E0%B8%99%E0%B8%B2%E0%B8%99%E0%B8%B2%20%E0%B9%81%E0%B8%AD%E0%B8%97%20%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%97%2071%20181%20185%20Sukhumvit%2071%20Rd%2C%20Khwaeng%20Phra%20Khanong%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJe_kdhM6f4jARWGA4fvI7Jgo",
+    "rating": 4.5,
+    "price_range": 1,
+    "tag": "new_opening",
+    "area": "Phra Khanong",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/best-new-cafes-in-bangkok-2026/",
+        "title": "The best new cafes in Bangkok right now - Lifestyle Asia",
+        "quote": "NANA Coffee Roasters開設首間獨立分店，風格精緻優雅。",
+        "facts": "位於Phet Kasem Rd, Bang Wa, Phasi Charoen，在Seacon Bangkhae對面。招牌飲品為Mocha Panna Cotta咖啡，甜點有Yuzu Cake。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJe_kdhM6f4jARWGA4fvI7Jgo/photos/Aa-ngMbwfMtmieFQuV9cNVEguLug4-hngCBduwMxEfMQR7L5DpD7DRKd-pwV-YGexr-3CDCoCwfHHzy8XQI0L_pzjudV7cT6aRiV4SRE-eTpS2QbjSz84uSRFtk0Gdsv8x3DN45fR9Vi0y2svH9NIhhHs1ofLEsUiOIR13LSXza--S5epitN82VbC_zJeTSaWfEtjFDKBCQ-ExOn0tphqIQB-Wd2e-MdvS75wpuz4F3Jq7fBpB66_QjDO1SLQ7KFXnLAfx-wDsi2UvQyrWAzwF25npWVxIsh07z64Qn7Y_MRtaEVAroKUeSRoZhZlXlwNF3nuWZ0ntK5vwZ9WSWNLHzzrPMu5mvWXsIFU6d2ebJCa0A6Gw26tb5nJdo7l8SDUzIT82X0GdVahiCAy2TCwd8BwDtTJ1s",
+      "places/ChIJe_kdhM6f4jARWGA4fvI7Jgo/photos/Aa-ngMYFp5I4g1d2-QFRCSgRmAn79hxpI4pq-KhvE7LydmU-sMQL3_DyTF6tJtFual5qENI-hMwm62INMhE7ffImlBgVIpCLKn437Kzuo2URT_D1vxSHbd1-iGdELDJ3wR2qy-DZoju__018dylt--bJNNnRc-r7tHBS2uqi8iUSyiTSV3aED5flam_-wH3zsMxEGTq6yaxax_n44TGExV6ohqyLBSRUf04WQIZVyzJG1Bj-WbeQoVeq5J2_iSuLGjDeM7uRL2iYDS4nWCLNXH-mhm00ma_vV3H60-TXc9gq4c8xCeT3ezYnWBGLF7vr5_yj0q0tJ3HVgIknqd6Fpp5mwK4g5isxrKb5LjHBlv0QjhDHipralOywpl6JhVtS2mhwd2JvGe8yFs26itrM19qP0m6iBZ1rO3Q",
+      "places/ChIJe_kdhM6f4jARWGA4fvI7Jgo/photos/Aa-ngMbANW_yQ1M16GSD80P9R9IZ15Ejh2HvE5eExRS1KHRnqFw06qfxnKNPQxarlCAJ0tYTFAzO8Daf0yPuxn_2W7uQ9F_yMthovrqMVl5s1m-ULVkiy5oZ7ZQoS95avOvVE6PO91r57qw8WslhYUX0EtqeYVwiVBdNFKyIhFLskuQ5du57yf8-rqntZMVFXt2NVBy02IcQPhRfpUDRuzYfGcfJKz6fOLIKRVNUsMeAxquVbpLTbKM133IEYraxlEe4XMGNy8W108QrP2qcYCiG2GEu7xLLNip5EnXhXgAGniVGOZyFNSFXQaKwpEJuRdKjQYeGmKHjm_o1m9tZlemBauRMtsVXTA4u1bEdXx3AnVg7yGgKhDZ00KAlBsV2utmoOhvc-3EesOp_e7UkuStpOxQG8-U7VVZ1QlaGsMMcZFUG",
+      "places/ChIJe_kdhM6f4jARWGA4fvI7Jgo/photos/Aa-ngMbHWavFDdIJgUB59_66XjWFZe_0yE-Cww21SH9rrgNI7qkJrZea8DBanlvf1UXQpepGKhjMtofBoXSYDycmfbRlL6W0zuBy1FThRouarIco1WbpXLMN0rliDj77lGy4-AnGTjSs1E-oruZOYPFP39s9Oxtf5Yx8z2_RIuNbDoRO4atW5BabebKMdb_r6oioIuFLeTG4urvFUQ9DBsCFFDuFVhW3dEqIXwwJmYDJOvhBDmlrxhHOkSQDyKzfHsFEEAFVvvd-XVPOStwlvl6egXEIDkxi3OscmVB50q8yakEEceVO8F5oc7YzAmGzcZD234QLZSGKj0Fbp8fgdlJhadoDHZosB1g2h8RIiwSpA_1C6xIUXA8FZ-MzKJovNzqmdfqsgW89oWiPbEe1rk6OtZi4Mg",
+      "places/ChIJe_kdhM6f4jARWGA4fvI7Jgo/photos/Aa-ngMY3uv0dcz6LRGrf4thnShTvFnY0HGV83CIFJbl5GjRM0wT71cI_zCZk_7pFKFQSiw1bXrOt-JPq-T0AkxF2bVerhBPJ0J0HcYhkoF9uXKcUvrFzeNO0_NKAY7YVi-3OMBL5GQ616kfXpWPa_1HWMCDZx0qUlugqJpEYgr0yhk1hoJWeampz_tQNP2qeDryZKx59RxBbvJmMZgXQLuWDfrByYyoXN_Z2i8ER1w2ByQETnCZ8K8ypPzssqsE6ICk-aEYiTezNe6FtxbFiDl-2Hgk8ifONIdnScZVZgFY7n0hs3P3LoroNP6P4-0SduL14VAIxxP3vOAPGrxuAge5zlWU55S8Vbt0NtxSU_c9R3dUonVzd04FbmMgmfaU3PoG9JGBeUvS9zeEYGluFC2oiK0evYsQdxNlXJ5g3xH39ljUp",
+      "places/ChIJe_kdhM6f4jARWGA4fvI7Jgo/photos/Aa-ngMb7Q5JjvxTa8dwTt47TzKdWvTCP8nkiELiQCLafuajBqt5xe6wLA9zbcoLFWbhpB6zzQ7rgnoCSNzHKikaHXsH6tFOU31Nn6M4aGYnj2Qx4s-m-_grxujqGZAPdzd4wL8d2dV5zhQ0dLwUphOLKV53VL7B44nsxA3Ylp2_3ux4LcPNGnBQc1xm-N1inbxMG_ZTDuNjc3zKsjFEUP0u6TjgcplXiYf2vnpzTCg5p_s5QiIn1DzAeX7JSnnbWYIE3Kn2JifX_YpHSbYEwBlGL9R5dcTRTz0C1ufQbJzUkkkvFSKiCsMC7kwlH65Vivhr-QOBOQBMCW-MCMNdwNdQsJcb0Yt-pBhngRyRKMgAYm75iuR9KcfYQRZoxhTh9s9JxZX4wKeQjAXvOLS96JeAxETFNh9sPjzgK3Rogf19cMZ5Jbw"
+    ],
+    "highlights": [
+      "Citrus Latte",
+      "Shiro"
+    ],
+    "approved_at": "2026-10-09T15:44:05.838Z",
+    "slug": "harudot-by-nana-sukhumvit-71-71"
+  },
+  {
+    "id": "92a8afbe-8117-4be7-9b8c-5d93cb32c53d",
+    "name_en": "Adam n Eve - THE COMMONS @Thonglor",
+    "name_zh": "Adam n Eve - THE COMMONS @Thonglor",
+    "description_zh": "位於通羅 The Commons 商場內的 Adam n Eve，主打希臘優格冰淇淋，口感滑順、甜度適中，不像一般甜點那麼膩。開心果口味評價特別好，風味均衡；覆盆子口味則評價較為普通。使用真正優格、巴薩米克醋與高蛋白布朗尼等食材，分量偏大，點一份吃起來很有份量。",
+    "description_en": "Adam n Eve is a frozen yogurt shop inside The Commons on Thonglor 17. They serve Greek yogurt soft serve that's smooth, not overly sweet, and made with quality ingredients like real yogurt, balsamic vinegar, and high-protein brownies. The pistachio flavor is well-balanced and the most recommended; the raspberry one is less impressive. Portions are on the generous side, so one cup is quite filling.",
+    "category": "cafe",
+    "address": "335, The Commons, 17 Soi Thong Lo, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.735134799999999,
+    "lng": 100.5822318,
+    "photos": [
+      "/photos/92a8afbe-8117-4be7-9b8c-5d93cb32c53d/0.jpg",
+      "/photos/92a8afbe-8117-4be7-9b8c-5d93cb32c53d/1.jpg",
+      "/photos/92a8afbe-8117-4be7-9b8c-5d93cb32c53d/2.jpg",
+      "/photos/92a8afbe-8117-4be7-9b8c-5d93cb32c53d/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Adam%20n%20Eve%20-%20THE%20COMMONS%20%40Thonglor%20335%2C%20The%20Commons%2C%2017%20Soi%20Thong%20Lo%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJWbdsXACf4jARSNBxF0K6DQo",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "new_opening",
+    "area": "Thonglor",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.onebangkok.com/en/blog/new-store-openings-one-bangkok-2026/",
+        "title": "New One Bangkok Mall Stores Opening in 2026: Latest Updates",
+        "quote": "Guss Damn Good旗下凍優格品牌，提供質地順滑、甜酸平衡的低罪惡感甜點。",
+        "facts": "位於One Bangkok商場B1 Floor, The Storeys。提供smooth、creamy frozen yoghurt，具平衡的sweet-and-sour taste與多種配料選項。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJWbdsXACf4jARSNBxF0K6DQo/photos/Aa-ngMZlzDvPjqpCyQG79SyStkfJqBQgCt7hkRQXW0tpn57LSk3CH3P4dmlLqRPAaHH3pSfs-pRpJgBdlnvH1K6hUueL-BQxDnghbRkuTKiarGtl72X6qZpMW12qPLVFb47EyPmBIZRJxsBcEIDeizlWoChSy7vmn42oZH3BVEiOJjQcBLlUG7rIpyhh-iJzyHS2rzCCJVEHqgoAJstkGXOf3Z2L1gxW5ad_qClpJ6F-4scEQEiS5qCU-a17w06DyrYijTX1irKCUvOi3OjuqXFiQ4p_dEgxFsxkZdo6P5FrjsgIwqQmkOqP16usNVGkf9FYyuLqQ0inR3IXLbOgWvzsutGsEcjzQOUZrjEXVcTzyoB8GOrpopRlD7lDKp5AcVeP0YnwBiofeFZv86g5hdA_aPhTDAojtl75u1qHNdCXUCfzWQ",
+      "places/ChIJWbdsXACf4jARSNBxF0K6DQo/photos/Aa-ngMYHXjr2tml6MjMZ1cI9q7otKyRmMuhYwYU3SVQ2jfnfX5hwX31aSkkvlWTfB4WNhDxLzmLlPEjasq4iiBYRszahKOgQbotDgmXnv2P0HaaatZBbwIDZCXKytZB9r5E2qRT1sKxQQMKTfgynHu1my-5XAxUmXE-a0GlANpRj5o28Fgc0LH2C_qS96wcQbLRCGvWPL9MXTLAvCRjlqv2qR2tg3ww5rnPzAXa10oj-sOH-PaIoAhBgSz-7VwigU2ZmPtcGqiQxY_yuSokyL0AmdrgxHeVdawAfiguul7RhLT1a52POoFE7WTM11OBCIpkdCCd8fymdtbb8wwBhtSc3s3kS4Lhab9I9KPoA9NoaGNZK8GQEApCbcMdiTsh_r0UjLW9Wl5ulYRBZImKT71Ry_IcKH2j468hpsXRF2ijj16uPIA",
+      "places/ChIJWbdsXACf4jARSNBxF0K6DQo/photos/Aa-ngMYRfXDjHzrgR0rKh7B0wnsgmepRQ-VMdI2v9VdaNEGq6dLU6d1LQkkEEWDsIxHCTrpKpRGV1fHAHyUy3qCG2K0Q3n82X30selUC-EWVuKaDrsCUuuKrtBRRF9FJpMxI2DSuPqTtD_vtvC1-BsJixRYiVnMqcmMDF2A5sikhz3QrhS3Jo37A84mWRfmFntArWUb8IxMXQQOLHzDkmserGZhLWRyKkc_XYTXFFLDfVEGKGC1bTdO5WlWzcxexx3mrO02ETk1rk48heWmyCwXXdtEf2ETNM3eb_Yuo8IqlNW4BzN-1WrGHjJmZ-1GF9oiB68UJwRk6lifCkC71gPrIcvVCVmPnKfI3G1DBi2blA9mPuwWm9vmrvg6TKDWUxRhaT0N5PCyXycXx-1WhjIrffYcvnUb23bf3EDSS6QAE6bC_dQ",
+      "places/ChIJWbdsXACf4jARSNBxF0K6DQo/photos/Aa-ngMaVWkLzynV3UkR9XiZNF3NvKSmp0qtx6INPy-MnHesPgXB6RZ-L-uRiix_GlyPhNEjqKB783XfpLXsVSDDpVTinPwpblUPeUXDI-msmNKs6PSu9ScUThtl7qu_iPxtXyDbvNUEYkYUduMcEgDOL5g8KwSOl6dyYWbEWkosnUvPaAzfE_YJiX7Mz204M2-FKB1l1cS0qkdSD-BwPW1Q-VI4RuK7mThOyCJL-j1j0Fe_8HqwNvkAb194B7zrMI9dnzfTsTINngInRERTir-d9xahz8main_L3dnBECOo8z1hP9e0tHeTRF_lY0klbH2QOBSwv5oN_h2kPRYcCzqaN2GWEBDg22olqlbg3kM8eyg9O-kLmbPUT5Vv0gZOeNeu45pIY7H3tVPuoPryL9fM2WekOWKd9OSUwb7AUU8X8JCedmQ",
+      "places/ChIJWbdsXACf4jARSNBxF0K6DQo/photos/Aa-ngMZuSKaLxaXVW4ZZS0A4PZPHq89Yn0wBghKbzXKP80ihFi0sjynNjKrU6iGEQLLj5d1stL_w1UmqHItdIONQJv8ZBZzOcOZf1dsB9aTnj5_AgAQn7FjkyLPZ60Yk0LfEYm5Ih-Mj2X1FQ_umreJ4XR8pPHi6YAhpvUUlh6VxijVevaneboWaKhBSOuWL9m5g-A6LLdzUiCUwWrqEwvmf9yGWVaz1Uz_BEVc8v5smlqGir6sovAbxOS9OOo0S7R0BkH1z_9SPK3oMW7Uf9eIyB00jDCp7XNcHNbKI8x7ejejaxNIW8KIbVJrESHWSfgRliErFYgm3xBTLMiFTbXGpkiP7a2AGHPc2jBZVBHDa2Qf2_8lDATUNcCUpVVNixVPRROtPb2eOv9tXh7OUcbFOIbMXoHxkWllHrAM3f9YQVqZ4oA",
+      "places/ChIJWbdsXACf4jARSNBxF0K6DQo/photos/Aa-ngMZoUg1Mx1qr235-hEwFqd6kasxUT8OhAFNurwovbtLBqkdmrE2vMh86AE9GUrnYud-451ZE6RiqUwlVvRkL2P6rLIUXNrv3jZHFTPHQ7eY-82mEsTALU4otqrjJZENs2mrjwikHujtSSmJelcul_LI3Oazcf1U_5A0e9t43KaFKG_sA72FSHP6dCIgMGjjmEVb4DaI3W1RTS6r5dkeAezsysMfC6Z0pg4iNZwvcu3_KhCByh61Ul7v0eXLxW3sVJjzxkJzyZfSyg4MzdWF7WLMf4kkYmbhv5vyvj0dDduRImz5Vu7W4AQ1DyHpDSM-aeq4dOTkNN-n0DxGfoqapEcRPsLRybQTmU_Ivn3zGfJ8AGdIipAwrblNHpXoweozTnotaNGeOsD2v9Q0fvxfAL3bOG8kioii4B1tuDXYCKenH"
+    ],
+    "highlights": [
+      "Greek Yogurt Soft Serve",
+      "Pistachio"
+    ],
+    "approved_at": "2026-10-09T15:44:05.856Z",
+    "slug": "adam-n-eve-the-commons-thonglor"
+  },
+  {
+    "id": "a9a7104b-9632-47a6-9f46-68eb1a3b2c3b",
+    "name_en": "Carnival",
+    "name_zh": "Carnival",
+    "description_zh": "Carnival 位於 Siam Square Soi 7，是曼谷街頭潮流圈熟知的球鞋與服飾店。Nike、Adidas、Vans 的稀有款與限量版在這裡都找得到，也有 Carnival 自家的聯名系列。店內偶爾會展示本地藝術家的作品。工作人員英文溝通沒問題，也願意協助換貨或特別訂款。二樓樓梯沒有扶手，走上去要注意。",
+    "description_en": "Carnival sits on Siam Square Soi 7 and is well known in Bangkok's streetwear scene for rare and limited-edition sneakers from Nike, Adidas, and Vans, alongside Carnival's own collaboration lines. The store occasionally exhibits work by local artists. Staff are English-speaking and helpful with exchanges and special orders. Note that the staircase to the second floor has no proper handrail, so take care on the way up.",
+    "category": "shopping",
+    "address": "428 ถนน Siam Square Soi 7, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "lat": 13.7444373,
+    "lng": 100.532321,
+    "photos": [
+      "/photos/a9a7104b-9632-47a6-9f46-68eb1a3b2c3b/0.jpg",
+      "/photos/a9a7104b-9632-47a6-9f46-68eb1a3b2c3b/1.jpg",
+      "/photos/a9a7104b-9632-47a6-9f46-68eb1a3b2c3b/2.jpg",
+      "/photos/a9a7104b-9632-47a6-9f46-68eb1a3b2c3b/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Carnival%20428%20%E0%B8%96%E0%B8%99%E0%B8%99%20Siam%20Square%20Soi%207%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJa5R5XtKe4jARmhu00aiQbVA",
+    "rating": 4.3,
+    "price_range": 2,
+    "tag": "new_opening",
+    "area": "Siam",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.onebangkok.com/en/blog/new-store-openings-one-bangkok-2026/",
+        "title": "New One Bangkok Mall Stores Opening in 2026: Latest Updates",
+        "quote": "街頭文化必去據點，匯集潮牌球鞋、限量服飾、聯名商品及藝術玩具。",
+        "facts": "位於One Bangkok商場Ground Floor, The Storeys。寬敞零售空間，提供unique sneakers、trendy apparel、exclusive collaboration lines與art toys。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJa5R5XtKe4jARmhu00aiQbVA/photos/Aa-ngMY9a9YpmQENmdSqTCWP1UdrC__fSMT-VApwkMWW0hq0wliYXpfqMo-GAx21BagDQzYtyrzYHVsuvw7WjU_txgA98Ngwza44PidiSnChVyQdsnJCPXRFyBDeo-Onc91v6SJhwhCqZ26T7ew0r__wEhYZ0N9BS4A-I078IlbRs31Cb1cUK09ZUMEPK7NX7fpaFJ9WOB-i5qziOhfZg8U40piPGJrQWNtKgKxpi5q4wvjnPAmDT4uTp0ACVQE3H_kYdTvZ2G-KjSje_Xvd-vJ8_ArbQuLB51E4Dm5gSSjVG97aPrDU_wBWNLlOH-PsTfz6SGGLk4IOYwZHc-DdYk_YdxuhMO0mXfVUPUz6qDYmHPyh7pz47saWCtTJXE-HKS1ncz3gC5LN-HLnj2TJu9cXh48CHHxn",
+      "places/ChIJa5R5XtKe4jARmhu00aiQbVA/photos/Aa-ngMYFQOGGxBXX0aO8k9i41vXFBxVIRlRxWLLYPxrtwMiEGAV0469WsrLdk-p6JUYL92W6PGdmUqVNO_zULcguQnsjbtmY-vX0bSIFnryj1vt5GHIVzYDdyAMzp6xWPOHP0XesUaoqQpPw9IjAZUjzd60P9cp6Wgmjcu4iJ8vLRsaG4IOfa0HcH3i8HdtZHSXhIj1al_wCJRv-tsmBeqKH2Gds4KzRgW1hRNTrbkAY3tmOMJwLCi5FsaDYfUcwGPiFfRMFZ9x3aeMEXhBMZzTn87wvKRhPXgKS3hse2LT_xV2_xydhMVOZM07m8z0cdwjjOx1EXZhTjWfmDKuU6LvNCnyg2a0wnSLQSI5QF_YKvDh3jQYFqMN5LNvepR9tQ_tP2ERovvG1lRL8a5EJnBkAdeXEh5ykzskDAoDSS68DdXerVA",
+      "places/ChIJa5R5XtKe4jARmhu00aiQbVA/photos/Aa-ngMa2UV8q0XO3Gw3QtKfwNq7OOMxohkXowPGXnyrcInlBRdkuzFCUULzRZYAEBKcB2mXk_RpR0EieG_TycJ31w13ySxa8iBvL7HSr7ATFg-pAijMxM4x3lxoWOGeeKm5PxG10KofopJlciQTZoZ1qsYoWBP3o8u8Z7subKoKIJDvkxk9Jc3rDvSwaKvDCtaz8TYwhdROnxdsPHhTniJ66C_-m_izDqrhnX0Ew6jIYVQVoGNXaBllATHOgs-HA-Z75WSWFju2ZIsxUyEqAO58zGUx9C_1kbr4gR7VKbqjOfmRP9DktJ2eYo3RITHntrfBG53wr0bszyQLVtHayUQ6sM-U4X5fWK5ZjpGqp1K6FGeP48cUiXOJ13yfnrZiaUvexab9Ei29n6l2dARtfp9oGhpoFNzhLAn4",
+      "places/ChIJa5R5XtKe4jARmhu00aiQbVA/photos/Aa-ngMbi-JPVSzQoCGcXplEfmcKUAGUha5EoH_GSnUDpppdTVjo0o0ZJpRX6slvp-8OPWnZHlO3w4LW1T_tpAffwrxop-XZ_GaThsmkTLh1ZQWpQjMGbk0O5etovW-uw0npGz3C15-8iK084JWI6j5jm6dHKkudGOWUKfYYsccQa9Wnsqi-Txs8a3ar4arnUJV3TTMXoL-fRuGuIOxvS2_yyrogqmU4IrZrOIv8VGHSi6YLkXyTX7fEyX3v8tZWqa73q5Q2HfyyqGChUpqh_Wmt0p-QknGYKtZIPheQOBG4KX8d1uTEvd79UxJiPGrNh2LOWdQ9lvbhHzNawqizJy4XQ6k3veM3zledsINLtE4p-dT3f7AG0-4KhC8OvQFcOzqn2qVNuCTcPbwl5B9ZKZ72cy7Tz2QZi",
+      "places/ChIJa5R5XtKe4jARmhu00aiQbVA/photos/Aa-ngMbdBNKgIh1AihtPXbc3ZeeAcWDSac8iAE2ju9bpExLQgWQlTBZWYXZ_PptCyPSfcgXNlSeSLble_1K0rdjGZcnLsTjD5VxPLM_86KLcJE5COYCljbkSymzHejhU1ARSiGLwMVNf1zyyQJkSTh6Ft5wBuUvtgukPqImSdV6ehmSCyMKgsbBeS7U-HgHVGvCt-r00C-0Rp5OEqAV1AqvI6ZVwgGcCYf00gnRxDLoLUp3psy0sz03rr_hSspyvF-X1ean63nMAhna3Csl9K_D0ToK8Ldn6Pk9pxAOmG8Dx4SjSOs0v54cAcT_zYgOCK5-y9DFizR9f7lC2mjeDtHc19VvzBS0uZT6dQukP7gYmT1LFgYgRvQcVJ3SaYGj7TruVVAGovQ2pyRXDhe1Qg9hw8VvMRP_b1GNc94mz9y_eyWyGCg",
+      "places/ChIJa5R5XtKe4jARmhu00aiQbVA/photos/Aa-ngMabkBu1w8qhJ1K1q0L8bgw_dLas-Idld0r9mJRkHelNSewJdde0BC7ZWdRWMZLh1rspluHUUf7NNSnGvmZn_jLoWS0Zp3DsTHyLF9sSMW3bhJttTeWKLvEapRfQD4T0W1lpQ_Fw_R2tOgT_w_AKroRTYbp6Gg267Io0OUwiIi8UKmXfWyL7cSh3B6DBPdWnfnxEZJwE0DjU2BkU0NZm3oUvS-uE-zwAgZzpr_XaejnnQo2UTcufHteniuQNiCiLtXQZhlfK-jdBGPun97S5CWAsOR7N41cI1U0cC5paDHa9n2SHK9ZMd5kaJI-9a3hjRFza3VmVKN6gq6ewGqRDwB20sIMFqLQCJyrwAs4-kR7Zt2quDtCQqSDa7fAxMqlK9A9YZPZ7nwgi5WVH_2ef-aFUaGSL"
+    ],
+    "highlights": [
+      "Limited Sneakers",
+      "Collabs"
+    ],
+    "approved_at": "2026-10-09T15:44:05.870Z",
+    "slug": "carnival"
+  },
+  {
+    "id": "061e40b7-d4a4-46d9-959e-b181ef21d041",
+    "name_en": "Ruay Mitr Boiled Rice Sathorn 10",
+    "name_zh": "Ruay Mitr Boiled Rice Sathorn 10",
+    "description_zh": "位在 Sathorn 10 巷內，主打泰式粥品（Boiled Rice）。招牌菜是橄欖菜炒豬絞肉，搭白粥吃特別對味；梅子湯豬絞肉也值得點。這裡與 Supanniga Eating Room 共用空間，兩家的菜單可以同時點。餐廳在 2、3 樓，樓梯較陡，行動不便者要注意。附近停車困難，但有代客泊車服務。",
+    "description_en": "Located on Sathorn 10, this spot specializes in Thai boiled rice (khao tom). The standout dish is minced pork stir-fried with salted olive — best paired with a bowl of boiled rice. The minced pork with ume soup is another solid pick. The space is shared with Supanniga Eating Room, so you can order from both menus at the same table. The restaurant sits on the 2nd and 3rd floors with steep stairs, which may be tricky for elderly visitors. Parking nearby is tight, though valet service is available.",
+    "category": "food",
+    "address": "28 N Sathon Thani Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
+    "lat": 13.723213099999999,
+    "lng": 100.5272052,
+    "photos": [
+      "/photos/061e40b7-d4a4-46d9-959e-b181ef21d041/0.jpg",
+      "/photos/061e40b7-d4a4-46d9-959e-b181ef21d041/1.jpg",
+      "/photos/061e40b7-d4a4-46d9-959e-b181ef21d041/2.jpg",
+      "/photos/061e40b7-d4a4-46d9-959e-b181ef21d041/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Ruay%20Mitr%20Boiled%20Rice%20Sathorn%2010%2028%20N%20Sathon%20Thani%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJ34xlB-2Z4jARFdP7CyiZSjk",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "new_opening",
+    "area": "Bang Rak",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@chicwithmind/video/7690138544722939137",
+        "title": "ร้านเปิดใหม่ย่านท่าเตียนที่มุมถ่ายรูปสวยทุกชั้น Mitr Street by ...",
+        "quote": "他提慶地區新開幕餐廳，翻新老建築6層樓，每層都有美麗的拍照角度。",
+        "facts": "位於他提慶地區，將老建築翻新成6層樓餐飲空間，每層都有多個拍照打卡點。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJ34xlB-2Z4jARFdP7CyiZSjk/photos/Aa-ngMa7FwcsqZ3u0fyMMAVX_tPLMcgvwUCwJ42yIwh5jBQkWASnnKQQUEb-AznBhGdPwsEVIruAV08tM7qi7SZLgEciFc1nTcwoqmDjubQaE63zLt_THVAgbc4MBSCsfdINzMTj4ujLTVTbBRgy_QCM8BedQROL24qlLdJc-ECe7TFNxf8BlNEeiFDx4o6t_oiDHUIio8Bjb_qdFDt_9RiRBTlw3TXz99I6OnwirK5ahGXU1BLX3FXKEmtzm5nzLF66XYiWVhH4mjIlCpkLECqI2ZM6kCBWKYOxDiqVBWRUEeFgMpVxl_iFVyIomWvlzixN-u7r1ugxsYjLWn4jutmkateGQdW4IBBfQ7kmo8DQW3kBYpffEzzOLHEzJA5Kvof0Ezw-6ONECqzGbWmz28AmzaAK9k0zW7c",
+      "places/ChIJ34xlB-2Z4jARFdP7CyiZSjk/photos/Aa-ngMbuHl93fS1Zq-6JT6mYPdYHhH2FzL5Pk8lu0awDzSiZkeiV_1G2TMh8mZELS6i0vIGTuV_CGedCPo12iuWJ8fBmxIgfNQs59qZO9upB7rW5f4yCFc0BuNXJbYF5dEn7Xkml84IEdjGl2zg2JEKdHGt280CIyqriHOeD0azBkXhiB-00xeKhILuvo_eFX5HdMIUwBVK0JIwQAi2l8KXhm-eK6qmtmPzcCf2yBL5v6eFiPXH3OAN-WUu8edMLLp9JSzkN2yTa74u5ZZij7lIvRH96A6ztZ44vsyTuLlHa4RsBfT_Zf4KKdHxO39Ytt43BgG7Rxx0IC2jF8xbzvILKRR-WZNW9hji4H2ruePXn9fYEvXhC9D8ncD4QZSyC3tZUJYpuOeW6IFq7Sc3iRj0eLhUQKhz7U9kNSGtKBOxmXqWM",
+      "places/ChIJ34xlB-2Z4jARFdP7CyiZSjk/photos/Aa-ngMZ_B4v5F7DN-PTkM_N8Y0NGDoPKeGzFAUrYBotDG5pCJujptoMuDLthFcu-w6-jvwi9OKjcIRNmwYSsoareLfAKkaayvU1I9LpYX67PeZyosjaMuaUMXwFDdsAxb5CxttbXfkG3FcA-0tNtB0f_l6UzMa3tdocxgjDXHI-TiLhsmJjnn92Tg2ON0fFqCaZM3QhfLG5tmuFW-UX_7E4H8WJwVfBWVzriuX9LgEd0pw48YqumAovxUoWDnWlQjw9p7SDDQYmW0hYtNo7Yde4UGNOeZhp5bN53SKuHTic_Nlb5LDweFtpy8w4yw8r6mEiSVqxyghWuOVDlIYCvplNCkfZH9DjUamMMjh_e3GUmdUJEeEc_KJUB3aNJuH8w8iSLByKD9ckYh2GUW-CteL-helWUvFU1IVI",
+      "places/ChIJ34xlB-2Z4jARFdP7CyiZSjk/photos/Aa-ngMYQLuEQ8NpyAZ5Lf6I1K_VfaiSx_YGxGi-7WOfjyQfEVHPIkGqGWfCEtVZLvvAawiVR2ENlbZjzdXQmhsTDkJx_KnCMP-b869mOKx0UjGN6cbloX-__O6cFSF-39500GJuawZmSJGd8t3MVQoWbiwUiQKpnviRBMlkT_ICRCCjOKpPrXAf5tQT3DEl9kaz6-dEY6gH43RB3hzKYp16Zq9F581BY_p5ZFXI2i-Ld1srtM0BEiT66MXSxCuBWSluxaOHz5QS7vYQH4XNEmg0SWbCMVnMGsc4lo9Fzg0nFz9aCykWg3xM1qwJ6wO17h4HzF_RnG9Ou56GYzA0rBvvBu9y5xl-X2pCjTF6xINTF4Te1BYYS3YWIhxzV6zMjiby1Jow6zFLKUBNM116FYL_oKUc4OZhEtxRM7egu-6jFBkyGxg",
+      "places/ChIJ34xlB-2Z4jARFdP7CyiZSjk/photos/Aa-ngMZ92KcbCYaaWu2HVOHFMD9loddS4k6AbuzgGeLMlHyXeQA_0xbw5TaTo9xIJV1THOXIDBpWD8wIAvVH6lNVGovF3sgYurd87VVwP_qS2aWT61qZPJzrlgqYBMKJ7Y60ksZRrmUHKNJazBH1hj_gvfJQ79eVEklmRKUnKeJopYSeqzyt-4tXR9juH3elNhAdOEDZHFbjURYFyfJdRVxz25LRSKfrI4Ii1_Gtluv45MI-uJGTddoyNzEXW2vyOH7u85Dn5eeuEouMeFpo6ktq-Vbd94Jib9npwTGqTgqs45EM7FjPAOoABWqEkKGtThIvi9nDiFRsRJMguhfCctZBrvoRoFGW44XSpkH0RJ9XZWdPUH_mOtjHyYlTufTdMY4BgfEeu3dQ4zdMj-zjAo1BueMa9rq1hFpywVOUm9cW4CCa",
+      "places/ChIJ34xlB-2Z4jARFdP7CyiZSjk/photos/Aa-ngMbueBNY5lLxdtRjha9rUo4qKAAmzeq16vg2npP1-NalevDlV85P4tp__u_ZPrQq8E6p6IPe4zusenHua4CCpbp4AVE19jl3szZq4X0vO5JY5CqzWjRjAzwj9SDXXO1MPEQsX8CLugv6mih1TXwPwHaFJFtz0Vld2HJA2aGvQPc1LLVHC_SgC1aCw-mFj1CKJff7MBUnFgbvh0q-nCvq5tnOB-jYvqwYkOcmv8aw85LP2ny8_fAchFFv50GtmvFjUJwHLPDixT7_GwAMl3FNX23ywopCQfnSh-E91fRIBr_OuYVnMNz_91prLnTNqibHVo_xBK5Cu5NMt8FaKOXBzhvy4Kt137AlGMO1qQFDNQpFHIFlhBciu9iibbaqgcVmfEwD7rcMCYPzS14_B_871ukltoMQtQfEwlfXhc0vNhJu"
+    ],
+    "highlights": [
+      "Boiled Rice",
+      "Minced Pork & Olive"
+    ],
+    "approved_at": "2026-10-09T15:44:05.885Z",
+    "slug": "ruay-mitr-boiled-rice-sathorn-10"
+  },
+  {
+    "id": "79bb01e9-c823-4bde-bf59-e54eaccee308",
+    "name_en": "JING JING HOUSE & FOOD",
+    "name_zh": "JING JING HOUSE & FOOD",
+    "description_zh": "新開幕的小型旅館，就在唐人街耀華力路附近，地點方便購物和用餐。房間乾淨整潔，有電梯，一樓設有餐飲區，供應冰沙和碗裝輕食。入住時床上會有小象裝飾迎賓，員工親切。",
+    "description_en": "A newly opened small hotel steps from Yaowarat Chinatown, handy for shopping and eating. Rooms are clean and well-kept, there's an elevator, and the ground floor serves smoothies and bowls. Staff are friendly and leave a little elephant decoration on the bed to welcome guests.",
+    "category": "hotel",
+    "address": "466 ซอย Trok Rong Khom, จักรวรรดิ Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
+    "lat": 13.7397065,
+    "lng": 100.5071859,
+    "photos": [
+      "/photos/79bb01e9-c823-4bde-bf59-e54eaccee308/0.jpg",
+      "/photos/79bb01e9-c823-4bde-bf59-e54eaccee308/1.jpg",
+      "/photos/79bb01e9-c823-4bde-bf59-e54eaccee308/2.jpg",
+      "/photos/79bb01e9-c823-4bde-bf59-e54eaccee308/3.jpg"
+    ],
+    "source": "instagram",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=JING%20JING%20HOUSE%20%26%20FOOD%20466%20%E0%B8%8B%E0%B8%AD%E0%B8%A2%20Trok%20Rong%20Khom%2C%20%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%94%E0%B8%B4%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJs22IDQaZ4jAR8MWKgD2hxeQ",
+    "rating": 5,
+    "price_range": 2,
+    "tag": "new_opening",
+    "area": "Yaowarat",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.instagram.com/p/Dd05eAikpA-/",
+        "title": "5 recommendations you need to know for your next Bangkok trip if you ...",
+        "quote": "新開幕餐廳，位置絕佳，提供在地用餐體驗和購物機會。",
+        "facts": "新開幕空間，位置優良，融合當地購物與在地飲食文化。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJs22IDQaZ4jAR8MWKgD2hxeQ/photos/Aa-ngMYKh1QcEvUqpTZKk6RtR7-b99d8eFE6_x8264oJKjk2pUnZaf8nyn4-8YhC_vT39bwm57VoNM2syJ5fgFkmV__HIGDLIe91nDAx8jt8MHoI6TGCrZ-jBCm63qOF6pcY7x58rAyvOhpycGozgg9xTmSLc7rGDGCUP5tkoWi-SydGUbmcO474aZCc2zxk6UH2Q2LaOsOw6UWxA2k7r2xt6shqNdk0VgJA0FXhn_ftiQwULLLC9FqZp6d0Bh0V31lQ15DTPj_OwkUytbd8UlRL7bUVdErdkv1rlxragCyZjEAobyuV75fWwBf5ZbJMR3EBqnPauYG2l7HdnnnmYCXUu802Wqq9Ud2xAQhFHotEDr-RNc61mTYBT64C14xG-tCbGaWB3ufV0zPrBaei29Qiu8aKrisREWPIy0LAESEu7zpAZg",
+      "places/ChIJs22IDQaZ4jAR8MWKgD2hxeQ/photos/Aa-ngMbsUTIToY8QAyqDSAjxIS67omQKepgUBAvEE9wBxrmjVxz2JVyW0pQUQ1KKidggNrsn8DV9YytO1YZG1zkHdb2KR8MRdK_dBXVUILucN8EBxAuHALRG1E5h_LplTMjeQJ5QmjQbI-2HF7_xSp5oFqzLzqsTbI3-rPk559XrvniyBpxnZkNM6c4_tjFz8YKh6Ig4677NEFdWEyreaU31keaygSeQHL7VftKSoG2_QnOLS8jPjt51_CSBwzHOniwkpmfBr3Kq5Efr2WpVjUyzdn37O_6DdX5f7dkJYzKPVD6xSOfFMUpCMnQM47MSyH3a3iHnhkoecHxofAcmh7hT4M5vsZlwEuvIE3lAKUFfFJYq14VYNWkn9eA_RGqHKK2Bt18OW2DJYcBTrJxse98IbtcM2TXaMsB2VXAbX6VqyZ1klg",
+      "places/ChIJs22IDQaZ4jAR8MWKgD2hxeQ/photos/Aa-ngMaAUa0qwmDbiTjSk9hCOfNOGbdqtuOhYbAlyABp0KEGY9qLw16h59LVrbT2ww9SfxxU99UoKBo1n2LZoXuq3w26rNmJS_-RoaLo4X7xw39rjpnZ-0WLcs2SCpzYDflz98t30afLO-7uVKzvzvO-IFe-hcYwIzmsqSGLyJqu9Umtwl3V2UK3kfkaYuq48NdEVQk7Daxe6Y0ltf-ocj3dwvKNZmuJlNErACkF0zg4fuVW0otwttmGZMfHSs_QxSWVU5WEC_bXEX1UULAJ6-iZA9EkKVEvS6n3fERL0oOKXIKF9oZIGzaxpnXbJ3RskcoyzUI1MOez5SErY57-iuadLAVZ-MdTUOMRKNi0SI6RvbcasKqTc5FYew6nD6wabqyR8in7e2X8i9RgKCDWGSex9ov9FDZ0yS8pzBRObhb6HAj2OA",
+      "places/ChIJs22IDQaZ4jAR8MWKgD2hxeQ/photos/Aa-ngMapM8QjPt80O003awJx_MmcffyYfGmXC3P8z4t0XCTInUb4WKdJ_hg_wqcFJFTyjkH6rj2d55PHH_-CLh92J9pQGOceNGRMjmXhEOpQPCZKDd8Bvyih446HVSGkblHG7WjFIDng5Ry5B3FnaPRMiCkTyomOk7Hbse3T3gNDn-R_w91a2Ihxg_ivULsE5OiqTib093T6Ih5-x1CWQkSz8DsOonYLzGMiRRRvdcif0FMImuE10eAc9HFYqQ3s2TjIzOoZLNurA2ALVqwhAsQ8FdI9IKX2oWUtY6_4R4fnXZywIV-YtI2smaIUl00hUBcPgJfIjXcd12JjNvS6k3HqpyQ8HBcHDrxiTTQXA4iPhlHuHz9HgKz82cPGB10u1qGGNQRvqjEOxhVNHTVvMMj_JJsTRRIWuFoY5KBhKkwnncCF",
+      "places/ChIJs22IDQaZ4jAR8MWKgD2hxeQ/photos/Aa-ngMYZoFNTR6i5ubDHM386BCqM7e6OWg94_97nskUvEmeWKm0INl6fL-NxICx0cqSqTZVEU9As0OmC1fRuq9wYfdo3hlkDhd-Nvl4pGEGW4mIzJHolP_rMiEcEr75x3btC2Pg4UnnSD9nwYFnBijRRyMKL8nK2Q0A6frOX3BxD-iYAXDxk1JEOAVc3BttaqdJ5A9U70wbP2124o4GlCxRygedia0JQAny1PR--Esue87HOQRA-siusUvgA0vq1DKE1LMgJOTKnP5sjmeEBZTxkj8ynEDVrJTRisimHnpRIg3JqjCcMeqt8ms18BlXoG9WOVF8SSDnPHENoKfcnFuQ1jRcp-NHUYLPv-SQl8I9HQ66IWIDFnaGsLvR7hK_L89646Xpb7do5lN9e266PIqsFMnjJpWbUt4vFVaBJauitrrWeMg",
+      "places/ChIJs22IDQaZ4jAR8MWKgD2hxeQ/photos/Aa-ngMaPqn5U8vsWmq_KYjO1spZgZhOrW0qCEBinhhYbrhuUsHSUqKfagejYiT4ScLATYm0aG9gkGg5TV50bJx9MY2qwZfgIZwB1n84qN6KIz4JHRr5VVgOY5wgYF-3nBGxxSahtmdaZ5hMhSMZlKKRGl7HSLvOfgj3vHceNlWIWT5ZK6tm9b420FUW-4vbqXes0Ct9S6CTj5C1KS5J449nFTzVfKZwWhG2uCSUHwB6-l_ey85mesjWFeJlIT8uhrC3s8u-KN2pRrjGq1LkjjypxhcIQDwmnRaak_6jDfoHS9r0e58xKkJdNo9VPJIrsukHKT81zRhOehml3RWUGqVF-qLBv8AsRmT87HGJBRhnL-8QDu4BgD9tJuDLyoRMt7okBfDdSZtaLQIqKcA32u17NxA0m12iw8e1ez2nwWMzL7XBvmQ"
+    ],
+    "highlights": [
+      "Smoothies",
+      "Bowls"
+    ],
+    "approved_at": "2026-10-09T15:44:05.901Z"
   }
 ]
