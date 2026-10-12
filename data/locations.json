@@ -19693,6 +19693,1173 @@
       "Smoothies",
       "Bowls"
     ],
-    "approved_at": "2026-10-09T15:44:05.901Z"
+    "approved_at": "2026-10-09T15:44:05.901Z",
+    "slug": "jing-jing-house-and-food"
+  },
+  {
+    "id": "7b34dc7a-0616-4cbf-baff-b4ab2c4c7621",
+    "name_en": "รวยมิตร เอกมัย",
+    "name_zh": "รวยมิตร เอกมัย",
+    "description_zh": "Ekkamai 巷弄裡的泰式家常餐廳，菜色走傳統路線，但細節做得認真。鹹欖炒豬絞肉香氣十足、日式梅子豬絞肉湯口味獨特，伊森和牛牛舌和臘腸沙拉也是常被點的菜。餐廳有兩層樓，二樓可以電話預約、相對安靜。空調夠冷，適合多人聚餐。",
+    "description_en": "A traditional Thai restaurant tucked along Ekkamai, where the cooking is more careful than the modest setting suggests. Standout dishes include minced pork wok-fried with salted olive, minced pork soup with Japanese ume plum, Isan wagyu tongue, and lapchiong salad. The restaurant has two floors — you can call ahead to reserve a second-floor table if you want more privacy. Air conditioning is strong, and the space is comfortable for group meals.",
+    "category": "food",
+    "address": "26 Sukhumvit 61, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.7239476,
+    "lng": 100.58337279999999,
+    "photos": [
+      "/photos/7b34dc7a-0616-4cbf-baff-b4ab2c4c7621/0.jpg",
+      "/photos/7b34dc7a-0616-4cbf-baff-b4ab2c4c7621/1.jpg",
+      "/photos/7b34dc7a-0616-4cbf-baff-b4ab2c4c7621/2.jpg",
+      "/photos/7b34dc7a-0616-4cbf-baff-b4ab2c4c7621/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%A3%E0%B8%A7%E0%B8%A2%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%A3%20%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%A1%E0%B8%B1%E0%B8%A2%2026%20Sukhumvit%2061%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJpShPfLGf4jAR2CFl2eeZYk0",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "new_opening",
+    "area": "Sukhumvit",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@chicwithmind/video/7690138544722939137",
+        "title": "ร้านเปิดใหม่ย่านท่าเตียนที่มุมถ่ายรูปสวยทุกชั้น Mitr Street by ...",
+        "quote": "Tha Tian地區新開幕餐廳，每層都有拍照角度。",
+        "facts": "位於Tha Tian地區，將舊建築重新翻新，6層建築。"
+      },
+      {
+        "url": "https://www.instagram.com/p/DeYcRiqGwiz/",
+        "title": "Coming to Bangkok from the minds behind Ruay Mitr comes a 6-floor ...",
+        "quote": "新開幕六層樓餐廳，懷舊風格，致敬曼谷街邊小吃",
+        "facts": "由Ruay Mitr團隊打造，預計8月開幕。六層樓規模，融合舒適食物與懷舊風格，菜單向曼谷傳統街邊餐館致敬。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJpShPfLGf4jAR2CFl2eeZYk0/photos/Aa-ngMbB0rIQjFciLp52otMw343SEYG4Hwl_ZU86obgYytvc7RoZAqNZGfR70x9W2_xF-JYmDtHQKpapZP1hpZTO8B0D4fuxP1WxRD8bi2RSAEwYa1MHA4mIt5U_6ohJoBFT4BhnSijScbUhMKuLWkSh1HTTZlRR-lTVWDlfc6ZB3qsExQ4vSOKMSxaaoFuSvy_s3GBBruYpG53pcVsCZuNQXYQjXMJ_neGEYVQdQr8-fl7pB3q1lx5UHW8I3xPCXCfMJ3-QK4U3I94BVdwZPK9r1w5m2EmYpP5McINLx2MkdUV7HiQ0KfyTsdHZeNLcaHHAm6MJTmGY1Caq8H7DCIBBLHnm74lbbbXyflXt30QB2WZXuJbElPzPP5Z8NMmbo6uy8Wq7Gy94K1I9JdRPkd-8Be57TQ8m6cr5GHzLWkpTWBbJ",
+      "places/ChIJpShPfLGf4jAR2CFl2eeZYk0/photos/Aa-ngMbBtVZ7chM5_Pf7J9QmoY8YXvHIMbpRO3WQOIQ7Oj4a6meoOTG9Y9Bm1NHCGK4lL1aY063rjbiBuKU2W7SFL41ymeQtnIepli1DA0GEhookUv7lMdIo7GxSXXeQh1RlBmHcXQU-lOghYAlNONHfUrGOwXCzGE4aHH0SLnR09wNXcIqZUGLPhLJFniKQLRM4QGkqBDaxGA1_w9LM0O36qxU09riNgjtmQtBttPWT7WhXRYX9kL28O0usT2H88bqElJFzbexptZxrH5quQchNvwFDqSnh2TxUosGVR-70tFLpWC8Qaud6M3uC-fQ8_3FiOVbNupe6gqOo0_zlCnryep607FP1kUy7huvxIlJrGkwi3qSGHf-xqOuqGzTMZpQey0uHVuaFsKU-KnIvBva1d61c9AmBzOJhXFrFZ13zIXuLqQ",
+      "places/ChIJpShPfLGf4jAR2CFl2eeZYk0/photos/Aa-ngMZ2JeIkydxwqhSZjFH7jmfIc8sXHlY9ZNydHJyD3sGvt6fUA73MH5T-ikgu51Hef_TNaOZTfeTPBpC0PJh9WyDoMc5owDbGzy_rLgfpb8YDtxoHO0pburclyTlJY9-Urj6Mm5XtYdgDSleP7OQpbQd17lssPM9TUAujgvBPuVJQxI6zIdiXxLIY4gpEfeynWrLbOE3u0CgaKWWU8SHyaWqeTepN4vos-2uiq0rtUFRXjaNY9cb9hJGizo1cN4yEudB8C7DEowj9AWESRSrxCWJohIKlZKAC-ddnAUKCFdmb_XZmY6zYpqI_NF0Bh6BsMfvsvXCuURCD7oyvlA12XOmn3LoszOrXQRYstdGa2uJdHyaV9_rJ8aPvAB2jQu1XkYFjVYV46AjNpScjT0_c5aIHj6lmhojpwP6E3BjKSmQ5WA",
+      "places/ChIJpShPfLGf4jAR2CFl2eeZYk0/photos/Aa-ngMYP-NVXoSHcXtNT2rk3r8cLKoSyXY7yKFhuSi9ZYlA75FrwD7pstYnoKxjmp49gYWa9vwk-IuAfb2vADYPBtqoMVnjaYTCo3HtU2ekacml4HeMI3iNxie5TTFkJAEHG0dyUzg8S7UVeVKjSNO_ufVC1uSS4Yrl4KHOJPk0oQLfkwA4vAP201K082KhwCaVaG_rRcsIs4AFqk7XxWYjLKG2R3BD53-6KtVhxTOm7PMOcNM0f250wXX6F_Q8qmrnn1GdcZJIKw9qJBVNkHTXpwgM4LPK8By6fsKr27QludLA0GoSrBwE9Ma7WV-LvSdc6yGV2kFJkg3y7-xSuOL9Q_ZwhWRDSK-wnlgTRfE49QhmXdoIKwpJ3mHjUtVI_87vwhHJcbdL5Ll4Cbln5vfkNIjK4kCpsGv_y1ZUTozVDDWvnjw",
+      "places/ChIJpShPfLGf4jAR2CFl2eeZYk0/photos/Aa-ngMbSKl9QIwpgdaR88RZ_tRK-IooTTk--Fx2s9uPWPJ-pClqUukdLTJegcWzuBSW4-0Mc0Js4TeCh0m9znQBrbVbxixjDnjuRmeT6BiCJRaUGfMAEyMS6qpKhYDxKqo0EjSW6G-NfUpsNjBWnEXWdDW9570J2mxQOEdSOCaTzfTyJgmNHS6_-YdeoPgkdo-kZ5mEX69QxyyKjbToTHkrgfD8bN91S6j1zSaljehoO6pKhmdlfp4kpk-hU3CzGXe8Ea0BTRwHIQYf934v0pbkzRIoQ6s41DRoVfPtJwhP-mOq6IASyyViUmFTTz7y34KtEcA5XM4DkzFYe-ScwFNqDej6bJV9t-YJBlfNE1haaZk2haZEEW5HTldTLT0PPZYTJcsD3j6MeVx-lLQgx6x1wp4EoWRSSZXm2U5yyQi7AZ71wAQ",
+      "places/ChIJpShPfLGf4jAR2CFl2eeZYk0/photos/Aa-ngMaC8vxFnWSNb5i2JjACy3AEh8YSG6GOWmc7A7yX81DZEplkxs0-hb-K9hPp839Td4StAzqoauXIgoQExOd8YezW6O9eKb6lKe3Ap3g-L-_hFxHdrU_e_cN7l7BssdGz_L8l31S1E2qEEbWUgwHtmUhYDg1NqHVR7CjtsGYEukgtvfEWAemjaB8hI2GTeD4sZhQaWcZPOCmnva2IM3NGVDnN7optFeaMipoA0WLbojIhBBSyUUdFRrc7I0US8q8taI5DAXjKATfJx6RCVw_Ly5fgRKJOkZ7Azd9d-XtSlpQoG3KeAESnPBqdy81b-SjP099RBP1G0B7mshnTUcQsAb-5pygtsf31-mZcYdEVnu4M4XMW7qDz8-NVn4nMbMHLzENuxhnolLJIrwc30UXfywU2-OmFQiUo0zAM6WqqCCeSDA"
+    ],
+    "highlights": [
+      "Wagyu Tongue",
+      "Lapchiong Salad"
+    ],
+    "approved_at": "2026-10-12T09:02:40.278Z",
+    "slug": "place-7b34dc7a"
+  },
+  {
+    "id": "f2381130-cb2b-495f-a233-1e74524cd5d0",
+    "name_en": "AMBR.",
+    "name_zh": "AMBR.",
+    "description_zh": "Watermelon Group 在通羅 323/2 號四樓開的酒吧，室內以琥珀色為基調，中央擺著一座太陽臉雕塑。主打泰國音樂，固定有樂隊和 DJ 輪番上陣，雞尾酒單的每一杯都以歌曲為靈感命名。",
+    "description_en": "A bar by Watermelon Group on the 4th floor of 323/2 Thonglor, designed around an amber color scheme with a sun-face sculpture at the center. The lineup rotates between live bands and DJs, all focused on Thai music, and every cocktail on the menu is named after a song.",
+    "category": "nightlife",
+    "address": "4th Floor, 323 2, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.734376800000001,
+    "lng": 100.5823862,
+    "photos": [
+      "/photos/f2381130-cb2b-495f-a233-1e74524cd5d0/0.jpg",
+      "/photos/f2381130-cb2b-495f-a233-1e74524cd5d0/1.jpg",
+      "/photos/f2381130-cb2b-495f-a233-1e74524cd5d0/2.jpg",
+      "/photos/f2381130-cb2b-495f-a233-1e74524cd5d0/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=AMBR.%204th%20Floor%2C%20323%202%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJmy-9HACf4jAR0heYgjfQilM",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "new_opening",
+    "area": "Sukhumvit",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "Watermelon Group新開幕音樂表演場所，以琥珀色調和泰國音樂為主。",
+        "facts": "位於通羅323/2號，週二至週日晚上8:30開始營業。由Watermelon Group開設，以琥珀色（Amber）為主題設計，中央有太陽臉雕塑。主要呈現泰國音樂，有樂隊和DJ表演。雞尾酒菜單靈感來自各首歌曲。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "Watermelon Group新開幕的夜生活目的地，以現場音樂和泰國音樂為主。",
+        "facts": "位於Thonglor 323 2號。由Watermelon Group開設，室內以暖色調和金色裝飾為主，中央設有日冠人物塑像。主要舉辦樂隊和DJ表演，雞尾酒菜單靈感來自音樂。周二至周日晚上8:30開始營業。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJmy-9HACf4jAR0heYgjfQilM/photos/Aa-ngMbQxmhbcZQzsCVxBgyRDtM5uo7qJ6wNPFnPC4CmcqvCx2CAGqeybGcZvkEPSXm0l7QALXUasPWxXo_Dw_8ykUp8GH31wdwIu1tbzvNH5k6XZ1fIw3a5IKHlSJGsYHc1c9PiTdcyKcBwp0FcOCnHBIf-jqWp7mxaGeOHpvzmINYsCPVd-GXKe51WNX59pvoU8DQO1Sr8BFn7_6kR0SUAB5OlUEX-sireHusbT5IQNNnSsg1YgcEMC841vPpCSfwLqqRVCRavZuavYaVploZ69d5NbstBuaDPBiT5wc0i6wXGbilkBFOqEhRwMB0nxCiPZoZ86bJRUEc9tQLEZO0PlqwNrL8LQUu2-Ss09sqIae3sknPQCbVpxIoI-jWYCkVttMo3lxb4LrMQf9UfWNJLdPy5cENLTkwLgzuZiKpwSx88",
+      "places/ChIJmy-9HACf4jAR0heYgjfQilM/photos/Aa-ngMaFeeyILbGf78cTmucf0liLkglCzKN47k9-RQMX4HdNg7wql_n0Hyjghs5oMsp0sndg40kHiw2O1Wk8QHH-bAWbG0KEMfLZmGxoOyiGRhn9uXWsuUwuWs2ut6hBaKaDwVldnzUWx5_4IxG-hMXFOYV5-PQNA36oEll-oVz0lwNxooe6Yeu_PkEOSD0CBG12FwHPaE3ABzJ_mmW3rV0-UBZvrwgeVSNPH0IsKuRt15Fi5Yr98choP7nJo2wsq4QhnaHfkqh3iS0RhRCuxKzfIOS83NVcFkq-wQvDUXLZAurHCGTnkICSRFuzVVAoVax-sgAjEHgVj8UcHgnOU6B0BRrQKTpq5cayKsOThr6E_asFi3EM1lShd3UWfQtrIhMYUr2DP3Kv2A4IZtpB-bsakV-d2Trfc4xe5YcJ1dKADliWnQ",
+      "places/ChIJmy-9HACf4jAR0heYgjfQilM/photos/Aa-ngMbG2plsWwP2WNh3dUcYTNpT0qYPN55WkSoJrv6AL4RNBt7c8enmEi93BreY_rF7Z-1cOC9ELpY-gGLH03Kjy7b2dys9cXzDW2alMeLtuodoOT3diC3vS15cHbnrJZ8wpeL9VEmdAFQuIWnZtrZAmoVt3oussbTzpgnOCWRwG3sd0pD-xgO_NsrFItPY4qjY4Rx0r19ECafkgG0X5pK-1YKa_rSGGqQuohTPUBA6NueCp_nv0M1eJ3PlU50PL-y80KP7pZm6eK-oFNTuZSqK-2SIZVYbzcfi5uOvhH_sGaPFSb8copSo1nAHct5L6C6mghF-o_B_ta_e303t4tfGqscCY_Hx6s7wJgWU9KrGuTDAkuajP027NniZ8XSyw-06b4SzYGzhWF1TrMJyI_5y9OPjQM8cUar-sB2yVPGmGHll8g",
+      "places/ChIJmy-9HACf4jAR0heYgjfQilM/photos/Aa-ngMbZgvrHigBwnrvjJkvSl3xOKfQbqpPRmPQuTMR_X6ucSHpzvhzU76o5NrltO74SCQPJftOX2x9FJNZRFeMWLbzx-TgWgtj-KAWN5FxBiXXuJvObPK6RPeOX5lToI1PxdxBvjKnLCKuurAwGBA4MtNxEOWyJcmMZRda8hVSgKmInKGZ_wDo6QfU2xO6m3g-jW_ZA7K7bT8hx8YPTnl8soXunUaIjn3Fcd-K4PfjT9HDS6iZnWKeia3v3_2zj0EoUDO1-KwyqJ512G_yG2e-im2zqfZX-fRT3XVob8EkX8XnCX87T4sa1iiL-4dBrkE1lMjLtgW1BTNweD2faf2pIIIPRoffHyFYvchLtvfD-78ZRCqUP8fbSEaUizHbFXLeeeUN9z4NOkL6Cj-G9g1Zkx2Eo0WzIaDumq_vXiwPMEY_QTA",
+      "places/ChIJmy-9HACf4jAR0heYgjfQilM/photos/Aa-ngMae8WuDRMVHO52Z86hhZ7cb9Nrg2z9y0RP9X51Ed5w7WkRhWiO6n2SL6N8QzBheFtaJ1qAkwHRnggrbi4By1Pgi-d62aqD_K8GZUbAfSmZG4ORvlV7bUuZ8lkTPGEmIBrgzwp1YoEINGQJZlkAZCrmsxLfiptDEK7bSHoRfKGHbW_bY6WqOO8psHdNIJNI3fNrIbsPjtW0jU_DGOB9ZJX50yPvK8pSxx1OqLDGkgNH6FgpMNjIpqffqZnvHDt2cR6IpAnzNv8mZwP6_RAnheREzJPamBwGxykdvZMODiJ0oqwGhsg_7kahALZDzclY0adf_Ika5dAzBqPsyVrY2_2-FcVzG9t8sRrBJfyPnOceWz0ARmToVSscbtW5G9C8mDMpb7TopLYBIZf8dpS5Hf2XizEHOynsXOJePfhy7XyRM",
+      "places/ChIJmy-9HACf4jAR0heYgjfQilM/photos/Aa-ngMbStX57OsZkz4SQ6vTsuV_agrtQzkxreddvm-WNzp31S6osBdXdTnQlGf8eL2uTOFP0MfJciGNp4XVUT4i81vwtfzdJE2CyEbwlYqEAXGQH-NgGf3K3_HaA1nQ2hy5K-Xtwcf9B4_UV_nEq5VZ87WcUavcYF4ns1223_I9hIjGJSYDH0eQ3ICVmbeDiKb3gx7THSwlu9SpMACvkXdg7R_d0-UPWfoH3KWI4kX5t8HAJB-9iHq0Yi83Bc-2L1-JIH8Hv09JpgGJlwHAukXtBHejoN2oi8o63wT-qsIn8dA7Bkkk39WA4rmb0SCUTokHqr2sRtDn3wwVOC8hHxwbkwjiS-3AFftJhix7AEcBvWJsh7CKhx7lbfe8yN1Zq2H6HBjEAb1ozKLaPDHx_xIHV6IC1nmNIeZ0No2KOT7xMPKAGmw"
+    ],
+    "highlights": [
+      "Live Music",
+      "Cocktails"
+    ],
+    "approved_at": "2026-10-12T09:02:40.302Z",
+    "slug": "ambr"
+  },
+  {
+    "id": "04937e8c-88ed-45b6-933b-14498351ff18",
+    "name_en": "AELA SOCIAL BAR",
+    "name_zh": "AELA SOCIAL BAR",
+    "description_zh": "位於 Fairmont Bangkok Sukhumvit 飯店內，蘇坤蔚 20 巷。雞尾酒菜單以《A Journey Through States》為題，分四個章節：Arrival 走果香路線、Orientation 玩味矛盾對比、Ground 以泰國與亞洲在地食材為主軸、Release 則是經典調酒的再詮釋。酒吧空間以水晶藝術品為設計概念，設有多處拍照角落。威士忌酸酒是回頭客點名的品項，餐點也有提供。",
+    "description_en": "Located inside Fairmont Bangkok Sukhumvit on Soi Sukhumvit 20. The cocktail menu is called 'A Journey Through States,' divided into four chapters: Arrival (delicate fruit-forward drinks), Orientation (playful contradictions), Ground (Thai and Asian local ingredients), and Release (classic spirits reinterpreted). The bar's design concept revolves around crystalline art, with several dedicated photo spots. The whisky sour is a crowd favorite, and food is available alongside drinks.",
+    "category": "nightlife",
+    "address": "10, 1 Soi Sukhumvit 20, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110",
+    "lat": 13.7332928,
+    "lng": 100.56368309999999,
+    "photos": [
+      "/photos/04937e8c-88ed-45b6-933b-14498351ff18/0.jpg",
+      "/photos/04937e8c-88ed-45b6-933b-14498351ff18/1.jpg",
+      "/photos/04937e8c-88ed-45b6-933b-14498351ff18/2.jpg",
+      "/photos/04937e8c-88ed-45b6-933b-14498351ff18/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=AELA%20SOCIAL%20BAR%2010%2C%201%20Soi%20Sukhumvit%2020%2C%20Khwaeng%20Khlong%20Toei%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJieAmMACf4jARzQqXKSUnXIk",
+    "rating": 5,
+    "price_range": 2,
+    "tag": "new_opening",
+    "area": "Sukhumvit",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "Fairmont Bangkok Sukhumvit新開幕雞尾酒吧，設計如「有生命的水晶藝術品」。",
+        "facts": "位於Fairmont Bangkok Sukhumvit飯店，蘇坤蔚20巷10/1號。設計概念為「水晶藝術品」，體現「情感反思的藝術」。雞尾酒菜單名為'A Journey Through States'，分4章：Arrival（細緻果香）、Orientation（巧妙矛盾）、Ground（泰國與亞洲在地食材）、Release（經典款式創新呈現）。每日09:00-24:00營業。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "Fairmont Bangkok Sukhumvit新開幕的優雅雞尾酒吧，設計如晶體藝術品。",
+        "facts": "位於Fairmont Bangkok Sukhumvit內，Sukhumvit 20路10 1號。菜單名為《A Journey Through States》，分為四個章節：Arrival（精緻水果）、Orientation（趣味悖論）、Ground（泰國及亞洲食材）、Release（烈酒經典變奏）。每日上午9點至午夜12點營業。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJieAmMACf4jARzQqXKSUnXIk/photos/Aa-ngMZzIBCQIrsRj7eY5tJORJUYsfCS5pE154Bagfd9WiJ-rXWbFXojE_zqXOzrDdSU_zL3UaBiReLr1AE3snEi5-ZB0SL7arcrq90nC3ge_URb_jnEsIv_U-EhWyhqhk-YrAriauahiRHjzh5lBz5pw5WHY_GygxeIETMcx2gmZ3X0beRyxvIajQeBPwbsB6hOvrZ7UicPQQ2sStFd5p71C-I73iXifs4Pc81LLiOftbP--5QYUajYMsovJCthcrSdnmNNH-lkFUO4iIaYcAb4XvC2th2Jttwe14IyMyVN-UF2vlosPfVFbow-5uedBmf8pON3gEe5S4ycqxDphvShzclfGXq-MhKx6ZGP5H5SEPsi9kZCrx-v6mwSKpaSqZCvNF59ubVyYP4imfyR-gVJ8kJyirxA9-ZM5r9parmZvRtRwg",
+      "places/ChIJieAmMACf4jARzQqXKSUnXIk/photos/Aa-ngMYfhex_CPt75ScJDL7vpufrv9GPs9Mng5D39IXPHwFHe0ex2gAG2HvKabWDPdgR2r25ttRkgyX42wVTRx1dNcdbi2zP_oIvUjIaM5bjETGRmU3schud0c4tZXIaWNBzxhJ8U_UlY8-iC52oGO9uxmZ6_75NAIJXDf3Qj05xgsJCX_uYzd5Flz_EZ3b0mIDu42CermfywLvmCynUX06NiNG-Ef1VZ7CTKeJdLeDpEl5YCywIUzweALkcQ0dfo_5IDRTMQ8-F9jW3Cq0yqtcIsOKNNs9GGN3hYVIhUWxknN0bu7AzqYI0RBpJpB_Nl4p5AUNqyKvfjPyr7TGSswzc9epx3f9Hw_p8crNm8QbX4_WQrjux7R_IdrXGm2N5re1JMwk9YQ1ZKIQFKPD9mr-kFWP1fw5HwYRK1EtjEfS6lcMG1A",
+      "places/ChIJieAmMACf4jARzQqXKSUnXIk/photos/Aa-ngMaa2095Dy3jhT2ru24ZA7E9zUShhxZbGqM5RYVYEEqsZLe2XNyhg998u5AzEOtZmP8UrrlP5QQLvGDRWwOQdG1vzjbhlbpp8Itta_wX9Mq4d7JjZX7vardZKsgB5sxMHjvFDsjlhKzMk9A6bdr8OL7dkHgrOC0mKET8K0Bd_7z-xgMAqyGYqGYDbovcwsq4QkbQBNJLHx_LHt3qLAJzNySoalxI6PfY7r-HjbV_u0TDXpJeL-R-txqax6DpLQ6P3yX9DdbdBPH5N-h72Pb4miKSeayrWPZpk8SLUD1RwqpVi7kaTLBjf3J1IM8kvF2sw60VF8bnaCQDZqH8sPo4U7xzOL834RAW8XvCHIc5zdwBmYQpP11eDOvO5GE3WRZ6Gx3quQCorw0KYYuzIZniGsJrl42wpjY5SiskGaayhSmuRw",
+      "places/ChIJieAmMACf4jARzQqXKSUnXIk/photos/Aa-ngMY3EqDtnoIM5bORQiX2QnvObqNqtcwAagRh4HY-r91rrwbaXeVQnHwRnVzElsXxK2bVZpZ1MY-jfCn-mHUR6BAzCVKIj3yzinhANdcuoE9qKcnqISmSg2lfzA3nzR1tm0WOhatFVPCwYVQc8MFu_UoeObOWt22ajeSzr9fMtdjtkI6pI8ZKE-tlf1FKik_6_WvpR8ixoEnEyzQWgBsVVRMpsHatlDKJhM8QxjUlXvuBX7vXcCe9H0v-z0HnUFjYik3WHh-exFbjCUd76fP9euTS8JuirCyZBxnOlQ3iYIT-grgo12cXKrOqa8MOfW94ChQ4l4IiuQHdItvQzYFYWlfX7udu0S2eLmBeQSnMgFP1mjP0h92KbhEigB5nSqgAUgqJ-qe2QVHCJ2q9cRtQkG5S0GU6un1NDhs2feX-FVM-mA",
+      "places/ChIJieAmMACf4jARzQqXKSUnXIk/photos/Aa-ngManNJ9W8YlqIHFn8KvjymI99XakwOelx2gYu1xAIeXsloEUOV_gAN-MZk60MIQ7pdPzGLXE9fFpGkatrYNUI6ANsU5OTGrJN2uBVaXAeH9iGQV9SdvOhjprguYYB_0O3WlaSZV6GJVUE-2KDw--T3XIN0yJ1cri_wICH1k_DkI4fGzZZzBrVPbh9JsDjpUvMYS-ma3AKlXba82a6nOGdbCJQZhs9iv4O-niPRL9YgsofHjPLs-C7_NytJzOIIASQA4a1aKJvEjn5FlPaJeCStknxvC95MW3_jgIX_qITB2l9m2apaZfeFbpc6__NWpJwmffok7jwsHESkZhzd_yxHY3ct6D3RwM7gAmaIvcO4IzlgDKcpqFkajFA51gAkc9etDC9OFmo7CAIdAL9HhYWy4zg8QCv2HsYPciLlq3tizleg",
+      "places/ChIJieAmMACf4jARzQqXKSUnXIk/photos/Aa-ngMaMgpNJ29cx0JIXJHMy8SlEjX8uaBw_-rHNZPjo9wCA0pDv-Q8y57CeAg9PaI2sVzSJ6ZmsDycUULDPvdhMFAKEZoWE8VmnbJ9WgluGmdXopf59VsOLt3iTY9ZgdO-_z53Yrnw2q-TPDJ62_s61En5h3n_TrcmDODfDhNAnHv7k9dsXs-2m1_DTtokCwiimZzqrQZtANws1wt-0s4ccBzmo63nQEKJcEPXIaCbvfevKC4TqN2XryZWCAnhVGLi7X9BqT-6gnzAAXzAD3aLB4Sy1EraSmQpbcO-V-piJYkmybEPPPGb2jE7amVAdN9HA7c7OI86ywPgUg3X3rKpfS-Tu_B-4xQbykLhlRH6bt6-sZynKkLF8Wm7KUePGsgxQqxmORF8o7xma5nuddXeolPrrOpbCKjc6rLyOfcr0x9cO"
+    ],
+    "highlights": [
+      "Whisky Sour",
+      "Signature Cocktails"
+    ],
+    "approved_at": "2026-10-12T09:02:40.318Z",
+    "slug": "aela-social-bar"
+  },
+  {
+    "id": "69cf542a-f95c-49d4-a26b-d77e60690eb1",
+    "name_en": "The Loft",
+    "name_zh": "The Loft",
+    "description_zh": "位於 Waldorf Astoria Bangkok 56 樓的雞尾酒吧。現行菜單《Floral Zoo》共 14 款雞尾酒，靈感來自泰國藝術家 Atia 的作品，招牌酒款包括以黃油蘭姆酒和火龍果糖漿調製的 Butterfly Effect，以及加入黑芝麻糖漿和桃子苦味酒的 Night Shadow。夜間有 DJ 駐場，音樂偶爾會蓋過對話聲。另設雪茄休息區，有固定熟客。建議事先訂位。",
+    "description_en": "A cocktail bar on the 56th floor of Waldorf Astoria Bangkok. The current menu, Floral Zoo, features 14 cocktails inspired by Thai artist Atia's work. Standout drinks include Butterfly Effect, made with butter rum, dragon fruit syrup, and yuzu foam, and Night Shadow, with rum, black sesame syrup, and peach bitters. A DJ plays in the evenings, though the music can make conversation tricky. There's also a cigar lounge with a regular following. Reservations recommended.",
+    "category": "nightlife",
+    "address": "56th Floor, 151 Thanon Ratchadamri, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "lat": 13.7425284,
+    "lng": 100.5405162,
+    "photos": [
+      "/photos/69cf542a-f95c-49d4-a26b-d77e60690eb1/0.jpg",
+      "/photos/69cf542a-f95c-49d4-a26b-d77e60690eb1/1.jpg",
+      "/photos/69cf542a-f95c-49d4-a26b-d77e60690eb1/2.jpg",
+      "/photos/69cf542a-f95c-49d4-a26b-d77e60690eb1/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Loft%2056th%20Floor%2C%20151%20Thanon%20Ratchadamri%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJZxhy2BCf4jARyl5Tg954Szk",
+    "rating": 4.8,
+    "price_range": 3,
+    "tag": "trending",
+    "area": "Ratchadamri",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "Waldorf Astoria Bangkok 56樓酒吧推出新菜單「花卉動物園」，靈感來自泰國新銳藝術家作品。",
+        "facts": "位於Waldorf Astoria Bangkok飯店56樓。推出14款新雞尾酒菜單'Floral Zoo'，靈感來自泰國藝術家Atia的作品。招牌酒品包括'Butterfly Effect'（奶油蘭姆酒、火龍果糖漿、橙柚濃香）和'Night Shadow'（蘭姆酒、Mancino Cinato、黑芝麻糖漿、桃子苦酒精）。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "Waldorf Astoria Bangkok 56樓酒吧推出新花卉主題雞尾酒菜單。",
+        "facts": "位於Waldorf Astoria Bangkok 151 Ratchadamri Road, Lumpini。新菜單《Floral Zoo》共14款雞尾酒，靈感來自泰國新興藝術家Atia作品。招牌酒款包括Butterfly Effect（黃油蘭姆酒、火龍果糖漿、柚子泡沫）和Night Shadow（蘭姆酒、黑芝麻糖漿、桃子苦味酒）。每日下午5點至午夜12點營業（周五六至凌晨1點）。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJZxhy2BCf4jARyl5Tg954Szk/photos/Aa-ngMYWXL8IdO-NzAOmVWs1t4zLXp7QBd0uqEK6P3rCSAXHyJqKfwcykJMYcQWlHuhL0PUx35ggkrDLNlEfn5leu59fKsOETFlUcgN-a_RdsG_PMNRN-fPfWxlvxTBMDuUMG77gRKlzOVA1hXaa0-1U17df57zbaI3sKvIxiHo4a8JC3it2mLVYNr2FAE7qsO-YrOw4cmFJMuEfupXq-7rt-YIKh3OEBkPASs30xE0BVWlGmnO2nc_6368PqZfkvc20U7xqOn00Z3vgq64vMrqRIxYijcDEPUG6bOKp0uSQeLl_7oCv6x6oprEarSCQy534B7Ddtzct1g_pzzR-wHVyBwcLRoJXwBhILUt4mtAwrCemqWLDOYSyIvEnJPWCw9-jEmCWNxtea1yk7qDh53BSrgJ61Rzx5bM",
+      "places/ChIJZxhy2BCf4jARyl5Tg954Szk/photos/Aa-ngMYM4G22EHjpTDWebKTJlw0i_aMze5j2jUAOyrwLEj8s4NzHoSv1de6CmJtxxtbDfAzZc9MHA8jmpJrXGAN_r9vbReJ61GDxm1PVlDauIaqrymUHUsG0NPegK51CF8Ib54MXvWg-Tx3XyHUG4G_ZoIW4TLM6uQpX6x4pZMC3fg2dSyzkTMp51uS70xVIafldkUMYKuVT4o0fwMV_X62b4zUe8jo6C-SeN2Z8w0i-srgZHdfuAIyz6y7DlfH4ZPTjk_59X93Muu5IOcQbZuPsu6Fkn_ICQIHmloRskIJk0V07d66JwR0O5N8ZcOkuQubVnB7NOrNgDgyknSYM5z-BXnzIZKrfkMUpFPAl0HKwFPkOye_Vlhzz9y44649sq6P5Ef4SeMLZmVm6z7Zt9f4jdG5iK-0sXY8AG7Psh_jghNIVrQ",
+      "places/ChIJZxhy2BCf4jARyl5Tg954Szk/photos/Aa-ngMZqO2I2jjRz5Qfc2Hou4wbB3J_MnZ_h8wA0DfOeRlahuOM2jQckzuTqwWralVCgdG8xLU8K-OubOzoAXudS1Fd5FYkORsNzgxCEPUh3ejD_iIMofWgFde7U6R0Uou6IaaEB5OELNEhGH3oy7qGm7ZCPA_IcuA-WuCS1peFodmuhiBYrjY4vJLAgNNUikMQPxq0xV6OLG8H8pGC-IvJ1CniXcUCgNPPkLO0rdebKr2VMWxJ7Ky7k2nvdtoLmxt1fzBQbQYTBWFEz9Um50y70GqoJcuNSyZxEAVDzBIX1y-seQU7kpKFZUz_jWXACjc4a7BEhglFHfr32wxMiXjjZnrS2op_Uh5ZMaJN1AMOyk4_0oZNUFyhNs69XSOygubpdw59H1u_HXkH3Tp_6JPmUyBGWeMzlasWF9XIoWNSvelmz7w",
+      "places/ChIJZxhy2BCf4jARyl5Tg954Szk/photos/Aa-ngMaEDInqYKePlCy878gJIv_bzJqrjmBoCiNirNsKnvdWdo3BlN2uwnGX3mxOQ70sWOguVaooMpzyxOhXRCR04q4fXGgf_Y9xds8HEnuvk7mJ4errY8BCrUG_oPixJlEHVuyhgmnWQD0d_Q70WCsfdPi5baz1Lxa8ILkqXZnh6wLvhixNmKAGr1WFSq-m02I-5hOIlZAdwLPSfbMdhwnR22MqMeU8fGx9sJb1j4JR1250t4udSjgeLq_pMkHa13i6OrzhdNuubJmxgX7PXDnH-lEM6DnaJNcTp_V2PN9_M2bj6C4JV3cMIOxOnehqVa2JqsiSBKsVEHKO8aENfpbIezGbn8s2G_o9qDrXq4Q_Pwqgs8UqCQPF7EcA05KqVC3NuIwKOg5be0zizSHUhdpWOkGE0GapzCn3iVcETbjtR57HVw",
+      "places/ChIJZxhy2BCf4jARyl5Tg954Szk/photos/Aa-ngMb4hGbmzLbXw32YV-Z-vNxHNaAv-4w-VYhjRYPSnhWE33Sj6EOiIDLVY5zjA2chf_AStMZwJ7WShndIRg5RfTuyUTH0iSDFjaGe9lB0Lp5tNP9IxHqWtJUkBATKc8Fb48Go2sGtGnuRISlzAmZ98WSElrt_XCdIewmro-o1QxN9x5GRKCoq0dhYpPz3pGovMIL6Y8alARO7Rg9Z5EjiYY69nRI5vcOqna9aMuEloDe7ZNeqCLB01k5FcWoYaObNMSphZGboX420t7dYlN_FvAXwnNcvkdMpSNQHsvwC5sieUc5exQueNx8ETQOoJpC9REpIka69iEPC5fTkZyjFjg8Zt6H5BwUz4Mz_5osZ7WxmyU05Bqko0V5GlM1HMVJxv7GEN4AjrQCXqR5wQT_yAODk-N-otWj6IHOhbUeXlDhMzQ",
+      "places/ChIJZxhy2BCf4jARyl5Tg954Szk/photos/Aa-ngMYGzKjRR99MD08_4y6-HlBKVb09FsTVWd-gHmmtXG0V8X88xvijWSO4msg5VlkBBZsTniaTn6fmF_6WVSuTOyBfDYn0eXdNMx_cKItKHHqdvO-ocXso-9CGQV1Pjy2MU1cyGp45hvGswJJpgrmiGeRW_EeYALUQZlxi1nb_HkQglQ_w_gYGDdy9cLSUPbI91W__mkWLGkkcAcxRjQLfchI0F9OkWwjdnZjmkd9QuCGFlH3hXIpWNn2fGqr3fgTJyCqxGlkvplV7s4ChA1KqlKsX7dBwR5xJ5VYrOlS9FCqVHbmyp3o_3a61DuZwokIOgAe0W-D9cnF5Nb_fMKyMfiXaEO8G-7oCUR-rJeyR8g5HxOJv82ZF618CIcFbjI2mea5VUaP4wjiNW35j9ag_XIRiqjU53ZI2jDwdK8_-8QCCvg"
+    ],
+    "highlights": [
+      "Butterfly Effect",
+      "Floral Zoo"
+    ],
+    "approved_at": "2026-10-12T09:02:40.333Z",
+    "slug": "the-loft"
+  },
+  {
+    "id": "fb1cb43e-f330-4ef8-9d42-f7a3a71ef6c7",
+    "name_en": "Bar Us",
+    "name_zh": "Bar Us",
+    "description_zh": "目前在 Asia's 50 Best Bars 排第 6、World's 50 Best Bars 排第 15，位在 Sukhumvit 26 的 Bar Us 主打以食物為靈感的創意調酒，菜單分區就像一頓完整的餐：前菜、主菜到甜點都有對應的酒款。Beef & Onion 和 Fig & Sour 是常被點的兩款，Boulevardier 和 Dirty Martini 也有水準。座位不多，建議事先訂位，否則現場等位可能超過一小時。",
+    "description_en": "Ranked No. 6 on Asia's 50 Best Bars and No. 15 on The World's 50 Best Bars, Bar Us on Sukhumvit 26 builds its menu around a food-course concept — cocktails are grouped into starters, mains, and desserts. Beef & Onion and Fig & Sour are two of the more talked-about orders; the Boulevardier and Dirty Martini hold up well too. The space is small, so a reservation is strongly recommended — walk-ins can wait over an hour.",
+    "category": "nightlife",
+    "address": "61/37 Floor, 1 Sukhumvit 26, Khwaeng Khlong Tan, Khet Khlong Toei, Krung Thep Maha Nakhon 10110",
+    "lat": 13.7256006,
+    "lng": 100.56936809999999,
+    "photos": [
+      "/photos/fb1cb43e-f330-4ef8-9d42-f7a3a71ef6c7/0.jpg",
+      "/photos/fb1cb43e-f330-4ef8-9d42-f7a3a71ef6c7/1.jpg",
+      "/photos/fb1cb43e-f330-4ef8-9d42-f7a3a71ef6c7/2.jpg",
+      "/photos/fb1cb43e-f330-4ef8-9d42-f7a3a71ef6c7/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Bar%20Us%2061%2F37%20Floor%2C%201%20Sukhumvit%2026%2C%20Khwaeng%20Khlong%20Tan%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJG5QaZUKf4jARMm-GbfMbX4A",
+    "rating": 4.7,
+    "price_range": 3,
+    "tag": "trending",
+    "area": "Sukhumvit",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "在World's 50 Best Bars 2026排名第4，曼谷頂級酒吧。",
+        "facts": "在世界前50最佳酒吧排名中位居第4。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "2026年世界50大酒吧排名第4位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJG5QaZUKf4jARMm-GbfMbX4A/photos/Aa-ngMYpEDTq93a7g9f2PeDfNpkt0F1ZeL5lVJFk1Sed-chpCASireoOYMX2piy63MQnUWPCh3lN_6dwCYNyJlr3P307p0JFUvYyizOx5Y03lwT2ZZer73RTL_82aZ_FVrA1O1Ja6xoExexl3RjUJUhAbWSRA9IZgutuQCM1P0ZJ5Fbkdu3xeeV1XcXz2k5BpRZcAIj7ADZ01fQJNhgYhte6Tz6Ru4lgQbm-eTh5olThWEeuhmNjKTrJToQCyk4NdncY1rlMdO33d57sdp1AxDgAKf-_S7iwRGiV4VH5XylXWM-wNAY02THJgzAh-1I6q9KpXkfm0v_DvDqeoEwBPluMtdR-oiIHxG9NxkfSRJkmz8s_Puijx2juVHsk-iPUYiqq0uSVlSpnbhalIycNOzVCTPsqnSpKx0-3n6Y4UNo5r7C9jg",
+      "places/ChIJG5QaZUKf4jARMm-GbfMbX4A/photos/Aa-ngMYe3NTj034bTgV8KPIpbIGbpdKjVP5kDQaZTLwUaiOOO08xUqTnzH_JbrnVn_qr0t64HbdN3I2yHQHIxjft-VFyDV02sx3RHvrdYonXwX6CM7nuzor9PGMzn_bVzVI80bLgX69cdtuBrPlEsR1EskbvSEKAaSu2Uaoo308aJJ-vHrobh8W6xGkU8fFIiguGFmcBwlDigq_MB4yJ520PCc1Q5VMTrw90tFPKeb2AxPtKzx26-e1co-BAJei0POvrK_W8MtsUIjXs8-uOiEQB_9_Pk-xrD9MhUXZ7qnv6_YofQEwoDYpd_UZl61I1uR03_cLTWfSjqhMWmxC_wkeBaLRiM0EsZZILA4cbULzNpWtRUxLi2PdqkC45uAwbRdkW_5XCzlT24p96GWE_5orl2scdYIYSLuI",
+      "places/ChIJG5QaZUKf4jARMm-GbfMbX4A/photos/Aa-ngMaPww5-6Oo4E3vu20HjTg9uMyqdq5koTWHaeDcFD0JnQOBSsdNOb5QfPA56goP5Ty_YuVc6XxE_iCMLzlkQz17Li0n2i4PEpTW402vkq95Px0SqksWNQUPj7cZGgTtlZe-RLX5RpdqiqPPjgCteqKm26HRrx1aoVdVZBOsAu777kV6RfQBAu-lncnx8N1ZSSavlzgEJ4GFHJ-3IL8L2u6M6UKsd13dAtTxysuWp5b3hLtvWsF1ffhMRvFra7SORjLKN-1tj8b6toRznsCOKm3NLefm7fa7LOyyXVJuMUxw0r3nSsRmfWslEl-veflNX_Ep_SYbFXDxNYachlKjWN9moLpABs3T5-l0lAFsXJ5BxbTTcvKu8nbAUYtkw1j3xW9nnHNjdlE0YG2BNYZmgF3S8M7pqIMarPZ-qol7OTpILig",
+      "places/ChIJG5QaZUKf4jARMm-GbfMbX4A/photos/Aa-ngMYPDowJqPkcIs3jvOhQiNWSEvo-p7dOCqp6YDHWFUJKHcFK65DmAait0TNFryuJDR_-F_JlpCaH0DiLUvMF-6ikneewEBpR62qgvjNo7tyg0xV1EsLUKNi6X5HS6kIPSZe9I_423x1Yc1gtSXZxvmyjoOUe5QAza61Y5IL7diJeFOuRZjCCzmtkOPqo67759zHTbSG1vkqN0DUn2v8ucuFheyKRmKLovkP9IsYX8tzNXntLVG_Gb7fkzT0h39Yg5FfvnH0N-gdoWjHu--dn7rVjd2gsSiBLAFCkR09rJdDVEmFaohJtPa6ttEScfgogEfnU5veKs3r9ECsT5g7jKmE7Ou9foO4mK8DgenUwKlHgUEvbe3JMvZ9GLMMMb3HfHzfUrkGph6IY3mW_n52AfF8k2hF_",
+      "places/ChIJG5QaZUKf4jARMm-GbfMbX4A/photos/Aa-ngMZGUzvPSP3JROi15uROZeFLqCqNAFf5L3_0Tkz4Jyns-nWNdhuwwpOIc-GqtpZ7wh6G5G-6BzlSY_9umV6i-RHyJHntbMCvnPIUKUsFL4C-hM1VnEv1qFDDh4ze37Tq45CTtnT-FNtC0vo8tzcZ-W1HyKsiSH8bZNszehtVnjdECvrvoFN8Ss46nFgW37ymzZwcrodzc5lxIHL-AFnnYUxSN7Sp-bVbeJfbrZbraq4NnJ1Cc-Czy3ULO1UpaNzhd7Nus9_f33_MI0U9803mRLvPWFIcg8fDLH_XsAP5s9ogGnYDnjzKlEprhNkZNRct1OoWJGSZ2DbntyJXHh9bQ1ZIHXjesTPkrj3wIKV1ss8ptYRgNUistcAE1HJPTCLg0op0JNmQLLZxHfzzYgl145B0j9Ti6CUBcmBLnqYlWBcr2w",
+      "places/ChIJG5QaZUKf4jARMm-GbfMbX4A/photos/Aa-ngMYTGrECqYtHI_TuuCq1zSeR-9pT__RIXDNCa59QRD4q2hluE7O3jL5ACiAD9Yf-3gQY3DfYMh4CLWGFeRbyB5aSFKeBlt-QIGde6yio3YIUz3_XV9FlvGpw8pJNjMO5EZW6G8AUsMC9HQk2NZ6D6ww10sCwpMxKklTRamCAt0CnMTPFKza8_lEWTDTBci4pVMCdk2wY6dR0fsDq89_zXCqojNJO3lvsFoFKG1tm0Z7NSFg9aKACo6UW0zrY0pT00ZsFHNKosraQ_cAWzkEhC7w6Y7cbRpKh67jy571eDxoC-lIDI0NNzTw01DRvZTARGI75uU56BXMMBQbe7qld64ZvfeQq1zEAzI1wGr8F4bcGjizWsX68qjOwfnbtw9_pdkY0PM7aKGWqdPkA4UofgVI_zRoWDX8HTYJMNMiyGOaD5A"
+    ],
+    "highlights": [
+      "Beef & Onion",
+      "Three-Course Cocktails"
+    ],
+    "approved_at": "2026-10-12T09:02:40.355Z",
+    "slug": "bar-us"
+  },
+  {
+    "id": "6516bc9a-71ce-41a3-bfe5-75764fa5d902",
+    "name_en": "BKK Social Club",
+    "name_zh": "BKK Social Club",
+    "description_zh": "四季酒店內的酒吧，在世界50大酒吧排名第30位。調酒由駐吧調酒師按客人口味當場推薦，目前以墨西哥風格為主題輪替，炭烤去骨雞翅是獲獎的招牌吧台食物。調酒課程偶爾在場內舉辦，座位有限且常額滿，訂位建議提早安排。",
+    "description_en": "A bar inside the Four Seasons Bangkok, ranked 30th on the World's 50 Best Bars list. Bartenders recommend cocktails based on your taste on the spot, with a rotating theme currently centred on Mexican-style drinks. The charcoal-grilled boneless chicken wings are an award-winning bar snack worth ordering. Cocktail classes are occasionally held on-site but fill up fast, so book your table in advance.",
+    "category": "nightlife",
+    "address": "300/1 ถ. เจริญกรุง Khwaeng Yan Nawa, Khet Sathon, Krung Thep Maha Nakhon 10120",
+    "lat": 13.712043699999999,
+    "lng": 100.51034039999999,
+    "photos": [
+      "/photos/6516bc9a-71ce-41a3-bfe5-75764fa5d902/0.jpg",
+      "/photos/6516bc9a-71ce-41a3-bfe5-75764fa5d902/1.jpg",
+      "/photos/6516bc9a-71ce-41a3-bfe5-75764fa5d902/2.jpg",
+      "/photos/6516bc9a-71ce-41a3-bfe5-75764fa5d902/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=BKK%20Social%20Club%20300%2F1%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Yan%20Nawa%2C%20Khet%20Sathon%2C%20Krung%20Thep%20Maha%20Nakhon%2010120&query_place_id=ChIJLwlh74qZ4jARfZDqGK5qtE4",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Bangkok",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "在World's 50 Best Bars 2026排名第30，有炭烤去骨雞翅等特色食物。",
+        "facts": "在世界前50最佳酒吧排名中位居第30。招牌食物為炭烤去骨雞翅（Charcoal-grilled Boneless Chicken Wings），獲得最受推薦酒吧食物獎。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "2026年世界50大酒吧排名第30位，烤無骨雞翅獲最推薦酒吧食物獎。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJLwlh74qZ4jARfZDqGK5qtE4/photos/Aa-ngMYtx1IR8kF1LchbBi1yb3-2skf5vuRym0aCjNqkzPEcJZIgxBo-2lfqOUwHcteSPV8XQGRSU-Jdf0SuJ5A7GdDn6wufuWNiQJBP4suJyEwaJgt9iwkqinxVZNKQQAxvfCVvE46E3ZVMOt6KsuQ-m0pzfViby1_J0w7AQl8puHlfmZQyrlXudQpvpTuoo9Jtx0EDJ7A5fMwksb81d_hXiLKq_f5ilJ0J8qiqF2Z2iunsv-altig8UEg-k5HZ7t7jTuIfPDLfQ3Vwx88Nna3x1S_YrHWRCFcDmP4GoOAcf0FmeXMcKIwVgiS8FYJyUVWhgZCUpmhgTBAJbIGA5zvq0YSUevLIFqYBUDonW4WR837tfcKH-6cbkETCn0urgSLcbWCLJz7DksScxE70eKjL8xzwt4j4yRlF9WhySG4C6-qlfw",
+      "places/ChIJLwlh74qZ4jARfZDqGK5qtE4/photos/Aa-ngMbpDalwOdIcNnN8hMw9LGNuvqSN_L2gbobJVCRwZA7k_EfXU-61_qWXffECU94Pxt4IL-rRaIYaaaFq7UfROj35S0t98rd_hNVb6sgjNuH78KkHxwEooog0UFO5XRQdXeKdlyV37y5P1p35q_6jdHMoPLVQO7C6cFEybV7w1D249Z2ikrKcNianUxrjAf9--mn59QriZb1Opl5oqXv0zc10zCZJVGkTG-E89aEGRYDO3mBaz_ApC0-VNfAlZgi1Z3c5oPd25ELVHSqro0F3rVyNQ2G-YtvLH28N6gCLOg1jImcR2oVM8sSVUGq0_LTWS6JzJIGvwSu57MjG5gjPUsK4Mbz9zXB_2zZHziP6rxIR84XJnk5gvg2a21We0l6hc5jn09uDAq2HqU9aBxXCxhBAyYgdZi2Lo98McIuXNGCQfQ",
+      "places/ChIJLwlh74qZ4jARfZDqGK5qtE4/photos/Aa-ngMYXGWhY-kAAoyj3d7mIZt5sbVM3JOf5sIqEpLqPfEfaHYPbunbOwc56K4betcIWjTye9XUsTOu9DsxY-LUlOD-ss01YB_Hz1Ar6a3Uascy0--aNsjJGXlGjcIghlWukqzbWCwTCOjpm5PMFzSFGlD3Os1JwR-vMG2akbp9SWrbsw6dL_ABpupxlOGtNOSonPh9b4_EqUHjkA_JLrDXtH1ybMpQuFl3cpNfjkCi-5KFcASO5ZoHjn3603nggcb1KzSvIZ_CIZMKgdEDREZYv9pABZgJkDlXDTmh_2WaZ5tgGn1IVSyqdPowyaI-VV0JgoQff9I40AxHz0aTt3XHjuwa60RyiAgkj9KEsYPOBoS-rgEqKI_oMyQB6WiQmwZLM6R3ilqWjUujnggCHg3E4Lyag_jS3zZJMOAYYu_tkJdWr",
+      "places/ChIJLwlh74qZ4jARfZDqGK5qtE4/photos/Aa-ngMZO6zHI7Dz2zk6QXPBZh0rwHxL70GEdk2a2G3Kbx6EOVJ3cdFW-Dg79zrSpqdwPjr0oP425GIMSyZ2enSeQrO4ocM4F35kp4mNMw4GaxH9Fvk09odOzjRZbXK6fiY4O-HwX9ISTQjVKifHfWrijNYXwbdOH_TtPs70SMEJsz86K3wrNtp5rN83z-31E76zMPicWtCFfBP-UuXZ5qWFqKG-N4aTf8FFh4_f3KfkRvbONTQ3Fq4MtwsnRaKbG3sYyiVVxAjiCdsunmOgUAjQeMBefx02XDNCxkl-ePyC5c6SWw_KnjZ-vmocMQm-EkQIaHI14K2UZR8nXpSo0xJLBMr1D9NvyufU7oZggpKsngR_N1n5elt5gqdEZbiEHzVHLdApOyd8dOg46IoL79blw2hA0_KLlLjCPbt9iQ3xQJko1",
+      "places/ChIJLwlh74qZ4jARfZDqGK5qtE4/photos/Aa-ngMYF8eaumaAI0Dv0Cud5ACbElK7stNdorR7qpSPKI4u-6sIB_WlsN7i0VjwyjiBFNSDwHVIy3tPqi8Vc_FoXY6OsTrJYu2pIcAn3GEgrHHbmAudOZUe16hhUSaBoSJI4kcFOx2zTsMMcB4fKJqEE9tWVLbFMo6IJRE5rg8yJqQR5HspImKFdiKYBwkS-ejL0qqqfnkCvQWI9LDyLSJWecJBcP4hIFyLt3xLO0StLij35C_EJc-8U2e3qM_yI6ucgwTWZntu8FHY1-CLrK7JERoJ_2UGb2MLSchMbjDqFgOboab_OCRILNHuD0xSl8md0wZNlSgnhjVRGcrwqmGzrU_ALR-eBeSKVEswKLON4UJXnHDP07EIH98JxLHGzM1FJ9xnr92_Awc0kIQuXwcBSWaJQjbdaLu-xrbkxBnN_fgboSg",
+      "places/ChIJLwlh74qZ4jARfZDqGK5qtE4/photos/Aa-ngMZ5Bq4LLDlaOmXWURrup5Mh6cjc-lcHoswroItJCfjqXtmlFaPao2Wqm1TF4hmFOhM5Cm3K2M7IAFbt46lGz9PSSbMQy5xwLA4PwCT1VV47nDfXa7iZADfFO9Ga61oAoxyNnTJ_6Om8kxC-xTGzPBE0W3SsyMT_Jy0Egqjt83fA1xNC4wn4YcTNftewIPgjus0qeABMoGLOi_jNCwjOZIc9N9JASAeB9rfVLvhKacDjJbcm9Bdc4TZKzmczGduS1mKQLIPlrLnZgZm7Hin5Y5Z37su-x0Z91WPoDXWa_1okVCe21_9vBi68neyHMtutRU3bzq0ZTxneHFz0Y6Ea_wFj_r7ahFX8S8JqAZ2i48sbYDHxZdsw1Al31e0hF_UW_6N23BEY5SO_lgYh8hRioCzD6gpwE2s3C8Io-dbpzDRopw"
+    ],
+    "highlights": [
+      "Boneless Chicken Wings",
+      "Mexican Cocktails"
+    ],
+    "approved_at": "2026-10-12T09:02:40.376Z",
+    "slug": "bkk-social-club"
+  },
+  {
+    "id": "a3a65208-f6a8-4ec8-870c-baaac31868d2",
+    "name_en": "Last Call Bar Bkk",
+    "name_zh": "Last Call Bar Bkk",
+    "description_zh": "位於通羅 Soi Thong Lo 的二樓，搭電梯上去就到，空間小而親密。主調酒師 Tor 曾任職 Sugar Ray，手法講求精準，調酒以傳統為基底加入創作，招牌是 French Trinidad Connection。Tor 獲得媒體評選最受推薦調酒師獎，酒吧本身在 The Bartender's Edit 排名第一。建議提前訂位。",
+    "description_en": "On the second floor of a building on Soi Thong Lo — take the lift up and you'll find a small, intimate bar. Head bartender Tor, previously at Sugar Ray, mixes with precision and builds on classic tradition with his own creative touch. The French Trinidad Connection is a standout order. Tor has been named most recommended bartender by Lifestyle Asia, and the bar topped The Bartender's Edit rankings. Advance reservation is recommended.",
+    "category": "nightlife",
+    "address": "413 10-12 Soi Thong Lo, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.738083999999999,
+    "lng": 100.5838404,
+    "photos": [
+      "/photos/a3a65208-f6a8-4ec8-870c-baaac31868d2/0.jpg",
+      "/photos/a3a65208-f6a8-4ec8-870c-baaac31868d2/1.jpg",
+      "/photos/a3a65208-f6a8-4ec8-870c-baaac31868d2/2.jpg",
+      "/photos/a3a65208-f6a8-4ec8-870c-baaac31868d2/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Last%20Call%20Bar%20Bkk%20413%2010-12%20Soi%20Thong%20Lo%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJQ632OwCf4jAR8WFwZZGAP38",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Thonglor",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第1名，主調酒師Vipop 'Tor' Jinaphan獲最受推薦。",
+        "facts": "在The Bartender's Edit排名第1。主調酒師Vipop 'Tor' Jinaphan獲得最受推薦調酒師獎。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第1位。",
+        "facts": "調酒師Vipop 'Tor' Jinaphan獲最推薦調酒師獎。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJQ632OwCf4jAR8WFwZZGAP38/photos/Aa-ngMYyLESMbRR83VypiAXereF45pTjQYLSBnTvbGIoxosH0TbNqVsuiBsBXO12A7sjBLEuDjpB33fUJn5nmccY2ixTCzpmTelpwVKzOts3rqGnGPV4eP4Igs1z703sjjonf-4veO09yAgLYnmbEP7kPenuhvUXWYg984GyH6j9FoDDwiXbt7EiK0ar6z8T2hHRXFmz128S_mNGPdtYIjE1MOT3w__DGnSdlcgudYIZ4gLijOhkkI0j9iWkhOrGFjJzBSGES1zSlLSRMKAfiLDFoj1jflp9mMkgPz6KHrYt4Qej0isoU8-ph71WhmnlRWqonHBKvyqhmJQeZZFZ3_eqzSNCbmxYXwJeeUfPhrj5kxoKUdGzTIhiWVSPqiMfpzsIGdFN0uuamoHFWE1Ve3xqzlbnX1wUrnfyQDmwAuSGN5JEyA",
+      "places/ChIJQ632OwCf4jAR8WFwZZGAP38/photos/Aa-ngMbcaiVDlLDPVcVgzXOSfb47fUh1AfJakTAlJyZZZqc6oWt9vuXsrNFyY70s6oWi6sL32K5GtBHactkop81L8Y8IRWC1mUI34R_nSCUDgiGTeS1Pns8bOjcKn16ML7RFLPbFyuNGH-IA4J6V7whfdkm-6ZoGPub4POkjIyTSD-42_8Tw6zyKZf9FE0x1hh4LfyXOWodOOdwJER_wbcBG95FJKRtAOMiRCug_pDLVxEpyfoMZtAcR8dTzq6YgNwfF4bfWQnORr3OsVg4NNRzqJU2IA0iTFS92gAw6eLkdLltV7xeFwj0jDREvNLYudCsZCd2BfK9kr-qQvA6_EvKnRV_vIDTG0PSd9C9fvDHCsQp1-HxPvUoOLrVxai_-kc1ClPvNWZbyM_JS4ucmFQUbCT90u40kS6RFMQIG_z_xzQmjuQ",
+      "places/ChIJQ632OwCf4jAR8WFwZZGAP38/photos/Aa-ngMaw0g8mnc4t9Ly0hwMcqe9UudFKVvXgMQyVfdLPoSo3GC8vCQKmVNenaYTTI1WLsccpb0TEzEBZVscmLseusq38gO5Y668uJVEXup0Ke7LDrtpqNDdaTw0e6ZDZbA0pt4J8m1YBl0hg9ydpywvs73-TCsTf8L5_htgyH12ZbBLBwtH3seubj2_Yl7BC98PEYA2mpHlgZYPaYi-9JKSQDC3yNfKlyVrhQLLOr9ZY-2hjkGmcEaEmCJeRhfO_kS8LQWQE5eIw6-9f-V12XqZuWV6ZzvQHRyuFx6ffDWOrDCIUwmLWsy8F1GPNbqWz-SoXh4QD8e0kFVCjKxaT35xkPZmfGVnKAOvuFblCqTP-cu11KPEHjEoQmjfwoh8iUK4-y2dL5kUCIBnALGFmOk46CoXIaqscg-cfZVTEryCc3Kz3Cw",
+      "places/ChIJQ632OwCf4jAR8WFwZZGAP38/photos/Aa-ngMZkONQebtfYP1E35-CQTREOd6o5u9DAxL4GArELXXKT8hNwTfpCztJ3IhGCYEpi5qR_XIi_0_lfmOXxjm_6t5YdqsTe1FCWuAYtWzP644OPD3OCSwtNbI9eUqDtNDmp0WDKFCbIeEXRmEI1LZa1LWm-1wJ22h-_reFqZuTWclJkPU0zloOsuwupZbfFjk8HE13WvR9FC86czhmvAqJe_4_LKNDakuVpje-WoodGQzr1n4W6uOpBcJp7Pi_TCx23gSl1I7jD8AntzSWMW9gveBkSfEh3RAW4i6stY8sGxXhEZpVYfVqtuSzv4kfMBRREbqjvdOHVa6EKkAa2S7j1niFhQdyn0-Yvcdxbze8xghHsnRnJAzBSEeEUZRwdPigXnOBTI2cwKgjNa_OrlSBReseHCzalN0i9gi316G0OEpdycg",
+      "places/ChIJQ632OwCf4jAR8WFwZZGAP38/photos/Aa-ngMZQq3nHAiDqR8KnraT0655Gacb434BQQA9gsooPI9XgWY5uiZ40PWtek5IVOaEYKwGWv1vlN9InD0fpjfTGTPErCawu6iKIEDLfznwqcOIgyfthHtBFGE6HKN9SR4-FSMww1T8cClQodqk5iwudTvdAfRT8gzo9zbNQwzl5JrxbHN-4DISHqjI8vY-BrulwrcbqOf56l8MuWJIxTIuT7nflYvckl0M3Vd_U0dB5S04wAIpi8Ega9PDu6vBIMZuNgAb38LTOFJN7C9I7Of2CgRECy2Ow4z3SGo1tGSyJSlY1apOS-E492o73E87VGgaBJ_3OZehmTVa7gN6hve2nvJCufv99xzwjL77pTgAw8CIWV4R-iLHMg3tVcgvwqwBiTqJ8bDIWt9NOHhD_junTVvxamc_79paGbIuPCFjO0MNQ6w",
+      "places/ChIJQ632OwCf4jAR8WFwZZGAP38/photos/Aa-ngMYc8knwCKwNYDCp0Q6f34dQpS_VHg781EHq27dXI0ulG1j3OrZfoebsgVLjletTEWXTt9HbX8YEPdaW_QkHUdeDPprF47RCBIeaMqxT-P-CfDsTjEcUcfEFnIsbtlpsM8onna9WdplIXr4dcl2a6BU2w98m_hTp8fDDlYe7FqfCGrPWnVSY4zWVk4EPp4bW2teKAf9SeEzPiY09R2Va6H2fD8r2ypecQhNEdeWxM8dDKkDVsbM6VDDSIR4TqPKQarM90rogprP8i_zyUd1ozG-CJkQx6u4UU-V9iaeHDyAnGHQbaZe1JzlLEBMYHqhUxrlRFCKtDI-OJ_jXVS6AcCUo7h7YfGcnqyvLqPJfdTcxVr_yZgYEWpXsP-25JbkM0G2ndMYaoHBcI_uuATkBBRMxL2mLlqjLAPBUkzBgNJpOEA"
+    ],
+    "highlights": [
+      "Craft Cocktails"
+    ],
+    "approved_at": "2026-10-12T09:02:40.390Z",
+    "slug": "last-call-bar-bkk"
+  },
+  {
+    "id": "036dd3e0-79ce-4f58-8608-0afc13a0ec6d",
+    "name_en": "Black Cabin Bar Bangkok",
+    "name_zh": "Black Cabin Bar Bangkok",
+    "description_zh": "藏在通羅巷弄裡，門口沒有招牌，跟著 Google 地圖才找得到入口。酒吧全室昏暗，現場樂隊演出是重頭戲，曾登上 The Bartender's Edit 曼谷酒吧第二名。調酒工法紮實，食物方面有螞蟻卵、豬肉碎脆皮和以 Anthony Bourdain 命名的三明治值得點。冷氣開很強，怕冷的話記得帶件外套。建議提前訂位，若會晚到可以來電告知。",
+    "description_en": "Tucked in a Thonglor soi with no visible street signage—follow Google Maps to the dimly lit entrance. Live bands are the centerpiece of the evening, and the bar ranked No. 2 on The Bartender's Edit Bangkok list. Cocktails are skillfully crafted, and the food menu includes ant eggs, pulled pork crackers, and the Anthony Bourdain sandwich. The AC runs cold, so bring a layer. Reservations are recommended; they can hold your table if you call ahead to let them know you'll be late.",
+    "category": "nightlife",
+    "address": "466, 16 ถ. ทองหล่อ แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110",
+    "lat": 13.734005,
+    "lng": 100.58319739999999,
+    "photos": [
+      "/photos/036dd3e0-79ce-4f58-8608-0afc13a0ec6d/0.jpg",
+      "/photos/036dd3e0-79ce-4f58-8608-0afc13a0ec6d/1.jpg",
+      "/photos/036dd3e0-79ce-4f58-8608-0afc13a0ec6d/2.jpg",
+      "/photos/036dd3e0-79ce-4f58-8608-0afc13a0ec6d/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Black%20Cabin%20Bar%20Bangkok%20466%2C%2016%20%E0%B8%96.%20%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A5%E0%B9%88%E0%B8%AD%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJnQbbMb2f4jARLfxvJ3HMMaY",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Bangkok",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第2名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第2。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第2位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJnQbbMb2f4jARLfxvJ3HMMaY/photos/Aa-ngMYQkI08jCDbsWHLEayxS-7XltXkzwec_yh2PEmiNkylaL1O1GnDVzWpfQ3nNBFNK8GsKWnH2jUxAEYo5gG3R3rhukzkJDh0gkURtwERhbCv2xyWnWe94HX2PHSWyn0mm_83wwjrWzgQeYOES7DZ0XuEUxHANF2YL6fvdxJgzaVSrxlxAcHoxHooXKRWkok6UD6qjdyvXsEV-4KExJLSODg8P1tztXw9XIcuErideADo77vQNq1GvJUhdCs_9h32J8xGbET2QdCoM7_JX-1NFQWN02eL27P4nPzfITh3-8FR7vMcEEQ1KfzxczrmsH9irVFN812FmIdGy8eUrSSd2DKBInbzYrc8l9gxUZC2j2Lf7yL4uJxmknzhPVqZOe6yX9K8lK73BUkSwh3uTOOWmBEXGNc",
+      "places/ChIJnQbbMb2f4jARLfxvJ3HMMaY/photos/Aa-ngMbUI7b6spoQjiwWT_dF__JasgwQo0iP0owD4ZwDja9bBheYnek8q7-Dwi2C7vlhPueP9tRX_z4PUye5XrCJOX6_LSVVK1fUzfhwpWWW53vrL_kMD_prlWY8qws1cSCxMSWWFxtchIAUmiTSneVvfeoPXsPXytfMSwCORjXH5wYjtJ3yEzy4jyV07BadIIlbt1KFDwKpz5ONxP8aNxy1Sxje_c162sLpuIjwufCakzWoHAXvN5sRaa_wzFu0xeWEZZQZuezLIXmgaK3khHqgDn5TTN2yZk78C8ZO_WQoyj0eUFdpt-GAb8vxpwR0QewXLTbYsXnSyhlHuP7VhGFlYZ2JsV_p3BofzbhWY95kETQPTDrCPZmhLbtLELX6apKIeU_L5wo6KSbvbKDHApzZ6PlLpVdPDAA",
+      "places/ChIJnQbbMb2f4jARLfxvJ3HMMaY/photos/Aa-ngMZQmrSsHHGRnCNtszXHoI4G6RpDB23741K8Twv9t3WozXwHKEfXuiOZrHYdKsyklAX8KjwKJ3J13Q0Z5RDR7sU6aK95sbL91qjs0KwuaH3FOGogrET-Z1ybNKEiGRAPBnfXOZHH80xwEsJDXFFdhJj-Nd47zf2JUfeGym0h8_w45UyndJvnpcMUh5sBAWp5A1FcE1WiJXe25k050dpHH-vUaf09GfBcP_76RWtpYWss0m8LRSpTaUe0V-0G-hDDlyDX93uxDfSm03-tV3lBqBgJZeoQFXMQQjI4_ZjAGpyhnw3p7Cr4MpqfRPmBBHKMFC5Cjd1laNRfT-P_XZMPPjOf6nmgiCBrui63cYZHMLde9AFTzQMTonMcc3rcv2u1X0Y37b6C_yBGY7Hq30Ej3iG-tNt2306b73qap4yL8mLUfw",
+      "places/ChIJnQbbMb2f4jARLfxvJ3HMMaY/photos/Aa-ngMbclstMAfW6NdKmWuhNr1lkg4spGrdflKI0WkLFuqMQsBmn77jifiJukqdD8XZY-ZP4DpvDHHlJF-APNN61gp5Msx2UkCmxWhbzTSJ94f9R3FNqniBlhcfit-3cukPLnEnS1Els2deoi_ZP1Ppud7t8zrxgaAYs4CIlXpjcuShUyABMRidaoJ-SdVkSFohibSOgvljnpbTn8Rzep44QqYaInYrEoV5zT6vn7fKP4qf1hIAr4DzT3AVQJfwzH0AO8tKWm8kg3RgxeDIFU1Xf9rexZTFH1Yb-HCcVtj4k2boL9JY5iDoHrTg2C01q6DxeqrwWDRKbr-JnlLEZ45fuW8zvJtMlFNRogKuy2Ptj1Ya9fzImuuu8YeuJR6gcGdbV4Rk9FVpgcROB4tLMBjH-XqmqXalAWAiETrYJIZ6yVzYL5Q",
+      "places/ChIJnQbbMb2f4jARLfxvJ3HMMaY/photos/Aa-ngMbtf0Ah4m5Fn7epSeyP5oXPqKh11c12GXSvh7SrSFFuR1uZa6tscBZqPT14UaH-dNIiBuFdKqdwW4MK_8PGEkzHIFKPPk9I9iGRbhJePIVZ75QC1YjbmqXZ0ex9Gk_I02VZ_7DcuKu-kFWEj8uYaQSkXDemsrWXMLPc9_4Y2CFSzBdgvOxPC2eOytmEnOZZbNgyZWwiKwf3qRTX-yre7F2xCnk4th1-vWnSnPOg09r13_a6juHNNdeQEQa-f6_PvPE_cRecuCwan1b6i6mWJuhM7cTD5pQ7wW1h4T4ChxmNA6KuLv7ZOP035mBhh1Bsm6VgfplZsZCkBPijrdYkcZuEsksouMQgkBcaooLWBLmcBVRpvQcfQej0SRDn_yozMu2Vkg0h0Qs3fuC2Y9UzPY_3Qo2QGGk6I8ctSRmV4wQx9Q",
+      "places/ChIJnQbbMb2f4jARLfxvJ3HMMaY/photos/Aa-ngMZuPp80PDxbkcdp5h1fVXfoziDAMdz-13JBULhxIq31idMWrNZ8cCnEY4kkguMt10qgAentOwfr-vMnhGTckdpQE65MC27LSHZRcORMdNqllJ9NkTJRdeZ4OupW8tOxLg0uQjyGAf908geN0m82aOjXYx-RFdoAPX5N8j1Hwt8pyIhlQS4h6WidpkDk_F49bNvxBOFJiuBT7KOp3u40oTGj7wy2Ud4nEP60XWilgRHo5-t6_hfzvuwuyyuiZNDKG0K1o_eyNWloDODDMoEU_tMzj1JvkMPhtuL8ZcUG-uV-j0afnpa4GUPCpcK29iFVD7JPx2J_f___zng2CqVWnm5dHPpUrxKF7Hp0Oh297-lbs42roZ2ixtckZW-uxAlQwFLfupQqxjtOHnV4lsBfLrN80lJTjXtYRs_rd4nLUkbEzQ"
+    ],
+    "highlights": [
+      "Live Music",
+      "Ant Eggs"
+    ],
+    "approved_at": "2026-10-12T09:02:40.404Z",
+    "slug": "black-cabin-bar-bangkok"
+  },
+  {
+    "id": "be43ac1b-ed07-4c1e-9a06-1c2f0ced5afe",
+    "name_en": "Vesper",
+    "name_zh": "Vesper",
+    "description_zh": "位在 Soi Convent 2 的調酒吧，曾入選 World's 50 Best Bars 擴展名單第 99 名。提供創意調酒，也有無酒精選項如 Kombucha。場地小、座位少，人氣旺，建議提前訂位；坐吧台是評價最高的座位選擇。",
+    "description_en": "A cocktail bar on Soi Convent 2, ranked 99th on the World's 50 Best Bars Extended List. The menu covers creative cocktails alongside non-alcoholic options like kombucha. The space is small and fills up quickly — booking ahead is recommended, and bar seats are the top pick.",
+    "category": "nightlife",
+    "address": "10/15 Soi Convent 2, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
+    "lat": 13.7270527,
+    "lng": 100.5334589,
+    "photos": [
+      "/photos/be43ac1b-ed07-4c1e-9a06-1c2f0ced5afe/0.jpg",
+      "/photos/be43ac1b-ed07-4c1e-9a06-1c2f0ced5afe/1.jpg",
+      "/photos/be43ac1b-ed07-4c1e-9a06-1c2f0ced5afe/2.jpg",
+      "/photos/be43ac1b-ed07-4c1e-9a06-1c2f0ced5afe/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Vesper%2010%2F15%20Soi%20Convent%202%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJN4leQSyf4jARHG0tQIiRjic",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Bang Rak",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第4名，在World's 50 Best Bars排名第99。",
+        "facts": "在The Bartender's Edit排名第4。在World's 50 Best Bars Extended List排名第99。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "2026年世界50大酒吧擴展名單第99位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJN4leQSyf4jARHG0tQIiRjic/photos/Aa-ngMZtspwJNOHPLGwWvs_F7R__O7pYxlf93NxAbIx9G_OWhzCtYQZOo9vODaacwpba3CZl1pWneVCF4rTJHDKVenDXO1d8rbxGRgOO9eWXzCM4IbX4x5dBv5lExibNX-cTVYAAg5JBqFkyCu-rearffxDcOHXUdgEtd5500xq49j9-pnFb80gHoBwjSXdd45RLm6kkmY32zdvVlJytT1VYxtOOmzLwut9pKoaDiu3PW6fygoGI4aw_5hiQJS2FVXSwK-uTM49CndcIDVWZu2ki8WmgBAaVj9iU__MbLYVv2ecgfmzslv814-fxfQoXSwWU1zKaAH2bg8Qu9BDmmb33BO0HeSrpQRJ4EL6PymnA3971QV-CduoxjJA4IBKpmKDDWe7gYsAjQFx_QtKp0y4VSP2rRXAFfCU",
+      "places/ChIJN4leQSyf4jARHG0tQIiRjic/photos/Aa-ngMafd-RmR0IRwyZC9Bi4463_xNtBsLXFL2V_PXS-44u-JIJw7VCwfpSjYbBQpWgXw9z2H_desNVChiAOXBEjEeA8EOk3B9d8Wb61-6o3_tXLhXDgzgYf1IR5OFu-yBhdV7munl4wZHONBlWvAcG5IbW19F-HiSrRtzersMXko9o4P0eiMnrU1cYh2s2OzTeirNAQRi47eKMmmtkcGJm3xQoKidtLlUgSgihnPiK1-KB8qsHHmXYX9Lp7yAXreJs1SuB9iPpRW5Q-V_sd6RIVAvEIFkjBKbCJQcDzRgtQo4KBeG_my-Bdovzd_4w3hLXYxxAO6x3NYjzqAm1FbS8HkzpuM0CIWAEgW0TopBanDVI1vMWwdnmJgIEF6OVZMd99NtzQlLslVPE1udPgD1DGo6ZhDim87VDjKRnDHbwla-IcHA",
+      "places/ChIJN4leQSyf4jARHG0tQIiRjic/photos/Aa-ngMbxei1J6Nsnp-FCF8mLCwyt8ddPEvKMYc08kKBuzpjs7JNNu-pEEV8_m2uK4ldyFnhjcLQCvQlNmuoFxXOblm5_x23_nI5GL9KyDU8bDr8TMtF-SjWUK2k-hb0t8iHJRk-gmgXC1HytnisNVywbcDEejIWq2YVaMLQxaKCV0dnCq8UytuRX7VqmmAa27Iw1YnXIQqUXiAy72L3y6aZnbaERgGTPJUQs2OOnUXXN_wmQxx55ciG2VDh5_fMZVZJjMcmQkQUibmO53RW7atWcBn-wp4N2nePETJFzAUOVKuw1mi1DNsbKqcYgbi01Rk0E8NR9W8i8L0wMwZX0Of4ISEJoNoxvSal6paY_E0Kbjyi8cG8mRLKAiHxUWnFiwwMUlcM9WBINv5TN4Gt50l5rdHRPWQ",
+      "places/ChIJN4leQSyf4jARHG0tQIiRjic/photos/Aa-ngMbhHNVzU_5PavNWPS9i1khyHL9tZI75F8etqSTgh2KWGYhw9CEFzM2i3AwZYDDXPTJCL3cZft3H5LUra_5t9wgFEXPdjGTNrlSqVRImrPzjXeyPTupP_vtfOaaaqGMyh_BazwFi6VCRBrdCigSN13XHubxvqIAasAXk5o4hk0vkja_KLPvSStmavMJCKyQigBJGpqxo1nvJB25vAas_DsWyBKvNr67UzT6t1ri6wjHadzjHNonCEntzL5sY14ZhB_SogtwZGfm6X8iH61ulycFqs284AK0E9B-n1kM_OEvMStIAoi8F4Z-VQ_2dPzVwfy78AgX7zL0evu1e9FezbdQH_yLnxtfsyo1Fbi57jEedzvFe3N1ulcQ3KH73o_wROVYBTWjoSrMmJMnHfxd5FQbvtUaFlfo",
+      "places/ChIJN4leQSyf4jARHG0tQIiRjic/photos/Aa-ngMZ589aRmI_1PEgIroVBZiEjGgwKVF-6NAYaKnbhI3Ow94CPIw77efutaebI9IZnypC4JQC5-fVo5_TE3WSiC_txAsgLUChoqQpBdXlJo8yvvLQ-JXU9TK0g0k0E5QrtqcNeocsdtEXtLzLx3K5Rm7jJyAav3pQ1RJq_i4LFyRH2I8cifO_TqJN0CEJ-iTZ6dQxR3cJcvXn_F4Rc93HViHPzviSxpnhxdls1FpsmkJkigqu6BiCax_AWmn5ezif4jDJRAGvmLwjc-2cuHYIxHvtQ7mtu6Ybo34AM9lwE3DxU6XcBThFPIbpYoA8-no_NUc2ia-GwryeNh3zb58TZQOJMTL6KEw19mB9yOq87FmIndGlXY9-B7I9dxu_hvuMyhlkKwkUhskc-YUZ4DvubRjCoU-g9DGv93qcWkAn3UDBG",
+      "places/ChIJN4leQSyf4jARHG0tQIiRjic/photos/Aa-ngMa62EV4chf3ratGhuShK4tNRMqkHrCT39yb_OQE7MTyoaiMoqaj4UFgKGG6ajPd5fCaj5an5RaUXa2MypBhrCHYADbPq1qbJVL3-b9Tibbo4gx2Rz444UtPSxRYWwO-KOAJjEHAcGBYZcOD3BMyc9qH4OmwCG5CVY3aJscdMqNd_c6edNn0kwtBgzHxjtVtJ-4zAACYazZvevIRgB5yVbQF51sLjNR53tC2kZLSNC5h9y6jLop1QXUYIpxYJ1peLvbL9icNk3n-DfGOGkbp0h1fXVC9G6SBpNiShJxElEVwAb8CSRSiLgDw57outCgJnPmGh9t5Su44522G_LKkCqrhI1l0j3EERUTZtCRtYIZZGr2AoXfaP90J6t6gvTR5srXZ9Ppy3MoSYmMQDd33t5X2gbJLBJnOeB_EjuYFF7IHMQ"
+    ],
+    "highlights": [
+      "Cocktails",
+      "Kombucha"
+    ],
+    "approved_at": "2026-10-12T09:02:40.418Z",
+    "slug": "vesper"
+  },
+  {
+    "id": "8de12abc-1bd1-4552-892f-a47c0512706d",
+    "name_en": "Messengerservice Bar",
+    "name_zh": "Messengerservice Bar",
+    "description_zh": "曼谷唐人街區的一間雞尾酒吧，拿下 Asia's 50 Best Bars 2026 第 69 名，同時是 The Bartender's Edit 曼谷榜單前十名。酒單的設計靈感來自超市貨架分區，Salad-Bar、Liquor 等不同「區域」各有對應的調酒。空間帶有實驗室教室的氣氛，燈光偏暗，有人覺得座位稍硬，打算多喝幾輪的話留意一下。路邊停車位有限，想停免費路邊位要趁早。",
+    "description_en": "A cocktail bar in Bangkok's Chinatown district, ranked 69th at Asia's 50 Best Bars 2026 and in the top 10 of The Bartender's Edit Bangkok list. The cocktail menu is structured like a supermarket floor plan, with drinks sorted into sections such as Salad-Bar and Liquor. The space has a dim, laboratory-classroom feel. Seating can be on the firm side if you're staying for several rounds. Street parking is limited, so arrive early if you want a free spot.",
+    "category": "nightlife",
+    "address": "306 Thanon Santiphap, Khwaeng Pom Prap, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+    "lat": 13.7422778,
+    "lng": 100.5120838,
+    "photos": [
+      "/photos/8de12abc-1bd1-4552-892f-a47c0512706d/0.jpg",
+      "/photos/8de12abc-1bd1-4552-892f-a47c0512706d/1.jpg",
+      "/photos/8de12abc-1bd1-4552-892f-a47c0512706d/2.jpg",
+      "/photos/8de12abc-1bd1-4552-892f-a47c0512706d/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Messengerservice%20Bar%20306%20Thanon%20Santiphap%2C%20Khwaeng%20Pom%20Prap%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJcdcCLOhhHTERwEua_zsYjW4",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Bangkok",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第8名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第8。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第8位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJcdcCLOhhHTERwEua_zsYjW4/photos/Aa-ngMa5-h_Mwvv9ZQ17YIWWIAvOXyqApeBzAyDmiO4QYR5aQUzL9EqCibvpAY1eWKiiGnV9u98rlevnuoOUNhka-_QyHOe0vCKkXuQP9ubhW12ZEp940GySM53rFNdNxoxh9W57ZIWnJ-Nk5YieZqeXZmCdF-hoWRoCoUWCxa0qkF0KX8y_QkG4ZlWWCTDWXTern_U16HSXonFWhnPQGJGtJ70At4TyhUi5R4jDg7nYb6oSWASW1nN9zNVJAEWzqP_tijoGOGkjRxIOQouQpgvUxjB0k-Etm_cQlXLiPtm_Wg8TdNENczp8Hr1IJqVQ1MczqSOX0msnAUgWa_XPoR4CbnQoraZHQfomKKPcAN5xlOaeYDFMQI6EsE8J32sa1cBGTF6b47-qYkZVckEl6GD0u4nwUA",
+      "places/ChIJcdcCLOhhHTERwEua_zsYjW4/photos/Aa-ngMbb6wdIkYkSMGh9R9Vuxf4p0GKbt9Jo3WrGWpKE8QfBnBR-N0bC1zYGlcjCGs4Ml3xWYq5_4wnYNSNzrHXUOU_uomLXxhiEoo9t_fz7lid88O_KASjuh3SCAVsQQ-Bqp13ZnbX3S7Lt-6R7iBsvMHupmNm1tObOiziT1y1EfVygs4YT6DfYFAGa75uMj7AwxzhOdkR9lL55XwBTn0h2CmJaNMOSSqIdYVTrhqtBtwf0qWX3zk28mtjCht8KBqFEc_45OQwM81qWH19w1hfNwsZz7nu_dkIn2DD-D0ofy8z962ZSgpDmRJtMsldqYylJs299Hf6W70FMfJSRwhP4Gb0HhA4xQXTVwVhVYq5yu2YPrbZP8KoLuXMi_Lk7Fkzv9rc1DZIhd3WVzOlPRmBUR5l_sFXlvsTm9w0WGhlma3gVIw",
+      "places/ChIJcdcCLOhhHTERwEua_zsYjW4/photos/Aa-ngMZSPvQM4Ebi4NGBj1pYnJ-qLj3rg917iqY2a_rK21-Yva2_6MkNHQbynHtN9mUep9NlMb90BqexQHOmfbuVH4qdzK20H-iUdxyByLgO0ZyAK-oM-fMHxFKGLckRB5kAe6oOmLVQaaSt38kGv8z_A6ZEg5480jwQeJoJJegFInqlK6kZJR7L8RehCHDew7284Cxe-Sy2VZcPp4Cs-2uCPQBlYSCXicTw0KG-OcTB5GZfIYCda6KvRIfILplU7DFR0tqFmIMuTdVDzg8gxqLSAnJ8Z-9tkR-VP7oqz9aC8SEN6GUkaUCtw5RiHL4HH06HpUZzx0HsU5ZKhbiCPn5eCS14nrz-mueYzl_7NCQes-jXXwvTTnP8HIj0STqauViMeDj3vSqBl9AkGa3FxU31QRQ5QFfF5zDG--pymgbxPk1KtQ",
+      "places/ChIJcdcCLOhhHTERwEua_zsYjW4/photos/Aa-ngMZDwOsTA0JrAxZ2zSVroS8PuWlDmeyfnR-2IkyiKx16YcxCaPvs2bjk3l1HcWHglIEHxkK-Vf-vF2V2ReIp0nJYrCFmhOy6uEeWfi6pXVxUqJ_bKqtJdBBBGrRPRaTW5FA8HNYIMKpGpRD8eOtGoGELrZo7oD-kTPdOIoeeGNwFIm_H_7AITx3E97RsaKyc0uDqQYcH5APzsy6VTDfGYuKsz_-f7361E_doDIa6EoctH3tgP7BvCsq1PtBqo6egAVNWerK0An7zoCHZ1WwzA_uZtxrbVa8KBTlCo_GErinK6A4w-aBKUbRZ7BBQcAQixUhR0QfC7ymsq1pGzDu0VfeAj4gB_AAzQ1EaKPyseZZN3ogHAMyC1KwsbaqgVhso1XlD_lOFoiqkiK90sXn-WEg3xsejFXdoKDriUdrykiB5RQ",
+      "places/ChIJcdcCLOhhHTERwEua_zsYjW4/photos/Aa-ngMaB1PuJbQM95SCpFfRAD8q3wAihbAtF1BmyI_pfRLGARiTKz_cBJA4B9DDGPWi7Uxqay6GvCEooCgdhKyAfAbHbceFS2VXYV6hLuYcSLuxe5Vy4yQ7amKVij9hp9Bek_svM6cY-fRx4jlUSZoM7CQ9XZ1vVYX8CoLq8X273AJNSIBBeEiUoqgra6hvgqM-oVepX2MWZDaWJ3d_xW0cu3vQCUtPBKZ7qGKmy_oWcvmDDeQjph4stjPyo7IEZAo5vcLUCXgWuab1_89cKj7hkjCtEqmkK0FAldPAZctMkMo_TeEWLhrXupFl4lZeEpmY91_EAiNOPb4jtydSUNuiBsLkxtmo-CAdr2C95wd0_jG7m3C-EEVT9BiE1NXt-UVH_Rs00e2crTJ4cbn2K2rMjaJ3ikVyjc6h6nqh6SgTNwZd5zw",
+      "places/ChIJcdcCLOhhHTERwEua_zsYjW4/photos/Aa-ngMZxZGeRXkuuOaDpWXoJe5DqVuu44S8dM1rwVT4OWmlNP_WjcMvsrZX_0YfAGsZDWRNSAtSMXt5PdDds_RUscHtBojdEoTRuvg_jXxrL45iACt_uXNGpIRgMow5f6nb7CPQ7y8GCtMKmXfmivVGspWrcFNFykzkylBAVVt0MBcBa1BiBtzPfarQGSJMoVNK2SEG3kVcQNHeoRsX13X5x5IkuTi3vzFz8JK-S0rHizB9OvDWsw9ZuIWWYo2PwcUbimyIAioz-hhcUd_AS-l9_mMd6Mo8cKBocNvpyjZC5MawT1zXOPkgPIwf6p149P7PegxEOU2yR83O0ovRTh1AhZvXNtYUKLnL1HOG_ZE7PP-qtejydItLRdXGZecOiDHFKjs251uUNjr718URf-BKn8UrSvoHJ9h5aj24czWpWFziZ8g"
+    ],
+    "highlights": [
+      "Coriander Lychee",
+      "Grocery-Inspired Menu"
+    ],
+    "approved_at": "2026-10-12T09:02:40.433Z",
+    "slug": "messengerservice-bar"
+  },
+  {
+    "id": "99d69827-11f9-4fac-aa0e-5e5cf756bcd0",
+    "name_en": "TAX",
+    "name_zh": "TAX",
+    "description_zh": "主打昆蟲調酒的雞尾酒吧，原料包括蜂幼蟲、巨型水蟲蒸餾液、蠶蛹和竹蟲，每杯都會附上對應的真實昆蟲。吧檯手會逐杯解說，不接受昆蟲的客人也可以點茶或醋為基底的無昆蟲招牌調酒，例如以醋收尾的 Sakura。Guinness 也有供應，可加蛋白質配料。已入選 The Bartender's Edit 曼谷酒吧推薦名單。",
+    "description_en": "A cocktail bar built around insect-based ingredients — Bee Larvae, Giant Water Bug Distillate, Silk Pupa, and Bamboo Worm all make it into the drinks, each served alongside the actual insect used. Bartenders walk you through every order in detail. If insects aren't your thing, there are non-insect signature cocktails using tea and vinegar as bases — the Sakura, lightly sweet with a vinegar finish, is one to try. Guinness is also on tap, with an optional protein topping. Listed on The Bartender's Edit Bangkok bar recommendations.",
+    "category": "nightlife",
+    "address": "695-697 Thanon Maitri Chit, Khwaeng Pom Prap, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+    "lat": 13.7396976,
+    "lng": 100.51479599999999,
+    "photos": [
+      "/photos/99d69827-11f9-4fac-aa0e-5e5cf756bcd0/0.jpg",
+      "/photos/99d69827-11f9-4fac-aa0e-5e5cf756bcd0/1.jpg",
+      "/photos/99d69827-11f9-4fac-aa0e-5e5cf756bcd0/2.jpg",
+      "/photos/99d69827-11f9-4fac-aa0e-5e5cf756bcd0/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=TAX%20695-697%20Thanon%20Maitri%20Chit%2C%20Khwaeng%20Pom%20Prap%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJmRpH1VKZ4jARAxoY6yVunBs",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Bangkok",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第9名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第9。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第9位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJmRpH1VKZ4jARAxoY6yVunBs/photos/Aa-ngMaCotSUQJKLK3rJo-KZuhtC4gj-zcnUtbhiknU4XXRrkkuuNB7ivphU734YWnmWRM1p33Nn_TcRlH41W9_GeV9DfOxDu2cnrJYzfiDVBLOrK3qYek7PoH1sLnLe7DIYfOCNrfYR2HreLySBkc-vepaBF3QOF22mi1bbKtqhk8OzgOxNOw8c32Bss_hgYjHbInRuELRslaQa-ls93Id1DkW7ULti4YN92jJ8SALkj6bgBRjquKQIVSNCy93rOrjPvC1IyBfVxMKbmy0GpQg_oCNgP1aB0jg3i9LkbT6quBZyJ6wFp85dfCaSgur9zyJBfAfX9oOWBx56J_-_b2PPqDfaBO8maNcCCj1zZ8nhKaYUC8RrX5h1lsQpOLNeiNkNgzVmL9KX51PZLdax4vTiWA2u4w",
+      "places/ChIJmRpH1VKZ4jARAxoY6yVunBs/photos/Aa-ngMY-1hI2KqMOh8gx-zi4lHaQW8KrrVqxWwpZVfHAphPCFIiNsEMvX4u5EARXIjvZbOlh6_kOPGlvwXOZpv8_mJ8f7HGRXBwMkHQOQUStaRuRq7yqr-7XKZm1oOitu4thjob476cPxias6zOpClJhvHz9lzNmY07HhYkVry6aHqZzxL4xPM1zlGWPAk7VMfbDeuVaAxxMNPZLwGVwBwkJtNzGWlXttdhdLY-zmXv02p4cBX8yw8oorG4aUKJqx1DGxYWveqA_49GzOP86s4NBRMrNO91EaBb-R0bg3-h1FeP4dEvm4g9re7Mt6tnGdErVzYRd-to-y5ZzAOqFCpyoYz59W8ot_uocGCsqGW20ptmluP3haaE4nuS_ZoEfGYfY029MGi-pTCB5BH7maWuwmVPMEELARngE1_mIeTpYKgd3Kg",
+      "places/ChIJmRpH1VKZ4jARAxoY6yVunBs/photos/Aa-ngMZ8DUjDIKyE7OdhfMfHjNDdoLfZNnn2uMC-GqsUVBODbClCHUg4P5oAKS8XvhXQIFOj1oOE5mOZYgwPtDgD452ERD3WGQ5r7KFrzRmBszpIwxwQhq-m2IcT2FlYt4rG6KSH2Ti1ZyOn38EP3TghAbolZkr3rC2ehT4DVZqk4cAgi0Q-cwqIp2p6819tiD79rngHxaGm6roHTZEWnCog3tt8OFbme9XRSVf6u3hnxES-fXst0dV9cXHR8zsp_82HTqQbqFU_nAgSjOHkRpRlOdjPry1lUg8bmLGWFX3IJGtmeNufUJssG8qXgEPN-UGxTh0h378m77-xfRwEZbvtR67ThVZF0g-Cxif_NGTE3yLDshyjthZoXJ_E-aqrrRq8DWqjpujzR12TPVpJI2W46LTcVkq20CAs40MNG9T9C2uI",
+      "places/ChIJmRpH1VKZ4jARAxoY6yVunBs/photos/Aa-ngMYoa452IsZDZU4lVmT1EhmfmM9N-PQMda80nXv2KKEKiRQ4IZ8YF33__bBbrXv0J4T8gB8MgOLXrofPrL8Dkvp20VlmCTLi5CDhaABm-3lb2c7V6h_M9cg1kMAjnZmCQCW23iRp9nF6zGP8bS8QcL1NzWjTw7MBOEhLSloKVm58yjAVV4GZQcnJTynSYfZCOY5TV1kTZ8QVEZFWsyvNON9uvvM5T2kWoq_NoqrFoGC81sHH48ShFY6gXX_nwE-E3RWxVajnteJqo6rviqmKy6CUcgRM0Zod-j-tZDcHIXwCrMPRuLAc7TJBv3d4yiv92dwY_955-8HUywPI4LYQNz690ele08cPm3NEzbKdqBTt0u84im9gn3cyl4Gm6N3bwVXqJuiqePAZ-FS5pEspwh-DJnxSQK82bWNCaelcHtdN",
+      "places/ChIJmRpH1VKZ4jARAxoY6yVunBs/photos/Aa-ngMazvo57ikLndlsnI9bVNApd4SJFnELH-HToE2Uag0Vut8F2xWoFF_ZWFxn58o_3WQ71zS2-Jl5y1AkZ0iAOdmCl-Q13XBa3Wr9bf0W4WwBjLQNeXMWSNP2ELUgHEr9rRMCyJeV1DAHV9B01BBbjyvS7DuOU8HkNCovSavPvzOaaVRqk8G1-1igoqw4XP-8yZi660Ocy9PPVyKdhFccAbg8-BToJKP7MGccwGuEfODDfnYkNOK7a_8NQXW40FN2TJvRvacwiLL9CGmVz8B_m0gvJYmP9T7BD9e5Nxt1en2rEDIlkRNHjaD8WFsGGaYI8Wms4T6VjAmhWjPOcZbp4VNGz8kAMH7US0bGoKQG1R9rg4lSUt4T1B4DGW9sSqsufYl657DRlvjWmO3GarbG_cMK_7EqJvIBXKPh-iUJH3ZhzqA",
+      "places/ChIJmRpH1VKZ4jARAxoY6yVunBs/photos/Aa-ngMbVJIwOkRgetpLIcqa2qSK9k-3x7do1YLo_UDo7AurNu7rXHO7Pu6SslsCvAv2wOsVeFRgPq8SV5d14SsuY_3hGFpAt8Weayf8tSIqivDdfoQwowsuvvwH42CCt1EMZGN1pilIiv_V2eeosdVtULS5AF-uE6mYrSRX22zLtgVH7UGZcMsvmEIwxyXdBfFaIMj0g7_KKRXCBMD4VjruBNUN6A19geC9N4pGLHzqKdXcwF4gBNfDrzcypZXWEkzyE9TOLlKUBH75yylMa3HkueOzdnET7x7RpwU0ju7ePkS14xbkL8Q3yd8BCdh-FvpU60DrRvFP7hLOtRtb4WLz2HcNCAo0GgvwfXVnJOfspTpE6_P1NM07AefJuhBU4w8BfJAiZ0GYnF2SYUdf21aljkOh0BtTgr_CaoDLSiwjFRh6ZGQ"
+    ],
+    "highlights": [
+      "Insect Cocktails",
+      "Sakura"
+    ],
+    "approved_at": "2026-10-12T09:02:40.447Z",
+    "slug": "tax"
+  },
+  {
+    "id": "238866f6-55fb-432c-a938-fdd9f3fba6ae",
+    "name_en": "Bar Scofflaws",
+    "name_zh": "Bar Scofflaws",
+    "description_zh": "藏在 Sukhumvit Soi 63 巷內，入口躲在一家披薩店後方的小巷裡，要有點勇氣走進去。調酒走創意路線，Flips 系列以 Ron Zacapa 蘭姆酒為基底，風味平衡且層次清晰。吧台人員同時身兼調酒師，點酒前可以直接跟他們說你的喜好，推薦很準。曾登上 The Bartender's Edit 曼谷酒吧榜單。",
+    "description_en": "Hidden behind a pizza place down a small alley off Sukhumvit Soi 63 — the entrance looks sketchy but that's part of finding it. The cocktail menu leans creative, with the Flips series standing out for its Ron Zacapa rum base and well-calibrated balance. Staff double as bartenders, so telling them your flavor preferences gets you solid recommendations. Listed on The Bartender's Edit Bangkok bar ranking.",
+    "category": "nightlife",
+    "address": "582 5 Sukhumvit Soi 63 Khlong Tan Nuea Subdistrict 582/13 ซอย สุขุมวิท 63 Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.7375463,
+    "lng": 100.5889964,
+    "photos": [
+      "/photos/238866f6-55fb-432c-a938-fdd9f3fba6ae/0.jpg",
+      "/photos/238866f6-55fb-432c-a938-fdd9f3fba6ae/1.jpg",
+      "/photos/238866f6-55fb-432c-a938-fdd9f3fba6ae/2.jpg",
+      "/photos/238866f6-55fb-432c-a938-fdd9f3fba6ae/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Bar%20Scofflaws%20582%205%20Sukhumvit%20Soi%2063%20Khlong%20Tan%20Nuea%20Subdistrict%20582%2F13%20%E0%B8%8B%E0%B8%AD%E0%B8%A2%20%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%97%2063%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJlS-9juif4jAR0Kx-XwlT6RA",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Sukhumvit",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第11名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第11。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第11位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJlS-9juif4jAR0Kx-XwlT6RA/photos/Aa-ngMYtlUKIRYXiGTjkSSbW2uCQUcOlWByZSB9vc78yKU1JvGaHiXXxHNYasEupPw6OTBaLdhBc6072mO6cTm5O22ikU49C3xOpIYdlMlAh8cOCZMBUfry5UWG3rRswPdjfpwBYBSTT-aPGIn_wmQIQWnVBiJ2OSp5Tv8OaSdZhGDfZB2ysRXbFhjqxcf6WwpG6uG3yVZay-DhXXauZ-LfNieZx5kLS6bq-FjUgzX3RuljnyYjkD9vqYL45PoO24RxVEu5kvCL1nAlBRnYl371f2QnAJxsO2WGXIO_xtDKooijdLBdnFC5wpNPFDCPhLEw86R3HLSVWVMArMCQWhmDtt12EAe37xhi4dfZK4leL6IAEBZi_AHkQQ8VmcgwuWAeXU0ixpy1v4WP4Oe1nqoJKNHiSYHQxc2Y4cWjOwwgmdLsciQ",
+      "places/ChIJlS-9juif4jAR0Kx-XwlT6RA/photos/Aa-ngMYjzqI4wVCFnWEjI8vnKqT_BpXFTwPOmPSO2soTHeJOwtDXoV-78bnekkVHQmvxYa2MvrmrFz_OCI9ll99ilFD8Mc1YfLkMAv06dQTY-u913wnsS-aPQMw6nnrheR1zQ-1LrxLZT45_FvFKtGNAgGXp-_ulTQTa4MD6VR83LXYSapBjS4Y5En7KWPOq3v_yrrJVKZ36YcHv25GlHS9aghtMk-oKvR_xPM8bXI1RJqjY_xu9bX1ay6Pzvh3L3UFuwRfIVtZvybe6C9LBX2BmOX4Fq-2zjtEE1Ov4huqs1v2R9htNcUaW54eYf7RJ_1HuidWt2aNtr47KlCX5eYDwzrQ4x06EAJeyeuWmnr7LpTYngQR-l-QR6q_6TAzAVtpiN1cKWuB11O9mNNJNUBrM2G_NBNOoi-LhHVb467uzSC6dqQ",
+      "places/ChIJlS-9juif4jAR0Kx-XwlT6RA/photos/Aa-ngMbhnmEIB2h6a6QNWBhwZ7EerkfHw1gQGZChKOclOKuEEnMrejux56YQZKlH45U3Kc64Djq-dOwOmZ57J1NqRglQULdL72FDPFGk4j7AjnBif624iCckM-1o37bPFujQ64yB9YPHSLdnHhsDU3_L1FEEeRRak1m-qHsq-hzxoJbdpqFl69ANs9Reskp9OAz4fmhw-S2HFw_6FPYN_UA9RhUehdBC1VmEb6og_T66uT1LQgBrmBGgW27OuUK49RQTXasQQHSsbIN57BH32FhyR8NKxUwIY2MX94CwXv-1y5hLnSDPuljugxN7tJdHPCBwMY00vCrCed4dkeEerUjUxG5S1Dj35cOf80WJjHTyofxmwDNxvrF9bE3280HXHzPA7JPu_OnWgxyn7SjiDBtpcaciLfmpcJt5D1A8QzURhnYB4g",
+      "places/ChIJlS-9juif4jAR0Kx-XwlT6RA/photos/Aa-ngMZPpbx7XOY1umt-_XbvcZuvoXc9wZuW4TzevKhDZxnuRMyWPXNmuRSBMNXTa6dFxPwpTPAzsGE2ynuVuMz4di072idEuwv5MKlGPoTIWriEXecQ3M3566O27ktqnUsaq9zVWvjFo4lTLEEZ2TvLou79d__VLh5Wo2FjoBlUjhGK6FDHErf_FZTIdCHtqr7k7zkDHLWJXSIJCcjHdk-uzI_uMyMktqYpP2fuwkRSPvcnhC0o8X4cSfFkn-maZFEwa-L91qXdgNfher9ml-tlP05bxUAXBQprGZx75v-I8IGUnI_8An5yvypajup716LKPZiILwN9Zg8y8m1j_E6GF-5yeSU1VQrW-ZrLFvecYMLbVx1q0EOGBh3XlgXRqrMTKn6MGJ2nDG7T_1UoC12PB_rK7f03u2DVGHnFBKh0Gshr7A",
+      "places/ChIJlS-9juif4jAR0Kx-XwlT6RA/photos/Aa-ngMbArNoev4kp-I7oInkyYa8sV3rzsKPzl3GRX6iu1mSzM-StDa748zgBAX164kxyJB2Olk5ex9vGxKc84tZjhomTEDIHxcMEROvC9Nt2Eau0LT2_8noskipJ6-zMtaLLouE7QNR4CynUA_6RZE7FWKZKW1xlfcIyp-GhVZLMxDkJm-b_4AScK4scFiYQx29waM-WOf3FCj4StNs2ApFsvTDq3IWN1FU9vtn79zcbZnN3g6ADaUN9_XdCh_G7ySl605BfRn6fwvk8P1cwOhKpVXHlrD2MXBl2Hrr6IhxXsa2j_WE4lRWRnOnDao155L4MHrfxAXi282kGL-c8UZFcRXQYFxwjeKPFtU2qi8fSHyJhJ725TtHfcRKFLkkpqTjU1FZfxfHyIVlZ7BB9KOIXSxmD10H_BconvP0AKhHjYNUS0g",
+      "places/ChIJlS-9juif4jAR0Kx-XwlT6RA/photos/Aa-ngMYr6btenpKYeu409t7DzUx-TTZjT5c17DQ1mKoJfVKRiZFiy5LtMX2WYz8wmykGY8sUzwWq7lRc3RNKlunS5Q_L-GMsbb3akjnny_IrAKTo91rqNlfyePtThZaLPjsSVZofQcYVQQo3uo6MxIJQF9FbUHvcexYP9mE8UXoX2RlquL4yjzSncmHF4iXIOHYkqFxpnfRFCF8tKomcXx_knMOsHhsofqvcucXVnaHaxvfhRX30sJk9fMWVE4TNKtQE9anJRwgbo3DFej2u-im2h3J6rSK3LBEGQhU4WYx6F5PXkKfbtOBKNdktDw4YsxUI4WpJDHVEoL0YPxdyao9a1PaJQNrqpRVJLv6XHIrHGX7tgq5kF98__nFbbWJSCPfB7jJrGG1Gj1xjA4lfT2fTUQxpVM7eBpzADmlUZ2Y29T_aPA"
+    ],
+    "highlights": [
+      "Flips Series",
+      "Ron Zacapa"
+    ],
+    "approved_at": "2026-10-12T09:02:40.462Z",
+    "slug": "bar-scofflaws"
+  },
+  {
+    "id": "4f17ff3b-b5a6-4fc7-a645-69f37928d955",
+    "name_en": "TEP BAR - Cultural Bar of Thailand",
+    "name_zh": "TEP BAR - Cultural Bar of Thailand",
+    "description_zh": "位在Pom Prap區Soi Nana巷內，以泰國傳統文化為主題的調酒吧。週一和週三有現場樂隊演奏泰國民俗音樂，一樓靠近樂隊位置音量較大、難以交談，二樓適合人數較多或想說話的客人。調酒以泰式草藥香料為風味基底，也有提供小食。一、二樓的最低消費金額不同，建議提前一至兩週訂位。",
+    "description_en": "A Thai culture-themed cocktail bar tucked in Soi Nana, Pom Prap. On Mondays and Wednesdays, a live band plays traditional Thai folk music — seats on the 1F are close to the band and get quite loud, while 2F is better for conversation and larger groups. Cocktails are built around Thai herbs and spices, and food is available too. Minimum spend differs between floors, so book a table one to two weeks ahead.",
+    "category": "nightlife",
+    "address": "69 ซ. นานา Khwaeng Pom Prap, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+    "lat": 13.739674899999999,
+    "lng": 100.5144313,
+    "photos": [
+      "/photos/4f17ff3b-b5a6-4fc7-a645-69f37928d955/0.jpg",
+      "/photos/4f17ff3b-b5a6-4fc7-a645-69f37928d955/1.jpg",
+      "/photos/4f17ff3b-b5a6-4fc7-a645-69f37928d955/2.jpg",
+      "/photos/4f17ff3b-b5a6-4fc7-a645-69f37928d955/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=TEP%20BAR%20-%20Cultural%20Bar%20of%20Thailand%2069%20%E0%B8%8B.%20%E0%B8%99%E0%B8%B2%E0%B8%99%E0%B8%B2%20Khwaeng%20Pom%20Prap%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJu-y0lCaZ4jARWaSsGSx4nMc",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Bangkok",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第12名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第12。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第12位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJu-y0lCaZ4jARWaSsGSx4nMc/photos/Aa-ngMayTxRFU9FO6IJ3dIMu4VQJN5N-7tH4tUQ9GYDiA6ZTJ0rcMKDgdemQawcu-jIqee2Pq3OOHF15P3wgFQtIo4t1GJCG15VjBnXMbZsJpkSRLG4ftObgib1P9DAgGDbJF3skK3BVbm8n1Vifm_RlPPs-sF4MaqzsFtMRt6D1Fxd8OTrC4fQMKW0-aDYQEPqWbM6zG0FcMoiUUGFVT-MT4eHxxhBnkW7aLzpk76JgLwLDkuRy2P1bkhH8UQdePWjAHxG8izmdW4VXVDtcaWMA-6bO2B-QM4LpDvjmApvcRmV2ui0E3dv6rqSGK5Q6yXBPfpGmgQWPiAY1KXWqPEOSRtWxLGua_8CE7PN33_CauxGHuMFvUv9o8gjEVS1DRsU0hTFh0RdMtdL6uHAl-g_VkWxQ31a_y1duQxlgscb0MSQrDg",
+      "places/ChIJu-y0lCaZ4jARWaSsGSx4nMc/photos/Aa-ngMYR9sHVV4Ag3-welB0tmPtto6QjnOZHqz0glhS8a2mdZ_U5cpzpQBjNlZ1tHEorENUH48qgpQFeSl48GHzj44lSxYy0XOT0lOD_WujkWCHIVj1gURlwo2JU4maxoxnz8x6sXqwwyzjMAC4yxuuJM3MNBYqE04t3mqaw759Maey7f4vN1zUWZHFw6M-9oilZXzepgs7u0wvfbFqPAapxWUwCCc2LWIVR_4OYgdjpzGzLkx9WR666kCU9D_xDcmr-nKr3soDGoXPLWxahFkF1adryC3r02wAsNPJCmpKFSskrqaPghbG1r82-N4M4fLkkmnphzmiiM6jmppyB8GvwB4lb4CJ7GrUJb4GX8XVYIkJAfny1ZlJlfDXx27tyFBRciiwUR4mBj07kW1GX3fJCETea1smGLxxACCAQcjo3QHzQ",
+      "places/ChIJu-y0lCaZ4jARWaSsGSx4nMc/photos/Aa-ngMYnrXInzpnF3cU3Zqocqn-vxsJSk8IgYK9--DLOsyCIuQ-OAZXm-1pACwECIvdGfNFZj0joNHR7CZhRcBlYIA8kIYHfXffybVokCFuwSXOhUsqeBn6mNGQ5Mf7u23V9m4eeEDOaxUxxDbLIxZdCkXtDHGISc4G57si-zwE24ghWct0cOgxHF6ZZy7PjXNeOV8IEdstP1rroIukfIIU-RNq2jebYzYAriBvd8XFeHBZMAmTVTUhPx01Sgae7WQmECSI0HtToW2n-M_AsCGFWFYnH2m4ZT3pziO67td_ZQteJPt0Do96C-L_d1f31ZY3gFIZPslbfqGJJhjduOk2VP26rsGw0TwvsLLU3qB6FRfVnAREC0hNBroPvMN-BQjToO-XPrqx8O-U3nmbbgnmvQqLgvGY",
+      "places/ChIJu-y0lCaZ4jARWaSsGSx4nMc/photos/Aa-ngMZm0ZxEUML866ydl6LuV1_su98RmD81UHDTt084wzyKqeJIWjBkx5iFtPFOhK8x-cM55BJA1XYldxCYYFRhhzKUcYXVBpBzK_Xrt7-yYTPe1dtwVoYcm-QuXaUO0GbcaPOt_W7B-5ZeM9-gdFE-wv0gEbokYZRg5FnosiS40IHs97RKzEl4R2UzjW0WgeSiZJSyx6y5BeHq7rtS1Sptl51ca0yEJjPNXKdiRtTi482PE8xqssb2iIt626k1ZCYFC8OJnERX3MYWxFodIefjjW3NmppolTSAjGVrSZ7J56a9kEPvUM6SQXoSMsimM5sVZjUK4DHW-Ww7aB6xrTpF6P5YnXe2d2ZWQyGf-Gqrt2w0aUupSz15PlgoIQI_NK3oVo9TCOHC30nA2IOhiklO0G2x18VFlKEM4S6PdI466CTJzA",
+      "places/ChIJu-y0lCaZ4jARWaSsGSx4nMc/photos/Aa-ngMbs0PQshQCCMnBkTVtocUQPjl3jRf3apfDYN0OQAivmfMgP5-RGGwcMZtEpGfzkZK0fKzhg_qdHRrw3M_DFA-U_4aY7HQyrrB7_nkJ9TRkjkQ9eI1yC1M3X2wUqkwt1rlu6JpFewTy6m7J0KMuL5iesQPALchQVgbszEHi_9ZFjUVUZ71GOwTLYqASUo9RbSmG5leCj88Zgr1k59vSnQA4IVmMtaDB3K1sVCzLHmgFCmRIR1PBjumy8Adrv0PaRatkJtICYsDPHpnh3cQe5sDwFN_8rFkcFlOH5Z5LbwRi5u_U5yofQqAglfJXerjuB-_rLPm9SvAumUzV4eWiCljXJ_yeMrYAHqRMEPXAlntqLKTmCfgPmxC1Z_W7huSKiu17i9C1-1I77D7O5K_YKuFlTXRU",
+      "places/ChIJu-y0lCaZ4jARWaSsGSx4nMc/photos/Aa-ngMZ7pX-m-cQxO_0lsOqmMYCOxRB7FL7d09n36nrG3V-_ldWdn5xPTc1BD5GAH5YMjkrtcE35rPmEg7hrXYC_rgDy507THB15kO3sa36QlS_702Nj4jc-zTbLQ8SqOeE3AJXeXwUTEtyw0d07Z-7PwLLwo8P_zsw-LLSj3lnjjsxlxFcNnTaql2Bv0yOm-s9XwDVi9MZI_Bnp9DaDyxTVzsFUAa7Hk56_EVXnV6RYCCnqV6gRZAMQjyMkn6hudvBfEqGT3i5BiGZFbUw2UNX2giA4MJW0NIZQSEsrZqAQ3Hmydmvve_kedPrzqB336SH1Hzxy-KJX_kbp-lddaxwICATE5nCVvU6eWRJDlspiQ90haettiPbGb-QL0dVu4m4xh33M3dmo3xtj-OyKKDBCKF7U9kJWkslG2XhRHH-eDcduIA"
+    ],
+    "highlights": [
+      "Live Music",
+      "Thai Cocktails"
+    ],
+    "approved_at": "2026-10-12T09:02:40.475Z",
+    "slug": "tep-bar-cultural-bar-of-thailand"
+  },
+  {
+    "id": "f5aa2254-459a-40f1-862b-92cfb7c9955d",
+    "name_en": "Opium Bar",
+    "name_zh": "Opium Bar",
+    "description_zh": "位在唐人街 Soi Wanit 1 的雞尾酒吧，入選 World's 50 Best Bars 延伸名單第 97 位。坐落於老建築內，雞尾酒以概念取勝，例如 World Champion – From Sip to Seed 和 The Opium Oath 各有特色呈現，Pukka 附烤魷魚搭配飲用。也可點 Potong 餐廳的菜，如熟成鴨腿串燒。需提前訂位，並收取不退還訂金作帳單抵用；著裝要求 smart casual，拖鞋不可入場。",
+    "description_en": "A cocktail bar on Soi Wanit 1 in Chinatown, ranked 97th on the World's 50 Best Bars Extended List. Set inside an old building, the bar is known for concept-driven cocktails like World Champion – From Sip to Seed, The Opium Oath, and Pukka, which comes paired with a BBQ squid to engage your sense of smell. Food from the restaurant Potong downstairs is available to order. Reservations are required with a non-refundable deposit that goes toward the final bill; smart casual dress code applies, no flip-flops or slippers.",
+    "category": "nightlife",
+    "address": "422 Soi Wanit 1, Khwaeng Samphanthawong, Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
+    "lat": 13.739189999999999,
+    "lng": 100.50849760000001,
+    "photos": [
+      "/photos/f5aa2254-459a-40f1-862b-92cfb7c9955d/0.jpg",
+      "/photos/f5aa2254-459a-40f1-862b-92cfb7c9955d/1.jpg",
+      "/photos/f5aa2254-459a-40f1-862b-92cfb7c9955d/2.jpg",
+      "/photos/f5aa2254-459a-40f1-862b-92cfb7c9955d/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Opium%20Bar%20422%20Soi%20Wanit%201%2C%20Khwaeng%20Samphanthawong%2C%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJ95ecsjyZ4jARLm3_GznbJsc",
+    "rating": 4.7,
+    "price_range": 3,
+    "tag": "trending",
+    "area": "Yaowarat",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第13名，在World's 50 Best Bars排名第97。",
+        "facts": "在The Bartender's Edit排名第13。在World's 50 Best Bars Extended List排名第97。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "2026年世界50大酒吧擴展名單第97位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJ95ecsjyZ4jARLm3_GznbJsc/photos/Aa-ngMbWoHrIfOsG64MVey-HynUu9dCzMTkpiSOc8HYJzTb20nOutuFspFX9sMZyZnRWMCoCniiB6w6Bk4v_yzv-Fbphxo2VeIYvRIKGhZT4SHkjxhLQq3pxCEgn2ewRWnD4cGvNMTVu3fq3bErjEHaUHvdY5EzMDFcOb0CgGMs4ooTgzD_iMMxKkpWoc0xYJ_cEaqkn391kdx2nCbASKkRBXROPAY73P37uJ9ixCKv7K9fYjHg2F4qlhsrlCFK5NjO1fj9L0YJYUJI-p0m48ZYmFcpICQrqeTlSADdSwylJwK_pPWNVMu05ZdZ_Cr7UYwysLLfhiBZroKRECrF6-2bGna7F7wzOIEJX9RaxMlwdeH8vgbTTApL64SDCPC0-H2WqWK0GgAGXedXosy7uSP8xDplOi1k",
+      "places/ChIJ95ecsjyZ4jARLm3_GznbJsc/photos/Aa-ngMYAQD8Sn1dwX5_0XoUWY8_4dIn5jkjEEZxrDyAI1B0QqoOjmpt2khwQZCAz94viPnTyW_KPu39WptE9p_oatKaryMpUvFlgc5KBx1y7dcXsz5XZ_wvGI8Nr7XK-Mv57JVuQH5dDNTvV8zrg1lnzqJbSyvjC4IETiG_-6f103HaX3HhKYZ1HtBMYshSssHtMHWHLGydQmuyHdpzgw_s9T76R7yD6tz9w7zIMJSvmNaTiMTeaPUdDGdaDoAybj92TuDXXHyaby0i8GvSqUvLsnCkBJeJBb_jlM49OOhZ7Xzx8_73AU_NPRXcpaVClkt1bIO-RbWMhcwluQsVtajoAGrGyAMNpe-JZPRtsyLpN7cZLQF1gX9iNmqwcTQ6jYnhh5ev4szFI2P91rzcrEDnDqruioGnFugAUC0yW3-7UlxwuVw",
+      "places/ChIJ95ecsjyZ4jARLm3_GznbJsc/photos/Aa-ngMYMmaCWNhtY_m4wcChaaex24mbz8tBOIjgEnOLu0qgVRJGFlj5xkZ8zA5-cLAadHFI7JlfCe0U9qcPp0_MZJqzy6sHiHN6cr3P-2VGSHRCYzH0XKP347zAM1yx1-KcypOFAye0CNk-EVrUDyR78VKAbPZOjgeXKBCkZyI9LkyWHS02xrX3JYuDn6V-W9m_ZJdP5EMnHpM7z7L-r0CxvaxXKuvhaYcm7urAX-BVqNHzm_9Esn2vjnMxQ1eb6PbOypW1kVngJnf60t61JWXzMii0l_L2gsTw_gPknVe_vWqlWYGCwU95EbDv7duczouPF8W1rPx1qC5oaJAEIU_OxHOlDPxopxUQejWTiK-QtM15pJCj2OnfuPvKM7B02KczS8-JdbA6WJNqLQ2QOfwXLOWMBT7FSUJI",
+      "places/ChIJ95ecsjyZ4jARLm3_GznbJsc/photos/Aa-ngMbfP1_5aelBKko9c31zS1jHSVaP85Tnma9uImgjuhNQMGiOHc8o5fD-eiPfrnA1q9CQGt44kvgvLZKqaCKClGJ-6eZdr_EwF2-W6cYi6gtjIYzHFerFj5xzUVQruWIQjqNRvTkgr4z5nhZJClfHza58MGsC50RnAwgtGHEess8oGVnRJTEeSLya2mOBampb1_1Js-H0FxADRkO-yP973gg2q2eczGTndtHuRMLAZ_S3sg4EExyHT1XwjL3Hk5IDIz4ZZAHAuJBG2mbkSWQkm_d5HEJstyy4TxG9t1stNJyZyb39KJUg_3tJ2EPojAVbGwVn-gZPrUeEpXMW38LLLG6a4_tZYNDsuCyrdc47lKeTNU7OJ-FC7o4TbEY4FGwT5c2VOAcuVHPPMDQQ02GNjEPlEpv0_opB2nhnKA-A14k--g",
+      "places/ChIJ95ecsjyZ4jARLm3_GznbJsc/photos/Aa-ngMa_OJ61JajZLcaJwMFQBHHA4yJrEkCh_skkj5vY4IUe8jhEgn2AUF-IBgtyYanJiz9rAZ_wG1ZWKhNce3bVcoHxdm_VUSVioqxU3NL9UnKhCd_xR0aRX7yGbyCrlQykS43q8MFmIcymn_H6GZZcgZrqHpgN9dDWWsqy1FE_VCLZKl9tMG_dFVoeNZXV-HtBKwpaXoq6DfnTwnKZY81rVfeooVLX7dxZfLcVPDMBTSruy9TY5-Azg--LEtZqpYKnZVERbnTm6TxMi1zz2w4rGA1zA05wCGwAtnYMq7An616i_sGIFMXd_8Df_7X7sxdxCIBc3-Y4r4JPrji7_NZYeV8Mus3AGOfcAaYgaJga0V0LXi5wULLWaTfR2qpdzyXOK13JIjfN32MhMepD1xO4VuWB1FyCIj57gX0bSPVNUAKE",
+      "places/ChIJ95ecsjyZ4jARLm3_GznbJsc/photos/Aa-ngMbOS-TgdMfAvEc37hD7n8cuap2uY7SAeIH6IyxtEre1tpYkPIJFOsT4hFw8W1xIOlKtgrb5UprJ39RV8RHNmDu84TKq3J-4YLtKawimDnjAv3gg4wP9HVqvBPT8iefxN-HF-TnkDLXkD_f6wV3SD2QxElGL7OIOOYHy_nD5VtDfX2dOukdgznNKha8u35Dxrp8OwCzAyH1wMUOEt3J1NiNrqBy-IgdAep1W3ZsOx2ZmYHGU4L5XmEnbsVARsBp3Ug9Yc1RHBkUbsEUpqwu6did2D27flEGNeJsXRIQdtCQIBRJ54jfUf5b8HOYa_yH1bSXCNSTNDCvnED8v3fn0VIgreDXorQ8aVgJRh5mnjlym98aGKRtCoirtI4EWwE34d2h1xPopA5qRvvoP_IuPZ_mH1_HDQnLgYFE-5La-gtCYAg"
+    ],
+    "highlights": [
+      "World Champion",
+      "The Opium Oath"
+    ],
+    "approved_at": "2026-10-12T09:02:40.489Z",
+    "slug": "opium-bar"
+  },
+  {
+    "id": "0abc4dab-1dac-45bd-8a17-2029e9b09af4",
+    "name_en": "Bar Sathorn",
+    "name_zh": "Bar Sathorn",
+    "description_zh": "坐落在 Sathorn 路上的 The House on Sathorn 內，這棟保育老宅緊鄰 W Hotel。調酒菜單以建築不同年代的歷史為主題，每款都有泰式食材的切入點。招牌 Skyline Drift 值得點，義式春捲等小食也有人推。現場設有 DJ，入座後會附贈歡迎飲品與小食。目前在 Asia's 50 Best Bars 排名第 17 位。",
+    "description_en": "Housed inside The House on Sathorn, a heritage villa next to the W Hotel on North Sathorn Road. The cocktail menu is built around different historical eras of the building, with Thai ingredient twists running through the drinks. Skyline Drift is a solid pick; the Italian spring rolls are worth ordering alongside. A welcome drink and complimentary snacks are served on arrival, and there's a live DJ. Currently ranked No. 17 on Asia's 50 Best Bars.",
+    "category": "nightlife",
+    "address": "106, The House on Sathorn, 108 N Sathon Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
+    "lat": 13.722108299999999,
+    "lng": 100.5289705,
+    "photos": [
+      "/photos/0abc4dab-1dac-45bd-8a17-2029e9b09af4/0.jpg",
+      "/photos/0abc4dab-1dac-45bd-8a17-2029e9b09af4/1.jpg",
+      "/photos/0abc4dab-1dac-45bd-8a17-2029e9b09af4/2.jpg",
+      "/photos/0abc4dab-1dac-45bd-8a17-2029e9b09af4/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Bar%20Sathorn%20106%2C%20The%20House%20on%20Sathorn%2C%20108%20N%20Sathon%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJXyOvz1OZ4jARR_a5T-qORL8",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Sathorn",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第14名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第14。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第14位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJXyOvz1OZ4jARR_a5T-qORL8/photos/Aa-ngMZacRpAYjlTnbNMG2Rbj-NcIWQtY6KsJoFoR1HiSeSscprpkr9VtiOzCgT4He2eFjLb9SrKmQ47RWrw46DNQIpWF1wsZt8B9oGWqdTMEEk_JMmEeWt5Z2BUS9dmDR0Av8By-GrK8yAdEeDWNMEm4IRp7xK7YX-HWKh62skQzl7lwJYQaO98FkR_Nq16mjVJXEIGB9k0k9KVrEf-J7EzLe7rZyYqdkS5czYggIT71RRZ4BM0Ig3YUNOnE-Q_UcFFTGi9VzprXlz77IEw3c53gh7wsrYx-d8VyWW_mzfdUVPjpa1C2L_OMYAYsN6y4eFqC4nFoPmf5GBEGxbVjje_-sj75E77yN0qeuCB9py3SsSCEMt7P1unNUq4OM-4fe9CsAyo9F42fZxvM2hcj4yzy_1TnGmIMeDZZ1wAAsHP5B2T",
+      "places/ChIJXyOvz1OZ4jARR_a5T-qORL8/photos/Aa-ngMafpJ4duf4BaeYL0FJ1c8ZNwYcrwL5MDBZ27ndWDxCkdltPAhUE7FdQ7jXHufHILo9dGng8hRMr3wkl3Y-fvLxVjpRHmx2x3_PhW5O73h6mDEQP1vJydwehBjNGhQsj8iNB-86dbnMDkCqBBpt_o-rJNnrESn4fhaycLA1wYW6uRCa5A4Yt6KTh901GTz_ruSoaPi-dHcJR6Y2r9YGanyFrgrM04PpHwIu7ua72XCHDMa2fHkzSWCX1jdrBj3rQ7eqwckmymIMSszKCpPsMHIMrUv8RJjkMQglPhxZRdm6Eh1-I6EeAdn-mMDK33l8t5Lb39LAn1C5BCqAkWQsy5g8tbfgGXvMrIVd5sqV4tKJuM1_L1_UC0dAzGOx74VFG6P4bXday-41F2WNmecVuyNvxGDt_i_JUGdqcHXHq-HRIAA",
+      "places/ChIJXyOvz1OZ4jARR_a5T-qORL8/photos/Aa-ngMZ7XDh3Gr6V0V8Fx20rfsg9256xPpcdp2Lw_ln_mXsN64JFWO5jajRRa8nogks6K3-Hwx9Vv8tMoytk2a1xYPDiM4BFJvrx0zeGBqtIW5mtVzjDusnOQD4Sr5rVYLLRcszvzX68CRAgXTpU8mu7sLaBmoPbU6_KhkKXkrOKylxFZo5vfZzQKHJFhb6RSIxEs31RVovpABYc-xMvuUicMHk-Zyh9wbQRwODaBaZ_D_KpR6OQSXYDgrR_W4E8tjUL6nPGjOrKRJkKLKTIdGCtHV_wXGICx1VyF-0StJdRKisCVuFd111WSVBsE6wJK8ZiTr_t_CNiDsvTKApAPLtBl68CB27yk1gV6D7CoLzhCgrCpSkEY6in4E8RUfpKqJdfzWG7b_FcTgKCqG9veLIv_McG2RvkBMzg1zao7Y_tn_htvQ",
+      "places/ChIJXyOvz1OZ4jARR_a5T-qORL8/photos/Aa-ngMbZPeZZDVYD2KgBvf43gBGoSctewCaDdO1rqPzo1O3w0-hMIs1uo48_bFz5tdUGmAvj_ZUhhoAfVsbp20fbQYbJhl8L0CFWLDazsybRjIwUggAqSMRaUnhatRi4I9X6s34kUQiQv03sU7LszX43svKeAysv3WlW5KM7xJOAPsc9ZcK873bqtH9yd45GdDJHSrXZTA1mXuQWVhCDEhjLP41y4kLmzLAJ1j-1GVNh63waeBFRXA3ALT-A87wCSRaz-ETz1eyDw7T6R6RjjG8beC7RDd4YlqgMB112-yKdkBqRrbPo7vYQ_dQaTqYe5O947mG3GwjeGzx5buxsArrzeqlZRHEtoCMS6wHb4HLW8PZdcnrWOniz9AExOZCfeGsR8qbPT1qFwWL6UqtEIX2kQbMQnZtaRi6oKvefqEbyXzKz",
+      "places/ChIJXyOvz1OZ4jARR_a5T-qORL8/photos/Aa-ngMaMh4oh8kLl8WZK9k8iBPbmfKAl2Ib1DRXj9_Gq6bUgY0er6M0jtCnQT1q9r6VQCJlr0QdYgb-JZSsm24OIj2WyQap_hNhDzDfg7z0Af1M0zYFF8HISpKfH-muAyFkJgNOrAARdSQhg_o0Oc9o2bN6PZEh502_n_qJGKlLdIBniT0xcnWnLW5K8sFDFCfHvDJ8EL-GDUN4uRvsB3hHJEEubEtmw0quyFilVAxmANzpkiv042PJVGEkklTVBx2tkAPQiYZnBh3-WU9yUYpUtzDtClsjXU9Fxe8FTZz8JDAjh6Go0nkYzbMx6AthDoTDnqplMnASUrh-xP_bghmpYrQCaXrYYHXjZZSHX5wPR7LtM46nTRNqd0Te4h07OIhrHrp0Bjwj5g0wDO_dCepVFrcG0fVn1E68kAtnl94xNfhJs",
+      "places/ChIJXyOvz1OZ4jARR_a5T-qORL8/photos/Aa-ngMZ_crEuPrEExXI1aIAg3vZu6aNJSj9aC6PJE3KFw9HLq339uHib6LtpPamNfa8tqvb2-_XEpusHF95Ip_BbuQEg-5c0wIlRtJhQeuTWuUIBNLgAYeGkCdwSdon-uvEw4MwDibSWDgPjPYtP845lJGCpTah7wmaZodRpXKXSyXS1Dn2Q2ivWrZATU9AjTN3qBJAcWKVa7jCfCPcQSW-kl7m1SCL8hPgAo8BI_E_aebWU34jzt2ztqX4Vx7DSx9xJu37S6j8emvqgcxCQRcdYJVxCOF0CdfubQ4rv0kKvLrXY4yPzeoRg9fRqT6_6JDMvmthQNC10svRvBVSvRcAN8uPMSn3SzOUTbolwhmVDp6yd1LyimTrPGl678K0VECd1tVlTf_CSsz2fembgI0-NV5sKMtgooSvg1svvwLi-2U2mXw"
+    ],
+    "highlights": [
+      "Skyline Drift",
+      "Live DJ"
+    ],
+    "approved_at": "2026-10-12T09:02:40.503Z",
+    "slug": "bar-sathorn"
+  },
+  {
+    "id": "13762cfa-0108-4340-b1a4-6541986d0d75",
+    "name_en": "Funkytown (F*nkytown)",
+    "name_zh": "Funkytown (F*nkytown)",
+    "description_zh": "藏在 Sukhumvit 37 巷、Sarnies 咖啡店後方四樓，入口不好找，但找到就值得。以泰式風味調酒聞名，Tom Yum 調酒、Satay 調酒、Matcha Pain au Croissant 都是常被點的品項，還有招牌的 Alcoholic Hot Chicken Dinner 壓軸。每杯調酒附「funkiness scale」標示實驗程度，入座會先送歡迎飲和小點。曾入選 The Bartender's Edit 曼谷酒吧榜。",
+    "description_en": "Hidden behind Sarnies coffee shop on the 4th floor along Sukhumvit Soi 37 — takes a bit of effort to find. The bar is known for Thai-inspired cocktails: the Tom Yum, Satay, and Matcha Pain au Croissant cocktails are regulars on tables, with the Alcoholic Hot Chicken Dinner as a closing act. Each cocktail comes with a \"funkiness scale\" rating its experimental level. Expect a welcome drink and complimentary snacks on arrival. Listed on The Bartender's Edit Bangkok bar rankings.",
+    "category": "nightlife",
+    "address": "1, 39 Soi Sukhumvit 37, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.730717499999999,
+    "lng": 100.5702666,
+    "photos": [
+      "/photos/13762cfa-0108-4340-b1a4-6541986d0d75/0.jpg",
+      "/photos/13762cfa-0108-4340-b1a4-6541986d0d75/1.jpg",
+      "/photos/13762cfa-0108-4340-b1a4-6541986d0d75/2.jpg",
+      "/photos/13762cfa-0108-4340-b1a4-6541986d0d75/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Funkytown%20(F*nkytown)%201%2C%2039%20Soi%20Sukhumvit%2037%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJiVI9bX-f4jARIiAgnU2YP2o",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Sukhumvit",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第15名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第15。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第15位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJiVI9bX-f4jARIiAgnU2YP2o/photos/Aa-ngMY2wWw14tZ-1ycS4zQoHzdN6q5Uh5-6iiRyPJKw_VJLVQ32imE_dUsRxdCdg8JN2bFWsZygGqZgPd54uB-Vo_trGAwFNLC4hDcMALm0wRAwbuvH_gOIdudcpOjUVxFF7IA9FZ54qyeC5mnwkPtwmkTGCE3oiYXpVGo7UEaEWfg7FxBpVss4CgEkCG608fhutCixLrYdquPo4Mo0pqvo52cUaVwVtO_aglk6Gw2Bor4Cm4ciTRwUoWxbUHuNkvjhMv7NgXqWqEB2ykEqAo87b8B7wf5Mle9Q3_8EBn5U-3WLIuMmbCe4rLDKnvHVBg1njgR8ZMg74MGK-JUZKgDsw7Rjvhi14nOb7WTjBI86J0-UJuw-E-jgBvkqXr29_9tzkXt8qFAjW3SdjWRQJjY-KFdTzg",
+      "places/ChIJiVI9bX-f4jARIiAgnU2YP2o/photos/Aa-ngMaagSCloyoEspBAEvyJDKJZqvQ4j3DF5OtuCx7KFc5Ka0nRP6RdzcXOKvpssLyd-W87d-syZKKDGnnj05XIBV5WbG9FpjpUmZMW6Mlz-fy3kLgf-rZ8n6akISks_7HEkWCPo5A1YosiCrKy8MY-132aYqM6PiHfBJ3QhGKq_q86uB3upCgejS5-so0gB6vyVWU1a4Pt2hDyINbst9nLzRZ9sSYfIyZSohMkjM6_HQwLeaTPd0owi-ucfcQCBFesDYlVOpdCdakSO3HamFviSwNjOsbmfRM2LfC2nhUOYZI74pazb6x7kNaQjyeNnUor2I238rqmSr4Zigg_Zeb7797K6HtwURa0cmcuHFO_zOH31jUjtDI_6ij0uLAObp3cHIjn1YyGaYUfVLE7vd1lKIuIdqg",
+      "places/ChIJiVI9bX-f4jARIiAgnU2YP2o/photos/Aa-ngMZPrKmyYqVpPsEaPC3qfOHoHqcZ4-puGTdQleiC1Y08AfbHy9_pSXrY4bkAFd2_UmiCw2VZT1ZDcMMUSVuDLcgTUxLG-r1EBwfjPwazZ7XKpjkaAmHeD120Uw4Nzjki4xD1NET-iN0QvCQpNrAfxT4WG83LESM1EVVVcYl8G5v6v71Uvs9VvdUNzMix1PHfHCSE64Kkzr7y1_zo-ws_ZhHwKsKlcon0SAVYPA9HOlQKokbc9r4Medx1x1kXZcrT3b6A_RmXJYeZkhZs6-eIZy3zbQQq2N5hQNasISrTZkc3jWB0yN7wGWHHSWW125mYSs8rDrm6Ebh70hTEh0qBGQx_61XuOHApvtJ7gqFLqSpeHoIkFA70YEO42R5wLPAbSyQyjS-MpSBzqD7X-4ulWJ3CNRsIV00MohNN40no3nU4",
+      "places/ChIJiVI9bX-f4jARIiAgnU2YP2o/photos/Aa-ngMYwTShGCm9Q6gwn42LRaR_mxAq8WYTKmQQwSPnUJi6YQNnowwbBYpIq23uM6phpsKItx_2dbaUlCaJ07CjrbnkRg31wjG066mCe4u23dD8B1M0EpXZAejUuzgPVTFQ2U14_HsKLvuFkrHNooIhJ-SgMksBWk2noKwE6JCiaYPGo6mkorPgq_YnMyONCKGNp-EA2A4kfZzLl5TUKzmHo1gFcupBXIzlee20VqQw8EVniDcu5QWhQOxHFCqnOF0bxzoBGL5BOW6EDMg3zNZ1DA8HtKsW7YAqjg1tqIGyMCcr7XZbJZQffw_nNH38ZckBVDBNOnqFfnKPJ6OdmhQjz1fOABnzXnB9vo368sTAuxop2KWeLLeYzRbHn40EDRYQouFVFhXnPzOteUBegGeC6AA24Zp7jPpw2DfHqPqZ-jhvwkg",
+      "places/ChIJiVI9bX-f4jARIiAgnU2YP2o/photos/Aa-ngMbDEMG8f09VAYkaLTWT_Ej81Zex2C9wRnOgrE-DbtyRGTo_u2HUDU-RqSZSR6xn6_CquweIWFTAjI8KtSBA4dYcZ1PZL44Xxw5xQs7OS1fF456SL-mg-BCOt-gmFtZYTH8RnmfE4oDs59QGZuoDu36rSR_H9WZKAgfIAtYa1MAdZRPPXe1IaxJLDIG6zPDRkhXtP06yXoyDw-NvCDVUbrh9NPjAimYzoe_nMMRRtJ9I0SnFsR0xFAbj05nuz0Ua4HS-xuoGo2ME5YEg14v8wjhLm9fN0YBDPDacGqTLv4SDW1sLglWWdzXjeUw2pwP-AYVMI4VcNstmohU1mSS2vqFBIm5RXqHcEGNBFJpIFS3mqwV2kgAlcUWeeNG7qZmsu9olQa6jRCrHzIZtJC5uYwD6CA2CCfCyS0J6xq-n6kyZ",
+      "places/ChIJiVI9bX-f4jARIiAgnU2YP2o/photos/Aa-ngMbuntiiOQAhgkZzuOVAZrmyiAjWxd1reHlujQWapQQTK_SU9WhTiLwxtO7kbBxnqzCbyqMqEYdqv_0VUs1tcdzSWwh4VLZcIBPEsxPKdDA2womPnSoG7wgxtfs1ccKnCGlAnrpRhdaEKDI5NrTeteN8ucrDVWjgL-Wf0iWKLrrV2_2Csquazqv-I42e_w8BL7YM1wzsyONWJKGZ7tFhTb51_7X-0znD9LEisXFkprzyCxkucAFZ48p-R5vqdNtIelN0IFBCnao5-R37_IENMDwNCOMWnSN_-n3c6fAepQcuFDToJbfNRfSIcgv8dCDF60JL0h55gDNex390E7IgkoAYWRlfzlS7-sQH9MqeaRV0IsjKLe5eIqLWoeVn7fBwI0GamLIO1FT1EtKjfRcCdjmsOlmez-XmNhhnN1e4PQPFvQ"
+    ],
+    "highlights": [
+      "Tom Yum Cocktail",
+      "Hot Chicken Dinner"
+    ],
+    "approved_at": "2026-10-12T09:02:40.516Z",
+    "slug": "funkytown-f-nkytown"
+  },
+  {
+    "id": "508f5d6d-e4be-4373-8fec-3bae8cff36dd",
+    "name_en": "Firefly Bar",
+    "name_zh": "Firefly Bar",
+    "description_zh": "位於 Sindhorn Kempinski Hotel Bangkok 一樓，以精心設計的調酒和現場爵士樂見稱。吧台人員熟悉酒單，會根據個人口味給出建議，也有未上架的實驗性酒款可以詢問。音樂音量有時偏大，聊天要靠近一點說話。已入選亞洲頂級酒吧名單。",
+    "description_en": "Located on the ground floor of Sindhorn Kempinski Hotel Bangkok, Firefly Bar is known for its craft cocktails and live jazz. The bartenders know the menu well and tailor recommendations to your palate—there are also off-menu creations worth asking about. Note that the music can get loud enough to make conversation tricky. The bar has made it onto Asia's top bar rankings.",
+    "category": "nightlife",
+    "address": "80 Soi Ton Son, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "lat": 13.7367759,
+    "lng": 100.5437843,
+    "photos": [
+      "/photos/508f5d6d-e4be-4373-8fec-3bae8cff36dd/0.jpg",
+      "/photos/508f5d6d-e4be-4373-8fec-3bae8cff36dd/1.jpg",
+      "/photos/508f5d6d-e4be-4373-8fec-3bae8cff36dd/2.jpg",
+      "/photos/508f5d6d-e4be-4373-8fec-3bae8cff36dd/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Firefly%20Bar%2080%20Soi%20Ton%20Son%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJPysUcIGf4jAR8COXqx4arDU",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Siam",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第16名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第16。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第16位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJPysUcIGf4jAR8COXqx4arDU/photos/Aa-ngMb9p9uEe2yr88QwyXJodRRZARIlqvyFZ7lKt_1FGp4OWtZjG61CPFZU4630Is31rrk1XrPX5KXPL6dxxKn88kf86d6tPAJY12PrEU04UX6-tZrLqkTy6uhPBmTFi6u-B2uX3zDkopXg3kKRqj6FXQXf97vaaknFezAmvYftLgysNcxX07kMqs_AFaU8gnRntgOwJuPiKpKbUOlHpU7vjaNen4GBNxDCuDMnXQ07u-ufjNDm7615J1S1BB0rVWBgbUzSXsfJq7irwC7MJ7-A_7FYn1t-BXxT9se5_tyDYmiDcaF96bO2xjnkyMprA9R-DT9q398MhnV-2Drl5PpjO-1e5A8GJTwOjvXz0VOwTEk1ayOqO1DhDVXDy0iJ4ZhK_KL_7Fsz8dzDnq-nwATU5CABiiGhy6s",
+      "places/ChIJPysUcIGf4jAR8COXqx4arDU/photos/Aa-ngMZpr78YO_7FD2GBBeT9ROkG7QVQRP1HrA_iKUihNQvTUDDn3o7q5_DrtP1HEftak7Xtu4oKXPU3V6O26L5VjvydL8PGQfmGnbLLHGEoWiRD26AYRLCW8nnMZh1Yv0yNJC5741l294a6uwCjVR_ar9r0fxNZws4M6TF4HkvFaKyocEzN_PZQ1wDJcm3V111-hLHTY4EKbD7TF0KEOWYOrW95dL11xQk5xhGdXDKaMAYmI9v_XbAvGRsPepkMZeWP61HC3PINMZ9aWFBmjOKp9rroagePVtd4ux5GP32SxOhT3v4PdasTOuB2qAgIVULil9RoqSO_xi0EZERqHG7CsW4xkYRRGHqkac_dEzSzQWtTE365soIreD1GTQ0A768z-Yqml-yaZrQIElEUBn8SMX_OmzqNiry5mNvFZuVQASS8Eg",
+      "places/ChIJPysUcIGf4jAR8COXqx4arDU/photos/Aa-ngMa0oWz0NRMLLjwZVJdekDDouXs-7MVI845peIHcm9ggY4CzteAmi-qqPMXc671w8gWwkPZAdfsXCFxLE_Q0ON782IROrKQ6ECiPcs3lezhY73VMH6YWwdLdI2ogmLMnDXw9Q0fNZpxK7f3aWFThzhQuEDIrvs7oB17rL3mNP5UGxsoV8Q0zfFDEB7Srx69i84NoEVWlanE0fLGNs1GRyNOkvUi0Es5zAthPc-uIB2Ld9AiBNm1wy0r3CdsUfmL2lQPAZbNf_8FI86LTM3XXSUUSHcUoLH6tlQpeJyGY7idYZeRClday2mKOAqgtQP3cP56pGTDsWotUAMk0YLTKKP-eiP0Wl5qxuCEj0tMIVBwf1E9Va4d5hYK8Gt6QDwZnARxdHyxwUQauPL6kaFkZbTTXxffkDZLU-WmqCXiTvujESA",
+      "places/ChIJPysUcIGf4jAR8COXqx4arDU/photos/Aa-ngMaCjm4fwTV5VItCRsriYnTjSWG514TMwk2oLhk-71jMJYClWT_pW4cnZuspAWH0xj_mIA8LVCALF6LKLGd435uhMZK4YOmsHqo2ohVuThgaEoYUNj5pXW_LgRlIyhlBdYEobqXIZIfdSuJQH-5NQzQYGofQlk6UrBxoBuLKffIfmQ8DJIi9Ls48HzY16assAMl73h_jZUJGSPFLM8sEDp5VYNQOljjnUPeHlAaR4MrG0aO70OEupDfbtS5GW_4DrogIS-4sDvTIIp0XNB3jgTcVmKiDTZQ3CJmaynzLp-beFjE_97523A312BxWXgKF1MwZ3tfrSdF2HDnptqYYq2ajr8qfBKrFJluZ0WWaW3yLmi9FvMrK6jUN-69tpxDbL0qS_0SGppPKz4-cUAh-vlVFX5H5aMfr-wSvGq0sgNHb4g",
+      "places/ChIJPysUcIGf4jAR8COXqx4arDU/photos/Aa-ngMa_EYGxaneVmzlRZETUyeLBil2VZ--qwcb-EQsildP8_ZWKfb0orJ0TEalo72WnXEVBafXua_6INJ4GywNpoIyWa70g9fNnC8XBxyHOX-KdvxZC_sjYKMru2hsqtykTFXHy0bsnnhOox-QDXkFoSH3obQRp6XItcGcOZ5HrtE2NJm_ZJpx52_GkyXrk77fI4sEH-yApd837gyAm5_ttQIu3-i17iQR5x3-qScDtpdLeOebOMR5HoQbjFQoqA-thOwzROs4ILJU1QR9UQ7IQiplBXN6foYBlbmNEn5LFXxptPGvEX0F5aDEM71-ehCMkc8U5EeRbDJjBNH36gH8Quu4XHyomZ2HtVCQZfsN6ekQxkxD3WI-U_8hVs1knULxHIWJv9xs9v6qefh5Oo1zXBe8ftlUq_94m-NSOLF286Drq3Q",
+      "places/ChIJPysUcIGf4jAR8COXqx4arDU/photos/Aa-ngMYsZdzgHE2A4doYbc2-fRstPOO6l1oWpemP3-bez9vwzGNI3IVHoDHXaI7OwfQMfSTC26QVLeWxi_RbGUbKjiwqEvxRkcSgNQEw0zOIV_vYN7CppjlpvmuMSvSvMzHiLCl5rkKdw2mAg4gTH53pQKbOW0qOXDCfpIZvWFBWlyjkcgFbCiAQADZzbi4hC-W1m_NEguMnWmVBWJufzH4PhC5jcLJCHaXjEwvMY5HPGGRjMaOSnTFjYXwlxiFygaOl-jCUKUfBSpSlRaFp3aFZb8_eDY3KQhI-wvlsQLxQoOGq9EDwfQOWn6dIDrfYdC-dKCjspdiJ2XuNdPlIiGI2OpDruybTzIK6hFfeSHuZtP8R6A9BRZtlGuGTWC9cTN-nn4IOCs84WH10pYMQvedZ9fCB4_mC47lD54ysqcW_vo2V"
+    ],
+    "highlights": [
+      "Craft Cocktails",
+      "Live Jazz"
+    ],
+    "approved_at": "2026-10-12T09:02:40.530Z",
+    "slug": "firefly-bar"
+  },
+  {
+    "id": "40d521f5-ff54-4ff1-80a0-12df4e2001a4",
+    "name_en": "Cherry Olive Cocktail Club",
+    "name_zh": "Cherry Olive Cocktail Club",
+    "description_zh": "藏在 Convent 巷弄裡的調酒吧，以「Cherry」和「Olive」兩個情緒區塊來分類調酒，讓你根據當下心情點單。部分調酒附上冰棒等意想不到的配搭，手法有創意。入夜後座位不易搶，週日前往會輕鬆許多。店面位置較隱密，找的時候留意一下。",
+    "description_en": "A cocktail bar tucked in an alley off Convent Road in Silom. The menu is split into two sections — \"Cherry\" and \"Olive\" — so you order based on your mood rather than flavour profile. Some drinks come with popsicles and other unexpected touches. It gets busy on weekends; Sunday visits tend to be much more relaxed. The entrance is a bit hidden, so keep an eye out.",
+    "category": "nightlife",
+    "address": "10 Convent Rd, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
+    "lat": 13.7271606,
+    "lng": 100.53331639999999,
+    "photos": [
+      "/photos/40d521f5-ff54-4ff1-80a0-12df4e2001a4/0.jpg",
+      "/photos/40d521f5-ff54-4ff1-80a0-12df4e2001a4/1.jpg",
+      "/photos/40d521f5-ff54-4ff1-80a0-12df4e2001a4/2.jpg",
+      "/photos/40d521f5-ff54-4ff1-80a0-12df4e2001a4/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Cherry%20Olive%20Cocktail%20Club%2010%20Convent%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJXYrKuqqf4jARXVzllGywpCU",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Bang Rak",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第17名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第17。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第17位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJXYrKuqqf4jARXVzllGywpCU/photos/Aa-ngMY56fgpEA6qahqTfh49n0mTzqzb_ZYjdOfaE21i2ZxZDaMtiYAAxQTU4E7vCwwutAEOl2Bd4ffiCQNkkBtV7dgL3WYmP2Qn0lJAx48vNQ2VuvD_8BBGeHrw-IsS-f1noIWl3Ydx86yW053ROXBMvZPmJQC_4NEI6nhxImigYjQ9Fjn1MseJotHolFYMUEwNvT4rtpp8l016fsZIR8Jx2EAIpouATSqnS-kxuEhmHaFbAZY6YcyQg69PVKcqOLGU_tivchIjPntiv2fBpuKb_qVR7wwbgLpYXyauYXA83b4eci0RtabPbZIGkQZiVFzdlPydC9CvDw5z_a_ajTCysRqVKxSqecNgv7aB-w5WPv2RQox9J0j55OMh01dqQBLfjTVchTnA69Wggeyk2BT_5MW2wdIGK8wEsez5HVmv2ww_jQ",
+      "places/ChIJXYrKuqqf4jARXVzllGywpCU/photos/Aa-ngMaBt6qwsFhfJzdsbTJaodRiNdLV4gBnJISPrLdoT42K3sDChHzMB1Q48xUKwIXDNV2nwJLt6urx9E08bGzZS5m252jTFEEpsufenr4iGPiRIc_r4GHP37q6taDgim75lqXV2n2Zlr6rHt4fl1_rzMgPwkzhbv5BOnKes5PyWe4EK34djZK3IRmYysNVnSX9_dmBUI7W8Ni17Yk9oke-38sEElhm1ZVi-l5DSTG23QA_4IW1E4GJI1rgHd5bYA2-zrNrYGJdD7Pdxy-xjoHO5BDkUqEYJz_XKdsJhxOBP07IVIxknl_UD1nElmyB6qoXPp9PzAD5jWREfPcPXA5pJR9sRSbYb7bfXQRhFcHmVhHXc1USMvxUT6ixB6vVeMTQ4e1o3dhWa2TvXx2kDztGAfFVJ7_4K6dgrLfyGHZ5okTI4g",
+      "places/ChIJXYrKuqqf4jARXVzllGywpCU/photos/Aa-ngMaOeofKZFu4krIvinGyoGnM-k5syqCjECTJEUzoqUYP8ckCUP-Kr9gs7d12iETuXwH_hhR8V3QcHjqrO5hxuo5jhAq5MsRaP0m-z_m-2TChc9NSBGaVGVGz2nLl6r5_0tGcbY7-JCOHIRIhUg-l_QeoC_i61zeBe3DnF07Vgq0LTa2kwzosbm-FP0xwdr0nk7TuApc1-V1sVM03OhP5A1Bam9Rie4LqaAxbLyhz-osrtU7PN46dBRcoSXl-u-VKtQdsvvuHzNUe1M-If20HnHE_9bc6hnQRYoMdkevdDxOFz2KSF_OcWrWO-qXwXMW3dsK3IPaFrlYkY_j7R2WcLdOznJgysGsf0IoYBmqP7fQY_p7UyAdUFoOOrazUQO_7RQS_RlCn0ARUJ243tN7LTirNN_plvwtyM4YCFfpy7-f3Xw",
+      "places/ChIJXYrKuqqf4jARXVzllGywpCU/photos/Aa-ngMamZf5DIWhPS3eHuS0qQXFoHan3cWQHGx6ZjizNcdujWVWzDX0DZjmpbB7mtWsE-7TiDkJIdtz_Gk_T5qub5D5wzdxrYi7lbxE7L0fK8ucYCBQvyERBD5WWhWYT8U9StYDQFU9mdF88rlnn29sKQmtdxcVLjaCk8Fpuvp2trPmZXqavQ76WvVAG-rYuVybr9J1GgI84h_zDXRDYvSVstCv-4da8qqJ8eyBeuglImIX9ANyenwdUQlMGMfcf_M2QlMLz3tZPuD0GSEdLadNi03ATiRLzLXBFJSVzyaVNev-j3KJcg9tAn6HK-vSM4eveEP-OAu6HBLGhFuxU9hSTIYpJz3VgFhEHzCKKGUXa26a024lPzD81P6t1CfRwpdNgjaI_cBiPFKUcnvPdVZmWFgpbHmt-TxDEllre59x2r-twBw",
+      "places/ChIJXYrKuqqf4jARXVzllGywpCU/photos/Aa-ngMZSkjZG6qGFVQcYiqOabA1NsqAV1d74HZkiwOksTY8vd4EDxB7ohZS9KXPUizty7HWIzBxNAYxyjStuIqhuXIC7TDhB-oj4setwkBg8f_ldHwWsmOPwH3szCxqqPzZjKE66Inx1lWDQQU94OfhLaUokXKkAf-WkbEQsUGqm5QNAATV30RjIyHJYdHSFSXd-ae07uI1KtG-uXEU8AIX4w364hwCUWv1jUE_fSoHMUvOPVpIuLb7R4D8ZfUVme02MPp6NYCgFuyphc9GoBkAhePwakDWuRAi_TYToIV-tGtiTc4uCyeNJkCCNfgw-I4tzp740TzV-ff4pB8xXwgTTwWU1L0NvAVmq7BqmYQfrhGzs0UV3RBfrGyDbNjIINDFqMROYn6xocm9k0aVvj40M6jpcT8inCXw7IP8r7pkoHfAG",
+      "places/ChIJXYrKuqqf4jARXVzllGywpCU/photos/Aa-ngMZ87yys_sS9GAoZj977La7GEjG8uGzJ4nW8SH5d-GoJZQywMeQt8-M4nEL9a3ze9MnVbcNbvpiSyTp1gtaKt63ylJFVEdonoTeSdbMq9pvWuwrTERg_jLjvvsrY-wiD3N_PrW6LfDk4dl2cB7U65yRHmV7dMBOiIyoaeO3UqxO8_3HhfxfbuLsynvZ7MzjkK4Mz4O6qG-_ijyFVrThdQFGjk4fKtex5KCdPAQn47sO9O1S8kDE3qbqWCA_UPMmwGmnE8ZWrkSnbh2z_6Jvr6TIur8mjR2VTQhfrBHDuwu5TpGd1WieUQMxOro76lwZHXoV6rHvjTJkV_a-9v_xK2zg98sv2XcNzyJ9bzJ1Lrnj2EMjYjyaKoio879O3cEWMnIzFmpUmCDAG8vZ4XPgqi5H1Rst68P6BflblclDQTQLCLw"
+    ],
+    "highlights": [
+      "Mood-based Menu",
+      "Cherry & Olive"
+    ],
+    "approved_at": "2026-10-12T09:02:40.544Z",
+    "slug": "cherry-olive-cocktail-club"
+  },
+  {
+    "id": "79a92bc6-1efe-4e03-a505-3270f3b21e5f",
+    "name_en": "LA COPITA Agave bar",
+    "name_zh": "LA COPITA Agave bar",
+    "description_zh": "位在唐人街的小型龍舌蘭酒吧，專攻 tequila 與 mezcal，選酒清單長，在曼谷算相對少見的定位。空間不大，座位有限，多數人站在吧台或到門口喝，有種隨意駐足的街頭感。調酒單走精簡路線，Paloma 是點單好選擇；調酒師會根據你偏酸或偏甜的喜好即時調整。沒有廁所，附近停車場有免費公共衛生間可用。",
+    "description_en": "A tequila and mezcal bar in Chinatown with a long spirits list—a rarity in Bangkok. The space is small, seating is limited, and most people end up standing at the bar or drinking just outside, giving it a casual, drop-in feel. The cocktail menu is short and focused; the Paloma is a solid pick, and the bartender will adjust the balance toward sour or sweet depending on your preference. No bathroom on-site, but there's a free public one at the nearby parking lot.",
+    "category": "nightlife",
+    "address": "205 Thanon Yaowaphanit, Khwaeng Samphanthawong, Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
+    "lat": 13.739001799999999,
+    "lng": 100.5080485,
+    "photos": [
+      "/photos/79a92bc6-1efe-4e03-a505-3270f3b21e5f/0.jpg",
+      "/photos/79a92bc6-1efe-4e03-a505-3270f3b21e5f/1.jpg",
+      "/photos/79a92bc6-1efe-4e03-a505-3270f3b21e5f/2.jpg",
+      "/photos/79a92bc6-1efe-4e03-a505-3270f3b21e5f/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=LA%20COPITA%20Agave%20bar%20205%20Thanon%20Yaowaphanit%2C%20Khwaeng%20Samphanthawong%2C%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJlz5iHR6Z4jAR8GFCTIGO3T8",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Yaowarat",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第18名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第18。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第18位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJlz5iHR6Z4jAR8GFCTIGO3T8/photos/Aa-ngMbwV3HGsWzN6sQBzCc-z6GzHoB7hC66W1x9E1YOesCoz5rK-5VB9J_NK-gSLrV6dmxMdcpzs2EhTwSY-ukhblbyJRyMAgXyPv5Xfg8SvqwW1o0uchT9RLe4kAq5Fi4tIYeA9B0eqGIM_fpvwkdNY5DB4-Ks7_Qmi4PXy2PdsLtnPcIwqr0BIxMTpNOkfT6zqdtPXzc9uGefQ0rlxW5p0_ce1BsZRcgXU2E0SePcICJoGa3ej_40Cb4e8It8OA1-zdO7yHazDPNp3_5_7krnSm73eT63D1ZvrCGjau9OCzXRxZ8UeiKEF3k6jYysN1TzUjOQE30gADEwPFtAr4lOn_6po0Iio6-3JMST_EBDL6SURQJviZXk3RY4LPm7A6DQlfwW37V5CPs6vMjpbHz5HHpWghpFEPtQiH8stzWuExNNyQ",
+      "places/ChIJlz5iHR6Z4jAR8GFCTIGO3T8/photos/Aa-ngMZF4VrcKppDoXn0sDfZavq48ySc5HLPaxgMe-ulVIFkKmhFepslWZkXgjW_l9E-cg8LVphLfpnE6ndbcR55-NGBy7_6Ch1-Kw6iETZI58iuO2Dh7Lvvk12a0Sdj5NOW28zDnJBAWL04BSAVZDi006k2QU3X75VPPeD0rLyCqa5Pyhzr9ZK6XAYlgKvRTG0sQTBjZTybEcp5FynB0zxK449CtJ3uIMePYkIKLH7p1t6FSoggYthN_xuDwgrR6vSry1R6UYmQug-44Dc4R5s7f5wT32LqWPZHeWseGfMmcJS-Zpu8H-ByOZaYDL5vMT461DtKOecUBrCE4Rk0IMisWMHWjPpTl4cNwzg8F2AHoDe4y3WfuWpFhlFblEa2eQOjRhyQrsW1G1otv-t7_7ZVsh_v30H3Q71ONhkV_fAbL1-cNA",
+      "places/ChIJlz5iHR6Z4jAR8GFCTIGO3T8/photos/Aa-ngMYJW46w5n16oH1DAOGrtiZ2XJEJKgmUC0VBSVLVoQ70zSjUPYh61gthXm__3H_qAZ09qnFP_EPj2nj5ckcV9ty_Oc5ZYKheb3qA70TMZ7kqZafhyQTuf-u3eGfmSX9OH7DfKxtKW4RlthYHhaj-O_rGzmw2KQUKUL_vIAGq9RktdgSTB7QlzxFPJyb_EIROYCo34OAgTh3pm1bOvJ1Hs8TJJPPJlErWzCd0jKpBjI0B_4sG9qNWrUlPeoPYmjYkFh4Xc4ddpl4PBG1F-DV-vg2-nYK9sXp1TlaDJlXtaTYepOL6LZkTcKzRxjz1tF61FRWpG32-Zt3adCtsNeCBvNY4MlJzfepke4hrz1xl5BegX6JnT2lwo6wGx40pK5FbK3gC2wn5MKHV64-Jmx0_XsjaUeQAHAmpPspMda_OyVsmgQ",
+      "places/ChIJlz5iHR6Z4jAR8GFCTIGO3T8/photos/Aa-ngMbP8IUNM7JwyR3ezi3VZXTGUq3J_PUMEi75kw5Hh8-EWPK6cXYSE7qrC_NlfEFuFSASsBLM10tTARyTfhn0zU5GQxlgU1TTLdOUtfkldrPb1yx7KQj_pK4IoSLt6AkZwCfvZd3ltg0nUrEToY_Q82c-nmZWxB2gexrkx837K8uYnZG51CWKNQFOZnDF8f5x3hEwBtXqhIAa-s7aP7UrkSN-b2Sm-swn-9mlqSYSWDmiVXSaBv0k56gGh8RbooU6jBCbu2ZaiaTUH2BB_meqnK5U1LeNs62rg0gIhXoJNji_fmWpB70Nk-lPpdHV0s0Oi4eAGbREB7lw1U11nCiXuJJyc2HMmhZpZ0NazmOUUjKBSCZoYg-6XL0tFl2a2hBRLDFd4deObng55NoprLYv6ondFrKwq0bJ6M09cI2PVledtg",
+      "places/ChIJlz5iHR6Z4jAR8GFCTIGO3T8/photos/Aa-ngMbty5tbYckcYh7gyJnN0xfs1hNN8eyJ0tSCLC6JDDvx5V37r7SFufvg3nohA_YMmzAhNlxfQk3V5Fm6t4xks9FwOU3utFsQBeFB1QwkxRpj8Fuj-0FPVfvxZUyBF6RXwCdk8hBBDzGZRuSRWydkYMAXXXcMCFMNVbpN4DRlFZpDLtb56RgLsxr94PC-If_aX7KBFxQk0Ly2mR-9qxeSrogERJiec9v2JMRUdvowAPa0xpps8AxrsFJAG_zvy5QAtccNkXONdUGmYtt5RnIFjgbHL0nxsPVOQKMB62yBVSnu3k28f6_zOX2IrjRFK61JdCKIRDx3oxUndqeNQtxoMALdVylQJLwnUoepMIUR9UfCODAkUOlplGNyMAWdKz2Ds2o-z3OREd-zLLLyDHph_Z5GGi2SrVeyskj2NhN0TrAQ",
+      "places/ChIJlz5iHR6Z4jAR8GFCTIGO3T8/photos/Aa-ngMbw4dajsschxW97e9HsQcTny-2HXgzjoLQmHjHAtWEPOEt5pcxHQ-fZVsRXCJNbDQ8_kgCqLaSGqZh3nu_erDOUHQuwWVgQzkyeQDNPltEoyEIgLE7OQ2_IOWE9WcfVAjp1GQphqpRRA_d31hul8nd1FAAzTSEpZdZ4GNNvhrlxSccCJHx0yh81iBHViJoMTH4qonsAVHrUmUh41CL2gsvO78l3-YMQr6vEwQfXM5z6YeNt2hmDN1NYlouhUNjdqNuSr4y4HnCqGB9rolh1qJsdvTJ-AwMdYSeofgvJy3wVWI5uR4YwusZhcTE40OJ62I7RCOKQB5RO1mt2QOEo2zTnJWvDWMTxPGzOVuQTPAc1L9gXHdf-ZFXIHglxFUj2oPvit_SNT9pHhRLlT-DdJbLTcbsg18zrFheAQlDlKKkB"
+    ],
+    "highlights": [
+      "Tequila & Mezcal",
+      "Paloma"
+    ],
+    "approved_at": "2026-10-12T09:02:40.559Z",
+    "slug": "la-copita-agave-bar"
+  },
+  {
+    "id": "4a4a5ba2-23f1-4e49-9520-8465e2e6d7d7",
+    "name_en": "Ku Bar",
+    "name_zh": "Ku Bar",
+    "description_zh": "藏在 Phra Sumen 路底的一棟建築三樓，入口低調，黑暗的巷道走到底才是對的地方。以調酒見長，Dirty Fizz 是點名度高的一杯，附上燒焦玉米殼一起上桌，氣味本身就是喝飲料體驗的一部分。風格極簡，空間不大，非週末時段直接走進去通常有位子。",
+    "description_en": "Hidden on the third floor of a building at the end of a dark stretch of Thanon Phra Sumen — walk until you think you've gone the wrong way, then keep going. The cocktail menu is the main draw; the Dirty Fizz comes with burnt corn husk on the side, and the aroma is part of the drink. Minimalist space with limited seating, but on quieter nights you can usually walk in without a reservation.",
+    "category": "nightlife",
+    "address": "469 Thanon Phra Sumen, Khwaeng Wat Bowon Niwet, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "lat": 13.758850299999999,
+    "lng": 100.5036731,
+    "photos": [
+      "/photos/4a4a5ba2-23f1-4e49-9520-8465e2e6d7d7/0.jpg",
+      "/photos/4a4a5ba2-23f1-4e49-9520-8465e2e6d7d7/1.jpg",
+      "/photos/4a4a5ba2-23f1-4e49-9520-8465e2e6d7d7/2.jpg",
+      "/photos/4a4a5ba2-23f1-4e49-9520-8465e2e6d7d7/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Ku%20Bar%20469%20Thanon%20Phra%20Sumen%2C%20Khwaeng%20Wat%20Bowon%20Niwet%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJ1bEkLGuZ4jARyyJQM90XSn4",
+    "rating": 4.6,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Old City",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第19名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第19。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第19位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJ1bEkLGuZ4jARyyJQM90XSn4/photos/Aa-ngMYwdBvhWzH6TgfkRU0p0CCg6jI-N7MiNIBQkx7vT3-0cztddUJfQcln8c8qsNbv_Q-2ty0SyX6X7N15pAxmoPGQtGukvSuBnAlJ070xVG3r5T7dcIyKJLLMfwx_HAUOuVY_mHDZzuT0K6LkDOg-HyC4AEZxEJqZ6b5bv8xqCUWMt8v4jMPywIjEFipJlQSgjOCXEUeAg8pdyWaLCNmPGUlBZVKWAXw9wPbVidUuOP1GWW7rK4ocaDs_iDJcobcsrNMi_IkYu_ffvwH4-jGYJ8my-1F4NVmCHcLBE2KNaiLEwDjuMjI581tCj8NSewtsOdRkajbuH57k3qjbUY93nvmpsYy46Du2jGAVTZYJLS5YBf3pozo2Mxe9dHAmTQ5EK8rwbLXHeh6ZXFY2oafuPvFMcsTj",
+      "places/ChIJ1bEkLGuZ4jARyyJQM90XSn4/photos/Aa-ngMaIFjmnsffUvYdUESkDtJIrpihLEoJx_KD-84O8qfP1PIL_TUGGUOqPIe6RAic8MU1XgCkZi12JE4JQxl49lBorUkCXXw54dBHs_c6EKTxMYNZuvLnMJTqPtOZb3_I6R1lNPd98l2WzoIqn-KNMDCqJ6GqgmGVUyU6OpFdQwuk7gzJsIrR7j41mU_vrgAKc2bqZ5TZclPZTUmyuxYs51hyBvnWxi1585IkQWmZxhbIwAtqYZ8gCNplq4kPRCMKUvh6bS0SG_Ie_V41u1kK9N1k4dkzhaDVA043A54QlVjXfWTfwxqzh16-ksRMqpSQeHEKVAuDBl6urBBKWOj4BZNcyKR8BZKzZP6xerdGMOVRlG0RxUudEHoAJ1gXA_r9s28h3J7Waz_kEWIWUSUnvk4Jdky8",
+      "places/ChIJ1bEkLGuZ4jARyyJQM90XSn4/photos/Aa-ngMa3e0anccP_iDO2Vc8PTS9lV2W04HR-8EjFyjCCrGSlNjS64HG_Imd70BlWRX6uU3Ss_NI7b51tWh9kAsMCYozrqwPSe3N_xa512FZsbGQXlGntjyYFoDctkECgIqC6Vu-TyX18Z3O3AaYGYF2Cxo7VvYOTfNrYBI11DTalfBRiU6dZTYaVXH4YkRaLRF2RYKZ-k1MB7wjMPxJfUZtcBgWteFxc4-mDd1U-sr3t--8IJMet1EYO4fVstL3ff8gfBKV30jX_zorOEofpLDF3O62cJJi41fhb4PR2VSAO6g2Ing35ramkUDTIKR8nqNMHq_OwPfRTSUANjZVpCn2eHAzre-Bm4NQiM4MK14EBGj5s4BoxQFSFUxE7lxObaDz3pDzlaEZGyWNynTD4cOBHFU1IOASPpuyxq2_fn2EFtoHUQQ",
+      "places/ChIJ1bEkLGuZ4jARyyJQM90XSn4/photos/Aa-ngMYfzyIinJBrEZXblv0P7fA6S_HaTEw_mLvC7-HkCAEYaFMIPwgW5dZjnxI6LoeshRNOVqxhrvJfKgVGNfD2-N83XNJkF204m0sCin7KXk3PkB7rwo3KVxxpLfU-xudemIQ9bXbiS-SV07aG9NxmxDadReSw6LbP0q1RZMGXS5u--tkF-ZVae8anvdHf4gwkuqJfpz0tXzorE3tUoUlXVwR1OWOmL489ZC49XqERj6g7N2yKbdfbPXcsVbjmXCHmN1OZuzGBw3llJM3DuWIgloBVkupoAs6a21MwQBQoLZ0pLa0bOvwUypwFgcPOK150QnR_-oLVYaMpqPMHoOtbwSi2jy8OsvYzjhPbGqFtL8VDSPReRUadMMw1AI4p9bCembkhhsrMEKkLzXydHpR97ycNMvs2f3d3qCqCxe6EvNJhbA",
+      "places/ChIJ1bEkLGuZ4jARyyJQM90XSn4/photos/Aa-ngMaFbKojosb8EI38Yy5ufrb1qEPuGplFWfBtr47eMw3VlPeyOLixafqsbxaSr8Z40O1FLa1u8ILsd9teEgKvNdPk63MRXb5Kznpy5OPpVlli7V3lXCpo2juf3yXw6dGK465rcuGuk5KZolKdtNWARaZ1GYi-Z_245PYJhAlQ67kXlHwfJXyLFCgVfLh-2NzZ3Nylfa8yNpdDzXfb-1v3q_QX3BUiKiv4FSBDl-YF7N5Km6_OR387NluL4e8hudTWWkkQUdxnBAb57UIwd4MMsawBqnX0nYF_fUmYuyHzYIxTMaRAv3DmDPp9YYj2Ae3ZlUK2Efq8i9VPVnW29pNxJcTX-_x8ZFCNI26GhjE0TaWzcj0gQenHNUeFzIZCsH2Bw_yFCnmd2si2n5Aqt6rFy5aUt-rnDtEGXPkIOfoI7U45-Q",
+      "places/ChIJ1bEkLGuZ4jARyyJQM90XSn4/photos/Aa-ngMblos1LF0j7Qgh8ebB4oxGYsQUXHW0342NoDpGQMc6mEdA3PUGEs4U6EpP3FUxAk9A7_zDaq_UgpivSok3LZbyFu5b04TVuy8SOuuyJ3_wHyF-qEouqk_T0Wz99VaaVWBbZI7ttSyuJUhvpK2fNJsc0WOV9ZkcTkyDjqObpNDmqS2a5qN4u1vZxV_s9S6-DWMxomPRAtqKRzyoLmGJTdGPJMMWpC46RenXW3gTKOKBlI1n-E3nwCi-xvng3jzWViYo-9mfeavdrVJeImt8DZz1EeAC1V4-cQxuzj90PME3l3SVpZHEz5Brtfe2SDUPKQ7ljTYpu6ForTIYhRlecWXc9nm7ESynA3TVKCSdx3KhLiw2kg1BbKRS4s7w3_Lo0DqqWGMJ-x1x5y2oh5kp9q7YKZ2QLoeU"
+    ],
+    "highlights": [
+      "Dirty Fizz",
+      "Cocktails"
+    ],
+    "approved_at": "2026-10-12T09:02:40.571Z",
+    "slug": "ku-bar"
+  },
+  {
+    "id": "76791b68-d819-4c7e-b2f9-ed2c2bbc12fd",
+    "name_en": "Club Salva : Record Bar",
+    "name_zh": "Club Salva : Record Bar",
+    "description_zh": "Modern-Day Culture 的姊妹店，藏在 Sukhumvit 63 巷內三樓，主題是發酵調酒——酸、甜、辣各有一款，其中 Soft Riot 被多位客人點名。黑膠唱片從地板疊到天花板，駐場 DJ 現場放碟，店主本人也會親自上陣。調酒師 Oath 會根據你的口味喜好即席發揮，不知道點什麼的話直接告訴他就好。",
+    "description_en": "A sister bar to Modern-Day Culture, tucked on the third floor down a deep red wall on Soi Sukhumvit 63. The cocktail menu revolves around fermentation — sour, sweet, spicy — and the Soft Riot is a frequent standout. Records line the walls floor to ceiling, with a DJ behind the decks all night; the owner herself sometimes plays. Bartender Oath takes drink requests based on your preferences, so feel free to skip the menu and just tell him what you like.",
+    "category": "nightlife",
+    "address": "70 (Floor, 3 Soi Sukhumvit 63, Khwaeng Phra Khanong Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.724737200000002,
+    "lng": 100.58480449999999,
+    "photos": [
+      "/photos/76791b68-d819-4c7e-b2f9-ed2c2bbc12fd/0.jpg",
+      "/photos/76791b68-d819-4c7e-b2f9-ed2c2bbc12fd/1.jpg",
+      "/photos/76791b68-d819-4c7e-b2f9-ed2c2bbc12fd/2.jpg",
+      "/photos/76791b68-d819-4c7e-b2f9-ed2c2bbc12fd/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Club%20Salva%20%3A%20Record%20Bar%2070%20(Floor%2C%203%20Soi%20Sukhumvit%2063%2C%20Khwaeng%20Phra%20Khanong%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJS6WMVryf4jAR8M0cmYWoc6g",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "trending",
+    "area": "Phra Khanong",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
+        "quote": "The Bartender's Edit評選第20名曼谷酒吧。",
+        "facts": "在The Bartender's Edit排名第20。"
+      },
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/drinks/best-new-bars-cocktail-menus-bangkok-2026/",
+        "title": "The best new bars and cocktail menus in Bangkok right now",
+        "quote": "The Bartender's Edit曼谷酒吧排名第20位。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJS6WMVryf4jAR8M0cmYWoc6g/photos/Aa-ngMajVxMnv9jNXSphPHyXU99ZalvCNyO70HPiE9E5gIRuqPf6duil-XfuuMfTDLcz8QziJwAHAL48FUpGbRbXWgNxRRTr9bxl0rKs-rZMe03KlFFGxcnGssSGRKJCHDTxANoHXuJypA0RtL_qn5LzHNOkdbXQugg24vu8FVnRExKKgRU0L1J7EO9kVS3m-S3VWpEKLxkEpyWivmL_QFWoK77GWOFaDK8wLNXCQYYFTdQ29l0T3XyMLo77qkDBnKBzIGVr0pEF54DwwHKR06aHVi5LCZoBKIO9Vgwc7vE7eFv-G-G7gx7initmov0mH_vfJEFI1ImuteKsYEBAzgpJroB3zQ9g_Gm6wkrwGBEvWuzmILPCLa5OWH0Eo022IyLIDod5EItMpgQ0KmYG3hPQt7tgFDDVTHADOYlkLs2MSzX0",
+      "places/ChIJS6WMVryf4jAR8M0cmYWoc6g/photos/Aa-ngMbFdRISykHjtuw1UnxbM3L6jXIKIl-3bFTbLwuuSDIqgynXuPAX6XvzGEc8qnx403ECwRHkiHBeOynzZ-Tve6O8ORoDiC4bdG7PKzBbmgNJyvvcsi_iUTzQOc6bZdPgn8hgwWrGew-dHOozBp47zgt14ixUr9iYa5E85_rVJm6a8hSf9PHJYcm9hNqxudG8vQkwK9y8umVMGl3T4oDCMkCrDOz1mDvbC0CHYKw-nhMKupkHRGVYSDb5_zalP6p_Br1YFfPbppP7BKChWqKiBL9ZMm6dEGkB5z-Kg3yTuKgb3I4h7RuY0CD4I0GdloRp4elqQBonc0fZ-eTZyjFCCe6VWsUA8YZltsLVlkEWhzgRSCbPp3ZUMljAILZ-6ucnZmFAP4X4yJmGRbtLOf0p1szIH0VbGXc",
+      "places/ChIJS6WMVryf4jAR8M0cmYWoc6g/photos/Aa-ngMYlJBpG3a9sTZMMpe-RQ-UYwTSVY_nwlRMlbMtlod1H4cZQR7US7ibpjAN9DABk-L5_j4bd81-1PZl8nnxNehNcBRegsIGw5BdeyACV0_7PJUOarW7RD87wj_ao9Y8nJA9TYW75GFi1CPKz2JWqcNZnQWjwJoidsqFXtTWXdmv-atpSwt_4N83zrhpG0ly2NKfGHTPuJy7OVrtYGhNouq3AcvZTGLPKbWrc_IgZ_Wq6xvGdtMXkLAEGEX9E3IHqibbtuA2d8q9QHnqRm3jJGFfpbwoFe4YL2j4KZEAUzU2chPHq2HZfKGy2PogISVpA3fnSGmmAsq_iCBmOD-Ji_T1csJ0Hh88YfreMv8d4-770dtCKqExH7xd-7huzm2xYbNeovJ-y7w7b-OxkLmuBYHjXtkvJ-O4DGj7KCNuCUKmh",
+      "places/ChIJS6WMVryf4jAR8M0cmYWoc6g/photos/Aa-ngMYbMO9R10PGO_MZsZKVnlT4moED55I-VF8qEp7e6JPz6Qid5KnHVwwMXuOuV3VAr4t6EU1AcSZr6SyDfSkBuNPIA8_K3-s_Jb8Qqb_NJograL6LjiZ7yQqPvUxKRzQmoNEJEh0yXDRSFOKyCCXRPTF1KdpXGSOBmDyHsQLSPn3Cw43HWci8PlLLOhs3oXAZWPYhoWHaMAm2E_66VArks9VsIS91bXJFX3dJ41rxyYACNwPpzCR_LsHAB9jJKHMREhYzs5n6EwY_VEnnInlAfCL9Gmp5opFIruH2Prodg9hyJSs5oQzaBhkoK1zUJXFkQawmjnp5ZBXXjeQMe08foBOu2adztcYYHrzs6Opq2jqXdpwQLlV6_MBwv4WwXmmpFy8yFeUGzFfWTP2xUsVSQGeUFWsvgphi-1x92cltPA-A",
+      "places/ChIJS6WMVryf4jAR8M0cmYWoc6g/photos/Aa-ngMYGEs4IrEUJeB7sbN-XQjHUxRgU7gNSpF2a7VSctGcHz-G9NcwWCKQojREThoDHC7qticrofBny48CELdmfmjz7ca1gRLkYwi7lQQVXWa-H4b9k_9TaWXbfwPojmcb9P6ikrtGYOOQLFPEXc5Q4XH1mRQppe1pCv8khHDbUBy9rM3gX4WowzVci10ZCsrCPLiNWalyU7j1OWJxMrACev1GzxySX9YBNPnxjStstbWxSNfAXT20P7hLYaXFCorG3WS3jV6kgV8oLRz-K4BRMMZl0nE0EOB8u34hEi5hJ4GzdQPRtwnfkpk1o9v-84KFOP5QWj5NcPmmRWJfPxLqogJMGiYwxQ3Mib8VnEMEd46_bHw14GzaGaD9bvSlksJESp238XFJzOE9vPueP4pMquhyfrw-x0xVzmF7gIAQKKZE9yw",
+      "places/ChIJS6WMVryf4jAR8M0cmYWoc6g/photos/Aa-ngMbs2wuX5_suVtZ8EBIxSBkqBS4mcwAwxRBtfXV9Mi4OGk3-QTFVfJ7BH6S_TnkQ--q5NXKXYdnPbdfs_Ygg0wQx_YDDmLSczZs2bfYwuZoweGijJ7njhuX1TtCVqvLfyosR_4QjRnJwx4MLMesovx8oR7U2ZTdHjWnoLjhE2AgF4_FeNrG1j-VfkxSnzqU39H221J1atN9GHA8YQ9p0Xuq317YjY_d8TEOErTeEg4mf1H0po_GPnJ1k66PNV8fa8egX0TZX_oYjpUmkT1D2RQ-3s3T_DLnsu81mwJv7KMR2-Pmg0z9sD4yPjbAs9YvtDVEVKSju-vy9Hjna689lDLR3sgHgFO5_-LhRtkc5QDYz9lqpPdkmXQ-2_8ozk_brN-x_P7eZwnfgT_lhgKZyWuvjx1CZlJUtBDsCtjqwNhPEuQ"
+    ],
+    "highlights": [
+      "Fermented Cocktails",
+      "Soft Riot"
+    ],
+    "approved_at": "2026-10-12T09:02:40.586Z",
+    "slug": "club-salva-record-bar"
+  },
+  {
+    "id": "b3affcf8-315e-4ef0-a3b8-3fea2fb4b65f",
+    "name_en": "Harudot",
+    "name_zh": "Harudot",
+    "description_zh": "Nana Coffee Roasters 旗下的小型分店，位於 Sukhumvit Soi 22 的 Makro 內。店面很小，座位只有兩張桌子左右，Grab 外送單量不少，現場有時需要稍等。咖啡品質維持 Nana 水準，濾掛和義式都有，也賣少量甜點與三明治。想體驗完整空間感，Ari 總店氛圍會更好。",
+    "description_en": "A small Nana Coffee Roasters outpost located inside Makro on Sukhumvit Soi 22. Seating is minimal—around two tiny tables inside—and the counter handles a steady flow of Grab delivery orders, so there may be a short wait. Coffee quality holds up to the Nana standard, with filter and espresso options available, plus a small selection of desserts and sandwiches. If you want the full café experience, the Ari location has more to offer; this one works best as a quick stop or for picking up beans.",
+    "category": "cafe",
+    "address": "Makro, Sukhumvit Soi 22, Khwaeng Khlong Toei, Khet Khlong Toei, Krung Thep Maha Nakhon 10110",
+    "lat": 13.7315914,
+    "lng": 100.5649504,
+    "photos": [
+      "/photos/b3affcf8-315e-4ef0-a3b8-3fea2fb4b65f/0.jpg",
+      "/photos/b3affcf8-315e-4ef0-a3b8-3fea2fb4b65f/1.jpg",
+      "/photos/b3affcf8-315e-4ef0-a3b8-3fea2fb4b65f/2.jpg",
+      "/photos/b3affcf8-315e-4ef0-a3b8-3fea2fb4b65f/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Harudot%20Makro%2C%20Sukhumvit%20Soi%2022%2C%20Khwaeng%20Khlong%20Toei%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJUUA_C2Wf4jARK6jtB3HoA3o",
+    "rating": 4.3,
+    "price_range": 1,
+    "tag": "new_opening",
+    "area": "Sukhumvit",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/best-new-cafes-in-bangkok-2026/",
+        "title": "The best new cafes in Bangkok right now",
+        "quote": "NANA Coffee Roasters 獨立品牌首間獨立門市，設計優雅、咖啡與甜點精緻。",
+        "facts": "位於 607 Phet Kasem Rd, Bang Wa, Phasi Charoen，面向 Seacon Bangkhae。招牌品項為 Mocha Panna Cotta 咖啡與柚子蛋糕。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJUUA_C2Wf4jARK6jtB3HoA3o/photos/Aa-ngMas4wizGwZahsWsX1w8D9K_iCoW_4-P1o3TFuS_uux4Cpk7zosR2kPBgV-Pq1yjrD6fDjQcvLLs-UV146fh6mkGBUcSwx0dVTAi6cWg8mHfzrCcwR0DUS0VYOoOCPK44noYTygDm8ZNIRuK0yWDLz0IcU8L5r4-RRnhkGkkCIcOImIcIBqNVlfmWT-peM7n3M3WuAogLHZN4DXrxv6d_T4ECDbWytjPIX4XqazmXAXT43DCH67JnzTAWqoJ_B5IPycW62GKfljFCelZek3A4-n-P7-MdSDJlBPbwF6kf2F_cO2SLYOvBDHztT7WOQWEwkD81OpHabdh5FyTUeBaUxD69vNxmKng44kaFwnHlIt0_H6US0vXh5j3QNGpwqvXB_C4eeKXef7XlXQqQJeY6lvW8HvUXFTlsBIGEqA1jzdj8w",
+      "places/ChIJUUA_C2Wf4jARK6jtB3HoA3o/photos/Aa-ngMaV2Wz1WUYEwlDW50RqbRrQ6xoqzjdtzVht0RO9DrEvXkFCQiB4k8YecHui73CNhdogS6Z2I3eFrBUQ8PsiNKqiWy4bEWDai-VZU1rPCxRCeoxBmfbjoFJm4y-fh-VPrQEXNL296_O6qkFycJPVVnWtgbAkLyLjDkqX-swdq94nRjoegh6lpHTgBKdSdU0acE3QvF7obfc-WjDvauLMsLDpKmBilzELl9mE6z_afWi1Zek0jcRwzBM8Sh_pyaifYCxapPAFIQtY8FvEWc19vXWLM2i67jdwhlfHmg_6R_7y4LosolU3O1EqO1NB_6S3Ty7Kvt_1k4wYgMkXd2TymYvWd5jxig2oAY8J04_6hllY9LwE7RL3G3rh_RXWvLIaaxn4opvnn2NMWFAwx7tTUjDxAR8",
+      "places/ChIJUUA_C2Wf4jARK6jtB3HoA3o/photos/Aa-ngMZqfB0y5a7Jx4ld0qr5IGe7nj9ua-M7fp-z8ZT2Pe3k43kMw4J_NNcRoby2_JLVQWqiNAIPfX4UKDgG0_-ouCamv3Pqx9DkPNljLfTWTQuyS6YZXiOVf7iU-jlOwuf3ttIG1ATEbCEm6s9lKIOp3bL9dLBXzVwZ0QfOiQrkOFaJJkw21qJPu9mvwynZw88_-mPRuBNvTDJAC7FvpWkUUhiTEvxtce83f2b72RnfdZPtQB0D5qJA74C_kj-bps81ecve_MKOznUSEE83KLejcCcrIRef_3bnQ3EvHPdXZvPTGgr7xqD2KR5_dbnl47xGfQKbt8dTlBRig9xqwlsgFTCe3w96qtS0oe4SJjbUtmSqd9dv24xvYzpwr6G5xAkIJR7SITpQVSAzEu6E73UR-1U5ctQ",
+      "places/ChIJUUA_C2Wf4jARK6jtB3HoA3o/photos/Aa-ngMaNruMZZAii_7GaZoSa33bLsoZDkPqVfIWI_C7r-fvPb59L3vO8ME8b4TbiPESbJ-QLbiMPR8Kp8zQ47puHKlVuxTANnYduiJEMiTpEYRmvpHZOp-1XrFW1IigOIgqbvd4uIn5UNrUpu2YC60UqfQXK1T53uc-dzpQnFuXHxcTpqPA4EdBrt2Qd9EwF69gvqY7TkLM_6wJKKIFxJ1MPRhWaHx9EM7b9ihmY2LrztNsWQePNI74lo5L9QgJ85F5ieGyJF_Mp5prgb5_mdE9m7VqCk2AYCGwSfWGC9aQhlD6SbhK4YVFGs-4yqX5wEL98-L4FYN1TBB46qUNNLHImYqKEeJMdAlXVTKyIVfRsTb2OY73JvBZjxssqZHcAr7Dhqjd_Jbzr0nPqyT2DuVZCIvsp5pY",
+      "places/ChIJUUA_C2Wf4jARK6jtB3HoA3o/photos/Aa-ngMYNybpxfgPaJurh9hoWUSIn3KzXzMY3eXk3bEbTVgmsrQZmtn8kEVvhuEZMBIhavnrCx9EFjcCPz9tlvUk85ct2cGB7htV34oTw0dRb7z5vZkQSjo7krda_V-MgkU42bLNQC8RRklqFirF8_FLNtFfhQKWNUaCNuL_uuq5NgI7JOZpZkZlJmvm9TI3CU_4ER8F3astrSrCsZk4_Q4gvwkksJe8Uzpqi1NfPbRk9e6zDgNQDosB01KmW774DsavLLQVPC1tiaLncMC02JpqWsWoDshWQQfS0NLkNPw08mmlxz5bEfb72fbEb5Aa54f0dYmGfbjbHEDUCf26x4Gmay5OX3qxzGFemSefViRhegh2GcySEpdGH4Zgk26KPVS4CvmgW4GdMuV38KN7jk08KvPRPdMAp-UCKaMKbEJSc5CRP6w",
+      "places/ChIJUUA_C2Wf4jARK6jtB3HoA3o/photos/Aa-ngMZp02EWkhHMA3nxaESblvXQUVZO9c-rPCb1ZcyIQ6UBADaFPPNXTocNxL0FczT3YsQiDhDFHg73OGL8ovm9Ro3ISemEHPe5eD5mEWrg3Gqq5787a5pjBLWGbyUs0df9O3WwFhS3fQgtHKJU28TSsvFogzc4kDLusjTKvTZ-zDmH7rsE_KDftqzzvPtvNKIzqTq12g8qlaIM8fDuhR9POK1z-mMvJm0nL5Vbp1tVC0MFkK-Fn37Ie9N6sgkOGYJXJZnwvOJqdvvfk0NEzSWmrLlTrSypfZAHfjRBOjP7RL1Eb0gqPN3ULbC85PElqIC8dNpkZ-NZ9GQcBCMVkorxYFG-aGFkI7tKFshy34ciJKP2C_m538yGpseeT4TG2r6G10PbfY6qUz0XkHmolXZ2qpmEUbV62aaE21jo61xNpdb8Zg"
+    ],
+    "highlights": [
+      "Filter Coffee",
+      "Espresso"
+    ],
+    "approved_at": "2026-10-12T09:02:40.606Z",
+    "slug": "harudot"
+  },
+  {
+    "id": "dfd9e0cb-e2dd-41ed-9195-167843ae11ce",
+    "name_en": "Klean Khao",
+    "name_zh": "Klean Khao",
+    "description_zh": "位於通羅 Chaem Chan 巷內，Klean Khao 主打健康米飯碗，招牌有 Chicken Pad Krapao Bowl 和 Lean Beef Bowl，配料選項包含酪梨、泡菜、烤玉米等。飲品方面有甜菜根汁和百香果飲。老闆 Mike 親自接待，不少客人反映用餐氣氛輕鬆、服務親切。",
+    "description_en": "Located in Chaem Chan Alley in Thonglor, Klean Khao serves healthy rice bowls with options like Chicken Pad Krapao Bowl and Lean Beef Bowl, with toppings such as avocado, kimchi, and roasted corn. Drinks include beetroot sunrise juice and passion fruit. The owner Mike is known for being hands-on and welcoming, and the vibe is relaxed and unpretentious.",
+    "category": "food",
+    "address": "69 Subdistrict, 4 Soi Chaem Chan, Khwaeng Khlong Tan Nuea, Thonglor, Krung Thep Maha Nakhon 10110",
+    "lat": 13.738939499999999,
+    "lng": 100.5871729,
+    "photos": [
+      "/photos/dfd9e0cb-e2dd-41ed-9195-167843ae11ce/0.jpg",
+      "/photos/dfd9e0cb-e2dd-41ed-9195-167843ae11ce/1.jpg",
+      "/photos/dfd9e0cb-e2dd-41ed-9195-167843ae11ce/2.jpg",
+      "/photos/dfd9e0cb-e2dd-41ed-9195-167843ae11ce/3.jpg"
+    ],
+    "source": "instagram",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Klean%20Khao%2069%20Subdistrict%2C%204%20Soi%20Chaem%20Chan%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Thonglor%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJA-HrR2Of4jAR58K0zir0luk",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "new_opening",
+    "area": "Thonglor",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.instagram.com/reel/DeN-EhUJNat/",
+        "title": "first month of opening a restaurant - Instagram",
+        "quote": "新開幕餐廳，主打米飯料理",
+        "facts": "位於通羅區綠草巷69號(Chaem Chan Alley, Khlong Tan Nuea, Thonglor)。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJA-HrR2Of4jAR58K0zir0luk/photos/Aa-ngMZT0rt_Vpe-muztzcRYV1UWx9_uNaIdo-jz6g4gWGNMmeixUNk7cJ6jeLpraXyyDNP75Gv2rxT2Jg7g85YlW5xd6SO754yR5ki_Qvua6H_6cWqejKwgFsbtHDpNspUkcYjh41KWUiX3_cbVrAGT8CSeuveRsTSevaEnC5Br3DhQl2AahLVKrqkJ5PMH4FFQZfvcBlipLYTjeJg1rILwzE5EeSbCteV-sEWicYSGphp1M_eq1_9xiUCLpUcEDBTqs4pEyHnHglwppAwUcfwp8JLSq4H3T_Tz3uqR1jqfURrL9-4AUL8FoGtEWCl1xLHs0iEUNGRJK-vcYuyX9JjIoB8v4BDLOzafrmKuH7wUzwSa72dNEOwKEl4lPA9tVOWHjP2i_WozPv2ubaS5HYQV3M-v4GFz-4c8HEyCZIuTlm9Vmg",
+      "places/ChIJA-HrR2Of4jAR58K0zir0luk/photos/Aa-ngMbtxQNR-nw7hLrFlaxxokSEEUPMAIz_plLxttgpfsTaN_FYR6xtBgydaapweUcBjrQ-t5dzTD8vEyA29m4yBIHOcKPSX4l3Mwf-KhSj-AEPaOOLffTkrYUy0OdHYW1iwxGJgIDuFhTB5_lF9J5CIIUjFYwtQYKOmTEjt84E148Pu4HFghDNPbkeBhFC8XobYg6xz1kfqWqPX3yer7zWwALTae9JRyelOgT13rPKDuuevYm_lof32iYZ47pjQOQ72PPPz2usZCDAG4L9IukY7_V-veDiSTnJCVTzrnswKp3H5yi3Zqb-pdt88ubSMNorVL8DxlG4Yoal6K301upprY_EOZlikc-v4pRi2bk8amGJ5lbMnYyqhJKR_miv_AHVev5cDb-wLX8JWgQtI86SRfqcsAOi6zaRS9bcQp0iNnxo7w",
+      "places/ChIJA-HrR2Of4jAR58K0zir0luk/photos/Aa-ngMbj3hkx3Pydjm8QNH5eON3G7C8z415jgwJ-0f7v7pcuZH_T0gyp3CBvZ-B26Cv8W4Ovg-NzWmILE-S7wNHY74JBr4QlibFT7YNL9VrJ0hCKmfmFZex_HP5yqWZZypgexrDAIgKj_srovZ4Pv9XWR_wtFvyTDbYHIXcYISt0MI5bPWEVNT_JOf_uVmA3ncMWUUTa7cTep_8qos1sNAiUvbi3z2eUSekRttWWpoVBPUwjrsJXsFoDJ1TSwxrF-65fWpwjhaWmIipRI0cASGY9k83BdhVQau-ZyjoxE2f9FS-a8HbTn-U2B82Z435ge95amSjhI3ep1wLiCEClr1pTqjMgZzUNH0hcxqTwTN1XHNGtr0B9pFfDj18XNLAuXKtJY0HFQnDDGbm5hJuxl2nQ5wOIm3MG_LMMoUmQZyg4ofgLIg",
+      "places/ChIJA-HrR2Of4jAR58K0zir0luk/photos/Aa-ngMbXDKlHEI8ekUTmOEJm9r4tOjXvixRlrPi_mGEmTkw_nzO_JfxPkakBywhZVvLSkyhUvww9N5bj3MocD0NRqJTOlgYo3M7Alrf42NOrR9lIN_d86S6tMiaVX62D_J5ZEdatACyGt7Z3gbhF8NpEcYEzuc1AunAPE0S46ORWvvDGhHtL6wzDED6eh3EsVqhQB0ZRf4FVyXthZcL00hqyqXx_97O8a9Qx5Ba5SSxFCeUef2rlaOmc7c8WhA36vJLTEpagM6jJg7rveCPZshCpKkji9ErNw9uInjj8eaemuq1MSCArLqYVwM4lVOd5so_fqHlIEYi4Fi9k3l9ECZyAjTh1GmszW-0ABIDvpYLgkFcB4ubpkIYcV4XPG0ILKkIDQzEmoBzZrTclN6qchLBlPo6cyCirWAkYPUvCMd-pWuSjGA",
+      "places/ChIJA-HrR2Of4jAR58K0zir0luk/photos/Aa-ngMasRK3Mn3vNtBNrtyWQpqz_4g_RFydHCJAKhOjpnsg2p2wCLLR-kim2BHmILdnaj77vH6qhtwAq2EDgXE7fB6AuAFXryPfToRNS5n7N91WQ_Z2oC6awMBRlpkpLku7vkHhKOx44GiTXhryhRHKrvQgbxduTcSJzIrDpeRsxOqYhZLGV4PE4-8ITw4_zsHYMDLcyg39VOEUzBZ2pc7q5PBhhOH9S3T8Qs-2XCN3vkVU_Dh5x7oEYyF7hFuP0308w4jQJ3SuqALGusKDp_nXdCRazGBCB2uy0fimjnkPGoqeh_wQvrIULemotTwfYqiOXkQkPex3f8yPSae7kLG_4RTjeFbStpuLgrNDOnVEG8pWzzJBqtPOOBHF9aUsKoklYqJCT2mPqPTINZLg_1XS_6ntLKK0zs2_3cIHxe7TS9EPqIw",
+      "places/ChIJA-HrR2Of4jAR58K0zir0luk/photos/Aa-ngMZdVjz2Hdgzd8-5QKX_SpXuY3wtlCJ046jTSi0mbmP6CVmI5ZGd4ynG2HL7tjliLru5jhz3agyy7MfmfQkD2PVMAmNaTKm8gkU_6NaH9flQJ-V4wJGMUWO_b5Et_a7AOu0YQkAy21uwV1BeiQHheIBsvpnAPtfJc84YK2mZ5kM035bCqBT5iqrel3AU4ef8zGJ71sQd3nKUEwnt5EONKVZjhWrGGvD6c4UApMxqsteqhQv5htPPGnoxdCQpOprnaXr_xEexTTWsvB39W3gxPsMzoZxsAR1laZE3Tg2JRt-6Y7qPGWvfhBJFAj3nVa-w3CvwtxaYfjsOfBxTm0A106zshNHu4Gke9GgaqIXPRQZJTwFmMsc2Ien_ZPtK4ACUfWW5gOCvl2Dgqhu_6YxmSIfXYfSn-In3dHNTEvD0YWoSyg"
+    ],
+    "highlights": [
+      "Rice Bowls",
+      "Beetroot Juice"
+    ],
+    "approved_at": "2026-10-12T09:02:40.619Z"
   }
 ]
