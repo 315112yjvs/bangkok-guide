@@ -15,6 +15,8 @@ import { haversineKm } from '@/lib/geo'
 import { expandQuery } from '@/lib/searchTerms'
 import { MIcon } from '@/components/icons/MaterialIcons'
 import { LocationCard } from '@/components/LocationCard'
+import { openStatus } from '@/lib/openStatus'
+import { useBangkokMinute } from '@/lib/useBangkokMinute'
 import { DragScroll } from '@/components/DragScroll'
 import { LocationMap } from '@/components/LocationMap'
 import { Reveal } from '@/components/Reveal'
@@ -72,6 +74,9 @@ export function PublicHomepage({ locations }: Props) {
   // 區域列預設收起（手機第一個畫面要先看到店家），按「區域」才展開；已選了區域就保持展開
   const [areaOpen, setAreaOpen] = useState(false)
   // 篩選結果的排序
+  // 只看現在有開的店（沒有營業時間資料的店無法判斷，開啟時不列出）
+  const [openNow, setOpenNow] = useState(false)
+  const minute = useBangkokMinute()
   const [sortBy, setSortBy] = useState<'default' | 'rating' | 'distance'>('default')
   const searchRef = useRef<HTMLDivElement>(null)
   // 每分頁一個洗牌種子：一進站隨機，之後同分頁返回維持同樣順序（不會重洗）
@@ -120,7 +125,7 @@ export function PublicHomepage({ locations }: Props) {
   // 篩選/搜尋條件一變，網格視圖回到第一頁
   useEffect(() => {
     setGridLimit(GRID_PAGE)
-  }, [activeCategory, activeTag, activeArea, specialFilter, query, landmark])
+  }, [activeCategory, activeTag, activeArea, specialFilter, query, landmark, openNow])
 
   function handleToggleSave(id: string) {
     setSavedIds((prev) => {
@@ -171,7 +176,8 @@ export function PublicHomepage({ locations }: Props) {
         ? [loc.name_zh, loc.name_en, loc.description_zh, loc.description_en, loc.address, getArea(loc), ...(loc.highlights ?? [])].join('\n').toLowerCase()
         : ''
       const matchSearch = terms.length === 0 || terms.some((t) => haystack.includes(t))
-      return matchCat && matchTag && matchArea && matchSpecial && matchSearch
+      const matchOpen = !openNow || minute === null || (!!loc.hours && openStatus(loc.hours, minute).open)
+      return matchCat && matchTag && matchArea && matchSpecial && matchSearch && matchOpen
     })
     if (specialFilter === 'nearby' && nearbyAnchor) {
       return [...base]
@@ -182,7 +188,7 @@ export function PublicHomepage({ locations }: Props) {
         )
     }
     return base
-  }, [locations, activeCategory, activeTag, activeArea, specialFilter, query, userLocation, landmark, savedIds])
+  }, [locations, activeCategory, activeTag, activeArea, specialFilter, query, userLocation, landmark, savedIds, openNow, minute])
 
   const areas = useMemo(() => {
     const counts = new Map<string, number>()
@@ -201,7 +207,7 @@ export function PublicHomepage({ locations }: Props) {
     return counts
   }, [locations])
 
-  const showSections = specialFilter === 'all' && activeTag === 'all' && activeArea === 'all' && !query
+  const showSections = specialFilter === 'all' && activeTag === 'all' && activeArea === 'all' && !query && !openNow
 
   // 篩選結果的排序：預設順序（附近模式已由近到遠）、評分高到低、距離近到遠（要有定位或地標才有）
   const gridItems = useMemo(() => {
@@ -357,6 +363,17 @@ export function PublicHomepage({ locations }: Props) {
                 : <svg className="w-3 h-3 shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
               }
               {lang === 'zh' ? '附近' : 'Near Me'}
+            </button>
+            {/* 現在營業中 */}
+            <button
+              onClick={() => setOpenNow((v) => !v)}
+              aria-pressed={openNow}
+              className={`flex items-center gap-1.5 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                openNow ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
+              }`}
+            >
+              <span className={`w-1.5 h-1.5 rounded-full ${openNow ? 'bg-emerald-400' : 'bg-emerald-600'}`} />
+              {lang === 'zh' ? '營業中' : 'Open now'}
             </button>
             {/* Saved */}
             <button

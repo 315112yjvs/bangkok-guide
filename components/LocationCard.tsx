@@ -10,6 +10,8 @@ import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from './icons/TagIcons'
 import { MIcon } from './icons/MaterialIcons'
+import { openStatus, openStatusText, openStatusClass } from '@/lib/openStatus'
+import { useBangkokMinute } from '@/lib/useBangkokMinute'
 
 // Inline SVG icons for source badges (no emoji)
 const SOURCE_SVG: Record<Source, string> = {
@@ -56,6 +58,8 @@ type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: bool
 
 export function LocationCard({ location, lang, distanceKm, saved: savedProp = false, onToggleSave, compact = false, hideTag = false }: Props) {
   const [copied, setCopied] = useState(false)
+  const minute = useBangkokMinute()
+  const status = location.hours && minute !== null ? openStatus(location.hours, minute) : null
 
   // 沒有外部 onToggleSave（分類/主題/區域頁、地點頁的附近推薦）時，卡片自己讀寫 localStorage 收藏
   const [localSaved, setLocalSaved] = useState(false)
@@ -179,6 +183,13 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
         {/* Description */}
         <p className="text-[11px] text-muted mb-1 line-clamp-1">{desc}</p>
 
+        {/* 現在有沒有開。高度固定保留，時間算出來之前不會讓卡片跳動 */}
+        {location.hours && (
+          <p className={`text-[10px] font-bold h-[15px] mb-1 line-clamp-1 ${status ? openStatusClass(status) : ''}`}>
+            {status ? openStatusText(status, lang) : ''}
+          </p>
+        )}
+
         {/* Curator note */}
         {location.curator_note && (
           <p className="flex items-center gap-1 text-[10px] text-brand bg-brand-soft rounded-sm px-2 py-1 mb-1 line-clamp-1 font-medium">
@@ -204,7 +215,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
         <div className="flex items-center justify-between gap-1 mt-auto">
           {/* 左側資訊放不下時從尾端裁掉（順序＝重要性：評分、距離、價位、區域），不要壓到右邊的按鈕 */}
           <div className="flex items-center gap-1.5 min-w-0 flex-1 overflow-hidden whitespace-nowrap">
-            <span className="shrink-0 text-[11px] font-bold text-ink"><span className="text-amber-500">★</span> {location.rating.toFixed(1)}</span>
+            <span className="shrink-0 text-[11px] font-bold text-ink"><span className="text-amber-500">★</span> {location.rating.toFixed(1)}{location.reviews ? <span className="font-normal text-muted"> ({location.reviews.toLocaleString('en-US')})</span> : null}</span>
             {distanceKm !== undefined && (
               <span className="shrink-0 text-[10px] font-bold text-brand">
                 {distanceKm < 1 ? `${Math.round(distanceKm * 1000)}m` : `${distanceKm.toFixed(1)}km`}

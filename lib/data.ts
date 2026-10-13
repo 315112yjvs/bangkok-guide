@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs'
 import { join } from 'path'
 import type { Location, PendingLocation } from './types'
 import { buildSlugMap } from './slug'
+import { getPlaceInfo } from './placeInfo'
 
 function dataDir(): string {
   return process.env.DATA_DIR ?? join(process.cwd(), 'data')
@@ -20,7 +21,7 @@ export function readLocations(): Location[] {
   ensureFile(locPath(), '[]')
   const raw: Location[] = JSON.parse(readFileSync(locPath(), 'utf-8'))
   const slugMap = buildSlugMap(raw)
-  return raw.map((l) => ({ ...l, slug: l.slug || slugMap.get(l.id) }))
+  return raw.map((l) => ({ ...l, slug: l.slug || slugMap.get(l.id), ...getPlaceInfo(l.id) }))
 }
 
 // Slim projection for the homepage/listing cards. Drops fields that only the
@@ -48,7 +49,9 @@ export function readCardLocations(): Location[] {
 
 export function writeLocations(locations: Location[]): void {
   ensureFile(locPath(), '[]')
-  writeFileSync(locPath(), JSON.stringify(locations, null, 2))
+  // hours / reviews 是讀取時從 hours.json 併進來的，存檔前拿掉，免得舊資料被寫死在 locations.json
+  const clean = locations.map(({ hours: _h, reviews: _r, ...rest }) => rest)
+  writeFileSync(locPath(), JSON.stringify(clean, null, 2))
 }
 
 export function readPending(): PendingLocation[] {

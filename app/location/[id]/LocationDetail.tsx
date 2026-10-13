@@ -12,6 +12,8 @@ import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { LocationCard } from '@/components/LocationCard'
+import { openStatus, openStatusText, openStatusClass } from '@/lib/openStatus'
+import { useBangkokMinute } from '@/lib/useBangkokMinute'
 
 function extractThai(text: string): string | null {
   const thai = text.match(/[฀-๿][฀-๿\s]*/g)?.join(' ').trim()
@@ -144,11 +146,9 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
   const cleanDesc = desc?.replace(/^必點：[^。]*。\s*/, '') ?? ''
 
   // 今天是曼谷的星期幾（0=週一），用來標出今天的營業時間；只在瀏覽器端算，避免 SSR 與使用者時區不一致
-  const [today, setToday] = useState<number | null>(null)
-  useEffect(() => {
-    const wd = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Bangkok', weekday: 'short' }).format(new Date())
-    setToday(['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(wd))
-  }, [])
+  const minute = useBangkokMinute()
+  const today = minute === null ? null : Math.floor(minute / 1440)
+  const status = hours && minute !== null ? openStatus(hours.week, minute) : null
 
   // 手機上左右滑動切換照片（只認明顯的水平滑動，避免跟上下捲動打架）
   const touchStart = useRef<{ x: number; y: number } | null>(null)
@@ -277,8 +277,20 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
 
           <h1 className="font-liufen text-[26px] lg:text-[32px] text-ink leading-tight mt-1 mb-1.5">{name}</h1>
 
+          {/* 現在有沒有開：放在店名正下方，不用捲到營業時間表才知道 */}
+          {hours && (
+            <p className={`text-[13px] font-bold h-5 mb-1.5 ${status ? openStatusClass(status) : ''}`}>
+              {status ? openStatusText(status, lang) : ''}
+            </p>
+          )}
+
           <div className="flex items-center gap-3 mb-5 pb-5 border-b border-line">
             <span className="text-base font-bold text-ink"><span className="text-amber-500">★</span> {location.rating.toFixed(1)}</span>
+            {location.reviews ? (
+              <span className="text-sm text-muted -ml-1.5">
+                {lang === 'zh' ? `${location.reviews.toLocaleString('en-US')} 則評論` : `${location.reviews.toLocaleString('en-US')} reviews`}
+              </span>
+            ) : null}
             {location.price_range > 0 && (
               <span className="text-sm text-muted">{'฿'.repeat(location.price_range)}</span>
             )}

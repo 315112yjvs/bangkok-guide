@@ -9,9 +9,9 @@ import { join } from 'path'
 export type WeekHours = string[][]
 export type OpeningHours = { week: WeekHours | 'always'; checkedAt: string }
 
-let cache: Record<string, { week: WeekHours | 'always' | null; checked_at: string }> | null = null
+let cache: Record<string, { week: WeekHours | 'always' | null; reviews?: number | null; checked_at: string }> | null = null
 
-export function getOpeningHours(locationId: string): OpeningHours | null {
+function load() {
   if (!cache) {
     try {
       const path = join(process.env.DATA_DIR ?? join(process.cwd(), 'data'), 'hours.json')
@@ -20,6 +20,17 @@ export function getOpeningHours(locationId: string): OpeningHours | null {
       cache = {}
     }
   }
-  const h = cache![locationId]
+  return cache!
+}
+
+export function getOpeningHours(locationId: string): OpeningHours | null {
+  const h = load()[locationId]
   return h?.week ? { week: h.week, checkedAt: h.checked_at } : null
+}
+
+// 卡片與地點頁要顯示的兩個欄位：每週營業時間（算「現在有沒有開」）和 Google 評論數
+export function getPlaceInfo(locationId: string): { hours?: WeekHours | 'always'; reviews?: number } {
+  const h = load()[locationId]
+  if (!h) return {}
+  return { ...(h.week ? { hours: h.week } : {}), ...(h.reviews ? { reviews: h.reviews } : {}) }
 }

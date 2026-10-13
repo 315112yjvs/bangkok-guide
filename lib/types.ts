@@ -35,6 +35,9 @@ export type Location = {
   mentions?: number          // 找熱點時被幾個不同來源提到（待審排序用）
   evidence?: Evidence[]      // 提到這家店的來源清單（待審時判斷為什麼紅）
   approved_at?: string
+  // 以下兩欄來自 data/hours.json，讀取時才併進來，不會寫回 locations.json
+  hours?: string[][] | 'always'   // 每週營業時間（週一到週日）
+  reviews?: number                // Google 評論數
 }
 
 export type PendingLocation = Omit<Location, 'approved_at'> & {
