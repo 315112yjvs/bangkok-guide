@@ -10,7 +10,8 @@ import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from './icons/TagIcons'
 import { MIcon } from './icons/MaterialIcons'
-import { openStatus, openStatusText, openStatusClass } from '@/lib/openStatus'
+import { openStatus, openStatusParts } from '@/lib/openStatus'
+import { TAG_BG } from '@/lib/tagStyle'
 import { useBangkokMinute } from '@/lib/useBangkokMinute'
 
 // Inline SVG icons for source badges (no emoji)
@@ -140,12 +141,12 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
   }
 
   return (
-    <div className="group relative flex flex-col h-full bg-white rounded-lg overflow-hidden border border-line hover:border-ink/30 transition-colors duration-200">
+    <div className="group relative flex flex-col h-full bg-white rounded-[20px] overflow-hidden border-[3px] border-ink transition-transform duration-200 hover:-translate-y-0.5">
       {/* 整卡可點的連結鋪在上層（z-10）、互動按鈕疊更高（z-20）：
           避免 <a> 巢套 <a>（無效 HTML，會導致 hydration 失敗、整頁 client 重渲染） */}
-      <Link href={`/location/${location.slug ?? location.id}`} aria-label={name} className="absolute inset-0 z-10 rounded-lg" />
+      <Link href={`/location/${location.slug ?? location.id}`} aria-label={name} className="absolute inset-0 z-10 rounded-[18px]" />
       {/* Photo */}
-      <div ref={photoBox} className="relative h-36 w-full overflow-hidden bg-paper">
+      <div ref={photoBox} className="relative h-36 w-full shrink-0 overflow-hidden bg-mizu-soft border-b-[3px] border-ink">
         {nearView && <Image
           src={imgSrc}
           alt={name}
@@ -157,8 +158,8 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
         />}
         {/* Tag label：四種標籤都顯示。以前「經典必訪」不顯示，同一排卡片有的有標籤有的沒有，看起來像漏了 */}
         {!hideTag && (
-          <span className="absolute top-2 left-2 inline-flex items-center gap-1 text-[10px] font-bold bg-white text-ink px-1.5 py-0.5 rounded-sm">
-            <TagIcon size={11} className="shrink-0 text-brand" /> {lang === 'zh' ? tagMeta.zh : tagMeta.en}
+          <span className={`absolute top-2 left-2 inline-flex items-center gap-1 text-[10px] font-bold text-ink px-2 py-0.5 rounded-full border-2 border-ink ${TAG_BG[tag]}`}>
+            <TagIcon size={11} className="shrink-0" /> {lang === 'zh' ? tagMeta.zh : tagMeta.en}
           </span>
         )}
       </div>
@@ -173,7 +174,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
             <button
               onClick={copyThai}
               title={strings[lang].copyThai as string}
-              className="relative z-20 shrink-0 text-[10px] font-bold px-1.5 py-0.5 rounded-sm border border-line text-muted hover:text-ink hover:border-ink/40 transition-colors"
+              className="relative z-20 shrink-0 text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-ink text-ink bg-white hover:bg-mustard-soft transition-colors"
             >
               {copied ? (strings[lang].copied as string) : (strings[lang].copyThai as string)}
             </button>
@@ -185,14 +186,22 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
 
         {/* 現在有沒有開。高度固定保留，時間算出來之前不會讓卡片跳動 */}
         {location.hours && (
-          <p className={`text-[10px] font-bold h-[15px] mb-1 line-clamp-1 ${status ? openStatusClass(status) : ''}`}>
-            {status ? openStatusText(status, lang) : ''}
+          <p className="flex items-center gap-1 text-[10px] h-[17px] mb-1 whitespace-nowrap overflow-hidden">
+            {status && (() => {
+              const p = openStatusParts(status, lang)
+              return (
+                <>
+                  <span className={`shrink-0 font-bold text-ink px-1.5 rounded-full ${p.bg}`}>{p.label}</span>
+                  {p.detail && <span className="text-muted truncate">{p.detail}</span>}
+                </>
+              )
+            })()}
           </p>
         )}
 
         {/* Curator note */}
         {location.curator_note && (
-          <p className="flex items-center gap-1 text-[10px] text-brand bg-brand-soft rounded-sm px-2 py-1 mb-1 line-clamp-1 font-medium">
+          <p className="flex items-center gap-1 text-[10px] text-ink bg-mustard-soft rounded-full px-2 py-1 mb-1 line-clamp-1 font-medium">
             <MIcon name="format_quote" size={12} className="shrink-0" /> {location.curator_note}
           </p>
         )}
@@ -201,7 +210,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
         {visibleHighlights.length > 0 && (
           <div className="flex items-center gap-1 mb-1.5 overflow-hidden whitespace-nowrap">
             {visibleHighlights.map((h) => (
-              <span key={h} className="shrink-0 text-[10px] text-muted border border-line px-1.5 py-0.5 rounded-sm">
+              <span key={h} className="shrink-0 text-[10px] text-ink bg-paper border border-line px-1.5 py-0.5 rounded-full">
                 {h}
               </span>
             ))}
@@ -215,7 +224,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
         <div className="flex items-center justify-between gap-1 mt-auto">
           {/* 左側資訊放不下時從尾端裁掉（順序＝重要性：評分、距離、價位、區域），不要壓到右邊的按鈕 */}
           <div className="flex items-center gap-1.5 min-w-0 flex-1 overflow-hidden whitespace-nowrap">
-            <span className="shrink-0 text-[11px] font-bold text-ink"><span className="text-amber-500">★</span> {location.rating.toFixed(1)}{location.reviews ? <span className="font-normal text-muted"> ({location.reviews.toLocaleString('en-US')})</span> : null}</span>
+            <span className="shrink-0 text-[11px] font-bold text-ink"><span className="text-[#E9A93B]">★</span> {location.rating.toFixed(1)}{location.reviews ? <span className="font-normal text-muted"> ({location.reviews.toLocaleString('en-US')})</span> : null}</span>
             {distanceKm !== undefined && (
               <span className="shrink-0 text-[10px] font-bold text-brand">
                 {distanceKm < 1 ? `${Math.round(distanceKm * 1000)}m` : `${distanceKm.toFixed(1)}km`}
@@ -233,7 +242,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
               onClick={toggleSave}
               aria-label={saved ? (lang === 'zh' ? '取消收藏' : 'Unsave') : (lang === 'zh' ? '收藏' : 'Save')}
               aria-pressed={saved}
-              className={`relative z-20 shrink-0 w-10 h-10 flex items-center justify-center rounded-md transition-colors ${saved ? 'text-red-500' : 'text-gray-400 hover:text-ink'}`}
+              className={`relative z-20 shrink-0 w-10 h-10 flex items-center justify-center rounded-full transition-colors ${saved ? 'text-[#E07A6A]' : 'text-ink/50 hover:text-ink'}`}
             >
               <svg width="17" height="17" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.2}>
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -244,7 +253,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${strings[lang].navigate as string} — ${name}`}
-              className="relative z-20 shrink-0 flex items-center justify-center gap-1 h-10 min-w-10 border border-line text-ink text-[10px] font-bold rounded-md px-2 whitespace-nowrap hover:border-ink/40 transition-colors"
+              className="relative z-20 shrink-0 flex items-center justify-center gap-1 h-9 min-w-9 border-2 border-ink bg-mizu text-ink text-[10px] font-bold rounded-full px-2 whitespace-nowrap hover:bg-mizu-soft transition-colors"
             >
               <IconPin size={15} className="shrink-0" />
               {!compact && (strings[lang].navigate as string)}

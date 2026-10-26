@@ -38,14 +38,14 @@ export function CategoryTabs({ active, onChange, lang, counts }: Props) {
     : TABS
 
   return (
-    <DragScroll className="flex gap-1 px-3 overflow-x-auto no-scrollbar lg:justify-center">
+    <DragScroll className="flex gap-1.5 px-3 py-2.5 overflow-x-auto no-scrollbar lg:justify-center">
       {visibleTabs.map(({ id, labelKey, Icon }) => (
         <button
           key={id}
           onClick={() => onChange(id)}
           aria-pressed={active === id}
-          className={`shrink-0 flex items-center gap-1.5 px-3 pt-3.5 pb-3 text-[14px] whitespace-nowrap border-b-2 transition-colors ${
-            active === id ? 'border-brand text-ink font-bold' : 'border-transparent text-muted hover:text-ink'
+          className={`shrink-0 flex items-center gap-1.5 px-3.5 py-1.5 text-[14px] text-ink whitespace-nowrap rounded-full border-2 transition-colors ${
+            active === id ? 'bg-mustard border-ink font-bold' : 'border-transparent hover:bg-mustard-soft'
           }`}
         >
           <Icon size={17} />

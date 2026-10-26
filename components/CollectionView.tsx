@@ -30,9 +30,9 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
   const items = useMemo(() => (seed != null ? seededShuffle(locations, seed) : locations), [locations, seed])
 
   return (
-    <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen lg:border-x lg:border-line">
+    <div className="max-w-md lg:max-w-6xl mx-auto bg-paper min-h-screen">
       {/* Header */}
-      <div className="border-b border-line px-4 pt-5 pb-6 lg:px-10 lg:pt-8 lg:pb-9">
+      <div className="border-b-2 border-ink px-4 pt-5 pb-6 lg:px-10 lg:pt-8 lg:pb-9">
         <div className="flex items-center justify-between mb-5">
           <Link href="/" className="flex items-center gap-1.5 text-muted hover:text-ink text-sm transition-colors">
             <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
           <LanguageToggle lang={lang} setLang={setLang} tone="light" />
         </div>
         <h1 className="flex items-center gap-2.5 text-ink font-liufen text-[28px] lg:text-[36px] leading-tight mb-2">
-          <MIcon name={icon} size={26} className="shrink-0 text-brand" /> {h1}
+          <span className="w-11 h-11 shrink-0 rounded-full bg-mustard border-[3px] border-ink flex items-center justify-center"><MIcon name={icon} size={22} /></span> {h1}
         </h1>
         <p className="text-muted text-[14px] leading-relaxed max-w-2xl">{desc}</p>
         <p className="text-muted text-[12px] mt-3">
@@ -60,7 +60,7 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
             ))}
           </div>
         ) : (
-          <p className="text-gray-400 text-sm py-16 text-center">
+          <p className="text-muted text-sm py-16 text-center">
             {lang === 'zh' ? '持續更新中，敬請期待！' : 'Curating picks — check back soon!'}
           </p>
         )}
@@ -68,8 +68,8 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
 
       {/* 內部交叉連結（SEO + 探索） */}
       {related.length > 0 && (
-        <div className="border-t border-line px-4 lg:px-10 py-6">
-          <p className="text-[12px] font-bold text-muted tracking-[0.08em] mb-3">
+        <div className="border-t-2 border-dashed border-ink/20 px-4 lg:px-10 py-6">
+          <p className="ehon-h2 mb-3">
             {lang === 'zh' ? '繼續探索' : 'Explore more'}
           </p>
           <div className="flex flex-wrap gap-2">
@@ -77,7 +77,7 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
               <Link
                 key={r.href}
                 href={r.href}
-                className="text-[12px] px-3 py-1.5 rounded-full border border-line text-ink/70 hover:border-ink/40 hover:text-ink transition-colors"
+                className="chip"
               >
                 {r.label}
               </Link>
@@ -87,8 +87,8 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
       )}
 
       {/* Footer：所有分類（內部連結） */}
-      <div className="border-t border-line px-4 lg:px-10 py-6">
-        <p className="text-[12px] font-bold text-muted tracking-[0.08em] mb-3">
+      <div className="border-t-2 border-dashed border-ink/20 px-4 lg:px-10 py-6">
+        <p className="ehon-h2 mb-3">
           {lang === 'zh' ? '曼谷分類指南' : 'Bangkok by category'}
         </p>
         <div className="flex flex-wrap gap-2">
@@ -96,7 +96,7 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
             <Link
               key={c.slug}
               href={`/category/${c.slug}`}
-              className="inline-flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border border-line text-ink/70 hover:border-ink/40 hover:text-ink transition-colors"
+              className="chip"
             >
               <MIcon name={c.icon} size={14} className="shrink-0" /> {lang === 'zh' ? c.h1Zh : c.h1En}
             </Link>

@@ -20,23 +20,24 @@
   font-display: swap;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  /* 全站字型：中英用粉圓 OpenHuninn、泰文用 NotoSansThai，未涵蓋的字 fallback 系統字型 */
-  font-family: 'OpenHuninn', 'NotoSansThai', -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+  color: #3E3A39;
+  background: #FFFCF6;
+  /* 全站字型：Google Fonts 的 Huninn（粉圓，按字切片載入，所有中文字都有）；
+     泰文用 NotoSansThai。本機的 OpenHuninn 子集當作 Google Fonts 載入失敗時的備援 */
+  font-family: 'Huninn', 'OpenHuninn', 'NotoSansThai', -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+}
+
+/* 繪本風共用元件：3px 墨灰粗框、大圓角、平塗色塊，不用漸層與陰影 */
+@layer components {
+  .ehon-box { @apply bg-white border-[3px] border-ink rounded-[22px]; }
+  .chip { @apply inline-flex items-center gap-1 text-[12px] text-ink bg-white px-3 py-1.5 rounded-full border-2 border-ink whitespace-nowrap transition-colors hover:bg-mustard-soft; }
+  .chip-on { @apply bg-mustard hover:bg-mustard font-bold; }
+  .ehon-btn { @apply inline-flex items-center justify-center gap-2 font-bold text-ink bg-mustard border-[3px] border-ink rounded-full transition-transform active:translate-y-px; }
+  .ehon-icon-btn { @apply w-10 h-10 rounded-full bg-white border-2 border-ink text-ink flex items-center justify-center transition-colors hover:bg-mustard-soft; }
+  /* 區塊小標：前面一顆山吹黃圓點 */
+  .ehon-h2 { @apply flex items-center gap-2 text-[14px] font-bold text-ink mb-2; }
+  .ehon-h2::before { content: ''; @apply w-2.5 h-2.5 shrink-0 rounded-full bg-mustard border-2 border-ink; }
 }
 
 @layer utilities {

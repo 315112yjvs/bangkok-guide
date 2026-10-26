@@ -70,8 +70,18 @@ export function openStatusText(s: OpenStatus, lang: 'zh' | 'en'): string {
   return zh ? `休息中，${when} ${s.opensAt} 開` : `Closed, opens ${when} ${s.opensAt}`
 }
 
-// 顏色：營業中綠、一小時內打烊橘、休息中灰
-export function openStatusClass(s: OpenStatus): string {
-  if (!s.open) return 'text-muted'
-  return !s.always && s.closingSoon ? 'text-amber-600' : 'text-emerald-700'
+// 拆成「標籤」和「說明」兩段：標籤放在色塊裡（營業中綠、快打烊黃、休息中灰），說明用一般文字
+export function openStatusParts(s: OpenStatus, lang: 'zh' | 'en'): { label: string; detail: string; bg: string } {
+  const zh = lang === 'zh'
+  if (s.open) {
+    if (s.always) return { label: zh ? '24 小時營業' : 'Open 24 hours', detail: '', bg: 'bg-matcha' }
+    return {
+      label: s.closingSoon ? (zh ? '快打烊' : 'Closing soon') : (zh ? '營業中' : 'Open'),
+      detail: zh ? `${s.closesAt} 打烊` : `until ${s.closesAt}`,
+      bg: s.closingSoon ? 'bg-mustard' : 'bg-matcha',
+    }
+  }
+  if (!s.opensAt) return { label: zh ? '目前沒有營業' : 'Closed', detail: '', bg: 'bg-line' }
+  const when = s.dayOffset === 0 ? (zh ? '今天' : 'today') : s.dayOffset === 1 ? (zh ? '明天' : 'tomorrow') : WD[lang][s.weekday]
+  return { label: zh ? '休息中' : 'Closed', detail: zh ? `${when} ${s.opensAt} 開` : `opens ${when} ${s.opensAt}`, bg: 'bg-line' }
 }

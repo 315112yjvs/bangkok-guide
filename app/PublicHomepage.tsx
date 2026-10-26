@@ -21,6 +21,8 @@ import { DragScroll } from '@/components/DragScroll'
 import { LocationMap } from '@/components/LocationMap'
 import { Reveal } from '@/components/Reveal'
 import { getArea } from '@/lib/area'
+import { TAG_BG } from '@/lib/tagStyle'
+import { HeroScene, EmptyScene } from '@/components/illustrations/Scenes'
 import type { Location, Category, LocationTag } from '@/lib/types'
 
 type Props = { locations: Location[] }
@@ -231,70 +233,72 @@ export function PublicHomepage({ locations }: Props) {
     return map
   }, [filtered, showSections, shuffleSeed])
 
-  return (
-    <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen overflow-hidden relative lg:border-x lg:border-line">
-
-      {/* HERO */}
-      <div className="relative h-[60vw] max-h-80 min-h-[232px] lg:h-[400px] lg:max-h-[400px] overflow-hidden">
-        <Image
-          src="/hero-bangkok.jpg"
-          alt="Bangkok"
-          fill className="object-cover object-center"
-          priority
+  // 搜尋框（手機和桌機各放一個位置，內容相同）
+  function searchBox(where: 'mobile' | 'desktop') {
+    return (
+      <div ref={where === 'mobile' ? searchRef : undefined} className="flex items-center gap-2.5 bg-white border-[3px] border-ink rounded-full px-4 py-3">
+        <svg className="w-4 h-4 text-ink shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
+        </svg>
+        <input
+          className="flex-1 min-w-0 text-[15px] text-left outline-none text-ink placeholder:text-muted bg-transparent"
+          placeholder={strings[lang].searchPlaceholder as string}
+          aria-label={lang === 'zh' ? '搜尋' : 'Search'}
+          value={query}
+          onChange={(e) => {
+            const v = e.target.value
+            // 開始輸入時把搜尋框捲到畫面最上方，結果才會出現在鍵盤上方看得到的地方
+            if (where === 'mobile' && !query && v && searchRef.current) {
+              window.scrollTo({ top: searchRef.current.getBoundingClientRect().top + window.scrollY - 8, behavior: 'smooth' })
+            }
+            setQuery(v)
+          }}
+          enterKeyHint="search"
         />
-        {/* layered gradient: subtle top bar darkening + heavy title backdrop */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/35" />
+        {query && (
+          <button onClick={() => setQuery('')} aria-label={lang === 'zh' ? '清除搜尋' : 'Clear search'} className="text-muted hover:text-ink text-sm leading-none transition-colors">✕</button>
+        )}
+      </div>
+    )
+  }
 
-        <div className="relative z-10 h-full flex flex-col">
-          {/* Top bar */}
-          <div className="flex justify-end items-center px-4 pt-5">
-            <LanguageToggle lang={lang} setLang={setLang} />
+  return (
+    <div className="max-w-md lg:max-w-6xl mx-auto bg-paper min-h-screen overflow-hidden relative">
+
+      {/* HERO：logo、標題、插圖、搜尋。手機依序往下排；桌機左邊標題與搜尋、右邊插圖 */}
+      <header className="px-4 pt-4 lg:px-10 lg:pt-6">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <Image src="/logo-circle.png" alt="" width={36} height={36} className="rounded-full border-2 border-ink" priority />
+            <span className="font-liufen text-[17px] text-ink leading-none">曼谷人 <span className="text-[12px] text-muted tracking-wide">BKK LOCAL</span></span>
+          </Link>
+          <LanguageToggle lang={lang} setLang={setLang} tone="light" />
+        </div>
+      </header>
+
+      <div className="px-4 pt-5 pb-5 lg:px-10 lg:pt-8 lg:pb-10 lg:grid lg:grid-cols-[1fr_1.1fr] lg:gap-10 lg:items-center">
+        <div className="lg:order-1">
+          <p className="hero-rise hero-rise-1 text-[12px] tracking-[0.1em] text-muted mb-2">
+            {lang === 'zh' ? '泰國社群精選 · 在地人推薦' : 'THAI SOCIAL PICKS · CHOSEN BY LOCALS'}
+          </p>
+          <h1 className="hero-rise hero-rise-2 font-liufen text-[28px] lg:text-[42px] text-ink leading-[1.25] mb-4">
+            <span className="block">{strings[lang].heroTitle as string}</span>
+            <span className="block">{strings[lang].heroTitleAccent as string}</span>
+          </h1>
+          {/* 桌機的搜尋放在標題下方 */}
+          <div className="hidden lg:block">{searchBox('desktop')}</div>
+        </div>
+        <div className="hero-rise hero-rise-3 lg:order-2 relative">
+          <div className="ehon-box overflow-hidden bg-mizu-soft rounded-[26px]">
+            <HeroScene className="block w-full h-auto aspect-[400/222]" />
           </div>
-
-          <div className="flex-1" />
-
-          {/* Bottom editorial block */}
-          <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl lg:mx-auto lg:text-center">
-            {/* 副標 */}
-            <p className="hero-rise hero-rise-1 text-[12px] tracking-[0.12em] text-white/80 mb-2">
-              {lang === 'zh' ? '泰國社群精選 · 在地人推薦' : 'THAI SOCIAL PICKS · CHOSEN BY LOCALS'}
-            </p>
-
-            {/* Title — 六分糖字型 */}
-            <h1 className="hero-rise hero-rise-2 leading-[1.15] mb-3.5">
-              <span className="font-liufen text-[30px] lg:text-[46px] text-white block">{strings[lang].heroTitle as string}</span>
-              <span className="font-liufen text-[30px] lg:text-[46px] text-white block">{strings[lang].heroTitleAccent as string}</span>
-            </h1>
-
-            {/* Search bar */}
-            <div ref={searchRef} className="hero-rise hero-rise-3 flex items-center gap-2.5 bg-white rounded-lg px-4 py-3">
-              <svg className="w-4 h-4 text-muted shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
-              </svg>
-              <input
-                className="flex-1 text-[15px] text-left outline-none text-ink placeholder:text-muted bg-transparent"
-                placeholder={strings[lang].searchPlaceholder as string}
-                value={query}
-                onChange={(e) => {
-                  const v = e.target.value
-                  // 開始輸入時把搜尋框捲到畫面最上方，結果才會出現在鍵盤上方看得到的地方
-                  if (!query && v && searchRef.current) {
-                    window.scrollTo({ top: searchRef.current.getBoundingClientRect().top + window.scrollY - 8, behavior: 'smooth' })
-                  }
-                  setQuery(v)
-                }}
-                enterKeyHint="search"
-              />
-              {query && (
-                <button onClick={() => setQuery('')} aria-label={lang === 'zh' ? '清除搜尋' : 'Clear search'} className="text-muted hover:text-ink text-sm leading-none transition-colors">✕</button>
-              )}
-            </div>
-          </div>
+          {/* 手機的搜尋疊在插圖下緣 */}
+          <div className="lg:hidden relative -mt-6 mx-3">{searchBox('mobile')}</div>
         </div>
       </div>
 
       {/* MAP strip — collapsible */}
-      <div className={`overflow-hidden transition-[height] duration-300 ease-in-out ${mapExpanded ? 'h-56 lg:h-96' : 'h-0'}`}>
+      <div className={`overflow-hidden transition-[height] duration-300 ease-in-out mx-4 lg:mx-10 ${mapExpanded ? 'h-56 lg:h-96 mb-4 rounded-[22px] border-[3px] border-ink' : 'h-0'}`}>
         {mapEverOpened && (
           <LocationMap
             locations={filtered}
@@ -306,9 +310,9 @@ export function PublicHomepage({ locations }: Props) {
       </div>
 
       {/* 內容區 */}
-      <div className="relative bg-white">
+      <div className="relative bg-paper">
         {/* 分類頁籤 + 地圖開關 */}
-        <div ref={filterRef} className="flex items-stretch border-b border-line scroll-mt-2">
+        <div ref={filterRef} className="flex items-stretch border-y-2 border-ink scroll-mt-2">
           <div className="flex-1 min-w-0">
             <CategoryTabs
               active={activeCategory}
@@ -320,7 +324,7 @@ export function PublicHomepage({ locations }: Props) {
           <button
             onClick={() => { setMapExpanded(v => !v); setMapEverOpened(true) }}
             aria-pressed={mapExpanded}
-            className={`shrink-0 flex items-center gap-1.5 px-3.5 border-l border-line text-[13px] transition-colors ${mapExpanded ? 'text-brand font-bold' : 'text-muted hover:text-ink'}`}
+            className={`shrink-0 flex items-center gap-1.5 px-3.5 border-l-2 border-ink text-[13px] text-ink transition-colors ${mapExpanded ? 'bg-mizu font-bold' : 'hover:bg-mizu-soft'}`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
               <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7M9 20l6-3M9 20V7m6 13l4.553 2.276A1 1 0 0021 21.382V10.618a1 1 0 00-.553-.894L15 7M15 20V7M9 7l6-3" strokeLinecap="round" strokeLinejoin="round"/>
@@ -330,21 +334,17 @@ export function PublicHomepage({ locations }: Props) {
         </div>
 
         {/* Filter row */}
-        <div className="bg-white border-b border-line py-2.5 relative">
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
+        <div className="bg-paper border-b-2 border-ink/15 py-2.5 relative">
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-paper to-transparent z-10" />
           <DragScroll className="flex gap-2 overflow-x-auto no-scrollbar px-3 lg:justify-center">
             {/* All */}
             <button
               onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all'); setLandmark(null); setGeoError(false) }}
-              className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
-                specialFilter === 'all' && activeTag === 'all' && activeArea === 'all'
-                  ? 'bg-ink text-white border-ink'
-                  : 'bg-white text-ink/70 border-line hover:border-ink/40'
-              }`}
+              className={`chip ${specialFilter === 'all' && activeTag === 'all' && activeArea === 'all' ? 'chip-on' : ''}`}
             >
               {lang === 'zh' ? '全部' : 'All'}
             </button>
-            <div className="w-px bg-line mx-0.5 my-1.5" />
+            <div className="w-0.5 bg-ink/20 mx-0.5 my-1.5 rounded-full" />
             {/* Nearby */}
             <button
               onClick={() => {
@@ -352,11 +352,7 @@ export function PublicHomepage({ locations }: Props) {
                 requestLocation()
               }}
               disabled={locating}
-              className={`flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
-                specialFilter === 'nearby' && !landmark
-                  ? 'bg-ink text-white border-ink'
-                  : 'bg-white text-ink/70 border-line hover:border-ink/40'
-              }`}
+              className={`chip ${specialFilter === 'nearby' && !landmark ? 'chip-on' : ''}`}
             >
               {locating
                 ? <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>
@@ -368,42 +364,34 @@ export function PublicHomepage({ locations }: Props) {
             <button
               onClick={() => setOpenNow((v) => !v)}
               aria-pressed={openNow}
-              className={`flex items-center gap-1.5 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
-                openNow ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
-              }`}
+              className={`chip ${openNow ? 'chip-on' : ''}`}
             >
-              <span className={`w-1.5 h-1.5 rounded-full ${openNow ? 'bg-emerald-400' : 'bg-emerald-600'}`} />
+              <span className="w-2 h-2 rounded-full bg-matcha border-[1.5px] border-ink" />
               {lang === 'zh' ? '營業中' : 'Open now'}
             </button>
             {/* Saved */}
             <button
               onClick={() => setSpecialFilter(specialFilter === 'saved' ? 'all' : 'saved')}
-              className={`flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
-                specialFilter === 'saved'
-                  ? 'bg-ink text-white border-ink'
-                  : 'bg-white text-ink/70 border-line hover:border-ink/40'
-              }`}
+              className={`chip ${specialFilter === 'saved' ? 'chip-on' : ''}`}
             >
               <svg width="10" height="10" viewBox="0 0 24 24" fill={specialFilter === 'saved' ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.5}>
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
               {lang === 'zh' ? '我的收藏' : 'Saved'}
-              {savedIds.size > 0 && <span className={`text-[9px] font-black ${specialFilter === 'saved' ? 'text-white/70' : 'text-muted'}`}>{savedIds.size}</span>}
+              {savedIds.size > 0 && <span className="text-[10px] font-bold text-muted">{savedIds.size}</span>}
             </button>
             {/* 區域：預設收起，點了才展開下面那一列 */}
             {areas.length > 0 && (
               <button
                 onClick={() => setAreaOpen((v) => !v)}
                 aria-expanded={areaOpen || activeArea !== 'all'}
-                className={`lg:hidden flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
-                  activeArea !== 'all' ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
-                }`}
+                className={`lg:hidden chip ${activeArea !== 'all' ? 'chip-on' : ''}`}
               >
                 {activeArea !== 'all' ? activeArea : (lang === 'zh' ? '區域' : 'Area')}
                 <svg className={`w-2.5 h-2.5 transition-transform ${areaOpen || activeArea !== 'all' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </button>
             )}
-            <div className="w-px bg-line mx-0.5 my-1.5" />
+            <div className="w-0.5 bg-ink/20 mx-0.5 my-1.5 rounded-full" />
             {/* Tag filters */}
             {TAG_ORDER.map((tag) => {
               const m = TAG_META[tag]
@@ -412,11 +400,7 @@ export function PublicHomepage({ locations }: Props) {
                 <button
                   key={tag}
                   onClick={() => { setActiveTag(activeTag === tag ? 'all' : tag); setSpecialFilter('all') }}
-                  className={`inline-flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
-                    activeTag === tag
-                      ? 'bg-ink text-white border-ink'
-                      : 'bg-white text-ink/70 border-line hover:border-ink/40'
-                  }`}
+                  className={`chip ${activeTag === tag ? 'chip-on' : ''}`}
                 >
                   <Icon size={13} className="shrink-0" /> {lang === 'zh' ? m.zh : m.en}
                 </button>
@@ -427,17 +411,15 @@ export function PublicHomepage({ locations }: Props) {
 
         {/* Area chips（手機預設收起，桌機常駐） */}
         {areas.length > 0 && (
-          <div className={`bg-white border-b border-line py-2.5 relative ${areaOpen || activeArea !== 'all' ? '' : 'hidden lg:block'}`}>
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className={`bg-paper border-b-2 border-ink/15 py-2.5 relative ${areaOpen || activeArea !== 'all' ? '' : 'hidden lg:block'}`}>
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-paper to-transparent z-10" />
             <DragScroll className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
-              <svg className="w-3.5 h-3.5 text-gray-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <svg className="w-3.5 h-3.5 text-muted shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z" strokeLinejoin="round"/><circle cx="12" cy="9" r="2.5"/>
               </svg>
               <button
                 onClick={() => { setActiveArea('all'); setSpecialFilter('all'); setLandmark(null) }}
-                className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
-                  activeArea === 'all' ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
-                }`}
+                className={`chip ${activeArea === 'all' ? 'chip-on' : ''}`}
               >
                 {lang === 'zh' ? '所有區域' : 'All Areas'}
               </button>
@@ -445,9 +427,7 @@ export function PublicHomepage({ locations }: Props) {
                 <button
                   key={a}
                   onClick={() => { setActiveArea(activeArea === a ? 'all' : a); setSpecialFilter('all'); setLandmark(null) }}
-                  className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
-                    activeArea === a ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
-                  }`}
+                  className={`chip ${activeArea === a ? 'chip-on' : ''}`}
                 >
                   {a}
                 </button>
@@ -458,24 +438,22 @@ export function PublicHomepage({ locations }: Props) {
 
         {/* 地標列：按了「附近」或定位失敗時出現，選一個地標就以它為中心找 5 公里內的店 */}
         {(specialFilter === 'nearby' || geoError) && (
-          <div className="bg-white border-b border-line py-2.5 relative">
+          <div className="bg-paper border-b-2 border-ink/15 py-2.5 relative">
             {geoError && (
-              <p className="px-3 pb-1.5 text-[12px] font-bold text-rose-600">
+              <p className="px-3 pb-1.5 text-[12px] font-bold text-ink">
                 {lang === 'zh' ? '拿不到你的定位，可以改選一個地標：' : "Couldn't get your location. Pick a landmark instead:"}
               </p>
             )}
-            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-paper to-transparent z-10" />
             <DragScroll className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
-              <span className="shrink-0 text-[11px] font-bold text-gray-400 whitespace-nowrap">
+              <span className="shrink-0 text-[11px] font-bold text-muted whitespace-nowrap">
                 {lang === 'zh' ? '或選地標' : 'Or near'}
               </span>
               {LANDMARKS.map((lm) => (
                 <button
                   key={lm.id}
                   onClick={() => pickLandmark(lm)}
-                  className={`inline-flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
-                    landmark?.id === lm.id ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
-                  }`}
+                  className={`chip ${landmark?.id === lm.id ? 'chip-on' : ''}`}
                 >
                   <MIcon name={lm.icon} size={13} className="shrink-0" /> {lang === 'zh' ? lm.zh : lm.en}
                 </button>
@@ -493,14 +471,15 @@ export function PublicHomepage({ locations }: Props) {
               const meta = TAG_META[tag]
               const Icon = TAG_ICON[tag]
               return (
-                <section key={tag} className="mt-8 pt-7 border-t border-line first:border-t-0 first:mt-0 first:pt-5">
+                <section key={tag} className="mt-6 pt-6 border-t-2 border-dashed border-ink/20 first:border-t-0 first:mt-0 first:pt-5">
                   {/* Section header */}
                   <div className="flex items-end justify-between gap-3 px-4 mb-3">
                     <div className="min-w-0">
                       <h2 className="flex items-center gap-2 font-liufen text-[20px] lg:text-[24px] text-ink leading-tight">
-                        <Icon size={18} className="shrink-0 text-brand" /> {lang === 'zh' ? meta.zh : meta.en}
+                        <span className={`w-8 h-8 shrink-0 rounded-full border-2 border-ink flex items-center justify-center ${TAG_BG[tag]}`}><Icon size={16} /></span>
+                        {lang === 'zh' ? meta.zh : meta.en}
                       </h2>
-                      <p className="text-[12px] text-muted mt-1">
+                      <p className="text-[12px] text-muted mt-1 pl-10">
                         {lang === 'zh'
                           ? tag === 'trending' ? '曼谷社群話題精選' : tag === 'hidden_gem' ? '在地人才知道的地方' : tag === 'new_opening' ? '最新開幕，搶先體驗' : '經典不敗，值得回訪'
                           : tag === 'trending' ? 'What Bangkok is buzzing about' : tag === 'hidden_gem' ? "Locals' best-kept secrets" : tag === 'new_opening' ? 'Be the first to visit' : 'Timeless picks, always worth it'}
@@ -508,7 +487,7 @@ export function PublicHomepage({ locations }: Props) {
                     </div>
                     <button
                       onClick={() => { setActiveTag(tag); setSpecialFilter('all'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
-                      className="shrink-0 text-[12px] text-brand hover:text-brand-dark hover:underline underline-offset-4 whitespace-nowrap"
+                      className="shrink-0 text-[12px] font-bold text-ink border-b-2 border-mustard hover:border-ink whitespace-nowrap transition-colors"
                     >
                       {lang === 'zh' ? `看全部 ${items.length} 筆` : `See all ${items.length}`} →
                     </button>
@@ -516,7 +495,7 @@ export function PublicHomepage({ locations }: Props) {
                   {/* Horizontal scroll cards — 每區隨機抽 SECTION_LIMIT 筆，其餘按「看全部」進完整清單 */}
                   <DragScroll className="flex gap-3 overflow-x-auto no-scrollbar px-4 pb-1 lg:cursor-grab">
                     {items.slice(0, SECTION_LIMIT).map((loc) => (
-                      <Reveal key={loc.id} className="shrink-0 w-44 lg:w-52 h-[250px] lg:h-[290px]">
+                      <Reveal key={loc.id} className="shrink-0 w-44 lg:w-52 h-[300px] lg:h-[304px]">
                         <LocationCard
                           location={loc}
                           lang={lang}
@@ -531,13 +510,13 @@ export function PublicHomepage({ locations }: Props) {
                     {items.length > SECTION_LIMIT && (
                       <button
                         onClick={() => { setActiveTag(tag); setSpecialFilter('all'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
-                        className="shrink-0 w-32 lg:w-36 h-[250px] lg:h-[290px] rounded-lg border border-line hover:border-ink/30 transition-colors flex flex-col items-center justify-center gap-2 text-muted"
+                        className="shrink-0 w-32 lg:w-36 h-[300px] lg:h-[304px] rounded-[20px] border-[3px] border-dashed border-ink/40 hover:border-ink hover:bg-mustard-soft transition-colors flex flex-col items-center justify-center gap-2 text-muted"
                       >
-                        <span className="w-10 h-10 rounded-full border border-line flex items-center justify-center text-ink">
+                        <span className="w-10 h-10 rounded-full border-2 border-ink bg-mustard flex items-center justify-center text-ink">
                           <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
                         </span>
-                        <span className="text-[12px] font-bold">{lang === 'zh' ? '看全部' : 'See all'}</span>
-                        <span className="text-[11px] text-gray-400">{items.length} {lang === 'zh' ? '筆' : 'places'}</span>
+                        <span className="text-[12px] font-bold text-ink">{lang === 'zh' ? '看全部' : 'See all'}</span>
+                        <span className="text-[11px] text-muted">{items.length} {lang === 'zh' ? '筆' : 'places'}</span>
                       </button>
                     )}
                   </DragScroll>
@@ -546,16 +525,16 @@ export function PublicHomepage({ locations }: Props) {
             })}
             {/* 主題玩法：放在分區之後，不擠掉第一個畫面的店家 */}
             {activeCategory === 'all' && filtered.length > 0 && (
-              <section className="mt-8 pt-7 border-t border-line px-4">
+              <section className="mt-6 pt-6 border-t-2 border-dashed border-ink/20 px-4">
                 <h2 className="font-liufen text-[20px] lg:text-[24px] text-ink leading-tight mb-3">{lang === 'zh' ? '主題玩法' : 'Browse by theme'}</h2>
                 <div className="flex flex-wrap gap-2">
                   {THEMES.map((t) => (
                     <Link
                       key={t.slug}
                       href={`/theme/${t.slug}`}
-                      className="inline-flex items-center gap-1.5 text-[13px] text-ink border border-line rounded-full px-3.5 py-2 hover:border-ink/40 transition-colors"
+                      className="chip text-[13px] px-3.5 py-2"
                     >
-                      <MIcon name={t.icon} size={15} className="shrink-0 text-brand" />
+                      <MIcon name={t.icon} size={15} className="shrink-0" />
                       {lang === 'zh' ? t.h1Zh.replace(/^曼谷\s*/, '') : t.h1En.replace(/^Bangkok('s)?\s*/, '')}
                     </Link>
                   ))}
@@ -563,14 +542,12 @@ export function PublicHomepage({ locations }: Props) {
               </section>
             )}
             {filtered.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
-                <span className="mb-4 text-gray-300">
-                  <MIcon name={({ hotel: 'hotel', attraction: 'attractions', shopping: 'shopping_bag', nightlife: 'local_bar', food: 'restaurant', cafe: 'local_cafe' } as Record<string, string>)[activeCategory] ?? 'search'} size={56} />
-                </span>
-                <p className="text-sm font-bold text-gray-400 mb-1">
+              <div className="flex flex-col items-center justify-center py-16 text-muted px-8">
+                <EmptyScene className="w-40 mb-4" />
+                <p className="text-sm font-bold text-ink mb-1">
                   {lang === 'zh' ? '這個類別暫無推薦' : 'No picks in this category yet'}
                 </p>
-                <p className="text-xs text-gray-300 text-center">
+                <p className="text-xs text-muted text-center">
                   {lang === 'zh' ? '持續更新中，敬請期待！' : 'We are curating picks — check back soon!'}
                 </p>
               </div>
@@ -592,7 +569,7 @@ export function PublicHomepage({ locations }: Props) {
                     <select
                       value={sortBy === 'distance' && !nearbyAnchor ? 'default' : sortBy}
                       onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-                      className="bg-white border border-line rounded-md px-2 py-1.5 text-[13px] text-ink outline-none focus:border-ink/40"
+                      className="bg-white border-2 border-ink rounded-full px-3 py-1.5 text-[13px] text-ink outline-none"
                     >
                       <option value="default">{lang === 'zh' ? '預設排序' : 'Default'}</option>
                       <option value="rating">{lang === 'zh' ? '評分高到低' : 'Top rated'}</option>
@@ -619,10 +596,10 @@ export function PublicHomepage({ locations }: Props) {
                   <div className="flex justify-center mt-6">
                     <button
                       onClick={() => setGridLimit((n) => n + GRID_PAGE)}
-                      className="flex items-center gap-1.5 text-[13px] font-bold text-ink bg-white border border-line rounded-full px-6 py-2.5 hover:border-ink/40 transition-colors"
+                      className="ehon-btn text-[13px] px-6 py-2.5"
                     >
                       {lang === 'zh' ? '載入更多' : 'Load more'}
-                      <span className="text-[11px] text-gray-400 font-semibold">
+                      <span className="text-[11px] text-ink/60 font-semibold">
                         {Math.min(gridLimit, filtered.length)} / {filtered.length}
                       </span>
                     </button>
@@ -630,33 +607,29 @@ export function PublicHomepage({ locations }: Props) {
                 )}
               </>
             ) : specialFilter === 'saved' ? (
-              <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
-                <svg className="w-12 h-12 mb-4 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-                <p className="text-sm font-bold text-gray-400 mb-1">{lang === 'zh' ? '還沒有收藏任何地點' : 'No saved places yet'}</p>
-                <p className="text-xs text-gray-300 text-center">{lang === 'zh' ? '點擊卡片上的 ♡ 加入收藏清單' : 'Tap ♡ on any card to save it here'}</p>
+              <div className="flex flex-col items-center justify-center py-16 text-muted px-8">
+                <EmptyScene className="w-40 mb-4" />
+                <p className="text-sm font-bold text-ink mb-1">{lang === 'zh' ? '還沒有收藏任何地點' : 'No saved places yet'}</p>
+                <p className="text-xs text-muted text-center">{lang === 'zh' ? '點擊卡片上的 ♡ 加入收藏清單' : 'Tap ♡ on any card to save it here'}</p>
               </div>
             ) : specialFilter === 'nearby' ? (
-              <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
-                <span className="mb-4 text-gray-200"><MIcon name="near_me" size={48} /></span>
-                <p className="text-sm font-bold text-gray-400 mb-1">
+              <div className="flex flex-col items-center justify-center py-16 text-muted px-8">
+                <EmptyScene className="w-40 mb-4" />
+                <p className="text-sm font-bold text-ink mb-1">
                   {!nearbyAnchor
                     ? (lang === 'zh' ? '選一個地標看看附近有什麼' : 'Pick a landmark to see what is nearby')
                     : (lang === 'zh' ? '5 公里內沒有符合的地點' : 'Nothing matches within 5 km')}
                 </p>
                 {nearbyAnchor && (
-                  <p className="text-xs text-gray-300 text-center">
+                  <p className="text-xs text-muted text-center">
                     {lang === 'zh' ? '換個地標，或清掉分類篩選試試' : 'Try another landmark or clear the category filter'}
                   </p>
                 )}
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center py-20 text-gray-400">
-                <svg className="w-12 h-12 mb-4 text-gray-200" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
-                </svg>
-                <p className="text-sm">{strings[lang].emptyState as string}</p>
+              <div className="flex flex-col items-center justify-center py-16 text-muted px-8">
+                <EmptyScene className="w-40 mb-4" />
+                <p className="text-sm text-ink">{strings[lang].emptyState as string}</p>
               </div>
             )}
           </section>

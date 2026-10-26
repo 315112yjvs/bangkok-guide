@@ -12,7 +12,8 @@ import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { LocationCard } from '@/components/LocationCard'
-import { openStatus, openStatusText, openStatusClass } from '@/lib/openStatus'
+import { openStatus, openStatusParts } from '@/lib/openStatus'
+import { TAG_BG } from '@/lib/tagStyle'
 import { useBangkokMinute } from '@/lib/useBangkokMinute'
 
 function extractThai(text: string): string | null {
@@ -163,17 +164,17 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
   }
 
   const listedAt = location.approved_at ? new Date(location.approved_at) : null
-  const sectionTitle = 'text-[12px] font-bold text-muted mb-1.5 tracking-[0.08em]'
+  const sectionTitle = 'ehon-h2'
 
   return (
-    <div className="max-w-md lg:max-w-5xl mx-auto bg-white min-h-screen lg:border-x lg:border-line">
+    <div className="max-w-md lg:max-w-5xl mx-auto bg-paper min-h-screen">
       <div className="lg:grid lg:grid-cols-2 lg:gap-10 lg:p-8 lg:items-start">
 
         {/* 照片欄（桌機固定在左側） */}
-        <div className="lg:sticky lg:top-8">
+        <div className="lg:sticky lg:top-8 px-4 pt-4 lg:p-0">
           <div
             // touch-pan-y：手指在照片上橫向滑時只換照片，頁面不會跟著上下晃；直向滑仍可捲動頁面
-            className="relative w-full h-72 lg:h-[460px] bg-gray-100 lg:rounded-lg lg:overflow-hidden touch-pan-y"
+            className="relative w-full h-72 lg:h-[460px] bg-mizu-soft rounded-[24px] border-[3px] border-ink overflow-hidden touch-pan-y [transform:translateZ(0)]"
             onTouchStart={(e) => { touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY } }}
             onTouchEnd={onPhotoTouchEnd}
           >
@@ -188,28 +189,27 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 onError={() => markBroken(allPhotos[activePhoto] ?? allPhotos[0])}
               />
             ) : (
-              <div className="w-full h-full bg-gray-200" />
+              <div className="w-full h-full bg-mizu-soft" />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
 
             <button
               onClick={goBack}
               aria-label={lang === 'zh' ? '返回' : 'Back'}
-              className="absolute top-4 left-4 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center text-white hover:bg-black/65 transition-colors"
+              className="absolute top-3 left-3 ehon-icon-btn"
             >
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M19 12H5M11 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
 
             <button
               onClick={shareLocation}
               aria-label={lang === 'zh' ? '分享' : 'Share'}
-              className="absolute top-4 right-16 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center hover:bg-black/65 transition-colors"
+              className="absolute top-3 right-[60px] ehon-icon-btn"
             >
               {shared
-                ? <svg width="16" height="16" fill="none" stroke="white" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                : <svg width="16" height="16" fill="none" stroke="white" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                ? <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                : <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" strokeLinecap="round" strokeLinejoin="round"/></svg>
               }
             </button>
 
@@ -217,9 +217,9 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               onClick={toggleSave}
               aria-label={saved ? (lang === 'zh' ? '取消收藏' : 'Unsave') : (lang === 'zh' ? '收藏' : 'Save')}
               aria-pressed={saved}
-              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center hover:bg-black/65 transition-colors"
+              className="absolute top-3 right-3 ehon-icon-btn"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill={saved ? '#ef4444' : 'none'} stroke={saved ? '#ef4444' : 'white'} strokeWidth={2.5}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill={saved ? '#F2A497' : 'none'} stroke="currentColor" strokeWidth={2.5}>
                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
               </svg>
             </button>
@@ -231,18 +231,18 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 <button
                   onClick={() => setActivePhoto((i) => (i - 1 + allPhotos.length) % allPhotos.length)}
                   aria-label={lang === 'zh' ? '上一張照片' : 'Previous photo'}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 ehon-icon-btn"
                 >
                   <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </button>
                 <button
                   onClick={() => setActivePhoto((i) => (i + 1) % allPhotos.length)}
                   aria-label={lang === 'zh' ? '下一張照片' : 'Next photo'}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 ehon-icon-btn"
                 >
                   <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </button>
-                <span className="absolute bottom-4 right-4 text-[11px] font-bold bg-black/55 text-white px-2 py-1 rounded-sm">
+                <span className="absolute bottom-3 right-3 text-[11px] font-bold bg-white text-ink border-2 border-ink px-2 py-0.5 rounded-full">
                   {activePhoto + 1} / {allPhotos.length}
                 </span>
               </>
@@ -253,8 +253,8 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               const meta = TAG_META[tag]
               const TagIcon = TAG_ICON[tag]
               return (
-                <span className="absolute bottom-4 left-4 inline-flex items-center gap-1 text-[11px] font-bold bg-white text-ink px-2 py-1 rounded-sm">
-                  <TagIcon size={12} className="shrink-0 text-brand" /> {lang === 'zh' ? meta.zh : meta.en}
+                <span className={`absolute bottom-3 left-3 inline-flex items-center gap-1 text-[11px] font-bold text-ink border-2 border-ink px-2 py-0.5 rounded-full ${TAG_BG[tag]}`}>
+                  <TagIcon size={12} className="shrink-0" /> {lang === 'zh' ? meta.zh : meta.en}
                 </span>
               )
             })()}
@@ -268,7 +268,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
             <div className="flex justify-end mb-1">
               <button
                 onClick={copyThai}
-                className="shrink-0 text-[11px] font-bold px-2 py-1 rounded-sm border border-line text-muted hover:text-ink hover:border-ink/40 transition-colors"
+                className="chip text-[11px] font-bold"
               >
                 {copied ? (lang === 'zh' ? '已複製' : 'Copied!') : (lang === 'zh' ? '複製泰文店名（給司機看）' : 'Copy Thai name (for drivers)')}
               </button>
@@ -279,13 +279,21 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
 
           {/* 現在有沒有開：放在店名正下方，不用捲到營業時間表才知道 */}
           {hours && (
-            <p className={`text-[13px] font-bold h-5 mb-1.5 ${status ? openStatusClass(status) : ''}`}>
-              {status ? openStatusText(status, lang) : ''}
+            <p className="flex items-center gap-2 text-[13px] h-6 mb-2">
+              {status && (() => {
+                const p = openStatusParts(status, lang)
+                return (
+                  <>
+                    <span className={`font-bold text-ink px-2.5 py-0.5 rounded-full border-2 border-ink ${p.bg}`}>{p.label}</span>
+                    {p.detail && <span className="text-muted">{p.detail}</span>}
+                  </>
+                )
+              })()}
             </p>
           )}
 
-          <div className="flex items-center gap-3 mb-5 pb-5 border-b border-line">
-            <span className="text-base font-bold text-ink"><span className="text-amber-500">★</span> {location.rating.toFixed(1)}</span>
+          <div className="flex items-center gap-3 mb-5 pb-5 border-b-2 border-dashed border-ink/20">
+            <span className="text-base font-bold text-ink"><span className="text-[#E9A93B]">★</span> {location.rating.toFixed(1)}</span>
             {location.reviews ? (
               <span className="text-sm text-muted -ml-1.5">
                 {lang === 'zh' ? `${location.reviews.toLocaleString('en-US')} 則評論` : `${location.reviews.toLocaleString('en-US')} reviews`}
@@ -298,8 +306,8 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
           </div>
 
           {location.curator_note && (
-            <div className="mb-5 border-l-2 border-brand pl-4 py-1">
-              <p className="text-[11px] font-bold text-brand tracking-wide mb-1">
+            <div className="mb-6 bg-mustard-soft border-[3px] border-ink rounded-[20px] px-4 py-3">
+              <p className="text-[12px] font-bold text-ink mb-1">
                 {lang === 'zh' ? '在地人怎麼說' : "Local's Take"}
               </p>
               <p className="text-[15px] text-ink leading-relaxed">{location.curator_note}</p>
@@ -318,7 +326,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               <h2 className={sectionTitle}>{lang === 'zh' ? '必點' : 'Must Try'}</h2>
               <div className="flex flex-wrap gap-2">
                 {location.highlights!.map((h) => (
-                  <span key={h} className="text-[12px] text-ink border border-line px-2.5 py-1 rounded-sm">{h}</span>
+                  <span key={h} className="text-[12px] text-ink bg-coral-soft border-2 border-ink px-3 py-1 rounded-full">{h}</span>
                 ))}
               </div>
             </div>
@@ -335,7 +343,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                   {groupHours(hours.week, lang).map((r) => {
                     const isToday = today !== null && today >= r.from && today <= r.to
                     return (
-                      <div key={r.from} className={`flex gap-4 py-0.5 ${isToday ? 'text-ink font-bold' : 'text-ink/75'}`}>
+                      <div key={r.from} className={`flex gap-4 py-1 px-2 -mx-2 rounded-xl ${isToday ? 'text-ink font-bold bg-matcha-soft' : 'text-ink/75'}`}>
                         <dt className="w-24 shrink-0">{r.days}{isToday ? (lang === 'zh' ? '（今天）' : ' (today)') : ''}</dt>
                         <dd>{r.hours}</dd>
                       </div>
@@ -370,7 +378,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={lang === 'zh' ? '在 Google Maps 開啟這個位置' : 'Open this location in Google Maps'}
-                className="block relative mt-3 h-44 rounded-lg overflow-hidden border border-line bg-paper isolate [transform:translateZ(0)]"
+                className="block relative mt-3 h-44 rounded-[20px] overflow-hidden border-[3px] border-ink bg-mizu-soft isolate [transform:translateZ(0)]"
               >
                 <iframe
                   title={lang === 'zh' ? '位置地圖' : 'Location map'}
@@ -391,7 +399,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
 
           {location.social_embed_url && (
             <div className="mb-6">
-              <h2 className="text-[12px] font-bold text-muted mb-2.5 tracking-[0.08em]">{lang === 'zh' ? '社群影片' : 'Social Video'}</h2>
+              <h2 className="ehon-h2">{lang === 'zh' ? '社群影片' : 'Social Video'}</h2>
               <SocialEmbed url={location.social_embed_url} />
             </div>
           )}
@@ -409,7 +417,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
             href={mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:flex items-center justify-center gap-2 w-full py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark transition-colors"
+            className="hidden lg:flex ehon-btn w-full py-3.5 text-[15px] hover:bg-[#F3C85E]"
           >
             <IconPin size={16} />
             {lang === 'zh' ? '在 Google Maps 導航' : 'Navigate with Google Maps'}
@@ -419,8 +427,8 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
 
       {/* 附近還有：看完這家可以順路去的其他地點 */}
       {nearby.length > 0 && (
-        <div className="px-4 lg:px-8 pt-6 pb-6 lg:pb-10 border-t border-line">
-          <h2 className="text-[12px] font-bold text-muted mb-2.5 tracking-[0.08em]">{lang === 'zh' ? '附近還有' : 'Also nearby'}</h2>
+        <div className="px-4 lg:px-8 pt-6 pb-6 lg:pb-10 border-t-2 border-dashed border-ink/20">
+          <h2 className="ehon-h2">{lang === 'zh' ? '附近還有' : 'Also nearby'}</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {nearby.map((n) => (
               <LocationCard key={n.location.id} location={n.location} lang={lang} distanceKm={n.km} compact />
@@ -431,12 +439,12 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
 
       {/* 手機：底部固定導航按鈕（上面留一段空白，內容才不會被按鈕蓋住） */}
       <div className="h-24 lg:hidden" />
-      <div className="lg:hidden fixed bottom-0 left-1/2 -translate-x-1/2 z-30 w-full max-w-md px-4 pb-6 pt-3 bg-white border-t border-line">
+      <div className="lg:hidden fixed bottom-0 left-1/2 -translate-x-1/2 z-30 w-full max-w-md px-4 pb-6 pt-3 bg-paper border-t-2 border-ink">
         <a
           href={mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark transition-colors"
+          className="ehon-btn flex w-full py-3.5 text-[15px]"
         >
           <IconPin size={16} />
           {lang === 'zh' ? '在 Google Maps 導航' : 'Navigate with Google Maps'}
