@@ -14,7 +14,7 @@ import type { WeekHours, OpeningHours } from '@/lib/placeInfo'
 import type { NearestStation } from '@/lib/transit'
 import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
-import { buildMapsUrl } from '@/lib/maps'
+import { buildMapsUrl, extractPlaceId } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { LocationCard } from '@/components/LocationCard'
@@ -78,6 +78,18 @@ function groupHours(week: WeekHours, lang: 'zh' | 'en'): { days: string; hours: 
       : `${d[r.from]}${lang === 'zh' ? '至' : '–'}${d[r.to]}`
   }
   return rows
+}
+
+function embedMapSrc(location: Location, lang: 'zh' | 'en') {
+  const key = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  if (!key) {
+    const { lat, lng } = location
+    return `https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.006}%2C${lat - 0.0035}%2C${lng + 0.006}%2C${lat + 0.0035}&layer=mapnik&marker=${lat}%2C${lng}`
+  }
+  // 有 place id 就用它，地圖上會標出店名；沒有就用座標
+  const placeId = extractPlaceId(location.source_url)
+  const q = placeId ? `place_id:${placeId}` : `${location.lat},${location.lng}`
+  return `https://www.google.com/maps/embed/v1/place?key=${key}&q=${encodeURIComponent(q)}&zoom=16&language=${lang === 'zh' ? 'zh-TW' : 'en'}`
 }
 
 export function LocationDetail({ location, nearby = [], hours = null, station = null }: Props) {
@@ -395,26 +407,26 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 </p>
               )}
               {location.address && <p className="text-[13px] text-ink/75 leading-relaxed">{location.address}</p>}
-              {/* 位置地圖（OpenStreetMap 內嵌，免費）。整塊是一個連結，點了開 Google Maps；
-                  地圖本身不接收觸控，避免在手機上滑頁面時被地圖攔住 */}
+              {/* 位置地圖（Google Maps Embed API，免費、不限次數）。整塊是一個連結，點了開 Google Maps；
+                  地圖本身不接收觸控，避免在手機上滑頁面時被地圖攔住。沒有金鑰時退回 OpenStreetMap */}
               <a
                 href={mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={lang === 'zh' ? '在 Google Maps 開啟這個位置' : 'Open this location in Google Maps'}
-                className="block relative mt-3 h-44 rounded-lg overflow-hidden border border-line bg-paper isolate [transform:translateZ(0)]"
+                className="block relative mt-3 h-52 rounded-lg overflow-hidden border border-line bg-paper isolate [transform:translateZ(0)]"
               >
                 <iframe
                   title={lang === 'zh' ? '位置地圖' : 'Location map'}
                   loading="lazy"
                   tabIndex={-1}
                   className="absolute -inset-px w-[calc(100%+2px)] h-[calc(100%+2px)] border-0 pointer-events-none"
-                  src={`https://www.openstreetmap.org/export/embed.html?bbox=${location.lng - 0.006}%2C${location.lat - 0.0035}%2C${location.lng + 0.006}%2C${location.lat + 0.0035}&layer=mapnik&marker=${location.lat}%2C${location.lng}`}
+                  src={embedMapSrc(location, lang)}
                 />
               </a>
               {station && (
                 <p className="text-[11px] text-muted mt-1.5">
-                  {lang === 'zh' ? '步行時間依直線距離估算。地圖與車站位置 © OpenStreetMap 貢獻者。' : 'Walking time estimated from straight-line distance. Map and station data © OpenStreetMap contributors.'}
+                  {lang === 'zh' ? '步行時間依直線距離估算。車站位置 © OpenStreetMap 貢獻者。' : 'Walking time estimated from straight-line distance. Station data © OpenStreetMap contributors.'}
                 </p>
               )}
               {thaiAddress && <p className="text-[13px] text-muted mt-0.5">{thaiAddress}</p>}
