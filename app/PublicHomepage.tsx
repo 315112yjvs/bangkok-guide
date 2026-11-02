@@ -1,7 +1,6 @@
 'use client'
 import { useState, useMemo, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useLanguage } from '@/hooks/useLanguage'
 import { strings } from '@/lib/i18n'
 import { LanguageToggle } from '@/components/LanguageToggle'
@@ -10,7 +9,6 @@ import { TAG_ICON } from '@/components/icons/TagIcons'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
 import { LANDMARKS, type Landmark } from '@/lib/landmarks'
-import { THEMES } from '@/lib/themes'
 import { haversineKm } from '@/lib/geo'
 import { expandQuery } from '@/lib/searchTerms'
 import { Icon, MIcon } from '@/components/icons/Icon'
@@ -536,24 +534,6 @@ export function PublicHomepage({ locations }: Props) {
                 </section>
               )
             })}
-            {/* 主題玩法：放在分區之後，不擠掉第一個畫面的店家 */}
-            {activeCategory === 'all' && filtered.length > 0 && (
-              <section className="mt-8 pt-7 border-t border-line px-4">
-                <h2 className="font-liufen text-[20px] lg:text-[24px] text-ink leading-tight mb-3">{lang === 'zh' ? '主題玩法' : 'Browse by theme'}</h2>
-                <div className="flex flex-wrap gap-2">
-                  {THEMES.map((t) => (
-                    <Link
-                      key={t.slug}
-                      href={`/theme/${t.slug}`}
-                      className="inline-flex items-center gap-1.5 text-[13px] text-ink border border-line rounded-full px-3.5 py-2 hover:border-ink/40 transition-colors"
-                    >
-                      <MIcon name={t.icon} size={15} className="shrink-0 text-brand" />
-                      {lang === 'zh' ? t.h1Zh.replace(/^曼谷\s*/, '') : t.h1En.replace(/^Bangkok('s)?\s*/, '')}
-                    </Link>
-                  ))}
-                </div>
-              </section>
-            )}
             {filtered.length === 0 && (
               <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
                 <span className="mb-4 text-gray-300">
