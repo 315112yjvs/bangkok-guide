@@ -209,7 +209,8 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
     return counts
   }, [locations])
 
-  const showSections = specialFilter === 'all' && activeTag === 'all' && activeArea === 'all' && !query && !openNow
+  // 拜拜只有十幾間，不拆成四個分區，直接列成一整個網格
+  const showSections = specialFilter === 'all' && activeTag === 'all' && activeArea === 'all' && !query && !openNow && activeCategory !== 'temple'
 
   // 篩選結果的排序：預設順序（附近模式已由近到遠）、評分高到低、距離近到遠（要有定位或地標才有）
   const gridItems = useMemo(() => {
@@ -407,7 +408,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
             )}
             <div className="w-px bg-line mx-0.5 my-1.5" />
             {/* Tag filters */}
-            {TAG_ORDER.map((tag) => {
+            {activeCategory !== 'temple' && TAG_ORDER.map((tag) => {
               const m = TAG_META[tag]
               const TagIcon = TAG_ICON[tag]
               return (

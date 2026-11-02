@@ -249,7 +249,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               </>
             )}
 
-            {(() => {
+            {location.category !== 'temple' && (() => {
               const tag = resolveTag(location)
               const meta = TAG_META[tag]
               const TagIcon = TAG_ICON[tag]
