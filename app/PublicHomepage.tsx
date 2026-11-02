@@ -33,6 +33,9 @@ const TAG_META: Record<LocationTag, { zh: string; en: string; subZh: string; sub
 
 const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'new_opening', 'evergreen']
 
+// 分區底色：隔一區換一塊莫蘭迪色，沒有底色的區沿用頁面底色
+const TAG_FIELD: Partial<Record<LocationTag, string>> = { hidden_gem: 'var(--ed-sage)', evergreen: 'var(--ed-rose)' }
+
 // 每個首頁分區最多顯示幾筆（其餘按「看全部」進完整清單）
 const SECTION_LIMIT = 15
 // 篩選/搜尋的網格視圖一次顯示幾筆（其餘按「載入更多」），避免一次渲染上百張卡片
@@ -262,20 +265,20 @@ export function PublicHomepage({ locations }: Props) {
       {/* HERO：深色底＋一條真實店家照片 */}
       <header className="ed-hero">
         <div className="ed-wrap flex items-center justify-between pt-5 lg:pt-8">
-          <Link href="/" className="flex items-center gap-2.5 text-white text-[16px]">
+          <Link href="/" className="flex items-center gap-2.5 text-[var(--ed-ink)] text-[16px]">
             <Image src="/logo-circle.png" alt="" width={28} height={28} className="rounded-full" />
             曼谷人 BKK LOCAL
           </Link>
-          <span className="[&>div]:text-[13px]"><LanguageToggle lang={lang} setLang={setLang} /></span>
+          <span className="[&>div]:text-[13px]"><LanguageToggle lang={lang} setLang={setLang} tone="light" /></span>
         </div>
 
         <div className="ed-wrap pt-10 lg:pt-14 pb-8 lg:pb-10">
-          <h1 className="hero-rise hero-rise-1 ed-serif ed-display text-white">
+          <h1 className="hero-rise hero-rise-1 ed-serif ed-display text-[var(--ed-ink)]">
             <span className="sr-only">曼谷人 BKK LOCAL：</span>
             <span className="block">{strings[lang].heroTitle as string}</span>
             <span className="block">{strings[lang].heroTitleAccent as string}</span>
           </h1>
-          <p className="hero-rise hero-rise-2 mt-5 max-w-[34em] text-[16px] lg:text-[20px] leading-relaxed text-white/80">
+          <p className="hero-rise hero-rise-2 mt-5 max-w-[34em] text-[16px] lg:text-[20px] leading-relaxed text-[var(--ed-ink)]">
             {lang === 'zh'
               ? `在地人挑的曼谷美食、咖啡廳、酒吧與私藏地點，目前收錄 ${locations.length} 家。`
               : `Bangkok food, cafes, bars and hidden spots picked by locals. ${locations.length} places so far.`}
@@ -312,7 +315,7 @@ export function PublicHomepage({ locations }: Props) {
           {/* 曼谷此刻：幾點、幾家開著，按了直接看營業中的店 */}
           <button
             onClick={() => { setOpenNow(true); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
-            className="ed-press inline-flex items-center justify-center gap-2 h-14 px-6 rounded-full bg-[var(--ed-accent)] text-white text-[16px] hover:bg-[#323d91] self-start lg:self-auto"
+            className="ed-press inline-flex items-center justify-center gap-2 h-14 px-6 rounded-full bg-[var(--ed-accent)] text-white text-[16px] hover:bg-[var(--ed-accent-hover)] self-start lg:self-auto"
           >
             {clock && openCount !== null
               ? (lang === 'zh' ? `曼谷現在 ${clock}，有 ${openCount} 家開著` : `${clock} in Bangkok, ${openCount} places open`)
@@ -451,7 +454,12 @@ export function PublicHomepage({ locations }: Props) {
               if (!items || items.length === 0) return null
               const meta = TAG_META[tag]
               return (
-                <section key={tag} className="pt-24 lg:pt-32" aria-labelledby={`sec-${tag}`}>
+                <section
+                  key={tag}
+                  className={TAG_FIELD[tag] ? 'mt-20 lg:mt-28 pt-16 pb-16 lg:pt-24 lg:pb-24' : 'pt-24 lg:pt-32'}
+                  style={TAG_FIELD[tag] ? { background: TAG_FIELD[tag] } : undefined}
+                  aria-labelledby={`sec-${tag}`}
+                >
                   <Reveal className="ed-wrap mb-6 lg:mb-8">
                     <h2 id={`sec-${tag}`} className="ed-serif ed-head text-[var(--ed-ink)]">{lang === 'zh' ? meta.zh : meta.en}</h2>
                     <p className="mt-2 text-[16px] text-[var(--ed-ink)]">
@@ -489,7 +497,7 @@ export function PublicHomepage({ locations }: Props) {
 
             {/* 主題玩法：一欄清單，左邊名稱、右邊家數 */}
             {activeCategory === 'all' && filtered.length > 0 && (
-              <section className="ed-wrap pt-20 lg:pt-32" aria-labelledby="sec-themes">
+              <section className="mt-20 lg:mt-32 py-16 lg:py-24" style={{ background: 'var(--ed-mist)' }} aria-labelledby="sec-themes"><div className="ed-wrap">
                 <div className="grid lg:grid-cols-12 gap-8">
                   <Reveal className="lg:col-span-4">
                     <h2 id="sec-themes" className="ed-serif ed-head text-[var(--ed-ink)]">{lang === 'zh' ? '主題玩法' : 'By theme'}</h2>
@@ -514,7 +522,7 @@ export function PublicHomepage({ locations }: Props) {
                     ))}
                   </ul>
                 </div>
-              </section>
+              </div></section>
             )}
             {filtered.length === 0 && (
               <div className="ed-wrap py-24 text-center">
@@ -596,7 +604,7 @@ export function PublicHomepage({ locations }: Props) {
         )}
       </main>
 
-      <footer className="ed-wrap pt-40 pb-8 grid gap-2 lg:grid-cols-[1fr_auto_1fr] lg:items-baseline text-[16px] text-[var(--ed-muted)]">
+      <footer className="ed-wrap pt-24 pb-8 grid gap-2 lg:grid-cols-[1fr_auto_1fr] lg:items-baseline text-[16px] text-[var(--ed-muted)]">
         <span>{lang === 'zh' ? '曼谷人，住在曼谷的人推薦的店' : 'BKK LOCAL, picks from people who live here'}</span>
         <nav aria-label={lang === 'zh' ? '分類' : 'Categories'} className="flex flex-wrap gap-x-6 gap-y-1">
           {(['food', 'cafe', 'nightlife', 'shopping'] as const).map((c) => (

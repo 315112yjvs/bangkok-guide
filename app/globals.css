@@ -87,14 +87,19 @@ html { scroll-behavior: smooth; }
 /* ───────── 首頁文青版（.ed-page 以內才生效，其他頁不受影響） ───────── */
 .ed-root { font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Noto Sans TC', 'NotoSansThai', 'Microsoft JhengHei', sans-serif; }
 .ed-page {
-  --ed-bg: #f7f7f5;
-  --ed-ink: #16171a;
-  --ed-muted: #5b5f66;
-  --ed-surface: #ecebe7;
-  --ed-surface-2: #e2e1dc;
-  --ed-accent: #3d4aae;
-  --ed-open: #1f6f4a;
-  --ed-hero: #121315;
+  /* 莫蘭迪色系：灰調的米、鼠尾草綠、灰粉、霧藍；品牌藍降低彩度當重點色 */
+  --ed-bg: #efede9;
+  --ed-ink: #2b2c2e;
+  --ed-muted: #5d5f63;
+  --ed-surface: #e2dfd9;
+  --ed-surface-2: #d6d2ca;
+  --ed-accent: #4f5d80;
+  --ed-accent-hover: #414e70;
+  --ed-open: #4d6b55;
+  --ed-hero: #d9ddd5;
+  --ed-sage: #dde1d8;
+  --ed-rose: #e8deda;
+  --ed-mist: #dadfe5;
   background: var(--ed-bg);
   color: var(--ed-ink);
   font-family: -apple-system, BlinkMacSystemFont, 'PingFang TC', 'Noto Sans TC', 'NotoSansThai', 'Microsoft JhengHei', sans-serif;
@@ -106,14 +111,15 @@ html { scroll-behavior: smooth; }
 .ed-head { font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.75rem); line-height: 1.15; }
 .ed-wrap { width: 100%; max-width: 1400px; margin-inline: auto; padding-inline: 20px; }
 @media (min-width: 1024px) { .ed-wrap { padding-inline: 48px; } }
-.ed-hero { background: var(--ed-hero); color: #fff; }
+.ed-hero { background: var(--ed-hero); color: var(--ed-ink); }
+/* 照片稍微降彩度，跟莫蘭迪底色融在一起 */
+.ed-page img { filter: saturate(0.88); }
 .ed-link { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 5px; text-decoration-thickness: 1.5px; transition: text-decoration-color .2s; }
 .ed-link:hover, .ed-link:focus-visible { text-decoration-color: currentColor; }
 .ed-current { text-decoration: underline; text-underline-offset: 6px; text-decoration-thickness: 2px; text-decoration-color: var(--ed-accent); }
 .ed-press { transition: transform .15s ease, background-color .2s, color .2s; }
 .ed-press:active { transform: scale(0.96); }
 .ed-page :focus-visible { outline: 2px solid var(--ed-accent); outline-offset: 3px; }
-.ed-hero :focus-visible { outline-color: #fff; }
 /* 首屏正中那張照片緩慢推近 */
 @keyframes strip-drift { from { transform: scale(1); } to { transform: scale(1.06); } }
 .strip-drift { animation: strip-drift 9s ease-out both; }

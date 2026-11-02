@@ -55,7 +55,7 @@ export function HeroStrip({ items, lang }: { items: Location[]; lang: Lang }) {
               data-frame
               href={`/location/${loc.slug ?? loc.id}`}
               onFocus={(e) => e.currentTarget.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' })}
-              className="relative shrink-0 snap-center h-[44svh] max-h-[340px] min-h-[240px] lg:h-[34vh] overflow-hidden bg-white/5"
+              className="relative shrink-0 snap-center h-[44svh] max-h-[340px] min-h-[240px] lg:h-[34vh] overflow-hidden bg-black/5"
               style={{ aspectRatio: RATIOS[i % RATIOS.length] }}
               aria-label={name}
             >
@@ -66,17 +66,17 @@ export function HeroStrip({ items, lang }: { items: Location[]; lang: Lang }) {
                 unoptimized
                 sizes="(max-width: 768px) 70vw, 420px"
                 priority={i < 5}
-                className={`object-cover transition-opacity duration-500 ${i === active ? 'opacity-100 strip-drift' : 'opacity-40 hover:opacity-80'}`}
+                className={`object-cover transition-opacity duration-500 ${i === active ? 'opacity-100 strip-drift' : 'opacity-55 hover:opacity-90'}`}
               />
             </Link>
           )
         })}
       </DragScroll>
-      <p className="mt-3 min-h-[24px] text-[16px] text-white/90 text-center" aria-live="polite">
+      <p className="mt-3 min-h-[24px] text-[16px] text-[var(--ed-ink)] text-center" aria-live="polite">
         {cur && (
           <>
             {lang === 'zh' ? cur.name_zh : cur.name_en}
-            {cur.area && cur.area !== 'Bangkok' && <span className="text-white/60">　{cur.area}</span>}
+            {cur.area && cur.area !== 'Bangkok' && <span className="text-[var(--ed-muted)]">　{cur.area}</span>}
           </>
         )}
       </p>
