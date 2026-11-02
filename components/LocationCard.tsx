@@ -1,6 +1,8 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { navigateWithPhoto } from '@/lib/viewTransition'
 import { useState, useRef, useEffect } from 'react'
 import { IconPin } from './icons/CategoryIcons'
 import type { Location, Source, LocationTag } from '@/lib/types'
@@ -58,6 +60,7 @@ type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: bool
 
 export function LocationCard({ location, lang, distanceKm, saved: savedProp = false, onToggleSave, compact = false, hideTag = false }: Props) {
   const [copied, setCopied] = useState(false)
+  const router = useRouter()
   const minute = useBangkokMinute()
   const status = location.hours && minute !== null ? openStatus(location.hours, minute) : null
 
@@ -140,10 +143,20 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
   }
 
   return (
-    <div className="group relative flex flex-col h-full bg-white rounded-lg overflow-hidden border border-line hover:border-ink/30 transition-colors duration-200">
+    <div className="card-press group relative flex flex-col h-full bg-white rounded-lg overflow-hidden border border-line hover:border-ink/30">
       {/* 整卡可點的連結鋪在上層（z-10）、互動按鈕疊更高（z-20）：
           避免 <a> 巢套 <a>（無效 HTML，會導致 hydration 失敗、整頁 client 重渲染） */}
-      <Link href={`/location/${location.slug ?? location.id}`} aria-label={name} className="absolute inset-0 z-10 rounded-lg" />
+      <Link
+        href={`/location/${location.slug ?? location.id}`}
+        aria-label={name}
+        className="absolute inset-0 z-10 rounded-lg"
+        onClick={(e) => {
+          // 一般點擊才做照片轉場；新分頁開啟（⌘/Ctrl/中鍵）照瀏覽器原本的行為
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return
+          e.preventDefault()
+          navigateWithPhoto(router, `/location/${location.slug ?? location.id}`, photoBox.current)
+        }}
+      />
       {/* Photo */}
       <div ref={photoBox} className="relative h-36 w-full overflow-hidden bg-paper">
         {nearView && <Image
@@ -235,7 +248,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
               aria-pressed={saved}
               className={`relative z-20 shrink-0 w-10 h-10 flex items-center justify-center rounded-md transition-colors ${saved ? 'text-red-500' : 'text-gray-400 hover:text-ink'}`}
             >
-              <Icon name="heart" size={18} fill={saved ? 'currentColor' : 'none'} />
+              <span key={saved ? 'on' : 'off'} className={saved ? 'heart-pop' : ''}><Icon name="heart" size={18} fill={saved ? 'currentColor' : 'none'} /></span>
             </button>
             <a
               href={mapsUrl}

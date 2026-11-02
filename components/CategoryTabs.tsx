@@ -3,6 +3,7 @@ import { IconAll, IconFood, IconCafe, IconShopping, IconNightlife, IconHotel, Ic
 import type { Category } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
+import { useLayoutEffect, useRef, useState } from 'react'
 import { DragScroll } from './DragScroll'
 import { MIcon } from './icons/Icon'
 
@@ -38,15 +39,38 @@ export function CategoryTabs({ active, onChange, lang, counts }: Props) {
     ? TABS.filter(({ id }) => id === 'all' || (counts[id] ?? 0) >= MIN_TAB_ITEMS)
     : TABS
 
+  // 選中頁籤底下的藍線：量出選中按鈕的位置，用 transform 滑過去（量到之前先用按鈕自己的底線）
+  const tabRefs = useRef(new Map<string, HTMLButtonElement>())
+  const [bar, setBar] = useState<{ x: number; w: number } | null>(null)
+  useLayoutEffect(() => {
+    const measure = () => {
+      const el = tabRefs.current.get(active)
+      if (el) setBar({ x: el.offsetLeft, w: el.offsetWidth })
+    }
+    measure()
+    // 字型載入或視窗寬度改變時重量
+    window.addEventListener('resize', measure)
+    document.fonts?.ready.then(measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [active, visibleTabs.length, lang])
+
   return (
-    <DragScroll className="flex gap-1 px-3 overflow-x-auto no-scrollbar lg:justify-center">
+    <DragScroll className="relative flex gap-1 px-3 overflow-x-auto no-scrollbar lg:justify-center">
+      {bar && (
+        <span
+          aria-hidden
+          className="absolute bottom-0 left-0 h-0.5 w-[100px] bg-brand origin-left transition-transform duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+          style={{ transform: `translateX(${bar.x}px) scaleX(${bar.w / 100})` }}
+        />
+      )}
       {visibleTabs.map(({ id, labelKey, Icon }) => (
         <button
           key={id}
+          ref={(el) => { if (el) tabRefs.current.set(id, el); else tabRefs.current.delete(id) }}
           onClick={() => onChange(id)}
           aria-pressed={active === id}
-          className={`shrink-0 flex items-center gap-1.5 px-3 pt-3.5 pb-3 text-[14px] whitespace-nowrap border-b-2 transition-colors ${
-            active === id ? 'border-brand text-ink font-bold' : 'border-transparent text-muted hover:text-ink'
+          className={`tap shrink-0 flex items-center gap-1.5 px-3 pt-3.5 pb-3 text-[14px] whitespace-nowrap border-b-2 ${
+            active === id ? `${bar ? 'border-transparent' : 'border-brand'} text-ink font-bold` : 'border-transparent text-muted hover:text-ink'
           }`}
         >
           <Icon size={17} />

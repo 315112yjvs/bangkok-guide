@@ -1,5 +1,6 @@
 'use client'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef } from 'react'
+import { markPhotoPageReady } from '@/lib/viewTransition'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { IconPin } from '@/components/icons/CategoryIcons'
@@ -82,7 +83,15 @@ function groupHours(week: WeekHours, lang: 'zh' | 'en'): { days: string; hours: 
 export function LocationDetail({ location, nearby = [], hours = null, station = null }: Props) {
   const router = useRouter()
   const { lang } = useLanguage()
-  const [activePhoto, setActivePhoto] = useState(0)
+  const [activePhoto, setActivePhotoRaw] = useState(0)
+  // 換照片時記住上一張，新照片疊在上面淡入，不會閃一下灰底
+  const [prevPhoto, setPrevPhoto] = useState<number | null>(null)
+  function setActivePhoto(next: (i: number) => number) {
+    setActivePhotoRaw((i) => { setPrevPhoto(i); return next(i) })
+  }
+
+  // 從卡片點進來的照片轉場：頁面畫好就通知轉場拍新畫面
+  useLayoutEffect(() => { markPhotoPageReady() }, [])
   const [saved, setSaved] = useState(false)
   const [copied, setCopied] = useState(false)
   const [shared, setShared] = useState(false)
@@ -179,29 +188,42 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
         <div className="lg:sticky lg:top-8">
           <div
             // touch-pan-y：手指在照片上橫向滑時只換照片，頁面不會跟著上下晃；直向滑仍可捲動頁面
-            className="relative w-full h-72 lg:h-[460px] bg-gray-100 lg:rounded-lg lg:overflow-hidden touch-pan-y"
+            className="relative w-full h-72 lg:h-[460px] bg-gray-100 lg:rounded-lg overflow-hidden touch-pan-y"
             onTouchStart={(e) => { touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY } }}
             onTouchEnd={onPhotoTouchEnd}
           >
-            {allPhotos.length > 0 ? (
-              <Image
-                src={srcOf(allPhotos[activePhoto] ?? allPhotos[0])}
-                alt={name}
-                fill
-                className="object-cover"
-                unoptimized
-                priority
-                onError={() => markBroken(allPhotos[activePhoto] ?? allPhotos[0])}
-              />
-            ) : (
-              <div className="w-full h-full bg-gray-200" />
-            )}
+            {/* 轉場落點：卡片照片會移動到這一塊 */}
+            <div className="absolute inset-0" style={{ viewTransitionName: 'loc-photo' }}>
+              {allPhotos.length > 0 ? (
+                <>
+                  {/* 底下先墊卡片用過的小圖（瀏覽器已快取），大圖還沒載完時轉場也有畫面 */}
+                  {activePhoto === 0 && prevPhoto === null && (
+                    <Image src={photoUrl(allRefs[0], 480)} alt="" fill className="object-cover" unoptimized aria-hidden />
+                  )}
+                  {prevPhoto !== null && prevPhoto !== activePhoto && (
+                    <Image src={srcOf(allPhotos[prevPhoto])} alt="" fill className="object-cover" unoptimized aria-hidden />
+                  )}
+                  <Image
+                    key={activePhoto}
+                    src={srcOf(allPhotos[activePhoto] ?? allPhotos[0])}
+                    alt={name}
+                    fill
+                    className={`object-cover ${prevPhoto !== null ? 'photo-fade' : ''}`}
+                    unoptimized
+                    priority
+                    onError={() => markBroken(allPhotos[activePhoto] ?? allPhotos[0])}
+                  />
+                </>
+              ) : (
+                <div className="w-full h-full bg-gray-200" />
+              )}
+            </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
 
             <button
               onClick={goBack}
               aria-label={lang === 'zh' ? '返回' : 'Back'}
-              className="absolute top-4 left-4 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center text-white hover:bg-black/65 transition-colors"
+              className="absolute top-4 left-4 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center text-white hover:bg-black/65 tap"
             >
               {/* 返回用帶桿的箭頭，跟切換照片的 < > 區分開 */}
               <Icon name="arrow-left" size={19} strokeWidth={2} />
@@ -210,7 +232,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
             <button
               onClick={shareLocation}
               aria-label={lang === 'zh' ? '分享' : 'Share'}
-              className="absolute top-4 right-16 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center hover:bg-black/65 transition-colors"
+              className="absolute top-4 right-16 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center hover:bg-black/65 tap"
             >
               {shared
                 ? <Icon name="check" size={17} strokeWidth={2} className="text-white" />
@@ -222,7 +244,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               onClick={toggleSave}
               aria-label={saved ? (lang === 'zh' ? '取消收藏' : 'Unsave') : (lang === 'zh' ? '收藏' : 'Save')}
               aria-pressed={saved}
-              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center hover:bg-black/65 transition-colors"
+              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center hover:bg-black/65 tap"
             >
               <Icon name="heart" size={17} strokeWidth={2} fill={saved ? 'currentColor' : 'none'} className={saved ? 'text-red-500' : 'text-white'} />
             </button>
@@ -234,14 +256,14 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 <button
                   onClick={() => setActivePhoto((i) => (i - 1 + allPhotos.length) % allPhotos.length)}
                   aria-label={lang === 'zh' ? '上一張照片' : 'Previous photo'}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 tap"
                 >
                   <Icon name="chevron-left" size={18} strokeWidth={2} />
                 </button>
                 <button
                   onClick={() => setActivePhoto((i) => (i + 1) % allPhotos.length)}
                   aria-label={lang === 'zh' ? '下一張照片' : 'Next photo'}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 tap"
                 >
                   <Icon name="chevron-right" size={18} strokeWidth={2} />
                 </button>
@@ -421,7 +443,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
             href={mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden lg:flex items-center justify-center gap-2 w-full py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark transition-colors"
+            className="hidden lg:flex items-center justify-center gap-2 w-full py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark tap"
           >
             <IconPin size={16} />
             {lang === 'zh' ? '在 Google Maps 導航' : 'Navigate with Google Maps'}
@@ -448,7 +470,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
           href={mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark transition-colors"
+          className="flex items-center justify-center gap-2 w-full py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark tap"
         >
           <IconPin size={16} />
           {lang === 'zh' ? '在 Google Maps 導航' : 'Navigate with Google Maps'}

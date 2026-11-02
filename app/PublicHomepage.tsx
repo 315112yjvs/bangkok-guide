@@ -62,6 +62,18 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null)
   const [landmark, setLandmark] = useState<Landmark | null>(null)
   // 附近的中心點：選了地標就用地標座標，否則用 GPS
+  // 切換分類時讓內容區淡入一次。不用 key 重掛元件：重掛的瞬間頁面變矮，捲動位置會跳掉
+  const tabFadeRef = useRef<HTMLDivElement>(null)
+  const firstTabRender = useRef(true)
+  useEffect(() => {
+    if (firstTabRender.current) { firstTabRender.current = false; return }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    tabFadeRef.current?.animate(
+      [{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }],
+      { duration: 360, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' },
+    )
+  }, [activeCategory])
+
   const nearbyAnchor = landmark ? { lat: landmark.lat, lng: landmark.lng } : userLocation
   const [locating, setLocating] = useState(false)
   // 定位失敗（拒絕權限/逾時/不支援）：提示改選地標，不要讓「附近」按了沒反應
@@ -243,7 +255,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
         <Image
           src="/hero-bangkok.jpg"
           alt="Bangkok"
-          fill className="object-cover object-center"
+          fill className="object-cover object-center hero-drift"
           priority
         />
         {/* layered gradient: subtle top bar darkening + heavy title backdrop */}
@@ -342,7 +354,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
             {/* All */}
             <button
               onClick={() => { setSpecialFilter('all'); setActiveTag('all'); setActiveArea('all'); setLandmark(null); setGeoError(false) }}
-              className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+              className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap tap ${
                 specialFilter === 'all' && activeTag === 'all' && activeArea === 'all'
                   ? 'bg-ink text-white border-ink'
                   : 'bg-white text-ink/70 border-line hover:border-ink/40'
@@ -358,7 +370,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                 requestLocation()
               }}
               disabled={locating}
-              className={`flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+              className={`flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap tap ${
                 specialFilter === 'nearby' && !landmark
                   ? 'bg-ink text-white border-ink'
                   : 'bg-white text-ink/70 border-line hover:border-ink/40'
@@ -374,7 +386,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
             <button
               onClick={() => setOpenNow((v) => !v)}
               aria-pressed={openNow}
-              className={`flex items-center gap-1.5 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+              className={`flex items-center gap-1.5 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap tap ${
                 openNow ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
               }`}
             >
@@ -384,7 +396,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
             {/* Saved */}
             <button
               onClick={() => setSpecialFilter(specialFilter === 'saved' ? 'all' : 'saved')}
-              className={`flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+              className={`flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap tap ${
                 specialFilter === 'saved'
                   ? 'bg-ink text-white border-ink'
                   : 'bg-white text-ink/70 border-line hover:border-ink/40'
@@ -399,7 +411,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
               <button
                 onClick={() => setAreaOpen((v) => !v)}
                 aria-expanded={areaOpen || activeArea !== 'all'}
-                className={`lg:hidden flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                className={`lg:hidden flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap tap ${
                   activeArea !== 'all' ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
                 }`}
               >
@@ -416,7 +428,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                 <button
                   key={tag}
                   onClick={() => { setActiveTag(activeTag === tag ? 'all' : tag); setSpecialFilter('all') }}
-                  className={`inline-flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                  className={`inline-flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap tap ${
                     activeTag === tag
                       ? 'bg-ink text-white border-ink'
                       : 'bg-white text-ink/70 border-line hover:border-ink/40'
@@ -437,7 +449,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
               <Icon name="map-pin" size={14} className="text-gray-400 shrink-0" />
               <button
                 onClick={() => { setActiveArea('all'); setSpecialFilter('all'); setLandmark(null) }}
-                className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap tap ${
                   activeArea === 'all' ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
                 }`}
               >
@@ -447,7 +459,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                 <button
                   key={a}
                   onClick={() => { setActiveArea(activeArea === a ? 'all' : a); setSpecialFilter('all'); setLandmark(null) }}
-                  className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                  className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap tap ${
                     activeArea === a ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
                   }`}
                 >
@@ -475,7 +487,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                 <button
                   key={lm.id}
                   onClick={() => pickLandmark(lm)}
-                  className={`inline-flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
+                  className={`inline-flex items-center gap-1 text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap tap ${
                     landmark?.id === lm.id ? 'bg-ink text-white border-ink' : 'bg-white text-ink/70 border-line hover:border-ink/40'
                   }`}
                 >
@@ -486,6 +498,8 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
           </div>
         )}
 
+        {/* 切換分類時整塊內容重新淡入 */}
+        <div ref={tabFadeRef}>
         {/* 4-section view (default) */}
         {showSections && sectionsByTag && (
           <div className="pb-10">
@@ -517,8 +531,8 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                   </div>
                   {/* Horizontal scroll cards — 每區隨機抽 SECTION_LIMIT 筆，其餘按「看全部」進完整清單 */}
                   <DragScroll className="flex gap-3 overflow-x-auto no-scrollbar px-4 pb-1 lg:cursor-grab">
-                    {items.slice(0, SECTION_LIMIT).map((loc) => (
-                      <Reveal key={loc.id} className="shrink-0 w-44 lg:w-52 h-[250px] lg:h-[290px]">
+                    {items.slice(0, SECTION_LIMIT).map((loc, i) => (
+                      <Reveal key={loc.id} delay={i < 5 ? i * 70 : 0} className="shrink-0 w-44 lg:w-52 h-[250px] lg:h-[290px]">
                         <LocationCard
                           location={loc}
                           lang={lang}
@@ -620,8 +634,8 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                   </label>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                  {gridItems.slice(0, gridLimit).map((loc) => (
-                    <Reveal key={loc.id}>
+                  {gridItems.slice(0, gridLimit).map((loc, i) => (
+                    <Reveal key={loc.id} delay={(i % 5) * 60}>
                       <LocationCard
                         location={loc}
                         lang={lang}
@@ -676,6 +690,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
             )}
           </section>
         )}
+        </div>
 
       </div>
     </div>

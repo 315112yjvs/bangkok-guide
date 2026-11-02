@@ -9,7 +9,7 @@ export function RouteBanner({ lang, route = TEMPLE_ROUTES[0], stop, className = 
   return (
     <Link
       href={`/guide/${route.slug}`}
-      className={`flex items-center gap-3 rounded-lg border border-line bg-paper px-4 py-3 hover:border-ink/30 transition-colors ${className}`}
+      className={`flex items-center gap-3 rounded-lg border border-line bg-paper px-4 py-3 hover:border-ink/30 tap ${className}`}
     >
       <span className="shrink-0 w-9 h-9 rounded-full bg-white border border-line text-brand flex items-center justify-center">
         <Icon name="route" size={17} strokeWidth={2} />

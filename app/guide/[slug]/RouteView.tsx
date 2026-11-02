@@ -52,7 +52,7 @@ export function RouteView({ route, stops }: { route: TempleRoute; stops: Stop[] 
           href={walkingUrl(stops)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark transition-colors"
+          className="flex items-center justify-center gap-2 w-full py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark tap"
         >
           <Icon name="route" size={17} strokeWidth={2} />
           {zh ? '用 Google Maps 開啟步行路線' : 'Open walking route in Google Maps'}

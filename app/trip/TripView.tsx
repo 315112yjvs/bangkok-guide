@@ -25,7 +25,7 @@ export function TripView() {
       href={TRIP_CONTACT_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center justify-center gap-2 w-full lg:w-auto lg:px-10 py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark transition-colors"
+      className="flex items-center justify-center gap-2 w-full lg:w-auto lg:px-10 py-3.5 bg-brand text-white font-bold text-[15px] rounded-lg hover:bg-brand-dark tap"
     >
       <Icon name="message-circle" size={18} strokeWidth={2} />
       {zh ? '傳訊息問行程' : 'Message me'}

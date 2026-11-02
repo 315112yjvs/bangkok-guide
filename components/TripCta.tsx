@@ -18,7 +18,7 @@ export function TripCta({ lang, compact = false }: { lang: Lang; compact?: boole
   return (
     <Link
       href="/trip"
-      className="mb-6 flex items-center gap-3 rounded-lg bg-brand-soft border border-brand/15 px-4 py-3.5 hover:border-brand/40 transition-colors"
+      className="mb-6 flex items-center gap-3 rounded-lg bg-brand-soft border border-brand/15 px-4 py-3.5 hover:border-brand/40 tap"
     >
       <span className="shrink-0 w-10 h-10 rounded-full bg-brand text-white flex items-center justify-center">
         <Icon name="route" size={19} strokeWidth={2} />
