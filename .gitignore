@@ -48,3 +48,4 @@ __pycache__/
 
 # claude code local config
 .claude/
+.taste-skill/
