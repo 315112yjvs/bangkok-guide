@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { IconPin } from '@/components/icons/CategoryIcons'
+import { Icon } from '@/components/icons/Icon'
 import type { Location, LocationTag } from '@/lib/types'
 import type { WeekHours, OpeningHours } from '@/lib/placeInfo'
 import type { NearestStation } from '@/lib/transit'
@@ -198,9 +199,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               className="absolute top-4 left-4 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center text-white hover:bg-black/65 transition-colors"
             >
               {/* 返回用帶桿的箭頭，跟切換照片的 < > 區分開 */}
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path d="M19 12H5M11 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <Icon name="arrow-left" size={19} strokeWidth={2} />
             </button>
 
             <button
@@ -209,8 +208,8 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               className="absolute top-4 right-16 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center hover:bg-black/65 transition-colors"
             >
               {shared
-                ? <svg width="16" height="16" fill="none" stroke="white" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                : <svg width="16" height="16" fill="none" stroke="white" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                ? <Icon name="check" size={17} strokeWidth={2} className="text-white" />
+                : <Icon name="share" size={17} strokeWidth={2} className="text-white" />
               }
             </button>
 
@@ -220,9 +219,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               aria-pressed={saved}
               className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/45 flex items-center justify-center hover:bg-black/65 transition-colors"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill={saved ? '#ef4444' : 'none'} stroke={saved ? '#ef4444' : 'white'} strokeWidth={2.5}>
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
+              <Icon name="heart" size={17} strokeWidth={2} fill={saved ? 'currentColor' : 'none'} className={saved ? 'text-red-500' : 'text-white'} />
             </button>
 
             {/* 只載入目前這一張；其他照片要滑到或按箭頭才會載入。
@@ -234,14 +231,14 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                   aria-label={lang === 'zh' ? '上一張照片' : 'Previous photo'}
                   className="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
                 >
-                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <Icon name="chevron-left" size={18} strokeWidth={2} />
                 </button>
                 <button
                   onClick={() => setActivePhoto((i) => (i + 1) % allPhotos.length)}
                   aria-label={lang === 'zh' ? '下一張照片' : 'Next photo'}
                   className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/40 flex items-center justify-center text-white hover:bg-black/60 transition-colors"
                 >
-                  <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <Icon name="chevron-right" size={18} strokeWidth={2} />
                 </button>
                 <span className="absolute bottom-4 right-4 text-[11px] font-bold bg-black/55 text-white px-2 py-1 rounded-sm">
                   {activePhoto + 1} / {allPhotos.length}
@@ -286,7 +283,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
           )}
 
           <div className="flex items-center gap-3 mb-5 pb-5 border-b border-line">
-            <span className="text-base font-bold text-ink"><span className="text-amber-500">★</span> {location.rating.toFixed(1)}</span>
+            <span className="inline-flex items-center gap-1 text-base font-bold text-ink"><Icon name="star" size={15} strokeWidth={1.5} fill="currentColor" className="text-amber-500" /> {location.rating.toFixed(1)}</span>
             {location.reviews ? (
               <span className="text-sm text-muted -ml-1.5">
                 {lang === 'zh' ? `${location.reviews.toLocaleString('en-US')} 則評論` : `${location.reviews.toLocaleString('en-US')} reviews`}

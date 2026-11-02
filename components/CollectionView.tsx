@@ -7,7 +7,7 @@ import { LocationCard } from '@/components/LocationCard'
 import { CATEGORY_META } from '@/lib/collections'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
-import { MIcon } from '@/components/icons/MaterialIcons'
+import { Icon, MIcon } from '@/components/icons/Icon'
 import type { Location } from '@/lib/types'
 
 type Props = {
@@ -35,9 +35,7 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
       <div className="border-b border-line px-4 pt-5 pb-6 lg:px-10 lg:pt-8 lg:pb-9">
         <div className="flex items-center justify-between mb-5">
           <Link href="/" className="flex items-center gap-1.5 text-muted hover:text-ink text-sm transition-colors">
-            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path d="M15 18l-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+            <Icon name="arrow-left" size={16} strokeWidth={2} />
             {lang === 'zh' ? '曼谷人' : 'BKK LOCAL'}
           </Link>
           <LanguageToggle lang={lang} setLang={setLang} tone="light" />

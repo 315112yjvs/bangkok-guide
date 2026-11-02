@@ -9,7 +9,7 @@ import { strings } from '@/lib/i18n'
 import { buildMapsUrl } from '@/lib/maps'
 import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from './icons/TagIcons'
-import { MIcon } from './icons/MaterialIcons'
+import { Icon, MIcon } from './icons/Icon'
 import { openStatus, openStatusText, openStatusClass } from '@/lib/openStatus'
 import { useBangkokMinute } from '@/lib/useBangkokMinute'
 
@@ -215,7 +215,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
         <div className="flex items-center justify-between gap-1 mt-auto">
           {/* 左側資訊放不下時從尾端裁掉（順序＝重要性：評分、距離、價位、區域），不要壓到右邊的按鈕 */}
           <div className="flex items-center gap-1.5 min-w-0 flex-1 overflow-hidden whitespace-nowrap">
-            <span className="shrink-0 text-[11px] font-bold text-ink"><span className="text-amber-500">★</span> {location.rating.toFixed(1)}{location.reviews ? <span className="font-normal text-muted"> ({location.reviews.toLocaleString('en-US')})</span> : null}</span>
+            <span className="shrink-0 inline-flex items-center gap-0.5 text-[11px] font-bold text-ink"><Icon name="star" size={11} strokeWidth={1.5} fill="currentColor" className="text-amber-500" /> {location.rating.toFixed(1)}{location.reviews ? <span className="font-normal text-muted"> ({location.reviews.toLocaleString('en-US')})</span> : null}</span>
             {distanceKm !== undefined && (
               <span className="shrink-0 text-[10px] font-bold text-brand">
                 {distanceKm < 1 ? `${Math.round(distanceKm * 1000)}m` : `${distanceKm.toFixed(1)}km`}
@@ -235,9 +235,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
               aria-pressed={saved}
               className={`relative z-20 shrink-0 w-10 h-10 flex items-center justify-center rounded-md transition-colors ${saved ? 'text-red-500' : 'text-gray-400 hover:text-ink'}`}
             >
-              <svg width="17" height="17" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.2}>
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
+              <Icon name="heart" size={18} fill={saved ? 'currentColor' : 'none'} />
             </button>
             <a
               href={mapsUrl}

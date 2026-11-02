@@ -13,7 +13,7 @@ import { LANDMARKS, type Landmark } from '@/lib/landmarks'
 import { THEMES } from '@/lib/themes'
 import { haversineKm } from '@/lib/geo'
 import { expandQuery } from '@/lib/searchTerms'
-import { MIcon } from '@/components/icons/MaterialIcons'
+import { Icon, MIcon } from '@/components/icons/Icon'
 import { LocationCard } from '@/components/LocationCard'
 import { openStatus } from '@/lib/openStatus'
 import { useBangkokMinute } from '@/lib/useBangkokMinute'
@@ -268,9 +268,7 @@ export function PublicHomepage({ locations }: Props) {
 
             {/* Search bar */}
             <div ref={searchRef} className="hero-rise hero-rise-3 flex items-center gap-2.5 bg-white rounded-lg px-4 py-3">
-              <svg className="w-4 h-4 text-muted shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
-              </svg>
+              <Icon name="search" size={16} className="text-muted shrink-0" />
               <input
                 className="flex-1 text-[15px] text-left outline-none text-ink placeholder:text-muted bg-transparent"
                 placeholder={strings[lang].searchPlaceholder as string}
@@ -286,7 +284,7 @@ export function PublicHomepage({ locations }: Props) {
                 enterKeyHint="search"
               />
               {query && (
-                <button onClick={() => setQuery('')} aria-label={lang === 'zh' ? '清除搜尋' : 'Clear search'} className="text-muted hover:text-ink text-sm leading-none transition-colors">✕</button>
+                <button onClick={() => setQuery('')} aria-label={lang === 'zh' ? '清除搜尋' : 'Clear search'} className="text-muted hover:text-ink transition-colors"><Icon name="x" size={16} /></button>
               )}
             </div>
           </div>
@@ -322,9 +320,7 @@ export function PublicHomepage({ locations }: Props) {
             aria-pressed={mapExpanded}
             className={`shrink-0 flex items-center gap-1.5 px-3.5 border-l border-line text-[13px] transition-colors ${mapExpanded ? 'text-brand font-bold' : 'text-muted hover:text-ink'}`}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-              <path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7M9 20l6-3M9 20V7m6 13l4.553 2.276A1 1 0 0021 21.382V10.618a1 1 0 00-.553-.894L15 7M15 20V7M9 7l6-3" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+            <Icon name="map" size={16} />
             {lang === 'zh' ? (mapExpanded ? '收起' : '地圖') : (mapExpanded ? 'Hide' : 'Map')}
           </button>
         </div>
@@ -360,7 +356,7 @@ export function PublicHomepage({ locations }: Props) {
             >
               {locating
                 ? <svg className="w-3 h-3 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"/></svg>
-                : <svg className="w-3 h-3 shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+                : <Icon name="locate" size={13} strokeWidth={2} className="shrink-0" />
               }
               {lang === 'zh' ? '附近' : 'Near Me'}
             </button>
@@ -384,9 +380,7 @@ export function PublicHomepage({ locations }: Props) {
                   : 'bg-white text-ink/70 border-line hover:border-ink/40'
               }`}
             >
-              <svg width="10" height="10" viewBox="0 0 24 24" fill={specialFilter === 'saved' ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={2.5}>
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-              </svg>
+              <Icon name="heart" size={12} strokeWidth={2} fill={specialFilter === 'saved' ? 'currentColor' : 'none'} />
               {lang === 'zh' ? '我的收藏' : 'Saved'}
               {savedIds.size > 0 && <span className={`text-[9px] font-black ${specialFilter === 'saved' ? 'text-white/70' : 'text-muted'}`}>{savedIds.size}</span>}
             </button>
@@ -400,14 +394,14 @@ export function PublicHomepage({ locations }: Props) {
                 }`}
               >
                 {activeArea !== 'all' ? activeArea : (lang === 'zh' ? '區域' : 'Area')}
-                <svg className={`w-2.5 h-2.5 transition-transform ${areaOpen || activeArea !== 'all' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                <Icon name="chevron-down" size={12} strokeWidth={2} className={`transition-transform ${areaOpen || activeArea !== 'all' ? 'rotate-180' : ''}`} />
               </button>
             )}
             <div className="w-px bg-line mx-0.5 my-1.5" />
             {/* Tag filters */}
             {TAG_ORDER.map((tag) => {
               const m = TAG_META[tag]
-              const Icon = TAG_ICON[tag]
+              const TagIcon = TAG_ICON[tag]
               return (
                 <button
                   key={tag}
@@ -418,7 +412,7 @@ export function PublicHomepage({ locations }: Props) {
                       : 'bg-white text-ink/70 border-line hover:border-ink/40'
                   }`}
                 >
-                  <Icon size={13} className="shrink-0" /> {lang === 'zh' ? m.zh : m.en}
+                  <TagIcon size={13} className="shrink-0" /> {lang === 'zh' ? m.zh : m.en}
                 </button>
               )
             })}
@@ -430,9 +424,7 @@ export function PublicHomepage({ locations }: Props) {
           <div className={`bg-white border-b border-line py-2.5 relative ${areaOpen || activeArea !== 'all' ? '' : 'hidden lg:block'}`}>
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
             <DragScroll className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
-              <svg className="w-3.5 h-3.5 text-gray-300 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7z" strokeLinejoin="round"/><circle cx="12" cy="9" r="2.5"/>
-              </svg>
+              <Icon name="map-pin" size={14} className="text-gray-400 shrink-0" />
               <button
                 onClick={() => { setActiveArea('all'); setSpecialFilter('all'); setLandmark(null) }}
                 className={`text-[12px] px-3 py-1.5 rounded-full border whitespace-nowrap transition-colors ${
@@ -491,14 +483,14 @@ export function PublicHomepage({ locations }: Props) {
               const items = sectionsByTag[tag]
               if (!items || items.length === 0) return null
               const meta = TAG_META[tag]
-              const Icon = TAG_ICON[tag]
+              const TagIcon = TAG_ICON[tag]
               return (
                 <section key={tag} className="mt-8 pt-7 border-t border-line first:border-t-0 first:mt-0 first:pt-5">
                   {/* Section header */}
                   <div className="flex items-end justify-between gap-3 px-4 mb-3">
                     <div className="min-w-0">
                       <h2 className="flex items-center gap-2 font-liufen text-[20px] lg:text-[24px] text-ink leading-tight">
-                        <Icon size={18} className="shrink-0 text-brand" /> {lang === 'zh' ? meta.zh : meta.en}
+                        <TagIcon size={18} className="shrink-0 text-brand" /> {lang === 'zh' ? meta.zh : meta.en}
                       </h2>
                       <p className="text-[12px] text-muted mt-1">
                         {lang === 'zh'
@@ -534,7 +526,7 @@ export function PublicHomepage({ locations }: Props) {
                         className="shrink-0 w-32 lg:w-36 h-[250px] lg:h-[290px] rounded-lg border border-line hover:border-ink/30 transition-colors flex flex-col items-center justify-center gap-2 text-muted"
                       >
                         <span className="w-10 h-10 rounded-full border border-line flex items-center justify-center text-ink">
-                          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                          <Icon name="chevron-right" size={18} />
                         </span>
                         <span className="text-[12px] font-bold">{lang === 'zh' ? '看全部' : 'See all'}</span>
                         <span className="text-[11px] text-gray-400">{items.length} {lang === 'zh' ? '筆' : 'places'}</span>
@@ -631,9 +623,7 @@ export function PublicHomepage({ locations }: Props) {
               </>
             ) : specialFilter === 'saved' ? (
               <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
-                <svg className="w-12 h-12 mb-4 text-gray-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5}>
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
+                <Icon name="heart" size={48} strokeWidth={1.25} className="mb-4 text-gray-300" />
                 <p className="text-sm font-bold text-gray-400 mb-1">{lang === 'zh' ? '還沒有收藏任何地點' : 'No saved places yet'}</p>
                 <p className="text-xs text-gray-300 text-center">{lang === 'zh' ? '點擊卡片上的 ♡ 加入收藏清單' : 'Tap ♡ on any card to save it here'}</p>
               </div>
@@ -653,9 +643,7 @@ export function PublicHomepage({ locations }: Props) {
               </div>
             ) : (
               <div className="flex flex-col items-center justify-center py-20 text-gray-400">
-                <svg className="w-12 h-12 mb-4 text-gray-200" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/>
-                </svg>
+                <Icon name="search" size={48} strokeWidth={1.25} className="mb-4 text-gray-300" />
                 <p className="text-sm">{strings[lang].emptyState as string}</p>
               </div>
             )}
