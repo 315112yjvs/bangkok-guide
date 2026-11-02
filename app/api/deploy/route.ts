@@ -13,7 +13,7 @@ export async function POST() {
     // 上架的店補齊照片（待審時只下載了封面）、清掉被駁回店家的照片，再一起提交
     downloadPhotos()
 
-    execSync('git add -A data/locations.json data/pending.json data/hours.json public/photos', { cwd: repoRoot, stdio: 'pipe' })
+    execSync('git add -A data/locations.json data/pending.json data/hours.json data/diary.json public/photos public/diary', { cwd: repoRoot, stdio: 'pipe' })
 
     try {
       execSync(`git commit -m "data: update locations ${date}"`, {

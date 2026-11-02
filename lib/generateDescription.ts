@@ -9,7 +9,7 @@ import type { Evidence, LocationTag } from './types'
 
 const CAT_ZH: Record<string, string> = {
   food: '餐廳', cafe: '咖啡廳', shopping: '購物景點',
-  nightlife: '夜生活場所', hotel: '飯店', attraction: '景點',
+  nightlife: '夜生活場所', hotel: '飯店', attraction: '景點', temple: '寺廟神壇',
 }
 
 // Pull Google's own editorial summary + real reviews for the EXACT place (by place_id).

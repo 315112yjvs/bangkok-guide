@@ -17,7 +17,7 @@ const TAG_META: Record<LocationTag, { zh: string; color: string }> = {
 
 const CAT_LABEL: Record<string, string> = {
   food: '餐廳', cafe: '咖啡廳', shopping: '購物',
-  nightlife: '夜生活', hotel: '飯店', attraction: '景點',
+  nightlife: '夜生活', hotel: '飯店', attraction: '景點', temple: '拜拜',
 }
 
 function resolveTag(loc: Location): LocationTag {

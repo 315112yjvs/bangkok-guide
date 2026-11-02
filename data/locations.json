@@ -20861,5 +20861,697 @@
       "Beetroot Juice"
     ],
     "approved_at": "2026-10-12T09:02:40.619Z"
+  },
+  {
+    "id": "8765f13a-30e7-49bc-aafc-833010a260e2",
+    "name_zh": "四面佛",
+    "name_en": "The Shrine of Erawan",
+    "name_th": "ศาลท้าวมหาพรหมเอราวัณ",
+    "description_zh": "曼谷香火最旺的神壇，就在 Ratchaprasong 路口、Grand Hyatt Erawan 旁邊，BTS Chit Lom 站走過來兩分鐘。四面佛其實是印度教的梵天，四張臉各管不同的願望，所以大家都會繞一圈四面都拜。旁邊常有泰國舞者在跳舞，那是願望成真的人回來還願請的。",
+    "description_en": "Bangkok’s busiest shrine, right at the Ratchaprasong intersection next to Grand Hyatt Erawan. The four-faced Brahma is said to grant a different kind of wish on each side, so people walk around and pray at all four. The dancers you see were hired by people returning to give thanks.",
+    "category": "temple",
+    "address": "494 Thanon Ratchadamri, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "address_th": "494 ถ. ราชดำริ แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
+    "lat": 13.7443437,
+    "lng": 100.5404554,
+    "photos": [
+      "/photos/8765f13a-30e7-49bc-aafc-833010a260e2/0.jpg",
+      "/photos/8765f13a-30e7-49bc-aafc-833010a260e2/1.jpg",
+      "/photos/8765f13a-30e7-49bc-aafc-833010a260e2/2.jpg",
+      "/photos/8765f13a-30e7-49bc-aafc-833010a260e2/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Shrine%20of%20Erawan%20494%20Thanon%20Ratchadamri%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJcdjtDNCe4jARVBbi7rkb-jA",
+    "rating": 4.7,
+    "price_range": 1,
+    "tag": "evergreen",
+    "area": "",
+    "temple": {
+      "deity_zh": "梵天（泰文 Phra Phrom，華人習慣叫四面佛）",
+      "wishes_zh": [
+        "事業與健康（正面）",
+        "愛情與婚姻（第二面）",
+        "財運（第三面）",
+        "平安與家庭（第四面）"
+      ],
+      "steps_zh": [
+        "在入口櫃檯買一整套供品，裡面有香、蠟燭和花環",
+        "從正對入口的那一面開始，順時針繞",
+        "每一面點香、獻上花環，雙手合十默念自己的名字、生日和願望",
+        "四面都拜完就完成了，願望實現後記得回來還願"
+      ],
+      "offerings_zh": [
+        "香、蠟燭、萬壽菊或茉莉花環（現場整套販售）",
+        "還願：木雕大象、花環，或請舞者跳一段舞（依人數和時間計價）"
+      ],
+      "tips_zh": [
+        "四面的分工是民間流傳的說法，各地版本略有不同",
+        "人潮很多，注意隨身物品",
+        "許了願就要還，承諾的還願方式要做到"
+      ],
+      "thai": [
+        {
+          "th": "ศาลพระพรหม",
+          "read": "sǎan phrá-phrom",
+          "zh": "四面佛祠"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:04.654Z",
+    "photo_refs": [
+      "places/ChIJcdjtDNCe4jARVBbi7rkb-jA/photos/AV-0GLdH_jQqhg2GBtGwR9cN4a1lVToX6goigec0GV04oxdDONURCcLQnKb1TeMIVC6i1t6RZapyus84B-Cg7OC5McRv_nQxv5Og2i5TNqXM0TEkm2PI0yqGLpCdv6ndyDPAeh-r4jaXT7x1AdxQOdddShJ2A9e2tcyhCSUFDnMVUnc0oP0VmNllCeC66wBIInmYROC7NhcXo6Mx6qGAwzXIiOHYIG9yAYX3HUz9owhCb7vzHx701NFJ_G4QLMgwH5C69KmYjpF26cQtLnVJYOCojPVU2max-q76lj_zNA_2-kNeKUhp_SRphnr_66lsmdVP_pdth5_Wq1aWBvKMCWYbu0yDK32PVNsD78QAkNaczeAZwOf5I0-WlQ2teKD6IACuOhMIbFqPu3obRVieBsIWAkEOuQ",
+      "places/ChIJcdjtDNCe4jARVBbi7rkb-jA/photos/AV-0GLefk8e21iDo6YzRwjGyQ0Dli7wb-lF0R-sfVX1UONj3IbntItaKGdDQ48NQUE-1IFIOqFSeE5vQWkCedu0bhCVI8aKhfkb5CVTcLpZdcm2kAASEM3grr2-Akvn7xq_8I9BWZ4u0mBbpa1hpYGtIgzkacYv_tEVrOMbKCdEKhVtLl5crRDxdticcwc1_s1n8IQp7SBQ1guXBVzMeeLYaTy9WoiH07g-FdruqdDQ4PY7pfbYb0u6MFdAikHJniq7eWNpHW--WHyjw15xQCAtFFnth4fZJYT_Onw76zig9Ciqdgl9mbXJmBTu0yg-spqBV7RVdqYDE97MG7GENbKo83roKR5ygShl33BnRm6hcCMcQaFBXbdsvxk8Z7vthkcmt-I4AqxJf41QzPy_JfOwJGwUz_aINEOA__E7v9hN2VGn0Gw",
+      "places/ChIJcdjtDNCe4jARVBbi7rkb-jA/photos/AV-0GLfghOm4T_ZFPKMDqk4i-UKeT-sxWgmrciK7HKuVdmjPGbcjA_Aco50-vU25g5zN4o-IYqs4LRJ-RCYm5jxZGX1GGuvoBi8jelr4_Fa0PJx8cWtjd5sVBCFUy4xasxY68AJu3IcCVpqH19MJyJEcVKngzgfcxHM_GNBU6nq0zT84_PDPRrEMltDRHE2EgtJQdiqAdtkgGNqax0lEwb93rOY_7IAdI_s7KWOffXZIxcSmYoaDB7Dnm_8ZWaryhq-WdQEysUXUKpPB6jub0qXAryjaNoQLhiCq_KlA0CARa914wI9j0zDVrCMs4ta4KalIRClrCKj44RoBu_fQfN_3XVRCnEhFQqPAV5QfEq3kn7kpvO4FVUll4Dogtz68mmdoBJu5GjJnGI-oHMeBZI3jfSLns0Y",
+      "places/ChIJcdjtDNCe4jARVBbi7rkb-jA/photos/AV-0GLeOK8UQQ9oKCK-CH33Pbx39Ol4vJsegQZR8bHCKxLB8o3BC9SQTDvUmTOFGjgjqJ0O66UTuhgrd1RMo10CMTvgINhnhh5GB63DLVhqWLMy043Io37QZpsmHFhTGvRtU72-w_LDOPcQR1EZlAfsK2EXCr35AlUPHnnifpTu77MlbniRElMhMGNq376B5ZPSL0H_8m_eFH2iczpxBQK5VSL6xSg4jTSNT1mCmU5DOARJPtiBLgQNp9UlkGPtCNWhXzESnhWf0PO6NwcxUvIkPxpNz3dFo5G1pgv6bGxw_ZgXhb3uOoLvMvmdv0E4TULitJEwbAy-6X6ZSsMnCmZvlnBm2iZOgQ9uXGwu7yxmSclj8Lx6r-jp5VBwuJg3C557aJZ6-o3ug7-M8XITZzPXpZcru-zheub0",
+      "places/ChIJcdjtDNCe4jARVBbi7rkb-jA/photos/AV-0GLfLm213By38VmEl143rzQrfM_qddTvRH4xNqHaom110YJ2-TZ_m-QqIFtpZ7V2101bhUUz4fP6Vg46CcPz-7vGLSQbgYQaV6fVN3GqTqsYImUKSS0HGnfTFa_QqRVR-aSM4IMkuBDrE18UI_ChrkC8ovwV_LG0AYdliHsN7l-c8WhCGaBeJxI89KLEMHNf4mC6JXM-LmOcy0MMz6M7p3oV0MqZDBVbcnPbu4nvb1KdBXm-y5gwktPhojYrUqcjKiKJiqmtzdW05DDPMlfifVE3HUb6APL_r6Md5_AMmiYIAQ8dKWHnoYKEp9DQy4xO4VMXhb9DicJjTa0g_bJYlHa9-C4qzAu5LdCSH8m5S_9pE1ihKPg4qdvE7Y-L4FomSZAnV_aNvQJdE7Ff6ssJEFHA_5Fg",
+      "places/ChIJcdjtDNCe4jARVBbi7rkb-jA/photos/AV-0GLefsEQ2J5w30a3ioGOzPpGZ91L_FG00uHTdeTEllQRzfNopKZoZmY4L9XZeimMa1RxAyqezzKA2PNixE8eX3m-gg_Gbrav-gFZhrKwlpnJURLiEvtB2W3_feObWNDP2MAo6ITE1NpRxDidBgm3G4fVdwc0j3eWUN9n-jb5DwfiB4rMAPl0kXsM_ZI8_fLkixfLDZ9anZ2DhtuywUkDyxxJUm4cCVm_yn5b_9czWw6nLH4YbQ1znVWTvXJl1azNqQLilBDtPoBoFGhbPAsmhDMFErClGBd4FyUHO0V3NkiAPuEVEnMEKFnY5Xdzv7bbkuZQNrBS3FecVHC_q5ggEnmFOPuYSTZz5fMQqCjRXzzjtNTifIcM4sAX1oEhuMNlB5786rjwEPTKKIaLSB0qq93JyzUYnGZQ"
+    ]
+  },
+  {
+    "id": "c2971c85-bb20-4916-8840-063f9503be13",
+    "name_zh": "愛神（Trimurti 三相神）",
+    "name_en": "San Phra Trimurti",
+    "name_th": "ศาลพระตรีมูรติ",
+    "description_zh": "在 Central World 正門前的廣場，來求愛情的人多到晚上要排隊。Trimurti 是梵天、毗濕奴、濕婆三位合一，華人都叫祂愛神。整座神壇被紅玫瑰淹沒，單身的、想復合的、想穩定下來的都會來。",
+    "description_en": "In the plaza in front of Central World. Trimurti, the three great Hindu gods in one, is known locally as the god of love, and the shrine is buried in red roses every evening.",
+    "category": "temple",
+    "address": "89 ถ. ราชประสงค์ Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "address_th": "89 ถ. ราชประสงค์ แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
+    "lat": 13.7477229,
+    "lng": 100.54029709999999,
+    "photos": [
+      "/photos/c2971c85-bb20-4916-8840-063f9503be13/0.jpg",
+      "/photos/c2971c85-bb20-4916-8840-063f9503be13/1.jpg",
+      "/photos/c2971c85-bb20-4916-8840-063f9503be13/2.jpg",
+      "/photos/c2971c85-bb20-4916-8840-063f9503be13/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=San%20Phra%20Trimurti%2089%20%E0%B8%96.%20%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%87%E0%B8%84%E0%B9%8C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJjdSTj8-e4jARYIzwTX-2u1o",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "trending",
+    "area": "",
+    "temple": {
+      "deity_zh": "三相神 Trimurti（梵天、毗濕奴、濕婆合一）",
+      "wishes_zh": [
+        "姻緣、脫單",
+        "感情穩定",
+        "復合"
+      ],
+      "steps_zh": [
+        "在旁邊的攤位買紅玫瑰、紅色的香和紅蠟燭",
+        "點香點燭，雙手合十，說出自己的名字、生日，以及想要的對象或感情狀態",
+        "把玫瑰獻上，插在神壇前",
+        "旁邊就是象神，很多人會一起拜"
+      ],
+      "offerings_zh": [
+        "紅玫瑰（常見是 9 朵）",
+        "紅色的香、紅蠟燭",
+        "還願：再送一次玫瑰或水果"
+      ],
+      "hours_zh": "傳說每週四晚上 9 點半神明會降臨，那時候人最多",
+      "tips_zh": [
+        "許願要說得具體，例如想要什麼樣的對象",
+        "週四晚上人很多，想安靜拜可以改其他時間"
+      ],
+      "thai": [
+        {
+          "th": "ตรีมูรติ",
+          "read": "dtrii-muu-rá-dtì",
+          "zh": "三相神"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:05.087Z",
+    "photo_refs": [
+      "places/ChIJjdSTj8-e4jARYIzwTX-2u1o/photos/AV-0GLf_PvNbFN196g4SIKN8EyGGZIpf_NEggh46HG7OkQXiZIfYCTdezN7J1U--YQN6uQ2ZI8SFmXxs04n3TrjXf968i1qFBzkZtPgUiJ5V5HiMN2lO7oRvn7QdjFQd_81nakTTeEZKtJS0Wa69fvbKyf1DShiPXilupAocGfSxHgPhSItRP0U0kCwls5kjotDOj3XMr4Ucb7tk25gyCiGJQ4tIknMUeFZh9Urt-oyBA1MTj2yLRKV-x286fN5Q8JwGlhjUsVLmpFxhKRIHtjAWW4BPMu5hFz4MBD4ha6au5Gvwm_txcvCT3yxlPhQHiVth5ZdQbqPpuQJILz4AtpzqiUlh2PkaV4L9kX3ZQENJ3TYfdS8VMgtswcPCCH3ipo7E5Kli_qvxYg6hid5wT53U8Qr7Gszt",
+      "places/ChIJjdSTj8-e4jARYIzwTX-2u1o/photos/AV-0GLeNq-YTKhamqEaYWb-jG5rlYjJu69Zg1MFFR-h1P3eq08mZ7kzrPjz8N3_X4swc8_xp7C_nPKzqoGjQOrExGH8wMVK1KNybXyClnbihslEZq5X_vG_my3cqO4atJHcNxmH468X_5lU6iWTdt1Ye66LkabEQW-A3uYODABMr8e2VhGRJtim06lF_7fxPUlZ53j3btUfIaLCwNxkkDQfk2XBhHCpLNQQRrBsnhDKtKIEGz7g-9ucie2ugUhfb5FlLZFnTmDvI59_mWKutysBaxWK2Oa9DpGF4zvMiOQppjJs3RuGqIFtvqvU0sXD3Rlyfy4nYvPs4ewnN1qtp_7igPYUaIqylgj1fL7dZIor0eQhD5V054_29-d9ZLHsdtXgRbkeje0piKw0jTd3BtBhayrAJ76w",
+      "places/ChIJjdSTj8-e4jARYIzwTX-2u1o/photos/AV-0GLeRHCWVIk4zdn6-XAS-uJBoUCPh1HIMg5CeJomkMpkek6fcgFRwhuYZceLscYbp7sYlbc3CSvTpedb5EGK03ASpQomOFvC5MVBseLdnVqJWJhAcQyGfYsZpHsafY1hudqwxH3Z1la1clPd2S3Ze0eMAVVdYiw8IDGstrvbUwkGAMUJ_GEFHUhKW_qpN9bbJxwyiD6OxUKF6ry_VDj2OOQcYlnxwFPHiIDPTpH7C5z6M3Lj0xK5iXJ5dl3noCtUMT-Une3EP0Cnyja2StFKSMLxmqlj4TdW8fq8mNpUiEMl8CeLyU4bLbyQR-YvN46gyt_ZhYuEnOtTLTSBlxLGMzQkQ4W3hDdg9Oe73tP5dwZoWu-ED6VNZB7Te47pvW359b0fCmkwZnhrGdrYiiUMOp5V7UkKMZThjiEMDGZ4QHYaE-A",
+      "places/ChIJjdSTj8-e4jARYIzwTX-2u1o/photos/AV-0GLfmY3J3fRq-EYAz-WVEzlarqUrLk_Dv6U05GAJCl6h9xMqKuHb0n9itGiM5PPtJetWJnJok_odFHkkBZoibOYYnnQ4nmwefK0eWs3JWK3UJ8bLYyyCFowoPmzQdml8h3ElrCOcXw1WCWNzwi-XTNweflwu3ffRg6zNVNeh-DRd3RMZsqHlh0DnA12RsNyDDdAZcNFPBLVisjhiy_EKPSF3E2uAVhqXNt6sCpx2wcyhwU-1V0LLhp2ynToovvXfsp7nlmHp4vovatW3Ar5-KH00-PSHLBZ2wnlrwxGHg3ULUUx2FWKgsTej-N2wIomXTHTKJWuPa-zTzB1vQDw9RTpX-hxsaC3loNjraBi1TEjI1l8aMvqEfHCAdYAWpt6-xZH6lzTfGuOY7SeSb0wl849Z0h6z4Yxs",
+      "places/ChIJjdSTj8-e4jARYIzwTX-2u1o/photos/AV-0GLeSRt30KVCEBaO_u-2lRxkxmndt1jhfmqsUG_EZBRBRScDYJu5HocazubYKJlSjbYCIW0KZwE_aR5_xzETMEPqJfXNyvklqAPk_544BbmtFq1CSs77Kh7XR0XJo949mqtZb7y0dcyRBvHnZzL-frw10v9_2JT6o_Hlg5h0xFubHVz3AFZrZbOwsPRekP17O8CybjXOGaXKJsN7fhGexjZrbFeh0jH5DRFR8CTWykvADtP0Bl39l0qjrywTRFNp5lPVAbmnYQHLq4hGLEsQXtJXtJdAvYOsz-sLzZze3-0cLOJm52yL65Urn1QdSx3hw4iXLO5y9OegMpSSjvqH40z7kdWOmLUuPf3SVJQ_eyt_1xhjkP0WZ4xkdCFi9jLFYlPn1MgXCyVXWdGf5CfZh2m8aUwKX5sbpn0LGUhne64jVOA",
+      "places/ChIJjdSTj8-e4jARYIzwTX-2u1o/photos/AV-0GLdhQkX8CQa62p3Z6Et9M1FO01BNB74sESiv886QcVwgpSK7otWw88hBLgqj3usCcOICWOEeCW5d18UqlMqPsKWaRR_C2vl5lMDV_4yhMrT2g0Zpi-bqJmr4K7_BcSIwqN64yzUJsnlX3FIcMdBaeeA4JNntFm-YuRTL5DyfBF8fWOErbZLZyXK0VicxEA-yQgZhG4ybD0bhWnO8wph3uJW8Sn091vifKD_dMUQaB45HnRTl-C_UFB4Vat-cTXxoSvoYvoCGotQozlBb0K7LI3PhYUHmdhdY5Ky1Jrtl8MUBNV8QtV4YXlSQKhgTC1O4BPQO9ByolU0_9Jz1EyKwir9QfZ3t9RTdTLdtUk_wF5K2cnQaGxExUFyfS8OVjMhuGwmMo_qKESwbSokO1M_Nup06XAdB"
+    ]
+  },
+  {
+    "id": "a4d13909-1ef2-41b1-accf-36e1967b26c6",
+    "name_zh": "象神（Central World）",
+    "name_en": "Ganesha Shrine",
+    "name_th": "ศาลพระพิฆเนศ",
+    "description_zh": "就在愛神旁邊，一樣在 Central World 前面的廣場。象神是排除障礙、保佑事業和學業的神，泰國很多做生意的人、學生、藝術工作者都拜祂。拜完愛神順便拜象神是很多人的固定行程。",
+    "description_en": "Right beside the Trimurti shrine in front of Central World. Ganesha removes obstacles and looks after work, study and the arts.",
+    "category": "temple",
+    "address": "2978 Rama I Rd, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "address_th": "2978 ถ. พระรามที่ 1 แขวงปทุมวัน เขตปทุมวัน กรุงเทพมหานคร 10330",
+    "lat": 13.747893999999999,
+    "lng": 100.54027409999999,
+    "photos": [
+      "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/0.jpg",
+      "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/1.jpg",
+      "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/2.jpg",
+      "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Ganesha%20Shrine%202978%20Rama%20I%20Rd%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJmQEVj8-e4jARtoDrw5J5Rpc",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "evergreen",
+    "area": "",
+    "temple": {
+      "deity_zh": "象神 Ganesha（泰文 Phra Phikanet）",
+      "wishes_zh": [
+        "事業順利",
+        "考試、學業",
+        "排除障礙",
+        "藝術與創作"
+      ],
+      "steps_zh": [
+        "準備供品，象神喜歡甜食和水果",
+        "點香，雙手合十說出名字和願望",
+        "把供品放在神壇前"
+      ],
+      "offerings_zh": [
+        "香蕉、甘蔗、甜點",
+        "萬壽菊花環",
+        "香和蠟燭"
+      ],
+      "tips_zh": [
+        "可以跟旁邊的愛神一起拜，兩座走幾步就到"
+      ],
+      "thai": [
+        {
+          "th": "พระพิฆเนศ",
+          "read": "phrá-phí-khá-nêet",
+          "zh": "象神"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:05.516Z",
+    "photo_refs": [
+      "places/ChIJmQEVj8-e4jARtoDrw5J5Rpc/photos/AV-0GLfFk2f1HYXY17qqHwfRTjsNVcnlMENylAIdzEulDaYuE2Wxm4oUtjUGlgtqHdZkFFBYQIfMbDt_KIHDx9VY2KArYBqlTCiEtwxM8_6KSXQh5ceZ1D3Z3iDLcDcFgZUx2rcNbvPr2Wj_lrZHWpQ-WSfvobkqRj6_oOKHXPQjs7n48HjxulJiImZOSn22NkolB8Z79QeYNVkUzoTSnPkPT3KRGQxMlR5Lw9RqozOIGoAemhdK_YSqhPzEdJZWmQMF_uUtbUJ6GuojDHLnOe7KlnXzQAMtVxoD6oexsgyFJk8IIrucF5u-2OadEmYAIjVyYLbPQkSYRDfKaJqYHjm6GbOLCz3hWtIDLoByln-6SYJjsW976K1reJeetjHNfllssxwvHt-vjP6yONGTf25vx7RkwQ",
+      "places/ChIJmQEVj8-e4jARtoDrw5J5Rpc/photos/AV-0GLfuH0aE2tmR98bTI76r1LIu8bzJboDd0Mi_zNj5y0ej8BNR4U0LmbnTTSnXC0VfZP9QIg-aboaT7BZ9V5mepZHBbepnkgRPQN7dhKOUQr3ca3mn7W98KujVRJ1dIyyopUBZ2hO__9VU86ygdQZwmEcwrpvH66gaDrt3ouJnheFhU8bD1Vqxhh5LkQ8pENO3sgkipSUcmZR3NEOSu31CbM41m37rjQs54cjQAlICerkNAaFNjx3Wwu5A_ROzD1b4N-UIXcboBSmRwMhSiI00luhi7UXJgLDwLx3McWKIwlzFNvfzWmKu2x9clAU1PY9WOcLJvujHuGsE_48FvbRiC2qm-d8oeGQ7HdIJX80WFHoPiIX7Yaj1kAtUCHTn3e4tY1i2O3aowStOZfDCfLx0pl512xc",
+      "places/ChIJmQEVj8-e4jARtoDrw5J5Rpc/photos/AV-0GLeYstnbiBijYWeSRp0Vl6E65kg3R9CF7wvOAToIi7KXDkYNEBJnKmHZpV7UniITB5uZdotsPIvUl7EOAEfMDCriEJlaBnp7VvJDNTka9unEq-9kzd4gteBl9rHuZz9WUMTZeybERL6AXd8nmF7J2MYX8vm6n4_xUt1VyIZG3GlwvpkITmWx66dSFk2IyxS48Y42KZliZaW5XoTQsgSOJq_hNEnxC0OzUhZ20cvaKUHQBs4zYK24qxhDf7rqVvEs2NBMSwBlc2P0LH0CkctyIDXS-1IHwNXh8I8jG7xxQmmH41c1i9gGBAgGMORKbX0T3XRppDkTFrWm479_qTJ4eQAk8YJDgrJvPIumn_RSesXKSjii4Nz4UIOl1Z0LDChkzx2kDiGLqPjdn331HEfU4iTxz7Sq",
+      "places/ChIJmQEVj8-e4jARtoDrw5J5Rpc/photos/AV-0GLfznwKePxroeVY5A_mcMhWIuS-ylAzrZe8OdvuGZtDOgFiHsW7RLP0OYdLJ8YkFV9Afm6phHdxu53Q217bOSUfrfajpWW0T-Cg5jyLii_pjLyHPVFhmsdBG24EihTBkAOE3LA6VwUauJARsmeEKzyB5f4hqfrnZucVtUQhZQL198qvWSX3Bb6lWGn5SNt9AzPCOP541g-brvRd7QMnHfXeGHS9XdkA8VaGKNr5ZcbP5tVpaZPWxcxs-bkJ9KamlGBrypAaYb4sNRSt7vPdlVwCj8fnkRDrn1sntOv6i1G03lesmZStX6d7PebK8ZAV1g5GPOLXJa7Vt5Tr2ZHJDgfzdqZx56DP4ow8gvsB0nsVD0YC4sWLihekFMGrTJ95ZFy61ddGOKqHCOjDUVxhuG3OHuekDXc2G-wsPDlUVN_um6Q",
+      "places/ChIJmQEVj8-e4jARtoDrw5J5Rpc/photos/AV-0GLccD1du7WcJB5BlFXswAYtfKhF6tFrPptxVgPEHo9fVJ6WxVpQ_7m5NanTf0WdIBKK4th9ZSX5mlgnMOFaCUCIKwzFYLrtqmg9G3zO4lcav4lz4UtRly0XzLE0h3nRnzsWRsT0Eamr6sjjgRhYj_6W1eNim7Bs4BafQXbBixa5uSiI8g3WXimAA8szLjooi1ZYo1yPCnaI0ZMejhJun-kXmNYFSKGVUcOBxohqMB_oJjL14HbVH1S7PQYrOnKSGB587i8yuMGyogSJyl3s0UmxSsZ_TrdHhu3EhruFIoGDSMdItGGIWUmfclx_hi0fG7JgznNf88PGcUp9QqC-kq554A8IWbC3i0Bn7bZzeC2iG9LbmhOOhLGgtO12NpZdSQMVGicrB4yd2_ot9nWlTiVXa8Wrw9Q342auXdSVFS0JVtQ",
+      "places/ChIJmQEVj8-e4jARtoDrw5J5Rpc/photos/AV-0GLd02AokjEpUUUF5Voo0z5MW9IzuMDreeRC-1pEAGPfeEGhWqSuSFrGbGJrSSqCj1h_W41Kssi9UXz2kbvum1skYcJrfWHkrgW1Sjzo_sg-KgP8gMmab5AiNEZZjroLZELlvp6bw9a0bVzsFvAMfQUJotyiYf2mMYZLWOV0lL6MpPt9lG_VjgN_bag3AFBkq6IQghmbM3H3_P8rtZu4V2GgJbLUpU-sn7Zv3BVQdiLTUEtkmlFvnnnGTMuCqkObFhHGvnHMErsiYIXVBwRDEEBU__7bPtHVq-_yFjI8dByknvo5-uw4CrcAeNLb3nLJYlSikJm1gSmosIbDGgrVzjItiPJV3-s3zY02ZyRvismixIqtc2XdevcAkyjhxbHyFfooc_iFlpeCPvlZMBx79HPeUT3E"
+    ]
+  },
+  {
+    "id": "b34ba8a7-afc9-4567-bb0e-22af1b6f96bc",
+    "name_zh": "吉祥天女（Gaysorn）",
+    "name_en": "San Phra Mae Lakshmi",
+    "name_th": "ศาลพระแม่ลักษมี",
+    "description_zh": "藏在 Gaysorn 商場樓上的戶外平台，從四面佛走過去幾分鐘。吉祥天女是掌管財富和美貌的女神，比樓下的四面佛清幽很多，很多人拜完四面佛會順路上來。",
+    "description_en": "Up on an outdoor terrace of Gaysorn, a short walk from Erawan Shrine. Lakshmi, goddess of wealth and beauty, gets far fewer crowds than the shrines below.",
+    "category": "temple",
+    "address": "999 Thanon Phloen Chit, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "address_th": "999 ถนน เพลินจิต แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
+    "lat": 13.744768599999999,
+    "lng": 100.5405715,
+    "photos": [
+      "/photos/b34ba8a7-afc9-4567-bb0e-22af1b6f96bc/0.jpg",
+      "/photos/b34ba8a7-afc9-4567-bb0e-22af1b6f96bc/1.jpg",
+      "/photos/b34ba8a7-afc9-4567-bb0e-22af1b6f96bc/2.jpg",
+      "/photos/b34ba8a7-afc9-4567-bb0e-22af1b6f96bc/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=San%20Phra%20Mae%20Lakshmi%20999%20Thanon%20Phloen%20Chit%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJn_XQCNCe4jARkJSJ2FQ0zvc",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "area": "",
+    "temple": {
+      "deity_zh": "吉祥天女 Lakshmi（毗濕奴的妻子）",
+      "wishes_zh": [
+        "財富",
+        "美貌",
+        "人緣與愛情"
+      ],
+      "steps_zh": [
+        "搭電梯到 Gaysorn 樓上的戶外平台，循著指標走",
+        "點香，雙手合十說出名字和願望",
+        "把花和供品放在神壇前"
+      ],
+      "offerings_zh": [
+        "紅玫瑰或蓮花",
+        "水果、甜點",
+        "香和蠟燭"
+      ],
+      "tips_zh": [
+        "上去前可以先在樓下或四面佛旁買好供品",
+        "商場的營業時間就是能上去的時間"
+      ],
+      "thai": [
+        {
+          "th": "พระแม่ลักษมี",
+          "read": "phrá-mâe lák-sà-mii",
+          "zh": "吉祥天女"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:05.928Z",
+    "photo_refs": [
+      "places/ChIJn_XQCNCe4jARkJSJ2FQ0zvc/photos/AV-0GLeIQ_Z-3AFg9l-VW88MsyT5zrRmaQhcn2Wf6bwd3PskQR42qVuG1TSGfonzHCgjG41jtWgCK953WWjJO_Cm9Ue0zAnOz0CpWm_IyiAmrSjuMcJxF3vVWPySIZGh9PaPnU7RwF5CHMdZz7FL8TwLcouRtKHXBDAS0LWrtkFxzHiQiRiLgdi-vmAfxdZiZM7HGzfXykUWBLA6UQ4OVnJKhsUo1Fn36xvz_Bv3uUPNFOhswEAZnWasG5Q-xtmUnovU_sSGjcAPJmZwn52PeOVUsZNGnUrKXEPc3O0miDclcCTt51DFujd39kStqfbJfh5r-clupAAtlHq7CjRfDkp2-NXBPK4LPlfd3GnffMsGsp7LzNe0okYpvsRoDydH_e80qNAf10uihTBEPjyBFPcw4rYv07A2t3M",
+      "places/ChIJn_XQCNCe4jARkJSJ2FQ0zvc/photos/AV-0GLf3JVp4MwcoGpOcvW_ay99f4JTzs1GmkUy-tOpcZ1krjBhq2cMFmJLy1X6RwgX9DneDSukg19y8dnbB9yWGJpvgk0Q15Rp4BuOWc9XgpJvrhFTnLeLuXkORCc6_4yL4hq2-3dNu6rv-bMDChIy68hK-3iz_ugwoA8TZ3pM_rYIuHjCUrF-UtAp2x5vTLOC3VKURCX2jAI9-XaRYw3WU8HiW7WQdh0jzcPfmujpsPJPPJeifoaYjtGUT7BIxy6uRMFH3jaqOezvKXfxUHe2nVWCswX869wkWUMy5vrT2I2lNLf04Q2RbpYn_6y-fahjxdEPGzrvpinK32b6Zh3RPHD3mcxixmUhyDFGQC5U6cY7KHFXQ75WZOcFuaqDDl2FdSDZRseoIZ09e9Kwxzlfzx9RltiRq8KcolutRY5lB0AXP",
+      "places/ChIJn_XQCNCe4jARkJSJ2FQ0zvc/photos/AV-0GLczoXAEzRlxT8Y1lgaeVfpo6fgT_B7PPLdo5jbJOnT07bbgG_w0Tr0ftdPdcWmhtp9gTp4i8Yylq-h7Azc0n_jhtzjzswbBlI3lONy65Cbffph9FuIYBjQag_ThjO8HuDd1w7r7O8pm4l3yZlqfExZ1vhxbU9fvD4dx12TS210NBlGeg0_2zvbjMUOj70d9l94jR97RtEqYb1JJYbZXSbbeTOxUohvJgZVIoeKvhcI-K9B5UUCEIbM92uebKZkTc0dNz1V-8BPxvgDvbn2kURYCCL4u3Vbf5pBsW8n0TQtYh1b6aUnqk6_Y_9unshXUA4Y1PY3t_satU2BoG_HCGrAM7Ollr6RyGeu68l60BL_lSbEdVcGFw8P7iEfFOTbg8swsgK7_IANV6uS03hGObce9mC-G",
+      "places/ChIJn_XQCNCe4jARkJSJ2FQ0zvc/photos/AV-0GLcEPW9TI4IOO43qyC0Diiq15p6bkImt1hP6eyudhzfIMs492ddVqBlNjS0ZN4HEQmGb3PS2k_Lc1x95plhtMzADFAk6X3724JB06XUF9gWKQGXU9GCBfFeh-ER5UIHH3fRh-MmPk0bycyO7c7wO6ikoENo2QuO9cAdy0hx_mDGBIt7p0B-_E8KqrNzZm_V0o7pYh_nDTfl91NZY5gamByfYoxkiWOKtntJunuGmgG-6VsIMFJeEJ_jWQ2O1P55V4aLP9lmdRYtpzjz5SKrulbl2lCTMMRqtVhXLm8CuqbuL-0sVRhbTCX1Acl6K8kH68RVLqicz-v1o31ylwIFQGxjU34sB5qXREKzVQbCEpWRNV0_tT7244cDg5xINqiMaA24jUI2_xBnZETPcfBfJ4qSvcp6KQ3A",
+      "places/ChIJn_XQCNCe4jARkJSJ2FQ0zvc/photos/AV-0GLdgQVKMLNS-FGrBMBxbTSuNpMcHdsfZRibiQw-C_bty_1Rl_kpamEFVhMeTJBOw9c6Wr9wgC6oGLlUZQ4Rq5n8WlqG3VjzqN2PFNqw4xMXQLf8Han4womov2-ZdX3-g7cL4SuSDj4Rss0Q5IoUq0l2ryVXmOWYiFU4m-BNXnZmjCy43B8mc68MYYQTOiVTQvwzIQxwRicumcMkhW05eVbzT4fxq_Nulxrr2_tY4CIXxDYPZYC31dyvJxjAHfxQSa6Qyc3QjhM6Uj08mWxaxd8NaQLeeL59TNZCp31jBUWfiB-aVBNonkyOkLm2OXf5MYFlaW_cOrKDrLZieoCmLTzW_nbsONALg346RP5aRrDaV_xEcwpIadyTFSz94MQ5PsVrefX5WaOpLtsTxBHG_gzjH1nM",
+      "places/ChIJn_XQCNCe4jARkJSJ2FQ0zvc/photos/AV-0GLd2q-sIq17S6YxbEKPwhb3eHgBPNr1lEfpiwKFTEgz9B_2KIgBjUhY0aoXX4JxhGv2rKX-PDvTEy2bRf2F3ZbcGcg6zJvqMC4LtP-c34moOk8SWfXY8Y5nRA4EHuxvJAQdv1oUx6LS96A53F_P_XbgP9RE0AOzNyeaRA0EhlzV5s3kp-mx9lZXlWmxvftY_aSSn1cp0mUqHWFLJnjBOAQet_IjrzSWc2IeZ68dnoobXV3qzq7uOIV26-81LXYL-mAU5dtBRl0GXEwaAL8pvcOLkQJV3ijz5D1Heot7kuQ0WtMq_OSK0Hzi4uavpm7YUY1U5aezQWBMPMAuKUDNvyYXuLoI0zVQrtbaHmoOrT1WLiHL-ZnVAaSIb7aFhyG1YOfze2lloOUd3JyQ4k_27Vw3rOgY"
+    ]
+  },
+  {
+    "id": "bcc02e1b-c564-46ad-9842-642842f963cd",
+    "name_zh": "帝釋天",
+    "name_en": "Phra Indra Shrine",
+    "name_th": "Phra Indra Shrine",
+    "description_zh": "在 InterContinental 飯店前面，Ratchaprasong 一帶的神壇之一。帝釋天是眾神之王，祂的坐騎就是四面佛祠名字裡的愛侶灣三頭象。這一區還有四面佛、愛神、象神、吉祥天女，走一圈可以全部拜完。",
+    "description_en": "In front of InterContinental Bangkok. Indra is king of the gods, and his three-headed elephant Erawan gave the famous shrine nearby its name.",
+    "category": "temple",
+    "address": "518, 5 Thanon Phloen Chit, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "address_th": "518, 5 ถนน เพลินจิต แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
+    "lat": 13.744030899999998,
+    "lng": 100.54196089999999,
+    "photos": [
+      "/photos/bcc02e1b-c564-46ad-9842-642842f963cd/0.jpg",
+      "/photos/bcc02e1b-c564-46ad-9842-642842f963cd/1.jpg",
+      "/photos/bcc02e1b-c564-46ad-9842-642842f963cd/2.jpg",
+      "/photos/bcc02e1b-c564-46ad-9842-642842f963cd/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Phra%20Indra%20Shrine%20518%2C%205%20Thanon%20Phloen%20Chit%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJ6_eEvdqe4jARRfOL9YTItl0",
+    "rating": 4.6,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "area": "",
+    "temple": {
+      "deity_zh": "帝釋天 Indra（泰文 Phra In，眾神之王）",
+      "wishes_zh": [
+        "事業、升遷",
+        "心想事成",
+        "保佑平安"
+      ],
+      "steps_zh": [
+        "點香，雙手合十說出名字和願望",
+        "獻上花環和供品"
+      ],
+      "offerings_zh": [
+        "花環",
+        "香和蠟燭",
+        "水果"
+      ],
+      "tips_zh": [
+        "可以安排成 Ratchaprasong 一圈：四面佛、帝釋天、吉祥天女、愛神、象神"
+      ],
+      "thai": [
+        {
+          "th": "พระอินทร์",
+          "read": "phrá-in",
+          "zh": "帝釋天"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:06.412Z",
+    "photo_refs": [
+      "places/ChIJ6_eEvdqe4jARRfOL9YTItl0/photos/AV-0GLe1KwtMMyUkdF59vsRX7SwS_dOVT5qrNBT6J8Q6mObNdBS3whOpdLVoc2YbIdWhXhraFMq30unaZuJf5JYoeY60B-9L2WFFQvBLjjE0zjYbX3ZrB68Hqt9mOg10tHDrl-jhAJrCZuaT1SlafV3hCAZCtdp2sjKopPOZXUBDBtzPYBaf7HoGnVj9LGQsynWilXP3eIlX5Uzjg-Y_ZlRbN3_bYf1Jbk20VzG9ddurnA7uYXsWlJinxbL_njXvEl0P00C2BV5tt7Oihtg0UUCeh-yBIixwbDO8POU4o9oO-chOFSD2fHiPYSpnogMMnsOg6PJnq_2yCct-cjCbc_JLVlCIHlUBSwE87UEGJfoQ6Gh90dokDg-6WsHEksYJ0DQfdEVv7UlhDXwLKgFViK5CdSC0XkK21fltjfudqFMVudqbpA",
+      "places/ChIJ6_eEvdqe4jARRfOL9YTItl0/photos/AV-0GLemJQKalXltOBhzHrhZqrblhffUtkpeMnCiHgjF1bojiXBqWa4nX7q6OvohPl1x9aUYodvlhGZgwXjodRLp1PTYoWdpFzMdku01DFmVCerxEF18vBuekH3qQaunyiW8cJ8JAWPnQ1-5YRifQii7j0Re2aDsxFNjmclhwe1rk6HZuXR6r4ulHY7bfXPMPxVtEOtQEclYDEs8YRIpoRU40SYWoBA4b13nOgDzTOVCT1HGgpxnXa4k-CiyfWOThwsGcXdO7dC6X1WdQK396lafgoACZv0HdKZHi39PwJB0B5Y9ftkpde97bu9w1oqFTpN76pQh8nEW1HeLcX1t573EZw9xll03XnfwYYUfmf_Mlz3LOBCoCy8uQh3ZnOagZk73J82_FHpBXll0_b6QOTnIcChjC7I",
+      "places/ChIJ6_eEvdqe4jARRfOL9YTItl0/photos/AV-0GLcj3pJZC62YginX75ICTov8octNWdfaXwgc4clG44QNV3GUWgnlsue6OhHe6lA9nvSzz59B9WM-JjyoJfUtLKqf7uyEvoZ2tf8DAhBmbZSrKpXAgLEDoNaLWA8XR3NRUvacOEQS0uKt5laBqCqKvRCIIZW5LvRsTw7dQhRY_a1xSblwQTTxpOCpvnYFkCDojTKhyNmfNIPXEv70wSQLm2krioY2TDFZMu1CN9gAS3WGZWr4ug8AquvxIiYUXI8iUDM2bELPHPU2eSw9PuqJdHMBtww8QZWEDFcwR0JFgdgi8nb4F69Zlzy9ADmAbCAAb7Xul0xDm3aDohZ8gypfY1UIsW2xpGU7za6WaRMOthv6IFiNRPVw_J5zcPltX0Q73FYwP_IfkkBesPdfoWTAOIqxRhAzvTCZfLzuj8g_HDqtKg",
+      "places/ChIJ6_eEvdqe4jARRfOL9YTItl0/photos/AV-0GLdkRRzIuZlXnneOwaWqfkBl5ehmKbS8dzZu817YdBXt0CNzuUHe_MsKDZYigWuQ9mXk1_tjb9jkrFWnWBt6YySIypiVvIPm063le9UxY4PrGTTIt3JgqXQKOOZIh49okgZn03G7dfK7rqnhzuP_9zscXLMZLkwdAB5dHvvaiYuPMLFSr_r45Fjv32B_yX1q4Vff-pOnOky8jagyslIepaAMwjC0QKQwHDSSaF1fvDPyvjXWOMv5rcAwxmIkyRc0wyuFostmXvxUYFbWvKltYG-jDrWhNBcBNUz6141b1a9HiwXrTnCejyFczW4BhhYK2p1uX13kOnNX0NgmWfz-oBQ0OljrukMf8t135HIECH48xaYWbPXNGA4R8wgE9P6HPnfHDz96Lun5h84QXiOlPGVDyJanwK0",
+      "places/ChIJ6_eEvdqe4jARRfOL9YTItl0/photos/AV-0GLehvc12QquZ4L10LAoFkbu-TusyYVa0KWzUGbZVSk7xX34XAhqpiUqarOAIWh3CYXbB7ZZHnBezUbuIlfnvdTKqG7iqMlkmwV4r-Du3Dl_g1AuGmnctBEuUptIPn1e5kxGAhFsRh849LINVtpnskEkg5iUL9vzZQv5kQ-HuwTBs8GTcaHX0A4hxKtGx-8Z08P5coKbg-ITMTFC59Uvt8-UkZO9x2eNDp9U2UGramMblY3UA4EDlqdXdba2ztmjLXnsHZxyIrdFfoz32TQeFAuMyTi5DYZOV0YV0cpSVan3UeA99Pr5Wu1FgEzf_yu5WYcm39MVbfEqvWAMk5BbYInBTngS12sPcP4IjXafpHCe-UnyrmH8CzhY_x0m6wyWMEhqcbfzER-3yP6pOoxUZpxkWdT8",
+      "places/ChIJ6_eEvdqe4jARRfOL9YTItl0/photos/AV-0GLeeAGC6X5aaG1Sv09lg1uZ_evDZsaNQKBmkjfbJwBZkRa_grBXEOmNOu2sTINmpq8bvEz1hdmKXuUctdS5R5MJY8A2Msc6py_jk3Eiwl_Lwk7Hvlm_zx_7OoKKPmCwp8gHSLpmDyBGQDj1zg_DNPiw238eSoMcUlHB6ik1wSJ9YghoiZ2xMc1XsxJXfku1Tk-940x1k1T2j8l15_-k1hatWrOr7MHXe4zwgNf9n1G2U_nvkRqFFGXngJjMCWm7nGxr87EL5QfsAIEAPMxeVE5Kp3FxMQSDYY77JYQee-BevpZ3Sx3wmL2Ua1sA2cCS-aTAXZdRzZswLjFZiJ6KnDq1__gFc8qp_3tFW1zLPCsxzb98D0876M1WuyJ6jn4cWOqznsT6rj9BEXiL5IJ4hLGUj00RBmKJqQDwiKZtl72z3lA"
+    ]
+  },
+  {
+    "id": "295ba8ab-30cb-42a6-b418-8a89d96d7243",
+    "name_zh": "匯權象神",
+    "name_en": "Ganesha temple",
+    "name_th": "เทวลัยพระพิฆเนศ",
+    "description_zh": "在 Huai Khwang 路口，MRT Huai Khwang 站出來就到，24 小時都有人在拜。泰國人說這尊象神特別靈、願望實現得快，所以香火從早到半夜都沒停過。拜完旁邊就是匯權夜市，可以順便吃宵夜。",
+    "description_en": "At the Huai Khwang intersection by the MRT station, busy around the clock. Locals swear this Ganesha answers wishes fast. The night market is right next door.",
+    "category": "temple",
+    "address": "QHHF+C83, Thanon Ratchadaphisek, Ratchadaphisek, Khet Din Daeng, Krung Thep Maha Nakhon 10400",
+    "address_th": "QHHF+C83 ถ. รัชดาภิเษก แขวงรัชดาภิเษก เขตดินแดง กรุงเทพมหานคร 10400",
+    "lat": 13.778508299999999,
+    "lng": 100.57330789999999,
+    "photos": [
+      "/photos/295ba8ab-30cb-42a6-b418-8a89d96d7243/0.jpg",
+      "/photos/295ba8ab-30cb-42a6-b418-8a89d96d7243/1.jpg",
+      "/photos/295ba8ab-30cb-42a6-b418-8a89d96d7243/2.jpg",
+      "/photos/295ba8ab-30cb-42a6-b418-8a89d96d7243/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Ganesha%20temple%20QHHF%2BC83%2C%20Thanon%20Ratchadaphisek%2C%20Ratchadaphisek%2C%20Khet%20Din%20Daeng%2C%20Krung%20Thep%20Maha%20Nakhon%2010400&query_place_id=ChIJxyp5oCqc4jARfwqIZf_cLUI",
+    "rating": 4.7,
+    "price_range": 1,
+    "tag": "trending",
+    "area": "Din Daeng",
+    "temple": {
+      "deity_zh": "象神 Ganesha（泰文 Phra Phikanet）",
+      "wishes_zh": [
+        "事業、財運",
+        "考試",
+        "想要很快實現的願望"
+      ],
+      "steps_zh": [
+        "在周邊攤位買香、花環和供品",
+        "點香，雙手合十說出名字和願望",
+        "找到象神旁邊的老鼠雕像（老鼠是象神的坐騎），一手摀住老鼠一邊耳朵，對著另一邊耳朵小聲說出願望，傳說這樣願望不會漏掉",
+        "願望實現後回來還願"
+      ],
+      "offerings_zh": [
+        "香蕉、甘蔗、甜食",
+        "萬壽菊花環",
+        "還願常見：椰子、水果、甜點"
+      ],
+      "hours_zh": "24 小時開放",
+      "tips_zh": [
+        "深夜也很熱鬧，晚上來可以接著逛匯權夜市",
+        "路口車多，過馬路小心"
+      ],
+      "thai": [
+        {
+          "th": "ห้วยขวาง",
+          "read": "hûai-khwǎang",
+          "zh": "匯權（地名）"
+        },
+        {
+          "th": "พระพิฆเนศ",
+          "read": "phrá-phí-khá-nêet",
+          "zh": "象神"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:06.848Z",
+    "photo_refs": [
+      "places/ChIJxyp5oCqc4jARfwqIZf_cLUI/photos/AV-0GLfs25giHJu2TW0zbNQAck1BD9wBU_sQKwjprnVH3iVAaYG9zfPPzseW7152BnR-43zYlV6anTBz66GnDl_hqU4KK8LqBng-f1ywZPn9DEKXU8uoY6A5MoEll38O6N9h3UCn5TYDhnAGjgCzuXxNK57s93JenYeXQfzpZmV6gzDSB-Rx8AzixF7CgBaO9Uy-ODvJ4XkA-1meDv35BeWHhJ3CklZqJl19tMlux287NXA6OiXf6qWWXuWuqN9PGFngcYmrbNI_A1pAqo_fnRr5M--9Qx0tsVUOdrXgpV8Ef85TAIvRtXeqWpPzz-4Le3r1nO-38TTLw9fbMkJdM663I7bUrlQceWgRFDEYV6Db3mVo5LwGqDC5AiS6E-B2tQyhIHIztY_VtcoJc4-LLVO_mrBE6hg",
+      "places/ChIJxyp5oCqc4jARfwqIZf_cLUI/photos/AV-0GLfq_m38kxW0Ifx7Q8OfzXvgAFbhjRJBWSdC_INj4yxfiuJacnYtqoAWad8hlT7NFvmnj4_thIp1B3KkcRiUVzFp21YflUTeFCFdDAGLAbJguJKDCwSAJGnc-XX4iGhF6e4KAHg4c5cz7E9IetRzlKnwTF3YBkUQevawbUFQ41yRNkhQV9dW6Nf3z6SykErCbLIXnKT0mOH9MbAzIhsWAYBA7827t4gbeKhBsEd75Fmaq4dxw1g2FeQaqzepSw00t2bInTcoA9E6eF3i6C2ptviedbw6ORdvO7SAzilYiRH4Q1RWHJfGX-8xbVt8iNFgrw5_8mAMDMKdmyInAO-fNrsLUkLBv0yaD7hxaVOIE1gKn9B-meTxJBxaQ_Zvqhjs8HUENP2bUV2SmTixDMFXxWYsd_bUHWM",
+      "places/ChIJxyp5oCqc4jARfwqIZf_cLUI/photos/AV-0GLewpQd8sKNJ8tarCBPMVrTzXmG-UsN0eAcfxzADA8hB4kb8a59-XbCjncHPnPBDBH4DwQpPTB2Q08RfSX-PD8hk3b_xQuXgUdJg3Ue2pAeaD7f3v7qCFsbdDUQIeeLh8CyK9UhTXJqrSY6SX5cFitCwk6Nz13fDNjK3xMLjfI8xARpJoTC3YCAtRSqmn_nodkMp9Q7r5eDwyxwZcoiVSiRI-nGIB8k3vEwKTymJhfQjv6SWZUYmXyOX6incUr85iRgysCJgCk3Lv9lXzcuvES1-o349gIp3pFAq3lMK9Q0q-zST6yl6hhFnwHO09_re2z1ymRMjzy29lxAwagerpsABg_JE2dcI6obLfa46-l-BpraEJ38NbqsNvr6hFGV2WfPH36Fjz8r6FII6QrX_EgveBwA",
+      "places/ChIJxyp5oCqc4jARfwqIZf_cLUI/photos/AV-0GLds_l2tfHdBqD5Wr2f1kS8wtvzjO1U-usygG-4cMBBda46U8ityzve3GTndTeLSwRCIxOUsnt3yS13qwAfHSr8U8T2bclamy6HOHAMDgan0fURW22cwalFQ23Wo_aqPSthwu0wIym2kMux-NxPCwPlPcVdIFK9tobuU0dZC53ErmujrHuyof9wdn7lhb3tyaBRHZvEh9KNkDY6H5oC9u9LjHBIJin0uGXzfg8lX51ZEXokRlwHphBTuNdyhwYJrrhR7U8dC-LorgWE3LgL6-FMf3mFn5AUWz10z1d_IJ5j3V5h4NHGNQVaDLMlZps8qPbE9MgGIL8SfExAW-TGwlYkk90exVVEfTdFB730sI7pxS87gGi7BAN5t1rfV1VfiY-Mmk_jXVtzdYw0sS7lNJtxRFw",
+      "places/ChIJxyp5oCqc4jARfwqIZf_cLUI/photos/AV-0GLd3B_hZME38f-e_skJBtNJMHvvZeJxq634VuPxW-QfhK65bILIqBDNseD4rEaDmgHO4D3hpnjJI0yEgfRpggsMZCz8XkFuo8fxi9yqapmxPx-u5rvPSlaY_kibA6gRbiTsqeJ8lU47sDpjel4R7KodwC6swdW44Zw_7xIs7_KEXp4T2qLUcfwMreqbPslupywo43uH2kLSGIL7-fPgAWK1kGdMerJ59d6N4mFzvJ8KCzUOPagpZjrmAV2bhSznc3C37NIlsheXcK9BrYAGb_BIgcdHLTiOq2Y7ukwWMeHGW5vxTxwVGShqzUoVz31IxMxJge9Xw8B9lWbga1qcxedqjX33cJsDA63BefLThFMXa2l7cwvY5qmGOAhWy9HKU9PrGigm4zzgBYdrGthdSZQAHL4O8JHU",
+      "places/ChIJxyp5oCqc4jARfwqIZf_cLUI/photos/AV-0GLcWg0a4yQaRYZ0rzLOH6HDr7p52z3nt1-1F8sDzvK-NOCUMVqkKYNr2aRYvwunzEpNFw8LsH7cvdpEkrvTjBceaFGsAuv2-8_kK7d6HXMI-Ymv92Bo_WNNLd2oPpjcHzW2jNak2uVdEStneJGkAU30f1HQk5dwZGPx3KKUr-dhXK2hJD9h0kOCV9B0QCuNi5g93L6Lp6xvydyP907EAnx4eZ3BFWHnFXHDfkF3P6od0qfuNbavOr5gen-frbFnM4C7h3yPEk78tEo3RQtoqSvHT9hlxHo_Qr_M6QTZIZ-fSrMQYp2G0sdzXZCqiREjYL6rv1kpxA5Wyr5QgEKBeyT756j3vXmaBoiqoBf2Sa_GsCpzsZVPe--0v6cRYgyxk73Ye-kJtCQWTDQKBE1uUZphlqSl96s8LLPqg2s4ldx5vxw"
+    ]
+  },
+  {
+    "id": "ec613b6e-9a9f-483e-abb0-58d24dafb7f7",
+    "name_zh": "龍蓮寺",
+    "name_en": "Wat Mangkon Kamalawat (Wat Leng Noei Yi)",
+    "name_th": "วัดมังกรกมลาวาส (วัดเล่งเน่ยยี่)",
+    "description_zh": "中國城最大的華人佛寺，在 Charoen Krung 路上，MRT Wat Mangkon 站走路就到。拜法跟台灣的廟很像，香、燭、金紙一應俱全，安太歲和點光明燈都可以。過年前後人潮滿到門外。",
+    "description_en": "The biggest Chinese Buddhist temple in Chinatown, on Charoen Krung Road near MRT Wat Mangkon. Worship here feels just like a temple back in Taiwan or Hong Kong.",
+    "category": "temple",
+    "address": "423 ถ. เจริญกรุง Khwaeng Pom Prap, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+    "address_th": "423 ถ. เจริญกรุง แขวงป้อมปราบ เขตป้อมปราบศัตรูพ่าย กรุงเทพมหานคร 10100",
+    "lat": 13.7430288,
+    "lng": 100.50915979999999,
+    "photos": [
+      "/photos/ec613b6e-9a9f-483e-abb0-58d24dafb7f7/0.jpg",
+      "/photos/ec613b6e-9a9f-483e-abb0-58d24dafb7f7/1.jpg",
+      "/photos/ec613b6e-9a9f-483e-abb0-58d24dafb7f7/2.jpg",
+      "/photos/ec613b6e-9a9f-483e-abb0-58d24dafb7f7/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Wat%20Mangkon%20Kamalawat%20(Wat%20Leng%20Noei%20Yi)%20423%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Pom%20Prap%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJZ-IlRCKZ4jARzgWVA3vA_0k",
+    "rating": 4.6,
+    "price_range": 1,
+    "tag": "evergreen",
+    "area": "Pom Prap Sattru Phai",
+    "temple": {
+      "deity_zh": "釋迦牟尼佛、觀音菩薩、太歲星君等（華人大乘佛寺）",
+      "wishes_zh": [
+        "安太歲",
+        "補財庫",
+        "平安、健康"
+      ],
+      "steps_zh": [
+        "在入口處買香和供品",
+        "跟台灣的廟一樣，依序拜各殿",
+        "要安太歲或點光明燈，到服務處登記"
+      ],
+      "offerings_zh": [
+        "香、蠟燭、金紙",
+        "水果、餅乾",
+        "光明燈、太歲燈（登記付費）"
+      ],
+      "tips_zh": [
+        "農曆新年前後人非常多",
+        "出寺之後就是耀華力路，可以接著逛中國城"
+      ],
+      "thai": [
+        {
+          "th": "วัดมังกรกมลาวาส",
+          "read": "wát mang-gɔɔn gà-má-laa-wâat",
+          "zh": "龍蓮寺"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:07.281Z",
+    "photo_refs": [
+      "places/ChIJZ-IlRCKZ4jARzgWVA3vA_0k/photos/AV-0GLcVNy8-2AsfL5Vd6eezFxdEwYcYJbchXwxQAD9QArIoi5kGLpok49toLGnZpxaBWl_Sg872uySGFfdwXljaQCCX1URzqN0T6kpVMcQsFZz9eXVhcnAGvrc07hsXaN08RPTaDOR8NsGsDFXNpkGsrpdW9vZle09BlowQSFX-Uyq94dwgm6_z0EPoiiHDg0XEJ4RYsDB2xQu2kko_XgsB_ylonoL7uTct7_HGqx9EaXRoKg3ro95orvk_dFGOFj4HHYFxwWctbSlsufI7Mu1a0TEIb34jeDrX9s8vHOD7Qfzh3tV3Wz1qmvUxi_4jyIZ5kl7auTDf0HalaDgV0zS1dvPY-I4wj5OibwC8x7T6gPyPYxLxms-CY-vy9ow_lYV3ZJHOWu2HmeYlISDrZLSdxwNGAfA",
+      "places/ChIJZ-IlRCKZ4jARzgWVA3vA_0k/photos/AV-0GLdtH9vS4BuivmOscyLwYJo6UqyUrF6Ez9Fyy3Q-8r_0DhV4MYy9qE3ZHwcqv1U-AjbaC69xpTzw7VoYGVV1-qFfsYgk6Y1b32Hx1BJDY_t32CHpEgeynKaqlHrYQJ3ARb2WB9j2NeadFFGBnt5DHn_7T3-Ku0XPR4c_2H3RBUF66WXWiS8dwpV9ArDjnb8NBJ60YMHWX2PLotqQ6NDn29uLo1FIfcJgpF8Dbh5ERsuQW5v3WJRfk9qAXSa9N0GoBXa-9M9a8368ikMJ_R2YC_sp-k4rnUINl0wTFwQBEHpRGunPXpnY-65rUvbPIP7lq4zY8ECs3Qesed_gXkrT12MbrVbFy33Z1wsxk4XorQ1U4FZir91c1XKZxvq2GAEXiclfSS3rb5H1QK_qh55YjE03yVALCmI",
+      "places/ChIJZ-IlRCKZ4jARzgWVA3vA_0k/photos/AV-0GLernVMN-8JRivUu8ZPnyb9MuAlqw957SmrgVqKWmuAnajj1uqQZ71TCfCQ7PBsK-lvCqbgilGavK4L5T1TShLY_pMa36IXU2lyAgf2ubSS2HEIiVUCESEbXfEhQ0u40wVP77gxPEsVp1753ekkC96XXVuONHjWhuKm-b-xJNCYnlgdg4j7qNGqgVaLKIW7BFrfaMpb6tzWiF_BbORmaJw4Mf6oDwvCAtfeISUXp6pda6B0rpG_oxJK_Zj7KLKj2cEur7vE_iBA8d6sCJzuUkm2S2M2QB5GFv2UVuO6kfD73onX-UhcO-u0Pmvn1Bbh-UKa6OhHUiQGYnff6inHRHNKBFTeHvvvez_FZSkb8FOivkairqg_BJqutHPdSc7vVyQ9BB7HdKvmfL7rF4VyUJi3QO9d7fDY",
+      "places/ChIJZ-IlRCKZ4jARzgWVA3vA_0k/photos/AV-0GLdV-Z_pnm9HsyJOWlYABxzQ7D2ViHRjIhn9HLvjGkEItdjeZCHcInaTLMc-o6AK31WOIaJCOtPm_jveInQ-RV33Cv-9t0tEu6Pbl4mIVdBNbkQnGCS6oqxpm0jjOaaFozg8tFmRkfEpZuZuEAdM6unmn6aomqTFXM82bWm2NUb4VQoYN3vME3Bs_3D01OJ7kYdtBHDJSlOx8NZssDX3xTfbrqY7PWBNoy4zurwHF4RuYgHUfO8JMcjvV-P_rA6h_P8eckvN4ed5l8DMdJUXlrlV2QCb5mGjcjQ74KOWHWx9K5fcyvigPOCriI3RK3XXJ7tTYoV5R4rv6claZIob6FGjLQVbbSbHI6OFxv3uHaJukRlzSxk4xoxCJkIj171TVaDHQyU23kHShh8SPWGrceJj7Q",
+      "places/ChIJZ-IlRCKZ4jARzgWVA3vA_0k/photos/AV-0GLcd-07YUJ1J6dXTOPtHwv9J8kyq3fYizf7NOJl-GFHh0uYuH0bYmfPgjbBmLPo60JyLTSTSaykQ0W4pKosWWkJgs6q-sU8WGtJKD09KpeAXsKS7mORVDrHT5Xrl7Ban4B8UUsmzQoXj-G-FGQJ_io4-930awn2WlhNjbsFOWcRtLySInRZiRE3jHk_C9lvPw3zQJySUYAev-RVhBt70jaJtJ5Hlb3bEm61_pZXxY5y33eGkKbWmycrLCO_DY9eDP4OTCnIqGjazSYPSDdsheYpIzA9jvpXqp-59uvn9wbp0J3JbWNoY3R7K4xihZsWNylKi8CJYBS7CveiFP0fl1KjJa2byAV1Bl04-DqEfw5gwRwytE9JFX60xTzo7dMYBcHqjvyD-kJdFRWMt00pACn1IONNMTO5NlxnvxDjsP8USBA",
+      "places/ChIJZ-IlRCKZ4jARzgWVA3vA_0k/photos/AV-0GLc78Fgba55UCvk5PbRcW0oUy-xXdkd7tiHiJ7z4sIzEXQ9ZdWW_yldmkJQHJzQ2JDS1edKIA8bhCPt6d5oewCLWZImVlMG7bk4iwKGt4fT9ELyFhRbedHJxg5fdMlDN7gsI5hFSl4lp2gC4q9bZTXyMR7IH2IJg141ey4_CKbjC-vb_Ic1nM0WB6sGE7CHIz_QcwbWKbGK7HpqwyW5JGNL4ECYDPcxpwLGyCBBct-BcuaK6PqYa-ag10wxVIA2rA1xqr6PhHoVZp6EAOl8K3nT0nAnieTWRu_uFZLPYf4Y5RLvaB8LmfKwhi9GhnDYu5znvqdpmFsMBIsOvu0M0oH3poB3ZS2TvsDrLjJ4c1gVYbY62LyflK4_SWOkRAFrTJe8g3vSZnVruO_xfIEFVk1mHn1Y"
+    ]
+  },
+  {
+    "id": "b51f2088-b7ee-40d0-8fee-56218bddb3ba",
+    "name_zh": "印度廟（Sri Maha Mariamman）",
+    "name_en": "Sri Maha Mariamman Temple (Wat Khaek)",
+    "name_th": "วัดพระศรีมหาอุมาเทวี (วัดแขก)",
+    "description_zh": "在 Silom 路上，曼谷最老的印度教廟，外牆滿滿是彩色的神像雕刻。泰國人叫它「Wat Khaek」。主祀烏瑪女神，祭司會幫信眾在額頭點紅。每年十月的九夜節是最熱鬧的時候，整條 Silom 路都會封起來遊行。",
+    "description_en": "Bangkok’s oldest Hindu temple, on Silom Road, its tower covered in painted deities. Thais call it Wat Khaek. The Navaratri festival in October closes Silom Road for a parade.",
+    "category": "temple",
+    "address": "2 Thanon Pan, Khwaeng Bang Rak, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
+    "address_th": "2 ถ. ปั้น แขวงบางรัก เขตบางรัก กรุงเทพมหานคร 10500",
+    "lat": 13.7242482,
+    "lng": 100.5229171,
+    "photos": [
+      "/photos/b51f2088-b7ee-40d0-8fee-56218bddb3ba/0.jpg",
+      "/photos/b51f2088-b7ee-40d0-8fee-56218bddb3ba/1.jpg",
+      "/photos/b51f2088-b7ee-40d0-8fee-56218bddb3ba/2.jpg",
+      "/photos/b51f2088-b7ee-40d0-8fee-56218bddb3ba/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Sri%20Maha%20Mariamman%20Temple%20(Wat%20Khaek)%202%20Thanon%20Pan%2C%20Khwaeng%20Bang%20Rak%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJnyXs5dGY4jARxAURliWpDZg",
+    "rating": 4.7,
+    "price_range": 1,
+    "tag": "evergreen",
+    "area": "Bang Rak",
+    "temple": {
+      "deity_zh": "烏瑪女神 Sri Maha Mariamman（濕婆的妻子）",
+      "wishes_zh": [
+        "平安、健康",
+        "家庭和睦",
+        "事業"
+      ],
+      "steps_zh": [
+        "在門口脫鞋，寄放鞋子",
+        "在門口攤位買花環和供品",
+        "進廟後把供品交給祭司，祭司祝禱後會在你額頭點紅",
+        "順時針繞行各神龕"
+      ],
+      "offerings_zh": [
+        "花環",
+        "椰子、香蕉",
+        "蓮花"
+      ],
+      "tips_zh": [
+        "廟內禁止拍照",
+        "穿著要遮肩、過膝",
+        "十月九夜節期間人潮非常多"
+      ],
+      "thai": [
+        {
+          "th": "วัดแขก",
+          "read": "wát khàek",
+          "zh": "印度廟（泰國人的叫法）"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:07.840Z",
+    "photo_refs": [
+      "places/ChIJnyXs5dGY4jARxAURliWpDZg/photos/AV-0GLdWt7Vy00vxxtuzVkCD-G3X_c0KHdOMnFCIzgUf_D1nksFVTc4wT7tAbUMaiUcmaO48cblkmzu-V1lcEEvNCGHvTBFUM0hZCyyd1T-6V5dZIu1d5YXE0O-4MVnp8GozAqaES5XdvB4HAWIHLmO8xKmnRvpKAXXDJfBwMpKLZbphgPzX4alTr3w2NeI0P1vIqlcf81dGTxB8qZxaMk1_J96J_uI6BbCa40usA6NhO0x4TUAzViIyvRyCNVSOjkEHM-n9XS10qZlfWk6oSeVfrrIq5td04c7xjH95RD8Vd2E_tBTmkYO3fKRL5rdkDNS4-k5C0vz0q8zbisKQmjMxgIM5_KY3TaSXPGPqNwoAN_b8CF0fQu2FOTpd6iQwpuzKAGfpAmjCWwHRLUfanNDCqi9kkvo",
+      "places/ChIJnyXs5dGY4jARxAURliWpDZg/photos/AV-0GLfoabSKIfKyYi7xaDfZImygB37mwUULGSc6YxJwIg3F9f1qtCIiw3YTzUExUVLfoiVyxLG6wZyj7vyNxCKnmtTsHC1gRymC83dl1Br-Ki-6z7tfy0K_HiSq4ZYTc1WWJ0qI8Zt6dZbL0XOkI5a3XIKqjrmopNKa4njulqs15XI1FfqTF5sSwkfbBdrdzBBtUx29sLE4tsNNOWtjMFY4IddMX6riv9rY7m5lrSPi_t51ao9JzVp73L-o6Duvkvha_w_91lF9gcFSoGkABB1UZt44vqSbIUZGiVtHRrcUzLx5-vyZlQZKA1iB-gyMwGsyECwmrj47J0NjFeqMyDHfKEgjJ8RJuZtT_ms19pfjTBMzggp8nyWglsK9uHvTCjpA0SzH3ej7n8oTZ7YWC-uWl90vYvk",
+      "places/ChIJnyXs5dGY4jARxAURliWpDZg/photos/AV-0GLfjTgbO8-p2CtACQndDF9VT_ghrr5XFADVGTQJVbDjysDTlgJvoq6SFL3NlRGcEz2O37yBvfq_36iPqLHrDrgusFRJf_R6DygcXl3OgEPl5blqZ1EtGpVt5-eTSaEUNCCz1AG7nKEgCaLvNpo8MV6L452STHDkJ_O5L8abgz6csH6_ZH2VU8Ug2Nkrp1HIfT6piMIFaUvC0awLWliCMSTiXJ5m1bTL78yEdd0kIR_bQdeM_Mu1AbLQnBVRztQUgLjNOd5p-UNvxtFfcSZ4xqECrnRTKoDnoKDgd184vcXN-LoSosuCgLrxPIflaBIGlDicb9_m3b-M8gxVediS2QQ4hXzrFlV3MbtTLgI-lsEFCU3ywiIdFXgyHKVC8uS8QbZWxW37NVZ63QBTkZBY7GNg5E-TLGcmsvKu8tSpYJF0r3w",
+      "places/ChIJnyXs5dGY4jARxAURliWpDZg/photos/AV-0GLecfidjZ3Din7LxBwxlQv8ZFWiwDZZkrlBg82FXqs9CAktgBG0yyQAeM1w-kQA97yn49mjE8uM5ZsVaeCRC6QZU4ptQ8LqUd6PO45LG0ugN0A0HGBPWIC7Zi5kXKpLGIOnWeLEqwy4f1gyy3Gw31NYlDxz71jKucqe-xPnQD6EZ0HK9owzmrEuXSHhJOoJ8zHARg65M90Z8slrDQX_sw8SQsDQfJtYqxBNAEyWxcIUNmj4YlVZPRjZljVHGGcDsib7eLrri2DiSKQroTH7JPraaO9f86UftH0MUxE77uXh7RKaRmxuNElIdytCfkILBP9Idm-2gbRLDBE5SJrIZb-Txpzk-Y1YJQPrJGjJUgIHyDmUT_wEo7A_SRKCR2E8fhz-K53yaAgUKNTP1n4pHJUi2ae0",
+      "places/ChIJnyXs5dGY4jARxAURliWpDZg/photos/AV-0GLdUWkNSBnXHPLq9C0DzOj0AaoQLIBOJDq2v4DPrmXHXxf6FJfPMZ_I2tsONp8IunTKo76J8WRBe2LOT7_0kJYP8e_wozMu9bI7MdHKiuRKzkVIgGJ8Yn4i4gwOpRtGANip2DpMxrGWzB0IEDcuzQLjOW2BgHx4KXO1kwo6VpB1bSOGaNOM5JD0XL5v2J2mGsyhl521SJHDUSBxKTywjiZs_s3jsMso0hgeS_zkzKaImdfcP5yHGAQ_ZPT0AMYcJ9NgBeAShWvhDw2Zesje3fWNMS-FA1pf3k3DtgZc-m0SdfCg1hZx0bqeHthZVEAxFEDXhExx94P1FnuAq7vnKndRqai9ctf9-31XzSrN7MOaScwKIVi3fXr9AjOHnwFpxF5kNxGiWOXpGdBp74KhmTWIX6Vp5feRyRc0Z_9ijiSX7AQ",
+      "places/ChIJnyXs5dGY4jARxAURliWpDZg/photos/AV-0GLePbx7hXtusuDq_O9tAxkoRgKGDCIORBMOYshddENhLUi4qVjv8a3qD1OLfAyLnW6x225Rhmx5I2wiuWti9y3zTLVfWGnKmha6dQeBO9RqyIElHxeeoxO9p0JiqWltWoK1U9Vv5GSQFjFvR9BjE-9rAMQFqWYNaPNBXl-5GEQmPY86UAOZtTy6DjtiDMQy75yGiMLZrSR5JH_CgQ9ctjlwmIcid0WeAdz5jQUWy8hsipfHAOsvevNDDFJ1TSBoiEDK9oie-ocx-70ClLiROOa8X7bZnGyv2r0flCpEYa25ZtYKCMCk9HsuTLSJSNagNw_l4FfWpfGcXZ7xqTbly4Nb3H9HVtevU8p0d_YKoqH043AZvW3jNfrCvfQmc8uwqqLkrqmQCQ8N-G3O8llWF5H-7ng"
+    ]
+  },
+  {
+    "id": "2bee248e-c261-41e3-985d-b818922c1cf5",
+    "name_zh": "臥佛寺",
+    "name_en": "Wat Phra Chetuphon Wimon Mangkhalaram Rajwaramahawihan",
+    "name_th": "วัดพระเชตุพนวิมลมังคลาราม ราชวรมหาวิหาร",
+    "description_zh": "曼谷最古老的寺廟之一，裡面有一尊 46 公尺長的金色臥佛，腳底鑲滿螺鈿。臥佛後面有一整排 108 個銅缽，換一杯硬幣一缽丟一枚，是來這裡必做的祈福。寺裡也是泰式按摩的發源地，有按摩學校可以直接體驗。",
+    "description_en": "One of Bangkok’s oldest temples, home to a 46-metre golden reclining Buddha. Drop a coin into each of the 108 bronze bowls behind it for good luck. The birthplace of Thai massage, with a school on site.",
+    "category": "temple",
+    "address": "2 Thanon Sanam Chai, Khwaeng Phra Borom Maha Ratchawang, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
+    "address_th": "2 ถนน สนามไชย แขวงพระบรมมหาราชวัง เขตพระนคร กรุงเทพมหานคร 10200",
+    "lat": 13.7464237,
+    "lng": 100.4927733,
+    "photos": [
+      "/photos/2bee248e-c261-41e3-985d-b818922c1cf5/0.jpg",
+      "/photos/2bee248e-c261-41e3-985d-b818922c1cf5/1.jpg",
+      "/photos/2bee248e-c261-41e3-985d-b818922c1cf5/2.jpg",
+      "/photos/2bee248e-c261-41e3-985d-b818922c1cf5/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Wat%20Phra%20Chetuphon%20Wimon%20Mangkhalaram%20Rajwaramahawihan%202%20Thanon%20Sanam%20Chai%2C%20Khwaeng%20Phra%20Borom%20Maha%20Ratchawang%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJgcxFcQWZ4jARLsIR9Qia9H0",
+    "rating": 4.7,
+    "price_range": 1,
+    "tag": "evergreen",
+    "area": "Phra Nakhon",
+    "temple": {
+      "deity_zh": "臥佛（釋迦牟尼佛涅槃像）",
+      "wishes_zh": [
+        "平安",
+        "好運",
+        "健康"
+      ],
+      "steps_zh": [
+        "買門票入寺，先到臥佛殿參觀",
+        "在殿內換一杯硬幣",
+        "沿著臥佛背後的 108 個銅缽，一缽丟一枚，邊走邊許願"
+      ],
+      "offerings_zh": [
+        "硬幣（殿內兌換）",
+        "蓮花、金箔"
+      ],
+      "tips_zh": [
+        "需要購買門票，價格以現場公告為準",
+        "穿著要遮肩、過膝，不合規定可在門口借衣服",
+        "早上剛開門時人最少"
+      ],
+      "thai": [
+        {
+          "th": "วัดโพธิ์",
+          "read": "wát phoo",
+          "zh": "臥佛寺"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:08.367Z",
+    "photo_refs": [
+      "places/ChIJgcxFcQWZ4jARLsIR9Qia9H0/photos/AV-0GLckdPWcdQOCpxyGv4Ill4E9wKZfSPq8tQN3CY0A0lpzHs96culQ13M-kXg2loxp8fTG7MvpYAciaVwYnPvAYRlbeQLUDYteUHMPDvJpMkJMDSGywpTcXq_TF6a1LTBZVGgsymNYQD5-qxbWa-ReVk-s-rVvyBTYP0Cof8XYy7uYnm-r4fvxYbJgVL6bDfmP_Jtrx7G-PhlW6n7OnkvZduDI1JK3ilGL9pegqbCfX-tdhwGn8TfRc1QvXmjm4djjpBw8XpxQa5OgucNjIDP5Qgo8ncH771eaL924ZVDriy-Ec7mx3Ew8Q0xrv8gw8qkZgAzaW0b-O6mNZcNxYxG37qJjbTVrx--WXVAEMl5FSgsH-bVnZiwjWXuToJS6Wyt_O3e98kDdADl1FwkDjqO5YGQ9DnvhQPuW1rR0mt83PgzT",
+      "places/ChIJgcxFcQWZ4jARLsIR9Qia9H0/photos/AV-0GLeynkqFzrzeM9eAxZ4wAlslo5l7DmX64I3xXfwyMBtF1vxBmKS-bJzREggvQ_Xs7DBl00-Z7wQ9HJBx6E1Tu5-r0OtWth4nPxWqIm5L-LyasWjxQ7qd0mCYmrcBcrUZ-KcioDErOfGuIM6ojMiyB7RCXUvKigtLjsKkyIZZunG-yM6tw0zM-gvK35uVaQJfzcOmB6rQslhNVeKt7CSPvnYOzEMmKnpg3CLBD8vOP-jXiN84LkYgN16FXm6IoZFDxH0NnPkd5dOzrqCXbaCv19VV5aGsHZrvRU316qT5e6XhaRiWKq5Bhh3eLxtQ7t3o2TNlx-m8XPomLD2E26-n5yOTI_ZMsZoNgHitzJacv2EVooUYkvusJL7Z5WUH4x2xR8y6dofE52xVvWcpawPx5wH-FXXSOrU",
+      "places/ChIJgcxFcQWZ4jARLsIR9Qia9H0/photos/AV-0GLcqUQktN8tWeCriRT96LeP5AObCcO8tPoDz1rAkLuJ71z7UEGEhaTZyzl7-2UeSfa45l7ijcrQu8qWqcTnO1x4_-6yN_p8dn2irZr5ek_570afg2TI-qJ5l_0CQSPvqIdcDnLtN0Q6_O7Y5Mk2Rpqz87zq9Q4AV0Cz6qKPIabJEwaPy3HFTgSyzQGxWTO_JgqWmyGMAvPfYTviPfQGc-ITTXdgoEdKxUEQNnkqh-y3-faPmGhiiURu9l1gj6C2gtggB1ILDEAAV6oR4nzwx56h_HNqcftLA8PXiXK_by9FLXp4Fb8HrYKPP3x1BEK_hYMxN9XZyN8Lrbl12xlGN50PNMUzB0u6hXwfOljb_AStTRvICHdn-nOpdpXCuqrQjItcFwq3KQZxaJt2gRqs-UXZRcRCcxPE",
+      "places/ChIJgcxFcQWZ4jARLsIR9Qia9H0/photos/AV-0GLcpEe8r0HUTPrkBRqRoI3PfnLSYQ5SJauXjasW1LtKZciI6zWOJj1Pwdr1Asy-CAXQMyY_As384xsCu6iKGnEC-zh7Yw9VAFZRvhZlBCCofN406TIg9RHgOkGvCpcJZWiGGMRvzY13Iki83nFpDBG7IGZAjE2o4eN_SU02BqWNobDq_6we1UNRYN1voGBb_i2Iyf7yMlo4GpWz-BcQ8W7T7-T9YatHYOxih3AKeJxcfm8IW24-c66Q1snIDT_76FQVigtbs6KMbSwJNb5rHvXDPNP2fBhHYuUZEmpumWLON2qo0FfTXMQ_8apI7Nff3510n3n27NmDSgZYbCinxMKQTI55yY5jeext7h_Tjxf1lYy1d0vjE_tGh2hNhyhS7fZ3t4-YnJzrtSSd8pKzlsnMB_A",
+      "places/ChIJgcxFcQWZ4jARLsIR9Qia9H0/photos/AV-0GLcLcPRmBDX_o6uq6jTPcX_-v3JZGU_souW1lXWEn25HuSw_rAuP6RLHewZ5KUqTeC4iQ2UEMPhj9numCRwxPxGjbTt_WximL5wkVnUhi2vtCaJCNOPK6qgkzbG0DfP3LBfQN9Bp49VFjlUWzXkdut7yoSTegjNdBdEEteEV-NE2OsoRMfaKY-CTibBs8y8UYuT_pwYxGV2RE5BJMhBm4znSPI7ekr_sru9xLTYswC4FsEn5yXYjQMpxz46X-jS7rhcEU1QFJA323jC8CTN4eJtkFA8TlDJIPQSxh1kSArLwxI3vLMAN51B0XB_IkmKvCoqkNq5Wx_bBsBCKpxkUqlihQScHjdyc7EaqdfbKXHp12c_njcYRR_Z0vEsgLzUrvuACN7S1k8ejQuRAz9QnU815aa-p",
+      "places/ChIJgcxFcQWZ4jARLsIR9Qia9H0/photos/AV-0GLfcTUYcxE5DVKGhmEawP10eEYq6Q-iLGL2A-Nr6ljeNoosQvE5Mluo_DZiIKl0NtIO5KuerbCd1ffcIt_WGNWVsnXN6zZkBq1Dsz-7HnelsFcpjwP73HS7jZm2xJhmIxXuRchqqr7XpH36n0J8dFeiPWX0CumHsBHit2AWzOvGWf2Se8D_zwuyBXUd2n7s9VgihCe7aBG0rmp2WUzU9EA_pNn4ruvUse8BD6KUGNK0YxgUQDzmvlmtKdd1aYjga1EEWzJafuu1ubz_aaNSE6es24wqOpvy1Sj8kdex8A20lvEiY6BNpAlDuO0Q1-MPX8wzYh_rUAXgX8H6C83IqMNlIFImhUhMsZzm7aC4k2IZ69kDRF6bFIDB1y_y6-VgIHWIg8tkxeBhrgGwP3ip3aROJ4lo"
+    ]
+  },
+  {
+    "id": "e32a616a-f1da-4ce7-9943-b5420a56af81",
+    "name_zh": "娜娜女鬼廟（Mae Nak）",
+    "name_en": "Wat Mahabut (Mae Nak Phra Khanong)",
+    "name_th": "วัดมหาบุศย์ (แม่นาคพระโขนง)",
+    "description_zh": "在 On Nut 附近的 Wat Mahabut 寺內，供奉泰國最有名的鬼故事主角娜娜。傳說她難產過世，卻一直等丈夫從戰場回家。泰國男生抽兵役前會來求不中籤，也有人來求平安生產和樂透。神壇前堆滿了給她的泰式衣服、化妝品，還有給她孩子的玩具。",
+    "description_en": "Inside Wat Mahabut near On Nut, the shrine of Mae Nak, heroine of Thailand’s most famous ghost story. Young men come to pray their way out of the military draft lottery.",
+    "category": "temple",
+    "address": "749 On Nut 7, On Nut, Khet Suan Luang, Krung Thep Maha Nakhon 10250",
+    "address_th": "749 อ่อนนุช 7 แขวงอ่อนนุช เขตสวนหลวง กรุงเทพมหานคร 10250",
+    "lat": 13.7155449,
+    "lng": 100.6070091,
+    "photos": [
+      "/photos/e32a616a-f1da-4ce7-9943-b5420a56af81/0.jpg",
+      "/photos/e32a616a-f1da-4ce7-9943-b5420a56af81/1.jpg",
+      "/photos/e32a616a-f1da-4ce7-9943-b5420a56af81/2.jpg",
+      "/photos/e32a616a-f1da-4ce7-9943-b5420a56af81/3.jpg"
+    ],
+    "source": "manual",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Wat%20Mahabut%20(Mae%20Nak%20Phra%20Khanong)%20749%20On%20Nut%207%2C%20On%20Nut%2C%20Khet%20Suan%20Luang%2C%20Krung%20Thep%20Maha%20Nakhon%2010250&query_place_id=ChIJobyO3cOf4jARPQkpRZv8O94",
+    "rating": 4.6,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "area": "Suan Luang",
+    "temple": {
+      "deity_zh": "娜娜 Mae Nak（泰國民間傳說人物）",
+      "wishes_zh": [
+        "避兵役（抽籤不中）",
+        "平安生產",
+        "樂透、偏財",
+        "姻緣"
+      ],
+      "steps_zh": [
+        "在寺內攤位買香、花環和供品",
+        "到娜娜神壇前點香，說出名字和願望",
+        "把供品放在神壇前"
+      ],
+      "offerings_zh": [
+        "泰式傳統服裝、化妝品",
+        "嬰兒衣服、玩具（給她的孩子）",
+        "花環、香"
+      ],
+      "tips_zh": [
+        "寺旁的小運河可以餵魚",
+        "從 BTS On Nut 搭計程車或摩托計程車比較方便"
+      ],
+      "thai": [
+        {
+          "th": "แม่นาค",
+          "read": "mâe nâak",
+          "zh": "娜娜"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sǎa-thú",
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+        }
+      ]
+    },
+    "approved_at": "2026-11-02T11:53:08.863Z",
+    "photo_refs": [
+      "places/ChIJobyO3cOf4jARPQkpRZv8O94/photos/AV-0GLeJO4BvTLUJB-jpXCreW0U3uH7q8DtYPlkTaq8kaBadrK1iX2mZnFAJkgH4bEasnuMhvpX1sMf-S4cG-uWBABVTODsiR5GSyBjMnY1yNGylh9l10v5NE8GKXyJ29Z-HcKCt-c2s8McFiN-6wqnrhiT9F09VF5P9FehlYGDlY5oo6csugeWKeHwms8WxgUxuFTe2s5REAKIgDMSmI8o8ZBz2-x1wsHq8Hxp_ZjPdpNSi8E-lAfKf53M7shG2JYclKIwIoXnGtCjvy2AN6lIfRRUtT5PJ8Sj10Q9Eg7g9iV8zW6S_SL72moC4HdNXQMh0GB13iFvZxOV42bRyBwhPCdr6jXt4LYj4t7ZqvukIAsPC2OIJFi3rAvlTR2nQw9ZvukmW7N4fpwo4g6Jm4WBTLR0s-Sgmvn5HJN0HfzXfo7biDQ",
+      "places/ChIJobyO3cOf4jARPQkpRZv8O94/photos/AV-0GLd6JgeRhLkz1lj1KPBfpJ24aVd3xWu5KQfHKwjgF_jaMIj56vUDUrf8AYKOBMat2rmt2n4Sf7jB_MNmKPnbqQLSQWLp7tlIP6lDRYOPF9z8GmtVL1NjS155HyrN4WDthWLD7d0g2bGRQ7v9xRm_HTcoqSPo7WW5n_L-mrk9kJ0bXaBkDhKsewFYM0U4poZkpTnTw29b9bxFUj4F-I5z0SzRaPUsEb7ansd18qTkpyhf8y4gt22OhW_lORIw1TA-YELsUVHF9hdTWVM5OTtU_9hWGBFb9l-MrlZe3P9kfeb3bwmdUhpm0Jrd8C6kLS_x_0DXnLuwAWJTH_COLyDY64xU8toqcuMeO2APosknK1UyzcWXEa1VL46g9g1_yLPVoSO8ATaDd7rE_BprCeFlFCHDkiqrMCY",
+      "places/ChIJobyO3cOf4jARPQkpRZv8O94/photos/AV-0GLe577BOVfs6LbYaLV3O72_C7ggGFzjRxqQn_9Mg5rT_uXUekyyJdQ5_rkdpnUMMVv1wwfKYp_Jhu4Oc3KiddAOK07lsSO8lg1ebBcrRBuT7I_UpqLpFzsCdLans_UJOvX5FW-QE_BHiCwfcIuehCJG5DW-dFVLw5QlMZlmoRGLb5XQ4KkPE7v6a8aUSjdu4_Rj4wsrlj4r8SCKcxmV8oxOf2pO6-inrE1GKsd8ZDtfhJ1jd1TJu13aKYG7HwhfdtDnyr-mLGWN70guoC5HOGMvVnH3CqHgc9DXO3YUoJcIPrWmUREaLxsFZb7uYASRjneI_otwJCOJVZ9LHAQaff3sijB-zRBAJOWsynDJuGmQHBCtVQzAjGvInypV-etr1vsTMjlXU8w0i1gtdg_n2gdmQujDCO0U",
+      "places/ChIJobyO3cOf4jARPQkpRZv8O94/photos/AV-0GLeGcaCY61ZHBdoVhEEkaGpS59pTyeAs53qmAC8SPtLtFWNlXL3cq4kiiHCSafR1FTeohafmvaQm-4yQ6V_WSkNEcjBt9W_sytWMwUbq3apArw30JBM25hTkkjod_rei5ULCIBcQMT-ZVUyv9MlIkRcdZRMszvvjy95239wq16Q9FGCOqJmYwGhw4bVokzYkDHM8g_76nWKHs6T4r47aNdM6cyuk4kfmAEfKIE0kpVyTOyOIBC0NE2eATdN8XqO7RyF0LiachXbuR3w_fF6T_I-6OqMpMs5_CrB0keqesV7jwajSKb0W4OIe9Cbie8NqmYSpJLMw8rLAMYQqdA3aAP5c8_nJjjyms-u5nKyeHe_npyCR8LTRuk-4Ss4VM9olXDDLNKdnCH9kBXF6dgwbA2IhXbYbpHU",
+      "places/ChIJobyO3cOf4jARPQkpRZv8O94/photos/AV-0GLcRdxQbRhDjXnoLeQZL4KCrEgk4AKOmKMkUP6DQHcqoZJDf3bSOtj8rZOgn3ntwfTNTNIZAseFaD4jow9aq11Cv4iJv4AN4TnihVT2_aJvz9rp-hh4Spjw2C4a9rKp4YPyZ71vdXOLDVT9w7VyNehFXRm-0wbDwCPXNI8LJ_vr2VFp6V2Bj0nbV7oLi3xooNK0VUtz4scWRJ-10-yABu_dZivrXurDL64Nr4FHZ7nohvleZ6FNsVhJt_cxhiy6ECO7PRnFPpY3P9Mq1_Rotk3n8WnJIHSW1uE_FgPFrudWAwXL4J4AzgrOeDcJNlX6li4ghIhWIWb9yzDuOJhmmMw4mC-3VFmrL3y6i2yfD9MDfMIZzfAftiaRhSZnXEe48KdAVVnayPy7QmmVr8CYLljbiuQ",
+      "places/ChIJobyO3cOf4jARPQkpRZv8O94/photos/AV-0GLehhuwfMQibqpqh9FHFWqSRt9OIKRYJLeAGaiUjiiCoFQU2NhKeB3jx60uMkjlo6r5CyRwYukL4We0IDCBGnmfOE77qELM61QIgQ3xviEK8kxFTElbO2jOD_JzPGY5t7_PyOF8WSUkZvHiN7adiU9iuoj9qZXuT4AWbBAHlcULfoRrseHIKKXzUtAQffe-iCMuzj9cCTxqSzIEa168Zws-0gjgp0atFXVfHj4WBH28fAM3lL2FWAkBn39erKoHfjNVoitjlmHx7hBd8_9GDnKMkJmsIqfPxdcL6Ybxmv-Twq56kKORIwOY6vSZ5wKGnJAgCfCMfPSvYSuRVyIiVRkOOzXDewxwzMpRW-SQtx34KklJGPvWI1GgeH6zpOziVNnsaFnkqRCuj6v_2hJITFZPowN0SmU7TUb0bTbB3wiaAcA"
+    ]
   }
 ]

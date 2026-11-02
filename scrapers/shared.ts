@@ -8,6 +8,7 @@ const CATEGORY_LABEL: Record<Category, { zh: string; en: string }> = {
   nightlife: { zh: '酒吧',   en: 'Bar' },
   hotel:     { zh: '飯店',   en: 'Hotel' },
   attraction:{ zh: '景點',   en: 'Attraction' },
+  temple:    { zh: '拜拜',   en: 'Temple' },
 }
 
 export function categoryLabel(category: Category | undefined): { zh: string; en: string } {

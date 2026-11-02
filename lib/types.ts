@@ -1,10 +1,21 @@
-export type Category = 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel' | 'attraction'
+export type Category = 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel' | 'attraction' | 'temple'
 export type Source = 'pantip' | 'wongnai' | 'googlemaps' | 'tiktok' | 'instagram' | 'media' | 'manual'
 export type LocationTag = 'trending' | 'hidden_gem' | 'new_opening' | 'evergreen'
 
 // 爬蟲「找熱點」留下的出處：哪個網址、標題、以及它怎麼說這家店
 // facts：來源原文裡關於這家店的具體事實摘要（位置、招牌、特色），寫介紹時當依據
 export type Evidence = { url: string; title: string; quote: string; facts?: string }
+
+// 拜拜（寺廟、神壇）專屬資訊，只有 category 為 temple 的地點才有
+export type TempleInfo = {
+  deity_zh: string        // 主祀神明
+  wishes_zh: string[]     // 求什麼
+  steps_zh: string[]      // 怎麼拜（依序）
+  offerings_zh: string[]  // 供品
+  hours_zh?: string       // 參拜時間
+  tips_zh?: string[]      // 注意事項（服裝、禁忌、還願）
+  thai?: { th: string; read: string; zh: string }[]  // 泰文小知識：泰文、念法、意思
+}
 
 export type Location = {
   id: string
@@ -34,6 +45,7 @@ export type Location = {
   social_embed_url?: string  // TikTok or Instagram post URL to embed
   mentions?: number          // 找熱點時被幾個不同來源提到（待審排序用）
   evidence?: Evidence[]      // 提到這家店的來源清單（待審時判斷為什麼紅）
+  temple?: TempleInfo        // 拜拜頁專屬內容
   approved_at?: string
   // 以下兩欄來自 data/hours.json，讀取時才併進來，不會寫回 locations.json
   hours?: string[][] | 'always'   // 每週營業時間（週一到週日）

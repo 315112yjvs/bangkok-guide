@@ -3,8 +3,9 @@ import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { photoUrl } from '@/lib/photo'
 import type { Location, PendingLocation, Category, Source, LocationTag } from '@/lib/types'
+import type { DiaryEntry } from '@/lib/diary'
 
-type Tab = 'pending' | 'approved' | 'add'
+type Tab = 'pending' | 'approved' | 'add' | 'diary'
 
 const SOURCE_LABEL: Record<Source, string> = {
   tiktok: 'TikTok', instagram: 'IG', pantip: 'Pantip',
@@ -434,7 +435,7 @@ function PendingCard({
             <div>
               <p className="text-[10px] font-semibold text-gray-500 mb-1">分類</p>
               <select className={inp} value={form.category} onChange={e => setForm(f => ({...f, category: e.target.value as Category}))}>
-                {(['food','cafe','shopping','nightlife','hotel','attraction'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
+                {(['food','cafe','shopping','nightlife','hotel','attraction','temple'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div>
@@ -539,7 +540,6 @@ function PhotoManager({ photos, onChange }: { photos: string[]; onChange: (photo
               dragIdx === i ? 'opacity-40 border-indigo-400' : i === 0 ? 'border-amber-400' : 'border-transparent'
             }`}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={photoUrl(url, 200)} alt="" className="w-full h-full object-cover pointer-events-none" />
             {i === 0 && (
               <span className="absolute bottom-0 inset-x-0 bg-amber-400/90 text-amber-900 text-[9px] font-black text-center py-0.5">封面</span>
@@ -693,7 +693,7 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
             <div className="col-span-2">
               <p className="text-[10px] font-semibold text-gray-500 mb-1">分類</p>
               <select className={inp} value={form.category} onChange={e => setForm(f => ({...f, category: e.target.value as Category}))}>
-                {([['food','美食'],['cafe','咖啡廳'],['nightlife','夜生活'],['shopping','購物'],['hotel','飯店'],['attraction','景點']] as [Category, string][]).map(([v, label]) => <option key={v} value={v}>{label}</option>)}
+                {([['food','美食'],['cafe','咖啡廳'],['nightlife','夜生活'],['shopping','購物'],['hotel','飯店'],['attraction','景點'],['temple','拜拜']] as [Category, string][]).map(([v, label]) => <option key={v} value={v}>{label}</option>)}
               </select>
             </div>
             <div>
@@ -725,6 +725,118 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
 }
 
 // ---- MANUAL ADD FORM ----
+// 照片在瀏覽器端縮到長邊 1400px 再上傳，手機原圖動輒 5MB 以上
+async function resizePhoto(file: File): Promise<string> {
+  const url = URL.createObjectURL(file)
+  try {
+    const img = await new Promise<HTMLImageElement>((resolve, reject) => {
+      const el = new window.Image()
+      el.onload = () => resolve(el)
+      el.onerror = reject
+      el.src = url
+    })
+    const scale = Math.min(1, 1400 / Math.max(img.width, img.height))
+    const canvas = document.createElement('canvas')
+    canvas.width = Math.round(img.width * scale)
+    canvas.height = Math.round(img.height * scale)
+    canvas.getContext('2d')!.drawImage(img, 0, 0, canvas.width, canvas.height)
+    return canvas.toDataURL('image/jpeg', 0.82)
+  } finally {
+    URL.revokeObjectURL(url)
+  }
+}
+
+function DiaryPanel({ onChanged }: { onChanged: () => void }) {
+  const today = new Date(Date.now() + 7 * 3600_000).toISOString().slice(0, 10)  // 曼谷時間
+  const [entries, setEntries] = useState<DiaryEntry[]>([])
+  const [date, setDate] = useState(today)
+  const [text, setText] = useState('')
+  const [place, setPlace] = useState('')
+  const [photo, setPhoto] = useState('')
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState('')
+
+  const load = useCallback(() => {
+    fetch('/api/diary').then(r => r.json()).then(setEntries).catch(() => {})
+  }, [])
+  useEffect(load, [load])
+
+  async function submit() {
+    if (!photo || !text.trim()) { setError('照片和文字都要有'); return }
+    setSaving(true)
+    setError('')
+    const res = await fetch('/api/diary', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ date, text, place, photo }),
+    })
+    setSaving(false)
+    if (!res.ok) { setError((await res.json()).error ?? '發佈失敗'); return }
+    setText(''); setPlace(''); setPhoto(''); setDate(today)
+    onChanged()
+    load()
+  }
+
+  async function remove(id: string) {
+    if (!window.confirm('確定刪除這篇日記？')) return
+    await fetch('/api/diary', { method: 'DELETE', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) })
+    onChanged()
+    load()
+  }
+
+  return (
+    <div className="max-w-2xl">
+      <h1 className="text-xl font-black text-[#0f172a] mb-1">曼谷日記</h1>
+      <p className="text-sm text-slate-500 mb-4">一張照片配幾句話。發佈後按左下「存檔並上傳」才會出現在網站上。</p>
+
+      <div className="bg-white rounded-2xl shadow-sm p-5 space-y-3 mb-6">
+        <label className="block">
+          {photo ? (
+            <img src={photo} alt="" className="w-full aspect-[4/3] object-cover rounded-xl cursor-pointer" />
+          ) : (
+            <div className="w-full aspect-[4/3] rounded-xl border-2 border-dashed border-slate-200 flex items-center justify-center text-slate-400 text-sm cursor-pointer hover:border-slate-300">
+              點這裡選照片
+            </div>
+          )}
+          <input type="file" accept="image/*" className="hidden" onChange={async (e) => {
+            const f = e.target.files?.[0]
+            if (f) setPhoto(await resizePhoto(f))
+          }} />
+        </label>
+        <textarea
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="今天在曼谷……"
+          rows={4}
+          className="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm outline-none focus:border-slate-400 resize-y"
+        />
+        <div className="flex gap-3">
+          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} className="border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-slate-400" />
+          <input value={place} onChange={(e) => setPlace(e.target.value)} placeholder="地點（選填）" className="flex-1 border border-slate-200 rounded-xl px-3 py-2 text-sm outline-none focus:border-slate-400" />
+        </div>
+        {error && <p className="text-red-500 text-xs">{error}</p>}
+        <button onClick={submit} disabled={saving} className="w-full bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-sm font-bold rounded-xl py-2.5">
+          {saving ? '發佈中...' : '發佈'}
+        </button>
+      </div>
+
+      <div className="space-y-3">
+        {entries.map((e) => (
+          <div key={e.id} className="bg-white rounded-2xl shadow-sm p-3 flex gap-3">
+            <img src={e.photo} alt="" className="w-24 h-20 object-cover rounded-lg shrink-0" />
+            <div className="flex-1 min-w-0">
+              <p className="text-xs text-slate-400 mb-0.5">{e.date}{e.place ? ` · ${e.place}` : ''}</p>
+              <p className="text-sm text-slate-700 line-clamp-3 whitespace-pre-line">{e.text}</p>
+            </div>
+            <button onClick={() => remove(e.id)} className="text-xs text-red-500 hover:text-red-600 self-start shrink-0">刪除</button>
+          </div>
+        ))}
+        {entries.length === 0 && <p className="text-sm text-slate-400">還沒有日記</p>}
+      </div>
+    </div>
+  )
+}
+
 function AddForm({ onAdded }: { onAdded: () => void }) {
   const empty = {
     name_zh: '', name_en: '', name_th: '', description_zh: '', description_en: '',
@@ -859,7 +971,7 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
         <div>
           <label className={label}>分類</label>
           <select className={inp} value={form.category} onChange={field('category')}>
-            {(['food','cafe','shopping','nightlife','hotel','attraction'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
+            {(['food','cafe','shopping','nightlife','hotel','attraction','temple'] as Category[]).map(c => <option key={c} value={c}>{c}</option>)}
           </select>
         </div>
         <div>
@@ -1173,6 +1285,7 @@ export function AdminPanel() {
           {navLink('pending', '待審核地點', pending.length)}
           {navLink('approved', '已上架地點')}
           {navLink('add', '手動新增')}
+          {navLink('diary', '曼谷日記')}
         </nav>
         <div className="p-4 border-t border-white/10">
           <p className="text-slate-400 text-[10px] font-semibold mb-1.5 uppercase tracking-wide">自訂關鍵字（每行一個）</p>
@@ -1355,6 +1468,7 @@ export function AdminPanel() {
           </div>
         )}
 
+        {tab === 'diary' && <DiaryPanel onChanged={() => setHasUnsaved(true)} />}
         {tab === 'add' && <AddForm onAdded={() => { setHasUnsaved(true); loadData(); setTab('approved') }} />}
       </div>
       </div>

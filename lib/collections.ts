@@ -50,6 +50,13 @@ export const CATEGORY_META: Record<string, CollectionMeta> = {
     descZh: '住在曼谷的人精選的飯店與住宿，從設計旅店到高 CP 值選擇。',
     descEn: 'Hand-picked Bangkok hotels and stays by locals.',
   },
+  temple: {
+    slug: 'temple', emoji: '🙏', icon: 'temple',
+    h1Zh: '曼谷拜拜指南', h1En: 'Bangkok Temples & Shrines',
+    titleZh: '曼谷拜拜指南 🙏 四面佛、愛神、象神怎麼拜', titleEn: 'Bangkok Temples & Shrines Guide',
+    descZh: '四面佛、愛神、象神、吉祥天女……每間廟拜什麼神、求什麼、怎麼拜、準備哪些供品，一次整理給你。',
+    descEn: 'Which deity, what to wish for, how to pray and what to offer at Bangkok’s most visited shrines.',
+  },
   attraction: {
     slug: 'attraction', emoji: '🗺️', icon: 'attractions',
     h1Zh: '曼谷景點推薦', h1En: 'Bangkok Attractions',

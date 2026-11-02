@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { readCardLocations } from '@/lib/data'
 import { CATEGORY_META, listAreas } from '@/lib/collections'
 import { THEMES } from '@/lib/themes'
+import { readDiary } from '@/lib/diary'
 import { PublicHomepage } from './PublicHomepage'
 
 export const revalidate = 3600
@@ -18,7 +19,7 @@ export default function Page() {
 
   return (
     <>
-      <PublicHomepage locations={locations} />
+      <PublicHomepage locations={locations} diary={readDiary().slice(0, 6)} />
 
       {/* SEO: server-rendered content + internal links. Visually hidden so the
           app design is untouched, but gives crawlers real text and a link graph
@@ -47,6 +48,8 @@ export default function Page() {
             ))}
           </ul>
         </nav>
+
+        <p><Link href="/diary">曼谷日記</Link></p>
 
         {areas.length > 0 && (
           <nav aria-label="依區域瀏覽">

@@ -213,7 +213,7 @@ export function extractArea(formattedAddress: string): string {
 }
 
 const CAT_ZH: Record<string, string> = {
-  food: '餐廳', cafe: '咖啡廳', shopping: '購物景點', nightlife: '夜生活場所', hotel: '飯店', attraction: '景點',
+  food: '餐廳', cafe: '咖啡廳', shopping: '購物景點', nightlife: '夜生活場所', hotel: '飯店', attraction: '景點', temple: '寺廟神壇',
 }
 
 export function buildDescriptions(

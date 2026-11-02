@@ -19,9 +19,13 @@ import { DragScroll } from '@/components/DragScroll'
 import { LocationMap } from '@/components/LocationMap'
 import { Reveal } from '@/components/Reveal'
 import { getArea } from '@/lib/area'
+import Link from 'next/link'
+import { TripCta } from '@/components/TripCta'
+import { tripEnabled } from '@/lib/site'
+import type { DiaryEntry } from '@/lib/diary'
 import type { Location, Category, LocationTag } from '@/lib/types'
 
-type Props = { locations: Location[] }
+type Props = { locations: Location[]; diary?: DiaryEntry[] }
 
 const TAG_META: Record<LocationTag, { emoji: string; zh: string; en: string; color: string }> = {
   trending:    { emoji: '🔥', zh: '話題爆紅', en: 'Trending Now',    color: 'from-orange-600 to-amber-500' },
@@ -47,7 +51,7 @@ function resolveTag(loc: Location): LocationTag {
 
 type SpecialFilter = 'all' | 'nearby' | 'saved'
 
-export function PublicHomepage({ locations }: Props) {
+export function PublicHomepage({ locations, diary = [] }: Props) {
   const { lang, setLang } = useLanguage()
   const [activeCategory, setActiveCategory] = useState<Category | 'all'>('all')
   const [activeTag, setActiveTag] = useState<LocationTag | 'all'>('all')
@@ -245,7 +249,13 @@ export function PublicHomepage({ locations }: Props) {
 
         <div className="relative z-10 h-full flex flex-col">
           {/* Top bar */}
-          <div className="flex justify-end items-center px-4 pt-5">
+          <div className="flex justify-end items-center gap-2 px-4 pt-5">
+            {tripEnabled && (
+              <Link href="/trip" className="inline-flex items-center gap-1.5 text-[12px] font-bold text-white bg-white/15 hover:bg-white/25 border border-white/30 rounded-full px-3 py-1.5 backdrop-blur-sm transition-colors">
+                <Icon name="route" size={14} strokeWidth={2} />
+                {lang === 'zh' ? '客製行程' : 'Custom trip'}
+              </Link>
+            )}
             <LanguageToggle lang={lang} setLang={setLang} />
           </div>
 
@@ -534,10 +544,44 @@ export function PublicHomepage({ locations }: Props) {
                 </section>
               )
             })}
+            {/* 曼谷日記：只在沒篩選分類時出現，有文章才顯示 */}
+            {diary.length > 0 && activeCategory === 'all' && (
+              <section className="mt-8 pt-7 border-t border-line">
+                <div className="flex items-end justify-between gap-3 px-4 mb-3">
+                  <div className="min-w-0">
+                    <h2 className="flex items-center gap-2 font-liufen text-[20px] lg:text-[24px] text-ink leading-tight">
+                      <Icon name="notebook-pen" size={18} className="shrink-0 text-brand" /> {lang === 'zh' ? '曼谷日記' : 'Bangkok Diary'}
+                    </h2>
+                    <p className="text-[12px] text-muted mt-1">{lang === 'zh' ? '住在曼谷的日常' : 'Everyday life in Bangkok'}</p>
+                  </div>
+                  <Link href="/diary" className="shrink-0 text-[12px] text-brand hover:text-brand-dark hover:underline underline-offset-4 whitespace-nowrap">
+                    {lang === 'zh' ? '看全部' : 'See all'} →
+                  </Link>
+                </div>
+                <DragScroll className="flex gap-3 overflow-x-auto no-scrollbar px-4 pb-1 lg:cursor-grab">
+                  {diary.map((e) => (
+                    <Link key={e.id} href={`/diary#${e.id}`} className="shrink-0 w-60 lg:w-72 group">
+                      <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-paper mb-2">
+                        <Image src={e.photo} alt={e.place ?? ''} fill className="object-cover group-hover:scale-[1.02] transition-transform" unoptimized />
+                      </div>
+                      <p className="text-[11px] font-bold text-muted mb-0.5">{e.date.replaceAll('-', '.')}{e.place ? ` · ${e.place}` : ''}</p>
+                      <p className="text-[14px] text-ink leading-snug line-clamp-2">{e.text}</p>
+                    </Link>
+                  ))}
+                </DragScroll>
+              </section>
+            )}
+
+            {tripEnabled && (
+              <div className="mt-8 px-4 lg:max-w-2xl lg:mx-auto">
+                <TripCta lang={lang} />
+              </div>
+            )}
+
             {filtered.length === 0 && (
               <div className="flex flex-col items-center justify-center py-20 text-gray-400 px-8">
                 <span className="mb-4 text-gray-300">
-                  <MIcon name={({ hotel: 'hotel', attraction: 'attractions', shopping: 'shopping_bag', nightlife: 'local_bar', food: 'restaurant', cafe: 'local_cafe' } as Record<string, string>)[activeCategory] ?? 'search'} size={56} />
+                  <MIcon name={({ hotel: 'hotel', attraction: 'attractions', temple: 'temple', shopping: 'shopping_bag', nightlife: 'local_bar', food: 'restaurant', cafe: 'local_cafe' } as Record<string, string>)[activeCategory] ?? 'search'} size={56} />
                 </span>
                 <p className="text-sm font-bold text-gray-400 mb-1">
                   {lang === 'zh' ? '這個類別暫無推薦' : 'No picks in this category yet'}

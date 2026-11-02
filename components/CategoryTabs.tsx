@@ -1,5 +1,5 @@
 'use client'
-import { IconAll, IconFood, IconCafe, IconShopping, IconNightlife, IconHotel } from './icons/CategoryIcons'
+import { IconAll, IconFood, IconCafe, IconShopping, IconNightlife, IconHotel, IconTemple } from './icons/CategoryIcons'
 import type { Category } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
@@ -14,6 +14,7 @@ type Tab = { id: Category | 'all'; labelKey: keyof typeof strings.zh; Icon: Reac
 
 const TABS: Tab[] = [
   { id: 'all',       labelKey: 'categoryAll',       Icon: IconAll },
+  { id: 'temple',    labelKey: 'categoryTemple',    Icon: IconTemple },
   { id: 'food',      labelKey: 'categoryFood',      Icon: IconFood },
   { id: 'cafe',      labelKey: 'categoryCafe',      Icon: IconCafe },
   { id: 'shopping',  labelKey: 'categoryShopping',  Icon: IconShopping },

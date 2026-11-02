@@ -221,7 +221,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
                 {distanceKm < 1 ? `${Math.round(distanceKm * 1000)}m` : `${distanceKm.toFixed(1)}km`}
               </span>
             )}
-            {location.price_range > 0 && (
+            {location.price_range > 0 && location.category !== 'temple' && (
               <span className="shrink-0 text-[10px] text-muted">{'฿'.repeat(location.price_range)}</span>
             )}
             {location.area && location.area !== 'Bangkok' && (

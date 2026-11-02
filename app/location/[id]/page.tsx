@@ -26,6 +26,7 @@ const SCHEMA_TYPE: Record<string, string> = {
   hotel: 'Hotel',
   shopping: 'Store',
   attraction: 'TouristAttraction',
+  temple: 'PlaceOfWorship',
 }
 
 function buildJsonLd(loc: Location) {

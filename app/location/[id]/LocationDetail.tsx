@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { IconPin } from '@/components/icons/CategoryIcons'
+import { TempleGuide } from '@/components/TempleGuide'
+import { TripCta } from '@/components/TripCta'
 import { Icon } from '@/components/icons/Icon'
 import type { Location, LocationTag } from '@/lib/types'
 import type { WeekHours, OpeningHours } from '@/lib/placeInfo'
@@ -35,6 +37,7 @@ const CATEGORY_LABEL: Record<string, { zh: string; en: string }> = {
   nightlife:  { zh: '夜生活', en: 'Nightlife' },
   hotel:      { zh: '飯店',   en: 'Hotel' },
   attraction: { zh: '景點',   en: 'Attraction' },
+  temple:     { zh: '拜拜',   en: 'Temple' },
 }
 
 function resolveTag(loc: Location): LocationTag {
@@ -289,7 +292,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 {lang === 'zh' ? `${location.reviews.toLocaleString('en-US')} 則評論` : `${location.reviews.toLocaleString('en-US')} reviews`}
               </span>
             ) : null}
-            {location.price_range > 0 && (
+            {location.price_range > 0 && location.category !== 'temple' && (
               <span className="text-sm text-muted">{'฿'.repeat(location.price_range)}</span>
             )}
             <span className="text-sm text-muted">{CATEGORY_LABEL[location.category]?.[lang] ?? location.category}</span>
@@ -310,6 +313,8 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               <p className="text-[15px] text-ink/85 leading-[1.75]">{cleanDesc}</p>
             </div>
           )}
+
+          {location.temple && <TempleGuide temple={location.temple} lang={lang} sectionTitle={sectionTitle} />}
 
           {(location.highlights?.length ?? 0) > 0 && (
             <div className="mb-6">
@@ -393,6 +398,8 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               <SocialEmbed url={location.social_embed_url} />
             </div>
           )}
+
+          <TripCta lang={lang} />
 
           {listedAt && (
             <p className="text-[12px] text-muted mb-6">

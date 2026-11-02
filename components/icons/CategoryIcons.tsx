@@ -26,6 +26,10 @@ export function IconHotel({ size = 24, className }: IconProps) {
   return <Icon name="bed-double" size={size} className={className} />
 }
 
+export function IconTemple({ size = 24, className }: IconProps) {
+  return <Icon name="flower-2" size={size} className={className} />
+}
+
 export function IconPin({ size = 16, className }: IconProps) {
   return <Icon name="map-pin" size={size} className={className} />
 }
