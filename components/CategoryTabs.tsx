@@ -4,7 +4,7 @@ import type { Category } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
 import { DragScroll } from './DragScroll'
-import { MIcon } from './icons/MaterialIcons'
+import { MIcon } from './icons/Icon'
 
 function IconAttraction({ size = 24 }: { size?: number }) {
   return <MIcon name="attractions" size={size} />
