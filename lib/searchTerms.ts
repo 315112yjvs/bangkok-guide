@@ -49,6 +49,15 @@ const SYNONYMS: Record<string, string[]> = {
   飯店: ['hotel', 'resort'],
   唐人街: ['yaowarat', 'chinatown'],
   中國城: ['yaowarat', 'chinatown'],
+  廟: ['temple', 'shrine', 'wat ', '寺'],
+  寺: ['temple', 'wat ', '廟'],
+  求財: ['財'],
+  財運: ['財'],
+  姻緣: ['愛情', '姻緣', '脫單'],
+  愛情: ['愛情', '姻緣', '脫單'],
+  桃花: ['愛情', '姻緣', '脫單'],
+  考試: ['考試', '學業'],
+  八方神: ['ratchaprasong'],
 }
 
 // 把使用者輸入展開成一組要比對的字詞（原字詞＋同義寫法），全部小寫

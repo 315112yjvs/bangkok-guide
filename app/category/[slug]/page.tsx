@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { readLocations } from '@/lib/data'
 import { CATEGORY_META, CATEGORY_SLUGS, listAreas } from '@/lib/collections'
 import { CollectionView } from '@/components/CollectionView'
+import { RouteBanner } from '@/components/RouteBanner'
 
 export const revalidate = 3600
 
@@ -46,6 +47,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       descEn={meta.descEn}
       icon={meta.icon}
       related={related}
+      banner={slug === 'temple' ? <RouteBanner lang="zh" /> : undefined}
     />
   )
 }

@@ -19,9 +19,11 @@ type Props = {
   icon: string
   // 同類交叉連結（其他分類 / 熱門區域）
   related: { href: string; label: string }[]
+  // 標題下方的額外內容（例如拜拜路線入口）
+  banner?: React.ReactNode
 }
 
-export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, related }: Props) {
+export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, related, banner }: Props) {
   const { lang, setLang } = useLanguage()
   const h1 = lang === 'zh' ? h1Zh : h1En
   const desc = lang === 'zh' ? descZh : descEn
@@ -51,6 +53,7 @@ export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, re
 
       {/* Grid */}
       <div className="px-4 pt-4 pb-8">
+        {banner && <div className="mb-4 lg:max-w-xl">{banner}</div>}
         {locations.length > 0 ? (
           <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-3">
             {items.map((loc) => (

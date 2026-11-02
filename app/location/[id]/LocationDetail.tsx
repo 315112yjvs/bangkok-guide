@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { IconPin } from '@/components/icons/CategoryIcons'
 import { TempleGuide } from '@/components/TempleGuide'
 import { TripCta } from '@/components/TripCta'
+import { RouteBanner } from '@/components/RouteBanner'
+import { routeOfStop } from '@/lib/templeRoutes'
 import { Icon } from '@/components/icons/Icon'
 import type { Location, LocationTag } from '@/lib/types'
 import type { WeekHours, OpeningHours } from '@/lib/placeInfo'
@@ -313,6 +315,11 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
               <p className="text-[15px] text-ink/85 leading-[1.75]">{cleanDesc}</p>
             </div>
           )}
+
+          {(() => {
+            const r = routeOfStop(location.id)
+            return r ? <RouteBanner lang={lang} route={r.route} stop={r.index} className="mb-6" /> : null
+          })()}
 
           {location.temple && <TempleGuide temple={location.temple} lang={lang} sectionTitle={sectionTitle} />}
 

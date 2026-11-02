@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next'
 import { readLocations } from '@/lib/data'
 import { CATEGORY_SLUGS, listAreas } from '@/lib/collections'
 import { THEMES } from '@/lib/themes'
+import { TEMPLE_ROUTES } from '@/lib/templeRoutes'
+import { tripEnabled } from '@/lib/site'
 
 const BASE_URL = 'https://www.bkk-local.com'
 
@@ -39,6 +41,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
+  // 拜拜路線、日記、客製行程
+  const extraUrls: MetadataRoute.Sitemap = [
+    ...TEMPLE_ROUTES.map((r) => ({ url: `${BASE_URL}/guide/${r.slug}`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 })),
+    { url: `${BASE_URL}/diary`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.6 },
+    ...(tripEnabled ? [{ url: `${BASE_URL}/trip`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 }] : []),
+  ]
+
   return [
     {
       url: BASE_URL,
@@ -46,6 +55,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1,
     },
+    ...extraUrls,
     ...themeUrls,
     ...categoryUrls,
     ...areaUrls,

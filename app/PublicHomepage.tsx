@@ -21,6 +21,7 @@ import { Reveal } from '@/components/Reveal'
 import { getArea } from '@/lib/area'
 import Link from 'next/link'
 import { TripCta } from '@/components/TripCta'
+import { RouteBanner } from '@/components/RouteBanner'
 import { tripEnabled } from '@/lib/site'
 import type { DiaryEntry } from '@/lib/diary'
 import type { Location, Category, LocationTag } from '@/lib/types'
@@ -175,7 +176,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
         specialFilter === 'nearby' ||
         (specialFilter === 'saved' && savedIds.has(loc.id))
       const haystack = terms.length
-        ? [loc.name_zh, loc.name_en, loc.description_zh, loc.description_en, loc.address, getArea(loc), ...(loc.highlights ?? [])].join('\n').toLowerCase()
+        ? [loc.name_zh, loc.name_en, loc.description_zh, loc.description_en, loc.address, getArea(loc), ...(loc.highlights ?? []), loc.temple ? `拜拜 廟 temple ${loc.temple.deity_zh}` : '', ...(loc.temple?.wishes_zh ?? [])].join('\n').toLowerCase()
         : ''
       const matchSearch = terms.length === 0 || terms.some((t) => haystack.includes(t))
       const matchOpen = !openNow || minute === null || (!!loc.hours && openStatus(loc.hours, minute).open)
@@ -598,6 +599,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
         {/* Filtered / search view */}
         {!showSections && (
           <section className="px-4 pt-4 pb-10">
+            {activeCategory === 'temple' && !query && <RouteBanner lang={lang} className="mb-4 lg:max-w-xl" />}
             {filtered.length > 0 ? (
               <>
                 <div className="flex items-center justify-between mb-3">
