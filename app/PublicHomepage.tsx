@@ -32,6 +32,14 @@ const TAG_META: Record<LocationTag, { emoji: string; zh: string; en: string; col
 
 const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'new_opening', 'evergreen']
 
+// 每個分區的點綴色：只用在標題前的圖標和「看全部」連結，讓四區捲動時有一點不同的顏色
+const TAG_ACCENT: Record<LocationTag, { icon: string; link: string }> = {
+  trending:    { icon: 'text-orange-600',  link: 'text-orange-700 hover:text-orange-800' },
+  hidden_gem:  { icon: 'text-emerald-600', link: 'text-emerald-700 hover:text-emerald-800' },
+  new_opening: { icon: 'text-purple-600',  link: 'text-purple-700 hover:text-purple-800' },
+  evergreen:   { icon: 'text-brand',       link: 'text-brand hover:text-brand-dark' },
+}
+
 // 每個首頁分區最多顯示幾筆（其餘按「看全部」進完整清單）
 const SECTION_LIMIT = 15
 // 篩選/搜尋的網格視圖一次顯示幾筆（其餘按「載入更多」），避免一次渲染上百張卡片
@@ -488,7 +496,7 @@ export function PublicHomepage({ locations }: Props) {
                   <div className="flex items-end justify-between gap-3 px-4 mb-3">
                     <div className="min-w-0">
                       <h2 className="flex items-center gap-2 font-liufen text-[20px] lg:text-[24px] text-ink leading-tight">
-                        <TagIcon size={18} className="shrink-0 text-brand" /> {lang === 'zh' ? meta.zh : meta.en}
+                        <TagIcon size={18} className={`shrink-0 ${TAG_ACCENT[tag].icon}`} /> {lang === 'zh' ? meta.zh : meta.en}
                       </h2>
                       <p className="text-[12px] text-muted mt-1">
                         {lang === 'zh'
@@ -498,7 +506,7 @@ export function PublicHomepage({ locations }: Props) {
                     </div>
                     <button
                       onClick={() => { setActiveTag(tag); setSpecialFilter('all'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
-                      className="shrink-0 text-[12px] text-brand hover:text-brand-dark hover:underline underline-offset-4 whitespace-nowrap"
+                      className={`shrink-0 text-[12px] ${TAG_ACCENT[tag].link} hover:underline underline-offset-4 whitespace-nowrap`}
                     >
                       {lang === 'zh' ? `看全部 ${items.length} 筆` : `See all ${items.length}`} →
                     </button>
