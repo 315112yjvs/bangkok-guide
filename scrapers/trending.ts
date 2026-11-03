@@ -132,6 +132,17 @@ function sameVenue(a: string, b: string): boolean {
   return similarity(na, nb) >= 0.85
 }
 
+// 社群平台上每則貼文都是不同人發的，各算一次；其他網站同一個網域只算一次
+// （同一家媒體的兩篇排行文章不算「兩個來源」，之前 Lifestyle Asia 一站就灌進 17 家酒吧）
+const SOCIAL_HOSTS = /(^|\.)(tiktok\.com|instagram\.com|facebook\.com|threads\.net|threads\.com|x\.com|twitter\.com|youtube\.com|pantip\.com)$/
+export function countSources(evidence: Evidence[]): number {
+  const keys = new Set(evidence.map((e) => {
+    const host = hostOf(e.url)
+    return SOCIAL_HOSTS.test(host) ? e.url : host
+  }))
+  return keys.size
+}
+
 export function aggregateMentions(mentions: TrendingMention[]): TrendingCandidate[] {
   const groups: { names: string[]; cats: Category[]; isNew: boolean; evidence: Evidence[] }[] = []
   for (const m of mentions) {
@@ -157,7 +168,7 @@ export function aggregateMentions(mentions: TrendingMention[]): TrendingCandidat
       name: mode(g.names),
       category: mode(g.cats),
       isNew: g.isNew,
-      mentions: g.evidence.length,
+      mentions: countSources(g.evidence),
       evidence: g.evidence,
     }))
     // 被越多來源提到排越前面；同分時不同網域多的優先（避免同一站洗版），再來是新開幕

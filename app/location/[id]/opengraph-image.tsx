@@ -3,6 +3,7 @@ import { readFileSync } from 'fs'
 import { join } from 'path'
 import { readLocations } from '@/lib/data'
 import type { Location, LocationTag } from '@/lib/types'
+import { resolveTag } from '@/lib/tags'
 
 export const alt = '曼谷人 BKK LOCAL'
 export const size = { width: 1200, height: 630 }
@@ -18,13 +19,6 @@ const TAG_META: Record<LocationTag, { zh: string; color: string }> = {
 const CAT_LABEL: Record<string, string> = {
   food: '餐廳', cafe: '咖啡廳', shopping: '購物',
   nightlife: '夜生活', hotel: '飯店', attraction: '景點', temple: '拜拜',
-}
-
-function resolveTag(loc: Location): LocationTag {
-  if (loc.tag) return loc.tag
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if ((loc as any).trending === true) return 'trending'
-  return 'evergreen'
 }
 
 async function loadPhoto(loc: Location): Promise<string | null> {

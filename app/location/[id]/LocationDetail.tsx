@@ -20,6 +20,7 @@ import { TAG_ICON } from '@/components/icons/TagIcons'
 import { LocationCard } from '@/components/LocationCard'
 import { openStatus, openStatusText, openStatusClass } from '@/lib/openStatus'
 import { useBangkokMinute } from '@/lib/useBangkokMinute'
+import { resolveTag } from '@/lib/tags'
 
 function extractThai(text: string): string | null {
   const thai = text.match(/[฀-๿][฀-๿\s]*/g)?.join(' ').trim()
@@ -41,13 +42,6 @@ const CATEGORY_LABEL: Record<string, { zh: string; en: string }> = {
   hotel:      { zh: '飯店',   en: 'Hotel' },
   attraction: { zh: '景點',   en: 'Attraction' },
   temple:     { zh: '拜拜',   en: 'Temple' },
-}
-
-function resolveTag(loc: Location): LocationTag {
-  if (loc.tag) return loc.tag
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if ((loc as any).trending === true) return 'trending'
-  return 'evergreen'
 }
 
 type Nearby = { location: Location; km: number }

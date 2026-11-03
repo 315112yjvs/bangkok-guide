@@ -25,6 +25,7 @@ import { RouteBanner } from '@/components/RouteBanner'
 import { tripEnabled } from '@/lib/site'
 import type { DiaryEntry } from '@/lib/diary'
 import type { Location, Category, LocationTag } from '@/lib/types'
+import { resolveTag } from '@/lib/tags'
 
 type Props = { locations: Location[]; diary?: DiaryEntry[] }
 
@@ -41,14 +42,6 @@ const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'new_opening', 'ever
 const SECTION_LIMIT = 15
 // 篩選/搜尋的網格視圖一次顯示幾筆（其餘按「載入更多」），避免一次渲染上百張卡片
 const GRID_PAGE = 30
-
-function resolveTag(loc: Location): LocationTag {
-  if (loc.tag) return loc.tag
-  // backward-compat: old JSON has `trending: boolean`
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if ((loc as any).trending === true) return 'trending'
-  return 'evergreen'
-}
 
 type SpecialFilter = 'all' | 'nearby' | 'saved'
 

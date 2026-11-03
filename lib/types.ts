@@ -37,6 +37,8 @@ export type Location = {
   rating: number
   price_range: 1 | 2 | 3 | 4
   tag?: LocationTag      // editorial classification
+  trending_at?: string   // 最後一次確認在社群上爆紅的時間（超過 60 天自動退回 base_tag，見 lib/tags.ts）
+  base_tag?: LocationTag // 爆紅期過後要退回的標籤
   area?: string          // Bangkok neighbourhood, e.g. "Thonglor", "Silom"
   highlights?: string[]
   hashtags?: string[]    // Thai/EN trending hashtags

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-import { readLocations, readPending, writePending } from '@/lib/data'
+import { readLocations, readPending, writePending, writeLocations } from '@/lib/data'
 import { isDuplicate, similarity } from '@/lib/dedup'
 import { extractPlaceId } from '@/lib/maps'
 import type { PendingLocation, Category, Source } from '@/lib/types'
@@ -52,12 +52,37 @@ function sourceOf(c: TrendingCandidate): Source {
   return 'media'
 }
 
+// 已上架的店又被兩個以上來源提到：更新它的爆紅時間，讓它留在（或回到）「話題爆紅」。
+// 「話題爆紅」只保留近兩個月有討論的店，過期由 lib/tags.ts 自動退回原本的標籤。
+function refreshApprovedTrending(candidates: TrendingCandidate[]): number {
+  const locations = readLocations()
+  const now = new Date().toISOString()
+  let refreshed = 0
+  for (const c of candidates) {
+    if (c.mentions < 2) continue
+    const loc = locations.find((l) => l.category !== 'temple' && similarity(c.name, l.name_en) >= 0.8)
+    if (!loc || loc.tag === 'new_opening') continue
+    if (loc.tag !== 'trending') loc.base_tag = loc.tag
+    loc.tag = 'trending'
+    loc.trending_at = now
+    loc.mentions = c.mentions
+    const seen = new Set((loc.evidence ?? []).map((e) => e.url))
+    loc.evidence = [...c.evidence.filter((e) => !seen.has(e.url)), ...(loc.evidence ?? [])].slice(0, 6)
+    refreshed++
+    console.log(`[trending] 已上架的店再度爆紅：${loc.name_en}（${c.mentions} 個來源）`)
+  }
+  if (refreshed) writeLocations(locations)
+  return refreshed
+}
+
 async function runTrending(existing: PendingLocation[], newItems: PendingLocation[]) {
   const knownPlaceIds = new Set(existing.map((l) => extractPlaceId(l.source_url)).filter(Boolean) as string[])
   // 只留有熱度訊號的：來源明說是新開幕，或被兩個以上來源提到。
   // 只被單一來源順帶提到的老店（例如米其林名單）不算熱點。
   // 已上架/待審裡已經有的店也先濾掉，不浪費 Google 查詢。
-  const candidates = (await findTrendingCandidates())
+  const found = await findTrendingCandidates()
+  refreshApprovedTrending(found)
+  const candidates = found
     .filter((c) => c.isNew || c.mentions >= 2)
     .filter((c) => !isDuplicate({ name_en: c.name }, existing))
     .slice(0, MAX_VERIFY)
@@ -99,6 +124,7 @@ async function runTrending(existing: PendingLocation[], newItems: PendingLocatio
       rating: place.rating,
       price_range: place.price_range,
       tag: c.isNew ? 'new_opening' : 'trending',
+      ...(c.isNew ? {} : { trending_at: new Date().toISOString(), base_tag: 'hidden_gem' as const }),
       area: place.area,
       mentions: c.mentions,
       evidence: c.evidence.slice(0, 6),

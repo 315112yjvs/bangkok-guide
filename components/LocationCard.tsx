@@ -14,6 +14,7 @@ import { TAG_ICON } from './icons/TagIcons'
 import { Icon, MIcon } from './icons/Icon'
 import { openStatus, openStatusText, openStatusClass } from '@/lib/openStatus'
 import { useBangkokMinute } from '@/lib/useBangkokMinute'
+import { resolveTag } from '@/lib/tags'
 
 // Inline SVG icons for source badges (no emoji)
 const SOURCE_SVG: Record<Source, string> = {
@@ -39,13 +40,6 @@ const SOURCE_BADGE: Record<Source, { label: keyof typeof strings.zh; color: stri
 function extractThai(text: string): string | null {
   const thai = text.match(/[฀-๿][฀-๿\s]*/g)?.join(' ').trim()
   return thai && thai.length >= 3 ? thai : null
-}
-
-function resolveTag(loc: Location): LocationTag {
-  if (loc.tag) return loc.tag
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if ((loc as any).trending === true) return 'trending'
-  return 'evergreen'
 }
 
 const TAG_BADGE: Record<LocationTag, { emoji: string; zh: string; en: string; color: string }> = {

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { photoUrl } from '@/lib/photo'
 import type { Location, PendingLocation, Category, Source, LocationTag } from '@/lib/types'
 import type { DiaryEntry } from '@/lib/diary'
+import { resolveTag as resolveSiteTag } from '@/lib/tags'
 
 type Tab = 'pending' | 'approved' | 'add' | 'diary'
 
@@ -28,11 +29,10 @@ const TAG_OPTIONS: { value: LocationTag; emoji: string; zh: string; hint: string
   { value: 'evergreen',   emoji: '📌', zh: '經典必訪', hint: '不敗經典，來曼谷必訪代表店' },
 ]
 
+// 待審的店照原樣顯示；已上架的店顯示網站上實際的標籤（爆紅超過兩個月已自動退回）
 function resolveTag(item: Location | PendingLocation): LocationTag {
-  if ('tag' in item && item.tag) return item.tag as LocationTag
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if ((item as any).trending === true) return 'trending'
-  return 'evergreen'
+  if ('scraped_at' in item) return (item.tag as LocationTag) ?? 'evergreen'
+  return resolveSiteTag(item as Location)
 }
 
 // Scoring widget — helper only, not persisted

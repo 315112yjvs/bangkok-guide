@@ -1,11 +1,5 @@
 import type { Location, LocationTag } from './types'
-
-function resolveTag(loc: Location): LocationTag {
-  if (loc.tag) return loc.tag
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if ((loc as any).trending === true) return 'trending'
-  return 'evergreen'
-}
+import { resolveTag } from './tags'
 
 function text(loc: Location): string {
   return [
