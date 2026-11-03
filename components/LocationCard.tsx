@@ -37,11 +37,6 @@ const SOURCE_BADGE: Record<Source, { label: keyof typeof strings.zh; color: stri
   manual:     { label: 'sourceManual',    color: 'bg-amber-500' },
 }
 
-function extractThai(text: string): string | null {
-  const thai = text.match(/[฀-๿][฀-๿\s]*/g)?.join(' ').trim()
-  return thai && thai.length >= 3 ? thai : null
-}
-
 const TAG_BADGE: Record<LocationTag, { emoji: string; zh: string; en: string; color: string }> = {
   trending:    { emoji: '🔥', zh: '話題爆紅', en: 'Trending',   color: 'bg-orange-500' },
   hidden_gem:  { emoji: '🗺', zh: '在地私藏', en: 'Hidden Gem', color: 'bg-emerald-600' },
@@ -52,7 +47,6 @@ const TAG_BADGE: Record<LocationTag, { emoji: string; zh: string; en: string; co
 type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void; compact?: boolean; hideTag?: boolean }
 
 export function LocationCard({ location, lang, distanceKm, saved: savedProp = false, onToggleSave, compact = false, hideTag = false }: Props) {
-  const [copied, setCopied] = useState(false)
   const router = useRouter()
   const minute = useBangkokMinute()
   const status = location.hours && minute !== null ? openStatus(location.hours, minute) : null
@@ -90,8 +84,6 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
   const tagMeta = TAG_BADGE[tag]
   const TagIcon = TAG_ICON[tag]
 
-  const thaiName = location.name_th ?? extractThai(location.name_en) ?? extractThai(location.name_zh)
-  const thaiAddress = location.address_th
 
   const mapsUrl = buildMapsUrl(location)
 
@@ -126,14 +118,6 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
 
   const visibleHighlights = (location.highlights ?? []).slice(0, 2)
   const extraHighlights = (location.highlights?.length ?? 0) - 2
-
-  function copyThai() {
-    const text = [thaiName, thaiAddress].filter(Boolean).join('\n')
-    navigator.clipboard.writeText(text).then(() => {
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
-    })
-  }
 
   return (
     <div className="card-press group relative flex flex-col h-full bg-white rounded-lg overflow-hidden border border-line hover:border-ink/30">
@@ -175,15 +159,6 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
           <div className="flex items-center gap-1 flex-1 min-w-0">
             <h3 className="text-[14px] font-bold text-ink leading-tight line-clamp-1 flex-1">{name}</h3>
           </div>
-          {(thaiName || thaiAddress) && (
-            <button
-              onClick={copyThai}
-              title={strings[lang].copyThai as string}
-              className="relative z-20 shrink-0 text-[10px] font-bold px-1.5 py-0.5 rounded-sm border border-line text-muted hover:text-ink hover:border-ink/40 transition-colors"
-            >
-              {copied ? (strings[lang].copied as string) : (strings[lang].copyThai as string)}
-            </button>
-          )}
         </div>
 
         {/* Description */}
