@@ -146,7 +146,8 @@ async function fetchPlacesQuery(query: string, category: QueryConfig['category']
       address: place.formattedAddress,
       lat: place.location.latitude,
       lng: place.location.longitude,
-      photos: place.photos?.[0]?.name ? [place.photos[0].name] : [],
+      // 搜尋結果本來就附幾張照片的 ref（不另外計費），全留著：待審時只下載封面，上架後補到 4 張
+      photos: (place.photos ?? []).slice(0, 6).map((p: { name: string }) => p.name).filter(Boolean),
       source_url: `https://www.google.com/maps/search/?api=1&query=${q}&query_place_id=${place.id}`,
       rating,
       price_range,
