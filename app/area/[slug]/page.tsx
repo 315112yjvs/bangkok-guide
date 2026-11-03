@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { readLocations } from '@/lib/data'
-import { CATEGORY_META, listAreas, slugToArea } from '@/lib/collections'
+import { listAreas, slugToArea } from '@/lib/collections'
 import { getArea } from '@/lib/area'
 import { CollectionView } from '@/components/CollectionView'
 
@@ -35,12 +35,6 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
     .filter((l) => getArea(l) === area)
     .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
 
-  // 交叉連結：各分類
-  const related = Object.values(CATEGORY_META).map((c) => ({
-    href: `/category/${c.slug}`,
-    label: `${c.emoji} ${c.h1Zh}`,
-  }))
-
   return (
     <CollectionView
       locations={locations}
@@ -49,7 +43,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
       descZh={`住在曼谷的人精選 ${area} 的咖啡廳、餐廳、酒吧與打卡景點。`}
       descEn={`Hand-picked spots in ${area}, Bangkok — cafes, eats, bars and more.`}
       icon="place"
-      related={related}
+      related={[]}
     />
   )
 }
