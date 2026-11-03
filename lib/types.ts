@@ -1,6 +1,7 @@
 export type Category = 'food' | 'cafe' | 'shopping' | 'nightlife' | 'hotel' | 'attraction' | 'temple'
 export type Source = 'pantip' | 'wongnai' | 'googlemaps' | 'tiktok' | 'instagram' | 'media' | 'manual'
-export type LocationTag = 'trending' | 'hidden_gem' | 'new_opening' | 'evergreen'
+// 2026-11-03 拿掉「新開幕」：舊資料若還有 new_opening，顯示時當成在地私藏（lib/tags.ts）
+export type LocationTag = 'trending' | 'hidden_gem' | 'evergreen'
 
 // 爬蟲「找熱點」留下的出處：哪個網址、標題、以及它怎麼說這家店
 // facts：來源原文裡關於這家店的具體事實摘要（位置、招牌、特色），寫介紹時當依據

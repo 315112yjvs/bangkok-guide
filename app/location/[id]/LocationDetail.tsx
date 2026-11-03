@@ -30,7 +30,6 @@ function extractThai(text: string): string | null {
 const TAG_META: Record<LocationTag, { emoji: string; zh: string; en: string; color: string }> = {
   trending:    { emoji: '🔥', zh: '話題爆紅', en: 'Trending',   color: 'bg-orange-500' },
   hidden_gem:  { emoji: '🗺', zh: '在地私藏', en: 'Hidden Gem', color: 'bg-emerald-600' },
-  new_opening: { emoji: '✨', zh: '新開幕',   en: 'New',        color: 'bg-violet-500' },
   evergreen:   { emoji: '📌', zh: '經典必訪', en: 'Must Visit', color: 'bg-sky-500' },
 }
 

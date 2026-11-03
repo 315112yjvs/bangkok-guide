@@ -32,11 +32,10 @@ type Props = { locations: Location[]; diary?: DiaryEntry[] }
 const TAG_META: Record<LocationTag, { emoji: string; zh: string; en: string; color: string }> = {
   trending:    { emoji: '🔥', zh: '話題爆紅', en: 'Trending Now',    color: 'from-orange-600 to-amber-500' },
   hidden_gem:  { emoji: '🗺', zh: '在地私藏', en: 'Hidden Gems',     color: 'from-emerald-700 to-teal-500' },
-  new_opening: { emoji: '✨', zh: '新開幕',   en: 'Just Opened',     color: 'from-violet-600 to-purple-400' },
   evergreen:   { emoji: '📌', zh: '經典必訪', en: 'Must Visit',      color: 'from-blue-700 to-sky-500' },
 }
 
-const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'new_opening', 'evergreen']
+const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'evergreen']
 
 // 每個首頁分區最多顯示幾筆（其餘按「看全部」進完整清單）
 const SECTION_LIMIT = 15
@@ -511,8 +510,8 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                       </h2>
                       <p className="text-[12px] text-muted mt-1">
                         {lang === 'zh'
-                          ? tag === 'trending' ? '曼谷社群話題精選' : tag === 'hidden_gem' ? '在地人才知道的地方' : tag === 'new_opening' ? '最新開幕，搶先體驗' : '經典不敗，值得回訪'
-                          : tag === 'trending' ? 'What Bangkok is buzzing about' : tag === 'hidden_gem' ? "Locals' best-kept secrets" : tag === 'new_opening' ? 'Be the first to visit' : 'Timeless picks, always worth it'}
+                          ? tag === 'trending' ? '曼谷社群話題精選' : tag === 'hidden_gem' ? '在地人才知道的地方' : '經典不敗，值得回訪'
+                          : tag === 'trending' ? 'What Bangkok is buzzing about' : tag === 'hidden_gem' ? "Locals' best-kept secrets" : 'Timeless picks, always worth it'}
                       </p>
                     </div>
                     <button

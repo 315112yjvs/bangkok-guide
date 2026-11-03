@@ -13,11 +13,6 @@ export function IconHiddenGem({ size = 24, className }: IconProps) {
   return <Icon name="gem" size={size} className={className} />
 }
 
-// 新開幕：星芒
-export function IconNew({ size = 24, className }: IconProps) {
-  return <Icon name="sparkles" size={size} className={className} />
-}
-
 // 經典必訪：認證徽章
 export function IconClassic({ size = 24, className }: IconProps) {
   return <Icon name="badge-check" size={size} className={className} />
@@ -26,6 +21,5 @@ export function IconClassic({ size = 24, className }: IconProps) {
 export const TAG_ICON: Record<LocationTag, (p: IconProps) => React.ReactElement> = {
   trending: IconTrending,
   hidden_gem: IconHiddenGem,
-  new_opening: IconNew,
   evergreen: IconClassic,
 }

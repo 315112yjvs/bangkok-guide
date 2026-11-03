@@ -117,9 +117,7 @@ ${web
 走進去就會愛上的地方 🕯️ 昏黃的燈光、復古的裝潢，感受曼谷夜生活的精緻與慵懶。
 
 【再判斷一個標籤 tag（依這家店的本質與知名度）】
-- trending（話題爆紅）：社群正在瘋傳、TikTok/IG 爆紅、排隊名店、近期話題度高、網美打卡熱點。
-- hidden_gem（在地私藏）：在地人才知道、藏在巷弄、觀光客少、低調私房店。
-- new_opening（新開幕）：資料明確顯示近期才新開幕（近一年內）。沒明確證據就不要選這個。
+- hidden_gem（在地私藏）：在地人才知道、藏在巷弄、觀光客少、低調私房店，或近期新開的店。
 - evergreen（經典必訪）：老字號、經典不敗、知名地標、來曼谷必訪的代表店、評價成熟穩定的名店。
 
 【再挑 1–2 個 highlight（卡片小標籤）】
@@ -129,7 +127,7 @@ ${web
 - 查不到具體招牌或特色就回空陣列 []。
 
 ${web ? '查證完成後，' : ''}你的回覆「最後一行」只輸出一個 JSON（不要加任何說明文字或 markdown 標記）：
-{"zh":"中文介紹","en":"English description","tag":"trending 或 hidden_gem 或 new_opening 或 evergreen","highlights":["招牌1","招牌2"]}`
+{"zh":"中文介紹","en":"English description","tag":"hidden_gem 或 evergreen","highlights":["招牌1","招牌2"]}`
 
   let messages: Anthropic.MessageParam[] = [{ role: 'user', content: prompt }]
   let finalText = ''
@@ -168,7 +166,8 @@ ${web ? '查證完成後，' : ''}你的回覆「最後一行」只輸出一個 
     throw new Error(`could not parse model output: ${finalText.slice(0, 300)}`)
   }
 
-  const VALID_TAGS = ['trending', 'hidden_gem', 'new_opening', 'evergreen']
+  // 「話題爆紅」只由找熱點爬蟲或站主手動決定（要有近兩個月的社群討論），AI 介紹不給這個標籤
+  const VALID_TAGS = ['hidden_gem', 'evergreen']
   const tag = parsed.tag && VALID_TAGS.includes(parsed.tag) ? (parsed.tag as LocationTag) : undefined
 
   const highlights = Array.isArray(parsed.highlights)

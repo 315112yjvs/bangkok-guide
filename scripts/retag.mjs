@@ -1,3 +1,6 @@
+// 已停用（2026-11-03）：標籤規則改了。「新開幕」已拿掉，「話題爆紅」只由找熱點爬蟲依近兩個月的社群討論決定（見 lib/tags.ts）。
+console.error('這支腳本已停用：標籤規則已改，見 lib/tags.ts'); process.exit(1)
+
 import { readFileSync, writeFileSync } from 'fs'
 import Anthropic from '@anthropic-ai/sdk'
 

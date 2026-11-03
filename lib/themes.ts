@@ -81,7 +81,7 @@ export const THEMES: Theme[] = [
     titleEn: "Bangkok's Newest & Trending Spots",
     descZh: '曼谷新開幕與社群爆紅的地點，搶在人潮之前先去。',
     descEn: "Bangkok's newest openings and viral spots — beat the crowd.",
-    match: (l) => resolveTag(l) === 'new_opening' || resolveTag(l) === 'trending',
+    match: (l) => resolveTag(l) === 'trending',
   },
 ]
 

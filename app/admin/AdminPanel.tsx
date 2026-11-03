@@ -25,7 +25,6 @@ const SOURCE_STYLE: Record<Source, string> = {
 const TAG_OPTIONS: { value: LocationTag; emoji: string; zh: string; hint: string }[] = [
   { value: 'trending',    emoji: '🔥', zh: '話題爆紅', hint: '社群正在瘋傳，高流量話題' },
   { value: 'hidden_gem',  emoji: '🗺', zh: '在地私藏', hint: '在地人才知道，觀光客少' },
-  { value: 'new_opening', emoji: '✨', zh: '新開幕',   hint: '近期開幕，新鮮值得嘗試' },
   { value: 'evergreen',   emoji: '📌', zh: '經典必訪', hint: '不敗經典，來曼谷必訪代表店' },
 ]
 
@@ -48,7 +47,6 @@ function ScoringWidget({ onApply }: { onApply?: (tag: LocationTag) => void }) {
   const getTag = (): LocationTag => {
     if (total >= 70) return 'trending'
     if (total >= 50 && scores.social <= 20) return 'hidden_gem'
-    if (scores.recency >= 15) return 'new_opening'
     return 'evergreen'
   }
   const suggestedTag = TAG_OPTIONS.find(t => t.value === getTag())!

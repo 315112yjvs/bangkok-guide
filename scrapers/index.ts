@@ -63,7 +63,7 @@ function refreshApprovedTrending(candidates: TrendingCandidate[], placeIds = new
     if (c.mentions < 2) continue
     const pid = placeIds.get(c)
     const loc = locations.find((l) => l.category !== 'temple' && (pid ? extractPlaceId(l.source_url) === pid : similarity(c.name, l.name_en) >= 0.8))
-    if (!loc || loc.tag === 'new_opening') continue
+    if (!loc) continue
     if (loc.tag !== 'trending') loc.base_tag = loc.tag
     loc.tag = 'trending'
     loc.trending_at = now
@@ -129,8 +129,8 @@ async function runTrending(existing: PendingLocation[], newItems: PendingLocatio
       source_url: `https://www.google.com/maps/search/?api=1&query=${q}&query_place_id=${place.place_id}`,
       rating: place.rating,
       price_range: place.price_range,
-      // 被兩個以上來源討論就是話題爆紅（新開幕也一樣，討論度優先）；只有單一來源說它新開的才歸新開幕
-      tag: c.mentions >= 2 ? 'trending' : 'new_opening',
+      // 被兩個以上來源討論就是話題爆紅；只有單一來源說它新開的，先放在地私藏
+      tag: c.mentions >= 2 ? 'trending' : 'hidden_gem',
       ...(c.mentions >= 2 ? { trending_at: new Date().toISOString(), base_tag: 'hidden_gem' as const } : {}),
       area: place.area,
       mentions: c.mentions,

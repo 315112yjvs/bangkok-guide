@@ -13,7 +13,8 @@ export function isTrendingFresh(loc: Pick<Location, 'trending_at'>, now = Date.n
 // 網站上實際顯示的標籤
 export function resolveTag(loc: Location, now = Date.now()): LocationTag {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const tag: LocationTag = loc.tag ?? ((loc as any).trending === true ? 'trending' : 'evergreen')
+  let tag: LocationTag = loc.tag ?? ((loc as any).trending === true ? 'trending' : 'evergreen')
+  if ((tag as string) === 'new_opening') tag = 'hidden_gem'
   if (tag === 'trending' && !isTrendingFresh(loc, now)) return loc.base_tag && loc.base_tag !== 'trending' ? loc.base_tag : 'hidden_gem'
   return tag
 }
