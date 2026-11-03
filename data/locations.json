@@ -20890,16 +20890,16 @@
     "name_zh": "四面神",
     "name_en": "The Shrine of Erawan",
     "name_th": "ศาลท้าวมหาพรหมเอราวัณ",
-    "description_zh": "曼谷香火最旺的神壇，就在 Ratchaprasong 路口、Grand Hyatt Erawan 旁邊，BTS Chit Lom 站走過來兩分鐘。四面佛其實是印度教的梵天，四張臉各管不同的願望，所以大家都會繞一圈四面都拜。旁邊常有泰國舞者在跳舞，那是願望成真的人回來還願請的。",
-    "description_en": "Bangkok’s busiest shrine, right at the Ratchaprasong intersection next to Grand Hyatt Erawan. The four-faced Brahma is said to grant a different kind of wish on each side, so people walk around and pray at all four. The dancers you see were hired by people returning to give thanks.",
+    "description_zh": "曼谷香火最旺的神壇，就在 Ratchaprasong 路口、Central World 旁邊，BTS Chit Lom 站走過來兩分鐘。四面佛其實是印度教的梵天，四張臉各管不同的願望，所以大家都會繞一圈四面都拜。旁邊常有泰國舞者在跳舞，那是願望成真的人回來還願請的。",
+    "description_en": "Bangkok’s busiest shrine, right at the Ratchaprasong intersection next to Central World. The four-faced Brahma is said to grant a different kind of wish on each side, so people walk around and pray at all four. The dancers you see were hired by people returning to give thanks.",
     "category": "temple",
     "address": "494 Thanon Ratchadamri, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "address_th": "494 ถ. ราชดำริ แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
     "lat": 13.7443437,
     "lng": 100.5404554,
     "photos": [
-      "/photos/8765f13a-30e7-49bc-aafc-833010a260e2/0.jpg",
       "/photos/8765f13a-30e7-49bc-aafc-833010a260e2/1.jpg",
+      "/photos/8765f13a-30e7-49bc-aafc-833010a260e2/0.jpg",
       "/photos/8765f13a-30e7-49bc-aafc-833010a260e2/2.jpg",
       "/photos/8765f13a-30e7-49bc-aafc-833010a260e2/3.jpg"
     ],
@@ -20995,10 +20995,7 @@
     "lat": 13.7477229,
     "lng": 100.54029709999999,
     "photos": [
-      "/photos/c2971c85-bb20-4916-8840-063f9503be13/0.jpg",
-      "/photos/c2971c85-bb20-4916-8840-063f9503be13/1.jpg",
-      "/photos/c2971c85-bb20-4916-8840-063f9503be13/2.jpg",
-      "/photos/c2971c85-bb20-4916-8840-063f9503be13/3.jpg"
+      "/photos/c2971c85-bb20-4916-8840-063f9503be13/0.jpg"
     ],
     "source": "manual",
     "source_url": "https://www.google.com/maps/search/?api=1&query=San%20Phra%20Trimurti%2089%20%E0%B8%96.%20%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%87%E0%B8%84%E0%B9%8C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJjdSTj8-e4jARYIzwTX-2u1o",
@@ -21082,7 +21079,7 @@
     "name_zh": "象神（Central World）",
     "name_en": "Ganesha Shrine",
     "name_th": "ศาลพระพิฆเนศ",
-    "description_zh": "就在愛神旁邊，一樣在 Central World 前面的廣場。象神是排除障礙、保佑事業和學業的神，泰國很多做生意的人、學生、藝術工作者都拜祂。拜完愛神順便拜象神是很多人的固定行程。",
+    "description_zh": "就在愛神旁邊，一樣在 Central World 前面的廣場。象神是排除障礙、保佑事業和學業的神，泰國很多做生意的人、學生、藝術工作者都拜祂。拜完愛神一起拜象神是很多人的固定行程。",
     "description_en": "Right beside the Trimurti shrine in front of Central World. Ganesha removes obstacles and looks after work, study and the arts.",
     "category": "temple",
     "address": "2978 Rama I Rd, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
@@ -21091,9 +21088,7 @@
     "lng": 100.54027409999999,
     "photos": [
       "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/0.jpg",
-      "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/1.jpg",
-      "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/2.jpg",
-      "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/3.jpg"
+      "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/1.jpg"
     ],
     "source": "manual",
     "source_url": "https://www.google.com/maps/search/?api=1&query=Ganesha%20Shrine%202978%20Rama%20I%20Rd%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJmQEVj8-e4jARtoDrw5J5Rpc",
