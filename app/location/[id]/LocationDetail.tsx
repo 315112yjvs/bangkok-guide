@@ -272,10 +272,13 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 >
                   <Icon name="chevron-right" size={18} strokeWidth={2} />
                 </button>
-                <span className="absolute bottom-4 right-4 text-[11px] font-bold bg-black/55 text-white px-2 py-1 rounded-sm">
-                  {activePhoto + 1} / {allPhotos.length}
-                </span>
               </>
+            )}
+            {/* 張數一律顯示，只有一張也寫 1 / 1，才不會以為是切換壞了 */}
+            {allPhotos.length > 0 && (
+              <span className="absolute bottom-4 right-4 text-[11px] font-bold bg-black/55 text-white px-2 py-1 rounded-sm">
+                {activePhoto + 1} / {allPhotos.length}
+              </span>
             )}
 
             {location.category !== 'temple' && (() => {
