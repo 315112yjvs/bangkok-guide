@@ -21795,8 +21795,8 @@
     "id": "34776e9d-d8f7-41f4-aeb7-339d5e992ecf",
     "name_en": "Brunchboy.bkk",
     "name_zh": "Brunchboy.bkk",
-    "description_zh": "藏在三攀他旺區 Worachak 路上一棟老洋房裡，主打早午餐，菜單有煙燻鮭魚酸麵包、鮪魚起司三明治和貝果，貝果可搭配蛋與培根。空間乾淨整潔，咖啡是中焙風格。部分菜單品項有時未必供應，點餐前可先確認。",
-    "description_en": "Housed in an old building on Worachak Rd in Samphanthawong, this brunch spot serves smoked salmon sourdough, tuna cheese sandwiches, and bagels with egg and bacon. The space is clean and the coffee is a medium roast. Note that not everything on the menu is always available, so it's worth checking before you order.",
+    "description_zh": "藏在 Songwat 區 Worachak 路上一棟老洋房裡，主打早午餐，菜單有煙燻鮭魚酸麵包、鮪魚起司三明治和貝果，貝果可搭配蛋與培根。空間乾淨整潔，咖啡是中焙風格。部分菜單品項有時未必供應，點餐前可先確認。",
+    "description_en": "Housed in an old building on Worachak Rd in Songwat, this brunch spot serves smoked salmon sourdough, tuna cheese sandwiches, and bagels with egg and bacon. The space is clean and the coffee is a medium roast. Note that not everything on the menu is always available, so it's worth checking before you order.",
     "category": "food",
     "address": "1182 Worachak Rd, Khwaeng Chakkrawat, Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
     "lat": 13.7383255,
@@ -21835,7 +21835,10 @@
     "approved_at": "2026-11-03T07:58:17.464Z",
     "slug": "brunchboy-bkk",
     "trending_at": "2026-11-03T08:03:46.025Z",
-    "base_tag": "hidden_gem"
+    "base_tag": "hidden_gem",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "id": "9e9b2cb8-7541-4eab-810f-b4d094088622",
