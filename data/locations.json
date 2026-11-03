@@ -21667,7 +21667,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Restaurant%20ROSA%202nd%20Floor%2C%20Wallflower%20Building%2C%2031-33%20%E0%B8%8B.%20%E0%B8%99%E0%B8%B2%E0%B8%99%E0%B8%B2%20Khwaeng%20Pom%20Prap%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJG7JiulaZ4jARwfKYD9THoG0",
     "rating": 5,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -21691,7 +21691,9 @@
       "Tasting Menu"
     ],
     "approved_at": "2026-11-03T07:58:17.414Z",
-    "slug": "restaurant-rosa"
+    "slug": "restaurant-rosa",
+    "trending_at": "2026-11-03T08:03:38.629Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "caa0ebdc-1491-4838-9b1a-0bc610ce43ee",
@@ -21713,7 +21715,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Yo-Chi%20centralwOrld%20G212%2C%202%20FLOOR%20THE%20GROOVE%20AT%20CENTRALWORLD%20999%2F9%20Rama%20I%20Rd%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJi0mtoTuf4jARKkpnklseaqc",
     "rating": 4.7,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Siam",
     "mentions": 1,
     "evidence": [
@@ -21737,7 +21739,9 @@
       "Chocolate Fountain"
     ],
     "approved_at": "2026-11-03T07:58:17.432Z",
-    "slug": "yo-chi-centralworld"
+    "slug": "yo-chi-centralworld",
+    "trending_at": "2026-11-03T08:03:41.356Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "051cf83a-dc2f-42e8-ba37-1d72de0d5bcc",
@@ -21759,7 +21763,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=AKKEE%20Thai%20Delicacies%20and%20Tasting%20Counter%2042%2099%2C%20%E0%B8%95%E0%B8%B3%E0%B8%9A%E0%B8%A5%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%95%E0%B8%A5%E0%B8%B2%E0%B8%94%20%E0%B8%AD%E0%B8%B3%E0%B9%80%E0%B8%A0%E0%B8%AD%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%81%E0%B8%A3%E0%B9%87%E0%B8%94%20%E0%B8%99%E0%B8%99%E0%B8%97%E0%B8%9A%E0%B8%B8%E0%B8%A3%E0%B8%B5%2011120&query_place_id=ChIJGVvkeXCF4jARp6rXqZlVM18",
     "rating": 4.7,
     "price_range": 4,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -21783,7 +21787,9 @@
       "Fried Insects"
     ],
     "approved_at": "2026-11-03T07:58:17.449Z",
-    "slug": "akkee-thai-delicacies-and-tasting-counter"
+    "slug": "akkee-thai-delicacies-and-tasting-counter",
+    "trending_at": "2026-11-03T08:03:43.192Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "34776e9d-d8f7-41f4-aeb7-339d5e992ecf",
@@ -21805,7 +21811,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Brunchboy.bkk%201182%20Worachak%20Rd%2C%20Khwaeng%20Chakkrawat%2C%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJbW0AZACZ4jARUlp65klynVM",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Yaowarat",
     "mentions": 1,
     "evidence": [
@@ -21827,7 +21833,9 @@
       "Bagels"
     ],
     "approved_at": "2026-11-03T07:58:17.464Z",
-    "slug": "brunchboy-bkk"
+    "slug": "brunchboy-bkk",
+    "trending_at": "2026-11-03T08:03:46.025Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "9e9b2cb8-7541-4eab-810f-b4d094088622",
@@ -21849,7 +21857,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Upside%20Down%20501%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Pom%20Prap%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJf06KYwCZ4jAR7853De2AAxs",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -21873,7 +21881,9 @@
       "Wan Thong Coff-Tail"
     ],
     "approved_at": "2026-11-03T07:58:17.480Z",
-    "slug": "the-upside-down"
+    "slug": "the-upside-down",
+    "trending_at": "2026-11-03T08:03:47.833Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "c23b7f04-6305-40c6-ad75-af6fdd2ee5b0",
@@ -21895,7 +21905,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Big%20Tree%20Caf%C3%A9%2033%2023%20Soi%20Chuan%20Chuen%20Modus%20Rattanathibate%20Village%2C%20Tambon%20Tha%20It%2C%20Amphoe%20Pak%20Kret%2C%20Chang%20Wat%20Nonthaburi%2011120&query_place_id=ChIJxWdG7JCF4jARDwi-bwKC7Xc",
     "rating": 4.4,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -21919,7 +21929,9 @@
       "Kids Zone"
     ],
     "approved_at": "2026-11-03T07:58:17.497Z",
-    "slug": "the-big-tree-caf"
+    "slug": "the-big-tree-caf",
+    "trending_at": "2026-11-03T08:03:50.402Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "c64c7311-49ea-48ae-823c-fe7ba28119da",
@@ -21941,7 +21953,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=MittenBlues.bkk%20252%20Soi%20Phahon%20Yothin%2035%2C%20Lane%205-2-1%2C%20Khwaeng%20Lat%20Yao%2C%20Khet%20Chatuchak%2C%20Krung%20Thep%20Maha%20Nakhon%2010900&query_place_id=ChIJfYZIfACd4jARzJArWD5J_LA",
     "rating": 5,
     "price_range": 1,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Phahonyothin",
     "mentions": 1,
     "evidence": [
@@ -21965,7 +21977,9 @@
       "Duck Pond"
     ],
     "approved_at": "2026-11-03T07:58:17.517Z",
-    "slug": "mittenblues-bkk"
+    "slug": "mittenblues-bkk",
+    "trending_at": "2026-11-03T08:03:51.932Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "ef0be100-9596-452d-8362-e59f4b81f6b5",
@@ -21987,7 +22001,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Dough%20Bakehouse%20ASVIN%2C%20%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%209%20Thanon%20Nakkharat%2C%20Khwaeng%20Khlong%20Maha%20Nak%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJwb-p5m2Z4jARyfBNdHwT-R8",
     "rating": 4.4,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -22011,7 +22025,9 @@
       "Honey Butter"
     ],
     "approved_at": "2026-11-03T07:58:17.532Z",
-    "slug": "dough-bakehouse"
+    "slug": "dough-bakehouse",
+    "trending_at": "2026-11-03T08:03:53.908Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "27501656-f3ff-4f81-b21f-e4f3037966a0",
@@ -22033,7 +22049,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Flour%20n%20Flutter%20999%2F9%20Central%20World%20%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%207%20Rama%20I%20Rd%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJT4iuyeqf4jARSXzhR1l81Gs",
     "rating": 4.6,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Siam",
     "mentions": 1,
     "evidence": [
@@ -22057,7 +22073,9 @@
       "Beef Wellington"
     ],
     "approved_at": "2026-11-03T07:58:17.548Z",
-    "slug": "flour-n-flutter"
+    "slug": "flour-n-flutter",
+    "trending_at": "2026-11-03T08:03:56.470Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "c55038c3-4517-49e8-ae33-39e8f58af221",
@@ -22079,7 +22097,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Sam%20Roasters%20-%20ekkamai%2015%20281%2F8%20Soi%20Ekkamai%2015%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJu2PAas-f4jARs-4w-8MESFU",
     "rating": 4.4,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Ekkamai",
     "mentions": 1,
     "evidence": [
@@ -22103,7 +22121,9 @@
       "Single Origin Americano"
     ],
     "approved_at": "2026-11-03T07:58:17.563Z",
-    "slug": "sam-roasters-ekkamai-15"
+    "slug": "sam-roasters-ekkamai-15",
+    "trending_at": "2026-11-03T08:03:58.560Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "ba78639a-0446-47bc-9fb1-c37c5b5d8018",
@@ -22125,7 +22145,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Juber%20Bakery%2040%20579%20Thanon%20Khlong%20Lamchiak%2C%20Khwaeng%20Nuanchan%2C%20Khet%20Bueng%20Kum%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJRxk9KGNjHTERg4UYjPN8NXM",
     "rating": 4.9,
     "price_range": 1,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -22149,7 +22169,9 @@
       "Nama Glazed Donut"
     ],
     "approved_at": "2026-11-03T07:58:17.577Z",
-    "slug": "juber-bakery"
+    "slug": "juber-bakery",
+    "trending_at": "2026-11-03T08:04:01.562Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "7b84962d-0733-45de-a5f0-e3a2bf4cd149",
@@ -22171,7 +22193,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Andaz%20Terrace%20L%20Floor%2C%20Andaz%20One%20Bangkok%2C%20by%20Hyatt%2C%20201%20Thanon%20Witthayu%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJKW5Wcbmf4jARqIaUZGk-xR0",
     "rating": 4.7,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Siam",
     "mentions": 1,
     "evidence": [
@@ -22195,7 +22217,9 @@
       "Outdoor Terrace"
     ],
     "approved_at": "2026-11-03T07:58:17.592Z",
-    "slug": "andaz-terrace"
+    "slug": "andaz-terrace",
+    "trending_at": "2026-11-03T08:04:03.074Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "3568edf6-5c0d-4a7d-b3b1-81e3f2f9e6d0",
@@ -22217,7 +22241,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Tempered%20One%20Bangkok%20PGGW%2B7WQ%20One%20Bangkok%20Boulevard%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJSfhBdQCf4jAR-mWTuvRahCk",
     "rating": 4.7,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Siam",
     "mentions": 1,
     "evidence": [
@@ -22240,7 +22264,9 @@
       "Hot Chocolate"
     ],
     "approved_at": "2026-11-03T07:58:17.605Z",
-    "slug": "tempered-one-bangkok"
+    "slug": "tempered-one-bangkok",
+    "trending_at": "2026-11-03T08:04:04.538Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "95fd4f3f-7914-4271-8f28-5b9b81dc3def",
@@ -22262,7 +22288,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=PAII%20106%2C%20108%20N%20Sathon%20Rd%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJ_803Z2CZ4jAR1mgDfc0Kgw0",
     "rating": 4.6,
     "price_range": 3,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bang Rak",
     "mentions": 1,
     "evidence": [
@@ -22286,7 +22312,9 @@
       "River Prawns"
     ],
     "approved_at": "2026-11-03T07:58:17.620Z",
-    "slug": "paii"
+    "slug": "paii",
+    "trending_at": "2026-11-03T08:04:06.400Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "4dd420cb-857b-45b3-b078-fd4dc5953039",
@@ -22308,7 +22336,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Krobnok%20by%20Yangrak%209%2F2-3%2C%20Decho%20Rd%2C%20Khwaeng%20Suriya%20Wong%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJoYDIrmaZ4jAR1yiPmvp39Fs",
     "rating": 5,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bang Rak",
     "mentions": 1,
     "evidence": [
@@ -22332,7 +22360,9 @@
       "Crab Curry Salad"
     ],
     "approved_at": "2026-11-03T07:58:17.636Z",
-    "slug": "krobnok-by-yangrak"
+    "slug": "krobnok-by-yangrak",
+    "trending_at": "2026-11-03T08:04:08.611Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "093a6b82-0515-414c-8443-ecb27dbf651a",
@@ -22354,7 +22384,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Benjamin%20%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%20%E0%B8%A1%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B9%80%E0%B8%81%E0%B9%87%E0%B8%95%20%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%AA%2C%20323%20Soi%20Thong%20Lo%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJVQn_j6if4jARihdcrqnq_wk",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Thonglor",
     "mentions": 1,
     "evidence": [
@@ -22377,6 +22407,9 @@
       "Green Curry",
       "Fried Pork"
     ],
-    "approved_at": "2026-11-03T07:58:17.650Z"
+    "approved_at": "2026-11-03T07:58:17.650Z",
+    "slug": "benjamin",
+    "trending_at": "2026-11-03T08:04:10.999Z",
+    "base_tag": "hidden_gem"
   }
 ]
