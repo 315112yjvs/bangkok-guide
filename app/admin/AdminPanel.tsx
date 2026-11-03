@@ -753,6 +753,8 @@ function TempleCard({ item, onUpdate, onRemove }: {
   const t = item.temple ?? { deity_zh: '', wishes_zh: [], steps_zh: [], offerings_zh: [] }
   const init = () => ({
     name_zh: item.name_zh,
+    name_en: item.name_en,
+    name_th: item.name_th ?? '',
     description_zh: item.description_zh,
     description_en: item.description_en,
     deity: t.deity_zh,
@@ -782,7 +784,8 @@ function TempleCard({ item, onUpdate, onRemove }: {
         thai: lines(f.thai).map(l => { const [th = '', read = '', zh = ''] = l.split('|').map(x => x.trim()); return { th, read, zh } }).filter(x => x.th),
       } : {}),
     }
-    await onUpdate(item.id, { name_zh: f.name_zh.trim(), description_zh: f.description_zh.trim(), description_en: f.description_en.trim(), photos: f.photos, temple })
+    // 網址（slug）已存在資料裡，改英文名不會讓原本的網址失效
+    await onUpdate(item.id, { name_zh: f.name_zh.trim(), name_en: f.name_en.trim() || item.name_en, name_th: f.name_th.trim() || undefined, description_zh: f.description_zh.trim(), description_en: f.description_en.trim(), photos: f.photos, temple })
     setSaving(false)
     setOpen(false)
   }
@@ -815,7 +818,11 @@ function TempleCard({ item, onUpdate, onRemove }: {
       {open && (
         <div className="border-t border-slate-100 p-4 space-y-3">
           <PhotoManager photos={f.photos} onChange={(photos) => setF(prev => ({ ...prev, photos }))} locationId={item.id} />
-          {field('中文名稱', '網站上顯示的名字', <input value={f.name_zh} onChange={set('name_zh')} className={input} />)}
+          <div className="grid gap-3 md:grid-cols-3">
+            {field('中文名稱', '中文版網站顯示', <input value={f.name_zh} onChange={set('name_zh')} className={input} />)}
+            {field('英文名稱', '英文版網站顯示', <input value={f.name_en} onChange={set('name_en')} className={input} />)}
+            {field('泰文名稱', '「複製泰文」給司機看', <input value={f.name_th} onChange={set('name_th')} className={input} />)}
+          </div>
           {field('中文介紹', '', <textarea value={f.description_zh} onChange={set('description_zh')} rows={3} className={input} />)}
           {field('英文介紹', '', <textarea value={f.description_en} onChange={set('description_en')} rows={2} className={input} />)}
           {field('主祀神明', '例：梵天（泰文 Phra Phrom，華人習慣叫四面佛）', <input value={f.deity} onChange={set('deity')} className={input} />)}
