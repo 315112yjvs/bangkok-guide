@@ -20889,9 +20889,9 @@
     "id": "8765f13a-30e7-49bc-aafc-833010a260e2",
     "name_zh": "四面神",
     "name_en": "The Shrine of Erawan",
-    "name_th": "ศาลท้าวมหาพรหมเอราวัณ",
-    "description_zh": "曼谷香火最旺的神壇，就在 Ratchaprasong 路口、Central World 旁邊，BTS Chit Lom 站走過來兩分鐘。四面佛其實是印度教的梵天，四張臉各管不同的願望，所以大家都會繞一圈四面都拜。旁邊常有泰國舞者在跳舞，那是願望成真的人回來還願請的。",
-    "description_en": "Bangkok’s busiest shrine, right at the Ratchaprasong intersection next to Central World. The four-faced Brahma is said to grant a different kind of wish on each side, so people walk around and pray at all four. The dancers you see were hired by people returning to give thanks.",
+    "name_th": "พระพรหมเอราวัณ",
+    "description_zh": "四面神壇位在拉差帕頌路口、Grand Hyatt Erawan 飯店前方，是曼谷最知名的神壇之一，也是華人旅客來曼谷必拜的景點。神壇的由來和飯店有關：當年飯店興建初期意外頻傳，於是建了這座神壇。之後工程順利完成，神壇靈驗的名聲也傳開，從此信眾絡繹不絕。神像由泰國藝術廳以上等青銅打造，外層貼覆金箔。",
+    "description_en": "Standing at the Ratchaprasong intersection in front of the Grand Hyatt Erawan, this is one of Bangkok’s most famous shrines and a must-visit for Chinese-speaking travellers. Its origin is tied to the hotel: when construction began, a string of accidents plagued the site, so the shrine was built. The hotel was then completed without further trouble, word of the shrine’s power spread, and devotees have been coming ever since. The statue was crafted by Thailand’s Fine Arts Department in fine bronze and covered in gold leaf.",
     "category": "temple",
     "address": "494 Thanon Ratchadamri, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "address_th": "494 ถ. ราชดำริ แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
@@ -20910,24 +20910,28 @@
     "tag": "evergreen",
     "area": "",
     "temple": {
-      "deity_zh": "梵天（泰文 Phra Phrom，華人習慣叫四面神）",
+      "deity_zh": "大梵天（泰國稱 Phra Phrom），印度教的創世之神。泰國的信仰認為梵天是創造者，也掌管、書寫人的命運。四張臉朝向東南西北，代表慈、悲、喜、捨四種美德。",
       "wishes_zh": [
-        "四張臉各管一種願望：正面求事業，第二面求愛情與婚姻，第三面求財運，第四面求平安與健康。所以大家都會繞一圈，四面都拜。"
+        "幾乎什麼都能求，是曼谷「萬能型」的神明。華人信眾常見的說法是四面各有所司：正面求事業，第二面求愛情與婚姻，第三面求財運，第四面求平安與健康。所以大家都會繞一圈，四面都拜。"
       ],
       "steps_zh": [
-        "在入口櫃檯買一整套供品，裡面有香、蠟燭和花環",
-        "從正對入口的那一面開始，順時針繞",
-        "每一面點香、獻上花環，雙手合十默念自己的名字、生日和願望",
-        "四面都拜完就完成了，願望實現後記得回來還願"
+        "在神壇旁的攤位購買供品組，點燃香和蠟燭",
+        "從正面開始，向四面神合十鞠躬三次",
+        "以順時針方向繞行，在每一面都獻上香、蠟燭和花，並許下願望",
+        "參拜結束後，可以用一旁金色水缸裡的聖水洗臉、洗手",
+        "願望實現後回來還願，最常見的方式是請神壇的泰國傳統舞者跳舞答謝"
       ],
       "offerings_zh": [
-        "入口櫃檯有賣整套供品，裡面有香、蠟燭和萬壽菊或茉莉花環，四面各用一份。願望實現後回來還願，常見的是送木雕大象、花環，或是請旁邊的舞者跳一段舞，價格依舞者人數而定。"
+        "四面神的供品在神壇旁的攤位就買得到，最常見的是香、蠟燭和花環，很多人也會加上木雕大象，因為大象正是梵天座騎的象徵。按照泰國傳統的講究，每一面通常會準備 3 支香、1 支蠟燭和 1 串花；也有比較隆重的拜法，第一面就獻上 16 支香、9 支蠟燭、9 朵蓮花和 1 瓶水。另外也可以供奉牛奶、甜點，以及香蕉、甘蔗、鳳梨等新鮮水果，但要記得避開葷食和肉類。"
       ],
       "hours_zh": "06:00-22:00",
       "tips_zh": [
-        "四面的分工是民間流傳的說法，各地版本略有不同",
-        "人潮很多，注意隨身物品",
-        "許了願就要還，承諾的還願方式要做到"
+        "許願要發自善心，不要祈求違法、不道德或傷害他人的事",
+        "花環是供品，不要戴在自己身上",
+        "穿著端莊，遮住肩膀和膝蓋；因為是露天神壇，可以不用脫鞋",
+        "神壇周邊人潮多，要留意騙局",
+        "交通：BTS Chit Lom 站 8 號出口，步行約 100 公尺",
+        "入場免費"
       ],
       "thai": [
         {
@@ -20943,24 +20947,28 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "Brahma (Phra Phrom in Thai), known as the Four-Faced Buddha",
+      "deity_en": "Lord Brahma (known in Thailand as Phra Phrom), the Hindu god of creation. In Thai belief, Brahma is the creator who writes and shapes each person’s destiny. His four faces point to the four directions and represent the four sublime virtues: loving-kindness, compassion, sympathetic joy and equanimity.",
       "wishes_en": [
-        "Each of the four faces grants a different kind of wish: the front for career, the second for love and marriage, the third for wealth, and the fourth for safety and health. That is why people walk around and pray at all four."
+        "Almost anything — this is Bangkok’s “all-purpose” shrine. A popular belief among Chinese devotees is that each face governs a different area: career and studies, love and relationships, wealth, and health and safety."
       ],
       "steps_en": [
-        "Buy a full offering set at the counter by the entrance: incense, candles and garlands",
-        "Start at the face opposite the entrance and walk clockwise",
-        "At each face, light incense, offer a garland, and silently say your name, birthday and wish",
-        "Once all four faces are done you are finished. Come back to give thanks when your wish comes true"
+        "Buy an offering set from the stalls beside the shrine and light the incense and candle",
+        "Start at the front face, press your palms together and bow three times",
+        "Walk clockwise around the statue, placing incense, a candle and flowers at each face as you make your wish",
+        "Finish by washing your face and hands with holy water from the golden urn nearby",
+        "If your wish comes true, return to give thanks — most commonly by hiring the resident Thai dancers to perform"
       ],
       "offerings_en": [
-        "The entrance counter sells full offering sets of incense, candles and marigold or jasmine garlands, one portion for each face. When your wish comes true, come back to give thanks with carved wooden elephants, garlands, or by hiring the dancers, priced by how many dance."
+        "Offerings are sold at the stalls right beside the shrine. The most common are incense, candles and flower garlands, and many people also offer wooden elephants, since the elephant is Brahma’s sacred mount. Traditionally, each face receives 3 incense sticks, 1 candle and 1 bunch of flowers; a more elaborate practice offers 16 incense sticks, 9 candles, 9 lotus flowers and 1 bottle of water at the first face. Milk, sweets and fresh fruits such as bananas, sugarcane and pineapple are also welcome, but avoid meat and any savoury non-vegetarian food."
       ],
       "hours_en": "06:00–22:00",
       "tips_en": [
-        "Which face grants what is folk tradition, and versions vary",
-        "It gets very crowded, so watch your belongings",
-        "If you make a wish, keep your promise when you give thanks"
+        "Pray with a sincere and good heart — never ask for anything illegal, immoral or harmful to others",
+        "Garlands are offerings, not accessories — don’t wear them",
+        "Dress modestly with shoulders and knees covered; shoes can stay on at this open-air shrine",
+        "It gets very crowded, so watch out for scams nearby",
+        "Getting there: BTS Chit Lom Station, Exit 8, about 100 metres on foot",
+        "Admission is free"
       ]
     },
     "approved_at": "2026-11-02T11:53:04.654Z",
@@ -20976,11 +20984,11 @@
   },
   {
     "id": "c2971c85-bb20-4916-8840-063f9503be13",
-    "name_zh": "愛神（Trimurti 三相神）",
-    "name_en": "San Phra Trimurti",
-    "name_th": "ศาลพระตรีมูรติ",
-    "description_zh": "在 Central World 正門前的廣場，來求愛情的人多到晚上要排隊。Trimurti 是梵天、毗濕奴、濕婆三位合一，華人都叫祂愛神。整座神壇被紅玫瑰淹沒，單身的、想復合的、想穩定下來的都會來。",
-    "description_en": "In the plaza in front of Central World. Trimurti, the three great Hindu gods in one, is known locally as the god of love, and the shrine is buried in red roses every evening.",
+    "name_zh": "愛神（三相神）",
+    "name_en": "Phra Trimurti",
+    "name_th": "พระตรีมูรติ",
+    "description_zh": "愛神神壇位在 CentralWorld 百貨正前方的廣場，建於 1989 年，是曼谷最有名的求愛聖地。神壇設在高起的平台上，由四根柱子撐起圓頂，四面山牆雕刻精緻，周圍還有一圈座位，讓信眾可以坐下來靜心。神像融合了古典印度雕塑與泰式風格，是仿照大城府一尊古老神像所造。\n\n冷知識：「Trimurti」原本的意思是「三相」，代表印度教三大神——創造之神梵天、守護之神毗濕奴、破壞之神濕婆。不過泰國有說法認為，CentralWorld 這尊在神像造型上其實不是標準的三相神，真正符合三相神樣貌的神像位在沙吞區的 Empire Tower 旁。",
+    "description_en": "Set in the plaza right in front of CentralWorld, the Trimurti Shrine was built in 1989 and is Bangkok’s most famous place to pray for love. The shrine sits on a raised platform beneath a dome supported by four pillars, with finely carved gables on all four sides and a ring of seats where worshippers can sit and reflect. The statue blends classical Indian sculpture with a Thai touch, and is modelled on an older statue from Ayutthaya.\n\nFun fact: “Trimurti” means “three forms,” representing Hinduism’s three great gods — Brahma the creator, Vishnu the preserver and Shiva the destroyer. Some Thai sources point out that the CentralWorld statue doesn’t actually follow the classic Trimurti form, and that an iconographically correct Trimurti can be found beside Empire Tower in Sathorn.",
     "category": "temple",
     "address": "89 ถ. ราชประสงค์ Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "address_th": "89 ถ. ราชประสงค์ แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
@@ -20996,23 +21004,27 @@
     "tag": "hidden_gem",
     "area": "",
     "temple": {
-      "deity_zh": "三相神 Trimurti（梵天、毗濕奴、濕婆合一）",
+      "deity_zh": "三相神（Trimurti），結合梵天、毗濕奴、濕婆三大神於一身。在泰國被尊為「愛神」，雖然以姻緣聞名，但傳統上也被認為能帶來事業、財運、健康等各方面的好運。",
       "wishes_zh": [
-        "曼谷最有名的求愛情神壇。單身的人來求好姻緣，有對象的人求感情穩定，也有不少人來求復合。"
+        "愛情。不管是想找到對象、守住感情，還是挽回舊愛，都有人來這裡求。傳說這裡特別容易促成泰國人與外國人的姻緣。"
       ],
       "steps_zh": [
-        "在旁邊的攤位買紅玫瑰、紅色的香和紅蠟燭",
-        "點香點燭，雙手合十，說出自己的名字、生日，以及想要的對象或感情狀態",
-        "把玫瑰獻上，插在神壇前",
-        "旁邊就是象神，很多人會一起拜"
+        "準備好紅色系供品，來到神壇前",
+        "坐在神壇前，誦念刻在神壇下方石頭上的祈禱文",
+        "說出自己的姓名、地址，再清楚說出心願",
+        "獻上玫瑰，把香和蠟燭插進香爐",
+        "祈願時最好心中有一個具體的對象，而不是籠統地求「好姻緣」；一次專注求愛情這一件事就好"
       ],
       "offerings_zh": [
-        "紅玫瑰是愛神的招牌供品，常見是 9 朵，再搭配紅色的香和紅蠟燭，旁邊的攤位都買得到。願望實現後，很多人會再送一次玫瑰或水果還願。"
+        "愛神的供品以紅色為主，因為紅色是愛神的代表色，也象徵愛情。最經典的組合是 9 朵紅玫瑰（或一串玫瑰花環）、9 支紅香，加上紅色蠟燭；單身的人點 1 支，已經有伴侶、想讓感情更穩定的人則準備 2 支。之所以是「9」，是因為泰文的九聽起來像「前進」。也可以多準備一瓶紅色汽水，以及蘋果這類紅色水果。供品在 CentralWorld 周邊就買得到，很方便。"
       ],
-      "hours_zh": "傳說每週四晚上 9 點半神明會降臨，那時候人最多",
+      "hours_zh": "24 小時開放。最佳參拜時間是星期四早上 9:30 和晚上 9:30，相傳這是愛神降臨人間收集願望的時刻。也有說法認為星期二晚上 9:30 同樣靈驗。",
       "tips_zh": [
-        "許願要說得具體，例如想要什麼樣的對象",
-        "週四晚上人很多，想安靜拜可以改其他時間"
+        "星期四晚上人潮非常多，常常需要排隊等候",
+        "很多來求愛情的人會穿紅色衣服前往，可以一起入境隨俗",
+        "愛神正旁邊就是象神神壇，可以一次求愛情和事業順利",
+        "交通：BTS Chit Lom 站或 Siam 站",
+        "穿著端莊，避免太暴露的衣服"
       ],
       "thai": [
         {
@@ -21028,23 +21040,27 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "Trimurti (Brahma, Vishnu and Shiva in one)",
+      "deity_en": "Trimurti, the union of Brahma, Vishnu and Shiva. Revered in Thailand as the “God of Love,” though traditionally believed to also bring good fortune in career, wealth and health.",
       "wishes_en": [
-        "Bangkok’s best-known shrine for love. Singles come to find a partner, couples pray for a lasting relationship, and plenty come hoping to get back together."
+        "Love — whether finding it, keeping it or winning it back. Legend has it this shrine is especially good at bringing Thais and foreigners together."
       ],
       "steps_en": [
-        "Buy red roses, red incense and red candles at the stalls nearby",
-        "Light the incense and candles, put your palms together, and say your name, birthday and the partner or relationship you hope for",
-        "Offer the roses at the shrine",
-        "Ganesha is right next door, and many people pray at both"
+        "Prepare your red offerings and approach the shrine",
+        "Sit in front of the shrine and recite the prayer carved on the stone below it",
+        "State your name and address, then clearly state your wish",
+        "Present the roses to the deity, and place the incense and candle in the holder",
+        "Pray with a specific person in mind rather than a vague wish for romance, and focus on love alone"
       ],
       "offerings_en": [
-        "Red roses are the classic offering here, usually nine, together with red incense and red candles from the stalls nearby. Once a wish comes true, many people return with more roses or fruit."
+        "Offerings to Trimurti are all about red — the deity’s colour and the colour of love. The classic set is 9 red roses (or a rose garland), 9 red incense sticks and red candles: one candle if you are single, or two if you are a couple hoping to strengthen your bond. The number nine is chosen because it sounds like “moving forward” in Thai. You can also add a bottle of red soda and red fruits such as apples. Offerings are easy to find around CentralWorld."
       ],
-      "hours_en": "Legend says the god descends every Thursday at 9:30 pm, when it is busiest",
+      "hours_en": "Open 24 hours. The most auspicious times are Thursday at 9:30am and 9:30pm, when the deity is believed to descend from heaven to collect wishes. Some also say Tuesday at 9:30pm works just as well.",
       "tips_en": [
-        "Be specific when you wish, such as the kind of partner you want",
-        "Thursday nights are crowded. Come another time for a quieter visit"
+        "Thursday nights get extremely crowded, and you’ll often have to queue",
+        "Many love-seekers wear red when they visit — feel free to join in",
+        "The Ganesha Shrine stands right next door, so you can pray for love and success in one stop",
+        "Getting there: BTS Chit Lom or Siam Station",
+        "Dress modestly and avoid revealing clothing"
       ]
     },
     "approved_at": "2026-11-02T11:53:05.087Z",
@@ -21062,9 +21078,9 @@
     "id": "a4d13909-1ef2-41b1-accf-36e1967b26c6",
     "name_zh": "象神（Central World）",
     "name_en": "Ganesha Shrine",
-    "name_th": "ศาลพระพิฆเนศ",
-    "description_zh": "就在愛神旁邊，一樣在 Central World 前面的廣場。象神是排除障礙、保佑事業和學業的神，泰國很多做生意的人、學生、藝術工作者都拜祂。拜完愛神一起拜象神是很多人的固定行程。",
-    "description_en": "Right beside the Trimurti shrine in front of Central World. Ganesha removes obstacles and looks after work, study and the arts.",
+    "name_th": "พระพิฆเนศ",
+    "description_zh": "這座象神神壇建於 1994 年，位在 CentralWorld 百貨前方、伊勢丹那一側，緊鄰愛神神壇。金色的象神神像非常醒目，周圍還有白象、馬等金箔雕像，晚上打燈後特別漂亮。拍照的經典角度是從正面拍，讓背後的 CentralWorld 招牌一起入鏡。",
+    "description_en": "Built in 1994, this Ganesha shrine stands in front of CentralWorld on the Isetan side, right next to the Trimurti Shrine. The golden Ganesha statue is impossible to miss, surrounded by gold-leaf statues of white elephants and horses that glow beautifully when lit up at night. The classic photo angle is straight from the front, with the CentralWorld sign in the background.",
     "category": "temple",
     "address": "2978 Rama I Rd, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "address_th": "2978 ถ. พระรามที่ 1 แขวงปทุมวัน เขตปทุมวัน กรุงเทพมหานคร 10330",
@@ -21081,20 +21097,27 @@
     "tag": "evergreen",
     "area": "",
     "temple": {
-      "deity_zh": "象神 Ganesha（泰文 Phra Phikanet）",
+      "deity_zh": "象神（Ganesha），是濕婆與雪山女神烏瑪的兒子。祂有大象的頭、人的身體，耳朵很大，只有一根象牙，身形圓潤，有四隻手。在婆羅門教與印度教的傳統中，象神是舉行任何吉祥儀式前都要最先參拜的神明（只有喪禮例外）。",
       "wishes_zh": [
-        "象神是排除障礙的神，求事業順利、考試和學業的人最多。泰國的藝術和創作工作者也特別信奉祂。"
+        "事業、學業、考試、財運，以及一切「新的開始」。象神被視為成功之神、智慧之神與藝術的守護神，也是「排除障礙之神」。如果你正要創業、考試、換工作，或覺得做事一直卡關，都很適合來拜。"
       ],
       "steps_zh": [
-        "準備供品，象神喜歡甜食和水果",
-        "點香，雙手合十說出名字和願望",
-        "把供品放在神壇前"
+        "點燃香，雙手合十，先讓自己的心靜下來",
+        "誦念象神心咒「Om Sri Ganeshaya Namaha」，可唸 3、5、7 或 9 次",
+        "心中清楚說出自己的全名和具體的願望",
+        "獻上供品後，到象神座前的老鼠「Musika」旁，用手遮住牠的一邊耳朵，對另一邊耳朵輕聲說出願望，相傳老鼠會幫你把話傳給象神",
+        "也可以順便給老鼠一點甜點或硬幣當「跑腿費」"
       ],
       "offerings_zh": [
-        "象神喜歡甜食，供品以香蕉、甘蔗和甜點為主，再加上萬壽菊花環和香燭。"
+        "象神的供品選擇很多，只要避開肉類就可以隨心準備。常見的有香、花環或鮮花（尤其是橘黃色的萬壽菊和紅蓮花），以及鮮奶或清水。象神最愛甜食，可以帶印度甜點「莫達克」或「拉杜」，其他甜點也行，但要避開含蛋的；水果方面，大家普遍認為香蕉是象神的最愛，柳橙、鳳梨等吉祥水果也很適合。此外，泰國年輕人流行給象神獻上珍珠奶茶，相傳能讓事業與財運「像火箭一樣」快速起飛，可以當作有趣的小知識。"
       ],
+      "hours_zh": "06:00–23:00",
       "tips_zh": [
-        "可以跟旁邊的愛神一起拜，兩座走幾步就到"
+        "嚴禁供奉任何肉類或蛋類",
+        "象神和愛神神壇相鄰，可以一次求事業與愛情",
+        "交通：BTS Siam 站或 Chit Lom 站，步行到 CentralWorld 前方即可",
+        "穿著端莊，避免無袖上衣、短褲、短裙",
+        "尖峰時段人潮較多，喜歡安靜的話可以避開"
       ],
       "thai": [
         {
@@ -21110,20 +21133,27 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "Ganesha (Phra Phikanet in Thai)",
+      "deity_en": "Lord Ganesha, son of Shiva and the goddess Uma. He has the head of an elephant and a human body, large ears, a single tusk, a rounded belly and four arms. In Brahmin-Hindu tradition, Ganesha is the first deity to be honoured before any auspicious ceremony — the only exception being funerals.",
       "wishes_en": [
-        "Ganesha removes obstacles, so most people come to pray for their careers, exams and studies. Thai artists and creatives are especially devoted to him."
+        "Career, studies, exams, wealth and new beginnings of every kind. Ganesha is the god of success, wisdom and the arts, and the remover of obstacles. If you’re starting a business, sitting an exam, changing jobs, or simply feeling stuck, this is the place to come."
       ],
       "steps_en": [
-        "Bring offerings. Ganesha loves sweets and fruit",
-        "Light incense, put your palms together and say your name and wish",
-        "Place your offerings in front of the shrine"
+        "Light your incense, press your palms together and calm your mind",
+        "Recite Ganesha’s mantra, “Om Sri Ganeshaya Namaha,” 3, 5, 7 or 9 times",
+        "Silently state your full name and your specific wish",
+        "After presenting your offerings, go to Musika, the mouse at Ganesha’s feet. Cover one of his ears with your hand and whisper your wish into the other — it’s believed the mouse will deliver your message to Ganesha",
+        "You can also give the mouse a little sweet or a coin as a “delivery fee”"
       ],
       "offerings_en": [
-        "Ganesha has a sweet tooth, so bring bananas, sugarcane or desserts, along with a marigold garland, incense and candles."
+        "Ganesha is easy to please — as long as you avoid meat, you can bring almost anything. Common offerings include incense, garlands or fresh flowers (especially orange marigolds and red lotuses), and fresh milk or water. Ganesha famously loves sweets, so Indian treats like modak or laddu are ideal, and other sweets are welcome too, as long as they contain no eggs. For fruit, bananas are widely believed to be his favourite, and auspicious fruits such as oranges and pineapples also work well. A fun modern twist: young Thais have started offering bubble milk tea to Ganesha, believing it helps their career and finances take off like a rocket."
       ],
+      "hours_en": "06:00–23:00",
       "tips_en": [
-        "Pair it with the Trimurti shrine, just a few steps away"
+        "No meat or eggs of any kind",
+        "The Ganesha and Trimurti shrines are side by side, so you can pray for success and love in one stop",
+        "Getting there: BTS Siam or Chit Lom Station, then walk to the front of CentralWorld",
+        "Dress modestly and avoid sleeveless tops, shorts and short skirts",
+        "It can get crowded at peak hours, so avoid them if you prefer a quieter visit"
       ]
     },
     "approved_at": "2026-11-02T11:53:05.516Z",
@@ -21139,20 +21169,18 @@
   },
   {
     "id": "b34ba8a7-afc9-4567-bb0e-22af1b6f96bc",
-    "name_zh": "吉祥天女（Gaysorn）",
-    "name_en": "San Phra Mae Lakshmi",
-    "name_th": "ศาลพระแม่ลักษมี",
-    "description_zh": "藏在 Gaysorn 商場樓上的戶外平台，從四面佛走過去幾分鐘。吉祥天女是掌管財富和美貌的女神，比樓下的四面佛清幽很多，很多人拜完四面佛會順路上來。",
-    "description_en": "Up on an outdoor terrace of Gaysorn, a short walk from Erawan Shrine. Lakshmi, goddess of wealth and beauty, gets far fewer crowds than the shrines below.",
+    "name_zh": "吉祥天女（拉克什米女神）",
+    "name_en": "Phra Mae Lakshmi",
+    "name_th": "พระแม่ลักษมี",
+    "description_zh": "吉祥天女神壇位在 Gaysorn Village 百貨四樓的頂樓露台，就在 CentralWorld 對面。神壇底座有一圈流動的水道，水面上漂著蓮花。相傳她誕生於天神與阿修羅攪動乳海之時，出現時坐在蓮花上、手持蓮花，因此又被稱為「蓮花女神」。這裡有點隱密，不太好找，第一次去可以預留一點時間。",
+    "description_en": "Tucked away on the 4th-floor rooftop terrace of Gaysorn Village, right across from CentralWorld, this shrine is surrounded by a circular stream of flowing water with lotus blossoms floating on its surface. According to Hindu legend, Lakshmi emerged from the Churning of the Ocean of Milk, seated on a lotus and holding one in her hand — which is why she is also called the Lotus Goddess. The shrine is a little hidden, so allow some extra time to find it on your first visit.",
     "category": "temple",
     "address": "999 Thanon Phloen Chit, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "address_th": "999 ถนน เพลินจิต แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
     "lat": 13.744768599999999,
     "lng": 100.5405715,
     "photos": [
-      "/photos/b34ba8a7-afc9-4567-bb0e-22af1b6f96bc/0.jpg",
       "/photos/b34ba8a7-afc9-4567-bb0e-22af1b6f96bc/1.jpg",
-      "/photos/b34ba8a7-afc9-4567-bb0e-22af1b6f96bc/2.jpg",
       "/photos/b34ba8a7-afc9-4567-bb0e-22af1b6f96bc/3.jpg"
     ],
     "source": "manual",
@@ -21162,21 +21190,25 @@
     "tag": "hidden_gem",
     "area": "",
     "temple": {
-      "deity_zh": "吉祥天女 Lakshmi（毗濕奴的妻子）",
+      "deity_zh": "吉祥天女（拉克什米），印度教中掌管財富、美貌與豐盛的女神，也是毗濕奴的妻子。同一層露台轉角處還有守護四方的四大天王神壇，可以順道參拜。",
       "wishes_zh": [
         "求財、事業、美貌與愛情。除了財富與美貌，她在單身族群中也很有名，常有人來求好姻緣。因為她對丈夫忠貞不渝，所以很多人也向她祈求靈魂伴侶。"
       ],
       "steps_zh": [
-        "搭電梯到 Gaysorn 樓上的戶外平台，循著指標走",
-        "點香，雙手合十說出名字和願望",
-        "把花和供品放在神壇前"
+        "雙手合十，點燃 9 支香",
+        "誦念祈禱文，最常見的簡短版是「Om Jaya Sri Lakshmi Mata」，可唸 3、8 或 108 次",
+        "在心中說出自己的姓名、生日、住址，以及想祈求的願望",
+        "獻上供品，插香後再次合十致意"
       ],
       "offerings_zh": [
-        "常見的是紅玫瑰或蓮花，加上水果、甜點和香燭。樓上沒有賣供品，記得在樓下或四面佛那邊先買好。"
+        "常見供品有 9 支香、8 朵蓮花、甘蔗汁、牛奶或清水，以及椰子等口味溫和的水果；求愛情的人可以多準備蘋果和乳香。建議以粉紅色系的供品為主。"
       ],
+      "hours_zh": "07:00–19:00",
       "tips_zh": [
-        "上去前可以先在樓下或四面佛旁買好供品",
-        "商場的營業時間就是能上去的時間"
+        "禁止供奉任何肉類，也不要供奉含蛋的甜點",
+        "現場不一定買得到供品，建議自己準備好再去",
+        "交通：搭 BTS 到 Chit Lom 站，從 6 號出口步行約 5 分鐘",
+        "穿著端莊，避免無袖、短褲、短裙"
       ],
       "thai": [
         {
@@ -21192,21 +21224,25 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "Lakshmi (wife of Vishnu)",
+      "deity_en": "Goddess Lakshmi, the Hindu goddess of wealth, beauty and abundance, and the consort of Vishnu. The Jatulokbal (Four Great Kings) shrine sits just around the corner on the same terrace.",
       "wishes_en": [
-        "People pray to her for wealth, career, beauty and love. Beyond wealth and beauty, she is popular with singles hoping to meet the right person. Because she is famously devoted to her husband, many also ask her for a soulmate."
+        "Wealth, career success, beauty and love. Because of her unwavering devotion to her husband, many singles come here to pray for a soulmate."
       ],
       "steps_en": [
-        "Take the lift up to the outdoor terrace at Gaysorn and follow the signs",
-        "Light incense, put your palms together and say your name and wish",
-        "Place flowers and offerings in front of the shrine"
+        "Press your palms together and light 9 incense sticks",
+        "Recite the prayer — the most common short version is “Om Jaya Sri Lakshmi Mata,” repeated 3, 8 or 108 times",
+        "Silently state your name, birthday, address and your wish",
+        "Present your offerings, place the incense, and bow once more"
       ],
       "offerings_en": [
-        "Red roses or lotus flowers are typical, with fruit, sweets, incense and candles. Nothing is sold upstairs, so buy offerings downstairs or near Erawan Shrine first."
+        "9 incense sticks, 8 pink lotus flowers, sugarcane juice, milk or water, and mild fruits such as coconut. Those praying for love can add apples and frankincense. Pink-colored offerings are especially recommended."
       ],
+      "hours_en": "07:00–19:00",
       "tips_en": [
-        "Buy offerings downstairs or near Erawan Shrine before going up",
-        "You can only go up during mall opening hours"
+        "No meat of any kind, and no desserts containing eggs",
+        "Offerings may not be sold on site, so bring your own",
+        "Getting there: BTS Chit Lom Station, Exit 6, about a 5-minute walk",
+        "Dress modestly — avoid sleeveless tops, shorts and short skirts"
       ]
     },
     "approved_at": "2026-11-02T11:53:05.928Z",
