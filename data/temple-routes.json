@@ -3,52 +3,58 @@
     "slug": "ratchaprasong",
     "title_zh": "Ratchaprasong 拜拜路線：五尊神走路一次拜完",
     "short_zh": "Ratchaprasong 五尊神一次拜完",
-    "intro_zh": "四面佛所在的 Ratchaprasong 路口一帶，走路幾分鐘內就有五尊神：四面佛、帝釋天、吉祥天女、愛神、象神。照這個順序走，不用回頭，最後停在 Central World，拜完直接逛街吃飯。",
-    "start_zh": "BTS Chit Lom 站下車，走空橋往 Ratchaprasong 方向，下樓就是四面佛。",
+    "intro_zh": "四面神所在的 Ratchaprasong 路口，被稱為曼谷的「眾神路口」，走路幾分鐘內就能拜到五尊神：四面神、帝釋天、吉祥天女、象神和愛神。照這個順序走不用回頭，最後停在 Central World，拜完直接逛街吃飯。",
+    "start_zh": "搭 BTS 到 Chit Lom 站，從 8 號出口出站，步行約 100 公尺就是四面神。",
     "duration_zh": "走路約 15 分鐘，加上參拜大約 1 到 1.5 小時",
-    "title_en": "Ratchaprasong shrine walk: five gods in one loop",
-    "short_en": "Five Ratchaprasong shrines in one walk",
-    "intro_en": "Around the Ratchaprasong intersection, five shrines sit within a few minutes’ walk: Erawan, Indra, Lakshmi, Trimurti and Ganesha. Follow this order and you never double back, finishing at Central World for shopping and food.",
-    "start_en": "Get off at BTS Chit Lom, take the skywalk towards Ratchaprasong, and head down to Erawan Shrine.",
+    "title_en": "Ratchaprasong Shrine Walk: Five Gods in One Loop",
+    "short_en": "Five Ratchaprasong Shrines in One Walk",
+    "intro_en": "The Ratchaprasong intersection is known as Bangkok’s “crossroads of the gods,” with five shrines just minutes apart on foot: Erawan, Indra, Lakshmi, Ganesha and Trimurti. Follow this order and you’ll never double back, finishing at Central World for shopping and food.",
+    "start_en": "Take the BTS to Chit Lom Station, leave from Exit 8, and walk about 100 metres to the Erawan Shrine.",
     "duration_en": "About 15 minutes of walking, 1 to 1.5 hours with prayers",
     "stops": [
       {
         "id": "8765f13a-30e7-49bc-aafc-833010a260e2",
-        "note_zh": "起點。在入口櫃檯買整套供品，從正面開始順時針拜四面。",
-        "note_en": "Start here. Buy a full offering set at the entrance counter and pray at all four faces, clockwise from the front."
+        "note_zh": "在神壇旁的攤位買供品組，從正面開始，順時針繞行參拜四面。",
+        "note_en": "Start here. Buy an offering set from the stalls beside the shrine, then pray at all four faces, walking clockwise from the front."
       },
       {
         "id": "bcc02e1b-c564-46ad-9842-642842f963cd",
-        "note_zh": "出四面佛沿 Ploenchit 路往東走兩三分鐘，在 InterContinental 飯店門口。",
-        "note_en": "Walk two or three minutes east along Ploenchit Road. The shrine is in front of the InterContinental."
+        "note_zh": "出四面神後沿 Ploenchit 路走約 3 分鐘，帝釋天就在 Gaysorn Amarin 百貨（舊名 Amarin Plaza）門口。準備萬壽菊花環或大象小雕像，記得不要供奉蓮花。",
+        "note_en": "From Erawan, walk about 3 minutes along Ploenchit Road. The shrine stands in front of Gaysorn Amarin (formerly Amarin Plaza). Bring marigold garlands or elephant figurines, and remember that lotus flowers are not offered here."
       },
       {
         "id": "b34ba8a7-afc9-4567-bb0e-22af1b6f96bc",
-        "note_zh": "往回走進 Gaysorn，搭電梯上樓到戶外平台。樓上沒有賣供品，建議在四面佛那邊先買好。",
-        "note_en": "Head back into Gaysorn and take the lift up to the outdoor terrace. No offerings are sold upstairs, so buy them at Erawan first."
-      },
-      {
-        "id": "c2971c85-bb20-4916-8840-063f9503be13",
-        "note_zh": "走空橋或過 Ratchaprasong 路口往北，Central World 正門前廣場。紅玫瑰在旁邊攤位買。",
-        "note_en": "Take the skywalk or cross Ratchaprasong heading north to the plaza in front of Central World. Red roses are sold at the stalls nearby."
+        "note_zh": "走空橋過 Ploenchit 路到對面的 Gaysorn Village，搭電梯上 4 樓的戶外頂樓平台。轉角還有四大天王神壇，可以順道參拜。這站不一定買得到供品，粉紅蓮花和甘蔗汁建議先準備好。",
+        "note_en": "Take the skywalk across Ploenchit Road to Gaysorn Village, then ride the lift to the 4th-floor rooftop terrace. The Four Great Kings shrine is just around the corner, so you can pay respects there too. Offerings may not be sold here, so bring pink lotuses and sugarcane juice with you."
       },
       {
         "id": "a4d13909-1ef2-41b1-accf-36e1967b26c6",
-        "note_zh": "就在愛神旁邊幾步路，準備香蕉、甜點或花環。",
-        "note_en": "A few steps from Trimurti. Bring bananas, sweets or a garland."
+        "note_zh": "從 Gaysorn Village 走空橋往 Central World，象神在 Central World 前方廣場、伊勢丹那一側。照泰國習俗，象神要先拜，再去隔壁的愛神。準備香蕉、甜點或花環，別忘了對象神座前的小老鼠說出願望。",
+        "note_en": "From Gaysorn Village, take the skywalk to Central World. The Ganesha shrine is in the plaza in front of the mall, on the Isetan side. By Thai custom, Ganesha comes first, before Trimurti next door. Bring bananas, sweets or a garland, and don’t forget to whisper your wish to the little mouse at Ganesha’s feet."
+      },
+      {
+        "id": "c2971c85-bb20-4916-8840-063f9503be13",
+        "note_zh": "終點，就在象神旁邊幾步路。紅玫瑰、紅香和紅蠟燭在附近攤位就買得到，拜完直接逛 Central World。",
+        "note_en": "The final stop, just a few steps from Ganesha. Red roses, red incense and red candles are sold at the stalls nearby. Once you’re done, head straight into Central World."
       }
     ],
     "tips_zh": [
-      "供品可以每站分開買，也可以在四面佛一次買齊",
-      "想求愛情的人常在週四晚上來，愛神那站會比較擠",
-      "白天很熱，可以走 BTS 空橋，不用一直過馬路",
-      "每一站都說清楚自己的名字和生日再許願"
+      "吉祥天女在百貨頂樓，要配合開放時間，建議白天走這條路線",
+      "吉祥天女那站不一定買得到供品，粉紅蓮花等供品建議事先準備好",
+      "五尊神都嚴禁供奉肉類，吉祥天女和象神也不能供奉含蛋的甜點",
+      "想求愛情可以在週四晚上 9:30 來拜愛神，但那時人潮很多要排隊",
+      "白天很熱，盡量走 BTS 空橋，少過馬路",
+      "每一站都先說清楚自己的名字和生日，再許願",
+      "穿著端莊，避免無袖、短褲、短裙"
     ],
     "tips_en": [
-      "Buy offerings at each stop, or get everything at Erawan Shrine",
-      "People wishing for love often come on Thursday evenings, so Trimurti gets busy",
-      "It is hot by day. Use the BTS skywalk instead of crossing roads",
-      "At every stop, say your name and birthday clearly before making your wish"
+      "The Lakshmi Shrine is on a mall rooftop with set opening hours, so do this route during the day",
+      "Offerings may not be sold at the Lakshmi Shrine, so prepare pink lotuses and other items in advance",
+      "No meat at any of the five shrines, and no desserts containing eggs for Lakshmi and Ganesha",
+      "To pray for love, visit Trimurti on Thursday at 9:30pm, but expect crowds and queues",
+      "It gets hot by day, so use the BTS skywalk and avoid crossing roads where you can",
+      "At every stop, say your name and birthday clearly before making your wish",
+      "Dress modestly: no sleeveless tops, shorts or short skirts"
     ]
   }
 ]
