@@ -15,7 +15,14 @@ export type TempleInfo = {
   offerings_zh: string[]  // 供品
   hours_zh?: string       // 參拜時間
   tips_zh?: string[]      // 注意事項（服裝、禁忌、還願）
-  thai?: { th: string; read: string; zh: string }[]  // 泰文小知識：泰文、念法、意思
+  thai?: { th: string; read: string; zh: string; en?: string }[]  // 泰文小知識：泰文、念法、意思
+  // 英文版（英文介面用；沒填的欄位會退回顯示中文）
+  deity_en?: string
+  wishes_en?: string[]
+  steps_en?: string[]
+  offerings_en?: string[]
+  hours_en?: string
+  tips_en?: string[]
 }
 
 export type Location = {

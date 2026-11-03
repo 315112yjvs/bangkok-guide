@@ -6,18 +6,26 @@ export function TempleGuide({ temple, lang, sectionTitle }: { temple: TempleInfo
   const zh = lang === 'zh'
   // 後台剛新增、還沒填參拜內容的廟先不顯示這一塊
   if (!temple.deity_zh) return null
+  // 英文介面用英文欄位，沒填的退回中文
+  const pick = <T,>(en: T | undefined, zhv: T): T => (!zh && en && (!Array.isArray(en) || en.length) ? en : zhv)
+  const deity = pick(temple.deity_en, temple.deity_zh)
+  const hours = pick(temple.hours_en, temple.hours_zh)
+  const wishes = pick(temple.wishes_en, temple.wishes_zh)
+  const steps = pick(temple.steps_en, temple.steps_zh)
+  const offerings = pick(temple.offerings_en, temple.offerings_zh)
+  const tips = pick(temple.tips_en, temple.tips_zh ?? [])
   return (
     <>
       <div className="mb-6 rounded-lg bg-paper border border-line p-4">
         <p className="text-[11px] font-bold text-brand tracking-wide mb-1">{zh ? '主祀' : 'Deity'}</p>
-        <p className="text-[16px] font-bold text-ink leading-snug">{temple.deity_zh}</p>
-        {temple.hours_zh && <p className="text-[13px] text-muted mt-1.5">{temple.hours_zh}</p>}
+        <p className="text-[16px] font-bold text-ink leading-snug">{deity}</p>
+        {hours && <p className="text-[13px] text-muted mt-1.5">{hours}</p>}
       </div>
 
       <div className="mb-6">
         <h2 className={sectionTitle}>{zh ? '求什麼' : 'What to pray for'}</h2>
         <div className="flex flex-wrap gap-2">
-          {temple.wishes_zh.map((w) => (
+          {wishes.map((w) => (
             <span key={w} className="text-[13px] text-ink border border-line px-2.5 py-1 rounded-sm">{w}</span>
           ))}
         </div>
@@ -26,7 +34,7 @@ export function TempleGuide({ temple, lang, sectionTitle }: { temple: TempleInfo
       <div className="mb-6">
         <h2 className={sectionTitle}>{zh ? '怎麼拜' : 'How to pray'}</h2>
         <ol className="space-y-2.5">
-          {temple.steps_zh.map((s, i) => (
+          {steps.map((s, i) => (
             <li key={i} className="flex gap-3 text-[15px] text-ink/85 leading-[1.7]">
               <span className="shrink-0 w-6 h-6 mt-0.5 rounded-full bg-brand text-white text-[12px] font-bold flex items-center justify-center">{i + 1}</span>
               <span>{s}</span>
@@ -38,17 +46,17 @@ export function TempleGuide({ temple, lang, sectionTitle }: { temple: TempleInfo
       <div className="mb-6">
         <h2 className={sectionTitle}>{zh ? '供品' : 'Offerings'}</h2>
         <ul className="space-y-1.5">
-          {temple.offerings_zh.map((o) => (
+          {offerings.map((o) => (
             <li key={o} className="text-[15px] text-ink/85 leading-[1.7] pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.7em] before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand">{o}</li>
           ))}
         </ul>
       </div>
 
-      {(temple.tips_zh?.length ?? 0) > 0 && (
+      {tips.length > 0 && (
         <div className="mb-6">
           <h2 className={sectionTitle}>{zh ? '注意事項' : 'Good to know'}</h2>
           <ul className="space-y-1.5">
-            {temple.tips_zh!.map((t) => (
+            {tips.map((t) => (
               <li key={t} className="text-[14px] text-ink/80 leading-[1.7] pl-4 relative before:content-['·'] before:absolute before:left-1 before:text-muted">{t}</li>
             ))}
           </ul>
@@ -63,7 +71,7 @@ export function TempleGuide({ temple, lang, sectionTitle }: { temple: TempleInfo
               <div key={t.th} className="py-2.5 flex items-baseline gap-3 flex-wrap">
                 <dt className="text-[17px] text-ink">{t.th}</dt>
                 <dd className="text-[13px] text-muted">{t.read}</dd>
-                <dd className="text-[13px] text-ink/80 basis-full">{t.zh}</dd>
+                <dd className="text-[13px] text-ink/80 basis-full">{!zh && t.en ? t.en : t.zh}</dd>
               </div>
             ))}
           </dl>

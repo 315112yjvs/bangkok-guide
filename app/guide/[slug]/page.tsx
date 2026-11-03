@@ -29,7 +29,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   const all = readLocations()
   const stops = route.stops.flatMap((s) => {
     const loc = all.find((l) => l.id === s.id)
-    return loc ? [{ location: toCardLocation(loc), note: s.note_zh }] : []
+    return loc ? [{ location: toCardLocation(loc), note: s.note_zh, noteEn: s.note_en }] : []
   })
   return <RouteView route={route} stops={stops} />
 }

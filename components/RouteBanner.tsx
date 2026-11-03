@@ -20,7 +20,7 @@ export function RouteBanner({ lang, route = TEMPLE_ROUTES[0], stop, className = 
             ? (zh ? `拜拜路線第 ${stop + 1} 站，共 ${route.stops.length} 站` : `Stop ${stop + 1} of ${route.stops.length} on a temple route`)
             : (zh ? '拜拜路線' : 'Temple route')}
         </span>
-        <span className="block text-[14px] font-bold text-ink truncate">{route.short_zh}</span>
+        <span className="block text-[14px] font-bold text-ink truncate">{zh ? route.short_zh : route.short_en}</span>
       </span>
       <Icon name="chevron-right" size={18} className="shrink-0 text-muted" />
     </Link>

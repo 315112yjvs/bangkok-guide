@@ -763,7 +763,13 @@ function TempleCard({ item, onUpdate, onRemove }: {
     offerings: t.offerings_zh.join('\n'),
     hours: t.hours_zh ?? '',
     tips: (t.tips_zh ?? []).join('\n'),
-    thai: (t.thai ?? []).map(x => `${x.th} | ${x.read} | ${x.zh}`).join('\n'),
+    thai: (t.thai ?? []).map(x => `${x.th} | ${x.read} | ${x.zh}${x.en ? ` | ${x.en}` : ''}`).join('\n'),
+    deity_en: t.deity_en ?? '',
+    wishes_en: (t.wishes_en ?? []).join('\n'),
+    steps_en: (t.steps_en ?? []).join('\n'),
+    offerings_en: (t.offerings_en ?? []).join('\n'),
+    hours_en: t.hours_en ?? '',
+    tips_en: (t.tips_en ?? []).join('\n'),
     photos: item.photos,
   })
   const [open, setOpen] = useState(!t.deity_zh)
@@ -781,8 +787,14 @@ function TempleCard({ item, onUpdate, onRemove }: {
       ...(f.hours.trim() ? { hours_zh: f.hours.trim() } : {}),
       ...(lines(f.tips).length ? { tips_zh: lines(f.tips) } : {}),
       ...(lines(f.thai).length ? {
-        thai: lines(f.thai).map(l => { const [th = '', read = '', zh = ''] = l.split('|').map(x => x.trim()); return { th, read, zh } }).filter(x => x.th),
+        thai: lines(f.thai).map(l => { const [th = '', read = '', zh = '', en = ''] = l.split('|').map(x => x.trim()); return { th, read, zh, ...(en ? { en } : {}) } }).filter(x => x.th),
       } : {}),
+      ...(f.deity_en.trim() ? { deity_en: f.deity_en.trim() } : {}),
+      ...(lines(f.wishes_en).length ? { wishes_en: lines(f.wishes_en) } : {}),
+      ...(lines(f.steps_en).length ? { steps_en: lines(f.steps_en) } : {}),
+      ...(lines(f.offerings_en).length ? { offerings_en: lines(f.offerings_en) } : {}),
+      ...(f.hours_en.trim() ? { hours_en: f.hours_en.trim() } : {}),
+      ...(lines(f.tips_en).length ? { tips_en: lines(f.tips_en) } : {}),
     }
     // 網址（slug）已存在資料裡，改英文名不會讓原本的網址失效
     await onUpdate(item.id, { name_zh: f.name_zh.trim(), name_en: f.name_en.trim() || item.name_en, name_th: f.name_th.trim() || undefined, description_zh: f.description_zh.trim(), description_en: f.description_en.trim(), photos: f.photos, temple })
@@ -823,15 +835,26 @@ function TempleCard({ item, onUpdate, onRemove }: {
             {field('英文名稱', '英文版網站顯示', <input value={f.name_en} onChange={set('name_en')} className={input} />)}
             {field('泰文名稱', '「複製泰文」給司機看', <input value={f.name_th} onChange={set('name_th')} className={input} />)}
           </div>
-          {field('中文介紹', '', <textarea value={f.description_zh} onChange={set('description_zh')} rows={3} className={input} />)}
-          {field('英文介紹', '', <textarea value={f.description_en} onChange={set('description_en')} rows={2} className={input} />)}
-          {field('主祀神明', '例：梵天（泰文 Phra Phrom，華人習慣叫四面佛）', <input value={f.deity} onChange={set('deity')} className={input} />)}
-          {field('求什麼', '一行一項', <textarea value={f.wishes} onChange={set('wishes')} rows={3} className={input} />)}
-          {field('怎麼拜', '一行一個步驟，依順序', <textarea value={f.steps} onChange={set('steps')} rows={4} className={input} />)}
-          {field('供品', '一行一項', <textarea value={f.offerings} onChange={set('offerings')} rows={3} className={input} />)}
-          {field('參拜時間', '選填，例：24 小時開放', <input value={f.hours} onChange={set('hours')} className={input} />)}
-          {field('注意事項', '選填，一行一項', <textarea value={f.tips} onChange={set('tips')} rows={3} className={input} />)}
-          {field('泰文小知識', '選填，一行一個：泰文 | 念法 | 意思', <textarea value={f.thai} onChange={set('thai')} rows={3} className={`${input} font-mono text-xs`} placeholder="ศาลพระพรหม | sǎan phrá-phrom | 四面佛祠" />)}
+          {/* 每一項左邊中文、右邊英文（英文介面用，沒填就顯示中文） */}
+          <div className="grid gap-x-4 gap-y-3 md:grid-cols-2">
+            <p className="hidden md:block text-[11px] font-black text-slate-400">中文</p>
+            <p className="hidden md:block text-[11px] font-black text-slate-400">English</p>
+            {field('介紹', '', <textarea value={f.description_zh} onChange={set('description_zh')} rows={3} className={input} />)}
+            {field('Description', '', <textarea value={f.description_en} onChange={set('description_en')} rows={3} className={input} />)}
+            {field('主祀神明', '例：梵天（泰文 Phra Phrom）', <input value={f.deity} onChange={set('deity')} className={input} />)}
+            {field('Deity', '', <input value={f.deity_en} onChange={set('deity_en')} className={input} />)}
+            {field('求什麼', '一行一項', <textarea value={f.wishes} onChange={set('wishes')} rows={3} className={input} />)}
+            {field('What to pray for', 'one per line', <textarea value={f.wishes_en} onChange={set('wishes_en')} rows={3} className={input} />)}
+            {field('怎麼拜', '一行一個步驟，依順序', <textarea value={f.steps} onChange={set('steps')} rows={4} className={input} />)}
+            {field('How to pray', 'one step per line', <textarea value={f.steps_en} onChange={set('steps_en')} rows={4} className={input} />)}
+            {field('供品', '一行一項', <textarea value={f.offerings} onChange={set('offerings')} rows={3} className={input} />)}
+            {field('Offerings', 'one per line', <textarea value={f.offerings_en} onChange={set('offerings_en')} rows={3} className={input} />)}
+            {field('參拜時間', '選填', <input value={f.hours} onChange={set('hours')} className={input} />)}
+            {field('Hours', 'optional', <input value={f.hours_en} onChange={set('hours_en')} className={input} />)}
+            {field('注意事項', '選填，一行一項', <textarea value={f.tips} onChange={set('tips')} rows={3} className={input} />)}
+            {field('Good to know', 'optional, one per line', <textarea value={f.tips_en} onChange={set('tips_en')} rows={3} className={input} />)}
+          </div>
+          {field('泰文小知識', '選填，一行一個：泰文 | 念法 | 中文意思 | English meaning', <textarea value={f.thai} onChange={set('thai')} rows={3} className={`${input} font-mono text-xs`} placeholder="ศาลพระพรหม | sǎan phrá-phrom | 四面佛祠 | Erawan Shrine" />)}
           <div className="flex items-center gap-2 pt-1">
             <button onClick={save} disabled={saving} className="flex-1 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-sm font-bold rounded-xl py-2.5">
               {saving ? '儲存中...' : '儲存'}

@@ -20937,13 +20937,38 @@
         {
           "th": "ศาลพระพรหม",
           "read": "sǎan phrá-phrom",
-          "zh": "四面佛祠"
+          "zh": "四面佛祠",
+          "en": "Erawan Shrine"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "Brahma (Phra Phrom in Thai), known as the Four-Faced Buddha",
+      "wishes_en": [
+        "Career (front face)",
+        "Love and marriage (second face)",
+        "Wealth (third face)",
+        "Safety and health (fourth face)"
+      ],
+      "steps_en": [
+        "Buy a full offering set at the counter by the entrance: incense, candles and garlands",
+        "Start at the face opposite the entrance and walk clockwise",
+        "At each face, light incense, offer a garland, and silently say your name, birthday and wish",
+        "Once all four faces are done you are finished. Come back to give thanks when your wish comes true"
+      ],
+      "offerings_en": [
+        "Incense, candles, marigold or jasmine garlands (sold as a set on site)",
+        "Giving thanks: carved wooden elephants, garlands, or hiring the dancers (priced by number of dancers)"
+      ],
+      "hours_en": "06:00–22:00",
+      "tips_en": [
+        "Which face grants what is folk tradition, and versions vary",
+        "It gets very crowded, so watch your belongings",
+        "If you make a wish, keep your promise when you give thanks"
       ]
     },
     "approved_at": "2026-11-02T11:53:04.654Z",
@@ -21008,13 +21033,37 @@
         {
           "th": "ตรีมูรติ",
           "read": "dtrii-muu-rá-dtì",
-          "zh": "三相神"
+          "zh": "三相神",
+          "en": "Trimurti"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "Trimurti (Brahma, Vishnu and Shiva in one)",
+      "wishes_en": [
+        "Finding love",
+        "A stable relationship",
+        "Getting back together"
+      ],
+      "steps_en": [
+        "Buy red roses, red incense and red candles at the stalls nearby",
+        "Light the incense and candles, put your palms together, and say your name, birthday and the partner or relationship you hope for",
+        "Offer the roses at the shrine",
+        "Ganesha is right next door, and many people pray at both"
+      ],
+      "offerings_en": [
+        "Red roses (usually 9)",
+        "Red incense and red candles",
+        "Giving thanks: more roses or fruit"
+      ],
+      "hours_en": "Legend says the god descends every Thursday at 9:30 pm, when it is busiest",
+      "tips_en": [
+        "Be specific when you wish, such as the kind of partner you want",
+        "Thursday nights are crowded. Come another time for a quieter visit"
       ]
     },
     "approved_at": "2026-11-02T11:53:05.087Z",
@@ -21077,13 +21126,35 @@
         {
           "th": "พระพิฆเนศ",
           "read": "phrá-phí-khá-nêet",
-          "zh": "象神"
+          "zh": "象神",
+          "en": "Ganesha"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "Ganesha (Phra Phikanet in Thai)",
+      "wishes_en": [
+        "Career success",
+        "Exams and study",
+        "Removing obstacles",
+        "Art and creativity"
+      ],
+      "steps_en": [
+        "Bring offerings. Ganesha loves sweets and fruit",
+        "Light incense, put your palms together and say your name and wish",
+        "Place your offerings in front of the shrine"
+      ],
+      "offerings_en": [
+        "Bananas, sugarcane, sweets",
+        "Marigold garlands",
+        "Incense and candles"
+      ],
+      "tips_en": [
+        "Pair it with the Trimurti shrine, just a few steps away"
       ]
     },
     "approved_at": "2026-11-02T11:53:05.516Z",
@@ -21146,13 +21217,35 @@
         {
           "th": "พระแม่ลักษมี",
           "read": "phrá-mâe lák-sà-mii",
-          "zh": "吉祥天女"
+          "zh": "吉祥天女",
+          "en": "Lakshmi"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "Lakshmi (wife of Vishnu)",
+      "wishes_en": [
+        "Wealth",
+        "Beauty",
+        "Popularity and love"
+      ],
+      "steps_en": [
+        "Take the lift up to the outdoor terrace at Gaysorn and follow the signs",
+        "Light incense, put your palms together and say your name and wish",
+        "Place flowers and offerings in front of the shrine"
+      ],
+      "offerings_en": [
+        "Red roses or lotus flowers",
+        "Fruit and sweets",
+        "Incense and candles"
+      ],
+      "tips_en": [
+        "Buy offerings downstairs or near Erawan Shrine before going up",
+        "You can only go up during mall opening hours"
       ]
     },
     "approved_at": "2026-11-02T11:53:05.928Z",
@@ -21213,13 +21306,33 @@
         {
           "th": "พระอินทร์",
           "read": "phrá-in",
-          "zh": "帝釋天"
+          "zh": "帝釋天",
+          "en": "Indra"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "Indra (Phra In in Thai), king of the gods",
+      "wishes_en": [
+        "Career and promotion",
+        "Wishes coming true",
+        "Protection and safety"
+      ],
+      "steps_en": [
+        "Light incense, put your palms together and say your name and wish",
+        "Offer garlands and other offerings"
+      ],
+      "offerings_en": [
+        "Garlands",
+        "Incense and candles",
+        "Fruit"
+      ],
+      "tips_en": [
+        "Make it a Ratchaprasong loop: Erawan, Indra, Lakshmi, Trimurti and Ganesha"
       ]
     },
     "approved_at": "2026-11-02T11:53:06.412Z",
@@ -21284,18 +21397,43 @@
         {
           "th": "ห้วยขวาง",
           "read": "hûai-khwǎang",
-          "zh": "匯權（地名）"
+          "zh": "匯權（地名）",
+          "en": "Huai Khwang (the district)"
         },
         {
           "th": "พระพิฆเนศ",
           "read": "phrá-phí-khá-nêet",
-          "zh": "象神"
+          "zh": "象神",
+          "en": "Ganesha"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "Ganesha (Phra Phikanet in Thai)",
+      "wishes_en": [
+        "Career and wealth",
+        "Exams",
+        "Wishes you want granted fast"
+      ],
+      "steps_en": [
+        "Buy incense, garlands and offerings at the stalls around the shrine",
+        "Light incense, put your palms together and say your name and wish",
+        "Find the rat statue beside Ganesha (the rat is his mount). Cover one of its ears and whisper your wish into the other so it does not slip out",
+        "Come back to give thanks when your wish comes true"
+      ],
+      "offerings_en": [
+        "Bananas, sugarcane, sweets",
+        "Marigold garlands",
+        "Common thanks offerings: coconuts, fruit, desserts"
+      ],
+      "hours_en": "Open 24 hours",
+      "tips_en": [
+        "Busy even late at night. Walk on to Huai Khwang night market afterwards",
+        "The intersection is busy, so take care crossing"
       ]
     },
     "approved_at": "2026-11-02T11:53:06.848Z",
@@ -21358,13 +21496,35 @@
         {
           "th": "วัดมังกรกมลาวาส",
           "read": "wát mang-gɔɔn gà-má-laa-wâat",
-          "zh": "龍蓮寺"
+          "zh": "龍蓮寺",
+          "en": "Wat Mangkon Kamalawat"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "Shakyamuni Buddha, Guanyin, Tai Sui and more (Chinese Mahayana temple)",
+      "wishes_en": [
+        "Appeasing Tai Sui (your zodiac year)",
+        "Wealth and fortune",
+        "Safety and health"
+      ],
+      "steps_en": [
+        "Buy incense and offerings at the entrance",
+        "Pray at each hall in turn, as at any Chinese temple",
+        "To appease Tai Sui or light a blessing lamp, register at the service desk"
+      ],
+      "offerings_en": [
+        "Incense, candles, joss paper",
+        "Fruit and biscuits",
+        "Blessing lamps and Tai Sui lamps (register and pay)"
+      ],
+      "tips_en": [
+        "Extremely crowded around Chinese New Year",
+        "Yaowarat Road is right outside, so carry on exploring Chinatown"
       ]
     },
     "approved_at": "2026-11-02T11:53:07.281Z",
@@ -21429,13 +21589,37 @@
         {
           "th": "วัดแขก",
           "read": "wát khàek",
-          "zh": "印度廟（泰國人的叫法）"
+          "zh": "印度廟（泰國人的叫法）",
+          "en": "Indian temple (what Thais call it)"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "Sri Maha Mariamman, the goddess Uma (wife of Shiva)",
+      "wishes_en": [
+        "Safety and health",
+        "Family harmony",
+        "Career"
+      ],
+      "steps_en": [
+        "Take off your shoes at the door and leave them at the counter",
+        "Buy garlands and offerings at the stalls by the entrance",
+        "Inside, hand your offerings to the priest, who will bless you and mark your forehead",
+        "Walk clockwise past each shrine"
+      ],
+      "offerings_en": [
+        "Garlands",
+        "Coconuts and bananas",
+        "Lotus flowers"
+      ],
+      "tips_en": [
+        "No photos inside the temple",
+        "Cover shoulders and knees",
+        "Very crowded during Navaratri in October"
       ]
     },
     "approved_at": "2026-11-02T11:53:07.840Z",
@@ -21498,13 +21682,35 @@
         {
           "th": "วัดโพธิ์",
           "read": "wát phoo",
-          "zh": "臥佛寺"
+          "zh": "臥佛寺",
+          "en": "Wat Pho"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "The Reclining Buddha (the Buddha entering nirvana)",
+      "wishes_en": [
+        "Safety",
+        "Good luck",
+        "Health"
+      ],
+      "steps_en": [
+        "Buy a ticket and head to the Reclining Buddha hall first",
+        "Exchange money for a cup of coins inside the hall",
+        "Walk along the 108 bronze bowls behind the Buddha, dropping a coin in each as you make your wish"
+      ],
+      "offerings_en": [
+        "Coins (exchanged in the hall)",
+        "Lotus flowers and gold leaf"
+      ],
+      "tips_en": [
+        "Entry requires a ticket. Check the price posted on site",
+        "Cover shoulders and knees. Clothing can be borrowed at the gate",
+        "Quietest right at opening time"
       ]
     },
     "approved_at": "2026-11-02T11:53:08.367Z",
@@ -21568,13 +21774,36 @@
         {
           "th": "แม่นาค",
           "read": "mâe nâak",
-          "zh": "娜娜"
+          "zh": "娜娜",
+          "en": "Mae Nak"
         },
         {
           "th": "สาธุ",
           "read": "sǎa-thú",
-          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語"
+          "zh": "拜完雙手合十說的「善哉」，像是願望成真的祝福語",
+          "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
+      ],
+      "deity_en": "Mae Nak, from Thai folk legend",
+      "wishes_en": [
+        "Avoiding military conscription",
+        "Safe childbirth",
+        "Lottery luck",
+        "Love"
+      ],
+      "steps_en": [
+        "Buy incense, garlands and offerings at the stalls in the temple",
+        "Light incense at Mae Nak’s shrine and say your name and wish",
+        "Place your offerings in front of the shrine"
+      ],
+      "offerings_en": [
+        "Traditional Thai dresses and makeup",
+        "Baby clothes and toys (for her child)",
+        "Garlands and incense"
+      ],
+      "tips_en": [
+        "You can feed the fish in the canal beside the temple",
+        "Easiest by taxi or motorbike taxi from BTS On Nut"
       ]
     },
     "approved_at": "2026-11-02T11:53:08.863Z",
