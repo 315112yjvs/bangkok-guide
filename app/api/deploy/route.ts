@@ -4,6 +4,9 @@ import { resolve } from 'path'
 import { downloadPhotos } from '@/lib/downloadPhotos'
 import { isOnline, publish, hasDrafts } from '@/lib/store'
 
+// 每次都讀最新資料，不在建置時先跑
+export const dynamic = 'force-dynamic'
+
 export const runtime = 'nodejs'
 
 export async function GET() {

@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { transact, isOnline } from '@/lib/store'
 import { txPending, txWritePending, txRemovePhotos } from '@/lib/data'
 
+// 每次都讀最新資料，不在建置時先跑
+export const dynamic = 'force-dynamic'
+
 export const runtime = 'nodejs'
 export const maxDuration = 60
 

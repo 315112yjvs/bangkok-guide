@@ -3,6 +3,9 @@ import { randomUUID } from 'crypto'
 import { transact } from '@/lib/store'
 import { sortDiary, type DiaryEntry } from '@/lib/diary'
 
+// 每次都讀最新資料，不在建置時先跑
+export const dynamic = 'force-dynamic'
+
 export const runtime = 'nodejs'
 
 const FILE = 'data/diary.json'

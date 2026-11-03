@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import { transact } from '@/lib/store'
 import type { TempleRoute } from '@/lib/templeRoutes'
 
+// 每次都讀最新資料，不在建置時先跑
+export const dynamic = 'force-dynamic'
+
 export const runtime = 'nodejs'
 
 const FILE = 'data/temple-routes.json'

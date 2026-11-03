@@ -6,6 +6,9 @@ import { txLocalizePhotos } from '@/lib/googlePhotos'
 import type { Location, PendingLocation } from '@/lib/types'
 import { isTrendingFresh } from '@/lib/tags'
 
+// 每次都讀最新資料，不在建置時先跑
+export const dynamic = 'force-dynamic'
+
 export const runtime = 'nodejs'
 export const maxDuration = 60
 
