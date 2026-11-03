@@ -777,7 +777,7 @@ function TempleCard({ item, onUpdate, onRemove }: {
   )
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+    <div className={`bg-white rounded-2xl shadow-sm overflow-hidden ${open ? 'xl:col-span-2' : ''}`}>
       <button onClick={() => setOpen(o => !o)} className="w-full flex items-center gap-3 p-3 text-left hover:bg-slate-50">
         {item.photos[0]
           ? <Image src={photoUrl(item.photos[0], 480)} alt="" width={64} height={64} className="w-16 h-16 rounded-lg object-cover shrink-0" unoptimized />
@@ -846,7 +846,7 @@ function TemplePanel({ temples, onUpdate, onRemove, onAdded }: {
   }
 
   return (
-    <div className="max-w-3xl">
+    <div>
       <h1 className="text-xl font-black text-[#0f172a] mb-1">拜拜</h1>
       <p className="text-sm text-slate-500 mb-4">共 {temples.length} 間。改完按左下「存檔並上傳」才會更新到網站。</p>
 
@@ -863,7 +863,7 @@ function TemplePanel({ temples, onUpdate, onRemove, onAdded }: {
         {msg && <p className="text-xs font-bold text-indigo-600 mt-2">{msg}</p>}
       </div>
 
-      <div className="space-y-2">
+      <div className="grid gap-2 xl:grid-cols-2 items-start">
         {temples.map((t) => <TempleCard key={t.id} item={t} onUpdate={onUpdate} onRemove={onRemove} />)}
       </div>
     </div>
