@@ -5,6 +5,7 @@ import { photoUrl } from '@/lib/photo'
 import type { Location, PendingLocation, Category, Source, LocationTag, TempleInfo } from '@/lib/types'
 import type { DiaryEntry } from '@/lib/diary'
 import { resolveTag as resolveSiteTag } from '@/lib/tags'
+import type { TempleRoute } from '@/lib/templeRoutes'
 
 type Tab = 'pending' | 'approved' | 'temple' | 'add' | 'diary'
 
@@ -872,6 +873,187 @@ function TempleCard({ item, onUpdate, onRemove }: {
   )
 }
 
+// 一日路線：存在 data/temple-routes.json，站點從拜拜區的廟裡挑
+const emptyRoute = (slug: string): TempleRoute => ({
+  slug, title_zh: '', short_zh: '', intro_zh: '', start_zh: '', duration_zh: '', stops: [], tips_zh: [],
+  title_en: '', short_en: '', intro_en: '', start_en: '', duration_en: '', tips_en: [],
+})
+
+function RouteCard({ route, temples, onSave, onDelete }: {
+  route: TempleRoute
+  temples: Location[]
+  onSave: (r: TempleRoute) => Promise<string | null>
+  onDelete: () => void
+}) {
+  const [open, setOpen] = useState(route.stops.length === 0)
+  const [r, setR] = useState(route)
+  const [tipsZh, setTipsZh] = useState(route.tips_zh.join('\n'))
+  const [tipsEn, setTipsEn] = useState(route.tips_en.join('\n'))
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState('')
+  type TextKey = 'slug' | 'title_zh' | 'short_zh' | 'intro_zh' | 'start_zh' | 'duration_zh' | 'title_en' | 'short_en' | 'intro_en' | 'start_en' | 'duration_en'
+  const set = (k: TextKey) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setR(prev => ({ ...prev, [k]: e.target.value }))
+  const setStop = (i: number, patch: Partial<TempleRoute['stops'][number]>) => setR(prev => ({ ...prev, stops: prev.stops.map((s, j) => j === i ? { ...s, ...patch } : s) }))
+  const moveStop = (i: number, d: number) => setR(prev => {
+    const stops = [...prev.stops]
+    const j = i + d
+    if (j < 0 || j >= stops.length) return prev
+    ;[stops[i], stops[j]] = [stops[j], stops[i]]
+    return { ...prev, stops }
+  })
+  const used = new Set(r.stops.map(s => s.id))
+  const nameOf = (id: string) => temples.find(t => t.id === id)?.name_zh ?? '（找不到這間廟）'
+
+  async function save() {
+    setSaving(true)
+    setError('')
+    const err = await onSave({ ...r, tips_zh: lines(tipsZh), tips_en: lines(tipsEn) })
+    setSaving(false)
+    if (err) setError(err)
+    else setOpen(false)
+  }
+
+  const input = 'w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-400'
+  const field = (label: string, hint: string, el: React.ReactNode) => (
+    <label className="block">
+      <span className="text-xs font-bold text-slate-600">{label}</span>
+      {hint && <span className="text-[11px] text-slate-400 ml-2">{hint}</span>}
+      <div className="mt-1">{el}</div>
+    </label>
+  )
+
+  return (
+    <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+      <button onClick={() => setOpen(o => !o)} className="w-full flex items-center gap-3 p-3 text-left hover:bg-slate-50">
+        <div className="flex-1 min-w-0">
+          <p className="font-bold text-slate-800 truncate">{route.title_zh || '新路線（還沒填）'}</p>
+          <p className="text-xs text-slate-400 truncate">{route.stops.map(s => nameOf(s.id)).join(' → ') || '還沒有站點'}</p>
+        </div>
+        <span className="text-slate-400 text-sm">{open ? '收起' : '編輯'}</span>
+      </button>
+
+      {open && (
+        <div className="border-t border-slate-100 p-4 space-y-4">
+          <div className="grid gap-x-4 gap-y-3 md:grid-cols-2">
+            <p className="hidden md:block text-[11px] font-black text-slate-400">中文</p>
+            <p className="hidden md:block text-[11px] font-black text-slate-400">English</p>
+            {field('標題', '路線頁最上面的大標', <input value={r.title_zh} onChange={set('title_zh')} className={input} />)}
+            {field('Title', '', <input value={r.title_en} onChange={set('title_en')} className={input} />)}
+            {field('短標題', '廟的頁面上「這間廟在路線上」用', <input value={r.short_zh} onChange={set('short_zh')} className={input} />)}
+            {field('Short title', '', <input value={r.short_en} onChange={set('short_en')} className={input} />)}
+            {field('簡介', '', <textarea value={r.intro_zh} onChange={set('intro_zh')} rows={3} className={input} />)}
+            {field('Intro', '', <textarea value={r.intro_en} onChange={set('intro_en')} rows={3} className={input} />)}
+            {field('怎麼到起點', '', <textarea value={r.start_zh} onChange={set('start_zh')} rows={2} className={input} />)}
+            {field('Getting to the start', '', <textarea value={r.start_en} onChange={set('start_en')} rows={2} className={input} />)}
+            {field('所需時間', '', <input value={r.duration_zh} onChange={set('duration_zh')} className={input} />)}
+            {field('Duration', '', <input value={r.duration_en} onChange={set('duration_en')} className={input} />)}
+            {field('小提醒', '一行一項', <textarea value={tipsZh} onChange={(e) => setTipsZh(e.target.value)} rows={4} className={input} />)}
+            {field('Tips', 'one per line', <textarea value={tipsEn} onChange={(e) => setTipsEn(e.target.value)} rows={4} className={input} />)}
+          </div>
+
+          <div>
+            <p className="text-xs font-bold text-slate-600 mb-2">站點 <span className="text-[11px] font-normal text-slate-400 ml-1">依順序，每站寫怎麼從上一站走過來</span></p>
+            <div className="space-y-2">
+              {r.stops.map((s, i) => (
+                <div key={s.id} className="border border-slate-200 rounded-xl p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-6 h-6 rounded-full bg-indigo-600 text-white text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
+                    <p className="flex-1 font-bold text-sm text-slate-800 truncate">{nameOf(s.id)}</p>
+                    <button onClick={() => moveStop(i, -1)} disabled={i === 0} className="px-2 py-1 text-xs text-slate-500 hover:text-slate-800 disabled:opacity-30">↑ 上移</button>
+                    <button onClick={() => moveStop(i, 1)} disabled={i === r.stops.length - 1} className="px-2 py-1 text-xs text-slate-500 hover:text-slate-800 disabled:opacity-30">↓ 下移</button>
+                    <button onClick={() => setR(prev => ({ ...prev, stops: prev.stops.filter((_, j) => j !== i) }))} className="px-2 py-1 text-xs text-red-500 hover:text-red-600">移除</button>
+                  </div>
+                  <div className="grid gap-2 md:grid-cols-2">
+                    <textarea value={s.note_zh} onChange={(e) => setStop(i, { note_zh: e.target.value })} rows={2} placeholder="中文：怎麼走、要準備什麼" className={input} />
+                    <textarea value={s.note_en} onChange={(e) => setStop(i, { note_en: e.target.value })} rows={2} placeholder="English note" className={input} />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <select
+              value=""
+              onChange={(e) => e.target.value && setR(prev => ({ ...prev, stops: [...prev.stops, { id: e.target.value, note_zh: '', note_en: '' }] }))}
+              className="mt-2 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-400"
+            >
+              <option value="">＋ 加一站（從拜拜區的廟挑）</option>
+              {temples.filter(t => !used.has(t.id)).map(t => <option key={t.id} value={t.id}>{t.name_zh}</option>)}
+            </select>
+          </div>
+
+          {field('網址代號', `網站上是 /guide/${r.slug || '…'}，小寫英文、數字和 -，上線後別再改`, <input value={r.slug} onChange={set('slug')} className={`${input} font-mono`} />)}
+
+          {error && <p className="text-xs font-bold text-red-600">{error}</p>}
+          <div className="flex items-center gap-2 pt-1">
+            <button onClick={save} disabled={saving} className="flex-1 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-sm font-bold rounded-xl py-2.5">
+              {saving ? '儲存中...' : '儲存'}
+            </button>
+            <button onClick={() => { setR(route); setTipsZh(route.tips_zh.join('\n')); setTipsEn(route.tips_en.join('\n')); setError(''); setOpen(false) }} className="px-4 py-2.5 text-sm text-slate-500 hover:text-slate-700">取消</button>
+            {route.stops.length > 0 && <a href={`/guide/${route.slug}`} target="_blank" rel="noopener noreferrer" className="px-3 py-2.5 text-sm text-indigo-600 hover:text-indigo-500">看網站頁面</a>}
+            <button onClick={() => { if (window.confirm(`確定刪除「${route.title_zh || '這條路線'}」？`)) onDelete() }} className="px-3 py-2.5 text-sm text-red-500 hover:text-red-600">刪除</button>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function RouteEditor({ temples }: { temples: Location[] }) {
+  const [saved, setSaved] = useState<TempleRoute[] | null>(null)   // 已存進檔案的
+  const [drafts, setDrafts] = useState<TempleRoute[]>([])           // 剛按新增、還沒存的
+  const [version, setVersion] = useState(0)  // 存檔後重建卡片，表單回到存好的內容
+
+  useEffect(() => {
+    fetch('/api/temple-routes').then(r => r.json()).then(setSaved)
+  }, [])
+
+  // 整份存回去，存檔失敗就把錯誤顯示在那張卡片上
+  async function persist(next: TempleRoute[]): Promise<string | null> {
+    const res = await fetch('/api/temple-routes', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(next) })
+    if (!res.ok) return (await res.json()).error ?? '儲存失敗'
+    setSaved(next)
+    setVersion(v => v + 1)
+    return null
+  }
+
+  if (!saved) return null
+  const all = [...saved, ...drafts]
+  return (
+    <div className="mb-5">
+      <div className="flex items-baseline gap-3 mb-2">
+        <p className="text-sm font-bold text-slate-700">一日路線</p>
+        <button
+          onClick={() => setDrafts([...drafts, emptyRoute(`route-${all.length + 1}`)])}
+          className="text-xs font-bold text-indigo-600 hover:text-indigo-500"
+        >＋ 新增路線</button>
+      </div>
+      <div className="space-y-2">
+        {saved.map((route, i) => (
+          <RouteCard
+            key={`${version}-${i}`}
+            route={route}
+            temples={temples}
+            onSave={(r) => persist(saved.map((x, j) => j === i ? r : x))}
+            onDelete={() => persist(saved.filter((_, j) => j !== i))}
+          />
+        ))}
+        {drafts.map((route, i) => (
+          <RouteCard
+            key={`draft-${route.slug}-${i}`}
+            route={route}
+            temples={temples}
+            onSave={async (r) => {
+              const err = await persist([...saved, r])
+              if (!err) setDrafts(drafts.filter((_, j) => j !== i))
+              return err
+            }}
+            onDelete={() => setDrafts(drafts.filter((_, j) => j !== i))}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function TemplePanel({ temples, onUpdate, onRemove, onAdded }: {
   temples: Location[]
   onUpdate: (id: string, updates: Partial<Location>) => Promise<void>
@@ -914,6 +1096,9 @@ function TemplePanel({ temples, onUpdate, onRemove, onAdded }: {
         {msg && <p className="text-xs font-bold text-indigo-600 mt-2">{msg}</p>}
       </div>
 
+      <RouteEditor temples={temples} />
+
+      <p className="text-sm font-bold text-slate-700 mb-2">廟</p>
       <div className="grid gap-2 xl:grid-cols-2 items-start">
         {temples.map((t) => <TempleCard key={t.id} item={t} onUpdate={onUpdate} onRemove={onRemove} />)}
       </div>

@@ -1,0 +1,28 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { readFileSync, writeFileSync } from 'fs'
+import { join } from 'path'
+import type { TempleRoute } from '@/lib/templeRoutes'
+
+export const runtime = 'nodejs'
+
+const file = () => join(process.cwd(), 'data', 'temple-routes.json')
+
+export async function GET() {
+  return NextResponse.json(JSON.parse(readFileSync(file(), 'utf-8')))
+}
+
+// 整份覆蓋：[{ slug, title_zh, ..., stops: [{ id, note_zh, note_en }] }]
+export async function PUT(req: NextRequest) {
+  const routes: TempleRoute[] = await req.json()
+  if (!Array.isArray(routes)) return NextResponse.json({ error: '格式錯誤' }, { status: 400 })
+  const slugs = new Set<string>()
+  for (const r of routes) {
+    if (!/^[a-z0-9-]+$/.test(r.slug ?? '')) return NextResponse.json({ error: `網址代號只能用小寫英文、數字和 -：${r.slug}` }, { status: 400 })
+    if (slugs.has(r.slug)) return NextResponse.json({ error: `網址代號重複：${r.slug}` }, { status: 400 })
+    slugs.add(r.slug)
+    if (!r.title_zh?.trim()) return NextResponse.json({ error: '每條路線都要有中文標題' }, { status: 400 })
+    if (!Array.isArray(r.stops) || r.stops.length < 2) return NextResponse.json({ error: `「${r.title_zh}」至少要兩站` }, { status: 400 })
+  }
+  writeFileSync(file(), JSON.stringify(routes, null, 2) + '\n')
+  return NextResponse.json({ ok: true })
+}
