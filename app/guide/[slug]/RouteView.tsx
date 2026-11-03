@@ -73,7 +73,7 @@ export function RouteView({ route, stops }: { route: TempleRoute; stops: Stop[] 
                 <div className="min-w-0">
                   <h2 className="text-[17px] font-bold text-ink group-hover:text-brand transition-colors leading-snug">{zh ? s.location.name_zh : s.location.name_en}</h2>
                   {s.location.temple && (
-                    <p className="text-[13px] text-muted mt-0.5">{zh ? `求 ${s.location.temple.wishes_zh.slice(0, 3).join('、')}` : `For ${(s.location.temple.wishes_en?.length ? s.location.temple.wishes_en : s.location.temple.wishes_zh).slice(0, 3).join(', ')}`}</p>
+                    <p className="text-[13px] text-muted mt-0.5">{zh ? s.location.temple.deity_zh : (s.location.temple.deity_en || s.location.temple.deity_zh)}</p>
                   )}
                   <p className="text-[12px] text-brand mt-1.5 inline-flex items-center gap-0.5">{zh ? '怎麼拜、供品' : 'How to pray'} <Icon name="chevron-right" size={13} /></p>
                 </div>

@@ -20912,10 +20912,7 @@
     "temple": {
       "deity_zh": "梵天（泰文 Phra Phrom，華人習慣叫四面神）",
       "wishes_zh": [
-        "事業（正面）",
-        "愛情與婚姻（第二面）",
-        "財運（第三面）",
-        "平安與健康（第四面）"
+        "四張臉各管一種願望：正面求事業，第二面求愛情與婚姻，第三面求財運，第四面求平安與健康。所以大家都會繞一圈，四面都拜。"
       ],
       "steps_zh": [
         "在入口櫃檯買一整套供品，裡面有香、蠟燭和花環",
@@ -20949,10 +20946,7 @@
       ],
       "deity_en": "Brahma (Phra Phrom in Thai), known as the Four-Faced Buddha",
       "wishes_en": [
-        "Career (front face)",
-        "Love and marriage (second face)",
-        "Wealth (third face)",
-        "Safety and health (fourth face)"
+        "Each of the four faces grants a different kind of wish: the front for career, the second for love and marriage, the third for wealth, and the fourth for safety and health. That is why people walk around and pray at all four."
       ],
       "steps_en": [
         "Buy a full offering set at the counter by the entrance: incense, candles and garlands",
@@ -21006,9 +21000,7 @@
     "temple": {
       "deity_zh": "三相神 Trimurti（梵天、毗濕奴、濕婆合一）",
       "wishes_zh": [
-        "姻緣、脫單",
-        "感情穩定",
-        "復合"
+        "曼谷最有名的求愛情神壇。單身的人來求好姻緣，有對象的人求感情穩定，也有不少人來求復合。"
       ],
       "steps_zh": [
         "在旁邊的攤位買紅玫瑰、紅色的香和紅蠟燭",
@@ -21042,9 +21034,7 @@
       ],
       "deity_en": "Trimurti (Brahma, Vishnu and Shiva in one)",
       "wishes_en": [
-        "Finding love",
-        "A stable relationship",
-        "Getting back together"
+        "Bangkok’s best-known shrine for love. Singles come to find a partner, couples pray for a lasting relationship, and plenty come hoping to get back together."
       ],
       "steps_en": [
         "Buy red roses, red incense and red candles at the stalls nearby",
@@ -21099,10 +21089,7 @@
     "temple": {
       "deity_zh": "象神 Ganesha（泰文 Phra Phikanet）",
       "wishes_zh": [
-        "事業順利",
-        "考試、學業",
-        "排除障礙",
-        "藝術與創作"
+        "象神是排除障礙的神，求事業順利、考試和學業的人最多。泰國的藝術和創作工作者也特別信奉祂。"
       ],
       "steps_zh": [
         "準備供品，象神喜歡甜食和水果",
@@ -21133,10 +21120,7 @@
       ],
       "deity_en": "Ganesha (Phra Phikanet in Thai)",
       "wishes_en": [
-        "Career success",
-        "Exams and study",
-        "Removing obstacles",
-        "Art and creativity"
+        "Ganesha removes obstacles, so most people come to pray for their careers, exams and studies. Thai artists and creatives are especially devoted to him."
       ],
       "steps_en": [
         "Bring offerings. Ganesha loves sweets and fruit",
@@ -21190,9 +21174,7 @@
     "temple": {
       "deity_zh": "吉祥天女 Lakshmi（毗濕奴的妻子）",
       "wishes_zh": [
-        "財富",
-        "美貌",
-        "人緣與愛情"
+        "求財、事業、美貌與愛情。除了財富與美貌，她在單身族群中也很有名，常有人來求好姻緣。因為她對丈夫忠貞不渝，所以很多人也向她祈求靈魂伴侶。"
       ],
       "steps_zh": [
         "搭電梯到 Gaysorn 樓上的戶外平台，循著指標走",
@@ -21224,9 +21206,7 @@
       ],
       "deity_en": "Lakshmi (wife of Vishnu)",
       "wishes_en": [
-        "Wealth",
-        "Beauty",
-        "Popularity and love"
+        "People pray to her for wealth, career, beauty and love. Beyond wealth and beauty, she is popular with singles hoping to meet the right person. Because she is famously devoted to her husband, many also ask her for a soulmate."
       ],
       "steps_en": [
         "Take the lift up to the outdoor terrace at Gaysorn and follow the signs",
@@ -21281,9 +21261,7 @@
     "temple": {
       "deity_zh": "帝釋天 Indra（泰文 Phra In，眾神之王）",
       "wishes_zh": [
-        "事業、升遷",
-        "心想事成",
-        "保佑平安"
+        "帝釋天是眾神之王，大家多半來求事業和升遷，也求心想事成、出入平安。"
       ],
       "steps_zh": [
         "點香，雙手合十說出名字和願望",
@@ -21313,9 +21291,7 @@
       ],
       "deity_en": "Indra (Phra In in Thai), king of the gods",
       "wishes_en": [
-        "Career and promotion",
-        "Wishes coming true",
-        "Protection and safety"
+        "Indra is king of the gods. Most people come to pray for their careers and promotions, as well as for wishes to come true and for safe travels."
       ],
       "steps_en": [
         "Light incense, put your palms together and say your name and wish",
@@ -21368,9 +21344,7 @@
     "temple": {
       "deity_zh": "象神 Ganesha（泰文 Phra Phikanet）",
       "wishes_zh": [
-        "事業、財運",
-        "考試",
-        "想要很快實現的願望"
+        "泰國人說這尊象神特別靈、願望實現得快，所以求事業、財運和考試的人很多，有急事想求的人也常來。"
       ],
       "steps_zh": [
         "在周邊攤位買香、花環和供品",
@@ -21410,9 +21384,7 @@
       ],
       "deity_en": "Ganesha (Phra Phikanet in Thai)",
       "wishes_en": [
-        "Career and wealth",
-        "Exams",
-        "Wishes you want granted fast"
+        "Locals say this Ganesha answers prayers quickly, so it draws people wishing for career success, wealth and exam results, and anyone with an urgent wish."
       ],
       "steps_en": [
         "Buy incense, garlands and offerings at the stalls around the shrine",
@@ -21469,9 +21441,7 @@
     "temple": {
       "deity_zh": "釋迦牟尼佛、觀音菩薩、太歲星君等（華人大乘佛寺）",
       "wishes_zh": [
-        "安太歲",
-        "補財庫",
-        "平安、健康"
+        "拜法跟台灣的廟很像。華人多半來安太歲、補財庫，也會為家人求平安和健康。"
       ],
       "steps_zh": [
         "在入口處買香和供品",
@@ -21503,9 +21473,7 @@
       ],
       "deity_en": "Shakyamuni Buddha, Guanyin, Tai Sui and more (Chinese Mahayana temple)",
       "wishes_en": [
-        "Appeasing Tai Sui (your zodiac year)",
-        "Wealth and fortune",
-        "Safety and health"
+        "Worship here works much like a temple in Taiwan or Hong Kong. Chinese visitors come to appease Tai Sui in their zodiac year, to boost their fortune, and to pray for their family’s safety and health."
       ],
       "steps_en": [
         "Buy incense and offerings at the entrance",
@@ -21560,9 +21528,7 @@
     "temple": {
       "deity_zh": "烏瑪女神 Sri Maha Mariamman（濕婆的妻子）",
       "wishes_zh": [
-        "平安、健康",
-        "家庭和睦",
-        "事業"
+        "主要求平安、健康和家庭和睦，做生意的人也會來求事業順利。"
       ],
       "steps_zh": [
         "在門口脫鞋，寄放鞋子",
@@ -21596,9 +21562,7 @@
       ],
       "deity_en": "Sri Maha Mariamman, the goddess Uma (wife of Shiva)",
       "wishes_en": [
-        "Safety and health",
-        "Family harmony",
-        "Career"
+        "People mostly pray for safety, health and family harmony, and business owners come for success in their work."
       ],
       "steps_en": [
         "Take off your shoes at the door and leave them at the counter",
@@ -21655,9 +21619,7 @@
     "temple": {
       "deity_zh": "臥佛（釋迦牟尼佛涅槃像）",
       "wishes_zh": [
-        "平安",
-        "好運",
-        "健康"
+        "來這裡多半是求平安、好運和健康。沿著臥佛背後的 108 個銅缽一路投硬幣，是最有名的祈福方式。"
       ],
       "steps_zh": [
         "買門票入寺，先到臥佛殿參觀",
@@ -21689,9 +21651,7 @@
       ],
       "deity_en": "The Reclining Buddha (the Buddha entering nirvana)",
       "wishes_en": [
-        "Safety",
-        "Good luck",
-        "Health"
+        "Most visitors pray for safety, good luck and health. Dropping a coin into each of the 108 bronze bowls behind the Buddha is the best-known way to make a wish."
       ],
       "steps_en": [
         "Buy a ticket and head to the Reclining Buddha hall first",
@@ -21746,10 +21706,7 @@
     "temple": {
       "deity_zh": "娜娜 Mae Nak（泰國民間傳說人物）",
       "wishes_zh": [
-        "避兵役（抽籤不中）",
-        "平安生產",
-        "樂透、偏財",
-        "姻緣"
+        "泰國男生抽兵役前會來求不要中籤，孕婦來求平安生產，也有人來求樂透和偏財，或是求好姻緣。"
       ],
       "steps_zh": [
         "在寺內攤位買香、花環和供品",
@@ -21781,10 +21738,7 @@
       ],
       "deity_en": "Mae Nak, from Thai folk legend",
       "wishes_en": [
-        "Avoiding military conscription",
-        "Safe childbirth",
-        "Lottery luck",
-        "Love"
+        "Young Thai men come before the military draft lottery hoping not to be picked, expectant mothers pray for a safe birth, and others ask for lottery luck or love."
       ],
       "steps_en": [
         "Buy incense, garlands and offerings at the stalls in the temple",

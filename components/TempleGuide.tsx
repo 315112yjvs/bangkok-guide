@@ -24,9 +24,10 @@ export function TempleGuide({ temple, lang, sectionTitle }: { temple: TempleInfo
 
       <div className="mb-6">
         <h2 className={sectionTitle}>{zh ? '求什麼' : 'What to pray for'}</h2>
-        <div className="flex flex-wrap gap-2">
+        {/* 一段文字敘述（換行就分段） */}
+        <div className="space-y-2">
           {wishes.map((w) => (
-            <span key={w} className="text-[13px] text-ink border border-line px-2.5 py-1 rounded-sm">{w}</span>
+            <p key={w} className="text-[15px] text-ink/85 leading-[1.75]">{w}</p>
           ))}
         </div>
       </div>
