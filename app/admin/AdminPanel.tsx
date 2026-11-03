@@ -493,9 +493,10 @@ function PendingCard({
 
 // ---- PHOTO MANAGER ----
 // 地點照片管理：拖拉縮圖排序（第一張 = 封面）、刪除、貼網址新增
-function PhotoManager({ photos, onChange }: { photos: string[]; onChange: (photos: string[]) => void }) {
+function PhotoManager({ photos, onChange, locationId }: { photos: string[]; onChange: (photos: string[]) => void; locationId?: string }) {
   const [dragIdx, setDragIdx] = useState<number | null>(null)
   const [newUrl, setNewUrl] = useState('')
+  const [uploading, setUploading] = useState(false)
 
   function move(from: number, to: number) {
     if (to < 0 || to >= photos.length) return
@@ -516,61 +517,78 @@ function PhotoManager({ photos, onChange }: { photos: string[]; onChange: (photo
     setNewUrl('')
   }
 
+  // 從電腦選照片上傳：先在瀏覽器縮到長邊 1400px，存成網站自己的檔案
+  async function upload(files: FileList | null) {
+    if (!files?.length || !locationId) return
+    setUploading(true)
+    const added: string[] = []
+    for (const file of Array.from(files)) {
+      // 大圖給地點頁，480px 小圖給卡片封面（跟 Google 照片的 0-480.jpg 一樣）
+      const [photo, thumb] = await Promise.all([resizePhoto(file), resizePhoto(file, 480)])
+      const res = await fetch('/api/photos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: locationId, photo, thumb }) })
+      if (res.ok) added.push((await res.json()).path)
+    }
+    setUploading(false)
+    if (added.length) onChange([...photos, ...added])
+  }
+
   return (
     <div className="col-span-2">
-      <p className="text-[10px] font-semibold text-gray-500 mb-1">
-        照片（拖拉調整順序，第一張是封面）
+      <p className="text-xs font-bold text-gray-600 mb-1.5">
+        照片 <span className="font-normal text-gray-400">第一張是封面。按「設為封面」或拖拉調整順序，改完記得按儲存</span>
       </p>
-      <div className="flex flex-wrap gap-2 mb-2">
+      <div className="flex flex-wrap gap-2.5 mb-2">
         {photos.map((url, i) => (
-          <div
-            key={`${url}-${i}`}
-            draggable
-            onDragStart={(e) => { setDragIdx(i); e.dataTransfer.effectAllowed = 'move' }}
-            onDragOver={(e) => {
-              e.preventDefault()
-              if (dragIdx === null || dragIdx === i) return
-              move(dragIdx, i)
-              setDragIdx(i)
-            }}
-            onDragEnd={() => setDragIdx(null)}
-            className={`relative w-24 h-24 rounded-xl overflow-hidden border-2 cursor-grab active:cursor-grabbing group/photo ${
-              dragIdx === i ? 'opacity-40 border-indigo-400' : i === 0 ? 'border-amber-400' : 'border-transparent'
-            }`}
-          >
-            <img src={photoUrl(url, 200)} alt="" className="w-full h-full object-cover pointer-events-none" />
-            {i === 0 && (
-              <span className="absolute bottom-0 inset-x-0 bg-amber-400/90 text-amber-900 text-[9px] font-black text-center py-0.5">封面</span>
-            )}
-            <button
-              type="button"
-              title="刪除這張"
-              onClick={() => { if (confirm('確定刪除這張照片？')) onChange(photos.filter((_, j) => j !== i)) }}
-              className="absolute top-1 right-1 w-5 h-5 rounded-full bg-black/60 text-white text-[10px] font-bold leading-none opacity-0 group-hover/photo:opacity-100 transition-opacity"
+          <div key={`${url}-${i}`} className="w-28">
+            <div
+              draggable
+              onDragStart={(e) => { setDragIdx(i); e.dataTransfer.effectAllowed = 'move' }}
+              onDragOver={(e) => {
+                e.preventDefault()
+                if (dragIdx === null || dragIdx === i) return
+                move(dragIdx, i)
+                setDragIdx(i)
+              }}
+              onDragEnd={() => setDragIdx(null)}
+              className={`relative w-28 h-28 rounded-xl overflow-hidden border-2 cursor-grab active:cursor-grabbing group/photo ${
+                dragIdx === i ? 'opacity-40 border-indigo-400' : i === 0 ? 'border-amber-400' : 'border-transparent'
+              }`}
             >
-              ✕
-            </button>
-            {/* 拖不動時的備援：左右移動鈕 */}
-            <div className="absolute top-1 left-1 flex gap-0.5 opacity-0 group-hover/photo:opacity-100 transition-opacity">
-              {i > 0 && (
-                <button type="button" title="往前移" onClick={() => move(i, i - 1)}
-                  className="w-5 h-5 rounded-full bg-black/60 text-white text-[10px] font-bold leading-none">◀</button>
+              <img src={photoUrl(url, 200)} alt="" className="w-full h-full object-cover pointer-events-none" />
+              {i === 0 && (
+                <span className="absolute bottom-0 inset-x-0 bg-amber-400/90 text-amber-900 text-[10px] font-black text-center py-0.5">封面</span>
               )}
-              {i < photos.length - 1 && (
-                <button type="button" title="往後移" onClick={() => move(i, i + 1)}
-                  className="w-5 h-5 rounded-full bg-black/60 text-white text-[10px] font-bold leading-none">▶</button>
-              )}
+              <button
+                type="button"
+                title="刪除這張"
+                onClick={() => { if (confirm('確定刪除這張照片？')) onChange(photos.filter((_, j) => j !== i)) }}
+                className="absolute top-1 right-1 w-6 h-6 rounded-full bg-black/60 text-white text-[11px] font-bold leading-none"
+              >
+                ✕
+              </button>
             </div>
+            {i > 0 && (
+              <button type="button" onClick={() => move(i, 0)}
+                className="mt-1 w-full text-[11px] font-bold py-1 rounded-lg bg-amber-50 text-amber-700 hover:bg-amber-100">
+                設為封面
+              </button>
+            )}
           </div>
         ))}
         {photos.length === 0 && (
-          <p className="text-[11px] text-gray-400 py-3">目前沒有照片，貼網址新增第一張</p>
+          <p className="text-[11px] text-gray-400 py-3">目前沒有照片</p>
         )}
       </div>
       <div className="flex gap-2">
+        {locationId && (
+          <label className={`shrink-0 text-xs font-bold px-3 py-1.5 rounded-lg bg-emerald-600 text-white hover:bg-emerald-500 cursor-pointer ${uploading ? 'opacity-50 pointer-events-none' : ''}`}>
+            {uploading ? '上傳中...' : '從電腦上傳'}
+            <input type="file" accept="image/*" multiple className="hidden" onChange={(e) => { upload(e.target.files); e.target.value = '' }} />
+          </label>
+        )}
         <input
           className="flex-1 border border-gray-200 rounded-lg px-2.5 py-1.5 text-xs outline-none focus:border-indigo-400"
-          placeholder="貼圖片網址（https://...）或 places/... ref，按「加入」"
+          placeholder="或貼圖片網址（https://...），按「加入」"
           value={newUrl}
           onChange={(e) => setNewUrl(e.target.value)}
           onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addPhoto() } }}
@@ -681,6 +699,8 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
       {editing && (
         <div className="border-t border-gray-100 p-4 bg-gray-50 space-y-2">
           <div className="grid grid-cols-2 gap-2">
+            {/* 照片放最上面，改封面不用往下找 */}
+            <PhotoManager photos={form.photos} onChange={(photos) => setForm(f => ({ ...f, photos }))} locationId={item.id} />
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">中文名稱</p><input className={inp} value={form.name_zh} onChange={e => setForm(f => ({...f, name_zh: e.target.value}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">English Name</p><input className={inp} value={form.name_en} onChange={e => setForm(f => ({...f, name_en: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">泰文店名</p><input className={inp} value={form.name_th} onChange={e => setForm(f => ({...f, name_th: e.target.value}))} /></div>
@@ -706,7 +726,6 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">Hashtags（逗號分隔）</p><input className={inp} value={form.hashtags} onChange={e => setForm(f => ({...f, hashtags: e.target.value}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">在地客 %</p><input type="number" min="0" max="100" className={inp} value={form.local_ratio} onChange={e => setForm(f => ({...f, local_ratio: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">社群貼文 URL（TikTok / Instagram）</p><input className={inp} value={form.social_embed_url} onChange={e => setForm(f => ({...f, social_embed_url: e.target.value}))} placeholder="https://www.tiktok.com/@.../video/... 或 https://www.instagram.com/p/..." /></div>
-            <PhotoManager photos={form.photos} onChange={(photos) => setForm(f => ({ ...f, photos }))} />
           </div>
           <div className="flex gap-2 pt-1">
             <button onClick={save} disabled={saving} className="flex-1 bg-[#0f172a] text-white text-xs font-bold rounded-xl py-2 disabled:opacity-50">
@@ -743,11 +762,12 @@ function TempleCard({ item, onUpdate, onRemove }: {
     hours: t.hours_zh ?? '',
     tips: (t.tips_zh ?? []).join('\n'),
     thai: (t.thai ?? []).map(x => `${x.th} | ${x.read} | ${x.zh}`).join('\n'),
+    photos: item.photos,
   })
   const [open, setOpen] = useState(!t.deity_zh)
   const [f, setF] = useState(init)
   const [saving, setSaving] = useState(false)
-  const set = (k: keyof ReturnType<typeof init>) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setF(prev => ({ ...prev, [k]: e.target.value }))
+  const set = (k: Exclude<keyof ReturnType<typeof init>, 'photos'>) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setF(prev => ({ ...prev, [k]: e.target.value }))
 
   async function save() {
     setSaving(true)
@@ -762,7 +782,7 @@ function TempleCard({ item, onUpdate, onRemove }: {
         thai: lines(f.thai).map(l => { const [th = '', read = '', zh = ''] = l.split('|').map(x => x.trim()); return { th, read, zh } }).filter(x => x.th),
       } : {}),
     }
-    await onUpdate(item.id, { name_zh: f.name_zh.trim(), description_zh: f.description_zh.trim(), description_en: f.description_en.trim(), temple })
+    await onUpdate(item.id, { name_zh: f.name_zh.trim(), description_zh: f.description_zh.trim(), description_en: f.description_en.trim(), photos: f.photos, temple })
     setSaving(false)
     setOpen(false)
   }
@@ -794,6 +814,7 @@ function TempleCard({ item, onUpdate, onRemove }: {
 
       {open && (
         <div className="border-t border-slate-100 p-4 space-y-3">
+          <PhotoManager photos={f.photos} onChange={(photos) => setF(prev => ({ ...prev, photos }))} locationId={item.id} />
           {field('中文名稱', '網站上顯示的名字', <input value={f.name_zh} onChange={set('name_zh')} className={input} />)}
           {field('中文介紹', '', <textarea value={f.description_zh} onChange={set('description_zh')} rows={3} className={input} />)}
           {field('英文介紹', '', <textarea value={f.description_en} onChange={set('description_en')} rows={2} className={input} />)}
@@ -871,7 +892,7 @@ function TemplePanel({ temples, onUpdate, onRemove, onAdded }: {
 }
 
 // 照片在瀏覽器端縮到長邊 1400px 再上傳，手機原圖動輒 5MB 以上
-async function resizePhoto(file: File): Promise<string> {
+async function resizePhoto(file: File, maxSide = 1400): Promise<string> {
   const url = URL.createObjectURL(file)
   try {
     const img = await new Promise<HTMLImageElement>((resolve, reject) => {
@@ -880,7 +901,7 @@ async function resizePhoto(file: File): Promise<string> {
       el.onerror = reject
       el.src = url
     })
-    const scale = Math.min(1, 1400 / Math.max(img.width, img.height))
+    const scale = Math.min(1, maxSide / Math.max(img.width, img.height))
     const canvas = document.createElement('canvas')
     canvas.width = Math.round(img.width * scale)
     canvas.height = Math.round(img.height * scale)

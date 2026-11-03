@@ -7,7 +7,8 @@ export const FALLBACK_PHOTO = 'https://images.unsplash.com/photo-1552911180-2a72
 // 2) Google Places 照片 ref（`places/...`）：新上架還沒下載的店，走 /api/photo 代理，每張向 Google 計費。
 export function photoUrl(ref: string | undefined | null, w = 800): string {
   if (!ref) return FALLBACK_PHOTO
-  if (ref.startsWith('/photos/')) return w <= 480 ? ref.replace(/\/0\.jpg$/, '/0-480.jpg') : ref
+  // 有 480px 小圖的：Google 下載的封面 0.jpg、後台上傳的 u-xxxx.jpg
+  if (ref.startsWith('/photos/')) return w <= 480 ? ref.replace(/\/(0|u-[0-9a-f]+)\.jpg$/, '/$1-480.jpg') : ref
   if (ref.startsWith('places/')) return `/api/photo?ref=${encodeURIComponent(ref)}&w=${w}`
   return ref
 }

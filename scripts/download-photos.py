@@ -162,20 +162,30 @@ if not dry_run:
         changed = False
         for loc in fresh:
             live_ids.add(loc['id'])
-            local = []
-            for i in range(PHOTOS_PER_PLACE):
-                if os.path.exists(os.path.join(OUT, loc['id'], f'{i}.jpg')):
-                    local.append(f"/photos/{loc['id']}/{i}.jpg")
-                else:
-                    break
-            if not local:
+            photos = loc.get('photos') or []
+            # 只把還是 Google ref（places/...）的照片換成已下載的本機檔，其他照片原樣保留。
+            # 站主在後台調過的順序、設定的封面、自己上傳的照片都不能動
+            # （以前這裡會把整串照片重設成 0.jpg、1.jpg…，後台改的封面一上傳就被還原）。
+            if not any(isinstance(p, str) and p.startswith('places/') for p in photos):
                 continue
             refs = refs_of(loc)
+            new_photos = []
+            for p in photos:
+                if isinstance(p, str) and p.startswith('places/') and p in refs:
+                    i = refs.index(p)
+                    if os.path.exists(os.path.join(OUT, loc['id'], f'{i}.jpg')):
+                        new_photos.append(f"/photos/{loc['id']}/{i}.jpg")
+                        continue
+                    # 已上架的店超過下載張數的 ref 用不到，直接拿掉；
+                    # 待審的店只先下載封面，其餘 ref 要留著，上架後才補下載
+                    if kind == 'approved' and i >= PHOTOS_PER_PLACE:
+                        continue
+                new_photos.append(p)
             if refs and loc.get('photo_refs') != refs:
                 loc['photo_refs'] = refs
                 changed = True
-            if loc.get('photos') != local:
-                loc['photos'] = local
+            if new_photos != photos:
+                loc['photos'] = new_photos
                 switched += 1
                 changed = True
         if changed:
