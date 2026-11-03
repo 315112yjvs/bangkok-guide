@@ -2,11 +2,11 @@
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { photoUrl } from '@/lib/photo'
-import type { Location, PendingLocation, Category, Source, LocationTag } from '@/lib/types'
+import type { Location, PendingLocation, Category, Source, LocationTag, TempleInfo } from '@/lib/types'
 import type { DiaryEntry } from '@/lib/diary'
 import { resolveTag as resolveSiteTag } from '@/lib/tags'
 
-type Tab = 'pending' | 'approved' | 'add' | 'diary'
+type Tab = 'pending' | 'approved' | 'temple' | 'add' | 'diary'
 
 const SOURCE_LABEL: Record<Source, string> = {
   tiktok: 'TikTok', instagram: 'IG', pantip: 'Pantip',
@@ -723,6 +723,153 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
 }
 
 // ---- MANUAL ADD FORM ----
+// ── 拜拜：每間廟的參拜內容（神明、求什麼、怎麼拜、供品、注意事項、泰文）
+const lines = (s: string) => s.split('\n').map(x => x.trim()).filter(Boolean)
+
+function TempleCard({ item, onUpdate, onRemove }: {
+  item: Location
+  onUpdate: (id: string, updates: Partial<Location>) => Promise<void>
+  onRemove: (id: string) => Promise<void>
+}) {
+  const t = item.temple ?? { deity_zh: '', wishes_zh: [], steps_zh: [], offerings_zh: [] }
+  const init = () => ({
+    name_zh: item.name_zh,
+    description_zh: item.description_zh,
+    description_en: item.description_en,
+    deity: t.deity_zh,
+    wishes: t.wishes_zh.join('\n'),
+    steps: t.steps_zh.join('\n'),
+    offerings: t.offerings_zh.join('\n'),
+    hours: t.hours_zh ?? '',
+    tips: (t.tips_zh ?? []).join('\n'),
+    thai: (t.thai ?? []).map(x => `${x.th} | ${x.read} | ${x.zh}`).join('\n'),
+  })
+  const [open, setOpen] = useState(!t.deity_zh)
+  const [f, setF] = useState(init)
+  const [saving, setSaving] = useState(false)
+  const set = (k: keyof ReturnType<typeof init>) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setF(prev => ({ ...prev, [k]: e.target.value }))
+
+  async function save() {
+    setSaving(true)
+    const temple: TempleInfo = {
+      deity_zh: f.deity.trim(),
+      wishes_zh: lines(f.wishes),
+      steps_zh: lines(f.steps),
+      offerings_zh: lines(f.offerings),
+      ...(f.hours.trim() ? { hours_zh: f.hours.trim() } : {}),
+      ...(lines(f.tips).length ? { tips_zh: lines(f.tips) } : {}),
+      ...(lines(f.thai).length ? {
+        thai: lines(f.thai).map(l => { const [th = '', read = '', zh = ''] = l.split('|').map(x => x.trim()); return { th, read, zh } }).filter(x => x.th),
+      } : {}),
+    }
+    await onUpdate(item.id, { name_zh: f.name_zh.trim(), description_zh: f.description_zh.trim(), description_en: f.description_en.trim(), temple })
+    setSaving(false)
+    setOpen(false)
+  }
+
+  const input = 'w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-400'
+  const field = (label: string, hint: string, el: React.ReactNode) => (
+    <label className="block">
+      <span className="text-xs font-bold text-slate-600">{label}</span>
+      {hint && <span className="text-[11px] text-slate-400 ml-2">{hint}</span>}
+      <div className="mt-1">{el}</div>
+    </label>
+  )
+
+  return (
+    <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+      <button onClick={() => setOpen(o => !o)} className="w-full flex items-center gap-3 p-3 text-left hover:bg-slate-50">
+        {item.photos[0]
+          ? <Image src={photoUrl(item.photos[0], 480)} alt="" width={64} height={64} className="w-16 h-16 rounded-lg object-cover shrink-0" unoptimized />
+          : <div className="w-16 h-16 rounded-lg bg-slate-100 shrink-0" />}
+        <div className="flex-1 min-w-0">
+          <p className="font-bold text-slate-800 truncate">{item.name_zh}</p>
+          <p className="text-xs text-slate-400 truncate">{item.name_en}</p>
+          {t.deity_zh
+            ? <p className="text-xs text-slate-500 mt-0.5 truncate">主祀：{t.deity_zh}</p>
+            : <p className="text-xs font-bold text-amber-600 mt-0.5">還沒填參拜內容</p>}
+        </div>
+        <span className="text-slate-400 text-sm">{open ? '收起' : '編輯'}</span>
+      </button>
+
+      {open && (
+        <div className="border-t border-slate-100 p-4 space-y-3">
+          {field('中文名稱', '網站上顯示的名字', <input value={f.name_zh} onChange={set('name_zh')} className={input} />)}
+          {field('中文介紹', '', <textarea value={f.description_zh} onChange={set('description_zh')} rows={3} className={input} />)}
+          {field('英文介紹', '', <textarea value={f.description_en} onChange={set('description_en')} rows={2} className={input} />)}
+          {field('主祀神明', '例：梵天（泰文 Phra Phrom，華人習慣叫四面佛）', <input value={f.deity} onChange={set('deity')} className={input} />)}
+          {field('求什麼', '一行一項', <textarea value={f.wishes} onChange={set('wishes')} rows={3} className={input} />)}
+          {field('怎麼拜', '一行一個步驟，依順序', <textarea value={f.steps} onChange={set('steps')} rows={4} className={input} />)}
+          {field('供品', '一行一項', <textarea value={f.offerings} onChange={set('offerings')} rows={3} className={input} />)}
+          {field('參拜時間', '選填，例：24 小時開放', <input value={f.hours} onChange={set('hours')} className={input} />)}
+          {field('注意事項', '選填，一行一項', <textarea value={f.tips} onChange={set('tips')} rows={3} className={input} />)}
+          {field('泰文小知識', '選填，一行一個：泰文 | 念法 | 意思', <textarea value={f.thai} onChange={set('thai')} rows={3} className={`${input} font-mono text-xs`} placeholder="ศาลพระพรหม | sǎan phrá-phrom | 四面佛祠" />)}
+          <div className="flex items-center gap-2 pt-1">
+            <button onClick={save} disabled={saving} className="flex-1 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-sm font-bold rounded-xl py-2.5">
+              {saving ? '儲存中...' : '儲存'}
+            </button>
+            <button onClick={() => { setF(init()); setOpen(false) }} className="px-4 py-2.5 text-sm text-slate-500 hover:text-slate-700">取消</button>
+            <a href={`/location/${item.slug ?? item.id}`} target="_blank" rel="noopener noreferrer" className="px-3 py-2.5 text-sm text-indigo-600 hover:text-indigo-500">看網站頁面</a>
+            <button
+              onClick={() => { if (window.confirm(`確定刪除「${item.name_zh}」？`)) onRemove(item.id) }}
+              className="px-3 py-2.5 text-sm text-red-500 hover:text-red-600"
+            >刪除</button>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function TemplePanel({ temples, onUpdate, onRemove, onAdded }: {
+  temples: Location[]
+  onUpdate: (id: string, updates: Partial<Location>) => Promise<void>
+  onRemove: (id: string) => Promise<void>
+  onAdded: () => void
+}) {
+  const [query, setQuery] = useState('')
+  const [nameZh, setNameZh] = useState('')
+  const [adding, setAdding] = useState(false)
+  const [msg, setMsg] = useState('')
+
+  async function add() {
+    if (!query.trim()) return
+    setAdding(true)
+    setMsg('')
+    const res = await fetch('/api/temples', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ query, name_zh: nameZh }) })
+    const data = await res.json()
+    setAdding(false)
+    if (!res.ok) { setMsg(data.error ?? '新增失敗'); return }
+    setMsg(`已新增：${data.location.name_en}，請在下面填參拜內容`)
+    setQuery(''); setNameZh('')
+    onAdded()
+  }
+
+  return (
+    <div className="max-w-3xl">
+      <h1 className="text-xl font-black text-[#0f172a] mb-1">拜拜</h1>
+      <p className="text-sm text-slate-500 mb-4">共 {temples.length} 間。改完按左下「存檔並上傳」才會更新到網站。</p>
+
+      <div className="bg-white rounded-2xl shadow-sm p-4 mb-5">
+        <p className="text-sm font-bold text-slate-700 mb-2">新增一間廟</p>
+        <div className="flex gap-2">
+          <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && add()} placeholder="Google 上的名字（英文或泰文），例：Wat Arun" className="flex-1 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-400" />
+          <input value={nameZh} onChange={(e) => setNameZh(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && add()} placeholder="中文名（選填），例：鄭王廟" className="w-48 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-400" />
+          <button onClick={add} disabled={adding || !query.trim()} className="shrink-0 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-sm font-bold rounded-lg px-4">
+            {adding ? '搜尋中...' : '新增'}
+          </button>
+        </div>
+        <p className="text-[11px] text-slate-400 mt-1.5">會自動從 Google 抓位置、照片、泰文名和評分，照片在「存檔並上傳」時存成網站自己的檔案。</p>
+        {msg && <p className="text-xs font-bold text-indigo-600 mt-2">{msg}</p>}
+      </div>
+
+      <div className="space-y-2">
+        {temples.map((t) => <TempleCard key={t.id} item={t} onUpdate={onUpdate} onRemove={onRemove} />)}
+      </div>
+    </div>
+  )
+}
+
 // 照片在瀏覽器端縮到長邊 1400px 再上傳，手機原圖動輒 5MB 以上
 async function resizePhoto(file: File): Promise<string> {
   const url = URL.createObjectURL(file)
@@ -1282,6 +1429,7 @@ export function AdminPanel() {
         <nav className="flex-1 p-3 space-y-1">
           {navLink('pending', '待審核地點', pending.length)}
           {navLink('approved', '已上架地點')}
+          {navLink('temple', '拜拜', approved.filter(l => l.category === 'temple' && !l.temple?.deity_zh).length)}
           {navLink('add', '手動新增')}
           {navLink('diary', '曼谷日記')}
         </nav>
@@ -1458,6 +1606,7 @@ export function AdminPanel() {
             <div className="space-y-2">
               {approved.length === 0 && <p className="text-gray-400 text-sm py-12 text-center">還沒有上架的地點</p>}
               {approved
+                .filter(item => item.category !== 'temple')
                 .filter(item => !approvedSearch || item.name_zh?.toLowerCase().includes(approvedSearch.toLowerCase()) || item.name_en.toLowerCase().includes(approvedSearch.toLowerCase()))
                 .map((item) => (
                   <ApprovedCard key={item.id} item={item} onRemove={handleRemove} onUpdate={handleUpdate} />
@@ -1466,6 +1615,14 @@ export function AdminPanel() {
           </div>
         )}
 
+        {tab === 'temple' && (
+          <TemplePanel
+            temples={approved.filter(l => l.category === 'temple')}
+            onUpdate={handleUpdate}
+            onRemove={handleRemove}
+            onAdded={() => { setHasUnsaved(true); loadData() }}
+          />
+        )}
         {tab === 'diary' && <DiaryPanel onChanged={() => setHasUnsaved(true)} />}
         {tab === 'add' && <AddForm onAdded={() => { setHasUnsaved(true); loadData(); setTab('approved') }} />}
       </div>

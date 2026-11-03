@@ -4,6 +4,8 @@ import type { Lang } from '@/lib/i18n'
 // 拜拜頁專屬：神明、求什麼、怎麼拜、供品、注意事項、泰文小知識。內容只有中文版。
 export function TempleGuide({ temple, lang, sectionTitle }: { temple: TempleInfo; lang: Lang; sectionTitle: string }) {
   const zh = lang === 'zh'
+  // 後台剛新增、還沒填參拜內容的廟先不顯示這一塊
+  if (!temple.deity_zh) return null
   return (
     <>
       <div className="mb-6 rounded-lg bg-paper border border-line p-4">
