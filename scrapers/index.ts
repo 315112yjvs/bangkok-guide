@@ -54,13 +54,15 @@ function sourceOf(c: TrendingCandidate): Source {
 
 // 已上架的店又被兩個以上來源提到：更新它的爆紅時間，讓它留在（或回到）「話題爆紅」。
 // 「話題爆紅」只保留近兩個月有討論的店，過期由 lib/tags.ts 自動退回原本的標籤。
-function refreshApprovedTrending(candidates: TrendingCandidate[]): number {
+// placeIds：Google 驗證後對到的已上架店（來源寫的店名常跟 Google 店名不同，光比店名會漏掉）
+function refreshApprovedTrending(candidates: TrendingCandidate[], placeIds = new Map<TrendingCandidate, string>()): number {
   const locations = readLocations()
   const now = new Date().toISOString()
   let refreshed = 0
   for (const c of candidates) {
     if (c.mentions < 2) continue
-    const loc = locations.find((l) => l.category !== 'temple' && similarity(c.name, l.name_en) >= 0.8)
+    const pid = placeIds.get(c)
+    const loc = locations.find((l) => l.category !== 'temple' && (pid ? extractPlaceId(l.source_url) === pid : similarity(c.name, l.name_en) >= 0.8))
     if (!loc || loc.tag === 'new_opening') continue
     if (loc.tag !== 'trending') loc.base_tag = loc.tag
     loc.tag = 'trending'
@@ -100,7 +102,11 @@ async function runTrending(existing: PendingLocation[], newItems: PendingLocatio
     if (place.rating < MIN_RATING) { skip('評分太低', c.name, String(place.rating)); continue }
     if (place.rating_count < (c.isNew ? MIN_REVIEWS_NEW : MIN_REVIEWS)) { skip('評論數太少', c.name, String(place.rating_count)); continue }
     // 用 Google 回來的正式店名與 place id 再去重一次（來源寫法常跟 Google 店名不同）
-    if (place.place_id && knownPlaceIds.has(place.place_id)) { skip('已上架或已在待審', c.name); continue }
+    if (place.place_id && knownPlaceIds.has(place.place_id)) {
+      if (c.mentions >= 2) refreshApprovedTrending([c], new Map([[c, place.place_id]]))
+      skip('已上架或已在待審', c.name)
+      continue
+    }
     if (isDuplicate({ name_en: place.name_en }, existing)) { skip('已上架或已在待審', c.name); continue }
 
     const category = place.category as Category
@@ -123,8 +129,9 @@ async function runTrending(existing: PendingLocation[], newItems: PendingLocatio
       source_url: `https://www.google.com/maps/search/?api=1&query=${q}&query_place_id=${place.place_id}`,
       rating: place.rating,
       price_range: place.price_range,
-      tag: c.isNew ? 'new_opening' : 'trending',
-      ...(c.isNew ? {} : { trending_at: new Date().toISOString(), base_tag: 'hidden_gem' as const }),
+      // 被兩個以上來源討論就是話題爆紅（新開幕也一樣，討論度優先）；只有單一來源說它新開的才歸新開幕
+      tag: c.mentions >= 2 ? 'trending' : 'new_opening',
+      ...(c.mentions >= 2 ? { trending_at: new Date().toISOString(), base_tag: 'hidden_gem' as const } : {}),
       area: place.area,
       mentions: c.mentions,
       evidence: c.evidence.slice(0, 6),
