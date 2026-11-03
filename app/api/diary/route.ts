@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { randomUUID } from 'crypto'
 import { transact } from '@/lib/store'
 import { sortDiary, type DiaryEntry } from '@/lib/diary'
+import { withErrors } from '@/lib/apiError'
 
 // 每次都讀最新資料，不在建置時先跑
 export const dynamic = 'force-dynamic'
@@ -11,12 +12,12 @@ export const runtime = 'nodejs'
 const FILE = 'data/diary.json'
 const save = (list: DiaryEntry[]) => JSON.stringify(list, null, 2)
 
-export async function GET() {
+async function handleGET() {
   return NextResponse.json(sortDiary(await transact('read', (tx) => tx.readJson<DiaryEntry[]>(FILE, []))))
 }
 
 // 新增一篇：{ date, text, place?, photo: data:image/jpeg;base64,... }（照片在瀏覽器端先縮好）
-export async function POST(req: NextRequest) {
+async function handlePOST(req: NextRequest) {
   const { date, text, place, photo } = await req.json()
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date ?? '') || !text?.trim() || !photo?.startsWith('data:image/jpeg;base64,')) {
     return NextResponse.json({ error: '日期、文字、照片都要填' }, { status: 400 })
@@ -30,7 +31,7 @@ export async function POST(req: NextRequest) {
   return NextResponse.json({ ok: true, entry })
 }
 
-export async function DELETE(req: NextRequest) {
+async function handleDELETE(req: NextRequest) {
   const { id } = await req.json()
   const found = await transact(`刪除日記 ${id}`, async (tx) => {
     const list = await tx.readJson<DiaryEntry[]>(FILE, [])
@@ -43,3 +44,7 @@ export async function DELETE(req: NextRequest) {
   if (!found) return NextResponse.json({ error: 'Not found' }, { status: 404 })
   return NextResponse.json({ ok: true })
 }
+
+export const GET = withErrors(handleGET)
+export const POST = withErrors(handlePOST)
+export const DELETE = withErrors(handleDELETE)

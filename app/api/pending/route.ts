@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { transact, isOnline } from '@/lib/store'
 import { txPending, txWritePending, txRemovePhotos } from '@/lib/data'
+import { withErrors } from '@/lib/apiError'
 
 // 每次都讀最新資料，不在建置時先跑
 export const dynamic = 'force-dynamic'
@@ -8,11 +9,11 @@ export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 export const maxDuration = 60
 
-export async function GET() {
+async function handleGET() {
   return NextResponse.json(await transact('read', txPending))
 }
 
-export async function PATCH(req: NextRequest) {
+async function handlePATCH(req: NextRequest) {
   const { id, ...updates } = await req.json()
   if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
   const found = await transact(`修改待審 ${id}`, async (tx) => {
@@ -28,7 +29,7 @@ export async function PATCH(req: NextRequest) {
 }
 
 // 駁回：本機的照片資料夾由「存檔並上傳」時的下載腳本清理；正式站這裡直接清
-export async function DELETE(req: NextRequest) {
+async function handleDELETE(req: NextRequest) {
   const body = await req.json()
   if (!body.all && !body.id) return NextResponse.json({ error: 'id required' }, { status: 400 })
   await transact(body.all ? '清空待審' : `駁回 ${body.id}`, async (tx) => {
@@ -39,3 +40,7 @@ export async function DELETE(req: NextRequest) {
   })
   return NextResponse.json({ ok: true })
 }
+
+export const GET = withErrors(handleGET)
+export const PATCH = withErrors(handlePATCH)
+export const DELETE = withErrors(handleDELETE)

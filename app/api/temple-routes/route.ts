@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { transact } from '@/lib/store'
 import type { TempleRoute } from '@/lib/templeRoutes'
+import { withErrors } from '@/lib/apiError'
 
 // 每次都讀最新資料，不在建置時先跑
 export const dynamic = 'force-dynamic'
@@ -9,12 +10,12 @@ export const runtime = 'nodejs'
 
 const FILE = 'data/temple-routes.json'
 
-export async function GET() {
+async function handleGET() {
   return NextResponse.json(await transact('read', (tx) => tx.readJson<TempleRoute[]>(FILE, [])))
 }
 
 // 整份覆蓋：[{ slug, title_zh, ..., stops: [{ id, note_zh, note_en }] }]
-export async function PUT(req: NextRequest) {
+async function handlePUT(req: NextRequest) {
   const routes: TempleRoute[] = await req.json()
   if (!Array.isArray(routes)) return NextResponse.json({ error: '格式錯誤' }, { status: 400 })
   const slugs = new Set<string>()
@@ -28,3 +29,6 @@ export async function PUT(req: NextRequest) {
   await transact('修改一日路線', async (tx) => { tx.writeText(FILE, JSON.stringify(routes, null, 2) + '\n') })
   return NextResponse.json({ ok: true })
 }
+
+export const GET = withErrors(handleGET)
+export const PUT = withErrors(handlePUT)

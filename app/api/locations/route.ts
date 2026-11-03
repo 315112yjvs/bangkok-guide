@@ -5,6 +5,7 @@ import { txLocations, txWriteLocations, txPending, txWritePending, txRemovePhoto
 import { txLocalizePhotos } from '@/lib/googlePhotos'
 import type { Location, PendingLocation } from '@/lib/types'
 import { isTrendingFresh } from '@/lib/tags'
+import { withErrors } from '@/lib/apiError'
 
 // 每次都讀最新資料，不在建置時先跑
 export const dynamic = 'force-dynamic'
@@ -12,12 +13,12 @@ export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
 export const maxDuration = 60
 
-export async function GET() {
+async function handleGET() {
   return NextResponse.json(await transact('read', txLocations))
 }
 
 // POST: approve a pending item (body: { action:'approve', id:string }) OR add a manual location (body: { action:'add', ...fields })
-export async function POST(req: NextRequest) {
+async function handlePOST(req: NextRequest) {
   const body = await req.json()
 
   if (body.action === 'approve') {
@@ -59,7 +60,7 @@ export async function POST(req: NextRequest) {
 }
 
 // PATCH: update fields on an approved location
-export async function PATCH(req: NextRequest) {
+async function handlePATCH(req: NextRequest) {
   const { id, ...updates } = await req.json()
   if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
   const found = await transact(`修改 ${id}`, async (tx) => {
@@ -81,7 +82,7 @@ export async function PATCH(req: NextRequest) {
 }
 
 // DELETE: remove an approved location by id
-export async function DELETE(req: NextRequest) {
+async function handleDELETE(req: NextRequest) {
   const { id } = await req.json()
   if (!id) return NextResponse.json({ error: 'id required' }, { status: 400 })
   await transact(`刪除 ${id}`, async (tx) => {
@@ -91,3 +92,8 @@ export async function DELETE(req: NextRequest) {
   })
   return NextResponse.json({ ok: true })
 }
+
+export const GET = withErrors(handleGET)
+export const POST = withErrors(handlePOST)
+export const PATCH = withErrors(handlePATCH)
+export const DELETE = withErrors(handleDELETE)

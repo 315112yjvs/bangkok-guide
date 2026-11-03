@@ -5,6 +5,7 @@ import { txLocations, txWriteLocations } from '@/lib/data'
 import { txLocalizePhotos } from '@/lib/googlePhotos'
 import { extractPlaceId } from '@/lib/maps'
 import type { Location } from '@/lib/types'
+import { withErrors } from '@/lib/apiError'
 
 export const runtime = 'nodejs'
 export const maxDuration = 60
@@ -34,7 +35,7 @@ async function search(query: string, lang: 'en' | 'th') {
 }
 
 // 新增一間廟：用名稱在 Google 找位置、照片、泰文名，參拜內容之後在後台填
-export async function POST(req: NextRequest) {
+async function handlePOST(req: NextRequest) {
   const { query, name_zh } = await req.json() as { query: string; name_zh?: string }
   if (!query?.trim()) return NextResponse.json({ error: '請輸入廟名' }, { status: 400 })
 
@@ -77,3 +78,5 @@ export async function POST(req: NextRequest) {
   })
   return NextResponse.json({ ok: true, location: saved })
 }
+
+export const POST = withErrors(handlePOST)
