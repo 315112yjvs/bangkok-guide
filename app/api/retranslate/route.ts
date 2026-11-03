@@ -2,11 +2,14 @@ import { NextResponse } from 'next/server'
 import { readLocations, writeLocations } from '@/lib/data'
 import { readPending, writePending } from '@/lib/data'
 import { translateZhToEn } from '@/scrapers/translate'
+import { isOnline } from '@/lib/store'
 
 export const runtime = 'nodejs'
 export const maxDuration = 300
 
 export async function POST() {
+  // 要跑很久或要用本機的 Python / git，只能在電腦上的後台用
+  if (isOnline) return NextResponse.json({ ok: false, error: '這個功能只能在電腦上的後台使用' }, { status: 400 })
   const locations = readLocations()
   const pending = readPending()
 

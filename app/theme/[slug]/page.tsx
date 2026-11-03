@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { readLocations } from '@/lib/data'
+import { readVisibleLocations } from '@/lib/data'
 import { getTheme, THEMES } from '@/lib/themes'
 import { CATEGORY_META } from '@/lib/collections'
 import { CollectionView } from '@/components/CollectionView'
@@ -28,7 +28,7 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
   const theme = getTheme(slug)
   if (!theme) notFound()
 
-  const locations = readLocations()
+  const locations = readVisibleLocations()
     .filter(theme.match)
     .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
 

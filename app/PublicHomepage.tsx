@@ -4,7 +4,9 @@ import Image from 'next/image'
 import { useLanguage } from '@/hooks/useLanguage'
 import { strings } from '@/lib/i18n'
 import { LanguageToggle } from '@/components/LanguageToggle'
-import { CategoryTabs } from '@/components/CategoryTabs'
+import { CategoryTabs, type HomeTab } from '@/components/CategoryTabs'
+import { RouteList } from '@/components/RouteList'
+import { isHiddenCategory } from '@/lib/site'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
@@ -21,7 +23,6 @@ import { Reveal } from '@/components/Reveal'
 import { getArea } from '@/lib/area'
 import Link from 'next/link'
 import { TripCta } from '@/components/TripCta'
-import { RouteBanner } from '@/components/RouteBanner'
 import { tripEnabled } from '@/lib/site'
 import type { DiaryEntry } from '@/lib/diary'
 import type { Location, Category, LocationTag } from '@/lib/types'
@@ -46,7 +47,7 @@ type SpecialFilter = 'all' | 'nearby' | 'saved'
 
 export function PublicHomepage({ locations, diary = [] }: Props) {
   const { lang, setLang } = useLanguage()
-  const [activeCategory, setActiveCategory] = useState<Category | 'all'>('all')
+  const [activeCategory, setActiveCategory] = useState<HomeTab>('all')
   const [activeTag, setActiveTag] = useState<LocationTag | 'all'>('all')
   const [activeArea, setActiveArea] = useState<string>('all')
   const [specialFilter, setSpecialFilter] = useState<SpecialFilter>('all')
@@ -105,7 +106,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
       const saved = JSON.parse(sessionStorage.getItem(FILTER_KEY) ?? 'null')
       if (saved) {
         if (saved.specialFilter) setSpecialFilter(saved.specialFilter)
-        if (saved.activeCategory) setActiveCategory(saved.activeCategory)
+        if (saved.activeCategory && !isHiddenCategory(saved.activeCategory)) setActiveCategory(saved.activeCategory)
         if (saved.activeTag) setActiveTag(saved.activeTag)
         if (saved.activeArea) setActiveArea(saved.activeArea)
         if (saved.query) setQuery(saved.query)
@@ -172,7 +173,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
     // 中文搜尋詞展開成英文/泰文寫法（搜「燒肉」也找得到 Mookata）
     const terms = expandQuery(query)
     const base = locations.filter((loc) => {
-      const matchCat = activeCategory === 'all' || loc.category === activeCategory
+      const matchCat = activeCategory === 'all' || activeCategory === 'routes' || loc.category === activeCategory
       const matchTag = activeTag === 'all' || resolveTag(loc) === activeTag
       const matchArea = activeArea === 'all' || getArea(loc) === activeArea
       const matchSpecial =
@@ -215,7 +216,9 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
   }, [locations])
 
   // 拜拜只有十幾間，不拆成四個分區，直接列成一整個網格
-  const showSections = specialFilter === 'all' && activeTag === 'all' && activeArea === 'all' && !query && !openNow && activeCategory !== 'temple'
+  const showSections = specialFilter === 'all' && activeTag === 'all' && activeArea === 'all' && !query && !openNow && activeCategory !== 'temple' && activeCategory !== 'routes'
+  // 一日路線頁籤：列路線卡片（有輸入搜尋字時改回一般搜尋結果）
+  const showRoutes = activeCategory === 'routes' && !query
 
   // 篩選結果的排序：預設順序（附近模式已由近到遠）、評分高到低、距離近到遠（要有定位或地標才有）
   const gridItems = useMemo(() => {
@@ -340,7 +343,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
         </div>
 
         {/* Filter row */}
-        <div className="bg-white border-b border-line py-2.5 relative">
+        <div className={`bg-white border-b border-line py-2.5 relative ${showRoutes ? 'hidden' : ''}`}>
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
           <DragScroll className="flex gap-2 overflow-x-auto no-scrollbar px-3 lg:justify-center">
             {/* All */}
@@ -434,7 +437,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
         </div>
 
         {/* Area chips（手機預設收起，桌機常駐） */}
-        {areas.length > 0 && (
+        {areas.length > 0 && !showRoutes && (
           <div className={`bg-white border-b border-line py-2.5 relative ${areaOpen || activeArea !== 'all' ? '' : 'hidden lg:block'}`}>
             <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent z-10" />
             <DragScroll className="flex items-center gap-1.5 overflow-x-auto no-scrollbar px-3">
@@ -602,10 +605,15 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
           </div>
         )}
 
+        {showRoutes && (
+          <section className="px-4 pt-4 pb-10 lg:max-w-5xl lg:mx-auto">
+            <RouteList lang={lang} locations={locations} />
+          </section>
+        )}
+
         {/* Filtered / search view */}
-        {!showSections && (
+        {!showSections && !showRoutes && (
           <section className="px-4 pt-4 pb-10">
-            {activeCategory === 'temple' && !query && <RouteBanner lang={lang} className="mb-4 lg:max-w-xl" />}
             {filtered.length > 0 ? (
               <>
                 <div className="flex items-center justify-between mb-3">

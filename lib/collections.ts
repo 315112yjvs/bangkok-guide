@@ -1,5 +1,6 @@
 import type { Location } from './types'
 import { getArea } from './area'
+import { isHiddenCategory } from './site'
 
 // 分類清單頁的 SEO 中繼資料（針對中文高意圖搜尋字詞優化）
 export type CollectionMeta = {
@@ -14,7 +15,7 @@ export type CollectionMeta = {
   descEn: string
 }
 
-export const CATEGORY_META: Record<string, CollectionMeta> = {
+const ALL_CATEGORY_META: Record<string, CollectionMeta> = {
   cafe: {
     slug: 'cafe', emoji: '☕', icon: 'local_cafe',
     h1Zh: '曼谷咖啡廳推薦', h1En: 'Best Cafes in Bangkok',
@@ -65,6 +66,11 @@ export const CATEGORY_META: Record<string, CollectionMeta> = {
     descEn: 'Hand-picked Bangkok attractions and photo spots by locals.',
   },
 }
+
+// 隱藏的分類不出現在任何分類連結和分類頁
+export const CATEGORY_META: Record<string, CollectionMeta> = Object.fromEntries(
+  Object.entries(ALL_CATEGORY_META).filter(([slug]) => !isHiddenCategory(slug)),
+)
 
 export const CATEGORY_SLUGS = Object.keys(CATEGORY_META)
 

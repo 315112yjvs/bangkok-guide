@@ -17,8 +17,8 @@ export function RouteBanner({ lang, route = TEMPLE_ROUTES[0], stop, className = 
       <span className="flex-1 min-w-0">
         <span className="block text-[11px] font-bold text-brand tracking-wide">
           {stop !== undefined
-            ? (zh ? `拜拜路線第 ${stop + 1} 站，共 ${route.stops.length} 站` : `Stop ${stop + 1} of ${route.stops.length} on a temple route`)
-            : (zh ? '拜拜路線' : 'Temple route')}
+            ? (zh ? `一日路線第 ${stop + 1} 站，共 ${route.stops.length} 站` : `Stop ${stop + 1} of ${route.stops.length} on a day route`)
+            : (zh ? '一日路線' : 'Day route')}
         </span>
         <span className="block text-[14px] font-bold text-ink truncate">{zh ? route.short_zh : route.short_en}</span>
       </span>

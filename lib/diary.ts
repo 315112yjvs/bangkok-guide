@@ -17,8 +17,11 @@ function diaryPath(): string {
 // 新的在前
 export function readDiary(): DiaryEntry[] {
   if (!existsSync(diaryPath())) return []
-  const list: DiaryEntry[] = JSON.parse(readFileSync(diaryPath(), 'utf-8'))
-  return list.sort((a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id))
+  return sortDiary(JSON.parse(readFileSync(diaryPath(), 'utf-8')))
+}
+
+export function sortDiary(list: DiaryEntry[]): DiaryEntry[] {
+  return [...list].sort((a, b) => b.date.localeCompare(a.date) || b.id.localeCompare(a.id))
 }
 
 export function writeDiary(list: DiaryEntry[]): void {

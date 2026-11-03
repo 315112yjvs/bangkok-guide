@@ -2,10 +2,24 @@ import { NextResponse } from 'next/server'
 import { execSync } from 'child_process'
 import { resolve } from 'path'
 import { downloadPhotos } from '@/lib/downloadPhotos'
+import { isOnline, publish, hasDrafts } from '@/lib/store'
 
 export const runtime = 'nodejs'
 
+export async function GET() {
+  return NextResponse.json({ drafts: await hasDrafts().catch(() => false) })
+}
+
 export async function POST() {
+  // 正式站後台：修改已經一筆筆存在 GitHub 上了，這裡只觸發一次部署
+  if (isOnline) {
+    try {
+      await publish(`data: 後台上傳 ${new Date().toISOString().slice(0, 16).replace('T', ' ')}`)
+      return NextResponse.json({ ok: true })
+    } catch (err) {
+      return NextResponse.json({ ok: false, error: err instanceof Error ? err.message : String(err) }, { status: 500 })
+    }
+  }
   try {
     const repoRoot = resolve(process.cwd())
     const date = new Date().toISOString().slice(0, 16).replace('T', ' ')
@@ -22,6 +36,14 @@ export async function POST() {
       })
     } catch {
       // nothing new to commit — still push in case previous commit wasn't pushed
+    }
+
+    // 正式站後台會直接 commit 到 GitHub，先把那些改動接進來再推
+    try {
+      execSync('git pull --rebase origin main', { cwd: repoRoot, stdio: 'pipe', timeout: 120000 })
+    } catch (err) {
+      execSync('git rebase --abort', { cwd: repoRoot, stdio: 'pipe' })
+      throw new Error('和正式站後台的修改衝突（同一家店兩邊都改了），請找 Claude 處理。' + (err instanceof Error ? err.message : ''))
     }
 
     execSync('git push origin main', {

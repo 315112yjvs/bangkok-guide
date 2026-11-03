@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { readLocations } from '@/lib/data'
+import { readVisibleLocations } from '@/lib/data'
 import { CATEGORY_SLUGS, listAreas } from '@/lib/collections'
 import { THEMES } from '@/lib/themes'
 import { TEMPLE_ROUTES } from '@/lib/templeRoutes'
@@ -8,7 +8,7 @@ import { tripEnabled } from '@/lib/site'
 const BASE_URL = 'https://www.bkk-local.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const locations = readLocations()
+  const locations = readVisibleLocations()
 
   const locationUrls: MetadataRoute.Sitemap = locations.map((loc) => ({
     url: `${BASE_URL}/location/${loc.slug ?? loc.id}`,

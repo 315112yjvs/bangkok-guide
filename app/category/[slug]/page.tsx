@@ -1,9 +1,8 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { readLocations } from '@/lib/data'
+import { readVisibleLocations } from '@/lib/data'
 import { CATEGORY_META, CATEGORY_SLUGS, listAreas } from '@/lib/collections'
 import { CollectionView } from '@/components/CollectionView'
-import { RouteBanner } from '@/components/RouteBanner'
 
 export const revalidate = 3600
 
@@ -28,7 +27,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   const meta = CATEGORY_META[slug]
   if (!meta) notFound()
 
-  const all = readLocations()
+  const all = readVisibleLocations()
   const locations = all
     .filter((l) => l.category === slug)
     .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
@@ -47,7 +46,6 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
       descEn={meta.descEn}
       icon={meta.icon}
       related={related}
-      banner={slug === 'temple' ? <RouteBanner lang="zh" /> : undefined}
     />
   )
 }

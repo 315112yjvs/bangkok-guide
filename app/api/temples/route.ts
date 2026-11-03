@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { randomUUID } from 'crypto'
-import { readLocations, writeLocations } from '@/lib/data'
+import { transact, isOnline } from '@/lib/store'
+import { txLocations, txWriteLocations } from '@/lib/data'
+import { txLocalizePhotos } from '@/lib/googlePhotos'
 import { extractPlaceId } from '@/lib/maps'
 import type { Location } from '@/lib/types'
 
 export const runtime = 'nodejs'
+export const maxDuration = 60
 
 const FIELDS = 'places.id,places.displayName,places.formattedAddress,places.location,places.rating,places.photos'
 
@@ -37,8 +40,8 @@ export async function POST(req: NextRequest) {
 
   const en = await search(query.trim(), 'en')
   if (!en) return NextResponse.json({ error: 'Google 找不到這間廟，換個寫法試試（英文或泰文名）' }, { status: 404 })
-  const locations = readLocations()
-  if (locations.some((l) => extractPlaceId(l.source_url) === en.id)) {
+  const existing = await transact('read', txLocations)
+  if (existing.some((l) => extractPlaceId(l.source_url) === en.id)) {
     return NextResponse.json({ error: `已經有這間了：${en.displayName?.text}` }, { status: 409 })
   }
   const th = await search(query.trim(), 'th')
@@ -66,6 +69,11 @@ export async function POST(req: NextRequest) {
     temple: { deity_zh: '', wishes_zh: [], steps_zh: [], offerings_zh: [] },
     approved_at: new Date().toISOString(),
   }
-  writeLocations([...locations, loc])
-  return NextResponse.json({ ok: true, location: loc })
+  // 正式站沒有 Python，新增當下就把照片存成網站自己的檔案
+  const saved = await transact(`新增廟 ${loc.name_zh}`, async (tx) => {
+    const withPhotos = isOnline ? await txLocalizePhotos(tx, loc) : loc
+    txWriteLocations(tx, [...await txLocations(tx), withPhotos])
+    return withPhotos
+  })
+  return NextResponse.json({ ok: true, location: saved })
 }

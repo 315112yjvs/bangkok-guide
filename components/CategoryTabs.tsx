@@ -1,23 +1,32 @@
 'use client'
 import { IconAll, IconFood, IconCafe, IconShopping, IconNightlife, IconHotel, IconTemple } from './icons/CategoryIcons'
+import { isHiddenCategory } from '@/lib/site'
 import type { Category } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { DragScroll } from './DragScroll'
-import { MIcon } from './icons/Icon'
+import { Icon, MIcon } from './icons/Icon'
 
 function IconAttraction({ size = 24 }: { size?: number }) {
   return <MIcon name="attractions" size={size} />
 }
 
-type Tab = { id: Category | 'all'; labelKey: keyof typeof strings.zh; Icon: React.ComponentType<{ size?: number }> }
+function IconRoutes({ size = 24 }: { size?: number }) {
+  return <Icon name="route" size={size} strokeWidth={1.8} />
+}
+
+// 首頁頁籤：各分類 + 一日路線（路線不是店的分類，點了改列路線卡片）
+export type HomeTab = Category | 'all' | 'routes'
+
+type Tab = { id: HomeTab; labelKey: keyof typeof strings.zh; Icon: React.ComponentType<{ size?: number }> }
 
 const TABS: Tab[] = [
   { id: 'all',       labelKey: 'categoryAll',       Icon: IconAll },
   { id: 'temple',    labelKey: 'categoryTemple',    Icon: IconTemple },
   { id: 'food',      labelKey: 'categoryFood',      Icon: IconFood },
   { id: 'cafe',      labelKey: 'categoryCafe',      Icon: IconCafe },
+  { id: 'routes',    labelKey: 'categoryRoutes',    Icon: IconRoutes },
   { id: 'shopping',  labelKey: 'categoryShopping',  Icon: IconShopping },
   { id: 'nightlife', labelKey: 'categoryNightlife', Icon: IconNightlife },
   { id: 'hotel',     labelKey: 'categoryHotel',     Icon: IconHotel },
@@ -28,16 +37,15 @@ const TABS: Tab[] = [
 const MIN_TAB_ITEMS = 5
 
 type Props = {
-  active: Category | 'all'
-  onChange: (cat: Category | 'all') => void
+  active: HomeTab
+  onChange: (cat: HomeTab) => void
   lang: Lang
   counts?: Partial<Record<Category | 'all', number>>
 }
 
 export function CategoryTabs({ active, onChange, lang, counts }: Props) {
-  const visibleTabs = counts
-    ? TABS.filter(({ id }) => id === 'all' || (counts[id] ?? 0) >= MIN_TAB_ITEMS)
-    : TABS
+  const visibleTabs = TABS.filter(({ id }) =>
+    id === 'all' || id === 'routes' || (!isHiddenCategory(id) && (!counts || (counts[id] ?? 0) >= MIN_TAB_ITEMS)))
 
   // 選中頁籤底下的藍線：量出選中按鈕的位置，用 transform 滑過去（量到之前先用按鈕自己的底線）
   const tabRefs = useRef(new Map<string, HTMLButtonElement>())

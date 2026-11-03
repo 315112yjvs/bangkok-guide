@@ -494,6 +494,9 @@ function PendingCard({
 
 // ---- PHOTO MANAGER ----
 // 地點照片管理：拖拉縮圖排序（第一張 = 封面）、刪除、貼網址新增
+// 剛上傳的照片在正式站要等部署完才有檔案，這段時間先用瀏覽器裡的縮圖預覽
+const uploadedPreview = new Map<string, string>()
+
 function PhotoManager({ photos, onChange, locationId }: { photos: string[]; onChange: (photos: string[]) => void; locationId?: string }) {
   const [dragIdx, setDragIdx] = useState<number | null>(null)
   const [newUrl, setNewUrl] = useState('')
@@ -527,7 +530,11 @@ function PhotoManager({ photos, onChange, locationId }: { photos: string[]; onCh
       // 大圖給地點頁，480px 小圖給卡片封面（跟 Google 照片的 0-480.jpg 一樣）
       const [photo, thumb] = await Promise.all([resizePhoto(file), resizePhoto(file, 480)])
       const res = await fetch('/api/photos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: locationId, photo, thumb }) })
-      if (res.ok) added.push((await res.json()).path)
+      if (res.ok) {
+        const path = (await res.json()).path
+        uploadedPreview.set(path, thumb)
+        added.push(path)
+      }
     }
     setUploading(false)
     if (added.length) onChange([...photos, ...added])
@@ -555,7 +562,7 @@ function PhotoManager({ photos, onChange, locationId }: { photos: string[]; onCh
                 dragIdx === i ? 'opacity-40 border-indigo-400' : i === 0 ? 'border-amber-400' : 'border-transparent'
               }`}
             >
-              <img src={photoUrl(url, 200)} alt="" className="w-full h-full object-cover pointer-events-none" />
+              <img src={uploadedPreview.get(url) ?? photoUrl(url, 200)} alt="" className="w-full h-full object-cover pointer-events-none" />
               {i === 0 && (
                 <span className="absolute bottom-0 inset-x-0 bg-amber-400/90 text-amber-900 text-[10px] font-black text-center py-0.5">封面</span>
               )}
@@ -580,10 +587,10 @@ function PhotoManager({ photos, onChange, locationId }: { photos: string[]; onCh
           <p className="text-[11px] text-gray-400 py-3">目前沒有照片</p>
         )}
       </div>
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {locationId && (
           <label className={`shrink-0 text-xs font-bold px-3 py-1.5 rounded-lg bg-emerald-600 text-white hover:bg-emerald-500 cursor-pointer ${uploading ? 'opacity-50 pointer-events-none' : ''}`}>
-            {uploading ? '上傳中...' : '從電腦上傳'}
+            {uploading ? '上傳中...' : '上傳照片'}
             <input type="file" accept="image/*" multiple className="hidden" onChange={(e) => { upload(e.target.files); e.target.value = '' }} />
           </label>
         )}
@@ -1081,18 +1088,18 @@ function TemplePanel({ temples, onUpdate, onRemove, onAdded }: {
   return (
     <div>
       <h1 className="text-xl font-black text-[#0f172a] mb-1">拜拜</h1>
-      <p className="text-sm text-slate-500 mb-4">共 {temples.length} 間。改完按左下「存檔並上傳」才會更新到網站。</p>
+      <p className="text-sm text-slate-500 mb-4">共 {temples.length} 間。改完按「存檔並上傳」才會更新到網站。</p>
 
       <div className="bg-white rounded-2xl shadow-sm p-4 mb-5">
         <p className="text-sm font-bold text-slate-700 mb-2">新增一間廟</p>
-        <div className="flex gap-2">
+        <div className="flex flex-col md:flex-row gap-2">
           <input value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && add()} placeholder="Google 上的名字（英文或泰文），例：Wat Arun" className="flex-1 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-400" />
-          <input value={nameZh} onChange={(e) => setNameZh(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && add()} placeholder="中文名（選填），例：鄭王廟" className="w-48 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-400" />
-          <button onClick={add} disabled={adding || !query.trim()} className="shrink-0 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-sm font-bold rounded-lg px-4">
+          <input value={nameZh} onChange={(e) => setNameZh(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && add()} placeholder="中文名（選填），例：鄭王廟" className="md:w-48 border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-slate-400" />
+          <button onClick={add} disabled={adding || !query.trim()} className="shrink-0 py-2 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 text-white text-sm font-bold rounded-lg px-4">
             {adding ? '搜尋中...' : '新增'}
           </button>
         </div>
-        <p className="text-[11px] text-slate-400 mt-1.5">會自動從 Google 抓位置、照片、泰文名和評分，照片在「存檔並上傳」時存成網站自己的檔案。</p>
+        <p className="text-[11px] text-slate-400 mt-1.5">會自動從 Google 抓位置、照片、泰文名和評分，照片會存成網站自己的檔案。</p>
         {msg && <p className="text-xs font-bold text-indigo-600 mt-2">{msg}</p>}
       </div>
 
@@ -1168,7 +1175,7 @@ function DiaryPanel({ onChanged }: { onChanged: () => void }) {
   return (
     <div className="max-w-2xl">
       <h1 className="text-xl font-black text-[#0f172a] mb-1">曼谷日記</h1>
-      <p className="text-sm text-slate-500 mb-4">一張照片配幾句話。發佈後按左下「存檔並上傳」才會出現在網站上。</p>
+      <p className="text-sm text-slate-500 mb-4">一張照片配幾句話。發佈後按「存檔並上傳」才會出現在網站上。</p>
 
       <div className="bg-white rounded-2xl shadow-sm p-5 space-y-3 mb-6">
         <label className="block">
@@ -1422,9 +1429,23 @@ export function AdminPanel() {
     setApproved(a)
   }, [])
 
+  // 正式站後台（手機也能用）：每次儲存直接存到 GitHub，按「存檔並上傳」才部署
+  const isVercel = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname)
+
   useEffect(() => {
-    if (authed) loadData()
-  }, [authed, loadData])
+    if (!authed) return
+    if (isVercel) {
+      loadData()
+      fetch('/api/deploy').then(r => r.json()).then(d => { if (d.drafts) setHasUnsaved(true) }).catch(() => {})
+    } else {
+      // 本機後台先把正式站後台改過的資料拉下來
+      setDeployStatus('同步正式站的修改中...')
+      fetch('/api/sync', { method: 'POST' }).then(r => r.json())
+        .then(d => setDeployStatus(d.ok ? (d.updated ? '✓ 已同步正式站後台的修改' : '') : `同步失敗：${String(d.error).slice(0, 60)}`))
+        .catch(() => setDeployStatus(''))
+        .finally(loadData)
+    }
+  }, [authed, loadData, isVercel])
 
   async function handleApprove(id: string, category?: Category, tag?: LocationTag) {
     await fetch('/api/locations', {
@@ -1559,7 +1580,7 @@ export function AdminPanel() {
         })
       }
       setHasUnsaved(true)
-      setBatchMsg(`已上架 ${list.length} 筆，記得按左下「存檔並上傳」推上線`)
+      setBatchMsg(`已上架 ${list.length} 筆，記得按「存檔並上傳」推上線`)
       loadData()
     } finally {
       setBatchRunning(false)
@@ -1603,7 +1624,7 @@ export function AdminPanel() {
       const res = await fetch('/api/deploy', { method: 'POST' })
       const data = await res.json()
       if (data.ok) {
-        setDeployStatus('✓ 已推送到 Vercel')
+        setDeployStatus(isVercel ? '✓ 已送出，約 2～3 分鐘後網站更新' : '✓ 已推送到 Vercel')
         setHasUnsaved(false)
       } else {
         setDeployStatus(`失敗：${data.error?.slice(0, 60)}`)
@@ -1629,7 +1650,6 @@ export function AdminPanel() {
     return Boolean(item.name_en) && approvedKeys.has('n:' + item.name_en.trim().toLowerCase())
   }
 
-  const isVercel = typeof window !== 'undefined' && !['localhost', '127.0.0.1'].includes(window.location.hostname)
 
   if (!authed) return <AuthOverlay onAuth={() => setAuthed(true)} />
 
@@ -1649,20 +1669,15 @@ export function AdminPanel() {
   )
 
   return (
-    <div className="flex h-screen bg-slate-100 flex-col overflow-hidden">
-      {isVercel && (
-        <div className="bg-amber-400 text-amber-900 text-xs font-bold px-4 py-2.5 flex items-center gap-2">
-          ⚠️ 目前在 Vercel 上，所有編輯、🔥 熱門切換、上下架操作都無法儲存。請在本機執行 <code className="bg-amber-300 px-1.5 py-0.5 rounded font-mono">npm run dev</code> 後至 <code className="bg-amber-300 px-1.5 py-0.5 rounded font-mono">localhost:3000/admin</code> 操作。
-        </div>
-      )}
-      <div className="flex flex-1 overflow-hidden">
+    <div className="flex md:h-screen min-h-screen bg-slate-100 flex-col md:overflow-hidden">
+      <div className="flex flex-1 flex-col md:flex-row md:overflow-hidden">
       {/* SIDEBAR */}
-      <div className="w-56 bg-[#0f172a] flex flex-col shrink-0 overflow-y-auto">
-        <div className="px-5 py-6 border-b border-white/10">
+      <div className="w-full md:w-56 bg-[#0f172a] flex flex-col shrink-0 md:overflow-y-auto">
+        <div className="px-5 py-4 md:py-6 border-b border-white/10">
           <div className="text-white font-black text-sm tracking-wide">BKK LOCAL</div>
           <div className="text-slate-500 text-xs mt-0.5">曼谷人 管理後台</div>
         </div>
-        <nav className="flex-1 p-3 space-y-1">
+        <nav className="flex md:flex-col md:flex-1 gap-1 p-2 md:p-3 overflow-x-auto md:space-y-1 [&>button]:whitespace-nowrap [&>button]:w-auto md:[&>button]:w-full">
           {navLink('pending', '待審核地點', pending.length)}
           {navLink('approved', '已上架地點')}
           {navLink('temple', '拜拜', approved.filter(l => l.category === 'temple' && !l.temple?.deity_zh).length)}
@@ -1670,6 +1685,7 @@ export function AdminPanel() {
           {navLink('diary', '曼谷日記')}
         </nav>
         <div className="p-4 border-t border-white/10">
+          {!isVercel && <>
           <p className="text-slate-400 text-[10px] font-semibold mb-1.5 uppercase tracking-wide">自訂關鍵字（每行一個）</p>
           <textarea
             value={customKeywords}
@@ -1699,6 +1715,8 @@ export function AdminPanel() {
             </button>
           )}
           <p className="text-slate-500 text-[10px] text-center mt-1.5">{scraperStatus}</p>
+          </>}
+          {isVercel && <p className="text-slate-500 text-[10px] text-center">找熱點、補庫存要在電腦上的後台跑</p>}
           {hasUnsaved && !deploying && (
             <p className="text-amber-400 text-[10px] text-center mt-3 font-bold flex items-center justify-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
@@ -1723,9 +1741,9 @@ export function AdminPanel() {
       </div>
 
       {/* MAIN */}
-      <div className="flex-1 p-6 overflow-y-auto">
+      <div className="flex-1 p-3 md:p-6 md:overflow-y-auto min-w-0">
         {/* STATS */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="hidden md:grid grid-cols-3 gap-4 mb-6">
           {[
             { label: '待審核', value: pending.length, color: 'text-amber-600' },
             { label: '已上架', value: approved.length, color: 'text-green-600' },

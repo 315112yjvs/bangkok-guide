@@ -1,14 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { readFileSync, writeFileSync } from 'fs'
-import { join } from 'path'
+import { transact } from '@/lib/store'
 import type { TempleRoute } from '@/lib/templeRoutes'
 
 export const runtime = 'nodejs'
 
-const file = () => join(process.cwd(), 'data', 'temple-routes.json')
+const FILE = 'data/temple-routes.json'
 
 export async function GET() {
-  return NextResponse.json(JSON.parse(readFileSync(file(), 'utf-8')))
+  return NextResponse.json(await transact('read', (tx) => tx.readJson<TempleRoute[]>(FILE, [])))
 }
 
 // 整份覆蓋：[{ slug, title_zh, ..., stops: [{ id, note_zh, note_en }] }]
@@ -23,6 +22,6 @@ export async function PUT(req: NextRequest) {
     if (!r.title_zh?.trim()) return NextResponse.json({ error: '每條路線都要有中文標題' }, { status: 400 })
     if (!Array.isArray(r.stops) || r.stops.length < 2) return NextResponse.json({ error: `「${r.title_zh}」至少要兩站` }, { status: 400 })
   }
-  writeFileSync(file(), JSON.stringify(routes, null, 2) + '\n')
+  await transact('修改一日路線', async (tx) => { tx.writeText(FILE, JSON.stringify(routes, null, 2) + '\n') })
   return NextResponse.json({ ok: true })
 }

@@ -1,13 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { writeFileSync, unlinkSync, existsSync } from 'fs'
-import { join } from 'path'
 import { randomUUID } from 'crypto'
-import { readDiary, writeDiary, type DiaryEntry } from '@/lib/diary'
+import { transact } from '@/lib/store'
+import { sortDiary, type DiaryEntry } from '@/lib/diary'
 
 export const runtime = 'nodejs'
 
+const FILE = 'data/diary.json'
+const save = (list: DiaryEntry[]) => JSON.stringify(list, null, 2)
+
 export async function GET() {
-  return NextResponse.json(readDiary())
+  return NextResponse.json(sortDiary(await transact('read', (tx) => tx.readJson<DiaryEntry[]>(FILE, []))))
 }
 
 // 新增一篇：{ date, text, place?, photo: data:image/jpeg;base64,... }（照片在瀏覽器端先縮好）
@@ -17,19 +19,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: '日期、文字、照片都要填' }, { status: 400 })
   }
   const id = randomUUID().slice(0, 8)
-  writeFileSync(join(process.cwd(), 'public', 'diary', `${id}.jpg`), Buffer.from(photo.split(',')[1], 'base64'))
   const entry: DiaryEntry = { id, date, text: text.trim(), photo: `/diary/${id}.jpg`, ...(place?.trim() ? { place: place.trim() } : {}) }
-  writeDiary([...readDiary(), entry])
+  await transact(`日記 ${date}`, async (tx) => {
+    tx.writeBase64(`public/diary/${id}.jpg`, photo.split(',')[1])
+    tx.writeText(FILE, save([...await tx.readJson<DiaryEntry[]>(FILE, []), entry]))
+  })
   return NextResponse.json({ ok: true, entry })
 }
 
 export async function DELETE(req: NextRequest) {
   const { id } = await req.json()
-  const list = readDiary()
-  const entry = list.find((e) => e.id === id)
-  if (!entry) return NextResponse.json({ error: 'Not found' }, { status: 404 })
-  const file = join(process.cwd(), 'public', entry.photo)
-  if (existsSync(file)) unlinkSync(file)
-  writeDiary(list.filter((e) => e.id !== id))
+  const found = await transact(`刪除日記 ${id}`, async (tx) => {
+    const list = await tx.readJson<DiaryEntry[]>(FILE, [])
+    const entry = list.find((e) => e.id === id)
+    if (!entry) return false
+    if ((await tx.list('public/diary')).includes(entry.photo.split('/').pop()!)) tx.remove(`public${entry.photo}`)
+    tx.writeText(FILE, save(list.filter((e) => e.id !== id)))
+    return true
+  })
+  if (!found) return NextResponse.json({ error: 'Not found' }, { status: 404 })
   return NextResponse.json({ ok: true })
 }

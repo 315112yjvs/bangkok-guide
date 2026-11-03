@@ -33,14 +33,14 @@ export function RouteView({ route, stops }: { route: TempleRoute; stops: Stop[] 
     <div className="max-w-md lg:max-w-3xl mx-auto bg-white min-h-screen lg:border-x lg:border-line">
       <div className="border-b border-line px-4 pt-5 pb-6 lg:px-10 lg:pt-8 lg:pb-9">
         <div className="flex items-center justify-between mb-5">
-          <Link href="/category/temple" className="flex items-center gap-1.5 text-muted hover:text-ink text-sm transition-colors">
+          <Link href="/" className="flex items-center gap-1.5 text-muted hover:text-ink text-sm transition-colors">
             <Icon name="arrow-left" size={16} strokeWidth={2} />
-            {zh ? '曼谷拜拜指南' : 'Temples'}
+            {zh ? '曼谷人' : 'BKK LOCAL'}
           </Link>
           <LanguageToggle lang={lang} setLang={setLang} tone="light" />
         </div>
         <p className="flex items-center gap-1.5 text-[12px] font-bold text-brand tracking-[0.08em] mb-2">
-          <Icon name="flower-2" size={15} strokeWidth={2} /> {zh ? '拜拜路線' : 'TEMPLE ROUTE'}
+          <Icon name="flower-2" size={15} strokeWidth={2} /> {zh ? '一日路線' : 'DAY ROUTE'}
         </p>
         <h1 className="font-liufen text-[28px] lg:text-[36px] text-ink leading-tight mb-3">{zh ? route.title_zh : route.title_en}</h1>
         <p className="text-[15px] text-ink/85 leading-[1.75] mb-4">{zh ? route.intro_zh : route.intro_en}</p>

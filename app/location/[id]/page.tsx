@@ -6,6 +6,8 @@ import { getOpeningHours } from '@/lib/placeInfo'
 import { nearestStation } from '@/lib/transit'
 import type { Location } from '@/lib/types'
 import { LocationDetail } from './LocationDetail'
+import { isHiddenCategory } from '@/lib/site'
+import { CATEGORY_META } from '@/lib/collections'
 
 export const revalidate = 3600
 
@@ -40,7 +42,7 @@ function buildJsonLd(loc: Location) {
     url: `https://www.bkk-local.com/location/${loc.slug ?? loc.id}`,
     description: loc.description_en || loc.description_zh || undefined,
     ...(photo ? { image: photo } : {}),
-    ...(loc.price_range > 0 ? { priceRange: '฿'.repeat(loc.price_range) } : {}),
+    ...(loc.price_range > 0 && loc.category !== 'temple' ? { priceRange: '฿'.repeat(loc.price_range) } : {}),
     address: {
       '@type': 'PostalAddress',
       streetAddress: loc.address || undefined,
@@ -53,7 +55,32 @@ function buildJsonLd(loc: Location) {
       longitude: loc.lng,
     },
   }
+  // 廟：中文為主（搜尋的人多半打中文），同時是參拜地點和觀光景點
+  if (loc.category === 'temple') {
+    const isWat = /^wat\b/i.test(loc.name_en)
+    data['@type'] = [isWat ? 'BuddhistTemple' : 'PlaceOfWorship', 'TouristAttraction']
+    data.name = loc.name_zh
+    data.alternateName = [loc.name_en, loc.name_th].filter(Boolean)
+    data.description = loc.description_zh || loc.description_en || undefined
+    data.isAccessibleForFree = true
+    data.inLanguage = 'zh-TW'
+  }
   return data
+}
+
+// 麵包屑：首頁 › 分類 › 店名（Google 搜尋結果會顯示這條路徑）
+function buildBreadcrumb(loc: Location) {
+  const meta = CATEGORY_META[loc.category]
+  const items = [
+    { name: '曼谷人', item: 'https://www.bkk-local.com/' },
+    ...(meta ? [{ name: meta.h1Zh, item: `https://www.bkk-local.com/category/${meta.slug}` }] : []),
+    { name: loc.name_zh || loc.name_en, item: `https://www.bkk-local.com/location/${loc.slug ?? loc.id}` },
+  ]
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((x, i) => ({ '@type': 'ListItem', position: i + 1, ...x })),
+  }
 }
 
 // 安全地把 JSON-LD 嵌進 <script>：跳脫會破壞 script 標籤 / 注入腳本的字元，
@@ -94,6 +121,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description,
     alternates: { canonical: `/location/${loc.slug ?? loc.id}` },
+    // 暫時隱藏的分類：頁面留著，但不給搜尋引擎收錄
+    ...(isHiddenCategory(loc.category) ? { robots: { index: false, follow: true } } : {}),
     openGraph: { title, description, type: 'article' },
     twitter: { card: 'summary_large_image', title, description },
   }
@@ -114,9 +143,13 @@ export default async function LocationPage({ params }: { params: Promise<{ id: s
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(buildJsonLd(location)) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(buildBreadcrumb(location)) }}
+      />
       <LocationDetail
         location={location}
-        nearby={nearbyOf(location, locations)}
+        nearby={nearbyOf(location, locations.filter((l) => !isHiddenCategory(l.category)))}
         hours={hours}
         station={nearestStation(location.lat, location.lng)}
       />

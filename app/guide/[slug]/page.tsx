@@ -31,5 +31,46 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
     const loc = all.find((l) => l.id === s.id)
     return loc ? [{ location: toCardLocation(loc), note: s.note_zh, noteEn: s.note_en }] : []
   })
-  return <RouteView route={route} stops={stops} />
+  const url = `https://www.bkk-local.com/guide/${route.slug}`
+  // 結構化資料：一日遊行程（依序經過的每一站）+ 麵包屑
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'TouristTrip',
+      name: route.title_zh,
+      description: route.intro_zh,
+      url,
+      inLanguage: 'zh-TW',
+      touristType: '自由行旅客',
+      itinerary: {
+        '@type': 'ItemList',
+        numberOfItems: stops.length,
+        itemListElement: stops.map((s, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          item: {
+            '@type': s.location.category === 'temple' ? 'PlaceOfWorship' : 'TouristAttraction',
+            name: s.location.name_zh,
+            alternateName: s.location.name_en,
+            url: `https://www.bkk-local.com/location/${s.location.slug ?? s.location.id}`,
+            geo: { '@type': 'GeoCoordinates', latitude: s.location.lat, longitude: s.location.lng },
+          },
+        })),
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '曼谷人', item: 'https://www.bkk-local.com/' },
+        { '@type': 'ListItem', position: 2, name: route.title_zh, item: url },
+      ],
+    },
+  ]
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
+      <RouteView route={route} stops={stops} />
+    </>
+  )
 }

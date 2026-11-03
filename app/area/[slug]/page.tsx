@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { readLocations } from '@/lib/data'
+import { readVisibleLocations } from '@/lib/data'
 import { listAreas, slugToArea } from '@/lib/collections'
 import { getArea } from '@/lib/area'
 import { CollectionView } from '@/components/CollectionView'
@@ -8,12 +8,12 @@ import { CollectionView } from '@/components/CollectionView'
 export const revalidate = 3600
 
 export function generateStaticParams() {
-  return listAreas(readLocations()).map((a) => ({ slug: a.slug }))
+  return listAreas(readVisibleLocations()).map((a) => ({ slug: a.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const area = slugToArea(slug, readLocations())
+  const area = slugToArea(slug, readVisibleLocations())
   if (!area) return {}
   const titleZh = `${area} 美食咖啡廳推薦 📍 曼谷在地精選`
   const descZh = `住在曼谷的人精選 ${area} 的咖啡廳、餐廳、酒吧與打卡景點，幫你規劃 ${area} 一日散步路線。`
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function AreaPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const all = readLocations()
+  const all = readVisibleLocations()
   const area = slugToArea(slug, all)
   if (!area) notFound()
 

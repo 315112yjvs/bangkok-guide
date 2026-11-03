@@ -3,6 +3,8 @@ import { join } from 'path'
 import type { Location, PendingLocation } from './types'
 import { buildSlugMap } from './slug'
 import { getPlaceInfo } from './placeInfo'
+import type { Tx } from './store'
+import { isHiddenCategory } from './site'
 
 function dataDir(): string {
   return process.env.DATA_DIR ?? join(process.cwd(), 'data')
@@ -43,8 +45,13 @@ export function toCardLocation(loc: Location): Location {
   }
 }
 
+// 網站上列得出來的店（不含 lib/site.ts 裡暫時隱藏的分類）
+export function readVisibleLocations(): Location[] {
+  return readLocations().filter((l) => !isHiddenCategory(l.category))
+}
+
 export function readCardLocations(): Location[] {
-  return readLocations().map(toCardLocation)
+  return readVisibleLocations().map(toCardLocation)
 }
 
 export function writeLocations(locations: Location[]): void {
@@ -62,4 +69,36 @@ export function readPending(): PendingLocation[] {
 export function writePending(pending: PendingLocation[]): void {
   ensureFile(pendPath(), '[]')
   writeFileSync(pendPath(), JSON.stringify(pending, null, 2))
+}
+
+// ---------- 後台用（經過 lib/store：本機寫檔，正式站 commit 到 GitHub） ----------
+export const LOCATIONS_FILE = 'data/locations.json'
+export const PENDING_FILE = 'data/pending.json'
+
+function decorate(raw: Location[]): Location[] {
+  const slugMap = buildSlugMap(raw)
+  return raw.map((l) => ({ ...l, slug: l.slug || slugMap.get(l.id), ...getPlaceInfo(l.id) }))
+}
+
+export async function txLocations(tx: Tx): Promise<Location[]> {
+  return decorate(await tx.readJson<Location[]>(LOCATIONS_FILE, []))
+}
+
+export function txWriteLocations(tx: Tx, locations: Location[]): void {
+  const clean = locations.map(({ hours: _h, reviews: _r, ...rest }) => rest)
+  tx.writeText(LOCATIONS_FILE, JSON.stringify(clean, null, 2))
+}
+
+export async function txPending(tx: Tx): Promise<PendingLocation[]> {
+  return tx.readJson<PendingLocation[]>(PENDING_FILE, [])
+}
+
+export function txWritePending(tx: Tx, pending: PendingLocation[]): void {
+  tx.writeText(PENDING_FILE, JSON.stringify(pending, null, 2))
+}
+
+// 店被刪除或駁回時，照片資料夾一起清掉
+export async function txRemovePhotos(tx: Tx, id: string): Promise<void> {
+  if (!/^[0-9a-f-]{36}$/.test(id)) return
+  for (const name of await tx.list(`public/photos/${id}`)) tx.remove(`public/photos/${id}/${name}`)
 }
