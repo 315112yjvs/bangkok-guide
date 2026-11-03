@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: '曼谷人 | BKK LOCAL',
     short_name: '曼谷人',
-    description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 夜生活',
+    description: '曼谷人自己會去的地方：住在曼谷的人挑好的美食、咖啡廳、拜拜與一日路線',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',

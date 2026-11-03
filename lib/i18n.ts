@@ -3,9 +3,8 @@ export type Lang = 'zh' | 'en'
 export const strings = {
   zh: {
     siteName: '曼谷人',
-    heroTitle: '住在曼谷的人',
-    heroTitleAccent: '告訴你最近在瘋什麼',
-    heroSubtitle: '泰國社群即時熱度，用中文呈現給台灣人',
+    heroTitle: '曼谷人自己會去的地方',
+    heroSubtitle: '吃的、喝的、拜的，住這裡的人幫你挑好了',
     searchPlaceholder: '搜尋餐廳、咖啡廳、廟...',
     categoryAll: '全部',
     categoryFood: '美食',
@@ -39,9 +38,8 @@ export const strings = {
   },
   en: {
     siteName: 'BKK Local',
-    heroTitle: 'Bangkok Locals',
-    heroTitleAccent: "Tell You What's Trending",
-    heroSubtitle: "Real-time Thai social picks, curated for you in Chinese",
+    heroTitle: 'Where Bangkok Locals Actually Go',
+    heroSubtitle: 'Food, drinks and temples, chosen by locals',
     searchPlaceholder: 'Search restaurants, cafes, temples...',
     categoryAll: 'All',
     categoryFood: 'Food',

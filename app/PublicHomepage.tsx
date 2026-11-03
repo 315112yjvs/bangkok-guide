@@ -272,16 +272,15 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
 
           {/* Bottom editorial block */}
           <div className="px-5 pb-5 lg:px-12 lg:pb-10 lg:max-w-3xl lg:mx-auto lg:text-center">
-            {/* 副標 */}
-            <p className="hero-rise hero-rise-1 text-[12px] tracking-[0.12em] text-white/80 mb-2">
-              {lang === 'zh' ? '泰國社群精選 · 在地人推薦' : 'THAI SOCIAL PICKS · CHOSEN BY LOCALS'}
-            </p>
-
             {/* Title — 六分糖字型 */}
-            <h1 className="hero-rise hero-rise-2 leading-[1.15] mb-3.5">
-              <span className="font-liufen text-[30px] lg:text-[46px] text-white block">{strings[lang].heroTitle as string}</span>
-              <span className="font-liufen text-[30px] lg:text-[46px] text-white block">{strings[lang].heroTitleAccent as string}</span>
+            <h1 className="hero-rise hero-rise-1 font-liufen text-[30px] lg:text-[46px] text-white leading-[1.15] mb-2">
+              {strings[lang].heroTitle as string}
             </h1>
+
+            {/* 副標：說清楚網站有什麼 */}
+            <p className="hero-rise hero-rise-2 text-[14px] lg:text-[16px] text-white/85 mb-4">
+              {strings[lang].heroSubtitle as string}
+            </p>
 
             {/* Search bar */}
             <div ref={searchRef} className="hero-rise hero-rise-3 flex items-center gap-2.5 bg-white rounded-lg px-4 py-3">

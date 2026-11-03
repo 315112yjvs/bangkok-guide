@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.bkk-local.com'),
   title: '曼谷人 | BKK LOCAL',
   appleWebApp: { capable: true, statusBarStyle: 'black-translucent', title: '曼谷人' },
-  description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 夜生活',
+  description: '曼谷人自己會去的地方：住在曼谷的人挑好的美食、咖啡廳、拜拜與一日路線',
   icons: {
     icon: [{ url: '/logo-circle.png?v=3', type: 'image/png', sizes: '512x512' }],
     apple: '/apple-icon.png?v=2',
   },
   openGraph: {
     title: '曼谷人 | BKK LOCAL',
-    description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × TikTok 爆紅地點 × 美食咖啡廳',
+    description: '曼谷人自己會去的地方：住在曼谷的人挑好的美食、咖啡廳、拜拜與一日路線',
     url: 'https://www.bkk-local.com',
     siteName: '曼谷人',
     locale: 'zh_TW',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '曼谷人 | BKK LOCAL',
-    description: '住在曼谷的人告訴你最近在瘋什麼 — 在地私藏 × 美食咖啡廳 × 夜生活',
+    description: '曼谷人自己會去的地方：住在曼谷的人挑好的美食、咖啡廳、拜拜與一日路線',
   },
 }
 
