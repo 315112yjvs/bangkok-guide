@@ -847,8 +847,8 @@ function TempleCard({ item, onUpdate, onRemove }: {
             {field('What to pray for', 'a short paragraph', <textarea value={f.wishes_en} onChange={set('wishes_en')} rows={3} className={input} />)}
             {field('怎麼拜', '一行一個步驟，依順序', <textarea value={f.steps} onChange={set('steps')} rows={4} className={input} />)}
             {field('How to pray', 'one step per line', <textarea value={f.steps_en} onChange={set('steps_en')} rows={4} className={input} />)}
-            {field('供品', '一行一項', <textarea value={f.offerings} onChange={set('offerings')} rows={3} className={input} />)}
-            {field('Offerings', 'one per line', <textarea value={f.offerings_en} onChange={set('offerings_en')} rows={3} className={input} />)}
+            {field('供品', '寫一段文字，換行就分段', <textarea value={f.offerings} onChange={set('offerings')} rows={3} className={input} />)}
+            {field('Offerings', 'a short paragraph', <textarea value={f.offerings_en} onChange={set('offerings_en')} rows={3} className={input} />)}
             {field('參拜時間', '選填', <input value={f.hours} onChange={set('hours')} className={input} />)}
             {field('Hours', 'optional', <input value={f.hours_en} onChange={set('hours_en')} className={input} />)}
             {field('注意事項', '選填，一行一項', <textarea value={f.tips} onChange={set('tips')} rows={3} className={input} />)}

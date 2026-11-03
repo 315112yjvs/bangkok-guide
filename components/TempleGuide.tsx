@@ -46,11 +46,11 @@ export function TempleGuide({ temple, lang, sectionTitle }: { temple: TempleInfo
 
       <div className="mb-6">
         <h2 className={sectionTitle}>{zh ? '供品' : 'Offerings'}</h2>
-        <ul className="space-y-1.5">
+        <div className="space-y-2">
           {offerings.map((o) => (
-            <li key={o} className="text-[15px] text-ink/85 leading-[1.7] pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.7em] before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand">{o}</li>
+            <p key={o} className="text-[15px] text-ink/85 leading-[1.75]">{o}</p>
           ))}
-        </ul>
+        </div>
       </div>
 
       {tips.length > 0 && (
