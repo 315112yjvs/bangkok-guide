@@ -21258,11 +21258,11 @@
   },
   {
     "id": "bcc02e1b-c564-46ad-9842-642842f963cd",
-    "name_zh": "帝釋天",
+    "name_zh": "帝釋天（因陀羅）",
     "name_en": "Phra Indra Shrine",
     "name_th": "Phra Indra Shrine",
-    "description_zh": "在 InterContinental 飯店前面，Ratchaprasong 一帶的神壇之一。帝釋天是眾神之王，祂的坐騎就是四面佛祠名字裡的愛侶灣三頭象。這一區還有四面佛、愛神、象神、吉祥天女，走一圈可以全部拜完。",
-    "description_en": "In front of InterContinental Bangkok. Indra is king of the gods, and his three-headed elephant Erawan gave the famous shrine nearby its name.",
+    "description_zh": "帝釋天神壇位在拉差帕頌路口、Gaysorn Amarin 百貨（舊名 Amarin Plaza）前方，離 BTS Chit Lom 站很近，和對面 InterContinental 飯店前的毗濕奴神像隔街相望。百貨的名字「Amarin」本身就是帝釋天的泰文稱呼，所以在這裡供奉祂，是希望祂守護這塊地方，與四面神、象神等大神一起，讓這個「眾神路口」更完整。神像是翠玉般的綠色，手持金剛杵，綠色象徵神聖、純淨與永生。很多附近的上班族每天早上經過時，都會順手低頭致意。\n\n冷知識：曼谷市的官方市徽，就是帝釋天騎著三頭神象「愛侶灣」的圖案。",
+    "description_en": "The Indra Shrine stands at the Ratchaprasong intersection in front of Gaysorn Amarin (formerly Amarin Plaza), just a short walk from BTS Chit Lom, directly across from the Narayana statue at the InterContinental. “Amarin” is the Thai name for Indra, so the shrine was built to have him protect the area, completing the spiritual harmony of this “crossroads of the gods” alongside Brahma, Ganesha and others. The statue is jade green and holds a thunderbolt; the green colour symbolises holiness, purity and immortality. Many local office workers bow their heads as they pass by each morning.\n\nFun fact: Bangkok’s official city emblem shows Indra riding the three-headed elephant Erawan.",
     "category": "temple",
     "address": "518, 5 Thanon Phloen Chit, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
     "address_th": "518, 5 ถนน เพลินจิต แขวงลุมพินี เขตปทุมวัน กรุงเทพมหานคร 10330",
@@ -21270,9 +21270,7 @@
     "lng": 100.54196089999999,
     "photos": [
       "/photos/bcc02e1b-c564-46ad-9842-642842f963cd/0.jpg",
-      "/photos/bcc02e1b-c564-46ad-9842-642842f963cd/1.jpg",
-      "/photos/bcc02e1b-c564-46ad-9842-642842f963cd/2.jpg",
-      "/photos/bcc02e1b-c564-46ad-9842-642842f963cd/3.jpg"
+      "/photos/bcc02e1b-c564-46ad-9842-642842f963cd/1.jpg"
     ],
     "source": "manual",
     "source_url": "https://www.google.com/maps/search/?api=1&query=Phra%20Indra%20Shrine%20518%2C%205%20Thanon%20Phloen%20Chit%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJ6_eEvdqe4jARRfOL9YTItl0",
@@ -21281,19 +21279,29 @@
     "tag": "hidden_gem",
     "area": "",
     "temple": {
-      "deity_zh": "帝釋天 Indra（泰文 Phra In，眾神之王）",
+      "deity_zh": "帝釋天（Indra），印度教中的眾神之王，掌管雷電、風雨，也是戰爭與勝利之神。在泰國佛教經典中，祂是忉利天的天主，守護行善之人與佛法。祂的武器「金剛杵」代表果斷與驅散黑暗，象徵能斬斷問題的銳利智慧。",
       "wishes_zh": [
-        "帝釋天是眾神之王，大家多半來求事業和升遷，也求心想事成、出入平安。"
+        "工作與事業上的勝利。特別適合這幾種人：",
+        "做生意想贏得標案、勝過競爭對手、談判順利的老闆",
+        "想遠離職場小人、化解工作難題的上班族",
+        "準備考試、等待升遷評估的人"
       ],
       "steps_zh": [
-        "點香，雙手合十說出名字和願望",
-        "獻上花環和供品"
+        "雙手合十，先唸三遍「Namo」（禮敬佛陀的開頭經文）",
+        "誦念帝釋天心咒「Om Sakkatewata Vandanang Sukita Mahalapo」（重複三遍）",
+        "心中清楚說出你的目標，最好具體到某個專案名稱或想解決的問題",
+        "獻上供品，插香後再次合十致意"
       ],
       "offerings_zh": [
-        "準備花環和香燭就可以，想多表心意的話可以再加一份水果。"
+        "帝釋天的供品講求簡單、潔淨，絕對不能有任何肉類。基本會準備 9 支香和一對蠟燭，再搭配萬壽菊花環或黃白色系的花，但要注意不要供奉蓮花。水果可以選香蕉、椰子、甘蔗這類吉祥水果，飲品則是鮮奶或清水。另外，帝釋天的座騎是神象愛侶灣，所以很多人會獻上一對大象或馬的小雕像，作為帝釋天的侍從；也有人會供奉茉莉花，祈求帝釋天的庇佑。"
       ],
+      "hours_zh": "24 小時",
       "tips_zh": [
-        "可以安排成 Ratchaprasong 一圈：四面佛、帝釋天、吉祥天女、愛神、象神"
+        "嚴禁供奉肉類，也不要供奉蓮花",
+        "帝釋天守護的是「行善且努力不懈的人」，求完記得自己也要努力",
+        "交通：BTS Chit Lom 站，步行約 3 分鐘",
+        "拉差帕頌路口一帶還有四面神、吉祥天女、愛神、象神等神壇，都在步行距離內，可以排成一條拜拜路線",
+        "穿著端莊"
       ],
       "thai": [
         {
@@ -21309,19 +21317,29 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "Indra (Phra In in Thai), king of the gods",
+      "deity_en": "Lord Indra, king of the Hindu gods, ruler of thunder, storms and rain, and the god of war and victory. In Thai Buddhist scripture, he rules the Tavatimsa heaven and protects the virtuous and Buddhism. His weapon, the vajra (thunderbolt), stands for decisiveness and the destruction of darkness — a symbol of the sharp wisdom that cuts through problems.",
       "wishes_en": [
-        "Indra is king of the gods. Most people come to pray for their careers and promotions, as well as for wishes to come true and for safe travels."
+        "Victory in work and business. Especially suited to:",
+        "Business owners hoping to win bids, beat competitors and negotiate smoothly",
+        "Office workers wanting to escape toxic workplaces and resolve problems at work",
+        "Anyone preparing for exams or awaiting a promotion review"
       ],
       "steps_en": [
-        "Light incense, put your palms together and say your name and wish",
-        "Offer garlands and other offerings"
+        "Press your palms together and chant “Namo” three times (the opening verse honouring the Buddha)",
+        "Recite Indra’s mantra, “Om Sakkatewata Vandanang Sukita Mahalapo,” three times",
+        "State your goal clearly — ideally naming a specific project or the exact problem you want solved",
+        "Present your offerings, place the incense, and bow once more"
       ],
       "offerings_en": [
-        "A garland with incense and candles is enough. Add some fruit if you want to offer a little more."
+        "Offerings to Indra should be simple and pure, and must never include meat. The basics are 9 incense sticks and a pair of candles, along with marigold garlands or yellow and white flowers — but avoid lotus flowers. For fruit, choose auspicious ones such as bananas, coconuts and sugarcane, and offer fresh milk or pure water to drink. Since Indra’s mount is the elephant Erawan, many people also offer a pair of elephant or horse figurines as his attendants, and some bring jasmine in return for his divine protection."
       ],
+      "hours_en": "24 hours",
       "tips_en": [
-        "Make it a Ratchaprasong loop: Erawan, Indra, Lakshmi, Trimurti and Ganesha"
+        "No meat, and no lotus flowers",
+        "Indra protects those who act virtuously and persevere — so keep working hard after you pray",
+        "Getting there: BTS Chit Lom Station, about a 3-minute walk",
+        "The Erawan, Lakshmi, Trimurti and Ganesha shrines are all within walking distance, making it easy to plan a full shrine route",
+        "Dress modestly"
       ]
     },
     "approved_at": "2026-11-02T11:53:06.412Z",
@@ -21337,20 +21355,18 @@
   },
   {
     "id": "295ba8ab-30cb-42a6-b418-8a89d96d7243",
-    "name_zh": "匯權象神",
+    "name_zh": "象神（Huai Khwang 象神廟）",
     "name_en": "Ganesha temple",
-    "name_th": "เทวลัยพระพิฆเนศ",
-    "description_zh": "在 Huai Khwang 路口，MRT Huai Khwang 站出來就到，24 小時都有人在拜。泰國人說這尊象神特別靈、願望實現得快，所以香火從早到半夜都沒停過。拜完旁邊就是匯權夜市，可以順便吃宵夜。",
-    "description_en": "At the Huai Khwang intersection by the MRT station, busy around the clock. Locals swear this Ganesha answers wishes fast. The night market is right next door.",
+    "name_th": "เทวาลัยพระพิฆเนศ ห้วยขวาง",
+    "description_zh": "匯權象神廟位在 Ratchada–Huai Khwang 十字路口的轉角，距離 MRT Huai Khwang 站只有約 100 公尺，被認為是泰國最靈驗的象神廟之一。這裡的由來和路口有關：以前這個十字路口經常發生車禍，於是迎來象神神像化解，並建了這座神廟，創建者是泰國多座知名神廟的建造者 Suchat Rattanasuk 老師。之後前來參拜的人絡繹不絕，成為今天香火鼎盛的神廟。主神像是站姿的象神，一頭四臂，正在賜福。  匯權這一帶近年被稱為曼谷的「新中國城」，所以這裡的華人信眾特別多。",
+    "description_en": "The Huai Khwang Ganesha Shrine sits on a corner of the Ratchada–Huai Khwang intersection, just 100 metres from MRT Huai Khwang, and is considered one of the most sacred Ganesha shrines in Thailand. Its origin is tied to the intersection itself: accidents used to happen there frequently, so a Ganesha statue was brought in to counter the bad luck and the shrine was built. It was founded by Ajarn Suchat Rattanasuk, who also founded several other well-known shrines in Thailand. Devotees have been coming ever since. The main statue shows Ganesha standing, with one head and four arms, bestowing blessings.\n\nHuai Khwang has recently become known as Bangkok’s “New Chinatown,” so the shrine is especially popular with Chinese-speaking devotees.",
     "category": "temple",
     "address": "QHHF+C83, Thanon Ratchadaphisek, Ratchadaphisek, Khet Din Daeng, Krung Thep Maha Nakhon 10400",
     "address_th": "QHHF+C83 ถ. รัชดาภิเษก แขวงรัชดาภิเษก เขตดินแดง กรุงเทพมหานคร 10400",
     "lat": 13.778508299999999,
     "lng": 100.57330789999999,
     "photos": [
-      "/photos/295ba8ab-30cb-42a6-b418-8a89d96d7243/0.jpg",
       "/photos/295ba8ab-30cb-42a6-b418-8a89d96d7243/1.jpg",
-      "/photos/295ba8ab-30cb-42a6-b418-8a89d96d7243/2.jpg",
       "/photos/295ba8ab-30cb-42a6-b418-8a89d96d7243/3.jpg"
     ],
     "source": "manual",
@@ -21360,23 +21376,24 @@
     "tag": "hidden_gem",
     "area": "Din Daeng",
     "temple": {
-      "deity_zh": "象神 Ganesha（泰文 Phra Phikanet）",
+      "deity_zh": "主祀象神，另外還供奉拉胡（羅睺）、三相神和烏瑪女神，是可以一次拜多位神明的地方。",
       "wishes_zh": [
-        "泰國人說這尊象神特別靈、願望實現得快，所以求事業、財運和考試的人很多，有急事想求的人也常來。"
+        "事業、學業、考試，以及各種成功與好運。華人信眾特別常來這裡求學業和工作順利。"
       ],
       "steps_zh": [
-        "在周邊攤位買香、花環和供品",
-        "點香，雙手合十說出名字和願望",
-        "找到象神旁邊的老鼠雕像（老鼠是象神的坐騎），一手摀住老鼠一邊耳朵，對著另一邊耳朵小聲說出願望，傳說這樣願望不會漏掉",
-        "願望實現後回來還願"
+        "先到神廟內側，參拜象神的「家人」——象神、濕婆和烏瑪女神，代表先向長輩致敬",
+        "再出來參拜三相神（面向象神正面時位在左手邊），以及其他神明",
+        "點香後誦念象神心咒「Om Sri Ganeshaya Namaha」，可唸 3 次或依自己方便",
+        "心中說出姓名和具體願望，獻上供品"
       ],
       "offerings_zh": [
-        "跟其他象神一樣，香蕉、甘蔗和甜食最受歡迎，再配上萬壽菊花環。還願的時候，很多人會帶椰子、水果或甜點回來。"
+        "匯權象神的供品可以自己準備，也可以在廟旁購買現成的供品組。水果常見的有香蕉、甘蔗、鳳梨，甜點則以象神最愛的印度甜點「莫達克」和「拉杜」為主，飲品可以準備鮮奶或紅色汽水。除此之外，有些信眾還會獻上泰式披肩布、蠟燭、珍珠項鍊和花環。花的部分，紅色扶桑花是象神特別喜愛的花，萬壽菊或新鮮花環也都很適合。記得所有供品都要避開肉類。"
       ],
       "hours_zh": "24 小時開放",
       "tips_zh": [
-        "深夜也很熱鬧，晚上來可以接著逛匯權夜市",
-        "路口車多，過馬路小心"
+        "嚴禁供奉肉類",
+        "有多位神明，建議依照順序參拜，先拜象神一家，再拜其他神明",
+        "穿著端莊"
       ],
       "thai": [
         {
@@ -21398,23 +21415,24 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "Ganesha (Phra Phikanet in Thai)",
+      "deity_en": "Lord Ganesha is the main deity, and the shrine also houses Rahu, Trimurti and the goddess Uma Devi — so you can pay respects to several gods in one visit.",
       "wishes_en": [
-        "Locals say this Ganesha answers prayers quickly, so it draws people wishing for career success, wealth and exam results, and anyone with an urgent wish."
+        "Career, studies, exams, and success and good fortune of every kind. It is especially popular among Chinese visitors praying for success in studies and work."
       ],
       "steps_en": [
-        "Buy incense, garlands and offerings at the stalls around the shrine",
-        "Light incense, put your palms together and say your name and wish",
-        "Find the rat statue beside Ganesha (the rat is his mount). Cover one of its ears and whisper your wish into the other so it does not slip out",
-        "Come back to give thanks when your wish comes true"
+        "Start inside the shrine by paying respects to Ganesha’s family — Ganesha, Shiva and Uma Devi — as a sign of respect to the elders",
+        "Then step out to worship Trimurti (on your left when facing the front of Ganesha) and the other deities",
+        "Light your incense and recite Ganesha’s mantra, “Om Sri Ganeshaya Namaha,” three times or as many times as you like",
+        "Silently state your name and your specific wish, then present your offerings"
       ],
       "offerings_en": [
-        "As with any Ganesha, bananas, sugarcane and sweets are favourites, together with a marigold garland. People returning to give thanks often bring coconuts, fruit or desserts."
+        "You can bring your own offerings or buy a ready-made set beside the shrine. Popular fruits include bananas, sugarcane and pineapple, while the favourite sweets are modak and laddu, the Indian treats Ganesha loves most. For drinks, offer fresh milk or red soda. Some devotees also present a Thai sabai shawl, candles, pearl necklaces and flower garlands. For flowers, the red hibiscus is said to be Ganesha’s favourite, and marigolds or fresh garlands are also a good choice. Remember that all offerings must be meat-free."
       ],
       "hours_en": "Open 24 hours",
       "tips_en": [
-        "Busy even late at night. Walk on to Huai Khwang night market afterwards",
-        "The intersection is busy, so take care crossing"
+        "No meat of any kind",
+        "With several deities here, follow the order: Ganesha’s family first, then the others",
+        "Dress modestly"
       ]
     },
     "approved_at": "2026-11-02T11:53:06.848Z",
@@ -21433,8 +21451,8 @@
     "name_zh": "龍蓮寺",
     "name_en": "Wat Mangkon Kamalawat (Wat Leng Noei Yi)",
     "name_th": "วัดมังกรกมลาวาส (วัดเล่งเน่ยยี่)",
-    "description_zh": "中國城最大的華人佛寺，在 Charoen Krung 路上，MRT Wat Mangkon 站走路就到。拜法跟台灣的廟很像，香、燭、金紙一應俱全，安太歲和點光明燈都可以。過年前後人潮滿到門外。",
-    "description_en": "The biggest Chinese Buddhist temple in Chinatown, on Charoen Krung Road near MRT Wat Mangkon. Worship here feels just like a temple back in Taiwan or Hong Kong.",
+    "description_zh": "龍蓮寺位在中國城（耀華力）的 Charoen Krung 路上，是曼谷規模最大、最重要的華人佛寺，建於 1871 年。寺名原本是潮州話的「龍蓮寺」，後來泰王拉瑪五世賜了正式的泰文名稱「Wat Mangkon Kamalawat」，意思同樣是「龍蓮寺」。寺裡供奉多達 58 尊神佛，涵蓋佛教、道教與儒家信仰。每逢農曆新年和九皇齋節，這裡都是中國城慶典的核心。平常來的多半是當地泰籍華人，而不是觀光客，大家來這裡做功德、祈求健康與財運，也會為祖先焚燒紙錢。",
+    "description_en": "Located on Charoen Krung Road in Chinatown (Yaowarat), Wat Mangkon Kamalawat is the largest and most important Chinese temple in Bangkok, founded in 1871. It was originally called Wat Leng Noei Yi, meaning “Dragon Lotus Temple” in Teochew, and King Rama V later gave it its official Thai name, Wat Mangkon Kamalawat, which carries the same meaning. The temple houses as many as 58 deities across Buddhist, Taoist and Confucian traditions. It is the heart of Chinatown’s celebrations during Chinese New Year and the Vegetarian Festival. Most visitors are local Thai-Chinese rather than tourists, coming to make merit, pray for health and wealth, and burn paper offerings for their ancestors.",
     "category": "temple",
     "address": "423 ถ. เจริญกรุง Khwaeng Pom Prap, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
     "address_th": "423 ถ. เจริญกรุง แขวงป้อมปราบ เขตป้อมปราบศัตรูพ่าย กรุงเทพมหานคร 10100",
@@ -21453,21 +21471,29 @@
     "tag": "evergreen",
     "area": "Pom Prap Sattru Phai",
     "temple": {
-      "deity_zh": "釋迦牟尼佛、觀音菩薩、太歲星君等（華人大乘佛寺）",
+      "deity_zh": "大殿供奉「三寶佛」——釋迦牟尼佛、阿彌陀佛和藥師佛，旁邊還有十八羅漢。進門會先經過四大天王殿。大殿右側供奉多位神明，包括太歲星君、醫神華佗、財神爺、濟公和彌勒佛。",
       "wishes_zh": [
-        "拜法跟台灣的廟很像。華人多半來安太歲、補財庫，也會為家人求平安和健康。"
+        "龍蓮寺最有名的是「安太歲、改運、消災解厄」。華人相信每年犯太歲的生肖可能會遇到阻礙，所以會來這裡拜太歲化解。此外也有很多人來求健康、財運和平安。"
       ],
       "steps_zh": [
-        "在入口處買香和供品",
-        "跟台灣的廟一樣，依序拜各殿",
-        "要安太歲或點光明燈，到服務處登記"
+        "參拜順序是「由外而內」：",
+        "先拜寺門口的守護神",
+        "進門後參拜四大天王",
+        "進入大殿參拜三寶佛",
+        "再依序參拜右側的太歲星君、財神等神明",
+        "需要安太歲、改運的人，可以向寺方購買專用的供品組，依照工作人員的指示進行"
       ],
       "offerings_zh": [
-        "跟台灣的廟一樣，準備香、蠟燭、金紙，再帶些水果或餅乾。想點光明燈或太歲燈的話，到服務處登記付費。"
+        "龍蓮寺的供品不用煩惱，寺方就有販售安太歲、改運專用的供品組，內容通常包括寫上姓名和生辰的紅紙、金銀紙、香、蠟燭和水果，每間寺廟的組合略有不同。一般參拜的話，華人習慣準備 3 支香，分別敬天、地、人，再搭配 1 到 2 支紅蠟燭，以及單數的水果（例如 3、5 或 9 樣）和甜點。寺外的攤販也有賣現成的供品組，像是 5 顆金桔、春捲或泰式傳統甜點組，很方便。"
       ],
+      "hours_zh": "每日約 07:00–18:00。農曆新年等重大節日期間會延長開放，除夕夜甚至會通宵開放。",
       "tips_zh": [
-        "農曆新年前後人非常多",
-        "出寺之後就是耀華力路，可以接著逛中國城"
+        "安太歲、改運的流程請以寺方工作人員的指示為主",
+        "寺內香火很旺，節慶期間人多又煙霧瀰漫，帶小孩要特別留意",
+        "可以拍照，但不要用閃光燈，也不要擋到正在參拜的信眾",
+        "交通：MRT Wat Mangkon 站 3 號出口，步行約 2 分鐘",
+        "入場免費",
+        "拜完可以順遊耀華力路的街頭美食、三聘市場或金佛寺"
       ],
       "thai": [
         {
@@ -21483,21 +21509,29 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "Shakyamuni Buddha, Guanyin, Tai Sui and more (Chinese Mahayana temple)",
+      "deity_en": "The main hall enshrines the “Three Buddhas” — Shakyamuni, Amitabha and the Medicine Buddha — along with the Eighteen Arhats. You’ll pass through the Hall of the Four Heavenly Kings on the way in. To the right of the main hall are shrines to several more deities, including Tai Sui (the God of the Year), Hua Tuo the God of Medicine, the God of Wealth, Ji Gong and the Maitreya Buddha.",
       "wishes_en": [
-        "Worship here works much like a temple in Taiwan or Hong Kong. Chinese visitors come to appease Tai Sui in their zodiac year, to boost their fortune, and to pray for their family’s safety and health."
+        "The temple is best known for “Tai Sui” rituals — changing your luck and warding off misfortune. In Chinese belief, people whose zodiac sign clashes with the current year may face obstacles, so they come here to pray to Tai Sui. Many also come to pray for health, wealth and safety."
       ],
       "steps_en": [
-        "Buy incense and offerings at the entrance",
-        "Pray at each hall in turn, as at any Chinese temple",
-        "To appease Tai Sui or light a blessing lamp, register at the service desk"
+        "Worship goes “from the outside in”:",
+        "Begin with the guardian deity at the temple entrance",
+        "Pay respects to the Four Heavenly Kings as you enter",
+        "Enter the main hall and worship the Three Buddhas",
+        "Then continue to Tai Sui, the God of Wealth and the other deities on the right side",
+        "If you want a Tai Sui or luck-changing ritual, buy the dedicated offering set from the temple and follow the staff’s instructions"
       ],
       "offerings_en": [
-        "Just as at a temple in Taiwan or Hong Kong, bring incense, candles and joss paper, plus some fruit or biscuits. Blessing lamps and Tai Sui lamps can be arranged and paid for at the service desk."
+        "You don’t need to worry about preparing offerings here — the temple sells special sets for Tai Sui and luck-changing rituals, which usually include a red paper slip for your name and birth date, gold and silver joss paper, incense, candles and fruit, with the exact contents varying by temple. For regular worship, Chinese tradition calls for 3 incense sticks — honouring heaven, earth and humanity — with 1 or 2 red candles, an odd number of fruits (such as 3, 5 or 9) and some sweets. Stalls outside the temple also sell ready-made sets, such as 5 golden oranges, spring rolls or traditional Thai dessert sets."
       ],
+      "hours_en": "Daily, roughly 07:00–18:00. Hours are extended during major festivals such as Chinese New Year, and the temple even stays open overnight on New Year’s Eve.",
       "tips_en": [
-        "Extremely crowded around Chinese New Year",
-        "Yaowarat Road is right outside, so carry on exploring Chinatown"
+        "For Tai Sui and luck-changing rituals, follow the temple staff’s instructions",
+        "The temple is very busy with incense; during festivals it gets crowded and smoky, so keep children close",
+        "Photography is fine, but avoid flash and don’t block worshippers",
+        "Getting there: MRT Wat Mangkon Station, Exit 3, about a 2-minute walk",
+        "Admission is free",
+        "Combine your visit with Yaowarat street food, Sampeng Market or Wat Traimit (Golden Buddha)"
       ]
     },
     "approved_at": "2026-11-02T11:53:07.281Z",
@@ -21516,8 +21550,8 @@
     "name_zh": "印度廟（Sri Maha Mariamman）",
     "name_en": "Sri Maha Mariamman Temple (Wat Khaek)",
     "name_th": "วัดพระศรีมหาอุมาเทวี (วัดแขก)",
-    "description_zh": "在 Silom 路上，曼谷最老的印度教廟，外牆滿滿是彩色的神像雕刻。泰國人叫它「Wat Khaek」。主祀烏瑪女神，祭司會幫信眾在額頭點紅。每年十月的九夜節是最熱鬧的時候，整條 Silom 路都會封起來遊行。",
-    "description_en": "Bangkok’s oldest Hindu temple, on Silom Road, its tower covered in painted deities. Thais call it Wat Khaek. The Navaratri festival in October closes Silom Road for a parade.",
+    "description_zh": "印度廟位在 Silom 路與 Pan 路的轉角，是曼谷最主要的印度教寺廟，1879 年由來自南印度的泰米爾移民所建，採用南印度建築風格。寺廟外牆色彩繽紛，雕滿了大大小小、形態各異的印度神祇，非常好認。踏進寺內，迎面是萬壽菊花環的鮮豔色彩和茉莉香的氣味，和外面喧囂的 Silom 路形成強烈對比。除了印度信眾，這裡也很受泰國人和華人歡迎，大家相信印度神明能幫助事業順利。寺廟周圍是曼谷的印度社區，有很多印度餐廳和商店，值得順道走走。",
+    "description_en": "Standing on the corner of Silom and Pan roads, Sri Maha Mariamman is Bangkok’s main Hindu temple, built in 1879 by Tamil immigrants from South India in the South Indian architectural style. Its colourful exterior is covered in carvings of Hindu gods and goddesses in every shape and size, making it impossible to miss. Step inside and you’re greeted by bright marigold garlands and the sweet scent of jasmine incense — a striking contrast to the bustle of Silom Road outside. Beyond the Indian community, the temple is also popular with Thai and Chinese devotees who believe the Hindu gods can help them succeed in business. The surrounding area is Bangkok’s Indian neighbourhood, full of Indian restaurants and shops worth exploring.",
     "category": "temple",
     "address": "2 Thanon Pan, Khwaeng Bang Rak, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
     "address_th": "2 ถ. ปั้น แขวงบางรัก เขตบางรัก กรุงเทพมหานคร 10500",
@@ -21536,23 +21570,29 @@
     "tag": "evergreen",
     "area": "Bang Rak",
     "temple": {
-      "deity_zh": "烏瑪女神 Sri Maha Mariamman（濕婆的妻子）",
+      "deity_zh": "主神是烏瑪女神（Sri Maha Mariamman，泰國稱 พระแม่อุมาเทวี，也就是雪山女神帕爾瓦蒂）。她是濕婆的妻子、象神的母親，也是印度教「三大女神」之一，另外兩位是吉祥天女和辯才天女。寺內還供奉象神、濕婆、黑天、毗濕奴、戰神穆魯甘、吉祥天女和迦梨女神。",
       "wishes_zh": [
-        "主要求平安、健康和家庭和睦，做生意的人也會來求事業順利。"
+        "權勢、地位、事業成功與家庭圓滿。在印度教中，烏瑪女神是掌管權勢與威望的女神，相傳常常賜予虔誠參拜的人地位與成就。也有很多人來這裡求愛情與好姻緣。"
       ],
       "steps_zh": [
-        "在門口脫鞋，寄放鞋子",
-        "在門口攤位買花環和供品",
-        "進廟後把供品交給祭司，祭司祝禱後會在你額頭點紅",
-        "順時針繞行各神龕"
+        "在寺外或寺內購買供品盤",
+        "進入寺廟前先脫鞋",
+        "進入寺內後，依照現場信眾和祭司的指引參拜各位神明",
+        "雙手合十，誦念烏瑪女神的祈禱文，最簡短的是「Om Jai Mata Di」",
+        "心中說出姓名與願望"
       ],
       "offerings_zh": [
-        "門口的攤位有賣花環、椰子、香蕉和蓮花，買好後進廟交給祭司就可以。"
+        "如果沒有事先準備，寺內就有販售現成的供品盤，價格大約 60 泰銖和 100 泰銖兩種，購買同時也算是一種功德。想自己準備的話，可以選蓮花或萬壽菊花環、乳香或香料，飲品可以從清水、紅色汽水、牛奶或甘蔗汁中挑一樣，再搭配口味溫和、香味不濃烈的甜點，或素食、蔬食料理。寺外也有攤販在賣花環和供品。要特別注意，這裡嚴格禁止供奉任何肉類和蛋類，供品必須是純素的。"
       ],
+      "hours_zh": "週一至週四：06:00–20:00/週五：06:00–21:00/週六、週日：06:00–20:30",
       "tips_zh": [
-        "廟內禁止拍照",
-        "穿著要遮肩、過膝",
-        "十月九夜節期間人潮非常多"
+        "寺內嚴禁拍照，只能在中庭和外部拍攝；甚至在外面拍照，有時也會引來祭司不悅的眼光，拍照前請多留意",
+        "進入寺內必須脫鞋",
+        "穿著要遮住肩膀，不可以穿短褲",
+        "嚴禁攜帶或供奉肉類、蛋類",
+        "交通：BTS Surasak 站，步行一小段即可抵達",
+        "入場免費",
+        "九夜節期間 Silom 路一帶會封路，交通要提早規劃"
       ],
       "thai": [
         {
@@ -21568,23 +21608,29 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "Sri Maha Mariamman, the goddess Uma (wife of Shiva)",
+      "deity_en": "The main deity is Sri Maha Mariamman, known in Thailand as Uma Devi (also called Parvati). She is the wife of Shiva, the mother of Ganesha, and one of Hinduism’s three great goddesses, alongside Lakshmi and Saraswati. The temple also houses Ganesha, Shiva, Krishna, Vishnu, Lord Murugan, Lakshmi and Kali.",
       "wishes_en": [
-        "People mostly pray for safety, health and family harmony, and business owners come for success in their work."
+        "Power, status, career success and a happy family. In Hinduism, Uma Devi is the goddess of power and prestige, believed to grant rank and achievement to those who worship her faithfully. Many also come to pray for love and a good partner."
       ],
       "steps_en": [
-        "Take off your shoes at the door and leave them at the counter",
-        "Buy garlands and offerings at the stalls by the entrance",
-        "Inside, hand your offerings to the priest, who will bless you and mark your forehead",
-        "Walk clockwise past each shrine"
+        "Buy an offering tray outside or inside the temple",
+        "Remove your shoes before entering",
+        "Once inside, follow the lead of local devotees and the priests as you pay respects to each deity",
+        "Press your palms together and recite Uma Devi’s prayer — the simplest version is “Om Jai Mata Di”",
+        "Silently state your name and your wish"
       ],
       "offerings_en": [
-        "Stalls at the entrance sell garlands, coconuts, bananas and lotus flowers. Buy what you like and hand it to the priest inside."
+        "If you haven’t prepared anything, ready-made offering trays are sold inside the temple for around 60 or 100 baht, and buying one also counts as making merit. If you’d like to bring your own, choose lotus flowers or marigold garlands and frankincense or other fragrances, plus one drink — water, red soda, milk or sugarcane juice — along with mild, lightly scented sweets or vegetarian dishes. Stalls outside the temple also sell garlands and offerings. Please note that meat and eggs of any kind are strictly forbidden; all offerings must be purely vegetarian."
       ],
+      "hours_en": "Monday–Thursday: 06:00–20:00/Friday: 06:00–21:00/Saturday–Sunday: 06:00–20:30",
       "tips_en": [
-        "No photos inside the temple",
-        "Cover shoulders and knees",
-        "Very crowded during Navaratri in October"
+        "No photography inside the temple — only the courtyard and exterior are allowed. Even taking photos from outside can sometimes draw a disapproving look from the priests, so be mindful",
+        "Remove your shoes before entering",
+        "Cover your shoulders and don’t wear shorts",
+        "Meat and eggs are strictly forbidden",
+        "Getting there: BTS Surasak Station, then a short walk",
+        "Admission is free",
+        "Silom Road closes during Navaratri, so plan your transport ahead"
       ]
     },
     "approved_at": "2026-11-02T11:53:07.840Z",
@@ -21601,10 +21647,10 @@
   {
     "id": "2bee248e-c261-41e3-985d-b818922c1cf5",
     "name_zh": "臥佛寺",
-    "name_en": "Wat Phra Chetuphon Wimon Mangkhalaram Rajwaramahawihan",
-    "name_th": "วัดพระเชตุพนวิมลมังคลาราม ราชวรมหาวิหาร",
-    "description_zh": "曼谷最古老的寺廟之一，裡面有一尊 46 公尺長的金色臥佛，腳底鑲滿螺鈿。臥佛後面有一整排 108 個銅缽，換一杯硬幣一缽丟一枚，是來這裡必做的祈福。寺裡也是泰式按摩的發源地，有按摩學校可以直接體驗。",
-    "description_en": "One of Bangkok’s oldest temples, home to a 46-metre golden reclining Buddha. Drop a coin into each of the 108 bronze bowls behind it for good luck. The birthplace of Thai massage, with a school on site.",
+    "name_en": "Wat Pho",
+    "name_th": "วัดโพธิ์",
+    "description_zh": "臥佛寺位在曼谷舊城區、大皇宮旁邊，是曼谷最具代表性的寺廟之一。寺內最有名的就是巨大的金色臥佛，建於拉瑪三世時期，以磚石砌成後全身貼金，長 46 公尺、高 15 公尺，是泰國第三大、曼谷最大的臥佛。臥佛的兩個腳底板，用珍珠母貝鑲嵌出 108 種吉祥圖案，是很多人必拍的重點。拉瑪三世時期曾全面修繕臥佛寺，並把各種學問刻在寺內各處，讓一般百姓也能學習，所以這裡也被視為泰國最早的「公共大學」，至今仍是知名的泰式按摩學校所在地。\n\n冷知識：很多人以為大臥佛是寺裡的主佛，其實不是，主佛供奉在另一座大殿裡。",
+    "description_en": "Located in Bangkok’s Old Town next to the Grand Palace, Wat Pho is one of the city’s most iconic temples. Its highlight is the giant golden Reclining Buddha, built during the reign of King Rama III from brick and plaster and covered entirely in gold leaf. At 46 metres long and 15 metres high, it is the third-largest reclining Buddha in Thailand and the largest in Bangkok. The soles of its feet are inlaid with mother-of-pearl depicting 108 auspicious symbols — a must-see photo spot. King Rama III also had the entire temple restored and had texts on many subjects inscribed throughout the grounds so ordinary people could learn from them, which is why Wat Pho is often called Thailand’s first public university. Today it is still home to a famous Thai massage school.\n\nFun fact: Many people assume the Reclining Buddha is the temple’s principal Buddha image — but it isn’t. The principal image is enshrined in a separate ordination hall.",
     "category": "temple",
     "address": "2 Thanon Sanam Chai, Khwaeng Phra Borom Maha Ratchawang, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
     "address_th": "2 ถนน สนามไชย แขวงพระบรมมหาราชวัง เขตพระนคร กรุงเทพมหานคร 10200",
@@ -21623,22 +21669,28 @@
     "tag": "evergreen",
     "area": "Phra Nakhon",
     "temple": {
-      "deity_zh": "臥佛（釋迦牟尼佛涅槃像）",
+      "deity_zh": "大臥佛（泰文 พระพุทธไสยาส），是「降伏阿修羅王羅睺」姿態的佛像。在泰國，臥佛也是星期二出生者的守護佛。",
       "wishes_zh": [
-        "來這裡多半是求平安、好運和健康。沿著臥佛背後的 108 個銅缽一路投硬幣，是最有名的祈福方式。"
+        "平安、福氣和愛情。泰國人和華人相信，參拜臥佛、禮拜佛足上的 108 吉祥圖案，能為自己和家人帶來平靜與幸福。此外，泰國有一種說法：臥佛能幫人「斬斷感情上的業障」，如果你感情一再受挫，或覺得遲遲遇不到對的人，可以來這裡求真愛。"
       ],
       "steps_zh": [
-        "買門票入寺，先到臥佛殿參觀",
-        "在殿內換一杯硬幣",
-        "沿著臥佛背後的 108 個銅缽，一缽丟一枚，邊走邊許願"
+        "先在殿外參拜，獻上供品",
+        "脫鞋進入臥佛殿，從佛頭一路走向佛腳，參拜臥佛",
+        "到佛腳前禮拜 108 吉祥圖案，祈求福氣",
+        "沿著臥佛背後的走廊，把硬幣依序投進 108 個銅缽，一缽一枚，象徵佛陀的 108 種美好特質，是很受歡迎的積功德方式",
+        "如果是來求愛情，建議選星期二來，並穿粉紅色衣服"
       ],
       "offerings_zh": [
-        "這裡最特別的是投硬幣：在臥佛殿內換一杯硬幣，沿著 108 個銅缽一缽丟一枚。另外也可以獻上蓮花和金箔。"
+        "一般參觀者最常做的，是在殿內花 20 泰銖換一缽小硬幣，投進那 108 個銅缽裡，整座大殿都迴盪著硬幣叮叮噹噹的聲音，非常特別。如果是特地來求愛情，泰國傳統會準備粉紅色的香 8 支、粉紅色蠟燭 8 支、金箔 8 片、8 泰銖，以及 3 束泰式米線配咖哩醬（ขนมจีนน้ำยา）和一瓶清水；也有人準備 8 朵粉紅蓮花。這些供品也可以直接向寺方購買，順便做功德。在殿外拜完之後，習俗是把米線拿去吃掉，再進殿參拜臥佛。"
       ],
+      "hours_zh": "08:00–18:30",
       "tips_zh": [
-        "需要購買門票，價格以現場公告為準",
-        "穿著要遮肩、過膝，不合規定可在門口借衣服",
-        "早上剛開門時人最少"
+        "服裝規定嚴格：必須遮住肩膀和膝蓋，不能穿無袖、短褲、短裙或透視裝；門口可以借沙龍",
+        "進入臥佛殿要脫鞋，建議穿好穿脫的鞋子",
+        "準備現金零錢，門票、硬幣和按摩都用得到",
+        "寺內有泰式按摩可以現場排隊，30 分鐘約 260 泰銖起，60 分鐘約 420 泰銖起",
+        "中午天氣非常熱，售票處排隊會很辛苦，建議早上去",
+        "可以搭渡輪過河，順遊對岸的鄭王廟"
       ],
       "thai": [
         {
@@ -21654,22 +21706,28 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "The Reclining Buddha (the Buddha entering nirvana)",
+      "deity_en": "The Reclining Buddha (Thai: พระพุทธไสยาส), depicted in the posture of subduing the demon king Rahu. In Thailand, the reclining Buddha is also the guardian Buddha for those born on a Tuesday.",
       "wishes_en": [
-        "Most visitors pray for safety, good luck and health. Dropping a coin into each of the 108 bronze bowls behind the Buddha is the best-known way to make a wish."
+        "Peace, blessings and love. Thai and Chinese devotees believe that paying respects to the Reclining Buddha and the 108 auspicious symbols on its feet brings peace and happiness to themselves and their families. There’s also a Thai belief that the Reclining Buddha can “cut karmic ties” in love — so if you’ve had repeated heartbreak or feel blocked from meeting your soulmate, this is the place to pray for true love."
       ],
       "steps_en": [
-        "Buy a ticket and head to the Reclining Buddha hall first",
-        "Exchange money for a cup of coins inside the hall",
-        "Walk along the 108 bronze bowls behind the Buddha, dropping a coin in each as you make your wish"
+        "Begin by making your offerings outside the hall",
+        "Remove your shoes and enter the Reclining Buddha hall, walking from the head towards the feet",
+        "Pay respects to the 108 auspicious symbols on the Buddha’s feet",
+        "Walk along the corridor behind the statue, dropping one coin into each of the 108 bronze bowls. They symbolise the Buddha’s 108 virtues, and this is a popular way to make merit",
+        "If you’re praying for love, visit on a Tuesday and wear pink"
       ],
       "offerings_en": [
-        "The signature offering here is coins: exchange money for a cup of them inside the hall and drop one into each of the 108 bronze bowls. Lotus flowers and gold leaf can also be offered."
+        "The most popular offering for visitors is to exchange 20 baht for a bowl of small coins inside the hall, then drop them one by one into the 108 bronze bowls — the whole hall rings with the sound of falling coins. If you’ve come specifically to pray for love, Thai tradition calls for 8 pink incense sticks, 8 pink candles, 8 sheets of gold leaf, 8 baht, 3 bundles of Thai rice noodles with curry sauce (khanom jeen nam ya) and a bottle of water; some also bring 8 pink lotus flowers. These can also be bought from the temple as a way of making merit. By custom, after praying outside you eat the noodles yourself, then go inside to pay respects to the Reclining Buddha."
       ],
+      "hours_en": "08:00–18:30",
       "tips_en": [
-        "Entry requires a ticket. Check the price posted on site",
-        "Cover shoulders and knees. Clothing can be borrowed at the gate",
-        "Quietest right at opening time"
+        "Strict dress code: shoulders and knees must be covered; no sleeveless tops, shorts, short skirts or see-through clothing. Sarongs are available at the gate",
+        "Remove your shoes before entering the Reclining Buddha hall — slip-on shoes make this easier",
+        "Bring small cash for tickets, coins and massages",
+        "Walk-in Thai massages are available on site, from about 260 baht for 30 minutes and 420 baht for 60 minutes",
+        "Midday heat can be intense and ticket queues exhausting, so morning visits are best",
+        "Take the ferry across the river to visit Wat Arun on the same trip"
       ]
     },
     "approved_at": "2026-11-02T11:53:08.367Z",
@@ -21688,8 +21746,8 @@
     "name_zh": "娜娜女鬼廟（Mae Nak）",
     "name_en": "Wat Mahabut (Mae Nak Phra Khanong)",
     "name_th": "วัดมหาบุศย์ (แม่นาคพระโขนง)",
-    "description_zh": "在 On Nut 附近的 Wat Mahabut 寺內，供奉泰國最有名的鬼故事主角娜娜。傳說她難產過世，卻一直等丈夫從戰場回家。泰國男生抽兵役前會來求不中籤，也有人來求平安生產和樂透。神壇前堆滿了給她的泰式衣服、化妝品，還有給她孩子的玩具。",
-    "description_en": "Inside Wat Mahabut near On Nut, the shrine of Mae Nak, heroine of Thailand’s most famous ghost story. Young men come to pray their way out of the military draft lottery.",
+    "description_zh": "娜娜女鬼廟位在 On Nut 區的瑪哈布寺（Wat Mahabut）裡，就在寺院最後方、運河旁。瑪哈布寺建於大城王朝末期，約西元 1762 年，因為寺內有娜娜的神壇，泰國人習慣直接叫它「帕卡農娜娜寺」。\n\n這裡供奉的是泰國最有名的鬼故事主角——娜娜（Mae Nak）。傳說她的丈夫麥（Mak）出征打仗時，娜娜在生產中難產過世，但她對丈夫的愛太深，化成鬼魂繼續和回家的丈夫一起生活。後來丈夫發現真相，逃到瑪哈布寺躲避，娜娜也追了過來，最後村民請來法師，娜娜才離開人間、不再糾纏。這段故事被拍成無數電影和電視劇，娜娜也從令人害怕的女鬼，變成泰國人眼中「堅貞愛情」的象徵，被尊稱為「娜娜奶奶」（ย่านาค）。",
+    "description_en": "The Mae Nak Shrine sits at the very back of Wat Mahabut in the On Nut area, right beside the canal. Wat Mahabut dates back to the late Ayutthaya period, around 1762, and because of the shrine, locals usually just call it “Wat Mae Nak Phra Khanong.”\n\nThe shrine honours Mae Nak, the heroine of Thailand’s most famous ghost story. Legend has it that while her husband Mak was away at war, Nak died in childbirth — but her love for him was so strong that she returned as a ghost and continued living with him when he came home. When Mak discovered the truth, he fled to Wat Mahabut for refuge, but Nak followed him there. Eventually the villagers called in an exorcist, and Nak finally departed this world. The story has been retold in countless films and TV series, and Mae Nak has transformed from a fearsome ghost into a symbol of faithful, undying love — lovingly called “Grandma Nak” (Ya Nak) by Thais.",
     "category": "temple",
     "address": "749 On Nut 7, On Nut, Khet Suan Luang, Krung Thep Maha Nakhon 10250",
     "address_th": "749 อ่อนนุช 7 แขวงอ่อนนุช เขตสวนหลวง กรุงเทพมหานคร 10250",
@@ -21708,21 +21766,29 @@
     "tag": "hidden_gem",
     "area": "Suan Luang",
     "temple": {
-      "deity_zh": "娜娜 Mae Nak（泰國民間傳說人物）",
+      "deity_zh": "娜娜（Mae Nak）和她的嬰兒。神壇中央是娜娜抱著孩子的雕像，周圍掛滿信眾供奉的泰式傳統服飾，還有她的畫像。",
       "wishes_zh": [
-        "泰國男生抽兵役前會來求不要中籤，孕婦來求平安生產，也有人來求樂透和偏財，或是求好姻緣。"
+        "愛情：祈求像娜娜一樣堅貞不移的真愛",
+        "求子、順產：因為娜娜是在生產中過世，所以吸引了很多孕婦前來祈求平安生產",
+        "樂透號碼：很多人會在泰國政府彩券開獎前一晚來這裡求明牌",
+        "免服兵役：每年 4 月泰國抽籤徵兵前，會有很多年輕男生和家人來祈求不要被抽中"
       ],
       "steps_zh": [
-        "在寺內攤位買香、花環和供品",
-        "到娜娜神壇前點香，說出名字和願望",
-        "把供品放在神壇前"
+        "走進瑪哈布寺後，先參拜「微笑佛」（หลวงพ่อยิ้ม），為自己增添福氣",
+        "往寺院後方走到娜娜神壇，向娜娜和她的孩子獻上香、蠟燭和花",
+        "雙手合十，心中說出自己的願望",
+        "願望實現後回來還願，送上泰式傳統服飾、化妝品，或是給嬰兒的衣服和玩具"
       ],
       "offerings_zh": [
-        "娜娜的供品很特別，大家會送泰式傳統服裝和化妝品給她，也會送嬰兒衣服和玩具給她的孩子，再加上花環和香。寺內攤位都買得到。"
+        "娜娜神壇的供品和其他神明很不一樣，最具代表性的是送給娜娜和她孩子的「生活用品」。基本參拜時，準備 2 支香、1 支蠟燭，再加上花環或鮮花就可以了，寺內也有販售現成的供品組。如果是來還願，最常見的是獻上色彩鮮豔的泰式傳統服飾和化妝品給娜娜，以及嬰兒的衣服和玩具給她的孩子，也有人會送上泰式小房子模型。走進寺院的路上，兩旁就有很多攤販在賣供品、泰服和兒童玩具，不用事先準備。有些信眾則會把布條綁在寺內的菩提樹上，作為供奉。"
       ],
+      "hours_zh": "07:30–17:30",
       "tips_zh": [
-        "寺旁的小運河可以餵魚",
-        "從 BTS On Nut 搭計程車或摩托計程車比較方便"
+        "寺內可以拍攝環境和展示品，但不要用閃光燈；有人在祈禱時請把相機放下",
+        "神壇在運河旁，記得帶防蚊液",
+        "寺內運河旁可以餵魚",
+        "入場免費",
+        "寺院入口附近有很多算命攤，有興趣可以順便體驗"
       ],
       "thai": [
         {
@@ -21738,21 +21804,29 @@
           "en": "Said with palms together after praying, a blessing like \"so be it\""
         }
       ],
-      "deity_en": "Mae Nak, from Thai folk legend",
+      "deity_en": "Mae Nak and her baby. At the centre of the shrine is a statue of Nak holding her child, surrounded by traditional Thai dresses offered by devotees and portraits of her.",
       "wishes_en": [
-        "Young Thai men come before the military draft lottery hoping not to be picked, expectant mothers pray for a safe birth, and others ask for lottery luck or love."
+        "Love: for a love as faithful and unwavering as Nak’s",
+        "Children and safe childbirth: because Nak died giving birth, the shrine draws many pregnant women praying for a safe delivery",
+        "Lottery numbers: many come the night before the Thai government lottery draw hoping for lucky numbers",
+        "Military exemption: before Thailand’s annual military draft lottery each April, young men and their families come to pray they won’t be selected"
       ],
       "steps_en": [
-        "Buy incense, garlands and offerings at the stalls in the temple",
-        "Light incense at Mae Nak’s shrine and say your name and wish",
-        "Place your offerings in front of the shrine"
+        "When you enter Wat Mahabut, first pay respects to Luang Pho Yim (the “Smiling Buddha”) to bring yourself good fortune",
+        "Walk to the back of the temple to the Mae Nak shrine, and offer incense, a candle and flowers to Nak and her child",
+        "Press your palms together and make your wish",
+        "When your wish comes true, return to give thanks with traditional Thai dresses, cosmetics, or baby clothes and toys"
       ],
       "offerings_en": [
-        "Offerings to Mae Nak are unusual: people bring her traditional Thai dresses and makeup, plus baby clothes and toys for her child, along with garlands and incense. All are sold at stalls in the temple."
+        "Offerings at the Mae Nak shrine are unlike those for any other deity — the most iconic are everyday gifts for Nak and her baby. For a basic visit, 2 incense sticks, 1 candle and a garland or fresh flowers are all you need, and ready-made offering sets are sold at the temple. When returning to give thanks, the most common offerings are brightly coloured traditional Thai dresses and cosmetics for Nak, and baby clothes and toys for her child; some even bring model Thai houses. Stalls along the path into the temple sell offerings, Thai dresses and children’s toys, so there’s no need to prepare in advance. Some devotees also tie lengths of cloth around the temple’s Bodhi tree as an offering."
       ],
+      "hours_en": "07:30–17:30",
       "tips_en": [
-        "You can feed the fish in the canal beside the temple",
-        "Easiest by taxi or motorbike taxi from BTS On Nut"
+        "Photography of the grounds and displays is fine, but avoid flash and lower your camera when people are praying",
+        "The shrine is beside the canal, so bring insect repellent",
+        "You can feed the fish along the canal",
+        "Admission is free",
+        "There are many fortune-teller stalls near the temple entrance if you’d like to try one"
       ]
     },
     "approved_at": "2026-11-02T11:53:08.863Z",
