@@ -38,6 +38,10 @@ const TAG_META: Record<LocationTag, { emoji: string; zh: string; en: string; col
 
 const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'evergreen']
 
+// 爆紅時間（沒有就用上架時間）新到舊
+const trendTime = (l: Location) => new Date(l.trending_at ?? l.approved_at ?? 0).getTime()
+const byNewestTrending = (items: Location[]) => [...items].sort((a, b) => trendTime(b) - trendTime(a))
+
 // 每個首頁分區最多顯示幾筆（其餘按「看全部」進完整清單）
 const SECTION_LIMIT = 15
 // 篩選/搜尋的網格視圖一次顯示幾筆（其餘按「載入更多」），避免一次渲染上百張卡片
@@ -227,9 +231,10 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
       return [...filtered].sort((a, b) =>
         haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, a.lat, a.lng) - haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, b.lat, b.lng))
     }
+    if (activeTag === 'trending') return byNewestTrending(filtered)
     return filtered
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtered, sortBy, userLocation, landmark])
+  }, [filtered, sortBy, userLocation, landmark, activeTag])
 
   const sectionsByTag = useMemo(() => {
     if (!showSections) return null
@@ -237,7 +242,10 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
     for (const tag of TAG_ORDER) {
       const items = filtered.filter((l) => resolveTag(l) === tag)
       // 用分頁種子洗牌：一進站隨機，返回維持同序；每個分區用不同 offset 避免四區洗法一致
-      if (items.length > 0) map[tag] = shuffleSeed != null ? seededShuffle(items, shuffleSeed + TAG_ORDER.indexOf(tag)) : items
+      if (items.length === 0) continue
+      // 話題爆紅：最新標成爆紅的排最前面；其他分區照舊隨機
+      map[tag] = tag === 'trending' ? byNewestTrending(items)
+        : shuffleSeed != null ? seededShuffle(items, shuffleSeed + TAG_ORDER.indexOf(tag)) : items
     }
     return map
   }, [filtered, showSections, shuffleSeed])
