@@ -34,7 +34,7 @@ async function handlePOST(req: NextRequest) {
         ...(body.tag ? { tag: body.tag } : {}),
         approved_at: new Date().toISOString(),
       }
-      if (approved.tag === 'trending' && !approved.trending_at) approved.trending_at = new Date().toISOString()
+      if (approved.tag === 'trending' && !isTrendingFresh(approved)) approved.trending_at = new Date().toISOString()
       if (approved.tag === 'trending' && body.tag === 'trending' && item.tag !== 'trending' && item.tag) approved.base_tag = item.tag
       // 正式站沒有 Python，上架當下就把照片存成網站自己的檔案
       if (isOnline) approved = await txLocalizePhotos(tx, approved)
@@ -52,6 +52,8 @@ async function handlePOST(req: NextRequest) {
     id: uuidv4(),
     approved_at: new Date().toISOString(),
   }
+  // 手動選「話題爆紅」要記下時間，不然會被當成過期的爆紅，直接顯示成在地私藏
+  if (location.tag === 'trending') location.trending_at = new Date().toISOString()
   await transact(`新增 ${location.name_zh ?? location.name_en}`, async (tx) => {
     const loc = isOnline ? await txLocalizePhotos(tx, location) : location
     txWriteLocations(tx, [...await txLocations(tx), loc])
