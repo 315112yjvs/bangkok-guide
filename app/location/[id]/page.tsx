@@ -11,11 +11,11 @@ import { CATEGORY_META } from '@/lib/collections'
 
 export const revalidate = 3600
 
-// 以 slug 或舊 uuid 找地點；byUuid=true 代表是舊網址、需轉到新 slug 網址
+// 以 slug、舊 uuid 或舊 slug 找地點；byUuid=true 代表是舊網址、需轉到新 slug 網址
 function resolveLocation(param: string, locations: Location[]) {
   const bySlug = locations.find((l) => l.slug === param)
   if (bySlug) return { loc: bySlug, byUuid: false }
-  const byId = locations.find((l) => l.id === param)
+  const byId = locations.find((l) => l.id === param || l.old_slugs?.includes(param))
   if (byId) return { loc: byId, byUuid: true }
   return { loc: null, byUuid: false }
 }

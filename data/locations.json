@@ -324,7 +324,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-05T09:13:43.970Z",
-    "slug": "place-65efab73",
+    "slug": "krua-phitsamai",
     "photo_refs": [
       "places/ChIJX4tkNjWZ4jARa74olkgPf8g/photos/Aa-ngMZO1U1vnO-1-RH0DYsELqMISWK3B7r4S5KfpPghn9Uql6pAzI0gMNp5tPN1AKYIFXuz86QLzXXki3gMWKg38K4KbLIo6nieFArBblrYZzAGErAvV08_2-ZXHxvnyC85XGi7bEeuSRgFaV-qZU3ZZ9jASIfVYBFwXKYSfhxybQzeRW4GEjndBNY5-2HC_bBAQ3orGlrZbR1UeRHjO3w3jo4dxZo0bQ3liZm7l6Z691myGzGwl3o15lB_XXOpLvPpG6BH8I0kKJnxHwrXN4nU89uN2i87UeG28zH_q4CD9JeiNTW2u8jI-QDaBph_pzqc9fj8-gigo2bqibmAdK0ENLMtRwCcIMYpgWknkcT0t-72CGAi16DvE6GSTFcfnCQOfgdzdfHlFjX-xxKoaMdrybU8j71SE2W3TDUm0j_HqZzqrw",
       "places/ChIJX4tkNjWZ4jARa74olkgPf8g/photos/Aa-ngMa1mAYxyjwBegyM1mDllT_Dld0tXO3yYzwSAJA-cgZ4hvOzxSPyYm2Lim2Ka_0-jyLaeh1Tixxe-jAu_ENVT22R1ibQGmtA1pwQyp9cqAMLXk3AUPuvWI0w5CjxphumH5WswJtyiLnvGbvJ-JJIQDTW8VcG5oBVdZqLk9jyG9XbrJrKj8mu7W1ZOQ5FXpiou28hMCLYx5d0LcXP6cMJnjsNMPfOfzzWMe5GXk45ewKgOIQdHZ5HAr3o9b0QyaIW_MRP1EX_NcjuxYgpMFyOSUbndNiK9fj2JmCtd27vZGLVfGhFZDjP7FHeoiOawsLrMFAs-gDpdXrpgn9XiiND4ap8bh9IHgIf5RktGBRjtEiYBRj3H_9O_XEm6ZXwmFrsrcWZs6xRCK5YUkGCLXXg-7KHqJth3Vm1MZERONluyvCp",
@@ -337,7 +337,10 @@
       "Isaan Cuisine",
       "Spicy"
     ],
-    "name_th": "ครัวพิศมัย"
+    "name_th": "ครัวพิศมัย",
+    "old_slugs": [
+      "place-65efab73"
+    ]
   },
   {
     "name_en": "Ping Noei (Victory Monument)",
@@ -362,7 +365,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-05T09:14:49.621Z",
-    "slug": "place-f24416bd",
+    "slug": "ping-noei-victory-monument",
     "photo_refs": [
       "places/ChIJcefWVF6f4jARoBCU--L6YXI/photos/Aa-ngMah9gkXZB_lvJhxvvc_aJeFouRppuGqbxKQ7eAfHArPjVtSatcWdB6_WZL_G0-tvLyqGMf4bcC_WHF1ypbzMaouJEIsqOlMs7OrI1bJHabTK1ctw_QfROctUyawLRFSitv_wx8yf6WUvY7SWiEci653qfZpm35-R6QkMRbwn2ChQDhiJHaNnUT7BiAa5ny0MOSxsK93cLN5Mxe2aEVYD8fV9TpZCcxYMo84xa5zfPzuM5VCg9HfLkLMHMNdRtFuo6pf-zj-YKnvbKEAWpP2NZTo1lq77fAGCNjhuxsUe3utPlf6NC9zeMI-Uj_HSr9xMjLlGVPr5B7i15bCvShllJtUi4-bKl8OKEii5CZAP6ZjUuHOzhAnQVB52j0TAsuLeI8MK_xVZG-wNZQN_HlirTwKe_RAlGg4Nodzw31IIsM",
       "places/ChIJcefWVF6f4jARoBCU--L6YXI/photos/Aa-ngMZictwI6dASPql0MfSJXAjvxtxl8k1p-QBBY8NdNw8cjXlgr6rgukPZmzWXdKzCKR4HbUi-ZlXaKRNbzOXDZr88Ylo7VN6TiOTuZ_zD5S75n9kJvTrfAfRvd18J0vpVZhMzBr7r0g0N9WvuobI3bSj-GeLSHUtWCDd9lFFY1ybBYLpWSiy3AGDT9EjZd4Hnry_fVNQLHJqnu4cwYLHTKl3TwCWxaoxyStNGztNBOnhNwJ7tCp9TYlGg_DepvgqRUrCjRqYDs_MRJQCoC12ro7znjXEvq7nu5jottehendCkPhR_meoUJ405BROwlRXBHeePseTDKw6010xj_0RnnxjznQorcy7uztFeZN5JqrkxfE8k48wywtYmxZMnCvJq0BhlmCm4PfeoXIwksPykZVKCfuivUOIvp1KAG2hb8VYhXe4M",
@@ -375,7 +378,10 @@
       "All-you-can-eat",
       "Rooftop View"
     ],
-    "name_th": "ปิ้งเนย สาขาอนุสาวรีย์ชัยฯ"
+    "name_th": "ปิ้งเนย สาขาอนุสาวรีย์ชัยฯ",
+    "old_slugs": [
+      "place-f24416bd"
+    ]
   },
   {
     "name_en": "Landhaus Bakery",
@@ -998,7 +1004,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-05T11:25:04.544Z",
-    "slug": "place-5138774e",
+    "slug": "hot-pot-hoi-ya",
     "photo_refs": [
       "places/ChIJ0QGgJQCd4jAR8AWrLlvkuEg/photos/Aa-ngMauXkCvqWOZKYprdyZ0QDE6B1HzxVxA5Gm9RlV5DFCeaNUMUJBFwxTgkZ6Tk0D828EyzrMiizIakPsi_bLOg5WXc5DmHNrfeB2Bt8-NGix825KwKT_gJRJbKgEFNvweLvPRstJSwkXNqkFZYj70Wr-RbTaLPQlPCLozjVZWca9FnBbVlkyW1Oalx6GsCaxBLHQkzaJ3Lb5lFFTwVfNHBG2QIBp31X37drA7zhjQGtMJRhX5Yxg8RP2hfyFnBE2vvw0aae-KZ2tCtZ2CNaNwJwA_sjQp0bf1lKnz8dDrV0TA3ILpMpViV1hmXENohpMsBUb2_sS70wk28wXT2OxufbHt_lFAZpw9kGfcDNkD1Np6oGTWYoJ3FbV62zQ6jCQ15Lin9wczDZOvhcHrW9-hdcZaex9j-1msNxWHl9FGgJL6h9ZJH71AkeN5LfjSVSva",
       "places/ChIJ0QGgJQCd4jAR8AWrLlvkuEg/photos/Aa-ngMZEa_3QIpDwbPJoPWPFQ__9krqcUeF4Wf-u1QPZtHxn9uhOdzzZaPz6Orc9UWnuwlypqOsr5s0BDlAqpOeLhKdSIx0AA1IwPhX_vp98fR3pC03rok-Fcv3kOQDqmSuCqSeIHyDB6DeMUizkucGeDTRERwhojU8tNwegM-zBE3LxQQe90f4U9Mym9iVEcT3D1JDYYjGT2dfdpOhhURxJGV4RPJKcxcgUBDJiC4JXy7G-sQJBxuvygwuD7H2JAVdHvVbCw7sZfcgxFmGozTIKeuOBzJETOrPufZCi2jTQyFnVWNNi0dEPyQloSEubPkZBNKAG3Oi424iyCTviTVFm2WjwewWweg_7ztOgIH6qKwjyva8P9Xon82t632eXO8cfywJFcymPE6a0QA37gKYCF1vMjCvjzmVZoSyjpd6-joVmrYT60csD8PK4yqcJaIad",
@@ -1013,7 +1019,10 @@
     ],
     "name_th": "ร้านฮ๊อทพ๊อทหอยย๊า",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "old_slugs": [
+      "place-5138774e"
+    ]
   },
   {
     "name_en": "Peppina (Sukhumvit Flagship Branch)",
@@ -3361,7 +3370,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-06-09T14:30:11.914Z",
-    "slug": "place-4f3c54f2",
+    "slug": "heng-hoi-tod-ekkamai",
     "photo_refs": [
       "places/ChIJsV4dIAif4jARO5AfplTr-GY/photos/Aa-ngMYoQxSwg4jvR_Xxzg2CJjtJUNQxKGbcL30wjRgjOMv9Gjab5MF4m5vqLwPqR22ZkMV83CpauLThOMX1w0eAfAyQZUW4DNshxv5ocIxHO35Y0KwdaSEPazypmArjh8w8nNPQDqDR4TdCneFmU_HFt_cSE70U8hxK7gU4Hd3S82lOAaW1g_rbsc9xwLNtpEosFIsX4Sj3PO5rsgLZIzX1X8bk3oOcyWE_E4SsrvtPvJMYvE4mWj7a9pvNbn3U0bTa4erFtpblg027lnk_nvVJOb2zgGXUvG9hq1jvM1vDgQG1NF1_hIdoJvjYz-rb_CimTTxVa0D2Zd_UEPwASFrQ6jgaL3foC098dpYJ-5_cqjEA8uYa8c5xYP3B9EHax7t2mkD7LX1mIs39qeqFAresOkcQSAOPw0ReRofzfDp_vjVrizRnC04LXt7hK3HL5g",
       "places/ChIJsV4dIAif4jARO5AfplTr-GY/photos/Aa-ngMa5aZIyAFPbOn5NljvHIiVAgULghWtPhTZKZZ3EYLF3IsMZqLwQz9nb338YLawvnBikSm2V7GoYgYZTfsqsma-R5RVvXZo3Gan6k3h2ROm-CaAyyrTOeoNMhLaDJjbObyQgyhqpYrOLOvyDLLss9F7tqX8kSuIpDTqfvPCMRYCNuajukZMH6JqAasOyl406kInv9YmFOkfu2UVuJrYKc8ubnWnDnk3c_-AZ3mWSBZXvzOPEC8XngIfPPbS44pwSuFE90kO-BEghv2VKo2_1axEMW7i5Iz37qAr7vDNGCW_TWfgPJ7rOhWnJdtdZ24fa2VyQqCLok-EHFYKUE6dOlLciUoTktl8t_5L3PsiKxIPlmcYAN6VRwPB5yci9DvsIFgDwrNbwLETDH3SCaSit32dt1vlzUhWR-LSxU5nQVV0NikaXqnw-oL33dx4-K5cL",
@@ -3376,7 +3385,10 @@
     ],
     "name_th": "เฮงหอยทอด - เอกมัย",
     "address_th": "",
-    "hashtags": []
+    "hashtags": [],
+    "old_slugs": [
+      "place-4f3c54f2"
+    ]
   },
   {
     "name_en": "Johnny Market Ekkamai",
@@ -8902,7 +8914,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-07-01T07:26:36.016Z",
-    "slug": "place-a2b3bed8",
+    "slug": "kang-liang-heng-noodles",
     "photo_refs": [
       "places/ChIJH6qIQxaZ4jARTEYezBDhxvs/photos/Aa-ngMZJfY3CUqsJu3MA0Jcsha6B3Ch4c7U5YtBgHP4uq6gymuRdsCylbXqccDpxKuJw5iuddOev1EPdeGBe2q0BMoAEPSJZbMPLaW8M9wNu-DodVTnCqsTkgO_KHbfiMHcfGbzAyIJP07VmLmvl-O7VQuw7t0AsUuNI4qk6AKWmWnVp84ZpxeZRAonYcQRf8qrGKPcHeSoOy7h5659OFtJ_qdvCBCKDn4iLo6CTl0jTr1xVySQAzCThAgxRaU-_I8X_s4Im4Va88v9LugG4ObcJGmX7tG-DJcp_9oIQOc5EiG-1gvlzGMdmu4jd3pg5VCQayimLzAYem2Fbzs2lyhsGvkAGHHXN4578bob3EYOe-tjVB6X6haayh-AwD_FOPWkMtZEIpDzDqgh0LZ9lDoxpZjhJebPnVK8lGZni9pjt5q20ku4T9vE2EbWBLt7js8z4",
       "places/ChIJH6qIQxaZ4jARTEYezBDhxvs/photos/Aa-ngMapB1pRLt9eghZg28lBSGtV9WV1-zED5kK0SxFbhSyV9IyzN97DL9aBzuHRJqcO_KaCcpiTxRkK8Q_bbLnCPDqouOPyefDyCQVR21KXBKsYnSZHutMT5aJWH2LSg6Dovnw8welMLxcal4LwewMcFY1T0tgI0r7meSPSAIOYB-3tPCo8FnfSNqCSnr25fHhyLfz8DO_-40-6Dd2DPSHA_jjlg9fUl7-KIw7d1eAsUr5IiZiyRoghjtrR6W5dXTEFrQRCqnsnyjungN29GBXcac2bvl6OCXogn792DxvnryKit0P7ZFKJo8sI8PYlqIyMhZ8RyO0aov5CS46MUOqY3nR1JG3Zdwfi_iEzCCWzz4JDpSVLn_SaGJeCisw-7UJtpEWBylkl_Uzwqqx5oLUrQxvYbX-jIzEzvsndOX6lLHFTVEAT",
@@ -8915,7 +8927,10 @@
       "Stewed Pork Noodle",
       "Black Pepper Broth"
     ],
-    "name_th": "ก๋วยเตี๋ยวรสเด็ด กังเลี่ยงเฮง"
+    "name_th": "ก๋วยเตี๋ยวรสเด็ด กังเลี่ยงเฮง",
+    "old_slugs": [
+      "place-a2b3bed8"
+    ]
   },
   {
     "name_en": "Je Ju Noodle",
@@ -9055,7 +9070,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-07-01T07:42:08.746Z",
-    "slug": "place-eb108b73",
+    "slug": "somyong-tam-sua-silom",
     "photo_refs": [
       "places/ChIJAfAglSqf4jARX-ERTCN0xo8/photos/Aa-ngMbgdbs3hiwRSIVBIio1Okco7e2z722pD5B0vHCOh5_jCF2YnlJLuo3OYQPQ1EppgNn78HV11rhLS5NseJIEmZg6eqBiLRIZ2SeynCOBx6ysCDj1Oa89AtYXegjQzBaszc1Q5O7DW_ryEIaeER9VUyH9bTNQozJ0RwLfUUPMQFX8g0yfcFOgYG74H6H0ptvq2YOeW9PGCODNVE0EvmUM9MzPODNMa72sG7YsT76GeLy7ejXfFn9FMeAVIrwjKNufCKFyQTYer5IT6ww1ve5OA4DqPjG4nFcXHrtpIWPAq1qqU8SfCmdZiR1E7rMoihOI9RXCflz8xh5LMyTD1wxxp6ENsy7I7cThgFm8JnH4AR2GhVigrEoxnlnLw8sZ_pyXcGQBHf1cKYrR_hh9W6tg-3iBLz0n96ONq-g58Z0DPxhznA",
       "places/ChIJAfAglSqf4jARX-ERTCN0xo8/photos/Aa-ngMaN2fMfl-zx4pJrcNNGRHqWHCNdiwRzuMbenzPE3SecEQ4oJNvW5ALu-vMOPhrLkPMehXEBr2l_jejFU-vrs0MtcimPcRAp7tvPLz0o66SXYc4RSwYuZGPgvPBAdaURQ312zJ2TzusK0FuVLs9TpbdKEHSJEFeDTJ20mIKRSh-29c__vyRpk783pGVAdOu6uhNYTndgrqTC_C1N9bS9U0rMOccAbibtKd5g7XudKJGEt4sbiKLcCfdqDosdICJhgGZgcCgypz7kQmNp8HWmDsIFIBmPuQUntMwJsPsYJjrYQh7wfYSb5umw1XYzvneWcHQlA_BAjFW4b2KyZeQSZdslhMKFNvmMeiawpgkfaN5H6gIXfbq4j5lrH6UkD1LyBuH3d4nq-md8rC1rP9jzYtwb4S8upwQG52Q",
@@ -9068,7 +9083,10 @@
       "Grilled Pork Neck",
       "Papaya Salad"
     ],
-    "name_th": "สมยงตำซั่ว สีลม"
+    "name_th": "สมยงตำซั่ว สีลม",
+    "old_slugs": [
+      "place-eb108b73"
+    ]
   },
   {
     "name_en": "Somtam I Yang Wa",
@@ -9094,7 +9112,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-07-01T11:29:32.822Z",
-    "slug": "place-61ae0ad7",
+    "slug": "somtam-i-yang-wa",
     "photo_refs": [
       "places/ChIJI78k4Vqd4jAR_2G0qYsBmRI/photos/Aa-ngMb15WP3GAkaJ6Kh-dSFm6gUUBjy5pzuGqE1SQr8zcSXP0_vzyOEVW-tc1PKvgXW-k64OjdUVSiuRFhnXJzgXyrzlQcuTKizxLPUQrA94sSL2LouJGZ1YZpD7eazCqTU5Uz64gc1WxPcfjiBc86gJeM_kFSJSetOn6FqK8vaPaEv4-XdykNHF_uS243dF9mLLOrAcwBavXP-SsbiGXIJRKZvgQtZFg3UnoANWnhpWCsFeCQm-x2AZNlGsTA3I8GxtYFx9Hqjt6dDgvaMoA-V32A7-pvknLiYWzP9NYx4uXqSkuZhED6bhwIwbTiZRcnNNggXxkU37hVY7aMXVz6cdbq6BoAai0rExyyzMYDXFJzYhU8wXpL0t6xw8B57mTPjggkrnyJ1RqyKfJezsWs4Q88zM9AzmeItWIHPdh8jwzPm5baU",
       "places/ChIJI78k4Vqd4jAR_2G0qYsBmRI/photos/Aa-ngMasjkWYhRW5zsF8ynzLqziihzT_aGNY3yZjktd1vLGNlYOB6k-M2p76bqqYa-yvurFfwp-1y2-hMi7JfxoG1qNprVFqZ0u43JsnM4lr95Ww83VmmRTP4_x8NHbpWa1_pnySnw6Kf9o3saM37-BsSt-VysG5dsoKcteJVnWWD17PN5g_mpSjgNe7aJOxHKlPRQsYwdX2W0_Hg8nYX44UfEDN95wiChyxzX-XFNIv981VjkQ5ROdUTEUXYWhAskvhtYpFukPFq9Lf_YIDRpcIbT6qeXPjzfJ9oBlLcbBzlj8Sg0541-VniPtcf2utqLWh7aJ01tGPQ_Ye_wyJW5WsdEo8JDlLEnkdBSVcc1DUuU2jx1WKNdmx0PwpYE8W_4mfD5NYTieEaZPKKAlnWlvH_6VBhytZvxtPYlj3IcYO1hCRkOqnLBz3qrEC_yue_7ng",
@@ -9107,7 +9125,10 @@
       "Papaya Salad",
       "Grilled Beef"
     ],
-    "name_th": "ส้มตำอิหยังวะ"
+    "name_th": "ส้มตำอิหยังวะ",
+    "old_slugs": [
+      "place-61ae0ad7"
+    ]
   },
   {
     "name_en": "Jaekoy เจ๊ก้อย ส้มตำอาหารอีสาน เพชรบุรี12 (สาขา1)",
@@ -9171,7 +9192,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-07-01T11:31:33.794Z",
-    "slug": "place-f18525d3",
+    "slug": "tam-tam-ton-tamrap-samyan-mitrtown",
     "photo_refs": [
       "places/ChIJIWC5L7iZ4jARbGKBdHeTIb8/photos/Aa-ngMa_FiZxIPyZ0vyCsIuFcGKxno3IaG7aZTaIsgHsHGeYiWqDvQuXFpGfTuK0B6uTVcSsG8P0I8KVQuW-8rZQhCqtAntOG1qVyA5B25rP0kfPpUfSOIw45HJXJsQnszC_nft6EJBbsHiHZCPdiIsGxBlUNs43AyA2E2EgXJ2UiCE1lpaPYq8WJv5BI-bOg3aw92oH6GpS2t0iB1T-_QPYgkgVAPGY8gL2EWaLVSl2OKVB6L1KwX14hXsQLDCw533_Fnl09vh4_SQbGrNL-EyzuqDg6RdjXVBN3k-hb1VZSihHtPSIgKcjw9iZtKTpGpCU4_AZPvChXAcaY1XhupE9tqV1X_hSun5f-i09rnziQFy8wVSywfvJEi-j5ys6ClY1EsIRrejB0hQKbCVwwlg2V9pgghRULbE",
       "places/ChIJIWC5L7iZ4jARbGKBdHeTIb8/photos/Aa-ngMZJGZIZmnsVwPTxT_OmhDkzZmhSOpI0CmTmkOIG2bL5njVdxAL9d1k56dNmxfHrQUuXlWQrTFw0S70fDdKJA28a6-fsn8-CjLeVv60k239A1sp6IeMkPGNq8CgRc5WtHVc17_MTxxyR_ENX7iVyHUsByfNmSBYWqitl8Z6452Ou4gFpjOncqhLfGr0Ae9_0enneL6CEQkXHEZTBBoSBvqRJrOp3GYr3BuJJ_9Rj3VOjvVE-VyJzYyyp2w4BcWVe6s9LH-NOrSs384BRVSIgA85VIILqjV3nHjE1iLebqBy2frjPURF4mx7xOPl6A6P-Xed5aJADmXoRcePswMKsVa2w6e42MgiCn8tpfcaSyFVwM3sWDWqX-1CKsJhWhYBS0xBSDdSLPOgjACGJHOkLioPNhSISxsWWP3f9ocwMRC8yow",
@@ -9184,7 +9205,10 @@
       "Green Papaya Salad",
       "Tom Saeb Pork"
     ],
-    "name_th": "ตำตำ ต้นตำรับ | สามย่านมิตรทาวน์"
+    "name_th": "ตำตำ ต้นตำรับ | สามย่านมิตรทาวน์",
+    "old_slugs": [
+      "place-f18525d3"
+    ]
   },
   {
     "name_en": "HEY Mookrata",
@@ -9248,7 +9272,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-07-01T11:34:37.803Z",
-    "slug": "place-8d285d18",
+    "slug": "tid-jai-mookata-thewet",
     "photo_refs": [
       "places/ChIJbcCg5ceZ4jARLcOSP-Ckn3Q/photos/Aa-ngMYuKWaNBXkWM7HYW-cz-QCsGCL3SVmV4VccQvj3XE6dfB_ecSvROjZpabbAKUCV4_sm4neWQqW-AnezmljKfyhCzsogzDfGvkLrX8FkUGe0XT9QWGlqLdefHDCM7P1eVZPvY4Nq_QRp5o7Y10nPipYCno2I5kqQtj04oIaQ9TQ7EiqoCMtyflN8nJxFL9yY6Lam3Pr75KCZ99xkZsmqkwR6SPbe4wiQf47Ct1Lma9NN3Ud4gdnvcbo3Q3qPgSo3UKpDMZRpDZRfFiJRTZRWXHbcrF47jdNCGGpgy3zGnvUU5DF-HKt_BJBXBzdnRPaKc3LTJUtmCgreopn58oSaeVuzaci2lr6_d06Y7KJ32EXO3fVdOMYjO07X9_yX_EbMR56vTzmMVe1oF2QCwJMlcvLpttwo4gzTWJ8N6IGb96eqUQ",
       "places/ChIJbcCg5ceZ4jARLcOSP-Ckn3Q/photos/Aa-ngMYId5-iRn6omMK3lYnN4J5zvj9XSwHHilh3ftEYfvC1DJ8xBskg1ZEqx6zXGzN75MydnPyhGuPbSLEz-lTiEP9XksePvjlJovmF9QfXhMuzsUm7tEo7-6DeKCi_YNsAjZ8ZHNMhnOTnHGDedNKViQHd-fzkXi0xsJG_CBAHd2qXWD08sinbAa54gRjWa1jiAC8iaE5EnfxzhgA3epP3eCDthsnuAgkM1cTaG4YoKrDAitm0Ll3S9l2xRZhjlLm_PmPBTcOkOW2QXAT-ap-HqSDHFE6Euhx547vAzSTvJn1KhKgI0CX43f2LMeeZASSRok1Z86764YNvM59A5nw4c_zxR3X0DcO--0qU1wuUqnBslhvjDVzk9V2KEJouteOGma0DYtoClhOz-CYts0Mq8A3Ppn69gzuRSv2auhLUUhO5mg",
@@ -9261,7 +9285,11 @@
       "Moo Kratha",
       "Unlimited Drinks"
     ],
-    "name_th": "ติดใจหมูกระทะ เทเวศร์"
+    "name_th": "ติดใจหมูกระทะ เทเวศร์",
+    "old_slugs": [
+      "place-a30fb477",
+      "place-8d285d18"
+    ]
   },
   {
     "name_en": "Thai Loe Bar Grill Mookata",
@@ -9287,7 +9315,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-07-01T11:38:39.534Z",
-    "slug": "place-281cbf2c",
+    "slug": "thai-loe-bar-grill-mookata",
     "photo_refs": [
       "places/ChIJ3Rppr1GZ4jAR4Tp2G8r0QW0/photos/Aa-ngMbVpJ3chQcrkbXdfWPqtXqz3Jz8oUXnHba7TDRlNUaXgLQsu-nN0BvEm0koxoAXBocjU3Rd1s-sO-LjayY1upft0nmmml0NVhfsK84TDK8zF4TjSfgPZHEp83WRAhl_JMzDuNFys310duRgcupDHUPLWcvshbgYXldOLzGTjvFfsPEuQyDtdJAB0WpXqIa47o39AyfGYqRgsst60PMLTRD1olpKbhL1dFK0Q-FLrUVvty8fe5L8mtHwQQ5fyy8g7wAapST_ZqPH6dmEBGvRvOv72SYkJCB8rCnbesUNB12jSgZgyUCnfP4a1QvNZ2pdu-OJWw5ledNHmseWf95tHWDBy0AQ5BcWp98RQ4mKKByb-hFVAu-R43g1jl-eay1Pm7y5Xa5XPP6osINLtBNKX3i8BC4B5DR6UVjo6r7eDVmR6w",
       "places/ChIJ3Rppr1GZ4jAR4Tp2G8r0QW0/photos/Aa-ngMauuSqtPyeDvyRXwdC51lboCelzgoA8FfU3Sg-KoLjlEpmVDSkW-vAewe0aKxUQpzaEJqPNw3HMNDZyU8K2YbtNQLgEWAG6jFC-ZhGx13iUSoPpoalaFol-hTS69W-0MRzWhsF_-cO4cLpe2FDucUbny_GHREOVaMesycE4QCmJjxIJbn8bWF3X903mlSPPkUVeM45uzUJUjiHi4_pnrCo7sYiGv3Mn_xuq7gHVyxfniRcdhzKvmH0DoZ_7e6Db6wKLb5fAOVme2xKj_0g1LFJlPCnb4zIHUc58OWZCWjCCfLV73QAAMCWCihCvWVYM1SsQ_EaHbmCT_Is6jS7YlR9qluQqWrKNVP0gLq5FUUf9QVu3OQ50YWXGsfAKUPcs0i64Hmxpxy3V18NcWlMOjFbfXoWYNK5soX074aKp19Hg_A2gL5xIIcRbdpr4GWPx",
@@ -9300,7 +9328,11 @@
       "Grilled Pork",
       "Retro Vibe"
     ],
-    "name_th": "หมูกระทะ ไทยเลอ บาร์กริล"
+    "name_th": "หมูกระทะ ไทยเลอ บาร์กริล",
+    "old_slugs": [
+      "place-0dde7446",
+      "place-281cbf2c"
+    ]
   },
   {
     "name_en": "Khun Ple Mookata",
@@ -9896,7 +9928,7 @@
     "source": "googlemaps",
     "area": "",
     "approved_at": "2026-07-01T14:03:33.498Z",
-    "slug": "place-667f8ca9",
+    "slug": "kope-hya-tai-kee-prachathipatai",
     "photo_refs": [
       "places/ChIJfyX3DAmZ4jARov4yzd-QDIY/photos/Aa-ngMZf2sOZnctSUfBTuXkknaCm6zTyABC8c7nAxADVWwNz_Lfna5Y9kLpkmJVU5lENVnJeu4JC5ot7T0GNYcLC91l4bpfmJ3bicj02WR0hYlOs4D_yv8XFVCWFX1OrDmQrmlz5elsf_IQfQ1l_4_qlexrF_9lfqxnsc6fCRxv49bHogFgD-smP5Zp6m9qlj6h4UzUMPgusz-Eof9ihzJ-4pLQDfm9kR0XFjdRZuPTA5NYkQpUPe0fjXXcJe4LzHfiaZaScBL6qqNdrPuxV-AyDZ-m9LGjrlX0eMlqe6FJagj40dtrXumzG0TNxQ8XNumh0L-daNu8X2r1-JOSxW_6Aq-0f5fy0S3-OTmMiVRnASDrVNFEGuaCeeDOryQP27ZFx_DVhvn5fBYfRq7BdEW9I_I-2iQ2Wr_5dSNNFDvQx3xpht6I",
       "places/ChIJfyX3DAmZ4jARov4yzd-QDIY/photos/Aa-ngMb1vqGx25P3elg2jcxmSryK1EnqG2CPYS4YG2XDPRBwbfPpGehpDS2WH_dHoCcdfy91MTTzDUKgW5tEGURKDgXVtKzpcn8mEyIJDdZMvfgF2vV2_UroGUzCBUao2IfOjxfVcw5lVVWd6yEyUmn75BvLrOrBsb9xqpxZmTTsAs3xd801NvdxmrjigBGxrh5WJdgfPClnE2GTkcJ7kKNas0bfr98vNfmORovLvUI3sk7ez9Lk4kJCv8ekuSLC59bJrOJ-rC8V5VEklZp5aK-Gifg0WSQiyhLw0lpf0ibQ8Vj8_xcP8mcJ_89mHGDpc8x97-VSlE7-QF5sUNzD_veN0c6I9dR6DkPYEPLmRuvCouToPRUJDR7l_Vp9hT8k6YfiIGwRvocHfy4rX2-5SDiUnpmWXKxmhV_RdfyHMcC4dwdZRRXUSO9hnYc0_aoyJeGA",
@@ -9909,7 +9941,10 @@
       "Iron Pan Eggs",
       "Sugarcane Coffee"
     ],
-    "name_th": "โกปี๊เฮี้ยะไถ่กี่ ณ ประชาธิปไตย ข้างวัดมกุฏฯ"
+    "name_th": "โกปี๊เฮี้ยะไถ่กี่ ณ ประชาธิปไตย ข้างวัดมกุฏฯ",
+    "old_slugs": [
+      "place-667f8ca9"
+    ]
   },
   {
     "name_en": "Breakfast Story Phloen Chit",
@@ -12184,7 +12219,10 @@
       "places/ChIJF9faoNib4jARi9DUGM6uGYY/photos/Aa-ngMb9RhmFKNJWQCINL-vPaJofjBCu9uJre7h-pzJ_eQYc-O_A-c6su7CGOOf2227tr25xWdelL922cLOfaKWRYi2NNKJzAfEz0VyUKi5E52VE-KkvUKxfMAi_lc6Ej04n4Axuf5AN3T57TOh4Ny8te_lbH-Faxi2v1C0aDFJNSJnFtvduyI-mMADnhtV2-TCIHvl7N83gn6WHfZT0X25_MjwthWdEuGiS3-BDsgqpSmd9d8TVl4qg_IrG4ZoJ8j40obhDCuF0ZqyMpGVo-dKvjPt1EulA8w_1FWnIXJx0Pvk0sIeXr1VKBJQoKFxHlBt7xwRav0IHlSMdn4cH8K1tRsak8bbuuvfvoPE5i1B66iS4mEW9J4WoH-1OKyyIG209glctTH_9TfxFmbb8KRmlvVnvto3BCE0"
     ],
     "approved_at": "2026-10-09T15:30:03.165Z",
-    "slug": "place-6a21eeff"
+    "slug": "sang-hee-chicken-rice",
+    "old_slugs": [
+      "place-6a21eeff"
+    ]
   },
   {
     "name_en": "ข้าวมันไก่ที่ถูกต้อง",
@@ -12213,7 +12251,10 @@
       "places/ChIJlduc4qJjHTERn56KINByEs8/photos/Aa-ngMaOhCjbox5_G1dqcaxDJWtqGjSHltONjwpaR8BHsHi-eyUF8dyk2It9sB-VaWFYF99fpTZZC7Ofit_q_IDFe_OSKBRG3y5kuVGJGVXbDnqr4sc7H1J5wtJJpTTIz2KfIwDz-PVHNGcoOx4OQK40KHPDwG85e6VyCuyYsbO-xmblahfRyLK5Be8xThUBoEyEX0AyqvGKFO4axHTi6dlzzoM28AQVGhoNPgfPd0_iQgn7S2MfAHYb2sowG0_QS-DXenpGhwuAakIubcw4ht1lPnNOyTc_6I6cfBK41CsIj1If_6M2V68jQmdqhlgFr2CmwzvE_5XRFw032rrlUQ_lrVDm4ArSgYw32HkF3GDvhPmqLE5n9wY_67YjxU95PNfwLUy1aq9MOBOQFLvSbWwin__7bKykAM3ZO92u0nal6OZkyg"
     ],
     "approved_at": "2026-10-09T15:30:03.549Z",
-    "slug": "place-6cf7df5c"
+    "slug": "khao-man-gai-tee-took-tong",
+    "old_slugs": [
+      "place-6cf7df5c"
+    ]
   },
   {
     "name_en": "ข้าวมันไก่เบตง จางเจียหยี",
@@ -12242,7 +12283,10 @@
       "places/ChIJW0mrbfWe4jARhESOURP7fKw/photos/Aa-ngMa3HaoC0jbm4W5sGX6gh3NJeMge0b2qz76ejkkk6bOqkEdHtYWY-vRy77B0K1IkUobP_oUacMlM6t9bTbq74TbNII-SRLRSAPSEjDMDsMmVfdfUyMBDjV3eUM9mX4eZp65KAyPWGQTpMLmyu6CHKu1Ohpteyxqe_fe57I_JgaGFMjPdKM7xFUYxD3CDYlq2DmtKs7a9xKSCZoRxUkH5KPVvtMAHwfuZAsbTUJcCb2brp263GaC8eIZGEeUApHcEusYxzryufIoIJf4roZuQ3NOs3K3xsrPF6h4t3uaLTeZ_LDfo9qTqbYa98l6e91qW54lzB_gyMO85mE9YRstJigweV9DUHS10sMDXJMFy0I6m-zM9C_WeOtjLmXtyW226L5eDO_znJns-CAMG473hPYteB7avNss"
     ],
     "approved_at": "2026-10-09T15:30:03.965Z",
-    "slug": "place-38450739"
+    "slug": "betong-chicken-rice-jang-jia-yi",
+    "old_slugs": [
+      "place-38450739"
+    ]
   },
   {
     "name_en": "Loong Nun Noodle",
@@ -12445,7 +12489,10 @@
       "places/ChIJqV1qKG2Z4jARgBlocC1OXrQ/photos/Aa-ngMax8_nX09zom9FeRih8WbVhq3Ikp9wqXIdAIHAYij22ggZQQmrzMMryhDDp2UmRFaNU4S3V5os4hU8P1oehiMGzPFtBW2xdVTklv-lwimTiuErlIRlibBzo8Y05rqF_FEfXY4WyL6deToX7ZnNc6SKU0SbbeO83_gI7YbBXxqw7P3_CCJlg8Sa2f7dghwTXrqVlUBRZ7A0JsTOUvBrBPzF0MYIWs5gW8iDRpBKfgJx_gOuiJCUFsxKC9hzhAX50mfIIq_c7IlqwbqzX24_4X-hnwuPMA2c11axZuy38RVWeoBeoG0kaqN-ZbSZUahb8-danQM5ADpHQjc8jj18jzW0Zqe6KwVqBTrLHJlFgbBZ3T4W4dfCHCUC73FeeTBmFJLyk_2wYNPlcWnFLcdVm4uCo_CbhAZzLHg9wUAR3Hezq"
     ],
     "approved_at": "2026-10-09T15:30:05.777Z",
-    "slug": "place-d3626125"
+    "slug": "yan-charoen-boat-noodles",
+    "old_slugs": [
+      "place-d3626125"
+    ]
   },
   {
     "name_en": "Baan Kuay Tiew Ruathong",
@@ -12503,7 +12550,10 @@
       "places/ChIJo-E_JEiZ4jAR4zvIoZkXYvg/photos/Aa-ngMaWKiskjRrN1tuTjyVKfjgVBEi9h9bgGpTKLsfRDzlE6fCd4mvCy2G6yhzy_kThvceUR9Zni5xoaEHaMc4qHupqhwyTOaxOddXvSinTwOZrxIp3fJ28IaMberYZj0yxmWUMMrcio75OFhkH5LR8HjPaHPoEjLjaiiu82kD-1mAXA7IHXng6jPhF4VYO4ff1mu7WBTZNDUCPlOPRxZ0EBlmRQezWbHBHgaGJtbL_UzVQdIbaVqH3pURIJlRJg-4E_5tSmOyYV77FQAfOr7Q5m7Ya3Gnw6ReJmBPY-qIEUQ851Q2m04GakJOMYrBiRVlHkdS5AAMY3z5gJTZHrO0wtBXIdws5sIrpWeVp2GeAO9RjYcDrjAc9WNsPs6ZTOORQme8EZqnHBIW2k3j953hYGG9FG3WxygNshrGsv34y2d4q"
     ],
     "approved_at": "2026-10-09T15:30:06.142Z",
-    "slug": "place-42520960"
+    "slug": "baan-tha-boat-noodles",
+    "old_slugs": [
+      "place-42520960"
+    ]
   },
   {
     "name_en": "เตี๋ยวเรือสองลาย",
@@ -12532,7 +12582,10 @@
       "places/ChIJAaucU5Kd4jARI8ALUdo7T04/photos/Aa-ngMbILsycvdt8NJb9aDUXx_PBA_PhCuHpp5ixzGVDzAic2FIOhqbFhOt3VcTGwvFKTa5vdzbnrGLNsFZ7uIKZG3pYrPTrRRF4vxXPhvwSzZo9J3a3Df4539f_w_nPx2P8ofRkTBV-OMrNTkxD4-5Oh3yL8HMFg5HU2MQsGsvwAwRq3tZy5u7SkwprvrGe68z8AoyWvEes9wszOi8Vifmv2X9iHm1-bI02pOIziSurssO9JVEaD6Zr7zPjDGbRA9ZTeuDXSgvDZBFaGzEdXuQUKM6rxuYXfOILDTEyCx0-yneQlfNRTTbXCXy_iQw3hmOBjAVNE-WmgPLSlRE1TcItwnn0X_kLtBJfHDMIDscRLSA8wTB57RJUTQDQtHIE04uHz1Jsz3RBirBC_rnsMjwE6VIejHhvIumvP-nG2M_c8HQbVg"
     ],
     "approved_at": "2026-10-09T15:30:06.345Z",
-    "slug": "place-38e1c6a3"
+    "slug": "song-lai-boat-noodles",
+    "old_slugs": [
+      "place-38e1c6a3"
+    ]
   },
   {
     "name_en": "Papaya Salad and Grilled Meats",
@@ -12590,7 +12643,10 @@
       "places/ChIJAfAglSqf4jARX-ERTCN0xo8/photos/Aa-ngMZGxU3ApfEcENQWs-oyUAK2-vDYUiAEVWC-pS0Kfqpq-wo7qeMhbzWJIve5Sg9sQourkdDGhCbPqbNItocNsf_qbv6ditM0ZWMV0g_E7R7mqZZy5Wdv9-Zn26Nfk7gVfXjrtHm4w46Oc86mkpS_0cZL6BSVlj-AdZp28ElIoygUDtNCAbMNP1yHuqJ45BSt6amrY45fo9W3Z3NiSBFljCysOMJuXewnGTORQgDHuBKsCoMuta-rLryUxml6duIWtzarwkM0BNzO2T31u8ejfsPvDtgLrcN0MkyoK_C6IjPFDozjLM7OhnWZZUHbcvbht7OxhEUuVlqns-kONiM9dWY38r-00h6QpwUcDPH-lSsxlo-PkHUWKCyUw2LdAWe8nh6Vlspm1C4emRIEyJH9psgk5FV0ms3sxIzLq7D1lvuP2w"
     ],
     "approved_at": "2026-10-09T15:30:06.711Z",
-    "slug": "place-2c31796c"
+    "slug": "somyong-tam-sua-silom-2",
+    "old_slugs": [
+      "place-2c31796c"
+    ]
   },
   {
     "name_en": "Tabuntum",
@@ -12764,7 +12820,10 @@
       "places/ChIJh3-0LwCZ4jARYrwHNiAlVSM/photos/Aa-ngMaYDVZRfI_ejtWr3eZl9NT9wBMueH4H2FGVTdR8hTOrMKGFvqDB0rCyYQw6UV2aH6Ix0yOnzzHHKn7CYQTDa2yKyCLK8OMTHMQByXe2k5EnorTKcKQb8xs3TKNesHaSjtxIOOqrlot80YhSM6HJFAOqn-pYNSYTwwxYwT-KRnNhFoLml5LwaR0Jexa4Q5VHLqVpzjgYtjuDXQeGn0lsa6hPuEFwzgLTkKVSFbam5TfK79LmqXvI4qaK6aVfR9C5WcwL9kWReAPCBsQmFdhRtbqkGd5rVSVC3gEorgpQ59m6IlMREeQ7cbplnSGzJ__0Ct3prcAtiGX40iqQEDWXojGUneDlfSOeywbD3x2X8CQaB7iB1POD3CgtG8IyGcl97EGg2BGHG_n__oU-wwsGyPoPocpW3mqYU2_5zdWJkV49zw"
     ],
     "approved_at": "2026-10-09T15:30:07.791Z",
-    "slug": "place-3f0cd986"
+    "slug": "laab-ruen-isan-craft",
+    "old_slugs": [
+      "place-3f0cd986"
+    ]
   },
   {
     "name_en": "ร้าน 4 แซ่บอาหารอีสาน&ตามสั่ง",
@@ -12880,7 +12939,10 @@
       "places/ChIJOV4PX72d4jARnM3B7eq7Y3M/photos/Aa-ngMY_i1K7zZ7efp0u1zK81heJC09rmkhCfhimPk4lNmuFi7QCv5ZnYKVfZ7fdWfnfS_a7ar-0j1HMABc2CfdQnwGNO_sGV-XhTHDrH9O1Ybubtbb_GI9qCffkok7NB8N5GWwvi0QPqEJxDcd8DwCuqs7R6mbolDeR-9nIhCa9p0fqedZd1Xr0LVIvDRDk1pfK6vjFceLmAyXXF2FPphUBk2R7GgmzIt2rQvZX2KWl1AqnKV3NAEdiJ6dx4ZY2Is_kBVuSuLzLZzEELDquDbkhn9z0wCEtHeIlqnyXF3M_7B5PzUmIv3du9QViCObKg2gXLXMctqabMt3ehyO-sIOLmFTQfnOSDi59W9WCQfQUZ5DLwYWJwv4PHQARU0eDkU6xuXN1MuhjGRWa4iKj7kSwsWRO1Hg"
     ],
     "approved_at": "2026-10-09T15:30:08.510Z",
-    "slug": "place-055821a0"
+    "slug": "baan-chalong-southern-thai",
+    "old_slugs": [
+      "place-055821a0"
+    ]
   },
   {
     "name_en": "ร้านแกงส้ม by เรือขุดแร่ ปิ่นเกล้า",
@@ -13141,7 +13203,10 @@
       "places/ChIJkRA_EySZ4jARevEdmB2s9cs/photos/Aa-ngMaRSSBG4jeiRmNq59vKkCGlKYhn_IAN3amkQSosIFkWvORMjKG_KUTc0BWdguvagnd4OKuhD9fMuxdGNcDO0aOWuqtrqDKLew_BMy11HBLFLBr7zvDbn7XDt5C3GGfne6DBebQMfXIx0N65KmDZv_W_vvsrmDOW37U61JQUJXEQLO2C3jWplB2khKucxvDsTfI7C6l-ZNsOutmzSJRrRhhXPQpIOOOwx-Ni0plHIbkCuhqGXySYvKnTRJCmakan0NmXqZ1oGqMd42tkc6SflSKQ6aUrq5oMrk0853Pf2fGzrQLEcTAsNX2b2CqdXdljqtSLtnwIIGzFasN-66MhF0zIlk4Cd55jHOAJYZPJHh7HtESh3b_knSjkP_9hsSXfUk0OPrMFN8YeC9RuF_UsEpSHvLv6sAv-bxeTP95a_gsUyA"
     ],
     "approved_at": "2026-10-09T15:30:10.124Z",
-    "slug": "place-43d0aa1c"
+    "slug": "phu-kong-jack-northern-thai",
+    "old_slugs": [
+      "place-43d0aa1c"
+    ]
   },
   {
     "name_en": "Hom Duan",
@@ -13228,7 +13293,10 @@
       "places/ChIJ-2WqcL6f4jARbj1BRJ3Q6Tc/photos/Aa-ngMZqafspxfeYCEkhMbgysicinNlCyNurJfttoOhkJtpPkGYKWyQ7V07Khqij9VKJo2i72RPqpcCv2qAZxacoch8jUvURM9L6LmnlxEC7frZs3nRO5GZE0xGtP1_GEz_tIYTwL7SBmkpcD_DEDr_SYTWXNEBHe-1PCJ19rWazv5TlMfWvZDzhiDXlWDhqSsLxx825EksX7C8RxraNVLdBqcMkdW3CI7ULgp5unc31CHD6Ut5FUbnrqMBQLdU3byuUBmnWrQd5WY3_xMRNhgZNKQU25p4O0ncYR_gfde0c-T2CsoDNMLrozvRm5ypIvXPr_ntlI8XUjVYnLILkw05DD6bj1jZX03RNmaBceGjEZ_NbTWTC8M-r6-zpmAedC8qMlG1YEptsa3WKw88ipR0if1ifZY4"
     ],
     "approved_at": "2026-10-09T15:30:10.659Z",
-    "slug": "place-49083d2c"
+    "slug": "rim-suan-mookata-phaya-thai-phirom",
+    "old_slugs": [
+      "place-49083d2c"
+    ]
   },
   {
     "name_en": "Yak Khu Mookrata",
@@ -13258,64 +13326,6 @@
     ],
     "approved_at": "2026-10-09T15:30:10.841Z",
     "slug": "yak-khu-mookrata"
-  },
-  {
-    "name_en": "ติดใจหมูกระทะ เทเวศร์",
-    "name_zh": "ติดใจหมูกระทะ เทเวศร์",
-    "description_en": "Sits right below Lost Inn BKK on Thanon Samsen. The all-you-can-eat charcoal mookata lets you grill and shabu at the same time on one pot. Fresh pork, a flavourful soup broth, and a solid dipping sauce are the draw. Staff are welcoming and will help you grill — they've been known to keep the place open even for late arrivals.",
-    "description_zh": "位在 Samsen 路上、Lost Inn BKK 樓下，這家店做的是炭火燒烤的豬肉鍋（Mookata）吃到飽，一個鍋子同時能炭烤與涮肉。豬肉新鮮，湯底有味道，沾醬也有自己的風格。老闆和員工態度熱情，還會幫客人顧火烤肉，就算很晚到也不趕人。",
-    "category": "food",
-    "address": "244 Thanon Samsen, Khwaeng Bang Khun Phrom, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200",
-    "lat": 13.768047999999999,
-    "lng": 100.50235699999999,
-    "photos": [
-      "/photos/a30fb477-37a0-4d79-bd10-3b6d9385ccad/0.jpg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B9%83%E0%B8%88%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%B0%20%E0%B9%80%E0%B8%97%E0%B9%80%E0%B8%A7%E0%B8%A8%E0%B8%A3%E0%B9%8C%20244%20Thanon%20Samsen%2C%20Khwaeng%20Bang%20Khun%20Phrom%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJbcCg5ceZ4jARLcOSP-Ckn3Q",
-    "rating": 4.7,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "highlights": [
-      "Mookata",
-      "Charcoal Grill"
-    ],
-    "local_ratio": 75,
-    "id": "a30fb477-37a0-4d79-bd10-3b6d9385ccad",
-    "source": "googlemaps",
-    "photo_refs": [
-      "places/ChIJbcCg5ceZ4jARLcOSP-Ckn3Q/photos/Aa-ngMYlSaCoud2bBskgOIYpMLREuAMJEFGYKEbcYyhqd3bUsa4mgCNVGWDLblsZu8iSHn1HSkIzfjgV22hwT2OJ24XbrGhxZRPgVlJm-nJiW2Oc3hv5LARCwDlB2THmLxZbzymB5Sq85McAGsjWlKpeivynEjtXdIv1pcgPjEr4wm4ui_dCRKhmwNUO1pC1NVZi1c2XUDOEz6b6Zj2TW7W5qban8rsLYzTmAyPqOknMlx0VIdWmEZxPawJG3ZAeSZWEn26ItSOIlcsf3OCMoMe1up1lWWYZxkFhju0KJpeHvTeX5bqELoT1OTKUIyn4R1dtLbyHYn5Wadz1S-SEd_IXO1nDlsQHg_TzRMdjIS2_bsvPg6_7w2BrqvPE6lyP2mMPEnDg_uAzZ2CUmxVpu40Ddb8ryZM"
-    ],
-    "approved_at": "2026-10-09T15:30:11.026Z",
-    "slug": "place-a30fb477"
-  },
-  {
-    "name_en": "หมูกระทะ ไทยเลอ บาร์กริล",
-    "name_zh": "หมูกระทะ ไทยเลอ บาร์กริล",
-    "description_en": "An all-you-can-eat mookata spot on Thanon Chan where you order via QR code. Meat options are solid — grilled pork neck stands out — alongside stir-fried pork, papaya salad, various dipping sauces, small appetiser dishes with rice and noodles, and ice cream for dessert. Note that they don't accept cash, so bring a card or e-wallet.",
-    "description_zh": "泰式燒烤吃到飽，走QR code點餐制，肉品選擇豐富，有豬頸肉、各式燒烤與炒豬肉，附多款沾醬、開胃小菜、米飯麵食及冰淇淋甜點，還有青木瓜沙拉可搭配。僅接受電子支付，不收現金。",
-    "category": "food",
-    "address": "Thanon Chan, Khwaeng Thung Wat Don, Khet Sathon, Krung Thep Maha Nakhon 10120",
-    "lat": 13.706745399999999,
-    "lng": 100.5249699,
-    "photos": [
-      "/photos/0dde7446-1edc-43fe-af03-25dc6cbf90be/0.jpg"
-    ],
-    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B8%B0%20%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B8%AD%20%E0%B8%9A%E0%B8%B2%E0%B8%A3%E0%B9%8C%E0%B8%81%E0%B8%A3%E0%B8%B4%E0%B8%A5%20Thanon%20Chan%2C%20Khwaeng%20Thung%20Wat%20Don%2C%20Khet%20Sathon%2C%20Krung%20Thep%20Maha%20Nakhon%2010120&query_place_id=ChIJ3Rppr1GZ4jAR4Tp2G8r0QW0",
-    "rating": 4.9,
-    "price_range": 2,
-    "tag": "hidden_gem",
-    "highlights": [
-      "Mookata",
-      "Pork Neck"
-    ],
-    "local_ratio": 75,
-    "id": "0dde7446-1edc-43fe-af03-25dc6cbf90be",
-    "source": "googlemaps",
-    "photo_refs": [
-      "places/ChIJ3Rppr1GZ4jAR4Tp2G8r0QW0/photos/Aa-ngMZBW_Tmjj8O7OKyj-8G4Xwd-gINlnUYylRmqAbYsVwFNmW3UltYVtacw9UoBFwlmmQzCG6DkEXlS597BI7cHZ1cA4AAV1xDcOl0codwqjDrzXqKyfxp8XW_cHYfn7xOMxgMJvNN4CQJ8xAnrv2Z0uHTAxDA90ZZ1E3tYTFkDc0O35Oj_40ryAALRr8CdMY3KA3jG6XFxTfdpdNFkF0MSWFCOQtaLCiK2phGVSk9pDB3J26qkGG96qt0lvRlQaTPFWZu7MB0-ig46SPAq62qOzd6XAx6oqHHK1_RrxT-NPxFwEYIcJiK7UNxPjQ1bCRqoXU4Mcd3PPVy2ieCoJNuxJ2hyC6oITArhy6lr5WMZ4Wfx6DDb6cD0QKdr7r294u6tQWNiGKfYtmQQfr34stdcvBdTg"
-    ],
-    "approved_at": "2026-10-09T15:30:11.226Z",
-    "slug": "place-0dde7446"
   },
   {
     "name_en": "จิรา หมูกระทะ มา วังหลัง แล้วว Jira Mookrata x WangLang view - 泰式烧烤",
@@ -13547,7 +13557,10 @@
       "places/ChIJcyrD2GyZ4jARokOWK_8RxjY/photos/Aa-ngMYkZ11x6MlFJy4bxmf2lFsCaWiIrCAoz9SZqDgpDoc5nO3kt3N9JjRFFYGUMYh8EOseHVVyOkI9vY7OIKbQWtVH_X4GwOLP2LZrVqgBrALZqTso5a0zyWOyrrYj-oUZ643fIeyTQ36gi0vUIxFfw_S68lVEUJSU3mgCWaTj4dz3tB8q7et6XuINB_sXH5OxUfRv52suwBCSVkfE0vVsDNnFFZgXpY7bAhHao7YrRZOGwDRfwS8keez8dAbSXPeHSK_wg4c4-TMoa3_k9RgjGgLwmVbq3ELtCKkCnTOp2CzdwcYHcy7NQMAxB9_RQHxIaMWAKR5Vq2nR2OgXYlgVeuAq9qVLZPp8Onb7nwzbja5SJb2n4_ZSTIVyTemgmaCojf1P5RVMIlWcYuLfqFqF09Xb-Wg"
     ],
     "approved_at": "2026-10-09T15:30:13.297Z",
-    "slug": "place-0efd1ba6"
+    "slug": "banglamphu-curry-rice",
+    "old_slugs": [
+      "place-0efd1ba6"
+    ]
   },
   {
     "name_en": "ร้านข้าวแกงสิรินทรา",
@@ -13576,7 +13589,10 @@
       "places/ChIJDwlbiHuZ4jAR1ZGCq8z3dfM/photos/Aa-ngMawh6rAWZU8713C-WZYtgwve1UvOCVBgruTOC6efG7O6Q1mpvtYyjdldJTWD6U8nlr8cY32TloStWSZXTcJOwxqhv0wItqu8SxBLmBzKnDF7aPfhv2ssJPo2d9rx-CKUCHyiN0Gkk-JSxxsV7dd1PFTVRwtWbg4lYyGjyZLssmct0hQsbXYzQ3xIlUBBotsszOzsi6dcWjX-O-Mu0Akfnvht6fdP7odip8d8P_PgBXcJYCBckKJFcRDna0xLECXuYDrM-yXEgiFLMXxBouqAE6-iEqxChj-saVQv9nKVZtht3sA6sHNKljIGwmJtjd-NSvRP4sr1MqsFBJ_zNvIIQjjpd0xVgdm4_hNs2OPH6zYvjkdMnZIZez86FNkiuf5DwKBXzhNpgf0uUVvg7xbpacsOZ6nCwQ"
     ],
     "approved_at": "2026-10-09T15:30:13.476Z",
-    "slug": "place-804b9631"
+    "slug": "sirinthra-curry-rice",
+    "old_slugs": [
+      "place-804b9631"
+    ]
   },
   {
     "name_en": "Puyai Lee Restaurant",
@@ -13692,7 +13708,10 @@
       "places/ChIJSWrZeACZ4jAR5MUvVDfnmls/photos/Aa-ngMZ7tXKbvqY-F4QxI8kg89WaR79pbgLeqLuzj3hdzc0H8stDEgllmIaxDn3eHyP9oDFIuQRkggvRs90I4StCzaZK0SXG-6crtl2hQSQtANzGRU2xe0L_0NG5y_qRg1z_2W6ZYudn2mbVmL8Lznh8uPpYLc84Da6CoMzCNhGrvl3ifFAGQsj0CmnCkzF1shXiiGSsn0zXF6U6HB2Jwnue1T7jyG2-aMjg2xlJ63ayth_nPooObxFv8wCtfW3-CpMuCRKEdYsMSHnpzaFIljYE3a2VbLwZG9CYufTM8gY2HpfXigtZbJZWsgas5dtA77xrtk207I_8y-cVklU0UYwcj2Tejer0ncb39Y8Ho8ejHFRsDkQz4IrH4F0b71E_a97fgYMTrTz8a-ytMHeu0eQAEpEuoA"
     ],
     "approved_at": "2026-10-09T15:30:15.612Z",
-    "slug": "place-63a0f7f5"
+    "slug": "baan-phu-yai-lee-curry-rice-khlong-thom",
+    "old_slugs": [
+      "place-63a0f7f5"
+    ]
   },
   {
     "name_en": "Khao Tom Bowon",
@@ -13750,7 +13769,10 @@
       "places/ChIJq1BEq3ie4jARV8_Ge7BY67U/photos/Aa-ngMZVO-2mliGosGP3feA-3o6KrobD3Tl9Kk8OIFmwTn6iz8eVKnteyLJGobOd2G7pCFfObKzEMxb5P6ZB80i4bezMvfdg0Gd_zvwt9tBsfUmbx4SpD_iMpK62ZbUvfpK9bJAEXvYlHKhNp6hh1uvAA78E4-RQ6QDNj3rXJPI7wPp97TMjIUwhQZRIjwb6Geku2umpLuHeCcFH9NbQMULC2JHpIv0zJ_R6dmQAbgFSxlaJdOV-yzUo0X0Q6_merDD8ualrm-zMlq8OlHylLjxdOoXNzT1j42dLRNr5xJTTXcYouFFGYXXc4f1oydGg385doN2L8Skdxp_8YmSoieLg0d5JXKsRDEehqtLXt_bofqTt97vlCJSNnkajK9JHlakHKyDONuch26Qm4t1SpfxMwXm224Vy2IRSyVcLve6X6xyN"
     ],
     "approved_at": "2026-10-09T15:30:17.299Z",
-    "slug": "place-d8d637dc"
+    "slug": "nam-chai-rice-porridge",
+    "old_slugs": [
+      "place-d8d637dc"
+    ]
   },
   {
     "name_en": "ข้าวต้มแปลงนาม วงเวียน 22",
@@ -14185,7 +14207,10 @@
       "places/ChIJIbPvkGSP4jARBYRKpizsNSE/photos/Aa-ngMbXD53CdwdT0X4Y3IRC-DS1WyCp_peA5NtPF7gi1Z8pBuy8hN55SoKU_4ac8cncpEsiF0oT9zbqBzxRa4J9CJwLa9adzAcDEKZKf1OJ2cJEQrxNJPkYH00SXCxirzleUKe4yo8SuzsTeI2GCuJQmwq8w39xGlRKTRGZxRYAk8jDvoWwRX6TkGFSQ28TDXmc_f4D2qcT-N3HDgfMl-KFFCtTwatECjg1DzDS0Uw3ApjYh9hdFJbDeoEVGSXCxm9LS1bsVf_TktyXMpeBNxeO4Ax0wAMXeEY4b00hSa0fez5hdeltSrfEWRqO3h1VnaJHDcP0ApgQvQ0AeIvp0iZehA0S4MJ4cLQVmbBwtMYnjjlBlfj5GLsfynDiH5_g6QkW9nhgPfj7jHyPxDAyZJTXPL_Um2PnbT2xsdVk_a12Wb_X"
     ],
     "approved_at": "2026-10-09T15:30:24.913Z",
-    "slug": "place-aa042e14"
+    "slug": "klin-talay-seafood",
+    "old_slugs": [
+      "place-aa042e14"
+    ]
   },
   {
     "name_en": "พ.ทะเลเถื่อน",
@@ -14214,7 +14239,10 @@
       "places/ChIJwX9Cr7tjHTERKg6QldK9AO8/photos/Aa-ngManAGX4vcmQUabdXz-tsm5kfnHNRkV8XKsJ8SFYqSYpMOZyAsoLszEanx-bbM2gxb2aKUk3xBoQjJwvn35iIXr-xo1dro3rmAQchB_u7WpJ39Q1d9ez5MwJFTrPA3jdxL1QXsbzxiqIm1t37Of1BLIGwj7zbfwyOv7AJJyfB7RiljPf2uD-qlEA7Js0gDj5gjYTRl9UqqB1f_6i6z0bwtWwF8MkSuub90CtukiBtOUQlTV8H9OqnblKsFTtZTfF7mSiaKx0048tRY8PlXibA7XXwgSvvT_hAvHPXppYluoKqJ0FkmKH6wO0mEMn3ta_JD7qlqnEOq2RV5zRkg12tcVF9tqiO0FGOiLvcpIUlZFSFYyk4rWIGXdDJVP5ApRrSWpKXI_hpj5NW6kRYeltA7kUD5QI8quM8UkIwW4JDmhrnw"
     ],
     "approved_at": "2026-10-09T15:30:25.127Z",
-    "slug": "place-89b8d076"
+    "slug": "por-talay-thuean",
+    "old_slugs": [
+      "place-89b8d076"
+    ]
   },
   {
     "name_en": "Sanan Seafood Restaurant",
@@ -14736,7 +14764,10 @@
       "places/ChIJGae0rtib4jARJmRm_qIdbmM/photos/Aa-ngMZM2TOqlBdw-0LNAxSTwsWl4xRboVq26DrN2JSgTnSjiL9TTCDmJMbNG87vu9UgDxXaoCXAhlCLZ_ubp8mE75jSYgmG_ZlxA5aymUQveR5E8Il8hczAaig1Rl4Vhoc_eT1x45b-A2z12CkJqmCooRpdwuNKAxKw7BOPmpcO8E49Sd-gLOneah45mRZ-vKSsEyyXAwrqq3f2q5ijDB7QmvLrnTYtPm0__n21EMbaCt-bS5k4U9YdvHnhR_slrEsTykPyV8ez55S0ZMPYM5yP_6tgdYgmBJq3MoffYymoJO1IsM0FSVH1aQYOc5rvvwofzlkGXb9NAcvD5yooIRJ-DWiO1-8Flez1zZOb_g1cWwSE0tjNGU1BoVSHGB9n1_pgxO0glIwZcuwS49DjnfP35rYHrwOtiko"
     ],
     "approved_at": "2026-10-09T15:30:32.041Z",
-    "slug": "place-edcf7d40"
+    "slug": "khanab-nam",
+    "old_slugs": [
+      "place-edcf7d40"
+    ]
   },
   {
     "name_en": "HIA LEK CHINESE SOUP MOO SAM YANG",
@@ -14881,7 +14912,10 @@
       "places/ChIJgRK4MySZ4jAROovQ9LCqXU4/photos/Aa-ngMacUCNZAKBL10As6qwGsH4KM_TvYrU67REPHaNAP4qNxuQpgUT4CVzS1iZa1wSDVbAZNDnx4mwitPmWdRz7PwL_b5QqpyjqgiV0ny9u6kakN-43Q-aSZf2NXXjY_64Ww9h-h2hheV0ke9PJhiYKy1Tn5eEUEEijYePHCV_Y3E1aTeWknNweSKppZtsoXCvCVVlVCMTnuWb0EiTZFK0u6pe8cImuiJrcIsxdIb_WWJD8l8TGXdF5NkiWqoOs3ZIcFVRyRZkXcVr_z3N8tkO9aAHtAIZAvAf2VWQ_wOee8EVqjJHF67JsY2qP2aanq49Xpv_-M_cGvmgPwYsMANqK3mDhZ1BEcAoHTXPfRKCmTZmeDloomK-ISFfRI3IgbB9PsowAmiyx-6JfOzCp9yUNaXGpHYRdo00"
     ],
     "approved_at": "2026-10-09T15:30:34.112Z",
-    "slug": "place-bb301bc1"
+    "slug": "prapon-duck-noodles",
+    "old_slugs": [
+      "place-bb301bc1"
+    ]
   },
   {
     "name_en": "ร้านข้าวต้มนายอ๋า",
@@ -14910,7 +14944,10 @@
       "places/ChIJXR5jGhWZ4jARS4AZ2RodTw4/photos/Aa-ngMaTDKiH5rNLhbWekffpTr4A9YG5FyXUk3u8_V7CpS59j6IX5Revwowhx2PYsXWT7ndjxL408CL8eEyNnPCJ7TVgRDqCcoyjvFlMIdVNKn71vB-bXymR4vlLmjN6q5vz5omjqhyhjxDXeX0MiTBxRH45_8qmiVoPdpRYWljg3OoAvPIri9jegzy3bv1IU-jKbspd0g-zo5-kDG90M5SuynVtX1RIIbBOY6EMgDibBqw43MGKll2VCk4DadkCVrRfL_fEp56O0cBjIZhNjP78-MI1HqR_nzptYGA954cCoNQRWRCuozFkeTb8TnOBqn9e9j4j9A2qbuCL_u1vFODJvk7sCst-chcZfKrpcA6JynoHRjnD7QNwAbqQEqDkSZPi6B8XXJNTupG6glN_AmQiiBh3BR43"
     ],
     "approved_at": "2026-10-09T15:30:34.325Z",
-    "slug": "place-d640e545"
+    "slug": "nai-aa-rice-porridge",
+    "old_slugs": [
+      "place-d640e545"
+    ]
   },
   {
     "name_en": "Bar Lub 49",
@@ -15374,7 +15411,10 @@
       "places/ChIJcQYp-YNiHTER-Q2UIpd2nT4/photos/Aa-ngMZ4WyLyvEkgE3qBoR-BRuAOLcGrmFQb7r-evK-qrWXWKdIudcCoriOfYgdfqRMTxhC5FqMEOsH0Oi5xn2K7iZ_aRA1yZ9yXQy5ACBcPmPVxc7NNqLdfpeaDPKQfR9-FBJjNG8ezBPs-SA_TIhFZwQAlmvPBIa5CD6qVccI00GptPMK9TAug0_gTONKue6X0oDDzJW2lE_vMROJGWv8tmwuE26Q0_vbvXHuFAjRNOvdEIQ3dJo1riqsKCk_aIWsy-3B0yArZihMwZUG_cb1IgrOmrWIEEfcEI0wHKNDTfgVM4weGpIJLJGwrAnegPPERBqCiy5j_4M2bNg_YyzsTAMXVAkH3MfjqxDbZe4Ily-yPz2-vZcNZLxcm_qN5N2EvkUIOxqgvTrDKP350xKgUYLBG1T6D"
     ],
     "approved_at": "2026-10-09T15:30:39.463Z",
-    "slug": "place-c1d6a408"
+    "slug": "krua-muang-hue-lao-vietnamese-kaset-nawamin",
+    "old_slugs": [
+      "place-c1d6a408"
+    ]
   },
   {
     "name_en": "Captain Noi by ChefFiat",
@@ -15751,7 +15791,10 @@
       "places/ChIJsf65pOdhHTERb5tDTq0bkeo/photos/Aa-ngMaVJh5NK7DnhvCai-EE61ZvPvqTmJJMIOR5Rq_Ys-AXcAOT0qAhLxSAWHcDmlDefqC0Avo8rqI1KE5iLI29Y4MdRZPdW2LJNSE_pj260RbCPQM1iUI2QD4-d1C8sUNiDY6dEQb-EHgR9xpAJHo2qYpJ36Ns9bHpZXAEFGlo-b3YAkxfwrr7sXEpoyhViLPUMelgv8Ent7HfWttO4h7a8Hif6DsSnCHh7MJb2sRpSV0BPowcT3YUWb4yh9HsR9SJ0ZphKnlsRlLaTI05kBp7a6I_zui7gfg6bu-rsOqEDihoib36fZU7c_XKxXZzBE0FOJyOLqBejuIRckAp5jUHifrZp00uSXtMgWYMJNXlrSdmPdrm09GGlxY2FHIzHBNbwk1BLTtlom8Vq62e_ANdAFwSIaAHwoU4HU4kaNPEeLIazw"
     ],
     "approved_at": "2026-10-09T15:30:44.411Z",
-    "slug": "place-4a619feb"
+    "slug": "lao-kui-asawin-egg-noodles",
+    "old_slugs": [
+      "place-4a619feb"
+    ]
   },
   {
     "name_en": "เกตุโอชา (Ket O Cha) รามคำแหง",
@@ -15896,7 +15939,10 @@
       "places/ChIJDYhiBq1hHTERqOq4kGAbxfY/photos/Aa-ngMYJF1nGE_o9_HzbRKRpSYN6w3uzN9XkdjfL6aKwgp8aM_vboHb4sEfEr7ONCpL0WIbQktPq0X5Jp2sqvR0jveMdLz8fEFBlSfGEyu7OsDgzL6BNBz4XX-HF3N8yVdi-1nTytrKail0k-Z02UkhFKjTfsSAagbfjXq79UOgk2se6u6JUOhLHzszkbeVHNFodDBIFqZbpWCMf6ajBZrfafKbG_1ZKtmPfRqo0ZZWh-e0gLhulpe6yDtUzqdIeAq5Ut13wfdmC8ddzgo95wQeqWLtZw9lMdyMDNb6AXYw5wwUGo6cGEk-EpWduTl5f77IqvtrxDlOp-xYYcvm9GGB3J9RSKCDwm4OG_-luqm1SMiqI2UjpVG_eed6gOkwDQ-dcJgSbPrfUI8YsqpaxvkAFyse-d80"
     ],
     "approved_at": "2026-10-09T15:30:45.541Z",
-    "slug": "place-b237f75d"
+    "slug": "krua-khun-lung-ramkhamhaeng",
+    "old_slugs": [
+      "place-b237f75d"
+    ]
   },
   {
     "name_en": "เฮือนเครื่องเทศอ่อนนุช",
@@ -15925,7 +15971,10 @@
       "places/ChIJk61zHNRhHTERgkotlEJ6-tE/photos/Aa-ngMa7JtMXdFctKvYFoGFnBAhIX32JOfnwv5iHFE7xraxvU_1j16HC7Pf7da1NzM3HCAmuk4XAJG-AOzbJ-9D2JPF8XQKaQMifzytTpIDWq2nUOH9iczvwYx1fF9wruYdHDL2B8vTADvEgBs-s0d-n-2OZhaQX_fMqk-_bkkCl4ArJrdaOw-0BB8z4XJMPSm2iDkHS0dWYt77ibKy0SjTTirecxrV59R8gI4GOTA9Hm00FpJEbJFlmJF4Sek5TcJAxbbGxS45MA4tC0O1TNes9PmnGxT09NeIy_Ea-GikWrf_TnlPN9IDMwM2QZqcAc4ZIhCcEjvkohWl3gV9FhbWQe5J11oMWf0ir31C1jTfJAN_Jd_e23v7xdY4T7I_LLJUPp9vgVF4_mUvhO1U29SrTEHE5HaFtmDBrxB3SHPsT5FLDSw"
     ],
     "approved_at": "2026-10-09T15:30:45.911Z",
-    "slug": "place-335eef4d"
+    "slug": "huean-khrueang-thet-on-nut",
+    "old_slugs": [
+      "place-335eef4d"
+    ]
   },
   {
     "name_en": "Rose Maree | Halal Restaurant",
@@ -15983,7 +16032,10 @@
       "places/ChIJhS20JaVhHTERySEowYJF1n8/photos/Aa-ngMaLKoUdvAKVJc2IvUkxcV6gX9iMNBOsPgM2PvPUwiyZEKN-dlDuCQYa8lf6wHaiwyNmJk9w2XQTYKPUp1bPDM9xc1QymniBvs7rLXrSwEEW_PJf7Qvhl_PnjMofnU_C8-FjI4_m8EA5uYuxMaSJv2sQx354ZhjKw0Xgyp1y2AZEjzzAQhfFc9f9BfObInOhICnMo-u35kGGeATRDIpR6WNZ4-lHijdkYwkZeliTzLRtQdIo0TW0BAH9Ju5Z-M5vfwCcboNrYXEVo5SigGqpwGJZ2oFji65A8YZQH9CtVCCbIfjh0Xo-v-CMLQ5wCEHfmSPt7_2sPnwiLnDJNK3QtOf15kKQ8oJlGyANNkk9sTIi6NZso4ioQnyOxiLrw2SF_hhIZNEgWVbvu-TQquCsOHWR5IxBa6Y_95auS5tVpCWPSg"
     ],
     "approved_at": "2026-10-09T15:30:46.625Z",
-    "slug": "place-6c5908d1"
+    "slug": "heng-hoi-tod-on-nut",
+    "old_slugs": [
+      "place-6c5908d1"
+    ]
   },
   {
     "name_en": "@19food&farm On Nut 17",
@@ -16041,7 +16093,10 @@
       "places/ChIJX0aeVGaf4jAR-N_Dz2okwtE/photos/Aa-ngMaAXO5DSBnJ3T4jJKGoasOmwy8rkVYLNg1HMtv5J6ziU6Wh4PWUT5xxDm3nlcQ__2LTH2RG_0DLY_u-GD899ZdGeJGNgpwKpIj5SQ_xSwgrHPkwzUG-HFCGq1echWIan7FjHtD_nqYE-wKrAKwgVvlRaIfiR-f9lm_9v4r7-nejHYg_f5YmkOeHKyG_BNqiligr7lCjJ2KcxRVf6KeuFWb3A1nCSyBKIptwsQPbnaNFAbMOx2u9RG_uy73qUU-sR40BFI2HoSJUCspm5ywBd8WkP-AaDt2iWg5v3oumKkf_oVe6wh4_lLIQ8uHZ8XbArgSGN9khO3pXuEEUbxLkTY50Fu_mcPnu-gKYLJ5srVPI-cQWlNPapdPewJYoM0JT2A7yI3zlFXaQl72ozI25EoAACsFD0PU"
     ],
     "approved_at": "2026-10-09T15:30:47.494Z",
-    "slug": "place-11e5303d"
+    "slug": "yoo-gub-baan",
+    "old_slugs": [
+      "place-11e5303d"
+    ]
   },
   {
     "name_en": "หลาลุงแสง อาหารใต้",
@@ -16070,7 +16125,10 @@
       "places/ChIJsUP1bFJhHTERFS5Jnk8JPGA/photos/Aa-ngMY2WUw0T9STXlL6UXcNIZkJBjazArI6u8A0GoQSiCfgp3xhcw90zNiU4xSY0dd9L9UBYftkcLdnSrnqOB1NHX7-GmM0mGjrXFJnuc182emcHQ83s8SaLQNcf_SriFkvNt0DB0D_pdeY4_cUW6KfoHlH3gWaqD01GlklWORlvEfNKHh-fG9ZpPdyfEMjxRAVmI5KkhQcmCn6mJ2_xoAh1tlb_BIsoE13qNexCqOtJ0wXxIXuhOtzDfwlePDAMd5rdZWSw6i8W_2q4ITQz1HC1y6e05oZoPYwJ1aQ0to4I0LHuDWgdg0_nL0nDzw6xEGc3SYIpzSgnbPrZznRRq0NCJHe9uwJcBdYpl82q_WZBgdxtd0Y4o8VjaKbCHkGqjk4Dm3raCNgu-Ou1oEwtRmsuh8wxx5IK7PQdbYEONKwgJ84AA"
     ],
     "approved_at": "2026-10-09T15:30:47.668Z",
-    "slug": "place-6b180553"
+    "slug": "la-lung-saeng-southern-thai",
+    "old_slugs": [
+      "place-6b180553"
+    ]
   },
   {
     "name_en": "น่ำเทียน by khanta",
@@ -16244,7 +16302,10 @@
       "places/ChIJuVO0LcCZ4jARl_fLNcl5MqM/photos/Aa-ngMbc-iKEtZi-r5897ZLcqMsC8HiJ5jk3uSSbrApZpkInu7CQRbAgmpOq39SJJXnIji_tqVNFoWFL_8iZuVD8hl0AMvb29yaMrBc-qyepePSGUc0ZhkH0E2ACKuhcFIpLAax9PIxsBKcq8dfdCxjGMmmcYCoXLJsnbysq6hMcRR3v0U34YUtaY7IVeuxiwoBS2qs1iHYRjVF6HSKFwpOPUvARNO4KdXm4O2krkIyGEMNvkgEhRBfjt_1N0-rW-pviNd270kYChDZrRKG5biHU08F0GXlP5B-tPY1X4ogtAGVvC4dNxe5Stqaf77RaSWu-3_kqgtOrFTK2h1V04CSfvdmdUrfqiEocDWqaaZ7SMCouEUkkOe7u5bFSX9_gbp8qjuBTNzdHxAzaJ3PH6f5dqnmAa-SKx0eVluLu-uYY8uEn"
     ],
     "approved_at": "2026-10-09T15:30:49.575Z",
-    "slug": "place-4e7adbac"
+    "slug": "yang-hai-sud-yud-tee-talay",
+    "old_slugs": [
+      "place-4e7adbac"
+    ]
   },
   {
     "name_en": "Pad Thai Baitong",
@@ -16302,7 +16363,10 @@
       "places/ChIJ3bIy7T-b4jARr6Tv1sNr0YY/photos/Aa-ngMYIoiIOjcqs_MRjcNSOekzF2Elpaji6y_KtrI873aursLb6YwJqVw0OpJiGZW4IqmQKwPbAfZH_yDMUxZVwlnsJSyeijZpmBRipNzD7lJF94XlAo_jjPvhu1cfgmkUASXSmnhO4vb57Hj0mAfOIS64VVlZcUt2lj8BSI-PY6q2_WP0ErvI6jlWC0l_BxK7f6EzhnCYOo1-0tI7TwMBRv7LGzvEWJ4nfizE85u6r-eydg3XtZJcbJaK8_V_LafBqOj1w37gcXKQ70EcpJEjvnp4T3XMuI72Hv8F4Otb2gvNlnpMTn08AvLTd7VGGGn7VN-qkR61CcQRhUsiNVx0yIJvSrBdS6XY6RjEK7dKywyalmzhfuDicPS1Rtf0-ojo-isvDAOR7sbSEOxwnBQvdv-Uc1eTRZTGETYyyxhRVqbAC"
     ],
     "approved_at": "2026-10-09T15:30:50.325Z",
-    "slug": "place-d3e75767"
+    "slug": "kin-kub-mok",
+    "old_slugs": [
+      "place-d3e75767"
+    ]
   },
   {
     "name_en": "The Reise",
@@ -16360,7 +16424,10 @@
       "places/ChIJg_hnccid4jARRd6Hmc35u0Y/photos/Aa-ngMaw-38jVU9r7mgVV_OXr0LCfHb-tcCz5WkG4PGU583QRzFJg3lZb5A0vY9MszQoEvXe2tUPlz_vT8XUuWOHazaA7X_xKE3y6eLhtPKynborQUerLPKNW_SyB0bOn8bAhRl74Y6JiwyEBMZ6qmF8opPEJPGeH11nIrnZgGLX8aI1XndWnUuMDkxtcaXI9AYsLhcLEQ-ljH0QrRX8hD7jvyyBCh407ibd_uUYXutthZSYVbQO38bYGMs2LgcAzv4eTn1V607PQyqetnnMd1NSuwoLVyXZEHnLLcMlv6hQad46XR78zin6-9oFcdwlR4osCdEvapSbXZqOHuHFna0zBdQ2E27cOrEofpOlMp49-DW8_z4gUEOy7BgnuaLSi6aMQTuk7jqvnl75y5An-pIzSapINQsC5GGOmq-fPfjhDkxN"
     ],
     "approved_at": "2026-10-09T15:30:51.124Z",
-    "slug": "place-5b8f01b8"
+    "slug": "ratchaphruek-seafood-pracha-chuen",
+    "old_slugs": [
+      "place-5b8f01b8"
+    ]
   },
   {
     "name_en": "Ob-Uan Prachachuen 20",
@@ -16621,7 +16688,10 @@
       "places/ChIJ8an9TgCh4jARvPOJtptHUys/photos/Aa-ngMZG_JHiPMI3NbmfoJ8PnKp-bc1D2xUAu29JlVWUxLO5QHyt8gx-ZGpEP1sN_klMEgdppLHJzyWxo8r4qvVXuXNAf7HtRnT63IghSrVqvJmhJYLDfgTDC5ODRZJfJkdjk_0OxYOSixxwVsiAuoMqzbF5THu2-SlzYrb1jq_ebLH2AHPH2Mfngf77gBHvW_638agVT5g4uNMNS9w969twmXToQVtlb6I1Ig8o2_d6Y79jT6lLs525xlDUmqL2uNsmOqM6zA5QAqY1eBuWe3fBzRPgyE48Fb3G6LNXPNgRDYkLfPlVhibBuHor59EH0HVsfl2kF_ZtBxLeaKspkCXtlVj72R-CbiOMKXpIxofd5VWI_CUJum7GbYYsT6kfSYYxRpowof9g8247igZnk-kyvoj4ugNAEECztiykW8fiARyduw"
     ],
     "approved_at": "2026-10-09T15:30:54.845Z",
-    "slug": "place-eaac000a"
+    "slug": "kuk-khee-mao-bang-na",
+    "old_slugs": [
+      "place-eaac000a"
+    ]
   },
   {
     "name_en": "The Witch Antiques & Restaurant",
@@ -17954,7 +18024,10 @@
       "places/ChIJCeU7RABjHTERElbG6T4um7k/photos/Aa-ngMbU0fHKcgpchwTQ-OLpuB1r1Io5bjHbRSXqm3dyOgD1cK_hJ9taHKsoeNtWfX01z9YvpTDFRHO8VDulAMhPREXWqF7--C5GQN5B2Nw2zN8uXJBAUmFsb072zeCxYwbocJJryBr5_RvNRw-hBdNWYkKdKTWWO7UG0S2buou-CfenkVNKMlLgK_DA6ziGfHfsXYs4-IXDuTMdlSmlKS6fPFsvamtFCm1v43f99ESxOrL17gRUeF3TFzh_SAtBDbBZhhrHFSWG1j2WqjAFwxo1PXXuojqz753PGmRJK9Hvesk2JflSrA6uP5xTRuOeoGa2eDkMxb3CDzenUpShwtSN0DXiQYwe3u14cv85u9peyJ3tcq2ol26TofczozlTUmYvypVD4CNhr16HcQ7K7oi6F98ZZH1FJz6E2m8cPinkbkxXYQ"
     ],
     "approved_at": "2026-10-09T15:40:08.569Z",
-    "slug": "place-428c898a"
+    "slug": "thong-thyme-cafe",
+    "old_slugs": [
+      "place-428c898a"
+    ]
   },
   {
     "name_en": "Forestpresso Cafe, Bistro and Co-working Space",
@@ -19789,7 +19862,10 @@
       "Lapchiong Salad"
     ],
     "approved_at": "2026-10-12T09:02:40.278Z",
-    "slug": "place-7b34dc7a"
+    "slug": "ruay-mit-ekkamai",
+    "old_slugs": [
+      "place-7b34dc7a"
+    ]
   },
   {
     "id": "f2381130-cb2b-495f-a233-1e74524cd5d0",

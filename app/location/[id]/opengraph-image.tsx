@@ -41,7 +41,7 @@ async function loadPhoto(loc: Location): Promise<string | null> {
 export default async function Image({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const locations = readLocations()
-  const loc = locations.find((l) => l.slug === id) ?? locations.find((l) => l.id === id)
+  const loc = locations.find((l) => l.slug === id) ?? locations.find((l) => l.id === id || l.old_slugs?.includes(id))
 
   const openhuninn = readFileSync(join(process.cwd(), 'public/fonts/og-openhuninn.woff'))
   const notoThai = readFileSync(join(process.cwd(), 'public/fonts/og-noto-thai.woff'))
