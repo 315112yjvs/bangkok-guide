@@ -46,6 +46,33 @@ async function fetchPlaceFacts(placeId: string): Promise<string> {
   }
 }
 
+// 手動新增的店常常沒有帶 place_id 的連結，就用店名＋地址到 Google 找出是哪一間
+async function findPlaceId(name: string, address?: string): Promise<string | null> {
+  const apiKey = process.env.GOOGLE_MAPS_API_KEY
+  if (!apiKey || !name.trim()) return null
+  try {
+    const res = await fetch('https://places.googleapis.com/v1/places:searchText', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Goog-Api-Key': apiKey,
+        'X-Goog-FieldMask': 'places.id',
+        'Referer': process.env.NEXT_PUBLIC_APP_URL ?? 'https://www.bkk-local.com/',
+      },
+      body: JSON.stringify({
+        textQuery: `${name} ${address || 'Bangkok'}`,
+        maxResultCount: 1,
+        regionCode: 'TH',
+        locationRestriction: { rectangle: { low: { latitude: 13.45, longitude: 100.25 }, high: { latitude: 14.05, longitude: 100.95 } } },
+      }),
+    })
+    if (!res.ok) return null
+    return (await res.json()).places?.[0]?.id ?? null
+  } catch {
+    return null
+  }
+}
+
 export type GenerateInput = {
   name_en: string
   address?: string
@@ -71,7 +98,7 @@ export async function generateDescription(input: GenerateInput): Promise<Generat
   if (!process.env.ANTHROPIC_API_KEY) throw new Error('no anthropic key')
 
   const catZh = CAT_ZH[category ?? ''] ?? '地點'
-  const placeId = extractPlaceId(source_url) ?? null
+  const placeId = extractPlaceId(source_url) ?? (await findPlaceId(name_en, address))
   const placeFacts = placeId ? await fetchPlaceFacts(placeId) : ''
 
   const evidenceText = (evidence ?? [])

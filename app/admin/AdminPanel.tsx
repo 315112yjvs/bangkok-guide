@@ -712,7 +712,13 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">中文名稱</p><input className={inp} value={form.name_zh} onChange={e => setForm(f => ({...f, name_zh: e.target.value}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">English Name</p><input className={inp} value={form.name_en} onChange={e => setForm(f => ({...f, name_en: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">泰文店名</p><input className={inp} value={form.name_th} onChange={e => setForm(f => ({...f, name_th: e.target.value}))} /></div>
-            <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">中文描述</p><textarea className={inp} rows={2} value={form.description_zh} onChange={e => setForm(f => ({...f, description_zh: e.target.value}))} /></div>
+            <div className="col-span-2">
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-[10px] font-semibold text-gray-500">中文描述</p>
+                <AiDescribeButton form={{ ...form, source_url: item.source_url }} onResult={d => setForm(f => ({ ...f, description_zh: d.description_zh, description_en: d.description_en || f.description_en }))} />
+              </div>
+              <textarea className={inp} rows={2} value={form.description_zh} onChange={e => setForm(f => ({...f, description_zh: e.target.value}))} />
+            </div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">English Description</p><textarea className={inp} rows={2} value={form.description_en} onChange={e => setForm(f => ({...f, description_en: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">地址</p><input className={inp} value={form.address} onChange={e => setForm(f => ({...f, address: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">泰文地址</p><input className={inp} value={form.address_th} onChange={e => setForm(f => ({...f, address_th: e.target.value}))} /></div>
@@ -1225,6 +1231,37 @@ function DiaryPanel({ onChanged }: { onChanged: () => void }) {
   )
 }
 
+// 手動新增或編輯時用：依店名、地址、Google Maps 連結請 AI 寫中英描述
+function AiDescribeButton({ form, onResult }: {
+  form: { name_en: string; address: string; source_url?: string; category: string }
+  onResult: (d: { description_zh: string; description_en?: string }) => void
+}) {
+  const [busy, setBusy] = useState(false)
+  async function run() {
+    if (!form.name_en.trim()) { alert('請先填英文店名'); return }
+    setBusy(true)
+    try {
+      const res = await fetch('/api/generate-description', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name_en: form.name_en, address: form.address, source_url: form.source_url, category: form.category }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (res.ok && data.description_zh) onResult(data)
+      else alert('生成失敗：' + (data.error ?? `HTTP ${res.status}`))
+    } catch (e) {
+      alert('生成失敗：' + (e instanceof Error ? e.message : String(e)))
+    }
+    setBusy(false)
+  }
+  return (
+    <button type="button" onClick={run} disabled={busy}
+      className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 hover:bg-indigo-100 disabled:opacity-50 transition-colors">
+      {busy ? '生成中…' : '✨ AI 生成描述'}
+    </button>
+  )
+}
+
 function AddForm({ onAdded }: { onAdded: () => void }) {
   const empty = {
     name_zh: '', name_en: '', name_th: '', description_zh: '', description_en: '',
@@ -1354,7 +1391,13 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
         <div><label className={label}>中文名稱</label><input className={inp} value={form.name_zh} onChange={field('name_zh')} required /></div>
         <div><label className={label}>English Name</label><input className={inp} value={form.name_en} onChange={field('name_en')} required /></div>
         <div className="col-span-2"><label className={label}>泰文店名 ชื่อร้าน（複製給計程車用）</label><input className={inp} value={form.name_th} onChange={field('name_th')} placeholder="เช่น ร้านอาหาร..." /></div>
-        <div className="col-span-2"><label className={label}>中文描述</label><textarea className={inp} rows={2} value={form.description_zh} onChange={field('description_zh')} /></div>
+        <div className="col-span-2">
+          <div className="flex items-center justify-between mb-1">
+            <label className="text-xs font-semibold text-gray-500">中文描述</label>
+            <AiDescribeButton form={form} onResult={d => setForm(f => ({ ...f, description_zh: d.description_zh, description_en: d.description_en || f.description_en }))} />
+          </div>
+          <textarea className={inp} rows={2} value={form.description_zh} onChange={field('description_zh')} />
+        </div>
         <div className="col-span-2"><label className={label}>English Description</label><textarea className={inp} rows={2} value={form.description_en} onChange={field('description_en')} /></div>
         <div>
           <label className={label}>分類</label>
