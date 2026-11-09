@@ -977,9 +977,9 @@
   },
   {
     "name_en": "Hot Pot Hoi Ya",
-    "name_zh": "Hot Pot Hoi Ya 貝類火鍋",
+    "name_zh": "Hot Pot Hoi Ya 蛤蜊啦啦煲",
     "description_en": "Thailand's first-ever! Shellfish hot pot with a fire show at every table 🔥🦪 ฮ๊อทพ๊อทหอยย๊า Hidden away in Ratchada for ages, this place serves up fresh clams and seafood with their signature seafood sauce—and every dish arrives with a dramatic burst of flames. It's seriously delicious AND totally Instagram-worthy. There's only one location, so if you want it, you've gotta make the trip.",
-    "description_zh": "泰國首創！每桌都有火焰秀的貝類火鍋 🔥🦪 ฮ๊อทพ๊อทหอยย๊า 在拉差達藏了好久，新鮮蛤蜊、海鮮配上獨門海鮮醬，每道上桌都伴隨火焰噴發，好吃又好拍，只有這一家分店，想吃就得特地來。",
+    "description_zh": "泰國首創！每桌都有火焰秀的蛤蜊啦啦煲 🔥🦪 ฮ๊อทพ๊อทหอยย๊า 在拉差達藏了好久，新鮮蛤蜊、海鮮配上獨門海鮮醬，每道上桌都伴隨火焰噴發，好吃又好拍，只有這一家分店，想吃就得特地來。",
     "category": "food",
     "address": "617 หมู่ 11 ลาดพร้าง, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand",
     "lat": 13.8268116,
@@ -1011,7 +1011,9 @@
       "Clam Hotpot",
       "Flaming Show"
     ],
-    "name_th": "ร้านฮ๊อทพ๊อทหอยย๊า"
+    "name_th": "ร้านฮ๊อทพ๊อทหอยย๊า",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "name_en": "Peppina (Sukhumvit Flagship Branch)",
@@ -10953,10 +10955,21 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=wasteland%203%2F19%2C%20Pridi%20Banomyong%201%2C%20%E0%B8%8B%E0%B8%AD%E0%B8%A2%20%E0%B8%9B%E0%B8%A3%E0%B8%B5%E0%B8%94%E0%B8%B5%20%E0%B8%9E%E0%B8%99%E0%B8%A1%E0%B8%A2%E0%B8%87%E0%B8%84%E0%B9%8C%201%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%82%E0%B8%99%E0%B8%87%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJCSlJJRSf4jARBFGVsVbdqfw",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
-    "mentions": 1,
+    "mentions": 2,
     "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม",
+        "quote": "《酒吧編輯精選》排名第10。"
+      },
+      {
+        "url": "https://today.line.me/th/v3/article/DRj6L6V",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนพฤศจิกายน | LSA Thailand",
+        "quote": "推出永續經營Provisions系列的首款手工蒸餾酒NUAL，靈感源自泰國傳統薰香文化。",
+        "facts": "位於Soi Pridi Banomyong 1, Sukhumvit 71路，Phra Khanong Nuea區。推出NUAL手工蒸餾酒，以泰國傳統薰香(เทียนอบ)植物成分為靈感。11月推出以NUAL為基底的限定雞尾酒菜單。營業時間為週三至週日18:00-00:00。"
+      },
       {
         "url": "https://thedotmagazine.com/bangkoks-best-bars-our-standouts-in-a-scene-that-never-stops/",
         "title": "Bangkok's Best Bars: Our Standouts In A Scene That Never Stops",
@@ -10976,7 +10989,9 @@
       "places/ChIJCSlJJRSf4jARBFGVsVbdqfw/photos/Aa-ngMZ9bXtEtbqQTai4VvVq6gSBLT32wQcZ2ivL0pw45QybTrY27h1Tp26CWnEi-Il4Fuyw3nAadMashXudcIZdhjuznFKwruqOa7tXzbQXXiBM5qFon--RMjbIvOl6s5qNOiu5CiQtI_qja2b9b6AZ6c1u4kHNl41NeH8GOGWEHndNuibSdBamNrJvlzWYOLbtiClyqTMNQiybt3lNVcR5H2kNxxmlxAbVGou6S5Xp7-z0V8ptJ4TX2tSOHf_i7MkSA-2VNN8_M0kiRQ5cRugCkIvwzLbvPuZ474pVdx1hAIzL7KJvB2ve1ooFhWNNwkIvz9u6Ew_KJkmjINgvA1m4bbIm0bFdRzvxerN50BcIvVKjcTxxPsZdYEgdRiibRDy3sRjpjnTaLMJvZu55-h3kPRiwEcKsuoMNOhxmLUz2zhswdA",
       "places/ChIJCSlJJRSf4jARBFGVsVbdqfw/photos/Aa-ngMaYneBtCu9-9rpVsUdqVSKzga2TSML0tACpTo39VhW9G8GoW_BGiX9vBykQeJ9LBh7S4qynGX42--qmUpDPhvv-w_YueCuRO5jTm57AqjYRAXvWLBvVTm5KhMO8PMT1N0UARallwgQi2YDslHoIQEiCE0sjgDFWIooAurNP5hyi9U-HaiDoXy0VI0A9jsFEjOB9ySEgRsfABJbpVDs9ySx8UT71Y812Td6HbuYFdgBIPFtMemoHxqVa-6NTvS7gVd4tujhxNgq-DavKZtcwR3UoC59_mR1GE-srmNFr9hlT-NF1mP7mLaBtjJXXzBS6uXfNbaqBrboJJGYMSa9rik1ezcVeqDcmycflFtbi1cpZj7rZCNZGe3G4Ry9CC-IZKC9TPc_k8R_YdKd0kP8nt4a5xe_6lvwS96i67jUFUYA",
       "places/ChIJCSlJJRSf4jARBFGVsVbdqfw/photos/Aa-ngMZ-fBEfOUAS8DEA7NHNj5_ieFG6Bp5uVDYz_G9IPvtOFLwtXQ1Guy5OEOqiERpUFHkedzYm9gYG8vN8CRV5SqsMl1QE4KrAUITA91P5mnROqXlmscz-14jqkPv-mKFs1-fD12Reb6Tuh9ultRUhlzDHS00sSTv5CLQ8Wkpw4r86nmXGC2neok1eCYPw_ZMQgvUn9r15i6REFGFQIbUMyGyYKrNi_hukd1_A9DaJicnnLhsjozhJDcHR3RVFs6kuUhhYLgOkPhBun6JSO889cQPxnxrEP1RIkFN4orEaEW5JS77nSeGagmwUjI9TAWnwBzY-ShUY6QNvwMuVb0Mb3cayUCYFDN85E3g51Y-wP0dbfyyn-zFdjTSOrE-ybUcE98V8q93GHfhp-Mkp862xFWnpUi2wrx-cBNQBhaEGmqYphw"
-    ]
+    ],
+    "base_tag": "hidden_gem",
+    "trending_at": "2026-11-09T08:24:20.996Z"
   },
   {
     "id": "e1eaf870-3b10-49fc-aaf8-cfcfc3042517",
@@ -11659,10 +11674,22 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=The%20rolls%2023%2C%2010%20Soi%20Si%20Bamphen%2C%20Khwaeng%20Thung%20Maha%20Mek%2C%20Khet%20Sathon%2C%20Krung%20Thep%20Maha%20Nakhon%2010120&query_place_id=ChIJgXIKXg-f4jAR3dAcohMLarw",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
-    "mentions": 1,
+    "mentions": 2,
     "evidence": [
+      {
+        "url": "https://www.tiktok.com/@tinkerbaim/video/7697922130188586260",
+        "title": "The Rolls Cafe คาเฟ่เปิดใหม่ใกล้วันแบงคอก | TikTok",
+        "quote": "新開幕可愛咖啡廳，靠近王柏，有糕點和飲品。",
+        "facts": "新開幕咖啡廳，位於王柏附近，提供糕點和飲品，有拍照友善的氛圍。"
+      },
+      {
+        "url": "https://www.tiktok.com/@bnzsicaa/photo/7695296495372881172?image_index=3",
+        "title": "The Rolls Cafe, Bangkok | TikTok",
+        "quote": "粉紅和黃色星星主題的新咖啡廳",
+        "facts": "位於沙吐恩地區，粉黃色星星主題裝潢"
+      },
       {
         "url": "https://www.tiktok.com/@theleisurelab/video/7691553286322670869",
         "title": "The Rolls เห็นพี่สาวญี่ปุ่นมาฮอปปิ้งคาเฟ่นี้ เพิ่งเปิดเลย ยังไม่... | TikTok",
@@ -11682,7 +11709,9 @@
       "Brioche Rolls"
     ],
     "approved_at": "2026-10-08T10:07:41.631Z",
-    "slug": "the-rolls"
+    "slug": "the-rolls",
+    "base_tag": "hidden_gem",
+    "trending_at": "2026-11-09T08:24:23.349Z"
   },
   {
     "id": "9073e865-deca-4716-8a79-e5da02b70112",
@@ -20201,10 +20230,16 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Messengerservice%20Bar%20306%20Thanon%20Santiphap%2C%20Khwaeng%20Pom%20Prap%2C%20Khet%20Pom%20Prap%20Sattru%20Phai%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJcdcCLOhhHTERwEua_zsYjW4",
     "rating": 4.8,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
-    "mentions": 1,
+    "mentions": 2,
     "evidence": [
+      {
+        "url": "https://roadbook.com/bangkok/city-guide/bangkok-thailand-best-bars/",
+        "title": "The 14 best bars in Bangkok 2026 - Roadbook",
+        "quote": "設計導向空間，供應創意調酒，菜單以日常超市食材製作。",
+        "facts": "位於Chinatown內百年老洋房Baan Trok中，Thanon Santiphap路306號。採用共享櫻桃木桌營造親密氛圍，擺放黏土花瓶和琥珀玻璃瓶。雞尾酒以雜貨清單格式呈現。"
+      },
       {
         "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
         "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
@@ -20230,7 +20265,9 @@
       "Grocery-Inspired Menu"
     ],
     "approved_at": "2026-10-12T09:02:40.433Z",
-    "slug": "messengerservice-bar"
+    "slug": "messengerservice-bar",
+    "base_tag": "hidden_gem",
+    "trending_at": "2026-11-09T08:24:22.664Z"
   },
   {
     "id": "99d69827-11f9-4fac-aa0e-5e5cf756bcd0",
@@ -20507,10 +20544,22 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Funkytown%20(F*nkytown)%201%2C%2039%20Soi%20Sukhumvit%2037%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJiVI9bX-f4jARIiAgnU2YP2o",
     "rating": 4.8,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Sukhumvit",
-    "mentions": 1,
+    "mentions": 3,
     "evidence": [
+      {
+        "url": "https://today.line.me/th/v3/article/DRj6L6V",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนพฤศจิกายน | LSA Thailand",
+        "quote": "推出20款新雞尾酒，將泰國日常食材轉化為創意飲品，按Funk Level分級。",
+        "facts": "位於Sukhumvit 37巷，Watthana區。推出按難度分級的雞尾酒(Level 1-5)，共20款新飲品。招牌飲品包括Ar-Rai-Gor-Dai、Beauty in a Pot、My Russian Honey和Isaan Daddy。另有創意小食如Smoked Pate Cannoli、Bone Marrow Canele和Bloody Mary Donuts。營業時間為每日17:00-00:00。"
+      },
+      {
+        "url": "https://www.timeout.com/bangkok/things-to-do/table-talk-in-bangkok",
+        "title": "Table talk in Bangkok (November 1-15) - Time Out",
+        "quote": "泰式童年記憶的雞尾酒創意詮釋，新菜單於11月1日推出。",
+        "facts": "位於 Sukhumvit 37, 39號。新菜單推出時間為11月1日。提供從第一級到第五級的「funk scale」雞尾酒，包括泰奶雞尾酒「cha Thai for Days」、火鍋風味「beauty in a pot」和榴槤「forbidden funk」等。食物包括世紀蟹魷魚凱撒沙拉、辣蜂蜜雞肉漢堡和骨髓蛋糕。營業時間為每日下午5點至午夜。"
+      },
       {
         "url": "https://www.lifestyleasia.com/bk-th/dining/drinks/best-new-bars-and-cocktails-menu-in-bangkok-2026-this-october/",
         "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนตุลาคม - Lifestyle Asia Hong Kong",
@@ -20536,7 +20585,9 @@
       "Hot Chicken Dinner"
     ],
     "approved_at": "2026-10-12T09:02:40.516Z",
-    "slug": "funkytown-f-nkytown"
+    "slug": "funkytown-f-nkytown",
+    "base_tag": "hidden_gem",
+    "trending_at": "2026-11-09T08:24:21.717Z"
   },
   {
     "id": "508f5d6d-e4be-4373-8fec-3bae8cff36dd",
@@ -22642,8 +22693,14 @@
     "price_range": 2,
     "tag": "trending",
     "area": "Thonglor",
-    "mentions": 1,
+    "mentions": 2,
     "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/food/best-new-restaurants-menus-in-bangkok-2026/",
+        "title": "The best new restaurants and menus in Bangkok right now",
+        "quote": "由主廚Benz Akadej創作的傳統泰式家常菜，融合懷舊與創新",
+        "facts": "位於Market Place Thonglor，Sukhumvit 55。主廚靈感來自祖母的烹飪，提供罕見傳統菜色與經典菜色。招牌菜包括炸豬頰、辣蟹芒果沙拉、椰奶鹹魚醬、咖哩燉牛腱、蒜香炸河蝦。"
+      },
       {
         "url": "https://www.instagram.com/reel/DeqS0wITrl-/",
         "title": "benja.min.bkk A new Thai restaurant in BKK is opening their doors on 21st",
@@ -22665,7 +22722,650 @@
     ],
     "approved_at": "2026-11-03T07:58:17.650Z",
     "slug": "benjamin",
-    "trending_at": "2026-11-03T08:04:10.999Z",
+    "trending_at": "2026-11-09T08:24:20.996Z",
     "base_tag": "hidden_gem"
+  },
+  {
+    "id": "fef85446-f8fc-44aa-8520-53a8a1bcebdd",
+    "name_en": "Lloyd's Club",
+    "name_zh": "Lloyd's Club",
+    "description_zh": "位於 Thong Lo 101 號 Staybridge Suites Bangkok Thonglor 飯店 30 樓的調酒吧。室內有沙發座位和氛圍燈光，另設室外露天區。調酒走創新路線，DJ 開始後氣氛才真正熱起來。停車位非常有限，自駕前要有心理準備。",
+    "description_en": "Located on the 30th floor of Staybridge Suites Bangkok Thonglor on Thong Lo, this cocktail bar has indoor lounge seating with ambient lighting and an outdoor terrace. The cocktails lean creative, and the energy picks up once the DJ comes on. Parking is very limited, so plan accordingly if you're driving.",
+    "category": "nightlife",
+    "address": "30th, 101 Thong Lo, Khlong Tan Nuea, Subdistrict, เขตวัฒนา กรุงเทพมหานคร 10110",
+    "lat": 13.7282047,
+    "lng": 100.5803159,
+    "photos": [
+      "/photos/fef85446-f8fc-44aa-8520-53a8a1bcebdd/0.jpg",
+      "/photos/fef85446-f8fc-44aa-8520-53a8a1bcebdd/1.jpg",
+      "/photos/fef85446-f8fc-44aa-8520-53a8a1bcebdd/2.jpg",
+      "/photos/fef85446-f8fc-44aa-8520-53a8a1bcebdd/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Lloyd's%20Club%2030th%2C%20101%20Thong%20Lo%2C%20Khlong%20Tan%20Nuea%2C%20Subdistrict%2C%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJ9wJNuA2f4jARGBhmp81kLkA",
+    "rating": 4.5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Thonglor",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://today.line.me/th/v3/article/DRj6L6V",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนพฤศจิกายน | LSA Thailand",
+        "quote": "新開幕的休閒風格酒吧，位於Thonglor，打造舒適的公寓聚會氛圍。",
+        "facts": "位於Staybridge Suites Bangkok Thonglor飯店30樓，地址為812/3 Sukhumvit 55。11月6日正式開幕。室內設計結合沙發座位、氛圍燈光和室外露天區。未來計畫推出「Friends of Lloyd's」會員專屬概念。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJ9wJNuA2f4jARGBhmp81kLkA/photos/AV-0GLe9eoNlq9euVMmcvpA7pFjfOaAbxgg7pxNlTGuwrSzWY_-sz97Nmfzin3-cNjPGcPq8QoUGxErJ2-4jAZ9ZFjAFpXtiEushIREGB4qLQJyZoxRsNXJ0El9_3GHDywe4PHllbEm3vEOAFxlENg-WL0t3MZRrE4OlYfUjh7gLy-x_ScZYatUH6STEWBybCitImeliL7HhUylTDo1aR7Z6qonSb2UcKb9JZ70_6HWg5_bRubm1l16FY8951z_y3Br7QvvB5T9HnByOtjNcI1FIKgekFim28tm3_0IMnrQf_UEG56MN-HVYqkziVuH1_wm_ygUf-o1RejKOQ1PL0iez6RaWQZhe97nShkGmq5owu_fKZunpYtGri8eBs3tET7O19oJeloFy0yIRzQ3l5AjeqTMK-Ns8_q5ru1GIts4SD7crAA",
+      "places/ChIJ9wJNuA2f4jARGBhmp81kLkA/photos/AV-0GLebSb6FHf0wuq0cySJEPX9kOS1HRoLLIkRdzyvy78_YmLFyUhO2Oqvyo58erx9J7lUWdO3N20sjCquVpCc6UlXzciiU5wKz6wms0-KTWLX7HEdk5p93W9Hs9Nya-ljjXpsiwunj5KFh4_iOHznTvYk4bdqIshTLVJ8wvq-NWQYLkzyF4m2fqiyBWjUv9IqVXO9mCX8NLLGKTK2y2x21KDNqMMxfHLHoBCr6rS89_YciSZw8XniBUi2qURCr_wKpRwPbb47S4WuFJRCJlbgFOPTX9KUegDhQzYvRM2wQb5vm8kRGtIgZzL1iam5zoL5V7DbpzoygQYwd6YOGZ2l1o1neIGzks_uYbPObjZYJjYYNCun2WXWBeIZ_vjfv0OZEbYmGYpUlS-fg2pA2OiqbBeDYddcazfM9rG64dbvg3yZriQ",
+      "places/ChIJ9wJNuA2f4jARGBhmp81kLkA/photos/AV-0GLd63-xDDst1jSHQQ2Ln9CxFWVsMAdYwoRkZ3Crqbx1wbRAZUG0Pr7sM8mDj89FjlRcRTknzZzdyvAWIVbP3ir-3fcJ9QzBeiYNXYmcZS3FGS0cwMccewCdOXOz2mA6M9gSa-uI5h6YTwDE2aIwG9NQSxkJ0TZwR-VwtY8b1BzWE9SZhMfXIozjBhtfdYJ2UfHXwbnSvGuRWRXSwc2d8mhjqkUJZ541-NR5kjE-xXyneEcQUC9gRFQ7XqO2ZTK8lgPoTj4Z6Z80NZt9msErJF6ZRiK2IuRH-kGAPAwy6nmV8tLpdrE-bGc2x6nnlSFoSNfo2HYx3ROmiUVnAG1FUxAqOdwyb4szGJOVTVrLpr-WeddaGpvBlXHdpaG2BFdFKHzupO7e9lNERdxvSQdxPJiT9LlKYfG5TQ_ifJwO4I0-WfA",
+      "places/ChIJ9wJNuA2f4jARGBhmp81kLkA/photos/AV-0GLdiBerUk745lsrb_JPCoe1WUM6HLXz_A0LqeHbpjiUkaSpRuWd-kfqTGEUWgp9oN90BHC_IeBFvxe4ffI21cjXTV0akHCvF7dQuku-RK8qzURW9ivZ-UXBn9_VRHQwDocvTS5sCgrqWa63gbLb0VVeHKX8TTtojtD2jACxM1ylNvGsaD4NNpyHgaJ5FE_A8kPOb_UO4jLqLUzUFPzVo6DIgPNtAMMy9o2vR2GzVMB6NnSJn_Eb_GOSK5OI6X9_1NQOH_r4OyzDZRgFzXdcf608eE2FSt-TR5ICuu3K0_MGNCzFYcZpxXwfvtyVHu5u7OgSkKB1Z_QSKHcvMXjaCWwFJF0akfh2jm-7NrpB1WZndPLcnmsLvKWM4_3at-TZ8qmYAC5abmJI6sQgGvx_B2YLdnA",
+      "places/ChIJ9wJNuA2f4jARGBhmp81kLkA/photos/AV-0GLd1PpDGelBMeUocSEI6oPaOsPRkSfTMAaab-vJQALVJ46hEduoZJiNUBjJV_488yX0-OsC8b3TU-hGb-gQSTI5YSbAmIZxEsQE3pNw3dsuoLWf5XdV7k-Kd_MUBy2kRNfQJ20Ni4YndO6XHG6fj_ximTC0kZ2eaCmLam58ixEpaNO3ctf2S8TTnNbsCGPdJXUmO5lptUkADkBPhp-PWWvSKvthW7CAXy_eYAXe7Mwd-fLUeujC3iLiZDMD8JMoICvJJ1k_Jm7wCYx30q5EkFL7jmOA9ef7pcfGtJbxFc7JuS5x-e_yN0OS-3U5XeECkDpb78OgtN4PxTW2c5US-3Q8vd325Ae-KcO-nPXCtAUEIKpq0x3Q3f8cge_ahTmUn6CIwH5Q7kExiX9yKkLgiSWgHZxQuPcmJibo34OKPlqQU",
+      "places/ChIJ9wJNuA2f4jARGBhmp81kLkA/photos/AV-0GLet7MncApDzBNBpqsJTleHCin3VpZHZ24A7-yW1ONfCuj_0AXg7ftJPg5I6HlFZvMXJSaJuQ54hCcPY1ptyNDruTrul89oxotkN4Ia_t-cQCNTQaYIFVh9n0vY1kQlwo319BulnJxsVO40JmYXmWPv_rPg4ujZo1qZQZ0sGOpcUnZeOzxsgg-s-qZu-ixrkIUrhBwPFkPWCTCjFGvX02lWB34QkvaY5J2D8sFuakJjWAZC2CuHgpbnQChIh_dok96-Iid-FHZ3JJoy8Ez-ybo6i-p7jznzOfbt6NmlsZYQYr4wr2TcfBhJoWNlR3kx0bUsCujUGr94qxo1ljkfeBO6xXFmBWtWwv6id82BGlZz62mijY1UU4nZ9zsuUFK5evsuT0oyBD6Koxwi-ZmOeNYk411sm"
+    ],
+    "highlights": [
+      "Innovative Cocktails",
+      "Live DJ"
+    ],
+    "approved_at": "2026-11-09T08:27:39.827Z",
+    "slug": "lloyds-club"
+  },
+  {
+    "id": "4d2e565f-ffa5-4721-a44a-a4be2c6bffc0",
+    "name_en": "Enough for Today",
+    "name_zh": "Enough for Today",
+    "description_zh": "位於 Vibhavadi 16/10 巷的 Enough for Today，專注於以泰國米酒 Sato 為主軸的調酒與餐食。招牌飲品有 Nam Nag Aek、Chocolate Mali Martini 和 Krajiab Soda，佐餐推薦番茄料理和醃漬小菜，與 Sato 的搭配尤其出色。店內也備有精選工藝 Sato 可供品飲。口碑正在快速累積，未來訂位難度可能會提高。",
+    "description_en": "Tucked into Vibhavadi Soi 16/10, Enough for Today builds its menu around Sato — Thailand's traditional sticky rice wine — both in cocktail form and as curated craft selections. Signature drinks include Nam Nag Aek, Chocolate Mali Martini, and Krajiab Soda. The tomato dishes and pickles are standout bites, pairing especially well with Sato. Word is spreading fast, so booking ahead may become necessary sooner than later.",
+    "category": "nightlife",
+    "address": "74/78, 10 ซ. วิภาวดีรังสิต 16 แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร 10900",
+    "lat": 13.7958146,
+    "lng": 100.5655079,
+    "photos": [
+      "/photos/4d2e565f-ffa5-4721-a44a-a4be2c6bffc0/0.jpg",
+      "/photos/4d2e565f-ffa5-4721-a44a-a4be2c6bffc0/1.jpg",
+      "/photos/4d2e565f-ffa5-4721-a44a-a4be2c6bffc0/2.jpg",
+      "/photos/4d2e565f-ffa5-4721-a44a-a4be2c6bffc0/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Enough%20for%20Today%2074%2F78%2C%2010%20%E0%B8%8B.%20%E0%B8%A7%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B4%E0%B8%95%2016%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B8%9E%E0%B8%A5%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%88%E0%B8%95%E0%B8%B8%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010900&query_place_id=ChIJIc_p2bSd4jARZhwB3Wq3vhE",
+    "rating": 5,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Bangkok",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://today.line.me/th/v3/article/DRj6L6V",
+        "title": "บาร์เปิดใหม่ น่าไปลอง 2026 ประจำเดือนพฤศจิกายน | LSA Thailand",
+        "quote": "以泰國傳統酒類為主角的新型社區酒吧，強調放鬆舒適的在地風格。",
+        "facts": "位於Vibhavadi 16/10巷，Jatujak區。主打以泰國米酒(สาโท)和傳統發酵酒為基底的雞尾酒。招牌飲品包括Nam Nag Aek、Chocolate Mali Martini和Krajiab Soda。營業時間為週三至週日17:00-00:00。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJIc_p2bSd4jARZhwB3Wq3vhE/photos/AV-0GLdzEShpRuft9pK5NQnSjacX38hVtR91DrDwf0ZTGDMQLpWbWGYfaHTRQPt74gG1gpT-7_imKMaSwutEbAnIELEoSm3B9_m3BVVec2BiVvTf5MQrKrNc-BhMCFlhDKiy_6uEGxx7lmH7GCXzQ3g0h3RFfUEBaLMph4TkaIn_PwtBwBuwm8SG8MFqUOVAyznPfmDEPM-vThxElpfHYXfTbZ_rxXkkN4W428--oxqWd1VHHzJMXsOTPh3GrDo2CaZx06Ic9HJ2S4d6r2_x-lO0a5QJ26rJNtR01Gqu1TIABiw2tKJ-Igd9EGTtaxlA5HS5rLwBnSpN-USgfnaBdpn1AewjJt0lpkPa1BiVuNuXTflcREPrXJDOs9KBWOvopnRKxeZQfIWPLvm4mLn7LKTYW5JP2816DE1CGPAZgprW75Xi2Q",
+      "places/ChIJIc_p2bSd4jARZhwB3Wq3vhE/photos/AV-0GLdMlRjE5vgH3YxXrvEQddVTaIxsv6TD4ffzv0ndxD-S7NO2aDVEagj_jalm3qs8358d9v2MkRjWi9-r2RmuMut7-VljIuLgsPed8bqD6H1BHW0N6Q0R6icpHI1-EKDTKF5Tr39xrVyDV0gstQ3vBKkI6pnA_h4xywoAZAXEz33aZssZRy1cN-tzmzwkoVH2zSqaNu6oMXrhko5NYxIw9zJ0RozWZKXT-l-XxW0inodIzPMgzYnkeT0Qt54dJn7OMP9ulxp_pbzdw-flNc_2NRCOYwikQpCpGIBPyWVW247n1HA1DehdEgUQm4FA0CZxchL6cUqPyssd8DBYyb8XfIE3I9If8pAlL4NX_lTh4Chf6wB6Hr5PjosPHbcgiOF422DGzNzcFOINYGzTn_a0T9TzwZPt1LojhaNLo1CfniLa",
+      "places/ChIJIc_p2bSd4jARZhwB3Wq3vhE/photos/AV-0GLcJoFiuDcWIInQkLZH2AkF0IoGNRlR2AzHfayI-5RHjACgvbbDFEm3gRTbP3K9LPaaImAxuQzG7qzFGrjZmvECr9phl5UeJowaAuViI8e-ZnDTXsn28p7KqnqIjcneKTIhn6h0hjeIodlHrv0OLiUKq54ESL1l8PXj3taCZ3wYRrdq5_kfjT-g7XeOi1viMUlkwAqNZ8TDH4_9RMQ6YgM8e5oF-830k3J7VhC1XxulddW3qOJXTCwWB0qCQYNhPxU1gERk31Gm3AqjJ73r6utJS6dmbuajx3iNsoQ86EPj2_qTsgSAODER5I_seCnwQoezQmXBVBKpUDjGO2OqxeouHGj3f3St-b-c-X4rBZgFA7b2Fd8D70ppw4X7MA9lqI87xodt77bvgj6miyEicw-qQ-dhNMSDaTKSEYrsLx-JsqA",
+      "places/ChIJIc_p2bSd4jARZhwB3Wq3vhE/photos/AV-0GLfLi3YLPx3YXb7_3qs-_v9gj0EubOmX0pCg2c6DChx3ZGo_0TfwFHPQNxQcPEep5ZrQsDQy3iU--wvjmm5pELWXP2N5WzSgSnBGDMishHCrvcLsuzTpC3ErV3eCgv1zxuHz8FeC3cXdRZLgDkdlvioNPZgAqG8fHxbQDKZQ0bbtIQ1m3Twzir1oZea6An9F5WCPOdY8UOOLy2EHGo8x-lspxqn97ny32MfV9zmeLXAhGovcjGR5n-OJJnDWWfTCba2y4bGQ4QsgqTrZMOwCqLC1Z8Tipl_cQTj1w9fiGScxmjkYH9lbwDW9q5lIc-vSM9_9R1SoCfjp5iURvCCZwC-LIJIeskH5yH3Ately-gEbzfrJFWQMnEay5D_m_DVllJ3T1QIeG1imIyu322NDlCQZI-I_uKk597tmTX_oB0a2",
+      "places/ChIJIc_p2bSd4jARZhwB3Wq3vhE/photos/AV-0GLcuCyVwNSfOcBP0J5L4XrWrlF3vn0C4mlObCHd9b0NrSGjDN4fkeiCRydR-cF2jJMTiaryhdGehh6aIB8aP3SattlVw5hhITgNrrXde-wyWCYHqzeGHobVgR-wJr7nqaow_-LIg5BShAY4HgaeWaP1bxnZCBdvMgJ06Hd-jGzlPiUVsCWMX11p4YEB8_3_YroBTeHTCd9XQsO2eElV09Zu4LP52rCbhm84xlGpqUzg0h99ElO-oOblz6fuO5SGFPI5-4VnZH5iN5tNJc9D1vUyRn-hvKBlF5uOkWsiXfiz1womlTByO2FOgoBIIfUhEVSBF3PFVW22blzlPXvPv3kW_ofTJQuLeSOWOi7VP0hjWcpC7FkIRem2a184RlReXrpT_lCy2o761x-KjQrRa3D16JVHNKn9fdYULbPXIEDn2Vw",
+      "places/ChIJIc_p2bSd4jARZhwB3Wq3vhE/photos/AV-0GLeqW9wpce12SZ4I0UcN0JD3DWAgB8G0065QAQhYJ0tykG8LeMF6AmBZd9X4USrblJ_bin8xHeVESaTI0-Nnp2JXPer46OCMMcJWXAJlcH0snSjG68Lrt6Tl7LSpuIOAiS5QI8eIuHAvygyjdsH1_mJV4PaxQkK8iq56rAIymgekf-bI3LsE3Rf2ROL8n-sEoLMUtU9I5SnvSKd6RdqjvHSyCIFRhxzilVfUUq7BY6p4s8KkYQwHgcRJrre4Z_SBne-UFPwV9505PF1dSsIwiEvCRHSdT6cicM9xOm1zvKJUDq4inEYz4iQc4kDo6XE4gXv2nCIEb_ijeeZ9o5b8u3-v8zFgG1xLyARERf7KT9R-FoD2PZX-sxVvKgUCM72Os_bU71iB5cwqaY1s1RooPyyRhMy3VWLnrkrPxyM8yzBZ"
+    ],
+    "highlights": [
+      "Craft Sato",
+      "Sato Cocktails"
+    ],
+    "approved_at": "2026-11-09T08:27:39.852Z",
+    "slug": "enough-for-today"
+  },
+  {
+    "id": "dd66be8b-6797-48ef-a841-d775e2f4b6f1",
+    "name_en": "Harmony Krungthep",
+    "name_zh": "Harmony Krungthep",
+    "description_zh": "Yen Akat 3 巷裡新開的餐廳，主打泰國在地食材搭配西式烹調手法，靈感來自歐洲小酒館與傳統牛排館。高級泰國和牛是核心，Zabuton 部位多汁入味，熟成牛排也值得點。空間從外看氣派，進去反而意外地有居家感。肉食愛好者可以把這裡排進晚餐清單。",
+    "description_en": "A recently opened restaurant on Yen Akat 3 in Chong Nonsi, built around local Thai produce cooked in a Western style — think European bistro meets classic steakhouse. The premium Thai wagyu is the main draw; the Zabuton cut is juicy and full of flavor, and the aged steak is worth ordering. The space looks striking from outside but feels noticeably homier once you're in. Worth saving if you're a meat eater.",
+    "category": "food",
+    "address": "7 Soi Yen Akat 3, Khwaeng Chong Nonsi, Khet Yan Nawa, Krung Thep Maha Nakhon 10120",
+    "lat": 13.711867999999999,
+    "lng": 100.5451889,
+    "photos": [
+      "/photos/dd66be8b-6797-48ef-a841-d775e2f4b6f1/0.jpg",
+      "/photos/dd66be8b-6797-48ef-a841-d775e2f4b6f1/1.jpg",
+      "/photos/dd66be8b-6797-48ef-a841-d775e2f4b6f1/2.jpg",
+      "/photos/dd66be8b-6797-48ef-a841-d775e2f4b6f1/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Harmony%20Krungthep%207%20Soi%20Yen%20Akat%203%2C%20Khwaeng%20Chong%20Nonsi%2C%20Khet%20Yan%20Nawa%2C%20Krung%20Thep%20Maha%20Nakhon%2010120&query_place_id=ChIJtQmATwCf4jARv6si6RYeZYg",
+    "rating": 5,
+    "price_range": 3,
+    "tag": "hidden_gem",
+    "area": "Bangkok",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/food/best-new-restaurants-menus-in-bangkok-2026/",
+        "title": "The best new restaurants and menus in Bangkok right now",
+        "quote": "西方烹飪融合泰式靈魂，展示高級乾式熟成牛肉和手工起司",
+        "facts": "位於Yen Akat 3，Chong Nonsi。專注西方美食融合泰式食材，提供高級泰國和牛、起司、冷切盤等。靈感來自歐洲小酒館和傳統牛排館。營業時間11am-12am。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJtQmATwCf4jARv6si6RYeZYg/photos/AV-0GLcmqXpWsg2R6nw5KRV1YflsIbndyPqZGlck7cw7ls4nYprGkjXRZOqkbmxdDQBajizHWmauCTD7QkUsIeb_P92Wx8qSouNFrqZyBuquVGCwPG1_2W0YYpM3FICenwk7BO_wDWcuaRaM72BOBZf6fOlItcNFUQektBc7P7p7yhxLYHj2jDJ0PXtd8sHa3kL3mCvLcLjeEEV_Nya21YiDMHikVbX3dG_65pXyr1mQ0xnhAs9F0dB1dCVlXDVViJCqWoXzHQBHS7yLm-pkwHHF3Q2E3OmFMzHqU9KeCvexBWYF8XR_ssOoc7xhl7y2PgnGgL_W5XHoFNd2tYKjWUOeexQq0zxT6ZVd-9Nz7NYxz_lx2SqfMVG64B2NgAtvDUrmgQHSr5zVVUAsSYFZw07vuyOzH2nG4llF4n1OY7da6J8c",
+      "places/ChIJtQmATwCf4jARv6si6RYeZYg/photos/AV-0GLfPkZe_q0WPpTkYcqX_2UR4VCCtqnAaXZcFpGnyq-0_y28MovS4hlHXhhq72MsC7O7Vp6HkT5lHnYgyUpIsZ1Hkz8A5t53pUMsWZeFsb2lD_wkrmkHRSCMbcd_fugUMo7uIgpmIf5F535hoRIiJJmRXwC2D4VjQOTGzAMzVU1tYz9qLpoNtzw_qkfYe7zWac-clqc1hHBGnQyPvHY84OMbyLFpoWuGlMMdDjdkt1BEtxGCNr16ndnaqGntdkNwP8g4DsPtGrBtAgG3oLHuk1NYC6t-vU2JMgTHy_qcS_S6aUv0o4aOvD_k-SRX8zby5biQkYvTPdBQfboFzDyMuK4ca0lW11d4D3qbE2wLq6jAPUfT1EzYXhBIJy83Sem0Wwj8PxgaPR3-vz1-Hz5unlpbFEAL01XE_t8cjmp1dbWPiqQ",
+      "places/ChIJtQmATwCf4jARv6si6RYeZYg/photos/AV-0GLfLdwUVGZxONDnJnFGjQpMKM6EY3ND5nvKML_2-XJOiiWN44rUR_Zx3AbB-A73-xJBNHI-meFHmNJ1x6oXrkeP-4MQAlLldlF6M9J-XcryyeVtiM4YUqFcP_Tb_JPSz6KH4MPOwzn4MtRbhhLxWSPV4wW0Y_v_UH8V4fBN8nWUEtnuo_RDncLKHYoSDhSJYPdf3prbbsY51d2aRSrWCdURyZZv6bzXZx6SD2IM4zmKSYJk349rCXW565d3ifUV2t0JMFCLR80xGMv8RBsJbFDikVJLHzghn3hcdnSteu3ot9a6NzhfI8z-5y18fAwcQqTwV12BTnsOYkZcLr3bQpSHHb8SkjEjo9hzZBpGH-8ev1R3q67GFerXbbGAP4v_-WwOw3QKk3aRsIO_OAB6s6dmIpthX-rHqb1qBUP7zauQVHA",
+      "places/ChIJtQmATwCf4jARv6si6RYeZYg/photos/AV-0GLdeiwIWfd-HWZ1h_fQyJJRK3mdB1vzPsBzwjneb2kgXSi55WzfmnbyDM1Dl0P88zqJHVGTS3SUIlJpznyiEKps0I8IRDO-iw00tk2LQFhM6IReeBkYRsh4hC29EU1f9uyWYxoTyW58g45ZEVFliZtRCpGLS8QKJ2YM7C4IL6RTezsOfdiv9y_zOoec4HFq6BjTmt_SHBpahkG1o_LtSQvPvd2nPYAueRG7TrjETyIIIguBnko20xVv_kvLGgI6tB4vnshc0ZAzpMoECBxfs6PqFeYQ3nlQcQNlIq8R01CtBCK_gwDNXKCBqYsBHwihuIuctY1B7yfcmKlHbTF_7g6TsApnqqBU5IYTIX7AFqrzVbRLA0YF0DCrOhwbe92B76i-0SUIVy5BMv3jtx9B6TuIovjqjbEk6lXtMtKNXxupGsA",
+      "places/ChIJtQmATwCf4jARv6si6RYeZYg/photos/AV-0GLf6oelBdfTdn7jmJ-cH9pMsUfgox7xLKQ0eLdvfAwBbDbFI27IOJVBdVbzmGFK81AZS1HYqXes83G5FlE5Wxq1WafOliJvFYVJ1FMP6HAjj4VMVEkcagnJsZiPdNg2_RTjf9SOadaM9Gb1XhjWwSDiAyfvUcCGXBuRwPD9rSVqQTrTbB1aqwqd1gwceX7sBdf26We7InYbNFw1UUmdOBU8fHq20Fx8sfs-Mm69CJSEIbEUPsXYyvfBk-DDdpFg8qtNEMW91taG6gX2b6huTyVO3E8btegX_o5jAhpz1mXZa9feWCAcB5W9cDGFKVdOwWMz-VkacgEPgKrvDyZCggasufU0pvPwyoHoxK-4fv6_SRBn8cfj_ch1OEa5B2YVNDnVracowshCAv9LgV5dXROZXeFH0Q9WCcb3fCNTyCr8f5Q",
+      "places/ChIJtQmATwCf4jARv6si6RYeZYg/photos/AV-0GLd9863iQUUlhBupqaUDZb2jmweoS9YCJh3pW3Q1HbwEcYhAVPl5CUks1b23WH50ar4GqMg45u6sBhXGjukMYnvwwIdZYDtNTsweh8SbFuZG1VDRhJ-1my5GIL_g7GyIX4PJ1aikV_UOKJROFJW-v1g5ImY6X4Bl64zNgrnq8EUbmi2hZr5MKEgzPEhnvPg4z3eVhw_FYxpfYHOLvplLyHOEfIRC2i6rM_vfKHtbhF7uyK6zRPIgR0B6Hr6ZCgEo7vbE439I3y0Pmmymx88JOCyZsh_qA8F-0C2AjyAqRBJqWxeKB8kAMxFUmPTaKDvB2WZfxzIRdGLxSp0nngeYqXs_zdN2MPp7Hfd6K03QNip6vrNmlY4uZGR3zB8Ax2O-XeQmRCA0ofc05j3A6NDLM_UFzhLvI_ISsgqRxT20yvB01g"
+    ],
+    "highlights": [
+      "Zabuton",
+      "Aged Steak"
+    ],
+    "approved_at": "2026-11-09T08:27:39.874Z",
+    "slug": "harmony-krungthep"
+  },
+  {
+    "id": "9eeb7b4e-2c15-47e2-be2e-64a51856af9b",
+    "name_en": "LOS Tacos Thailand",
+    "name_zh": "LOS Tacos Thailand",
+    "description_zh": "位於 Thonglor 的 theCOMMONS 商場內，由墨西哥主廚 Kalid Alcalá 主導，玉米餅皮全部手工製作。Carne Asada、Al Pastor 和 Camarones al Ajillo（蒜香酥炸蝦）是常被點名的選擇，薯片也是現做現炸。份量偏小，但食材和口味走的是正宗路線。Cantarito 雞尾酒也值得一試。",
+    "description_en": "Located inside theCOMMONS on Thonglor, led by Mexican chef Kalid Alcalá. Tortillas are handmade, and the chips are fried fresh. Carne Asada, Al Pastor, and the Camarones al Ajillo taco (shrimp with crispy garlic) are standout orders. Portions run on the smaller side, but the cooking is the real thing. The cantarito cocktail is worth ordering too.",
+    "category": "food",
+    "address": "theCOMMONS Thonglor 335, 17 ถ. ทองหล่อ แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110",
+    "lat": 13.734979599999999,
+    "lng": 100.582141,
+    "photos": [
+      "/photos/9eeb7b4e-2c15-47e2-be2e-64a51856af9b/0.jpg",
+      "/photos/9eeb7b4e-2c15-47e2-be2e-64a51856af9b/1.jpg",
+      "/photos/9eeb7b4e-2c15-47e2-be2e-64a51856af9b/2.jpg",
+      "/photos/9eeb7b4e-2c15-47e2-be2e-64a51856af9b/3.jpg"
+    ],
+    "source": "media",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=LOS%20Tacos%20Thailand%20theCOMMONS%20Thonglor%20335%2C%2017%20%E0%B8%96.%20%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A5%E0%B9%88%E0%B8%AD%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJ85T5d-yf4jAR1NjGgiDB_2Q",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Thonglor",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.lifestyleasia.com/bk/dining/food/best-new-restaurants-menus-in-bangkok-2026/",
+        "title": "The best new restaurants and menus in Bangkok right now",
+        "quote": "墨西哥主廚帶來道地墨西哥城玉米餅店，手工玉米餅和自製莎莎醬",
+        "facts": "位於theCOMMONS Thonglor，335 Amhara Phatsadu。由墨西哥主廚Kalid Alcalá領導，提供手工玉米餅、吞拿魚脆餅、Gaonera玉米餅、烤肉玉米餅等菜色。名稱'LOS'代表'Land of Smiles'。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJ85T5d-yf4jAR1NjGgiDB_2Q/photos/AV-0GLccJVQpngo7hG8y6HcVccDO9zXYZbEMdF8V4StgoeU0K5QWnmCISNN-cnou7OAo3FRgmDUQSBjlBja80pCNPlZBiE85TnmsKa6oLsE2sET-h7nT4DFTbptIVaR2XlysA5hOMbx1Ay11tZ0FrfA_Sl9P-wkOomBsZ-6Js_-9vo4ni3-cCZSs-sIV1trmP13pjn9uAAdjxBcrZarTq0Mxe2ORXOGA-kOWFW0hCKFiiNZdRholqVgCRoX_ElriwsNl1kmFPYcpYM59lMGen0uBIxLk2zRdmck5ecbb08sNvU47z66HtX2aa4JJfzyRH_7ExkTmStehGCWgyKSfHwkdxwIXn4fo5ax7kQV3CTUhtI2mCf-e3diSrSokKPEChxuYpgNjEe6U-z5dYj0Ut-4AOgZswuFDri1eSRI35TAylQGd",
+      "places/ChIJ85T5d-yf4jAR1NjGgiDB_2Q/photos/AV-0GLdmBMsvgMhusUF9lOjLERCEZPKiiU7TgixSOQEEfXTdblYj9i2egtNoGFaGeByi2A-7--b5bm0jMUTHlXLYWB0-BlBT2BpeatQAqb2aCLxY4LewC51PnpzE8Eb-kZMB_N5_MUHrVy8PxMlXyphENE7J_3iHj4QBUlHqbKRjbsaMMf6Gb76-VKtITQOGA9lY0BGw0DSbcR31JUk0X0u4IEHOgbPqKE9U0eoSwweWLMLhN9FOmlZ_n1iXL6GIoRQFsvGYZSkR6Cyi4A3G21gtwSzCH6n55UjtLhsX9kuR3Ki4bUOP_DH1UWJc-Xrxz7OB6f5K5NJpGSR8sAqFpH78t0bm9MeXvH0X4EsWKqLeGHNLWXpyffhnfKZBKVG6gTm0DNzBFWeG8JUuxBqiUgcE5sYnRKR7vZRvDuix5rBmzgRG_w",
+      "places/ChIJ85T5d-yf4jAR1NjGgiDB_2Q/photos/AV-0GLdRnhkt85aYfPgbdv7iMszW2w0ckZ3gbQcCXBKK87A8QqpMnNtL3iCcbP2aJugWLovuehHMubTBNLouG2aEiv7AUJvMJpCuzP2HcosYBTriNuESLjZSPvOo-Lj6KtbdSUYpaDgotHaPGyu2hSDHuWvNrx5lzQ_idI10T2IQyw8KSXZDFBloGT9s00Nzflu97CilD0pVghEC-L4_6fiIOpg_rxhfCVmWB02khfsIy8ieOH6n6V8kWcRTKTXeua0z3aHFP8Y0nHvBtZbMVMyvRMz8FwV9h7ssrmx2Ymn7vsUYQigo3nAhOWPTQkqvgtjWlNyz7dPcNYx7cqlE9eyUk1TicMo6XtRWAdMGfwXmpyGnh1xMddFJo8hcOQEC232O2ZTfe8uDfWoHznrD9ivhdtjN1pzA80rY0XRMMj4ix9kljg",
+      "places/ChIJ85T5d-yf4jAR1NjGgiDB_2Q/photos/AV-0GLfXsi8z6elCigZkRmfhQ042vQ-XcGmF2TJMhMeWdSkWzyspHQoDKhV93w3M43pIP5Ll_tYeOb9vhonwjvbfosg2mb0eeoZ5T4KzHSbuoHqagWZsGGhb2mc0SeyEaSeMuTn3L65zpsLd6VQuzTNxcq3twYR6bGHq54x-rRjyDYQrlPBGdetPTdIhqFuq9KvmmJMrGsnqLE_jt9zFQHC-JOmu3UF45VSkScnw0OCgbjAM5FwxfE3dJ0xUbA4zzdiNIR-Cx5Yha4pdfHQT2DdNO5AF2hfoDSIYaqzOz7Pdzb-Flr7l46_PUTJWnD7DQ_7Hzuqq2-dhRtoWqPRtNCR_dLo2dKjPLlTI9b2LBrEzAQLelztA7FLeX9sVCJfVk7usZP9CFjR5-r6S-MQxT0sJ8Ad64XWmhott8Ugto7cYpYce",
+      "places/ChIJ85T5d-yf4jAR1NjGgiDB_2Q/photos/AV-0GLdWPrGSHGNCM4cMytlUTWVZD6Fu9NCRzZCaAFCYk_AGDTqYhajVUjr_xpEyP1BVtoV1itfPitE03LKWh_bHls70ge_OEs8qivORrNv89invAhl1pztcSDds5yBy4Qkk_UAbyLZ42zLZWlrXs-bpLDAA-iRl04ckpgfgW1FRnX85KBkxH_bQFLzWr4C-6EEiC0I1LONHPsqS2vT_Nc9nIWEAnmw-7HfakHMxYLKyLKYN_eEt9K5rwnj2wXfWz9g-2wa3W7WtpZ91ER1bgXmtJi6YIfDjY3nfrcsNZSFEh1JNTqhPjyy5nbTGuTbErVR6A6kpmbvbHN-Bznywp4FBAlsDOFxXrQKvFjeDXhwam1Z13wBcCpxNvynvHWmxBq69VBR5370HKigFszKgzk780yk1kOZQK-qWF9mG0ymKJX7iPA",
+      "places/ChIJ85T5d-yf4jAR1NjGgiDB_2Q/photos/AV-0GLfsK7SB9GC80Uq80o8epkpaf5m6j4i7Y_Xa0BikBKwP05dhkyX2mxJTX0-ALeJJTyeNptBdiQkpYYKY0hQWJ8YI3uiPLZ9h5ZbTKd-CCE-PlLU4MSByv9EJmQ3cvhiau3IDin1MWPWnzgcFvXejuvN7O4sUY2VBBCayCEhH4C-RGMjKbYntVGZ_uLCuUu-3NlwOR2RUJ_-oHBQFkmvf4NBSVRM_vKGvIhM_1LOJtUHkhdSVjlwaGaQeVy2jyMKcDXipxDQdaA_EENv8r9xERvlvS07hltbReRvOyJSfoD3MrulnkVtJpHGOt6y4d0ffWj-DvaWvcSsB-lHrJ-91YQOp0oeLdkBX8t6efpH2Qa0sZfbntklJFZX8E0z3XhFdB2j_PsIK_GQIyebwbqbh0e0rkhnqy-PP-c1Vqg6Q1ehCPg"
+    ],
+    "highlights": [
+      "Al Pastor",
+      "Cantarito"
+    ],
+    "approved_at": "2026-11-09T08:27:39.896Z",
+    "slug": "los-tacos-thailand"
+  },
+  {
+    "id": "eb8ffce3-f796-496a-b9e3-48440f690fc9",
+    "name_en": "Matshun.bkk",
+    "name_zh": "Matshun.bkk",
+    "description_zh": "Nonsi 路上新開的抹茶專賣咖啡廳，分上下兩層，座位不多。抹茶飲品分清澈版與拿鐵版，可選牛奶或燕麥奶。甜點有餅乾、莓果提拉米蘇和貝果。週末人多、等待時間較長，建議平日前往。單數日店門前不能停車，可停對街 Amazon 旁的停車場。",
+    "description_en": "A newly opened matcha cafe on Thanon Nonsi, spread across two small floors. The matcha comes in both clear and latte versions, with a choice of cow's milk or oat milk. Desserts include cookies, berry tiramisu, and bagels. Worth knowing: waits can stretch long on weekends, and on odd-numbered days there's no parking in front—the lot next to Amazon across the street charges 20 baht per hour.",
+    "category": "cafe",
+    "address": "129/8 Thanon Nonsi, Khwaeng Chong Nonsi, Khet Yan Nawa, Krung Thep Maha Nakhon 10120",
+    "lat": 13.6944685,
+    "lng": 100.5397199,
+    "photos": [
+      "/photos/eb8ffce3-f796-496a-b9e3-48440f690fc9/0.jpg",
+      "/photos/eb8ffce3-f796-496a-b9e3-48440f690fc9/1.jpg",
+      "/photos/eb8ffce3-f796-496a-b9e3-48440f690fc9/2.jpg",
+      "/photos/eb8ffce3-f796-496a-b9e3-48440f690fc9/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Matshun.bkk%20129%2F8%20Thanon%20Nonsi%2C%20Khwaeng%20Chong%20Nonsi%2C%20Khet%20Yan%20Nawa%2C%20Krung%20Thep%20Maha%20Nakhon%2010120&query_place_id=ChIJEf97HQCf4jARAyYx35aHxUU",
+    "rating": 4.4,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "area": "Bangkok",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@matchun24/video/7698762960377908487",
+        "title": "มัทชุน (Matshun) คาเฟ่มัทฉะเปิดใหม่ในกรุงเทพ เสิร์ฟถั่วคั่ว! | TikTok",
+        "quote": "新開幕抹茶咖啡廳，提供烘烤堅果菜單。",
+        "facts": "新開幕抹茶咖啡廳，提供烘烤堅果相關菜單。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJEf97HQCf4jARAyYx35aHxUU/photos/AV-0GLdH9ROCMYb2OpdGWg921-UVECo3SUzMVA7haVMmQi0QeeApq-p5y6U5RudK2G8c4lE5Ovb5F4927Jmuxg_r2LdjrNn1uM9HRNZaUxWwg3nQ5MXwGMCA0-Gku_89WDRmLS8TY0Z5dKLjDVD4z_0hLQXamOo5QdLUAn5O_TyR0arz7pP_6-PdYbYhtOzrRvZZEtpN9zx2OhikTG6eWvyng3lAOWTGx9vU-rasntpup1VmqPpmB0wtm-ATkivEpk8zRr8485Kwnv3BV5-O0tzfGm34cs_4ACC3OncQJBOiyvL9W3pmQOYTJLnzK6L8QejT6fUoOyZ-IQm92syATrlJmZcR7c-VglkLoQ5sIxW47Bx-_bZ9_b7nSKG8dNf3o_AsfwCGw3MNqfig-kdEOHCdriVUsQGTIXT9hjUYCz0PtotFng",
+      "places/ChIJEf97HQCf4jARAyYx35aHxUU/photos/AV-0GLeee7xjZmLa6Xj9eTRxSW-kYwuYQeKtH-8F5pS2r0d5FStOWCKHU6LjRln0lKtFJrwuDtNlM6GGiMnerd0Ii3k4JYFFUdMLgwtTokCKCPy0dHz_xAE2oLOeL4d32q6R405qKJkTyp-GSSmBS_zdfXaoH3x7o7xGRv4gHNb1Z7VWytSIir2SQFU9masCDrWl1wdchvlhdsdEpbW1IVjVbN0ML_ekEChbuBrYCcz9XVK5WyXMXYnM6gPI4DVBHhNIR3MiQbSYprjzghdG2OLYba434HJrrcZI_VB9osZylPUsIBK70xJ-naSiJzEQcv0kBpYP-OoU-dnQa5BC4sHMizGfJFrcGzG4mlcuTfWPaTq44KUVXU3lUMlt8EdUByQc_VG9hZLoNo5O_fzKt3MSB-vbzRpO6c-LPLbuRA5m9cz47g",
+      "places/ChIJEf97HQCf4jARAyYx35aHxUU/photos/AV-0GLeumz7mv8beeaKDPwiNboMxLqO7bPRa2b-KpAx08S6n6fy8bq_R_kx1Buxdy649q9jmo-YqZ-h-aCorRgPTMASz3zAeXqKYrNrJPEBtOHe7NJPTmtzwjwJ4Vh9oBTa0JJ07RCpV0-X8_6YPl8cE-FopkStiE7io1MOUJShawBkjD1epKSxeaNSYCS98KcBXG83UDgwHAXV32-VJncA3XQj98oCp2kIXzMI9_Y5420_LNKNCIk0kMGBLkyg8bdw2oZKG_6Hnj7m7bUNIE5QjQdUuR91BiW1dcTMJgZk8UhV-7qnWH_bJKg0RVmOd5Rbp3keqjk0QkYiNqafV8rk5fyceFaP0DvjDgx4GFzD0CFjQMI8e_YewWR7IwBiOlJgnr5vkJPhLWSCc3lk-LAHlNVhf4IXuwLMQznOCXUT0SsFf",
+      "places/ChIJEf97HQCf4jARAyYx35aHxUU/photos/AV-0GLdzKUCSLvbnpwI7LG8mEY5l5NsLKE6psa74_eoBZEMq7C0gGktlXw4VRrm_V-mEHsi_gWN9-PFhl6YZFQF-gxjWavXNBVkZr8Olkuy62TCyuB846A02R1NApKznqJlWFyYCJhk2qmBIXz85y6lywWHrARua5w1YRuKV7jo66-5qoxPfhNpIEg0xDYtygoZ3uv8liYSTrb1FBz1rTKTu-II4RXKeMNa_pGpTWasRWIyODuuRkWJD7_9hBbkwN8Zn2p5YgAy3SO-YbFLkgV-qAo645zc7PdKYjnJhQjB9T00gdSyehHbvWHLu4UQd8PLpFHCuYag-IKSe2Uz8no1mhaFbCu958udSQ_DYdV-k6_tG4GnTOGS0n915IW9Hga-7hwzu2CBY-hkUnSHbK3-xtOU5d2z-SOea3css48KejdK0_Q",
+      "places/ChIJEf97HQCf4jARAyYx35aHxUU/photos/AV-0GLen-Ij8BnK-t6TzgptvRNwabFfM-7NjgJVsvIlKiKWUjzuRil5E4YTvqmgVkXK8ydo1XOcSFhEVyJKgzsqZvjS4uO48xvZz9oKd4iVp-wPs3sRy71mobn8d9bPc_Ns1Me0BNVQiGkSQ8dtFQviOjrQ2gOcXA9B8jv3aTq1zgJOBQ6m9tvQTp58KnEmByc3BFCIM178h4edPuJiC7PYFZNL25Oc5i7eH-hYG2kgdTpr6ZiBBYd2-eMSvA9iTUSR0kSzbO4kg2WQr6dBtS4iM3nxCn6xK_fbb1J1ULMEPaRM81_MjLaZKrG3XeVLymT78yyva2nHnoJzwPyuf1zV14PEtzzC8g27FtcK_yAPBPZUhUQO7cMC32rBYi-sjaP8Twj4ZVi8X7TnE92rRoZ5t7C5yGSNwXNqGUgm1zx5rnyLJuw",
+      "places/ChIJEf97HQCf4jARAyYx35aHxUU/photos/AV-0GLcVHYlgsARA3Erkq0izFVF_CYxV58J6nimlj74KQ7QIWSmYHpPkiTRq6ON_l1HmYj7YBLuraiN_XXKxLBf_shZp1Fns58IFuEfomrVEkEIJvOVoYVl4lrFWJbO22Lpkp1IysEudECaqEULJcPTqktkKUI20HSn-NL9KJhEThyGTWe2agoukYfvttYDTg04fhpBtzHzD-6azc_9uw-NRZ40KKcfNs8t5xEbhVDURUpCKimi42M4xf2uMfiA8d2qliAokCLuBsRsmXuBxtkciiD6mOuGE62QJgSOW6E9sIQti4l_iNxIe2N_9EIn0n5iXd796KVUL0vsJXUMW2F0qu08cHblyMSl2qbSSo-SeT2LaVMGqIdqYiQpZovkg8HY0--0ySa4S9PK7EjTdNBuNVlmSJaiMdpkVeT8nHG4H8oclfg"
+    ],
+    "highlights": [
+      "Matcha Latte",
+      "Berry Tiramisu"
+    ],
+    "approved_at": "2026-11-09T08:27:39.914Z",
+    "slug": "matshun-bkk"
+  },
+  {
+    "id": "726bcf2b-ea67-412b-a5b6-d2d33c18f185",
+    "name_en": "Matcha State",
+    "name_zh": "Matcha State",
+    "description_zh": "位於暖武里府 Ratchaphruek－Bang Kruai 一帶的 Suan Dok Lamjiak 社區內，專攻精品抹茶飲品，另有椰子布丁佐抹茶。店內走復古日式風格，下午光線好，還有貓迎客。假日午間頗熱鬧。",
+    "description_en": "Located inside the Suan Dok Lamjiak housing project in the Ratchaphruek–Bang Kruai area of Nonthaburi, Matcha State focuses on specialty matcha drinks alongside coconut pudding topped with matcha. The interior has a vintage Japanese feel with good afternoon light and a resident cat. Expect a crowd on weekend lunchtimes.",
+    "category": "cafe",
+    "address": "150 โครงการสวนดอกลำเจียก Tambon Bang Khun Kong, Amphoe Bang Kruai, Chang Wat Nonthaburi 11130",
+    "lat": 13.820949700000002,
+    "lng": 100.4479351,
+    "photos": [
+      "/photos/726bcf2b-ea67-412b-a5b6-d2d33c18f185/0.jpg",
+      "/photos/726bcf2b-ea67-412b-a5b6-d2d33c18f185/1.jpg",
+      "/photos/726bcf2b-ea67-412b-a5b6-d2d33c18f185/2.jpg",
+      "/photos/726bcf2b-ea67-412b-a5b6-d2d33c18f185/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Matcha%20State%20150%20%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A7%E0%B8%99%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B8%B3%E0%B9%80%E0%B8%88%E0%B8%B5%E0%B8%A2%E0%B8%81%20Tambon%20Bang%20Khun%20Kong%2C%20Amphoe%20Bang%20Kruai%2C%20Chang%20Wat%20Nonthaburi%2011130&query_place_id=ChIJDyyFdNub4jARFssTwrCZgLw",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Bangkok",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@doubleteereview/video/7704892859668860181",
+        "title": "Matcha State คาเฟ่มัทฉะใหม่ล่าสุดบนถนนราชพฤกษ์ ร้านตกแต่งสวย ...",
+        "quote": "最新開幕抹茶咖啡廳，室內裝潢漂亮。",
+        "facts": "位於拉查帕克路（ราชพฤกษ์），新開幕抹茶咖啡廳，室內裝潢漂亮。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJDyyFdNub4jARFssTwrCZgLw/photos/AV-0GLcji7UGu__S5cGFKYHHJV5WISM_9ak99WbgKsH_Z9RWNRSsGBvdBMsewk7Qzk0oaP_lI8t8VbdMXdg2kqBop-S8-TGjRp3bLl1lHweSAChcXUi173jQSodXhufznTt-w5XRzwZXsniGe--fQHSov9NOxpCaoRBR508ISzaKwIFiQdkQLVtn8mMKwb59VPSuswy-zGz8_7AQPZ5HXn2lLyZRgPfz8Q77EXX3zI-vc70ohAr-sTB714jC7fnd_T9LdVVCI03211AuDu8YxQuKUgMiRJ9t2wqC8FXM94DSKwqMvPoqKUxqVQ1W2rOazn4bM5E4uJY9CY7MHBRlYFNU_KWTAwzpB1c-3mG6Wa8cUdZhuTkPWbklnC34KUiszpuN9ehAgvagn-l3WV1xLQnKX5vyHSPcSjrdCmGKZPJtPapZxQ",
+      "places/ChIJDyyFdNub4jARFssTwrCZgLw/photos/AV-0GLfWf9pauWfmcMf0mW6QPWDIgd1EP-ZnX6abAUos1-5c7DIcHJVaEwpdbXQtdp1qS6wMmN5qgKRVxLVYRSXfMpxrzs1hPzCQWwfnTEiunYpmmhtCLP_IFB4mh3N8Vdm7DgrgX8jU70_twednaq2-XWZWvmLiAhPdbqwWh-nb15lysVR7Jrexq0ZWVtSTQthmKvHrGy0oQWS2-CYN507TKAlgHgMRy1l8kWGjtEC3uOLYffEb9xr7wZGzTk-8mGTHXKD7EihqNpXrh2PJDsVYKGgcdln3gddATRIA6KcchsQufJNyy7fY3fXTlBeU1rqzN7nuVR1RjbHk10gwCkVn5gw9RZ2LtKL1WzuMwdSkIY5yWMrncrxeORScS3QHPS8OrCjbPJ8HDI5cXxOADGDECM6mWnAeTfGfaWT2ze4jsnd27w",
+      "places/ChIJDyyFdNub4jARFssTwrCZgLw/photos/AV-0GLfh2_6pZvI6iP0NAq0Nqn_FyKzlifOnxJVNkuScDi38X-FT_tiMTHy6nZEL62SMT-qyKPYoOVzangRNBoIwv3MMZiaG8AiEq0E1eKLNIXNguwbAvWFnMRwh4y4DfiznKIZRQ68ne59pmKpN5t0z8n2OBCtPlgvcEAEEyYWeaaBs2Lh-hSSmJ5yqbRIZPIAp_q0pQVRMbLPVkBTlcYQBqd77L4hU5cs-SaJrY6Vw8uepjfGXDIrT2C_4UTn8JdpH46nuFJLQqcz2wO74vopG5RYrn1R0jsOTMxdOb135h1XK7KMjhohhTW012S3YmejTsahl9XNKVfNbRTQ0d4CmrpgF09DItJ8VKHKSiEovWNZ_l1hMd825eIv-lWYwO3KuV78awD7oidc0yZgf740r7aMA_2-eNA_cs8n8TYgar7KT",
+      "places/ChIJDyyFdNub4jARFssTwrCZgLw/photos/AV-0GLdZYRAksbN0B-N-UWc3QS2jWv1D3nKRFt1P-bSjzsMMYnpg4vTKfGvlD8zarXRrWHQh-UEWiOfdyZbdh4JwsBpDh1txom3qMKW9A50R6DSAuJO1JC6s5NOa86iCzuARnGt7m2Fw6hOPQoP7LoFNpuYiEvqHU09lJ3KdXHNhAP2VaBWFocSBeIZ3h9OTpZ9NOb_mXpKX5hhxfiSeQSU7ANMuQIHM9e_HCVprcC5DCP0_O0D0j2HRvpKwP-sYKRpc1YEKHT0dEN_PKzg_K0UpDmF0KpbCU501V6nZ0xqbY4LgEYf0NwGDHovZ8Oi9J5Oqzw64XV9wGDVfdAQxt4YHo7z8XwWxKBm_c0tMm0RX9hWSzEhn3FyuFmabNOsb1Lnc7NOHqOF8bsaL4qZw1rU6xLw5_fhiFed--WJ13pzGiAiw",
+      "places/ChIJDyyFdNub4jARFssTwrCZgLw/photos/AV-0GLfVhBz1ZfAC2jf1QqzZC-knMF8yBNDQlrRAkwbxy4zR2zbTl3AJ2w7o3R2z7hB0oHSKWIq4uaV0yGlbE__69dlayyPtk23ZOxkRWG8dsB0OVQKQJW7ME1xybXGIAckr9CCkM-1_0fphs6DV7o-dVDrVnkfo7ulWIJFzsHBWGWOBhezWUKLBVmEsU0qjNg15u-4-vEDwtPypqPl0NGQPgXAGHYBg-UwFK2Fu4CJkokNEZegC-BCPi85PRNVUoh5_ZlvIvYRYCUIE9r-7ocvzg5MwRWqpW1IjbbIMQULnMtWg6rw7Om7oMQjgHfE7-3Gifo2dvrSIgG9h5gl8iwwE9NPfQJiESa4FxGF3PJt4vWNYPXsJ9CirAuH7pYh89xoTzyBXsCerjw3ubFolti_Hx-OGMdW8SbdE2gh3LtP6Irsbbg",
+      "places/ChIJDyyFdNub4jARFssTwrCZgLw/photos/AV-0GLeGUeJFAIRzn1t492IaVwix6MQZxYFQVg4EWpgwM7w4rLqEio384lvdh2xAywHIP_4Gi1xHQZR_cxm-usPW8qbbMJQ0XEKBjv2ihkUh3V68rqJqbgQreoanXCTtJB-2nbeeCf9hKAuYjFOYLhHSg_RzR16LISkEUXxJ2QyBWwXpBlFiLw8GejuZnh84E6ISRYdOPySdqC1kWTAGhjDT6KpUPnnjhZhmSFlpA0HQzBXY3BTh8UURh6hmlIw6G3OiV4fPMKXAE7t3e0jwD8eh_kWqli25mTlqcWOO7YRHr8QwLpdyFw8BxR4j46YCCQWyoTuWFU09p7a2zdm4SxdLo26H1wqutTDt7Y3VjpnC_-3Hr7R5Ao9d2xZgRyQCeHok_eyF3gGrKjtp-_V7x9Ehy3EQwu_5G1qI5EAokehR2zY4"
+    ],
+    "highlights": [
+      "Specialty Matcha",
+      "Coconut Pudding"
+    ],
+    "approved_at": "2026-11-09T08:27:39.940Z",
+    "slug": "matcha-state"
+  },
+  {
+    "id": "177e0338-51ae-42c3-9b35-21eba4b452fd",
+    "name_en": "l o m l o m — maitrichit",
+    "name_zh": "l o m l o m — maitrichit",
+    "description_zh": "工業風裝潢的按摩店，同時附設咖啡廳，提供傳統泰式按摩與深層組織按摩。房間寬敞且私密，附淋浴設備，按摩結束後會附上茶飲和小點心。療程師技術扎實，可依照要求調整按壓部位與力道。付款只接受現金或泰國 QR 碼，不收信用卡。",
+    "description_en": "An industrial-style space that combines a massage studio with a café. Offers traditional Thai massage and deep tissue massage in spacious private rooms with showers. Sessions end with tea and snacks. Therapists are skilled and responsive to requests for specific focus areas and pressure levels. Payment is cash or Thai QR code only — no credit cards accepted.",
+    "category": "cafe",
+    "address": "350 wongwian 22 karakada khom, Saphan Yuan Rd แขวงป้อมปราบ เขตป้อมปราบศัตรูพ่าย กรุงเทพมหานคร 10100",
+    "lat": 13.7415547,
+    "lng": 100.51379229999999,
+    "photos": [
+      "/photos/177e0338-51ae-42c3-9b35-21eba4b452fd/0.jpg",
+      "/photos/177e0338-51ae-42c3-9b35-21eba4b452fd/1.jpg",
+      "/photos/177e0338-51ae-42c3-9b35-21eba4b452fd/2.jpg",
+      "/photos/177e0338-51ae-42c3-9b35-21eba4b452fd/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=l%20o%20m%20l%20o%20m%20%E2%80%94%20maitrichit%20350%20wongwian%2022%20karakada%20khom%2C%20Saphan%20Yuan%20Rd%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9B%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%9A%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9B%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%9A%E0%B8%A8%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B8%B9%E0%B8%9E%E0%B9%88%E0%B8%B2%E0%B8%A2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010100&query_place_id=ChIJq3plrs6Z4jARR7Km7dU3tm8",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Bangkok",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@doubleteereview/video/7704892859668860181",
+        "title": "Matcha State คาเฟ่มัทฉะใหม่ล่าสุดบนถนนราชพฤกษ์ ร้านตกแต่งสวย ...",
+        "quote": "新開幕茶飲咖啡廳，氛圍像清邁。",
+        "facts": "位於三詩路三軍廟街（ถนนสามเสน แขวงวัดสามพระยา），歷史街區（พระนคร），新開幕茶飲咖啡廳，氛圍類似清邁。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJq3plrs6Z4jARR7Km7dU3tm8/photos/AV-0GLelLzYYjaHfa7IBNXKWb1fYIW2YulFG8meQ7hUzN7CKuZODlEXaUfv7XSi1H-0o5kL7qEJKtn7yy9xGn4XySC-rXt7hsm-QLH-X6XnErkxz5hKYjSfyBulC6r5Mak6JgaVWKVifLVtmOm-YoZCGCAF0iqSoMsg1O5yylLRt-APPTre46ZPLizS4Bt_-4-OJYNI52y2q4sEMqTSoBCOzmCYbM2gpzPAesoO8969n-WN0geVhn9OT5Jez9Z09gtdQu0adr15qrM0-TCFxVR3RgQJIHS_pH4UpgYaMMX_xp5_uCRYp-c1H7bheUPEgmvY2iD9VM-bxd1BlCWQKQlXO412eeX2kX1buTO8j91PMTh4TLJ-MmLYOiip5LF5IMMXOZsKCUhRk2Tw_IcuD_MkbQgSWHQ",
+      "places/ChIJq3plrs6Z4jARR7Km7dU3tm8/photos/AV-0GLdbOnqwieeHLAnZ1HaB4_8oau8opG-D50Q9pv95YR8IBULKsXcgBmSqi6L1y9orSSaLbxGnVnaXNY_L8O9cKoFc3yiRoCKoUDi4EH1JBE9lTvWs7Rv8PQMvh_keZiAFZsPpu6b5v26r_ft9AhJw06iT7Jy6vG314vgw_JhbonmN9cZQm_i5EAPlbo-dMwps6NMvr2voeBoIRwKGwOSD42Hm0IP0u71hYDgQ9PVSgpYe1Dj9M5LMGd2XErJlu0emQuzMAS35OOh-xfENmT_mRVs1IzPE6xZESEHFB7_IlCeVfIIRdQeSSiBMe6FMN0Uo7MQ5-XpIlvM7gS8Tqo8DaCCbo3U2gn-2UgKzJz8SdN-MUfkMGymBwN3yu6p2SLN2OjYO90JhfoX03q00uk-sWiDnF_1EAMc",
+      "places/ChIJq3plrs6Z4jARR7Km7dU3tm8/photos/AV-0GLfbLMqtUWM5cH8DVG1_f5OUtIRnuboCOt4Cx-ud7_fv3m397GB2n9Q7qQFGSI6FPcVqXYrFT6D6GJfnL4qhwNfgoKfMovFY1YOGZkjfkVnIigO8YoxXr2-dYh2aDKob0GWjf7g-hKtIsh2xF4s4l5ywOx81BMFSQfVOIRThw2UoWXQa4oSMLpuTWYeSNJ9IwYMRRc0jj975Tu1H9Jc955wCr2mor_g9XS1GcC51RFnZ1wRE4jOapn8HXRz4O4iexkSqsPF8fz0aJlfhctU5SX6aQ0O14IPpYyedd67SkeMpagt2SPKAFVq11LurcPLVVNWz-aWuR9I21tuTGMiFtZQCXtmwn6GEDm8x6_Nbq0l2vQ4dLgIwEMtEV4vdRvimqjeTe9juMm1S-Ld5thriZV8PuIRf",
+      "places/ChIJq3plrs6Z4jARR7Km7dU3tm8/photos/AV-0GLeGr89OI6I7oeVLEt4D6EUvvhcf01E52Hj74pimN0HCauH6yZLjcSKVeMZ8U37tPskeC8qD2EKEjv9kCluqrQOiP7qSWTcjlQiFqjaiV1QY0AkzZ2yjcv5W-0W3rui0KoHXyqOxyFWhoYiOYTDt52xkVm07MHDHMK7j_C5dolsCjNwzXbnGUxI-DDhyotq6dJS5siAE83cr1Yzej29hSfKUTJkElScGBjG4GO7maIz_jioRNQ-B-Osipo6Y_qzLU2jtmwzObg2SEd4OPgfC3qgk5bBXm_s6viBkUBlIHgx5mvGkZi6r7dQ8lYeZWmufeqApmTWpvXhSEV0WM_pUk-rs2RCF5JknBTJvZ-xGPs_is9iqByGAeURWpz39HhA_x2F-P5qC6tAaK6QvKXti7-FJQx5wOJ4rkSNhPgdMOeq93A",
+      "places/ChIJq3plrs6Z4jARR7Km7dU3tm8/photos/AV-0GLf0cjkHSyjxf8wLihTEDwOCvvbE3eLJYJ8U0TIELN3BwzZZe1vBhDAcJeo8k4eYPdK-7vkDXIDzcV0xIPhEkGADaw8KGI9Gyyo3dAPpB2wwYDlSlpqT6aTPV3DOSrFD9G8N4Mmmfjx8MYmK0eX4Wz37ycxTTZMsFPgnwEgWetBE1E5BO_nV7X2bwcotQcG50CmBX4z4GnTzdEx_Hjy7ATL5uJFrAQWmuy8xPUDt0O8Us-b-QmcN7USie26gYplpMf0hOBP7SAOeDkgbUivnbv16ZctVqqKzNyFTbddF01yL5c7WTgpG8f8UnPQcjtJWJxTKNjSMblARpbyfA0DPehGx-J-YlvNMvHnb8QxIF4Kzj1BjmbYYJ1x-lpWpedSwHs0hjGQmldZKbRLSnO_we8NUk_OqYTs",
+      "places/ChIJq3plrs6Z4jARR7Km7dU3tm8/photos/AV-0GLeD9-laEtOtQa4d7nh--lOIXxqLDnY5pQcQQ26rZUf8r_NvZybijYXKOXOhuiiK_qc49NGAXqzr-8GPXo3jw-ToVIKiUravhigVo7ONOcWcoP5YEUCyWH8iPCrjExGYDSXEKlPr38kHey40uVhOV-trUBQ8WkpYYWUo3Lvh00o2wkbAo6iVSf87vBgckukVmkf-_gurGfpmiol-frSkrbyT-msbYzxzHNT46wps6XD9FuwLWyFSImCr97Zf6kYzlC_gTMPIHWT7n-l4wSa4tNK2IX9i9r1S8DwsTLFF36PhuMGC4524ragm-KbimyQ1m27DT3-7xSDMkRyNWN7PsAfSQsjRQyVag_e6jrOtiv5bt39GVJS-m9DjTLyfgZO8zbTWkv5qATIxE6nldQnacjXg1ffp-n9avlg7A-Gi3DT47w"
+    ],
+    "highlights": [
+      "Thai Massage",
+      "Deep Tissue"
+    ],
+    "approved_at": "2026-11-09T08:27:39.966Z",
+    "slug": "l-o-m-l-o-m-maitrichit"
+  },
+  {
+    "id": "24fd2a11-9f73-466e-bb51-f1a690656774",
+    "name_en": "นายท่านคาเฟ่ Nine Than Cafe",
+    "name_zh": "นายท่านคาเฟ่ Nine Than Cafe",
+    "description_zh": "位於 Nong Chok 農業區，咖啡廳四周被高大樹木圍繞，部分座位緊鄰稻田。招牌是鮮蝦水果沙拉，口味酸甜帶微辣。百香果汁也值得一試。傍晚五點前後光線最好，園區內有多種座位選擇，適合拍照。",
+    "description_en": "Tucked in the Nong Chok farming district, this cafe sits among tall trees with some seating right beside rice fields. The standout dish is the shrimp fruit salad — sweet, sour, and lightly spicy. The passion fruit juice is worth ordering too. Lighting is best around 5 PM, and there are several seating zones scattered through the garden.",
+    "category": "cafe",
+    "address": "Sangkha Santi Suk Rd, Khwaeng Krathum Rai, Khet Nong Chok, Krung Thep Maha Nakhon 10530",
+    "lat": 13.8432252,
+    "lng": 100.8985855,
+    "photos": [
+      "/photos/24fd2a11-9f73-466e-bb51-f1a690656774/0.jpg",
+      "/photos/24fd2a11-9f73-466e-bb51-f1a690656774/1.jpg",
+      "/photos/24fd2a11-9f73-466e-bb51-f1a690656774/2.jpg",
+      "/photos/24fd2a11-9f73-466e-bb51-f1a690656774/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%B2%E0%B9%80%E0%B8%9F%E0%B9%88%20Nine%20Than%20Cafe%20Sangkha%20Santi%20Suk%20Rd%2C%20Khwaeng%20Krathum%20Rai%2C%20Khet%20Nong%20Chok%2C%20Krung%20Thep%20Maha%20Nakhon%2010530&query_place_id=ChIJyww0YL1vHTERkrxcvg4vjro",
+    "rating": 4.7,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Bangkok",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@ninethancafe/video/7705077538984398087",
+        "title": "คาเฟ่เปิดใหม่ นายท่านคาเฟ่ หนองจอก — คาเฟ่ริมนา ต้นไม้สูงน่าถ่ายรูป",
+        "quote": "新開幕河邊咖啡廳，有高大樹木適合拍照。",
+        "facts": "位於農業區（หนองจอก），新開幕咖啡廳，河邊環境有高大樹木，氛圍溫暖自然。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJyww0YL1vHTERkrxcvg4vjro/photos/AV-0GLemLmPxLa_4bxQhbdm6mNxgn0YqVt0nWq1s6wtj2OaT2rKstHtaInzk0ZBe8d54rFUJ23jZtigHAFbyW4wMeyqnng-ElByaHmBX4kICyiZYU7_2-k6QtcwwwdzSN8LB8QQwj8Oofiykj60AKPgmNBECaEX4Cw_C3gpacj2UkWZJaZhXkcIfHzqsYkiCzrD8p5ICqqMCWSlKdQtIXtcq1XMeH4XdcXu6e79ZvenEymCHd4J7kG-eiGnprDPm-QLxAeIDm6AhDfYPdKOXhzqfMiieSbbBj6GnBKa6NRkkFGS-P6K0JM7ZbeeWwWFkEiBs-ibMRudyaukFCZiTSl5s-p6oVKGOsNiGhEpJf4IFcmoDh_Du6a0N9C5hIpYEpp523c2txxv09b3ay_-f1stLCWGR7A",
+      "places/ChIJyww0YL1vHTERkrxcvg4vjro/photos/AV-0GLde6sQTnUVAyFfJ9xAyfOaSL987qgmZKj2thvedoJkBGf3-OVWE9nGE93pAiTToI2OeBPH2i8ykQ40eFCl8N-n_RoFBVyaCfEw879pGhhkNu2Q7P57c8G1-VXsVWmCDuAcCmn1_wr-lTl52MvmyFagMRVm5hM2QFAlnR7LGx655tF6Q0-uKIo_X-cczQoqArCCmlMPz94ef3jGSgKCGNnoACCMBGQVLNtft8BF-2Ez7Y-g8HiSFvxmkx3W0jJNNcDzftu_YvA-cfZihXU8RC28moO7kVMG9cckE7Qsbu0fH1wB8ka9q9TUQlfkUGCnVZ8HLR3aeNY90axUpieFhd9z6nkRv9EwPc1r0T3SKSlRYa_U7W6KeD8RSnF-RCvcGmCO57kT67LDmQNRLWdrXtzeBzIbc4AU",
+      "places/ChIJyww0YL1vHTERkrxcvg4vjro/photos/AV-0GLcu2FiD5rMTFDizWfjQkBeESoHRiSqEqtsOJIXQbN9pV9P5ZyLXhFPRC3_0S85yhkZpSXc7g0sVw1JI70L_CDS-Uds2CGtpnRyaTE5000kz7FaO75RIGpGuYKDQKnwAA13Dw2DYoUFwxSnf_NVhO3kpBWyvrGB-FKsZQkn-lKu9Yry4rZGk2GE63HAIJjYQvmhpZ7amcFy58J2njHcgpiJiF2OXn4-UR2o4Mi9Coxz8c8PxBIGP6OWA3AtMTraTLAAKh6Rb68LYXJSyY_IuziAlpoxTJkjv-KiXT3TCN4DAXVgQokyau5pkAbpt5ML0KCvqWyVUaJmDdEYAwzsXjzovR8morwVuZhHUnFvG_c3_aMwndBgxC4zlVgIn0xNtTmw4NErx3skOW7lfMUJdHG2L1QUG8Rw-Bu28nqVpazFY2g",
+      "places/ChIJyww0YL1vHTERkrxcvg4vjro/photos/AV-0GLfpqNtvZX8WplAAVMxl21q3Bt5mndxjR8_J2rLqo9s2ssYo4Q1deeaiDKJaABFWMR7vVjfjQPsvGYEADCi9KKCCiYVuaoYOM4JWwGjSDp-hc3S9iFpwseTnpCjlZ1s9viwnzrpDbzoEIO9jJUY32uJpNDh_IrnJZ6SHfRnYT771eVaJpECT5m0rxRfXWhMlEKBxgr4rvnIOWLepiPRKjMwp2M_ycle3zPNbrJVQeZ44PXL5vB8DGi-g5-qcFvY1_T98991GqfzyXVnxBO9IPbE-k7UhW6l5Gl-7X_isxkSpi-e-WyztjU427ijUWtX96MXqcgFIgB8ITLh6x0pfblHaIHRVR12S-Kl_hQHjITLKpc5d6JFSkaSe2w6GqOTp-D_5QPvBMooTluDdgvuMRupmmw",
+      "places/ChIJyww0YL1vHTERkrxcvg4vjro/photos/AV-0GLe5VkcIR0Bfy66KLt0U5Vk--Ic3KG4rgOxVp0mO8cK91aHjQmnO4ipmRrHbPGb8HYoS4QmPnHHqTkwRHDMCOyI3WjEGcJs1UtSxRX37831vcuw-sXVRUl934Q6Ewj5e394U6Qp90rQJJpoVydQWfq2iq-NgEvaNb9xOBFSu4l343mh3Av5_yhamLpG6YhJfyWtegHoPQx9-XtxN-6Mfhws6Mz0MvnYqwUdd7ZEIfBz4aI4xbMOJLUL6Ksm0pR1SbYo0W9DuvKZh8BjChA-X3mhwVKd75CXD9tOoddQMYsMHm-RTP5uqyEfzhEUbIBSjXCuHhKlC1D88PaSe_TfFkRcu_2mMKpGQlmTSRotZeTZyjAPNKW0NlV8WoaqGhZrBpYOQ-FTxDORu1o29ICGk4x1jbUP9mIxkVN_IzbTbv67HUQ",
+      "places/ChIJyww0YL1vHTERkrxcvg4vjro/photos/AV-0GLdiZCYDdIiVciDxhyr8ZbLDkygARsBUXr0pjDcxlWNtEKF6EDmQpG4YAqJ-tFrUo2i-YG2gVYBCQC9kJlvNhMuu7yLgu221ksZFGrNb7bmu4mPpfFfs2q9154sU9Wi9yadus9Kpy-ggvbTONGMg_vqJtuHJA6iz8YneeSO352upG2J2D9U4EQsWXEVCmWbnj9xBSGR1hBxhLmQ9FT3usvmyPw4tAZxGTcdC7BGBBK76P2z4cNIKpXapJIUpY2Rr-9bI-uqyWFWzzfHm9U8f0KSy_TNq-9KJbYnLQZPdQVZqDK0Bi11WfcPvbWefE7hSUhiGDjeck3F_E_ePw8SPQE_FTQ_hbzwRxvaqDEMC_GiKz14HeDuYPaHVw1GZfkdP_nybfUi9egU0wRZCn2CfTikCUiE"
+    ],
+    "highlights": [
+      "Shrimp Fruit Salad",
+      "Passion Fruit Juice"
+    ],
+    "approved_at": "2026-11-09T08:27:39.985Z",
+    "slug": "nine-than-cafe"
+  },
+  {
+    "id": "a95bd8bc-b115-4eab-9dca-750fa9d585c7",
+    "name_en": "Eich.bkk",
+    "name_zh": "Eich.bkk",
+    "description_zh": "位於 Watthana 區 Soi Charoen Mit 的咖啡館，空間挑高，木材搭配皮革裝潢，燈光溫暖，氣氛放鬆。可頌和其他糕點現做、品質穩定；咖啡用 100% 阿拉伯比卡豆，冰拿鐵和橙香咖啡評價不錯。另有 Croffle，口感接近可頌的鬆餅。飲品和烘焙類值得點，餐點性價比偏低可參考。",
+    "description_en": "A café on Soi Charoen Mit in Watthana with high ceilings, wood and leather decor, and warm lighting. The croissants and pastries are freshly made, and the coffee is brewed with 100% Arabica beans — the iced latte and orange coffee both hit a good balance. The croffle, a waffle with a croissant-like taste and texture, is worth trying. Drinks and baked goods are the stronger order here; food dishes are less value for money.",
+    "category": "cafe",
+    "address": "73 Soi Charoen Mit, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.7286355,
+    "lng": 100.5913704,
+    "photos": [
+      "/photos/a95bd8bc-b115-4eab-9dca-750fa9d585c7/0.jpg",
+      "/photos/a95bd8bc-b115-4eab-9dca-750fa9d585c7/1.jpg",
+      "/photos/a95bd8bc-b115-4eab-9dca-750fa9d585c7/2.jpg",
+      "/photos/a95bd8bc-b115-4eab-9dca-750fa9d585c7/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Eich.bkk%2073%20Soi%20Charoen%20Mit%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJs0zBMACf4jARNaJN5E8cnog",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Sukhumvit",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@maa.laew/video/7697450750762372373",
+        "title": "EICH Cafe Ekamai: Your New Favorite Spot in Bangkok | TikTok",
+        "quote": "曼谷新開幕最愛去處",
+        "facts": "位於艾卡邁溝10號，日營業時間8AM-8PM，有停車位，靠近BTS"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJs0zBMACf4jARNaJN5E8cnog/photos/AV-0GLerkaTNh5aEPVzFbdEpJDAuETs7WSWxKYApZAO4T_ih0opkvBixwwItpq9jaSRFZ5S-Aa2tkxxuMbW-JHieqGw9jNMriLGDxOH3lx9fUBAIzQZS39PdIyz6MtoR7b78IUnw0MS2tqzKxGcVFNBVhDQ1TdaBClvJZhYTNbQxO2k8GgIxE5mrQNW7Lw1uewbcErVHF-hF2ky73YVoKhUBTDouPwbRkQgFSrp3wdpHfbaa61O11Pd8bztL_k--b--_EPEDqci9CZCg9_IXF4OBSA0b2dZN8B43Ycrw59_RWimKd4RBmQBqdfO8dMTle_Xi4JyIRTnN5bpHGzYH5uOGntkVVcUYKS7pj5aeEy-wEOrJozI03gbCgdmiocCIe-y0wg13ZBB3c26dfhwkxZVZcILOpQca90yjEM7sTjSfCbhPKQ",
+      "places/ChIJs0zBMACf4jARNaJN5E8cnog/photos/AV-0GLeUNY4K8b6bVWYG3nGahbowCrvdsIXQzhJ9VQvt2Sd4TxE3epOfSz_-NprUcFly1JDcSB8c67J-NjL6eC2KtjjtqbLk89M7jj7t2UKyCpqK26UwuZUX-fzo3Iiq2rOzbfEZvvZDcIoYZBtLdodKAmbQekjscZhKbjz4oy2-jSd8SgAAo-63cyOW4NFCnH0kdPU0EnKgU6BXhj8QHItfvMBrsc1-JiOvwL_PY_vT0TrewiFvp4L--LHB6PHQ09LlvfrL4RhZTh8gEGBMpH2YwQxeptDYoIYGZRpZ5CtX1p7N1ceMt3tOOgaIsNpFLxitY_881a1p1mzk4vBUiNBz-HzTajrHsKG8Jw07oNkUX0X888tIz8JqP8QphoGuZdXDHjvg9uls_s_GW60woaDu57WfBDzLzlbVjL-4-Fq7pE0A6g",
+      "places/ChIJs0zBMACf4jARNaJN5E8cnog/photos/AV-0GLdj7_fEctt1QZ9sR1fiUY88PNWm-K7Xq_vT9246s_b1yVmBF-8uSoZlPLw06ZNybb4ue-pqsr2JVYyjrKXxchJ-negY9qolkazSR0T2IXnp3guwWoU2coDfqwDdI-wmAgD3V2weFvofscqCQZ0dhhCkKr1cQhBWBM0ct3JL088YDGkQMOmwvyHY7xu2vex2PcAhwcFsNF_1tp0YZujdAVPIzcC9VS4_qbD6WzLvsK8L5j0_LYt8nXqC-vjsUiiI0fBc4floStURyHuTUIn4uZ4zQFXRVh7VwXpi0cA1VkQa4EBiRZGIDiHVU66EpzKe5yLeKfI6D8F6tVLDnYU34H3G5_KLuEkC8a7b9Cz4Rt98_2W9Ikjeig-BnNG5559eB1ld4ISBpsQOmx1KpsK4EJbia9Q-AA2t5quIeAYieVhZRA",
+      "places/ChIJs0zBMACf4jARNaJN5E8cnog/photos/AV-0GLcBYR6FoD6cxVRJOmvzil_7kito5KchqwRyAgBGMEUcGzEaTY7ZGL0RgOB_kVNroy6G7SMD0LkzGH5mw0KZPJc1KpOn7J9Vk13P0wO5QL7-jsnx0kWXdifWe5Y5aTe2Gj_7XqyzXJFDvf0TdOc-SOKIyzTMuWfHMJVjolQ9DNoBdzOp7LetG7Jq8QU96hMyngfzqC5-zUe9w5ABgG79uiPfdxpkSstOTNBDqLb9V5zLmWQvdx39rBDY8njR2vUqOBqonltZ84qG2FXX486gwuLCgxG-P-y5AA-GjSs9kcABFSH8Mz8XxDwJxAS413yqsqE53Ycvtq8BM7_NbZWuK-pcHCkuwzg3Vp3mynBoXblc-oyFuWTyphpY56B8qxd_nE9FY1YVdpens2fM4F_8Qii-AKwf_Gp77MnCkk1ERIDzsQ",
+      "places/ChIJs0zBMACf4jARNaJN5E8cnog/photos/AV-0GLfdZZp_L4Iw1MmaLnuesEk3OMkLY3cGgSDu3r_Iz5TNjvINiggolCuEdFqu-4Dupg_E9rDolOKxMM0AM2yUb4U68aAL-Tzu6TZOB8NcsYSl4FTn5zxa70Yw6CmTVy5KK5JAsrjxgKywouu3w1YjUQ-MCPx6hbg_1bb2p99l18KaIC5vw7FLpWiqoCdABmytmbw78oBz0G3PPHP9C3bGjvx2XeOLx6aVYHnA-UK5P_oi9_yMnhIFS96jYwyP1UOKnlvCdEmM7PFQYy4Rbo60oAVQe9l7ercPtRxLa357OTnDC6eFIyZrmQdjamZfMGJ-uYQRfxz6fTUWQmdEQBbDaL42YWB8IaVRFDOMYmR--ucYdjqkdT68PbxWsajCpVIxBA-JT2L0hx2R1mYOO4vrkY8HW9k5AVDZpTNumXj-y-0G",
+      "places/ChIJs0zBMACf4jARNaJN5E8cnog/photos/AV-0GLcBbTDPM7Z4-6mLRX_dtLYXOtt-oPLgfxsG8ZT-KilWxvd3dNzcxHDGgMRbulNiutgRgXYSe7E2O9uFURt61eIrHQNxY2zf7U2UGpYG3tYWloKnSnGDj9ua4bgkITgMGHI_EZv5JSIkmNTT-rTUgW45Q0FSAJdZwK4qfKtN6tSr__3e7TYFWqoFC_Zo-iu_YYtYXdEUmBh8-dlyy9q_kUJ2Da3Lom8UcnQyzIRPUTla_TjtxQ9MtTklHeg3lVsuXsqVrxHnjQGTjvukOoXhMZLWQr89pJtuNgoN4_dOC_Iwba7ZRx1I-pOSilfSQ-C5dIFSzshJdbZxYL7bdJNZqfdOYntJspkkDl04LZmxEhxh7dXx0b64XhmDyBxGyP_0s2Kh5bFirlep_L90dxK_-fEeQzxFFPpkENE5Z1DYl3kaoA"
+    ],
+    "highlights": [
+      "Croissant",
+      "Croffle"
+    ],
+    "approved_at": "2026-11-09T08:27:40.021Z",
+    "slug": "eich-bkk"
+  },
+  {
+    "id": "3b5f98bc-90f6-4ecb-99d9-61ded9c7cf13",
+    "name_en": "Sam Roasters - sathorn 12",
+    "name_zh": "Sam Roasters - sathorn 12",
+    "description_zh": "Sam Roasters 在 Silom 區的 Sathorn 12 分店，比 Ekkamai 店面積更大。招牌是自家烘焙咖啡，冰美式帶有清爽酸質，椰子抹茶也有不少回頭客。甜點方面，奶油釉面甜甜圈口感柔軟、甜度適中，值得點來配咖啡。樓上另有一間抹茶專區。",
+    "description_en": "Sam Roasters' Sathorn 12 branch is larger than their Ekkamai location. The house-roasted coffee is the focus — the iced Americano has a bright, clean acidity, and the coconut matcha draws regulars. The butter-glazed doughnut is soft and not overly sweet, a solid match for the coffee. There's also a dedicated matcha counter upstairs.",
+    "category": "cafe",
+    "address": "91 Soi Silom 9, Si Lom, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
+    "lat": 13.7231767,
+    "lng": 100.526354,
+    "photos": [
+      "/photos/3b5f98bc-90f6-4ecb-99d9-61ded9c7cf13/0.jpg",
+      "/photos/3b5f98bc-90f6-4ecb-99d9-61ded9c7cf13/1.jpg",
+      "/photos/3b5f98bc-90f6-4ecb-99d9-61ded9c7cf13/2.jpg",
+      "/photos/3b5f98bc-90f6-4ecb-99d9-61ded9c7cf13/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Sam%20Roasters%20-%20sathorn%2012%2091%20Soi%20Silom%209%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJ4ZYa6_iZ4jARox7umvoF_MM",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "area": "Silom",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@nhaireview/video/7700230257055419656",
+        "title": "Sam Roasters Sathorn: New Cafe on Soi 12 | TikTok",
+        "quote": "裝潢絕美、飲品好喝的新咖啡廳",
+        "facts": "位於沙吐恩溝12號"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJ4ZYa6_iZ4jARox7umvoF_MM/photos/AV-0GLdXUDZ-QCTmt2hnJX3u84ZDhPefVLmZcr0zuAHGwqTC-7M9qc7QTX2QrV5V4ZPbx20_NlBezWiTLs4ei_jj1xGlvnmgpA3goknakJjG1IEJ7m2zaqryRLsEZaK_hWua3cm1ZZDSPVhXPVYu2dcjUwZkg4z9Li8QynaLbxeChdoo-rbXagRo89-LAlRR6ZeROaYmoZS4yqTbIKHUVrTwvGejMCZzEzNeXqDGvi9BkDCaJ2gy-7OwyVK_fgY9wDxeKLWZYPOZbMSDzmiEcVszkq1W7ppNqgWmuK92bm0KCZ_29CfUn8WvKPB4pez_uRokK3WTCbs-usgqP6zsZzR8IS-Jrq4AuY4jqtPnFT1DtiFzOvpNQNsgAJvw-mMyuu9ExftETAPnN344nINaL547O_UtqTWpTfevqx4000NGkZeC",
+      "places/ChIJ4ZYa6_iZ4jARox7umvoF_MM/photos/AV-0GLcum0w54oU5J10IvLbLi3dPNMGMpTIKP1TBc_LPWtv1K2DEyQVtRmj4nFnJcCZz1vUasi2S2HV0NX5YyB6fJuihi-K4GNdFwP-oGBlK8PoIX7RLHUEejW5lgC_PpE4ve3E7ozghqcaGBQpDUUT9zkU3_vm_64VUPNFUN8YkxLLO2sxealEnRIhTJO3WRoWTwFaKk11AqGvTqlFjS42XQG_WD2koKij_8E3jsT_SCi9LanJOBVDuKJ24UbjgGbyx6u4Ih1TMAahy-_3W7UOLvzcS865vVEKDOJC5Opzv3jm90yeHoBhnFzRbbweirhbkBEKCNfRGCouZkYXB1MW6WKAgoge-t8cAp8faJ4K5jdfH8nuuyNanQM8aFhm78O1Euq0W4lWL0JoULW2yXSCRAUmTbYDwTEF3_Y34YBDtREzfCA",
+      "places/ChIJ4ZYa6_iZ4jARox7umvoF_MM/photos/AV-0GLdnHzoFBh7gsg9QW_TX-B1YMHyMhAJglgRro_v01QAO1sd1Xf4O1weqGfBPpyCTBu9iC6dH_cnLnO8H6UlCfwM-sfz4ig_X4m4MHsVtsVVwui3x6SruQoAPsbLcE_oOsZxFetRGCjp-sQpjRmjrQCncsGy8oD4r_p9CYK9yPzuW430qF6V4xQpBjj6eUI_f47kd2FEJ59FzrffKs-Q9kC6fIjQyKSCoJB1XWSeWXYctaymX46FpKu_dCogUiv2VV00dER5ee57gylrhuOOvsoaNmVbjr61QCUQg22zVHCZqJGXNrb9orKPjNUjh5obg73p9T75rucudqZwJUY0MbhFG53djxQv-pR__ShuxQ6EKbwWeHbrwVVidDTlfTazOq3BxOZqan7JXuCFDHn-2FdqIoRU-I2wrS-MRpuQ2S-g_",
+      "places/ChIJ4ZYa6_iZ4jARox7umvoF_MM/photos/AV-0GLcpEw9hnidv3OWLP_SVorVqRpeVvQodKjej_Q_erwo2WZJ_qS2HVJY0dSpoAZLeN0ygRYrNJrK3G4-C9yayzfhsJjyH_bGln3XxQn7heOorEg1Qcl6OxWWrkf5PXSq4OMhGIXm_PmdpbVLbMn4KHSyXe1lcDuYO87m_7oaDeFFJyGAlNOTIVBt4rN-DolWJvokEKjobnAWUQd4Nq-lJ4y5pTqTb9ZXI2JV7veFsbjXy1gNTX392swVRqmQBZCKQVv7Rx8f7NFX7Il5P_UZfgLSHFtZOOw7AfCvl0-H5wi4TREhlbLEQegkbTYx_JRRCwYk4XSBvmOAAaihPsQwUMqKZlb5vO_iNGGGCiuF2LbJsr38DiXHMXb_9VggowR76S42b3eGvp7ev22b4aa7EUkmfwdqIKCM79DNHFPSKUXcnfA",
+      "places/ChIJ4ZYa6_iZ4jARox7umvoF_MM/photos/AV-0GLfTVZUq351zEoj8felwX72tOD5Y_Z8e2Vbm0G2MuN78w35ME1bTOWa9Q-gksMB8UjodZF34wliGwHhuwjd1CTFTlA56d-qjXkF3eK3Fdt4KhfXg66kuuM5Gty6rsuS1FP-2CWKHxESRMcJPld57et5moZXwnkrc4tBL8uAjByfLsRJivFagH8FpcOkYFzB4B99qWsVkLWo1NLR21UyM3dKlx3BvC9qqlW0Uuss7VDx-ACSZCMjMFsOCErNym1rbbDrAZGk8we00jYWDWMApUYYo_BxMsk7aMgHfwsUSZsgs3iF0utY7v-gfwmszcof5yqy0S05vbdW6VGlV_T3qTllD-9uD5JFirKpORyKnWkUj0rw7CIpJb-NWRvVP7WgdRDe-Kvgwu5q-Jm7XcHhZcb_YvDadfRfYE-vdIdg41ZN1",
+      "places/ChIJ4ZYa6_iZ4jARox7umvoF_MM/photos/AV-0GLdQylPDleQCpDhsthBxCi5nytutSVoqcXB1OLE3ERyxwSfppJlM8y-T7_WRKkeYxUBdQ0hMaviq7xqIO0IE0ilm3lv58H4q67l6m5udDkxH3W-JkKR3GYlUQwXMviTpb_Z91M98lWcKb0TgXiHGvgCLlfvRdyWPtoqpGhPA3at3XTma-q1UWqN7UboOpILSLnSBFvU80MoziQGYLDNeKsY48sUDr5t8Vp5DDihlDRkYeKqXQQxvEJqS5ooeamAeXnT3kqODACrSafnq7S4iv_3pyw5LFk-N8NcfG9R9jvqvPYXsR-XshbGgqIDTKUdxxYPtKH9-gVJXYLHdJM70A9i9zThB4uSn5S7mjtKy4EbCzZ97A-Rnevfk34wkKbNQgOUoKOjWpKWZrh2At9pqAThd3iwRi3jFns7GkCVkZmtNzw"
+    ],
+    "highlights": [
+      "Iced Americano",
+      "Butter-Glazed Doughnut"
+    ],
+    "approved_at": "2026-11-09T08:27:40.045Z",
+    "slug": "sam-roasters-sathorn-12"
+  },
+  {
+    "id": "3f5e3484-0a87-4af3-aa5e-5528326b6735",
+    "name_en": "LUCCA Songwat",
+    "name_zh": "LUCCA Songwat",
+    "description_zh": "位在石龍軍路河邊的地中海餐廳，裝潢有自己的風格，和宋瓦路一帶的老街氛圍很搭。菜單以松露料理為主軸，品項選擇多；飲品方面推薦 Khanom Krok Latte，另有 Eggs Benedict 佐鮭魚忌廉醬可點。戶外座位面向河景，適合久坐或約朋友來吃頓悠閒早午餐。",
+    "description_en": "A Mediterranean restaurant on Song Wat Road, right by the river. The interior has a distinct style that fits the old-neighbourhood character of the street. The menu leans into truffle dishes with a solid variety, and the Khanom Krok Latte is worth ordering. The Eggs Benedict comes with salmon and a creamy sauce. Riverside seating makes it a good spot for a relaxed brunch.",
+    "category": "food",
+    "address": "1300 Song Wat Rd, Samphanthawong, Bangkok 10100, ถ. ทรงวาด แขวงสัมพันธวงศ์ เขตสัมพันธวงศ์ กรุงเทพมหานคร 10110",
+    "lat": 13.7376115,
+    "lng": 100.507896,
+    "photos": [
+      "/photos/3f5e3484-0a87-4af3-aa5e-5528326b6735/0.jpg",
+      "/photos/3f5e3484-0a87-4af3-aa5e-5528326b6735/1.jpg",
+      "/photos/3f5e3484-0a87-4af3-aa5e-5528326b6735/2.jpg",
+      "/photos/3f5e3484-0a87-4af3-aa5e-5528326b6735/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=LUCCA%20Songwat%201300%20Song%20Wat%20Rd%2C%20Samphanthawong%2C%20Bangkok%2010100%2C%20%E0%B8%96.%20%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%A7%E0%B8%B2%E0%B8%94%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%AA%E0%B8%B1%E0%B8%A1%E0%B8%9E%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%A7%E0%B8%87%E0%B8%A8%E0%B9%8C%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%AA%E0%B8%B1%E0%B8%A1%E0%B8%9E%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%A7%E0%B8%87%E0%B8%A8%E0%B9%8C%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJu7bhKQCZ4jARniQ_Ezn4So0",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Yaowarat",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@pimpatty/video/7700180441445174546",
+        "title": "Lucca Song Wat Bangkok new cafe near Song Wat | TikTok",
+        "quote": "松瓦廟附近的新咖啡廳",
+        "facts": "咖啡為主選單，提供食物搭配"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJu7bhKQCZ4jARniQ_Ezn4So0/photos/AV-0GLcH75y1RLczvyf17MD895TN8vpTycE3slu5bDKDFOB4Cj9lBAZyV4EebVWzPyhPv1IuCfnbFQ3rJw6KMBfbt7KLg_AOnyh3WrxhkCU14sXInmt5jl-Lg_FX6hvpMSxJrmiDQhmmkx0rh432bvRNC4Y4vvkSEw3FfyGPQMNukxLvIuZXvZfEe9Xn3ANeuyHlkPCMD_mtaGNvMdyq1MIUY1FDVp21tI8GvhDWs-jXXhcRuI4Wu2xBfDqd7XUBY-1lZaNdViQGZF_g7tCYgaZ1HSFzaS2fJUxRIPS-dj8QZBNvaN2N7IYKokujm2Seuv19noOZDIbU_EqApyMglINfzXvY9OuTeY5nxDteLk09XFIBiTHECoG9eMbj73CpddcA6N-FuL_XBWWiFGqTbEHBmUsSDCOTA_x57gFeCpg8_LwH",
+      "places/ChIJu7bhKQCZ4jARniQ_Ezn4So0/photos/AV-0GLcis8Tj7SPd42LJxmu_CA1VClvxgIOD1Qa0DDFWAPH3PqVM8zOsMFYoxJoimdNaMlKM8UzTPHBFooFK3et-apbw7pdscNFyOnNEMZJNiuynomuugiuvNpuWmNNvQ1fvhW3c99euycvQ50qnDTGmQ0UnWNPRNJHwsbI64zKjj4XoKlVSQsxf5uRGyIK1Z6teMklHdJK3chUSAot4L77xG9UcZrJKIOnaY6qSprPiyUz0VmTsQA4DU0FcrnEt5RS9-h3dKfyHnGplUq1dnqmBkcUpqWyl_YPhsHtRgJG9Zi7q18OSp4ctD5HF6Xv4yyJJyzPyb7c0jImvOy65DTdKYXSEzcs_dR4Y9Sq-Z_16SaV6XUxjBOlWE8M4-uSxNN3Aix7mgLKMEuYIjg0X9tAK7uzcETnfR3DDVU3oSm-VK6b2nA",
+      "places/ChIJu7bhKQCZ4jARniQ_Ezn4So0/photos/AV-0GLdj3y-pOgejroXtY9id5uFOtCVdT0N2KKWTphlScb1TzZooM__RJNKF_AsQY1_WK0cduBodSnmU48Q1OTw6pYO9ZHuSmYHLOtNtFh3HLxP_Qven_PtM9dfgbhH89_wFcDFpIkd-uoPJ3qONCcU2ug2YqVww3WoXqeptf0RcSSUltvaBiia1cR_yvaYsIhHMz-RrU-pwlK9cv2i5SYt_fe2y09ZoTjlVcBeRDPPzosLjpGSNTO_IoeuCWZ-Rx8DuEGOCk2JpwNMM4KCg-YOCEna3Qk2cn264OtMalrGIEqPTmRdq3phnvh4b1jq4Pt0_IFVWe-9aRa2OqGNDiH3IRz0qNr2na8m-PPFf1Kt7yH65HXc2Ai_qr1jY_uNSJIPU01Ozxemjfg-rqXSVWeKImJGdFBgTg5an_kz_KdxmwHldyg",
+      "places/ChIJu7bhKQCZ4jARniQ_Ezn4So0/photos/AV-0GLdeNgOidonPO17m8Dbo9hgfADZJ2szgWa8RbR0fh4pLzg8reNF1YaxJxcy1hMKG1FBxfKHuFzUMiDn2VezZTDjQW21SPBOR7UIVJu1BS82QhYycUBhsXB86NDE7l3p2MDqyCTdMFii_pH3t6-0w4X809IbQwfcvnWMAREc0VO5k7B3YUII04okiAUu9XVO-_bi-kx-nyObLTKzi3TEMhIzu51nv6qQZMxJ6gLw4LpcAmFGRJsr3WPJlnDyhrBQhLz9hLNJ9bS94edw8VwxSZowUF3xKYXd0jFkVKa7FppOTlV0Jyep4K5ZNI5z6oX58o1mx924kgEjb8_WiTVYsssBjWecTx8WmRxgFdOJ0DWj8G45paMDunan3SKY3s4W4mMdSMIfaTAWpwWK0nX8L27WZwx4381_nUQrxpUloZuHdGQ",
+      "places/ChIJu7bhKQCZ4jARniQ_Ezn4So0/photos/AV-0GLeB-goK5fpG_RxVmZhhBfs5ySqXNUh6LYDypAEaAIzIDOlB05t_5goxMejbL84JiuXQh2yFRsponBWVr0Wn2XLzc8TRVSOeSWJRHl_DHNlVpktmS0jpnlfstzrLO1ZytgjgeKEiT1n8KLJTF_d8Y0Vvq_UfV1T_InDYng6k2TF9KyUzhfF6HNHqBcCZXnvXF_Zk7o-CnSsCOHt_-9XzlDcOBw-sD-iQ8cWlT0Ujv2sqqlGEUpz4hxdFGlq4sJ3SmHJmWEBq0h63Q4zJ8SsRdtGf2q952pp-A8dE4xxO_QRB7Ko6iecbL4AjR4CzPyDZhT4T-ksV5Wv7mR--5TTSe8uxaVIe1t0klkw4rMbkJ9s3IhSDX8jP53MGrOmX6tx3GtN4it0sh86wrfjFY_TlUOPeR2-uE_xiDwCaHzIOdPXn0Q",
+      "places/ChIJu7bhKQCZ4jARniQ_Ezn4So0/photos/AV-0GLc2Eewn4p7imaswFh_vseZQ7EQjX6OIKTPQok64kKijmkiXQy7Mq1G6akap-2Z-nyUS6aZQDSt-pSXZu6q12pZg3onvUcrTR4Pk7Ndpl_5wTEKQZl6Kv7EpzwQe70hvBKhYqYKqTvwC0B8iGFVFrsBSFO9Rfftap3UmIwhTsvXy69Xlsx7zdhJ1MyAbDR1ZrVykT_K9zjuB9JtCrzaJNr8EmcTw35tcCpbIw68buAg4oPap-vF0KZ9reBhcNt5FxAb71FOU4bN_PnI0ivx6V3YO0vM4wyk5fbp2EdTOv7EB4JC7hN4uOUe13ppMYZ7g76i17-RqpETvPKTG4Giyug2gg0y4cjI6PgKd1nrvo8eXjB-s3j0M-GIf3FlnSBHgnXdq1qCnG1QVticTkiay7G74qS3pVvKlLJPMFcORuBMPaQ"
+    ],
+    "highlights": [
+      "Truffle Dishes",
+      "Eggs Benedict"
+    ],
+    "approved_at": "2026-11-09T08:27:40.066Z",
+    "slug": "lucca-songwat"
+  },
+  {
+    "id": "6946cdd2-fd2d-4bd7-a856-989fcf731761",
+    "name_en": "Tonkatsu Marushichi Thailand",
+    "name_zh": "Tonkatsu Marushichi Thailand",
+    "description_zh": "來自東京銀座的炸豬排專門店，招牌是以低溫慢煮處理的厚切豬排，外皮酥脆、內裡保留淡粉色中心，口感柔嫩多汁。豬排擺在玉子燒上方，與醃漬蔬菜搭配食用。提供 150g、300g 及限定 600g 等不同份量，脂肪比例隨份量增加而提高。店位於 Siam 一帶，平日開店前已有人排隊，建議提早到。",
+    "description_en": "A tonkatsu restaurant originally from Ginza, Tokyo, known for its slow-cooked thick-cut pork cutlet with a crispy breaded crust and a tender, pale pink center. The tonkatsu is served on top of an omelette and paired with pickled vegetables. Portions come in 150g, 300g, and a limited 600g, with fat content increasing as the size goes up. Located near Siam on Rama I Road. There's often a queue even on weekdays, so arriving early helps.",
+    "category": "food",
+    "address": "991 Rama I Rd, Khwaeng Pathum Wan, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "lat": 13.7463324,
+    "lng": 100.5351122,
+    "photos": [
+      "/photos/6946cdd2-fd2d-4bd7-a856-989fcf731761/0.jpg",
+      "/photos/6946cdd2-fd2d-4bd7-a856-989fcf731761/1.jpg",
+      "/photos/6946cdd2-fd2d-4bd7-a856-989fcf731761/2.jpg",
+      "/photos/6946cdd2-fd2d-4bd7-a856-989fcf731761/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Tonkatsu%20Marushichi%20Thailand%20991%20Rama%20I%20Rd%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJwzKcaMWf4jAR1lNrZl98Lc0",
+    "rating": 4.2,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Siam",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@thesamtyler/video/7699813358505135380",
+        "title": "Trying Tokyo's Viral Tonkatsu Marushichi in Bangkok | TikTok",
+        "quote": "東京爆紅炸豬排已登陸曼谷",
+        "facts": "日本知名餐廳，以酥脆炸豬排聞名"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJwzKcaMWf4jAR1lNrZl98Lc0/photos/AV-0GLdraGQBVltiabkVPbLGiVxr8rULxycqpuXrO7vR6bToEhCUBOHEzJHPyVEN8z2IlKfkzJecW35_KIiGt_JAPDNWTWbV5iSUIJMtt0Jt49eBw4LNOHCK-HikCp7OL4VWDqUMcT7n1Ydt3af-YTTZNK7alneSURfbyD4uGS9WZWuEZ--_gmTGin7c23R8pflWz7OGGKoJ6ukbwxMAjNJ4wr1_mxnpdWsMW4syjhmGs2mWtKioWi69rdu3K1Nnm5JZ6iIR-85kpyoL2pI9N1YwmwLGrCES9tOsuDSeuhyZKEdj46zHderaOkadNVudiLCEn2WbdZmPUaJUU3JMvmLumB-OYY-9yVX_-YrjoFrV1a9djei92d8JFg7bgZ7FzV3YfMsi-OQrAJ_gGZwAXpUHKI975OxulZR9-gkAbQpnNILaew",
+      "places/ChIJwzKcaMWf4jAR1lNrZl98Lc0/photos/AV-0GLfsUko8u7HnrzfiWU35qGnNHpYH0R39IZvtWyTwhdsDKefT3FVcTdTGjTHeKY-rsElTUPvkMWxb9b7EvBIFsX-_z7WX9U8DOLt_KMFCJ1eV0v2ZufUFwhuwdqRuJiAKlBbnBTGGnF0grQxJpRGdw2t8ZaCXVLGySfXu7A75Sq_R_vWSH8cIikodD8IJ68_vrBi8RgaeF1QDq41vemSZTbinv2SUDW15czW_a8SHDm12QLg0sGdXGr_RAy1YItI6LlClkB8ZKscWrmEw7J9Yh-T5QbiH-42_xFzcqFLn6HG4MUwVvrQwJOKlfoV5Hodp4lwOOlmKGsa7mDnJPG8k49cCbaXsgBSAKyyYTYazOs_s56_By5XdBaP9Qunvrh3I_KU1o0q5J0ZcaM7c17YTPOzQJhNmVDlWVYjZA3XVA8FYjw",
+      "places/ChIJwzKcaMWf4jAR1lNrZl98Lc0/photos/AV-0GLd2VbdqUPTQu6merLepQQgyPVhC3FQ-jIc-20A913LmK62o4Vo2Qa0vH9neQS1ykNpGNU3fHkPPWxgEeK1ieAQ5XqsLtWqTehQt10fvxo59bahdQ8QKOxenSQLfhdnjqDkyA2vBntttD7PzNlAQczSPlXQeNTkIUGT-HSAqNKqDcdx1pXfsmlbo1w5zQdFGoaK0emS9xCGpV86B9-UBvSIhRJButFS_2Mu-hTZZktt-ukag6CdJZOlc8i9AcBx5n1rAGkTSAJxsiQBaT8mZm_Yj4V1njijJr-5EQPJ547D6w8wAOgtYSq9Iz0di7d-N1OzvaobtvL0jfpHkE7AAxWXGtbleB3-KAOC0PVvmG062EX3KVHukfKD5FLGuY0BM8SsAUo6u9BSESv5c1VsmtYRzM9hGi5zoYYjlCnWtTB62YA",
+      "places/ChIJwzKcaMWf4jAR1lNrZl98Lc0/photos/AV-0GLdTz6gCfTxm38M9wEZNMFsAEvu_6COduMt9SOth1l1F0VJFZJbJ3WW-y6flR5r1YfwBxK9OkTIrzmRUND3HqJNBcXJ6aaLlJgvX3tuexjrvLHgClRVwHhV4gSby8lna4U7vWn6keLxFiW2lXvj08W24TEMrUx8vv4dz9u2Q00pHqU6NGP7j1QGNLtXwpZRQ6S2p7n4myCnaPH09aHy4bX9Fjfa1rdGGy6CcaybYDYmTtxdVI3-SQ3tri5mmN2tp6vZykARmtOdJnx5zDzBkGHpZ_NhGnt-Gb8GQk5q_f3f7tvLBIqSDihIyZumODVKpigBN5XDgcoACEdwS7BPDoX6RJN2DJwhQfa3WbGAM3aT094aT43ySG0pLueJcAXrFt8xACrIozkAKUuLJNFLh_Y90e6AWGNIWRu46DEWLwAUieA",
+      "places/ChIJwzKcaMWf4jAR1lNrZl98Lc0/photos/AV-0GLdQ5LNYpwgxUQ_FIfrS2EptZK8iyfiKzDMF7CynYeZgNBFA9sZ2wj-t87NG9BMIEeNdl8hlmJWaueqcfjLIBP1WIHc5HsXzS20N1IIiyUMeyX8g5tSn2BuD02BAyZ8x08NILwzY0XsrpG5ZA5NvEiBLPsMwxnFsIHm-2RZ-IZcaeo1VAEgsGX__KBouTp5YCg0uPcK3vP5UYmdPL0fGdd1PPd-2rxD_Px0lzVV4ABqFWEUwBrRzkkFO42HKH_GcaT5O0ZsgLNFIeePzzdZSDfe5uPlfngEPfftu_JLDoYme6Dr5_xAHkFwswPvY0TixMg4FH1N5KIZR9Ssw81z3k8xapTV4yASgHotJ7E-EKmnCb8UR8jZTCH4yfXGz83UETMqt9coRaWMsowEUNP90O_SgJQdExcumVVEKyOegOSlJuw",
+      "places/ChIJwzKcaMWf4jAR1lNrZl98Lc0/photos/AV-0GLfAZ0te0JeelvdSKXxxjdXjDVwHTwn452hmFqYxbLfx0DFpZ1QQke9_QL5sUgeZ7O79qrBn0KWakJvHRv5nVk2gFGQ3KGAHi5b3SRbk5EpuBFNq_CrSvRWi-5mDY7r3ZokGJ81FfRctI6LMyLe257yciKzcJXy4begoUtpkSyYg10Z61q3YBheTNhpv3aVuMBqbGbTStwYFdbnDB68cyNs0ofWkKnw4u3r4NWANdvnFTwA1jhU2xyNlYL2ZSetYpMZgdhDazQN6ZdT_cqYGy7vq-i7p_UChxMnsixgAoHiqbOsv7uFMcz8O9RThKn7Q_2gXQepDWGm5dbC3qIufjFpUtvPLkR-zQWqLMz1Fkn7V8NAESCsX1H9oMZ6TyezerP95BA2GpgEphvsBMubfO_szKzjQW8qNeIigmU2_oUDWIA"
+    ],
+    "highlights": [
+      "Thick-cut Tonkatsu",
+      "Sous Vide Pork"
+    ],
+    "approved_at": "2026-11-09T08:27:40.085Z",
+    "slug": "tonkatsu-marushichi-thailand"
+  },
+  {
+    "id": "9fd0bf2b-8762-4d7c-94d7-900ec6490597",
+    "name_en": "Jelly Happens.",
+    "name_zh": "Jelly Happens.",
+    "description_zh": "果凍主題咖啡廳，飲品全是無咖啡因選項，甜點也以果凍為主軸。店內中間設有互動體驗區，可以直接捏壓果凍，芒果糯米果凍是其中一道特色品項。Instagram 上持續有新品更新。",
+    "description_en": "A jelly-themed cafe where all drinks are non-coffee and the desserts are built around jelly. There's an interactive exhibition area in the middle of the space where you can squeeze and play with the jelly. The mango sticky rice jelly is one of the standout items. Follow their Instagram for new releases.",
+    "category": "cafe",
+    "address": "473 Thanon Si Ayutthaya, Khwaeng Thung Phaya Thai, Khet Ratchathewi, Krung Thep Maha Nakhon 10400",
+    "lat": 13.7585435,
+    "lng": 100.5345207,
+    "photos": [
+      "/photos/9fd0bf2b-8762-4d7c-94d7-900ec6490597/0.jpg",
+      "/photos/9fd0bf2b-8762-4d7c-94d7-900ec6490597/1.jpg",
+      "/photos/9fd0bf2b-8762-4d7c-94d7-900ec6490597/2.jpg",
+      "/photos/9fd0bf2b-8762-4d7c-94d7-900ec6490597/3.jpg"
+    ],
+    "source": "instagram",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Jelly%20Happens.%20473%20Thanon%20Si%20Ayutthaya%2C%20Khwaeng%20Thung%20Phaya%20Thai%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400&query_place_id=ChIJfwJ8druf4jARaTV-2evHxMM",
+    "rating": 4.9,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Ratchathewi",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.instagram.com/reel/DfetDQyhJ9U/",
+        "title": "ป็อปอัพเยลลี่เปิดใหม่กรุงเทพ NEW Interactive Jelly Cafe In ...",
+        "quote": "互動式果凍咖啡快閃店，彷彿藝術展覽",
+        "facts": "彩色果凍為甜點和互動體驗"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJfwJ8druf4jARaTV-2evHxMM/photos/AV-0GLdIWrZ3xRQEU9jeOAfOEHOpcX74PymUTRBrv7TJpwx3ngSfc0J29qXioB9UMhCRbBETLvR0B9HcsCrS2ZEFDLNGaRkAg5fcu8u0h-r5clPp7k1xrvYl8-Kgmk8QQAcLSZOagls0byRwx0gv9XPVBg9mTP58Xe0V7CMu1Rj_0CUHMP8sRGjA5wOATBS8IXE1ZZaFUR_BSECOkKS7w2VmFHSMz_Uk8HmyWNwBJ_pfbVkmt3mlyVF6H5C472gxqthQMg2yL9EyCCqypk8MUUR7KVknc-oUMeoDEg7MuX1Y9JX29P9AyIfJCmw2dzWW8lM6-G1SOrWnbdsQEf5NRIChuuuB-FfNbe5EUyLCa-ng5pZNgka3vXpYv0og97XP_LbvKGnNkmTwUexu3PfHFAi6IRW_lBmT8upQ9n38N0c4uMBp9Q",
+      "places/ChIJfwJ8druf4jARaTV-2evHxMM/photos/AV-0GLeQuwZByROKpu_8WMhUssyH-MGlKXoHSdxBLOQ2U948siFhfqhtVkVa5aRsw_3Y3HUVCe4KqYQ5nhWT9VvNOUr--HlAO6pPGofO7uesKkyBMAG4EWgKW4kawoHkxORU1vyNp0wPc4w3c8dC7r7k14nFsz5TU4Yrkeczup_93SYc7xByJ-kN2njCHEFUUenB-0opQS4EdgIDAnFKQTTLVsqBXPFbF0ZoHh2DTJb8oZnBL46UGTxL0PsuKheZ-uv6XvzaAYhcHkSJYZTthFXp7g88Vn5mxB6XQXPMjKhwx6HAtqoivoy8wgTzOnN2z6-gQOECH6ZRRb272SejjwiEMYL6SLDwHSLzxXTJjvqiN0lurGx0oobMQSA0kLvLK4jWJ1v1wX4RGJY_UT0PJ4a-GtPd-b25lRclYBoVVgwtQCiy",
+      "places/ChIJfwJ8druf4jARaTV-2evHxMM/photos/AV-0GLfzeWaA20Fr7RBp26WECXsceInHWOR0HK_Sw6X8rnSamnxZWKjXOOwTLsDxpEhHVXxHiBlEe7rA20ezRMmP6ePhC1YpBixrF88dppmoEaatbSkkrrPElZ32eZWJZc5p5z9-AoitbJnx6n2xNvViAFURLCXejF3iixVoqHKTkcckNwcLMpD2lwl67k0W0vt7CK6351Fhhko8kj35rDno1BOvrbn08SW7dNIOVm-6q-r7QdBs76nlqKghAETfizGr60nmXRARnU6gO98esRBiVabDm9Jd13Hsko2Pc5wZgV7dWm-t24QyTQ0MKFOBRaVpE4hB8iELZvhhoVmZshpwEKSfBX0-ZQPf4O718TBMQlFZbbdHr1GoTEwjMbcEyAnatqPrcxYYAKDMMek3Ps7b1yJcJDH1BGKNpVDMphSYsWjEgw",
+      "places/ChIJfwJ8druf4jARaTV-2evHxMM/photos/AV-0GLfgePH0HRyCAfawyI8LWq-WArhZY1xFuII1QXIBajrL0fVWVVoyBB1lxvpxM9x0ip-iHFuSVpJaCEF6K7cW6fAgMKLlvMwUb7VCJ29RAhn99SpnAHrw7kJKEJ1AzRHL1P9YJ1E7dMb6mAioTTBi3dVEAH8lEk4vpyFhxBKzNyyjSWy5kCvKWgD83daHwzfeY-Ib6kdE8UkaHSPCkMyyl3sTWpOahqfQoBAmz5ZCXq8ezeBPB3kP63-NCTNgP2SSDWP5IiRECZnqUzGeiIQjMRaEf-5GIOzbTiRHabQBBrrMKxtoqRWijH9vzV9iBOmL3w-2cgyCO5qdhmr2ScYNpSDwZmFdBN9kFzr4fsJxbPhDeAljDUTVqOzQnAYTH0y6b37DRdmfnD7a-3nc0GruvEJ1m6hwHyad_k80BjsIO4gF3Q",
+      "places/ChIJfwJ8druf4jARaTV-2evHxMM/photos/AV-0GLdorG3dHrMqMYAbk34D9prhVCKQYn8wu8yfxNvGO_VqyESj8XjjdezS7j1wkKAoqLArzQ5_DXIB37n3MygnINdeRkDujJ0hduhJinsWIEFzjXmWALW5d2mcJJXDdfSrc92vRgYEN40FsfM4g9GeeQzCpu04uBJpJHgRyC-NlgndMbwaEdRG4AUba-DwHjC5CJvOVIcYmQQxdfBGtbnUQ5YHPGJCg69verxoRI3pDSasc6lz5PmpvyitdpAoTWRZHNrPVY5RNDBvQsNzXbUL2iw8icB0U9k8krMrcoy7OQYOBNenF_ZjMAwD0Ns7DVwHTr0mbnl4U6XD0YLR5Ve_0J3ZRdB6soA2gCs7-XL2NFMcwycTSB0AOT8IpZsQNT5Hkaq2Zk8FQWctSBlvuwQnbHdTihm4Q7L-dbsYTJVm3IuF",
+      "places/ChIJfwJ8druf4jARaTV-2evHxMM/photos/AV-0GLc0K9vNqcHv14H3ArNczw-wBHfQriBsUpPmssvXGjZDj6gH7N_VhQR0k8DghykwaS5MlMEuH8q_O-gwyMlG_gknBCtRMlO53mEaHmOJXrYMSwY91VrSDmugXRz8GgOhVQifdJCS6p4V8VDKQBXKtX-AmLB-rJsPT4OSpCutciJyHDWnHtT_KsOUKn8R23prjepDRgCDqpu4tVahaSXyCfgX90hokD4-1_EmWwhu4HEqm89jF9dpvLFSTNr3ibTkMMrwHi_-jD-7Kypyp_llsM555xoS5JHmZF1rDAL6syL5ja0EGu9Vai0NA9reE36w_tjuK5JnyG8IyDBdy7NCH8e7N_JxHlq2HOyTKt_MtZtZED8oqx4pyNIBhSHvj87Bnn8rRD52K0CJqR20fzvF60eoo1ebIQnLnKoFAzmrs5_C6g"
+    ],
+    "highlights": [
+      "Mango Sticky Rice Jelly",
+      "Jelly Exhibition"
+    ],
+    "approved_at": "2026-11-09T08:27:40.109Z",
+    "slug": "jelly-happens"
+  },
+  {
+    "id": "c112c233-1166-4a5d-b73f-0bb5aa1cf285",
+    "name_en": "SATO SAMMOSORN",
+    "name_zh": "SATO SAMMOSORN",
+    "description_zh": "泰式居酒屋風格的新餐廳，主打泰國與伊善料理，採小盤共享形式上菜，開放式廚房加炭烤設備。推薦烤牛肝、烤石斑魚、豬肉沙嗲佐花生醬，以及炒冬粉麵。飲品以傳統泰國米酒 Sato 為主軸，也備有清酒與葡萄酒。椰子煎餅配椰子冰淇淋是招牌甜點，不要錯過。店內座位不多，停車方便。",
+    "description_en": "A new Thai-Isaan restaurant with an izakaya-style vibe, serving food in small shared plates from an open kitchen with a charcoal grill. Must-tries include grilled beef liver, grilled grouper, pork satay with peanut sauce, and stir-fried Dong Dang noodles. The drink list centers on traditional Thai rice wine Sato, alongside sake and wine. The crispy coconut pancake with coconut ice cream is the standout dessert. The venue is small but parking is easy.",
+    "category": "food",
+    "address": "5, 15 Phaya Thai Rd, Phaya Thai, Khet Ratchathewi, Krung Thep Maha Nakhon 10400",
+    "lat": 13.7627225,
+    "lng": 100.5375376,
+    "photos": [
+      "/photos/c112c233-1166-4a5d-b73f-0bb5aa1cf285/0.jpg",
+      "/photos/c112c233-1166-4a5d-b73f-0bb5aa1cf285/1.jpg",
+      "/photos/c112c233-1166-4a5d-b73f-0bb5aa1cf285/2.jpg",
+      "/photos/c112c233-1166-4a5d-b73f-0bb5aa1cf285/3.jpg"
+    ],
+    "source": "instagram",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=SATO%20SAMMOSORN%205%2C%2015%20Phaya%20Thai%20Rd%2C%20Phaya%20Thai%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400&query_place_id=ChIJydIwEgCf4jARL3nB96xeEcU",
+    "rating": 4.8,
+    "price_range": 3,
+    "tag": "hidden_gem",
+    "area": "Ratchathewi",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.instagram.com/p/Deo11PJGQ-i/",
+        "title": "The hottest [ quite literally] new Thai restaurant in Bangkok ...",
+        "quote": "曼谷最熱門新泰餐廳，北泰風味居酒屋氛圍。",
+        "facts": "新開泰餐廳，北泰風味居酒屋風格，櫃台座位氛圍熱烈。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJydIwEgCf4jARL3nB96xeEcU/photos/AV-0GLc4gHynSr8DnlilGusDtFEm-pNCYUHGFWTPFtUNMftDao5DJib51i1eDZhp1yqOYLZzpZwamAwFV0ZtXgHxCTgV4V_sVb5SJCA99zzDcdiRPWFwUalJMPwEtgHBSUp7B53hKl1gc4L4-My2t0u_fECuRNseGf0_ZYNPPGPQmv2tIOwgQUDmyIjzwRRVphJf6azg9aLLBvey_CIqbh-JNtpJwAVUPsv3CuY0iFY36Az3giEOgJFQxkB15SrDUMtcUsYADQihf3JdA7KkctcVae3bQMEL9DQcwfE_mw2JWEGCq7f6kP1GDKLxpaUHGmghLjsu79VHp4XJI1X8ROjTTMz8OGz9F-QE6q29js7D0wcAI-w_5tek76DA13FOPLBk9uz0L9zHtZGvWz3QOjaluCXUXU53gNhYlum3fZ1fXCjI",
+      "places/ChIJydIwEgCf4jARL3nB96xeEcU/photos/AV-0GLfQ4-A8tTQJcZA6MTkaZGONFVWwebqRHau6e9DZQ9gTemfVHmQEaIBfXEZsXLNIRdvbaBjurD7ebqm1hgrIpQ-FlWWp4v7Z_FQwFBbpYvTtcAXb3kJg3LC9ru55mWci--92PvQTnM_u2fXowJzPLoxosJ0TW0Uf38_tLXB5B_bZnQqZmtCjiM3ExmkTjwA_jQ9yRjNGGyCexPruSPEdGMg9kt-nYTG3o28gdOHBhBs3TlfaI2xMtIYkjc1Tf3SHpp89Z_Q8woNxG50db-vfYUpPaRHMine49eQjUK8tkwJ2P8uwqDkPKqM7sVeZhQKg4ZyzlGj8gznyEmgt0jDSOqQ7i7eyrnJYssp29tGrtSEb0xzICbvESWR6jT0PxT1MBcL10EOXbaAdXJxmHLPrRvJ6zSvfypV2DCZKc5iSF837tg",
+      "places/ChIJydIwEgCf4jARL3nB96xeEcU/photos/AV-0GLeQYFPniylKInLSgPE6hYhmDdWTwH9EG90O1LU0QHVXES5Dj_LqC8SSpBuXjXw42fz0xJIc5FbJKt5fW69J5hScnuSRmz5B0R2CwXIN_zJR-vRlLzw3L-nMpQXmwe2Asoy-u0-WkM8ezpA0cckDV_KMX4cCMq-jsh-VIF05iVDOA25mexs0M3KxjLjD8TjWahHmwMNC_BbPKfau0DFCPtLz5daoPPTcFXMfjX5RBcEe7pCUucM3JDG3i8Ayz5fODYF2ssQtfhj1fjw1QMwFA4gOlCnxBLc0RwZWqkXBuIaxdfMv-RXBSVLnvb_9YXahzGAgBclhHZBtmKPOtlGy4lFesn780p7wQ0FnBu1g21__D1FCk4xi2cbMTjnsy9dCShjo0BKeIlR-Ay40TwBvh_Sd4oT2p592yNPzEfVbqrpt2Q",
+      "places/ChIJydIwEgCf4jARL3nB96xeEcU/photos/AV-0GLdL9cmI__ji_vmC-TdT3tMPwsFvaSNdxyUaczOQdD-llChfYbr7_7MJev30WhW-V2hvBAUAw6my7ZTjt8UBdrX9tx9td8W1RTVoeCkrL19sXfWETeg3lzzRlpU1z9En16r9DZ7EwpuEfV57SyPLtNJKi09fV4io_D9_dAjn8IqYJQV5wy7VNSmPMsPqIJrYHUs07cxs9EPBbIqiO6wIIe2iierpt2gWW6wbpGIlQGV_51rtiWm3-B5KvlMcU7ZMV0v0B-UdojYognpf1-4RoGuPpih3va4sOZ8wR_71GhmbPbO7GHXWXFPqdKPO_jEUvfFLr5X1nMuxVd_utBGS8iAmX3hGadRtXfdrYgymoHWJKCzz8Bu9B5Dn-iQOabiKrt0I36GfXFXK5Vf1gGz_ecQlK0QWhRgGb_vBlxifqIV5OQ",
+      "places/ChIJydIwEgCf4jARL3nB96xeEcU/photos/AV-0GLeRtx3-m3IqY7-fcxxEFpJ54rt9m1wnKVHLuU1eJk9z6Oqn39rOqdPYJ0bQm-ijfG_FfqW0KmvC4m2wrP3phDg53qeCNoo0bwp67Bwg6ABMnQwIWkED4vtNcFJahiAMIbomP_SSJQsqfZriJy2Lim0Wl-Qos78kbpcawLNH8x5lxVGEF5F77vzGoHuWlZyxzbjEJot1HcBXX9aoco76IZV5sWGjhbQFa7dTeozamA_jNn1Gg2eEa6Z8UYb4hsxMP4KRqme3HCBE8NEwtfL9JOLGzTUHk5cs6jRiAY_JLzqcKrkyFZCfP8jrCjzXV2MFPV49aJwvS2fmnMLg1vUBQ0O9_KJec2tdN72P_qB4S_bykDWUp_sYxZ57uniemh-ZDnkg6efXmIZqaZIWSnJgPOZYpPBqsBeiZ0zPjMapp5qr",
+      "places/ChIJydIwEgCf4jARL3nB96xeEcU/photos/AV-0GLfTQV6aFxQw0QnTxHBi2Hrb1SxNJVWwef9syOL9GKv8YT449GVrpuU11v3gIRGL3cIqwhtLWYQ8bf13x9B5gDIeDPYhfZxoD-44w74uDS9FueKL9sw0eSGeQdY5Ezd2UWEeb_pvgHLHUnR04T8SwWdYP_tjlWCENslT07bQbx0e5LDTSdQLCUwgl2J15p4U9Dqkha0ijbWdm5R64oBplovWao4csrOgxBLehuVbzjoUMPYCw9-IJC4L0H5W-3tM6CLVjbF9jab4C66WXCsgUzsKBNdwCyuzvhMV2eiTbpVX3W_FbopUB1F6JR_TSdOR9ZOCGD0YhJfYudQNfVuxE5MEdQurDpYXCH0zXx9GIOjXBCRoDMoTto0v5d1ZXGaZ36ZEDUiDC3O5o8iZyfqUUbTr-tRmFlIvRKdH4n9oTtRJug"
+    ],
+    "highlights": [
+      "Sato",
+      "Pork Satay"
+    ],
+    "approved_at": "2026-11-09T08:27:40.132Z"
   }
 ]
