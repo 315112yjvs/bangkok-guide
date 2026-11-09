@@ -6,12 +6,14 @@ import { txLocalizePhotos } from '@/lib/googlePhotos'
 import type { Location, PendingLocation } from '@/lib/types'
 import { isTrendingFresh } from '@/lib/tags'
 import { withErrors } from '@/lib/apiError'
+import { makeSlug } from '@/lib/autoSlug'
+import { generateDescription } from '@/lib/generateDescription'
 
 // 每次都讀最新資料，不在建置時先跑
 export const dynamic = 'force-dynamic'
 
 export const runtime = 'nodejs'
-export const maxDuration = 60
+export const maxDuration = 120
 
 async function handleGET() {
   return NextResponse.json(await transact('read', txLocations))
@@ -38,7 +40,9 @@ async function handlePOST(req: NextRequest) {
       if (approved.tag === 'trending' && body.tag === 'trending' && item.tag !== 'trending' && item.tag) approved.base_tag = item.tag
       // 正式站沒有 Python，上架當下就把照片存成網站自己的檔案
       if (isOnline) approved = await txLocalizePhotos(tx, approved)
-      txWriteLocations(tx, [...await txLocations(tx), approved])
+      const current = await txLocations(tx)
+      if (!approved.slug) approved.slug = await makeSlug(approved.name_en, new Set(current.map((l) => l.slug ?? '')))
+      txWriteLocations(tx, [...current, approved])
       txWritePending(tx, pending.filter((p) => p.id !== body.id))
       return approved
     })
@@ -54,9 +58,21 @@ async function handlePOST(req: NextRequest) {
   }
   // 手動選「話題爆紅」要記下時間，不然會被當成過期的爆紅，直接顯示成在地私藏
   if (location.tag === 'trending') location.trending_at = new Date().toISOString()
+  // 描述沒填或只寫幾個字（例如「咖啡廳」），儲存時自動請 AI 寫；失敗就保留原本填的
+  if ((location.description_zh ?? '').trim().length < 20 && location.name_en?.trim()) {
+    try {
+      const d = await generateDescription({ name_en: location.name_en, address: location.address, source_url: location.source_url, category: location.category })
+      location.description_zh = d.description_zh
+      if (d.description_en) location.description_en = d.description_en
+    } catch (e) {
+      console.warn('[add] 自動生成描述失敗', e instanceof Error ? e.message : e)
+    }
+  }
   await transact(`新增 ${location.name_zh ?? location.name_en}`, async (tx) => {
     const loc = isOnline ? await txLocalizePhotos(tx, location) : location
-    txWriteLocations(tx, [...await txLocations(tx), loc])
+    const current = await txLocations(tx)
+    if (!loc.slug) loc.slug = await makeSlug(loc.name_en, new Set(current.map((l) => l.slug ?? '')))
+    txWriteLocations(tx, [...current, loc])
   })
   return NextResponse.json({ ok: true, id: location.id })
 }

@@ -1396,7 +1396,7 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
             <label className="text-xs font-semibold text-gray-500">中文描述</label>
             <AiDescribeButton form={form} onResult={d => setForm(f => ({ ...f, description_zh: d.description_zh, description_en: d.description_en || f.description_en }))} />
           </div>
-          <textarea className={inp} rows={2} value={form.description_zh} onChange={field('description_zh')} />
+          <textarea className={inp} rows={2} value={form.description_zh} onChange={field('description_zh')} placeholder="留空也可以，儲存時會自動請 AI 寫" />
         </div>
         <div className="col-span-2"><label className={label}>English Description</label><textarea className={inp} rows={2} value={form.description_en} onChange={field('description_en')} /></div>
         <div>

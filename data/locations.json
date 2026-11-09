@@ -1407,8 +1407,8 @@
     ]
   },
   {
-    "name_en": "Jirakaan Restaurant (จิรกาล)",
-    "name_zh": "Jirakaan Restaurant (จิรกาล)",
+    "name_en": "Jirakaan Restaurant",
+    "name_zh": "Jirakaan 宮廷泰菜",
     "description_en": "Dining at the table of King Rama V 🕰️ Jirakaan — meaning \"once upon a time\" — is Bangkok's most enchanting culinary time capsule. The menu revives forgotten royal recipes from the Rattanakosin Era, each dish narrated with history and heart. A century-old tree anchors the dining room, and every bite feels like a page from an old cookbook finally brought to life.",
     "description_zh": "穿越時光回到拉瑪五世的餐桌 🕰️ จิรกาล 以「從前從前」為名，專門復刻曼谷王朝時期近乎失傳的古老食譜，每道菜都是一段泰式飲食史，擁有百年老樹坐落餐廳正中央，氛圍典雅迷人，是曼谷最有靈魂的泰菜體驗之一。",
     "category": "food",
@@ -1428,7 +1428,7 @@
     "id": "8fc66940-4e54-4ae1-bb1a-e8c84c833195",
     "source": "googlemaps",
     "approved_at": "2026-06-05T14:17:38.588Z",
-    "name_th": "",
+    "name_th": "จิรกาล)",
     "address_th": "",
     "hashtags": [],
     "slug": "jirakaan-restaurant",
@@ -1524,8 +1524,8 @@
     ]
   },
   {
-    "name_en": "ร้านขจร | Kajohn Authentic Southern Thai Cuisine",
-    "name_zh": "ร้านขจร | Kajohn Authentic Southern Thai Cuisine",
+    "name_en": "Kajohn Authentic Southern Thai Cuisine",
+    "name_zh": "Kajohn 南泰菜",
     "description_en": "Southern Thai flavors so authentic, locals from the south say it tastes like home 🦀 Kajohn is tucked in an old shophouse near Wat Saket — seafood sourced fresh from the southern coast, with standout dishes like yellow prawn curry, crispy salted pork belly, and fried squid that keeps regulars coming back. A Google 4.9 rating that's thoroughly earned.",
     "description_zh": "曼谷最道地的南部泰菜，連南部人都說像家鄉味 🦀 ขจร 藏在金山寺附近的老街屋裡，海鮮直送自南部，招牌黃咖哩蝦、炸魷魚、鹹脆五花肉每道都辣得過癮、鮮得剛好，Google 評分 4.9，實至名歸。",
     "category": "food",
@@ -1545,7 +1545,7 @@
     "id": "aa4721a6-d181-45bf-9855-dc73e13cc116",
     "source": "googlemaps",
     "approved_at": "2026-06-05T14:19:14.324Z",
-    "name_th": "",
+    "name_th": "ร้านขจร",
     "address_th": "",
     "hashtags": [],
     "slug": "kajohn-authentic-southern-thai-cuisine",
@@ -2088,8 +2088,8 @@
     ]
   },
   {
-    "name_en": "ถึงเจียงใหม่ บางกอก | Thungchiangmai bangkok",
-    "name_zh": "ถึงเจียงใหม่ บางกอก | Thungchiangmai bangkok",
+    "name_en": "Thung Chiang Mai Bangkok",
+    "name_zh": "Thung Chiang Mai 泰北菜",
     "description_en": "Real Chiang Mai flavours, no flight required 🍜 Thungchiangmai Bangkok has earned five consecutive Michelin Bib Gourmands for its honest Northern Thai home cooking — laab moo kua, northern sausage, and bold mountain-spiced dishes that locals from Chiang Mai say taste just like home. Tucked quietly in Ari Soi 1, open Monday to Saturday only.",
     "description_zh": "不用去清邁，在 Ari 就能吃到真正的北部味 🍜 ถึงเจียงใหม่ 連續五年米其林 Bib Gourmand，炒豬肉拉布、北部香腸道地夠味，口味是清邁人自己認證的那種，藏在 Ari 1 巷安靜角落，週一至週六開門，值得特地繞路來。",
     "category": "food",
@@ -2122,7 +2122,8 @@
     "highlights": [
       "Larb Moo",
       "Northern Sausage"
-    ]
+    ],
+    "name_th": "ถึงเจียงใหม่ บางกอก"
   },
   {
     "name_en": "The Island Bangkok – Top Rated Thai Restaurant & Bar",
@@ -2310,8 +2311,8 @@
     ]
   },
   {
-    "name_en": "ไฟเขียวเยาวราช Fikeaw Yaowarat",
-    "name_zh": "ไฟเขียวเยาวราช Fikeaw Yaowarat",
+    "name_en": "Fikeaw Yaowarat",
+    "name_zh": "Fikeaw 海鮮攤（耀華力）",
     "description_en": "Chinatown's most addictive open-air seafood spot 🦞 ไฟเขียว on Yaowarat Soi 11 is pure street-food theatre — pick your lobster, river prawns, or fish, watch the chef work blazing wok fire, and dig into garlic butter lobster and crispy fried red snapper that keep people coming back trip after trip. Opens at 6pm. The queue is worth every minute.",
     "description_zh": "耀華力最值得排隊的海鮮攤 🦞 ไฟเขียว 就在耀華力 11 巷路邊，自選龍蝦、河蝦、鮮魚，大火鑊氣現炒，蒜蓉奶油龍蝦鮮甜無比，炸紅鯛外酥內嫩，有人來曼谷連吃五次、每次都不失望，傍晚六點開始、排隊是值得的儀式。",
     "category": "food",
@@ -2344,7 +2345,8 @@
     "highlights": [
       "Garlic Butter Lobster",
       "Fried Red Snapper"
-    ]
+    ],
+    "name_th": "ไฟเขียวเยาวราช"
   },
   {
     "name_en": "Maison Dunand",
@@ -2606,8 +2608,8 @@
     ]
   },
   {
-    "name_en": "รสกรุง - Ros Krung Esarn Thai Cafe",
-    "name_zh": "รสกรุง - Ros Krung Esarn Thai Cafe",
+    "name_en": "Ros Krung Esarn Thai Cafe",
+    "name_zh": "Ros Krung 東北菜",
     "description_en": "Old Bangkok's hidden Isaan gem 🌶️ Tucked on Maha Chai Road near Pra Tu Phi, Ros Krung serves authentic northeastern Thai comfort food with a modern twist — punchy som tam, flavourful larb, and beautifully plated dishes that punch well above their price point. The perfect pit stop after exploring Rattanakosin's temples and markets.",
     "description_zh": "曼谷老城區的東北泰菜小驚喜 🌶️ รสกรุง 藏在馬哈猜路上，現代裝潢融入傳統泰式元素，青木瓜沙拉、拉布肉末道地夠辣，擺盤精緻超乎預期，價格親民氣氛輕鬆，是逛完唐人街或大皇宮後最值得繞進去吃一頓的地方。",
     "category": "food",
@@ -2640,7 +2642,8 @@
     "highlights": [
       "Som Tam",
       "Larb"
-    ]
+    ],
+    "name_th": "รสกรุง"
   },
   {
     "name_en": "Madame K Kitchen & Bar",
@@ -3428,8 +3431,8 @@
     ]
   },
   {
-    "name_en": "ซาวเอกมัย ZAO EKKAMAI",
-    "name_zh": "ซาวเอกมัย ZAO EKKAMAI",
+    "name_en": "ZAO Ekkamai",
+    "name_zh": "ZAO 伊善菜（Ekkamai）",
     "description_en": "Isaan soul food, reframed with designer intention 🌶️ ZAO started in Ubon Ratchathani and brought its boldest flavours to a charming mid-century house in Ekkamai Soi 25. The name means \"search for whatever's there and cook it\" — and the menu delivers: watermelon in fermented fish sauce, red ant egg omelette, sun-dried beef, grilled snakehead fish. Authentic, seasonal, and unlike anywhere else in Bangkok. Reservations recommended, cashless only.",
     "description_zh": "不用去東北，在 Ekkamai 就能吃到靈魂級的伊善菜 🌶️ ZAO 由設計師老闆娘從烏汶府帶來，「ซาว」在伊善話意為「找到什麼就拿什麼來做」，西瓜配發酵魚醬、螞蟻卵炒蛋、烤牛舌，每道都是食材與文化的故事，百年老屋改建空間溫暖有質感，不收現金。",
     "category": "food",
@@ -3462,7 +3465,8 @@
     "highlights": [
       "Isaan Cuisine",
       "Heritage Building"
-    ]
+    ],
+    "name_th": "ซาวเอกมัย"
   },
   {
     "name_en": "Somtamnua",
@@ -3539,8 +3543,8 @@
     ]
   },
   {
-    "name_en": "SUMDAY Dimsum Park Silom - ซัมเดย์ติ่มซำ ปาร์ค สีลม",
-    "name_zh": "SUMDAY Dimsum Park Silom - ซัมเดย์ติ่มซำ ปาร์ค สีลม",
+    "name_en": "SUMDAY Dimsum Park Silom",
+    "name_zh": "SUMDAY 港式點心（Park Silom）",
     "description_en": "Silom's newest all-day dim sum bar 🥟 SUMDAY just opened on the ground floor of Park Silom — a Hong Kong-style dim sum counter where everything is made fresh in an open kitchen right in front of you. Plump har gow, generous fillings, and an 8-piece omakase set from 345 baht that covers all the signatures. Pair with Chinese tea and take your time. The kind of spot that makes any hour feel like dim sum hour.",
     "description_zh": "矽隆鬧區的港式飲茶新據點 🥟 SUMDAY Dimsum 剛在 Park Silom 一樓開幕，開放式廚房現包現蒸、每籠都看得見，蝦餃皮薄餡飽、8 件套餐 345 銖起，Omakase 套餐讓你一次嚐遍招牌，配一壺中國茶，任何時間都是下午茶時光。",
     "category": "food",
@@ -3573,7 +3577,8 @@
     "highlights": [
       "Shrimp Dumpling",
       "Omakase"
-    ]
+    ],
+    "name_th": "ซัมเดย์ติ่มซำ ปาร์ค สีลม"
   },
   {
     "name_en": "HongKong Dimsum and Noodle",
@@ -4467,8 +4472,8 @@
     ]
   },
   {
-    "name_en": "Aonchorn Thai restaurant ออนชอน ราชดำเนิน",
-    "name_zh": "Aonchorn Thai restaurant ออนชอน ราชดำเนิน",
+    "name_en": "Aonchorn Thai Restaurant",
+    "name_zh": "Aonchorn 泰菜（拉差達姆能）",
     "description_en": "A 4.9-rated pink shophouse gem near the Grand Palace 🌶️ ออนชอน on Prachathipatai Road is a beloved local haunt in Bangkok's old town — grilled pork with herb fish sauce dip, marinated beef, and northeastern-style salads that pack serious flavour for under 100 baht a dish. The kind of place locals know and visitors are lucky to stumble upon.",
     "description_zh": "大皇宮附近評分 4.9 的在地口袋名單 🌶️ ออนชอน 藏在拉差達姆能路上的粉紅小店，烤豬肉佐魚露香草醬、醃豬肉拌沙拉道道下飯，每份不到百銖卻味道夠勁，是本地人午餐衝來、外地人繞路也要來的那種老城區小館。",
     "category": "food",
@@ -4501,7 +4506,8 @@
     "highlights": [
       "Grilled Pork",
       "Herb Dip"
-    ]
+    ],
+    "name_th": "ออนชอน ราชดำเนิน"
   },
   {
     "name_en": "MaeThum Padthai",
@@ -4913,8 +4919,8 @@
     "hashtags": []
   },
   {
-    "name_en": "TAIBAN (ใต้บ้าน)",
-    "name_zh": "TAIBAN (ใต้บ้าน)",
+    "name_en": "TAIBAN",
+    "name_zh": "TAIBAN 老宅咖啡",
     "description_en": "Coffee, paint, and a Bangkok afternoon — all at once 🎨 TAIBAN (meaning \"under the house\") is tucked beneath a Hua Lamphong hostel in a leafy courtyard that doubles as an open-air painting studio. Order a drink, grab a canvas from 150 baht, and paint under the trees with all tools provided at no extra cost. No art skills required, no rush. Just one of Bangkok's most quietly joyful ways to spend a few hours.",
     "description_zh": "喝咖啡、同時在路邊作畫，這就是 TAIBAN 🎨 藏在華藍蓬站旁的老宅院子裡，點杯拿鐵、買張畫布，在綠蔭下自在揮灑，畫具全包只收畫布費，不需要任何基礎，是曼谷最有藝術療癒感的咖啡廳。",
     "category": "cafe",
@@ -4947,7 +4953,8 @@
     "highlights": [
       "Latte",
       "Painting Art"
-    ]
+    ],
+    "name_th": "ใต้บ้าน)"
   },
   {
     "name_en": "TRUST Cafe and Studio",
@@ -6469,8 +6476,8 @@
     ]
   },
   {
-    "name_en": "Penlaos Rama 3 - เป็นลาว พระราม 3",
-    "name_zh": "Penlaos Rama 3 - เป็นลาว พระราม 3",
+    "name_en": "Penlaos Rama 3",
+    "name_zh": "Penlaos 伊善菜（Rama 3）",
     "description_en": "Michelin Bib Gourmand Isaan cooking — no MSG, all flavour 🌶️ Penlaos began in Khao Yai and has since earned a loyal following across Bangkok with its honest, clean northeastern Thai recipes. The som tam is punchy and properly sour, the grilled pork neck is tender with the right char, and the larb is fragrant with fresh herbs throughout. No MSG, no shortcuts, and a Michelin Bib Gourmand that says everything you need to know. One of Rama 3's best reasons to make the trip.",
     "description_zh": "不加味精的道地伊善料理，從考艾山到曼谷 🌶️ เป็นลาว 起源自考艾、連續榮獲米其林 Bib Gourmand 加持，青木瓜沙拉酸辣夠勁、烤豬頸肉焦香軟嫩、拉布肉末鮮香帶草本氣息，全程不加味精、食材新鮮，是 Rama 3 一帶最讓人一試就愛上的東北泰菜。",
     "address": "662 69-70 Thanon Rama III, Khwaeng Bang Phong Phang, Khet Yan Nawa, Krung Thep Maha Nakhon 10120, Thailand",
@@ -6503,7 +6510,8 @@
     "highlights": [
       "Som Tam",
       "Grilled Pork Neck"
-    ]
+    ],
+    "name_th": "เป็นลาว พระราม 3"
   },
   {
     "name_en": "BlueMoon.bkk",
@@ -6839,8 +6847,8 @@
     ]
   },
   {
-    "name_en": "Vela Bhirom Restaurant - ร้านอาหารเวฬาภิรมย์",
-    "name_zh": "Vela Bhirom Restaurant - ร้านอาหารเวฬาภิรมย์",
+    "name_en": "Vela Bhirom Restaurant",
+    "name_zh": "Vela Bhirom 花園泰菜",
     "description_en": "A hidden Thai fine dining garden in the heart of Sathorn 🌿 Vela Bhirom — meaning \"a time of joy\" — is tucked inside Villa Deva Resort on Sathon Soi 1, surrounded by a pool and lush greenery that makes the city feel very far away. Authentic Thai fine dining by Chefs Kung and Baitong, with beautifully plated dishes like watermelon with sun-dried fish caviar and pomelo prawn salad that set the tone for the whole meal. Google 4.8, attentive service, and wine available outside. One of Bangkok's most serene and underrated Thai dining experiences.",
     "description_zh": "Sathorn 1 巷的秘密泰菜花園 🌿 เวฬาภิรมย์ 意為「快樂時光」，藏在 Villa Deva Resort 裡，泳池環繞、綠意靜謐，Fine Dining 級別的泰菜由主廚 Kung 與 Baitong 精心詮釋，西瓜乾魚魚子醬、柚子鮮蝦沙拉道道精緻優雅，Google 4.8 分，是 Sathorn 最讓人忘記身在城市的精緻泰菜體驗。",
     "category": "food",
@@ -6873,7 +6881,8 @@
     "highlights": [
       "Fine Dining Thai",
       "Pool Setting"
-    ]
+    ],
+    "name_th": "ร้านอาหารเวฬาภิรมย์"
   },
   {
     "name_en": "Armenio's Modern Grandma",
@@ -9009,8 +9018,8 @@
     ]
   },
   {
-    "name_en": "โต๋ว ก๋วยเตี๋ยว : Dhou noodles",
-    "name_zh": "โต๋ว ก๋วยเตี๋ยว : Dhou noodles",
+    "name_en": "Dhou Noodles",
+    "name_zh": "Dhou 粿條麵",
     "description_en": "A comforting bowl of noodles steps from MRT Itsaraphap 🍜 โต๋ว ก๋วยเตี๋ยว on Itsaraphap Road near Wat Arun is known for its springy, chewy thin noodles and a rich nam tok pork broth with good peppery depth — and you can add ma la spice powder if you want more kick. The soup is mellow and well-rounded without being salty. Air-conditioned, open daily until 8pm, and the kind of neighbourhood noodle shop you stumble into near Wat Arun and quietly keep coming back to.",
     "description_zh": "MRT อิสรภาพ 出口走幾步就有這碗 🍜 โต๋ว ก๋วยเตี๋ยว 藏在鄭王廟附近的 Itsaraphap 路上，以 Q 彈細米粉為招牌，豬肉水落麵湯底濃郁帶胡椒香，另可加麻辣粉提升層次，湯頭沉穩不死鹹，適合慢慢喝，是逛鄭王廟後那頓讓人放鬆的鄰里家常麵。",
     "category": "food",
@@ -9044,7 +9053,8 @@
     "highlights": [
       "Rice Noodle Soup",
       "Chili Powder"
-    ]
+    ],
+    "name_th": "โต๋ว ก๋วยเตี๋ยว"
   },
   {
     "name_en": "Somyong Tam Sua (Silom)",
@@ -9131,8 +9141,8 @@
     ]
   },
   {
-    "name_en": "Jaekoy เจ๊ก้อย ส้มตำอาหารอีสาน เพชรบุรี12 (สาขา1)",
-    "name_zh": "Jaekoy เจ๊ก้อย ส้มตำอาหารอีสาน เพชรบุรี12 (สาขา1)",
+    "name_en": "Jaekoy Som Tam Phetchaburi 12",
+    "name_zh": "Jaekoy 伊善菜（Phetchaburi 12）",
     "description_en": "Ratchathewi's most beloved late-night Isaan canteen 🌶️ Jaekoy on Phetchaburi Soi 12 has been drawing loyal crowds for years — a lively, loud, no-frills Isaan restaurant where the papaya salad is generous and punchy, the communal jimjum hotpot is loaded with fresh ingredients, and the fish-sauce-marinated prawns have their own fan club. Tripadvisor ranked, open daily until 3am, and just a short walk from BTS Ratchathewi. The kind of place that gets more fun the later you arrive.",
     "description_zh": "拉差威提最熱鬧的深夜伊善食堂 🌶️ เจ๊ก้อย 在เพชรบุรี 12 巷傳承多年，青木瓜沙拉份量大、各種ยำ沙拉道道扎實，招牌จิ้มจุ่ม大鍋熱湯食材滿滿、魚露醃鮮蝦鮮甜辛辣，Tripadvisor 曼谷前 1100 名、從傍晚坐到凌晨三點，是下班後、夜遊後最讓人滿足的那一頓伊善飯。",
     "category": "food",
@@ -9166,7 +9176,8 @@
     "highlights": [
       "Papaya Salad",
       "Larb"
-    ]
+    ],
+    "name_th": "เจ๊ก้อย ส้มตำอาหารอีสาน เพชรบุรี12 (สาขา1)"
   },
   {
     "name_en": "Tam Tam Ton Tamrap (Samyan Mitrtown)",
@@ -9373,8 +9384,8 @@
     ]
   },
   {
-    "name_en": "Saneh Mookrata เสน่ห์ หมูกระทะ",
-    "name_zh": "Saneh Mookrata เสน่ห์ หมูกระทะ",
+    "name_en": "Saneh Mookrata",
+    "name_zh": "Saneh 泰式烤肉鍋",
     "description_en": "Sukhumvit 22's most surprising hidden mookata 🐷 Saneh Mookrata is tucked on a quiet stretch of Soi 22 — a clean, modern, air-conditioned space that runs on a 40-year family pork recipe from their own farm. The garlic-pepper marinated pork neck, miso pork collar, and imported Australian beef are the must-orders, paired with three house dipping sauces and proactive staff who refill the soup without being asked. Google 4.9 from nearly 300 reviews, steps from Emsphere, and one of Bangkok's most underrated BBQ spots.",
     "description_zh": "素坤逸 22 巷裡的隱藏版精品烤肉鍋 🐷 Saneh Mookrata 以自家農場豬肉為傲、傳承 40 年秘方，蒜香黑胡椒豬頸肉、味噌豬頸排道道用心，三款沾醬各有風格、服務親切不斷補湯，室內冷氣明亮，Google 4.9 分、Emsphere 步行即達，是素坤逸一帶最讓人驚喜的街頭烤肉小館。",
     "category": "food",
@@ -9408,11 +9419,12 @@
     "highlights": [
       "Pork Neck Meat",
       "40-Year Recipe"
-    ]
+    ],
+    "name_th": "เสน่ห์ หมูกระทะ"
   },
   {
-    "name_en": "ซอยข่อยแน Soikoinae ส้มตำ อารีย์-สะพานควาย",
-    "name_zh": "ซอยข่อยแน Soikoinae ส้มตำ อารีย์-สะพานควาย",
+    "name_en": "Soikoinae Som Tam Ari",
+    "name_zh": "Soikoinae 伊善菜（Ari）",
     "description_en": "Ari's most local Isaan secret 🌶️ ซอยข่อยแน is tucked in a quiet corner of Phahon Yothin Soi 12 — the kind of neighbourhood Isaan spot that locals eat at every week and never tell anyone about. Punchy papaya salad, crying tiger grilled pork skewers, and bold northeastern flavours in a relaxed, no-fuss setting. The name means \"this alley\" in Thai — fitting for a place that feels like you've been let in on something. Open daily, consistently good, and the best-kept secret in the Ari area for anyone who loves Isaan food done properly.",
     "description_zh": "Ari 最隱藏的伊善料理巷弄 🌶️ ซอยข่อยแน藏在 Phahon Yothin 12 巷的安靜角落，「ข่อยแน」取自巷弄特色，每天吃都不膩的青木瓜沙拉、哭泣老虎烤豬肉串道道夠辣夠香，是 Ari 在地人一說出來就讓外人驚訝「這裡有這種地方？」的秘密口袋名單。",
     "category": "food",
@@ -9446,7 +9458,8 @@
     "highlights": [
       "Som Tam",
       "Larb Moo"
-    ]
+    ],
+    "name_th": "ซอยข่อยแน ส้มตำ อารีย์-สะพานควาย"
   },
   {
     "name_en": "Zaapteamchad Papaya Salads",
@@ -9985,8 +9998,8 @@
     ]
   },
   {
-    "name_en": "ซ้งเตี๋ยวหมูต้มยำมะนาว Zongtiew Tom Yum Noodles",
-    "name_zh": "ซ้งเตี๋ยวหมูต้มยำมะนาว Zongtiew Tom Yum Noodles",
+    "name_en": "Zongtiew Tom Yum Noodles",
+    "name_zh": "Zongtiew 檸檬冬蔭豬肉麵",
     "description_en": "The tom yum noodle bowl worth crossing the river for 🍜 ซ้งเตี๋ยว on Charoen Nakhon Soi 30/2 has built a loyal following for one thing: a pork tom yum noodle soup made with fresh lime that's bright, sour, and fragrant without any eye-watering sharpness. Silky pork slices, freshly fried pork lard croutons for crunch, and a clean broth that lets every ingredient speak. The space is neat and welcoming, and Grab delivery is available for when the craving hits at home. Not far from IconSiam — a very good reason to linger on the Charoen Nakhon side.",
     "description_zh": "IconSiam 旁最讓酸辣控魂牽夢縈的那碗麵 🍜 ซ้งเตี๋ยว 藏在 Charoen Nakhon 30/2 巷，招牌豬肉冬蔭麵湯底以新鮮萊姆提酸、清爽不嗆眼、豬肉切片嫩滑、撒上現炸豬油渣酥脆點睛，空間乾淨整潔、服務親切，絕對值得繞路特地去吃一碗，Grab 也有外送。",
     "category": "food",
@@ -10020,7 +10033,8 @@
     "highlights": [
       "Tom Yum Noodles",
       "Pork Crispy"
-    ]
+    ],
+    "name_th": "ซ้งเตี๋ยวหมูต้มยำมะนาว"
   },
   {
     "name_en": "Lek Yai Tomyam Bolan Noodle",
@@ -10297,8 +10311,8 @@
   },
   {
     "id": "fd6b6630-9971-4132-a328-6283d7bdd935",
-    "name_en": "หงส์ ทรงวาด / HONG Songwat",
-    "name_zh": "หงส์ ทรงวาด / HONG Songwat",
+    "name_en": "HONG Songwat",
+    "name_zh": "HONG Songwat 套餐泰菜",
     "description_zh": "🦢 坐落於曼谷唐人街旁的 Song Wat Road，HONG Songwat 以套餐形式端出正在消失的泰式古早家常料理，融合各地區傳承食譜，每道菜皆有故事。共桌用餐、精緻擺盤，搭配結合烹飪學校的理念，致力讓失傳古菜重回餐桌。",
     "description_en": "🦢 Tucked along the revived Song Wat Road near Chinatown, HONG Songwat champions vanishing Thai home-cooking traditions through a set menu of regional, time-honored recipes that are increasingly rare on Bangkok menus. Beautifully plated dishes come with stories behind each course — a dining concept tied to a Thai cooking school mission to bring ancient recipes back to life. Shared-table seating adds to the communal feel.",
     "category": "food",
@@ -10338,7 +10352,8 @@
       "places/ChIJ33pY786Z4jARYC_EaEzZOSI/photos/Aa-ngMYYGRiFQKOFsvVZKAbeuiCAapHeGUV4SIpGGCoIyX9HC32HLzqOgCYGX5ZC2_vT8wTp_091ZucNsv9SBqIz4gfhIUD_dWXk8hFNYcFFfpP2IwD6CFZpt0xyRcoX4fpIpUsKmemr8Iliamhgqq22Ev9Dsbt7pO2lLrIS4ojAxMFkyi24JXr4W3LmRnDX3WIMepg7qRHa9T8aTypfV0PD5exr-BLFON6OLQiIJQH4vO93V8Eot_c8uQcRf9KT0yfYRzzkuhbdIDTT7U5vfYVud1Z6usWXAX9yV_2_PchX1XFpbW0VjKvUrALJALsoNS35Gh6AZCR7_kwOme6WogeaRf4LfHCuC_2T2HHLnNM1WnIOQhgxI4AX6E6OUgKhDS6_QqMiuHvEHrMqequs7kTBYyjCa61GjoUufd40-y7-PAD-yw",
       "places/ChIJ33pY786Z4jARYC_EaEzZOSI/photos/Aa-ngMYuQGOxEOG6I_IGeflaedrmRakF-8-Z2ZYJrGW0zV6_E3Zt6s-5l1f2KJwqO7Kh71f9VHr_9_ogKcIGv0VWwxtGnyEJvhmlixC3pIKzG_7QapdkCIcoJSu86BE6vHpPA9lTXRE_G_5KdLbQprVQQJ3E0F_l_33GwS77FOjp8dOvnbS_nw89PhpTTh7MEpAl2tLGyhUSe57JbodDs1ap7WcWd1NGhF0H0lY_D7H_dqa1QKMSVTI5aS_i4Vkl0FGRpCJTs4J-ASpCYycDEJ0zRgnkHGd2BS2z7EtbuYejZPmIGvI-YOTNfb8K_TNoTY1HiSirqkfgQUHSsolRJQkJrBs2LPXszAhJOuYAoTudKEk44zsKiBKg91z4Wq4bCkRZXXJ7NbScecVoItb4Zop5WWlp8arkC0P2AUVuG16pZChH",
       "places/ChIJ33pY786Z4jARYC_EaEzZOSI/photos/Aa-ngMZp8lYAgNbpVMM08XEYm883wdPiWoKbvsHVqcBF7CNXZN0awcuHHP2m0urapzExpeM4RH-8N1t0Xy1jmwjyfkTBWPPJlpLOx0D7U8WetEj8Lbbo2muqcOAgPI2BDRmp5aIKW1pSZPooQatyVLV6pCMeri-CqB6KKUw4aP7KgLSR92yvzCHlZQOpp-mNshF7Mn29Tcy0N13yuFYLf6kEKqLKGDgqRkbUJRSCYPaLV6GdZOkwIAfDb7hgbUtDq8R53C5TkS-Ut5RUqi86djU4PWZkdfVuPgauxhUDCamSHw9sAUUOxQtxAOaxEYcogOiiNXyfzCTbhW2vMobNG9ICS1_EPDsRP5M86R-db2aEZeiT_O79O7mob1CEdoNJyV00L9ym5gf5gSpYfqu4W7L1x7BQ-XoUWhsKXaaR81k2CIWoEg"
-    ]
+    ],
+    "name_th": "หงส์ ทรงวาด"
   },
   {
     "id": "fd52f141-f98d-4848-80bf-e481f953bec3",
@@ -10702,8 +10717,8 @@
   },
   {
     "id": "d06be296-1eed-42f5-9b82-eb59f43a74d4",
-    "name_en": "MITR STREET มิตรสตรีท",
-    "name_zh": "MITR STREET มิตรสตรีท",
+    "name_en": "MITR STREET",
+    "name_zh": "MITR STREET 老城泰菜",
     "description_zh": "🔥 由米其林餐飲集團 Supanniga Group 打造，在老城 Tha Tien 巷弄裡豎起六層樓泰中街頭料理地標。以火焰鑊氣為靈魂，招牌有朋友炒牛肉、烏拉勞伊蝦刺身、紅炭烤雞與蟹肉炒蛋。頂樓「ThaiKi Rooftop Bar」融合 Tiki 酒吧與泰中風情，俯瞰臥佛寺全景，是曼谷目前最話題的新景點。",
     "description_en": "🔥 A six-storey Thai-Chinese street food landmark tucked into Tha Tien's historic lanes, from Supanniga Group—the Michelin-recognized force behind Ruay Mitr and Supanniga Eating Room. Everything is built around fire and wok energy: signature pengyou fried beef, urak lawoi prawn sashimi, red charcoal-grilled chicken, and creamy crab omelet. Climb to the top floor for ThaiKi Rooftop Bar, where Tiki-meets-Thai cocktails pair with a jaw-dropping unobstructed view of Wat Pho.",
     "category": "food",
@@ -10743,7 +10758,8 @@
       "places/ChIJ78rJX_2Z4jARhJyqJf3TMUY/photos/Aa-ngMbGRkw_S0-8tjo3NbPhf_0ZxadiGfADMIPVpJfIZvkfdhtEty1kdFdGWnNNkuTJXMBEfR0TTgvWKO2CwEcR1fQ3mJ8EYTvNQg3jMq56By8aqSZfE4oPeNuHtj7U3zlcDaphWU8gfCOU6C5WakIpWTX0w92yljcb8hUzAnaJC_SWLpOyFh8XeXVKG2KzDqHuNAG3MJ8TfP7QhNl2QcYF_FjjJ6D7RJHjlJZXhp3j16gZaHdvDnk4_9BNIqsWtgCrm3S5icA_ysSMpWEvzEmC-bXvJNmLncj4vOR8ivlKR0ZXqIs4OQtDiyHTNcd0-r7M71kGRlYH4r5_hnnNWrR0dm8rm62gEQzYUDgA3XSEbIenf98CPgQamQ7bqJDmGa7Uncu0_JqH69Z_R9A_Tgd9qU_k_h_lLH-WhPt465d_Sq2h",
       "places/ChIJ78rJX_2Z4jARhJyqJf3TMUY/photos/Aa-ngMbdzTIZJlEZJ_7Y2WWW0yVhlh5pZwDX_S_m0P1dg-zxhO1juDnpTwRR7216oJsg7i86TcaE9YiWHDfrkpqz6_S1n_hQuMG5TxRqIkqSKz--GeFOkAz4NsZzD3l0Zs77pUBvGbdQi7EcE54FeAy2UJf0AYSjhlsrXwEY_bL1x0biEqMpDeWUnUX9KLtsPO01h3TWm6KmjIsPQBLV9sfO6DAtinkOCAkbCPcrsL8f_gYGMJO_dzrZrb2fBhqh749g0O1Br3kLo1JMtIEQklDd4UkcANyWeiM8Ha59DAx7uPZBfS8SIW43AypNA1QLfWp2q-QEVNm1oeo6Npw4785RtcF77T2RUQo0UsHEVgea1MJXGb85fFtnGxFBt9Peo7JqrkwzqgBHzC80Sz60KrMeDmE6bfQsmCN574ZJy_NY1J1Dtg",
       "places/ChIJ78rJX_2Z4jARhJyqJf3TMUY/photos/Aa-ngMZO_j_FCGgDjej6vNu-n48Av9rB-txmkktejAsNMDI-n3wuBAeHbX15LZaM20sWEl0TKcAyPdFk27ttAUGEDfUkCgIOnNhIUnec-CsFAhCNDTv5Y42aL-YQ1A-8MctgIYUAfIOL4XGXQ8xowKCzJJokh-IMI8Drx-w8hafs98fi0lwtT3RuSvfOcmsgMFmOyt4RWOeWmwrxUR0iN8n76kYQG4W2NCMnFvuu_5D4GWNhUx3aV29sz_azuZxrGBlgvq--JtvjV-BOStQv56F2ekjAVwpTfGpBSqXRFsYMIZQcYyT7G9QaPqqdIHezStmyba9V7DgtnV3Kl6lQmIkA5BLyJaI8Wcwm6k1lyUUw_A1NmcOJwDjDRUL-ZlxbTYgB3KZMX9g3jLcn-J053nnaGiIUhk_1BSQPTn6l5bjDQDP1"
-    ]
+    ],
+    "name_th": "มิตรสตรีท"
   },
   {
     "id": "e51d3daa-cd0c-427d-b5c0-4f4770cdf782",
@@ -11030,8 +11046,8 @@
   },
   {
     "id": "e1eaf870-3b10-49fc-aaf8-cfcfc3042517",
-    "name_en": "Synth Restaurant BKK สินธุ์ กรุงเทพ",
-    "name_zh": "Synth Restaurant BKK สินธุ์ กรุงเทพ",
+    "name_en": "Synth Restaurant BKK",
+    "name_zh": "Synth 南泰菜（沙吞）",
     "description_zh": "🦀 藏在沙吞 Soi Naradhiwas 17 巷弄的曼谷新店，是蘇叻他尼人氣名店 Synth สินธุ์ 的姊妹店。Le Cordon Bleu 畢業的 Chef Boss 以南泰傳統食譜為根，加入歐式技法重新演繹，招牌有甲蒐那碟生蠔配三款醬汁、法式脆皮鴨胸紅咖哩與螃蟹蒟醬葉咖哩，菜單定期更換。",
     "description_en": "🦀 Tucked into a lane off Soi Naradhiwas 17 in Sathorn, this is the Bangkok outpost of celebrated Surat Thani restaurant Synth สินธุ์. Le Cordon Bleu-trained Chef Boss reimagines Southern Thai tradition through European technique — highlights include Kanchanadit oysters with three house sauces, a French-style crispy duck breast in red curry, and a crab betel-leaf curry. The menu rotates seasonally.",
     "category": "food",
@@ -11071,7 +11087,8 @@
       "places/ChIJiZWbnTKf4jARpG5xKjojcI0/photos/Aa-ngMZ7BWVqv8MHcOlQD5CG7QxMQeBHuIE5xl7AIwnB0fMtqzHHuG0TYR2Af01JsN9w5siI3eBC8QdLsEvaeRsx4s49rO1-RDGwMBAsHFyL2KlUH_6HgUF4ij0Dyo7un5D7ju-9_bBzWyv8R2zJ1CFjaHef7ZGaCSJo1mDzGCwZUlLudOcWE-g9HLDOQRv4K9taGouXP3QgvYkcamUTJpI6tv9YnG4onQ0fBEdws_3PR3g_WwsFgj33n0hS3NxXrXxqrylz86kaU9do73SqJ6V-oDsVIWb4ypbywrFMUr6uMvLQmOBnudjE-uaEWFOb09ExRFunlfgpWgn9Jd5SH5XWBVcVhmcylSoN18j_hj2eIPV6IwOxhme_H6ItNg7bkb5LSZP6QgN1QbJ1SmKAGUc-OeZZwoglPPtnq5m2ejhELhRt",
       "places/ChIJiZWbnTKf4jARpG5xKjojcI0/photos/Aa-ngMZppt4CfDnrQ1tPbGt9R_yAc-Rv4D39_SxiHNmVSGd5BNsdZ7nRGQ5xYXzUTI8KZ8W7yg5m7cMfkiZ1IeI9ZvEbSZqU79gM10H3rCPYXeo65zG7YJ8i7Kljv02iw_QDMU-cRAzO0K_UFTo--lj-lYLv6Ec-0YsTUoqQksCzUY7evGaVCwCe6em4VXgbkeFeZrOEuB0z2n92q0xrxtTcXXI2t1JbUQIa-UMK_YVpui1_7EZRuEm1_Sanp1H4GnnRvrrPe3NMJYiUY-Sk1ywh4o3eNyrIXP8UOARVqQfWyFxt2Q99K_7-Dio4j1wmXDjlIVLL0dpLjovfnMaMnaKSi7R6I6N1POXMCcsF9dTrFxRqPP91T2tuR0cnridMxF9qTQkPCcty098CBivxGhf1JES7jturidte3VKtb_23ySCc",
       "places/ChIJiZWbnTKf4jARpG5xKjojcI0/photos/Aa-ngMb4faNlgUuOPW2av0Yv5HsgoG_krDifEnx2rkA3AOhm-AImp5xp-55jKxZc8c8uE2bwODXpHDL38x1SGQe0K5Fz4_cuPFJVaADL5rqxAhgJcPdG9n2Kz2eM8u-CZ6sp9C3ZEkPbw3BxpkeSxUrnvX0oKTFLOidZrL-LBvKpXAnkmGzM-54dxHr5DaUF1CIH08cvVYKxLUq4ROoB87XHI5-lms3DEy7vvnIjg-ZqebR9m3IgyG9lu99Lm9u_5ug4ehLIk6aB4waHtKTFoJ1k28wMKHpykbjVsr1Qzznal0v9cVynGRF7as7JFOt0_p2auSlGASvaTBjjSkoI8pFq7H66sLWaeHvvgv0DXl4nS7vcbovcsooRtllXbLTW_YQvlkmyGFZqvcZkSU4j3lgHTCZ42WAZeAQ_CRi2eyx1BGzb"
-    ]
+    ],
+    "name_th": "สินธุ์ กรุงเทพ"
   },
   {
     "id": "8062f9a0-2137-4533-83f2-b8c33f6216ce",
@@ -11210,8 +11227,8 @@
   },
   {
     "id": "3204151a-4578-418c-957b-9f5717e08cfc",
-    "name_en": "The Old School Specialty Coffee - เจริญนคร",
-    "name_zh": "The Old School Specialty Coffee - เจริญนคร",
+    "name_en": "The Old School Specialty Coffee Charoen Nakhon",
+    "name_zh": "The Old School 精品咖啡（Charoen Nakhon）",
     "description_zh": "☕ 藏在詹隆區 Soi Charoen Nakhon 18 小巷的 Specialty Coffee 分店，母品牌在 Nonthaburi 榮獲 Wongnai 最佳咖啡廳及 World ESYEN 亞軍殊榮。兩層復古木桌搭配盆栽、中庭小瀑布水聲，必點招牌 Esyyenn 及肉桂八角冰咖啡，Bagel 火腿起司與松露 Shio Pan 也不容錯過。二樓安靜有 Wi-Fi 是數位遊牧族最愛，店後附停車場，BTS กรุงธนบุรี 4 號出口步行可達。",
     "description_en": "☕ Tucked down Soi Charoen Nakhon 18 in Khlong San, this Thonburi branch of the award-winning Old School Specialty Coffee & Roastery — Wongnai's #1 café in Nonthaburi and a World ESYEN runner-up — brings serious coffee credentials to the neighbourhood. The two-floor rustic space pairs old wooden desks and lush potted plants with a calming central waterfall feature. Must-orders: the signature Esyyenn and the cinnamon-star anise iced coffee; add a bagel with ham and cheese or truffle Shio Pan on the side. The quiet second floor has Wi-Fi and is a go-to for digital nomads. Parking behind the shop; short walk from BTS Krung Thon Buri Exit 4.",
     "category": "cafe",
@@ -11258,7 +11275,8 @@
       "places/ChIJxeiXh3KZ4jAR8VaIAmFi6Zw/photos/Aa-ngMbEmjMbQgPQb9Foj-8pFQEFJBlSfys6Ay-vvd2VZ_YGarUuJfYRW6JgWeKFS0FH1cdgAWtfXYlMHlDUu0Ue5OKhBDy1UGF5C9Y-GAni9nQlhIPNGZLbltT-k2QTj5lyL8baK6z2r5dc4mq-RJKAwfabRoF2QjuJPbgj68rXss8LCmhYX_AFzF7oA5U_6n4Qz2pgBsEhi4eGzREPZ7htLKYKXqaEKzSUXpvrQx_wJHsOCzdFeLr4IUKpYJ0eggvywtKbs5h5InkFNVBswSAbQ41ZyS3cuQLdrn8mu38Yz31v_6M8tFnW1JmZXfvyX_Y_u8E1ky33TIB6EI_st1LmfJs_MpBXIPDNOgraikIACCphgnT5obxfppoOUBeOn6KITlUzNr0VWsp5vdYy-fndDZwJ7QqCd8Rt_P9AaDL7XDOIL7vLM5dI7qQCIb7TKaUT"
     ],
     "trending_at": "2026-10-05T08:10:33.873Z",
-    "base_tag": "hidden_gem"
+    "base_tag": "hidden_gem",
+    "name_th": "เจริญนคร"
   },
   {
     "id": "4fa12dcc-fefd-4799-832e-3b2f98b40e79",
@@ -12164,8 +12182,8 @@
     "slug": "fufu-eggnoddle-wonton-bbq-pork-x-hainanese-chicken-rice"
   },
   {
-    "name_en": "ข้าวมันไก่ทอง Thong Chicken Rice",
-    "name_zh": "ข้าวมันไก่ทอง Thong Chicken Rice",
+    "name_en": "Thong Chicken Rice",
+    "name_zh": "Thong 海南雞飯",
     "description_en": "A chicken rice shop tucked in the Thon Buri backstreets, serving both steamed and fried chicken with soup and chilli sauce. The menu is available in multiple languages, and the auntie running the place is notably welcoming. Crispy pork and Pad See Ew with wok hei are also on the menu. The occasional dry chicken has been noted, so it's worth keeping expectations realistic.",
     "description_zh": "位於 Thon Buri 巷弄裡的雞飯專賣店，招牌是蒸雞和炸雞兩種選擇，附湯和辣醬。除了雞飯，也有炸豬肉和炒河粉（Pad See Ew）。店裡有多語言菜單，老闆娘待客熱情。少數評論提到雞肉偶爾偏乾，這點值得留意。店內設有廁所。",
     "category": "food",
@@ -12190,11 +12208,12 @@
       "places/ChIJd1g2oruZ4jARVDmfYO_xrVs/photos/Aa-ngMaK8EnWLcxWldakzb0oklqNU2BN0vKbd4VemAEYda7DQzEA9HxdCQC1JpsWBBP0kb0g1tPjYTdq4edjVgrBgWfMzGzLuNvq_7PoP4w-N7HIVRNcdoJtPkuOaooj8DK_VTDiVbziE6R7sGrHTeV63rGeCqWMk1oql-Mjd6OzOsRoOef8pcy2GN8YHOgKnzC7lQwO8Vjt1DE_7AnZ-p0Grz-iUh2BGC6jangadh0x2kMEOU_SmLyCSD7Qmt5wEMJPa9TP7WQhoW8LYtbfdcJJSG8rqEcBs_diIftcDTH6IpD_H8Prtcw8v3gTg4Qs2eW8G7Cdb9yINOqwaXd9Ww0J70WqnBHsB5IvdfH1Fd5j_t95wbGMHx3EulaU_8xqFFpHjoIwq_Y2eC1DTeBQDdW2AsRhggQ4cuk5JJe1bINMGaMm_A"
     ],
     "approved_at": "2026-10-09T15:30:02.632Z",
-    "slug": "thong-chicken-rice"
+    "slug": "thong-chicken-rice",
+    "name_th": "ข้าวมันไก่ทอง"
   },
   {
-    "name_en": "ซังฮี้ ข้าวมันไก่",
-    "name_zh": "ซังฮี้ ข้าวมันไก่",
+    "name_en": "Sang Hee Chicken Rice",
+    "name_zh": "Sang Hee 海南雞飯",
     "description_en": "A street-side Hainanese chicken rice stall in Bang Phlat. The rice is well-cooked with separate grains and good flavor, and the boiled chicken is tender with thin skin. The soup comes with pumpkin and Chinese cabbage. Orders are served in sequence so the wait stays manageable. Parking nearby can be tricky.",
     "description_zh": "位於 Bang Phlat 區的路邊海南雞飯攤，米飯粒粒分明、有味道，水煮雞肉嫩且皮薄。湯頭放了南瓜和大白菜，喝起來有料。出餐按順序來，等待不算久。附近停車位不好找。",
     "category": "food",
@@ -12222,11 +12241,12 @@
     "slug": "sang-hee-chicken-rice",
     "old_slugs": [
       "place-6a21eeff"
-    ]
+    ],
+    "name_th": "ซังฮี้ ข้าวมันไก่"
   },
   {
-    "name_en": "ข้าวมันไก่ที่ถูกต้อง",
-    "name_zh": "ข้าวมันไก่ที่ถูกต้อง",
+    "name_en": "Khao Man Gai Tee Took Tong",
+    "name_zh": "正確的海南雞飯",
     "description_en": "The name translates literally as 'the correct Khao Man Gai,' and it sits right next to a 7-Eleven on Lat Phrao 101 Soi 1. The chicken is soft and juicy — chicken breast is a standout — and the rice is well made. Matcha is available as a drink pairing. The place is clean and the service is solid, with a 4.9 Google rating to back it up.",
     "description_zh": "店名就叫「正確的海南雞飯」，開在 Lat Phrao 101 巷口 7-Eleven 旁邊。雞肉軟嫩多汁，尤其雞胸肉被特別推薦，米飯也做得扎實好吃。店內還有抹茶可以搭配，環境整潔，服務也讓人滿意。Google 評分高達 4.9，口碑相當穩。",
     "category": "food",
@@ -12254,11 +12274,12 @@
     "slug": "khao-man-gai-tee-took-tong",
     "old_slugs": [
       "place-6cf7df5c"
-    ]
+    ],
+    "name_th": "ข้าวมันไก่ที่ถูกต้อง"
   },
   {
-    "name_en": "ข้าวมันไก่เบตง จางเจียหยี",
-    "name_zh": "ข้าวมันไก่เบตง จางเจียหยี",
+    "name_en": "Betong Chicken Rice Jang Jia Yi",
+    "name_zh": "勿洞海南雞飯 Jang Jia Yi",
     "description_en": "A Chinese restaurant tucked in a Phaya Thai side street, serving Betong-style Hainanese chicken rice in a clean, air-conditioned space. The chicken comes with scallion oil, garlic, and chilli sauces, alongside a soup made from white radish and chicken stock. The menu goes beyond chicken rice—claypot noodles and fried crab are worth ordering. Staff are attentive and quick to offer extras without being asked.",
     "description_zh": "帕亞泰巷弄裡一間賣北大年風味海南雞飯的中式餐廳，有冷氣、環境乾淨。招牌雞飯附蔥油、蒜末、辣椒等醬料，湯底以白蘿蔔和雞高湯熬製。除了雞飯，菜單涵蓋砂鍋麵、炸蟹等多道料理，服務細心。",
     "category": "food",
@@ -12286,7 +12307,8 @@
     "slug": "betong-chicken-rice-jang-jia-yi",
     "old_slugs": [
       "place-38450739"
-    ]
+    ],
+    "name_th": "ข้าวมันไก่เบตง จางเจียหยี"
   },
   {
     "name_en": "Loong Nun Noodle",
@@ -12347,8 +12369,8 @@
     "slug": "uncle-and-aunt-pork-noodle"
   },
   {
-    "name_en": "ท่าเรือ ก๋วยเตี๋ยวเรือ สาขาอารีย์สัมพันธ์ 7",
-    "name_zh": "ท่าเรือ ก๋วยเตี๋ยวเรือ สาขาอารีย์สัมพันธ์ 7",
+    "name_en": "Tha Ruea Boat Noodles Ari Samphan 7",
+    "name_zh": "Tha Ruea 船麵（Ari Samphan 7）",
     "description_en": "A boat noodle shop on Arisampan Soi 7. The Kod Beef Vermicelli is the best-seller — solid beef with a rich, full-flavored broth typical of boat noodle style. Parking nearby is tricky; there's space along Arisampan Soi 7. The iced coffee and lod chong are also worth ordering.",
     "description_zh": "อารีย์สัมพันธ์ 7 巷的船麵店，招牌是牛肉船麵，其中 Kod Beef 米粉是熱賣品項，牛肉份量扎實，湯頭有船麵該有的濃郁風味。附近停車位不好找，可以停在 Arisampan Soi 7 旁邊的空間。冰咖啡和 Lod Chong 也值得點來試試。",
     "category": "food",
@@ -12373,7 +12395,8 @@
       "places/ChIJ35gZ7uef4jARJcw0RfOVGnU/photos/Aa-ngMai1W4OTiibucmh46BJR1bJDX2gBKmWmOLt687HpYst5iLe2FCXMTV44zU-YlBTguthkZz0GHj7JTioajp0XC3EOigBTrMD8ZioRCqNWS4UD3uK8cFKRtNiiczY1zAsRWBQHXO02VaL-CHaynf0II5siPZOAIq3M5exUKHlrq74XU1MOJG6SBKtkD3qX1D02HC3C5SN8UFkFM1tIP06oKSuAgmo0CBpqL48Gm83o_7rmhCk3pjCSQ6ibKEObsvS5iyFmJbEQbAPOIJ7bAq_83aEARE_8e-juujoz-UNIOvXvaZc28eJy8XX973PCxrBzpGkROEEn1cfAyEHTP14iE0gtD6r8ufiYkOoo6BgTUCXs-QaR4dqICpiJdtOWwd21KAqDWbixwJsSYpYRuF0mHv5rAMbCtQovu3jXPTeAljLXg"
     ],
     "approved_at": "2026-10-09T15:30:05.028Z",
-    "slug": "7"
+    "slug": "7",
+    "name_th": "ท่าเรือ ก๋วยเตี๋ยวเรือ สาขาอารีย์สัมพันธ์ 7"
   },
   {
     "name_en": "Payak Boat Noodle",
@@ -12434,8 +12457,8 @@
     "slug": "sam-zap-boat-noodle-asoke"
   },
   {
-    "name_en": "ก๋วยเตี๋ยวเรือสามแซ่บ โชคชัย4",
-    "name_zh": "ก๋วยเตี๋ยวเรือสามแซ่บ โชคชัย4",
+    "name_en": "Sam Saep Boat Noodles Chok Chai 4",
+    "name_zh": "Sam Saep 船麵（Chok Chai 4）",
     "description_en": "A boat noodle shop tucked into Chok Chai 4 Soi 49, known for a deep, sweet-salty broth served with chili-vinegar sauce—ask for mild if you skip spicy. Braised pork noodle (ก๋วยเตี๋ยวหมูตุ๋น) and mala boat noodles are among the regulars' picks, and the crispy pork crackling salad is worth ordering. Tables get wiped down quickly, service is attentive, and water gets refilled without asking. Parking out front is limited, though turnover moves fast.",
     "description_zh": "在 Chok Chai 4 巷 49 巷弄裡的船麵店，以濃郁甜鹹湯底為主打，附上辣椒醋醬，嗜辣程度可告知店員調整。招牌有燉豬肉麵（ก๋วยเตี๋ยวหมูตุ๋น）、麻辣船麵，炸豬皮沙拉也值得點。桌面收拾快、餐具乾淨，服務補水主動。店門口停車位不多，但翻桌快。",
     "category": "food",
@@ -12460,11 +12483,12 @@
       "places/ChIJ42nFAfSd4jARAL_fOxX8ZIw/photos/Aa-ngMaejifxOEfbjE_vETh_mNSrxPlAkSxuHbb-j9iFRpZKVx_G8JpvSFgqp2EFl722XpNz6VqtRurrbG0Vg42yMj6J1K3VnGxoGXoPnXek9ApGeEAlRTr2WQa-xHf0xh8Lq7IjRQm-zEap8eEDLbRLKsgCvEXyppXY7t6fUFNjxEuTxxtyAaoZr_KeLtFPUFP2ZvSP_T1UNPVX8c9VTceFmJwj6cY2gEf_tmf6vH8X--0D-L0IIWZGUsP56iVOCmhvmuu0D5_ftJZDsKScbh_7jshihWoH3_wuaxIsS023xX4gBPi-CJWJawCKlP59FvVBHPHZURT4DGel_YtpcsgcH2v_h8xWkMSlM4yAH9boV_52d5HuKeW0bH0C93FOxq7RxUPP30cxNWvSz4SRJ5lU5tuZgQ"
     ],
     "approved_at": "2026-10-09T15:30:05.611Z",
-    "slug": "4"
+    "slug": "4",
+    "name_th": "ก๋วยเตี๋ยวเรือสามแซ่บ โชคชัย4"
   },
   {
-    "name_en": "ก๋วยเตี๋ยวเรือย่านเจริญ",
-    "name_zh": "ก๋วยเตี๋ยวเรือย่านเจริญ",
+    "name_en": "Yan Charoen Boat Noodles",
+    "name_zh": "Yan Charoen 船麵",
     "description_en": "Located in Soi Thoet Thai 33, Thon Buri, this spot serves boat noodles with a slightly sweet broth you can season to taste. The menu includes fish ball noodles with sides like fried wontons, fried pork skin, and onsen eggs. Seating options include an air-conditioned room or dining right beside an actual boat. Expect around a 15-minute wait for your food.",
     "description_zh": "位於吞武里 Soi Thoet Thai 33 巷內，專賣船麵（Boat Noodle），湯頭偏甜，可自行加調味料調整。菜單有魚丸麵、炸雲吞、炸豬皮、溫泉蛋等選項。店內備有冷氣座位區，也可以在船旁用餐。等餐約需 15 分鐘。",
     "category": "food",
@@ -12492,7 +12516,8 @@
     "slug": "yan-charoen-boat-noodles",
     "old_slugs": [
       "place-d3626125"
-    ]
+    ],
+    "name_th": "ก๋วยเตี๋ยวเรือย่านเจริญ"
   },
   {
     "name_en": "Baan Kuay Tiew Ruathong",
@@ -12524,8 +12549,8 @@
     "slug": "baan-kuay-tiew-ruathong"
   },
   {
-    "name_en": "บ้านท่าก๋วยเตี๋ยวเรือ",
-    "name_zh": "บ้านท่าก๋วยเตี๋ยวเรือ",
+    "name_en": "Baan Tha Boat Noodles",
+    "name_zh": "Baan Tha 河岸船麵",
     "description_en": "Tucked inside a small alley in the riverside zone of the Amulet Market, this place is a bit tricky to find — follow Google Maps to the end and look for the lights on the ground. The boat noodles come with a rich, deeply flavoured broth that holds up on its own without any added condiments. The braised pork and beef melt in your mouth. There's air-conditioning inside and the space is clean. If you can't find the entrance, call the owner for directions.",
     "description_zh": "位在護符市場河岸區的小巷裡，店面有點隱蔽，建議跟著 Google 地圖走到底，地面有燈光指引。主打船麵，湯頭濃郁不需要另外加調料，滷豬肉和滷牛肉入口即化。店內有冷氣，靠近河邊，空間乾淨整潔。入口不好找，可以直接打電話給老闆問路。",
     "category": "food",
@@ -12553,11 +12578,12 @@
     "slug": "baan-tha-boat-noodles",
     "old_slugs": [
       "place-42520960"
-    ]
+    ],
+    "name_th": "บ้านท่าก๋วยเตี๋ยวเรือ"
   },
   {
-    "name_en": "เตี๋ยวเรือสองลาย",
-    "name_zh": "เตี๋ยวเรือสองลาย",
+    "name_en": "Song Lai Boat Noodles",
+    "name_zh": "Song Lai 船麵",
     "description_en": "A noodle shop on Sena Nikhom Road in Chatuchak, known for beef boat noodles and tom yum noodles. Orders come out fast, each bowl is carefully put together, and parking is easy to find.",
     "description_zh": "位在 Chatuchak 區 Sena Nikhom 路旁的船麵小店，招牌是牛肉船麵和冬蔭麵，評價一致說快出餐、每碗細節都顧到，停車方便。",
     "category": "food",
@@ -12585,7 +12611,8 @@
     "slug": "song-lai-boat-noodles",
     "old_slugs": [
       "place-38e1c6a3"
-    ]
+    ],
+    "name_th": "เตี๋ยวเรือสองลาย"
   },
   {
     "name_en": "Papaya Salad and Grilled Meats",
@@ -12617,8 +12644,8 @@
     "slug": "papaya-salad-and-grilled-meats"
   },
   {
-    "name_en": "สมยงตำซั่ว สีลม",
-    "name_zh": "สมยงตำซั่ว สีลม",
+    "name_en": "Somyong Tam Sua ITF Silom",
+    "name_zh": "Somyong 伊善烤雞（ITF Silom）",
     "description_en": "Tucked inside the ground floor of ITF Tower along Silom Road, the restaurant specializes in Isaan and northeastern Thai dishes. The grilled chicken is their signature, and the corn salad, Nam Tok Nuea, and fried morning glory are also worth ordering — the sauce on the morning glory drew particular praise. The spot sits inside a building parking area and is easy to miss if you don't know where to look.",
     "description_zh": "位在 ITF Tower 辦公大樓停車場區域的一樓，招牌是烤雞，也有東北泰菜常見的 Nam Tok Nuea、玉米沙拉和炒空心菜。玉米沙拉份量適合一人、口感清爽；空心菜醬汁評價特別好。店藏在大樓裡，初次來容易錯過，找到門面再確認一下。",
     "category": "food",
@@ -12646,7 +12673,8 @@
     "slug": "somyong-tam-sua-silom-2",
     "old_slugs": [
       "place-2c31796c"
-    ]
+    ],
+    "name_th": "สมยงตำซั่ว สีลม"
   },
   {
     "name_en": "Tabuntum",
@@ -12794,8 +12822,8 @@
     "slug": "jae-kai-isan-food"
   },
   {
-    "name_en": "ลาบรื่น อีสานคราฟต์",
-    "name_zh": "ลาบรื่น อีสานคราฟต์",
+    "name_en": "Laab Ruen Isan Craft",
+    "name_zh": "Laab Ruen 創意伊善菜",
     "description_en": "A northeastern Thai restaurant in Bang Khun Si that blends Isan cooking with international dishes. The bar offers a wide selection of both alcoholic and non-alcoholic drinks. Parking is available right out front. Service can get stretched during busy hours, so coming off-peak makes for a smoother visit.",
     "description_zh": "位在 Bang Khun Si 的東北泰料理餐廳，融合伊森（Isan）菜與國際口味，bar 台提供種類豐富的酒精與無酒精飲品。門口前方有停車位，用餐尖峰時段曾有人反映服務人手略顯不足，若想順暢用餐可避開人潮。",
     "category": "food",
@@ -12823,11 +12851,12 @@
     "slug": "laab-ruen-isan-craft",
     "old_slugs": [
       "place-3f0cd986"
-    ]
+    ],
+    "name_th": "ลาบรื่น อีสานคราฟต์"
   },
   {
-    "name_en": "ร้าน 4 แซ่บอาหารอีสาน&ตามสั่ง",
-    "name_zh": "ร้าน 4 แซ่บอาหารอีสาน&ตามสั่ง",
+    "name_en": "4 Saep Isan Food",
+    "name_zh": "4 Saep 伊善菜與快炒",
     "description_en": "About a 6-minute walk from Prince Palace Hotel in the Pom Prap Sattru Phai area. The menu covers Isan (northeastern Thai) dishes and made-to-order stir-fries — regulars go for the chicken pad kra pao rice, pad thai, papaya salad, and the salted egg chicken salad. Flavours are bold and fresh, though some diners find the dishes lean a little sweet. No air-con; fans keep the place ventilated.",
     "description_zh": "位於 Pom Prap Sattru Phai 區，距離 Prince Palace 飯店步行約六分鐘。主打東北泰（伊善）料理和快炒，招牌有打拋雞飯、雞肉炒河粉（Pad Thai）、木瓜沙拉和鹹蛋雞肉沙拉。餐點口味偏重、份量實在，但有顧客反映偶爾偏甜。店內沒有冷氣，靠電扇通風。",
     "category": "food",
@@ -12852,7 +12881,8 @@
       "places/ChIJQ3umtlGZ4jARuMiVyHDrAu4/photos/Aa-ngMY1iSm56HR1kgTYlab4mJ2_5k-x-_ObK7UF5ua-JirYjgokrP1lKCaugbJMzP47hMnWhLxZFx_qI2DusmMo5_CnrURv3Srk3-iZfeebqHaJyGxFc8DctQCtAn1Wo8-a0b8WKnbnSvcx5gBrEJ84KdSEae5l2CYaln82RkGSHEegNCgFp9gU4L3SsOiouQfVicNE3pgNVmuonlmGCXxC4UZAwq2hAITx6OFOC_D9N_q5qOp4QKvKl_bZnVLFAdVEA8uK6hjxaWKisEPeUunjEpBfdiO7ibhYBtOYr9XNvEtlGv0-sYFawciVyqTlVM0gvCwYdcOhTgpXqALZViz2JhTKKjrJcUJKPO542j9Dz3d4fJrU9gF3PYgwf0nvmFBiHSzomUEzrfcj0I9gOvsHzNq2iijzzF4"
     ],
     "approved_at": "2026-10-09T15:30:07.954Z",
-    "slug": "4-and"
+    "slug": "4-and",
+    "name_th": "ร้าน 4 แซ่บอาหารอีสาน&ตามสั่ง"
   },
   {
     "name_en": "No.1 Mu Kratha",
@@ -12913,8 +12943,8 @@
     "slug": "loong-yai-thai-esarn"
   },
   {
-    "name_en": "ร้านอาหารใต้ บ้านฉลอง",
-    "name_zh": "ร้านอาหารใต้ บ้านฉลอง",
+    "name_en": "Baan Chalong Southern Thai",
+    "name_zh": "Baan Chalong 南泰家常菜",
     "description_en": "A family-run southern Thai restaurant on Lat Pla Khao Road, opened by an owner who moved from the South to Bangkok. Standout dishes include southern-style yellow curry, coconut milk curry that stays savory without turning sweet, and deep-fried squid with egg. The food is authentically spicy in the southern Thai way, so pace yourself if your spice tolerance is low. Parking is available on-site and delivery is offered, though dining in is recommended.",
     "description_zh": "在拉披勞路上的家庭式南部泰菜館，老闆娘從泰南移居曼谷後開店，招牌是南部風格黃咖哩、椰奶咖哩和炸魷魚（附蛋）。菜色口味忠實呈現南泰辛辣風格，點椰奶咖哩不會過甜，配飯剛好。店內有停車位，也提供外送，但建議直接來吃。辣度是真實的南部辣，吃辣能力有限請提前心理準備。",
     "category": "food",
@@ -12942,11 +12972,12 @@
     "slug": "baan-chalong-southern-thai",
     "old_slugs": [
       "place-055821a0"
-    ]
+    ],
+    "name_th": "ร้านอาหารใต้ บ้านฉลอง"
   },
   {
-    "name_en": "ร้านแกงส้ม by เรือขุดแร่ ปิ่นเกล้า",
-    "name_zh": "ร้านแกงส้ม by เรือขุดแร่ ปิ่นเกล้า",
+    "name_en": "Kaeng Som by Ruea Khut Rae Pinklao",
+    "name_zh": "Kaeng Som 南泰酸咖哩（Pinklao）",
     "description_en": "Inside Susco Square on Borommaratchachonnani Rd, this spot serves authentic southern Thai food with kaeng som (sour curry) as the standout dish — the sea bass version gets particular praise. Spacious, comfortable, and attentive service. Solid 4.9 on Google and genuinely underrated for the area.",
     "description_zh": "位在 Susco Square 平卡拉商場內，專門賣道地南泰料理，招牌是酸咖喱（แกงส้ม），其中海鱸魚版本特別受好評。空間寬敞舒適，服務態度好，Google 評分達 4.9，算是這一帶被低估的實力店。",
     "category": "food",
@@ -12971,7 +13002,8 @@
       "places/ChIJSdCvHQCb4jARHCanK-i7WAE/photos/Aa-ngMYx5hBvo-Z5MbZcVm_ecdk89YE8iWsfcQj4LPvz8HpOh-vYDrqijUFv3MxNN4apD-1zghg8xm-W0WcFb35xJMC143LmdSCTGtSC-JVQK16GoC6pAyT7rDI_ZPVjVeajN9nW4v5mowCT5B70ZhDuzgl7vgO0SRnHLEIj8GLHXvD4ZT-RzDMRsufM-CxTkITVzrOef4_isO5TvvUx1G61acOwTgUeu4aod4ii2YxwfOAFbYAARopO6a_Nqpuhnrewv-2eyDggQbF81oKgKe-AaHLcZ6D6QFrfB-aUJUZ_lHGBOKYtCfhPQdwlUs-c09HSyIOXli264v0arb-4BD7ok9wTxtuJ2WDgRFhQW3pZL3HUisR2xtbfcCd-l18Z5-AGtcgCd1O6xfLGPpo4TYpOu7kMNsw0XJ8_o10pw6BgCds3NA"
     ],
     "approved_at": "2026-10-09T15:30:08.674Z",
-    "slug": "by"
+    "slug": "by",
+    "name_th": "ร้านแกงส้ม เรือขุดแร่ ปิ่นเกล้า"
   },
   {
     "name_en": "Prai Raya",
@@ -13090,8 +13122,8 @@
     "slug": "khao-soi-lamduan-faham-chiang-mai"
   },
   {
-    "name_en": "ข้าวซอย น้ำเงี้ยว มาลำกั๋น( khaosoi Nam Ngiao Malumkan)",
-    "name_zh": "ข้าวซอย น้ำเงี้ยว มาลำกั๋น( khaosoi Nam Ngiao Malumkan)",
+    "name_en": "Malumkan Khao Soi Nam Ngiao",
+    "name_zh": "Malumkan 泰北咖哩麵",
     "description_en": "A small Northern Thai spot at the mouth of Udom Suk Soi 24, run by a Chiang Rai owner. The khao soi—available as a chicken-and-beef combo—is savory and well-balanced, without the sweetness or heavy creaminess found at more touristy places. Nam ngiao (spicy pork and tomato broth noodles) and larb kua are worth ordering too, both aromatic and on the spicy side. The owner occasionally throws in a complimentary snack and sometimes serves traditional Chiang Rai desserts. A no-frills spot with generous portions.",
     "description_zh": "在 Udom Suk 24 巷口的北泰料理小店，招牌是雞肉加牛肉的招牌雙拼咖哩麵（Khao Soi），湯頭鹹香有層次，不走常見的偏甜濃郁路線。Nam Ngiao 北方酸辣番茄豬肉米線和 Larb Kua 也是必點，味道偏辣偏香。老闆娘來自清萊，有時會附上在地甜點，待客親切。店面不大，裝潢簡樸。",
     "category": "food",
@@ -13116,7 +13148,8 @@
       "places/ChIJ7TxCN-6f4jARLeR1v8qTn6w/photos/Aa-ngMbyU7HMLubcbPqAdUQgAv4Gw2uJiDq5SSRUhgXAEGlIWVTrBkYq8MVmEBYetx-vZpazPRvz27ugd2plcGnWhAQJnN80JpXgT6SPHjKPGcR3jXHumukttXn8v2YxAntphLtr2jTfXTsgetnfzfNPDvmghcabRD1psjl0Ve5XQ3Tc_IGfBHcU2aLSfivLlKo-KMdhUGzGPzB5QvvGQu07d6St-el63yLikTh9BqHOXEEHujchWHE-jeK69JD4g7mxg26Mtx-o51i67afMkEgBsu_5UdKWOyjqgxAaTh3ByTthasbsCEjibZPlA1p6nU8tAQp2JlCRp0-U8iWINEpipLUT5irDc4CaP47PhpVZKNtxo28TD9b-KUAmHNy-HliWi4_5XbWh_YqA9uobCCzZ0qNZvPRS79A"
     ],
     "approved_at": "2026-10-09T15:30:09.571Z",
-    "slug": "khaosoi-nam-ngiao-malumkan"
+    "slug": "khaosoi-nam-ngiao-malumkan",
+    "name_th": "ข้าวซอย น้ำเงี้ยว มาลำกั๋น"
   },
   {
     "name_en": "Khao Soi Lam Duan",
@@ -13177,8 +13210,8 @@
     "slug": "khao-soi-in-kala-northern-food"
   },
   {
-    "name_en": "ผู้กองแจ็ค คนเมืองพาน อาหารเหนือ",
-    "name_zh": "ผู้กองแจ็ค คนเมืองพาน อาหารเหนือ",
+    "name_en": "Phu Kong Jack Northern Thai",
+    "name_zh": "Phu Kong Jack 泰北菜",
     "description_en": "A Chiang Rai-style northern Thai spot tucked in a Ratchawithi alley in Dusit. The Khao Soi comes in chicken and braised pork versions; the Nam Ngiao — a spicy pork broth noodle soup — is made in the Chiang Rai tradition and served with Sai Ua sausage. Portions are generous, and the restaurant is air-conditioned. Also available via delivery apps.",
     "description_zh": "來自清萊的老闆把家鄉口味帶進都斯it區這條小巷。招牌是雞肉與滷肉口味的咖喱麵 Khao Soi，以及清萊風格的 Nam Ngiao 豬肉湯麵，配北泰香腸 Sai Ua 一起吃。評分4.7，份量很大，也可以透過外送平台點餐。店內有冷氣。",
     "category": "food",
@@ -13206,7 +13239,8 @@
     "slug": "phu-kong-jack-northern-thai",
     "old_slugs": [
       "place-43d0aa1c"
-    ]
+    ],
+    "name_th": "ผู้กองแจ็ค คนเมืองพาน อาหารเหนือ"
   },
   {
     "name_en": "Hom Duan",
@@ -13238,8 +13272,8 @@
     "slug": "hom-duan"
   },
   {
-    "name_en": "ข้าวซอยเจ๊จันทร์ อาหารเหนือ Kaosoijehjun",
-    "name_zh": "ข้าวซอยเจ๊จันทร์ อาหารเหนือ Kaosoijehjun",
+    "name_en": "Kaosoi Jeh Jun",
+    "name_zh": "Jeh Jun 泰北咖哩麵",
     "description_en": "A Northern Thai restaurant in Nonthaburi serving authentic northern-style food with generous portions and well-balanced seasoning. The green chili dip stands out for its fragrance and depth of flavor. Air-conditioned and not crowded, which makes it a comfortable spot for a proper northern Thai meal. The northern sausage is just average, but the rest of the menu holds up well.",
     "description_zh": "在暖武里府的北方料理餐廳，專賣泰北菜，份量大、調味紮實。招牌青辣椒醬香氣足、味道層次豐富，整體餐點口味均衡。餐廳有冷氣、空間不擠，適合想吃正統泰北菜又不想排隊的人。北方香腸評價普通，其他菜色表現穩定。",
     "category": "food",
@@ -13264,11 +13298,12 @@
       "places/ChIJ1RITdQCb4jARZnkcjxclWKI/photos/Aa-ngMajuAVwlEsyjPPvDBdW380Z7B5ePfjNtiySq89TshiVy_v7Vb3ug844LHfx5bL-j60iSZ2GzyV2tgkJ5GMTDYNgu0B2kJauTVa9KWUwTp3boeTU5vbNFgUvYtS9Bpz0wNVG6DCJ53Vy7Pe3om4tBbdYjuy8Q3hF7gvYO_UJ3pV1Z8_MVCDMZnbv9YWZJOc5OhLjBoi2A5vGBHpFtSLsAoV8ybkbiJoRmPDhPs9EkOLM5KVg48t5mSf3cPdztt1S2x3tIytWoLTJXqxZ0EoZZcFQoaRvwdWQpps4kokpaWFKmgKRnPSYtOOFUSlVGjCqM4XMkvX7eaeLFa9kCdDW3VuKEHPq0pb_fuDzUpb3rQWIdoVm_t0Fo3FyF2RHN4XuylquljCRD3VkfLv-0cqMFXKDgUFlcsAm11mJaecx9RYAHQ"
     ],
     "approved_at": "2026-10-09T15:30:10.476Z",
-    "slug": "kaosoijehjun"
+    "slug": "kaosoijehjun",
+    "name_th": "ข้าวซอยเจ๊จันทร์ อาหารเหนือ"
   },
   {
-    "name_en": "ริมสวน หมูกระทะ @สวนพญาไทภิรมย์",
-    "name_zh": "ริมสวน หมูกระทะ @สวนพญาไทภิรมย์",
+    "name_en": "Rim Suan Mookata",
+    "name_zh": "Rim Suan 泰式烤肉鍋（帕亞泰披隆公園）",
     "description_en": "Sitting directly across from Phayathai Pirom Park, this open-air mookata spot runs on charcoal grills with fresh pork and seafood, and a house dipping sauce worth trying. Tucked into a residential lane, the vibe feels more like a neighborhood backyard gathering than a restaurant. Thai music plays throughout. Give the charcoal some time to heat up before your food hits the grill.",
     "description_zh": "對面就是帕亞泰披隆公園，戶外座位、炭火烤爐，典型的泰式燒肉（หมูกระทะ）吃法。豬肉和海鮮食材新鮮，特製沾醬是亮點之一。藏在住宅區小巷裡，氣氛像在地人的後院聚餐，泰語音樂不停播。等炭火升溫需要一點時間，餓著肚子去會等得比較辛苦。",
     "category": "food",
@@ -13296,7 +13331,8 @@
     "slug": "rim-suan-mookata-phaya-thai-phirom",
     "old_slugs": [
       "place-49083d2c"
-    ]
+    ],
+    "name_th": "ริมสวน หมูกระทะ @สวนพญาไทภิรมย์"
   },
   {
     "name_en": "Yak Khu Mookrata",
@@ -13531,8 +13567,8 @@
     "slug": "mae-pranom-original-thai-food"
   },
   {
-    "name_en": "ร้านข้าวแกงบางลำพู",
-    "name_zh": "ร้านข้าวแกงบางลำพู",
+    "name_en": "Banglamphu Curry Rice",
+    "name_zh": "邦蘭普咖哩飯",
     "description_en": "On Tani Road just off Khao San, this rice-and-curry stall has been running for nearly fifty years. You pick from dozens of Thai curries—spicy, sweet, sour—lined up in front of you. Seating is outdoors on the street; it gets busy and tables are limited, so expect a short wait during peak hours. Check spice levels before ordering if you're heat-sensitive.",
     "description_zh": "在考山路旁的塔尼路（Tani Road）上，這間粥與咖哩飯攤子開業將近五十年。幾十種泰式咖哩任選，口味從微辣到重辣都有，下單前可以先問清楚辣度。座位在路邊戶外，人多時要等位，但翻桌快，值得耐著性子。",
     "category": "food",
@@ -13560,11 +13596,12 @@
     "slug": "banglamphu-curry-rice",
     "old_slugs": [
       "place-0efd1ba6"
-    ]
+    ],
+    "name_th": "ร้านข้าวแกงบางลำพู"
   },
   {
-    "name_en": "ร้านข้าวแกงสิรินทรา",
-    "name_zh": "ร้านข้าวแกงสิรินทรา",
+    "name_en": "Sirinthra Curry Rice",
+    "name_zh": "Sirinthra 咖哩飯",
     "description_en": "A sidewalk rice and curry stall in Talat Noi. Plenty of dishes to choose from, with generous portions. The boneless chicken curry is a standout, and the tom yum draws regulars too. Hygiene is basic but the food is solid and genuinely local.",
     "description_zh": "塔拉諾伊一帶的路邊咖哩飯攤，菜色選擇多，份量扎實。招牌是去骨雞肉咖哩，冬陰功湯也有人特別推。衛生條件普通，口味實在，價格親民，適合想吃在地便飯的人。",
     "category": "food",
@@ -13592,7 +13629,8 @@
     "slug": "sirinthra-curry-rice",
     "old_slugs": [
       "place-804b9631"
-    ]
+    ],
+    "name_th": "ร้านข้าวแกงสิรินทรา"
   },
   {
     "name_en": "Puyai Lee Restaurant",
@@ -13653,8 +13691,8 @@
     "slug": "the-originals-mae-ons-curry-over-rice-at-saphan-han"
   },
   {
-    "name_en": "ร้านข้าวแกงกาย&กัน (หลานตาลี)",
-    "name_zh": "ร้านข้าวแกงกาย&กัน (หลานตาลี)",
+    "name_en": "Kai & Kan Curry Rice",
+    "name_zh": "Kai & Kan 咖哩飯",
     "description_en": "A local rice-and-curry spot tucked in Soi Charoen Krung 6, serving a wide spread of Thai dishes including green curry chicken, basil beef, stir-fried long beans with pork, and a standout pork blood soup. Staff can communicate in English, making ordering easy. Popular with neighborhood regulars.",
     "description_zh": "藏在石龍軍路6巷的在地早餐攤，賣泰式咖哩飯，菜色選擇多，綠咖哩雞、打拋牛肉、豬肉炒長豆都是常見選項，豬血湯也頗受好評。員工能以英文溝通，點餐沒有障礙。Google 評分4.9，本地熟客多。",
     "category": "food",
@@ -13679,11 +13717,12 @@
       "places/ChIJh-sojLyZ4jARgVgYbeEKmcA/photos/Aa-ngManrTP5vcKY2Shcn8q8k9bmVJ2kPj3EOaZcnUfQiYoW6rr-0OKoWkOlHCVs6j2cS7I6SVdUrNn-hOW9-1UdcbgZBOToKt1HSBtrkBP1ofsxal1a0TPH7ePNPZ7PazIp841kz6QFBXWhNSipVxYrSVvTqy0_YiTaqhce9ybYGypVfPIxfghVL1mv8a0dsbtqWcti-d8tF2F10L-BqzILw9hM4L9jsblKr9PGZHOUza66FPGEL0yvvUua0JYKQ88_cGulXIzyUkcDLQRxqsbcyU4r0xvP2JNEh1LMXOsQGtKENXi4LUCVweGo2fTJEfgRXYIK2Z_yH7fS4MzX4tWbWFFbHwl16HgGdLbAkEkBNr-6VebI5topGdOSiZZCk4n9D_-es3u7ha1eAsCo84Io4FcAPqqJ8lk"
     ],
     "approved_at": "2026-10-09T15:30:14.992Z",
-    "slug": "and"
+    "slug": "and",
+    "name_th": "ร้านข้าวแกงกาย&กัน (หลานตาลี)"
   },
   {
-    "name_en": "ข้าวแกงบ้านผู้ใหญ่ลี สาขาคลองถม",
-    "name_zh": "ข้าวแกงบ้านผู้ใหญ่ลี สาขาคลองถม",
+    "name_en": "Baan Phu Yai Lee Curry Rice Khlong Thom",
+    "name_zh": "Baan Phu Yai Lee 咖哩飯（Khlong Thom）",
     "description_en": "Located on Soi Charoen Krung 11 directly opposite the entrance to Wat Phra Phiren, this curry rice shop is known for its spicy catfish curry, stir-fried frog, and mixed vegetable stew. The owner is happy to mix multiple toppings onto a single plate on request. A 4.8 rating backed by consistently friendly service and well-seasoned, home-style cooking.",
     "description_zh": "位在石龍軍路11巷、對面就是Wat Phra Phiren寺廟入口，是一家泰式咖哩飯店。招牌是辣味鯰魚咖哩和炒青蛙，什錦雜菜燉菜也受好評。老闆娘願意幫客人混搭多種菜色，評分4.8，靠的是口味扎實加上親切的服務態度。",
     "category": "food",
@@ -13711,7 +13750,8 @@
     "slug": "baan-phu-yai-lee-curry-rice-khlong-thom",
     "old_slugs": [
       "place-63a0f7f5"
-    ]
+    ],
+    "name_th": "ข้าวแกงบ้านผู้ใหญ่ลี สาขาคลองถม"
   },
   {
     "name_en": "Khao Tom Bowon",
@@ -13743,8 +13783,8 @@
     "slug": "khao-tom-bowon"
   },
   {
-    "name_en": "ร้านข้าวต้ม นำชัย",
-    "name_zh": "ร้านข้าวต้ม นำชัย",
+    "name_en": "Nam Chai Rice Porridge",
+    "name_zh": "Nam Chai 泰式粥與快炒",
     "description_en": "A local congee and stir-fry shop serving dishes with a mix of Chinese and Thai flavours. Standouts include stir-fried fish maw, deep-fried squid stuffed with minced pork, hot pan seafood, pork belly, yum woonsen, tom yum beef soup, and yum tua poo. Food comes out fast. No air conditioning, so expect the heat, and parking nearby is tricky to find.",
     "description_zh": "粥底街邊店，同時主打快炒料理。招牌有炒魚肚、炸釀魷魚（內餡豬絞肉）、海鮮鐵板、五花肉，以及粉絲沙拉、酸辣牛肉湯和四季豆沙拉。菜色兼具中式與泰式風味，上菜速度極快。店內沒有冷氣，天氣熱要有心理準備，附近停車位不好找。",
     "category": "food",
@@ -13772,11 +13812,12 @@
     "slug": "nam-chai-rice-porridge",
     "old_slugs": [
       "place-d8d637dc"
-    ]
+    ],
+    "name_th": "ร้านข้าวต้ม นำชัย"
   },
   {
-    "name_en": "ข้าวต้มแปลงนาม วงเวียน 22",
-    "name_zh": "ข้าวต้มแปลงนาม วงเวียน 22",
+    "name_en": "Khao Tom Plaeng Nam",
+    "name_zh": "Plaeng Nam 潮州粥（22 圓環）",
     "description_en": "A Thai-Chinese khao tom spot within walking distance of Yaowarat, open late into the night. The steamed minced pork with salted egg stands out — pronounced garlic and pepper flavors, exceptionally tender. Stir-fried clams with roasted chili paste packs a bold punch. There are decent vegetarian options, including crispy tofu. The garlic chicken isn't on the menu, but worth asking the staff about.",
     "description_zh": "泰中式粥品老舖，位在耀華力唐人街步行可達的範圍內，深夜仍有供餐。招牌推薦鹹蛋蒸豬肉末，蒜香與胡椒味明顯，豬肉極嫩；辣椒醬炒蛤蜊口味濃烈下飯。素食選項也不少，炸豆腐值得點。菜單上找不到的蒜味雞，可以開口詢問。",
     "category": "food",
@@ -13801,7 +13842,8 @@
       "places/ChIJqRyPmSaZ4jARigGX03bDSTs/photos/Aa-ngMYux9KvnujRfK-BT6aYR22uuh2OvL_tA2aNwU7J2j4gzI-gGurr1fTQ0i4F9yrmRPxf98j7xwZYJ-D5VGe-7tMvLOaZ4oy7ud6cSqK3yCFFdsJx6kDwFWrlyY0plzUf9bArge7CPnoPQsTQrk2FMUwibu7a8WmKVtWm_7U120LkGIAsufaDFn6ZwlWnR88z29PaD_wrPCDkBpj3Wr1alz8lq-MVizv8ci2Kp7sotTiISPOoB2BypdEXcQUk3UxNi6deK9Ai47Gpq1jOJYQ1_j8n7NGlWOvmmjzzbzwJwQ0sZLKr4XzDHS1qdJmDWb7SfBbxG60N6uWS--7_lapoVkMnaivUz-OPAkOCV4LYdGSDcGFH27dRgmHIF99qithfpLI_thK7vtEinyZBXSmQ6a-WLLXEl9g"
     ],
     "approved_at": "2026-10-09T15:30:17.860Z",
-    "slug": "22"
+    "slug": "22",
+    "name_th": "ข้าวต้มแปลงนาม วงเวียน 22"
   },
   {
     "name_en": "Nai Nguan Porridge",
@@ -13891,8 +13933,8 @@
     "slug": "somyoth"
   },
   {
-    "name_en": "ข้าวต้ม 3บาท50",
-    "name_zh": "ข้าวต้ม 3บาท50",
+    "name_en": "Khao Tom 3 Baht 50",
+    "name_zh": "3.5 銖粥飯",
     "description_en": "A rice porridge and rice shop in Bang Phlat with a wide range of dishes — pork, fish, chicken, and seafood, prepared fried, boiled, stir-fried, or as salads. Stir-fried squid with salted egg yolk is a crowd favourite. You can park at the temple lot nearby and walk over.",
     "description_zh": "Bang Phlat 一帶的粥飯小店，菜色涵蓋豬肉、魚、雞肉與海鮮，炒、炸、煮、涼拌都有。鹹蛋黃炒花枝是常被點的一道。停車可停對面廟宇的廣場，走路出來約一小段路。",
     "category": "food",
@@ -13917,7 +13959,8 @@
       "places/ChIJt1rHR_Cb4jARrwJPGWBi8-0/photos/Aa-ngMZvg5ZuKdjMLJz05Hv007TiDp7fRBtS9a6cNRehWVeYejC45PThKG3Pg9dwCslYZgNF8XXpILwGRmL0dPbIt0QtbGvDV5FPWL6EJUsukMH4En0rIQWmxldMbNw2gtuz3DNuVxafP3fOliN7jVp1eMGFa6wlAXZZ-4UqJe6mfW132xtzFH0NtF8x52eqsr6OShdB1AgRto9rk_xoCrI-Hyc4c9LjyvEPyZ8JJ8Yty_I-iXekTtWtR5RAQ568699TthLxNXKdaGFNhRgwlE6xpi9Bd2k0k75avAVSQYCifo5XJghXgtJ5RY_V7vwqfkfZnmzcHipJvMnnn1iXXyH13VAMnsnBEfwhzxYCkuJFIo0xgdwxUlCwf2v2cTWICsWdiTDjETYFHgS5SUPRzgaAhw05iQ"
     ],
     "approved_at": "2026-10-09T15:30:19.373Z",
-    "slug": "3-50"
+    "slug": "3-50",
+    "name_th": "ข้าวต้ม 3บาท50"
   },
   {
     "name_en": "Khao Tom Santipap",
@@ -14181,8 +14224,8 @@
     "slug": "kodtalay-seafood-buffet-sukhumvit"
   },
   {
-    "name_en": "กลิ่นทะเลซีฟู้ด",
-    "name_zh": "กลิ่นทะเลซีฟู้ด",
+    "name_en": "Klin Talay Seafood",
+    "name_zh": "Klin Talay 海鮮餐廳",
     "description_en": "A seafood restaurant in Bang Bua Thong, Nonthaburi. The seafood is fresh, and the house seafood sauce is a standout. Parking is easy with a spacious lot. The menu is in Thai only, which gives it an distinctly local feel.",
     "description_zh": "位於暖武里府 Bang Bua Thong 的海鮮餐廳，食材新鮮、海鮮醬口味獲得不少好評。停車場空間寬敞，菜單以泰文為主，偏向在地客群。",
     "category": "food",
@@ -14210,11 +14253,12 @@
     "slug": "klin-talay-seafood",
     "old_slugs": [
       "place-aa042e14"
-    ]
+    ],
+    "name_th": "กลิ่นทะเลซีฟู้ด"
   },
   {
-    "name_en": "พ.ทะเลเถื่อน",
-    "name_zh": "พ.ทะเลเถื่อน",
+    "name_en": "Por Talay Thuean",
+    "name_zh": "Por Talay Thuean 海鮮泰菜",
     "description_en": "A recently opened seafood Thai restaurant tucked inside Soi Yothin Phattana 3. The menu covers a good range of seafood — standouts include fish roe sour curry, king mackerel roe salad, baked scallops with butter, and grilled squid with a separate chili-vinegar dipping sauce. Bold seasoning and generous portions make it a solid choice for groups. The fried rice is well-presented but the rice itself is on the softer side. It gets crowded at dinner, so arriving early helps.",
     "description_zh": "開業不久的海鮮泰菜館，藏在 Yothin Phattana 3 巷內。菜單選擇多，招牌有魚卵酸咖哩、鯖魚卵沙拉、奶油烤扇貝和烤透抽，調味紮實、分量大，適合多人共享。炒飯賣相不錯，但米飯偏軟。晚餐時段人多，建議早點到。",
     "category": "food",
@@ -14242,7 +14286,8 @@
     "slug": "por-talay-thuean",
     "old_slugs": [
       "place-89b8d076"
-    ]
+    ],
+    "name_th": "พ.ทะเลเถื่อน"
   },
   {
     "name_en": "Sanan Seafood Restaurant",
@@ -14651,8 +14696,8 @@
     "slug": "baan-rim-naam-songwat"
   },
   {
-    "name_en": "ภู Kitchen สวนอาหารริมแม่น้ำเจ้าพระยา",
-    "name_zh": "ภู Kitchen สวนอาหารริมแม่น้ำเจ้าพระยา",
+    "name_en": "Phu Kitchen Riverside",
+    "name_zh": "Phu Kitchen 河畔餐廳",
     "description_en": "A riverside buffet restaurant along the Chao Phraya, where you can eat with a view of the river. Both all-you-can-eat buffet and à la carte options are available. Signature dishes include tom yum goong and salmon. Reviews are mixed — some praise the food and attentive service, while others note slow food refills and a gap between promotional photos and what's actually served. Tables fill up fast, so it's worth calling ahead to book.",
     "description_zh": "位在昭披耶河畔的自助餐廳，可以邊吃邊看河景。提供吃到飽與單點兩種選擇，招牌是冬蔭功蝦和鮭魚料理。評價褒貶不一，有人讚食物美味、服務積極，也有人反映補菜速度慢、菜色與宣傳圖片落差較大。座位搶手，建議提前電話訂位。",
     "category": "food",
@@ -14677,7 +14722,8 @@
       "places/ChIJKVkAhJiZ4jARNoCJrCQPoIw/photos/Aa-ngMaOpfgUq3HTKJACbWbilcR9NA4RQitlzdC6rsW7ajHYU7E65bsA8JkMy2y4ELULDWhgUz5eSAIBRTHdybgSw7bnPCciKwhI90dv2PUTNkvwYfwzTy3lH-6-O-sMRWgxT2qAc-TQx8Fah7E2OBtCHRYPmQHa7sL0xwBvQ2XqzVU-zUO226-1ZMiCOBOrZYIDYcd6L6EJAkzZEVdV9NtrvBVry3ccHDsKzHIZfQZyZU_S5B1S3fRDtz1olcIB8ag_HO2_U8_peeDv-C9ur3mRvXyUtqqhxYJKJBX19QsptpTOE6gESJ5yaIMBY2AYgvqzzt-vnGqKGCq5OotjtQqtDSJyF6znbvh3qdRfEZJOHjElhWcjqBFeo9yQQZgCXnbTbw7ZsJOaC4pVkS_egMF6nVD7D1_phqJgdlq8A3B8I8zY"
     ],
     "approved_at": "2026-10-09T15:30:31.212Z",
-    "slug": "kitchen"
+    "slug": "kitchen",
+    "name_th": "ภู สวนอาหารริมแม่น้ำเจ้าพระยา"
   },
   {
     "name_en": "Rabeang Rimnum",
@@ -14738,8 +14784,8 @@
     "slug": "river-tree-house"
   },
   {
-    "name_en": "ขนาบน้ำ",
-    "name_zh": "ขนาบน้ำ",
+    "name_en": "Khanab Nam",
+    "name_zh": "Khanab Nam 河岸泰菜",
     "description_en": "A Thai restaurant sitting right on the riverside, with a view of the river and bridge that gets particularly atmospheric at night when the lights come on. The menu focuses on Thai dishes, and the food quality has stayed consistent for at least 25 years according to a long-time regular. There's live band music during dinner. Note that parking is a distance from the river — arriving by taxi lets you drop off directly at the riverside entrance.",
     "description_zh": "河岸邊的泰式餐廳，緊鄰河流與橋樑，夜晚亮燈後景色很好看。菜單是泰國菜，食物份量實在，有食客表示二十五年來口味穩定沒變。用餐時段有現場樂隊演奏。開車來需把車停在離河邊較遠的地方，搭計程車則可以直接在河邊下車。",
     "category": "food",
@@ -14767,7 +14813,8 @@
     "slug": "khanab-nam",
     "old_slugs": [
       "place-edcf7d40"
-    ]
+    ],
+    "name_th": "ขนาบน้ำ"
   },
   {
     "name_en": "HIA LEK CHINESE SOUP MOO SAM YANG",
@@ -14918,8 +14965,8 @@
     ]
   },
   {
-    "name_en": "ร้านข้าวต้มนายอ๋า",
-    "name_zh": "ร้านข้าวต้มนายอ๋า",
+    "name_en": "Nai Aa Rice Porridge",
+    "name_zh": "Nai Aa 粥品",
     "description_en": "A rice porridge shop on Thanon Phra Sumen, best known for its 'Super' soup. Beyond congee, the menu covers à la carte dishes, rice boxes, and rice with toppings. Portions are generous, and regulars keep coming back for the consistent taste and value.",
     "description_zh": "位於帕蘇門路的粥品小店，招牌是「Super」湯，口味獲得不少回頭客肯定。除了粥之外，也有單點菜餚、便當盒和蓋飯可以選，份量給得實在，價格在周邊算是划算的選項。",
     "category": "food",
@@ -14947,7 +14994,8 @@
     "slug": "nai-aa-rice-porridge",
     "old_slugs": [
       "place-d640e545"
-    ]
+    ],
+    "name_th": "ร้านข้าวต้มนายอ๋า"
   },
   {
     "name_en": "Bar Lub 49",
@@ -14979,8 +15027,8 @@
     "slug": "bar-lub-49"
   },
   {
-    "name_en": "Baan Sood Soi Restaurant ร้านอาหารบ้านสุดซอย",
-    "name_zh": "Baan Sood Soi Restaurant ร้านอาหารบ้านสุดซอย",
+    "name_en": "Baan Sood Soi Restaurant",
+    "name_zh": "Baan Sood Soi 水岸餐廳",
     "description_en": "Tucked at the end of Borommaratchachonnani 15, right next to a water channel. You can sit indoors or outside along the canal, and the sunset view at dinner is a real draw. The Pad Thai comes served on a bed of rose petals — one of those small details that stands out. Generous portions, relaxed music in the background.",
     "description_zh": "餐廳位在 Borommaratchachonnani 15 巷底，緊鄰水道，可選擇坐在室內或戶外靠水邊的座位，傍晚用餐時能看到日落。Pad Thai 以玫瑰花瓣鋪底上桌。份量大，有輕音樂配食。",
     "category": "food",
@@ -15005,7 +15053,8 @@
       "places/ChIJvQpyad6Z4jARwSWQzHOs0TE/photos/Aa-ngMaLBs5gy-kLuwl0A8f422E7wRMboWISuSEhdrQtvfk8iySA8IVyGeyHCW08QHEBElwVRxLXF0N3fzoXJG8iVdxPBHWbWYEPHaolpeHFrtKrmnl99Ljv4vfdU68kVD0PZue-x1KHYt-j979gRpJU1CT1BWKfDVMfSGjhfDTwS3cOIzXbYho250sPJ6VIzTBn6VJdRtrPVUVoOSUI-F8zP-aAkT7sJSkpIXJDOrHhAbLM0oj0wz_xBtkSSj-jAEGh8zvcDy9D0IA8MxMrCmzSxd0Q4Yb8Qn08IZxLuIDvePiveYryNiI8PBPmFdAUUtuLCJ-lpVl6jwHYRXdH0mzneBE0OcUjxTH-rtho89vYc15ZIP0eTx66JFySzfIlF89orhHnuCs7otLjCHayK9knoPARefyQYPtKVHz35SHlqjQtrQ"
     ],
     "approved_at": "2026-10-09T15:30:35.045Z",
-    "slug": "baan-sood-soi-restaurant"
+    "slug": "baan-sood-soi-restaurant",
+    "name_th": "ร้านอาหารบ้านสุดซอย"
   },
   {
     "name_en": "Serpens - All Day Dining",
@@ -15182,8 +15231,8 @@
     "slug": "khaan-thai-fine-dining-restaurant"
   },
   {
-    "name_en": "Chef's Table by Lebua เชฟส์เทเบิล บาย เลอบัว",
-    "name_zh": "Chef's Table by Lebua เชฟส์เทเบิล บาย เลอบัว",
+    "name_en": "Chef's Table by Lebua",
+    "name_zh": "Chef's Table by Lebua 法式餐廳",
     "description_en": "A two Michelin-starred modern French tasting menu restaurant on the 61st floor of State Tower, helmed by Chef Vincent Thierry. Window tables overlook the Bangkok skyline. Signature dishes include King Crab Tiramisu, Challans Duck Breast, and scallops, with house-churned Khao Yai cream butter served at the start and a cheese trolley at the end. The open kitchen means Chef Vincent occasionally joins tables to walk through each course. A reservation well in advance is recommended.",
     "description_zh": "位於 State Tower 61 樓，Chef Vincent Thierry 主導的現代法式套餐餐廳，擁有米其林二星。從窗邊座位可俯瞰曼谷天際線。招牌菜包括 King Crab Tiramisu、Challans 鴨胸和扇貝，以花椰菜奶油開場，餐後有起司推車服務。開放式廚房讓主廚有時會親自入座解說菜色，氛圍私密，適合慶祝場合。建議提前訂位。",
     "category": "food",
@@ -15208,11 +15257,12 @@
       "places/ChIJkbyJIMeZ4jARgc1-140HJkU/photos/Aa-ngMaVU3Yytt1SdQxqRKU6XKp_6ZGpgLxU5xbRG0abfnI9V8QsDJqwO6MHmjtWCULF80_F15EmtyKLJ_5PAj1xEYT9wlPsoGCEsKpHuMv4ZQYhNuQu9jf_9G_WswcpxXm9MgrxxIMJ64pPGfDHNiQTVw-6EtXQC88Fr_i9i76B4SXqOhTAVyBnc1Nd_hA3CaQWSH56yD29JJ5XxFn_b4FOJ4DCuAgwI7E8sOZ1xKhxJ6MieDShEoskqJliqIGDebsWvqvzIBbwURF9ogKWnYUthW_459lmmb9mdgGRoKEALTAWCz35tuP1uu2MXOAWBaNPDdOIvJI5rFfMm_6E6JyinPW5VQAAbq6gNfI7K2PYePUE-aGV7-DBLYEClOUPLSxYNYAci8L8HGgDS-Sm4nL_8K8PbjldZmTPVZjVTLaWqV_v"
     ],
     "approved_at": "2026-10-09T15:30:36.987Z",
-    "slug": "chefs-table-by-lebua"
+    "slug": "chefs-table-by-lebua",
+    "name_th": "เชฟส์เทเบิล บาย เลอบัว"
   },
   {
-    "name_en": "Avant เอวองท์",
-    "name_zh": "Avant เอวองท์",
+    "name_en": "Avant",
+    "name_zh": "Avant 法式餐廳",
     "description_en": "Avant sits on the 30th floor of the Kimpton Maa-Lai Bangkok and earned a Michelin star within its first year of opening. The kitchen runs a French modern tasting menu — highlights include a celebrated fish course, quail with a glossy roasted sauce, and multiple caviar dishes. Desserts stand out even among the savory courses. Seating is bar-style, which makes it awkward for groups larger than three. Reservations are recommended.",
     "description_zh": "位在 Kimpton Maa-Lai Bangkok 飯店 30 樓，Avant 是一間法式現代風格的 Michelin 一星餐廳，開業不到一年即摘星。菜單以多道式套餐呈現，招牌包含魚料理、鵪鶉、鵝肝與多道以魚子醬為主角的菜式，甜點評價尤其突出。座位採吧台式配置，不適合三人以上的團體同桌用餐，建議事先訂位。",
     "category": "food",
@@ -15237,7 +15287,8 @@
       "places/ChIJXfTB2L2f4jARtLgqJNfth2c/photos/Aa-ngMaHaeRoP9BZJZ2yxxnPYDe3Y2WU6d8AAdsOndr8POQFp32BwGfMfiNi5DlL14rHj9UHRJZ0nf5wneHUkUeHLB7QrsFliiymOeS4MB3JJomdwp-Qg5AixP2AHDAcRLc6vQhgk9eZG9CupdwfCgvxCHVT8z05hSIljOs0CTuM82yg1PQp9uY9rrBfbvw5B9VMYrW1RY-EtsUuCwSro6MPlOaP9n2z97Zs-f-qEFTNkipga1g-Qtparo-sZ2e7Gj3wgLupRtClU-43tgBl82aK2CmF4iq7k0g0Q15kNKK23kdpuFg0spnAdKS4oXur0UM4Kdv_pu0eXDEZi4HTpFYIIwxpum2STucGEnIgt3E7eoNdfwmd1q_ntJN8oJKGgHahabJdk0p2BvD8pBVCBMIpmJ4g_QZwTUohmMxY_stqR89Z"
     ],
     "approved_at": "2026-10-09T15:30:37.529Z",
-    "slug": "avant"
+    "slug": "avant",
+    "name_th": "เอวองท์"
   },
   {
     "name_en": "Methavalai Sorndaeng",
@@ -15356,8 +15407,8 @@
     "slug": "obaroi-kaset-nawamin"
   },
   {
-    "name_en": "ตำ20 สาขาเกษตร - นวมินทร์",
-    "name_zh": "ตำ20 สาขาเกษตร - นวมินทร์",
+    "name_en": "Tam 20 Kaset-Nawamin",
+    "name_zh": "Tam 20 泰菜（Kaset-Nawamin）",
     "description_en": "A Thai restaurant on Thanon Prasert-Manukitch with enough space to accommodate groups of any size. The menu features multiple varieties of som tam, and the venue includes a kids' play area and live music in the evenings. It gets very busy on major Thai holidays, so consider timing your visit accordingly.",
     "description_zh": "位於 Prasert-Manukitch 路上的泰式餐廳，空間夠大，適合各種規模的聚餐。提供多款泰北涼拌木瓜沙拉（Som Tam），有兒童遊樂區，夜間有現場音樂演奏。逢泰國重要節假日人潮較多，建議避開高峰時段或提早前往。",
     "category": "food",
@@ -15382,11 +15433,12 @@
       "places/ChIJ3ZkfUQBjHTER0BWjShWeq_M/photos/Aa-ngMY8Po0T8ghnozDaJxuPKcUNj82HuZ3N_5UAtpOAERuxw0ioajzO0y4abEu213ieYlz2g3g1jPO8D7Fq6ZA2zI8LS7cuaJcKYv77NI_LqCEb6Ex5HPVN-ls1_L6A0UT3e6lhDAoztoUgMHroWMpMv57PsrrGJiLzmElpO9qM2lqWWgeKMf7b9RYfJpj2FHoyuvMKG25d8rBVvg_v1qQ9ZbXAJtBnYAJk1kwP0tjwmOOR6ZLs5nGkfituoD4XPsC9BFRaw8JEzV-qK50JQeGl3PMLYoEa2p48jr5N4qKIVHpKwNPkOF45Ek5wSFPHpXRCc31dNtJ6yUMej9_EznKbKHIpoTbZKJE24Tw_cssPbgtz1o6JBM3-zO5wN2_gKpYbwzgAWAJ7QBAaYUtGXQqONgN4_oXpj5DYYSJ794jnIe82"
     ],
     "approved_at": "2026-10-09T15:30:39.025Z",
-    "slug": "20"
+    "slug": "20",
+    "name_th": "ตำ20 สาขาเกษตร - นวมินทร์"
   },
   {
-    "name_en": "ครัวเมืองเว้ ลาว ญวน เกษตร- นวมินทร์",
-    "name_zh": "ครัวเมืองเว้ ลาว ญวน เกษตร- นวมินทร์",
+    "name_en": "Krua Muang Hue Kaset-Nawamin",
+    "name_zh": "Krua Muang Hue 越南寮國菜",
     "description_en": "On Prasert-Manukitch Road in Lat Phrao, this spot serves Vietnamese food alongside some Isaan dishes. The Vietnamese pizza is the standout—crispy, soft in one bite, and well-seasoned. Nem Nuong and the Vietnamese savory crepe are also crowd favorites, with the crepe coming in an impressively large size. Fresh vegetables are free-flow with refills. The dining area is spacious and well-maintained, with plenty of parking. It draws a steady crowd, so factor in extra time for the queue.",
     "description_zh": "位於 Prasert-Manukitch 路上，專賣越南菜，也融合了東北泰國料理風味。招牌是越南披薩，外皮酥脆、口感層次分明，幾乎每桌必點；Nem Nuong 和越南鹹可麗餅份量極大，適合四人以上同行。蔬菜盤可免費續點。店內空間寬敞、裝潢舒適，停車位充裕。用餐人潮多，建議預留等候時間。",
     "category": "food",
@@ -15414,7 +15466,8 @@
     "slug": "krua-muang-hue-lao-vietnamese-kaset-nawamin",
     "old_slugs": [
       "place-c1d6a408"
-    ]
+    ],
+    "name_th": "ครัวเมืองเว้ ลาว ญวน เกษตร- นวมินทร์"
   },
   {
     "name_en": "Captain Noi by ChefFiat",
@@ -15475,8 +15528,8 @@
     "slug": "panya-seafood-and-beer-hima"
   },
   {
-    "name_en": "อร่อย Together - Restaurant & Karaoke",
-    "name_zh": "อร่อย Together - Restaurant & Karaoke",
+    "name_en": "Aroi Together Restaurant & Karaoke",
+    "name_zh": "Aroi Together 泰菜卡拉OK",
     "description_en": "A Thai restaurant on Thanon Prasert-Manukitch that combines dining with karaoke. Seating options include indoor, outdoor, and private karaoke rooms with sofas. Some furniture is worn and the overall setup is dated, though the karaoke system holds up well.",
     "description_zh": "位於 Prasert-Manukitch 路上，泰式料理結合卡拉 OK 包廂的複合式餐廳。提供室內、室外與卡拉 OK 包廂等不同座位選擇，包廂有沙發座。部分沙發已有破損，設施略顯老舊，但卡拉 OK 系統評價不錯。",
     "category": "food",
@@ -15501,7 +15554,8 @@
       "places/ChIJMZoNcINjHTERMGntjG9swd0/photos/Aa-ngMaWkvPVa9s8Cotdlh-14eNo2S6aSRtzZedGIvFSg4M1p2uxMNRtSFtC0KVg0i-FJnR6vjI40__3BJpJSmk2Jb1l0OwhMjCc5iqOkEBazvP3mpaZM362Ymb9wUHpEkOYk1XQaEpxkn1mCgsK-ihpMeGHx6ZD5ESLiyUKMwaKfbW7L5E2LA8y2ke2WYCbKVgcQdbH2__cKpLb95TF419dmAAelDc5W73QWmFcgWfCCjypLSRUfd0sN13lHJZQHlDNABRmFnH1UtCn0DJ0MoPhNgfGTn1QdroyDDPBxd5u5QtzyddPGo-e3zvDg49wT2kbGpoe375hXEAsbEDXNNxKm0tFfeY8KlWyArg4MfFDb0kMOOLFya5i08MTs3vdUw4faigym39xbI_pt5aroLgBBAo9aw"
     ],
     "approved_at": "2026-10-09T15:30:40.728Z",
-    "slug": "together-restaurant-and-karaoke"
+    "slug": "together-restaurant-and-karaoke",
+    "name_th": "อร่อย"
   },
   {
     "name_en": "Krua Khun Ein",
@@ -15533,8 +15587,8 @@
     "slug": "krua-khun-ein"
   },
   {
-    "name_en": "Ja Dare Bor' (จะแด*บ่)",
-    "name_zh": "Ja Dare Bor' (จะแด*บ่)",
+    "name_en": "Ja Dare Bor",
+    "name_zh": "Ja Dare Bor 伊善創意菜",
     "description_en": "Right next to Central Rama 9, this Thai restaurant leans into Northeastern flavors. Standout dishes include fried pork with cheese, corn som tum, and sous vide grilled beef tongue. You can ask the staff to adjust the spice level when ordering. On Thursday evenings, live music starts from 7 PM.",
     "description_zh": "就在 Central Rama 9 旁邊，賣泰式料理融合東北口味，招牌有起司炸豬肉、玉米青木瓜沙拉、低溫慢煮牛舌。辣度可以請店員調整。每週四晚上七點起有現場音樂表演，氣氛熱鬧。",
     "category": "food",
@@ -15559,11 +15613,12 @@
       "places/ChIJIQSzbAuf4jARomdNWIGea5M/photos/Aa-ngMa5Y32ZXW1eLNQ0EJCWYKPcJ4_F5lYjQM8zJAGZDKprVf_5MJrAGcV8vtAsKRcoRt-wrI0YrxS4KjPKEefsfV2AVWvXkOuUiuYG-BEBFq50fb5VXIzTT5wqGDGNurlzWCyRo40FBjkiw-CE3L3O1G74nb1zC1KwiiDa8PLOT3RgjTwjXmoEX_nmeYzKlsGeyyCiWPejBYtdww2Hl4kebS25yHjl-FKWld1goK4AnUnUK_6jCabK2oE1dlUW61iHnlBsBp0L9jsVw3B4qti97P78NEWBQwuFgo2-JxFGvYYNcp-g5I3BnqorW4-ESCGoS7jgbkndHIpG4xcTYt5-1A8ypWMciKNfqRa1FPu9Pgxmw8_lYdnqe1uWwZmOfr6AFIoblHcU47pcY2FFCqTOqnHUjCNsEQ7oLfLv54TFT4xt3w"
     ],
     "approved_at": "2026-10-09T15:30:41.291Z",
-    "slug": "ja-dare-bor"
+    "slug": "ja-dare-bor",
+    "name_th": "จะแด บ่)"
   },
   {
-    "name_en": "บักหล้า คำเเพง BUKLA KUMPAENG",
-    "name_zh": "บักหล้า คำเเพง BUKLA KUMPAENG",
+    "name_en": "Bukla Kumpaeng",
+    "name_zh": "Bukla Kumpaeng 伊善菜",
     "description_en": "A northeastern Thai (Isaan) restaurant on Rama 9 Road, serving solid dishes like Som Tum and grilled meats with adjustable spice levels. There's live music inside — the performer tends to switch languages depending on where the customers are from. The parking lot entrance is tricky to find; taking the MRT to Exit 3 is the easier option.",
     "description_zh": "在 Rama 9 路上專賣東北泰（伊森）料理的餐廳，Som Tum、烤肉等菜色口味扎實，辣度可依個人喜好調整。店內有現場演唱表演，歌手會視桌客的國籍切換語言。停車場入口較隱密，搭 MRT 在 3 號出口下車比較省事。",
     "category": "food",
@@ -15588,7 +15643,8 @@
       "places/ChIJ-yt-2Smf4jARmUGZatdcjrw/photos/Aa-ngMb-6m_O1Mwf2_zWm3NOHp2gAfjlr7TT8GJZxrzHOF2TXTFVPTKHoOHOHVsQebtCJ7AOC6jKyRVMpA9koL5NFNzgkeOAHrYPb-axthz0y3K5o8ryRHZsRHaY7qv7XqCMMeqVLJm4hYpsBVF6x3oUZoUALsHOXtQ69bYt01-8OMcsQ_GEUJauac5LM6D5eD9dIeei3jjPM6fK_H50AeDv-iCkjMi3BtG5cnZoeHBg1SsA_pRsEVaWTN5-Rt27KMSWIhg-CCFHEVL7DzvEcqfdAJYaDTSLNfuyuyvBWFSVG-fRCL9BxiZH6040cmSSTpXc3z2CHI9JzVljzcKbg6t5eIHZEkyO-nZlOAF5NHKVNfNmdbseZKFvur_ylxrLikQrpInGyQEtK8DxCdmDZocxVBi7K8Ay"
     ],
     "approved_at": "2026-10-09T15:30:41.492Z",
-    "slug": "bukla-kumpaeng"
+    "slug": "bukla-kumpaeng",
+    "name_th": "บักหล้า คำเเพง"
   },
   {
     "name_en": "Zabb One Ratchada Soi 5",
@@ -15765,8 +15821,8 @@
     "slug": "koh-nai-soi-2"
   },
   {
-    "name_en": "เหล่ากุ้ย บะหมี่อัศวิน",
-    "name_zh": "เหล่ากุ้ย บะหมี่อัศวิน",
+    "name_en": "Lao Kui Asawin Egg Noodles",
+    "name_zh": "老貴 Asawin 雞蛋麵",
     "description_en": "A long-standing noodle and seafood spot that started as a street cart and has since grown into a spacious, retro-decorated restaurant. The menu covers congee, rice soup, and various seafood dishes. Come evening, it doubles as a casual pub, notable for serving beer in a slushy, super-chilled style. Tucked in Soi Hua Mak near ABAC university, it draws a steady crowd of locals and returning alumni.",
     "description_zh": "老字號麵食海鮮館，從路邊攤起家，現在已有寬敞的室內空間，裝潢帶點復古風格。白天主打粥品、湯飯與各式海鮮，晚間則轉型為附餐飲的小酒館，招牌是超冰沙拉啤酒的特別上法。位在 Hua Mak 巷子裡，鄰近 ABAC 大學，在地人和舊學生回頭率不低。",
     "category": "food",
@@ -15794,11 +15850,12 @@
     "slug": "lao-kui-asawin-egg-noodles",
     "old_slugs": [
       "place-4a619feb"
-    ]
+    ],
+    "name_th": "เหล่ากุ้ย บะหมี่อัศวิน"
   },
   {
-    "name_en": "เกตุโอชา (Ket O Cha) รามคำแหง",
-    "name_zh": "เกตุโอชา (Ket O Cha) รามคำแหง",
+    "name_en": "Ket O Cha Ramkhamhaeng",
+    "name_zh": "Ket O Cha 牛肉麵（Ramkhamhaeng）",
     "description_en": "A noodle shop with Michelin Plate recognition in 2022 and 2023, located inside the Ritratana Building on Ramkhamhaeng Road with air-conditioning and parking available. The braised beef noodle soup is the main draw — wide rice noodles soak up the sweet-salty broth well, and the beef is tender throughout. Deep-fried pork skin comes as a table snack and is notably crispy.",
     "description_zh": "連續兩年（2022、2023）獲得米其林推介的牛肉麵專門店，位在 Ramkhamhaeng 路上的 Ritratana Building 內，有冷氣和停車場。招牌是燉牛肉湯麵，寬粄條吸附湯汁效果好，牛肉燉得軟嫩，湯頭帶鹹甜風味。炸豬皮是桌上的小食，酥脆度高。",
     "category": "food",
@@ -15823,7 +15880,8 @@
       "places/ChIJxUcEhk2f4jAR4QNWX2G5zPY/photos/Aa-ngMYNbCOIzBel51cFRQdL95LuETXV4WVrWvhb9dzgy2fvvOXN-f2euUy-ycPe7UwfMtjnnpGTI4g73s7NHzPJHVO1i4wgcvkC1eQjFBZWIUS2Rt2sLQmbvxcYgxYjE5wuoqf-d-wUuYT1ZVFXv13ZBXwFgtVl93nNhzl-LRd7__kG1NgYQjqAUlfnvgXrD6NQbcS1g5QlfYxYQw5x2IKPhtr1QTS5EYvrU8d2t9glLHgUwwMg2YUd9n9z7vP4TxfAnwX7TuIld-qHJbV9c7prLN6gEbPij1ROrc3hNmZMW74HIlAGCuem8HRAtEX4PUTjodAL8I6y9NYgG5Z_kg10mbtNbDlEQs39QAqvjIFSISfW1EV4wcaYzuShUAn38TT7nAgmkXjK_Plmr1ALC1hIpoUlFsik"
     ],
     "approved_at": "2026-10-09T15:30:44.609Z",
-    "slug": "ket-o-cha"
+    "slug": "ket-o-cha",
+    "name_th": "เกตุโอชา รามคำแหง"
   },
   {
     "name_en": "Krua Salawalee",
@@ -15855,8 +15913,8 @@
     "slug": "krua-salawalee"
   },
   {
-    "name_en": "แกงป่า รามคำแหง 24 - Kang Pa",
-    "name_zh": "แกงป่า รามคำแหง 24 - Kang Pa",
+    "name_en": "Kang Pa Ramkhamhaeng 24",
+    "name_zh": "Kang Pa 南泰咖哩（Ramkhamhaeng 24）",
     "description_en": "Located near Ramkhamhaeng University's Hua Mak campus, this place specializes in southern Thai cooking with a wide range of Thai curries as its main draw — the flavors are authentic and the spice level is no joke. Portions are generous and the chilli dip is worth ordering alongside your meal. Staff are friendly and the dining atmosphere is relaxed. Most dishes run spicy, so it's worth checking before you order if you have a low heat tolerance.",
     "description_zh": "位在拉瑪坎恒大學華馬克校區附近，專做南泰料理，以各式泰式咖哩聞名，口味道地，辣度真實，份量扎實。咖哩選項多樣，辣椒醬也值得一試。店員態度友善，用餐氣氛輕鬆。要注意大多數菜色都偏辣，怕辣的人點餐前最好先問一下。",
     "category": "food",
@@ -15881,7 +15939,8 @@
       "places/ChIJeyfNSyCe4jARoQOg9J5jnFs/photos/Aa-ngMbkuXmFTdbuCM0CRYjafqhcSwuhOeZP7SxS5Ay3XzcVk5r7j5CF0VwADrVyztL0r1epZbdF3vpjIcmng96erZ7E1XAGnZCxJF_d7vCKbAv4LhiQiknpYqLlm2u7dZoZ16GfVfZ-JHgMXW_VznpNVB7hRTvhLPgIKacFUK9c-EQlviVC70fGJCYmGsutTDUNDqojnmkN8HLt1HdqFJrLwhIluw0zJyw59tkKRJfzonuWaS4VG2zSLps1bqv91zAWiAodtll7vIzEzKLkBYaOjtAajeYJ9KUlDaU0YWPw75It3ji8g5OG-yFkmBt-5PSmMOyJXYfxy8nsZM2HOqakuGLKJUoOHp-9uOGDv8DX2IXG7lkJALGcMvroNb8wVBUsSfGadZEs8s70zfH8SwyHhnwlTno"
     ],
     "approved_at": "2026-10-09T15:30:45.158Z",
-    "slug": "24-kang-pa"
+    "slug": "24-kang-pa",
+    "name_th": "แกงป่า รามคำแหง 24"
   },
   {
     "name_en": "Tam Laek Ban Nok",
@@ -15913,8 +15972,8 @@
     "slug": "tam-laek-ban-nok"
   },
   {
-    "name_en": "ครัวคุณลุง สาขารามคำแหง",
-    "name_zh": "ครัวคุณลุง สาขารามคำแหง",
+    "name_en": "Krua Khun Lung Ramkhamhaeng",
+    "name_zh": "Krua Khun Lung 快炒（Ramkhamhaeng）",
     "description_en": "A small restaurant tucked into Ramkhamhaeng Soi 50, where every dish is cooked to order right in front of you. The kitchen and dining area are kept noticeably clean. Signature dishes include tom yum, green curry, and beef with holy basil. Portions lean small, which makes it easy to order a few dishes and try more. Staff are friendly and communicate well with foreign visitors.",
     "description_zh": "藏在拉瑪坎亨50巷裡的小館子，菜全在你眼前現炒，廚房和用餐區都收拾得很乾淨。招牌有冬陰功、青咖哩，還有打拋牛肉。份量偏小，但好處是可以多點幾道試試。員工溝通沒問題，對外國客人也很友善。",
     "category": "food",
@@ -15942,11 +16001,12 @@
     "slug": "krua-khun-lung-ramkhamhaeng",
     "old_slugs": [
       "place-b237f75d"
-    ]
+    ],
+    "name_th": "ครัวคุณลุง สาขารามคำแหง"
   },
   {
-    "name_en": "เฮือนเครื่องเทศอ่อนนุช",
-    "name_zh": "เฮือนเครื่องเทศอ่อนนุช",
+    "name_en": "Huean Khrueang Thet On Nut",
+    "name_zh": "Huean Khrueang Thet 泰北菜",
     "description_en": "Tucked deep in the lanes off Soi On Nut 65, this spot focuses on Northern Thai cuisine. The Hang Lay curry is the standout—complex, layered flavour that keeps regulars coming back—and the stuffed chilli peppers are another firm favourite. Herbs and spices are used generously without pushing the heat too far. Parking is available for 3–4 cars out front and around 10 at the back.",
     "description_zh": "藏在 On Nut 65 巷弄深處，專賣北泰料理。Hang Lay 咖哩味道層次豐富，是不少熟客的指定點法；釀辣椒也是常被點到的菜色。香料用料紮實，口味有辣但不過衝。店前可停 3–4 輛車，後方還有約 10 個車位。",
     "category": "food",
@@ -15974,7 +16034,8 @@
     "slug": "huean-khrueang-thet-on-nut",
     "old_slugs": [
       "place-335eef4d"
-    ]
+    ],
+    "name_th": "เฮือนเครื่องเทศอ่อนนุช"
   },
   {
     "name_en": "Rose Maree | Halal Restaurant",
@@ -16006,8 +16067,8 @@
     "slug": "rose-maree-halal-restaurant"
   },
   {
-    "name_en": "เฮงหอยทอด - อ่อนนุช",
-    "name_zh": "เฮงหอยทอด - อ่อนนุช",
+    "name_en": "Heng Hoi Tod On Nut",
+    "name_zh": "Heng 蚵仔煎（On Nut）",
     "description_en": "เฮงหอยทอด sits down Soi On Nut 34 and was named by CNN in 2012 as one of the world's top five street food vendors. The signature hoi tod comes in two styles—crispy or soft—both made with large oysters. The seafood pad thai uses generously sized dried shrimp and doesn't clump. Braised pork leg on rice rounds out the menu. Delivery orders pick up around midday, so expect roughly a 15-minute wait even if the dining area looks quiet. Parking is available in front of the shop or just inside the soi.",
     "description_zh": "เฮงหอยทอด 在 On Nut 34 巷內，CNN 2012 年曾把這家列入全球五大街頭小吃。招牌是蚵仔煎，有脆皮與軟嫩兩種版本，兩者都用大顆生蠔。海鮮炒河粉（Pad Thai）乾蝦粒大，炒得香而不黏；滷豬腳飯也是常點的選項。午餐時段外送訂單多，現場等候約 15 分鐘，店前可停車，或停在巷口更方便。",
     "category": "food",
@@ -16035,7 +16096,8 @@
     "slug": "heng-hoi-tod-on-nut",
     "old_slugs": [
       "place-6c5908d1"
-    ]
+    ],
+    "name_th": "เฮงหอยทอด - อ่อนนุช"
   },
   {
     "name_en": "@19food&farm On Nut 17",
@@ -16067,8 +16129,8 @@
     "slug": "19foodandfarm-on-nut-17"
   },
   {
-    "name_en": "อยู่​ | กับ​ | บ้าน",
-    "name_zh": "อยู่​ | กับ​ | บ้าน",
+    "name_en": "Yoo Gub Baan",
+    "name_zh": "Yoo Gub Baan 運河綠意餐廳",
     "description_en": "A canal-side restaurant surrounded by trees, staying cool even at midday. Food and drinks are on offer, and the tables come with art supplies for doodling. The water flowing by is clean. The spot is tricky to find — ride-share apps struggle with the location — so driving yourself is the easier option. Can get crowded on busier days.",
     "description_zh": "沿運河而建的綠意餐廳，四周樹木圍繞，白天也涼爽舒適。提供餐飲，座位區備有塗鴉用的畫材，水質清澈。位置偏僻不易找，叫車軟體不好定位，自行開車前往較方便，假日時段會有人潮。",
     "category": "food",
@@ -16096,11 +16158,12 @@
     "slug": "yoo-gub-baan",
     "old_slugs": [
       "place-11e5303d"
-    ]
+    ],
+    "name_th": "อยู่​ กับ​ บ้าน"
   },
   {
-    "name_en": "หลาลุงแสง อาหารใต้",
-    "name_zh": "หลาลุงแสง อาหารใต้",
+    "name_en": "La Lung Saeng Southern Thai",
+    "name_zh": "La Lung Saeng 南泰菜",
     "description_en": "หลาลุงแสง on On Nut Road serves Southern Thai food with ingredients sourced directly from Songkhla. The stir-fried minced pork with chili paste is well-seasoned and balanced, while the turmeric-fried pork belly comes out crispy and fragrant. The space is decorated like a home, the owner is welcoming, and complimentary chili paste is served at the table. Located inside a compound with ample parking.",
     "description_zh": "หลาลุงแสง 位於 On Nut 路，專賣南泰料理，食材直接從宋卡進貨。炒辣醬絞肉鹹香均衡，薑黃炸五花肉上桌時酥脆帶香氣，兩道都是常客點的菜。店內布置像私宅，老闆親切，用餐還附贈辣醬。店在社區複合式建築內，停車位充足。",
     "category": "food",
@@ -16128,11 +16191,12 @@
     "slug": "la-lung-saeng-southern-thai",
     "old_slugs": [
       "place-6b180553"
-    ]
+    ],
+    "name_th": "หลาลุงแสง อาหารใต้"
   },
   {
-    "name_en": "น่ำเทียน by khanta",
-    "name_zh": "น่ำเทียน by khanta",
+    "name_en": "Nam Thian by Khanta",
+    "name_zh": "Nam Thian 復古中華餐館",
     "description_en": "น่ำเทียน by khanta is an old-school Chinese restaurant styled after the 1950s–60s era. Standout dishes include Char Siu Egg Noodles, Venison Gravy Wide Noodles, Char Siu Fried Rice, and Deep-fried Crab and Shrimp Rolls. Fresh Milk Tofu is the go-to dessert. The place runs on fans only, so expect it to get warm inside. Delivery is available via Line Man with a wider menu selection than Grab, though wait times run around an hour.",
     "description_zh": "น่ำเทียน by khanta 是一家走復古中華風的老式餐館，裝潢帶有 1950–60 年代的氛圍。招牌有叉燒蛋麵、鹿肉滷汁寬粉、叉燒炒飯、炸蟹蝦卷，甜點推鮮奶豆腐。餐廳只有電風扇，夏天坐裡面會熱。也可透過 Line Man 外送，選擇比 Grab 多，但等待時間約一小時。",
     "category": "food",
@@ -16157,7 +16221,8 @@
       "places/ChIJawH44Nyf4jARW-QEApJvn5Y/photos/Aa-ngMYWSYePKLF56Md73h-AccpKPk7Dypvyq3wr_ow1qMi0gJ7xY-pSrc6vCEXkzJMN-8z4K4NzD5ULYlCmBWTHgpI6dM4Yw3qb4vAc4Bj8H3pfkzmvL_RISn8PtaUP7XHLTjYMttyAcOVWiUfUcjnowhgHOBKEJ3FoZUmLt6cCWoP6PFw612-kx8sUtg9SZ02M3IkhQfKLdiL_UppOuhxo1Hjm9DgdiQeUB7mD_6OSkLe3Vfi3QLNu0gvyAJdBmT1B0SihAhiUbGx49jbSMkuHqr_MUSg8ng8AFHatJxZKHC7vKgePIYNI6hlHHUz7WMYB81EvXxzxysFps6Wox7PvM5RGguZX0dRDsLCwbsAU60O1c97a4RyF68MpeiEHA4ykfSW1T_AK9bsCSixU5w5h_cta2Aj6jGw"
     ],
     "approved_at": "2026-10-09T15:30:48.145Z",
-    "slug": "by-khanta"
+    "slug": "by-khanta",
+    "name_th": "น่ำเทียน"
   },
   {
     "name_en": "Lannua Zaab in the garden",
@@ -16189,8 +16254,8 @@
     "slug": "lannua-zaab-in-the-garden"
   },
   {
-    "name_en": "ธธดา TH•TH•DAH",
-    "name_zh": "ธธดา TH•TH•DAH",
+    "name_en": "TH•TH•DAH",
+    "name_zh": "TH•TH•DAH 創意泰菜",
     "description_en": "Tucked near the foot of Rama VIII Bridge, this small restaurant serves creative Thai home-style cooking. The standout is Gaeng Runjuan — a rich, punchy sour-and-spicy shrimp paste soup with spare ribs. Egg tofu in curry sauce is another uncommon combination worth trying. The menu blends old-school Thai recipes with contemporary touches, and the ingredients are carefully sourced. Note that the air conditioning runs quite strong, and a service charge plus VAT are added to the bill.",
     "description_zh": "位在 Rama VIII 橋頭附近，這家小餐廳做的是帶有創意的泰式家常料理。招牌 Gaeng Runjuan 是以豬肋排煮的酸辣蝦醬湯，風味濃烈紮實。蛋豆腐搭咖哩醬也是少見的組合。菜單融合老派泰國口味與當代手法，食材選料用心。餐廳空調較強，怕冷可留意。費用另加服務費與稅。",
     "category": "food",
@@ -16215,7 +16280,8 @@
       "places/ChIJw6dEMJ-Z4jARRAwiCTcnLW8/photos/Aa-ngMbf7uUGFAPr9xtk9PhedL17RmezvfeTzxTFXRwrOSlHE5l7PqJTOWzOyZSVtpQiIYaNUWkw0BwLyVRUGcYNqYOtyaGFH4eGy04MQGIqGDGA7FTQhA4SAY8xQz5hn2uE7WnGBodyhmdHZ3FyTs7zj0f3wY7Lh-14Yy-vlCS-S9kS4BxnDkXSQ7ce2ePpfrIKPfpR6VCyXJoHnO9V277HlV0FbIcpAedndtsedI-EYSKdZT1stXWdkONTu4s0FXYXgcxgPXt70NR4Z6Lq9E0u8Dk3F8K5K2ixAEdGvmCGswBLp1c_33XJIL-UzjaO91Va_vWSurknWn0obcutGbuJS4hy-wHXOntNI5nh3sM_lMFL-k7oPY5oLMY6yO_i603NZrRwbDYjVnuxv34M0e6tWH-zy6Y"
     ],
     "approved_at": "2026-10-09T15:30:48.796Z",
-    "slug": "th-th-dah"
+    "slug": "th-th-dah",
+    "name_th": "ธธดา"
   },
   {
     "name_en": "Krua Nai Soi",
@@ -16276,8 +16342,8 @@
     "slug": "sinchai-potchana"
   },
   {
-    "name_en": "ย่างให้สุด หยุดที่ทะเล",
-    "name_zh": "ย่างให้สุด หยุดที่ทะเล",
+    "name_en": "Yang Hai Sud Yud Tee Talay",
+    "name_zh": "Yang Hai Sud 韓式燒烤海鮮",
     "description_en": "Located down Charansanitwong Soi 32, this spot does Korean BBQ and seafood alongside a shabu-shabu menu. The prawns are notably large and the salmon gets consistent praise for freshness. The restaurant is air-conditioned, clean, and has its own parking—no rush on time limits either. There's also fruit ice cream to round out the meal.",
     "description_zh": "位於 Charansanitwong 32 巷內，主打韓式燒烤與海鮮，同時也提供涮涮鍋選項。蝦子個頭大、鮭魚品質好，食材新鮮是這裡的一貫水準。店內冷氣充足、空間乾淨，附有停車場，用餐沒有時間限制，整體 CP 值高。餐後還有水果冰淇淋可以點。",
     "category": "food",
@@ -16305,7 +16371,8 @@
     "slug": "yang-hai-sud-yud-tee-talay",
     "old_slugs": [
       "place-4e7adbac"
-    ]
+    ],
+    "name_th": "ย่างให้สุด หยุดที่ทะเล"
   },
   {
     "name_en": "Pad Thai Baitong",
@@ -16337,8 +16404,8 @@
     "slug": "pad-thai-baitong"
   },
   {
-    "name_en": "กินกับหมอก",
-    "name_zh": "กินกับหมอก",
+    "name_en": "Kin Kub Mok",
+    "name_zh": "Kin Kub Mok 運河露天泰菜",
     "description_en": "An open-air Thai restaurant tucked under the old Southern Bus Terminal U-turn overpass, right along Khlong Bangkok Noi. The Pad Kra Pao comes two ways — minced pork or crispy pork belly — both served with a fried egg. Tom Yum is the other thing to order: rich, spicy broth with generous portions of large fresh prawns. Stir-fried kale with pork is also a regular order. Note that Google Maps pins drop on the bridge above — the actual entrance is through the U-turn underpass below.",
     "description_zh": "藏在舊南部巴士站迴轉道下方、緊鄰運河的露天泰式小館。招牌打拋豬有兩種選擇：絞肉版和脆皮五花肉版，兩種都附荷包蛋。冬蔭功湯底濃郁、辣度到位，海鮮分量給得扎實，鮮蝦尺寸特別大。炒芥蘭也是常點選項，菜嫩肉軟。Google Maps 定位會導到橋上，實際入口要從迴轉道地下通道進來。",
     "category": "food",
@@ -16366,7 +16433,8 @@
     "slug": "kin-kub-mok",
     "old_slugs": [
       "place-d3e75767"
-    ]
+    ],
+    "name_th": "กินกับหมอก"
   },
   {
     "name_en": "The Reise",
@@ -16398,8 +16466,8 @@
     "slug": "the-reise"
   },
   {
-    "name_en": "ราชพฤกษ์ซีฟู้ด ประชาชื่น",
-    "name_zh": "ราชพฤกษ์ซีฟู้ด ประชาชื่น",
+    "name_en": "Ratchaphruek Seafood Pracha Chuen",
+    "name_zh": "Ratchaphruek 海鮮吃到飽",
     "description_en": "A roadside seafood spot in the Chatuchak area, serving an all-you-can-eat à la carte format with fish, crab, shrimp, and lobster — your choice of BBQ or cooked. The seafood is decent rather than ocean-fresh, and portions are designed so you can order a variety. No air conditioning, seating is a bit cluttered, and soft drinks are self-serve.",
     "description_zh": "位在 Chatuchak 拉差帕鑿區，路邊攤式的海鮮餐廳，提供無限量單點海鮮吃到飽形式，菜單涵蓋魚、螃蟹、蝦及龍蝦，可選燒烤或烹煮。海鮮不算超級新鮮，但整體水準穩定。沒有冷氣，空間稍顯雜亂，飲料採自助取用。",
     "category": "food",
@@ -16427,7 +16495,8 @@
     "slug": "ratchaphruek-seafood-pracha-chuen",
     "old_slugs": [
       "place-5b8f01b8"
-    ]
+    ],
+    "name_th": "ราชพฤกษ์ซีฟู้ด ประชาชื่น"
   },
   {
     "name_en": "Ob-Uan Prachachuen 20",
@@ -16662,8 +16731,8 @@
     "slug": "rue-poh-seafood"
   },
   {
-    "name_en": "กุ๊กขี้เมา บางนา",
-    "name_zh": "กุ๊กขี้เมา บางนา",
+    "name_en": "Kuk Khee Mao Bang Na",
+    "name_zh": "Kuk Khee Mao 泰菜（Bang Na）",
     "description_en": "The Bang Na branch of กุ๊กขี้เมา keeps the same bold, spicy flavors as the original. A standout dish is the crispy pork with mushroom sauce — spicy, sweet, and umami all at once. The space is clean and well-maintained, staff are attentive, and it works well for group gatherings. Parking is available at the back but limited.",
     "description_zh": "กุ๊กขี้เมา 的 Bang Na 分店，口味與本店保持一致，主打香辣濃郁的泰式料理。招牌是蘑菇醬脆豬肉，香辣、甜味與鮮味三者兼具。店面新淨整潔，服務人員積極到位，適合多人聚餐。店後方備有停車位，但數量有限。",
     "category": "food",
@@ -16691,7 +16760,8 @@
     "slug": "kuk-khee-mao-bang-na",
     "old_slugs": [
       "place-eaac000a"
-    ]
+    ],
+    "name_th": "กุ๊กขี้เมา บางนา"
   },
   {
     "name_en": "The Witch Antiques & Restaurant",
@@ -16839,8 +16909,8 @@
     "slug": "mitt-restaurant-and-space-ari-branch"
   },
   {
-    "name_en": "อร่อย อารีย์ Aroi Ari",
-    "name_zh": "อร่อย อารีย์ Aroi Ari",
+    "name_en": "Aroi Ari",
+    "name_zh": "Aroi Ari 素食泰菜",
     "description_en": "A vegetarian Thai restaurant tucked into Rama VI Soi 30, with a full page of vegan options on the menu. Standouts include warm Tofu Nway and tempeh dishes. If you're vegan rather than vegetarian, let the staff know—eggs are included by default. Rated 4.6 on Google, with a wide menu and affordable pricing.",
     "description_zh": "藏在 Rama VI Soi 30 的素食泰式餐廳，菜單裡有整頁純素選項，也有溫豆腐湯（Tofu Nway）和天貝（Tempeh）可以點。想吃純素要特別跟店員說，預設菜色是素食但含蛋。Google 評分 4.6，選擇多、價格親切。",
     "category": "food",
@@ -16865,7 +16935,8 @@
       "places/ChIJtQHqWQCf4jAR-2V0KYCFLw4/photos/Aa-ngMZkjkXDM7JuOAqpGaMHYvb6In_kLddlEB140N7MEbvmXGNsn90Xm43qpt2ZJ9UxpTmqiH8gEDfO-6ZTsQ0IOweRt2voWGYa2rCbtkbAIb6nANHB35RvQUV2fTSRV-60cTBQho3HIA7oGwyYgkEVWZO2lGqtq_osdc0ZoTeZgQJdDtuXZ3CS08pYbxU58OWhOv4ReqzliuW60N3FhR2g0A0h4trNv_EwUxr7yJ2pj8LR5UDWZ47Daf6fV47EIEhjUWI-Z9In1dEQxg_khu_TClv5EKJR6OC2mTwJI-Pq7BBTQScB6s4Dlf7V97rU8pMidygvbGuw8QeRExZQ_JHnuxtQTaWjH6AAkp1uN7oY8Ag_ye0ORygHDn6VApmsieOIRFgUrACLAJ5YwvTBDxGmjVkS5PNUc9wvKZPR4GiQs2-r3g"
     ],
     "approved_at": "2026-10-09T15:30:56.928Z",
-    "slug": "aroi-ari"
+    "slug": "aroi-ari",
+    "name_th": "อร่อย อารีย์"
   },
   {
     "name_en": "Baan Pueng Chom",
@@ -16926,8 +16997,8 @@
     "slug": "mae-panya-kitchen"
   },
   {
-    "name_en": "แซ่บสุดใจ อารีย์ - Sabsudjai Ari",
-    "name_zh": "แซ่บสุดใจ อารีย์ - Sabsudjai Ari",
+    "name_en": "Sabsudjai Ari",
+    "name_zh": "Sabsudjai 伊善菜（Ari）",
     "description_en": "An Isaan restaurant in the Ari area with consistently strong reviews. Go-to dishes include som tam with salmon, grilled pork neck (kor moo yang) with spicy dipping sauce, raw beef salad, and various yum salads dressed with fermented fish sauce (pla-rah). Hotpot is also on the menu. Delivery available via Grab.",
     "description_zh": "อารีย์一帶的東北泰料理（Isaan），評價極高。招牌有青木瓜沙拉配鮭魚、炭烤豬頸肉搭辣沾醬、生牛肉沙拉，以及用發酵魚露調味的各式涼拌，酸辣鹹鮮層次分明。也有火鍋選項。可外送（Grab）。",
     "category": "food",
@@ -16952,7 +17023,8 @@
       "places/ChIJhfXpIFOd4jAR9JEXzMGBXqw/photos/Aa-ngMZNORlfZiL2IaLQeT3ayL5_3JCt1MnlQ-dsO8uoh6SHSTEidiFXrpQti7zDPk1XfKZcdKgT74gqg4pQyZ-dfqLxyuWX90faM0r5qdHW-ngf1lfufTf3MsGX7EVZb4J-Oph8TVcD3JEHdP2NXyzcYD1hTdYgyBtYCaNvVaKt3mVJV1zTwUQvQWwHsy944rCiBGneoSrenFq6lY6Bcp4T5_U975jr08eUdN-VRery1_mEjtzzijkURkofrfhzaVGkGUd3ZZ1Xc3l7prFwefotvT_IxulLq-LGLyFYjSWU7QPuMuY5EUYJn7n0KmiBwjnZsvljS2Ulr3gOXAw4Va1-GzkuJlx57OmCokmbU4cNQo7ENRIbolI4sau39n3Sw3Cme1htFoVDxMEeY0TYWPKHysM8dMuPI2-EXDIOIfKqoeApzw"
     ],
     "approved_at": "2026-10-09T15:30:58.043Z",
-    "slug": "sabsudjai-ari"
+    "slug": "sabsudjai-ari",
+    "name_th": "แซ่บสุดใจ อารีย์"
   },
   {
     "name_en": "Mae Yui",
@@ -16984,8 +17056,8 @@
     "slug": "mae-yui"
   },
   {
-    "name_en": "Payaq Gallery Cafe & Bar พยัคฆ์ แกลเลอรี คาเฟ่ แอนด์ บาร์",
-    "name_zh": "Payaq Gallery Cafe & Bar พยัคฆ์ แกลเลอรี คาเฟ่ แอนด์ บาร์",
+    "name_en": "Payaq Gallery Cafe & Bar",
+    "name_zh": "Payaq 藝廊咖啡",
     "description_en": "A gallery cafe and bar tucked down a narrow alley near City Hall, with a courtyard shaded by a massive old tree and an air-conditioned indoor space. Art is displayed on the ground floor and upstairs. The cocktails are carefully made, and the iced tea is a repeat-order favourite. On music nights, expect a longer wait for food and drinks.",
     "description_zh": "藏在市政廳附近窄巷裡的藝廊咖啡吧，院子裡有一棵巨大的老樹覆蓋整片露天空間，室內有冷氣。除了藝廊展間，樓上還有畫作展覽。調酒用料認真，冰茶是回頭客常點的品項。音樂活動夜晚點餐和調酒等待時間較長，心裡有個底就好。",
     "category": "cafe",
@@ -17010,7 +17082,8 @@
       "places/ChIJk7PayMyZ4jARR3jIbOhr3Zw/photos/Aa-ngMbdspIh8MFLaWxk6-2KaXQ-CyzI-djnfYOzRPSn4o2NT6HxD_v5C9BFdNL7rewXfhuA2W7JiflO94dsmt9b0bf5pstxbwBQB6X0eL0nl_Gfu5rg4c8aKr2_63DG0E5vx3Fj8i3kE6v9M-HfK9dQ_ZuC-Dio9kr-5zI8TldUjfYw7pvdGTjmDB0iP3nOsriQpcPbyQpX4y61ChLqyz0S4es-KWg1I1YZSRW53F55hymVywIYGeawDtybB1010pAgvg0UQDscw23URd3KW92SxaTWmLTs1ohhl2ZudZnO4Nj4zmrhCrX-MRnlBewIyaCnA6sCW5D-uf8uQNp81FD7rznlw3DjjbMteFpbjQJP-2wWqM0AgKEDJZ9dAOMGEplCxu51nbQ5g6tGgLyFamq-mgzLpObcf3q3hYGJGOKTIkwX"
     ],
     "approved_at": "2026-10-09T15:30:58.775Z",
-    "slug": "payaq-gallery-cafe-and-bar"
+    "slug": "payaq-gallery-cafe-and-bar",
+    "name_th": "พยัคฆ์ แกลเลอรี คาเฟ่ แอนด์ บาร์"
   },
   {
     "name_en": "N10café",
@@ -17302,8 +17375,8 @@
     "slug": "unbranded-cafe"
   },
   {
-    "name_en": "Mae Somjai Cafe & Toast - แม่สมใจคาเฟ่",
-    "name_zh": "Mae Somjai Cafe & Toast - แม่สมใจคาเฟ่",
+    "name_en": "Mae Somjai Cafe & Toast",
+    "name_zh": "Mae Somjai 吐司咖啡",
     "description_en": "On Tri Phet Road in the old city area, this compact café is clean and minimalist with air conditioning. Menu highlights include yuzu jam toast, hojicha latte, and cha thai latte, alongside light meals like pork belly rice and tuna salad. The iced latte is smooth and not overly sweet.",
     "description_zh": "位於老城區 Tri Phet 路上，店內乾淨整潔、走簡約風格，有冷氣。招牌有柚子果醬吐司、焙茶拿鐵、泰式奶茶拿鐵，也供應豬五花飯和鮪魚沙拉等輕食。冰拿鐵口感滑順、甜度適中。",
     "category": "cafe",
@@ -17328,7 +17401,8 @@
       "places/ChIJIQKPI_SZ4jARFp-HxhzQ3KA/photos/Aa-ngMZt8UIrf12Mg9AZYQdYUTRXsGh6gd7bNb37lgwXd429tbs8giBRfF_Dl3EDyC7P_F-JBjfYiPHNxauJ5J-RY2KfbHLboIKK4M-H2YknXqZt5BHrS-4IEyH6OtrICqdcOvYTVp-y9J5ECKDHB46lZ7I_DXFtMpLnoHS5rYTVIIajZMRG68cmgzgT4WImTg6dS4VmZUEfIlWN3cYWYhapSlHNi7_BkeqfwCQdliLFmE6iIP5WJwzN_zhV5_zMnX4dLvf9y019AYvjxB64bS93jPWrYs5p2fnbCdyqAddTJJM3YR7XIPZa4TsDgOOgONLywP7VgyHsoTprSY-ACp_5Sbd83ORIO46t654PlUxCHkbtU-mLxRFcVFvQhAMw1XAGY-UCdY17gbDzgxVMnG4kpc6gHBDbL1HV3ytXvBc-pI-_aA"
     ],
     "approved_at": "2026-10-09T15:31:03.260Z",
-    "slug": "mae-somjai-cafe-and-toast"
+    "slug": "mae-somjai-cafe-and-toast",
+    "name_th": "แม่สมใจคาเฟ่"
   },
   {
     "name_en": "Le’ Bloom cafe",
@@ -17998,8 +18072,8 @@
     "slug": "liebe-coffee-and-roastery"
   },
   {
-    "name_en": "ทองไธม์ คาเฟ่",
-    "name_zh": "ทองไธม์ คาเฟ่",
+    "name_en": "Thong Thyme Cafe",
+    "name_zh": "Thong Thyme 咖啡廳",
     "description_en": "Located on Thanon Prasert-Manukitch in the Ram Inthra area, this café shares its space with a pet sport center. Coffee and food are on a similar level, with semi-self-service. The layout is notably private, making it a solid spot for solo visitors who want to read or work without being disturbed.",
     "description_zh": "位於 Ram Inthra 區的 Thanon Prasert-Manukitch 路上，這間咖啡廳同時附設寵物運動場地，兩者共存於同一空間。咖啡與餐點水準相近，採半自助服務模式。座位規劃相當私密，適合一個人來讀書或做創作。",
     "category": "cafe",
@@ -18027,7 +18101,8 @@
     "slug": "thong-thyme-cafe",
     "old_slugs": [
       "place-428c898a"
-    ]
+    ],
+    "name_th": "ทองไธม์ คาเฟ่"
   },
   {
     "name_en": "Forestpresso Cafe, Bistro and Co-working Space",
@@ -18175,8 +18250,8 @@
     "slug": "beachboy-coffee"
   },
   {
-    "name_en": "Just Space - จัสต์ สเปซ",
-    "name_zh": "Just Space - จัสต์ สเปซ",
+    "name_en": "Just Space",
+    "name_zh": "Just Space 老木屋咖啡",
     "description_en": "Tucked at the end of a walk-only alley off Soi Panichayakan Thonburi 6, this converted old wooden house runs its own micro-roastery. The slow bar offers six to seven single-origin beans—local Thai and international—for drip coffee, with espresso-based drinks and coffee cocktails also available. House-made baked goods round out the menu. The nearest parking lot is about 200 metres away and charges a flat daily fee.",
     "description_zh": "藏在 Soi Panichayakan Thonburi 6 小巷底的老木屋咖啡館，巷子窄到只能步行進入。主打單品手沖，備有六到七款來自泰國本地與世界各地的精選豆，店內自行微型烘焙。除了慢吧手沖，也提供義式奶咖與咖啡調酒。自製烘焙甜點也值得試試。附近約兩百公尺外有付費停車場可用。",
     "category": "cafe",
@@ -18201,7 +18276,8 @@
       "places/ChIJf78NRgCZ4jARINtbo4fdE7c/photos/Aa-ngMajt28Tb8gB6mjpXf48XmkndbTkz1nLcso26Mkj27M2LawJgyA__gXiDiHJc5OaAcNhTfXYwQNjCDyBhtkCv9MNWG8nJpZAx5Nqizm24e9Cw_h4qCfh58IanGSDl80wMTOiFg4wzMVaTzHD59eGnQkNWNYysYUo3momtw55kzyniSiXfqBKFQY_vUuWcvV4qRbIWSvwJMmFKYw7O_boYBrS2pw1ruk2nJ7AeIi-OXnSqxVaHs1134va6WcmefidWDQ-d6QrgImguW3Zre50aDQUKH59fxRc3vCuoPdCGNTG4dTBTnTTsxKGH162sZnz4k5xTX9FhGhu6i3oiBP-qkcHegO3xuOAWttWBiXwlUZDe5hRT74HEXiB-H0LXtfol--Hmd4r9lXk689XTNq4fejKf1BNhF8Gs-gC3OwnhQrQ"
     ],
     "approved_at": "2026-10-09T15:40:08.653Z",
-    "slug": "just-space"
+    "slug": "just-space",
+    "name_th": "จัสต์ สเปซ"
   },
   {
     "name_en": "Masonia Tree & Coffee Cafe",
@@ -19584,8 +19660,8 @@
   },
   {
     "id": "63813e3e-63ab-4cd9-9620-dbde817e7a85",
-    "name_en": "Harudot by Nana @Sukhumvit 71 ฮารุดอท บาย นานา แอท สุขุมวิท 71",
-    "name_zh": "Harudot by Nana @Sukhumvit 71 ฮารุดอท บาย นานา แอท สุขุมวิท 71",
+    "name_en": "Harudot by Nana Sukhumvit 71",
+    "name_zh": "Harudot 咖啡（Sukhumvit 71）",
     "description_zh": "位於 Sukhumvit 71，咖啡師會根據你的口味偏好推薦豆款，點 Dirty 或柑橘拿鐵都有一定水準。另有柚子氣泡飲 Shiro 可選。咖啡可搭配甜點享有套餐折扣。座位不多，尖峰時段要有心理準備。抹茶飲品預設有加糖，如果偏好無糖記得點單時告知。",
     "description_en": "On Sukhumvit 71, the baristas here know their beans and will tailor recommendations to your taste — the Dirty and citrus latte both hold up well. There's also Shiro, a yuzu sparkling drink. Ordering coffee with a sweet item gets you a bundle discount. Seating is limited, so expect it to fill up. The premium matcha comes sweetened by default, so specify if you want it unsweetened.",
     "category": "cafe",
@@ -19626,7 +19702,8 @@
       "Shiro"
     ],
     "approved_at": "2026-10-09T15:44:05.838Z",
-    "slug": "harudot-by-nana-sukhumvit-71-71"
+    "slug": "harudot-by-nana-sukhumvit-71-71",
+    "name_th": "ฮารุดอท บาย นานา แอท สุขุมวิท 71"
   },
   {
     "id": "92a8afbe-8117-4be7-9b8c-5d93cb32c53d",
@@ -19814,8 +19891,8 @@
   },
   {
     "id": "7b34dc7a-0616-4cbf-baff-b4ab2c4c7621",
-    "name_en": "รวยมิตร เอกมัย",
-    "name_zh": "รวยมิตร เอกมัย",
+    "name_en": "Ruay Mit Ekkamai",
+    "name_zh": "Ruay Mit 泰式家常菜（Ekkamai）",
     "description_zh": "Ekkamai 巷弄裡的泰式家常餐廳，菜色走傳統路線，但細節做得認真。鹹欖炒豬絞肉香氣十足、日式梅子豬絞肉湯口味獨特，伊森和牛牛舌和臘腸沙拉也是常被點的菜。餐廳有兩層樓，二樓可以電話預約、相對安靜。空調夠冷，適合多人聚餐。",
     "description_en": "A traditional Thai restaurant tucked along Ekkamai, where the cooking is more careful than the modest setting suggests. Standout dishes include minced pork wok-fried with salted olive, minced pork soup with Japanese ume plum, Isan wagyu tongue, and lapchiong salad. The restaurant has two floors — you can call ahead to reserve a second-floor table if you want more privacy. Air conditioning is strong, and the space is comfortable for group meals.",
     "category": "food",
@@ -19865,7 +19942,8 @@
     "slug": "ruay-mit-ekkamai",
     "old_slugs": [
       "place-7b34dc7a"
-    ]
+    ],
+    "name_th": "รวยมิตร เอกมัย"
   },
   {
     "id": "f2381130-cb2b-495f-a233-1e74524cd5d0",
@@ -23139,8 +23217,8 @@
   },
   {
     "id": "24fd2a11-9f73-466e-bb51-f1a690656774",
-    "name_en": "นายท่านคาเฟ่ Nine Than Cafe",
-    "name_zh": "นายท่านคาเฟ่ Nine Than Cafe",
+    "name_en": "Nine Than Cafe",
+    "name_zh": "Nine Than 稻田咖啡",
     "description_zh": "位於 Nong Chok 農業區，咖啡廳四周被高大樹木圍繞，部分座位緊鄰稻田。招牌是鮮蝦水果沙拉，口味酸甜帶微辣。百香果汁也值得一試。傍晚五點前後光線最好，園區內有多種座位選擇，適合拍照。",
     "description_en": "Tucked in the Nong Chok farming district, this cafe sits among tall trees with some seating right beside rice fields. The standout dish is the shrimp fruit salad — sweet, sour, and lightly spicy. The passion fruit juice is worth ordering too. Lighting is best around 5 PM, and there are several seating zones scattered through the garden.",
     "category": "cafe",
@@ -23183,7 +23261,8 @@
     "approved_at": "2026-11-09T08:27:39.985Z",
     "slug": "nine-than-cafe",
     "trending_at": "2026-11-09T08:32:51.853Z",
-    "base_tag": "hidden_gem"
+    "base_tag": "hidden_gem",
+    "name_th": "นายท่านคาเฟ่"
   },
   {
     "id": "a95bd8bc-b115-4eab-9dca-750fa9d585c7",
