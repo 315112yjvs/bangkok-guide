@@ -22745,7 +22745,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Lloyd's%20Club%2030th%2C%20101%20Thong%20Lo%2C%20Khlong%20Tan%20Nuea%2C%20Subdistrict%2C%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJ9wJNuA2f4jARGBhmp81kLkA",
     "rating": 4.5,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Thonglor",
     "mentions": 1,
     "evidence": [
@@ -22769,7 +22769,9 @@
       "Live DJ"
     ],
     "approved_at": "2026-11-09T08:27:39.827Z",
-    "slug": "lloyds-club"
+    "slug": "lloyds-club",
+    "trending_at": "2026-11-09T08:33:05.004Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "4d2e565f-ffa5-4721-a44a-a4be2c6bffc0",
@@ -22791,7 +22793,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Enough%20for%20Today%2074%2F78%2C%2010%20%E0%B8%8B.%20%E0%B8%A7%E0%B8%B4%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B4%E0%B8%95%2016%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%88%E0%B8%AD%E0%B8%A1%E0%B8%9E%E0%B8%A5%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%88%E0%B8%95%E0%B8%B8%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010900&query_place_id=ChIJIc_p2bSd4jARZhwB3Wq3vhE",
     "rating": 5,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -22815,7 +22817,9 @@
       "Sato Cocktails"
     ],
     "approved_at": "2026-11-09T08:27:39.852Z",
-    "slug": "enough-for-today"
+    "slug": "enough-for-today",
+    "trending_at": "2026-11-09T08:33:06.856Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "dd66be8b-6797-48ef-a841-d775e2f4b6f1",
@@ -22837,7 +22841,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Harmony%20Krungthep%207%20Soi%20Yen%20Akat%203%2C%20Khwaeng%20Chong%20Nonsi%2C%20Khet%20Yan%20Nawa%2C%20Krung%20Thep%20Maha%20Nakhon%2010120&query_place_id=ChIJtQmATwCf4jARv6si6RYeZYg",
     "rating": 5,
     "price_range": 3,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -22861,7 +22865,9 @@
       "Aged Steak"
     ],
     "approved_at": "2026-11-09T08:27:39.874Z",
-    "slug": "harmony-krungthep"
+    "slug": "harmony-krungthep",
+    "trending_at": "2026-11-09T08:33:08.880Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "9eeb7b4e-2c15-47e2-be2e-64a51856af9b",
@@ -22883,7 +22889,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=LOS%20Tacos%20Thailand%20theCOMMONS%20Thonglor%20335%2C%2017%20%E0%B8%96.%20%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A5%E0%B9%88%E0%B8%AD%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B8%99%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B7%E0%B8%AD%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%A7%E0%B8%B1%E0%B8%92%E0%B8%99%E0%B8%B2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJ85T5d-yf4jAR1NjGgiDB_2Q",
     "rating": 4.7,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Thonglor",
     "mentions": 1,
     "evidence": [
@@ -22907,7 +22913,9 @@
       "Cantarito"
     ],
     "approved_at": "2026-11-09T08:27:39.896Z",
-    "slug": "los-tacos-thailand"
+    "slug": "los-tacos-thailand",
+    "trending_at": "2026-11-09T08:33:10.553Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "eb8ffce3-f796-496a-b9e3-48440f690fc9",
@@ -22929,7 +22937,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Matshun.bkk%20129%2F8%20Thanon%20Nonsi%2C%20Khwaeng%20Chong%20Nonsi%2C%20Khet%20Yan%20Nawa%2C%20Krung%20Thep%20Maha%20Nakhon%2010120&query_place_id=ChIJEf97HQCf4jARAyYx35aHxUU",
     "rating": 4.4,
     "price_range": 1,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -22953,7 +22961,9 @@
       "Berry Tiramisu"
     ],
     "approved_at": "2026-11-09T08:27:39.914Z",
-    "slug": "matshun-bkk"
+    "slug": "matshun-bkk",
+    "trending_at": "2026-11-09T08:32:59.000Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "726bcf2b-ea67-412b-a5b6-d2d33c18f185",
@@ -22975,7 +22985,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Matcha%20State%20150%20%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A7%E0%B8%99%E0%B8%94%E0%B8%AD%E0%B8%81%E0%B8%A5%E0%B8%B3%E0%B9%80%E0%B8%88%E0%B8%B5%E0%B8%A2%E0%B8%81%20Tambon%20Bang%20Khun%20Kong%2C%20Amphoe%20Bang%20Kruai%2C%20Chang%20Wat%20Nonthaburi%2011130&query_place_id=ChIJDyyFdNub4jARFssTwrCZgLw",
     "rating": 4.7,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -22999,7 +23009,9 @@
       "Coconut Pudding"
     ],
     "approved_at": "2026-11-09T08:27:39.940Z",
-    "slug": "matcha-state"
+    "slug": "matcha-state",
+    "trending_at": "2026-11-09T08:33:00.653Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "177e0338-51ae-42c3-9b35-21eba4b452fd",
@@ -23021,7 +23033,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=l%20o%20m%20l%20o%20m%20%E2%80%94%20maitrichit%20350%20wongwian%2022%20karakada%20khom%2C%20Saphan%20Yuan%20Rd%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9B%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%9A%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%9B%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B8%9B%E0%B8%A3%E0%B8%B2%E0%B8%9A%E0%B8%A8%E0%B8%B1%E0%B8%95%E0%B8%A3%E0%B8%B9%E0%B8%9E%E0%B9%88%E0%B8%B2%E0%B8%A2%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010100&query_place_id=ChIJq3plrs6Z4jARR7Km7dU3tm8",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -23045,7 +23057,9 @@
       "Deep Tissue"
     ],
     "approved_at": "2026-11-09T08:27:39.966Z",
-    "slug": "l-o-m-l-o-m-maitrichit"
+    "slug": "l-o-m-l-o-m-maitrichit",
+    "trending_at": "2026-11-09T08:32:53.325Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "24fd2a11-9f73-466e-bb51-f1a690656774",
@@ -23067,7 +23081,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%99%E0%B8%B2%E0%B8%A2%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%B2%E0%B9%80%E0%B8%9F%E0%B9%88%20Nine%20Than%20Cafe%20Sangkha%20Santi%20Suk%20Rd%2C%20Khwaeng%20Krathum%20Rai%2C%20Khet%20Nong%20Chok%2C%20Krung%20Thep%20Maha%20Nakhon%2010530&query_place_id=ChIJyww0YL1vHTERkrxcvg4vjro",
     "rating": 4.7,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -23091,7 +23105,9 @@
       "Passion Fruit Juice"
     ],
     "approved_at": "2026-11-09T08:27:39.985Z",
-    "slug": "nine-than-cafe"
+    "slug": "nine-than-cafe",
+    "trending_at": "2026-11-09T08:32:51.853Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "a95bd8bc-b115-4eab-9dca-750fa9d585c7",
@@ -23113,7 +23129,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Eich.bkk%2073%20Soi%20Charoen%20Mit%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJs0zBMACf4jARNaJN5E8cnog",
     "rating": 4.8,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Sukhumvit",
     "mentions": 1,
     "evidence": [
@@ -23137,7 +23153,9 @@
       "Croffle"
     ],
     "approved_at": "2026-11-09T08:27:40.021Z",
-    "slug": "eich-bkk"
+    "slug": "eich-bkk",
+    "trending_at": "2026-11-09T08:32:49.789Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "3b5f98bc-90f6-4ecb-99d9-61ded9c7cf13",
@@ -23159,7 +23177,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Sam%20Roasters%20-%20sathorn%2012%2091%20Soi%20Silom%209%2C%20Si%20Lom%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJ4ZYa6_iZ4jARox7umvoF_MM",
     "rating": 4.8,
     "price_range": 1,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Silom",
     "mentions": 1,
     "evidence": [
@@ -23183,7 +23201,9 @@
       "Butter-Glazed Doughnut"
     ],
     "approved_at": "2026-11-09T08:27:40.045Z",
-    "slug": "sam-roasters-sathorn-12"
+    "slug": "sam-roasters-sathorn-12",
+    "trending_at": "2026-11-09T08:32:48.052Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "3f5e3484-0a87-4af3-aa5e-5528326b6735",
@@ -23205,7 +23225,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=LUCCA%20Songwat%201300%20Song%20Wat%20Rd%2C%20Samphanthawong%2C%20Bangkok%2010100%2C%20%E0%B8%96.%20%E0%B8%97%E0%B8%A3%E0%B8%87%E0%B8%A7%E0%B8%B2%E0%B8%94%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%AA%E0%B8%B1%E0%B8%A1%E0%B8%9E%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%A7%E0%B8%87%E0%B8%A8%E0%B9%8C%20%E0%B9%80%E0%B8%82%E0%B8%95%E0%B8%AA%E0%B8%B1%E0%B8%A1%E0%B8%9E%E0%B8%B1%E0%B8%99%E0%B8%98%E0%B8%A7%E0%B8%87%E0%B8%A8%E0%B9%8C%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJu7bhKQCZ4jARniQ_Ezn4So0",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Yaowarat",
     "mentions": 1,
     "evidence": [
@@ -23229,7 +23249,9 @@
       "Eggs Benedict"
     ],
     "approved_at": "2026-11-09T08:27:40.066Z",
-    "slug": "lucca-songwat"
+    "slug": "lucca-songwat",
+    "trending_at": "2026-11-09T08:32:46.023Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "6946cdd2-fd2d-4bd7-a856-989fcf731761",
@@ -23251,7 +23273,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Tonkatsu%20Marushichi%20Thailand%20991%20Rama%20I%20Rd%2C%20Khwaeng%20Pathum%20Wan%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJwzKcaMWf4jAR1lNrZl98Lc0",
     "rating": 4.2,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Siam",
     "mentions": 1,
     "evidence": [
@@ -23275,7 +23297,9 @@
       "Sous Vide Pork"
     ],
     "approved_at": "2026-11-09T08:27:40.085Z",
-    "slug": "tonkatsu-marushichi-thailand"
+    "slug": "tonkatsu-marushichi-thailand",
+    "trending_at": "2026-11-09T08:32:44.528Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "9fd0bf2b-8762-4d7c-94d7-900ec6490597",
@@ -23297,7 +23321,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Jelly%20Happens.%20473%20Thanon%20Si%20Ayutthaya%2C%20Khwaeng%20Thung%20Phaya%20Thai%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400&query_place_id=ChIJfwJ8druf4jARaTV-2evHxMM",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Ratchathewi",
     "mentions": 1,
     "evidence": [
@@ -23321,7 +23345,9 @@
       "Jelly Exhibition"
     ],
     "approved_at": "2026-11-09T08:27:40.109Z",
-    "slug": "jelly-happens"
+    "slug": "jelly-happens",
+    "trending_at": "2026-11-09T08:32:42.842Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "c112c233-1166-4a5d-b73f-0bb5aa1cf285",
@@ -23343,7 +23369,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=SATO%20SAMMOSORN%205%2C%2015%20Phaya%20Thai%20Rd%2C%20Phaya%20Thai%2C%20Khet%20Ratchathewi%2C%20Krung%20Thep%20Maha%20Nakhon%2010400&query_place_id=ChIJydIwEgCf4jARL3nB96xeEcU",
     "rating": 4.8,
     "price_range": 3,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Ratchathewi",
     "mentions": 1,
     "evidence": [
@@ -23366,6 +23392,9 @@
       "Sato",
       "Pork Satay"
     ],
-    "approved_at": "2026-11-09T08:27:40.132Z"
+    "approved_at": "2026-11-09T08:27:40.132Z",
+    "slug": "sato-sammosorn",
+    "trending_at": "2026-11-09T08:32:41.167Z",
+    "base_tag": "hidden_gem"
   }
 ]
