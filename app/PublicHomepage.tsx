@@ -6,7 +6,7 @@ import { strings } from '@/lib/i18n'
 import { LanguageToggle } from '@/components/LanguageToggle'
 import { CategoryTabs, type HomeTab } from '@/components/CategoryTabs'
 import { RouteList } from '@/components/RouteList'
-import { isHiddenCategory } from '@/lib/site'
+import { isHiddenCategory, INSTAGRAM_URL } from '@/lib/site'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
@@ -334,6 +334,16 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                 {lang === 'zh' ? '客製行程' : 'Custom trip'}
               </Link>
             )}
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram"
+              className="inline-flex items-center gap-1.5 text-[12px] font-bold text-white bg-white/15 hover:bg-white/25 border border-white/30 rounded-full px-3 py-1.5 backdrop-blur-sm transition-colors"
+            >
+              <Icon name="instagram" size={14} strokeWidth={2} />
+              {lang === 'zh' ? '追蹤 IG' : 'Instagram'}
+            </a>
             <LanguageToggle lang={lang} setLang={setLang} />
           </div>
 

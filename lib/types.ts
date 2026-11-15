@@ -57,6 +57,7 @@ export type Location = {
   local_ratio?: number   // 0–100 (% local customers)
   curator_note?: string      // short personal observation from the site owner
   social_embed_url?: string  // TikTok or Instagram post URL to embed
+  has_video?: boolean        // 卡片用：有站主影片（卡片資料不帶影片網址，只帶這個旗標）
   mentions?: number          // 找熱點時被幾個不同來源提到（待審排序用）
   evidence?: Evidence[]      // 提到這家店的來源清單（待審時判斷為什麼紅）
   temple?: TempleInfo        // 拜拜頁專屬內容

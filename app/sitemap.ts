@@ -45,6 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const extraUrls: MetadataRoute.Sitemap = [
     ...TEMPLE_ROUTES.map((r) => ({ url: `${BASE_URL}/guide/${r.slug}`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.9 })),
     { url: `${BASE_URL}/diary`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.6 },
+    { url: `${BASE_URL}/ig`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.5 },
     ...(tripEnabled ? [{ url: `${BASE_URL}/trip`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 }] : []),
   ]
 

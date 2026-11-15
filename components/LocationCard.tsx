@@ -152,6 +152,12 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
             <TagIcon size={11} className="shrink-0 text-brand" /> {lang === 'zh' ? tagMeta.zh : tagMeta.en}
           </span>
         )}
+        {/* 站主拍過影片的店 */}
+        {location.has_video && (
+          <span className="absolute top-2 right-2 inline-flex items-center gap-1 text-[10px] font-bold bg-black/65 text-white px-1.5 py-0.5 rounded-sm">
+            <Icon name="play" size={9} fill="currentColor" strokeWidth={0} /> {lang === 'zh' ? '曼谷人拍過' : 'Our video'}
+          </span>
+        )}
       </div>
 
       <div className="p-2.5 flex flex-col flex-1">

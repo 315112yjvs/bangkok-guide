@@ -14,6 +14,7 @@ import type { WeekHours, OpeningHours } from '@/lib/placeInfo'
 import type { NearestStation } from '@/lib/transit'
 import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
+import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from '@/lib/site'
 import { buildMapsUrl, extractPlaceId } from '@/lib/maps'
 import { photoUrl, photoPosition, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
@@ -331,6 +332,19 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
             <span className="text-sm text-muted">{CATEGORY_LABEL[location.category]?.[lang] ?? location.category}</span>
           </div>
 
+          {/* 站主拍過這間：放在店名下方，一點就捲到影片 */}
+          {location.social_embed_url && (
+            <a
+              href="#our-video"
+              onClick={(e) => { e.preventDefault(); document.getElementById('our-video')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
+              className="flex items-center gap-2 mb-5 -mt-1 px-3.5 py-2.5 rounded-lg bg-ink text-white text-[13px] font-bold hover:bg-ink/85 transition-colors"
+            >
+              <Icon name="play" size={13} fill="currentColor" strokeWidth={0} />
+              {lang === 'zh' ? '看曼谷人怎麼拍這間' : 'Watch our video of this place'}
+              <Icon name="chevron-down" size={14} strokeWidth={2} className="ml-auto opacity-70" />
+            </a>
+          )}
+
           {location.curator_note && (
             <div className="mb-5 border-l-2 border-brand pl-4 py-1">
               <p className="text-[11px] font-bold text-brand tracking-wide mb-1">
@@ -431,11 +445,26 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
           )}
 
           {location.social_embed_url && (
-            <div className="mb-6">
-              <h2 className="text-[12px] font-bold text-muted mb-2.5 tracking-[0.08em]">{lang === 'zh' ? '社群影片' : 'Social Video'}</h2>
+            <div id="our-video" className="mb-6 scroll-mt-4">
+              <h2 className="text-[12px] font-bold text-muted mb-2.5 tracking-[0.08em]">{lang === 'zh' ? '曼谷人拍的影片' : 'Our Video'}</h2>
               <SocialEmbed url={location.social_embed_url} />
             </div>
           )}
+
+          {/* 追蹤 IG：有影片的店放在影片下面，沒影片的店也放一個小連結 */}
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener"
+            className="flex items-center gap-3 mb-6 px-4 py-3 rounded-lg border border-line hover:border-ink/30 transition-colors"
+          >
+            <Icon name="instagram" size={22} className="text-brand shrink-0" />
+            <span className="flex-1 min-w-0">
+              <span className="block text-[14px] font-bold text-ink">{lang === 'zh' ? '在 IG 看更多曼谷人影片' : 'More Bangkok videos on Instagram'}</span>
+              <span className="block text-[12px] text-muted">@{INSTAGRAM_HANDLE}</span>
+            </span>
+            <span className="text-[12px] font-bold text-brand shrink-0">{lang === 'zh' ? '追蹤' : 'Follow'} →</span>
+          </a>
 
           <TripCta lang={lang} />
 

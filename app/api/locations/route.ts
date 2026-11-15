@@ -58,6 +58,7 @@ async function handlePOST(req: NextRequest) {
   }
   // 手動選「話題爆紅」要記下時間，不然會被當成過期的爆紅，直接顯示成在地私藏
   if (location.tag === 'trending') location.trending_at = new Date().toISOString()
+  if (location.social_embed_url) location.featured = true
   if (location.featured) location.featured_at = new Date().toISOString()
   // 描述沒填或只寫幾個字（例如「咖啡廳」），儲存時自動請 AI 寫；失敗就保留原本填的
   if ((location.description_zh ?? '').trim().length < 20 && location.name_en?.trim()) {
@@ -93,6 +94,8 @@ async function handlePATCH(req: NextRequest) {
       if (locations[idx].tag && locations[idx].tag !== 'trending') updates.base_tag = locations[idx].tag
     }
     // 勾選「曼谷人帶你去」記下時間，首頁照勾選時間新到舊排
+    // 第一次貼上站主影片連結：自動放進「曼谷人帶你去」
+    if (updates.social_embed_url && !locations[idx].social_embed_url && !locations[idx].featured && updates.featured === undefined) updates.featured = true
     if (updates.featured === true && !locations[idx].featured) updates.featured_at = new Date().toISOString()
     if (updates.featured === false) updates.featured_at = undefined
     locations[idx] = { ...locations[idx], ...updates }

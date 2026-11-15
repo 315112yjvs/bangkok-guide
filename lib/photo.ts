@@ -16,10 +16,9 @@ export function photoUrl(ref: string | undefined | null, w = 800): string {
 
 // 直的照片放進橫的框只露出中間一段；有記錄文字位置（photo_focus）就把那一段移到畫面中間。
 // 以卡片大約露出照片高度 42% 估算 object-position，讓文字中心落在框的正中央
-export function photoPosition(focus: Record<string, number> | undefined, ref: string | undefined): CSSProperties | undefined {
+export function photoPosition(focus: Record<string, number> | undefined, ref: string | undefined, v = 0.42): CSSProperties | undefined {
   const c = ref ? focus?.[ref] : undefined
   if (c === undefined) return undefined
-  const v = 0.42
   const pos = Math.max(0, Math.min(1, (c / 100 - v / 2) / (1 - v)))
   return { objectPosition: `50% ${Math.round(pos * 100)}%` }
 }
