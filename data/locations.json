@@ -23772,7 +23772,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=TSUTAYA%20Bookstore%20The%20Storeys%2C%20One%20Bangkok%2C%20Unit%202G27%2C%202117%2C%20G%20Floor%20and%201st%20Floor%20199%20Thanon%20Witthayu%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJkXeyVACf4jARIsOQQua-SnQ",
     "rating": 4.6,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Siam",
     "mentions": 1,
     "evidence": [
@@ -23796,7 +23796,9 @@
       "Wine & Drinks"
     ],
     "approved_at": "2026-11-15T07:55:28.194Z",
-    "slug": "tsutaya-bookstore"
+    "slug": "tsutaya-bookstore",
+    "trending_at": "2026-11-15T12:28:49.354Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "4ad8c489-5ccd-4f81-9e84-bde67db928ff",
@@ -23818,7 +23820,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Rob's%20Berry%20-%20Silom%2036%2C%201%20Convent%20Rd%2C%20%E0%B8%AA%E0%B8%B5%E0%B8%A5%E0%B8%A1%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJibRsieWf4jARDZhi1aP364c",
     "rating": 4.6,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bang Rak",
     "mentions": 1,
     "evidence": [
@@ -23842,7 +23844,9 @@
       "Crunchy Monkey"
     ],
     "approved_at": "2026-11-15T07:55:28.214Z",
-    "slug": "robs-berry-silom"
+    "slug": "robs-berry-silom",
+    "trending_at": "2026-11-15T12:28:51.223Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "eb7bb053-2048-4548-b7db-2baaa9c8e5d9",
@@ -23864,7 +23868,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Bacha%20Coffee%20Siam%20Paragon%20Siam%20Paragon%20Shopping%20Center%20Building%2C%20No.%20991%20Unit%20G15%2CGC1%2C%20G%20Floor%2C%20%E0%B8%96.%20%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A3%E0%B8%B2%E0%B8%A1%E0%B8%97%E0%B8%B5%E0%B9%88%201%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9B%E0%B8%97%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B1%E0%B8%99%20Subdistrict%2C%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010330&query_place_id=ChIJuSKxXgCf4jAR-_vdS8kcUXA",
     "rating": 4.4,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -23888,7 +23892,9 @@
       "French Toast"
     ],
     "approved_at": "2026-11-15T07:55:28.232Z",
-    "slug": "bacha-coffee-siam-paragon"
+    "slug": "bacha-coffee-siam-paragon",
+    "trending_at": "2026-11-15T12:28:53.265Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "13057aba-444c-4b6a-8bba-7d47f94589a7",
@@ -23910,7 +23916,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=PARRIS%20Atelier%20364%20Soi%20Yothinpattana%203%20Khwaeng%20Khlong%20Chan%2C%20Khet%20Bang%20Kapi%2C%20Krung%20Thep%20Maha%20Nakhon%2010240&query_place_id=ChIJxQoXmTdjHTER8x9Cqz8ZIJQ",
     "rating": 4.7,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -23934,7 +23940,9 @@
       "Dirty Coffee"
     ],
     "approved_at": "2026-11-15T07:55:28.252Z",
-    "slug": "parris-atelier"
+    "slug": "parris-atelier",
+    "trending_at": "2026-11-15T12:28:54.851Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "ab1358c6-7bac-4189-9ed7-960dd267588f",
@@ -23956,7 +23964,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Plum%20and%20tobacco%2078%20Soi%2C%20Khwaeng%20Chom%20Phon%2C%20%E0%B8%88%E0%B8%95%E0%B8%B8%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A3%20Krung%20Thep%20Maha%20Nakhon%2010900&query_place_id=ChIJs28-n5qd4jARaUcFHOtaJLQ",
     "rating": 5,
     "price_range": 1,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -23980,7 +23988,9 @@
       "Focaccia Sandwich"
     ],
     "approved_at": "2026-11-15T07:55:28.276Z",
-    "slug": "plum-and-tobacco"
+    "slug": "plum-and-tobacco",
+    "trending_at": "2026-11-15T12:28:56.399Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "1da220bc-3cc2-45b9-9ac0-4a711d0cffea",
@@ -24002,7 +24012,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Oliveto%20Cafe%204088%20Thanon%20Rama%20IV%2C%20Khwaeng%20Phra%20Khanong%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJP8D8ET-f4jAR0AYvhzJqGBQ",
     "rating": 4.8,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Phra Khanong",
     "mentions": 1,
     "evidence": [
@@ -24026,7 +24036,9 @@
       "Pesto Shrimp Pasta"
     ],
     "approved_at": "2026-11-15T07:55:28.294Z",
-    "slug": "oliveto-cafe"
+    "slug": "oliveto-cafe",
+    "trending_at": "2026-11-15T12:28:57.915Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "7ed8861e-40d4-4b29-9038-424d08a8d715",
@@ -24048,7 +24060,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Tonkin%20Annam%2069%20Thanon%20Maha%20Rat%2C%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%20%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%A3%E0%B8%A1%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%8A%2C%20Khet%20Phra%20Nakhon%2C%20Krung%20Thep%20Maha%20Nakhon%2010200&query_place_id=ChIJ9dfwywWZ4jARKuuXPZ3f1tg",
     "rating": 4.3,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Old City",
     "mentions": 1,
     "evidence": [
@@ -24072,6 +24084,8 @@
       "Bánh Xèo"
     ],
     "approved_at": "2026-11-15T07:55:28.312Z",
-    "slug": "tonkin-annam"
+    "slug": "tonkin-annam",
+    "trending_at": "2026-11-15T12:29:00.017Z",
+    "base_tag": "hidden_gem"
   }
 ]
