@@ -41,13 +41,16 @@ const TAG_ORDER: LocationTag[] = ['trending', 'hidden_gem', 'evergreen']
 // 爆紅時間（沒有就用上架時間）新到舊
 const trendTime = (l: Location) => new Date(l.trending_at ?? l.approved_at ?? 0).getTime()
 const byNewestTrending = (items: Location[]) => [...items].sort((a, b) => trendTime(b) - trendTime(a))
+// 曼谷人帶你去：勾選時間新到舊
+const byNewestFeatured = (items: Location[]) =>
+  [...items].sort((a, b) => new Date(b.featured_at ?? 0).getTime() - new Date(a.featured_at ?? 0).getTime())
 
 // 每個首頁分區最多顯示幾筆（其餘按「看全部」進完整清單）
 const SECTION_LIMIT = 15
 // 篩選/搜尋的網格視圖一次顯示幾筆（其餘按「載入更多」），避免一次渲染上百張卡片
 const GRID_PAGE = 30
 
-type SpecialFilter = 'all' | 'nearby' | 'saved'
+type SpecialFilter = 'all' | 'nearby' | 'saved' | 'featured'
 
 export function PublicHomepage({ locations, diary = [] }: Props) {
   const { lang, setLang } = useLanguage()
@@ -183,7 +186,8 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
       const matchSpecial =
         specialFilter === 'all' ||
         specialFilter === 'nearby' ||
-        (specialFilter === 'saved' && savedIds.has(loc.id))
+        (specialFilter === 'saved' && savedIds.has(loc.id)) ||
+        (specialFilter === 'featured' && !!loc.featured)
       const haystack = terms.length
         ? [loc.name_zh, loc.name_en, loc.description_zh, loc.description_en, loc.address, getArea(loc), ...(loc.highlights ?? []), loc.temple ? `拜拜 廟 temple ${loc.temple.deity_zh}` : '', ...(loc.temple?.wishes_zh ?? [])].join('\n').toLowerCase()
         : ''
@@ -231,10 +235,11 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
       return [...filtered].sort((a, b) =>
         haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, a.lat, a.lng) - haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, b.lat, b.lng))
     }
+    if (specialFilter === 'featured') return byNewestFeatured(filtered)
     if (activeTag === 'trending') return byNewestTrending(filtered)
     return filtered
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filtered, sortBy, userLocation, landmark, activeTag])
+  }, [filtered, sortBy, userLocation, landmark, activeTag, specialFilter])
 
   const sectionsByTag = useMemo(() => {
     if (!showSections) return null
@@ -249,6 +254,62 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
     }
     return map
   }, [filtered, showSections, shuffleSeed])
+
+  const featuredItems = useMemo(
+    () => (showSections ? byNewestFeatured(filtered.filter((l) => l.featured)) : []),
+    [filtered, showSections],
+  )
+
+  // 首頁橫向分區（曼谷人帶你去、話題爆紅、在地私藏、經典必訪共用）
+  const renderSection = ({ key, icon, title, subtitle, items, onSeeAll }: {
+    key: string; icon: React.ReactNode; title: string; subtitle: string; items: Location[]; onSeeAll: () => void
+  }) => (
+                <section key={key} className="mt-8 pt-7 border-t border-line first:border-t-0 first:mt-0 first:pt-5">
+                  {/* Section header */}
+                  <div className="flex items-end justify-between gap-3 px-4 mb-3">
+                    <div className="min-w-0">
+                      <h2 className="flex items-center gap-2 font-liufen text-[20px] lg:text-[24px] text-ink leading-tight">
+                        {icon} {title}
+                      </h2>
+                      <p className="text-[12px] text-muted mt-1">{subtitle}</p>
+                    </div>
+                    <button
+                      onClick={onSeeAll}
+                      className="shrink-0 text-[12px] text-brand hover:text-brand-dark hover:underline underline-offset-4 whitespace-nowrap"
+                    >
+                      {lang === 'zh' ? `看全部 ${items.length} 筆` : `See all ${items.length}`} →
+                    </button>
+                  </div>
+                  {/* Horizontal scroll cards — 每區隨機抽 SECTION_LIMIT 筆，其餘按「看全部」進完整清單 */}
+                  <DragScroll className="flex gap-3 overflow-x-auto no-scrollbar px-4 pb-1 lg:cursor-grab">
+                    {items.slice(0, SECTION_LIMIT).map((loc, i) => (
+                      <Reveal key={loc.id} delay={i < 5 ? i * 70 : 0} className="shrink-0 w-44 lg:w-52 h-[250px] lg:h-[290px]">
+                        <LocationCard
+                          location={loc}
+                          lang={lang}
+                          distanceKm={nearbyAnchor ? haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, loc.lat, loc.lng) : undefined}
+                          saved={savedIds.has(loc.id)}
+                          onToggleSave={handleToggleSave}
+                          compact
+                          hideTag
+                        />
+                      </Reveal>
+                    ))}
+                    {items.length > SECTION_LIMIT && (
+                      <button
+                        onClick={onSeeAll}
+                        className="shrink-0 w-32 lg:w-36 h-[250px] lg:h-[290px] rounded-lg border border-line hover:border-ink/30 transition-colors flex flex-col items-center justify-center gap-2 text-muted"
+                      >
+                        <span className="w-10 h-10 rounded-full border border-line flex items-center justify-center text-ink">
+                          <Icon name="chevron-right" size={18} />
+                        </span>
+                        <span className="text-[12px] font-bold">{lang === 'zh' ? '看全部' : 'See all'}</span>
+                        <span className="text-[11px] text-gray-400">{items.length} {lang === 'zh' ? '筆' : 'places'}</span>
+                      </button>
+                    )}
+                  </DragScroll>
+                </section>
+  )
 
   return (
     <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen overflow-hidden relative lg:border-x lg:border-line">
@@ -505,62 +566,29 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
         {/* 4-section view (default) */}
         {showSections && sectionsByTag && (
           <div className="pb-10">
+            {featuredItems.length > 0 && renderSection({
+              key: 'featured',
+              icon: <Icon name="compass" size={18} className="shrink-0 text-brand" />,
+              title: lang === 'zh' ? '曼谷人帶你去' : 'Our Picks',
+              subtitle: lang === 'zh' ? '住在曼谷的我們親自推薦' : 'Personally picked by Bangkok locals',
+              items: featuredItems,
+              onSeeAll: () => { setActiveTag('all'); setSpecialFilter('featured'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) },
+            })}
             {TAG_ORDER.map((tag) => {
               const items = sectionsByTag[tag]
               if (!items || items.length === 0) return null
               const meta = TAG_META[tag]
               const TagIcon = TAG_ICON[tag]
-              return (
-                <section key={tag} className="mt-8 pt-7 border-t border-line first:border-t-0 first:mt-0 first:pt-5">
-                  {/* Section header */}
-                  <div className="flex items-end justify-between gap-3 px-4 mb-3">
-                    <div className="min-w-0">
-                      <h2 className="flex items-center gap-2 font-liufen text-[20px] lg:text-[24px] text-ink leading-tight">
-                        <TagIcon size={18} className="shrink-0 text-brand" /> {lang === 'zh' ? meta.zh : meta.en}
-                      </h2>
-                      <p className="text-[12px] text-muted mt-1">
-                        {lang === 'zh'
-                          ? tag === 'trending' ? '曼谷社群話題精選' : tag === 'hidden_gem' ? '在地人才知道的地方' : '經典不敗，值得回訪'
-                          : tag === 'trending' ? 'What Bangkok is buzzing about' : tag === 'hidden_gem' ? "Locals' best-kept secrets" : 'Timeless picks, always worth it'}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => { setActiveTag(tag); setSpecialFilter('all'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
-                      className="shrink-0 text-[12px] text-brand hover:text-brand-dark hover:underline underline-offset-4 whitespace-nowrap"
-                    >
-                      {lang === 'zh' ? `看全部 ${items.length} 筆` : `See all ${items.length}`} →
-                    </button>
-                  </div>
-                  {/* Horizontal scroll cards — 每區隨機抽 SECTION_LIMIT 筆，其餘按「看全部」進完整清單 */}
-                  <DragScroll className="flex gap-3 overflow-x-auto no-scrollbar px-4 pb-1 lg:cursor-grab">
-                    {items.slice(0, SECTION_LIMIT).map((loc, i) => (
-                      <Reveal key={loc.id} delay={i < 5 ? i * 70 : 0} className="shrink-0 w-44 lg:w-52 h-[250px] lg:h-[290px]">
-                        <LocationCard
-                          location={loc}
-                          lang={lang}
-                          distanceKm={nearbyAnchor ? haversineKm(nearbyAnchor.lat, nearbyAnchor.lng, loc.lat, loc.lng) : undefined}
-                          saved={savedIds.has(loc.id)}
-                          onToggleSave={handleToggleSave}
-                          compact
-                          hideTag
-                        />
-                      </Reveal>
-                    ))}
-                    {items.length > SECTION_LIMIT && (
-                      <button
-                        onClick={() => { setActiveTag(tag); setSpecialFilter('all'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) }}
-                        className="shrink-0 w-32 lg:w-36 h-[250px] lg:h-[290px] rounded-lg border border-line hover:border-ink/30 transition-colors flex flex-col items-center justify-center gap-2 text-muted"
-                      >
-                        <span className="w-10 h-10 rounded-full border border-line flex items-center justify-center text-ink">
-                          <Icon name="chevron-right" size={18} />
-                        </span>
-                        <span className="text-[12px] font-bold">{lang === 'zh' ? '看全部' : 'See all'}</span>
-                        <span className="text-[11px] text-gray-400">{items.length} {lang === 'zh' ? '筆' : 'places'}</span>
-                      </button>
-                    )}
-                  </DragScroll>
-                </section>
-              )
+              return renderSection({
+                key: tag,
+                icon: <TagIcon size={18} className="shrink-0 text-brand" />,
+                title: lang === 'zh' ? meta.zh : meta.en,
+                subtitle: lang === 'zh'
+                  ? tag === 'trending' ? '曼谷社群話題精選' : tag === 'hidden_gem' ? '在地人才知道的地方' : '經典不敗，值得回訪'
+                  : tag === 'trending' ? 'What Bangkok is buzzing about' : tag === 'hidden_gem' ? "Locals' best-kept secrets" : 'Timeless picks, always worth it',
+                items,
+                onSeeAll: () => { setActiveTag(tag); setSpecialFilter('all'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) },
+              })
             })}
             {/* 曼谷日記：只在沒篩選分類時出現，有文章才顯示 */}
             {diary.length > 0 && activeCategory === 'all' && (

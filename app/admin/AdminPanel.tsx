@@ -689,6 +689,13 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
               {TAG_OPTIONS.map(t => <option key={t.value} value={t.value}>{t.emoji} {t.zh}</option>)}
             </select>
             <button
+              onClick={() => onUpdate(item.id, { featured: !item.featured })}
+              title="曼谷人帶你去：出現在首頁最上面"
+              className={`text-[10px] font-bold px-2 py-1.5 rounded-lg transition-colors whitespace-nowrap ${item.featured ? 'bg-amber-100 text-amber-700' : 'bg-slate-50 text-slate-400 hover:bg-amber-50 hover:text-amber-600'}`}
+            >
+              {item.featured ? '★ 帶你去' : '☆ 帶你去'}
+            </button>
+            <button
               onClick={() => setEditing(!editing)}
               className="text-xs font-bold px-2 py-1.5 rounded-lg bg-slate-50 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 transition-colors"
             >
@@ -1268,7 +1275,7 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
     category: 'food' as Category, address: '', address_th: '', lat: 0, lng: 0,
     photosInput: '', source: 'manual' as Source,
     source_url: '', rating: 4, price_range: 2 as 1|2|3|4, tag: 'evergreen' as LocationTag,
-    hashtagsInput: '', local_ratio: '' as string, social_embed_url: '',
+    hashtagsInput: '', local_ratio: '' as string, social_embed_url: '', featured: false,
   }
   const [form, setForm] = useState(empty)
   const [saving, setSaving] = useState(false)
@@ -1390,6 +1397,10 @@ function AddForm({ onAdded }: { onAdded: () => void }) {
       <div className="grid grid-cols-2 gap-4">
         <div><label className={label}>中文名稱</label><input className={inp} value={form.name_zh} onChange={field('name_zh')} required /></div>
         <div><label className={label}>English Name</label><input className={inp} value={form.name_en} onChange={field('name_en')} required /></div>
+        <label className="col-span-2 flex items-center gap-2 text-sm font-bold text-amber-700 bg-amber-50 rounded-xl px-3 py-2 cursor-pointer">
+          <input type="checkbox" checked={form.featured} onChange={e => setForm(f => ({ ...f, featured: e.target.checked }))} />
+          ★ 曼谷人帶你去（放在首頁最上面）
+        </label>
         <div className="col-span-2"><label className={label}>泰文店名 ชื่อร้าน（複製給計程車用）</label><input className={inp} value={form.name_th} onChange={field('name_th')} placeholder="เช่น ร้านอาหาร..." /></div>
         <div className="col-span-2">
           <div className="flex items-center justify-between mb-1">

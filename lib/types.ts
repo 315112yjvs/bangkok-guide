@@ -29,6 +29,8 @@ export type Location = {
   id: string
   slug?: string          // 網址用的英文店名 slug（由 name_en 產生，readLocations 自動補上）
   old_slugs?: string[]   // 改名前的舊 slug，舊網址會永久轉到新 slug
+  featured?: boolean     // 站主推薦：出現在首頁最上面「曼谷人帶你去」
+  featured_at?: string   // 勾選推薦的時間，越新排越前面
   name_zh: string
   name_en: string
   name_th?: string       // Thai name for copy-to-taxi
