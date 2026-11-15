@@ -580,7 +580,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
               key: 'featured',
               icon: <Icon name="compass" size={18} className="shrink-0 text-brand" />,
               title: lang === 'zh' ? '曼谷人帶你去' : 'Our Picks',
-              subtitle: lang === 'zh' ? '住在曼谷的我們親自推薦' : 'Personally picked by Bangkok locals',
+              subtitle: lang === 'zh' ? '住在曼谷的我親自推薦' : 'Personally picked by a Bangkok local',
               items: featuredItems,
               onSeeAll: () => { setActiveTag('all'); setSpecialFilter('featured'); filterRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }) },
             })}
