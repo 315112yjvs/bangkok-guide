@@ -15,7 +15,7 @@ import type { NearestStation } from '@/lib/transit'
 import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
 import { buildMapsUrl, extractPlaceId } from '@/lib/maps'
-import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
+import { photoUrl, photoPosition, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { LocationCard } from '@/components/LocationCard'
 import { openStatus, openStatusText, openStatusClass } from '@/lib/openStatus'
@@ -203,10 +203,10 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 <>
                   {/* 底下先墊卡片用過的小圖（瀏覽器已快取），大圖還沒載完時轉場也有畫面 */}
                   {activePhoto === 0 && prevPhoto === null && (
-                    <Image src={photoUrl(allRefs[0], 480)} alt="" fill className="object-cover" unoptimized aria-hidden />
+                    <Image src={photoUrl(allRefs[0], 480)} alt="" fill className="object-cover" style={photoPosition(location.photo_focus, allRefs[0])} unoptimized aria-hidden />
                   )}
                   {prevPhoto !== null && prevPhoto !== activePhoto && (
-                    <Image src={srcOf(allPhotos[prevPhoto])} alt="" fill className="object-cover" unoptimized aria-hidden />
+                    <Image src={srcOf(allPhotos[prevPhoto])} alt="" fill className="object-cover" style={photoPosition(location.photo_focus, allRefs[prevPhoto])} unoptimized aria-hidden />
                   )}
                   <Image
                     key={activePhoto}
@@ -214,6 +214,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                     alt={name}
                     fill
                     className={`object-cover ${prevPhoto !== null ? 'photo-fade' : ''}`}
+                    style={photoPosition(location.photo_focus, allRefs[activePhoto] ?? allRefs[0])}
                     unoptimized
                     priority
                     onError={() => markBroken(allPhotos[activePhoto] ?? allPhotos[0])}

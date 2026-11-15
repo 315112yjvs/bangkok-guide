@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 // 預設後備圖（照片載入失敗或無照片時）
 export const FALLBACK_PHOTO = 'https://images.unsplash.com/photo-1552911180-2a7279af1b85?w=400&h=300&fit=crop'
 
@@ -11,4 +12,14 @@ export function photoUrl(ref: string | undefined | null, w = 800): string {
   if (ref.startsWith('/photos/')) return w <= 480 ? ref.replace(/\/(0|u-[0-9a-f]+)\.jpg$/, '/$1-480.jpg') : ref
   if (ref.startsWith('places/')) return `/api/photo?ref=${encodeURIComponent(ref)}&w=${w}`
   return ref
+}
+
+// 直的照片放進橫的框只露出中間一段；有記錄文字位置（photo_focus）就把那一段移到畫面中間。
+// 以卡片大約露出照片高度 42% 估算 object-position，讓文字中心落在框的正中央
+export function photoPosition(focus: Record<string, number> | undefined, ref: string | undefined): CSSProperties | undefined {
+  const c = ref ? focus?.[ref] : undefined
+  if (c === undefined) return undefined
+  const v = 0.42
+  const pos = Math.max(0, Math.min(1, (c / 100 - v / 2) / (1 - v)))
+  return { objectPosition: `50% ${Math.round(pos * 100)}%` }
 }

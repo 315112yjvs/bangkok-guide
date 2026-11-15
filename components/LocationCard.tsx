@@ -9,7 +9,7 @@ import type { Location, Source, LocationTag } from '@/lib/types'
 import type { Lang } from '@/lib/i18n'
 import { strings } from '@/lib/i18n'
 import { buildMapsUrl } from '@/lib/maps'
-import { photoUrl, FALLBACK_PHOTO } from '@/lib/photo'
+import { photoUrl, photoPosition, FALLBACK_PHOTO } from '@/lib/photo'
 import { TAG_ICON } from './icons/TagIcons'
 import { Icon, MIcon } from './icons/Icon'
 import { openStatus, openStatusText, openStatusClass } from '@/lib/openStatus'
@@ -141,6 +141,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
           alt={name}
           fill
           className="object-cover"
+          style={photoPosition(location.photo_focus, location.photos[0])}
           sizes="(max-width: 768px) 50vw, 33vw"
           unoptimized
           onError={handleImgError}
