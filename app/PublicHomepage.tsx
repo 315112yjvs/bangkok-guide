@@ -7,6 +7,7 @@ import { LanguageToggle } from '@/components/LanguageToggle'
 import { CategoryTabs, type HomeTab } from '@/components/CategoryTabs'
 import { RouteList } from '@/components/RouteList'
 import { isHiddenCategory, INSTAGRAM_URL } from '@/lib/site'
+import { ShareListBar } from '@/components/ShareListBar'
 import { TAG_ICON } from '@/components/icons/TagIcons'
 import { seededShuffle } from '@/lib/shuffle'
 import { useShuffleSeed } from '@/hooks/useShuffleSeed'
@@ -661,6 +662,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
           <section className="px-4 pt-4 pb-10">
             {filtered.length > 0 ? (
               <>
+                {specialFilter === 'saved' && <ShareListBar ids={filtered.map((l) => l.id)} lang={lang} />}
                 <div className="flex items-center justify-between mb-3">
                   <p className="text-[13px] text-muted" aria-live="polite">
                     {lang === 'zh' ? `找到 ${filtered.length} 家` : `${filtered.length} places`}

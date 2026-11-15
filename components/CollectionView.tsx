@@ -21,15 +21,17 @@ type Props = {
   related: { href: string; label: string }[]
   // 標題下方的額外內容（例如拜拜路線入口）
   banner?: React.ReactNode
+  // 分享清單要照原本順序，不洗牌
+  keepOrder?: boolean
 }
 
-export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, related, banner }: Props) {
+export function CollectionView({ locations, h1Zh, h1En, descZh, descEn, icon, related, banner, keepOrder }: Props) {
   const { lang, setLang } = useLanguage()
   const h1 = lang === 'zh' ? h1Zh : h1En
   const desc = lang === 'zh' ? descZh : descEn
   // 用分頁種子洗牌：一進站隨機，返回同一頁維持同序（首屏 SSR 維持原序避免 hydration 不一致）
   const seed = useShuffleSeed()
-  const items = useMemo(() => (seed != null ? seededShuffle(locations, seed) : locations), [locations, seed])
+  const items = useMemo(() => (seed != null && !keepOrder ? seededShuffle(locations, seed) : locations), [locations, seed, keepOrder])
 
   return (
     <div className="max-w-md lg:max-w-6xl mx-auto bg-white min-h-screen lg:border-x lg:border-line">
