@@ -3,7 +3,7 @@
 export type Landmark = { id: string; icon: string; zh: string; en: string; emoji: string; lat: number; lng: number }
 
 export const LANDMARKS: Landmark[] = [
-  { id: 'chatuchak', icon: 'shopping_bag',     zh: '恰圖恰市集',    en: 'Chatuchak Market',   emoji: '🛍️', lat: 13.7999, lng: 100.5503 },
+  { id: 'chatuchak', icon: 'shopping_bag',     zh: 'Chatuchak 市集', en: 'Chatuchak Market',   emoji: '🛍️', lat: 13.7999, lng: 100.5503 },
   { id: 'central-ladprao', icon: 'storefront', zh: 'Central Ladprao', en: 'Central Ladprao', emoji: '🏬', lat: 13.8163, lng: 100.5610 },
   { id: 'siam', icon: 'directions_subway',          zh: 'Siam 商圈',      en: 'Siam',               emoji: '🚇', lat: 13.7460, lng: 100.5340 },
   { id: 'centralworld', icon: 'storefront',  zh: 'CentralWorld',   en: 'CentralWorld',       emoji: '🏬', lat: 13.7466, lng: 100.5396 },
@@ -14,7 +14,7 @@ export const LANDMARKS: Landmark[] = [
   { id: 'ari', icon: 'local_cafe',           zh: 'Ari',            en: 'Ari',                emoji: '☕', lat: 13.7797, lng: 100.5447 },
   { id: 'yaowarat', icon: 'festival',      zh: '唐人街 Yaowarat', en: 'Chinatown (Yaowarat)', emoji: '🏮', lat: 13.7400, lng: 100.5090 },
   { id: 'icon-siam', icon: 'shopping_bag',     zh: 'ICONSIAM',       en: 'ICONSIAM',           emoji: '🛍️', lat: 13.7266, lng: 100.5100 },
-  { id: 'khaosan', icon: 'backpack',       zh: '考山路',         en: 'Khaosan Road',       emoji: '🎒', lat: 13.7590, lng: 100.4977 },
+  { id: 'khaosan', icon: 'backpack',       zh: 'Khaosan Road',  en: 'Khaosan Road',       emoji: '🎒', lat: 13.7590, lng: 100.4977 },
   { id: 'sathorn', icon: 'location_city',       zh: 'Sathorn',        en: 'Sathorn',            emoji: '🏙️', lat: 13.7220, lng: 100.5290 },
-  { id: 'victory', icon: 'tour',       zh: '勝利紀念碑',     en: 'Victory Monument',   emoji: '🗽', lat: 13.7650, lng: 100.5380 },
+  { id: 'victory', icon: 'tour',       zh: 'Victory Monument',en: 'Victory Monument',   emoji: '🗽', lat: 13.7650, lng: 100.5380 },
 ]

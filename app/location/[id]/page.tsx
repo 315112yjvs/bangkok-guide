@@ -97,7 +97,7 @@ const TYPE_ZH: Record<string, string> = {
 }
 
 // 標題放店名、區域、類型（區域維持英文地名，例如 Thonglor 咖啡廳）。
-// 區域優先用走得到的捷運站判斷（地址常只寫到大區，例如通羅的店地址寫 Khlong Toei）
+// 區域優先用走得到的捷運站判斷（地址常只寫到大區，例如 Thonglor 的店地址寫 Khlong Toei）
 function pageTitle(loc: Location) {
   const name = loc.name_zh || loc.name_en
   const station = nearestStation(loc.lat, loc.lng)
