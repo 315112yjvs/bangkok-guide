@@ -19,6 +19,7 @@ export async function POST(req: NextRequest) {
 - 口語自然，像在跟朋友說話
 - 可以是小技巧、最佳時段、必點提醒、氛圍描述
 - 直接輸出文字，不加引號
+- 泰國地名寫英文（例如 Thonglor、Silom），不要寫中文音譯
 
 地點：${name_en}
 介紹：${description_zh}`
