@@ -178,13 +178,6 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
           </p>
         )}
 
-        {/* Curator note */}
-        {location.curator_note && (
-          <p className="flex items-center gap-1 text-[10px] text-brand bg-brand-soft rounded-sm px-2 py-1 mb-1 line-clamp-1 font-medium">
-            <MIcon name="format_quote" size={12} className="shrink-0" /> {location.curator_note}
-          </p>
-        )}
-
         {/* Highlights */}
         {visibleHighlights.length > 0 && (
           <div className="flex items-center gap-1 mb-1.5 overflow-hidden whitespace-nowrap">
