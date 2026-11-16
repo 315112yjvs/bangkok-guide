@@ -638,6 +638,8 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
     source: item.source,
     source_url: item.source_url,
     social_embed_url: item.social_embed_url ?? '',
+    curator_note: item.curator_note ?? '',
+    visited_at: item.visited_at ?? '',
     photos: item.photos ?? [],
   })
   const [saving, setSaving] = useState(false)
@@ -658,6 +660,8 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
       rating: Number(form.rating),
       source: form.source as Source,
       social_embed_url: form.social_embed_url || undefined,
+      curator_note: form.curator_note.trim() || undefined,
+      visited_at: form.visited_at || undefined,
     }
     await onUpdate(item.id, updates)
     setSaving(false)
@@ -746,6 +750,8 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">亮點（逗號分隔）</p><input className={inp} value={form.highlights} onChange={e => setForm(f => ({...f, highlights: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">Hashtags（逗號分隔）</p><input className={inp} value={form.hashtags} onChange={e => setForm(f => ({...f, hashtags: e.target.value}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">在地客 %</p><input type="number" min="0" max="100" className={inp} value={form.local_ratio} onChange={e => setForm(f => ({...f, local_ratio: e.target.value}))} /></div>
+            <div className="col-span-2"><p className="text-[10px] font-semibold text-indigo-500 mb-1">💬 在地人怎麼說（你自己的感受，1–2 句）</p><textarea className={inp} rows={2} placeholder="例如：貝果很有嚼勁，我最推蜂蜜薩拉米" value={form.curator_note} onChange={e => setForm(f => ({...f, curator_note: e.target.value}))} /></div>
+            <div><p className="text-[10px] font-semibold text-gray-500 mb-1">親訪年月</p><input type="month" className={inp} value={form.visited_at} onChange={e => setForm(f => ({...f, visited_at: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">社群貼文 URL（TikTok / Instagram）</p><input className={inp} value={form.social_embed_url} onChange={e => setForm(f => ({...f, social_embed_url: e.target.value}))} placeholder="https://www.tiktok.com/@.../video/... 或 https://www.instagram.com/p/..." /></div>
           </div>
           <div className="flex gap-2 pt-1">

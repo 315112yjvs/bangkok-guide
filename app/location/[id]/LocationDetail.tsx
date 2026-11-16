@@ -12,6 +12,7 @@ import { Icon } from '@/components/icons/Icon'
 import type { Location, LocationTag } from '@/lib/types'
 import type { WeekHours, OpeningHours } from '@/lib/placeInfo'
 import type { NearestStation } from '@/lib/transit'
+import type { Faq } from '@/lib/faq'
 import { useLanguage } from '@/hooks/useLanguage'
 import { SocialEmbed } from '@/components/SocialEmbed'
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from '@/lib/site'
@@ -51,6 +52,7 @@ type Props = {
   nearby?: Nearby[]
   hours?: OpeningHours | null
   station?: NearestStation | null
+  faq?: Faq[]
 }
 
 const DAYS = { zh: ['週一', '週二', '週三', '週四', '週五', '週六', '週日'], en: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }
@@ -86,7 +88,7 @@ function embedMapSrc(location: Location, lang: 'zh' | 'en') {
   return `https://www.google.com/maps/embed/v1/place?key=${key}&q=${encodeURIComponent(q)}&zoom=16&language=${lang === 'zh' ? 'zh-TW' : 'en'}`
 }
 
-export function LocationDetail({ location, nearby = [], hours = null, station = null }: Props) {
+export function LocationDetail({ location, nearby = [], hours = null, station = null, faq = [] }: Props) {
   const router = useRouter()
   const { lang } = useLanguage()
   const [activePhoto, setActivePhotoRaw] = useState(0)
@@ -351,6 +353,13 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 {lang === 'zh' ? '在地人怎麼說' : "Local's Take"}
               </p>
               <p className="text-[15px] text-ink leading-relaxed">{location.curator_note}</p>
+              {location.visited_at && (
+                <p className="text-[11px] text-muted mt-1">
+                  {lang === 'zh'
+                    ? `${location.visited_at.slice(0, 4)} 年 ${Number(location.visited_at.slice(5, 7))} 月親訪`
+                    : `Visited ${location.visited_at.slice(0, 7)}`}
+                </p>
+              )}
             </div>
           )}
 
@@ -448,6 +457,21 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
             <div id="our-video" className="mb-6 scroll-mt-4">
               <h2 className="text-[12px] font-bold text-muted mb-2.5 tracking-[0.08em]">{lang === 'zh' ? '曼谷人拍的影片' : 'Our Video'}</h2>
               <SocialEmbed url={location.social_embed_url} />
+            </div>
+          )}
+
+          {/* 常見問題：由地址、車站、營業時間等資料自動產生，同時輸出 FAQPage 結構化資料 */}
+          {faq.length > 0 && (
+            <div className="mb-6">
+              <h2 className={sectionTitle}>常見問題</h2>
+              <dl className="divide-y divide-line border-y border-line">
+                {faq.map((f) => (
+                  <div key={f.q} className="py-3">
+                    <dt className="text-[14px] font-bold text-ink mb-1">{f.q}</dt>
+                    <dd className="text-[13px] text-ink/80 leading-relaxed">{f.a}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           )}
 

@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { readVisibleLocations } from '@/lib/data'
 import { CATEGORY_META, CATEGORY_SLUGS, listAreas } from '@/lib/collections'
 import { CollectionView } from '@/components/CollectionView'
+import { JsonLd } from '@/components/JsonLd'
+import { itemListJsonLd } from '@/lib/jsonLd'
 
 export const revalidate = 3600
 
@@ -38,14 +40,17 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
     .map((a) => ({ href: `/area/${a.slug}`, label: a.area }))
 
   return (
-    <CollectionView
-      locations={locations}
-      h1Zh={meta.h1Zh}
-      h1En={meta.h1En}
-      descZh={meta.descZh}
-      descEn={meta.descEn}
-      icon={meta.icon}
-      related={related}
-    />
+    <>
+      <JsonLd data={itemListJsonLd(meta.h1Zh, `/category/${slug}`, locations)} />
+      <CollectionView
+        locations={locations}
+        h1Zh={meta.h1Zh}
+        h1En={meta.h1En}
+        descZh={meta.descZh}
+        descEn={meta.descEn}
+        icon={meta.icon}
+        related={related}
+      />
+    </>
   )
 }

@@ -4,6 +4,8 @@ import { readVisibleLocations } from '@/lib/data'
 import { listAreas, slugToArea } from '@/lib/collections'
 import { getArea } from '@/lib/area'
 import { CollectionView } from '@/components/CollectionView'
+import { JsonLd } from '@/components/JsonLd'
+import { itemListJsonLd } from '@/lib/jsonLd'
 
 export const revalidate = 3600
 
@@ -36,14 +38,17 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
     .sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0))
 
   return (
-    <CollectionView
-      locations={locations}
-      h1Zh={`${area} 在地精選`}
-      h1En={`${area} Local Picks`}
-      descZh={`住在曼谷的人精選 ${area} 的咖啡廳、餐廳、酒吧與打卡景點。`}
-      descEn={`Hand-picked spots in ${area}, Bangkok — cafes, eats, bars and more.`}
-      icon="place"
-      related={[]}
-    />
+    <>
+      <JsonLd data={itemListJsonLd(`${area} 在地精選`, `/area/${slug}`, locations)} />
+      <CollectionView
+        locations={locations}
+        h1Zh={`${area} 在地精選`}
+        h1En={`${area} Local Picks`}
+        descZh={`住在曼谷的人精選 ${area} 的咖啡廳、餐廳、酒吧與打卡景點。`}
+        descEn={`Hand-picked spots in ${area}, Bangkok — cafes, eats, bars and more.`}
+        icon="place"
+        related={[]}
+      />
+    </>
   )
 }

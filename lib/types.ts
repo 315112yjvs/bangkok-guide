@@ -56,6 +56,7 @@ export type Location = {
   hashtags?: string[]    // Thai/EN trending hashtags
   local_ratio?: number   // 0–100 (% local customers)
   curator_note?: string      // short personal observation from the site owner
+  visited_at?: string        // 站主親訪的年月（YYYY-MM），顯示在「在地人怎麼說」下面
   social_embed_url?: string  // TikTok or Instagram post URL to embed
   has_video?: boolean        // 卡片用：有站主影片（卡片資料不帶影片網址，只帶這個旗標）
   mentions?: number          // 找熱點時被幾個不同來源提到（待審排序用）

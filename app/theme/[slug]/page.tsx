@@ -4,6 +4,8 @@ import { readVisibleLocations } from '@/lib/data'
 import { getTheme, THEMES } from '@/lib/themes'
 import { CATEGORY_META } from '@/lib/collections'
 import { CollectionView } from '@/components/CollectionView'
+import { JsonLd } from '@/components/JsonLd'
+import { itemListJsonLd } from '@/lib/jsonLd'
 
 export const revalidate = 3600
 
@@ -39,14 +41,17 @@ export default async function ThemePage({ params }: { params: Promise<{ slug: st
   ]
 
   return (
-    <CollectionView
-      locations={locations}
-      h1Zh={theme.h1Zh}
-      h1En={theme.h1En}
-      descZh={theme.descZh}
-      descEn={theme.descEn}
-      icon={theme.icon}
-      related={related}
-    />
+    <>
+      <JsonLd data={itemListJsonLd(theme.h1Zh, `/theme/${slug}`, locations)} />
+      <CollectionView
+        locations={locations}
+        h1Zh={theme.h1Zh}
+        h1En={theme.h1En}
+        descZh={theme.descZh}
+        descEn={theme.descEn}
+        icon={theme.icon}
+        related={related}
+      />
+    </>
   )
 }

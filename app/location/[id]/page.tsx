@@ -7,7 +7,10 @@ import { nearestStation } from '@/lib/transit'
 import type { Location } from '@/lib/types'
 import { LocationDetail } from './LocationDetail'
 import { isHiddenCategory } from '@/lib/site'
+import { safeJsonLd } from '@/lib/jsonLd'
 import { CATEGORY_META } from '@/lib/collections'
+import { getArea, areaZh, extractArea } from '@/lib/area'
+import { buildFaq, faqJsonLd } from '@/lib/faq'
 
 export const revalidate = 3600
 
@@ -83,13 +86,25 @@ function buildBreadcrumb(loc: Location) {
   }
 }
 
-// 安全地把 JSON-LD 嵌進 <script>：跳脫會破壞 script 標籤 / 注入腳本的字元，
-// 避免店名/描述/地址若含 </script> 造成 XSS
-function safeJsonLd(obj: unknown): string {
-  return JSON.stringify(obj)
-    .replace(/</g, '\\u003c')
-    .replace(/>/g, '\\u003e')
-    .replace(/&/g, '\\u0026')
+const TYPE_ZH: Record<string, string> = {
+  food: '美食',
+  cafe: '咖啡廳',
+  nightlife: '酒吧',
+  hotel: '住宿',
+  shopping: '購物',
+  attraction: '景點',
+  temple: '寺廟',
+}
+
+// 標題放店名、區域、類型：用中文搜尋「通羅 咖啡廳」的人才找得到。
+// 區域優先用走得到的捷運站判斷（地址常只寫到大區，例如通羅的店地址寫 Khlong Toei）
+function pageTitle(loc: Location) {
+  const name = loc.name_zh || loc.name_en
+  const station = nearestStation(loc.lat, loc.lng)
+  const byStation = station ? extractArea(station.name) : 'Bangkok'
+  const area = byStation !== 'Bangkok' ? byStation : getArea(loc)
+  const kind = `${areaZh(area)}${TYPE_ZH[loc.category] ?? ''}`
+  return name.includes(kind) ? `${name} — 曼谷人` : `${name}｜${kind} — 曼谷人`
 }
 
 // 附近的其他地點：2 公里內由近到遠取 6 筆（用自家座標計算，不打任何 API）
@@ -113,7 +128,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { loc } = resolveLocation(id, locations)
   if (!loc) return {}
 
-  const title = `${loc.name_en} — 曼谷人`
+  const title = pageTitle(loc)
   const description = loc.description_zh || loc.description_en || ''
 
   // og:image / twitter:image 由 opengraph-image.tsx 自動產生（品牌化地點圖）
@@ -137,6 +152,8 @@ export default async function LocationPage({ params }: { params: Promise<{ id: s
   if (byUuid && location.slug) permanentRedirect(`/location/${location.slug}`)
 
   const hours = getOpeningHours(location.id)
+  const station = nearestStation(location.lat, location.lng)
+  const faq = buildFaq(location, hours, station)
   return (
     <>
       <script
@@ -147,11 +164,15 @@ export default async function LocationPage({ params }: { params: Promise<{ id: s
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(buildBreadcrumb(location)) }}
       />
+      {faq.length >= 2 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(faqJsonLd(faq)) }} />
+      )}
       <LocationDetail
         location={location}
         nearby={nearbyOf(location, locations.filter((l) => !isHiddenCategory(l.category)))}
         hours={hours}
-        station={nearestStation(location.lat, location.lng)}
+        station={station}
+        faq={faq.length >= 2 ? faq : []}
       />
     </>
   )

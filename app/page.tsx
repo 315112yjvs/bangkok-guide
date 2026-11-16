@@ -5,6 +5,8 @@ import { CATEGORY_META, listAreas } from '@/lib/collections'
 import { THEMES } from '@/lib/themes'
 import { readDiary } from '@/lib/diary'
 import { PublicHomepage } from './PublicHomepage'
+import { JsonLd } from '@/components/JsonLd'
+import { siteJsonLd } from '@/lib/jsonLd'
 
 export const revalidate = 3600
 
@@ -19,6 +21,7 @@ export default function Page() {
 
   return (
     <>
+      <JsonLd data={siteJsonLd()} />
       <PublicHomepage locations={locations} diary={readDiary().slice(0, 6)} />
 
       {/* SEO: server-rendered content + internal links. Visually hidden so the
