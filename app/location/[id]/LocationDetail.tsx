@@ -353,13 +353,6 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 {lang === 'zh' ? '在地人怎麼說' : "Local's Take"}
               </p>
               <p className="text-[15px] text-ink leading-relaxed">{location.curator_note}</p>
-              {location.visited_at && (
-                <p className="text-[11px] text-muted mt-1">
-                  {lang === 'zh'
-                    ? `${location.visited_at.slice(0, 4)} 年 ${Number(location.visited_at.slice(5, 7))} 月親訪`
-                    : `Visited ${location.visited_at.slice(0, 7)}`}
-                </p>
-              )}
             </div>
           )}
 

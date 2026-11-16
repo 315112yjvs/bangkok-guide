@@ -62,20 +62,3 @@ export function getArea(loc: Pick<Location, 'area' | 'address'>): string {
   return 'Bangkok'
 }
 
-// 區域中文名：標題和結構化資料用（中文搜尋的人打的是「通羅」不是 Thonglor）
-const AREA_ZH: Record<string, string> = {
-  'Thonglor': '通羅', 'Ekkamai': '伊卡邁', 'Phrom Phong': '澎蓬', 'Asok': '阿索克', 'On Nut': '安努',
-  'Udom Suk': '烏東蘇', 'Bearing': '貝林', 'Nana': '娜娜', 'Ploenchit': '奔集', 'Chidlom': '奇隆',
-  'Siam': '暹羅', 'Ratchadamri': '拉差當里', 'Silom': '是隆', 'Surawong': '蘇拉翁', 'Sathorn': '沙吞',
-  'Charoen Krung': '石龍軍路', 'Ari': '阿黎', 'Phahonyothin': '帕鳳裕庭', 'Ratchayothin': '叻差裕庭',
-  'Lat Phrao': '拉抛', 'Ratchada': '拉差達', 'Huai Khwang': '匯權', 'Chatuchak': '恰圖恰', 'Mo Chit': '蒙奇',
-  'Don Mueang': '廊曼', 'Yaowarat': '中國城', 'Khao San': '考山路', 'Bang Rak': '挽叻', 'Pratunam': '水門',
-  'Ratchathewi': '拉差裡威', 'Bang Phlat': '挽拍', 'Thon Buri': '吞武里', 'Khlong San': '空訕',
-  'Phra Khanong': '帕卡農', 'Wang Thong Lang': '王通朗', 'Min Buri': '民武里', 'Sukhumvit': '素坤逸',
-  'Old City': '舊城區', 'Phaya Thai': '帕亞泰', 'Bang Sue': '挽賜', 'Din Daeng': '暖登',
-  'Phra Nakhon': '舊城區', 'Pom Prap Sattru Phai': '舊城區', 'Suan Luang': '萱鑾', 'Bangkok': '曼谷',
-}
-
-export function areaZh(area: string): string {
-  return AREA_ZH[area] ?? area
-}

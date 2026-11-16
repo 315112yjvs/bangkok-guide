@@ -2,7 +2,6 @@ import { readVisibleLocations } from '@/lib/data'
 import { CATEGORY_META, listAreas } from '@/lib/collections'
 import { THEMES } from '@/lib/themes'
 import { TEMPLE_ROUTES } from '@/lib/templeRoutes'
-import { areaZh } from '@/lib/area'
 import { INSTAGRAM_URL } from '@/lib/site'
 import { SITE_URL } from '@/lib/jsonLd'
 
@@ -28,7 +27,7 @@ export function GET() {
     ...TEMPLE_ROUTES.map((r) => `- [${r.title_zh}](${SITE_URL}/guide/${r.slug}): ${r.duration_zh}`),
     '',
     '## 區域',
-    ...listAreas(locations).map((a) => `- [${areaZh(a.area)}（${a.area}）](${SITE_URL}/area/${a.slug}): ${a.count} 家`),
+    ...listAreas(locations).map((a) => `- [${a.area}](${SITE_URL}/area/${a.slug}): ${a.count} 家`),
     '',
     '## 其他',
     `- [曼谷日記](${SITE_URL}/diary)`,
