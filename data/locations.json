@@ -24243,7 +24243,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Yellow%20Lane%20Ekkamai%2017%20Soi%20Phatsana%202%2C%20Khwaeng%20Phra%20Khanong%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJ6zI_4Y2f4jARoBXU7OjKZ0g",
     "rating": 4.9,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Phra Khanong",
     "mentions": 1,
     "evidence": [
@@ -24267,7 +24267,7 @@
     ],
     "approved_at": "2026-11-19T12:48:16.641Z",
     "slug": "yellow-lane-ekkamai",
-    "trending_at": "2026-11-19T12:54:38.258Z",
+    "trending_at": "2026-11-19T13:13:09.972Z",
     "base_tag": "hidden_gem"
   },
   {
@@ -24290,7 +24290,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Blimey%20Yorkie%20Wraps%2051%2C%20Chapter%20Market%2C%202%20Sukhumvit%2026%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Khet%20Khlong%20Toei%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJTVSPL3ef4jARgbejcKBQhkw",
     "rating": 5,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Sukhumvit",
     "mentions": 1,
     "evidence": [
@@ -24314,7 +24314,9 @@
       "Cheese Mash"
     ],
     "approved_at": "2026-11-19T12:48:16.660Z",
-    "slug": "blimey-yorkie-wraps"
+    "slug": "blimey-yorkie-wraps",
+    "trending_at": "2026-11-19T13:13:12.253Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "253d6670-171c-40a2-a9ee-e9ea11bf5f66",
@@ -24336,7 +24338,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Hickory%20and%20craft%20238%2C%201%20Soi%20Sawatdi%204%2C%20Phra%20Khanong%20Tai%2C%20Khet%20Phra%20Khanong%2C%20Krung%20Thep%20Maha%20Nakhon%2010260&query_place_id=ChIJb9Yr6Sqf4jAR-XsjBe11Sls",
     "rating": 5,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Phra Khanong",
     "mentions": 1,
     "evidence": [
@@ -24360,7 +24362,9 @@
       "Craft Beer"
     ],
     "approved_at": "2026-11-19T12:48:16.679Z",
-    "slug": "hickory-and-craft"
+    "slug": "hickory-and-craft",
+    "trending_at": "2026-11-19T13:13:13.701Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "73bdb98e-b7d4-41bd-b5d7-ffa73e41f1bc",
@@ -24382,7 +24386,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=%E0%B8%AA%E0%B8%B8%E0%B8%81%E0%B8%B5%E0%B9%89%E0%B8%84%E0%B8%99%E0%B9%81%E0%B8%8B%E0%B9%88%E0%B8%81%E0%B9%8A%E0%B8%A7%E0%B8%A2%20%E0%B8%99%E0%B8%B2%E0%B8%84%E0%B8%99%E0%B8%B4%E0%B8%A7%E0%B8%B2%E0%B8%AA%20%E0%B9%80%E0%B8%A5%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%20200%20Thanon%20Nak%20Niwat%2C%20Khwaeng%20Lat%20Phrao%2C%20Khet%20Lat%20Phrao%2C%20Krung%20Thep%20Maha%20Nakhon%2010230&query_place_id=ChIJ8YXQewCd4jARqWoHtE4lBbQ",
     "rating": 4.5,
     "price_range": 1,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Lat Phrao",
     "mentions": 1,
     "evidence": [
@@ -24406,7 +24410,9 @@
       "Grandpa's Fried Rice"
     ],
     "approved_at": "2026-11-19T12:48:16.721Z",
-    "slug": "suki-nakhon"
+    "slug": "suki-nakhon",
+    "trending_at": "2026-11-19T13:13:15.173Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "792a8bbf-1823-4ded-9e18-1504d292be80",
@@ -24428,7 +24434,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Langsuan%20Coffee%20House%2074%20Soi%20Langsuan%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJH24oGv-f4jARo-RysJKXzbU",
     "rating": 4.8,
     "price_range": 1,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Siam",
     "mentions": 1,
     "evidence": [
@@ -24451,7 +24457,9 @@
       "Matcha"
     ],
     "approved_at": "2026-11-19T12:48:17.699Z",
-    "slug": "langsuan-coffee-house"
+    "slug": "langsuan-coffee-house",
+    "trending_at": "2026-11-19T13:13:17.189Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "768925f0-ca67-4f73-b40a-8489345f48e3",
@@ -24473,7 +24481,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Smash%20Bastards%20Burgers%20%26%20Taste%20of%20Europe%201448%2F357%20Siamese%20Sukhumvit%2048%20Building%2C%20Room%20No.%20CK03%2C%201st%20Floor%2C%20Distirct%2C%20%E0%B8%96.%20%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%B8%E0%B8%A1%E0%B8%A7%E0%B8%B4%E0%B8%97%20%E0%B9%81%E0%B8%82%E0%B8%A7%E0%B8%87%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%82%E0%B8%82%E0%B8%99%E0%B8%87%20Sub-district%2C%20%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3%2010110&query_place_id=ChIJ9-BI1H6f4jARH4xFBYpwP24",
     "rating": 5,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Siam",
     "mentions": 1,
     "evidence": [
@@ -24497,7 +24505,9 @@
       "German Sausage"
     ],
     "approved_at": "2026-11-19T12:48:17.728Z",
-    "slug": "smash-bastards-burgers-and-taste-of-europe"
+    "slug": "smash-bastards-burgers-and-taste-of-europe",
+    "trending_at": "2026-11-19T13:13:19.219Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "9beca3d4-9d0b-4b94-9f02-dd28629f6137",
@@ -24519,7 +24529,7 @@
     "source_url": "https://www.google.com/maps/search/?api=1&query=Room%20Bangkok%201545%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Yan%20Nawa%2C%20Khet%20Sathon%2C%20Krung%20Thep%20Maha%20Nakhon%2010120&query_place_id=ChIJZ1-YtYSZ4jAReDK8DuxfbpE",
     "rating": 4.6,
     "price_range": 2,
-    "tag": "hidden_gem",
+    "tag": "trending",
     "area": "Bangkok",
     "mentions": 1,
     "evidence": [
@@ -24540,7 +24550,9 @@
     ],
     "highlights": [],
     "approved_at": "2026-11-19T12:48:17.748Z",
-    "slug": "room-bangkok"
+    "slug": "room-bangkok",
+    "trending_at": "2026-11-19T13:13:21.709Z",
+    "base_tag": "hidden_gem"
   },
   {
     "name_zh": "Wat Saket Ratchawora Mahawihan",
