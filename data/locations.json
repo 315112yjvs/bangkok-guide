@@ -21385,7 +21385,11 @@
     "slug": "ganesha-shrine",
     "social_embed_url": "https://www.instagram.com/p/Dfo_ZtNCKtS/",
     "featured": true,
-    "featured_at": "2026-11-12T05:00:00.000Z"
+    "featured_at": "2026-11-12T05:00:00.000Z",
+    "photo_focus": {
+      "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/u-587003f2.jpg": 64
+    },
+    "video_cover": "/photos/a4d13909-1ef2-41b1-accf-36e1967b26c6/u-587003f2.jpg"
   },
   {
     "id": "b34ba8a7-afc9-4567-bb0e-22af1b6f96bc",
@@ -24262,7 +24266,9 @@
       "Brownie"
     ],
     "approved_at": "2026-11-19T12:48:16.641Z",
-    "slug": "yellow-lane-ekkamai"
+    "slug": "yellow-lane-ekkamai",
+    "trending_at": "2026-11-19T12:54:38.258Z",
+    "base_tag": "hidden_gem"
   },
   {
     "id": "217dde06-4f9c-4ab6-8276-fa1b32b69eaa",
@@ -24535,5 +24541,47 @@
     "highlights": [],
     "approved_at": "2026-11-19T12:48:17.748Z",
     "slug": "room-bangkok"
+  },
+  {
+    "name_zh": "Wat Saket Ratchawora Mahawihan",
+    "name_en": "Wat Saket Ratchawora Mahawihan",
+    "name_th": "",
+    "description_zh": "金山寺（Wat Saket）建於大城時代，是曼谷老城區的地標性佛寺。沿著螺旋石階拾級而上，沿途樹蔭茂密，兩側掛滿可敲響的銅鐘。攀頂後，金色佛塔聳立，可俯瞰曼谷舊城區的全景。山腳老樹以紅絲帶繫綁，是信眾祈福的傳統。入寺需穿著覆蓋肩膀與膝蓋的服裝，建議穿舒適的鞋子。",
+    "description_en": "Wat Saket, known as the Golden Mount, dates back to the Ayutthaya era and sits as a landmark in Bangkok's old town. The winding staircase to the top is lined with dense shade trees and rows of bells visitors can ring along the climb. At the summit stands a golden chedi with panoramic views over the old city. At the base, a large old tree wrapped in red ribbons serves as a spot for Buddhist prayers and wishes. Wear clothes that cover shoulders and knees, and comfortable shoes for the steps.",
+    "category": "temple",
+    "address": "344 Thanon Chakkraphatdi Phong, Khwaeng Ban Bat, Khet Pom Prap Sattru Phai, Krung Thep Maha Nakhon 10100",
+    "address_th": "",
+    "lat": 13.7527691,
+    "lng": 100.50667449999999,
+    "source": "googlemaps",
+    "source_url": "https://maps.app.goo.gl/GyVhCyweB3d73VMP8",
+    "rating": 4.7,
+    "price_range": 2,
+    "featured": true,
+    "tag": "evergreen",
+    "action": "add",
+    "photos": [
+      "/photos/6718e7d8-55b8-48bf-9e16-884b1b9f05f2/0.jpg",
+      "/photos/6718e7d8-55b8-48bf-9e16-884b1b9f05f2/1.jpg",
+      "/photos/6718e7d8-55b8-48bf-9e16-884b1b9f05f2/2.jpg",
+      "/photos/6718e7d8-55b8-48bf-9e16-884b1b9f05f2/3.jpg"
+    ],
+    "hashtags": [],
+    "id": "6718e7d8-55b8-48bf-9e16-884b1b9f05f2",
+    "approved_at": "2026-11-19T12:54:26.892Z",
+    "featured_at": "2026-11-19T12:54:26.892Z",
+    "slug": "wat-saket-ratchawora-mahawihan",
+    "photo_focus": {
+      "/photos/6718e7d8-55b8-48bf-9e16-884b1b9f05f2/u-ae18ebf7.jpg": 53
+    },
+    "video_cover": "/photos/6718e7d8-55b8-48bf-9e16-884b1b9f05f2/u-ae18ebf7.jpg",
+    "photo_refs": [
+      "places/ChIJP-MtN12Z4jARlEBmga-oF4w/photos/AV-0GLdNpm-MlHjzDlq-_qvxIt2KDG-C6rZ3DGikaC91pJ4955x6yCYyia4vQwmBKHcYyd95hLeTmGYUABnNvqWgoxyHJYApOhy-vEpsfwwTmNqZdxGM08ayZMe2UsoJjc842qJ9A17PxN0RRx65bXNSK3GGpzwqssuEUOTitMmeEu3_cQeZMZu7-FyWGZ1kyX5l5OqxTQmlTSDU__vuHbrVA4ZwWFosyseuh8Kes-AZecAKoNK4t0VP8kjAFhh5Wv8w9GwmjERY84eYjcfuv0U-jdWEyq2aqik_pjqJGcJ8xR3J5IABSzbAxy1ZC5_mTa9s5lsVsaGvBPmTzYPkF_bv5Z4VaLvgUCCqf6gy-mXb70ZSx4XS_RxNJfRKb5vo8eM0uxf0fHAa60MMwbjhJlUXANJMKTJSDcU",
+      "places/ChIJP-MtN12Z4jARlEBmga-oF4w/photos/AV-0GLe4MXogvTtrswlUkzvFSMIFBvzTQCtX8QI-0N9fhtxBzATopFkaNoQ1ahIxViAMHuqtIT6E06fMyIHOxE83Lyd4ZMM0ydImdh_JulBY51LF0DPqGb_O8dS6fa4gcIUg7bASvIWyja2VcAYN2tOXNmHmEGP4MlqkEd7Nz5UOywCTdTO8w9pjvXW64Xlw4EIYoP0s0T0pHM0U8wSNComG7yMkO4YxfqkRTn1rgC9GwBS2YZB1-FZGi5vbzFoXDJq7DnlvBpl25uinBc-sU_1hxWDut-kwICcbsCdA5w7yWPpaI_OFtTf4K3AA7VPc-H27xAJmJFl2u_FD0VS49A64d9BNkByJIs1dQEoZBmV-ECiG4ww1cCiXS_foxKz8sPml8EQ0gcBtznb1fpZ4o1VZT4oXaQ",
+      "places/ChIJP-MtN12Z4jARlEBmga-oF4w/photos/AV-0GLc7AZFwB93MfQuXnWqxGpaTmkBPHfFA2qvOPEdhe3_YA0jjl6a92VSjQ8Lx70dnKkW0mrp1uG3jSC3LoQS2l1_vH2_yUyV-FLZQ42qZr1EubEW19vIx3X-qjSzkYwC0nadBcb8CyAqXkdEZ3BsRBlUIYZd50ZaFliRwD9O3V0Za_bexBRC0-_dLOc-moJWHr5J5zmftFWC7VdIpfalTC4SZJNtTM7Ok_rGRr9a72ToilQi8yWxuTJbrufgMNK0l1HJQCIXqtewUpxdIiFAgrAThLLngd5XJMtvdv8uM7F5bPqPIhtRoinDDZmkc9qR6ZIvGVx-Ukx_6hXRdYEWV7zb7kMCIhW4xkih3jal89jrk-UZ5z41-d5P4s8W7jhpCmQRhQv52gWt9Wds9GRmATf7KdAs",
+      "places/ChIJP-MtN12Z4jARlEBmga-oF4w/photos/AV-0GLda575VGbHtqkH83OO2W5EIlnPFiTMXwk7o79iW60-ja-Xq-0gPdq_Fl5F58JBkBafB8YsWlhWSna71XZm3jQDgvzkZfUPHfd98Idp97wbKd778kuFgyoz-ghhytse3qLyBo3IVDs7SaoYlaCMFpwlsp7kEyJJEf4amxY9VCZ-JjWoTBcoG03Uzz_A-JcZDI4vVYVR5N5GKxEHVTBnv9TU4XTVzW7D9TqEj9C_YY-HsVFu-IvamUdGhyoqWjtc7d-e5z4y5qHvim1m_hSaftPCG5Y_gRznluTFaZYinyY5gDbKnqNJdhvLGOTcWjeVrPhIbzzWeISRhmB8728vHd1dtdK_kD0Oa_1Daw1NYLvDjGIy07iaoPmnrqXPhG71ylqo8uKeH4yiPd_q1z2LkVD9nXX_1krw",
+      "places/ChIJP-MtN12Z4jARlEBmga-oF4w/photos/AV-0GLdjfXOfRgONidc1pJSrlWqgDyiA2kf-YnumwqbTP9LvtStdlWYXsHyX_tU3g--zb4HB5ucOFQ2KAUpBI-E67wIErcuE4lXGbTFj3f3LHvIpPsfQpmKF3Abrectzz-AUuCEjaoYJJ35XIOwdCB_dq2ffVmAJz-e5gikuB0dbW9JOoNwEqtGd0AihvsXM3PfhnM09yBltUp_pQHd3s8fK1JmYqXAHpnldm02yEWi0Npuk_-bjcQ3sp6oYJkjiPA6VRZqJLBdqxFFYAzhJo7yDVt88j34VvNULYApYmo2wGJ1W4RNkuiJ8zSw21UdB-TYwRW-E10EYrOT7PexB1XWrEzARmA4cVEWixAIpNcyIAXBNnpnYLp2aygvQRC1QrGrRIPTdvgBitbQftrvZpwIkJOUJCqw",
+      "places/ChIJP-MtN12Z4jARlEBmga-oF4w/photos/AV-0GLd1m5s98T8VVdvOTtIH7u6ivJhtKy626spoLSmY-ebwyhb9D8reItNWNz7VeND0nbH4nYrTs4SnD33g7THu2KS3Sv4Yw28hGfAOVzcpgRIfCC6NkI6zA0X4pbEQNGlezeaVkPl1arTdJ0tBU7giQiZ2eRjBDclAAxGbxqo971m9sW8QKp4zI0j-1fZz_tyC1VJ418w19C8_9R1ZvU4bhSe1Xi_ZQBq3lr9PJ67ZyNnrmbumc3XI3gH4Ei3xX-dLOqtf-sdhzGwaxmEyZiC4cwpLTixcc7V60eBv59NsHxa6GrdFs10dtb9q7S6boKcxseOv2yawL8PT13Mj1bgbryJLU0yGlKa9ZSPqVcM8xq6JAA7QuS_vGJU8VDbSGVGUTSPnwtNtmLm8ebmhDmOi_buOqXg"
+    ]
   }
 ]
