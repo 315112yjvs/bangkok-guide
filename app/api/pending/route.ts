@@ -20,6 +20,11 @@ async function handlePATCH(req: NextRequest) {
     const pending = await txPending(tx)
     const idx = pending.findIndex((p) => p.id === id)
     if (idx === -1) return false
+    // 待審時改成「話題爆紅」：記下時間（上架後兩個月內顯示爆紅，期滿退回原本的標籤）
+    if (updates.tag === 'trending' && pending[idx].tag !== 'trending') {
+      updates.trending_at = new Date().toISOString()
+      if (pending[idx].tag) updates.base_tag = pending[idx].tag
+    }
     pending[idx] = { ...pending[idx], ...updates }
     txWritePending(tx, pending)
     return true

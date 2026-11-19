@@ -195,6 +195,13 @@ function PendingCard({
     setEditing(false)
   }
 
+  // 點標籤就存回待審資料：「一鍵全部上架」讀的是伺服器上的待審，只改畫面的話標籤會被丟掉
+  function pickTag(tag: LocationTag) {
+    setForm(f => ({ ...f, tag }))
+    onUpdate(item.id, { tag })
+    fetch('/api/pending', { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: item.id, tag }) }).catch(() => {})
+  }
+
   async function saveAndApprove() {
     await save()
     onApprove(item.id, form.category, form.tag)
@@ -287,7 +294,7 @@ function PendingCard({
             {TAG_OPTIONS.map((t) => (
               <button
                 key={t.value}
-                onClick={() => setForm(f => ({ ...f, tag: t.value }))}
+                onClick={() => pickTag(t.value)}
                 className={`text-[10px] font-bold px-2 py-0.5 rounded-full border transition-all ${
                   form.tag === t.value
                     ? 'bg-[#0f172a] text-white border-[#0f172a]'
@@ -328,7 +335,7 @@ function PendingCard({
 
       {showScoring && (
         <div className="border-t border-gray-100 px-4 pb-3 pt-3 bg-gray-50">
-          <ScoringWidget onApply={(t) => setForm(f => ({ ...f, tag: t }))} />
+          <ScoringWidget onApply={pickTag} />
         </div>
       )}
 
@@ -1674,6 +1681,8 @@ export function AdminPanel() {
     const list: PendingLocation[] = await fetch('/api/pending').then(r => r.json())
     if (list.length === 0) return
     if (!confirm(`確定一鍵上架全部 ${list.length} 筆待審店家嗎？`)) return
+    // 畫面上選的標籤一起帶上（保險：萬一還沒存回伺服器）
+    const picked = new Map(pending.map(p => [p.id, p.tag]))
     setBatchRunning(true)
     try {
       for (let i = 0; i < list.length; i++) {
@@ -1681,7 +1690,7 @@ export function AdminPanel() {
         await fetch('/api/locations', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ action: 'approve', id: list[i].id }),
+          body: JSON.stringify({ action: 'approve', id: list[i].id, ...(picked.get(list[i].id) ? { tag: picked.get(list[i].id) } : {}) }),
         })
       }
       setHasUnsaved(true)
