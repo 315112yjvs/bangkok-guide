@@ -277,7 +277,8 @@ export async function enrichItem(
   name: string,
   category: string,
   lat?: number,
-  lng?: number
+  lng?: number,
+  opts: { allowLandmarks?: boolean } = {}
 ): Promise<EnrichedItem | null> {
   const place = await findPlace(name, lat, lng)
   if (!place) return null
@@ -296,7 +297,8 @@ export async function enrichItem(
     'neighborhood', 'subdistrict', 'locality', 'transit station', 'train station',
     'subway station', 'airport', 'hospital', 'university', 'school', 'library',
   ]
-  if (NON_VENUE_TYPES.some(t => placeType.includes(t))) {
+  // IG 同步會傳 allowLandmarks：站主拍的廟、景點也要能對到
+  if (!opts.allowLandmarks && NON_VENUE_TYPES.some(t => placeType.includes(t))) {
     console.log(`Skipping "${name}" — non-venue type: ${place.primaryTypeDisplayName?.text}`)
     return null
   }
@@ -323,6 +325,8 @@ export async function enrichItem(
     resolvedCategory = 'hotel'
   } else if (/^(shopping_mall|store|clothing_store|department_store|supermarket|market)$/.test(googleType)) {
     resolvedCategory = 'shopping'
+  } else if (opts.allowLandmarks && /temple|shrine|place_of_worship/.test(googleType + ' ' + placeType)) {
+    resolvedCategory = 'temple'
   } else if (/^(tourist_attraction|amusement_park|zoo|aquarium|museum|art_gallery|park)$/.test(googleType)) {
     resolvedCategory = 'attraction'
   } else {

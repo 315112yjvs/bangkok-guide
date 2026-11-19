@@ -1674,6 +1674,35 @@ export function AdminPanel() {
     }
   }
 
+  // IG 同步：讀 IG 最新貼文，把地點掛到網站並放進「曼谷人帶你去」（正式站每天也會自動跑一次）
+  const [igRunning, setIgRunning] = useState(false)
+  const [igStatus, setIgStatus] = useState('')
+  const [igLog, setIgLog] = useState<{ code: string; status: string; name?: string; title?: string; note?: string; posted?: string }[]>([])
+  const loadIgLog = useCallback(() => {
+    fetch('/api/ig-sync?log=1').then(r => r.json()).then(d => setIgLog((d.items ?? []).slice(0, 6))).catch(() => {})
+  }, [])
+  useEffect(() => { if (authed) loadIgLog() }, [authed, loadIgLog])
+  async function syncIg() {
+    setIgRunning(true)
+    setIgStatus('讀取 IG 最新貼文中（約 1 分鐘）...')
+    try {
+      const res = await fetch('/api/ig-sync', { method: 'POST' })
+      const data = await res.json()
+      if (!res.ok || data.error) throw new Error(data.error ?? `HTTP ${res.status}`)
+      if (!data.processed) setIgStatus(`沒有新貼文（看了最近 ${data.checked} 篇）`)
+      else {
+        setIgStatus(`處理 ${data.processed} 篇，更新 ${data.changed} 間店` + (data.deployed ? '，網站 2～3 分鐘後更新' : data.changed && !isVercel ? '，記得按「存檔並上傳」' : ''))
+        if (data.changed && !isVercel) setHasUnsaved(true)
+      }
+      loadData()
+      loadIgLog()
+    } catch (e) {
+      setIgStatus('同步失敗：' + (e instanceof Error ? e.message : String(e)))
+    } finally {
+      setIgRunning(false)
+    }
+  }
+
   async function deploy() {
     setDeploying(true)
     setDeployStatus('上傳中...')
@@ -1774,6 +1803,30 @@ export function AdminPanel() {
           <p className="text-slate-500 text-[10px] text-center mt-1.5">{scraperStatus}</p>
           </>}
           {isVercel && <p className="text-slate-500 text-[10px] text-center">找熱點、補庫存要在電腦上的後台跑</p>}
+          <button
+            onClick={syncIg}
+            disabled={igRunning}
+            title="讀 IG 最新貼文，文案裡的地點自動掛上影片、放進「曼谷人帶你去」。正式站每天晚上 8 點也會自動跑。"
+            className="mt-3 w-full bg-pink-600 hover:bg-pink-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5"
+          >
+            {igRunning ? '同步中...' : '同步 IG 貼文'}
+          </button>
+          {igStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{igStatus}</p>}
+          {igLog.length > 0 && (
+            <ul className="mt-2 space-y-1">
+              {igLog.map(e => (
+                <li key={e.code} className="text-[10px] leading-snug text-slate-400">
+                  <a href={`https://www.instagram.com/p/${e.code}/`} target="_blank" rel="noopener" className="hover:text-white">
+                    <span className={e.status === 'linked' || e.status === 'created' ? 'text-emerald-400' : e.status === 'pending' ? 'text-amber-400' : e.status === 'error' ? 'text-red-400' : 'text-slate-500'}>
+                      {{ linked: '已連動', created: '新上架', pending: '待審', skipped: '略過', error: '失敗' }[e.status] ?? e.status}
+                    </span>
+                    {' '}{e.name || e.title}
+                  </a>
+                  {e.note && <span className="block text-slate-500">{e.note}</span>}
+                </li>
+              ))}
+            </ul>
+          )}
           {hasUnsaved && !deploying && (
             <p className="text-amber-400 text-[10px] text-center mt-3 font-bold flex items-center justify-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />

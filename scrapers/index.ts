@@ -31,7 +31,7 @@ const hasLatin = (s: string) => /[a-z]/i.test(s)
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9\u00C0-\u024F\u0E00-\u0E7F\u4E00-\u9FFF]+/gi, '')
 
 // Google 回來的店名要跟來源寫的店名對得上，否則就是搜到不相干的店（舊版「Hi tiktok」「貨運行」就是這樣混進來的）
-function nameMatches(wanted: string, got: string): boolean {
+export function nameMatches(wanted: string, got: string): boolean {
   // 一邊純泰文、一邊純英文時無從比對字面，交給範圍限制與評分門檻把關
   if ((hasThai(wanted) && !hasLatin(wanted) && !hasThai(got)) || (hasThai(got) && !hasLatin(got) && !hasThai(wanted))) return true
   const a = norm(wanted), b = norm(got)

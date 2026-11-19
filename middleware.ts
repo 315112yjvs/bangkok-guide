@@ -19,6 +19,12 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
+  // Vercel Cron 每天打 /api/ig-sync，會帶 Authorization: Bearer <CRON_SECRET>
+  const cron = process.env.CRON_SECRET
+  if (pathname === '/api/ig-sync' && cron && req.headers.get('authorization') === `Bearer ${cron}`) {
+    return NextResponse.next()
+  }
+
   const secret = process.env.ADMIN_PASSWORD
   const token = req.cookies.get('bkk_admin')?.value
   if (secret && token && token === (await sha256Hex(secret))) {

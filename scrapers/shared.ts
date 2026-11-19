@@ -33,7 +33,8 @@ export type ScrapedItem = {
   local_ratio?: number
 }
 
-export async function firecrawlScrape(url: string): Promise<string> {
+// maxAge: 0 代表一定抓即時版本（例如 IG 個人頁要看到最新貼文），不用 Firecrawl 的快取
+export async function firecrawlScrape(url: string, opts: { maxAge?: number } = {}): Promise<string> {
   const apiKey = process.env.FIRECRAWL_API_KEY
   if (!apiKey) throw new Error('FIRECRAWL_API_KEY not set')
 
@@ -43,7 +44,7 @@ export async function firecrawlScrape(url: string): Promise<string> {
       'Authorization': `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ url, formats: ['markdown'] }),
+    body: JSON.stringify({ url, formats: ['markdown'], ...(opts.maxAge !== undefined ? { maxAge: opts.maxAge } : {}) }),
   })
 
   if (!res.ok) throw new Error(`Firecrawl error: ${res.status}`)
