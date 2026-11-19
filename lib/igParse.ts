@@ -29,3 +29,17 @@ export function parseCaption(md: string): { caption: string; posted?: string } {
     .trim()
   return { caption, posted }
 }
+
+// 座標後備比對用的店名比對，比 nameMatches 嚴：Google 常回百貨本身（Central Chidlom），
+// 不能因為百貨裡的店名字含百貨名稱（MUJI Coffee (Central Chidlom)）就當成同一間
+const normName = (s: string) => s.toLowerCase().replace(/[^a-z0-9\u0E00-\u0E7F\u4E00-\u9FFF]+/g, '')
+export function sameName(google: string, site: string): boolean {
+  const g = normName(google), t = normName(site)
+  if (!g || !t) return false
+  if (g === t) return true
+  const [short, long] = g.length <= t.length ? [g, t] : [t, g]
+  // 「Ganesha Shrine」對「Ganesha Shrine (CentralWorld)」：開頭相同、後面接分店名 → 同一間
+  // 「Central Chidlom」對「MUJI Coffee (Central Chidlom)」：百貨名接在店名後面 → 不同
+  if (short.length >= 5 && long.startsWith(short)) return true
+  return long.includes(short) && short.length / long.length >= 0.8
+}

@@ -10,7 +10,7 @@ import { firecrawlScrape } from '@/scrapers/shared'
 import { enrichItem } from '@/scrapers/enricher'
 import { nameMatches } from '@/scrapers/index'
 import type { Category, Location, PendingLocation } from './types'
-import { parseProfile, parseCaption, igCode, postUrl, type ProfilePost } from './igParse'
+import { parseProfile, parseCaption, igCode, postUrl, sameName, type ProfilePost } from './igParse'
 
 export { parseProfile, parseCaption, igCode }
 
@@ -25,6 +25,7 @@ export { parseProfile, parseCaption, igCode }
 export const IG_LOG_FILE = 'data/ig-sync.json'
 const MAX_POSTS_PER_RUN = 3
 const MAX_ATTEMPTS = 3
+const RETRY_DAYS = 90       // 超過 90 天的貼文不再重新比對
 
 export type IgStatus = 'linked' | 'created' | 'pending' | 'skipped' | 'error'
 export type IgLogEntry = {
@@ -36,6 +37,9 @@ export type IgLogEntry = {
   name?: string
   note?: string          // 為什麼略過、或其他說明
   attempts?: number
+  // 因為「網站上還沒有這個地點」而略過的貼文：存下文案，之後有新店上架時用文案重新比對（不用再讀 IG）
+  retry?: boolean
+  caption?: string
 }
 export type IgLog = Record<string, IgLogEntry>
 
@@ -81,7 +85,7 @@ ${list}
   - event：期間限定活動或節慶佈置（聖誕佈置、廟會、快閃展），辦在某個地點
   - multi：一篇介紹好幾個地點的合輯
   - other：沒有具體地點
-- match：這個地點如果就是清單裡的某一筆，填那筆的編號；同品牌但不同分店不算。沒有就填 null。只在很確定時才填。
+- match：這個地點如果就是清單裡的某一筆，填那筆的編號；同品牌但不同分店不算。event 的話比對「舉辦活動的地點」（例如金山寺廟會 → 金山寺 Wat Saket）。沒有就填 null。只在很確定時才填。
 - name_en：地點的英文名（Google 地圖上會用的名字，含分店名）
 - brand：店名本體，不含分店、百貨、樓層，例如「Jellycat」「Wat Saket」
 - name_zh：網站顯示用的中文名。店名本身是英文就照用英文；寺廟神壇用常見的中文名
@@ -105,6 +109,12 @@ ${list}
   return a
 }
 
+function distanceM(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const r = (d: number) => (d * Math.PI) / 180
+  const a = Math.sin(r(lat2 - lat1) / 2) ** 2 + Math.cos(r(lat1)) * Math.cos(r(lat2)) * Math.sin(r(lng2 - lng1) / 2) ** 2
+  return 6371000 * 2 * Math.asin(Math.sqrt(a))
+}
+
 type Plan =
   | { kind: 'link'; code: string; locationId: string; featuredAt: string; note: string; entry: IgLogEntry }
   | { kind: 'create'; code: string; location: Location; entry: IgLogEntry }
@@ -115,14 +125,16 @@ type Plan =
 const featuredTime = (posted?: string) => (posted ? new Date(`${posted}T12:00:00+07:00`).toISOString() : new Date().toISOString())
 
 export async function planPost(post: ProfilePost, locations: Location[], prev?: IgLogEntry): Promise<Plan> {
-  const base = { at: new Date().toISOString(), posted: post.posted, title: post.title }
+  const base: Omit<IgLogEntry, 'status'> = { at: new Date().toISOString(), posted: post.posted ?? prev?.posted, title: post.title || prev?.title }
   try {
-    const { caption, posted } = parseCaption(await firecrawlScrape(post.url))
+    // 重新比對的貼文用存下來的文案，不再花 Firecrawl 點數
+    const parsed = prev?.caption ? { caption: prev.caption, posted: prev.posted } : parseCaption(await firecrawlScrape(post.url))
+    const { caption, posted } = parsed
     if (posted) base.posted = posted
     if (caption.length < 10) throw new Error('讀不到文案')
     const a = await analyze(caption, locations)
     const featuredAt = featuredTime(base.posted)
-    const skip = (note: string): Plan => ({ kind: 'log', code: post.code, entry: { ...base, status: 'skipped', name: a.name_zh || a.name_en, note } })
+    const skip = (note: string, retry = false): Plan => ({ kind: 'log', code: post.code, entry: { ...base, status: 'skipped', name: a.name_zh || a.name_en, note, ...(retry ? { retry, caption } : {}) } })
 
     if (a.type === 'multi') return skip('合輯貼文，介紹好幾個地點，沒有自動處理')
     if (a.type === 'other') return skip(`沒有具體地點：${a.reason}`)
@@ -133,6 +145,11 @@ export async function planPost(post: ProfilePost, locations: Location[], prev?: 
     if (!matched) {
       place = await enrichItem(a.search_query || a.name_en, a.category, undefined, undefined, { allowLandmarks: true })
       if (place?.place_id) matched = locations.find((l) => extractPlaceId(l.source_url) === place!.place_id)
+      // 手動新增的店常存短網址（沒有 place id）：Google 找到的地點跟網站上的店相距 150 公尺內、名字也對得上，就是同一間
+      if (place && !matched) {
+        const p = place
+        matched = locations.find((l) => distanceM(l.lat, l.lng, p.lat, p.lng) < 150 && sameName(p.name_en, l.name_en))
+      }
     }
 
     if (matched) {
@@ -140,15 +157,16 @@ export async function planPost(post: ProfilePost, locations: Location[], prev?: 
         return { kind: 'log', code: post.code, entry: { ...base, status: 'skipped', location_id: matched.id, name: matched.name_zh, note: '這間店已經掛了另一支影片，沒有覆蓋' } }
       }
       const note = isHiddenCategory(matched.category) ? '這間店的分類目前在網站上隱藏，首頁看不到' : undefined
-      return { kind: 'link', code: post.code, locationId: matched.id, featuredAt, note: a.curator_note, entry: { ...base, status: 'linked', location_id: matched.id, name: matched.name_zh, note } }
+      // 活動貼文的心得寫的是活動本身（例如「一年只開一次」），不適合放在地點頁
+      return { kind: 'link', code: post.code, locationId: matched.id, featuredAt, note: a.type === 'event' ? '' : a.curator_note, entry: { ...base, status: 'linked', location_id: matched.id, name: matched.name_zh, note } }
     }
 
     // 活動只掛到已有的地點，不為了期間限定活動新增一家店
-    if (a.type === 'event') return skip(`期間限定活動，網站上沒有對應的地點（${a.name_en}）`)
-    if (!place) return skip(`Google 地圖找不到「${a.search_query || a.name_en}」，請手動新增`)
+    if (a.type === 'event') return skip(`期間限定活動，網站上沒有對應的地點（${a.name_en}）。之後新增這個地點會自動掛上`, true)
+    if (!place) return skip(`Google 地圖找不到「${a.search_query || a.name_en}」，手動新增後會自動掛上`, true)
     // 用店名本體比對：搜尋字串含百貨名稱，Google 常回百貨本身（例如搜 Jellycat Central Chidlom 回 Central Chidlom）
     if (!nameMatches(a.brand || a.name_en, place.name_en)) {
-      return skip(`Google 找到的是「${place.name_en}」，跟文案的「${a.name_en}」對不上，請手動新增`)
+      return skip(`Google 找到的是「${place.name_en}」，跟文案的「${a.name_en}」對不上，手動新增後會自動掛上`, true)
     }
 
     const category = (place.category === 'temple' || a.category === 'temple') ? 'temple' : (CATEGORIES.includes(place.category as Category) ? place.category as Category : a.category)
@@ -203,10 +221,20 @@ export async function syncInstagram(opts: { deploy?: boolean } = {}): Promise<Sy
     .reverse()                       // 舊的先處理，同一天發的照順序排
     .slice(0, MAX_POSTS_PER_RUN)
 
-  if (!todo.length) return { checked: profile.length, processed: 0, changed: 0, deployed: false, results: [] }
+  // 之前因為網站上沒有這個地點而略過的貼文：上次比對之後有新店上架，就用存下來的文案再比對一次
+  const lastApproved = Math.max(0, ...snapshot.locations.map((l) => new Date(l.approved_at ?? 0).getTime()))
+  const retryCutoff = Date.now() - RETRY_DAYS * 86400000
+  const retries: ProfilePost[] = Object.entries(snapshot.log)
+    .filter(([code, e]) => e.status === 'skipped' && e.retry && !linkedCodes.has(code) && !todo.some((p) => p.code === code))
+    .filter(([, e]) => new Date(e.at).getTime() < lastApproved && new Date(e.posted ?? e.at).getTime() > retryCutoff)
+    .slice(0, Math.max(0, MAX_POSTS_PER_RUN - todo.length))
+    .map(([code, e]) => ({ code, url: postUrl(code), posted: e.posted, title: e.title ?? '' }))
+
+  const queue = [...todo, ...retries]
+  if (!queue.length) return { checked: profile.length, processed: 0, changed: 0, deployed: false, results: [] }
 
   const visible = snapshot.locations
-  const plans = await Promise.all(todo.map((p) => planPost(p, visible, snapshot.log[p.code])))
+  const plans = await Promise.all(queue.map((p) => planPost(p, visible, snapshot.log[p.code])))
 
   const changed = plans.filter((p) => p.kind !== 'log').length
   await transact(`IG 同步 ${plans.map((p) => p.entry.name ?? p.code).join('、')}`, async (tx: Tx) => {
