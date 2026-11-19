@@ -23603,7 +23603,6 @@
     "tag": "trending",
     "action": "add",
     "photos": [
-      "/photos/dff9ebe3-bacc-47ec-bfca-1fade8f8449e/u-0f8905b1.jpg",
       "/photos/dff9ebe3-bacc-47ec-bfca-1fade8f8449e/0.jpg",
       "/photos/dff9ebe3-bacc-47ec-bfca-1fade8f8449e/1.jpg",
       "/photos/dff9ebe3-bacc-47ec-bfca-1fade8f8449e/2.jpg",
@@ -23629,7 +23628,8 @@
     "photo_focus": {
       "/photos/dff9ebe3-bacc-47ec-bfca-1fade8f8449e/u-0f8905b1.jpg": 59
     },
-    "curator_note": "我點的 Dirty 牛奶味很濃、很順口。二樓的衣服圖案可以現場幫你印，坐在落地窗邊還能看 BTS 從窗外經過，平日早上來人最少。"
+    "curator_note": "我點的 Dirty 牛奶味很濃、很順口。二樓的衣服圖案可以現場幫你印，坐在落地窗邊還能看 BTS 從窗外經過，平日早上來人最少。",
+    "video_cover": "/photos/dff9ebe3-bacc-47ec-bfca-1fade8f8449e/u-0f8905b1.jpg"
   },
   {
     "name_zh": "The Summer Coffee - Central Park",
@@ -23685,7 +23685,6 @@
     "tag": "trending",
     "action": "add",
     "photos": [
-      "/photos/15e6ee87-e68d-44b9-bb97-260f48d5276b/u-bacc85f3.jpg",
       "/photos/15e6ee87-e68d-44b9-bb97-260f48d5276b/0.jpg",
       "/photos/15e6ee87-e68d-44b9-bb97-260f48d5276b/1.jpg",
       "/photos/15e6ee87-e68d-44b9-bb97-260f48d5276b/2.jpg",
@@ -23711,7 +23710,8 @@
     "photo_focus": {
       "/photos/15e6ee87-e68d-44b9-bb97-260f48d5276b/u-bacc85f3.jpg": 47
     },
-    "curator_note": "貝果口感扎實有嚼勁，咬下去不會乾硬。我點了蜂蜜薩拉米和希臘優格覆盆莓，最受歡迎的是酪梨開心果配自製奶油起司。週一公休。"
+    "curator_note": "貝果口感扎實有嚼勁，咬下去不會乾硬。我點了蜂蜜薩拉米和希臘優格覆盆莓，最受歡迎的是酪梨開心果配自製奶油起司。週一公休。",
+    "video_cover": "/photos/15e6ee87-e68d-44b9-bb97-260f48d5276b/u-bacc85f3.jpg"
   },
   {
     "id": "32262198-2e0b-4261-ae52-96255a2f9ce9",
@@ -24128,7 +24128,6 @@
     "tag": "trending",
     "action": "add",
     "photos": [
-      "/photos/cc134e82-253e-43cf-8ff2-c98c65d93bef/u-3ae6c859.jpg",
       "/photos/cc134e82-253e-43cf-8ff2-c98c65d93bef/0.jpg",
       "/photos/cc134e82-253e-43cf-8ff2-c98c65d93bef/1.jpg",
       "/photos/cc134e82-253e-43cf-8ff2-c98c65d93bef/2.jpg",
@@ -24152,6 +24151,7 @@
     "photo_focus": {
       "/photos/cc134e82-253e-43cf-8ff2-c98c65d93bef/u-3ae6c859.jpg": 50
     },
-    "curator_note": "清湯豬肉河粉小碗只要 26 銖，靠欄杆的位子正對 Benjakitti Park 的湖景，風很涼。下午 4 點就收，要早點來。"
+    "curator_note": "清湯豬肉河粉小碗只要 26 銖，靠欄杆的位子正對 Benjakitti Park 的湖景，風很涼。下午 4 點就收，要早點來。",
+    "video_cover": "/photos/cc134e82-253e-43cf-8ff2-c98c65d93bef/u-3ae6c859.jpg"
   }
 ]

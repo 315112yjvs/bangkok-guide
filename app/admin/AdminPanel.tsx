@@ -497,6 +497,52 @@ function PendingCard({
 // 剛上傳的照片在正式站要等部署完才有檔案，這段時間先用瀏覽器裡的縮圖預覽
 const uploadedPreview = new Map<string, string>()
 
+// 影片封面：只用在首頁「曼谷人帶你去」和 /ig 頁，其他地方顯示上面的店家照片。選了檔案就直接存
+function VideoCoverField({ item, onUpdate }: { item: Location; onUpdate: (id: string, updates: Partial<Location>) => void | Promise<void> }) {
+  const [cover, setCover] = useState(item.video_cover ?? '')
+  const [busy, setBusy] = useState(false)
+  async function upload(files: FileList | null) {
+    const file = files?.[0]
+    if (!file) return
+    setBusy(true)
+    try {
+      const [photo, thumb] = await Promise.all([resizePhoto(file), resizePhoto(file, 480)])
+      const res = await fetch('/api/photos', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id: item.id, photo, thumb }) })
+      if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error ?? `HTTP ${res.status}`)
+      const path = (await res.json()).path as string
+      uploadedPreview.set(path, thumb)
+      await onUpdate(item.id, { video_cover: path })
+      setCover(path)
+    } catch (e) {
+      alert('封面上傳失敗：' + (e instanceof Error ? e.message : String(e)))
+    } finally {
+      setBusy(false)
+    }
+  }
+  async function clear() {
+    await onUpdate(item.id, { video_cover: '' })
+    setCover('')
+  }
+  return (
+    <div className="col-span-2 flex items-center gap-3 bg-pink-50 rounded-xl p-2.5">
+      <div className="w-14 h-20 rounded-lg overflow-hidden bg-white shrink-0 border border-pink-100">
+        {cover && <img src={uploadedPreview.get(cover) ?? photoUrl(cover, 200)} alt="" className="w-full h-full object-cover" />}
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-xs font-bold text-pink-700">影片封面</p>
+        <p className="text-[10px] text-pink-600/80 leading-snug">只顯示在首頁「曼谷人帶你去」和 /ig 頁，其他地方用店家照片。選好檔案會直接存。</p>
+        <div className="flex gap-2 mt-1.5">
+          <label className={`text-[11px] font-bold px-2.5 py-1 rounded-lg bg-pink-600 text-white cursor-pointer ${busy ? 'opacity-50 pointer-events-none' : 'hover:bg-pink-500'}`}>
+            {busy ? '上傳中...' : cover ? '換封面' : '上傳封面'}
+            <input type="file" accept="image/*" className="hidden" onChange={(e) => { upload(e.target.files); e.target.value = '' }} />
+          </label>
+          {cover && !busy && <button type="button" onClick={clear} className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-white text-pink-700 hover:bg-pink-100">移除</button>}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function PhotoManager({ photos, onChange, locationId }: { photos: string[]; onChange: (photos: string[]) => void; locationId?: string }) {
   const [dragIdx, setDragIdx] = useState<number | null>(null)
   const [newUrl, setNewUrl] = useState('')
@@ -718,6 +764,7 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
           <div className="grid grid-cols-2 gap-2">
             {/* 照片放最上面，改封面不用往下找 */}
             <PhotoManager photos={form.photos} onChange={(photos) => setForm(f => ({ ...f, photos }))} locationId={item.id} />
+            <VideoCoverField item={item} onUpdate={onUpdate} />
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">中文名稱</p><input className={inp} value={form.name_zh} onChange={e => setForm(f => ({...f, name_zh: e.target.value}))} /></div>
             <div><p className="text-[10px] font-semibold text-gray-500 mb-1">English Name</p><input className={inp} value={form.name_en} onChange={e => setForm(f => ({...f, name_en: e.target.value}))} /></div>
             <div className="col-span-2"><p className="text-[10px] font-semibold text-gray-500 mb-1">泰文店名</p><input className={inp} value={form.name_th} onChange={e => setForm(f => ({...f, name_th: e.target.value}))} /></div>
@@ -854,6 +901,7 @@ function TempleCard({ item, onUpdate, onRemove }: {
       {open && (
         <div className="border-t border-slate-100 p-4 space-y-3">
           <PhotoManager photos={f.photos} onChange={(photos) => setF(prev => ({ ...prev, photos }))} locationId={item.id} />
+          <div className="grid grid-cols-2"><VideoCoverField item={item} onUpdate={onUpdate} /></div>
           <div className="grid gap-3 md:grid-cols-3">
             {field('中文名稱', '中文版網站顯示', <input value={f.name_zh} onChange={set('name_zh')} className={input} />)}
             {field('英文名稱', '英文版網站顯示', <input value={f.name_en} onChange={set('name_en')} className={input} />)}

@@ -31,6 +31,7 @@ export type Location = {
   old_slugs?: string[]   // 改名前的舊 slug，舊網址會永久轉到新 slug
   featured?: boolean     // 站主推薦：出現在首頁最上面「曼谷人帶你去」
   featured_at?: string   // 勾選推薦的時間，越新排越前面
+  video_cover?: string   // 站主影片封面（本機檔路徑），只在「曼谷人帶你去」與 /ig 頁顯示，其他地方用 photos[0]
   photo_focus?: Record<string, number> // 照片上文字區塊的垂直中心（0～100），卡片裁切時對準這裡
   name_zh: string
   name_en: string

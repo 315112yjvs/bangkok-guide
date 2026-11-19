@@ -293,6 +293,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                           onToggleSave={handleToggleSave}
                           compact
                           hideTag
+                          videoCover={key === 'featured'}
                         />
                       </Reveal>
                     ))}
@@ -691,6 +692,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                         onToggleSave={handleToggleSave}
                         compact
                         hideTag={activeTag !== 'all'}
+                        videoCover={specialFilter === 'featured'}
                       />
                     </Reveal>
                   ))}

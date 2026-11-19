@@ -44,9 +44,10 @@ const TAG_BADGE: Record<LocationTag, { emoji: string; zh: string; en: string; co
 }
 
 
-type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void; compact?: boolean; hideTag?: boolean }
+// videoCover：「曼谷人帶你去」用站主影片封面當卡片照片；其他地方維持店家原本的照片
+type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void; compact?: boolean; hideTag?: boolean; videoCover?: boolean }
 
-export function LocationCard({ location, lang, distanceKm, saved: savedProp = false, onToggleSave, compact = false, hideTag = false }: Props) {
+export function LocationCard({ location, lang, distanceKm, saved: savedProp = false, onToggleSave, compact = false, hideTag = false, videoCover = false }: Props) {
   const router = useRouter()
   const minute = useBangkokMinute()
   const status = location.hours && minute !== null ? openStatus(location.hours, minute) : null
@@ -89,7 +90,8 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
 
   // 照片走 /api/photo 代理（CDN 快取、不外露 key）；載入失敗時換預設圖避免破圖
   // 卡片最寬約 330px，抓 480 就夠（原本抓 800，流量多一倍以上）
-  const photo = photoUrl(location.photos[0], 480)
+  const cover = (videoCover && location.video_cover) || location.photos[0]
+  const photo = photoUrl(cover, 480)
   const [imgSrc, setImgSrc] = useState(photo)
   // 圖片載入失敗時先重試一次（冷快取/暫時性錯誤常一試就過），第二次才換預設圖
   const retried = useRef(false)
@@ -141,7 +143,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
           alt={name}
           fill
           className="object-cover"
-          style={photoPosition(location.photo_focus, location.photos[0])}
+          style={photoPosition(location.photo_focus, cover)}
           sizes="(max-width: 768px) 50vw, 33vw"
           unoptimized
           onError={handleImgError}

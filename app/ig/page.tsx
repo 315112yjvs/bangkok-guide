@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 // IG 個人簡介的連結放這頁：排列跟 IG 一樣是影片封面格子，點了直接到那間店
 export default function IgPage() {
   const items = readVisibleLocations()
-    .filter((l) => l.social_embed_url && l.photos[0])
+    .filter((l) => l.social_embed_url && (l.video_cover || l.photos[0]))
     .sort((a, b) =>
       new Date(b.featured_at ?? b.approved_at ?? 0).getTime() - new Date(a.featured_at ?? a.approved_at ?? 0).getTime())
 
@@ -39,20 +39,20 @@ export default function IgPage() {
 
       {items.length > 0 ? (
         <div className="grid grid-cols-3 gap-0.5">
-          {items.map((l) => (
+          {items.map((l) => { const cover = l.video_cover || l.photos[0]; return (
             <Link key={l.id} href={`/location/${l.slug ?? l.id}`} className="relative block aspect-[3/4] bg-paper overflow-hidden">
               {/* 9:16 封面放進 3:4 格子約露出 75% 高度；封面上已經有店名，不另外疊字 */}
               <Image
-                src={photoUrl(l.photos[0], 480)}
+                src={photoUrl(cover, 480)}
                 alt={l.name_zh || l.name_en}
                 fill
                 sizes="(max-width: 768px) 33vw, 256px"
                 className="object-cover"
-                style={photoPosition(l.photo_focus, l.photos[0], 0.75)}
+                style={photoPosition(l.photo_focus, cover, 0.75)}
                 unoptimized
               />
             </Link>
-          ))}
+          )})}
         </div>
       ) : (
         <p className="text-center text-[13px] text-muted py-10">影片整理中</p>
