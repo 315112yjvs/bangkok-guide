@@ -1725,6 +1725,7 @@ export function AdminPanel() {
   // IG 同步：讀 IG 最新貼文，把地點掛到網站並放進「曼谷人帶你去」（正式站每天也會自動跑一次）
   const [igRunning, setIgRunning] = useState(false)
   const [igStatus, setIgStatus] = useState('')
+  const [igLogOpen, setIgLogOpen] = useState(false)
   const [igLog, setIgLog] = useState<{ code: string; status: string; name?: string; title?: string; note?: string; posted?: string }[]>([])
   const loadIgLog = useCallback(() => {
     fetch('/api/ig-sync?log=1').then(r => r.json()).then(d => setIgLog((d.items ?? []).slice(0, 6))).catch(() => {})
@@ -1861,19 +1862,25 @@ export function AdminPanel() {
           </button>
           {igStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{igStatus}</p>}
           {igLog.length > 0 && (
-            <ul className="mt-2 space-y-1">
-              {igLog.map(e => (
-                <li key={e.code} className="text-[10px] leading-snug text-slate-400">
-                  <a href={`https://www.instagram.com/p/${e.code}/`} target="_blank" rel="noopener" className="hover:text-white">
-                    <span className={e.status === 'linked' || e.status === 'created' ? 'text-emerald-400' : e.status === 'pending' ? 'text-amber-400' : e.status === 'error' ? 'text-red-400' : 'text-slate-500'}>
-                      {{ linked: '已連動', created: '新上架', pending: '待審', skipped: '略過', error: '失敗' }[e.status] ?? e.status}
-                    </span>
-                    {' '}{e.name || e.title}
-                  </a>
-                  {e.note && <span className="block text-slate-500">{e.note}</span>}
-                </li>
-              ))}
-            </ul>
+            <div className="mt-1.5">
+              <button onClick={() => setIgLogOpen(o => !o)} className="w-full text-[10px] text-slate-500 hover:text-slate-300 text-center">
+                處理紀錄（{igLog.length}）{igLogOpen ? '▴' : '▾'}
+              </button>
+              {igLogOpen && (
+                <ul className="mt-1 max-h-32 overflow-y-auto space-y-0.5">
+                  {igLog.map(e => (
+                    <li key={e.code} title={e.note ?? ''} className="text-[10px] leading-snug text-slate-400 truncate">
+                      <a href={`https://www.instagram.com/p/${e.code}/`} target="_blank" rel="noopener" className="hover:text-white">
+                        <span className={e.status === 'linked' || e.status === 'created' ? 'text-emerald-400' : e.status === 'pending' ? 'text-amber-400' : e.status === 'error' ? 'text-red-400' : 'text-slate-500'}>
+                          {{ linked: '已連動', created: '新上架', pending: '待審', skipped: '略過', error: '失敗' }[e.status] ?? e.status}
+                        </span>
+                        {' '}{e.name || e.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           )}
           {hasUnsaved && !deploying && (
             <p className="text-amber-400 text-[10px] text-center mt-3 font-bold flex items-center justify-center gap-1">
