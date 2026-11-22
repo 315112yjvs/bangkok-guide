@@ -24410,10 +24410,92 @@
       "places/ChIJP-MtN12Z4jARlEBmga-oF4w/photos/AV-0GLd1m5s98T8VVdvOTtIH7u6ivJhtKy626spoLSmY-ebwyhb9D8reItNWNz7VeND0nbH4nYrTs4SnD33g7THu2KS3Sv4Yw28hGfAOVzcpgRIfCC6NkI6zA0X4pbEQNGlezeaVkPl1arTdJ0tBU7giQiZ2eRjBDclAAxGbxqo971m9sW8QKp4zI0j-1fZz_tyC1VJ418w19C8_9R1ZvU4bhSe1Xi_ZQBq3lr9PJ67ZyNnrmbumc3XI3gH4Ei3xX-dLOqtf-sdhzGwaxmEyZiC4cwpLTixcc7V60eBv59NsHxa6GrdFs10dtb9q7S6boKcxseOv2yawL8PT13Mj1bgbryJLU0yGlKa9ZSPqVcM8xq6JAA7QuS_vGJU8VDbSGVGUTSPnwtNtmLm8ebmhDmOi_buOqXg"
     ],
     "temple": {
-      "deity_zh": "",
-      "wishes_zh": [],
-      "steps_zh": [],
-      "offerings_zh": []
+      "deity_zh": "佛陀舍利",
+      "wishes_zh": [
+        "金山寺不是求特定事情的廟，比較像來「做功德、求平安」。泰國人相信參拜佛陀舍利是很大的功德，可以求全家平安、運勢順利、心裡踏實。爬上三百多級台階再敲鐘祈福，也有「步步高升、好運上身」的意思。"
+      ],
+      "steps_zh": [
+        "在山腳下的售票處買票，再開始爬台階",
+        "沿著螺旋步道往上爬，途中可以敲兩旁的銅鐘祈福",
+        "到山頂前先在入口買花、香、蠟燭或金箔",
+        "點香合十，向金色佛塔默念自己的名字與心願",
+        "順時針繞佛塔三圈",
+        "隨喜捐獻做功德，最後到觀景台看曼谷老城"
+      ],
+      "offerings_zh": [
+        "基本款是鮮花（蓮花或花串）、香、蠟燭，大約幾十泰銖就能買到一組。也可以貼金箔，或在佛塔前隨喜捐錢。每年 11 月的廟會期間，信眾還會在紅布上寫下自己和家人的名字，再一起包在佛塔上祈福。"
+      ],
+      "hours_zh": "07:00–19:00",
+      "tips_zh": [
+        "外國人爬金山要買門票 100 泰銖，只收現金，泰國人免費",
+        "山腳下的寺院範圍不用門票",
+        "約 300 多級台階，爬起來不算太累，建議早上或傍晚去，比較涼",
+        "服裝要遮肩、過膝",
+        "每年 11 月水燈節前後有大型廟會，晚上有燭光遊行，人會非常多",
+        "最近的捷運站是 MRT Sam Yot，也可以搭 Saen Saep 運河船到 Phan Fa 站"
+      ],
+      "thai": [
+        {
+          "th": "ภูเขาทอง",
+          "read": "phu khao thong",
+          "zh": "金山",
+          "en": "Golden Mount"
+        },
+        {
+          "th": "วัดสระเกศ",
+          "read": "wat sa-ket",
+          "zh": "金山寺（正式寺名）",
+          "en": "Wat Saket"
+        },
+        {
+          "th": "พระบรมสารีริกธาตุ",
+          "read": "phra borom-ma-sa-ri-rik-ka-that",
+          "zh": "佛陀舍利",
+          "en": "Buddha's relics"
+        },
+        {
+          "th": "ทำบุญ",
+          "read": "tham bun",
+          "zh": "做功德",
+          "en": "to make merit"
+        },
+        {
+          "th": "ตีระฆัง",
+          "read": "ti ra-khang",
+          "zh": "敲鐘",
+          "en": "to ring the bell"
+        },
+        {
+          "th": "สาธุ",
+          "read": "sa-thu",
+          "zh": "善哉（祈福後說）",
+          "en": "amen / so be it"
+        }
+      ],
+      "deity_en": "Relics of the Buddha",
+      "wishes_en": [
+        "Wat Saket isn't a temple for one specific wish. People come to make merit and pray for peace. Paying respect to the Buddha's relics is considered a great act of merit, believed to bring blessings, good fortune and peace of mind for you and your family. Climbing the 300+ steps and ringing the bells along the way is also seen as inviting good luck."
+      ],
+      "steps_en": [
+        "Buy your ticket at the foot of the hill before the climb",
+        "Follow the spiral path up, ringing the bells along the way for luck",
+        "Pick up flowers, incense, candles or gold leaf near the top",
+        "Light incense, press your palms together and silently say your name and wish before the golden chedi",
+        "Walk clockwise around the chedi three times",
+        "Leave a donation to make merit, then enjoy the view of Old Bangkok from the terrace"
+      ],
+      "offerings_en": [
+        "The basics are flowers (lotus or garlands), incense and candles, usually a few dozen baht per set. You can also apply gold leaf or leave a donation at the chedi. During the November temple fair, devotees write their own and their family's names on a red cloth that is wrapped around the chedi as a blessing."
+      ],
+      "hours_en": "07:00–19:00",
+      "tips_en": [
+        "Foreigners pay 100 THB (cash only) to climb the Golden Mount; free for Thais",
+        "The temple grounds at the base are free to enter",
+        "About 300+ steps, an easy climb; go in the morning or late afternoon to beat the heat",
+        "Cover shoulders and knees",
+        "A big temple fair is held every November around Loy Krathong, with a candlelight procession, so expect crowds",
+        "Nearest station: MRT Sam Yot, or take the Saen Saep canal boat to Phan Fa pier"
+      ]
     },
     "social_embed_url": "https://www.instagram.com/p/Df2C0HCCTee/"
   },
