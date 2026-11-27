@@ -38,6 +38,7 @@ Links: https://www.bkk-local.com/ig`
   it('座標比對的店名：百貨本身不能對到百貨裡的店', () => {
     expect(sameName('Central Chidlom', 'MUJI Coffee (Central Chidlom)')).toBe(false)
     expect(sameName('centralwOrld', 'Laem Charoen Seafood Central World')).toBe(false)
+    expect(sameName('centralwOrld', 'UNO! (centralwOrld)')).toBe(false)
     expect(sameName('Wat Saket Ratchawora Mahawihan', 'Wat Saket Ratchawora Mahawihan')).toBe(true)
     expect(sameName('Ganesha Shrine', 'Ganesha Shrine (CentralWorld)')).toBe(true)
   })

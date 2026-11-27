@@ -29,9 +29,10 @@
     "at": "2026-11-22T13:00:50.285Z",
     "posted": "2026-11-11",
     "title": "曼谷 Central World 聖誕城登場，迪士尼與皮克斯全來了！🎄 現場集",
-    "status": "linked",
-    "location_id": "1268aaa1-bf31-4c4d-a228-3ae48eb92bcf",
-    "name": "UNO! (centralwOrld)"
+    "status": "skipped",
+    "name": "Central World 聖誕城",
+    "note": "期間限定活動，曾誤連到 UNO! (centralwOrld)，已清掉。之後新增這個地點會自動掛上",
+    "retry": true
   },
   "Df4kAi2BEdq": {
     "at": "2026-11-22T13:00:50.286Z",

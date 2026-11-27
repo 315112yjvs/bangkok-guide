@@ -40,6 +40,6 @@ export function sameName(google: string, site: string): boolean {
   const [short, long] = g.length <= t.length ? [g, t] : [t, g]
   // 「Ganesha Shrine」對「Ganesha Shrine (CentralWorld)」：開頭相同、後面接分店名 → 同一間
   // 「Central Chidlom」對「MUJI Coffee (Central Chidlom)」：百貨名接在店名後面 → 不同
-  if (short.length >= 5 && long.startsWith(short)) return true
-  return long.includes(short) && short.length / long.length >= 0.8
+  // 其他情況一律不算（「centralwOrld」對「UNO! (centralwOrld)」曾被當成同一間，把聖誕城影片掛到 UNO）
+  return short.length >= 5 && long.startsWith(short)
 }
