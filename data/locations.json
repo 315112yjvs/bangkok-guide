@@ -23338,6 +23338,12 @@
     "mentions": 2,
     "evidence": [
       {
+        "url": "https://www.tiktok.com/@khwanji_wsw/video/7705368212581485845",
+        "title": "Jelly Happens คาเฟ่พญาไท — คาเฟ่เปิดใหม่ น่ารัก บรรยากาศชิล",
+        "quote": "平衛街新開幕可愛咖啡館，氛圍舒適",
+        "facts": "位於平衛街，營業時間10:30-18:30，周一公休"
+      },
+      {
         "url": "https://www.tiktok.com/@doubleteereview/video/7699350161532734726",
         "title": "คาเฟ่เจลลี่เปิดใหม่ Jelly Happens พญาไท ใกล้ BTS",
         "quote": "帕亞泰區新開幕的果凍咖啡快閃店，靠近BTS站",
@@ -23364,7 +23370,7 @@
     ],
     "approved_at": "2026-11-09T08:27:40.109Z",
     "slug": "jelly-happens",
-    "trending_at": "2026-11-15T07:51:06.151Z",
+    "trending_at": "2026-11-27T07:08:26.140Z",
     "base_tag": "hidden_gem"
   },
   {
@@ -24651,5 +24657,243 @@
       "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLcIuUhKLOyhIikOYKXyx8r1VB43QIjJrWLtLHf2jXVYxROgkd6hcTUbnqFlKATu2JDlbXOnrD0_KUXBaWMZ9mA56SDlxDxXTjuDt9nLtslwxZCNG38rm49nWES463wvQwCJ9-pBm2nAUG7HJajr2fzhJDYdR6xmgosdd54ykFaORuFRzzVMbqMadvWoo6KwQh_Gn7zlTEjwX9VJ2cAzL1lYVMD5NxsJpXbaEwL5TqJX3NkDqbc0vlAIK1c1vvjc__bCibDeS-ThE3_iirjgnhSYqj1AgegZ7kkUsO8DsLHxj1cUVLsADqOSxUkkrCir4r1-2AODL9SXq0Ud2k9N0aRwm6F2zSm45Djl3792mnUNElMqVzM7bpSYx3PCc7dtAzd8ivBDoVWfYft7dunP3qSOww",
       "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLddAojZxfqGa03iB6RjMbkqDkzY-nB8a5gvLSfvEljD40tvkte9ilPuqnZEXYTpQsBtp-i54rew_vZpZFPRROVOeuyuGY2opRYakYbnutlLuGFgDrN_v5uPKRM_W2BJF8xpS4eG1TfpHnxSVl-IqGCYlarFt-tDsAKDb6V2NMBCvQyV9GaiFAJD_ld3lKucb4f7srHqsEq0nnsXhmrfC_GUUvpCib93LAnOe9KKnnMdUyQqm5_Oq_i_6Y1oKjOGEiVyGds8iKBIUDvZLO7qmzXjA0CUENgwmnIwdnHcRpp-cRpTOpNoEWl-30xAmRdy5zJAg9kRmopuI8cSVjz_hYAIZnvJfGcrlDGmxqojgNBt6RT6_tlhZYi6QlpFi2hAoouNhMZ0pNJYONHEQF98xxSVwp1mwzk"
     ]
+  },
+  {
+    "id": "cafb60b9-e333-4286-922b-b751cedeab5d",
+    "name_en": "Gaggan",
+    "name_zh": "Gaggan",
+    "description_zh": "主廚 Gaggan Anand 親自主持的進階餐廳，坐落於 Sukhumvit 31。用餐形式像一場演出：先經過霓虹燈走廊和威士忌吧，再入座緊鄰廚房的長型共用餐檯，主廚全程以說故事方式解說每道菜背後的人生經歷，共約 22–28 道料理。全程禁止拍照，手機鏡頭須貼上貼紙。需事先訂位，且須準時到場。",
+    "description_en": "Chef Gaggan Anand runs the entire experience himself at this restaurant on Sukhumvit 31. Dinner unfolds like a show: guests pass through a neon-lit corridor and a whiskey bar before taking seats at a long counter facing the open kitchen, where Gaggan narrates each of the 22–28 courses as chapters of his own life story. No photos allowed — phone cameras are covered with stickers. Reservations are required and punctuality is expected.",
+    "category": "food",
+    "address": "68 Sukhumvit 31, Khwaeng Khlong Tan Nuea, Watthana, Krung Thep Maha Nakhon 10110",
+    "lat": 13.740783899999998,
+    "lng": 100.56758669999999,
+    "photos": [
+      "/photos/cafb60b9-e333-4286-922b-b751cedeab5d/0.jpg",
+      "/photos/cafb60b9-e333-4286-922b-b751cedeab5d/1.jpg",
+      "/photos/cafb60b9-e333-4286-922b-b751cedeab5d/2.jpg",
+      "/photos/cafb60b9-e333-4286-922b-b751cedeab5d/3.jpg"
+    ],
+    "source": "instagram",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Gaggan%2068%20Sukhumvit%2031%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110&query_place_id=ChIJi_nHcf-f4jARAI6VOXH0wII",
+    "rating": 4.4,
+    "price_range": 4,
+    "tag": "trending",
+    "trending_at": "2026-11-27T07:08:26.756Z",
+    "base_tag": "hidden_gem",
+    "area": "Sukhumvit",
+    "mentions": 2,
+    "evidence": [
+      {
+        "url": "https://www.instagram.com/p/DfV_eoyslVu/",
+        "title": "Gaggan in Bangkok is The Best Restaurant in Asia 2026. ...",
+        "quote": "知名廚師Anand開設的新餐廳，後改名為Gaggan。",
+        "facts": "由主廚Anand開設，後於2024年重新採用較短的名稱Gaggan。"
+      },
+      {
+        "url": "https://www.instagram.com/reel/Df5VLeUE_5H/",
+        "title": "The number 2 restaurant in the world hands you a menu ...",
+        "quote": "世界排名第2的餐廳，2019年原店關閉後在曼谷新地點重新開幕。",
+        "facts": "主廚Anand於2019年8月後在曼谷新地點開設新餐廳。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJi_nHcf-f4jARAI6VOXH0wII/photos/AV-0GLcVERoXqI4NgX7mFlaI74tduUdZ6-BPZxpCVBjKk3McW3JQLDQAnkVPuIHesTMIV2k_ZVHHa8KWuwMV83VsWSVAhvGKhGaSQGWQtuHyBQAO1EDl12NSCBFIk13uk75uUyCcNbiGgaa5MBbSi7F8dEzCdIZsjtrAwCzVT92KbSc9hC5zqhkRhuIVouHXEqP710zUD9VKYMtNmi2zo2NZ4YccllSx67Touj_Z6HNKmKk4WYLUjUZIioWeE1OIOsmaO4sNuJTlkoifqVCcKAlzZ8f5dmt3OxslB9SvpZJmxSpofSjDs1mebWYwWyOBEluRlURCciZg6hoXuwj3jy022QeNe0LqjSa3VX9Zon8b_DMcXcN-MhWbgul0Aqf90yaAX8tLiyaQCV3C-t5wq-NXb14khpMV",
+      "places/ChIJi_nHcf-f4jARAI6VOXH0wII/photos/AV-0GLeNiH1wH7mKmNmBbbUVwszO1JJgdJa7YW6AVa1pvq6MMZejfl-8nolLcbPMjkhKZx7PMG2IwtUA6v9x7qYa7r_EtCjRtMz_53gYFOFSpAP-MPs-GwpcjriFbmAS_OZFM91tJ7aS_NY-YO5fAUHWuN6BYRT09Lpu34SRgV8RnyNp4kxkKI-ZzgthguY8muZMzmlDBpiUTE6HJoRmcrAudKnAr6LcrL5Xw8VOaZHyk3E-Rbk2ZelJpzGmUzHS4zJ7gLANWaEr4yacVHodAYmKI-wWH9hxwFoAMcByJzyMzGareHgUy5gHkh--luBYcPJjBD1_-q3hjyharVYdBAa1BPTrUzdIRBYAr2vePg0YkZgKilP0poUxsvZVNtc6rZVTHDLax0ExDmXwQjhXsUVWvO4toBqzj-s",
+      "places/ChIJi_nHcf-f4jARAI6VOXH0wII/photos/AV-0GLenfaRfSCb2Cb62wg2pH7NuN4LhcVF_F3_spTGVIwnuQ78_67k3SnpX_UDMA36V2PJtQH2ASkbR7pw_4bUfe3YNah80E98-bENdhMhHe58oUVrrjYuc_Y974Ko3QLXRki5NpHm_mzHqRkqNT75BsrgtsMUwG81733pk8QaqE0LMmQgtPs0x01h4PU-4DdH9c7xUt0kvu77iKjBrLN28Sx1-wsWZyBhIYiMOLOqbl09rgtp8dAqPr2uJESTrAw8HrgzSsUUGm8NGViJGp3Xq8mIrVXgmwmkvMUJacTN7LS9FiRXyykmEdtcii0w7KRl4S2ytWLn8EJeeeJGEU6yy1A-rxrZ-yO51xQ9sXVx0EOknVt28Dr2H0JfgkmkMEQtTIMUE9ce6tklXnpz0PzPl7EMxM8Nd0XpykBsd5cV1o0QHkw",
+      "places/ChIJi_nHcf-f4jARAI6VOXH0wII/photos/AV-0GLcChCq8-QyFndlo2FnayJJlHAKdgh_6Ee0YQS7zTgSjHBKi2q0zSGaOjrrHoYxXL1giVmbtlT0oVvkofBtIUSp0wIuR_lBQvKfzdL-nIS6WZU983FVyC2Hxm8MYJnLB-IlBd4qEdypwlLlK7yQUGQH3TzBwkjh-8lpshKDujgosbow3lIofSTiKD1bdlHgvFNAUpvMCVRpqEJUrk8OJ1Vwk2f3bntekPHNmdudzwJigHasbWGp_VPjWU8zY0-fzyMyZ3EDHmL6dO2mEcu6YPfBRqJ93-sUiR2XKdpUiHCSMon-lca2puE-JWsLqP-SZml8Jy59n-nHHfKtsX-LyjxCrmuM6pS_ycTU-PmLpDQ2i_DvmFi8kneSikjA7_BTRpxFJnGClny1E-unIApV-9rOc9il-Hk93Z02bo-BWdv8K",
+      "places/ChIJi_nHcf-f4jARAI6VOXH0wII/photos/AV-0GLdM2bz0bb5jWuHL9TAs6q-iV4CirUTstdXxR9zTGXXzYvrB7he5jhvyZ6JHatmoY3ehbkTK7CTtXIdWU9yP7op-l57RZcWTwgAO9LOe_kVcxXDlrY-5cHxfK6hXsOTf95lGtej1HjVmE7YdkwpDL-Y56rzUAebGMkA-x-Uy9EMlXU7J4Ko95nJt6z84N_v3YRSK7oanYe1Ss8eWV1YtMOaxUC2aqfANoUq8VvGtNlaxfExHcqLwP4lq1CbYybg6ibsQ9zd4CglspDJShqXHh2lFRsQ5Bis78XoYuOImFOrB1xt_qHpkZGYetQV87P3P-7EnH3orL8_EInmimWsWL_s2QTjKyVhXn8HIV7vrMczUrdGV8GAQq23GmoYvBz3mpXqGimO0-wlUj0dSQHLlRpahCTmEhRM3jNw7i6y4D61Xxw",
+      "places/ChIJi_nHcf-f4jARAI6VOXH0wII/photos/AV-0GLfYsFK-lHEplUrQ3STA_y2oabbXCjz78lJQHFIFg74ZrSWmFJE5gtlwtSDGAgligwjanK5hgdhaHGQSQyVx68iTKPXZUPAuRTRUEh79Ey9MxJPOFQ8HznnTPG5dFwEEzoS_fzpAm1Wm6zCPzK6mgWGzx8dLTZ6j0YI9upAp0aPPY0NkOS3H5D5XV4QsDgzeCFDN0kYy5y6VdcMmOVa-BAPi0Q5lo-fyVqxvrk8zdgJmpKtdXAgj__UVDZC7Qwg-Ny5dyIF0S9M6vaButRQP2GNOItB33jaVJdG0jwbZTF_GHqA7S2tVF8tasDhcOos628O-EPOJpEgVG9eRg2vksLLztcw7KgfoYE2GdreX8ASBlYRgQ9u8BeH7j7b1ReAWLn7cxlDlfQhg_b38-yPUN0b_2z7NA0bOIauPFGnN8VNI_g"
+    ],
+    "highlights": [
+      "Tasting Menu",
+      "No-Phone Policy"
+    ],
+    "approved_at": "2026-11-27T07:12:31.204Z",
+    "slug": "gaggan"
+  },
+  {
+    "id": "992b68ae-0358-4c73-8b38-83c7eb0f4786",
+    "name_en": "DEMI Pairing Bar",
+    "name_zh": "DEMI Pairing Bar",
+    "description_zh": "藏在 Wang Thonglang 區 Soi Ruam Nam Chai Lane 4 的咖啡廳，主打創意飲品配對概念。菜單涵蓋咖啡、抹茶與早午餐，空間寬敞整潔，有停車位，也歡迎帶寵物入場。",
+    "description_en": "Tucked into Soi Ruam Nam Chai Lane 4 in Wang Thonglang, DEMI Pairing Bar focuses on creative drink pairings, with a menu covering coffee, matcha, and brunch items. The space is spacious and clean, parking is available, and pets are welcome.",
+    "category": "cafe",
+    "address": "Soi Ruam Nam Chai, Lane 4, Khlong Chaokhun Sing, Khet Wang Thonglang, Krung Thep Maha Nakhon 10310",
+    "lat": 13.7975813,
+    "lng": 100.6149942,
+    "photos": [
+      "/photos/992b68ae-0358-4c73-8b38-83c7eb0f4786/0.jpg",
+      "/photos/992b68ae-0358-4c73-8b38-83c7eb0f4786/1.jpg",
+      "/photos/992b68ae-0358-4c73-8b38-83c7eb0f4786/2.jpg",
+      "/photos/992b68ae-0358-4c73-8b38-83c7eb0f4786/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=DEMI%20Pairing%20Bar%20Soi%20Ruam%20Nam%20Chai%2C%20Lane%204%2C%20Khlong%20Chaokhun%20Sing%2C%20Khet%20Wang%20Thonglang%2C%20Krung%20Thep%20Maha%20Nakhon%2010310&query_place_id=ChIJxawkJQCd4jARFivaLkmxsug",
+    "rating": 5,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "area": "Bangkok",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@kentny14/photo/7710214548564741397?image_index=8",
+        "title": "คาเฟ่ใกล้ฉัน DEMI Pairing Bar รีวิวร้านคาเฟ่เปิดใหม่ โซนเลียบ ...",
+        "quote": "高速公路附近新開幕的咖啡館",
+        "facts": "位於彼迪素通路、共享善心巷第4分支、拉迪派瓦、旺通洛滑地區"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJxawkJQCd4jARFivaLkmxsug/photos/AV-0GLd-yrGknhBJ5OD0mAqus4gmiMwATZojdai5wa4qqdB3CC9VdqOAOULh558a048VTQIYL0JXsbMhLoq8cegHMwWA-WXkeQI98017GXw3Vdj2AeLl8IxLyxnvmp_mioICe2cw7Q6tyWYHlyIiRpqIKYxA6PDKAmsRbino56rqgnvx98RfQUAd36jyUcYGB22jy3iaBM49rLHB-8jm0yAE22VZEwJLoxoqLxb2iv-9BEnUgcKuCAMkPX9cUNjDSGip3O6Enw2OPFoXvgWT09ukizDz2TTyKFnIzXRkJZHELKsRmiWcFmmfsLB6iq8JryuVOL4XQM6U-aXm-jO2EBkhg1YTV3VD2ngeSv0r69dQAJ9tWj8X5lR6NMaUPIeR9UTNVUF1t2bxdWyEpAQMca_UaFu3zM2FDNXq8aQpZhQfeHHHtQ",
+      "places/ChIJxawkJQCd4jARFivaLkmxsug/photos/AV-0GLenmRAijMJUKWP67v7DJeH27xxCjBsFEFW1psJ9AL4IfBGzpNMDYfNL43Kno9GdffsvVA-SCudXHamyu5KUKK0x5aYcqlOQkbfis58c7CLgQMZ8_nS9YU1-79wvmPTtSyPbSrQOJAjszrtl0HJRftSrQPi82k121R8_KkvuNyFnCX8IQVQrlCZhzwJOy2tnkOBr80fXKDWggmtYU7VlLDM4kjmSIuDUGxV_233GgdBuMJ0P419J1a54dMkOphMWgbojJZDhH_SYnwLwjCrc52u6NE7RihwIEiyTPYBlrw4oL-pnNyQIXIDMFSr3laEKjKneKkOVB9DfQwBckGVwT8npKCM4oLcq203ev38XzyftG6yTKOIBmp2OQzDGritZx3npYIOLDcbN1Juvkxzfqi00IUJaFdvjfM5G4kdn3Jud",
+      "places/ChIJxawkJQCd4jARFivaLkmxsug/photos/AV-0GLdpbTCzU_Q2SnRFU_OxlyCwW5LyZr883qG6Vuck0QpVwZtySSigC6K0ZN1FE2xBLnD_QmPOX081luZOvZRi78LTAWxcl860afTw6pSRM54TaXoRY1zSwqD2zB--LYkeAOhW4oiwW0pog0m5-qS5QL3tesH0gfxlSiKh8VyoLxq1_An6Ooqpl3rNhaQCS1dG7PHtR_89LvR0MbbTvRa7xkNP6y_YFZnF8ezjhcASVqv5KqySn9wWjrExmDQPkT6_kV7f51O8t95GS6s0bqFcu19xEajhoVFWlyVZkcAG-0Lu2a89XH8ZRalnOuccJNg_gr1HtG-ldqkRGHnZwsimKpY2n6t0bms7OOPlYaFxEiZFQ4btNLIRJ6mz3cuXgbJfG1KOlv63Hwxdhi0qgmwjb8zve0aRvbIYAXov4bTj_60z",
+      "places/ChIJxawkJQCd4jARFivaLkmxsug/photos/AV-0GLeNpeksQEYl2bjaep3VirQoiRozvy2mClFzGe96iAJmMAqjYJwcBFdiqO7MiAhk8qeKkjS6fV-ew556VhE8rAYVkWTShBKOjXKORj_8GRUTB3vdZMNp1KwfeawaovGul7P9FnTNfjdmcVOV6L_IqFYiWXpMJ8n5Raj3VxDLOhA7ZgLqa3j0zQJf-yLOgekYOEYu8N4mj1_K_cC_64PAVLTH6htInEXBL3P34vb52VkmfhA10QPkvzaPVf8Cp3bw8oBPZUE_ncxegZzGAbYYSy12xWq34yKf8szxIhO2HVwZbYMeMfVCpiRW60bfcZmRjMcsucKP_KQ_DyH83AZHEvF8nbEp2IklIdsE9u3EUrE7rOtnOslJ_Fl5YXVd9N8MC-ntJicnKPRZJVbpOvjdsmlFq4KB55TEsdhwNAzH898IAQ",
+      "places/ChIJxawkJQCd4jARFivaLkmxsug/photos/AV-0GLf4wfVB0NPLsk6di2YvfzYcwKYIMMWTuxH7yw5wUjWeJ3wbES2Y14PimsUNSY5HU0R2_ep1bWiE7BblWI4Ro-1BsT8uC7fgScqy63EDYFrm9dlBBq9O30Ae_PK_08tLgXN8tUIbBTGlU39scmvLTYtKujxTEaof76ziPA9AfFJGRpZGXjGDK-sJS4Q2jucFzzISkpG7Gvv7NesT_RT2WWmvHC3kTZ5l6xP5lJkIOcVw9lrQ4W0qO2M0BU3updEiZxeU_JIZ5wV7oI9QbE7Hlovg8iRv2hKZls0hC5Hd3xfsFqQOzYvWnn_03ENoCfwTwaMSYWKZY0g6lQfAZFpHL3fFihB1JarwuWCHvKoV_YkoHoz3JmyJPhpM-HbYWWWgRElOXYw3PvRZZ_HyL1Tl19Y6OwsdG2aD5wpKb522otsLuQ",
+      "places/ChIJxawkJQCd4jARFivaLkmxsug/photos/AV-0GLcoNhql1yO48xfilO5eL-YSzlp1EjgamAFiU9PG11auY1QtAg7phTs1a1k_KhJNyFDaROl50bG2pwOj7ymV0CB-XxBHBiFgq3nO3RESXVuJ_91g1wIG_G3mMlWYvBiX1XgvzTXhwzCDyXpS9IRDpKC6884VwiSuYWpRtKfokPiQ9L7BGItr9z-P4aDRVDGsMbBZKcHWoG0IEQ2Ip1mpDt7NngFcPvhfKughzqWyhIrkKK5HYKztUt5I1lVcn73NWPZM1ROHi8x_0QqksfVakcu0tC5-ZxflrNYCd04pjYNb7W-NU3lDQo031kUNwEX1EJj2sDsl8NZDkFLBPa1GYdQ1eo03VUW3VSlUItKvLnNW7l0WU-spe5baufhA_RDkuedHyfULnYgb73DT6ybnqzt42iJhqSCeo36clfhmFsFNrA"
+    ],
+    "highlights": [
+      "Creative Pairings",
+      "Matcha"
+    ],
+    "approved_at": "2026-11-27T07:12:31.242Z",
+    "slug": "demi-pairing-bar"
+  },
+  {
+    "id": "c3a6b885-f9ba-4c48-9ccc-303b85757d45",
+    "name_en": "TOGETA HOUSE Yaowarat",
+    "name_zh": "TOGETA HOUSE Yaowarat",
+    "description_zh": "在 Tri Mit Road 上，緊鄰 Odeon Circle 圓環，可以從二樓以上各層直接看到圓環景觀。建築共五層，一樓是主要咖啡區兼販售二手再生商品，二樓咖啡座附衛浴，三樓是餐飲區，四樓有皮拉提斯課程，五樓是屋頂空間。咖啡豆混調融入中藥草元素，其中「Yaowarat Blend」據稱只有這個據點才有。食物方面有 Amphawa 酸種麵包，可搭配蝦醬紅酒奶油或酪梨。接受信用卡，燕麥奶不加價。附近停車位難找。",
+    "description_en": "On Tri Mit Road next to Odeon Circle, with views of the roundabout from the second floor up. The building runs five floors: ground floor is the main café and sells recycled goods, second floor has café seating and bathrooms, third floor is a restaurant area, fourth floor hosts Pilates classes, and the rooftop is on the fifth. Coffee blends incorporate Chinese herbs, and the Yaowarat Blend is said to be exclusive to this location. Food includes sourdough from Amphawa, served with options like Kapi red wine butter or avocado. Cards accepted and oat milk comes at no extra charge. Parking nearby is a challenge.",
+    "category": "cafe",
+    "address": "79-81 Tri Mit Rd, Khwaeng Samphanthawong, Khet Samphanthawong, Krung Thep Maha Nakhon 10100",
+    "lat": 13.737158299999999,
+    "lng": 100.5127033,
+    "photos": [
+      "/photos/c3a6b885-f9ba-4c48-9ccc-303b85757d45/0.jpg",
+      "/photos/c3a6b885-f9ba-4c48-9ccc-303b85757d45/1.jpg",
+      "/photos/c3a6b885-f9ba-4c48-9ccc-303b85757d45/2.jpg",
+      "/photos/c3a6b885-f9ba-4c48-9ccc-303b85757d45/3.jpg"
+    ],
+    "source": "tiktok",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=TOGETA%20HOUSE%20Yaowarat%2079-81%20Tri%20Mit%20Rd%2C%20Khwaeng%20Samphanthawong%2C%20Khet%20Samphanthawong%2C%20Krung%20Thep%20Maha%20Nakhon%2010100&query_place_id=ChIJXwfGHLCZ4jARb4kkdIDnAvc",
+    "rating": 4.8,
+    "price_range": 1,
+    "tag": "hidden_gem",
+    "area": "Yaowarat",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.tiktok.com/@thanayons/video/7710206191116356882",
+        "title": "Togeta House Yaowarat คาเฟ่เปิดใหม่เยาวราช วิววงเวียนโอเดียน",
+        "quote": "耀華力新開幕咖啡館，可飽覽歐迪恩圓環全景",
+        "facts": "位於耀華力街，每日營業07:00-21:00，可欣賞歐迪恩圓環景觀"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJXwfGHLCZ4jARb4kkdIDnAvc/photos/AV-0GLfDBN-KD0us40lxQP8iU6HSdSafGETxXbrm9aXwwlSMGy5NqYr0GediJBLYV80SQ__SpWnU1hQT6ptFbmWMMAULmQVry6Tl_oR-Sufa-OfghBTc_7vhUhvUqly6xuWU29XEevzP98_AISgqWj9_Aun5pkEcVDHacPtLHw2WxOYiXd_AuSNlb5rrx7HY35q36RgNhjz_M4Z7d6-_DspUt7kDguUYDcrswMKeLpadKt8sg1XCsCPPX7Tt6pJeUmwrra7h9PF_hmZLHAnxRO_5bYtNeQZ-crGVzVaKulp9_XnZc1pxdaAhh0Zlwe9ml7WCRZnOmJ21GBVqxLQk4unLshSHbGJmve5UuQlinX58RgNzb8wLAWw3-pLmMgQiiQldqYqWM4WBQcZI0dm2zLT5-kdxrfY86J1Pr2p8SfoyhAhYhw",
+      "places/ChIJXwfGHLCZ4jARb4kkdIDnAvc/photos/AV-0GLdcc-KJVMjWZj8iR58blDlVFeL9PlVI-Yee1y_Pzg9i0b0tKbvQg4_P1QJC0trqdyNBZHJTFhhWath4ibh4lyeHMfnvTEK4lFIbzhl6Hk2Vg_R8b-qJxJU9b-bZMyFZXbiS182QhfTG8akvxz6Nz_v2jq0PAaHzzIul2q8YIJ_DS9OobkfLHroDr02BOq1Z6rvI1629qnrOELBaX00-wxh9ADIUUdSEeBQFjBx1-EcxZxsS9vhKlYdcQQ7dCp13TxRH5PGyT4EmtF4susmZEMOXpBdlw6TlizBB25taytm2Y7ySMGWXg7sZ8MTUAmUWXP_zK6Q_kb3w4YO6QRmd978zYUwxVLfSEiJVKQ38CPKngomnGeyNhphaujBXaiDxoCUgOa_3iqcQ17XYdI1LfVdh-cchw5vo9osltsN5tERa3w",
+      "places/ChIJXwfGHLCZ4jARb4kkdIDnAvc/photos/AV-0GLf9aHdccWXkwX7b3axtTPNfOxg-Fud3GkCHErTU0oBqnQEe4sIjAhM5qcSTtgYyNIwC02cZy9ORzm-GFo9dEHwGVFsQmLm5qkFUVteLreLKBS4MMjjX-q5lpi3mzeEcEmbFq9ywvuyPkRLkvo1OYqj8avR2gFxUEEsTY5fRs_zoE8IDapkmZOfaFV6eXcvxBnB9_fYmEmny5BGpxmib8FwQ5riNJHhJrUca_ezhbi1LT-lgEcwKI1lTVLKTrDqmjVEvA5vadiNXjTJPxGg0uXYrCMmNaoQXZ28Ui04PCVIWBvsbD6NVqehDDsr7CoaHNBL5hYULNU0SsY0KHVuRyat2lWlaYS-HUg-WjxeGwKPH6rNV9csvbqMEZaHDiH_8PlXqG0SWfmfSkqnTgJgcm3dPC-HMYeve6_HDLpp_htaY",
+      "places/ChIJXwfGHLCZ4jARb4kkdIDnAvc/photos/AV-0GLfgw72V5AsErS_ZX4jQ7NPsWHqtl5B7OZl6xr-6xogXYDkS8BCV1jWYlrdY1XmYnNMDT9TraotoTOZUvA97uYK7Vevznub67ETJQ6tOc811J_vTl0aFxtJ0hhqumNrZfgopir4f5IMu72o5rVFUOShjwb9I4F-fvgDdz4x2TW6Z-WxhL3s5CeTLSEIs7m2ST3MH9L4cDYwd400L_BW_xc3CCYQRY0DbIAca3m3QrgKVxatSY4Vit7Usw7FM-XUr2L9YRNMXPS9YhwiF0oHTZAKYgnnrBW5EIw0R-NJunRjRT2w2b1cCOxXvHamAoW-2xShR9MnIdfxfmxlCSVKcPleZoeWM89vFuQj_f-5H_yvqYY9dm6Xp0VgnttaxMkQifH7KC1l_w4plIQ06nlITY-I8oUL1Q1O0TkDIjiH4VQGJ9g",
+      "places/ChIJXwfGHLCZ4jARb4kkdIDnAvc/photos/AV-0GLeLduOkOyPDjMyZzRlF4oG9fZqlfoBbh0rdBKaSQdBduggivO2UrxSe6mn7nBnSDX5luGLMp19q3zjbUGktpD0CBN3mqdQD0LjbMC_7kU69ZG51jI_UGyZRpVttwcBtv2tkbiJgBedqGSc1j6KMyYEOdD-AAFtjxhxxiMf4ZAPabvmkxIcizMhCYKXMkbpTW5z_IHCE2pFWOcgMYtDpmR8bqE9sTflM4AEEgH_IXFbOc0vjEy5tAJSBXfFMPsoAZwmlN19rMmJfCiKIbLBMZQB-5FWBZhq5p4VuGuNctQNiN1YMX3Fpmx6es9Yf_pffdfxUWNQEVkZFQhPfVlgfxEYlS4_AmZ8MPGGN9Jz8nsqFkhlcD_ks4u2G6x2zh7JhpHpqRH2tVklkk2MLb0GCcW90jYgbwbpF5shVSZhQvJoAzQ",
+      "places/ChIJXwfGHLCZ4jARb4kkdIDnAvc/photos/AV-0GLc_24y_gLkYpoiYRAD_iuDzNZFu40NmPj1rESA5VohRRPl6hR4A8Bus-bU_SBH45XAYz1xBQEOJFBSyNf79aUx1_IY99UkOGNFyTH8eCWII3jDXXvtGXI1Eu2flIMEO7pRDBaU8Ri_IDg-mxF-h2cguCHMLgSLZojkVnu5c_AT5jJUDKQNQd4G0fxpcHsKzWZWWjn6Bbglp92wAUwS6EbQx8BsSPtTsfO-EWUgUIng4xGjRsWN5thVvGE1leaP-27o0SQa6bopSyeFBVHC-WWIq0RrmUia3sINasKW81SfAp3RSppbwDL0pP66c3GRl0Tt4Pgvv8ero-AuejzjemfRzBgt2n0C2vykemghuuDrpbYNFGf4sZE0qr0OKB6l7UrlPma2SclcmdIHRJGnB3ALa-j0u7Cn_0y15--QpYQNqQQ"
+    ],
+    "highlights": [
+      "Yaowarat Blend",
+      "Rooftop View"
+    ],
+    "approved_at": "2026-11-27T07:12:31.269Z",
+    "slug": "togeta-house-yaowarat"
+  },
+  {
+    "id": "19f652ef-58a4-4f5e-be24-961671a182f9",
+    "name_en": "homer brunch cafe",
+    "name_zh": "homer brunch cafe",
+    "description_zh": "位在 Charoen Krung Road 上的早午餐店，以日系木質裝潢打造出明亮舒適的空間，一、二樓各有座位。招牌是現點現烤的荷蘭鬆餅，佐帕爾馬火腿、布拉塔起司與芝麻葉，需等約 20 分鐘，分量適合共享。也有烤酵母麵包配布拉塔起司與自製羅勒醬，以及天然甜味的玉米濃湯。咖啡水準一般，衝著食物來比較值得。",
+    "description_en": "A brunch spot on Charoen Krung Road with Japanese-inflected wood interiors spread across two floors. The standout dish is the Dutch pancake, baked fresh to order and topped with Parma ham, burrata, and rocket — expect about a 20-minute wait, best shared. Also worth trying: the sourdough toast with burrata and house-made basil sauce, and a naturally sweet corn soup. Coffee is average; the food is the real draw.",
+    "category": "food",
+    "address": "1113 ถ. เจริญกรุง Khwaeng Si Phraya, Khet Bang Rak, Krung Thep Maha Nakhon 10500",
+    "lat": 13.7281269,
+    "lng": 100.5160313,
+    "photos": [
+      "/photos/19f652ef-58a4-4f5e-be24-961671a182f9/0.jpg",
+      "/photos/19f652ef-58a4-4f5e-be24-961671a182f9/1.jpg",
+      "/photos/19f652ef-58a4-4f5e-be24-961671a182f9/2.jpg",
+      "/photos/19f652ef-58a4-4f5e-be24-961671a182f9/3.jpg"
+    ],
+    "source": "instagram",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=homer%20brunch%20cafe%201113%20%E0%B8%96.%20%E0%B9%80%E0%B8%88%E0%B8%A3%E0%B8%B4%E0%B8%8D%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%20Khwaeng%20Si%20Phraya%2C%20Khet%20Bang%20Rak%2C%20Krung%20Thep%20Maha%20Nakhon%2010500&query_place_id=ChIJcQN5P9aZ4jARDiK7ZiBudCY",
+    "rating": 4.8,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Bang Rak",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.instagram.com/reel/DfSX8mdBhvp/",
+        "title": "homer cafe | Classic Ham pesto sourdough sandwich Toasted ...",
+        "quote": "新開幕咖啡廳，提供經典火腿羅勒酵母麵包三明治。",
+        "facts": "提供烤酵母麵包、布拉塔起司、番茄與自製羅勒醬的經典三明治。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJcQN5P9aZ4jARDiK7ZiBudCY/photos/AV-0GLcAiCBb8x1napxI1FSnSXYfVapkevJjlV4bYyz7kZ69l0-NsXWiKOVgiDslfkHsLbQ-Esp-0lEUjR0_vuJnixnpGX0abQAVPhT7cJLlvfyS82I82TuvUBMLONo_40sl9jfhT0v3UYo6wf8rqhthWRF0q0Ppl08jWO7JlE14iC2gjzqWW1qziDy8k-zcwLkA7hbsCcyWjznCeb51yYDmptV-EYbZxZXwwW67hWEDe2GzSPbdpuWosyySd8H_TGJHPs19S4yIhEgBQ4p4GgOaAf8Ln3v1vV36qIxxIFndwVrPbAQ2CRN8OoRwatRcdGCV0tUxpHir1Geccthjpe8cXG6yVWK8tgMMUJNG-0SFw0GWWY_cQsqr2opyqw4nkuqWCrclTz66eDG2EeBaMK63YEahmKTFC0bHKBew6BvtuxSr",
+      "places/ChIJcQN5P9aZ4jARDiK7ZiBudCY/photos/AV-0GLeXy1Zlv7GwQ8meDz64D5PqgoAz2ie89ayVPqnlNTHAHfxElA2jFNbx7oetUoY-xYSL4DQIANau0efvEro92nJgcN_udNMlRHV9dIErO1AqWKRpgYB6sKFHKdcoIYo6wNfKWZbNJ5abieg9iGT5SCjEjJCqLnwSjGMI3KhMyab914pXkzUWFJRCtbbWNmU8ISnZbw55rZuDAjCHwRBmKBD486KqiU-7EmXv5H7ZcNnmV7_ek_bwOszfDIbgieVkmIxBkRbFq7ARbk8-vg97vtols7eii2L_zvwwQANp1FIRCqLKl04XqjYO3DoZGF21A5n87uDubuzydBPRv1BPLsFMzSVADFU9USbLAsl-1jzpfh50T4ek2UjRaZT8-5J2W1iSIHnlTXpqvU8dyo0q8_ERovUIJd7DkhDruuTSoJ9jdw",
+      "places/ChIJcQN5P9aZ4jARDiK7ZiBudCY/photos/AV-0GLejEuMmHp2nFC2-Wn70HvUroDl16l8xDg0SAuoYxg0Xvi5L6AhuUtDBEIVAHSEekBsp-i8PJMdadtEb5VPmBOSl_87mBHVFwNNGRTbYzw9jb1hvvz54pJHinM-MWh_q8rEhZbSMhFMESbuxjtVPhozn-1aYSsp8joHiT86SfRnzpEAuXj_3xqY6nAFbn2V_so1evuXUKd0v-1VBMEo8iY0aPbtDPi9HYjYAUDxpBp7wITXwTBMF8aYjAGo9dqb9xMajbk52LOrNHWj62xGjFg7-En7pEDUYlOt5fC8fpPZTljRd-oPTPv4Qa_YAvO5-cVUpqb2oMRHXGQt9MXIHTlnL8RA0YVzFxj8IiNgvznjhEBW8alTKD3UVUZUtcLr0zOGYyGotYU2XRTaRwSljTOgphXkyc5n0KQ2rvXCGF5-T",
+      "places/ChIJcQN5P9aZ4jARDiK7ZiBudCY/photos/AV-0GLeK5WvseHOodSTDCVoEhUPq_AE1UHCXytmHObHzEeYvnlXzTphSEuxEVU5CZXIYPQ3M54A-STic9NhamvBB82AmBNWGiwtOhuSV_OmjxIGO93mZ10J-O3KituwbDNc1r3QAayYV-60ZNUVYbfK_cMxkBmCjaVGG380IyyX41fj0bbILE2jRJGJDfpzFnk9OcO7crDSwC6elsettoLxyBWOhtUunDwFBtUt-1jEfw9wWeFgvWxR_6Z6Vrm7VbQUXlqursKAK-Abl61aqGhCogMJHpo8D3MpJQym1k1j8WEs7qi-f6aPd5iA7Z_3BaXnSMlO2wTg9zeIm1E3XoL3OdH0-zUN1YNeUz380l5umJx_Olxmq4ov5sIq2GWcDUYBi8VUOq8ctIorvolR7n2eO_LMlY4S2N55JcbQlzTCuFeZzsg",
+      "places/ChIJcQN5P9aZ4jARDiK7ZiBudCY/photos/AV-0GLdbG5R5ABV4f9gLZufkZ4qSpRIcOJ1I2a_1eXxGF8gCe9pvraPI2s7RvxEUC-Tx3dN8iH5Mt3kmJiMWfN4SzvqOJBBVLFBM-l-Dt0Pb6zGnQzGdOfDU2piAFoq-ebv_1fTPj_RUD_jD5Z8xU4p880qC_sLgBZmlrjcLbGNTSPcdJodSRF1ghpABAuYAWfn-Ij2A5NFJmDp6buxi-cISYXW4n-_bnzRfZy9zL9GXE4A42qwUjYh3LNg5hJ2Y5vzKkBApEfMUga-G760VB6G3ItPOIIceU7xZSF4lMk4Eyo03UcPxkY6iDfGrgFT7YpvNhZnQwqhX6sB-ThPECT1fNf6md_KbVDcnVogUHn2Wrl9ICte2IXMimrjw7Ds78T5n-4Y5otoxpsw1_-OMriJZbQHi7dJwSMKfanFn4CNyaimliQ",
+      "places/ChIJcQN5P9aZ4jARDiK7ZiBudCY/photos/AV-0GLeXVeOnQtble0GcIDHk5dHEzcckkZhQ-21O-1yHHuwc7ZtlvmuD8iXZdpuslQUGIXLuoQF9SaSLXzoPtsXNPEYb1BjkUY_ea7w958NTfF1MwyIoHJISNPh2y-CDbWsU_rSXjSEeMHFoc5X5YA1A8yoDw9O7lgEsqSMlwOgrWTqPATU135ykgMeDXnqefwpoe_PV08VTL3HK723vDdbLfGUcewnrkTPja0-XB_RQzPc7oiNXVe5Dl-7_9nMOX4cYespV8fuwsWt4K-Hm0fZ8XXPfU4NL6WHQlT4mTu2whDL4Sz_j0fTogud7uVmype8idkIFC-AJyvrvT1ZeId597KoHqSbYVRIZwPCefuUux0OOU84-8UkbeFwvQoKfU8wtHeTDcRaa2xbEwQeaBUKYsgRJMm0QcTReObD43hUG2FZkYg"
+    ],
+    "highlights": [
+      "Dutch Pancake",
+      "Burrata"
+    ],
+    "approved_at": "2026-11-27T07:12:31.291Z",
+    "slug": "homer-brunch-cafe"
+  },
+  {
+    "id": "7929423c-4525-4093-a55e-415015a89260",
+    "name_en": "The Bangkok Club",
+    "name_zh": "The Bangkok Club",
+    "description_zh": "位在 S Sathon Road 的 Sathorn City 大樓內，The Bangkok Club 是一間私人會所，需有會員帶領才能入場。設施包含按摩浴缸與分區功能室，餐飲以中式料理為主，套餐份量紮實，杏仁湯是不少人特別提到的一道。空間走高端路線，服務口碑一貫穩定。",
+    "description_en": "Located inside Sathorn City Tower on S Sathon Road, The Bangkok Club is a private members' club — you'll need to come with an active member to get in. Facilities include a jacuzzi and rooms set aside for different purposes. The menu focuses on Chinese cuisine; set meals come in solid portions, and the almond soup has drawn particular praise. The vibe is upscale and service is consistently well-regarded.",
+    "category": "nightlife",
+    "address": "อาคาร สาธรซิตี้ 175 S Sathon Rd, Khwaeng Thung Maha Mek, Khet Sathon, Krung Thep Maha Nakhon 10120",
+    "lat": 13.7217926,
+    "lng": 100.53203459999999,
+    "photos": [
+      "/photos/7929423c-4525-4093-a55e-415015a89260/0.jpg",
+      "/photos/7929423c-4525-4093-a55e-415015a89260/1.jpg",
+      "/photos/7929423c-4525-4093-a55e-415015a89260/2.jpg",
+      "/photos/7929423c-4525-4093-a55e-415015a89260/3.jpg"
+    ],
+    "source": "instagram",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=The%20Bangkok%20Club%20%E0%B8%AD%E0%B8%B2%E0%B8%84%E0%B8%B2%E0%B8%A3%20%E0%B8%AA%E0%B8%B2%E0%B8%98%E0%B8%A3%E0%B8%8B%E0%B8%B4%E0%B8%95%E0%B8%B5%E0%B9%89%20175%20S%20Sathon%20Rd%2C%20Khwaeng%20Thung%20Maha%20Mek%2C%20Khet%20Sathon%2C%20Krung%20Thep%20Maha%20Nakhon%2010120&query_place_id=ChIJo5ekjDKf4jARPWgiYCBuEQ8",
+    "rating": 4.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Bangkok",
+    "mentions": 1,
+    "evidence": [
+      {
+        "url": "https://www.instagram.com/reel/DdlwnKJJut4/",
+        "title": "The BKK - HKT CLUB | Something exciting is coming. A new ...",
+        "quote": "俱樂部在曼谷開設新分店，與2cc.club聯手呈現新章節。",
+        "facts": "曼谷新分店與@2cc.clubOne world聯合推出。"
+      }
+    ],
+    "photo_refs": [
+      "places/ChIJo5ekjDKf4jARPWgiYCBuEQ8/photos/AV-0GLeLVeaYwXtLLg4D2TF_f1qjm045L8PudhHTghwJ1moSAd-gZkQd8yACjKJnJWfthh2WE8S0JLqfNNmszLbxa_fm7VEOHoktBF4SKZsJMy6iDGO19Hquxo7tm1xs9tqCvrrgaN1ySEeY-OhaKN_JRxtptSAWqQxg1E28OgkdVNONxcfJ31_uo0LPzAezVyaq5NXvyZrQv631qGCf2agTajyx-Vk6vHsqBkTNd8qCZ57VrYqq-ehCXrfb2UU6Bb5GaVvl1xg83sFsdhMliKhi0jfCcmx17y4_o7o6kG1NqrIJ6bvMDDSjcBZKKl8uUiHsF_G1_tyYEkQwLhEulBW48-CQnLTfka6FHynSUNT3r94HjQTGYDNWXFPXWPrO4gac7fBJB_s56HfuydKFl0xKy0oLUHY",
+      "places/ChIJo5ekjDKf4jARPWgiYCBuEQ8/photos/AV-0GLc6N_0JKCHaSg9EHZh9Vu6B4zstD__wN8MYXhPwu7PIHM-2j5KST4CuUbLnHUE_Q1S5lNRKBf6pU-tlQIepvAI4HH1Yumf1J9_L9a7JbqgZDlNX_z1OzKxIXl2oFBl4PA-qLbEIF2_zavohsfhCqU3dgJ5vSloCAxt3f6KUKbaq8h_GUSmgqv1zu-9Y2fDwnYrRZv9tTP1MArean0gixRaJ9yDZMcBL-UPcIPVv5tztJl48Y67gNNflOoixQORtRSomUHLZM3R56Fdm075De2KlR6qDru8cyM-BK-7VuEoxXEQNYP_20q7uplKNb3Qp4CGdDvKV3ebOLTXf_KQOkbQZ8FEo7hd4GU1OgBE55S7n2WTCVyyMFRuU9TgMgHyDMLNUevco2dyw7H0d85rKzlHrz4k",
+      "places/ChIJo5ekjDKf4jARPWgiYCBuEQ8/photos/AV-0GLc3AMs7mDL1zWV-MUBkgBLWerelmafd8QydvRzNvD2ReSy684QARI3Yp79pNw6YCayNPb0KTkf-x1TU9gZUsjNsQmp7kq6xY4kvF5aHHCTNK4UrAuWRIySRq-iCpltSs3Zbd3KfYH_sk9WvW7-5cZVIwlCCegRpBbGs0zH_e1nHbUrOqWOgqXI6aBSZi0rB5iulF6rwblvhHNdT0vi65CjpMyr_qPmSUHx2TWT1HYfJr8s_c7dxENDOMACleUyjjQ_Euf1QluhS2Si7yNLsSfDgTORE1gQaT33YhkUqx6xFgS_0wQlg_g-r9DJCU5RoeSeiUEaXcgBxWlcxXl2igZHGdveXI-v_LSVmxpmbDq_uha7icbAVV6oAy88IWYPNdcDC-YxYRQkZflWkUIbZnpr0Wzk",
+      "places/ChIJo5ekjDKf4jARPWgiYCBuEQ8/photos/AV-0GLc7hA1AikLu2IrI4zFycAYCVJFsy9hIXnB3Ylm7xQsAi_pYWLmz7U8vTXsX3Lcb04LPuJjf-7vgKBLSd1h8yix-rum9kePwvMT0zMu_YbyHCvkNZCZx1Mty97L3BeKNiFFLfIK9mPreeAHOEmvjKkOwwUQOJ9R1Cyuo6na9UqEpkhuHNXB-CGzCLyGv4alPsgswDIVNBSPm3ag_ebLT3C8gKz5OyaoFx-YJg0ftco405rlu4_lnSorzJfHVYdXv91K77KOd1-EOEGwwvtq3BwPrlsaDCVZbIImZ59q33C8uWVpMUkLyDK7XqPlLKs4H_xEpwx9uTjp7PErqs2hWeUb3OXa6SX5vP_N9Go26vZ96OFZUCTPZJu5A79HSA4sDBQsXTS_Rr7FFpnd6Z_36muvunle_5bU",
+      "places/ChIJo5ekjDKf4jARPWgiYCBuEQ8/photos/AV-0GLcDgRr342G2gybe68kzoMdFW_6KXm6pMsefWDKB7yVIah7vFeNCLd1Ozr4mv71pa9NfQ8LIBFBW7ZEnytxoRiKcav3jMc4WN9jgIskPOuyuzqB-Z46tBtz-hfIvJbKMY42pYrq13JoTabziQYLjMVPYl_6gILMwGjVaHKWd45y_CsYQrm9IjimyBW9Zl8sc8-GBydDHtef-JTAD5PTmcMS8Exa8R8sQjUtY4kcIMaWcD_AVexJU2tf4ux_7D0m3FoQ8XXghqKVZ-1zXDfhiev1r6pSJ5N21dkh8SL_7L0k1pydwxlwAPLauZ7acSx6xeFkkaNXzLfjGXDQa90uUAOWFxZYsExnT4l433svo_75srncNBshtnjw1EGHWQOMP6SjWAK-OLihr4AE4R5Phi7sg6FM",
+      "places/ChIJo5ekjDKf4jARPWgiYCBuEQ8/photos/AV-0GLd2wwHthIHnMcQduv5v1RhE8kszILqRWolJC0dUpfBeaxML7SH5gL5FNkMSd316hNyOG1YEitKupfht0QxAjAQ-MKtMxbjIWAiBtg__DJ4fgOPV25eQ5ZFrC1MCw2X3Pd8dxnYNn29BFLB9m6a6XKb5D1CoR-FYhqJa_3rlzKKjE3bYWtogzbTL9NAeFuU6kMjnOHTm3ohFOnptF400azusAL1QTmPLxK1rhMVn9-IvqrZGJneStb9AlXZRS4AQwY4a8MEdUBB_LtF42sJPc4swGivw5TpXpj_lbvag1A2Ct6CTZKcXyNHOciXZaMi8pxX-Hk7xNUy0DRsO9BjqByp6pn7RJw2tvKaYs_95bangdPRAlCo8-gn1d-o70oOT7NnF1MIPW4rYVgl10z0KMzNuCjRvcvc"
+    ],
+    "highlights": [
+      "Chinese Cuisine",
+      "Almond Soup"
+    ],
+    "approved_at": "2026-11-27T07:12:31.312Z",
+    "slug": "the-bangkok-club"
   }
 ]
