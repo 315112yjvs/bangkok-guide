@@ -1894,7 +1894,7 @@ export function AdminPanel() {
           <button
             onClick={syncIg}
             disabled={igRunning}
-            title="讀 IG 最新貼文，文案裡的地點自動掛上影片、放進「曼谷人帶你去」。正式站每天晚上 8 點也會自動跑。"
+            title="讀 IG 最新貼文，文案裡的地點自動掛上影片、放進「曼谷人帶你去」。正式站每小時也會自動跑一次。"
             className="mt-3 w-full bg-pink-600 hover:bg-pink-500 disabled:opacity-50 text-white text-xs font-bold rounded-xl py-2.5"
           >
             {igRunning ? '同步中...' : '同步 IG 貼文'}

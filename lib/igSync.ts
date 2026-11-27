@@ -20,7 +20,7 @@ export { parseProfile, parseCaption, igCode }
 //  3. 已上架的店：掛上影片連結、放進「曼谷人帶你去」
 //     新的店：用 Google 驗證後直接上架（介紹與站主心得取自文案）；分類被隱藏或對不上 Google 的放待審
 //  4. 處理結果記在 data/ig-sync.json，同一篇不會重複處理（失敗的最多重試 3 次）
-// 每天由 Vercel Cron 打 GET /api/ig-sync，後台也有「同步 IG」按鈕可以立刻跑。
+// 每小時由 Vercel Cron 打 GET /api/ig-sync，後台也有「同步 IG」按鈕可以立刻跑。
 
 export const IG_LOG_FILE = 'data/ig-sync.json'
 const MAX_POSTS_PER_RUN = 3

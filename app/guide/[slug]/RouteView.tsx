@@ -68,7 +68,7 @@ export function RouteView({ route, stops }: { route: TempleRoute; stops: Stop[] 
             <div className="flex-1 min-w-0">
               <Link href={`/location/${s.location.slug ?? s.location.id}`} className="group flex gap-3 items-start">
                 <div className="relative shrink-0 w-24 h-24 lg:w-32 lg:h-28 rounded-lg overflow-hidden bg-paper">
-                  <Image src={s.location.photos[0] ? photoUrl(s.location.photos[0], 480) : FALLBACK_PHOTO} alt={s.location.name_zh} fill className="object-cover" unoptimized />
+                  <Image src={s.location.photos[0] ? photoUrl(s.location.photos[0], 480) : FALLBACK_PHOTO} alt={s.location.name_zh} fill className="object-cover" sizes="128px" />
                 </div>
                 <div className="min-w-0">
                   <h2 className="text-[17px] font-bold text-ink group-hover:text-brand transition-colors leading-snug">{zh ? s.location.name_zh : s.location.name_en}</h2>

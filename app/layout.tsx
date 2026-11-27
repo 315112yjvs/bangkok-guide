@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { RegisterSW } from '@/components/RegisterSW'
 import './globals.css'
 
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
         />
       </head>
-      <body className="bg-paper min-h-screen">{children}<Analytics /><RegisterSW /></body>
+      <body className="bg-paper min-h-screen">{children}<Analytics /><SpeedInsights /><RegisterSW /></body>
     </html>
   )
 }

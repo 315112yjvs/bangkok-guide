@@ -1,4 +1,5 @@
 'use client'
+import { CARD_SIZES } from '@/components/LocationCard'
 import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import { markPhotoPageReady } from '@/lib/viewTransition'
 import { useRouter } from 'next/navigation'
@@ -206,10 +207,10 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                 <>
                   {/* 底下先墊卡片用過的小圖（瀏覽器已快取），大圖還沒載完時轉場也有畫面 */}
                   {activePhoto === 0 && prevPhoto === null && (
-                    <Image src={photoUrl(allRefs[0], 480)} alt="" fill className="object-cover" style={photoPosition(location.photo_focus, allRefs[0])} unoptimized aria-hidden />
+                    <Image src={photoUrl(allRefs[0], 480)} alt="" fill className="object-cover" style={photoPosition(location.photo_focus, allRefs[0])} sizes={CARD_SIZES} aria-hidden />
                   )}
                   {prevPhoto !== null && prevPhoto !== activePhoto && (
-                    <Image src={srcOf(allPhotos[prevPhoto])} alt="" fill className="object-cover" style={photoPosition(location.photo_focus, allRefs[prevPhoto])} unoptimized aria-hidden />
+                    <Image src={srcOf(allPhotos[prevPhoto])} alt="" fill className="object-cover" style={photoPosition(location.photo_focus, allRefs[prevPhoto])} sizes="(max-width: 768px) 100vw, 768px" aria-hidden />
                   )}
                   <Image
                     key={activePhoto}
@@ -218,7 +219,7 @@ export function LocationDetail({ location, nearby = [], hours = null, station = 
                     fill
                     className={`object-cover ${prevPhoto !== null ? 'photo-fade' : ''}`}
                     style={photoPosition(location.photo_focus, allRefs[activePhoto] ?? allRefs[0])}
-                    unoptimized
+                    sizes="(max-width: 768px) 100vw, 768px"
                     priority
                     onError={() => markBroken(allPhotos[activePhoto] ?? allPhotos[0])}
                   />

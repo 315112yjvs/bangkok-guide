@@ -12,6 +12,9 @@ const nextConfig = {
     },
   },
   images: {
+    // Vercel 依螢幕大小縮圖並轉成 AVIF/WebP。照片網址內容不會變（新上傳的檔名都不同），快取一個月
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 2678400,
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'maps.googleapis.com' },

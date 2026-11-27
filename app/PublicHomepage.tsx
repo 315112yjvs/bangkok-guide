@@ -620,7 +620,7 @@ export function PublicHomepage({ locations, diary = [] }: Props) {
                   {diary.map((e) => (
                     <Link key={e.id} href={`/diary#${e.id}`} className="shrink-0 w-60 lg:w-72 group">
                       <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-paper mb-2">
-                        <Image src={e.photo} alt={e.place ?? ''} fill className="object-cover group-hover:scale-[1.02] transition-transform" unoptimized />
+                        <Image src={e.photo} alt={e.place ?? ''} fill className="object-cover group-hover:scale-[1.02] transition-transform" sizes="(max-width: 1024px) 240px, 288px" />
                       </div>
                       <p className="text-[11px] font-bold text-muted mb-0.5">{e.date.replaceAll('-', '.')}{e.place ? ` · ${e.place}` : ''}</p>
                       <p className="text-[14px] text-ink leading-snug line-clamp-2">{e.text}</p>

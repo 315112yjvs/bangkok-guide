@@ -45,6 +45,9 @@ const TAG_BADGE: Record<LocationTag, { emoji: string; zh: string; en: string; co
 
 
 // videoCover：「曼谷人帶你去」用站主影片封面當卡片照片；其他地方維持店家原本的照片
+// 卡片照片的尺寸提示（Vercel 依此縮圖）。地點頁轉場墊底的小圖用同一組，才會用到瀏覽器裡卡片那張快取
+export const CARD_SIZES = '(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 240px'
+
 type Props = { location: Location; lang: Lang; distanceKm?: number; saved?: boolean; onToggleSave?: (id: string) => void; compact?: boolean; hideTag?: boolean; videoCover?: boolean }
 
 export function LocationCard({ location, lang, distanceKm, saved: savedProp = false, onToggleSave, compact = false, hideTag = false, videoCover = false }: Props) {
@@ -144,8 +147,7 @@ export function LocationCard({ location, lang, distanceKm, saved: savedProp = fa
           fill
           className="object-cover"
           style={photoPosition(location.photo_focus, cover)}
-          sizes="(max-width: 768px) 50vw, 33vw"
-          unoptimized
+          sizes={CARD_SIZES}
           onError={handleImgError}
         />}
         {/* Tag label：四種標籤都顯示。以前「經典必訪」不顯示，同一排卡片有的有標籤有的沒有，看起來像漏了 */}

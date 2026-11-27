@@ -3,7 +3,7 @@
   "crons": [
     {
       "path": "/api/ig-sync",
-      "schedule": "0 13 * * *"
+      "schedule": "0 * * * *"
     },
     {
       "path": "/api/refresh-hours",

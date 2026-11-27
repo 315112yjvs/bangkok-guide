@@ -51,7 +51,6 @@ export default function IgPage() {
                 sizes="(max-width: 768px) 33vw, 256px"
                 className="object-cover"
                 style={photoPosition(l.photo_focus, cover, 0.75)}
-                unoptimized
               />
             </IgCoverLink>
           )})}

@@ -45,7 +45,7 @@ export function DiaryView({ entries }: { entries: DiaryEntry[] }) {
                 {e.place && <span className="font-normal">　·　{e.place}</span>}
               </p>
               <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-paper mb-3">
-                <Image src={e.photo} alt={e.place ?? (zh ? '曼谷日記' : 'Bangkok diary')} fill className="object-cover" unoptimized />
+                <Image src={e.photo} alt={e.place ?? (zh ? '曼谷日記' : 'Bangkok diary')} fill className="object-cover" sizes="(max-width: 768px) 100vw, 768px" />
               </div>
               <p className="text-[15px] text-ink leading-[1.8] whitespace-pre-line">{e.text}</p>
             </li>

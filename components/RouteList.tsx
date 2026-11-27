@@ -25,7 +25,7 @@ export function RouteList({ lang, locations }: { lang: Lang; locations: Location
             <div className={`grid ${['grid-cols-1', 'grid-cols-1', 'grid-cols-2', 'grid-cols-3'][covers.length]} gap-0.5 h-36 lg:h-44 bg-line`}>
               {covers.map((l) => (
                 <div key={l.id} className="relative bg-paper">
-                  <Image src={l.photos[0] ? photoUrl(l.photos[0], 480) : FALLBACK_PHOTO} alt="" fill className="object-cover" unoptimized />
+                  <Image src={l.photos[0] ? photoUrl(l.photos[0], 480) : FALLBACK_PHOTO} alt="" fill className="object-cover" sizes="(max-width: 768px) 50vw, 300px" />
                 </div>
               ))}
             </div>
