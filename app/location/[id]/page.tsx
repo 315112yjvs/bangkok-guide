@@ -6,7 +6,7 @@ import { getOpeningHours } from '@/lib/placeInfo'
 import { nearestStation } from '@/lib/transit'
 import type { Location } from '@/lib/types'
 import { LocationDetail } from './LocationDetail'
-import { isHiddenCategory } from '@/lib/site'
+import { isListed } from '@/lib/site'
 import { safeJsonLd } from '@/lib/jsonLd'
 import { CATEGORY_META } from '@/lib/collections'
 import { getArea, extractArea } from '@/lib/area'
@@ -137,7 +137,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     description,
     alternates: { canonical: `/location/${loc.slug ?? loc.id}` },
     // 暫時隱藏的分類：頁面留著，但不給搜尋引擎收錄
-    ...(isHiddenCategory(loc.category) ? { robots: { index: false, follow: true } } : {}),
+    ...(!isListed(loc) ? { robots: { index: false, follow: true } } : {}),
     openGraph: { title, description, type: 'article' },
     twitter: { card: 'summary_large_image', title, description },
   }
@@ -169,7 +169,7 @@ export default async function LocationPage({ params }: { params: Promise<{ id: s
       )}
       <LocationDetail
         location={location}
-        nearby={nearbyOf(location, locations.filter((l) => !isHiddenCategory(l.category)))}
+        nearby={nearbyOf(location, locations.filter(isListed))}
         hours={hours}
         station={station}
         faq={faq.length >= 2 ? faq : []}

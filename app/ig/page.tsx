@@ -5,6 +5,7 @@ import { readVisibleLocations } from '@/lib/data'
 import { photoUrl, photoPosition } from '@/lib/photo'
 import { Icon } from '@/components/icons/Icon'
 import { INSTAGRAM_URL, INSTAGRAM_HANDLE } from '@/lib/site'
+import { IgCoverLink } from '@/components/IgCoverLink'
 
 export const revalidate = 3600
 
@@ -41,7 +42,7 @@ export default function IgPage() {
       {items.length > 0 ? (
         <div className="grid grid-cols-3 gap-0.5">
           {items.map((l) => { const cover = l.video_cover || l.photos[0]; return (
-            <Link key={l.id} href={`/location/${l.slug ?? l.id}`} className="relative block aspect-[3/4] bg-paper overflow-hidden">
+            <IgCoverLink key={l.id} href={`/location/${l.slug ?? l.id}`} place={l.name_en} className="relative block aspect-[3/4] bg-paper overflow-hidden">
               {/* 9:16 封面放進 3:4 格子約露出 75% 高度；封面上已經有店名，不另外疊字 */}
               <Image
                 src={photoUrl(cover, 480)}
@@ -52,7 +53,7 @@ export default function IgPage() {
                 style={photoPosition(l.photo_focus, cover, 0.75)}
                 unoptimized
               />
-            </Link>
+            </IgCoverLink>
           )})}
         </div>
       ) : (

@@ -4,7 +4,8 @@ import type { Location, PendingLocation } from './types'
 import { buildSlugMap } from './slug'
 import { getPlaceInfo } from './placeInfo'
 import type { Tx } from './store'
-import { isHiddenCategory } from './site'
+import { isListed } from './site'
+import { getArea } from './area'
 
 function dataDir(): string {
   return process.env.DATA_DIR ?? join(process.cwd(), 'data')
@@ -30,6 +31,8 @@ export function readLocations(): Location[] {
 // detail page needs (source_url is ~15% of the payload, plus approved_at,
 // extra photos, hashtags…) so the client bundle ships far fewer bytes.
 // Keeps everything LocationCard and the client-side filter/search rely on.
+const clip = (s: string | undefined, n: number) => (s && s.length > n ? s.slice(0, n) : s ?? '')
+
 export function toCardLocation(loc: Location): Location {
   return {
     ...loc,
@@ -39,6 +42,15 @@ export function toCardLocation(loc: Location): Location {
     hashtags: undefined,
     social_embed_url: undefined,
     has_video: !!loc.social_embed_url,
+    // 卡片只顯示一行介紹、首頁搜尋也只需要前段文字：截短可以讓首頁資料小很多（介紹佔卡片資料六成）
+    description_zh: clip(loc.description_zh, 100),
+    description_en: clip(loc.description_en, 160),
+    area: getArea(loc),
+    // 地址保留：卡片的導航按鈕用店名＋地址組 Google 地圖搜尋
+    address_th: undefined,
+    name_th: undefined,
+    // 拜拜的參拜內容只留首頁搜尋用得到的神明與祈求項目
+    temple: loc.temple ? { deity_zh: loc.temple.deity_zh, wishes_zh: loc.temple.wishes_zh, steps_zh: [], offerings_zh: [] } : undefined,
     local_ratio: undefined,
     mentions: undefined,
     evidence: undefined,
@@ -46,9 +58,9 @@ export function toCardLocation(loc: Location): Location {
   }
 }
 
-// 網站上列得出來的店（不含 lib/site.ts 裡暫時隱藏的分類）
+// 網站上列得出來的店（不含 lib/site.ts 裡暫時隱藏的分類；站主推薦的店例外）
 export function readVisibleLocations(): Location[] {
-  return readLocations().filter((l) => !isHiddenCategory(l.category))
+  return readLocations().filter(isListed)
 }
 
 export function readCardLocations(): Location[] {
