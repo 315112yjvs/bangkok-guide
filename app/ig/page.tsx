@@ -15,9 +15,10 @@ export const metadata: Metadata = {
 }
 
 // IG 個人簡介的連結放這頁：排列跟 IG 一樣是影片封面格子，點了直接到那間店
+// 跟首頁「曼谷人帶你去」同一份名單：後台取消「帶你去」的店，這裡也不顯示
 export default function IgPage() {
   const items = readVisibleLocations()
-    .filter((l) => l.social_embed_url && (l.video_cover || l.photos[0]))
+    .filter((l) => l.featured && l.social_embed_url && (l.video_cover || l.photos[0]))
     .sort((a, b) =>
       new Date(b.featured_at ?? b.approved_at ?? 0).getTime() - new Date(a.featured_at ?? a.approved_at ?? 0).getTime())
 
