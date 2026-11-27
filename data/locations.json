@@ -24531,7 +24531,7 @@
     "name_zh": "SWU Night Market",
     "description_zh": "藏在詩納卡琳威洛大學（SWU）校園裡的週五限定夜市，從 BTS Asok 或 MRT Phetchaburi 步行約 10–15 分鐘可達。入夜後一排白色帳篷熱鬧展開，烤雞、豬肋排、各種小吃攤位一字排開，在地學生與上班族全都聚集於此。草地上可野餐，還有學生現場演奏，遠眺城市夜景，氣氛相當放鬆。",
     "description_en": "A Friday-only night market hidden inside the Srinakharinwirot University (SWU) campus, about 10–15 minutes on foot from BTS Asok or MRT Phetchaburi. After dark, rows of white tents light up with grilled chicken, pork ribs, and street snacks. Students and office workers sit on the lawn, listen to live student music, and enjoy the city skyline — one of Bangkok's most laid-back market experiences.",
-    "category": "shopping",
+    "category": "food",
     "address": "114 Sukhumvit Rd, Khwaeng Khlong Toei Nuea, Watthana, Krung Thep Maha Nakhon 10110",
     "lat": 13.744869,
     "lng": 100.56341289999999,
@@ -24568,7 +24568,14 @@
       "places/ChIJM0xLqLSf4jARiuHUkQnH4rc/photos/AV-0GLdXH7uSEjFWQ_hjqDQSmv6WhmCNNVX9nwrWn4cSQ8TVEPuahNBFXhTzTepCxcEJNIoTxFv7qjG3iVCQYG14utYY3Jx-iPxo8yeH2XvOWTSizzQ4h3imcDC2kJ5hSGz-0Sb4ERaUgHsmCXfhPsenME_IzphwB5U_KRBcVtAKZXUfe6jX5MqN4jWJzCTwNL0v9bezooPLhfCVwHghUMefUo-lE7NXWpL5ToyW9rpkyDtJ8lNkeMDany6xHGG7L0Xj5DEKv3rWlvgNrUDtFrt5p_FDOg1b7lnP1NOTiJfu7eiYy1Rkjk2Nb_Iff8syC5sbjd9TpJPOhqIQncxj7JDu-xHIphClUDzO762dn8-HaRM0VXq3HcrTPAZfpNTua7vhzVj1Ai81eOiHZKRCMb1h5D8y6he_",
       "places/ChIJM0xLqLSf4jARiuHUkQnH4rc/photos/AV-0GLfAwADAkinYI_fO572zRirIomd96Lh7GdAV2Djtb4-9-1wk7mXMDz1MG1wmHkgYWVuj7COJIrb2fqHZj-qWcEE_F20oapvpC6SNLZ7gtrGQ10ER0XdSfMRXUXUq9fa7IwvHJR2FH12SoJABOUjw9JcUnPt65v0TFXulc_eeMlw8KxfsPrUo89Hd2guSILWPWC04aslPTs9WJvc4zblJaCBfX1iuXsl-EFQC3lD1uekpy3jKlLrmLSbStk3qepa6LQfzCkFDetTmNCKW7eb8LHS_MBKyvAvLPvXEiBSaubLS3g0HxtTuOGQlJwCtaTIDZymyCHJVcnQDhx1xahJVung8R_PzYKt7Vh_GKTiqsztiUripcQUM0G4czA5YHiLCTzYhHcqO8Kma56fzqr3zUd9HEw2O4q8",
       "places/ChIJM0xLqLSf4jARiuHUkQnH4rc/photos/AV-0GLerH3naeG2gQV8f7YrrXbQmuLMugVPCynEr6l5EJUXKivecqk1kOzUtdKSRNgkabFUlH4OwzAGqpzkeuMwOaydWNN0wR6Sx1R7JPFptRB_00LpHJkh3smEC-QFvPkiKGUgbGyATDF2uqJjv2M-uFREELWrelrFIH60SIgTntfUZEQLF5sVZZCMnn1TycDK8ygunErHi3lgOE4TVD8ANKkjKCwoi6K1qbiXMqtYRIK-EBMvaJkY-Zw6pnd5fEdLbObbzXhNESRMVJwoLYuVdFX1Zf6Fqusfq6HBVqbUsjRP5eUGzGrb0X38h-0WhVEYr7F9I2gyRpoWxTSQNTuEzQCL9zmGueO5q_8BhhiJL9n_UhA31nssrKyn2yPh02JumPjsVZk-eJvIUSf1lXk5cjrXQYJGxwAP7YcWQuLTWD9ME"
-    ]
+    ],
+    "photo_focus": {
+      "/photos/cf29c635-bb83-4a74-b74f-1490e17840c4/u-ac0d63fe.jpg": 49
+    },
+    "video_cover": "/photos/cf29c635-bb83-4a74-b74f-1490e17840c4/u-ac0d63fe.jpg",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "id": "d8c3d418-675f-464f-ac00-ae015e64ede7",
@@ -24613,7 +24620,14 @@
       "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLdVT5Ug3K69l7h5Fd9JR3aSBudk2j8BDBvtI5dcjlyW4JUP0_ub5ewvJCUQCugUaAJFKI-IiCPrYPIRzJPgsQJU5JVf4vLHpGJCzyl3sumgYPr6MWGkpOlUTl5H27Y0y4jhkKuggxfMwquPiUYdEu5h78SF35odBeRtR68QId2VBb1KNE9kWujOqs-AER8CDi-hyIHXiNTQ9fkGRAh_WquhphoBEPesRhCMd8m-VLP2jFwIuObEOcepRCQeHk8PKYvCfoKk50dF1BkRI2Zg1c46Ii4BEWr-PNONRTSxLU10Puz2xZEkG_g_ApH58E_r3tWt-3VGGjllkl897ToKho4uXSnshv4WAA54pj4_vmL7mbz28esbt8kyfiPOlwC-tcufvxKDJ2vchfRAhkfqllvQ0vg",
       "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLcIuUhKLOyhIikOYKXyx8r1VB43QIjJrWLtLHf2jXVYxROgkd6hcTUbnqFlKATu2JDlbXOnrD0_KUXBaWMZ9mA56SDlxDxXTjuDt9nLtslwxZCNG38rm49nWES463wvQwCJ9-pBm2nAUG7HJajr2fzhJDYdR6xmgosdd54ykFaORuFRzzVMbqMadvWoo6KwQh_Gn7zlTEjwX9VJ2cAzL1lYVMD5NxsJpXbaEwL5TqJX3NkDqbc0vlAIK1c1vvjc__bCibDeS-ThE3_iirjgnhSYqj1AgegZ7kkUsO8DsLHxj1cUVLsADqOSxUkkrCir4r1-2AODL9SXq0Ud2k9N0aRwm6F2zSm45Djl3792mnUNElMqVzM7bpSYx3PCc7dtAzd8ivBDoVWfYft7dunP3qSOww",
       "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLddAojZxfqGa03iB6RjMbkqDkzY-nB8a5gvLSfvEljD40tvkte9ilPuqnZEXYTpQsBtp-i54rew_vZpZFPRROVOeuyuGY2opRYakYbnutlLuGFgDrN_v5uPKRM_W2BJF8xpS4eG1TfpHnxSVl-IqGCYlarFt-tDsAKDb6V2NMBCvQyV9GaiFAJD_ld3lKucb4f7srHqsEq0nnsXhmrfC_GUUvpCib93LAnOe9KKnnMdUyQqm5_Oq_i_6Y1oKjOGEiVyGds8iKBIUDvZLO7qmzXjA0CUENgwmnIwdnHcRpp-cRpTOpNoEWl-30xAmRdy5zJAg9kRmopuI8cSVjz_hYAIZnvJfGcrlDGmxqojgNBt6RT6_tlhZYi6QlpFi2hAoouNhMZ0pNJYONHEQF98xxSVwp1mwzk"
-    ]
+    ],
+    "photo_focus": {
+      "/photos/d8c3d418-675f-464f-ac00-ae015e64ede7/u-c4e57913.jpg": 48
+    },
+    "video_cover": "/photos/d8c3d418-675f-464f-ac00-ae015e64ede7/u-c4e57913.jpg",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "id": "cafb60b9-e333-4286-922b-b751cedeab5d",
