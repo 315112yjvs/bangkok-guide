@@ -1745,6 +1745,29 @@ export function AdminPanel() {
     fetch('/api/ig-sync?log=1').then(r => r.json()).then(d => setIgLog((d.items ?? []).slice(0, 6))).catch(() => {})
   }, [])
   useEffect(() => { if (authed) loadIgLog() }, [authed, loadIgLog])
+  // 本機才有：從剪輯台匯出的封面自動配給「帶你去」裡還沒有封面的店
+  const [coverRunning, setCoverRunning] = useState(false)
+  async function importCovers(silent = false) {
+    setCoverRunning(true)
+    if (!silent) setIgStatus('從剪輯台找封面中...')
+    try {
+      const res = await fetch('/api/editor-covers', { method: 'POST' })
+      const data = await res.json()
+      if (!res.ok || data.error) throw new Error(data.error ?? `HTTP ${res.status}`)
+      if (data.imported.length) {
+        setIgStatus(`已從剪輯台帶入封面：${data.imported.map((r: { name: string }) => r.name).join('、')}。記得按「存檔並上傳」`)
+        setHasUnsaved(true)
+        loadData()
+      } else if (!silent) {
+        setIgStatus(data.targets ? `有 ${data.targets} 間缺封面，剪輯台裡沒找到對得上的影片` : '「帶你去」的店都有封面了')
+      }
+    } catch (e) {
+      if (!silent) setIgStatus('帶入封面失敗：' + (e instanceof Error ? e.message : String(e)))
+    } finally {
+      setCoverRunning(false)
+    }
+  }
+
   async function syncIg() {
     setIgRunning(true)
     setIgStatus('讀取 IG 最新貼文中（約 1 分鐘）...')
@@ -1759,6 +1782,8 @@ export function AdminPanel() {
       }
       loadData()
       loadIgLog()
+      // 本機同步完順便找剪輯台的封面（新掛上的影片通常剛從剪輯台匯出）
+      if (!isVercel && data.changed) await importCovers(true)
     } catch (e) {
       setIgStatus('同步失敗：' + (e instanceof Error ? e.message : String(e)))
     } finally {
@@ -1874,6 +1899,16 @@ export function AdminPanel() {
           >
             {igRunning ? '同步中...' : '同步 IG 貼文'}
           </button>
+          {!isVercel && (
+            <button
+              onClick={() => importCovers()}
+              disabled={coverRunning || igRunning}
+              title="剪輯台匯出影片時會產生封面圖，這裡自動配給「曼谷人帶你去」裡還沒有封面的店"
+              className="mt-1.5 w-full bg-white/5 hover:bg-white/10 disabled:opacity-50 text-slate-300 text-[11px] font-bold rounded-xl py-2"
+            >
+              {coverRunning ? '找封面中...' : '從剪輯台帶入封面'}
+            </button>
+          )}
           {igStatus && <p className="text-slate-500 text-[10px] text-center mt-1.5">{igStatus}</p>}
           {igLog.length > 0 && (
             <div className="mt-1.5">
