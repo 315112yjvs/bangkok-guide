@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from 'next/server'
 //  - /api/admin/auth：登入端點本身
 //  - /api/photo：公開詳情頁/卡片的照片代理（CDN 快取）
 const PUBLIC_API = ['/api/admin/auth', '/api/photo']
+const CRON_PATHS = ['/api/ig-sync', '/api/refresh-hours']
 
 async function sha256Hex(input: string): Promise<string> {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(input))
@@ -19,9 +20,9 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
-  // Vercel Cron 每天打 /api/ig-sync，會帶 Authorization: Bearer <CRON_SECRET>
+  // Vercel Cron 每天打這些路徑，會帶 Authorization: Bearer <CRON_SECRET>
   const cron = process.env.CRON_SECRET
-  if (pathname === '/api/ig-sync' && cron && req.headers.get('authorization') === `Bearer ${cron}`) {
+  if (CRON_PATHS.includes(pathname) && cron && req.headers.get('authorization') === `Bearer ${cron}`) {
     return NextResponse.next()
   }
 

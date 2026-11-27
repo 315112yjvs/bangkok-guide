@@ -66,6 +66,7 @@ export type Location = {
   // 以下兩欄來自 data/hours.json，讀取時才併進來，不會寫回 locations.json
   hours?: string[][] | 'always'   // 每週營業時間（週一到週日）
   reviews?: number                // Google 評論數
+  closed?: 'permanent' | 'temporary'  // Google 顯示歇業（同樣來自 hours.json）
 }
 
 export type PendingLocation = Omit<Location, 'approved_at'> & {

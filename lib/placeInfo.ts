@@ -9,7 +9,7 @@ import { join } from 'path'
 export type WeekHours = string[][]
 export type OpeningHours = { week: WeekHours | 'always'; checkedAt: string }
 
-let cache: Record<string, { week: WeekHours | 'always' | null; reviews?: number | null; checked_at: string }> | null = null
+let cache: Record<string, { week: WeekHours | 'always' | null; reviews?: number | null; status?: string | null; checked_at: string }> | null = null
 
 function load() {
   if (!cache) {
@@ -29,8 +29,10 @@ export function getOpeningHours(locationId: string): OpeningHours | null {
 }
 
 // 卡片與地點頁要顯示的兩個欄位：每週營業時間（算「現在有沒有開」）和 Google 評論數
-export function getPlaceInfo(locationId: string): { hours?: WeekHours | 'always'; reviews?: number } {
+// closed：Google 顯示歇業（後台標出來給站主決定要不要下架）
+export function getPlaceInfo(locationId: string): { hours?: WeekHours | 'always'; reviews?: number; closed?: 'permanent' | 'temporary' } {
   const h = load()[locationId]
   if (!h) return {}
-  return { ...(h.week ? { hours: h.week } : {}), ...(h.reviews ? { reviews: h.reviews } : {}) }
+  const closed = h.status === 'CLOSED_PERMANENTLY' ? 'permanent' : h.status === 'CLOSED_TEMPORARILY' ? 'temporary' : undefined
+  return { ...(h.week ? { hours: h.week } : {}), ...(h.reviews ? { reviews: h.reviews } : {}), ...(closed ? { closed } : {}) }
 }

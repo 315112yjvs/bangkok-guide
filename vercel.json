@@ -1,6 +1,13 @@
 {
   "ignoreCommand": "git log -1 --pretty=%s | grep -q '^admin:'",
   "crons": [
-    { "path": "/api/ig-sync", "schedule": "0 13 * * *" }
+    {
+      "path": "/api/ig-sync",
+      "schedule": "0 13 * * *"
+    },
+    {
+      "path": "/api/refresh-hours",
+      "schedule": "0 21 * * *"
+    }
   ]
 }

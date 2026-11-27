@@ -70,7 +70,7 @@ export function readCardLocations(): Location[] {
 export function writeLocations(locations: Location[]): void {
   ensureFile(locPath(), '[]')
   // hours / reviews 是讀取時從 hours.json 併進來的，存檔前拿掉，免得舊資料被寫死在 locations.json
-  const clean = locations.map(({ hours: _h, reviews: _r, ...rest }) => rest)
+  const clean = locations.map(({ hours: _h, reviews: _r, closed: _c, ...rest }) => rest)
   writeFileSync(locPath(), JSON.stringify(clean, null, 2))
 }
 
@@ -98,7 +98,7 @@ export async function txLocations(tx: Tx): Promise<Location[]> {
 }
 
 export function txWriteLocations(tx: Tx, locations: Location[]): void {
-  const clean = locations.map(({ hours: _h, reviews: _r, ...rest }) => rest)
+  const clean = locations.map(({ hours: _h, reviews: _r, closed: _c, ...rest }) => rest)
   tx.writeText(LOCATIONS_FILE, JSON.stringify(clean, null, 2))
 }
 

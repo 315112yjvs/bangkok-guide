@@ -734,6 +734,11 @@ function ApprovedCard({ item, onRemove, onUpdate }: {
               <span className="text-[10px]">{TAG_OPTIONS.find(t => t.value === resolveTag(item))?.emoji}</span>
             </div>
             <p className="text-[10px] text-gray-400">{item.category} · ★ {item.rating}</p>
+            {item.closed && (
+              <p className="text-[10px] font-bold text-red-600">
+                Google 顯示{item.closed === 'permanent' ? '永久歇業，建議下架' : '暫停營業'}
+              </p>
+            )}
           </div>
           <div className="flex items-center gap-1 shrink-0">
             <select
