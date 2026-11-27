@@ -277,10 +277,9 @@
     "lat": 13.7357654,
     "lng": 100.5892865,
     "photos": [
-      "/photos/b535fe59-02bd-40d7-b0d5-0c2497f1f1fa/0.jpg",
+      "/photos/b535fe59-02bd-40d7-b0d5-0c2497f1f1fa/3.jpg",
       "/photos/b535fe59-02bd-40d7-b0d5-0c2497f1f1fa/1.jpg",
-      "/photos/b535fe59-02bd-40d7-b0d5-0c2497f1f1fa/2.jpg",
-      "/photos/b535fe59-02bd-40d7-b0d5-0c2497f1f1fa/3.jpg"
+      "/photos/b535fe59-02bd-40d7-b0d5-0c2497f1f1fa/2.jpg"
     ],
     "source_url": "https://www.google.com/maps/search/?api=1&query=Ekamai%20Mookata%20392%20Soi%20Om%20Sin%20Sena%203%2C%20Khwaeng%20Khlong%20Tan%20Nuea%2C%20Watthana%2C%20Krung%20Thep%20Maha%20Nakhon%2010110%2C%20Thailand&query_place_id=ChIJ7_g6IWCf4jARCB15EZJY77A",
     "rating": 4.6,
@@ -306,7 +305,14 @@
     "social_embed_url": "https://www.instagram.com/p/DgC3OcLTDld/",
     "featured": true,
     "featured_at": "2026-11-22T05:00:00.000Z",
-    "curator_note": "自己最常帶朋友來的泰式烤肉，每次都很滿意。點了 Mookata 鍋、薯條和泰式涼拌，沾醬種類多，整桌份量很澎湃。現場吉他演出讓氣氛輕鬆不吵雜，院子裡的復古麵包車隨手拍都好看。離 BTS Ekkamai 站近，很好找。"
+    "curator_note": "自己最常帶朋友來的泰式烤肉，每次都很滿意。點了 Mookata 鍋、薯條和泰式涼拌，沾醬種類多，整桌份量很澎湃。現場吉他演出讓氣氛輕鬆不吵雜，院子裡的復古麵包車隨手拍都好看。離 BTS Ekkamai 站近，很好找。",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": [],
+    "photo_focus": {
+      "/photos/b535fe59-02bd-40d7-b0d5-0c2497f1f1fa/u-27b36db1.jpg": 50
+    },
+    "video_cover": "/photos/b535fe59-02bd-40d7-b0d5-0c2497f1f1fa/u-27b36db1.jpg"
   },
   {
     "name_en": "Krua Phitsamai",
@@ -24517,7 +24523,6 @@
     "lat": 13.5383587,
     "lng": 100.6128887,
     "photos": [
-      "/photos/178ae3ff-2e7e-41d0-8057-1ad4c2eb9e93/0.jpg",
       "/photos/178ae3ff-2e7e-41d0-8057-1ad4c2eb9e93/1.jpg",
       "/photos/178ae3ff-2e7e-41d0-8057-1ad4c2eb9e93/2.jpg",
       "/photos/178ae3ff-2e7e-41d0-8057-1ad4c2eb9e93/3.jpg"
@@ -24549,7 +24554,14 @@
       "places/ChIJi9016k-n4jARFJkrswVmFLc/photos/AV-0GLe43bL6VKF0IU-CdVm01R_So9uOuBfbmZrsT0GvsPgvUDviNqW-UP0lpLi9QQhsI3n7qaAOKjaSWAZ00fbf4z-5lgMbUg54eboMX3criJ6ytxZerS_dBn8HZtI9pS9xB-WPHVvwJpyA5VvHFSKuimJFMprpjDI_FXhFyX8sTgh2x78jL5Wo5fIm_q-A6ih7HmiBXHoO7G9JSgmm3rdpE4QFT7x1Ily9j4L8D8rFlGlD_GmS0feyuJ1HN1mw2m8xjeTM1sLy-yYm0urFj3YleosNEJyhyFRAaXTZa0fzLKBxSWRH4N4JcalJvO1JCDHK_02jYtN-5nXTcqTi_pkJv3qelazIjqsWfSTkzXJE6lbTPRWrPnMyhoR_dtApL8KVOdG5qS9EhpxMtnXZfimrwPjiuPhQuJTqoX1xH7bZ56tcaA",
       "places/ChIJi9016k-n4jARFJkrswVmFLc/photos/AV-0GLdvkEPW72jgh8_EM4lX5FTmMSOCB8dHEx06AD_nXTHIKQjz0EfskS48iybr8c3mrB7S_LWxsmqPevO38mn-y4akhfDYFyyOYFrbFX0DO0XcEPVBTs13tYY599Zw80aVzZhoX_VG6vIKvOsIYIDHi9Vlm63RNFoDufPKehKr5qglx6bWYHPAglnoRo4zhQrqY0f5EYhOiquzTdKC5UujRKejDgioKQ-DEEgNJFJy4kCCxtBJ-SiErOebJKTLvwcMrGguXJLBCKbYXcgkmQ5y6HbmClT8PlbRCfPaXq87wyyNNts0Z6HRN8ozPxj-zcNM2iyqX-eG_Dns7ejwsegnJG7CCcmDi8IGm6oYGuuZhX_tTg21aHwh_NjLvJw_IcTwOJMiRg6lBXSGnfMnkP1D-S0JDlqAldczeqBNleY6rovUDQ"
     ],
-    "slug": "sailom-bangpu"
+    "slug": "sailom-bangpu",
+    "photo_focus": {
+      "/photos/178ae3ff-2e7e-41d0-8057-1ad4c2eb9e93/u-60df8564.jpg": 49
+    },
+    "video_cover": "/photos/178ae3ff-2e7e-41d0-8057-1ad4c2eb9e93/u-60df8564.jpg",
+    "name_th": "",
+    "address_th": "",
+    "hashtags": []
   },
   {
     "id": "cf29c635-bb83-4a74-b74f-1490e17840c4",
@@ -24594,6 +24606,51 @@
       "places/ChIJM0xLqLSf4jARiuHUkQnH4rc/photos/AV-0GLdXH7uSEjFWQ_hjqDQSmv6WhmCNNVX9nwrWn4cSQ8TVEPuahNBFXhTzTepCxcEJNIoTxFv7qjG3iVCQYG14utYY3Jx-iPxo8yeH2XvOWTSizzQ4h3imcDC2kJ5hSGz-0Sb4ERaUgHsmCXfhPsenME_IzphwB5U_KRBcVtAKZXUfe6jX5MqN4jWJzCTwNL0v9bezooPLhfCVwHghUMefUo-lE7NXWpL5ToyW9rpkyDtJ8lNkeMDany6xHGG7L0Xj5DEKv3rWlvgNrUDtFrt5p_FDOg1b7lnP1NOTiJfu7eiYy1Rkjk2Nb_Iff8syC5sbjd9TpJPOhqIQncxj7JDu-xHIphClUDzO762dn8-HaRM0VXq3HcrTPAZfpNTua7vhzVj1Ai81eOiHZKRCMb1h5D8y6he_",
       "places/ChIJM0xLqLSf4jARiuHUkQnH4rc/photos/AV-0GLfAwADAkinYI_fO572zRirIomd96Lh7GdAV2Djtb4-9-1wk7mXMDz1MG1wmHkgYWVuj7COJIrb2fqHZj-qWcEE_F20oapvpC6SNLZ7gtrGQ10ER0XdSfMRXUXUq9fa7IwvHJR2FH12SoJABOUjw9JcUnPt65v0TFXulc_eeMlw8KxfsPrUo89Hd2guSILWPWC04aslPTs9WJvc4zblJaCBfX1iuXsl-EFQC3lD1uekpy3jKlLrmLSbStk3qepa6LQfzCkFDetTmNCKW7eb8LHS_MBKyvAvLPvXEiBSaubLS3g0HxtTuOGQlJwCtaTIDZymyCHJVcnQDhx1xahJVung8R_PzYKt7Vh_GKTiqsztiUripcQUM0G4czA5YHiLCTzYhHcqO8Kma56fzqr3zUd9HEw2O4q8",
       "places/ChIJM0xLqLSf4jARiuHUkQnH4rc/photos/AV-0GLerH3naeG2gQV8f7YrrXbQmuLMugVPCynEr6l5EJUXKivecqk1kOzUtdKSRNgkabFUlH4OwzAGqpzkeuMwOaydWNN0wR6Sx1R7JPFptRB_00LpHJkh3smEC-QFvPkiKGUgbGyATDF2uqJjv2M-uFREELWrelrFIH60SIgTntfUZEQLF5sVZZCMnn1TycDK8ygunErHi3lgOE4TVD8ANKkjKCwoi6K1qbiXMqtYRIK-EBMvaJkY-Zw6pnd5fEdLbObbzXhNESRMVJwoLYuVdFX1Zf6Fqusfq6HBVqbUsjRP5eUGzGrb0X38h-0WhVEYr7F9I2gyRpoWxTSQNTuEzQCL9zmGueO5q_8BhhiJL9n_UhA31nssrKyn2yPh02JumPjsVZk-eJvIUSf1lXk5cjrXQYJGxwAP7YcWQuLTWD9ME"
+    ]
+  },
+  {
+    "id": "d8c3d418-675f-464f-ac00-ae015e64ede7",
+    "name_en": "Jelly cat central chitlom",
+    "name_zh": "Jellycat",
+    "description_zh": "Jellycat 在曼谷的第一家實體店，開在 Central Chidlom G 樓。店內陳列大量娃娃，兔子、熊、青蛙一字排開，石頭、珊瑚、盆栽也全化身玩偶。最吸睛的是整面牆的荷包蛋吐司、鬆餅、咖啡杯造型娃娃，另有裝飾嘟嘟車與拍貼機供拍照留念。",
+    "description_en": "Jellycat's first standalone store in Bangkok, located on the G floor of Central Chidlom. The shop is packed with plush characters ranging from bunnies and bears to frogs, alongside quirky food-themed designs like fried egg toast, waffles, and coffee cups covering an entire wall. A decorated tuk-tuk and a photo sticker machine are available for photo opportunities.",
+    "category": "shopping",
+    "address": "5th fl, Central Chidlom Tower, Lumphini, Khwaeng Lumphini, Pathum Wan, Krung Thep Maha Nakhon 10330",
+    "lat": 13.7448233,
+    "lng": 100.5453452,
+    "photos": [
+      "/photos/d8c3d418-675f-464f-ac00-ae015e64ede7/0.jpg",
+      "/photos/d8c3d418-675f-464f-ac00-ae015e64ede7/1.jpg",
+      "/photos/d8c3d418-675f-464f-ac00-ae015e64ede7/2.jpg",
+      "/photos/d8c3d418-675f-464f-ac00-ae015e64ede7/3.jpg"
+    ],
+    "source": "instagram",
+    "source_url": "https://www.google.com/maps/search/?api=1&query=Jelly%20cat%20central%20chitlom%205th%20fl%2C%20Central%20Chidlom%20Tower%2C%20Lumphini%2C%20Khwaeng%20Lumphini%2C%20Pathum%20Wan%2C%20Krung%20Thep%20Maha%20Nakhon%2010330&query_place_id=ChIJR6AUTwCf4jARExjSeRadNbo",
+    "rating": 3.4,
+    "price_range": 2,
+    "tag": "hidden_gem",
+    "area": "Chidlom",
+    "highlights": [],
+    "curator_note": "整面牆的早餐系列娃娃視覺衝擊感十足，那台坐著星星的嘟嘟車是最好拍的角落。厭世臉青蛙 Ricky 是我的私心必看。從 BTS Chit Lom 走天橋直通 Central Chidlom，不用出站吹到冷氣就到了。",
+    "social_embed_url": "https://www.instagram.com/p/Df4kAi2BEdq/",
+    "featured": true,
+    "featured_at": "2026-11-18T05:00:00.000Z",
+    "evidence": [
+      {
+        "url": "https://www.instagram.com/p/Df4kAi2BEdq/",
+        "title": "曼谷人 IG",
+        "quote": "Jellycat 曼谷第一家店，終於來了！🐰"
+      }
+    ],
+    "approved_at": "2026-11-27T07:01:39.459Z",
+    "slug": "jelly-cat-central-chitlom",
+    "photo_refs": [
+      "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLcaiG3suKElIkt-2n2YnoIhu1HMczA_xrZLhwFVLxPt65KFh2pIPUiLTV3zjJH-p_HYvVnfmg71NZX71YU0IKP2giTFulaZ9M63dnniSt0DtF249ZNDuFeSZNpaQv17084O-BKqRCrw0kXSQSG992JDpNm7rcdQhgdm1-Fuvkq2clvcvwzMU_PMVvha0CqQrw0HYUCSt7x8pdQ_Tyxyuj9iE5Er8pLmqK6A88w54jhMI0H62LOPGpLob0V6Iv2M7mFkyUe-ihHf3gmGnUqeIB8bhI1AfvLKvGwZdS0FOLgwUao8VmzFH8fakbdrgFGHnAD73vFXiQyeD7sXKn1ecf7aYk6Mf4K-voDsbOx9g5gBlAFOkbnNORGX_QLFWGhKPkouAsAjz1TaM0iH3Y4F3zuM8t_su-o",
+      "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLdE4Sykygk7pj21UZG4gbZiuLTu1or0prNUHu2oXIP1Jz7dgSSlfVOTZpIETQiSpenaFSloVbp3yjPrs_qQfaEC88xsHFE8Ghxq9M1fsML3XTVOyt0EpwyFOu3Oql_9NqnbINwb7laG8vIVHMIWfq_GhZuRkvKjy9arzZ7Y95GkulwknzQvCaYPIHWyT81-qvGdAObjLyimaEss0LAI_eur-r-KT47lAes9QNvs-7JT3m3gqqrtFb34_DQlckQ6MHAHto18SrJ7kukH0aDyvZqakZr8wspYcARjbEEWP2zijqvXlx_xPrbDDtVhlLYvlCHzoM93GuqbYD_gzMG5PS3oKE4yC_2n0IoYmYMzk7RW9KR2LU4iy-8iH123M5ALfph5cIpdMpWT_hIRLEWEqn5IWLJtcI4",
+      "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLfZchZD1INwh4DKng-iOvVZyCnrQO0m3c39zSosEr_MWl4rwPJg1Jfp5VuuhiTXbe0iQ3jMtWZKFPZJUxv7CdV3ZQhfFeVthT76H91LpAeO_1qd4KaPPFzEfMjU_lTHMTzqaJ5aP97HRoMTIYJjquJsLrVMgyyime5gkP5pDZbbVEyjU7dU-WNzPqM47h4pIU5qcORHRYlB6JzNG_jILlj_V1QpC9ab5QolalkOQ4aZZ2iLRK1V2FY3jJzgyTC8TF1ODDdTQ_7yrxTJUeQNT5i_cKqlkbqRTsz9cINkdmUHQxXwA_kDbq7n7dqJKUUfIqNiQR7sOpfbo5KphHENJMT1tmrA-iWSgy6Z7ih9Exbp_qcu2uFt61VrzktVMCI38r3Hp5nRj8YdFtBHzoagu6usjgk3OCc",
+      "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLdVT5Ug3K69l7h5Fd9JR3aSBudk2j8BDBvtI5dcjlyW4JUP0_ub5ewvJCUQCugUaAJFKI-IiCPrYPIRzJPgsQJU5JVf4vLHpGJCzyl3sumgYPr6MWGkpOlUTl5H27Y0y4jhkKuggxfMwquPiUYdEu5h78SF35odBeRtR68QId2VBb1KNE9kWujOqs-AER8CDi-hyIHXiNTQ9fkGRAh_WquhphoBEPesRhCMd8m-VLP2jFwIuObEOcepRCQeHk8PKYvCfoKk50dF1BkRI2Zg1c46Ii4BEWr-PNONRTSxLU10Puz2xZEkG_g_ApH58E_r3tWt-3VGGjllkl897ToKho4uXSnshv4WAA54pj4_vmL7mbz28esbt8kyfiPOlwC-tcufvxKDJ2vchfRAhkfqllvQ0vg",
+      "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLcIuUhKLOyhIikOYKXyx8r1VB43QIjJrWLtLHf2jXVYxROgkd6hcTUbnqFlKATu2JDlbXOnrD0_KUXBaWMZ9mA56SDlxDxXTjuDt9nLtslwxZCNG38rm49nWES463wvQwCJ9-pBm2nAUG7HJajr2fzhJDYdR6xmgosdd54ykFaORuFRzzVMbqMadvWoo6KwQh_Gn7zlTEjwX9VJ2cAzL1lYVMD5NxsJpXbaEwL5TqJX3NkDqbc0vlAIK1c1vvjc__bCibDeS-ThE3_iirjgnhSYqj1AgegZ7kkUsO8DsLHxj1cUVLsADqOSxUkkrCir4r1-2AODL9SXq0Ud2k9N0aRwm6F2zSm45Djl3792mnUNElMqVzM7bpSYx3PCc7dtAzd8ivBDoVWfYft7dunP3qSOww",
+      "places/ChIJR6AUTwCf4jARExjSeRadNbo/photos/AV-0GLddAojZxfqGa03iB6RjMbkqDkzY-nB8a5gvLSfvEljD40tvkte9ilPuqnZEXYTpQsBtp-i54rew_vZpZFPRROVOeuyuGY2opRYakYbnutlLuGFgDrN_v5uPKRM_W2BJF8xpS4eG1TfpHnxSVl-IqGCYlarFt-tDsAKDb6V2NMBCvQyV9GaiFAJD_ld3lKucb4f7srHqsEq0nnsXhmrfC_GUUvpCib93LAnOe9KKnnMdUyQqm5_Oq_i_6Y1oKjOGEiVyGds8iKBIUDvZLO7qmzXjA0CUENgwmnIwdnHcRpp-cRpTOpNoEWl-30xAmRdy5zJAg9kRmopuI8cSVjz_hYAIZnvJfGcrlDGmxqojgNBt6RT6_tlhZYi6QlpFi2hAoouNhMZ0pNJYONHEQF98xxSVwp1mwzk"
     ]
   }
 ]
